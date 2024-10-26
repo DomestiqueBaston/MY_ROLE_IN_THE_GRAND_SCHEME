@@ -1,0 +1,294 @@
+[gd_scene load_steps=28 format=3 uid="uid://dxsbbamjqxk1s"]
+
+[ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_hrlx0"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_02cvh"]
+[ext_resource type="ButtonGroup" uid="uid://s2v30wdlf28n" path="res://UI/Character_Generation_Button_Group.tres" id="3_uxv3c"]
+[ext_resource type="Texture2D" uid="uid://dmhmlsek5h32r" path="res://GRAPHICS/SETTINGS/Credits_Button_Pressed.png" id="4_lfu18"]
+[ext_resource type="Texture2D" uid="uid://dpgqkv2v1cxrb" path="res://GRAPHICS/SETTINGS/Credits_Button_Hover.png" id="5_1ef0o"]
+[ext_resource type="BitMap" uid="uid://b0aff0tqbymvi" path="res://GRAPHICS/SETTINGS/Credits_Button_Mask.png" id="6_8dsdr"]
+[ext_resource type="Texture2D" uid="uid://mp2y4uhtqtyo" path="res://GRAPHICS/SETTINGS/Language_Button_Pressed.png" id="7_nx8el"]
+[ext_resource type="Texture2D" uid="uid://dlu5db6a00ab0" path="res://GRAPHICS/SETTINGS/Language_Button_Hover.png" id="8_qighy"]
+[ext_resource type="BitMap" uid="uid://b6cv0xue6e4ga" path="res://GRAPHICS/SETTINGS/Language_Button_Mask.png" id="9_jiw7o"]
+[ext_resource type="Texture2D" uid="uid://djkbprdt08vou" path="res://GRAPHICS/SETTINGS/Continue_Button_Pressed.png" id="10_8fqdo"]
+[ext_resource type="Texture2D" uid="uid://dux624abav71v" path="res://GRAPHICS/SETTINGS/Continue_Button_Hover.png" id="11_olqpo"]
+[ext_resource type="BitMap" uid="uid://c01br5utjrve0" path="res://GRAPHICS/SETTINGS/Continue_Button_Mask.png" id="12_jyp6r"]
+[ext_resource type="Texture2D" uid="uid://gkjyjrrjqm4" path="res://GRAPHICS/SETTINGS/Quit_Button_Pressed.png" id="13_ttwap"]
+[ext_resource type="Texture2D" uid="uid://bhri06y4wwud5" path="res://GRAPHICS/SETTINGS/Quit_Button_Hover.png" id="14_kl4v5"]
+[ext_resource type="BitMap" uid="uid://dh37ysfoj22wq" path="res://GRAPHICS/SETTINGS/Quit_Button_Mask.png" id="15_h0olh"]
+[ext_resource type="Texture2D" uid="uid://qmsemtrgn2lh" path="res://GRAPHICS/SETTINGS/Settings_Button_Pressed.png" id="16_m6318"]
+[ext_resource type="Texture2D" uid="uid://yf08s0t0wboe" path="res://GRAPHICS/SETTINGS/Settings_Button_Hover.png" id="17_8grrc"]
+[ext_resource type="BitMap" uid="uid://dyx2wx00enl0p" path="res://GRAPHICS/SETTINGS/Settings_Button_Mask.png" id="18_xt5su"]
+[ext_resource type="Texture2D" uid="uid://cwyb25ikdwm7f" path="res://GRAPHICS/SETTINGS/New_Game_Button_Pressed.png" id="19_xjndw"]
+[ext_resource type="Texture2D" uid="uid://okdg1e5jce7e" path="res://GRAPHICS/SETTINGS/New_Game_Button_Hover.png" id="20_5r6rg"]
+[ext_resource type="BitMap" uid="uid://dton6iewjr24f" path="res://GRAPHICS/SETTINGS/New_Game_Button_Mask.png" id="21_s7viv"]
+[ext_resource type="Texture2D" uid="uid://dd8d724xh70jj" path="res://GRAPHICS/SETTINGS/LSD_Button_Pressed.png" id="22_emay7"]
+[ext_resource type="Texture2D" uid="uid://bw2ns5k33wq4w" path="res://GRAPHICS/SETTINGS/LSD_Button_Hover.png" id="23_mhseo"]
+[ext_resource type="BitMap" uid="uid://cshny4khdlmjh" path="res://GRAPHICS/SETTINGS/LSD_Button_Mask.png" id="24_1iqv1"]
+[ext_resource type="Texture2D" uid="uid://c1qmuoj1q7n2c" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Pressed.png" id="25_47f6w"]
+[ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Hover.png" id="26_yiwnx"]
+[ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Mask.png" id="27_d568r"]
+
+[node name="Main_Menu" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Main_Menu_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_hrlx0")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Useless" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Useless_Label" type="Label" parent="Useless"]
+self_modulate = Color(1, 0.91, 0.7, 0.686275)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 287.0
+offset_right = 125.0
+offset_bottom = 307.0
+pivot_offset = Vector2(45, 11)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "Secrets they're
+hiding from us!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Credits" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 78.0
+offset_bottom = 52.0
+rotation = -2.52379e-05
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("4_lfu18")
+texture_hover = ExtResource("5_1ef0o")
+texture_click_mask = ExtResource("6_8dsdr")
+metadata/_edit_lock_ = true
+
+[node name="Credits_Label" type="Label" parent="Useless/Credits"]
+layout_mode = 0
+offset_left = 34.995
+offset_top = 199.001
+offset_right = 112.995
+offset_bottom = 219.001
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Language" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("7_nx8el")
+texture_hover = ExtResource("8_qighy")
+texture_click_mask = ExtResource("9_jiw7o")
+metadata/_edit_lock_ = true
+
+[node name="Language_Label" type="Label" parent="Useless/Language"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 199.0
+offset_right = 280.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "Language"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Continue" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("10_8fqdo")
+texture_hover = ExtResource("11_olqpo")
+texture_click_mask = ExtResource("12_jyp6r")
+metadata/_edit_lock_ = true
+
+[node name="Continue_Label" type="Label" parent="Useless/Continue"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 199.0
+offset_right = 438.0
+offset_bottom = 218.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("13_ttwap")
+texture_hover = ExtResource("14_kl4v5")
+texture_click_mask = ExtResource("15_h0olh")
+metadata/_edit_lock_ = true
+
+[node name="Quit_Label" type="Label" parent="Useless/Quit"]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 198.0
+offset_right = 597.0
+offset_bottom = 219.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "QUIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("16_m6318")
+texture_hover = ExtResource("17_8grrc")
+texture_click_mask = ExtResource("18_xt5su")
+metadata/_edit_lock_ = true
+
+[node name="Settings_Label" type="Label" parent="Useless/Settings"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 111.0
+offset_right = 282.0
+offset_bottom = 131.0
+pivot_offset = Vector2(45, 11)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="New_Game" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("19_xjndw")
+texture_hover = ExtResource("20_5r6rg")
+texture_click_mask = ExtResource("21_s7viv")
+metadata/_edit_lock_ = true
+
+[node name="New Game_Label" type="Label" parent="Useless/New_Game"]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 110.0
+offset_right = 444.0
+offset_bottom = 130.0
+pivot_offset = Vector2(45, 11)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "New Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="LSD" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("22_emay7")
+texture_hover = ExtResource("23_mhseo")
+texture_click_mask = ExtResource("24_1iqv1")
+metadata/_edit_lock_ = true
+
+[node name="LSD_Label" type="Label" parent="Useless/LSD"]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 110.0
+offset_right = 603.0
+offset_bottom = 130.0
+pivot_offset = Vector2(45, 11)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "Load/Save/Del.
+Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Tutorial" type="TextureButton" parent="Useless"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("3_uxv3c")
+texture_pressed = ExtResource("25_47f6w")
+texture_hover = ExtResource("26_yiwnx")
+texture_click_mask = ExtResource("27_d568r")
+metadata/_edit_lock_ = true
+
+[node name="Tutorial_Label" type="Label" parent="Useless/Tutorial"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 25.0
+offset_right = 275.0
+offset_bottom = 45.0
+pivot_offset = Vector2(45, 11)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_02cvh")
+theme_override_font_sizes/font_size = 8
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true

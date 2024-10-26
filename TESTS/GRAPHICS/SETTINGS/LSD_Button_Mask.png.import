@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cshny4khdlmjh"
+path="res://.godot/imported/LSD_Button_Mask.png-0fce1f2e49ff14ba65e06dda2dfd5da4.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/LSD_Button_Mask.png"
+dest_files=["res://.godot/imported/LSD_Button_Mask.png-0fce1f2e49ff14ba65e06dda2dfd5da4.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,0 +1,151 @@
+[gd_scene load_steps=11 format=3 uid="uid://bldgrur6y3rhv"]
+
+[ext_resource type="Texture2D" uid="uid://do7g2c24mmsbk" path="res://GRAPHICS/LOAD_SAVE_DELETE/Load_Save_Delete_BG.png" id="1_b07ca"]
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="2_8ri13"]
+[ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="2_m3c2s"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_4fe4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7fen"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3e1n3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qddky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6a1d6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihvqb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qy1b3"]
+
+[node name="Load_Save_Delete" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Fond" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0946, 0.11, 0.09922, 0.376471)
+metadata/_edit_lock_ = true
+
+[node name="Load_Save_Delete_BG" type="Sprite2D" parent="."]
+position = Vector2(157, 176)
+texture = ExtResource("1_b07ca")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 87.0
+offset_top = 116.0
+offset_right = 230.0
+offset_bottom = 314.0
+theme = ExtResource("2_8ri13")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t7fen")
+metadata/_edit_lock_ = true
+
+[node name="ItemList" type="ItemList" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_8ri13")
+item_count = 20
+item_0/text = "Test"
+item_1/text = "Autre test"
+item_2/text = "Encore un autre test"
+item_3/text = "Et un dernier test"
+item_4/text = "Ah ! Non, encore un autre..."
+item_5/text = "Et allez ! un nouveau, tiens !"
+item_6/text = "Un dernier ?"
+item_7/text = "Pour le fun, bien entendu...."
+item_8/text = "Bon... Stop, maintenant !"
+item_9/text = "D'accord ?"
+item_10/text = "Nan, pas d'accord !"
+item_11/text = "On les met tous."
+item_12/text = "Comme ça on saura..."
+item_13/text = "Combien on en a avant de"
+item_14/text = "devoir mettre une scroll bar,"
+item_15/text = "Ce que je voudrais éviter"
+item_16/text = "tant qu'à faire !"
+item_17/text = "Bon, on y est, non ?"
+item_18/text = "Allez, le tout dernier !"
+item_19/text = "Et là, ça déborde !"
+metadata/_edit_lock_ = true
+
+[node name="Load_Save_Delete" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 97.0
+offset_right = 231.0
+offset_bottom = 105.0
+theme = ExtResource("2_m3c2s")
+theme_override_colors/font_color = Color(0.866667, 0.905882, 0.941176, 0.882353)
+text = "     -      -       "
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Yes_No" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 323.0
+offset_top = 217.0
+offset_right = 363.0
+offset_bottom = 257.0
+metadata/_edit_lock_ = true
+
+[node name="Load" type="Button" parent="Yes_No"]
+layout_mode = 0
+offset_left = -213.0
+offset_top = -120.0
+offset_right = -193.0
+offset_bottom = -112.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.8648, 0.907413, 0.94, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_4fe4i")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "LOAD"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Save" type="Button" parent="Yes_No"]
+layout_mode = 0
+offset_left = -179.0
+offset_top = -120.0
+offset_right = -159.0
+offset_bottom = -112.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.8648, 0.907413, 0.94, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_4fe4i")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "SAVE"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Delete" type="Button" parent="Yes_No"]
+layout_mode = 0
+offset_left = -145.0
+offset_top = -120.0
+offset_right = -116.0
+offset_bottom = -112.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.8648, 0.907413, 0.94, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_4fe4i")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "DELETE"
+flat = true
+metadata/_edit_lock_ = true

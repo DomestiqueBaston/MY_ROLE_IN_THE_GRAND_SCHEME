@@ -1,0 +1,251 @@
+[gd_scene load_steps=3 format=3 uid="uid://binajvg6yf5et"]
+
+[ext_resource type="Texture2D" uid="uid://bsn2bj0u3guk7" path="res://GRAPHICS/CALENDAR/Calendar_BG.png" id="1_tfm5c"]
+[ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="5_rli5c"]
+
+[node name="Calendar" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Calendar_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_tfm5c")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Current_Day" type="Node2D" parent="."]
+
+[node name="Week_1" type="Node2D" parent="Current_Day"]
+
+[node name="Monday" type="ColorRect" parent="Current_Day/Week_1"]
+visible = false
+offset_left = 193.0
+offset_top = 82.0
+offset_right = 248.0
+offset_bottom = 134.0
+color = Color(1, 0.8, 0.8, 0.588235)
+
+[node name="Tuesday" type="ColorRect" parent="Current_Day/Week_1"]
+visible = false
+offset_left = 249.0
+offset_top = 82.0
+offset_right = 303.0
+offset_bottom = 134.0
+color = Color(0.81, 1, 0.8, 0.588235)
+
+[node name="Wednesday" type="ColorRect" parent="Current_Day/Week_1"]
+visible = false
+offset_left = 304.0
+offset_top = 82.0
+offset_right = 359.0
+offset_bottom = 134.0
+color = Color(0.8, 0.863333, 1, 0.588235)
+
+[node name="Thursday" type="ColorRect" parent="Current_Day/Week_1"]
+visible = false
+offset_left = 360.0
+offset_top = 82.0
+offset_right = 415.0
+offset_bottom = 134.0
+color = Color(1, 0.983333, 0.8, 0.588235)
+
+[node name="Friday" type="ColorRect" parent="Current_Day/Week_1"]
+visible = false
+offset_left = 416.0
+offset_top = 82.0
+offset_right = 471.0
+offset_bottom = 134.0
+color = Color(1, 0.8, 0.97, 0.588235)
+
+[node name="Saturday" type="ColorRect" parent="Current_Day/Week_1"]
+visible = false
+offset_left = 472.0
+offset_top = 82.0
+offset_right = 527.0
+offset_bottom = 134.0
+color = Color(0.8, 0.8, 0.8, 0.588235)
+
+[node name="Sunday" type="ColorRect" parent="Current_Day/Week_1"]
+visible = false
+offset_left = 528.0
+offset_top = 82.0
+offset_right = 582.0
+offset_bottom = 134.0
+color = Color(0.6, 0.6, 0.6, 0.588235)
+
+[node name="Week_2" type="Node2D" parent="Current_Day"]
+position = Vector2(0, 56)
+
+[node name="Monday" type="ColorRect" parent="Current_Day/Week_2"]
+visible = false
+offset_left = 193.0
+offset_top = 79.0
+offset_right = 248.0
+offset_bottom = 138.0
+color = Color(1, 0.8, 0.8, 0.588235)
+
+[node name="Tuesday" type="ColorRect" parent="Current_Day/Week_2"]
+visible = false
+offset_left = 249.0
+offset_top = 79.0
+offset_right = 303.0
+offset_bottom = 138.0
+color = Color(0.81, 1, 0.8, 0.588235)
+
+[node name="Wednesday" type="ColorRect" parent="Current_Day/Week_2"]
+visible = false
+offset_left = 304.0
+offset_top = 79.0
+offset_right = 359.0
+offset_bottom = 138.0
+color = Color(0.8, 0.863333, 1, 0.588235)
+
+[node name="Thursday" type="ColorRect" parent="Current_Day/Week_2"]
+visible = false
+offset_left = 360.0
+offset_top = 79.0
+offset_right = 415.0
+offset_bottom = 138.0
+color = Color(1, 0.983333, 0.8, 0.588235)
+
+[node name="Friday" type="ColorRect" parent="Current_Day/Week_2"]
+visible = false
+offset_left = 416.0
+offset_top = 79.0
+offset_right = 471.0
+offset_bottom = 138.0
+color = Color(1, 0.8, 0.97, 0.588235)
+
+[node name="Saturday" type="ColorRect" parent="Current_Day/Week_2"]
+visible = false
+offset_left = 472.0
+offset_top = 79.0
+offset_right = 527.0
+offset_bottom = 138.0
+color = Color(0.8, 0.8, 0.8, 0.588235)
+
+[node name="Sunday" type="ColorRect" parent="Current_Day/Week_2"]
+visible = false
+offset_left = 528.0
+offset_top = 79.0
+offset_right = 582.0
+offset_bottom = 138.0
+color = Color(0.6, 0.6, 0.6, 0.588235)
+
+[node name="Week_3" type="Node2D" parent="Current_Day"]
+position = Vector2(0, 116)
+
+[node name="Monday" type="ColorRect" parent="Current_Day/Week_3"]
+visible = false
+offset_left = 193.0
+offset_top = 79.0
+offset_right = 248.0
+offset_bottom = 136.0
+color = Color(1, 0.8, 0.8, 0.588235)
+
+[node name="Tuesday" type="ColorRect" parent="Current_Day/Week_3"]
+visible = false
+offset_left = 249.0
+offset_top = 79.0
+offset_right = 303.0
+offset_bottom = 136.0
+color = Color(0.81, 1, 0.8, 0.588235)
+
+[node name="Wednesday" type="ColorRect" parent="Current_Day/Week_3"]
+visible = false
+offset_left = 304.0
+offset_top = 79.0
+offset_right = 359.0
+offset_bottom = 136.0
+color = Color(0.8, 0.863333, 1, 0.588235)
+
+[node name="Thursday" type="ColorRect" parent="Current_Day/Week_3"]
+visible = false
+offset_left = 360.0
+offset_top = 79.0
+offset_right = 415.0
+offset_bottom = 136.0
+color = Color(1, 0.983333, 0.8, 0.588235)
+
+[node name="Friday" type="ColorRect" parent="Current_Day/Week_3"]
+visible = false
+offset_left = 416.0
+offset_top = 79.0
+offset_right = 471.0
+offset_bottom = 136.0
+color = Color(1, 0.8, 0.97, 0.588235)
+
+[node name="Saturday" type="ColorRect" parent="Current_Day/Week_3"]
+visible = false
+offset_left = 472.0
+offset_top = 79.0
+offset_right = 527.0
+offset_bottom = 136.0
+color = Color(0.8, 0.8, 0.8, 0.588235)
+
+[node name="Sunday" type="ColorRect" parent="Current_Day/Week_3"]
+visible = false
+offset_left = 528.0
+offset_top = 79.0
+offset_right = 582.0
+offset_bottom = 137.0
+color = Color(0.6, 0.6, 0.6, 0.588235)
+
+[node name="Week_4" type="Node2D" parent="Current_Day"]
+position = Vector2(0, 175)
+
+[node name="Monday" type="ColorRect" parent="Current_Day/Week_4"]
+visible = false
+offset_left = 194.0
+offset_top = 79.0
+offset_right = 248.0
+offset_bottom = 135.0
+color = Color(1, 0.8, 0.8, 0.588235)
+
+[node name="Tuesday" type="ColorRect" parent="Current_Day/Week_4"]
+visible = false
+offset_left = 249.0
+offset_top = 79.0
+offset_right = 303.0
+offset_bottom = 135.0
+color = Color(0.81, 1, 0.8, 0.588235)
+
+[node name="Wednesday" type="ColorRect" parent="Current_Day/Week_4"]
+visible = false
+offset_left = 304.0
+offset_top = 79.0
+offset_right = 359.0
+offset_bottom = 135.0
+color = Color(0.8, 0.863333, 1, 0.588235)
+
+[node name="Thursday" type="ColorRect" parent="Current_Day/Week_4"]
+visible = false
+offset_left = 360.0
+offset_top = 79.0
+offset_right = 415.0
+offset_bottom = 135.0
+color = Color(1, 0.983333, 0.8, 0.588235)
+
+[node name="Friday" type="ColorRect" parent="Current_Day/Week_4"]
+visible = false
+offset_left = 416.0
+offset_top = 79.0
+offset_right = 471.0
+offset_bottom = 135.0
+color = Color(1, 0.8, 0.97, 0.588235)
+
+[node name="Saturday" type="ColorRect" parent="Current_Day/Week_4"]
+visible = false
+offset_left = 472.0
+offset_top = 79.0
+offset_right = 527.0
+offset_bottom = 135.0
+color = Color(0.8, 0.8, 0.8, 0.588235)
+
+[node name="Sunday" type="ColorRect" parent="Current_Day/Week_4"]
+visible = false
+offset_left = 528.0
+offset_top = 79.0
+offset_right = 582.0
+offset_bottom = 135.0
+color = Color(0.6, 0.6, 0.6, 0.588235)
+
+[node name="Top_Bar" parent="." instance=ExtResource("5_rli5c")]

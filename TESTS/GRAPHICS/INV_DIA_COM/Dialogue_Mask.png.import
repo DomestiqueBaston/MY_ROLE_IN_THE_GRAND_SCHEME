@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cb3jgqoeeje7y"
+path="res://.godot/imported/Dialogue_Mask.png-0b271fc34f0627ab34ff187cb738e12d.res"
+
+[deps]
+
+source_file="res://GRAPHICS/INV_DIA_COM/Dialogue_Mask.png"
+dest_files=["res://.godot/imported/Dialogue_Mask.png-0b271fc34f0627ab34ff187cb738e12d.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

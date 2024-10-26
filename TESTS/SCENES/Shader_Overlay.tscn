@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnkco2tyaesue"]
+
+[ext_resource type="Shader" path="res://SHADERS/Grain.gdshader" id="1_t6iqf"]
+[ext_resource type="Shader" path="res://SHADERS/Video.gdshader" id="1_x7fr2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pa556"]
+shader = ExtResource("1_t6iqf")
+shader_parameter/strength = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vn144"]
+shader = ExtResource("1_x7fr2")
+shader_parameter/wiggle = 0.025
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.2
+shader_parameter/blur_samples = 15
+
+[node name="Shader_Overlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Grain" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_pa556")
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Video" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vn144")
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+metadata/_edit_lock_ = true

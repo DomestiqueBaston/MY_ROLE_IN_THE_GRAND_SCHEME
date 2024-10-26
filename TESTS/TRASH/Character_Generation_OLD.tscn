@@ -1,0 +1,488 @@
+[gd_scene load_steps=38 format=3 uid="uid://brx7ly4iksxr4"]
+
+[ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_tk5ha"]
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="2_svdp7"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="3_axdv8"]
+[ext_resource type="Texture2D" uid="uid://buhsc5yt68kjy" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Normal.png" id="4_y7qjf"]
+[ext_resource type="Texture2D" uid="uid://bgpd3xdegc6ob" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Opaque.png" id="5_3hjd1"]
+[ext_resource type="Texture2D" uid="uid://bd74rjflviavc" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Transparent.png" id="6_mcpt6"]
+[ext_resource type="Texture2D" uid="uid://bsmeu2oywfdoq" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Normal.png" id="7_6kbne"]
+[ext_resource type="Texture2D" uid="uid://c2251qd7ihk5w" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Opaque.png" id="8_kglj2"]
+[ext_resource type="Texture2D" uid="uid://cig2kn14k747u" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Transparent.png" id="9_fqfg6"]
+[ext_resource type="Script" path="res://SCRIPTS/menu_button.gd" id="10_hdod0"]
+[ext_resource type="Script" path="res://SCRIPTS/option_button.gd" id="11_vhxt8"]
+[ext_resource type="Texture2D" uid="uid://c3nnlrwvwsj8r" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Normal.png" id="12_85h7r"]
+[ext_resource type="Texture2D" uid="uid://csbweenpgy1r0" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Opaque.png" id="13_qymwy"]
+[ext_resource type="Texture2D" uid="uid://e2o5gr620v4j" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Transparent.png" id="14_kbn5g"]
+[ext_resource type="Texture2D" uid="uid://dd1imvrd6584q" path="res://GRAPHICS/CHARACTER_GENERATION/Load_Normal.png" id="15_8qibs"]
+[ext_resource type="Texture2D" uid="uid://dpj5isqgaeq6s" path="res://GRAPHICS/CHARACTER_GENERATION/Load_Opaque.png" id="16_qhegj"]
+[ext_resource type="Texture2D" uid="uid://is837bm3l0xs" path="res://GRAPHICS/CHARACTER_GENERATION/Load_Transparent.png" id="17_0eibl"]
+[ext_resource type="Texture2D" uid="uid://maus5jo4knov" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Normal.png" id="18_w5fu7"]
+[ext_resource type="Texture2D" uid="uid://c45s2pghkecvu" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Opaque.png" id="19_hr7w8"]
+[ext_resource type="Texture2D" uid="uid://chcxqx81qfe27" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Transparent.png" id="20_3w7fq"]
+[ext_resource type="Texture2D" uid="uid://p0d1aufwk72f" path="res://GRAPHICS/CHARACTER_GENERATION/Delete_Normal.png" id="21_cme0y"]
+[ext_resource type="Texture2D" uid="uid://chw1ovo035v2u" path="res://GRAPHICS/CHARACTER_GENERATION/Delete_Opaque.png" id="22_csv7i"]
+[ext_resource type="Texture2D" uid="uid://g11clgp6gvms" path="res://GRAPHICS/CHARACTER_GENERATION/Delete_Transparent.png" id="23_toiaq"]
+[ext_resource type="Texture2D" uid="uid://dtjnjrfff61av" path="res://GRAPHICS/CHARACTER_GENERATION/Cancel_Normal.png" id="24_o4385"]
+[ext_resource type="Texture2D" uid="uid://bo51kin1mm6i3" path="res://GRAPHICS/CHARACTER_GENERATION/Cancel_Opaque.png" id="25_j6vnb"]
+[ext_resource type="Texture2D" uid="uid://b8ovyicsd5w38" path="res://GRAPHICS/CHARACTER_GENERATION/Cancel_Transparent.png" id="26_kdvj5"]
+[ext_resource type="Texture2D" uid="uid://bgbodpr0111k8" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Normal.png" id="27_lnjs0"]
+[ext_resource type="Texture2D" uid="uid://70e7q0rvnu72" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Opaque.png" id="28_g26ky"]
+[ext_resource type="Texture2D" uid="uid://cqamtgs2prxsn" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Transparent.png" id="29_hsm1q"]
+[ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="30_sti3x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ua1dv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3t8gv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gkhk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mny8t"]
+bg_color = Color(1, 0.934, 0.82, 0.501961)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rdnaa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uuiyu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
+
+[node name="Character_Generation" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Character_Generation_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_tk5ha")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Creation_Page" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 360.0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="LineEdit" type="LineEdit" parent="Creation_Page"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 61.0
+offset_right = 249.0
+offset_bottom = 77.0
+theme = ExtResource("2_svdp7")
+theme_override_colors/selection_color = Color(0.1998, 0.27, 0.21969, 0.341176)
+theme_override_colors/caret_color = Color(0.1998, 0.27, 0.21969, 0.662745)
+theme_override_colors/font_placeholder_color = Color(0.2, 0.270588, 0.219608, 0.341176)
+theme_override_colors/font_selected_color = Color(0.1998, 0.27, 0.21969, 0.662745)
+theme_override_colors/font_color = Color(0.1998, 0.27, 0.21969, 0.843137)
+theme_override_fonts/font = ExtResource("3_axdv8")
+theme_override_font_sizes/font_size = 8
+placeholder_text = "13 characters max."
+max_length = 13
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+drag_and_drop_selection_enabled = false
+flat = true
+draw_control_chars = true
+caret_blink = true
+caret_blink_interval = 0.5
+metadata/_edit_lock_ = true
+
+[node name="PHY" type="Label" parent="Creation_Page"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 90.0
+offset_right = 175.0
+offset_bottom = 98.0
+theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
+theme_override_fonts/font = ExtResource("3_axdv8")
+theme_override_font_sizes/font_size = 8
+text = "10"
+metadata/_edit_lock_ = true
+
+[node name="PHY_Moins" type="TextureButton" parent="Creation_Page/PHY"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 2.0
+offset_right = 80.0
+offset_bottom = 5.0
+texture_normal = ExtResource("4_y7qjf")
+texture_pressed = ExtResource("5_3hjd1")
+texture_hover = ExtResource("6_mcpt6")
+texture_focused = ExtResource("6_mcpt6")
+metadata/_edit_lock_ = true
+
+[node name="PHY_Plus" type="TextureButton" parent="Creation_Page/PHY"]
+layout_mode = 0
+offset_left = 86.0
+offset_right = 94.0
+offset_bottom = 7.0
+texture_normal = ExtResource("7_6kbne")
+texture_pressed = ExtResource("8_kglj2")
+texture_hover = ExtResource("9_fqfg6")
+texture_focused = ExtResource("9_fqfg6")
+metadata/_edit_lock_ = true
+
+[node name="MEN" type="Label" parent="Creation_Page"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 115.0
+offset_right = 175.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
+theme_override_fonts/font = ExtResource("3_axdv8")
+theme_override_font_sizes/font_size = 8
+text = "10"
+metadata/_edit_lock_ = true
+
+[node name="MEN_Moins" type="TextureButton" parent="Creation_Page/MEN"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 2.0
+offset_right = 80.0
+offset_bottom = 5.0
+pivot_offset = Vector2(22, 62)
+texture_normal = ExtResource("4_y7qjf")
+texture_pressed = ExtResource("5_3hjd1")
+texture_hover = ExtResource("6_mcpt6")
+texture_focused = ExtResource("6_mcpt6")
+metadata/_edit_lock_ = true
+
+[node name="MEN_Plus" type="TextureButton" parent="Creation_Page/MEN"]
+layout_mode = 0
+offset_left = 86.0
+offset_right = 94.0
+offset_bottom = 7.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("7_6kbne")
+texture_pressed = ExtResource("8_kglj2")
+texture_hover = ExtResource("9_fqfg6")
+texture_focused = ExtResource("9_fqfg6")
+metadata/_edit_lock_ = true
+
+[node name="HEA" type="Label" parent="Creation_Page"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 140.0
+offset_right = 175.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
+theme_override_fonts/font = ExtResource("3_axdv8")
+theme_override_font_sizes/font_size = 8
+text = "10"
+metadata/_edit_lock_ = true
+
+[node name="HEA_Moins" type="TextureButton" parent="Creation_Page/HEA"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 2.0
+offset_right = 80.0
+offset_bottom = 5.0
+pivot_offset = Vector2(22, 62)
+texture_normal = ExtResource("4_y7qjf")
+texture_pressed = ExtResource("5_3hjd1")
+texture_hover = ExtResource("6_mcpt6")
+texture_focused = ExtResource("6_mcpt6")
+metadata/_edit_lock_ = true
+
+[node name="HEA_Plus" type="TextureButton" parent="Creation_Page/HEA"]
+layout_mode = 0
+offset_left = 86.0
+offset_right = 94.0
+offset_bottom = 7.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("7_6kbne")
+texture_pressed = ExtResource("8_kglj2")
+texture_hover = ExtResource("9_fqfg6")
+texture_focused = ExtResource("9_fqfg6")
+metadata/_edit_lock_ = true
+
+[node name="Remaining_Points" type="Label" parent="Creation_Page"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 190.0
+offset_right = 194.0
+offset_bottom = 198.0
+theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
+theme_override_fonts/font = ExtResource("3_axdv8")
+theme_override_font_sizes/font_size = 8
+text = "13"
+metadata/_edit_lock_ = true
+
+[node name="ItemList" type="ItemList" parent="Creation_Page"]
+visible = false
+custom_minimum_size = Vector2(0, 115)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 213.0
+offset_right = 269.0
+offset_bottom = 226.0
+theme = ExtResource("2_svdp7")
+theme_override_colors/guide_color = Color(0.1998, 0.27, 0.21969, 0)
+theme_override_colors/font_selected_color = Color(0.1998, 0.27, 0.21969, 0.823529)
+theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.662745)
+theme_override_colors/font_hovered_color = Color(0.2, 0.270588, 0.219608, 0.662745)
+theme_override_fonts/font = ExtResource("3_axdv8")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ua1dv")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3t8gv")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_7gkhk")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_mny8t")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_rdnaa")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_uuiyu")
+max_text_lines = 10
+item_count = 23
+item_0/text = "Carpet Seller"
+item_1/text = "Chorist"
+item_2/text = "Dancer"
+item_3/text = "Darts Champion"
+item_4/text = "Drug Addict"
+item_5/text = "Infographist"
+item_6/text = "Ice Cream Seller"
+item_7/text = "Janitor"
+item_8/text = "Jailer"
+item_9/text = "Museum Guard"
+item_10/text = "Organic Farmer"
+item_11/text = "Parking Enforcement Officer"
+item_12/text = "Part-Time Superhero"
+item_13/text = "Philosopher"
+item_14/text = "Priest"
+item_15/text = "Pro. Wrestler"
+item_16/text = "Quantum Physics Researcher"
+item_17/text = "Retiree"
+item_18/text = "Taxidermist"
+item_19/text = "Teacher"
+item_20/text = "Tour Guide"
+item_21/text = "Vegan Chief"
+item_22/text = "Writer"
+metadata/_edit_lock_ = true
+
+[node name="MenuButton" type="MenuButton" parent="Creation_Page"]
+visible = false
+layout_mode = 0
+offset_left = 123.0
+offset_top = 211.0
+offset_right = 269.0
+offset_bottom = 227.0
+theme = ExtResource("2_svdp7")
+text = "Select your previous job..."
+alignment = 0
+text_overrun_behavior = 3
+item_count = 23
+popup/item_0/text = "Carpet Seller"
+popup/item_1/text = "Chorist"
+popup/item_1/id = 1
+popup/item_2/text = "Dancer"
+popup/item_2/id = 2
+popup/item_3/text = "Darts Champion"
+popup/item_3/id = 3
+popup/item_4/text = "Drug Addict"
+popup/item_4/id = 4
+popup/item_5/text = "Infographist"
+popup/item_5/id = 5
+popup/item_6/text = "Ice Cream Seller"
+popup/item_6/id = 6
+popup/item_7/text = "Janitor"
+popup/item_7/id = 7
+popup/item_8/text = "Museum Guard"
+popup/item_8/id = 8
+popup/item_9/text = "Organic Farmer"
+popup/item_9/id = 9
+popup/item_10/text = "Parking Enforcer Officer"
+popup/item_10/id = 10
+popup/item_11/text = "Part-Time Superhero"
+popup/item_11/id = 11
+popup/item_12/text = "Philosopher"
+popup/item_12/id = 12
+popup/item_13/text = "Priest"
+popup/item_13/id = 13
+popup/item_14/text = "Prison Guard"
+popup/item_14/id = 14
+popup/item_15/text = "Pro Wrestler"
+popup/item_15/id = 15
+popup/item_16/text = "Quantum Physics Researcher"
+popup/item_16/id = 16
+popup/item_17/text = "Retiree"
+popup/item_17/id = 17
+popup/item_18/text = "Taxidermist"
+popup/item_18/id = 18
+popup/item_19/text = "Teacher"
+popup/item_19/id = 19
+popup/item_20/text = "Tour Guide"
+popup/item_20/id = 20
+popup/item_21/text = "Vegan Chief"
+popup/item_21/id = 21
+popup/item_22/text = "Writer"
+popup/item_22/id = 22
+script = ExtResource("10_hdod0")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Creation_Page"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 211.0
+offset_right = 269.0
+offset_bottom = 328.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h5l0o")
+metadata/_edit_lock_ = true
+
+[node name="OptionButton" type="OptionButton" parent="Creation_Page/PanelContainer"]
+custom_minimum_size = Vector2(153, 16)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_svdp7")
+toggle_mode = false
+flat = true
+selected = 0
+item_count = 23
+popup/item_0/text = "Carpet Seller"
+popup/item_1/text = "Chorist"
+popup/item_1/id = 1
+popup/item_2/text = "Dancer"
+popup/item_2/id = 2
+popup/item_3/text = "Darts Champion"
+popup/item_3/id = 3
+popup/item_4/text = "Drug Addict"
+popup/item_4/id = 4
+popup/item_5/text = "Infographist"
+popup/item_5/id = 5
+popup/item_6/text = "Ice Cream Seller"
+popup/item_6/id = 6
+popup/item_7/text = "Janitor"
+popup/item_7/id = 7
+popup/item_8/text = "Museum Guard"
+popup/item_8/id = 8
+popup/item_9/text = "Organic Farmer"
+popup/item_9/id = 9
+popup/item_10/text = "Parking Enforcer Officer"
+popup/item_10/id = 10
+popup/item_11/text = "Part-Time Superhero"
+popup/item_11/id = 11
+popup/item_12/text = "Philosopher"
+popup/item_12/id = 12
+popup/item_13/text = "Priest"
+popup/item_13/id = 13
+popup/item_14/text = "Prison Guard"
+popup/item_14/id = 14
+popup/item_15/text = "Pro Wrestler"
+popup/item_15/id = 15
+popup/item_16/text = "Quantum Physics Researcher"
+popup/item_16/id = 16
+popup/item_17/text = "Retiree"
+popup/item_17/id = 17
+popup/item_18/text = "Taxidermist"
+popup/item_18/id = 18
+popup/item_19/text = "Teacher"
+popup/item_19/id = 19
+popup/item_20/text = "Tour Guide"
+popup/item_20/id = 20
+popup/item_21/text = "Vegan Chief"
+popup/item_21/id = 21
+popup/item_22/text = "Writer"
+popup/item_22/id = 22
+script = ExtResource("11_vhxt8")
+metadata/_edit_lock_ = true
+
+[node name="Randomize" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(1, 1, 1, 0.901961)
+layout_mode = 0
+offset_left = 42.0
+offset_top = 238.0
+offset_right = 98.0
+offset_bottom = 246.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("12_85h7r")
+texture_pressed = ExtResource("13_qymwy")
+texture_hover = ExtResource("14_kbn5g")
+texture_focused = ExtResource("14_kbn5g")
+metadata/_edit_lock_ = true
+
+[node name="Load" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(1, 1, 1, 0.901961)
+layout_mode = 0
+offset_left = 42.0
+offset_top = 251.0
+offset_right = 67.0
+offset_bottom = 259.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("15_8qibs")
+texture_pressed = ExtResource("16_qhegj")
+texture_hover = ExtResource("17_0eibl")
+texture_focused = ExtResource("17_0eibl")
+metadata/_edit_lock_ = true
+
+[node name="Save" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(1, 1, 1, 0.901961)
+layout_mode = 0
+offset_left = 42.0
+offset_top = 264.0
+offset_right = 67.0
+offset_bottom = 272.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("18_w5fu7")
+texture_pressed = ExtResource("19_hr7w8")
+texture_hover = ExtResource("20_3w7fq")
+texture_focused = ExtResource("20_3w7fq")
+metadata/_edit_lock_ = true
+
+[node name="Delete" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(1, 1, 1, 0.901961)
+layout_mode = 0
+offset_left = 42.0
+offset_top = 277.0
+offset_right = 80.0
+offset_bottom = 285.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("21_cme0y")
+texture_pressed = ExtResource("22_csv7i")
+texture_hover = ExtResource("23_toiaq")
+texture_focused = ExtResource("23_toiaq")
+metadata/_edit_lock_ = true
+
+[node name="Cancel" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(1, 1, 1, 0.901961)
+layout_mode = 0
+offset_left = 42.0
+offset_top = 302.0
+offset_right = 80.0
+offset_bottom = 310.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("24_o4385")
+texture_pressed = ExtResource("25_j6vnb")
+texture_hover = ExtResource("26_kdvj5")
+texture_focused = ExtResource("26_kdvj5")
+metadata/_edit_lock_ = true
+
+[node name="Confirm" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(1, 1, 1, 0.901961)
+layout_mode = 0
+offset_left = 42.0
+offset_top = 314.0
+offset_right = 87.0
+offset_bottom = 322.0
+pivot_offset = Vector2(9, 64)
+texture_normal = ExtResource("27_lnjs0")
+texture_pressed = ExtResource("28_g26ky")
+texture_hover = ExtResource("29_hsm1q")
+texture_focused = ExtResource("29_hsm1q")
+metadata/_edit_lock_ = true
+
+[node name="Story" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.643137)
+offset_left = 375.0
+offset_top = 30.0
+offset_right = 608.0
+offset_bottom = 332.0
+theme = ExtResource("30_sti3x")
+text = "Here’s your story, telling where it all began. It will depend on the background you choose and won’t be different from one game to another...
+
+You don’t really need this to play, but it’s fun to have something silly to read at that point!"
+horizontal_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3
+metadata/_edit_lock_ = true

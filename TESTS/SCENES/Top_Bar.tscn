@@ -1,0 +1,306 @@
+[gd_scene load_steps=4 format=3 uid="uid://hl8yhfvhjhtn"]
+
+[ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
+[ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
+[ext_resource type="Script" path="res://SCRIPTS/menu_button.gd" id="3_wxjko"]
+
+[node name="Top_Bar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 16.0
+theme = ExtResource("1_2tgjx")
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.005
+anchor_right = 0.005
+offset_left = -0.2
+offset_top = -3.0
+offset_right = 112.8
+offset_bottom = 13.0
+metadata/_edit_lock_ = true
+
+[node name="Day" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Mon."
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+text = "-"
+metadata/_edit_lock_ = true
+
+[node name="Time" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "12am"
+metadata/_edit_lock_ = true
+
+[node name="Double_Bar_1" type="Label" parent="."]
+layout_mode = 2
+offset_left = 53.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+text = " ||"
+metadata/_edit_lock_ = true
+
+[node name="Calendar" type="MenuButton" parent="."]
+layout_mode = 2
+offset_left = 63.0
+offset_top = -3.0
+offset_right = 109.0
+offset_bottom = 13.0
+theme = ExtResource("1_2tgjx")
+button_group = ExtResource("2_mdfj4")
+text = "Calendar"
+item_count = 4
+popup/item_0/text = "Everything"
+popup/item_1/text = "Appointments"
+popup/item_1/id = 1
+popup/item_2/text = "Bills"
+popup/item_2/id = 2
+popup/item_3/text = "Personal notes"
+popup/item_3/id = 3
+script = ExtResource("3_wxjko")
+metadata/_edit_lock_ = true
+
+[node name="Single_Bar_1" type="Label" parent="."]
+layout_mode = 2
+offset_left = 105.0
+offset_top = 1.0
+offset_right = 114.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+text = " |"
+metadata/_edit_lock_ = true
+
+[node name="Quests" type="MenuButton" parent="."]
+layout_mode = 2
+offset_left = 107.0
+offset_top = -3.0
+offset_right = 153.0
+offset_bottom = 13.0
+theme = ExtResource("1_2tgjx")
+button_group = ExtResource("2_mdfj4")
+text = "Cases"
+item_count = 4
+popup/item_0/text = "Bounty Board"
+popup/item_1/text = "Active"
+popup/item_1/id = 1
+popup/item_2/text = "Solved"
+popup/item_2/id = 2
+popup/item_3/text = "Revoked"
+popup/item_3/id = 3
+script = ExtResource("3_wxjko")
+metadata/_edit_lock_ = true
+
+[node name="Single_Bar_2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 142.0
+offset_top = 1.0
+offset_right = 151.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+text = " |"
+metadata/_edit_lock_ = true
+
+[node name="Cards" type="MenuButton" parent="."]
+layout_mode = 2
+offset_left = 144.0
+offset_top = -3.0
+offset_right = 190.0
+offset_bottom = 13.0
+theme = ExtResource("1_2tgjx")
+button_group = ExtResource("2_mdfj4")
+text = "Cards
+"
+item_count = 7
+popup/item_0/text = "Dialogue"
+popup/item_1/text = "Investigation"
+popup/item_1/id = 1
+popup/item_2/text = "Combat"
+popup/item_2/id = 2
+popup/item_3/text = "Abstract"
+popup/item_3/id = 3
+popup/item_4/text = "Interaction Hand"
+popup/item_4/id = 4
+popup/item_5/text = "Evidence"
+popup/item_5/id = 5
+popup/item_6/text = "Place"
+popup/item_6/id = 6
+script = ExtResource("3_wxjko")
+metadata/_edit_lock_ = true
+
+[node name="Single_Bar_3" type="Label" parent="."]
+layout_mode = 2
+offset_left = 179.0
+offset_top = 1.0
+offset_right = 188.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+text = " |"
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="MenuButton" parent="."]
+layout_mode = 2
+offset_left = 187.0
+offset_top = -3.0
+offset_right = 233.0
+offset_bottom = 13.0
+theme = ExtResource("1_2tgjx")
+button_group = ExtResource("2_mdfj4")
+text = "Settings"
+item_count = 5
+popup/item_0/text = "Game"
+popup/item_1/text = "Graphics"
+popup/item_1/id = 1
+popup/item_2/text = "Audio"
+popup/item_2/id = 2
+popup/item_3/text = "Give up!"
+popup/item_3/id = 3
+popup/item_4/text = "Quit"
+popup/item_4/id = 4
+script = ExtResource("3_wxjko")
+metadata/_edit_lock_ = true
+
+[node name="Double_Bar_2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 228.0
+offset_top = 1.0
+offset_right = 237.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+text = " ||"
+metadata/_edit_lock_ = true
+
+[node name="Character_Stats" type="RichTextLabel" parent="."]
+clip_contents = false
+custom_minimum_size = Vector2(364, 8)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -366.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 9.0
+grow_horizontal = 0
+pivot_offset = Vector2(325, 10)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("1_2tgjx")
+bbcode_enabled = true
+text = "[color=#ff1c18]PHY[/color]: [color=#ff8864] [/color] | [color=#ff1c18]MEN[/color]: [color=#ff8864] [/color] | [color=#ff1c18]HEA[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Emo[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Add[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Wan[/color]: [color=#00000000]|8[/color]| [color=#ff1c18]Drug[/color]: [color=#ff8864] [/color][color=#00000000]|[/color] | [color=#ff8864]    [/color][color=#ff1c18]Dø[/color]"
+scroll_active = false
+autowrap_mode = 0
+text_direction = 2
+metadata/_edit_lock_ = true
+
+[node name="Player_Name" type="Label" parent="Character_Stats"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -415.0
+offset_right = -324.0
+offset_bottom = 8.0
+grow_horizontal = 0
+pivot_offset = Vector2(80, 0)
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Player's name"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Double_Bar" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 43.0
+offset_right = 52.0
+offset_bottom = 8.0
+text = "||"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="PHY" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 74.0
+offset_right = 83.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "10"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="MEN" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 114.0
+offset_right = 123.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "10"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HEA" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 153.0
+offset_right = 162.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "10"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Emo" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 193.0
+offset_right = 202.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "-2"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Add" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 232.0
+offset_right = 241.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "+2"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Wan" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 270.0
+offset_right = 279.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "9"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Drug" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 313.0
+offset_right = 323.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "99"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dough" type="Label" parent="Character_Stats"]
+layout_mode = 0
+offset_left = 332.0
+offset_right = 352.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+text = "9999"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
