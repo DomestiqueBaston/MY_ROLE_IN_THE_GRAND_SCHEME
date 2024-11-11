@@ -69,7 +69,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js3gk"]
-bg_color = Color(0.99, 0.993333, 1, 0.752941)
+bg_color = Color(0.99, 0.993333, 1, 0.501961)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -123,7 +123,7 @@ OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
 PopupMenu/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
-PopupMenu/colors/font_hover_color = Color(0.1998, 0.27, 0.21969, 0.501961)
+PopupMenu/colors/font_hover_color = Color(0.048, 0.1, 0.0627333, 0.823529)
 PopupMenu/constants/item_start_padding = -12
 PopupMenu/constants/v_separation = 0
 PopupMenu/font_sizes/font_size = 8

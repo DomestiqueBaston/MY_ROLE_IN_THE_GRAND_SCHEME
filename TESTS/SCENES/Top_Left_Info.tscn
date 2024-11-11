@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dauwh3vjh26kl"]
+
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_pmk1m"]
+
+[node name="Top_Left_Info" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 34.0
+offset_right = 120.0
+offset_bottom = 142.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pmk1m")
+horizontal_scroll_mode = 3
+
+[node name="Info" type="Label" parent="ScrollContainer"]
+custom_minimum_size = Vector2(106, 108)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+text = "We are supposed to find infos here about the environment the player's in.
+
+But that depends on the game mode the player's in too... So I guess that in the agenda mode, we'll find something else!
+
+Anyway. We'll find out about that later..."
+horizontal_alignment = 1
+autowrap_mode = 2
