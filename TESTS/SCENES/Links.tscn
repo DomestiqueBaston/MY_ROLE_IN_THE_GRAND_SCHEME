@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://6h0vwfyh2npe"]
+[gd_scene load_steps=141 format=3 uid="uid://6h0vwfyh2npe"]
 
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_3rnh5"]
 [ext_resource type="Texture2D" uid="uid://b0im1pldeftlf" path="res://GRAPHICS/UI/Bouton_Blanc.png" id="2_j52sc"]
@@ -14,10 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://h3375476a4dd" path="res://GRAPHICS/UI/Bouton_Rose.png" id="16_03sbq"]
 [ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/UI/Plein_Rose.png" id="17_caeji"]
 [ext_resource type="Texture2D" uid="uid://cmbuochqkkclh" path="res://GRAPHICS/UI/Bouton_Rouge.png" id="18_i47bc"]
+[ext_resource type="Texture2D" uid="uid://bdte8yv4smu61" path="res://GRAPHICS/UI/Bouton_Vert_Fonce.png" id="18_qdqhj"]
+[ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/UI/Plein_Vert_Fonce.png" id="19_lwyql"]
 [ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/UI/Plein_Rouge.png" id="19_o3ivd"]
-[ext_resource type="Texture2D" uid="uid://c5a0mhitclt33" path="res://GRAPHICS/UI/Bouton_Vert.png" id="20_uxi6m"]
-[ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/UI/Plein_Vert.png" id="21_vpxyk"]
-[ext_resource type="Texture2D" uid="uid://cty6wxvend2vy" path="res://GRAPHICS/UI/Bouton_Violet.png" id="22_h8ste"]
+[ext_resource type="Texture2D" uid="uid://c6o6l64qpm5s1" path="res://GRAPHICS/UI/Bouton_Orange.png" id="20_jq6w3"]
+[ext_resource type="Texture2D" uid="uid://c5a0mhitclt33" path="res://GRAPHICS/UI/Bouton_Vert_Clair.png" id="20_uxi6m"]
+[ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/UI/Plein_Orange.png" id="21_26yiq"]
+[ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/UI/Plein_Vert_Clair.png" id="21_vpxyk"]
+[ext_resource type="Texture2D" uid="uid://bb3jufa2ia5p0" path="res://GRAPHICS/UI/Bouton_Bleu_Clair.png" id="22_q6yl2"]
+[ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/UI/Plein_Bleu_Clair.png" id="23_f4aus"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xdpla"]
 texture = ExtResource("2_j52sc")
@@ -277,6 +282,114 @@ texture = ExtResource("21_vpxyk")
 texture = ExtResource("21_vpxyk")
 modulate_color = Color(1, 1, 1, 0.498039)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hsi0u"]
+texture = ExtResource("18_qdqhj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_viswp"]
+texture = ExtResource("18_qdqhj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4pxnx"]
+texture = ExtResource("18_qdqhj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ytrpm"]
+texture = ExtResource("18_qdqhj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ts4y1"]
+texture = ExtResource("18_qdqhj")
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_b657f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmclx"]
+texture = ExtResource("19_lwyql")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdeoo"]
+texture = ExtResource("19_lwyql")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xfeh"]
+texture = ExtResource("19_lwyql")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qsrfv"]
+texture = ExtResource("19_lwyql")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2vef"]
+texture = ExtResource("19_lwyql")
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_8sbqf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cintx"]
+texture = ExtResource("20_jq6w3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m0db6"]
+texture = ExtResource("20_jq6w3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4jf7m"]
+texture = ExtResource("20_jq6w3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nwg0q"]
+texture = ExtResource("20_jq6w3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbks7"]
+texture = ExtResource("20_jq6w3")
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_jj8jo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftcwx"]
+texture = ExtResource("21_26yiq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1xtn"]
+texture = ExtResource("21_26yiq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cndby"]
+texture = ExtResource("21_26yiq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0s14s"]
+texture = ExtResource("21_26yiq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5pdg"]
+texture = ExtResource("21_26yiq")
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_hrncs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1x3g"]
+texture = ExtResource("22_q6yl2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3gjjh"]
+texture = ExtResource("22_q6yl2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3svj"]
+texture = ExtResource("22_q6yl2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ib2w3"]
+texture = ExtResource("22_q6yl2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ty214"]
+texture = ExtResource("22_q6yl2")
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5x5c8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcxc0"]
+texture = ExtResource("23_f4aus")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cu63u"]
+texture = ExtResource("23_f4aus")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_83k1p"]
+texture = ExtResource("23_f4aus")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62aie"]
+texture = ExtResource("23_f4aus")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02tig"]
+texture = ExtResource("23_f4aus")
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_5xwk5"]
+
 [node name="Links" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -290,17 +403,8 @@ self_modulate = Color(1, 1, 1, 0.67451)
 layout_mode = 0
 offset_left = 178.0
 offset_top = 30.0
-offset_right = 379.0
+offset_right = 342.0
 offset_bottom = 49.0
-color = Color(0.2331, 0.28786, 0.37, 0.498039)
-
-[node name="Background_Ext" type="ColorRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.67451)
-layout_mode = 0
-offset_left = 379.0
-offset_top = 30.0
-offset_right = 401.0
-offset_bottom = 40.0
 color = Color(0.2331, 0.28786, 0.37, 0.498039)
 metadata/_edit_lock_ = true
 
@@ -316,13 +420,19 @@ theme_override_constants/outline_size = 3
 text = "Links:"
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_White" type="Button" parent="."]
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Dotted_Line_White" type="Button" parent="Buttons"]
 layout_mode = 0
 offset_left = 179.0
 offset_top = 31.0
-offset_right = 203.0
+offset_right = 191.0
 offset_bottom = 39.0
-tooltip_text = "Probable Ownership Link"
+tooltip_text = "/"
 theme_override_styles/focus = SubResource("StyleBoxTexture_xdpla")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_tx7wp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ckj4y")
@@ -332,13 +442,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_White" type="Button" parent="."]
+[node name="Solid_Line_White" type="Button" parent="Buttons"]
 layout_mode = 0
 offset_left = 179.0
 offset_top = 40.0
-offset_right = 203.0
+offset_right = 191.0
 offset_bottom = 48.0
-tooltip_text = "Confirmed Ownership Link"
+tooltip_text = "/"
 theme_override_styles/focus = SubResource("StyleBoxTexture_m6apb")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7ubx5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_ii5px")
@@ -348,13 +458,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Gray" type="Button" parent="."]
+[node name="Dotted_Line_Gray" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 204.0
+offset_left = 194.0
 offset_top = 31.0
-offset_right = 228.0
+offset_right = 206.0
 offset_bottom = 39.0
-tooltip_text = "Probable Accomplice Link"
+tooltip_text = "Probable Witness Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_c2s0c")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_pgrov")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qne8s")
@@ -364,13 +474,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_Gray" type="Button" parent="."]
+[node name="Solid_Line_Gray" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 204.0
+offset_left = 194.0
 offset_top = 40.0
-offset_right = 228.0
+offset_right = 206.0
 offset_bottom = 48.0
-tooltip_text = "Confirmed Accomplice Link"
+tooltip_text = "Confirmed Witness Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_qyki3")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8o0g3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8cje7")
@@ -380,13 +490,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Black" type="Button" parent="."]
+[node name="Dotted_Line_Black" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 229.0
+offset_left = 209.0
 offset_top = 31.0
-offset_right = 253.0
+offset_right = 221.0
 offset_bottom = 39.0
-tooltip_text = "Probable Guilty Link"
+tooltip_text = "Probable Perpetrator/Accomplice/Evidence/Testimony Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_gem5x")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_njxec")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3cik8")
@@ -396,13 +506,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_Black" type="Button" parent="."]
+[node name="Solid_Line_Black" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 229.0
+offset_left = 209.0
 offset_top = 40.0
-offset_right = 253.0
+offset_right = 221.0
 offset_bottom = 48.0
-tooltip_text = "Confirmed Guilty Link"
+tooltip_text = "Confirmed Perpetrator/Accomplice/Evidence/Testimony Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_448em")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_uu685")
 theme_override_styles/hover = SubResource("StyleBoxTexture_syqib")
@@ -412,11 +522,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Dark_Blue" type="Button" parent="."]
+[node name="Dotted_Line_Dark_Blue" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 254.0
+offset_left = 224.0
 offset_top = 31.0
-offset_right = 278.0
+offset_right = 236.0
 offset_bottom = 39.0
 tooltip_text = "Probable Professional Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_rltj1")
@@ -428,11 +538,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_Dark_Blue" type="Button" parent="."]
+[node name="Solid_Line_Dark_Blue" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 254.0
+offset_left = 224.0
 offset_top = 40.0
-offset_right = 278.0
+offset_right = 236.0
 offset_bottom = 48.0
 tooltip_text = "Confirmed Professional Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_vtigx")
@@ -444,13 +554,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Yellow" type="Button" parent="."]
+[node name="Dotted_Line_Yellow" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 279.0
+offset_left = 239.0
 offset_top = 31.0
-offset_right = 303.0
+offset_right = 251.0
 offset_bottom = 39.0
-tooltip_text = "Probable Suspicion Link"
+tooltip_text = "Probable Confirmation Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_n5brv")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_updg7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_l1tvo")
@@ -460,13 +570,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_Yellow" type="Button" parent="."]
+[node name="Solid_Line_Yellow" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 279.0
+offset_left = 239.0
 offset_top = 40.0
-offset_right = 303.0
+offset_right = 251.0
 offset_bottom = 48.0
-tooltip_text = "Confirmed Suspicion Link"
+tooltip_text = "Confirmed Confirmation Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_7hpc6")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ggpju")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dj0w3")
@@ -476,11 +586,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Pink" type="Button" parent="."]
+[node name="Dotted_Line_Pink" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 304.0
+offset_left = 254.0
 offset_top = 31.0001
-offset_right = 328.0
+offset_right = 266.0
 offset_bottom = 39.0001
 tooltip_text = "Probable Intimate Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_ocxu5")
@@ -492,11 +602,11 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_Pink" type="Button" parent="."]
+[node name="Solid_Line_Pink" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 304.0
+offset_left = 254.0
 offset_top = 40.0001
-offset_right = 328.0
+offset_right = 266.0
 offset_bottom = 48.0001
 tooltip_text = "Confirmed Intimate Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_d3fxi")
@@ -508,13 +618,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Red" type="Button" parent="."]
+[node name="Dotted_Line_Red" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 329.0
+offset_left = 269.0
 offset_top = 31.0001
-offset_right = 353.0
+offset_right = 281.0
 offset_bottom = 39.0001
-tooltip_text = "Probable Enemy Link"
+tooltip_text = "Probable Contradiction Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_peohr")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xpeqq")
 theme_override_styles/hover = SubResource("StyleBoxTexture_44f0c")
@@ -524,13 +634,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_Red" type="Button" parent="."]
+[node name="Solid_Line_Red" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 329.0
+offset_left = 269.0
 offset_top = 40.0001
-offset_right = 353.0
+offset_right = 281.0
 offset_bottom = 48.0001
-tooltip_text = "Confirmed Enemy Link"
+tooltip_text = "Confirmed Contradiction Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_k3u7b")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3yvpg")
 theme_override_styles/hover = SubResource("StyleBoxTexture_okmh6")
@@ -540,13 +650,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Green" type="Button" parent="."]
+[node name="Dotted_Line_Light_Green" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 354.0
+offset_left = 284.0
 offset_top = 31.0
-offset_right = 378.0
+offset_right = 296.0
 offset_bottom = 39.0
-tooltip_text = "Probable Friendship Link"
+tooltip_text = "Probable Property Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_3v5tu")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_u3tbr")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dhonb")
@@ -556,13 +666,13 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Solid_Line_Green" type="Button" parent="."]
+[node name="Solid_Line_Light_Green" type="Button" parent="Buttons"]
 layout_mode = 0
-offset_left = 354.0
+offset_left = 284.0
 offset_top = 40.0
-offset_right = 378.0
+offset_right = 296.0
 offset_bottom = 48.0
-tooltip_text = "Confirmed Friendship Link"
+tooltip_text = "Confirmed Property Link"
 theme_override_styles/focus = SubResource("StyleBoxTexture_v4jyb")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_o4d2d")
 theme_override_styles/hover = SubResource("StyleBoxTexture_na8jh")
@@ -572,13 +682,104 @@ toggle_mode = true
 button_group = SubResource("ButtonGroup_ftaki")
 metadata/_edit_lock_ = true
 
-[node name="Dotted_Line_Violet" type="TextureRect" parent="."]
-self_modulate = Color(1, 1, 1, 0.498039)
+[node name="Dotted_Line_Dark_Green" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(12, 8)
 layout_mode = 0
-offset_left = 379.0
+offset_left = 299.0
 offset_top = 31.0
-offset_right = 403.0
+offset_right = 307.0
 offset_bottom = 39.0
-tooltip_text = "Auto-established link"
-texture = ExtResource("22_h8ste")
+tooltip_text = "Probable Friendship Link"
+theme_override_styles/focus = SubResource("StyleBoxTexture_hsi0u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_viswp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4pxnx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ytrpm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ts4y1")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_b657f")
+metadata/_edit_lock_ = true
+
+[node name="Solid_Line_Dark_Green" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(12, 8)
+layout_mode = 0
+offset_left = 299.0
+offset_top = 40.0
+offset_right = 307.0
+offset_bottom = 48.0
+tooltip_text = "Confirmed Friendship Link"
+theme_override_styles/focus = SubResource("StyleBoxTexture_vmclx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kdeoo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3xfeh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qsrfv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_s2vef")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_8sbqf")
+metadata/_edit_lock_ = true
+
+[node name="Dotted_Line_Orange" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(12, 8)
+layout_mode = 0
+offset_left = 314.0
+offset_top = 31.0
+offset_right = 326.0
+offset_bottom = 39.0
+tooltip_text = "Probable Enemy Link"
+theme_override_styles/focus = SubResource("StyleBoxTexture_cintx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_m0db6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4jf7m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nwg0q")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kbks7")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_jj8jo")
+metadata/_edit_lock_ = true
+
+[node name="Solid_Line_Orange" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(12, 8)
+layout_mode = 0
+offset_left = 314.0
+offset_top = 40.0
+offset_right = 326.0
+offset_bottom = 48.0
+tooltip_text = "Confirmed Enemy Link"
+theme_override_styles/focus = SubResource("StyleBoxTexture_ftcwx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_s1xtn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cndby")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0s14s")
+theme_override_styles/normal = SubResource("StyleBoxTexture_u5pdg")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_hrncs")
+metadata/_edit_lock_ = true
+
+[node name="Dotted_Line_Light_Blue" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(12, 8)
+layout_mode = 0
+offset_left = 329.0
+offset_top = 31.0
+offset_right = 341.0
+offset_bottom = 39.0
+tooltip_text = "Probable Acquaintance Link"
+theme_override_styles/focus = SubResource("StyleBoxTexture_u1x3g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_3gjjh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k3svj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ib2w3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ty214")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5x5c8")
+metadata/_edit_lock_ = true
+
+[node name="Solid_Line_Light_Blue" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(12, 8)
+layout_mode = 0
+offset_left = 329.0
+offset_top = 40.0
+offset_right = 341.0
+offset_bottom = 48.0
+tooltip_text = "Confirmed Acquaintance Link"
+theme_override_styles/focus = SubResource("StyleBoxTexture_bcxc0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_cu63u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_83k1p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_62aie")
+theme_override_styles/normal = SubResource("StyleBoxTexture_02tig")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5xwk5")
 metadata/_edit_lock_ = true

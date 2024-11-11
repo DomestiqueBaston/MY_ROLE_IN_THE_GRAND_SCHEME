@@ -30,6 +30,12 @@ folder_colors={
 "res://TRASH/": "red"
 }
 
+[layer_names]
+
+2d_physics/layer_1="Mouse"
+2d_physics/layer_2="Card_Top"
+2d_physics/layer_3="Pin"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
