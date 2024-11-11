@@ -1,8 +1,9 @@
-[gd_scene load_steps=141 format=3 uid="uid://6h0vwfyh2npe"]
+[gd_scene load_steps=135 format=3 uid="uid://6h0vwfyh2npe"]
 
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_3rnh5"]
 [ext_resource type="Texture2D" uid="uid://b0im1pldeftlf" path="res://GRAPHICS/UI/Bouton_Blanc.png" id="2_j52sc"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/UI/Plein_Blanc.png" id="3_pbucl"]
+[ext_resource type="ButtonGroup" uid="uid://i3wthbsm1kbx" path="res://UI/Link_Button_Group.tres" id="3_qrn1h"]
 [ext_resource type="Texture2D" uid="uid://cgp7p2rsj8r8k" path="res://GRAPHICS/UI/Bouton_Gris.png" id="4_avfvq"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/UI/Plein_Gris.png" id="5_61vjl"]
 [ext_resource type="Texture2D" uid="uid://bgw24h8aldi74" path="res://GRAPHICS/UI/Bouton_Noir.png" id="6_opm1n"]
@@ -39,8 +40,6 @@ texture = ExtResource("2_j52sc")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ritkt"]
 texture = ExtResource("2_j52sc")
 modulate_color = Color(1, 1, 1, 0.498039)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_ftaki"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6apb"]
 texture = ExtResource("3_pbucl")
@@ -298,8 +297,6 @@ texture = ExtResource("18_qdqhj")
 texture = ExtResource("18_qdqhj")
 modulate_color = Color(1, 1, 1, 0.498039)
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_b657f"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmclx"]
 texture = ExtResource("19_lwyql")
 
@@ -315,8 +312,6 @@ texture = ExtResource("19_lwyql")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2vef"]
 texture = ExtResource("19_lwyql")
 modulate_color = Color(1, 1, 1, 0.498039)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_8sbqf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cintx"]
 texture = ExtResource("20_jq6w3")
@@ -334,8 +329,6 @@ texture = ExtResource("20_jq6w3")
 texture = ExtResource("20_jq6w3")
 modulate_color = Color(1, 1, 1, 0.498039)
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_jj8jo"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftcwx"]
 texture = ExtResource("21_26yiq")
 
@@ -351,8 +344,6 @@ texture = ExtResource("21_26yiq")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5pdg"]
 texture = ExtResource("21_26yiq")
 modulate_color = Color(1, 1, 1, 0.498039)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_hrncs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1x3g"]
 texture = ExtResource("22_q6yl2")
@@ -370,8 +361,6 @@ texture = ExtResource("22_q6yl2")
 texture = ExtResource("22_q6yl2")
 modulate_color = Color(1, 1, 1, 0.498039)
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_5x5c8"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcxc0"]
 texture = ExtResource("23_f4aus")
 
@@ -387,8 +376,6 @@ texture = ExtResource("23_f4aus")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02tig"]
 texture = ExtResource("23_f4aus")
 modulate_color = Color(1, 1, 1, 0.498039)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_5xwk5"]
 
 [node name="Links" type="Control"]
 layout_mode = 3
@@ -439,7 +426,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ckj4y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qthgf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ritkt")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_White" type="Button" parent="Buttons"]
@@ -455,7 +442,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ii5px")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_najbq")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ci00v")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Gray" type="Button" parent="Buttons"]
@@ -471,7 +458,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_qne8s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sm03x")
 theme_override_styles/normal = SubResource("StyleBoxTexture_mpy6q")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Gray" type="Button" parent="Buttons"]
@@ -487,7 +474,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8cje7")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ehj10")
 theme_override_styles/normal = SubResource("StyleBoxTexture_mmb00")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Black" type="Button" parent="Buttons"]
@@ -503,7 +490,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_3cik8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5rn7u")
 theme_override_styles/normal = SubResource("StyleBoxTexture_2b411")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Black" type="Button" parent="Buttons"]
@@ -519,7 +506,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_syqib")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_vsreo")
 theme_override_styles/normal = SubResource("StyleBoxTexture_m41mv")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Dark_Blue" type="Button" parent="Buttons"]
@@ -535,7 +522,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ag1jt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_fybga")
 theme_override_styles/normal = SubResource("StyleBoxTexture_avenf")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Dark_Blue" type="Button" parent="Buttons"]
@@ -551,7 +538,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_xvpm3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6t6ij")
 theme_override_styles/normal = SubResource("StyleBoxTexture_a7fel")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Yellow" type="Button" parent="Buttons"]
@@ -567,7 +554,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_l1tvo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2ulsf")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vw660")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Yellow" type="Button" parent="Buttons"]
@@ -583,7 +570,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dj0w3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7lv3o")
 theme_override_styles/normal = SubResource("StyleBoxTexture_j6kbk")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Pink" type="Button" parent="Buttons"]
@@ -599,7 +586,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ii1ie")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rojte")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ovk08")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Pink" type="Button" parent="Buttons"]
@@ -615,7 +602,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_tnnsd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bced2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_34ylt")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Red" type="Button" parent="Buttons"]
@@ -631,7 +618,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_44f0c")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_a1g54")
 theme_override_styles/normal = SubResource("StyleBoxTexture_54y4i")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Red" type="Button" parent="Buttons"]
@@ -647,7 +634,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_okmh6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4rybx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_imo7i")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Light_Green" type="Button" parent="Buttons"]
@@ -663,7 +650,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dhonb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_75p7l")
 theme_override_styles/normal = SubResource("StyleBoxTexture_g5wol")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Light_Green" type="Button" parent="Buttons"]
@@ -679,7 +666,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_na8jh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t0ts4")
 theme_override_styles/normal = SubResource("StyleBoxTexture_dkcn5")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_ftaki")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Dark_Green" type="Button" parent="Buttons"]
@@ -696,7 +683,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_4pxnx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ytrpm")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ts4y1")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_b657f")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Dark_Green" type="Button" parent="Buttons"]
@@ -713,7 +700,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_3xfeh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qsrfv")
 theme_override_styles/normal = SubResource("StyleBoxTexture_s2vef")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_8sbqf")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Orange" type="Button" parent="Buttons"]
@@ -730,7 +717,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_4jf7m")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nwg0q")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kbks7")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_jj8jo")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Orange" type="Button" parent="Buttons"]
@@ -747,7 +734,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_cndby")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0s14s")
 theme_override_styles/normal = SubResource("StyleBoxTexture_u5pdg")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_hrncs")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Dotted_Line_Light_Blue" type="Button" parent="Buttons"]
@@ -764,7 +751,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_k3svj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ib2w3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ty214")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_5x5c8")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true
 
 [node name="Solid_Line_Light_Blue" type="Button" parent="Buttons"]
@@ -781,5 +768,5 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_83k1p")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_62aie")
 theme_override_styles/normal = SubResource("StyleBoxTexture_02tig")
 toggle_mode = true
-button_group = SubResource("ButtonGroup_5xwk5")
+button_group = ExtResource("3_qrn1h")
 metadata/_edit_lock_ = true

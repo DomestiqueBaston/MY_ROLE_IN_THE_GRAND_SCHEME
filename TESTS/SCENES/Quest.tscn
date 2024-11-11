@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=12 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/QUESTS/Quest_BG.png" id="1_5t8kf"]
 [ext_resource type="PackedScene" uid="uid://cnlr811vrm1fk" path="res://SCENES/Inv_Dia_Com.tscn" id="2_x7w3h"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://6h0vwfyh2npe" path="res://SCENES/Links.tscn" id="8_lfs84"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Rose.png" id="8_yqmfx"]
 [ext_resource type="PackedScene" uid="uid://cmdruf4bxouoa" path="res://SCENES/Link_Pin.tscn" id="10_13y24"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="11_c2c0c"]
 
 [node name="Quest" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -17,18 +18,6 @@ metadata/_edit_lock_ = true
 [node name="Quest_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_5t8kf")
 centered = false
-metadata/_edit_lock_ = true
-
-[node name="Inv_Dia_Com" parent="." instance=ExtResource("2_x7w3h")]
-
-[node name="Links" parent="." instance=ExtResource("8_lfs84")]
-
-[node name="Top_Bar" parent="." instance=ExtResource("3_1pxmd")]
-
-[node name="Top_Left_Info" parent="." instance=ExtResource("5_u6ur1")]
-metadata/_edit_lock_ = true
-
-[node name="Bottom_Left_Info" parent="." instance=ExtResource("6_6a8nk")]
 metadata/_edit_lock_ = true
 
 [node name="TMP" type="Node2D" parent="."]
@@ -104,6 +93,20 @@ offset_left = 519.0
 offset_top = 169.0
 offset_right = 527.0
 offset_bottom = 177.0
+
+[node name="Top_Left_Info" parent="." instance=ExtResource("5_u6ur1")]
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Left_Info" parent="." instance=ExtResource("6_6a8nk")]
+metadata/_edit_lock_ = true
+
+[node name="Links" parent="." instance=ExtResource("8_lfs84")]
+
+[node name="Inv_Dia_Com" parent="." instance=ExtResource("2_x7w3h")]
+
+[node name="Top_Bar" parent="." instance=ExtResource("3_1pxmd")]
+
+[node name="Shader_Overlay" parent="." instance=ExtResource("11_c2c0c")]
 
 [editable path="TMP/Card1"]
 [editable path="TMP/Card2"]
