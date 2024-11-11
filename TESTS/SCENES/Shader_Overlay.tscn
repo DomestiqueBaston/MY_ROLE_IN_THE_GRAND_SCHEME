@@ -22,7 +22,6 @@ metadata/_edit_lock_ = true
 
 [node name="Grain" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_pa556")
-layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
@@ -30,7 +29,6 @@ metadata/_edit_lock_ = true
 
 [node name="Video" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_vn144")
-layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
