@@ -154,7 +154,7 @@ metadata/_edit_lock_ = true
 [node name="Collider" type="Area2D" parent="Sprite2D/Carte_Fond"]
 visible = false
 collision_layer = 2
-collision_mask = 0
+collision_mask = 4
 metadata/_edit_lock_ = true
 
 [node name="Top_Collider" type="CollisionShape2D" parent="Sprite2D/Carte_Fond/Collider"]
