@@ -1,0 +1,220 @@
+[gd_scene load_steps=9 format=3 uid="uid://cet13n014p2ub"]
+
+[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_3musi"]
+[ext_resource type="Texture2D" uid="uid://bwojpud0dsewx" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
+[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_iytka"]
+[ext_resource type="PackedScene" uid="uid://dauwh3vjh26kl" path="res://SCENES/Top_Left_Info.tscn" id="4_j313n"]
+[ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info.tscn" id="5_v7ec1"]
+[ext_resource type="PackedScene" uid="uid://cnlr811vrm1fk" path="res://SCENES/Inv_Dia_Com.tscn" id="6_heit8"]
+[ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="7_2be8g"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="8_segon"]
+
+[node name="Interaction" type="Node2D"]
+script = ExtResource("1_3musi")
+metadata/_edit_lock_ = true
+
+[node name="Interaction_BG" type="Sprite2D" parent="."]
+texture = ExtResource("2_y864e")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="TMP" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Card1" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(264, 95)
+
+[node name="Combat" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Investigation" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color" index="1"]
+visible = true
+
+[node name="Card2" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(346, 95)
+
+[node name="Combat" parent="TMP/Card2/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card2/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Card3" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(428, 95)
+
+[node name="Combat" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Abstract" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="3"]
+visible = true
+
+[node name="Card17" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(465, 233)
+
+[node name="Combat" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Investigation" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color" index="1"]
+visible = true
+
+[node name="Card18" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(502, 233)
+
+[node name="Combat" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Dialogue" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color" index="2"]
+visible = true
+
+[node name="Card19" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(539, 233)
+
+[node name="Card4" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(154, 233)
+
+[node name="Combat" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Investigation" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color" index="1"]
+visible = true
+
+[node name="Card5" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(173, 233)
+
+[node name="Combat" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Investigation" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color" index="1"]
+visible = true
+
+[node name="Card6" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(192, 233)
+
+[node name="Combat" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Investigation" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color" index="1"]
+visible = true
+
+[node name="Card7" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(211, 233)
+
+[node name="Combat" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Dialogue" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color" index="2"]
+visible = true
+
+[node name="Card8" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(230, 233)
+
+[node name="Combat" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Dialogue" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color" index="2"]
+visible = true
+
+[node name="Card9" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(249, 233)
+
+[node name="Combat" parent="TMP/Card9/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Card10" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(268, 233)
+
+[node name="Combat" parent="TMP/Card10/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card10/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Card11" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(287, 233)
+
+[node name="Combat" parent="TMP/Card11/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card11/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Card12" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(306, 233)
+
+[node name="Combat" parent="TMP/Card12/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Violet" parent="TMP/Card12/Card_Mask/Card_BG/Card_Color" index="5"]
+visible = true
+
+[node name="Card13" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(325, 233)
+
+[node name="Combat" parent="TMP/Card13/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Violet" parent="TMP/Card13/Card_Mask/Card_BG/Card_Color" index="5"]
+visible = true
+
+[node name="Card14" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(344, 233)
+
+[node name="Combat" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Abstract" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color" index="3"]
+visible = true
+
+[node name="Card15" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(363, 233)
+
+[node name="Combat" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Abstract" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color" index="3"]
+visible = true
+
+[node name="Card16" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(382, 233)
+
+[node name="Combat" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Abstract" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color" index="3"]
+visible = true
+
+[node name="Top_Left_Info" parent="." instance=ExtResource("4_j313n")]
+metadata/_edit_lock_ = true
+
+[node name="Bottom_Left_Info" parent="." instance=ExtResource("5_v7ec1")]
+metadata/_edit_lock_ = true
+
+[node name="Inv_Dia_Com" parent="." instance=ExtResource("6_heit8")]
+
+[node name="Top_Bar" parent="." instance=ExtResource("7_2be8g")]
+
+[node name="Shader_Overlay" parent="." instance=ExtResource("8_segon")]
+visible = false
+
+[editable path="TMP/Card1"]
+[editable path="TMP/Card2"]
+[editable path="TMP/Card3"]
+[editable path="TMP/Card17"]
+[editable path="TMP/Card18"]
+[editable path="TMP/Card19"]
+[editable path="TMP/Card4"]
+[editable path="TMP/Card5"]
+[editable path="TMP/Card6"]
+[editable path="TMP/Card7"]
+[editable path="TMP/Card8"]
+[editable path="TMP/Card9"]
+[editable path="TMP/Card10"]
+[editable path="TMP/Card11"]
+[editable path="TMP/Card12"]
+[editable path="TMP/Card13"]
+[editable path="TMP/Card14"]
+[editable path="TMP/Card15"]
+[editable path="TMP/Card16"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://dxsbbamjqxk1s"]
+[gd_scene load_steps=30 format=3 uid="uid://dxsbbamjqxk1s"]
 
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_hrlx0"]
+[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_i5req"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_02cvh"]
 [ext_resource type="ButtonGroup" uid="uid://s2v30wdlf28n" path="res://UI/Character_Generation_Button_Group.tres" id="3_uxv3c"]
 [ext_resource type="Texture2D" uid="uid://dmhmlsek5h32r" path="res://GRAPHICS/SETTINGS/Credits_Button_Pressed.png" id="4_lfu18"]
@@ -27,8 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://c1qmuoj1q7n2c" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Pressed.png" id="25_47f6w"]
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Hover.png" id="26_yiwnx"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Mask.png" id="27_d568r"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="29_j2emp"]
 
 [node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_i5req")
 metadata/_edit_lock_ = true
 
 [node name="Main_Menu_BG" type="Sprite2D" parent="."]
@@ -292,3 +295,6 @@ text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="Shader_Overlay" parent="." instance=ExtResource("29_j2emp")]
+visible = false

@@ -14,13 +14,11 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 0.2
 shader_parameter/blur_samples = 15
 
-[node name="Shader_Overlay" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-mouse_filter = 2
-metadata/_edit_lock_ = true
+[node name="Shader_Overlay" type="CanvasLayer"]
+layer = 10
 
 [node name="Grain" type="ColorRect" parent="."]
+z_index = 10
 material = SubResource("ShaderMaterial_pa556")
 offset_right = 640.0
 offset_bottom = 360.0
@@ -28,6 +26,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="Video" type="ColorRect" parent="."]
+z_index = 10
 material = SubResource("ShaderMaterial_vn144")
 offset_right = 640.0
 offset_bottom = 360.0

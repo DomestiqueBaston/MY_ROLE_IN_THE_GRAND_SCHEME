@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=13 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/QUESTS/Quest_BG.png" id="1_5t8kf"]
+[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_sqsbj"]
 [ext_resource type="PackedScene" uid="uid://cnlr811vrm1fk" path="res://SCENES/Inv_Dia_Com.tscn" id="2_x7w3h"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="3_1pxmd"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="4_nkome"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="11_c2c0c"]
 
 [node name="Quest" type="Node2D"]
+script = ExtResource("1_sqsbj")
 metadata/_edit_lock_ = true
 
 [node name="Quest_BG" type="Sprite2D" parent="."]
@@ -26,29 +28,14 @@ metadata/_edit_lock_ = true
 [node name="Card1" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(190, 85)
 
-[node name="Carte_Evidence" parent="TMP/Card1/Sprite2D/Carte_Fond" index="1"]
-visible = false
-
 [node name="Card2" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(463, 206)
-
-[node name="Carte_Fond" parent="TMP/Card2/Sprite2D" index="0"]
-offset = Vector2(50, 0)
-
-[node name="Carte_Evidence" parent="TMP/Card2/Sprite2D/Carte_Fond" index="1"]
-visible = false
 
 [node name="Card3" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(512, 163)
 
-[node name="Carte_Fond" parent="TMP/Card3/Sprite2D" index="0"]
-offset = Vector2(100, -25)
-
 [node name="Card4" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(165, 213)
-
-[node name="Carte_Fond" parent="TMP/Card4/Sprite2D" index="0"]
-offset = Vector2(118, -28)
 
 [node name="Lien_Pointillé_Exemple" type="Line2D" parent="TMP"]
 points = PackedVector2Array(256, 97, 472, 215)
@@ -107,6 +94,7 @@ metadata/_edit_lock_ = true
 [node name="Top_Bar" parent="." instance=ExtResource("3_1pxmd")]
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("11_c2c0c")]
+visible = false
 
 [editable path="TMP/Card1"]
 [editable path="TMP/Card2"]
