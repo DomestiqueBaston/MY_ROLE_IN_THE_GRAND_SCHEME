@@ -21,7 +21,6 @@ metadata/_edit_lock_ = true
 [node name="Week_1" type="Node2D" parent="Current_Day"]
 
 [node name="Monday" type="ColorRect" parent="Current_Day/Week_1"]
-visible = false
 offset_left = 193.0
 offset_top = 82.0
 offset_right = 248.0
@@ -252,6 +251,54 @@ offset_top = 79.0
 offset_right = 582.0
 offset_bottom = 135.0
 color = Color(0.6, 0.6, 0.6, 0.588235)
+
+[node name="Cell_01" type="Node2D" parent="Current_Day"]
+position = Vector2(220, 108)
+
+[node name="Cell_BG" type="Polygon2D" parent="Current_Day/Cell_01"]
+position = Vector2(-220, -108)
+color = Color(1, 0.498039, 1, 0.25098)
+polygon = PackedVector2Array(196, 85, 196, 131, 245, 131, 245, 85)
+
+[node name="Cell_Outline" type="Line2D" parent="Current_Day/Cell_01/Cell_BG"]
+points = PackedVector2Array(195, 84, 195, 132, 246, 132, 246, 84)
+closed = true
+width = 2.0
+default_color = Color(0.5, 0.5, 0.5, 1)
+joint_mode = 2
+
+[node name="Cell_02" type="Node2D" parent="Current_Day"]
+position = Vector2(331, 93)
+
+[node name="Cell_BG" type="Polygon2D" parent="Current_Day/Cell_02"]
+position = Vector2(-220, -93)
+color = Color(0.498039, 0.498039, 1, 0.25098)
+polygon = PackedVector2Array(196, 85, 196, 100, 245, 100, 245, 85)
+
+[node name="Cell_Outline" type="Line2D" parent="Current_Day/Cell_02/Cell_BG"]
+points = PackedVector2Array(195, 84, 195, 101, 246, 101, 246, 84)
+closed = true
+width = 2.0
+default_color = Color(0.5, 0.5, 0.5, 1)
+joint_mode = 2
+
+[node name="Cell_03" type="Node2D" parent="Current_Day"]
+position = Vector2(331, 116)
+
+[node name="Cell_BG" type="Polygon2D" parent="Current_Day/Cell_03"]
+position = Vector2(-220, -165)
+scale = Vector2(1, 1.8)
+color = Color(0.498039, 1, 0.498039, 0.25098)
+polygon = PackedVector2Array(196, 83.8889, 196, 100, 245, 100, 245, 83.8889)
+
+[node name="Cell_Outline" type="Line2D" parent="Current_Day/Cell_03/Cell_BG"]
+position = Vector2(0, 41.1111)
+scale = Vector2(1, 0.555555)
+points = PackedVector2Array(195, 76, 195, 107, 246, 107, 246, 76)
+closed = true
+width = 2.0
+default_color = Color(0.5, 0.5, 0.5, 1)
+joint_mode = 2
 
 [node name="Top_Left_Info" parent="." instance=ExtResource("3_7jkro")]
 
