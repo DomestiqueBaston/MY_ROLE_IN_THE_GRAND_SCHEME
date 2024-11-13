@@ -2,18 +2,14 @@
 
 [ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_3musi"]
 [ext_resource type="Texture2D" uid="uid://bwojpud0dsewx" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
+[ext_resource type="PackedScene" uid="uid://bgwcs2vpa1g2o" path="res://SCENES/Playground.tscn" id="3_hdhly"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_iytka"]
 [ext_resource type="PackedScene" uid="uid://dauwh3vjh26kl" path="res://SCENES/Top_Left_Info.tscn" id="4_j313n"]
+[ext_resource type="PackedScene" uid="uid://8r7milsx8op" path="res://SCENES/Oops_LetsGo.tscn" id="5_raou3"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info.tscn" id="5_v7ec1"]
 [ext_resource type="PackedScene" uid="uid://cnlr811vrm1fk" path="res://SCENES/Inv_Dia_Com.tscn" id="6_heit8"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="7_2be8g"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="8_segon"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks1ii"]
-size = Vector2(469, 309)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1s0ns"]
-size = Vector2(76, 102)
 
 [sub_resource type="Gradient" id="Gradient_7eyd2"]
 offsets = PackedFloat32Array(0, 0.1, 0.9)
@@ -29,37 +25,13 @@ texture = ExtResource("2_y864e")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Playground_Collider" type="Area2D" parent="."]
-visible = false
-collision_layer = 16
-collision_mask = 7
-
-[node name="Playground" type="CollisionShape2D" parent="Playground_Collider"]
-position = Vector2(383.5, 183.5)
-shape = SubResource("RectangleShape2D_ks1ii")
-
-[node name="Card_Colliders" type="Area2D" parent="."]
-visible = false
-collision_layer = 8
-collision_mask = 2
-
-[node name="Interaction" type="CollisionShape2D" parent="Card_Colliders"]
-position = Vector2(301, 135)
-shape = SubResource("RectangleShape2D_1s0ns")
-
-[node name="Object" type="CollisionShape2D" parent="Card_Colliders"]
-position = Vector2(383, 135)
-shape = SubResource("RectangleShape2D_1s0ns")
-
-[node name="Abstract" type="CollisionShape2D" parent="Card_Colliders"]
-position = Vector2(465, 135)
-shape = SubResource("RectangleShape2D_1s0ns")
+[node name="Playground" parent="." instance=ExtResource("3_hdhly")]
 
 [node name="TMP" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
 [node name="Card1" parent="TMP" instance=ExtResource("3_iytka")]
-position = Vector2(264, 85)
+position = Vector2(264, 75)
 
 [node name="Combat" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
@@ -70,21 +42,8 @@ visible = true
 [node name="Carte_Evidence" parent="TMP/Card1/Card_Mask/Card_BG" index="1"]
 visible = false
 
-[node name="Card2" parent="TMP" instance=ExtResource("3_iytka")]
-visible = false
-position = Vector2(346, 85)
-
-[node name="Combat" parent="TMP/Card2/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
-[node name="Yellow" parent="TMP/Card2/Card_Mask/Card_BG/Card_Color" index="4"]
-visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card2/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card3" parent="TMP" instance=ExtResource("3_iytka")]
-position = Vector2(428, 85)
+position = Vector2(428, 75)
 
 [node name="Combat" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
@@ -96,7 +55,7 @@ visible = true
 visible = false
 
 [node name="Card17" parent="TMP" instance=ExtResource("3_iytka")]
-position = Vector2(465, 233)
+position = Vector2(464, 233)
 
 [node name="Combat" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
@@ -108,7 +67,7 @@ visible = true
 visible = false
 
 [node name="Card18" parent="TMP" instance=ExtResource("3_iytka")]
-position = Vector2(502, 233)
+position = Vector2(482, 233)
 
 [node name="Combat" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
@@ -120,9 +79,27 @@ visible = true
 visible = false
 
 [node name="Card19" parent="TMP" instance=ExtResource("3_iytka")]
-position = Vector2(539, 233)
+position = Vector2(501, 233)
+
+[node name="Combat" parent="TMP/Card19/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Dialogue" parent="TMP/Card19/Card_Mask/Card_BG/Card_Color" index="2"]
+visible = true
 
 [node name="Carte_Evidence" parent="TMP/Card19/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card21" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(520, 233)
+
+[node name="Carte_Evidence" parent="TMP/Card21/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card22" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(539, 233)
+
+[node name="Carte_Evidence" parent="TMP/Card22/Card_Mask/Card_BG" index="1"]
 visible = false
 
 [node name="Card4" parent="TMP" instance=ExtResource("3_iytka")]
@@ -270,6 +247,7 @@ visible = true
 visible = false
 
 [node name="Card10" parent="TMP" instance=ExtResource("3_iytka")]
+modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(268, 201)
 
 [node name="Combat" parent="TMP/Card10/Card_Mask/Card_BG/Card_Color" index="0"]
@@ -281,14 +259,102 @@ visible = true
 [node name="Carte_Evidence" parent="TMP/Card10/Card_Mask/Card_BG" index="1"]
 visible = false
 
+[node name="Card20" parent="TMP" instance=ExtResource("3_iytka")]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(353, 106)
+
+[node name="Combat" parent="TMP/Card20/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card20/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Carte_Evidence" parent="TMP/Card20/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card23" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(154, 61)
+
+[node name="Combat" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Carte_Evidence" parent="TMP/Card23/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card24" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(154, 73)
+
+[node name="Combat" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Carte_Evidence" parent="TMP/Card24/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card25" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(154, 85)
+
+[node name="Combat" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Carte_Evidence" parent="TMP/Card25/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card26" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(154, 96)
+
+[node name="Combat" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Carte_Evidence" parent="TMP/Card26/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card27" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(154, 107)
+
+[node name="Combat" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Carte_Evidence" parent="TMP/Card27/Card_Mask/Card_BG" index="1"]
+visible = false
+
+[node name="Card28" parent="TMP" instance=ExtResource("3_iytka")]
+position = Vector2(154, 118)
+
+[node name="Combat" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Yellow" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Carte_Evidence" parent="TMP/Card28/Card_Mask/Card_BG" index="1"]
+visible = false
+
 [node name="Line2D" type="Line2D" parent="TMP"]
-position = Vector2(0, -19.3151)
-scale = Vector2(1, 1.08219)
-points = PackedVector2Array(304, 215, 304, 196, 305, 175, 308, 156, 311, 146, 315, 137, 321, 129, 328, 122, 336, 117, 345, 113, 356, 110, 368, 109, 379, 109)
+position = Vector2(9, 11)
+points = PackedVector2Array(296, 204, 296, 188, 298, 173, 302, 160, 308, 148, 314, 138, 320, 130, 327, 123, 336, 117, 345, 113, 356, 110, 368, 109, 379, 109)
 width = 20.0
 gradient = SubResource("Gradient_7eyd2")
 end_cap_mode = 2
 antialiased = true
+metadata/_edit_lock_ = true
+
+[node name="Oops_LetsGo_Buttons" parent="." instance=ExtResource("5_raou3")]
+metadata/_edit_lock_ = true
 
 [node name="Top_Left_Info" parent="." instance=ExtResource("4_j313n")]
 metadata/_edit_lock_ = true
@@ -304,11 +370,12 @@ metadata/_edit_lock_ = true
 visible = false
 
 [editable path="TMP/Card1"]
-[editable path="TMP/Card2"]
 [editable path="TMP/Card3"]
 [editable path="TMP/Card17"]
 [editable path="TMP/Card18"]
 [editable path="TMP/Card19"]
+[editable path="TMP/Card21"]
+[editable path="TMP/Card22"]
 [editable path="TMP/Card4"]
 [editable path="TMP/Card5"]
 [editable path="TMP/Card6"]
@@ -322,3 +389,10 @@ visible = false
 [editable path="TMP/Card15"]
 [editable path="TMP/Card16"]
 [editable path="TMP/Card10"]
+[editable path="TMP/Card20"]
+[editable path="TMP/Card23"]
+[editable path="TMP/Card24"]
+[editable path="TMP/Card25"]
+[editable path="TMP/Card26"]
+[editable path="TMP/Card27"]
+[editable path="TMP/Card28"]

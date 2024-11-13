@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://8r7milsx8op"]
+
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_uf1ry"]
+[ext_resource type="ButtonGroup" uid="uid://ceobmkvssjybu" path="res://UI/Oops_LetsGo.tres" id="2_42vhj"]
+[ext_resource type="Texture2D" uid="uid://hoebeu4xqxp0" path="res://GRAPHICS/INTERACTION/Lets_Go_Normal.png" id="3_6cbfs"]
+[ext_resource type="Texture2D" uid="uid://bhk2c7rmchwp2" path="res://GRAPHICS/INTERACTION/Lets_Go_Hover.png" id="4_jp6k0"]
+[ext_resource type="BitMap" uid="uid://by0lu8xqtgvdm" path="res://GRAPHICS/INTERACTION/Lets_Go_Mask.png" id="5_aw6vn"]
+[ext_resource type="Texture2D" uid="uid://dpo3btfppffs1" path="res://GRAPHICS/INTERACTION/Oops_Normal.png" id="6_4sw3u"]
+[ext_resource type="Texture2D" uid="uid://c5iadvocgxl8j" path="res://GRAPHICS/INTERACTION/Oops_Hover.png" id="7_7muut"]
+[ext_resource type="BitMap" uid="uid://bwwbxy0ksof7y" path="res://GRAPHICS/INTERACTION/Oops_Mask.png" id="8_n2fcp"]
+
+[node name="Oops_LetsGo_Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("1_uf1ry")
+
+[node name="LetsGo" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "Validate the Interaction"
+toggle_mode = true
+button_group = ExtResource("2_42vhj")
+texture_normal = ExtResource("3_6cbfs")
+texture_pressed = ExtResource("3_6cbfs")
+texture_hover = ExtResource("4_jp6k0")
+texture_focused = ExtResource("3_6cbfs")
+texture_click_mask = ExtResource("5_aw6vn")
+
+[node name="Oops" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "Cancel this Interaction"
+toggle_mode = true
+button_group = ExtResource("2_42vhj")
+texture_normal = ExtResource("6_4sw3u")
+texture_pressed = ExtResource("6_4sw3u")
+texture_hover = ExtResource("7_7muut")
+texture_focused = ExtResource("6_4sw3u")
+texture_click_mask = ExtResource("8_n2fcp")
