@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cb8ie0y4shgtb"]
+[gd_scene load_steps=15 format=3 uid="uid://cb8ie0y4shgtb"]
 
 [ext_resource type="Texture2D" uid="uid://cno0b6h8jyy04" path="res://GRAPHICS/INVESTIGATION_CENTER/Investigation_Center_BG.png" id="1_njt05"]
+[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_p3qnj"]
 [ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png" id="2_6ndse"]
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="3_5yoyy"]
 [ext_resource type="Theme" uid="uid://5eedmsqjoxtm" path="res://UI/Investigation_Center_Theme.tres" id="4_b1ixs"]
@@ -11,10 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://bn54pgv02evuj" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Normal.png" id="9_slrl8"]
 [ext_resource type="Texture2D" uid="uid://r7y4gcm0ux3n" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Hover.png" id="10_cie2r"]
 [ext_resource type="BitMap" uid="uid://d2gyl41vrcl4a" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Mask.png" id="11_skuhm"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="12_byojy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
 
 [node name="Investigation_Center" type="Node2D"]
+script = ExtResource("1_p3qnj")
 metadata/_edit_lock_ = true
 
 [node name="Investigation_Center_BG" type="Sprite2D" parent="."]
@@ -27,81 +30,94 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Control"]
+[node name="Chalk_Mask" type="Sprite2D" parent="Control"]
 clip_children = 1
 texture = ExtResource("2_6ndse")
 centered = false
-
-[node name="White_Frame_01" type="Node2D" parent="Control/Sprite2D"]
 metadata/_edit_lock_ = true
 
-[node name="Line_01" type="Line2D" parent="Control/Sprite2D/White_Frame_01"]
+[node name="White_Frame_01" type="Node2D" parent="Control/Chalk_Mask"]
+metadata/_edit_lock_ = true
+
+[node name="Line_01" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
 position = Vector2(0, -20)
 points = PackedVector2Array(30, 47, 606, 47)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_02" type="Line2D" parent="Control/Sprite2D/White_Frame_01"]
+[node name="Line_02" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
 position = Vector2(0, -2)
 points = PackedVector2Array(30, 47, 606, 47)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_03" type="Line2D" parent="Control/Sprite2D/White_Frame_01"]
+[node name="Line_03" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
 points = PackedVector2Array(30, 27, 30, 45)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_04" type="Line2D" parent="Control/Sprite2D/White_Frame_01"]
+[node name="Line_04" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
 position = Vector2(576, 0)
 points = PackedVector2Array(30, 27, 30, 45)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="White_Frame_02" type="Node2D" parent="Control/Sprite2D"]
+[node name="White_Frame_02" type="Node2D" parent="Control/Chalk_Mask"]
 position = Vector2(0, 69)
 metadata/_edit_lock_ = true
 
-[node name="Line_01" type="Line2D" parent="Control/Sprite2D/White_Frame_02"]
-position = Vector2(0, 3)
-points = PackedVector2Array(30, 47, 606, 47)
+[node name="Line_01" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+position = Vector2(0, -45)
+points = PackedVector2Array(30, 47, 494, 47)
 width = 1.0
-metadata/_edit_lock_ = true
 
-[node name="Line_02" type="Line2D" parent="Control/Sprite2D/White_Frame_02"]
+[node name="Line_02" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
 position = Vector2(0, 217)
 points = PackedVector2Array(30, 47, 606, 47)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_03" type="Line2D" parent="Control/Sprite2D/White_Frame_02"]
-points = PackedVector2Array(30, 50, 30, 264)
+[node name="Line_03" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+points = PackedVector2Array(30, 2, 30, 264)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_04" type="Line2D" parent="Control/Sprite2D/White_Frame_02"]
+[node name="Line_04" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
 position = Vector2(576, 0)
-points = PackedVector2Array(30, 50, 30, 264)
+points = PackedVector2Array(30, 43, 30, 264)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Case_Report" type="Label" parent="Control/Sprite2D"]
+[node name="Line_05" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+position = Vector2(576, 5)
+points = PackedVector2Array(30, 38, -82, 38)
+width = 1.0
+
+[node name="Line_06" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+position = Vector2(631, 0)
+points = PackedVector2Array(-137, 2, -137, 43)
+width = 1.0
+
+[node name="Case_Report" type="Label" parent="Control/Chalk_Mask"]
 offset_left = 30.0
-offset_top = 106.0
+offset_top = 57.0
 offset_right = 87.0
-offset_bottom = 114.0
+offset_bottom = 65.0
 theme = ExtResource("4_b1ixs")
 text = "Case Report:"
+metadata/_edit_lock_ = true
 
-[node name="Report" type="Label" parent="Control/Sprite2D/Case_Report"]
+[node name="Report" type="Label" parent="Control/Chalk_Mask/Case_Report"]
 offset_left = 2.0
-offset_top = 15.0
+offset_top = 16.0
 offset_right = 574.0
-offset_bottom = 584.0
+offset_bottom = 274.0
 text = "Case: The Vanishing Witness
 Case ID: #2013-0457
 Status: Open
+
 
 Summary: Mia Turner, key witness in a criminal case, has gone missing. Last contacted 48 hours ago. She was set to testify against a local gang involved in illegal arms trade.
 
@@ -120,8 +136,9 @@ Next Steps:
     Speak with Emma Wright.
     Analyze phone records."
 autowrap_mode = 2
+metadata/_edit_lock_ = true
 
-[node name="Difficulty" type="Label" parent="Control/Sprite2D"]
+[node name="Difficulty" type="Label" parent="Control/Chalk_Mask"]
 modulate = Color(1, 1, 1, 0.752941)
 offset_left = 36.0
 offset_top = 32.0
@@ -129,15 +146,17 @@ offset_right = 106.0
 offset_bottom = 40.0
 theme = ExtResource("3_5yoyy")
 text = "Difficulty level:"
+metadata/_edit_lock_ = true
 
-[node name="Difficulty_Selector" type="PanelContainer" parent="Control/Sprite2D/Difficulty"]
+[node name="Difficulty_Selector" type="PanelContainer" parent="Control/Chalk_Mask/Difficulty"]
 offset_left = 67.0
 offset_top = -6.0
 offset_right = 104.0
 offset_bottom = 14.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fd502")
+metadata/_edit_lock_ = true
 
-[node name="Difficulty_List" type="OptionButton" parent="Control/Sprite2D/Difficulty/Difficulty_Selector"]
+[node name="Difficulty_List" type="OptionButton" parent="Control/Chalk_Mask/Difficulty/Difficulty_Selector"]
 clip_contents = true
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
@@ -157,8 +176,9 @@ popup/item_3/id = 3
 popup/item_4/text = "5"
 popup/item_4/id = 4
 script = ExtResource("5_na0ew")
+metadata/_edit_lock_ = true
 
-[node name="Case" type="Label" parent="Control/Sprite2D"]
+[node name="Case" type="Label" parent="Control/Chalk_Mask"]
 modulate = Color(1, 1, 1, 0.752941)
 offset_left = 176.0
 offset_top = 32.0
@@ -166,15 +186,17 @@ offset_right = 198.0
 offset_bottom = 40.0
 theme = ExtResource("3_5yoyy")
 text = "Case:"
+metadata/_edit_lock_ = true
 
-[node name="Case_Selector" type="PanelContainer" parent="Control/Sprite2D/Case"]
+[node name="Case_Selector" type="PanelContainer" parent="Control/Chalk_Mask/Case"]
 offset_left = 18.0
 offset_top = -6.0
 offset_right = 141.0
 offset_bottom = 14.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fd502")
+metadata/_edit_lock_ = true
 
-[node name="Case_List" type="OptionButton" parent="Control/Sprite2D/Case/Case_Selector"]
+[node name="Case_List" type="OptionButton" parent="Control/Chalk_Mask/Case/Case_Selector"]
 clip_contents = true
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
@@ -195,17 +217,25 @@ popup/item_3/id = 4
 popup/item_4/text = "The Watcher's Eye"
 popup/item_4/id = 5
 script = ExtResource("5_na0ew")
+metadata/_edit_lock_ = true
 
-[node name="Ok_Button" type="TextureButton" parent="Control/Sprite2D"]
+[node name="Ok_Button" type="TextureButton" parent="Control/Chalk_Mask"]
 offset_right = 640.0
 offset_bottom = 360.0
 texture_normal = ExtResource("6_msgya")
+texture_pressed = ExtResource("6_msgya")
 texture_hover = ExtResource("7_uxkdd")
 texture_click_mask = ExtResource("8_nj82a")
+metadata/_edit_lock_ = true
 
-[node name="Cancel_Button" type="TextureButton" parent="Control/Sprite2D"]
+[node name="Cancel_Button" type="TextureButton" parent="Control/Chalk_Mask"]
 offset_right = 640.0
 offset_bottom = 360.0
 texture_normal = ExtResource("9_slrl8")
+texture_pressed = ExtResource("9_slrl8")
 texture_hover = ExtResource("10_cie2r")
 texture_click_mask = ExtResource("11_skuhm")
+metadata/_edit_lock_ = true
+
+[node name="Shader_Overlay" parent="." instance=ExtResource("12_byojy")]
+visible = false
