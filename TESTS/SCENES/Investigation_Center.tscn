@@ -25,82 +25,78 @@ texture = ExtResource("1_njt05")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="Chalkboard_Content" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Chalk_Mask" type="Sprite2D" parent="Control"]
+[node name="Chalk_Mask" type="Sprite2D" parent="Chalkboard_Content"]
 clip_children = 1
 texture = ExtResource("2_6ndse")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="White_Frame_01" type="Node2D" parent="Control/Chalk_Mask"]
+[node name="White_Frame_01" type="Node2D" parent="Chalkboard_Content/Chalk_Mask"]
 metadata/_edit_lock_ = true
 
-[node name="Line_01" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
+[node name="Line_01" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
 position = Vector2(0, -20)
 points = PackedVector2Array(30, 47, 606, 47)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_02" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
+[node name="Line_02" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
 position = Vector2(0, -2)
 points = PackedVector2Array(30, 47, 606, 47)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_03" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
+[node name="Line_03" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
 points = PackedVector2Array(30, 27, 30, 45)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_04" type="Line2D" parent="Control/Chalk_Mask/White_Frame_01"]
+[node name="Line_04" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
 position = Vector2(576, 0)
 points = PackedVector2Array(30, 27, 30, 45)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="White_Frame_02" type="Node2D" parent="Control/Chalk_Mask"]
+[node name="White_Frame_02" type="Node2D" parent="Chalkboard_Content/Chalk_Mask"]
 position = Vector2(0, 69)
 metadata/_edit_lock_ = true
 
-[node name="Line_01" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+[node name="Line_01" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
 position = Vector2(0, -45)
 points = PackedVector2Array(30, 47, 494, 47)
 width = 1.0
 
-[node name="Line_02" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+[node name="Line_02" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
 position = Vector2(0, 217)
 points = PackedVector2Array(30, 47, 606, 47)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_03" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+[node name="Line_03" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
 points = PackedVector2Array(30, 2, 30, 264)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_04" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+[node name="Line_04" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
 position = Vector2(576, 0)
 points = PackedVector2Array(30, 43, 30, 264)
 width = 1.0
 metadata/_edit_lock_ = true
 
-[node name="Line_05" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+[node name="Line_05" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
 position = Vector2(576, 5)
 points = PackedVector2Array(30, 38, -82, 38)
 width = 1.0
 
-[node name="Line_06" type="Line2D" parent="Control/Chalk_Mask/White_Frame_02"]
+[node name="Line_06" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
 position = Vector2(631, 0)
 points = PackedVector2Array(-137, 2, -137, 43)
 width = 1.0
 
-[node name="Case_Report" type="Label" parent="Control/Chalk_Mask"]
+[node name="Case_Report" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
 offset_left = 30.0
 offset_top = 57.0
 offset_right = 87.0
@@ -109,13 +105,13 @@ theme = ExtResource("4_b1ixs")
 text = "Case Report:"
 metadata/_edit_lock_ = true
 
-[node name="Report" type="Label" parent="Control/Chalk_Mask/Case_Report"]
+[node name="Report" type="Label" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
 offset_left = 2.0
 offset_top = 16.0
 offset_right = 574.0
 offset_bottom = 274.0
 text = "Case: The Vanishing Witness
-Case ID: #2013-0457
+Case ID: #2024-0457
 Status: Open
 
 
@@ -138,7 +134,7 @@ Next Steps:
 autowrap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Difficulty" type="Label" parent="Control/Chalk_Mask"]
+[node name="Difficulty" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
 modulate = Color(1, 1, 1, 0.752941)
 offset_left = 36.0
 offset_top = 32.0
@@ -148,7 +144,7 @@ theme = ExtResource("3_5yoyy")
 text = "Difficulty level:"
 metadata/_edit_lock_ = true
 
-[node name="Difficulty_Selector" type="PanelContainer" parent="Control/Chalk_Mask/Difficulty"]
+[node name="Difficulty_Selector" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Difficulty"]
 offset_left = 67.0
 offset_top = -6.0
 offset_right = 104.0
@@ -156,7 +152,7 @@ offset_bottom = 14.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fd502")
 metadata/_edit_lock_ = true
 
-[node name="Difficulty_List" type="OptionButton" parent="Control/Chalk_Mask/Difficulty/Difficulty_Selector"]
+[node name="Difficulty_List" type="OptionButton" parent="Chalkboard_Content/Chalk_Mask/Difficulty/Difficulty_Selector"]
 clip_contents = true
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
@@ -178,7 +174,7 @@ popup/item_4/id = 4
 script = ExtResource("5_na0ew")
 metadata/_edit_lock_ = true
 
-[node name="Case" type="Label" parent="Control/Chalk_Mask"]
+[node name="Case" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
 modulate = Color(1, 1, 1, 0.752941)
 offset_left = 176.0
 offset_top = 32.0
@@ -188,7 +184,7 @@ theme = ExtResource("3_5yoyy")
 text = "Case:"
 metadata/_edit_lock_ = true
 
-[node name="Case_Selector" type="PanelContainer" parent="Control/Chalk_Mask/Case"]
+[node name="Case_Selector" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Case"]
 offset_left = 18.0
 offset_top = -6.0
 offset_right = 141.0
@@ -196,7 +192,7 @@ offset_bottom = 14.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fd502")
 metadata/_edit_lock_ = true
 
-[node name="Case_List" type="OptionButton" parent="Control/Chalk_Mask/Case/Case_Selector"]
+[node name="Case_List" type="OptionButton" parent="Chalkboard_Content/Chalk_Mask/Case/Case_Selector"]
 clip_contents = true
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
@@ -219,7 +215,7 @@ popup/item_4/id = 5
 script = ExtResource("5_na0ew")
 metadata/_edit_lock_ = true
 
-[node name="Ok_Button" type="TextureButton" parent="Control/Chalk_Mask"]
+[node name="Ok_Button" type="TextureButton" parent="Chalkboard_Content/Chalk_Mask"]
 offset_right = 640.0
 offset_bottom = 360.0
 texture_normal = ExtResource("6_msgya")
@@ -228,7 +224,7 @@ texture_hover = ExtResource("7_uxkdd")
 texture_click_mask = ExtResource("8_nj82a")
 metadata/_edit_lock_ = true
 
-[node name="Cancel_Button" type="TextureButton" parent="Control/Chalk_Mask"]
+[node name="Cancel_Button" type="TextureButton" parent="Chalkboard_Content/Chalk_Mask"]
 offset_right = 640.0
 offset_bottom = 360.0
 texture_normal = ExtResource("9_slrl8")
