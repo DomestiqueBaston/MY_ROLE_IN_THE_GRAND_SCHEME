@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d2gyl41vrcl4a"
+path="res://.godot/imported/Cancel_Mask.png-368fc17de5b8e125a587f9a26f02a634.res"
+
+[deps]
+
+source_file="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Mask.png"
+dest_files=["res://.godot/imported/Cancel_Mask.png-368fc17de5b8e125a587f9a26f02a634.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

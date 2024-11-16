@@ -17,10 +17,15 @@ texture = ExtResource("1_tfm5c")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Current_Day" type="Node2D" parent="."]
+[node name="Current_Day" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+metadata/_edit_lock_ = true
 
 [node name="Week_1" type="Control" parent="Current_Day"]
-modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_lock_ = true
@@ -95,8 +100,6 @@ color = Color(0.6, 0.6, 0.6, 1)
 metadata/_edit_lock_ = true
 
 [node name="Week_2" type="Control" parent="Current_Day"]
-visible = false
-modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 3
 anchors_preset = 0
 offset_top = 56.0
@@ -174,8 +177,6 @@ color = Color(0.6, 0.6, 0.6, 1)
 metadata/_edit_lock_ = true
 
 [node name="Week_3" type="Control" parent="Current_Day"]
-visible = false
-modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 3
 anchors_preset = 0
 offset_top = 116.0
@@ -253,8 +254,6 @@ color = Color(0.6, 0.6, 0.6, 1)
 metadata/_edit_lock_ = true
 
 [node name="Week_4" type="Control" parent="Current_Day"]
-visible = false
-modulate = Color(1, 1, 1, 0.588235)
 layout_mode = 3
 anchors_preset = 0
 offset_top = 175.0
@@ -331,56 +330,19 @@ offset_bottom = 135.0
 color = Color(0.6, 0.6, 0.6, 1)
 metadata/_edit_lock_ = true
 
-[node name="Cell_01" type="Node2D" parent="Current_Day"]
-metadata/_edit_lock_ = true
+[node name="Cells" type="Node2D" parent="."]
 
-[node name="Cell_BG" type="Polygon2D" parent="Current_Day/Cell_01"]
-color = Color(1, 0.498039, 1, 0.25098)
-polygon = PackedVector2Array(196, 85, 196, 131, 245, 131, 245, 85)
-metadata/_edit_lock_ = true
-
-[node name="Note" type="Label" parent="Current_Day/Cell_01/Cell_BG"]
-offset_left = 196.0
-offset_top = 85.0
-offset_right = 245.0
-offset_bottom = 131.0
-tooltip_text = "Whatever I need to remember such as a PNJ's schedule..."
-mouse_filter = 1
-theme = ExtResource("3_q45dv")
-theme_override_colors/font_color = Color(0, 0, 0, 0.784314)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
-theme_override_constants/shadow_offset_x = -1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 0
-text = "Whatever I need to remember such as a PNJ's schedule..."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-text_overrun_behavior = 3
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
-
-[node name="Cell_Outline" type="Line2D" parent="Current_Day/Cell_01/Cell_BG"]
-points = PackedVector2Array(195, 84, 195, 132, 246, 132, 246, 84)
-closed = true
-width = 2.0
-default_color = Color(0.5, 0.5, 0.5, 1)
-joint_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="Cell_02" type="Node2D" parent="Current_Day"]
+[node name="Cell_02" type="Node2D" parent="Cells"]
 position = Vector2(331, 93)
 metadata/_edit_lock_ = true
 
-[node name="Cell_BG" type="Polygon2D" parent="Current_Day/Cell_02"]
+[node name="Cell_BG" type="Polygon2D" parent="Cells/Cell_02"]
 position = Vector2(-220, -93)
 color = Color(0.498039, 0.498039, 1, 0.25098)
 polygon = PackedVector2Array(196, 85, 196, 100, 245, 100, 245, 85)
 metadata/_edit_lock_ = true
 
-[node name="Note" type="Label" parent="Current_Day/Cell_02/Cell_BG"]
+[node name="Note" type="Label" parent="Cells/Cell_02/Cell_BG"]
 offset_left = 196.0
 offset_top = 85.0
 offset_right = 245.0
@@ -403,7 +365,7 @@ text_overrun_behavior = 3
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="Cell_Outline" type="Line2D" parent="Current_Day/Cell_02/Cell_BG"]
+[node name="Cell_Outline" type="Line2D" parent="Cells/Cell_02/Cell_BG"]
 points = PackedVector2Array(195, 84, 195, 101, 246, 101, 246, 84)
 closed = true
 width = 2.0
@@ -411,17 +373,17 @@ default_color = Color(0.5, 0.5, 0.5, 1)
 joint_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Cell_03" type="Node2D" parent="Current_Day"]
+[node name="Cell_03" type="Node2D" parent="Cells"]
 position = Vector2(331, 116)
 metadata/_edit_lock_ = true
 
-[node name="Cell_BG" type="Polygon2D" parent="Current_Day/Cell_03"]
+[node name="Cell_BG" type="Polygon2D" parent="Cells/Cell_03"]
 position = Vector2(-220, -98)
 color = Color(0.498039, 1, 0.498039, 0.25098)
 polygon = PackedVector2Array(196, 83.8889, 196, 113, 245, 113, 245, 83.8889)
 metadata/_edit_lock_ = true
 
-[node name="Note" type="Label" parent="Current_Day/Cell_03/Cell_BG"]
+[node name="Note" type="Label" parent="Cells/Cell_03/Cell_BG"]
 offset_left = 196.0
 offset_top = 84.0
 offset_right = 245.0
@@ -444,9 +406,50 @@ text_overrun_behavior = 3
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="Cell_Outline" type="Line2D" parent="Current_Day/Cell_03/Cell_BG"]
+[node name="Cell_Outline" type="Line2D" parent="Cells/Cell_03/Cell_BG"]
 position = Vector2(0, 7)
 points = PackedVector2Array(195, 76, 195, 107, 246, 107, 246, 76)
+closed = true
+width = 2.0
+default_color = Color(0.5, 0.5, 0.5, 1)
+joint_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Cell_25" type="Node2D" parent="Cells"]
+position = Vector2(388, 280)
+metadata/_edit_lock_ = true
+
+[node name="Cell_BG" type="Polygon2D" parent="Cells/Cell_25"]
+position = Vector2(-221, -107)
+color = Color(1, 0.498039, 1, 0.25098)
+polygon = PackedVector2Array(196, 84, 196, 134, 245, 134, 245, 84)
+metadata/_edit_lock_ = true
+
+[node name="Note" type="Label" parent="Cells/Cell_25/Cell_BG"]
+offset_left = 196.0
+offset_top = 84.0
+offset_right = 245.0
+offset_bottom = 134.0
+tooltip_text = "Whatever I need to remember such as a PNJ's schedule..."
+mouse_filter = 1
+theme = ExtResource("3_q45dv")
+theme_override_colors/font_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+text = "Whatever I need to remember such as a PNJ's schedule..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Cell_Outline" type="Line2D" parent="Cells/Cell_25/Cell_BG"]
+points = PackedVector2Array(195, 83, 195, 135, 246, 135, 246, 83)
 closed = true
 width = 2.0
 default_color = Color(0.5, 0.5, 0.5, 1)

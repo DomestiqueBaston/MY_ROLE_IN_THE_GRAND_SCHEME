@@ -39,14 +39,14 @@ texture = ExtResource("1_hrlx0")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Useless" type="Control" parent="."]
+[node name="Drawer_Names" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="Useless_Label" type="Label" parent="Useless"]
+[node name="Useless_Label" type="Label" parent="Drawer_Names"]
 self_modulate = Color(1, 0.91, 0.7, 0.686275)
 layout_mode = 0
 offset_left = 37.0
@@ -66,11 +66,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Credits" type="TextureButton" parent="Useless"]
+[node name="Credits" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 78.0
 offset_bottom = 52.0
-rotation = -2.52379e-05
 toggle_mode = true
 button_group = ExtResource("3_uxv3c")
 texture_pressed = ExtResource("4_lfu18")
@@ -78,7 +77,7 @@ texture_hover = ExtResource("5_1ef0o")
 texture_click_mask = ExtResource("6_8dsdr")
 metadata/_edit_lock_ = true
 
-[node name="Credits_Label" type="Label" parent="Useless/Credits"]
+[node name="Credits_Label" type="Label" parent="Drawer_Names/Credits"]
 layout_mode = 0
 offset_left = 34.995
 offset_top = 199.001
@@ -95,7 +94,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Language" type="TextureButton" parent="Useless"]
+[node name="Language" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -106,7 +105,7 @@ texture_hover = ExtResource("8_qighy")
 texture_click_mask = ExtResource("9_jiw7o")
 metadata/_edit_lock_ = true
 
-[node name="Language_Label" type="Label" parent="Useless/Language"]
+[node name="Language_Label" type="Label" parent="Drawer_Names/Language"]
 layout_mode = 0
 offset_left = 202.0
 offset_top = 199.0
@@ -123,7 +122,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Continue" type="TextureButton" parent="Useless"]
+[node name="Continue" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -134,7 +133,7 @@ texture_hover = ExtResource("11_olqpo")
 texture_click_mask = ExtResource("12_jyp6r")
 metadata/_edit_lock_ = true
 
-[node name="Continue_Label" type="Label" parent="Useless/Continue"]
+[node name="Continue_Label" type="Label" parent="Drawer_Names/Continue"]
 layout_mode = 0
 offset_left = 362.0
 offset_top = 199.0
@@ -151,7 +150,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Quit" type="TextureButton" parent="Useless"]
+[node name="Quit" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -162,7 +161,7 @@ texture_hover = ExtResource("14_kl4v5")
 texture_click_mask = ExtResource("15_h0olh")
 metadata/_edit_lock_ = true
 
-[node name="Quit_Label" type="Label" parent="Useless/Quit"]
+[node name="Quit_Label" type="Label" parent="Drawer_Names/Quit"]
 layout_mode = 0
 offset_left = 519.0
 offset_top = 198.0
@@ -179,7 +178,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Settings" type="TextureButton" parent="Useless"]
+[node name="Settings" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -190,7 +189,7 @@ texture_hover = ExtResource("17_8grrc")
 texture_click_mask = ExtResource("18_xt5su")
 metadata/_edit_lock_ = true
 
-[node name="Settings_Label" type="Label" parent="Useless/Settings"]
+[node name="Settings_Label" type="Label" parent="Drawer_Names/Settings"]
 layout_mode = 0
 offset_left = 204.0
 offset_top = 111.0
@@ -208,7 +207,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="New_Game" type="TextureButton" parent="Useless"]
+[node name="New_Game" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -219,7 +218,7 @@ texture_hover = ExtResource("20_5r6rg")
 texture_click_mask = ExtResource("21_s7viv")
 metadata/_edit_lock_ = true
 
-[node name="New Game_Label" type="Label" parent="Useless/New_Game"]
+[node name="New Game_Label" type="Label" parent="Drawer_Names/New_Game"]
 layout_mode = 0
 offset_left = 366.0
 offset_top = 110.0
@@ -237,7 +236,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="LSD" type="TextureButton" parent="Useless"]
+[node name="LSD" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -248,7 +247,7 @@ texture_hover = ExtResource("23_mhseo")
 texture_click_mask = ExtResource("24_1iqv1")
 metadata/_edit_lock_ = true
 
-[node name="LSD_Label" type="Label" parent="Useless/LSD"]
+[node name="LSD_Label" type="Label" parent="Drawer_Names/LSD"]
 layout_mode = 0
 offset_left = 525.0
 offset_top = 110.0
@@ -267,7 +266,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Tutorial" type="TextureButton" parent="Useless"]
+[node name="Tutorial" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -278,7 +277,7 @@ texture_hover = ExtResource("26_yiwnx")
 texture_click_mask = ExtResource("27_d568r")
 metadata/_edit_lock_ = true
 
-[node name="Tutorial_Label" type="Label" parent="Useless/Tutorial"]
+[node name="Tutorial_Label" type="Label" parent="Drawer_Names/Tutorial"]
 layout_mode = 0
 offset_left = 197.0
 offset_top = 25.0

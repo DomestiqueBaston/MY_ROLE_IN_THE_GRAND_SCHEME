@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ddgekrtdupdrv"
+path="res://.godot/imported/Ok_Mask.png-2c759f87ccf00346f4273ed88459f7b7.res"
+
+[deps]
+
+source_file="res://GRAPHICS/INVESTIGATION_CENTER/Ok_Mask.png"
+dest_files=["res://.godot/imported/Ok_Mask.png-2c759f87ccf00346f4273ed88459f7b7.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

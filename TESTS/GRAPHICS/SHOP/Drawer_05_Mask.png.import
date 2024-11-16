@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://ciinjcqtgr6m8"
+path="res://.godot/imported/Drawer_05_Mask.png-25a5a3af679898a3e1f23da9fc751d09.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SHOP/Drawer_05_Mask.png"
+dest_files=["res://.godot/imported/Drawer_05_Mask.png-25a5a3af679898a3e1f23da9fc751d09.res"]
+
+[params]
+
+create_from=1
+threshold=0.5
