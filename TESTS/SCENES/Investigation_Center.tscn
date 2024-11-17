@@ -106,6 +106,7 @@ text = "Case Report:"
 metadata/_edit_lock_ = true
 
 [node name="Report" type="Label" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 16.0
 offset_right = 574.0
@@ -145,6 +146,7 @@ text = "Difficulty level:"
 metadata/_edit_lock_ = true
 
 [node name="Difficulty_Selector" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Difficulty"]
+layout_mode = 0
 offset_left = 67.0
 offset_top = -6.0
 offset_right = 104.0
@@ -185,6 +187,7 @@ text = "Case:"
 metadata/_edit_lock_ = true
 
 [node name="Case_Selector" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Case"]
+layout_mode = 0
 offset_left = 18.0
 offset_top = -6.0
 offset_right = 141.0
