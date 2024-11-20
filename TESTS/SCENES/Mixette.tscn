@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://gq7vbe70kt0a"]
+
+[ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/SETTINGS/Mixette__BG.png" id="1_v2vuv"]
+
+[node name="Mixette" type="Node2D"]
+
+[node name="Mixette_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_v2vuv")
+centered = false
