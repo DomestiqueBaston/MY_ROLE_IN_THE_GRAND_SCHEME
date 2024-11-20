@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_SELECTION/Frame.png" id="1_7kvak"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="2_5myo3"]
-[ext_resource type="ButtonGroup" uid="uid://ceobmkvssjybu" path="res://UI/Oops_LetsGo_Group.tres" id="2_erusa"]
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="2_r8krp"]
 [ext_resource type="Texture2D" uid="uid://gvyelslcisso" path="res://GRAPHICS/CARD_SELECTION/Ok_Normal.png" id="3_mq53m"]
 [ext_resource type="Texture2D" uid="uid://chh72py8tur0" path="res://GRAPHICS/CARD_SELECTION/Ok_Hover.png" id="4_mosnf"]
@@ -14,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/CARD_SELECTION/Trash_Hover.png" id="10_1h4u3"]
 [ext_resource type="BitMap" uid="uid://y603kq1ejhcn" path="res://GRAPHICS/CARD_SELECTION/Trash_Mask.png" id="11_ysq3u"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_e1gkw"]
+
 [node name="Card_Selection" type="Node2D"]
 metadata/_edit_lock_ = true
 
@@ -21,8 +22,7 @@ metadata/_edit_lock_ = true
 offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
-color = Color(0.0946, 0.11, 0.09922, 0.376471)
-metadata/_edit_lock_ = true
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 
 [node name="Painting" type="Sprite2D" parent="."]
 texture = ExtResource("1_7kvak")
@@ -41,11 +41,12 @@ theme = ExtResource("2_r8krp")
 metadata/_edit_lock_ = true
 
 [node name="Ok" type="TextureButton" parent="Buttons"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Validate the Deck"
 toggle_mode = true
-button_group = ExtResource("2_erusa")
+button_group = SubResource("ButtonGroup_e1gkw")
 texture_normal = ExtResource("3_mq53m")
 texture_pressed = ExtResource("3_mq53m")
 texture_hover = ExtResource("4_mosnf")
@@ -53,11 +54,12 @@ texture_click_mask = ExtResource("5_ky4y5")
 metadata/_edit_lock_ = true
 
 [node name="Exit" type="TextureButton" parent="Buttons"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Close that screen!"
 toggle_mode = true
-button_group = ExtResource("2_erusa")
+button_group = SubResource("ButtonGroup_e1gkw")
 texture_normal = ExtResource("6_xc5go")
 texture_pressed = ExtResource("6_xc5go")
 texture_hover = ExtResource("7_q7f8a")
@@ -65,11 +67,12 @@ texture_click_mask = ExtResource("8_l5fsx")
 metadata/_edit_lock_ = true
 
 [node name="Trash" type="TextureButton" parent="Buttons"]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Throw that card away!"
 toggle_mode = true
-button_group = ExtResource("2_erusa")
+button_group = SubResource("ButtonGroup_e1gkw")
 texture_normal = ExtResource("9_lssqb")
 texture_pressed = ExtResource("9_lssqb")
 texture_hover = ExtResource("10_1h4u3")

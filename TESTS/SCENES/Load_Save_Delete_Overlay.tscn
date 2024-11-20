@@ -24,7 +24,7 @@ metadata/_edit_lock_ = true
 offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
-color = Color(0.0946, 0.11, 0.09922, 0.376471)
+color = Color(0.0946, 0.11, 0.09922, 0.498039)
 metadata/_edit_lock_ = true
 
 [node name="Load_Save_Delete_BG" type="Sprite2D" parent="."]

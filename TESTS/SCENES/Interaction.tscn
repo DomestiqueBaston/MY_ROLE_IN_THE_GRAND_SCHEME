@@ -321,7 +321,7 @@ visible = false
 
 [node name="Line2D" type="Line2D" parent="TMP"]
 position = Vector2(9, 11)
-points = PackedVector2Array(296, 204, 296, 188, 298, 173, 302, 160, 308, 148, 314, 138, 320, 130, 327, 123, 336, 117, 345, 113, 356, 110, 368, 109, 379, 109)
+points = PackedVector2Array(296, 204, 296, 188, 298, 173, 301, 160, 306, 149, 313, 138, 320, 130, 327, 123, 336, 117, 345, 113, 356, 110, 368, 109, 379, 109)
 width = 20.0
 gradient = SubResource("Gradient_7eyd2")
 end_cap_mode = 2

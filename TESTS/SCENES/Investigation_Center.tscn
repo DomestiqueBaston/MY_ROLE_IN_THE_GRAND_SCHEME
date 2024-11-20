@@ -219,6 +219,7 @@ script = ExtResource("5_na0ew")
 metadata/_edit_lock_ = true
 
 [node name="Ok_Button" type="TextureButton" parent="Chalkboard_Content/Chalk_Mask"]
+self_modulate = Color(0.718, 1, 0.64, 1)
 offset_right = 640.0
 offset_bottom = 360.0
 texture_normal = ExtResource("6_msgya")
