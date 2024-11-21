@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dud4a85qritv7"
+path="res://.godot/imported/Blue_Button_04_Mask.png-3306e83073b4020568ffd65dc444ea6c.res"
+
+[deps]
+
+source_file="res://GRAPHICS/MIXETTE/Blue_Button_04_Mask.png"
+dest_files=["res://.godot/imported/Blue_Button_04_Mask.png-3306e83073b4020568ffd65dc444ea6c.res"]
+
+[params]
+
+create_from=1
+threshold=0.5
