@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=29 format=3 uid="uid://gq7vbe70kt0a"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_8od4w"]
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/MIXETTE/Mixette__BG.png" id="1_v2vuv"]
@@ -24,6 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://dpi8qba6dea3m" path="res://GRAPHICS/MIXETTE/Blue_Button_05_Hover.png" id="20_7b662"]
 [ext_resource type="BitMap" uid="uid://7iv2caub0cxf" path="res://GRAPHICS/MIXETTE/Blue_Button_05_Mask.png" id="21_h7ql1"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="23_ki5ci"]
+[ext_resource type="Texture2D" uid="uid://cgoqffli2x25r" path="res://GRAPHICS/MIXETTE/Ok_Pressed.png" id="25_f4gne"]
+[ext_resource type="BitMap" uid="uid://di3bjdfgjxkwl" path="res://GRAPHICS/MIXETTE/Ok_Mask.png" id="26_xgi5e"]
+[ext_resource type="Texture2D" uid="uid://bkwc25bp4mdfa" path="res://GRAPHICS/MIXETTE/Cancel_Pressed.png" id="27_sm5hb"]
+[ext_resource type="BitMap" uid="uid://bw4w5lbnuuckm" path="res://GRAPHICS/MIXETTE/Cancel_Mask.png" id="28_aeu40"]
 
 [node name="Mixette" type="Node2D"]
 script = ExtResource("1_8od4w")
@@ -121,3 +125,27 @@ texture_click_mask = ExtResource("21_h7ql1")
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("23_ki5ci")]
 visible = false
+
+[node name="Ok_Cancel_Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("8_ficjw")
+
+[node name="Ok" type="TextureButton" parent="Ok_Cancel_Buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "I do agree with
+that choice."
+texture_hover = ExtResource("25_f4gne")
+texture_click_mask = ExtResource("26_xgi5e")
+
+[node name="Cancel" type="TextureButton" parent="Ok_Cancel_Buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "On second thought..."
+texture_hover = ExtResource("27_sm5hb")
+texture_click_mask = ExtResource("28_aeu40")
