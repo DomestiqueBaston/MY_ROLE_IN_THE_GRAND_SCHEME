@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://70e7q0rvnu72" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Opaque.png" id="28_6l626"]
 [ext_resource type="Texture2D" uid="uid://cqamtgs2prxsn" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Transparent.png" id="29_ivich"]
 [ext_resource type="Texture2D" uid="uid://0bd6dk6fhjn7" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_BG.png" id="29_t6v1g"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="32_njtg4"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="32_njtg4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
 

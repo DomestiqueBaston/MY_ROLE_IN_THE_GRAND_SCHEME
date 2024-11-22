@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bn54pgv02evuj" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Normal.png" id="9_slrl8"]
 [ext_resource type="Texture2D" uid="uid://r7y4gcm0ux3n" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Hover.png" id="10_cie2r"]
 [ext_resource type="BitMap" uid="uid://d2gyl41vrcl4a" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Mask.png" id="11_skuhm"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="12_byojy"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_byojy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
 

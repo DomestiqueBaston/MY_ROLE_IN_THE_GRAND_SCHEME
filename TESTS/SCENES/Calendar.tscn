@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bsn2bj0u3guk7" path="res://GRAPHICS/CALENDAR/Calendar_BG.png" id="1_tfm5c"]
 [ext_resource type="PackedScene" uid="uid://dauwh3vjh26kl" path="res://SCENES/Top_Left_Info.tscn" id="3_7jkro"]
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="3_q45dv"]
-[ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info.tscn" id="4_udwsp"]
+[ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="4_udwsp"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="5_rli5c"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="6_rq134"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="6_rq134"]
 
 [node name="Calendar" type="Node2D"]
 script = ExtResource("1_14yya")

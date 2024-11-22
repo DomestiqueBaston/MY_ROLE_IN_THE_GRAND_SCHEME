@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://ci8paykoriwug" path="res://GRAPHICS/INTERACTION/Evidence.png" id="3_5oleu"]
 [ext_resource type="PackedScene" uid="uid://bgwcs2vpa1g2o" path="res://SCENES/Playground.tscn" id="3_hdhly"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_iytka"]
-[ext_resource type="PackedScene" uid="uid://dauwh3vjh26kl" path="res://SCENES/Top_Left_Info.tscn" id="4_j313n"]
-[ext_resource type="PackedScene" uid="uid://8r7milsx8op" path="res://SCENES/Oops_LetsGo.tscn" id="5_raou3"]
-[ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info.tscn" id="5_v7ec1"]
+[ext_resource type="PackedScene" uid="uid://8r7milsx8op" path="res://SCENES/Oops_Lets_Go.tscn" id="5_raou3"]
+[ext_resource type="PackedScene" uid="uid://cdd2r2s4fujkx" path="res://SCENES/Bottom_Left_Info_Long.tscn" id="5_v7ec1"]
 [ext_resource type="PackedScene" uid="uid://cnlr811vrm1fk" path="res://SCENES/Inv_Dia_Com.tscn" id="6_heit8"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="7_2be8g"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="8_segon"]
+[ext_resource type="PackedScene" uid="uid://dldk5itfc6prx" path="res://SCENES/Top_Left_Screen.tscn" id="8_10wmg"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="8_segon"]
 
 [sub_resource type="Gradient" id="Gradient_7eyd2"]
 offsets = PackedFloat32Array(0, 0.1, 0.9)
@@ -331,11 +331,9 @@ metadata/_edit_lock_ = true
 [node name="Oops_LetsGo_Buttons" parent="." instance=ExtResource("5_raou3")]
 metadata/_edit_lock_ = true
 
-[node name="Top_Left_Info" parent="." instance=ExtResource("4_j313n")]
-metadata/_edit_lock_ = true
-
 [node name="Bottom_Left_Info" parent="." instance=ExtResource("5_v7ec1")]
-metadata/_edit_lock_ = true
+
+[node name="Top_Left_Screen" parent="." instance=ExtResource("8_10wmg")]
 
 [node name="Inv_Dia_Com" parent="." instance=ExtResource("6_heit8")]
 

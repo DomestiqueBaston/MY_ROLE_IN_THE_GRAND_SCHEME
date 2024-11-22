@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://c1qmuoj1q7n2c" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Pressed.png" id="25_47f6w"]
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Hover.png" id="26_yiwnx"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Mask.png" id="27_d568r"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="29_j2emp"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="29_j2emp"]
 
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource("1_i5req")

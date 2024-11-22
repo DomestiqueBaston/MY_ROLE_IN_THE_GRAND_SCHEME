@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bcacd8gjvolgl" path="res://GRAPHICS/MIXETTE/Blue_Button_05_Pressed.png" id="19_ieq8a"]
 [ext_resource type="Texture2D" uid="uid://dpi8qba6dea3m" path="res://GRAPHICS/MIXETTE/Blue_Button_05_Hover.png" id="20_7b662"]
 [ext_resource type="BitMap" uid="uid://7iv2caub0cxf" path="res://GRAPHICS/MIXETTE/Blue_Button_05_Mask.png" id="21_h7ql1"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Shader_Overlay.tscn" id="23_ki5ci"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="23_ki5ci"]
 [ext_resource type="Texture2D" uid="uid://cgoqffli2x25r" path="res://GRAPHICS/MIXETTE/Ok_Pressed.png" id="25_f4gne"]
 [ext_resource type="BitMap" uid="uid://di3bjdfgjxkwl" path="res://GRAPHICS/MIXETTE/Ok_Mask.png" id="26_xgi5e"]
 [ext_resource type="Texture2D" uid="uid://bkwc25bp4mdfa" path="res://GRAPHICS/MIXETTE/Cancel_Pressed.png" id="27_sm5hb"]

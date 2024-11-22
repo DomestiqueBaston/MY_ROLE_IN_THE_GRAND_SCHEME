@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdd2r2s4fujkx"]
+
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_litdg"]
+
+[node name="Bottom_Left_Info" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 143.0
+offset_right = 123.0
+offset_bottom = 343.0
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_litdg")
+horizontal_scroll_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Info" type="Label" parent="ScrollContainer"]
+custom_minimum_size = Vector2(106, 108)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+text = "We are supposed to find infos here about a selected card for instance...
+
+But also a PNJ the player's selected...
+
+It could also eventually be something else but I don't what it could be so far.
+
+We'll find out about that later too!
+
+Great news: we enlarged this frame in order to show more things!"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true
