@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/QUESTS/Quest_BG.png" id="1_5t8kf"]
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_sqsbj"]
+[ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_6ou7q"]
 [ext_resource type="PackedScene" uid="uid://cnlr811vrm1fk" path="res://SCENES/Inv_Dia_Com.tscn" id="2_x7w3h"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="3_1pxmd"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="4_nkome"]
@@ -17,7 +17,7 @@
 size = Vector2(470, 287)
 
 [node name="Quest" type="Node2D"]
-script = ExtResource("1_sqsbj")
+script = ExtResource("1_6ou7q")
 metadata/_edit_lock_ = true
 
 [node name="Quest_BG" type="Sprite2D" parent="."]
