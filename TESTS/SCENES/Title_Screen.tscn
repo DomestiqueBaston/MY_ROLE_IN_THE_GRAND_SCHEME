@@ -1,96 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://mnqpfr0mjern"]
+[gd_scene load_steps=15 format=3 uid="uid://mnqpfr0mjern"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_h84ee"]
 [ext_resource type="Shader" path="res://SHADERS/Glow.gdshader" id="2_f1yrr"]
-[ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title.png" id="2_swx03"]
+[ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="2_swx03"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="3_y11b6"]
+[ext_resource type="Texture2D" uid="uid://dunq7q0u73bfx" path="res://GRAPHICS/TITLE/Title_02.png" id="4_r8mk4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3u8p3"]
 shader = ExtResource("2_f1yrr")
 shader_parameter/bloomRadius = 1.0
 shader_parameter/bloomThreshold = 1.0
 shader_parameter/bloomIntensity = 1.0
+shader_parameter/transparency = 1.0
 
-[sub_resource type="Animation" id="Animation_nr3dl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Title:material:shader_parameter/bloomRadius")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Title:material:shader_parameter/bloomThreshold")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Title:material:shader_parameter/bloomIntensity")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-
-[sub_resource type="Animation" id="Animation_bf0ic"]
-resource_name = "Intro_Loop"
-length = 28.6
-loop_mode = 1
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Title:material:shader_parameter/bloomRadius")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.6, 2.86667, 3.73333, 5.4667, 6.5333, 8.6667, 10, 10.8, 12.4, 15.7333, 17.7333, 21, 22.4, 23.3333, 27.4667, 28.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [1.23307, 2.072, 1.63, 1.27333, 1.5, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.23307]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Title:material:shader_parameter/bloomThreshold")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.93333, 2.53333, 5.1333, 7, 10.4667, 13.2, 14.2, 15.6667, 17.4, 19.3333, 21.7333, 23.9333, 25.6, 26.6, 28.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.58, 0.35, 0.715, 0.4, 0.7, 0.715, 0.4, 0.42, 0.715, 0.61, 0.87, 0.715, 0.5, 0.272, 0.42, 0.58]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Title:material:shader_parameter/bloomIntensity")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.13333, 4.86667, 6.5333, 8.3333, 9.5333, 11.8667, 14.8667, 16.0667, 18.2667, 21.4, 22.2, 24.6667, 26.0667, 28.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.776852, 0.1, 2.0, 1.14, 1.36, 6.14, 1.14, 1.36, 6.14, 1.14, 1.36, 6.14, 1.14, 1.36, 0.776852]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cli2"]
+shader = ExtResource("2_f1yrr")
+shader_parameter/bloomRadius = 0.89
+shader_parameter/bloomThreshold = -0.75
+shader_parameter/bloomIntensity = 1.59
+shader_parameter/transparency = 0.0
 
 [sub_resource type="Animation" id="Animation_m073f"]
 resource_name = "Intro_In"
@@ -99,7 +27,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Title:material:shader_parameter/bloomRadius")
+tracks/0/path = NodePath("Title_01:material:shader_parameter/bloomRadius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -111,7 +39,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Title:material:shader_parameter/bloomThreshold")
+tracks/1/path = NodePath("Title_01:material:shader_parameter/bloomThreshold")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -123,7 +51,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Title:material:shader_parameter/bloomIntensity")
+tracks/2/path = NodePath("Title_01:material:shader_parameter/bloomIntensity")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -131,6 +59,195 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(3, 1, 1, 1),
 "update": 0,
 "values": [1.59, 1.0, 0.784546, 0.776852]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title_02:material:shader_parameter/bloomRadius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.06667, 4.93334, 5),
+"transitions": PackedFloat32Array(3, 1, 1, 1),
+"update": 0,
+"values": [0.89, 1.1, 1.22848, 1.23307]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title_02:material:shader_parameter/bloomThreshold")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.06667, 4.93334, 5),
+"transitions": PackedFloat32Array(3, 1, 1, 1),
+"update": 0,
+"values": [-0.75, 0.2, 0.566897, 0.58]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title_02:material:shader_parameter/bloomIntensity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.06667, 4.93334, 5),
+"transitions": PackedFloat32Array(3, 1, 1, 1),
+"update": 0,
+"values": [1.59, 1.0, 0.784546, 0.776852]
+}
+
+[sub_resource type="Animation" id="Animation_bf0ic"]
+resource_name = "Intro_Loop"
+length = 28.6
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title_01:material:shader_parameter/bloomRadius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.86667, 3.73333, 5.4667, 6.5333, 8.6667, 10, 10.8, 12.4, 15.7333, 17.7333, 21, 22.4, 23.3333, 27.4667, 28.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.23307, 2.072, 1.63, 1.27333, 1.5, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.23307]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title_01:material:shader_parameter/bloomThreshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93333, 2.53333, 5.1333, 7, 10.4667, 13.2, 14.2, 15.6667, 17.4, 19.3333, 21.7333, 23.9333, 25.6, 26.6, 28.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.58, 0.35, 0.715, 0.4, 0.7, 0.715, 0.4, 0.42, 0.715, 0.61, 0.87, 0.715, 0.5, 0.272, 0.42, 0.58]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title_01:material:shader_parameter/bloomIntensity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.13333, 4.86667, 6.5333, 8.3333, 9.5333, 11.8667, 14.8667, 16.0667, 18.2667, 21.4, 22.2, 24.6667, 26.0667, 28.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.776852, 0.1, 2.0, 1.14, 1.36, 6.14, 1.14, 1.36, 6.14, 1.14, 1.36, 6.14, 1.14, 1.36, 0.776852]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title_02:material:shader_parameter/bloomRadius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.6, 2.86667, 3.73333, 5.4667, 6.5333, 8.6667, 10, 10.8, 12.4, 15.7333, 17.7333, 21, 22.4, 23.3333, 27.4667, 28.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.23307, 2.072, 1.63, 1.27333, 1.5, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.07319, 0.707, 1.905, 1.23307]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title_02:material:shader_parameter/bloomThreshold")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.93333, 2.53333, 5.1333, 7, 10.4667, 13.2, 14.2, 15.6667, 17.4, 19.3333, 21.7333, 23.9333, 25.6, 26.6, 28.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.58, 0.35, 0.715, 0.4, 0.7, 0.715, 0.4, 0.42, 0.715, 0.61, 0.87, 0.715, 0.5, 0.272, 0.42, 0.58]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title_02:material:shader_parameter/bloomIntensity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.13333, 4.86667, 6.5333, 8.3333, 9.5333, 11.8667, 14.8667, 16.0667, 18.2667, 21.4, 22.2, 24.6667, 26.0667, 28.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.776852, 0.1, 2.0, 1.14, 1.36, 6.14, 1.14, 1.36, 6.14, 1.14, 1.36, 6.14, 1.14, 1.36, 0.776852]
+}
+
+[sub_resource type="Animation" id="Animation_nr3dl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title_01:material:shader_parameter/bloomRadius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title_01:material:shader_parameter/bloomThreshold")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title_01:material:shader_parameter/bloomIntensity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title_02:material:shader_parameter/bloomRadius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.89]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title_02:material:shader_parameter/bloomThreshold")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.75]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title_02:material:shader_parameter/bloomIntensity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.59]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ip08k"]
@@ -140,21 +257,71 @@ _data = {
 "RESET": SubResource("Animation_nr3dl")
 }
 
+[sub_resource type="Animation" id="Animation_hegj2"]
+resource_name = "Intro_Loop"
+length = 10.0
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Title_02:material:shader_parameter/transparency")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(7.5, 7.5, 7.5),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ttgbo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Title_02:material:shader_parameter/transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucb6f"]
+_data = {
+"Intro_Loop": SubResource("Animation_hegj2"),
+"RESET": SubResource("Animation_ttgbo")
+}
+
 [node name="Title_Screen" type="Node2D"]
 script = ExtResource("1_h84ee")
 
-[node name="Title" type="Sprite2D" parent="."]
+[node name="Title_01" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_3u8p3")
 texture = ExtResource("2_swx03")
+centered = false
+
+[node name="Title_02" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1cli2")
+texture = ExtResource("4_r8mk4")
 centered = false
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("3_y11b6")]
 visible = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationGlow" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ip08k")
 }
 autoplay = "Intro_In"
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="AnimationTransparency" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationGlow")
+libraries = {
+"": SubResource("AnimationLibrary_ucb6f")
+}
+
+[connection signal="animation_finished" from="AnimationGlow" to="." method="_on_animation_player_animation_finished"]

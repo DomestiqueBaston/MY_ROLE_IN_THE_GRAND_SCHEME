@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-//uniform float v = 1.0; 
+//uniform float v = 1.0;
 uniform float size = 10.0;
 void fragment() {
 	vec4 c = textureLod(TEXTURE, UV, 0.0);
@@ -16,5 +16,5 @@ void fragment() {
 		}
 	}
 	COLOR = c;
-	
+
 }

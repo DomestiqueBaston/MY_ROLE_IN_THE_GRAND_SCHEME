@@ -14,6 +14,9 @@ config/name="TESTS"
 run/main_scene="res://SCENES/Title_Screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=15
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+boot_splash/use_filter=false
 
 [display]
 

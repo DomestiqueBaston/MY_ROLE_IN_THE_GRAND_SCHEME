@@ -7,4 +7,5 @@ func _ready():
 
 
 func _on_animation_player_animation_finished(_Intro) -> void:
-	$AnimationPlayer.play("Intro_Loop")
+	$AnimationGlow.play("Intro_Loop")
+	$AnimationTransparency.play("Intro_Loop")

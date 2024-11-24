@@ -3,6 +3,7 @@ shader_type canvas_item;
 uniform float bloomRadius = 1.0;
 uniform float bloomThreshold = 1.0;
 uniform float bloomIntensity = 1.0;
+uniform float transparency = 1.0;
 
 vec3 GetBloomPixel(sampler2D tex, vec2 uv, vec2 texPixelSize) {
 	vec2 uv2 = floor(uv / texPixelSize) * texPixelSize;
@@ -40,4 +41,5 @@ void fragment() {
 	vec3 bloom = GetBloom(TEXTURE, UV, TEXTURE_PIXEL_SIZE);
 	col.rgb += bloom * bloomIntensity;
 	COLOR = col;
+	COLOR.a = transparency;
 }
