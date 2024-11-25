@@ -6,10 +6,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2k8w1"]
 shader = ExtResource("2_unoy2")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.254
-shader_parameter/scanlines_width = 0.147
-shader_parameter/grille_opacity = 0.1
-shader_parameter/resolution = Vector2(640, 360)
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.05
+shader_parameter/resolution = Vector2(160, 120)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
 shader_parameter/roll_speed = 2.5

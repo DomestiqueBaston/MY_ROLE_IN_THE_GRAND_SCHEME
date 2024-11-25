@@ -33,19 +33,30 @@
 [node name="Shop" type="Node2D"]
 metadata/_edit_lock_ = true
 
-[node name="ShopBg" type="Sprite2D" parent="."]
+[node name="Fond" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0946, 0.11, 0.09922, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Drawers" type="Node2D" parent="."]
+position = Vector2(15, 15)
+metadata/_edit_lock_ = true
+
+[node name="Shop_BG" type="Sprite2D" parent="Drawers"]
 texture = ExtResource("1_2jude")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Quit" type="TextureButton" parent="."]
+[node name="Quit" type="TextureButton" parent="Drawers"]
 offset_right = 279.0
 offset_bottom = 330.0
 texture_hover = ExtResource("11_81b4l")
 texture_click_mask = ExtResource("12_wbk1e")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_Names" type="Control" parent="."]
+[node name="Drawer_Names" type="Control" parent="Drawers"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 279.0
@@ -54,7 +65,7 @@ mouse_filter = 2
 theme = ExtResource("4_ucq8a")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_08" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_08" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -65,7 +76,7 @@ texture_hover = ExtResource("6_c7je2")
 texture_click_mask = ExtResource("10_yd23n")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_07" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_07" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -76,7 +87,7 @@ texture_hover = ExtResource("9_tiv6f")
 texture_click_mask = ExtResource("9_k82x3")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_06" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_06" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -87,7 +98,7 @@ texture_hover = ExtResource("12_6twd7")
 texture_click_mask = ExtResource("8_3pdq0")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_05" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_05" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -98,7 +109,7 @@ texture_hover = ExtResource("15_cy36r")
 texture_click_mask = ExtResource("7_0yhju")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_04" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_04" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -109,7 +120,7 @@ texture_hover = ExtResource("18_6ri6p")
 texture_click_mask = ExtResource("6_lrg7q")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_03" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_03" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -120,7 +131,7 @@ texture_hover = ExtResource("21_pl032")
 texture_click_mask = ExtResource("5_0bqmj")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_02" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_02" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -131,7 +142,7 @@ texture_hover = ExtResource("24_2bsvs")
 texture_click_mask = ExtResource("8_aryyb")
 metadata/_edit_lock_ = true
 
-[node name="Drawer_01" type="TextureButton" parent="Drawer_Names"]
+[node name="Drawer_01" type="TextureButton" parent="Drawers/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
