@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpkowclume2ch"]
+[gd_scene load_steps=15 format=3 uid="uid://bpkowclume2ch"]
 
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_d2h0h"]
 [ext_resource type="Shader" path="res://SHADERS/Texture.gdshader" id="2_ocisw"]
 [ext_resource type="Texture2D" uid="uid://dvk5h8e7yhmvs" path="res://GRAPHICS/OVERLAYS/Texture_Wanted.png" id="3_dvpwx"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_j5gq4"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_aobqd"]
+[ext_resource type="AudioStream" uid="uid://dl3yq1xjs5va0" path="res://SOUND/MISC/Alarm_01.ogg" id="6_mrkhl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghmjl"]
 shader = ExtResource("2_ocisw")
@@ -107,6 +110,128 @@ _data = {
 "RESET": SubResource("Animation_ucfkd")
 }
 
+[sub_resource type="Animation" id="Animation_qppft"]
+resource_name = "Appearance"
+length = 0.266673
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Red_Filter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 0.2, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.25, 0.25), Vector2(1, 1)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_j5gq4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2p2rl"]
+resource_name = "Disappearance"
+length = 0.266673
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Red_Filter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 0.2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.266667),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_aobqd")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_6b548"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Red_Filter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwvx7"]
+_data = {
+"Appearance": SubResource("Animation_qppft"),
+"Disappearance": SubResource("Animation_2p2rl"),
+"RESET": SubResource("Animation_6b548")
+}
+
 [node name="Wanted_Overlay" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -116,18 +241,17 @@ metadata/_edit_lock_ = true
 
 [node name="Center" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 320.0
-offset_top = 180.0
-offset_right = 360.0
-offset_bottom = 220.0
+offset_right = 640.0
+offset_bottom = 360.0
+pivot_offset = Vector2(320, 180)
 metadata/_edit_lock_ = true
 
 [node name="Wanted_Outline" type="Label" parent="Center"]
 layout_mode = 0
-offset_left = -334.0
-offset_top = -104.852
-offset_right = 781.0
-offset_bottom = 310.148
+offset_left = -14.0
+offset_top = 75.148
+offset_right = 1101.0
+offset_bottom = 490.148
 rotation = -0.122173
 scale = Vector2(0.58, 0.725)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -148,10 +272,10 @@ metadata/_edit_lock_ = true
 [node name="Wanted_Texture" type="Label" parent="Center"]
 material = SubResource("ShaderMaterial_ghmjl")
 layout_mode = 0
-offset_left = -334.0
-offset_top = -104.852
-offset_right = 781.0
-offset_bottom = 310.148
+offset_left = -14.0
+offset_top = 75.148
+offset_right = 1101.0
+offset_bottom = 490.148
 rotation = -0.122173
 scale = Vector2(0.58, 0.725)
 theme_override_fonts/font = ExtResource("1_d2h0h")
@@ -162,8 +286,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Red_Filter" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.88, 0.1672, 0.23848, 0.156863)
+metadata/_edit_lock_ = true
+
+[node name="Alert" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_u4k8p")
 }
 autoplay = "Pumping"
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Alert")
+libraries = {
+"": SubResource("AnimationLibrary_pwvx7")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
+
+[node name="Alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mrkhl")
+volume_db = -25.0
+autoplay = true
+bus = &"FX"

@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj832g1qup1fu"]
+[gd_scene load_steps=18 format=3 uid="uid://bj832g1qup1fu"]
 
 [ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/CONFIRMATION/Confirmation.png" id="1_q44ut"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_dg7km"]
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="2_hsb6e"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_6rqop"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_77qji"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1u8"]
 
@@ -19,7 +21,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Do_You_Confirm_That:text")
+tracks/0/path = NodePath("Confirmation_Panel/Do_You_Confirm_That:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,7 +40,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Do_You_Confirm_That:text")
+tracks/0/path = NodePath("Confirmation_Panel/Do_You_Confirm_That:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -57,21 +59,156 @@ _data = {
 "Text_Animation": SubResource("Animation_wqng6")
 }
 
-[node name="Confirmation" type="Node2D"]
+[sub_resource type="Animation" id="Animation_o1fk7"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 2.5, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1),
+"update": 0,
+"values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_6rqop")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_1sxob"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-640, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_77qji")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_lpv2x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0jcg2"]
+_data = {
+"Appearance": SubResource("Animation_o1fk7"),
+"Disappearance": SubResource("Animation_1sxob"),
+"RESET": SubResource("Animation_lpv2x")
+}
+
+[node name="Confirmation" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
 metadata/_edit_lock_ = true
 
-[node name="Fond" type="ColorRect" parent="."]
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 metadata/_edit_lock_ = true
 
-[node name="Confirmation_BG" type="Sprite2D" parent="."]
+[node name="Confirmation_Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -640.0
+offset_bottom = 360.0
+metadata/_edit_lock_ = true
+
+[node name="Confirmation_BG" type="Sprite2D" parent="Confirmation_Panel"]
 position = Vector2(320, 180)
 texture = ExtResource("1_q44ut")
 metadata/_edit_lock_ = true
 
-[node name="Do_You_Confirm_That" type="Label" parent="."]
+[node name="Do_You_Confirm_That" type="Label" parent="Confirmation_Panel"]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 146.0
 offset_right = 409.0
@@ -88,8 +225,9 @@ text = "Do you
 confirm that?"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="Yes_No" type="Control" parent="."]
+[node name="Yes_No" type="Control" parent="Confirmation_Panel"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 323.0
@@ -98,7 +236,7 @@ offset_right = 363.0
 offset_bottom = 257.0
 metadata/_edit_lock_ = true
 
-[node name="Yes" type="Button" parent="Yes_No"]
+[node name="Yes" type="Button" parent="Confirmation_Panel/Yes_No"]
 layout_mode = 0
 offset_left = -42.0
 offset_top = -4.0
@@ -119,7 +257,7 @@ text = "Yes!"
 flat = true
 metadata/_edit_lock_ = true
 
-[node name="No" type="Button" parent="Yes_No"]
+[node name="No" type="Button" parent="Confirmation_Panel/Yes_No"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = -4.0
@@ -140,8 +278,18 @@ text = "No..."
 flat = true
 metadata/_edit_lock_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Vibration" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_lew6r")
 }
 autoplay = "Text_Animation"
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0jcg2")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/UI/Plein_Jaune.png" id="5_75utw"]
 [ext_resource type="PackedScene" uid="uid://dauwh3vjh26kl" path="res://SCENES/Top_Left_Info.tscn" id="5_u6ur1"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="6_6a8nk"]
-[ext_resource type="PackedScene" uid="uid://6h0vwfyh2npe" path="res://SCENES/Links.tscn" id="8_lfs84"]
+[ext_resource type="PackedScene" uid="uid://6h0vwfyh2npe" path="res://SCENES/Links_Buttons.tscn" id="8_lfs84"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Rose.png" id="8_yqmfx"]
 [ext_resource type="PackedScene" uid="uid://cmdruf4bxouoa" path="res://SCENES/Pin.tscn" id="10_13y24"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="11_c2c0c"]
@@ -99,7 +99,7 @@ metadata/_edit_lock_ = true
 [node name="Bottom_Left_Info" parent="." instance=ExtResource("6_6a8nk")]
 metadata/_edit_lock_ = true
 
-[node name="Links" parent="." instance=ExtResource("8_lfs84")]
+[node name="Links_Buttons" parent="." instance=ExtResource("8_lfs84")]
 
 [node name="Inv_Dia_Com" parent="." instance=ExtResource("2_x7w3h")]
 
