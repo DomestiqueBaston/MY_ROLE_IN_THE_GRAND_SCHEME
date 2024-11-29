@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3vtbisataho"
-path="res://.godot/imported/Title_Soft_Light.png-c63566deecb98fa174bcb57515f3af59.ctex"
+uid="uid://vdqboiwps0n1"
+path="res://.godot/imported/Title_White.png-2b42715b8b183938560f5701862597bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TRASH/Title_Soft_Light.png"
-dest_files=["res://.godot/imported/Title_Soft_Light.png-c63566deecb98fa174bcb57515f3af59.ctex"]
+source_file="res://TRASH/Title_White.png"
+dest_files=["res://.godot/imported/Title_White.png-2b42715b8b183938560f5701862597bf.ctex"]
 
 [params]
 

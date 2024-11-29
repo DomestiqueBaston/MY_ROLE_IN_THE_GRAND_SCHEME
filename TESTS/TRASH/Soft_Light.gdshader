@@ -1,13 +1,15 @@
 shader_type canvas_item;
 
 
-vec4 soft_light(vec4 base, vec4 blend) {
-    vec4 limit = step(0.5, blend);
-    return mix(2.0 * base * blend + base * base * (1.0 - 2.0 * blend), sqrt(base) * (2.0 * blend - 1.0) + (2.0 * base) * (1.0 - blend), limit);
+uniform float transparency = 1.0;
+
+// Soft_Light
+vec4 compositing(vec4 base, vec4 blend) {
+  return base / (1.0 - blend);
 }
 
 void fragment() {
     vec4 baseColor = texture(TEXTURE, UV);
-    vec4 blendColor = vec4(1.0, 1.0, 1.0, 1.0);
-    COLOR = soft_light(baseColor, blendColor);
+    vec4 blendColor = vec4(1.0, 1.0, 1.0, transparency);
+    COLOR = compositing(baseColor, blendColor);
 }

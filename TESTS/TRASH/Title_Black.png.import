@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vdqboiwps0n1"
-path="res://.godot/imported/Title_Vivid_Light.png-ed0d204c40bce8982649af0be6dcd262.ctex"
+uid="uid://cm3vtbisataho"
+path="res://.godot/imported/Title_Black.png-d2018fd8e023878a28cf58d5086c60ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TRASH/Title_Vivid_Light.png"
-dest_files=["res://.godot/imported/Title_Vivid_Light.png-ed0d204c40bce8982649af0be6dcd262.ctex"]
+source_file="res://TRASH/Title_Black.png"
+dest_files=["res://.godot/imported/Title_Black.png-d2018fd8e023878a28cf58d5086c60ac.ctex"]
 
 [params]
 

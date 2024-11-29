@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 // --- Functions --- //
 void fragment() {
-	COLOR.rgb = (texture(TEXTURE, UV) + 
+	COLOR.rgb = (texture(TEXTURE, UV) +
 			texture(TEXTURE, UV * 0.99 + 0.5*0.01) +
 			texture(TEXTURE, UV * 0.98 + 0.5*0.02) +
 			texture(TEXTURE, UV * 0.97 + 0.5*0.03) +

@@ -37,9 +37,8 @@ vec3 GetBloom(sampler2D tex, vec2 uv, vec2 texPixelSize) {
 }
 
 void fragment() {
-	vec4 col = texture(TEXTURE, UV);
+	vec4 col = texture(TEXTURE, UV, transparency);
 	vec3 bloom = GetBloom(TEXTURE, UV, TEXTURE_PIXEL_SIZE);
 	col.rgb += bloom * bloomIntensity;
 	COLOR = col;
-	COLOR.a = transparency;
 }
