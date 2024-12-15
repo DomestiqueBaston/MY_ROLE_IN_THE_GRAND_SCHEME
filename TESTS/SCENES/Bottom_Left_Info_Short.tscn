@@ -9,6 +9,7 @@ offset_left = 10.0
 offset_top = 202.0
 offset_right = 123.0
 offset_bottom = 343.0
+metadata/_edit_lock_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
@@ -19,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_litdg")
 horizontal_scroll_mode = 3
+metadata/_edit_lock_ = true
 
 [node name="Info" type="Label" parent="ScrollContainer"]
 custom_minimum_size = Vector2(106, 108)
@@ -41,3 +43,4 @@ It could also eventually be something else but I don't what it could be so far.
 We'll find out about that later too!"
 horizontal_alignment = 1
 autowrap_mode = 2
+metadata/_edit_lock_ = true

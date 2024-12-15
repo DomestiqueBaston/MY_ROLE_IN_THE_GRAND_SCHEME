@@ -33,6 +33,8 @@ metadata/_edit_lock_ = true
 
 [node name="Playground" parent="." instance=ExtResource("3_hdhly")]
 
+[node name="Top_Left_Screen" parent="." instance=ExtResource("8_10wmg")]
+
 [node name="TMP" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -331,11 +333,9 @@ metadata/_edit_lock_ = true
 [node name="Oops_LetsGo_Buttons" parent="." instance=ExtResource("5_raou3")]
 metadata/_edit_lock_ = true
 
-[node name="Bottom_Left_Info" parent="." instance=ExtResource("5_v7ec1")]
-
-[node name="Top_Left_Screen" parent="." instance=ExtResource("8_10wmg")]
-
 [node name="Inv_Dia_Com" parent="." instance=ExtResource("6_heit8")]
+
+[node name="Bottom_Left_Info_Long" parent="." instance=ExtResource("5_v7ec1")]
 
 [node name="Top_Bar" parent="." instance=ExtResource("7_2be8g")]
 

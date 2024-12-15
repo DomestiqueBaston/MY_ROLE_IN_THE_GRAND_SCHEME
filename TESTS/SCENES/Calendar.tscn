@@ -458,7 +458,7 @@ metadata/_edit_lock_ = true
 
 [node name="Top_Left_Info" parent="." instance=ExtResource("3_7jkro")]
 
-[node name="Bottom_Left_Info" parent="." instance=ExtResource("4_udwsp")]
+[node name="Bottom_Left_Info_Short" parent="." instance=ExtResource("4_udwsp")]
 
 [node name="Top_Bar" parent="." instance=ExtResource("5_rli5c")]
 
