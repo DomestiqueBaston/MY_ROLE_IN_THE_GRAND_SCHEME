@@ -29,10 +29,12 @@ metadata/_edit_lock_ = true
 visible = false
 collision_layer = 16
 collision_mask = 7
+metadata/_edit_lock_ = true
 
 [node name="Playground" type="CollisionShape2D" parent="Playground_Collider"]
 position = Vector2(383, 194.5)
 shape = SubResource("RectangleShape2D_lenic")
+metadata/_edit_lock_ = true
 
 [node name="TMP" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -97,7 +99,6 @@ offset_bottom = 177.0
 metadata/_edit_lock_ = true
 
 [node name="Bottom_Left_Info" parent="." instance=ExtResource("6_6a8nk")]
-metadata/_edit_lock_ = true
 
 [node name="Links_Buttons" parent="." instance=ExtResource("8_lfs84")]
 
