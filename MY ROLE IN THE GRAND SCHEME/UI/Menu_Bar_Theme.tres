@@ -39,7 +39,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8g25p"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w20g5"]
+bg_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
 
@@ -109,7 +110,7 @@ OptionButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529
 OptionButton/constants/arrow_margin = 5
 OptionButton/icons/arrow = ExtResource("3_x4acm")
 OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
-PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
+PopupMenu/colors/font_accelerator_color = Color(0.7, 0, 0, 0)
 PopupMenu/colors/font_color = Color(1, 1, 1, 0.686275)
 PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
@@ -130,7 +131,7 @@ PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxEmpty_50lrn")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
-PopupMenu/styles/panel = SubResource("StyleBoxEmpty_8g25p")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_w20g5")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_534da")
