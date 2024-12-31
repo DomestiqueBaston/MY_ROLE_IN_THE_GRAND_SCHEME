@@ -175,7 +175,7 @@ metadata/_edit_lock_ = true
 
 [node name="Abstract" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
-color = Color(0.47, 0.1551, 0.433262, 0.643137)
+color = Color(0.57, 0.2622, 0.53409, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
@@ -188,6 +188,12 @@ metadata/_edit_lock_ = true
 [node name="Lieu" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.1261, 0.018, 0.3, 0.643137)
+polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+metadata/_edit_lock_ = true
+
+[node name="Pnj" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
+visible = false
+color = Color(0.1248, 0.4208, 0.48, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 

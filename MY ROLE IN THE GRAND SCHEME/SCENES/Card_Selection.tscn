@@ -157,7 +157,7 @@ metadata/_edit_lock_ = true
 [node name="Card_Selection_Panel" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
+offset_left = -640.0
 offset_bottom = 360.0
 metadata/_edit_lock_ = true
 
