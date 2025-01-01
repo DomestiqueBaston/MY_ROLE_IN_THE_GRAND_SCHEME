@@ -86,7 +86,7 @@ theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
 metadata/_edit_lock_ = true
 
-[node name="Quests" type="MenuButton" parent="Menus"]
+[node name="Cases" type="MenuButton" parent="Menus"]
 layout_mode = 2
 offset_left = 107.0
 offset_top = -3.0
@@ -99,7 +99,7 @@ item_count = 4
 popup/item_0/text = "Bounty Board"
 popup/item_1/text = "Active"
 popup/item_1/id = 1
-popup/item_2/text = "Solved"
+popup/item_2/text = "Give up case!"
 popup/item_2/id = 2
 popup/item_3/text = "Revoked"
 popup/item_3/id = 3
@@ -308,6 +308,6 @@ offset_left = 332.0
 offset_right = 352.0
 offset_bottom = 8.0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
-text = "9999"
+text = "-999"
 horizontal_alignment = 2
 metadata/_edit_lock_ = true

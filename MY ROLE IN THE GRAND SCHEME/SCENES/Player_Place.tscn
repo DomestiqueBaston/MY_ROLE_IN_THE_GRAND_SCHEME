@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://euyms52mpy48"]
+
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_efxgk"]
+[ext_resource type="Texture2D" uid="uid://xjwjfkatpljx" path="res://GRAPHICS/UI/Player_Place.png" id="2_cf184"]
+[ext_resource type="Texture2D" uid="uid://bttgel1ek480w" path="res://GRAPHICS/UI/Pin.png" id="3_cldar"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
+
+[sub_resource type="Animation" id="Animation_4gwmr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ring:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_3mb1w"]
+resource_name = "Rotation"
+length = 2.00001
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ring:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 6.0805, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0d3ra"]
+_data = {
+"RESET": SubResource("Animation_4gwmr"),
+"Rotation": SubResource("Animation_3mb1w")
+}
+
+[node name="Player_Place" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 8.0
+offset_bottom = 8.0
+tooltip_text = "You are here!"
+theme = ExtResource("1_efxgk")
+metadata/_edit_lock_ = true
+
+[node name="Ring" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_cf184")
+metadata/_edit_lock_ = true
+
+[node name="Pin" type="Sprite2D" parent="."]
+texture = ExtResource("3_cldar")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Collider" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+collision_mask = 18
+metadata/_edit_lock_ = true
+
+[node name="Pin" type="CollisionShape2D" parent="Collider"]
+position = Vector2(4, 4)
+shape = SubResource("CircleShape2D_bfoqd")
+metadata/_edit_lock_ = true
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0d3ra")
+}
+autoplay = "Rotation"

@@ -16,14 +16,10 @@ Caractéristiques du Joueur
 
 Les caractéristiques principales
 Physique (PHY)  
-	- Impact : Influencera les actions physiques telles que les combats, les déplacements, les tests de force, etc.
 
 Mental (MEN)
-	- Impact : Affectera les interactions sociales, la résolution d'énigmes, la gestion du stress ou des traumatismes, etc.
 
 Santé (HEA)  
-	- Impact : Les points de santé déterminent la capacité du personnage à agir efficacement.
-
 
 	- À la création du personnage, 11 points sont à répartir entre PHY, MEN et HEA avec un minimum de 3 et un maximum de 7.
 	- 0 PHY ou 0 MEN rend le joueur incapable d‘entreprendre quelque chose qui nécessite ces caractéristiques (voir Système de Santé).
@@ -126,7 +122,7 @@ Les PNJs
 	- À la mort d’un PNJ causée par le joueur, l’enquête est retirée au joueur (pas de malus ni de bonus) et +2WAN !
 
 Structure type (en rouge les infos que le joueur n’aura jamais):
-ID : P001, P002, etc.
+ID : PNJ001, PNJ002, etc.
 Nom : Prénom + nom
 Genre : M ou F
 Apparence : Grand (25%)/Moyen (50%)/Petit (25%) – Mince (25%)/Moyen (50%)/Gros (25%).
@@ -156,7 +152,6 @@ Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) : (Lien/carte Lieu
 	- Le joueur peut consulter la fiche d’un PNJ (en cliquant sur sa carte ou son nom dans la fiche d’enquête) à tout moment pour un rappel des informations connues du joueur le concernant.
 	- Les PNJs ne sont pas sujets à la paranoïa.
 	- Les cartes PNJ elles-mêmes se résument graphiquement à une silhouette (apparence, sexe et nom quand il est connu).
-	- Une carte PNJ jouée en dialogue donne +1 au jet de dé.
 	- Si un PNJ meurt, la carte du PNJ ne sera pas retirée de l’enquête pour autant.
 	- Si le joueur est responsable de la mort d’un PNJ, l’enquête est retirée au joueur et +2WAN !
 
@@ -221,8 +216,8 @@ Professions possibles (le travail de nuit est à 25 % de chances) :
 	- Musicien : -1 PHY, +1 HEA
 
 La réputation (du joueur auprès du PNJ)
-	- Après la première interaction ET tranche de (24h × niveau de difficulté de l’enquête) sans interaction, +1 Rep.
-	- Avec un PNJ, établir un Lien incriminant plein → -1Rep, le défaire →  +1Rep.
+	- Après (24h × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
+	- Avec un PNJ, établir un ou plusieurs Lien(s) incriminant(s) plein(s) → -1Rep, le(s) défaire (tous) →  +1Rep.
 	
 
 Génération des caractéristiques des PNJs
@@ -260,11 +255,11 @@ Système de Dés
 Difficulté du jeu (écran d’OPTIONS)
 
 	- 5 niveaux de difficulté :
-		Hobbie : +1 aux jets de dé, +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEA à la génération.
+		Hobbie : bonus de 1 aux jets de dé, +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEA à la génération.
 		Tranquille : +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEA à la génération.
 		Routine : /
 		Stressant : -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
-		Cauchemar : -1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
+		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
 
 Les différentes piles de cartes du joueur (en interaction)
 	- Pile de maîtrise (cartes Dialogue, Combat, Investigation, Abstraite (max 3), Objet (Arme) (max 2)) / 10 Max
@@ -312,20 +307,20 @@ Récupération (joueur)
 	- Pas de sommeil pendant une crise de Paranoïa !
 	- Une nuit de sommeil (voir Veille/Sommeil) :
 
-Durée de Sommeil	Effets sur la Santé Mentale (HEA)	Effets sur les Émotions (Emo)	Bonus/malus aux jets de dé pour 24h
-4 heures	/	+1 Emo → Min/Max et +1 Add → Min/max	-2
-5 heures	/	+1 Emo → Min/Max	-1
-6 heures	/	/	-1
+Durée de Sommeil	Effets sur la Santé Mentale (HEA)	Effets sur les Émotions (Emo)	Bonus/Malus aux jets de dé jusqu’au prochain dodo
+4 heures	/	+1 Emo → Min/Max et +1 Add → Min/max	Malus de 2
+5 heures	/	+1 Emo → Min/Max	Malus de 1
+6 heures	/	/	Malus de 1
 7 heures	+1 HEA	/	/
 8 heures (normal)	+1 HEA	±1 Emo → 0	/
 9 heures	+1 HEA	+2 Emo → 0	/
-10 heures	+2 HEA	+1 Emo → 0	+1
-11 heures	+2 HEA	+2 Emo → 0	+1
-12 heures	+3 HEA	+1 Emo → 0	+2
+10 heures	+2 HEA	+1 Emo → 0	Bonus de 1
+11 heures	+2 HEA	+2 Emo → 0	Bonus de 1
+12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
 
 	- Intervention Thérapeutique (médecin) : +2 HEA, ±1 Emo → 0 et ±1 Add → O avec un maximum d’1 intervention/semaine et coûte 50 Dø.
-	- Pour une intervention thérapeutique, dans l’écran de jeu principal (Quest.tscn), faire un clic droit puis sélectionner Intervention thérapeutique.
+	- Pour une intervention thérapeutique, dans l’écran de jeu principal (Quest.tscn), faire un clic droit puis sélectionner « Intervention thérapeutique ».
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa !
 	- Pour aller chez le médecin, dans l’écran de jeu principal, faire clic droit, « Aller chez le médecin ».
 
@@ -335,7 +330,7 @@ Récupération (PNJs)
 
 Le temps
 	- La période diurne est de 8h à 20h. La période nocturne, c’est l’autre (de 20h à 8h!)
-	- Toutes les actions nocturnes du joueur (uniquement) ont un malus de -1 aux jets de dé.
+	- Toutes les actions nocturnes du joueur (uniquement) ont un malus de 1 aux jets de dé.
 
 	- On a un système de temps non continu.
 	- Seules certaines actions font avancer le temps en fonction de ce qui est défini pour ces actions :
@@ -344,16 +339,16 @@ Le temps
 		Un rendez-vous chez le médecin prend 1h (déplacement inclus).
 		Faire des achats dans un commerce prend 1h (déplacement inclus).
 		Consulter les nouvelles enquêtes prend 1h (déplacement inclus).
-		Obtenir une autorisation de fouille prend 1h (déplacement inclus).
+		Obtenir une autorisation de fouille prend 1h (déplacement inclus). Rappel : coûte 25Dø .
 		Dormir prend le temps défini pour cette période.
 		…
 	- On aura une horloge à l’écran en permanence avec la date et l’heure (en haut à gauche).
 
 Les emploi du temps
-	- Ils sont découpés en 4 tranches horaires : Matin (8h/12h), après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h)
+	- Ils sont découpés en 4 tranches horaires : Matin (8h/12h), Après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h)
 	- Le week-end, les emplois du temps sont variables aléatoirement (sauf la nuit).
-	- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire par jour (il ne sera alors plus trouvable) mais cela ne s’applique pas aux PNJs en prison.
-		Rappel : 1 PNJ attaqué (ou qui a attaqué) disparaîtra à la fin de l’interaction pendant 24h.
+	- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire par jour (il ne sera alors plus trouvable pendant cette tranche horaire) mais cela ne s’applique pas aux PNJs en prison.
+		Rappel : 1 PNJ attaqué (ou qui a attaqué) disparaîtra à la fin de l’interaction jusqu’au lendemain.
 
 Passer le temps pendant la paranoïa
 	- Lorsque le joueur est paranoïaque, on aura sur l’écran principal (Quest.tscn!) un bouton « Pass time » car il ne dort plus (mais les PNJs, eux, si) ! À utiliser quand le veut le joueur bien entendu. Le temps passera d’1h à chaque pression.
@@ -361,15 +356,14 @@ Passer le temps pendant la paranoïa
 
 Cycle Jour/Nuit
 	- Un cycle de jour/nuit (solaire) ainsi qu’un cycle veille/sommeil propre au joueur (voir Veille/Sommeil) qui peut se décaler en faisant des journées plus ou moins longues.
-	- Un système de temps non continu. Seules certaines actions font avancer le temps en fonction de ce qui est défini pour ces actions (voir plus haut).
-	- Les PNJs suivent ce cycle par leur emploi du temps mais si le joueur les emmène au delà des limites par une interaction, ils le suivront puis reprendront leur emploi du temps normal sans effet pour eux. Rappel : la nuit, -1 aux jets de dé du joueur.
+	- Un système de temps discret (granulaire, non continu). Seules certaines actions font avancer le temps en fonction de ce qui est défini pour ces actions (voir plus haut).
+	- Les PNJs suivent ce cycle par leur emploi du temps mais si le joueur les emmène au delà des limites par une interaction, ils le suivront puis reprendront leur emploi du temps normal sans effet pour eux. Rappel : la nuit, malus de 1 aux jets de dé du joueur.
 
 Veille / Sommeil
 	- Le joueur peux rester éveillé 16h. Au delà, il prend un malus de -1 au dé par heure. Il ne peut pas faire plus de 24h d’éveil d’affilé et « tombe de fatigue ». Il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé et prend -1HEA au réveil !
 	- Le joueur décidera de combien de temps il veut dormir (voir Récupération).
-	- On ne peut dormir qu’1 fois en 24h.
-	- Les Bonus/Malus au jets de dé ne durent que jusqu’à la prochaine nuit de sommeil.
-	- Ainsi le joueur peut tout à fait se désynchroniser du cycle jour/nuit solaire.
+	- On ne peut dormir qu’1 fois par jour (c’est la date et l’heure de déclenchement qui compte ici ainsi se coucher le lundi à 23h et se lever le mardi à 7h permettra encore de dormir le mardi soir.)
+	- Les Bonus/Malus au jets de dé du au sommeil ne durent que jusqu’au prochain dodo.
 
 	- Rappel : les testes de drogue se font toujours au réveil.
 
@@ -381,11 +375,12 @@ L’argent
 	- La monnaie du jeu, c’est le "Dough" noté Dø (Pognon noté Pø en français !).
 	- Une partie démarre le lundi matin avec la facture de la semaine réglée et 100Dø en poche.
 	- Les PNJs n’ont pas de besoins d’argent.
+	- Le joueur peut avoir des dettes (Dø négatif) mais il aura un malus de 1 à ses jets de dé par tranche de 50Dø de dette.
 
 Les factures
 	- Les factures se payent toujours le lundi matin pour la semaine passée. En cas d’impayé, les sommes de s’additionnent pas, ce sont les factures qui s’accumulent. Ainsi, le joueur, s’il en a 2 mais ne peut en payer qu’une pourra toujours en payer une. Il en a pour 100 Dø par semaine.
 	- On aura également accès à un agenda qui mentionnera toutes les échéances à venir connues du joueur (enquêtes, factures, etc.).
-	- Chaque facture impayée augmente de 10 % chaque semaine et implique -1 aux jets de dé.
+	- Chaque facture impayée augmente de 10 % chaque semaine.
 	- Pour payer sa facture, à l’écran principal, faire clic droit, « Payer les factures » et cliquer sur la facture que l’on veut payer.
 	- Les factures ont 50 % de chance de varier de ±10 % chaque semaine.
 
@@ -401,30 +396,33 @@ Les achats/dépenses
 Les cartes
 	- Globalement, les cartes représentent des éléments de dialogue avec le jeu. Elles indiquent seulement leur nom et une description de leur utilisation. Pas d’informations chiffrées !
 	- Les cartes sont de type Dialogue, Combat, Investigation, Abstraites , Objet, Lieu et PNJ.
-	- Le joueur disposera dans sa pile de maîtrise de 10 cartes Dialogue/Combat/Investigation/Abstraite (3 max. pour Abstraite). Ce sont ses cartes qui représentent les « actions » qu’il connaît et maîtrise.
+	- Le joueur disposera dans sa pile de maîtrise de max.10 cartes Dialogue/Combat/Investigation/Abstraite ( dont 3 max. pour Abstraite). Ce sont ses cartes qui représentent les « actions » qu’il connaît et maîtrise.
 	- En début de partie, Pour la pile de Maîtrise, le jeu proposera au joueur 3 cartes (1 Dialogue, 1 Combat et 1 Investigation). Plus précisément, pour chacune de ces cartes, le joueur aura le choix entre 3 cartes proposées aléatoirement par le jeu et 1 carte Abstraite.
+	- Les effets d’une carte sur PHY et MEN principales sont temporaires !
+	- Les bonus/malus d’une carte sur HEA, Emo, Add et/ou Wan sont permanents !
 
 Structure commune de carte
-	ID : C001 (Combat), D001 (Dialogue), I001 (Investigation), A001 (Abstraite), P001 (PNJ), O001 (Objet), L001 (Lieu). (on incrémentera le numéro pour chaque nouvelle carte)
+	ID : COM001 (Combat), DIA001 (Dialogue), INV001 (Investigation), ABS001 (Abstraite), PNJ001 (PNJ), OBJ001 (Objet), PLA001 (Lieu/Place). (on incrémentera le numéro pour chaque nouvelle carte)
 	Nom : Nom de l'objet, de l'action, de l'élément de dialogue, etc.
 	Type : Dialogue/Combat/Investigation/Abstraite/Objet/Lieu/PNJ.
+	Arme : Oui/Non
 	Description : Très brève description de la carte.
-	Preuve (Élément de preuve) : Oui/Non. L’enquête le définit au départ (affichage de l’overlay Evidence sur la carte). 
+	Preuve (Élément de preuve) : Oui/Non.
 	Combinaisons Possibles : Dialogue/Combat/Investigation/Abstraite/Lieu/Objet/PNJ.
 	Combinaisons impossibles : Dialogue/Combat/Investigation/Abstraite/Lieu/Objet/PNJ.
-	Information(s) révélée(s) : Lien (relations, emploi du temps) dans Fiche/fiche d'enquête/« Feuille de PNJ ».
-	Contenu : Objet(s).
+	Information(s) obtenable(s) : Lien (relations, emploi du temps) dans Fiche/fiche d'enquête/« Feuille de PNJ ».
+	Possession (pour un PNJ) : Cartes Objet (ce sont éventuellement des preuves)
 	Ouverture la nuit, le week-end : Non / Nuit (tous les jours) / Week-end (induit matin et après-midi uniquement).
-	Bonus/Malus : Modifications temporaires des caractéristiques principales en utilisant la carte (par exemple, +1 PHY pour un test d'escalade, -1 MEN en cas d'échec). L’effet éventuel sur Add et Emo est permanent.
+	Bonus/Malus : Modifications temporaires des caractéristiques principales en utilisant la carte (par exemple, +1 PHY pour un test d'escalade, -1 MEN en cas d'échec).
 	Durée d'effet : Durée des effets de bonus/malus (jusqu'à la fin de la scène, une interaction, une heure, un jour, etc.).
 	Usage : Usage unique, plusieurs, permanent (par exemple, usage unique pour chaque action). Inutilisable si rechargeable sinon défausse en fin de durée d’utilisation.
-	Rechargeable (armes) : 0(non)/1/2/3/…
 
 Cartes Abstraites
 	- Elles représentent des dynamiques amenant des modifications aux jets de dé en interactions avec des PNJs ou l’environnement.
 	- Les Bonus/Malus de Caractéristiques Principales sont temporaires et disparaissent à la fin de l’interaction.
 	- Les Bonus/Malus sont permanents sur les caractéristiques secondaires.
 	- Ces cartes se jouent à n’importe quel moment où on joue des cartes mais on n’en joue qu’une par interaction.
+	- Par interaction, le joueur ne peut jouer qu’1 carte Abstraite.
 	- Une fois jouée, une carte abstraite est perdue.
 
 Liste des cartes Abstraites
@@ -491,12 +489,12 @@ Cartes de Lieu
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
 	- Elles servent aussi à se déplacer dans les endroits liés aux enquêtes.
 	- Elles servent également à savoir si un lieu est ouvert ou fermé le week-end.
-	- Jouées en Dialogue, elles donnent un bonus de +1 au jet de dé si un Lien plein est établi avec elles.
+	- Une fois jouée, ces cartes ne sont pas perdues.
 
 Liste des cartes Lieu (bonus/malus pour le joueur uniquement et seulement en étant sur place) :
-	- Poste de Police : -1MEN
-	- Prison : /
-	- Caserne : +1PHY, -1MEN
+	- Poste de Police : -1MEN (Combat impossible)
+	- Prison : / (Combat impossible)
+	- Caserne : +1PHY, -1MEN (Combat impossible)
 	- Café : -1MEN
 	- Appartement : /
 	- Boutique/Magasin : -1MEN
@@ -528,15 +526,15 @@ Liste des cartes Lieu (bonus/malus pour le joueur uniquement et seulement en é
 
 
 Les cartes Dialogue, Combat et Investigation
-	- Une fois jouée, ces cartes ne sont pas perdues.
+	- Une fois jouées, ces cartes sont perdues.
 
 Liste des cartes Dialogue :
 	- Interrogatoire subtil : +1MEN, +1 info (si réussite et si applicable)
 	- Pression psychologique : +2MEN, -2Rep
 	- Argumentation logique : +1MEN
 	- Interrogatoire violent : +2PHY, -2Rep
-	- Pot-de-vin : +1 info (si réussite et si applicable), -10Dø × Difficulté de l’enquête, -1Rep pour réussite/-2Rep pour échec
-	- Pot-de-vin généreux: +1MEN, -20Dø × Difficulté de l’enquête, +1 info (si réussite et si applicable), ±1Rep pour réussite/échec
+	- Pot-de-vin : +1 info (si réussite et si applicable), -10Dø × Difficulté de l’enquête, +1Rep pour réussite/échec
+	- Pot-de-vin généreux: +1MEN, -20Dø × Difficulté de l’enquête, +1 info (si réussite et si applicable), +1Rep pour réussite/échec
 	- Mensonge convaincant : +1MEN, -1Rep si échec
 	- Question piège : +1MEN, +1 info cachée (si réussite et si applicable), -1Rep si échec
 	- Menace voilée : +1 PHY, -1Rep
@@ -557,22 +555,32 @@ Liste des cartes Investigation :
 	- Inspection détaillée : +1MEN, ±1 Emo → Min/Max
 	- Examen complet : +1MEN, +1PHY, ±2 Emo → Min/Max, +1 Objet, +2 heures
 	- Recherche rapide : -1PHY,  -2 heures
-	- Analyse succincte : -1MEN, -2 heures
-	- Jeter un œil en passant : -2PHY, -2MEN, -1 Objet (minimum de 0), -2 heures
+	- Analyse succincte : -1MEN, -1 heure
+	- Jeter un œil en passant : -1PHY, -1MEN, -1 Objet (minimum de 0), -2 heures (!)
 	- Fouille systématique :  ±1 Emo → Min/Max
 	- Inspection rapide : -1PHY, -1MEN, ±1 Emo → 0 , -1 heure
 	- Examen méticuleux : +1PHY, -1Emo, +1 heure
-	- Recherche consciencieuse : ±1 Emo → 0
-	SPECIAL (effraction)
+	- Recherche méthodique : ±1 Emo → 0
+	SPECIAL (à jouer en combinaison avec une carte Investigation de la liste du dessus)
+	- Outils de crochetage ! : +2PHY, -1MEN, +1 heure
+	- Utiliser un détecteur ! : -2PHY, +2MEN
+	- Outils improvisés ! : +1PHY, -2MEN, +1 heure
+	- Prise d’empreintes ! : -1PHY, +1MEN, +1 heure
+	- Démontage en règle ! : +1PHY, +2 heures
+	- Caméra endoscopique ! : -1PHY, +2MEN, +1 heure
+	- Avec du Luminol ! : +1MEN, +1Emo, +1 heure
+	- Coup de bol ! : bonus de 1 au jet de dé, +2Emo
+	- Ni vu, ni connu ! : Annule les malus d’Emo de l’autre carte de Combat, malus de 1 au jet de dé
+	EFFRACTION (avant Investigation)
 	- Grimper le long de la gouttière : +1PHY, +1Emo
-	- Crocheter la serrure : +1MEN, +1Emo
+	- Forcer la serrure : +1MEN, +1Emo
 	- Neutraliser la sécurité : +1MEN
-	- Forcer le passage : +2PHY, -2MEN
+	- Enfoncer la porte : +2PHY, -2MEN
 
 Liste des cartes Combat :
 	- Techniques martiales : +1PHY, +1MEN, -1Emo
 	- Combat de rues : ±1Emo → Min/Max
-	- Utiliser une arme à feu : +3PHY, -1MEN, +2Emo → Min/Max
+	- Utiliser une arme : +3PHY, -1MEN, +2Emo → Min/Max
 	- Attaque ciblée : +2PHY, -2Emo
 	- Provocation : +1MEN, ±1Emo → 0
 	- Diversion : -1PHY, +2MEN, +1Emo
@@ -584,18 +592,21 @@ Liste des cartes Combat :
 	- Mouvements désordonnés : +2PHY, -1MEN, -2Emo
 	- Charge : +1PHY, -1MEN, +1Emo
 	SPECIAL (à jouer en combinaison avec une carte Combat de la liste du dessus)
-	- Ne pas tuer : si le PNJ visé devait mourir, alors il sera à Hea = 1, le PNJ ne peut pas fuir et un Dialogue est possible ensuite !
-	- Incapaciter : si le PNJ visé devait mourir, alors il sera à Hea = 1
-	- Pas de bol ! : le PNJ aura -2 à son jet de dé et le joueur aura -1 à son jet de dé
-	- Désarmer : le PNJ aura -1 à son jet de dé.
+	- Ne pas tuer ! : si le PNJ visé devait mourir, alors il sera à Hea = 1, le PNJ ne peut pas fuir et un Dialogue est possible ensuite !
+	- Incapaciter ! : si le PNJ visé devait mourir, alors il sera à Hea = 1
+	- Pas de bol ! : le PNJ aura un malus de 2 à son jet de dé et le joueur aura un malus de 1 à son jet de dé
+	- Désarmer ! : le PNJ aura un malus de 1 à son jet de dé.
 	- Rendez-vous ! : le PNJ ne peut pas fuir (s’il survit) et un Dialogue sera possible ensuite !
-	- Self-control : Annule les malus d’Emo de l’autre carte de Combat, -1 au jet de dé
-	- Le tout pour le tout ! : +1 au jet de dé, les effets sur Emo sont augmentés de 1
-	- Adrénaline : +1 au jet de dé, ±1Add → Min/Max
-	SPECIAL (avant combat)
+	- Self-control ! : Annule les malus d’Emo de l’autre carte de Combat, malus de 1 au jet de dé
+	- Le tout pour le tout ! : bonus de 1 au jet de dé, les effets sur Emo sont augmentés de 1
+	- Adrénaline ! : bonus de 1 au jet de dé, ±1Add → Min/Max
+	FUITE (avant combat)
 	- Fuir : +1PHY, +1MEN
 
 
+
+Les Cartes Objet
+	- Une fois jouée, ces cartes ne sont pas perdues.
 
 Liste des cartes Objet (Élément de preuve possible) :
 	Ces objets sont TOUJOURS liés à un PNJ (car ils sont « nominatifs »).
@@ -655,115 +666,124 @@ Liste des cartes Objet (banals/inutiles mais Élément de preuve  impossible) :
 
 Les cartes PNJ :
 	- Elles ne servent qu’en Dialogue et sur la Fiche d’Enquête.
-	- Jouées en Dialogue, elles donnent un bonus de +1 au jet de dé si un lien plein est établi avec elles.
 	- Elles affichent une silhouette (Homme/Femme,  Grand/Moyen/Petit, Mince/Moyen/Gros) et les noms et prénoms dès qu’ils sont connus.
 	- Lorsque l’on veut avoir plus d’informations (si elles sont disponibles, on peut cliquer sur la carte pour ouvrir la fiche de personnage) ou aller dans la Fiche d’Enquête (écran principal) pour avoir le détails de ses liens à l’enquête et ses qualités (natures des liens, pleins ou pointillés).
 	- (si besoin) Il existe 1 carte spéciale qui représente les personnes dont on ne sait rien, et qui ne présentera qu’une silhouette indéfinie avec un « ? » dessus.
 	- Rappel : la carte d’un PNJ mort ne sera pas retirée de l’enquête. Si la mort du PNJ est causée par le joueur, de toute manière l’enquête lui est retirée et +2WAN !
+	- Une fois jouée, ces cartes ne sont pas perdues.
 Les interactions : Dialogue, Combat et Investigation
 
-	- On ne peut pas faire plusieurs interactions en même temps. Il faut faire un choix.
-	- Lorsque le joueur entrera dans un Lieu, avant de choisir quelle interaction il aura (s’il veut interagir), il sera informé de la présence (ou non) de PNJs et lesquels s’il les connaît déjà (sinon, au moins : Genre, apparence).
-	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier a menti, il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête si de tels liens avaient déjà été établis sinon le jeu créera un lien Violet (mais normalement, le lien devrait avoir été crée puisqu’il y a une information contredite).
-	- Si le joueur rencontre un PNJ sur un lieu sur lequel il n’est pas sensé être à cette heure-ci, au joueur d’en tirer les conclusions sur la Fiche d’Enquête si un lien avait déjà été établi sinon le jeu créera un lien Violet.
-	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même une interaction avec un PNJ (si certaines ne sont pas déjà connus) : Nom, Genre, Apparence. (ATTENTION, voir Dialogue) PAS DE MENSONGE.
-	- À chaque interaction avec un PNJ après la première, si Rep ≤ 0 alors -1Rep.
-	- Par défaut, les jets de dé d’interactions Combat et Dialogue sont basées sur un test de caractéristiques du joueur contre celles du PNJ.
-	- Par défaut, en interaction, le joueur a accès en plus à, aléatoirement choisies, 10 cartes Objet (hors Élément de preuve et Armes), Lieux, Dialogue, Combat ou Investigation (suivant le type d’interaction). Ce sont des cartes non-maîtrisées.
-	- En fonction du contexte, les cartes hors de propos ne seront donc pas proposées (On ne va pas jouer « donner une baffe » avec « pot-de-vin » par exemple).
-	- Un malus de non maîtrise est affecté à une carte jouée mais non maîtrisée (donc non issue du jeu de cartes du joueur) : -2 au jet de dé.
-	- On passe à Dialogue, Investigation ou Combat par les boutons adéquats. Cela fait aussi passer le temps s’il y a eu interaction (voir Le temps).
-	- Avec le(s) même(s) PNJ(s), on ne peut plus passer à Dialogue après un Combat avant 24h écoulées SAUF dans le cas d’un PNJ tombé à HEA=1 pendant le combat.
-	- On peut passer à Investigation après un Combat seulement si tous les PNJs ont fuit, sont tombé à HEA=1 ou 24h plus tard. Si le PNJ meurt ?
-	- Investigation n’est accessible lorsqu’au moins un PNJ est présent qu’avec une autorisation de fouille (à 25 Dø) (voir Enquête) OU si tous les PNJs présents sont à HEA=1 à la suite d’un combat. Dans ce cas, Rep = -3 auprès des PNJs présents.
+	- On ne peut pas interagir sans poser aucune carte sur le tapis.
+	- On ne peut pas faire plusieurs interactions en même temps.
+	- Pour interagir avec un PNJ ou un Lieu, sur l’écran principal, on fait Clic droit, « Dialogue » ou « Combat » ou « Investiguer » sur la carte concernée.
+	- Si au moment de la demande d’interaction (Dialogue ou Combat), le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps ou exceptionnellement, le PNJ n’est simplement pas là), le jeu préviendra avec un Overlay qui dira « Je ne sais pas où se trouve cette personne en ce moment. » Et le temps ne passera bien entendu pas !
+	- Pour Dialoguer directement avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci).
+	- Pour Combattre directement un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci).
+	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier a menti, il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête…
+	- Si le joueur rencontre un PNJ sur un lieu sur lequel il n’est pas sensé être à cette heure-ci, au joueur d’en tirer les conclusions  sur la Fiche d’Enquête…
+	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom, Genre, Apparence. (voir aussi Dialogue). PAS DE MENSONGE possible !
+	- Après chaque interaction avec un PNJ, si ce PNJ a « perdu », -1Rep !
+	- Les jets de dé pour Combat et Dialogue sont basées sur un test de caractéristiques du joueur contre celles du PNJ.
+	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement.
+	- L’écran d’interaction, affiche :
+		- La pile de Maîtrise (Mastery) du joueur qui est la pile des actions que le joueur maîtrise et avec la quelle il n’a pas de malus. Elle contient uniquement des cartes Combat, Dialogue, Investigation ou Abstraite.
+		- La pile de Non-Maîtrise (Fallback) du joueur qui est la pile des actions que le joueur ne maîtrise pas et avec la quelle il a un malus de 1 au jets de dé (Rappel : un jet de dé est réussi si le score du jet est inférieur ou égal au score à obtenir). En fonction du contexte, les cartes hors de propos ne seront donc pas proposées (On ne va pas jouer « donner une baffe » en Investigation par exemple).
+		- La pile Preuve (Evidence) qui est la pile contenant tous les éléments considérés dans l’enquête comme des preuves (cartes avec des liens plein établis). Il ne peut s’agir de cartes Objet (ex. : arme du crime), Lieu (ex. : lieu du crime) ou PNJ (ex. : témoin). Bonus de 1 au jets de dé.
+		- La pile PNJ qui est la pile contenant les (autres) cartes PNJ liées à l’enquête.
+		- La pile Lieu (Place) qui est la pile contenant les (autres) cartes Lieu liés à l’enquête.
+	- On ne peut plus passer à Dialogue après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de cartes de Combat spéciales qui le permettent.
+	- On ne peut pas investiguer en présence d’un PNJ sauf avec une autorisation de fouille (à 25 Dø) (voir Enquête). Il est donc possible d’investiguer après un Combat.
 	- On obtient une autorisation de fouille par la fiche de quête (Voir Enquête).
-	- Pendant qu’une interaction à lieu, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
-	- Par interaction, le joueur ne peut jouer qu’1 carte Abstraite.
+	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
+	- Rappel : par interaction, le joueur ne peut jouer qu’1 carte Abstraite.
 	- Lorsqu’une information non présente à l’écran est révélée lors d’une interaction, un compte-rendu sera donné au joueur de la/des révélation(s) dans un menu (ou autre) approprié.
-	- Le joueur ne peut pas interagir sans poser aucune carte sur le tapis.
+	- Rappel : le temps passe après une interaction (voir Le temps).
 
 Écrans d’interactions
 	- Un écran structuré de la même manière pour les dialogues/combats/investigations dans lequel on joue ses cartes pour l’interaction en cours et un bouton pour lancer le test de dé quand on est prêt.
 	- Limite de 3 cartes mises en jeu dans une interaction.
-		- En Dialogue : 1 Dialogue / 1 Objet ou Lieu (Élément de preuve) / 1 Abstraite
-		- En combat : 1 Combat / 1 Objet / 1 Abstraite
-		- En Investigation (également accès au lieu en préambule) : 1 Investigation / 1 Objet / 1 Abstraite
-	- RAPPEL : le joueur a une main de maximum 10 cartes personnelles (plus 3 cartes Abstraites).
+		- En Dialogue : 1 Dialogue / 1 Objet ou Lieu ou PNJ (Élément de preuve ou pas) / 1 Abstraite
+		- En combat : 1 Combat / 1 Combat Spéciale / 1 Abstraite
+		- En Investigation (également accès au lieu en préambule) : 1 Investigation / 1 Investigation Spéciale / 1 Abstraite
+	- RAPPEL : le joueur a une main de maximum 10 cartes personnelles (dont max. 3 cartes Abstraites).
 
 Cartes en Interaction
 
-	- Sur l’écran d’Interaction, le joueur se verra donc proposer également une main de non-maîtrise composée de 5 cartes aléatoires (3 du type de l’interaction et 2 Abstraites).
-
+	- Sur l’écran d’Interaction, le joueur se verra donc proposer également :
+	- Une pile de Fallback composée de 5 cartes aléatoires (3 du type de l’interaction et 2 Abstraites).
+	- Une pile Evidence composée de toutes les cartes définies comme preuves (liens pleins) dans l’enquête en cours.
+	- Une pile PNJ (en Dialogue) composée de tous les PNJs découverts par le joueur dans l’enquête.
+	- Une pile Lieu (en Dialogue) composée de tous les Lieux découverts par le joueur dans l’enquête.
 
 Fin d’interaction
 
-	- À la fin d’une interaction, le joueur se verra proposer les cartes de non-maîtrise qu’il a jouées et avec lesquelles il a eu un succès. Il pourra garder de 0 à 2 cartes (y compris Abstraite) de son choix et devra en rejeter s’il en a déjà le maximum (10 maîtrisées et 3 Abstraites).
-	- Il sera bien entendu possible de rejeter autant de cartes que l’on veut. La seule contrainte étant de ne pas en avoir plus de 10.
-	- Une carte abandonnée reprend automatiquement son malus de non maîtrise (-2 au jets de dé). Ainsi, la maîtrise est avérée par le fait d'avoir été utilisée avec succès lorsqu'elle n’était pas dans le jeu de cartes du joueur.
+	- À la fin d’une interaction, le joueur se verra proposer toutes les cartes d’interaction et Abstraites qu’il a jouées et avec lesquelles il a eu un succès. Il pourra en garder autant qu’il veut jusqu’à en avoir 10 dans sa pile.
+	- Il sera bien entendu possible de rejeter des cartes présentes dans sa pile de Maîtrise. La seule contrainte étant donc de ne pas en avoir plus de 10.
+	- Une carte abandonnée reprend automatiquement son malus de non maîtrise (malus de 1 au jets de dé).
 Dialogue
 
 	- On ne peut pas jouer de carte Arme (Objet) en Dialogue !
-	- Informations obtenues en plus concernant les PNJs lors du premier Dialogue avec un PNJ (si certaines ne sont pas déjà connus) : Profession, Emploi du Temps. Mensonges possibles suivant les probabilités ci-dessous.
-	- Qu’il y ait 1 ou plusieurs PNJs présents, un Dialogue durera 2h. Ainsi on ne rajoutera le temps écoulé qu’en quittant le lieu.
-	- Rappel : à chaque fois que le joueur rencontre un PNJ, ce dernier peut agresser le joueur (voir Déclenchement extérieur d’un combat par un PNJ plus bas) avant même le dialogue. S’il y a fuite, on n’ajoute pas les 2h à la fin puisque l’interaction n’a pas eu lieu.
+	- Un seul Dialogue avec un PNJ par jour.
+	- Informations obtenues en plus concernant les PNJs lors du premier Dialogue avec un PNJ (si elles ne sont pas déjà connus) : Profession, Emploi du Temps. Mensonges possibles suivant les probabilités ci-dessous.
+	- Un Dialogue durera 2h. 
+	- Rappel : à chaque fois que le joueur rencontre un PNJ, ce dernier peut agresser le joueur (voir Déclenchement extérieur d’un combat par un PNJ plus bas) avant même le dialogue.
 	- À la première rencontre, il n’y a pas de risque !
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, malus de Wan, Rep, Emo, Add (, etc. ?).
-		Pour le PNJ (avec seulement ses caractéristiques) : pas de carte, pas de bonus/malus de difficulté d’enquête, malus de Wan, (/etc.?).
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Sommeil, Malus d’action de Nuit…
+		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan… 
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
-	- Mais un jet de dé pour chaque PNJ interrogé. A partir du moment ou une interaction est engagée, le/les PNJ(s) est/sont soustrait(s) à leur/son emploi du temps qui reprendra dès la fin de l’interaction avec lui.
-	- On sélectionne le PNJ avec lequel on Dialogue en cliquant sur sa carte PNJ.
-	- À la fin, l’entretien avec le PNJ est donc terminé. Un autre sera possible avec lui à partir du lendemain. La carte du PNJ n’est plus sélectionnable.
-	- S’il reste d’autres PNJs, les entretiens peuvent continuer jusqu’à ce qu’il n’en reste plus ou que la tranche horaire soirée soit atteinte. Ainsi, s’il reste des PNJ avec lesquels le joueur n’a pas interagit mais qu’il le souhaitais et que la soirée est atteinte, cela ne sera plus possible et il faudra faire cela à partir du lendemain.
-
-	 - Pour poser des questions, le joueur utilise ses cartes de Dialogue et Abstraite et Objet/Lieu/Etc. (si ce sont des preuves/pièces à conviction potentielles ou avérées). En fonction de la marge de réussite (voir CA), il obtiendra (Marge de réussite × 2) informations (vraies et/ou fausses).
+	- À partir du moment ou un Dialogue est engagé, le PNJ est soustrait à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction (quelque soit son type).
+	On ne rajoute le temps écoulé qu’à la fin du Dialogue.
+	- Pour évaluer la marge de réussite ou l’échec d’un Dialogue, on fait score du jet de dé du joueur – score du jet de dé du PNJ.
+	- Pour poser des questions, le joueur utilise ses cartes de Dialogue, Abstraite et Objet/Lieu/PNJ/Evidence.
+	- En fonction de la marge de réussite, il obtiendra round(Marge de réussite) informations (vraies et/ou fausses, voir plus bas).
+	- Les informations obtenues sont choisies aléatoirement parmi celles obtenables auprès du PNJ.
 	Une carte Objet/Lieu, Etc. utilisée comme preuve/pièce à conviction à bon/mauvais escient rajoute un bonus/malus de ±1 au jet de dé. 
 	 - Chances que chaque information donnée soit fausse (errare humanum est) hors Nom, Genre et Apparence :
-		 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
-		 Coupable : (5+MEN)/(15+MEN)
-		 Complice : (3+MEN)/(18+MEN)
+		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
+		Auprès d’1 Coupable : (5+MEN)/(15+MEN)
+		Auprès d’1 Complice : (3+MEN)/(18+MEN)
 	 - Sauf pour les informations incriminantes (Fiche PNJ) :
-		 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) 
-		 Coupable : (9+MEN)/(10+MEN)
-		 Complice : (8+MEN)/(12+MEN)
-	 - Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête). Et de toute manière, l’information sera dans le compte-rendu des résultats dans le menu (ou autre) approprié…
+		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) 
+		Auprès d’1 Coupable : (9+MEN)/(10+MEN)
+		Auprès d’1 Complice : (8+MEN)/(12+MEN)
+	 - Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête).
 	 - Si une information donne lieu à la révélation d’un Objet, Lieu, Etc., sa carte passera automatiquement dans la catégorie des cartes Élément de preuve du joueur.
-	 - Si une information révélée concerne les informations personnelles d’un PNJ, elle seront consultables dans la fiche du PNJ.
-	 - Pour la révélation d’une information cachée d’un PNJ, le joueur doit avoir eu une marge de réussite de 3+ au jet de dé de Dialogue ou avoir utilisé une carte Dialogue « Question piège » ou avoir une réussite critique (même en cas de marge de réussite inférieure à +3).
+	 - Si une information révélée concerne les informations personnelles d’un PNJ, elle seront consultables dans la fiche/carte du PNJ.
+	 - Pour la révélation d’une information cachée d’un PNJ, le joueur doit avoir eu une marge de réussite de 3+ au jet de dé de Dialogue ou avoir utilisé une carte Dialogue « Question piège ».
 	- Un PNJ a les mêmes chances de corriger une information précédemment donnée comme fausse (voir juste au dessus).
-	- Un PNJ a 2 fois moins de chances de « corriger » une information donnée juste (voir au dessus aussi tout de même).
-	- Un PNJ innocent ne corrigera jamais une information incriminante donnée juste.
-	- À la fin d’un dialogue, le PNJ reprendra son cycle d’activité en fonction de son emploi du temps. S’il reste sur les lieux du Dialogue (parce qu’il travaille ici à cette heure-ci par exemple), il ne sera pour autant plus accessible avant le lendemain pour un complément d’entretien (en revanche, le joueur pourra tout à fait se battre avec lui s’il le désire ou investiguer en sa présence avec une autorisation de fouille).
-	- En cas d’échec critique, le joueur prend -1Emo et -1Rep avec le ou les PNJ(s) présent(s). Même ceux avec qui il a déjà Dialogué tant qu’ils sont encore présents. Règle cumulable en cas de plusieurs Interrogatoires consécutifs.
+	- Un PNJ ne corrigera pas une information vraie.
+	- En cas d’échec critique, le joueur prend -1Emo et -1Rep avec le PNJ.
 
 Quelles informations peuvent être révélées par un PNJ
-	- Toutes les informations en sa connaissance peuvent être révélées par un PNJ et le choix est aléatoire parmi toutes celles disponibles (en tenant compte de ce qui a été dit au dessus).
+	- Toutes les informations à la connaissance d’un PNJ peuvent être révélées et le choix est aléatoire parmi toutes celles disponibles (en tenant compte de ce qui a été dit à propos du vrai/faux plus haut).
 
 Fuir un Dialogue (PNJ)
 	- Un PNJ a 1/(MEN×5) chance de fuir un Dialogue.
 	- Pour un PNJ, fuir un Dialogue représente +1Wan.
+	- Après avoir fuit, le PNJ ne sera plus accessible avant le lendemain (comme si le dialogue avait eu lieu).
+	-  S’il y a fuite, on n’ajoute qu’1 heure au temps écoulé car l’Interaction n’aura pas eu lieu.
 
 Combat
-- Qu’il y ait 1 ou plusieurs PNJs présents, un Combat durera 2h.
-- Le jet de dé de base pour un Combat est : round((PHY×2 + MEN + HEA)÷4).
- Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, le (nombre de PNJs impliqués -1) en malus, malus de Wan, Emo, Add (, etc. ?).
- Pour le(s) PNJ(s) (avec seulement ses/leurs caractéristiques) : pas de carte, pas de bonus/malus de difficulté d’enquête, en revanche : malus de Wan (, etc. ?).
-- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
-- Mais un jet de dé pour chaque PNJ présent.
-- Une réussite critique permet au joueur de ne pas tuer si jamais le PNJ aurait dû mourir. La/les victimes seront à HEA=1 et le combat avec ce PNJ sera terminé.
-- Un échec critique fait que le joueur se blesse et prend -1HEA et -1 au prochains jets de dé jusqu’à la fin des combats.
-- La marge de réussite finale, c’est à dire la comparaison entre la marge de réussite du joueur – la marge de réussite du PNJ définit les dégâts subits par le joueur ou le PNJ suivant la CA.
-- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du/des Combats) une Rep = -3 auprès du/des PNJ(s) impliqués.
-	- Rappel : à la mort d’un PNJ, l’enquête est retirée au joueur (pas de bonus ni de malus) et son Wan reste ce qu’il est.
-	- Lorsqu’un combat est déclenché par le joueur, le/les PNJ(s) a/ont la possibilité de fuir. Chacun fera un jet de dé avant l’évaluation du combat (voir Fuir un combat (PNJ) plus bas).
-	- Lorsqu’un combat est déclenché par le/les PNJ(s), le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat (voir Fuir un combat (Joueur) plus bas). Il pourra également jouer sa carte Combat spéciale Fuir pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici).
+	- Les cartes Evidence ne peuvent pas être jouées en Combat.
+	- Un Combat durera 2h.
+	- Si d’autres PNJs sont présents au moment du Combat, ils prennent la fuite automatiquement et ne seront pas accessibles avant le lendemain.
+	- Le jet de dé de base pour un Combat est : round((PHY×2 + MEN + HEA)÷4).
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Sommeil, Malus d’action de Nuit…
+		Pour le PNJ (seulement ses caractéristiques) : pas de carte, pas de bonus/malus de difficulté d’enquête, en revanche : malus de Wan.
+	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
+	- Une réussite critique permet au joueur de ne pas tuer si jamais le PNJ aurait dû mourir. La/les victimes seront à HEA=1 et le combat avec ce PNJ sera terminé.
+	- Un échec critique fait que le joueur se blesse et prend -1HEA en plus.
+	- La marge de réussite finale, c’est à dire la comparaison entre la marge de réussite du joueur – la marge de réussite du PNJ définit les dégâts subits par le joueur ou le PNJ.
+	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) une Rep = -3 auprès du PNJ impliqué.
+	- Lorsqu’un combat est déclenché par le joueur, le PNJ a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat (voir Fuir un combat (PNJ) plus bas).
+	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat (voir Fuir un combat (Joueur) plus bas). Il pourra également jouer sa carte Combat (spéciale) Fuir pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici).
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible à partir de ce moment-là).
-	- Une carte notée Élément de preuve ne peut pas être jouée en Combat.
-	- Pour le joueur, initier un Combat fait +1Wan.
+	- Pour le joueur, déclencher un Combat fait +1Wan.
 
 Déclenchement extérieur d’un combat par un PNJ
 	- À la première rencontre, il n’y a pas de risque !
-	- À chaque fois que le joueur rencontre un Pnj, ce dernier, s’il ne fuit pas, peut agresser le joueur selon ces probabilités :
+	- À chaque fois que le joueur rencontre un PNJ, ce dernier, s’il ne fuit pas, peut agresser le joueur selon ces probabilités :
 	- Par défaut, il y a 0 % de chance d’attaque d’un PNJ.
 	- Rep modifie ces chances selon ce tableau :
 Rep	Pourcentage en plus
@@ -784,83 +804,83 @@ uniquement Plein	+5 %
 
 	- Le niveau de difficulté de l’enquête s’applique en multiplicateur.
 	- Résumé en équation : Pourcentage de risque d’attaque=((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque, évidemment!)
-	- Si un Combat a lieu, il intervient avant l’interaction prévue par le joueur (sauf cas de PNJ arrivant pendant pendant une Investigation et voir Investigation).
+	- Si un Combat a lieu, il intervient avant l’interaction autre que Combat prévue par le joueur.
 
 Fuir un Combat (Joueur)
-	- Avant tout combat initié par un ou des PNJ(s), le jeu demandera au joueur s’il veut fuir.
+	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir.
 	- Pour fuir un combat (avant qu’il ne commence), le joueur lance un dé contre round((PHY+MEN+HEA)÷3).
-	- S’il y a fuite, on n’ajoutera pas les 2h à la fin puisque l’interaction n’a pas eu lieu.
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Sommeil, Malus d’action de Nuit…
+	- Rappel : s’il y a fuite, on n’ajoutera qu’1 heure à la fin puisque l’interaction prévue n’a pas eu lieu.
 	- Rappel : on applique aussi le bonus/malus de difficulté de quête à ce jet de dé.
-	- En cas d’échec, le joueur fuit tout de même mais prend Emo +1 sinon, rien.
-	- En cas d’échec critique, le joueur fuit tout de même mais prend Emo +1 ET -1HEA.
+	- En cas de réussite, aucun effet.
+	- En cas de réussite critique, ±1Emo → 0.
+	- En cas d’échec, le joueur fuit tout de même mais prend -1HEA et +1Emo → Min/Max.
+	- En cas d’échec critique, le joueur fuit tout de même mais prend -2HEA et +1Emo → Min/max.
 
 Fuir un Combat (PNJ)
-	- Pour fuir un Combat, le PNJ lance un dé contre round((PHY+MEN+HEA)÷3). S’il réussit, il disparaît 24h sinon, le Combat a lieu avec +1 au jet de dé du joueur.
-	- En cas de réussite critique, le PNJ disparaît 48 heures au lieu de 24h.
-	- En cas d’échec critique, le PNJ reste pour le combat et à -1 à ses jets de dé jusqu’à la fin de l’interaction.
+	- Pour fuir un Combat, le PNJ lance un dé contre round((PHY+MEN+HEA)÷3). S’il réussit, il disparaît jusqu’au lendemain sinon, le Combat a lieu.
+	- En cas de réussite critique, le PNJ disparaît 2 jours.
+	- En cas d’échec critique, le PNJ reste pour le combat et à un malus de 1 à son jet de dé jusqu’à la fin de l’interaction prévue ensuite.
 
 
 Investigation
 
-	- On ne peut pas jouer de carte Arme (Objet) en Investigation !
+	- On ne peut pas jouer de carte Objet, Lieu ou PNJ en Investigation !
+	- On ne joue que des cartes Investigation, Investigation Spéciale et Abstraite.
+	- On ne peut investiguer un Lieu qu’avec une autorisation de fouille (voir plus loin).
+	- Une autorisation de fouille utilisée (validé à la fin de l’Investigation) est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) !
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, (etc).
-	- Le principe de fonctionnement est similaire aux deux précédents : résolution en 1 fois, interaction à 3 cartes (Investigation, Objet et Abstraite), etc.
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, bonus/malus Emo, Add et Wan (pas de Rep), Sommeil, Malus d’action de Nuit…
+	- Le principe de fonctionnement est similaire aux deux précédents : résolution en 1 fois, interaction à 3 cartes (Investigation, Investigation Spécial et Abstraite).
 	- Une réussite critique donne +50 Dø.
-	- Un échec critique donne -1 Objet (Élément de preuve).
-	- S’il y a des Objets (Élément de preuve) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation (voir CA).
-	- De temps en temps, le joueur récupérera des Objets plus ou moins « à la con » pendant ses investigations qui pourront éventuellement servir en combat. Cela à 1/10 chances que le joueur trouve quand il n’a pas mis la main sur un Élément de preuve
-	- On ne peut pas découvrir plus d’Éléments de preuve qu’il n’y en a dans le Lieu.
-	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une autre (à 25 Dø) !
-	- Pendant une Investigation (Autorisation de Fouille ou pas), si par son Emploi du Temps un PNJ est amené à pénétrer le Lieu, le joueur a +1Wan sans autorisation de fouille (et voir Déclenchement extérieur d’un combat par un PNJ et avec autorisation de fouille, on ajoute +5 % de chances et sans autorisation de fouille +10 % de chances de déclencher un combat).
+	- S’il y a des Objets (Evidence) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation.
+	- Un échec critique donne -1 Objet (Evidence uniquement) découvert (0 au minimum!).
+	- Le joueur récupérera aussi des Objets plus ou moins « à la con » pendant ses investigations. Il y a 1/10 chances que le joueur en trouve.
+	- On ne peut pas découvrir plus d’Éléments de preuve qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
+	- Pendant une Investigation (Autorisation de Fouille ou pas), si un PNJ devait arriver (par son emploi du temps), il attendra la fin de l’investigation avant d’entrer.
 	- Rappel : Si jamais un combat doit avoir lieu, il aura lieu avant l’Investigation.
 
 Investigation en présence d’un PNJ avec autorisation de fouille
 	- Avec une autorisation de fouille (à obtenir depuis la Fiche d’enquête), on peut Investiguer en présence d’un PNJ mais cela causera -1Rep.
 
-Investigation en présence d’un PNJ sans autorisation de fouille !
+Investigation en présence d’un PNJ sans autorisation de fouille
 	- Investigation impossible !
 
-Accès au Lieux à investiguer hors présence de PNJ (dans un Lieu fermé/sécurisé)
+Accès au Lieux fermés/sécurisés à investiguer hors présence de PNJ
 	- Il faut avant tout arriver à pénétrer dans le lieu et pour ce faire, il faut pouvoir « forcer » l’accès (grimper, forcer une serrure, etc.).
 	- ATTENTION : comme pour le reste, cette entreprise est testée en une fois.
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
-	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes, de Difficulté d’enquête, etc.
-	- La marge de réussite représentera un bonus au jets de dé pendant l’Investigation qui va suivre l’effraction suivant la CA.
-	- En cas d’échec, le joueur prendra -1HEA (-2HEA sur un échec critique) et suivant la CA aura un malus aux jets de dé et +1Wan.
-	- En cas d’échec, le joueur (s’il ne meurt pas) ne pourra ré-essayer que 24h plus tard au minimum.
+	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes, de Difficulté d’enquête, Emo, Add et Wan.
+	- La round(marge de réussite÷3) représentera un bonus au jets de dé pendant l’Investigation qui va suivre l’effraction.
+	- En cas d’échec, le joueur prendra -1HEA (-2HEA sur un échec critique) et round(marge d’échec÷3) malus aux jets de dé (et +1Wan sur un échec critique).
+	- En cas d’échec, le joueur (s’il ne meurt pas) ne pourra ré-essayer qu’à partir du lendemain.
 
 Enquête
 
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes (aléatoirement en fonction de ce à quoi il a accès au fur et à mesure (voir Échelle de difficulté plus bas) :
 
-Niveau de difficulté	Nombre max d’enquêtes disponibles
-1	5
-2	4
-3	3
+Niveau de difficulté	Nombre max. d’enquêtes disponibles
+1	3
+2	3
+3	2
 4	2
 5	1
 
-	- Une enquête peut-être abandonnée via le bouton Give up sur la Fiche d’enquête sans malus (ni bonus).
-	- Le niveau de difficulté d’une enquête représente un malus à TOUS les jets de dé du joueur dans cette enquête.
-	- Le joueur place les éléments à sa guise sur le tableau pour les relier comme bon lui semble.
-	- On obtient une autorisation de fouille par la fiche de quête au prix de 25Dø.
-	- On ne peut pas obtenir d’autorisation pendant une Interaction.
+	- Une enquête peut-être abandonnée via le bouton Give up dans le Menu Cases.
+	- Le joueur place les éléments à sa guise sur l’écran principal (Quest.tscn) pour les relier comme bon lui semble.
+	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously).
 	- Pour se rendre à un endroit lié à l’enquête ou chez un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles (comme ici, Aller).
-	- Le joueur ne pourra jamais aller chez un PNJ s’il ne connaît pas son adresse.
+	- Le joueur ne pourra jamais aller chez un PNJ s’il ne connaît pas son adresse ou ne sait pas où il est à cette heure-là.
 	- Le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas.
-	- Le tableau contiendra un bouton de demande de mise en accusation (comme si on passait le dossier pour un jugement) correspondant à une demande de validation de l’enquête et si tous les liens qui valident l’enquête sont bons sans erreur : gros bonus. Avec « quelques erreurs » (liens plein corrects mais liens pointillés incorrects), moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
-	- Faire et défaire des liens de culpabilité (liens Noir Plein) changera la Rep du joueur auprès des PNJs impliqués par ce lien. Seuls les liens pleins on un tel effet. -1 Rep pour un lien plein établi, +1 Rep pour un lien plein défait. Sans dépasser les Min/Max, bien entendu.
+	- On valide un Case (correspondant à une demande de validation de l’enquête) en faisant Clic droit, « Valider l’enquête » ou par le Menu Cases, « Valider l’enquête » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec jusqu’à 10 % d’erreur, moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
+	- Rappel : faire et défaire des liens de culpabilité (liens Noir Plein) changera la Rep du joueur auprès des PNJs impliqués par ce lien. Seuls les liens pleins on un tel effet. Autrement dit : -1 Rep pour un ou des lien(s) plein(s) établi(s), Annulation du malus quand il n’y a plus de lien.
 	 - Dans une enquête, chaque information (carte) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’au moins 1 PNJ.
-	- Un Élément de preuve (carte Objet) découverte va automatiquement dans la Fiche d’Enquête (en plus de la main de cartes Élément de preuve, naturellement) avec ses liens Violets.
-	- Toute carte (Objet) avec un Lien Plein ne peut plus être utilisée en Combat (si elle est utilisable ainsi dans des circonstances normales).
+	- Une Evidence découverte va automatiquement dans la pile de cartes Evidence avec ses liens Violets.
 
 
 Evolution du statut des cartes en Preuves/Pièces à conviction
 
-	- Toute nouvelle carte Objet découverte en interaction comme Élément de preuve prendra par défaut un lien Violet dans la fiche d'enquête et sera ainsi lié au Lieu de découverte et au(x) PNJ(s) présent(s) (ou au PNJ si le lien direct peut être fait puisque certaines cartes Objet (Élément de preuve) le peuvent) et à/aux éventuel(s) propriétaire(s) du Lieu. Le Lien Violet sera établi par le jeu.
-	- Une carte définie comme preuve, et à moins que son statut ne soit changé (liens) par le joueur, ne peut être utilisée en Combat.
-	- Si le joueur change ce statut et utilise cette carte en Combat, elle ne pourra plus jamais être utilisée comme preuve et fera potentiellement perdre l’enquête à la demande de validation de l’enquête si cet objet était bel et bien une preuve nécessaire.
+	- Toute nouvelle carte Objet découverte en interaction comme Élément de preuve prendra par défaut un lien Violet dans la fiche d'enquête et sera ainsi lié au Lieu de découverte et au PNJ présent et au PNJ propriétaire et au Lieu où elle aura été trouvée. Le Lien Violet sera établi par le jeu.
 
 Fiche d'enquête :
 
@@ -916,11 +936,14 @@ Vol (à l'étalage, pickpocket) – niveau 1 à 2
 
 Liens entre les éléments de la Fiche d'enquête
 
-	- Les liens se tracent depuis la partie haute d’une carte vers cette même zone sur une autre carte (sauf Gris, Rouge et Orange?).
-	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par exemple, amitié, collaboration).
-	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par exemple, suspicion, rumeurs).
+	- Pour tracer un lien, sur l’écran principal, faire clic droit, « créer un lien », « choix de type et plein ou pointillé » puis clic gauche sur le haut de la carte de départ, drag (trace une ligne) et drop sur le haut de la carte d’arrivée.
+	- Pour défaire un lien, sur l’écran principal, et sur le lien, fair clic droit, « Défaire le lien ».
+	- Pour changer le type, faire clic droit, « changer un lien », « choix de type et plein ou pointillé ».
+	- Les liens se tracent depuis la partie haute d’une carte vers cette même zone sur une autre carte.
+	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
+	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens : À définir, par exemple :
-          Blanc : /
+          Blanc : Dit où devrait être un PNJ à l’heure actuelle. 
 Gris : Témoin ? Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution (voir dans mon carnet mais pas idéal)…
           Noir : Coupable/Complice/Preuve → -1Rep si lien plein (incriminant) fait, +1Rep si lien plein (incriminant) défait.
           Rose : Intime
@@ -933,11 +956,6 @@ Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attach
           Vert clair : Propriété/Appartenance 
           Violet : nouveaux liens issus des interactions (Dialogue et/ou Investigation) toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ».
 
-	- Bonus/Malus
-	Le joueur aura des Bonus/Malus aux jets de dé (en Dialogue) avec un PNJ désigné comme Coupable ou Complice et uniquement à partir de la 2ème interaction de Dialogue :
-		1 lien plein (juste) : +1
-		1 lien plein (faux) : -1
-
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté (exemple)
 		Difficulté 1 : Enquêtes très simples. (+3)
@@ -948,7 +966,7 @@ Système de Difficulté pour les Enquêtes
 
 	- Le niveau de difficulté de l’enquête s’appliquera en bonus/malus à tous les jets de dé du joueur dans cette enquête.
 	- Au départ, le joueur n’a accès qu’aux enquêtes de niveau 1. Puis toutes les 3 enquêtes réussies dans ce niveau de difficulté, il a accès au niveau de difficulté suivant et ainsi de suite.
-	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de -3 aux jets de dé !
+	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 3 aux jets de dé !
 	- Plus le niveau de difficulté sera élevé et plus il faudra de preuves pour finaliser le dossier, plus il faudra (probablement) désigner de coupables et/ou de complices.
 
 
@@ -966,8 +984,8 @@ Résolution des enquêtes, gains et implications
 	- Une enquête perdue (accusation erronée avec validation finale) implique :
 		- Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0.
 	- Renoncer à une quête n’implique pas de malus (ni de bonus). Le joueur perd alors les cartes Objet (Lieu ?) liées à cette enquête (hors armes si elles ne sont pas de vraies preuves dans l’enquête). Son Emo ne bouge pas et il ne récupère pas d’argent non plus.
-	- Le joueur a un maximum de 10 cartes qu'il peut garder en main (plus 3 Abstraites). Ainsi il fait son jeu de cartes au fur et à mesure des événements tout en étant en permanence évolutif.
-	 - RAPPEL : Une carte abandonnée reprend automatiquement son malus de non maîtrise (-2 au jets de dé). Ainsi, la maîtrise est avérée par le fait d'avoir été utilisée avec succès lorsqu'elle n’était pas dans le jeu de cartes du joueur.
+	- Le joueur a un maximum de 10 cartes qu'il peut garder en main (dont max. 3 Abstraites). Ainsi il fait son jeu de cartes au fur et à mesure des événements tout en étant en permanence évolutif.
+	 - RAPPEL : Une carte abandonnée reprend automatiquement son malus de non maîtrise (malus de 2 au jets de dé). Ainsi, la maîtrise est avérée par le fait d'avoir été utilisée avec succès lorsqu'elle n’était pas dans le jeu de cartes du joueur.
 	- Si le joueur défausse des cartes liées à l’enquête, il les retrouvera automatiquement la prochaine fois qu’il reviendra interagir ici ou avec le(s) PNJ(s) avec lequel/lesquels il a interagi.
 	- Les cartes marquées comme Éléments de Preuve ne peuvent être défaussées puisqu’elles ne font pas partie de la main de maîtrise.
 	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de round(niveau de difficulté de l’enquête/2) jours.
@@ -1009,37 +1027,6 @@ Complice(s)	…
 Élément(s) de preuve	Objet(s), Lieu(x)
 Relations entre personnages	le mort et la librairie (plein), la librairie « L’art est partout » et le suspect 1 (pointillé)
 
-
-Mort du joueur dans la quête finale par épuisement :
-
-	- J’ai traîné, j’ai fouillé, j’ai retourné chaque ruelle puante, chaque bouge infâme où même la lumière n’ose plus pénétrer. J’ai parlé à des fêlés, des clodos puant la pisse. J’ai tendu l’oreille à des petites frappes en quête de gloire et d’anciens malfrats aux gueules de traviole. Même les vieux indics qui respiraient le piège à plein nez m’ont servi leur merde, sans que rien ne vienne compléter le tableau que je brossais depuis si longtemps.
-Les heures s’étaient allongées et plus je creusais, plus je m’enfonçais dans le vide et plus je sentais ce frisson qui me grignotait l’échine, qui glissait sous ma peau, jusqu’à me tordre les tripes. Ça m’empoisonnait petit à petit, et moi, je n’arrivais même plus à savoir si c’était la peur ou la folie qui me gagnait. Peut-être les deux, d’ailleurs. Je n'avais plus mangé depuis je ne sais combien de temps. Rien ne passait, pas même un verre d’eau. Comme si tout ça n’avait plus d’importance pour le chercheur de vérité que j’étais devenu, je fuyais le sommeil comme mon pire ennemi. Je ne savais même pas pourquoi il y avait de moins en moins de temps à perdre.
-Les morceaux que j’avais réussi à récolter, les quelques bribes d’une immonde vérité à ne même pas savoir mieux la nommer, m’indiquaient de plus en plus clairement que ma quête n’était pas une lubie de paranoïaque dont, de toute manière, je n’aurais jamais été suffisamment lucide pour le constater mais une descente dans un abîme qu’il n’était pas question d’esquiver. Et comme un con, j’y allais, sans retour, presque le sourire aux lèvres si j’avais pu déceler la moindre ironie là-dedans : une fois que la vérité commence à vous ronger, elle finit nécessairement par vous dévorer.
-C’est alors que tout a basculé. Ma vision s’est brouillée. Un vertige m’a frappé comme un coup de poing dans le ventre, me projetant au sol au milieu du hall de l’immeuble sur le carrelage froid qui sentait la poussière et l’humidité. J’ai senti mon crâne se fracasser sur le carrelage glacé de l’entrée de l’immeuble. J’ai à peine eu le temps d’apercevoir les motifs des carreaux au sol que je n’avais jamais vus d’aussi près : ils me rappelèrent brièvement Lisbonne. Puis plus rien. J’ai cané là, comme une merde !
-
-	- I hung around, searched, turned over every filthy alley, every godforsaken dive where even light dares not enter. I spoke to crazies, to homeless reeking of piss. I listened to small-time crooks chasing glory and old gangsters with crooked faces. Even the old informants who could smell a trap from a mile away handed me their crap, and none of it completed the picture I’d been painting for so long.
-The hours stretched on, and the deeper I dug, the further I sank into emptiness, and the more I felt that shiver gnawing at my spine, slipping under my skin, twisting my guts. It poisoned me, bit by bit, and I couldn’t even tell anymore if it was fear or madness taking hold of me. Maybe both. I hadn’t eaten in who knows how long. Nothing passed my lips, not even a glass of water. As if none of it mattered anymore to the truth-seeker I’d become, I was avoiding sleep like it was my worst enemy. I didn’t even know why there seemed to be less and less time to lose.
-The scraps I’d managed to gather, the few pieces of a vile truth that I couldn’t even name properly, pointed more and more clearly to the fact that my quest wasn’t some paranoid delusion—one I’d never have been clear-headed enough to realize anyway—but a descent into an abyss I couldn’t dodge. And like a fool, I kept going, no way back, almost with a smile on my lips if I could’ve found any irony in it: once the truth starts to gnaw at you, it inevitably devours you.
-That’s when everything tipped over. My vision blurred. A vertigo hit me like a punch in the gut, throwing me to the ground in the middle of the building’s hallway, the cold tiles beneath me smelling of dust and damp. I felt my skull crash against the icy floor. I barely had time to notice the tile patterns I’d never seen so close—briefly, they reminded me of Lisbon. Then nothing. I died there, like shit.
-
-Mort du joueur dans la quête finale par assassinat :
-
-	- J’avais touché au but. Punaise, j’étais sur le point de crever l’abcès. J’avais traîné dans la merde pendant des heures, à recouper chaque détail, remonter chaque fausse piste, chaque mensonge qu’on m’avait servi. Et maintenant, tout était là, net et propre. J’avais les preuves, les vraies. J'avais démêlé le vrai du faux. Tout ce bordel s’imbriquait comme un vieux puzzle, chaque pièce s’emboîtant trop facilement dans l’autre, comme si tout avait été fait pour me faire trébucher. Personne n’était clair. Pas dans cette ville. Pas dans cette affaire. Et je ne m’étais certainement pas fait avoir par ces sales petits « relativistes » et autres moutons bêlants prompts à gober le discours ambiant composé savamment pour les rassurer !
-Et certainement pas non plus dans cette ville de merde… New-Caelum. La même qui te crachait au visage dès que t'avais le malheur d’y croire. Des ruelles crades, des façades qui puaient la déprime, des ombres qui traînaient plus que ses âmes perdues. Il n’y avait pas de lumière ici. Tout était pourri jusqu’au noyau. Juste un bouillon merdeux où tu t’engouffrais sans même t’en rendre compte. Cette fois, plus de trucs bizarres à la Pizzeria, plus de martiens ou de drogues cosmiques. Non, cette fois, c’était bien plus vicieux. Bien plus dégueulasse. Comme tout dans cette ville putride. Je savais ce qu'ils préparaient. Tout. J’avais les preuves dans les mains.
-Mais juste quand je croyais avoir gagné, juste quand je me voyais déjà faire tomber les masques, tout a déraillé.
-Et j’ai entendu une déflagration venant de ma droite. Le bruit n’avait pas encore fini de résonner que le temps s’est quasiment figé. Mes paupières ont commencé à se baisser à ce moment-là et pendant que me mon regard glissait sur le côté, j’ai senti les muscles de mon cou se tendre pour faire pivoter ma tête et alors que mes paupières se relevaient, j’ai vu se diriger vers moi un éclat de lumière qui faisait vibrer l’espace autour de lui à mesure qu’il se rapprochait. Mes pupilles ont commencé à se dilater et ma mâchoire a tenté de s’ouvrir en grand pour que je puisse avaler une grande goulée de l’air puant la poudre brûlée autour de moi pour alimenter un réflexe salvateur mais je n‘ai pas eu le temps : j’ai senti ma cloison nasale instantanément chauffer puis céder et tout s’est accéléré : je me suis effondré sur le planché : le plus beau plat du 5m de ma vie sauf que je n’ai pas eu de médaille pour ça. J’ai à peine aperçu s’intensifier un épais glacis rouge vif devant mes yeux et ensuite le noir. J’ai cané là comme une merde.
-
-	- I had hit the mark. Damn, I was about to burst the damn abscess wide open. I'd been wallowing in this shit for hours, cross-checking every detail, retracing every false lead, every goddamn lie they’d shoved in my face. And now, it was all right there, clear as day. The evidence. The real stuff. I’d finally untangled the truth from the lies. Each piece of the puzzle slotted together too damn easily, like they’d all been set up to trip me up. No one was clear. Not in this city. Not in this case. And no way in hell I was getting fooled by those smug "relativists" or their bleating sheep, always ready to swallow whatever comforting bullshit they were fed. No fucking way.
-Not in this godforsaken city... New-Caelum. The same city that spits in your face as soon as you dare to believe in it. Dirty alleys, facades reeking of despair, shadows lurking longer than the lost souls they trap. There wasn’t a shred of light here. Just decay. A thick, soupy mess you drown in without even realizing it. No Pizzeria, no aliens, no cosmic drugs this time. No, this was far more twisted. Far more disgusting. Just like everything else in this rotten town.
-I knew what they were planning. I knew it all. The proof? I had it.
-But just when I thought I'd won, just when I saw the masks about to fall, everything went off the rails.
-I heard a blast from my right. The sound hadn't even finished ringing in my ears before time seemed to freeze. My eyelids started to drop slowly, and as my gaze drifted to the side, I felt the muscles in my neck tense to swivel my head. Then, as my eyelids lifted again, I saw it—a burst of light coming straight at me, warping the air around it as it drew closer. My pupils began to dilate, and my jaw tried to open wide, desperate to suck in a breath of the burnt powder-laced air that surrounded me, a reflex, a last-ditch effort to survive. But I didn’t get the chance.
-I felt my nasal cavity instantly heat up, then collapse, and everything sped up. I dropped to the floor. The most graceful belly flop from the 5-meter, straight down — though I wasn’t getting any medals for it. I barely caught a glimpse of the thick red glaze that spread in front of my eyes, growing more intense, and then… darkness. I crumpled there like garbage.
-
-
-
-
-
 Éléments additionnels :
 
 	- On va probablement créer plusieurs quêtes finales pour la re-jouabilité. Au moins 2 ou 3 ?
@@ -1054,69 +1041,6 @@ I felt my nasal cavity instantly heat up, then collapse, and everything sped up.
 	- Je pense qu’il faut avoir la possibilité de fouiller un/des PNJ(s) tombé(s) à HEA=1 et incapacité(s) ou mort(s) à la fin d’un/des combat(s) afin d’éventuellement trouver quelque chose sur lui/eux afin de redonner un peu d’intérêt aux Combats qui semblent en perdre au fur et à mesure.
 
 	- Sur l’écran d’Interarction, il manque probablement la zone de cartes Lieux et PNJs liés à l’enquête (il faut les retirer des Evidences, il me semble) !
-
-Génération procédurale :
-
-	- Tout est généré procéduralement ! Comme ça, c’est pas compliqué. :-)
-
-"Histoire" : 
-	- Je vis à New-Caelum, une ville crasseuse où le crime et la corruption règnent en maîtres. On se bat dans les rues, la justice y est rarement rendue et les secrets abondent autant que ces rats volants de pigeons. Ici, tout le monde navigue à vue entre dangers quotidiens et manigances sournoises : la survie de chacun dépend souvent de sa capacité à déjouer les pièges et à découvrir la vérité. Et ça maintenant, c'est mon boulot…
-	- I live in New-Caelum, a filthy town where crime and corruption reign supreme. People fight in the streets, justice is rarely served, and secrets are as common as those flying rats—pigeons. Here, everyone drifts through life, dodging daily dangers and sly schemes: each person's survival often depends on their ability to outwit traps and uncover the truth. And from now on, that's my job...
-Notes :
-	- Probablement pas de voix dans le jeu : pas trop compatible avec la génération procédurale de personnages, enquêtes, etc. À moins d’utiliser la fonction lecture qui semble être présente dans Godot…
-	- Des musiques qui puissent toutes se fondre l’une dans l’autre (attention au tempo, tonalité, etc.).
-	- En causant de ça, je pense aux films de Tati dans lesquels on n'entend presque jamais les voix des personnages. Ca pourrait être aussi une piste à explorer : des bruitages, de la "musique" mais pas de voix…
-
-
-Exemple d’« Histoire » pour un ex-concierge (Janitor) :
-	J’ai passé des années à curer la merde des bourgeois de New-Caelum, à les voir sourire faussement tout en répandant leur venin. Rien qu’à l’odeur sur les paliers, je devinais leurs secrets. J’étais concierge, invisible, mais toujours à l’affût.
-	Un jour, un bout de papier est tombé à mes pieds : un rendez-vous dans un coin du quartier que je croyais connaître de fonds en combles. Pourquoi ce lieu m’était-il si bien caché ? Cette question m’a hanté. Puis, en astiquant les cuivres de l’escalier A, je suis tombé sur un autre papier mentionnant un autre rendez-vous au même endroit.
-	L’adrénaline a pris le dessus. J’ai commencé à poser des questions discrètes, cherchant des pistes. L’envie de savoir m’a propulsé dans un monde d’intrigues. De simple concierge, je suis devenu un chasseur de vérités, prêt à déterrer ce qui se cache dans l’ombre.
-	Finalement pas grand-chose ne change, je gagne toujours ma vie comme ça : en remuant la merde des autres !
-	I spent years cleaning up after the bourgeois of New-Caelum, watching them exchange false smiles while spreading their venom. Just from the smell on the landings, I could guess their secrets. I was the janitor, invisible but always on alert.
-	One day, a scrap of paper fell at my feet: a note about a meeting in a corner of the neighborhood I thought I knew inside and out. Why was this place so well hidden from me? That question haunted me. Then, while polishing the brass on stairway A, I stumbled upon another slip mentioning yet another meeting in the same spot.
-	Adrenaline kicked in. I began to ask discreet questions, searching for leads. The urge to know propelled me into a world of intrigue. From simple janitor, I became a seeker of truths, ready to unearth what lurked in the shadows of this grimy city.
-	In the end, not much has changed; I still earn my living this way, stirring up other people's dirt!
-
-Exemple d’« Histoire » pour un ex-chômeur (Jobless) :
-
-	Sans boulot, le temps devient un insoutenable fardeau : chaque minute traîne, chaque seconde s’étire comme une éternité. J’ai traîné des mois dans ce quartier, usant mes vieilles pompes qui prenaient l’eau… Et ici, à New-Cælum, je devrais surtout parler de boue. Une fange dans laquelle on patauge tous, plus ou moins, mais on y est tous, les pieds et l’âme noyés dans cette merde.
-	J’ai passé tant de jours à observer, à écouter. Les gens ne s’aiment même pas entre eux. J’entendais leurs rumeurs, leurs basses manœuvres, leurs petits secrets qui traînaient. Et petit à petit, ça m’a piqué alors j’ai tendu l’oreille, d’abord sans y penser, puis l’envie de savoir a pris le dessus. J’ai commencé à poser des questions et à chercher dans les recoins sombres du quartier.
-	Ce que j’ai trouvé ne sentait pas le frais : des histoires de trahisons, de rancœurs, de gens prêts à tout pour cacher des coups tordus. Mais c’est là que tout a recommencé pour moi. Aujourd’hui, je gagne quelques billets à fouiller cette fange. J’enquête, et on me paye pour ça.
-
-	Without a job, time becomes an unbearable burden: every minute drags, each second stretches like an eternity. I spent months hanging around this neighborhood, wearing out my old shoes that were letting in water... And here, in New-Cælum, I should mostly talk about mud. A sludge that we all wade through, more or less, but we're all stuck in it, our feet and souls drowned in this shit.
-	I spent so many days just observing, listening. People don’t even like each other. I heard their gossip, their shady dealings, their little secrets lying around. And little by little, it started to sting, so I started paying attention—at first without thinking about it, but then the need to know took over. I began asking questions, searching in the dark corners of the neighborhood.
-	What I found didn’t smell fresh: stories of betrayal, grudges, people willing to do anything to hide dirty tricks. But that’s where it all started again for me. Today, I make a few bills digging through this muck. I investigate, and they pay me for it.
-
-Les écrans de jeu nécessaires
-	- Fiche d’Enquête
-	- Interactions
-	- PNJs
-	- Options
-	- Calendar
-	- Boutique/Deal
-	- Enquêtes disponibles
-	- Overlay de choix des cartes en fin d’interaction
-	- Overlay de résolution de Quête !
-	- Overlay de quête perdue !
-	- Overlay de mort ! (Game over !)
-	- Overlay de Paranoïa !
-	- Compteur de dose de drogue !
-	- Compteur de Dø !
-	- Overlay de Wanted !
-	- Création de personnage
-	- Pas mal d’autres, il faudra relire les règles car cette liste est de plus en plus loin d’être exhaustive ! 
-
-Fonctions de la souris
-	- Drag & Drop : Cartes, Liens… 
-	- Clic gauche : Activer, Valider, Sélectionner… 
-	- Clic milieu :
-	- Molette : Naviguer dans les cartes/la main de cartes. Dans tous les cas, sous la souris… 
-	- Menu clique Droit : Aller… 
-
-Menus
-	- 
-
 
 Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre.
 
@@ -1162,971 +1086,3 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 			- Une liste de mobiles vide qui se remplira au fur et à mesure des interrogatoires ?
 			- Une liste de mobiles pleine dont les interrogatoires éliminent les possibilités au fur et à mesure ?
 		- … 
-D’autres objets à trouver dans les Lieux :
-
-Objets du Commissariat :
-Gants jetables
-Tampon du Commissariat
-Sachets en plastique
-Lampe torche
-Scellés
-Papier à entête du commissariat
-Formulaires/reçus de saisie
-Munitions
-Insignes
-
-Prison :
-CNI
-Insignes
-Manuel d'instructions pénitentiaires
-Ticket de cantine
-Bracelet de suivi
-Clé de cellule
-Linge de lit
-Outils bricollés
-Carte de visite d'avocat
-Tampon de l'établissement
-
-Caserne :
-Insigne
-chapeau/casque
-registre
-Guide de procédure/protocole militaire/sanitaire
-gourde
-trousse de 1er secours
-Outils
-Émetteurs radio
-brassards
-Munitions
-rations de nourriture
-
-Café :
-Sous-bock
-Sachet de sucre
-Sachet de crème
-couverts
-Serviettes en papier
-Mélangeur de boisson
-Tasse
-Magazine/Journaux
-
-Appartement :
-Télécommande de TV
-
-Boutique/Magasin :
-Sachets en papier
-Carte de fidélité
-Bons cadeaux
-Sacs de courses en toile
-
-École :
-Cahiers
-Stylos
-Feutres
-Cartable
-Étiquettes de noms
-Manuel scolaire
-cahier de texte
-Crayons
-Balle
-Ballon
-
-Hôpital :
-Stéthoscope
-Perfusions et poches de liquide
-gants
-Seringues et aiguilles
-pansements et bandages
-Canne et béquilles
-Dossiers médicaux
-Thermomètre
-Inhalateur
-Radios
-
-Cabinet :
-Tensiomètre
-pansements et bandages
-Désinfectant
-Médicaments
-"Drogue"
-Dossiers
-Lampe de consultation
-Bâtonnets de prélèvements
-Gants
-Lingettes désinfectantes
-Balance/pèse-personne
-Cartes de rendez-vous
-Ciseaux
-
-Musée :
-Œuvre d'art
-Étiquettes
-Cartels
-Brochures, guides et prospectus
-Livre d'or
-Carte d'abonné/adhésion
-Tickets d'entrée
-Livres d'art
-Photos, cartes, reproductions...
-
-Discothèque :
-Cds
-Verres
-Bouteilles
-Bracelets d'entrée
-Bouchons d'oreilles
-
-Bureau :
-Cellphone
-Stylos, etc.
-Cartes de visite
-Classeurs et dossiers
-Agrafeuse
-Carnets de notes
-Agenda
-Calendrier
-Scotch
-Sucrettes
-Dosettes de café
-
-Hangar :
-Outils
-Câbles et fils électriques
-Graisse
-Carburant
-solvants
-Casque
-Gants
-Cordes
-
-Cimetière :
-Fleurs
-Plaques commémoratives
-Symboles religieux
-Urnes funéraires
-Porte-encens
-
-Salle de sport :
-Haltères
-Pots de protéines
-Corde à sauter
-Bouteilles de boisson pour le sport
-Serviettes
-Baladeur mp3
-Écouteurs
-
-Restaurant :
-Couverts
-Verres
-Serviettes en papier
-Sel, poivre
-Moutarde
-Bougies
-
-Parc :
-Jouets
-Balles, ballons, equipements de sportifs
-Baladeurs mp3, écouteurs
-Cahiers, stylos...
-Livres
-
-Lieu de culte :
-Bougies
-Encensoir
-Chapelets, perles de prière
-Livres sacrés ou de prières
-Symboles religieux
-
-Salle de jeux :
-Balles de baby-foot
-Palet de air hockey
-Boules de billard
-CB
-Jetons
-Tickets
-Pistolet de laser (jeu vidéo)
-Bracelet d'entrée
-
-Salle de spectacle :
-Tickets
-Programme
-T-shirt
-CDs
-Partitions
-Livret
-Texte de théâtre
-Flyers
-
-Marché aux puces :
-Couverts anciens
-Livres anciens
-Disques vinyles
-Vielles radios
-Vielles calculatrices
-Vielles machines à écrire
-Vieux outils
-Anciens bijoux
-Anciennes cartes postales, affiches
-Partitions anciennes
-Poupées (anciennes !)
-Appareils photo argentiques
-Jumelles
-Photos
-
-Galerie d'art :
-Photographies
-Sculptures
-Peintures
-Dessins
-Cadres et passe-partout
-Cartels
-Pinces
-Crochets
-"Cimaises"
-Catalogues
-Monographies
-Affiches
-Cartes de visite
-Flyers
-
-Stade :
-Balles, ballons...
-Raquettes
-Vêtements de sport
-Chronomètre
-Écharpes de supporter
-Sacs de confettis
-Vuvuzela
-Gobelet
-Canettes
-Bonnet de supporter
-
-Bibliothèque :
-Livre
-Journaux
-Fiches d’emprunt
-Marque-pages
-Carte d'"abonné"
-
-Hôtel :
-Clé magnétique
-Brochures et prospectus
-Serviettes, gants, shampooing et savons
-Télécommande de tv
-Réveil
-Nettoyants et lingettes
-Sèche-cheveux
-
-Station service :
-Bidon d'huile, antigel, lave-vitre...
-Essuie-glaces
-Paquet de cigarettes
-Carte routière
-Carte de fidélité
-Gilet de sécurité
-"Cadeaux" publicitaires
-
-Piscine :
-Maillot de bain
-Bonnet de bain
-Lunettes de natation
-Kit de test d'eau
-Flotteurs
-
-Cinéma :
-Ticket
-Pot à popcorn
-Gobelet à boisson
-Carte d'abonné
-
-Atelier :
-Outils
-Fournitures (vis, clous...)
-Colle
-Peinture
-Pinceaux
-Solvants
-Médiums
-Aiguilles, fil, tissus
-Mètre ruban
-Craies
-
-Laboratoire :
-Gants
-Lunettes de protection
-Masques
-Éprouvettes, béchers...
-Pipettes, flacons
-Balance
-Microscope
-Colorants
-Boîtes de Pétri
-Pinces, scalpels, spatules
-Étiquettes
-
-
-
-Liste de mobiles possibles :
-
-Adultère :
-    1. Insatisfaction relationnelle
-    2. Recherche de validation
-    3. Frustration émotionnelle
-    4. Désir d’aventure
-    5. Vengeance
-    6. Ennui dans la relation existante (recherche de nouveauté)
-    7. Manque d'intimité
-    8. Séduction et manipulation
-    9. Libération de frustrations sexuelles
-    10. Recherche de pouvoir ou d'influence
-    11. Volonté de s'affirmer ou de se libérer des contraintes relationnelles
-    12. Recherche d'une relation plus épanouissante
-    13. Désir de tester sa séduction
-    14. Stress ou pression extérieure (relations familiales, sociales)
-    15. Tentative de fuir des responsabilités émotionnelles
-Agression (physique/verbale) :
-    1. Colère
-    2. Vengeance
-    3. Rivalité
-    4. Humiliation perçue
-    5. Provocation
-    6. Défense personnelle
-    7. Stress ou pression
-    8. Dépendance à la violence
-    9. Jalousie
-    10. Protéger l'honneur ou l'image
-    11. Désir de contrôler la situation
-    12. Volonté de se faire respecter
-    13. Sentiment d'impuissance ou frustration
-    14. Réaction impulsive à une insulte
-    15. Anxiété ou peur entraînant une réaction excessive
-Cambriolage :
-    1. Besoin d'argent
-    2. Désespoir financier
-    3. Opportunisme
-    4. Vol par nécessité
-    5. Vengeance contre une victime
-    6. Tentative de dissimulation d’un autre crime
-    7. Vol pour financer un vice (drogue, jeu, etc.)
-    8. Fuite de la loi
-    9. Enthousiasme ou plaisir du crime
-    10. Mauvais exemple (influence familiale/criminelle)
-    11. Failles de sécurité exploitables
-    12. Vol de biens spécifiques (objets de valeur, objets sentimentaux)
-    13. Vol impulsif suite à une tentation
-    14. Recherche de sensation ou d’excitation
-    15. Récupérer des preuves compromettantes (pour faire chanter ou protéger quelqu’un)
-Chantage :
-    1. Recherche d’argent ou de pouvoir
-    2. Vengeance
-    3. Manipulation émotionnelle
-    4. Domination ou contrôle
-    5. Révélation de secrets personnels
-    6. Obtenir des informations
-    7. Pression pour de la reconnaissance ou un statut
-    8. Détournement de carrière
-    9. Protéger ses propres secrets
-    10. Manipulation d’un conflit
-    11. Intimidation pour obtenir des faveurs
-    12. Manipulation de la réputation d'un individu
-    13. Obtenir une couverture ou immunité
-    14. Gagner un avantage compétitif (politique, social)
-    15. Faire taire des témoignages ou des preuves
-Contrefaçon :
-    1. Profit financier
-    2. Tromperie pour gain personnel
-    3. Désir d’imiter une marque prestigieuse
-    4. Négligence ou erreur
-    5. Vente à bas prix (attirer les consommateurs à budget limité)
-    6. Satisfaction personnelle (prouver ses compétences)
-    7. Failles du système (profit des failles légales)
-    8. Rivalité commerciale
-    9. Volonté de provoquer une crise de confiance
-    10. Détournement des marques célèbres pour un gain rapide
-    11. Diminution des coûts de production
-    12. Escroquerie via des produits faux ou défectueux
-    13. Satisfaire une demande non satisfaite (marché parallèle)
-    14. Créer des faux pour éviter des sanctions légales
-    15. Désir d’atteindre un public spécifique (par exemple, jeunes consommateurs)
-Extorsion :
-    1. Pression financière
-    2. Recherche de pouvoir
-    3. Intimidation pour obtenir un avantage
-    4. Révélation de secrets compromettants
-    5. Rétorsion politique
-    6. Relation de pouvoir ou soumission
-    7. Manipulation émotionnelle
-    8. Punition ou vengeance
-    9. Cacher des fautes passées
-    10. Dépendance à la menace et à la coercition
-    11. Volonté de détruire un concurrent ou un ennemi
-    12. Obtenir des informations stratégiques
-    13. Prendre le contrôle d'une personne influente
-    14. Sécuriser des financements ou ressources illégales
-    15. Prendre des mesures pour empêcher une dénonciation
-Corruption :
-    1. Pouvoir ou richesse
-    2. Favoritisme ou privilège
-    3. Intérêt personnel
-    4. Tentation ou pression externe
-    5. Manque de morale
-    6. Conformisme au système
-    7. Peur de perdre une position
-    8. Enrichissement personnel rapide
-    9. Opportunisme
-    10. Perception que c'est la norme dans l’environnement
-    11. Profiter de failles légales ou administratives
-    12. Manipulation de fonds publics ou privés
-    13. Faire avancer un agenda personnel
-    14. Maintenir une position de pouvoir à tout prix
-    15. Créer des alliances stratégiques avec des parties influentes
-Délit de fuite :
-    1. Peur de la sanction
-    2. Manque de responsabilité
-    3. Pression immédiate
-    4. Conduite sous l’influence (alcool, drogues)
-    5. Tentative d’évasion des conséquences
-    6. Manque de préparation émotionnelle
-    7. Excuse personnelle (distraction, panique)
-    8. Refus d’assumer les conséquences
-    9. Culpabilité
-    10. Peur d'être jugé négativement
-    11. Tactique pour éviter les responsabilités légales
-    12. Désir d'éviter un procès ou une enquête
-    13. Recherche de couverture pour des infractions antérieures
-    14. Comportement impulsif ou panique après un accident
-    15. Crainte d’être impliqué dans un scandale médiatique
-Diffamation :
-    1. Rivalité
-    2. Colère ou vengeance
-    3. Compétition professionnelle
-    4. Prise de pouvoir ou influence
-    5. Désir de nuire à l’image d’une victime
-    6. Baisser la réputation d’un concurrent
-    7. Attirer l'attention
-    8. Manipulation d’opinion publique
-    9. Manipulation de l’image sociale
-    10. Désir de ruiner la réputation d'un individu influent
-    11. Protection d'un secret personnel en dénigrant l'autre
-    12. Détournement de l'attention de ses propres erreurs
-    13. Faire pression sur la victime pour obtenir des avantages
-    14. Souhait de détruire l'autorité ou la crédibilité d'un leader
-    15. Tentative de changer l’opinion publique sur un sujet ou une personne
-Enlèvement :
-    1. Demande de rançon
-    2. Motivations idéologiques
-    3. Vengeance
-    4. Manipulation ou contrôle psychologique
-    5. Trafic d’êtres humains
-    6. Enlèvement familial (garde d’enfants)
-    7. Prisonnier politique
-    8. Possession ou contrôle absolu
-    9. Preuve de pouvoir ou de domination
-    10. Créer un choc social
-    11. Utilisation comme pion dans un jeu politique ou économique
-    12. Cacher une personne pour protéger un secret
-    13. Volonté de punir une personne ou un groupe
-    14. Rébellion ou protestation contre un gouvernement ou système
-    15. Obtenir un levier pour une négociation ou un échange
-Espionnage :
-    1. Intérêt politique
-    2. Espionnage industriel
-    3. Recherche de secrets commerciaux
-    4. Intérêt militaire
-    5. Recherche de pouvoir stratégique
-    6. Profit personnel
-    7. Rivalité ou compétition
-    8. Bénéfices idéologiques
-    9. Protection des intérêts d'une nation ou d'une entreprise
-    10. Connaissance ou manipulation de secrets gouvernementaux
-    11. Obtenir une position de pouvoir ou d'influence
-    12. Créer un avantage concurrentiel
-    13. Réduire la compétitivité d'un ennemi
-    14. Contrôle des informations sensibles
-    15. Défendre une cause, une idéologie ou un groupe particulier
-Fraude :
-    1. Profit personnel
-    2. Éviter des responsabilités financières
-    3. Tromperie pour gain matériel
-    4. Manipulation du système
-    5. Protéger une position
-    6. Optimisation fiscale frauduleuse
-    7. Avantage à court terme
-    8. Faire passer des fonds personnels pour des dépenses professionnelles
-    9. Obtenir des crédits ou des prêts de manière illégale
-    10. Obtenir des produits ou services sans payer
-    11. Manipuler des documents pour changer des résultats
-    12. Escroquerie via des fausses assurances
-    13. Monopolisation de certaines ressources via des fraudes
-    14. Créer des faux rapports ou bilans financiers
-    15. Exploiter des failles légales dans des contrats ou systèmes
-Harcèlement :
-    1. Contrôle ou pouvoir
-    2. Vengeance
-    3. Recherche de soumission
-    4. Désir d'humiliation
-    5. Insécurité personnelle
-    6. Obsession
-    7. Protéger un territoire
-    8. Manipulation psychologique
-    9. Exercice de domination dans un cadre professionnel
-    10. Créer un climat de peur pour manipuler les autres
-    11. Culpabiliser ou faire se sentir inférieur
-    12. Rejet social ou marginalisation
-    13. Obtenir une réaction ou une soumission
-    14. Tester la limite des autres
-    15. Moquerie pour conforter sa propre estime de soi
-Incendie criminel :
-    1. Vengeance
-    2. Désir de destruction
-    3. Assurance frauduleuse
-    4. Protestation ou revendication politique
-    5. Simple plaisir de détruire
-    6. Cacher des preuves
-    7. Manipulation psychologique
-    8. Désir de semer la terreur
-    9. Marquer un territoire ou un espace
-    10. Recherche de sensation ou d'excitation
-    11. Créer une diversion pour d'autres crimes
-    12. Volonté d’attirer l’attention sur une cause
-    13. Attaque contre un ennemi perçu
-    14. Expérience de contrôle de la situation
-    15. Désir de forcer des changements dans une institution
-Intrusion :
-    1. Vol ou vandalisme
-    2. Espionnage ou surveillance
-    3. Recherche d’informations personnelles
-    4. Curiosité morbide ou voyeurisme
-    5. Tentative de crime plus grave
-    6. Collecte d’informations stratégiques
-    7. Excuse pour un autre crime
-    8. Espionnage industriel
-    9. Recherche de secrets ou de preuves
-    10. Vol de données sensibles
-    11. Sensation de pouvoir ou d’omniprésence
-    12. Exploration non autorisée d’un espace privé
-    13. Obsession pour un lieu ou une personne
-    14. Recherche de preuves pour faire chanter quelqu’un
-    15. Vol d’objets personnels à des fins de manipulation
-Maltraitance :
-    1. Pouvoir ou domination
-    2. Frustration ou stress
-    3. Insensibilité ou négligence
-    4. Défaut d'empathie
-    5. Hérédité ou modèle familial
-    6. Manque d’éducation
-    7. Détournement de frustration
-    8. Désir de contrôler ou soumettre l’autre
-    9. Sentiment de supériorité
-    10. Perception de l’autre comme inférieur
-    11. Recherche d’un exutoire émotionnel
-    12. Tentative de maintenir une autorité
-    13. Traumatismes passés non résolus
-    14. Négligence liée à l’alcool ou aux drogues
-    15. Croyance en une forme de "discipline" nécessaire
-Meurtre :
-    1. Vengeance
-    2. Conflit personnel ou familial
-    3. Gain financier
-    4. Désir de pouvoir
-    5. Obsession
-    6. Crise émotionnelle
-    7. Erreur fatale
-    8. Détournement de colère
-    9. Désir de perfection
-    10. Volonté de supprimer un rival perçu
-    11. Créer une illusion de justice
-    12. Protéger un secret ou une position
-    13. Peur d’être découvert
-    14. Défense de ses proches ou de soi-même
-    15. Frustration ou incompréhension profonde
-Piratage :
-    1. Profit financier
-    2. Recherche de pouvoir ou de reconnaissance
-    3. Espionnage industriel
-    4. Désir de perturber ou de saboter
-    5. Idéologie (hacktivisme)
-    6. Compétition technologique
-    7. Rétribution ou vengeance
-    8. Exposition publique
-    9. Détournement de fonds
-    10. Recherche de données sensibles
-    11. Activisme politique ou social
-    12. Prouver des compétences techniques
-    13. Sabotage d'un concurrent
-    14. Compromettre la sécurité nationale ou d’une entreprise
-    15. Réaliser un exploit informatique
-Proxénétisme :
-    1. Profit financier
-    2. Contrôle sur des victimes vulnérables
-    3. Exploitation ou manipulation psychologique
-    4. Réseau criminel organisé
-    5. Croyance dans la domination
-    6. Négligence morale ou manque d’éthique
-    7. Dépendance à l’argent rapide
-    8. Exploitation des faibles ou des opprimés
-    9. Utilisation des victimes comme biens de consommation
-    10. Profiter de l'illégalité de la prostitution
-    11. Maintien d’un réseau criminel
-    12. Vendre une illusion de succès ou de richesse
-    13. Influence d’une culture criminelle
-    14. Trouver des victimes dans des situations vulnérables (drogues, abus, pauvreté)
-    15. Volonté de dominer ou de contrôler des individus
-Racket :
-    1. Intimidation pour argent
-    2. Contrôle de territoire ou de marché
-    3. Exploitation de vulnérabilités
-    4. Menace ou coercition
-    5. Attirer des alliés
-    6. Défiance vis-à-vis de l’autorité
-    7. Retour d’expérience
-    8. Volonté de montrer sa puissance ou sa supériorité
-    9. Créer une « protection » pour les victimes
-    10. Contrôle ou prise en charge de secteurs économiques spécifiques
-    11. Expérience de pouvoir ou de domination
-    12. Perception de légitimité dans l’extorsion
-    13. Recherche de prestige ou reconnaissance sociale
-    14. Exploiter les faiblesses d’une personne ou d’une organisation
-    15. Volonté de créer une source de revenus réguliers
-Recèle :
-    1. Profit personnel
-    2. Impliqué dans un réseau criminel
-    3. Peur de la dénonciation
-    4. Manque d’éthique ou d’empathie
-    5. Cacher des traces d’un crime
-    6. Pragmatisme
-    7. Soutien à un criminel de confiance
-    8. Tentation de gagner de l’argent facile
-    9. Détournement de biens volés
-    10. Réduire les risques en cachant des objets
-    11. Protection d’un proche ou d’un partenaire criminel
-    12. Pérenniser un réseau illégal
-    13. Participer indirectement à un crime sans être activement impliqué
-    14. Perception que la loi est injuste
-    15. Volonté d’éviter la responsabilité d’un crime
-Usage de faux :
-    1. Gain financier
-    2. Falsification de documents officiels
-    3. Tentative d’évasion légale
-    4. Vol d’identité
-    5. Déguisement d’illégalités
-    6. Construire une nouvelle identité
-    7. Abus de système
-    8. Frauder pour obtenir des avantages sociaux ou fiscaux
-    9. Volonté de dissimuler des preuves
-    10. Contourner des lois ou des règles
-    11. Falsification pour manipuler un résultat
-    12. Escroquerie pour obtenir des biens ou services
-    13. Légitimer des fonds obtenus de manière illégale
-    14. Manipulation pour éviter des sanctions
-    15. Obtenir un crédit ou un prêt sous de faux prétextes
-Vente d'objets volés :
-    1. Profits rapides
-    2. Dépendance ou besoin d’argent
-    3. Part d’un réseau criminel
-    4. Revente de biens précieux
-    5. Commodité et accessibilité
-    6. Excuse de la nécessité
-    7. Volonté d’écouler des objets rapidement
-    8. Gain financier à court terme
-    9. Exploiter des objets de valeur volés
-    10. Liquider un stock de biens volés
-    11. Créer un marché parallèle ou illégal
-    12. Revente pour couvrir des dettes
-    13. Contournement des canaux légaux de vente
-    14. Vol pour financer un vice ou addiction
-    15. Facilité d’accès à des biens volés et leur revente
-Sabotage :
-    1. Vengeance
-    2. Protestation ou revendication politique
-    3. Rivalité professionnelle
-    4. Désir de nuire à une entreprise ou institution
-    5. Protéger ses propres intérêts
-    6. Représailles
-    7. Démonstration de pouvoir
-    8. Volonté de faire échouer un concurrent
-    9. Créer une rupture dans une organisation
-    10. Créer des dysfonctionnements pour manipuler une situation
-    11. Réduire la compétitivité d’un adversaire
-    12. Perturber un projet jugé nuisible
-    13. Prouver une idéologie par la destruction
-    14. Contribuer à un climat de méfiance
-    15. Expérience de contrôle en situation de crise
-Terrorisme :
-    1. Idéologie extrémiste
-    2. Rébellion politique
-    3. Protestation violente contre une autorité
-    4. Désir de répandre la peur
-    5. Manipulation par un groupe radical
-    6. Vengeance pour une cause
-    7. Création de chaos
-    8. Manipulation des masses
-    9. Renversement d'un système établi
-    10. Volonté de marquer les esprits
-    11. Volonté de changer les mentalités par la terreur
-    12. Légitimer un groupe ou un leader radical
-    13. Prendre position contre des politiques internationales
-    14. Attirer l'attention sur une situation sociale ou économique
-    15. Forcer un changement politique immédiat
-Trafic :
-    1. Profit financier
-    2. Exploitation de la vulnérabilité d’autrui
-    3. Trafic d’êtres humains ou de drogues
-    4. Complice dans un réseau criminel organisé
-    5. Loi de l’offre et de la demande
-    6. Implication familiale ou culturelle
-    7. Dépendance ou addiction
-    8. Profiter d’un marché parallèle
-    9. Exploiter des personnes vulnérables pour du travail ou des services forcés
-    10. Cacher des activités illégales sous une façade légale
-    11. Répandre une marchandise illégale
-    12. Volonté de pouvoir et de contrôle sur des individus
-    13. Se faire de l'argent rapidement grâce à la souffrance d’autrui
-    14. Exploiter les faiblesses sociales et économiques d'une population
-    15. Créer un réseau durable pour pérenniser le trafic
-Usurpation d'identité :
-    1. Profit financier
-    2. Vol de crédits ou d'informations personnelles
-    3. Fuite de responsabilité ou de sanction
-    4. Manipulation ou fraude
-    5. Recherche d’un nouveau départ
-    6. Emprunt frauduleux
-    7. Escroquerie
-    8. Créer des faux profils ou identités
-    9. Abuser de l’identité de quelqu’un d’autre pour manipuler
-    10. Fuir des dettes ou des obligations légales
-    11. Sabotage d’une réputation
-    12. Exploiter l'identité d'une personne pour effectuer des transactions financières
-    13. Vol de ressources ou de biens sous un faux nom
-    14. Accéder à des comptes ou services protégés
-    15. Créer une nouvelle vie à travers l’identité de quelqu’un d’autre
-Vandalisme :
-    1. Colère ou frustration
-    2. Expression de rébellion
-    3. Amusement ou recherche d’attention
-    4. Protestation
-    5. Désir d'attirer l'attention
-    6. Effet de groupe
-    7. Désir de montrer son mécontentement
-    8. Réaction à une injustice perçue
-    9. Volonté de perturber un environnement
-    10. Déstabilisation des symboles d’autorité
-    11. Marquer un territoire
-    12. Obsession pour la destruction ou le chaos
-    13. Action impulsive
-    14. Représentation de l'ennui ou du vide existentiel
-    15. Exprimer son inconfort social ou économique
-Viol :
-    1. Pouvoir et contrôle
-    2. Soumission ou domination
-    3. Frustration ou colère
-    4. Désir de punir ou d’humilier
-    5. Vengeance
-    6. Psychopathie
-    7. Dégradation de la victime
-    8. Plaisir sadique
-    9. Tordre la perception de la victime
-    10. Traumatismes ou abus antérieurs
-    11. Perception de l’autre comme inférieur
-    12. Désir de revendiquer une forme d’autorité
-    13. Croyance dans un droit divin ou moral sur le corps de l'autre
-    14. Humiliation ou mise sous domination
-    15. Désir d'imposer sa volonté à autrui
-Vol (à l'étalage, pickpocket) :
-    1. Besoin d'argent rapide
-    2. Frustration économique
-    3. Opportunisme
-    4. Plaisir personnel ou excitation
-    5. Vol pour revendre
-    6. Dépendance à l'adrénaline
-    7. Pauvreté ou nécessité
-    8. Voler pour d'autres (famille, amis)
-    9. Vol comme forme d’autosuffisance
-    10. Vol en réponse à des injustices sociales
-    11. Recherche d'un gain facile et rapide
-    12. Exploration de la légalité à travers l’illégalité
-    13. Fuir un environnement d’abus ou de négligence
-    14. Influence du groupe ou de pairs
-    15. Tentative d'affronter l'autorité ou les règles sociales
-
-Liste de mobiles complotistes :
-Adultère :
-    1. Partenaire contrôlé par des reptiliens.
-    2. Échapper à une surveillance occulte.
-    3. Saboter un complot d'élite.
-    4. Vengeance contre des manipulateurs secrets.
-    5. Libération de la manipulation sociale.
-Agression :
-    1. Empêcher la divulgation d’une possession extraterrestre.
-    2. Réagir contre la manipulation des rêves.
-    3. Défendre contre des accusations d’appartenance aux Illuminati.
-    4. S'énerver contre un complot de manipulation mentale.
-    5. Attaquer pour masquer un complot sur la culture des tomates.
-Cambriolage :
-    1. Voler des livres sur les extraterrestres.
-    2. Piller des magasins pour perturber un complot bio.
-    3. Voler des cartes postales révélant un complot pyramidal.
-    4. Casser pour récupérer des preuves de contrôle extraterrestre.
-    5. Cambrioler pour trouver des indices sur les sociétés secrètes.
-Chantage :
-    1. Forcer quelqu’un à avouer que la Terre est plate.
-    2. Obtenir des infos sur un complot télévisuel.
-    3. Menacer de révéler qu'un collègue est un robot.
-    4. Extorquer des aveux sur les extraterrestres.
-    5. Forcer à avouer un complot autour des bouchons de bouteilles.
-Contrefaçon :
-    1. Produire de faux billets de cinéma pour exposer des messages subliminaux.
-    2. Contrefaire des diplômes pour dénoncer un complot éducatif.
-    3. Créer de faux produits cosmétiques pour dévoiler un contrôle social.
-    4. Imprimer de fausses recettes pour saboter l’industrie culinaire secrète.
-    5. Contrefaire des cartes pour prouver que les banques nous espionnent.
-Extorsion :
-    1. Exiger de l'argent pour cacher un complot de pigeons-drones.
-    2. Faire chanter pour révéler la société secrète des licornes.
-    3. Forcer quelqu’un à avouer un complot bancaire.
-    4. Demander de l'argent pour taire un secret sur les hamburgers-clones.
-    5. Chantage pour exposer des manipulations par les cartes de fidélité.
-Corruption :
-    1. Cacher un complot sur les origines des croissants.
-    2. Falsifier des résultats de concours de chewing-gum.
-    3. Accepter un pot-de-vin pour étouffer un complot sur les oiseaux-drones.
-    4. Manipuler des informations sur l’industrie alimentaire secrète.
-    5. Protéger un complot bancaire.
-Délit de fuite :
-    1. Fuir pour échapper à un complot de surveillance extraterrestre.
-    2. S’échapper pour éviter d’être ciblé par des pigeons-drones.
-    3. Fuir après un accident pour ne pas être accusé d'appartenir à une société secrète.
-    4. S'échapper pour éviter que l’on découvre sa connexion avec les Illuminati.
-    5. Fuir un incident pour échapper à une conspiration sur les chats télépathes.
-Diffamation :
-    1. Accuser quelqu’un de cacher qu’il est un reptilien.
-    2. Diffamer une personne pour empêcher qu’elle révèle que les oiseaux sont des drones.
-    3. Détourner l'attention de la population d'un complot cosmique secret.
-    4. Saboter la réputation de quelqu’un qui pourrait exposer des sociétés secrètes.
-    5. Diffamer une victime pour cacher l’existence des machines à contrôler les rêves.
-Enlèvement :
-    1. Enlever quelqu’un pour empêcher qu'il révèle que la Terre est contrôlée par des reptiliens.
-    2. Kidnapper une personne pour l’empêcher de divulguer qu'elle est un clone.
-    3. Enlever un "témoignage" pour masquer une manipulation par des extraterrestres.
-    4. Capturer un individu pour l’empêcher de dénoncer un complot de météorologie contrôlée.
-    5. Enlever une victime pour empêcher qu'elle expose des manipulations gouvernementales.
-Espionnage :
-    1. Espionner pour découvrir la vérité sur les pigeons-drones.
-    2. Voler des secrets concernant un complot alimentaire global.
-    3. Espionner des organisations secrètes pour obtenir des preuves de manipulation télévisuelle.
-    4. Filmer des rencontres secrètes pour exposer des complots extraterrestres.
-    5. S'infiltrer dans des entreprises pour découvrir un complot sur les hamburgers-clones.
-Fraude :
-    1. Tromper pour masquer une expérience secrète sur les rêves contrôlés.
-    2. Manipuler des statistiques pour dissimuler des mensonges gouvernementaux.
-    3. Escroquer des gens pour cacher un complot sur les produits alimentaires industriels.
-    4. Frauder pour dissimuler la création de clones alimentaires.
-    5. Mentir pour cacher l’existence d’un complot extraterrestre lié aux réseaux sociaux.
-Harcèlement :
-    1. Harceler quelqu’un pour le forcer à admettre qu’il est un clone.
-    2. Poursuivre quelqu'un pour qu'il révèle qu'il contrôle les rêves des gens.
-    3. Faire subir du harcèlement pour découvrir des secrets sur les sociétés secrètes.
-    4. Harceler quelqu'un pour qu'il admette que les oiseaux sont des drones.
-    5. Pourchasser une personne pour l’empêcher de dévoiler un complot alimentaire.
-Incendie criminel :
-    1. Brûler des documents pour dissimuler un complot sur les pyramides.
-    2. Mettre le feu pour détruire des preuves de l'existence de reptiles extraterrestres.
-    3. Incendier des installations pour empêcher la divulgation de secrets sur les produits alimentaires.
-    4. Brûler des recherches sur les sociétés secrètes contrôlant la météo.
-    5. Créer un incendie pour effacer des preuves sur l’influence des extraterrestres sur les sociétés humaines.
-Intrusion :
-    1. S’introduire dans une maison pour voler des preuves d’un complot sur les clones.
-    2. Entrer dans une propriété pour espionner des activités liées aux extraterrestres.
-    3. Forcer l’entrée dans un bâtiment pour découvrir des documents secrets sur la manipulation des rêves.
-    4. Pénétrer un lieu pour trouver des informations sur les sociétés secrètes manipulant les médias.
-    5. S'introduire pour voler des informations sur un complot pour contrôler les oiseaux.
-Maltraitance :
-    1. Maltraiter un animal pour empêcher la révélation d’un complot sur les animaux mutants.
-    2. Abuser d’un individu pour l’empêcher de dénoncer un complot extraterrestre.
-    3. Maltraiter un proche pour cacher un complot sur les produits alimentaires.
-    4. Exercer des violences pour interdire la divulgation d’un complot météorologique.
-    5. Maltraiter un "collaborateur" pour empêcher de divulguer une conspiration sociale.
-Meurtre :
-    1. Tuer pour garder secret un complot extraterrestre impliquant les humains.
-    2. Eliminer quelqu’un qui sait trop sur le contrôle mental des rêves.
-    3. Assassiner pour empêcher la divulgation d’un complot reptilien.
-    4. Tuer pour stopper la diffusion de secrets sur les sociétés secrètes.
-    5. Meurtre pour maintenir un contrôle sur les "vraies" origines de la Terre.
-Piratage :
-    1. Pirater pour voler des preuves de l’existence de pigeons-drones.
-    2. Hacker des systèmes pour dénoncer un complot alimentaire mondial.
-    3. Saboter des sites pour exposer des conspirations secrètes liées aux extraterrestres.
-    4. Pirater des bases de données pour obtenir des preuves sur les rêves contrôlés.
-    5. Attaquer des serveurs pour révéler un complot autour des réseaux sociaux et leur surveillance.
-Proxénétisme :
-    1. Organiser un réseau pour cacher des preuves sur des complots extraterrestres.
-    2. Exploiter pour soutenir une conspiration contre les travailleurs humains.
-    3. Promouvoir des services pour protéger des réseaux secrets.
-    4. Utiliser des individus pour cacher l’existence des sociétés secrètes.
-    5. Gérer des affaires pour dissimuler des manipulations gouvernementales.
-Racket :
-    1. Exiger de l'argent pour cacher un complot de drones pigeons.
-    2. Racketter pour forcer quelqu'un à taire un complot sur les clones.
-    3. Forcer des aveux pour masquer un complot alimentaire mondial.
-    4. Demander de l’argent pour empêcher la divulgation de manipulations sociales.
-    5. Intimider pour protéger des informations sur les sociétés secrètes.
-Recèle :
-    1. Cacher des objets volés pour dissimuler des preuves d'une société secrète.
-    2. Conserver des objets pour protéger des informations sensibles sur des complots alimentaires.
-    3. Réceptionner des biens pour étouffer une conspiration liée aux drones.
-    4. Accepter des biens volés pour garder un complot reptilien secret.
-    5. Conserver des objets pour protéger un réseau d'extraterrestres.
-Usage de faux :
-    1. Créer de faux documents pour étouffer un complot extraterrestre.
-    2. Manipuler des identités pour dissimuler un complot mondial.
-    3. Créer de faux papiers pour protéger un réseau de pigeons-drones.
-    4. Utiliser des faux pour effacer des preuves d’un contrôle mental mondial.
-    5. Imprimer des faux pour bloquer la divulgation d'un complot alimentaire mondial.
-Vente d'objets volés :
-    1. Vendre des objets pour dissimuler des preuves sur les sociétés secrètes.
-    2. Revendre des biens pour financer une enquête sur les clones.
-    3. Vendre des articles pour cacher l’influence des extraterrestres.
-    4. Écouler des objets pour perturber un complot gouvernemental.
-    5. Revendre des objets pour financer la lutte contre la manipulation par les rêves.
-Sabotage :
-    1. Saboter des équipements pour cacher un complot sur les oiseaux-drones.
-    2. Endommager des installations pour ralentir un complot alimentaire mondial.
-    3. Saboter pour exposer un complot gouvernemental sur la météo.
-    4. Endommager des équipements pour dissimuler des expérimentations extraterrestres.
-    5. Saboter des recherches pour masquer un complot secret mondial.
-Terrorisme :
-    1. Créer une attaque pour dévoiler un complot reptilien.
-    2. Terroriser pour exposer un contrôle mondial des rêves.
-    3. Attenter pour stopper une conspiration sur la nourriture industrielle.
-    4. Créer un événement pour révéler une manipulation extraterrestre.
-    5. Détourner l’attention pour stopper un complot global.
-Trafic :
-    1. Trafic d'objets pour dissimuler des preuves de sociétés secrètes.
-    2. Gérer des échanges pour financer une lutte contre les clones.
-    3. Participer à des trafics pour exposer un complot alimentaire mondial.
-    4. Organiser un trafic pour déstabiliser un complot gouvernemental.
-    5. Promouvoir des échanges pour perturber des manipulations sociales.
-Usurpation d'identité :
-    1. Se faire passer pour un extraterrestre pour dissimuler un complot global.
-    2. Voler une identité pour manipuler des informations secrètes.
-    3. Prendre une identité pour infiltrer un réseau de manipulation.
-    4. Usurper pour découvrir des preuves de contrôle mental.
-    5. Voler une identité pour déstabiliser un complot alimentaire mondial.
-Vandalisme :
-    1. Casser des objets pour dénoncer un complot reptilien.
-    2. Détériorer des biens pour perturber un complot météorologique.
-    3. Détruire pour masquer des preuves d’une manipulation extraterrestre.
-    4. Vandalisme pour exposer un complot sur les rêves.
-    5. Casser pour cacher un complot alimentaire mondial.
-Viol
-    1. Agresser pour dissimuler des informations sur un contrôle extraterrestre.
-    2. Tuer pour cacher des preuves de manipulation psychologique.
-    3. Viol pour empêcher la divulgation d’un complot global.
-    4. Attaquer pour étouffer une révélation sur les sociétés secrètes.
-    5. Commettre des violences pour effacer des preuves d’un complot reptilien.
-Vol (à l'étalage, pickpocket) :
-    1. Voler pour récupérer des informations secrètes sur des sociétés cachées.
-    2. Dérober pour obtenir des objets manipulés par des extraterrestres.
-    3. Voler pour exposer un complot sur les cartes de fidélité.
-    4. Prendre pour dénoncer une manipulation de la société secrète.
-    5. Piquer des biens pour dénoncer l’influence des extraterrestres.

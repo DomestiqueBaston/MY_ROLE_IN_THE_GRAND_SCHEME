@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=12 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_xd2v3"]
 [ext_resource type="Texture2D" uid="uid://bwojpud0dsewx" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_iytka"]
 [ext_resource type="PackedScene" uid="uid://8r7milsx8op" path="res://SCENES/Oops_Lets_Go.tscn" id="5_raou3"]
 [ext_resource type="PackedScene" uid="uid://cdd2r2s4fujkx" path="res://SCENES/Bottom_Left_Info_Long.tscn" id="5_v7ec1"]
-[ext_resource type="PackedScene" uid="uid://cnlr811vrm1fk" path="res://SCENES/Inv_Dia_Com.tscn" id="6_heit8"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="7_2be8g"]
 [ext_resource type="PackedScene" uid="uid://dldk5itfc6prx" path="res://SCENES/Top_Left_Screen.tscn" id="8_10wmg"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="8_segon"]
@@ -332,8 +331,6 @@ metadata/_edit_lock_ = true
 
 [node name="Oops_LetsGo_Buttons" parent="." instance=ExtResource("5_raou3")]
 metadata/_edit_lock_ = true
-
-[node name="Inv_Dia_Com" parent="." instance=ExtResource("6_heit8")]
 
 [node name="Bottom_Left_Info_Long" parent="." instance=ExtResource("5_v7ec1")]
 

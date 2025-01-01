@@ -11,8 +11,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 8.0
 offset_bottom = 8.0
-tooltip_text = "Left click to move
-Right click to delete"
+tooltip_text = "Left click to move"
 theme = ExtResource("1_srh0y")
 metadata/_edit_lock_ = true
 
