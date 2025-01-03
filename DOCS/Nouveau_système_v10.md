@@ -1009,35 +1009,6 @@ Résolution des enquêtes, gains et implications
 Résolution de la quête ultime (Les Alchimistes de la Vérité)
 	- Une fois la quête résolue, le joueur mourra de toute manière assassiné par les sbires de la secte des Alchimistes de la Vérité. - L’écran final sera affiché résumant les événements qui suivirent la résolution de la quête.
 
-Quête ultime (Le complot)
-
-Texte introductif :
-	- Une pluie grasse tombait sur le trottoir et dans la librairie "L’art est partout", l’air ambiant puait le papier moisi. Il y avait comme une sorte d’accord tacite entre ce lieu et la ville. Devant la librairie, un corps. Celui d’un type qui avait pris une balle en pleine tête. Pas de témoin, évidemment, quelques des fiches jaunes et surtout des trucs et des machins qui pourraient tout foutre en l’air. À n’en pas douter, quelque chose de louche se tramait encore ici, et ça allait faire du bruit.
-	- A heavy rain was falling on the sidewalk and inside the bookstore "Art is Everywhere", the air reeked of musty paper. There seemed to be some kind of unspoken agreement between this place and the city. In front of the bookstore, a body. The body of a guy who had taken a bullet to the head. No witnesses, of course, just a few yellow slips of paper, and mostly bits and pieces of things that could throw everything off course. Without a doubt, something shady was going on here, and it was going to make some noise.
-
-	- Nom du complot : "Les Alchimistes de la Vérité"
-	- Description : un groupe secret d'alchimistes modernes aurait découvert une méthode pour transformer des idées en objets matériels, manipulant ainsi la réalité en créant des artefacts qui influencent les croyances et les comportements des masses.
-	- Création de "Vérités" tangibles : Ces alchimistes produiraient des objets spéciaux, comme des livres ou des films, capables de convaincre les gens de vérités alternatives, transformant des mensonges en consensus.
-       - Contrôle des esprits : En infiltrant des industries culturelles, ils utiliseraient l'art, la musique et la littérature pour injecter des idées subversives, déclenchant des mouvements sociaux basés sur des concepts farfelus.
-       - Rituels secrets : Des cérémonies seraient tenues dans des lieux cachés pour "activer" ces objets, rendant ainsi leurs effets psychologiques plus puissants, et impliquant des initiés dans une quête de contrôle mental.
-       - Le Grand Livre des Illusions : Un texte mythique contiendrait les instructions pour maîtriser cette alchimie des idées, que seuls quelques élus seraient capables de déchiffrer.
-
-Fiche de quête
-Éléments de l'Enquête	Détails
-Titre de l'enquête	Les Alchimistes de la Vérité 
-Difficulté	6 (Difficulté spéciale) 
-Statut	Nouvelle
-Délai imparti	5 jours (spécial)
-Lieu	Atelier d'alchimie, librairie « L’art est partout », Temple « de la mémoire du vrai Vendredi », 
-Indices Découverts	1. Des documents anciens liés aux Alchimistes de la Vérité (dans la librairie)
-	2. 1 mort (à côté de la librairie) (identité à découvrir liée au coupable)
-3. Prospectus publicitaire de la librairie « L’art est partout » sur le mort
-Suspect(s)	… 
-Témoin(s)	… 
-Coupable(s)	… 
-Complice(s)	… 
-Élément(s) de preuve	Objet(s), Lieu(x)
-Relations entre personnages	le mort et la librairie (plein), la librairie « L’art est partout » et le suspect 1 (pointillé)
 Éléments additionnels :
 
 	- On va probablement créer plusieurs quêtes finales pour la re-jouabilité. Au moins 2 ou 3 ?
