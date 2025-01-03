@@ -32,25 +32,25 @@ Les caractéristiques secondaires
 	- Emo à -3 ou +3 représente une excitation ou une déprime trop forte (voir conditions dans Système de santé).
 Emo	Effets et/ou modificateur de jet de dé
 -3	Emo = -2 et -1 Add si Add < 0 ou +1 Add si Add ≥ 0 
--2	-2
--1	-1
-0	0
-+1	+1
-+2	+2
-+3	Emo = 2 et +1 Add si Add > 0 ou -1 Add si Add ≤ 0 
+-2	-1
+-1	0
+0	+1
+1	0
+2	-1
+3	Emo = 2 et +1 Add si Add > 0 ou -1 Add si Add ≤ 0 
 
 
 État d’addiction (Add)
 	- L’état d’addiction du joueur variera entre -3 et +3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add=0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction).
 Add	Effet et/ou modificateur de jet de dé
--3	Mort si un jet contre HEA est raté (sinon -1 HEA, ±1Emo → Min/max et Add = -2)
+-3	Mort si un jet (avec un bonus de 1) contre HEA est raté (sinon -1 HEA, ±1Emo → Min/max et Add = -2)
 -2	-2
 -1	-1
 0	0
-+1	+1
-+2	+3
-+3	Mort si un jet contre HEA est raté (sinon -1 HEA, ±1Emo → Min/max et Add = 2)
+1	+1
+2	+3
+3	Mort si un jet contre HEA est raté (sinon -1 HEA, ±1Emo → Min/max et Add = 2)
 
 
 Réputation (Rep)
@@ -62,7 +62,7 @@ Réputation (Rep)
 Recherché/Wanted (Wan)
 	- Le Wanted évolue de 0 à 5. 0 au début du jeu. Il représente le niveau d’emmerdes qu’a le joueur avec les autorités.
 	- Il est également un malus aux jets de dé suivant le tableau ci-dessous.
-	- À 5, le joueur est arrêté, va en prison et ne peut plus rien faire pendant 3 jours à moins de payer une caution de 250Dø. À la sortie de prison, Wan = 0.
+	- À 5, le joueur est arrêté, va en prison et ne peut plus rien faire pendant 3 jours à moins de payer une caution de 200Dø. À la sortie de prison, Wan = 0.
 	- Résoudre une Enquête remet le Wan à 0.
 	- Une journée complète sans augmenter le Wan fait -1Wan.
 Niveau de Wanted	Malus au Dé
@@ -70,7 +70,7 @@ Niveau de Wanted	Malus au Dé
 1 à 2	-1
 3	-2
 4	-3
-5	Prison pendant 3 jours ou payement de 200dø de caution.
+5	Prison pendant 3 jours ou payement de 200dø de caution puis Wan = 0
 
 
 Paranoïa (Par)
