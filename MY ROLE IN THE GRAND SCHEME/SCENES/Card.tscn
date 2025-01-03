@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=17 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="2_y3cdu"]
+[ext_resource type="Texture2D" uid="uid://vuxehd33t5yj" path="res://GRAPHICS/CARD/Card_Special.png" id="3_gk6lr"]
 [ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="3_l7psf"]
 [ext_resource type="Texture2D" uid="uid://k8gtuwwg7pxm" path="res://GRAPHICS/CARD/Card_Evidence.png" id="3_uweet"]
+[ext_resource type="Texture2D" uid="uid://ddd34x72ghu57" path="res://GRAPHICS/CARD/Card_Run_Away.png" id="4_xhv7k"]
 [ext_resource type="Texture2D" uid="uid://ct7lvffsjl4m6" path="res://GRAPHICS/CARD/Card_Outline_Animation.png" id="5_m7h77"]
+[ext_resource type="Texture2D" uid="uid://dnyd4rhlcnw8v" path="res://GRAPHICS/CARD/Card_Break_In.png" id="5_rh7h4"]
 [ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Drawing_Card.ogg" id="6_1yy8m"]
 [ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Drawing_Card_Reverse.ogg" id="7_ofh61"]
 
@@ -161,10 +164,38 @@ color = Color(0.31, 0, 0.0464999, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
+[node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.643137)
+texture = ExtResource("3_gk6lr")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Run_Away" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.643137)
+texture = ExtResource("4_xhv7k")
+centered = false
+metadata/_edit_lock_ = true
+
 [node name="Investigation" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.051, 0.18, 0, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+metadata/_edit_lock_ = true
+
+[node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.643137)
+texture = ExtResource("3_gk6lr")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Break_In" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
+visible = false
+self_modulate = Color(0, 0, 0, 0.643137)
+texture = ExtResource("5_rh7h4")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
@@ -194,10 +225,34 @@ metadata/_edit_lock_ = true
 [node name="Pnj" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.1248, 0.4208, 0.48, 0.643137)
-polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 63, 1, 63, 26)
 metadata/_edit_lock_ = true
 
-[node name="Carte_Evidence" type="Sprite2D" parent="Card_Mask/Card_BG"]
+[node name="No_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+visible = false
+color = Color(0.12549, 0.419608, 0.478431, 0.643137)
+polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+metadata/_edit_lock_ = true
+
+[node name="Good_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+color = Color(0.16275, 0.75, 0.1425, 0.643137)
+polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+metadata/_edit_lock_ = true
+
+[node name="Average_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+visible = false
+color = Color(0.7, 0.333083, 0.105, 0.643137)
+polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+metadata/_edit_lock_ = true
+
+[node name="Low_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+visible = false
+color = Color(0.53, 0, 0, 0.643137)
+polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+metadata/_edit_lock_ = true
+
+[node name="Evidence" type="Sprite2D" parent="Card_Mask/Card_BG"]
+visible = false
 self_modulate = Color(0, 0, 0, 0.643137)
 texture = ExtResource("3_uweet")
 centered = false
@@ -247,6 +302,11 @@ centered = false
 hframes = 5
 metadata/_edit_lock_ = true
 
+[node name="Unplayable" type="Polygon2D" parent="Card_Mask/Card_BG"]
+visible = false
+color = Color(0, 0, 0, 0.498039)
+polygon = PackedVector2Array(0, 6, 1, 3, 3, 1, 6, 0, 68, 0, 71, 1, 73, 3, 74, 6, 74, 94, 73, 97, 71, 99, 68, 100, 6, 100, 3, 99, 1, 97, 0, 94)
+
 [node name="Bottom_Collider" type="Area2D" parent="Card_Mask/Card_BG"]
 visible = false
 collision_layer = 32
@@ -266,6 +326,14 @@ metadata/_edit_lock_ = true
 [node name="Collider" type="CollisionShape2D" parent="Card_Mask/Card_BG/Top_Collider"]
 position = Vector2(37, 13.5)
 shape = SubResource("RectangleShape2D_ptib8")
+metadata/_edit_lock_ = true
+
+[node name="Left_Pin_Position" type="Marker2D" parent="Card_Mask/Card_BG"]
+position = Vector2(7, 13)
+metadata/_edit_lock_ = true
+
+[node name="Right_Pin_Position" type="Marker2D" parent="Card_Mask/Card_BG"]
+position = Vector2(67, 13)
 metadata/_edit_lock_ = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]

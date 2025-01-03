@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=14 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/QUESTS/Quest_BG.png" id="1_5t8kf"]
 [ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_6ou7q"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://dauwh3vjh26kl" path="res://SCENES/Top_Left_Info.tscn" id="5_u6ur1"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="6_6a8nk"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Place.tscn" id="7_hutwy"]
-[ext_resource type="PackedScene" uid="uid://6h0vwfyh2npe" path="res://SCENES/Links_Buttons.tscn" id="8_lfs84"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Rose.png" id="8_yqmfx"]
 [ext_resource type="PackedScene" uid="uid://cmdruf4bxouoa" path="res://SCENES/Pin.tscn" id="10_13y24"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="11_c2c0c"]
@@ -43,14 +42,35 @@ metadata/_edit_lock_ = true
 [node name="Card1" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(190, 85)
 
+[node name="Special" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
 [node name="Card2" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(463, 206)
+
+[node name="Run_Away" parent="TMP/Card2/Card_Mask/Card_BG/Card_Color/Combat" index="1"]
+visible = true
 
 [node name="Card3" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(512, 163)
 
+[node name="Combat" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Investigation" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="1"]
+visible = true
+
+[node name="Break_In" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color/Investigation" index="1"]
+visible = true
+
 [node name="Card4" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(165, 213)
+
+[node name="Combat" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color" index="0"]
+visible = false
+
+[node name="Dialogue" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color" index="2"]
+visible = true
 
 [node name="Card5" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(294, 38)
@@ -61,9 +81,6 @@ visible = false
 [node name="Pnj" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color" index="6"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card5/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card6" parent="TMP" instance=ExtResource("4_nkome")]
 position = Vector2(537, 57)
 
@@ -73,8 +90,8 @@ visible = false
 [node name="Lieu" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card6/Card_Mask/Card_BG" index="1"]
-visible = false
+[node name="Unplayable" parent="TMP/Card6/Card_Mask/Card_BG" index="4"]
+visible = true
 
 [node name="Lien_Pointillé_Exemple" type="Line2D" parent="TMP"]
 points = PackedVector2Array(256, 97, 472, 215)
@@ -87,8 +104,7 @@ round_precision = 3
 metadata/_edit_lock_ = true
 
 [node name="Lien_Pointillé_Blanc_Exemple" type="Line2D" parent="TMP"]
-position = Vector2(-54, 96)
-points = PackedVector2Array(599, -22, 413, -50)
+points = PackedVector2Array(545, 74, 359, 46)
 width = 3.0
 texture = ExtResource("5_gsfxi")
 texture_mode = 1
@@ -149,13 +165,43 @@ offset_top = 70.0
 offset_right = 549.0
 offset_bottom = 78.0
 
+[node name="Base_Locations" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 230.0
+offset_top = 320.0
+offset_right = 270.0
+offset_bottom = 360.0
+metadata/_edit_lock_ = true
+
+[node name="Morpho_the_Dealer" parent="Base_Locations" instance=ExtResource("10_13y24")]
+tooltip_text = "Morpho the Dealer"
+
+[node name="Investigation_Center" parent="Base_Locations" instance=ExtResource("10_13y24")]
+offset_left = 193.0
+offset_top = -78.0
+offset_right = 201.0
+offset_bottom = -70.0
+tooltip_text = "Investigation Center"
+
+[node name="Boutique" parent="Base_Locations" instance=ExtResource("10_13y24")]
+offset_left = 28.0
+offset_top = -127.0
+offset_right = 36.0
+offset_bottom = -119.0
+tooltip_text = "Boutique"
+
+[node name="Jail" parent="Base_Locations" instance=ExtResource("10_13y24")]
+offset_left = 257.0
+offset_top = -265.0
+offset_right = 265.0
+offset_bottom = -257.0
+tooltip_text = "Jail"
+
 [node name="Top_Left_Info" parent="." instance=ExtResource("5_u6ur1")]
 metadata/_edit_lock_ = true
 
 [node name="Bottom_Left_Info" parent="." instance=ExtResource("6_6a8nk")]
-
-[node name="Links_Buttons" parent="." instance=ExtResource("8_lfs84")]
-visible = false
 
 [node name="Top_Bar" parent="." instance=ExtResource("3_1pxmd")]
 

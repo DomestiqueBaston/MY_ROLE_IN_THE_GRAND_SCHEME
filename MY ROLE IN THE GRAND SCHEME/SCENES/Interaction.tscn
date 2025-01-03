@@ -46,20 +46,14 @@ visible = false
 [node name="Investigation" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card1/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card3" parent="TMP" instance=ExtResource("3_iytka")]
-position = Vector2(428, 75)
+position = Vector2(427, 75)
 
 [node name="Combat" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
 [node name="Abstract" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card3/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card17" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(464, 233)
@@ -70,9 +64,6 @@ visible = false
 [node name="Investigation" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card17/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card18" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(482, 233)
 
@@ -82,14 +73,8 @@ visible = false
 [node name="Dialogue" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card18/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card19" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(501, 233)
-
-[node name="Carte_Evidence" parent="TMP/Card19/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card21" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(520, 233)
@@ -100,9 +85,6 @@ visible = false
 [node name="Abstract" parent="TMP/Card21/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card21/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card22" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(539, 233)
 
@@ -111,9 +93,6 @@ visible = false
 
 [node name="Abstract" parent="TMP/Card22/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card22/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card4" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(154, 233)
@@ -124,9 +103,6 @@ visible = false
 [node name="Investigation" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card4/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card5" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(173, 233)
 
@@ -135,9 +111,6 @@ visible = false
 
 [node name="Investigation" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card5/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card6" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(192, 233)
@@ -148,9 +121,6 @@ visible = false
 [node name="Investigation" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card6/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card7" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(211, 233)
 
@@ -159,9 +129,6 @@ visible = false
 
 [node name="Dialogue" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card7/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card8" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(230, 233)
@@ -172,32 +139,17 @@ visible = false
 [node name="Dialogue" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card8/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card9" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(249, 233)
-
-[node name="Carte_Evidence" parent="TMP/Card9/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card11" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(287, 233)
 
-[node name="Carte_Evidence" parent="TMP/Card11/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card12" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(306, 233)
 
-[node name="Carte_Evidence" parent="TMP/Card12/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card13" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(325, 233)
-
-[node name="Carte_Evidence" parent="TMP/Card13/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card14" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(344, 233)
@@ -208,9 +160,6 @@ visible = false
 [node name="Abstract" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card14/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card15" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(363, 233)
 
@@ -219,9 +168,6 @@ visible = false
 
 [node name="Abstract" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card15/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card16" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(382, 233)
@@ -232,21 +178,12 @@ visible = false
 [node name="Abstract" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card16/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card10" parent="TMP" instance=ExtResource("3_iytka")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(268, 201)
 
-[node name="Carte_Evidence" parent="TMP/Card10/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card20" parent="TMP" instance=ExtResource("3_iytka")]
-position = Vector2(353, 106)
-
-[node name="Carte_Evidence" parent="TMP/Card20/Card_Mask/Card_BG" index="1"]
-visible = false
+position = Vector2(351, 106)
 
 [node name="Card23" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(154, 61)
@@ -257,9 +194,6 @@ visible = false
 [node name="Lieu" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card23/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card24" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(154, 73)
 
@@ -268,9 +202,6 @@ visible = false
 
 [node name="Lieu" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card24/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card25" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(154, 85)
@@ -281,9 +212,6 @@ visible = false
 [node name="Object" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card25/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card26" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(154, 96)
 
@@ -292,9 +220,6 @@ visible = false
 
 [node name="Object" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card26/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Card27" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(154, 107)
@@ -305,9 +230,6 @@ visible = false
 [node name="Object" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Carte_Evidence" parent="TMP/Card27/Card_Mask/Card_BG" index="1"]
-visible = false
-
 [node name="Card28" parent="TMP" instance=ExtResource("3_iytka")]
 position = Vector2(154, 118)
 
@@ -316,9 +238,6 @@ visible = false
 
 [node name="Object" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
-
-[node name="Carte_Evidence" parent="TMP/Card28/Card_Mask/Card_BG" index="1"]
-visible = false
 
 [node name="Line2D" type="Line2D" parent="TMP"]
 position = Vector2(9, 11)

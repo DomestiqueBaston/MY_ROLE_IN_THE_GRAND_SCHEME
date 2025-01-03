@@ -119,7 +119,7 @@ Progression du joueur
 Les PNJs
 
 	- Pour les besoin du jeu, les PNJs seront aussi représentés sous forme de cartes afin de pouvoir les manipuler en Interaction et sur la fiche d'enquête.
-	- À la mort d’un PNJ causée par le joueur, l’enquête est retirée au joueur (pas de malus ni de bonus) et +2WAN !
+	- À la mort d’un PNJ causée par le joueur, l’enquête est retirée au joueur (pas de malus ni de bonus) et +1Wan !
 
 Structure type (en rouge les infos que le joueur n’aura jamais):
 ID : PNJ001, PNJ002, etc.
@@ -129,7 +129,7 @@ Apparence : Grand (25%)/Moyen (50%)/Petit (25%) – Mince (25%)/Moyen (50%)/Gro
 Profession : (voir Professions)
 Caractéristiques : PHY, MEN, HEA à la création du PNJ et Wan = 0.
 Rep (du joueur) : Rep_Joueur (auprès de ce PNJ)
-Lieux fréquentés (1 à 4) : Lieu(x) (en plus de ceux « normaux » de son boulot, sa maison, etc.)
+Lieux fréquentés (0 à 2) : Lieu(x) (en plus de ceux de son emploi du temps)
 Soupçon(s) : PNJ(s)
 Statut (Culpabilité réelle dans l’enquête) : Victime/Coupable/Complice/Suspect/Témoin/Aucun
 Relations sociales (pas forcément liées à l’enquête) :
@@ -143,8 +143,8 @@ Emploi du temps :	Matin : (carte lieu)
 		Après-midi : (carte lieu)
 		Soirée : (carte lieu)
 		Nuit : (carte lieu)
-Objets et ressources (0 à 3) : carte(s) Objet
-Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) : (Lien/carte Lieu/carte Objet – Élément de preuve/Emploi du temps/etc.)
+Objets et ressources (0 à 2) : carte(s) Objet/Evidence incriminantes.
+Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) : (Lien/carte Lieu/carte Objet – Evidence/Emploi du temps/etc.)
 
 
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
@@ -153,7 +153,7 @@ Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) : (Lien/carte Lieu
 	- Les PNJs ne sont pas sujets à la paranoïa.
 	- Les cartes PNJ elles-mêmes se résument graphiquement à une silhouette (apparence, sexe et nom quand il est connu).
 	- Si un PNJ meurt, la carte du PNJ ne sera pas retirée de l’enquête pour autant.
-	- Si le joueur est responsable de la mort d’un PNJ, l’enquête est retirée au joueur et +2WAN !
+	- Si le joueur est responsable de la mort d’un PNJ, l’enquête lui est retirée et +1Wan !
 
 Recherché/Wanted pour les PNJs (Wan)
 	- Le Wanted de PNJs évolue de 0 à 5. 0 au début du jeu. Il représente le niveau d’emmerdes avec les autorités qu’à le PNJ.
@@ -261,6 +261,18 @@ Difficulté du jeu (écran d’OPTIONS)
 		Stressant : -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
 		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
 
+	- En difficulté de jeu Hobbie, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
+		C’est pas gagné ! : le joueur a très peu de chances de réussir l'action. (<20 % de chances de réussite)
+		C’est compliqué… : le joueur a une faible chance de réussir, mais cela reste possible. (20 à 40 % de chances de réussite) 
+		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (40 à 60 % % de chances de réussite)
+		Ça passe, mais ça reste risqué... : le joueur a une chance conséquente de réussir, mais une part d'incertitude subsiste. (60 à 80 % de chances de réussite) 
+		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>80 % de chances de réussite)
+
+	- En difficulté de jeu Tranquille, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
+		C’est pas gagné ! : le joueur a peu de chances de réussir l'action. (<33 % de chances de réussite)
+		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (33 à 66 % de chances de réussite)
+		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>66 % de chances de réussite)
+
 Les différentes piles de cartes du joueur (en interaction)
 	- Pile de maîtrise (cartes Dialogue, Combat, Investigation, Abstraite (max 3), Objet (Arme) (max 2)) / 10 Max
 	- Pile de non-maîtrise (cartes Dialogue, Combat, Investigation, Abstraite) / 5 Max et aléatoires (mais possibles dans le contexte, pas de Dialogue en Combat, par exemple).
@@ -281,8 +293,8 @@ Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, A
 Addiction
 	- L’Add évolue au réveil (-1Add). Le joueur a besoin de sa dose (presque) quotidienne qui lui coûte de l’argent. Sans sa dose, -1Add et avec sa dose, +1Add.
 	- Le joueur peut prendre 2 doses maximum par jour. Au delà, c’est l’overdose !
-	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur. Cliquer dessus fait instantanément consommer 1 dose. Pas plus de 2 par jour (cycle jour/nuit solaire).
-	- Prendre 1 ou 2 doses prend indifféremment 1h. Pour que la prise de 2 doses soit considérée comme prise en une fois, le joueur ne doit rien faire d’autre entre les 2 cliques sur les doses.
+	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur. 1 simple clic dessus fait instantanément consommer 1 dose. 1 double clic fait instantanément consommer 2 doses. Pas plus de 2 par jour.
+	- Prendre de la drogue (simple ou double clic) prend indifféremment 1h.
 
 Crise liée à l’Addiction
 	- Cas d’Add à -3 ou +3 : voir Add au début des règles.
@@ -400,20 +412,22 @@ Les cartes
 	- En début de partie, Pour la pile de Maîtrise, le jeu proposera au joueur 3 cartes (1 Dialogue, 1 Combat et 1 Investigation). Plus précisément, pour chacune de ces cartes, le joueur aura le choix entre 3 cartes proposées aléatoirement par le jeu et 1 carte Abstraite.
 	- Les effets d’une carte sur PHY et MEN principales sont temporaires !
 	- Les bonus/malus d’une carte sur HEA, Emo, Add et/ou Wan sont permanents !
+	- À noter que le Card_BG dans Card.tscn peut (et doit) être bougé pour chaque carte (juste pour varier un peu leur fond). Offset/offset en x entre -120 et 0 et en y entre -30 et 0.
 
 Structure commune de carte
-	ID : COM001 (Combat), DIA001 (Dialogue), INV001 (Investigation), ABS001 (Abstraite), PNJ001 (PNJ), OBJ001 (Objet), PLA001 (Lieu/Place). (on incrémentera le numéro pour chaque nouvelle carte)
-	Nom : Nom de l'objet, de l'action, de l'élément de dialogue, etc.
+	ID : COM001 (Combat), DIA001 (Dialogue), INV001 (Investigation), ABS001 (Abstraite), PNJ001 (PNJ), OBJ001 (Objet), PLA001 (Lieu/Place). (on incrémentera le numéro pour chaque nouvelle carte !)
+	Nom : Nom de la carte
 	Type : Dialogue/Combat/Investigation/Abstraite/Objet/Lieu/PNJ.
 	Arme : Oui/Non
 	Description : Très brève description de la carte.
-	Preuve (Élément de preuve) : Oui/Non.
+	Preuve (Evidence) : Oui/Non.
 	Combinaisons Possibles : Dialogue/Combat/Investigation/Abstraite/Lieu/Objet/PNJ.
 	Combinaisons impossibles : Dialogue/Combat/Investigation/Abstraite/Lieu/Objet/PNJ.
 	Information(s) obtenable(s) : Lien (relations, emploi du temps) dans Fiche/fiche d'enquête/« Feuille de PNJ ».
-	Possession (pour un PNJ) : Cartes Objet (ce sont éventuellement des preuves)
+	Possession (pour un PNJ) : Cartes Objet (ce sont éventuellement des Evidences)
 	Ouverture la nuit, le week-end : Non / Nuit (tous les jours) / Week-end (induit matin et après-midi uniquement).
-	Bonus/Malus : Modifications temporaires des caractéristiques principales en utilisant la carte (par exemple, +1 PHY pour un test d'escalade, -1 MEN en cas d'échec).
+	Bonus/Malus temporaires : Modifications temporaires des caractéristiques principales en utilisant la carte (par exemple, +1PHY pour un test d'escalade, -1MEN en cas d'échec, etc.).
+	Bonus/Malus permanents : Modifications temporaires des caractéristiques principales en utilisant la carte (+1Add, -1Emo, etc.).
 	Durée d'effet : Durée des effets de bonus/malus (jusqu'à la fin de la scène, une interaction, une heure, un jour, etc.).
 	Usage : Usage unique, plusieurs, permanent (par exemple, usage unique pour chaque action). Inutilisable si rechargeable sinon défausse en fin de durée d’utilisation.
 
@@ -600,7 +614,7 @@ Liste des cartes Combat :
 	- Self-control ! : Annule les malus d’Emo de l’autre carte de Combat, malus de 1 au jet de dé
 	- Le tout pour le tout ! : bonus de 1 au jet de dé, les effets sur Emo sont augmentés de 1
 	- Adrénaline ! : bonus de 1 au jet de dé, ±1Add → Min/Max
-	FUITE (avant combat)
+	RUN AWAY (avant combat)
 	- Fuir : +1PHY, +1MEN
 
 
@@ -665,11 +679,12 @@ Liste des cartes Objet (banals/inutiles mais Élément de preuve  impossible) :
 
 
 Les cartes PNJ :
+	- Elles affichent en permanence une jauge en haut à droite donnant un indice du dernier état de santé du PNJ « connu » par le joueur après leur derniere interaction. Il y a 3 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA et Rouge : 1 à 3 HEA). Tant qu’il n’y a pas eu d’interaction, cette jauge n’est pas affichée.
 	- Elles ne servent qu’en Dialogue et sur la Fiche d’Enquête.
 	- Elles affichent une silhouette (Homme/Femme,  Grand/Moyen/Petit, Mince/Moyen/Gros) et les noms et prénoms dès qu’ils sont connus.
 	- Lorsque l’on veut avoir plus d’informations (si elles sont disponibles, on peut cliquer sur la carte pour ouvrir la fiche de personnage) ou aller dans la Fiche d’Enquête (écran principal) pour avoir le détails de ses liens à l’enquête et ses qualités (natures des liens, pleins ou pointillés).
 	- (si besoin) Il existe 1 carte spéciale qui représente les personnes dont on ne sait rien, et qui ne présentera qu’une silhouette indéfinie avec un « ? » dessus.
-	- Rappel : la carte d’un PNJ mort ne sera pas retirée de l’enquête. Si la mort du PNJ est causée par le joueur, de toute manière l’enquête lui est retirée et +2WAN !
+	- Rappel : la carte d’un PNJ mort ne sera pas retirée de l’enquête. Si la mort du PNJ est causée par le joueur, de toute manière l’enquête lui est retirée et +1Wan !
 	- Une fois jouée, ces cartes ne sont pas perdues.
 Les interactions : Dialogue, Combat et Investigation
 
@@ -818,7 +833,7 @@ Fuir un Combat (Joueur)
 	- En cas d’échec critique, le joueur fuit tout de même mais prend -2HEA et +1Emo → Min/max.
 
 Fuir un Combat (PNJ)
-	- Pour fuir un Combat, le PNJ lance un dé contre round((PHY+MEN+HEA)÷3). S’il réussit, il disparaît jusqu’au lendemain sinon, le Combat a lieu.
+	- Pour fuir un Combat, le PNJ lance un dé contre round((PHY+MEN+HEA)÷3). S’il réussit, il disparaît jusqu’au lendemain sinon, le Combat a lieu et le PNJ a un Malus de 1 au jet de dé du combat à suivre.
 	- En cas de réussite critique, le PNJ disparaît 2 jours.
 	- En cas d’échec critique, le PNJ reste pour le combat et à un malus de 1 à son jet de dé jusqu’à la fin de l’interaction prévue ensuite.
 
@@ -850,10 +865,10 @@ Accès au Lieux fermés/sécurisés à investiguer hors présence de PNJ
 	- Il faut avant tout arriver à pénétrer dans le lieu et pour ce faire, il faut pouvoir « forcer » l’accès (grimper, forcer une serrure, etc.).
 	- ATTENTION : comme pour le reste, cette entreprise est testée en une fois.
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
-	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes, de Difficulté d’enquête, Emo, Add et Wan.
-	- La round(marge de réussite÷3) représentera un bonus au jets de dé pendant l’Investigation qui va suivre l’effraction.
-	- En cas d’échec, le joueur prendra -1HEA (-2HEA sur un échec critique) et round(marge d’échec÷3) malus aux jets de dé (et +1Wan sur un échec critique).
-	- En cas d’échec, le joueur (s’il ne meurt pas) ne pourra ré-essayer qu’à partir du lendemain.
+	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes, de Difficulté d’enquête, Emo, Add et Wan, Sommeil, Nuit.
+	- En cas de réussite critique, Bonus de 1 au jet de dé de l’Investigation qui suit.
+	- En cas d’échec, le joueur prendra +1Wan et 1 de malus au jet de dé (et +1Wan sur un échec critique) dans l’investigation qui va suivre. Le joueur (s’il ne meurt pas) ne pourra ré-essayer qu’à partir du lendemain.
+	- En cas d’échec critique, -1HEA et +1Wan car le joueur se fait repérer (mais part). Le joueur (s’il ne meurt pas) ne pourra ré-essayer qu’à partir du lendemain.
 
 Enquête
 
@@ -943,14 +958,14 @@ Liens entre les éléments de la Fiche d'enquête
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens : À définir, par exemple :
-          Blanc : Dit où devrait être un PNJ à l’heure actuelle. 
+          Blanc : Dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. 
 Gris : Témoin ? Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution (voir dans mon carnet mais pas idéal)…
           Noir : Coupable/Complice/Preuve → -1Rep si lien plein (incriminant) fait, +1Rep si lien plein (incriminant) défait.
           Rose : Intime
           Vert foncé : Ami
 Orange : Ennemi
 Bleu clair : Connaissance
-          Bleu foncé : Professionnel
+          Bleu foncé : Professionnel/Collègue
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution (voir dans mon carnet mais pas idéal)…
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution (voir dans mon carnet mais pas idéal)…
           Vert clair : Propriété/Appartenance 
@@ -965,33 +980,30 @@ Système de Difficulté pour les Enquêtes
 		Difficulté 5 : Enquêtes épouvantablement complexes. (-3)
 
 	- Le niveau de difficulté de l’enquête s’appliquera en bonus/malus à tous les jets de dé du joueur dans cette enquête.
-	- Au départ, le joueur n’a accès qu’aux enquêtes de niveau 1. Puis toutes les 3 enquêtes réussies dans ce niveau de difficulté, il a accès au niveau de difficulté suivant et ainsi de suite.
-	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 3 aux jets de dé !
+	- Au départ, le joueur n’a accès qu’aux enquêtes de niveau 1 et 2. Puis toutes les 3 enquêtes réussies dans ces niveaux de difficulté, il a accès au niveau de difficulté suivant et ainsi de suite.
+	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 4 aux jets de dé !
 	- Plus le niveau de difficulté sera élevé et plus il faudra de preuves pour finaliser le dossier, plus il faudra (probablement) désigner de coupables et/ou de complices.
 
 
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est terminée et qu’elle est un succès, le personnage aura des bonus :
-		- round((100 + (niveau de difficulté − 1) × 125 ) ±10%) Dø
-		- autant que le niveau de difficulté de l’enquête en cartes Abstraites (tirées au hasard et ne pourra en garder que 3 max en main)
-		- Emo = 0
-		- Possiblement des objets (noté dans la fiche de quête).
-	- Si l’enquête est résolue mais comporte des erreurs non critiques (aucune erreur de Liens Pleins mais des résidus de Pointillés et le reste, on s’en fout, c’est pour le joueur) :
-		-  round(((100 + (niveau de difficulté − 1) × 125 ) ±10%) ÷ 2) Dø
-		- autant que round(le niveau de difficulté de l’enquête ÷ 2) en cartes Abstraites (tirées au hasard et ne pourra en garder que 3 max en main)
-		- ±1Emo → 0
+		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) Dø
+		- autant que le niveau de difficulté de l’enquête en cartes Combat, Dialogue, Investigation et Abstraites (sans dépasser les limites de pile de Maîtrise).
+		- Emo = 0, ±1 Add → O
+	- Si l’enquête est résolue mais comporte des erreurs dans la marge des 10 % (d’erreur), il obtient en plus :
+		-  25 % de Dø en plus.
+		- Add = 0
  	- Si le joueur valide une enquête et s’est gouré, l’enquête est terminée pour lui.
-	- Une enquête perdue (accusation erronée avec validation finale) implique :
-		- Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0.
-	- Renoncer à une quête n’implique pas de malus (ni de bonus). Le joueur perd alors les cartes Objet (Lieu ?) liées à cette enquête (hors armes si elles ne sont pas de vraies preuves dans l’enquête). Son Emo ne bouge pas et il ne récupère pas d’argent non plus.
-	- Le joueur a un maximum de 10 cartes qu'il peut garder en main (dont max. 3 Abstraites). Ainsi il fait son jeu de cartes au fur et à mesure des événements tout en étant en permanence évolutif.
-	 - RAPPEL : Une carte abandonnée reprend automatiquement son malus de non maîtrise (malus de 2 au jets de dé). Ainsi, la maîtrise est avérée par le fait d'avoir été utilisée avec succès lorsqu'elle n’était pas dans le jeu de cartes du joueur.
+	- Une enquête perdue (+ de 10 % d’erreur) implique :
+		- Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0, Add ±1 → Add Min/Max ou Add -1 si Add = 0 (dans un maximum de 10 cartes qu'il peut garder en main (dont max. 3 Abstraites).
+	- Renoncer à une quête n’implique pas de malus (ni de bonus). Evidemment, toutes les cartes Objet, Lieu et PNJ sont retirées de la partie.
+	 - RAPPEL : Une carte abandonnée reprend automatiquement son malus de non maîtrise (malus de 1 au jets de dé). Ainsi, la maîtrise est avérée par le fait d'avoir été utilisée avec succès lorsqu'elle n’était pas dans le jeu de cartes du joueur.
 	- Si le joueur défausse des cartes liées à l’enquête, il les retrouvera automatiquement la prochaine fois qu’il reviendra interagir ici ou avec le(s) PNJ(s) avec lequel/lesquels il a interagi.
-	- Les cartes marquées comme Éléments de Preuve ne peuvent être défaussées puisqu’elles ne font pas partie de la main de maîtrise.
-	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de round(niveau de difficulté de l’enquête/2) jours.
+	- Les cartes marquées Evidence ne peuvent être défaussées puisqu’elles ne font pas partie de la main de maîtrise.
+	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours.
 	- Le joueur ne peut pas mener plus de 3 enquêtes de front.
-	- Une enquête ne peut pas être rejetée à + de 24h de sa limite de validité.
-	- Lorsqu’une enquête est résolue ou retirée au joueur, tout ce qui est lié à cette enquête est aussi retiré du jeu. Cela signifie les PNJs, les cartes Lieu, Objet, Éléments de preuve, etc. sauf les cartes que le joueur a gardé dans sa main de maîtrise et ses cartes Abstraites. Il serait chouette cependant de garder les PNJs pour les réintroduire dans d’autres enquêtes de temps en temps...
+	- Une enquête ne peut pas être rejetée à + d’1 jour de sa limite de validité.
+	- Lorsqu’une enquête est résolue ou retirée au joueur, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite).
 
 
 Résolution de la quête ultime (Les Alchimistes de la Vérité)
@@ -1026,26 +1038,21 @@ Coupable(s)	…
 Complice(s)	… 
 Élément(s) de preuve	Objet(s), Lieu(x)
 Relations entre personnages	le mort et la librairie (plein), la librairie « L’art est partout » et le suspect 1 (pointillé)
-
 Éléments additionnels :
 
 	- On va probablement créer plusieurs quêtes finales pour la re-jouabilité. Au moins 2 ou 3 ?
 	- Fait-on en sorte que le joueur puisse trouver des éléments de la quête finale au fur et à mesure de l’avancement de ses autres quêtes ?
-	- Je pense qu’il faut faire en sorte qu’un PNJ ne puisse pas arriver pendant qu’une interaction est en cours ou vient de finir mais toujours après.
-	- En difficulté très basse (et basse ?), avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative afin qu’il décide en « connaissance de cause » :
-		C’est pas gagné ! : le joueur a peu de chances de réussir l'action.
-		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine.
-		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit.
 	- Vérifier ces histoires de Bonus/Malus des Liens en Combat (surtout) et Dialogue.
-	- Une très bonne idée serait d’arriver à trouver un moyen de devoir trouver le mobile des crimes sur lesquels on enquête même s’il est probable qu’il n’y ait pas toujours de mobile à proprement parler mais on peut peut-être trouver un moyen de « tricher ».
+	- Une très bonne idée serait d’arriver à trouver un moyen de devoir découvrir le mobile des crimes sur lesquels on enquête même s’il est probable qu’il n’y ait pas toujours de mobile à proprement parler mais on peut peut-être trouver un moyen de « tricher ».
 	- Je pense qu’il faut avoir la possibilité de fouiller un/des PNJ(s) tombé(s) à HEA=1 et incapacité(s) ou mort(s) à la fin d’un/des combat(s) afin d’éventuellement trouver quelque chose sur lui/eux afin de redonner un peu d’intérêt aux Combats qui semblent en perdre au fur et à mesure.
+	- Il serait chouette de garder des PNJs pour les réintroduire dans d’autres enquêtes de temps en temps...
 
-	- Sur l’écran d’Interarction, il manque probablement la zone de cartes Lieux et PNJs liés à l’enquête (il faut les retirer des Evidences, il me semble) !
+	- Sur l’écran d’Interarction, il manque probablement la zone de cartes Lieux, Objets et PNJs liés à l’enquête !
 
 Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre.
 
 
-	- Il va certainement falloir faire des liens Violets pointillés pour chaque couleur de lien ou en tout cas certains nécessaires…
+	- Il va falloir faire des liens Violets pointillés pour chaque couleur de lien ou en tout cas certains nécessaires…
 	- Il faudrait trouver un moyen de lier les liens Rouges, jaunes et Gris au milieu d’un autre lien (mon autre solution dans mon carnet n’est pas aussi satisfaisante) ou une autre solution !
 	- Dans ce cadre, voici les éléments absolument nécessaires au minimum :
 		1 Coupable
