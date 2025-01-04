@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dobmdhmiofn2w"
-path="res://.godot/imported/Lets_Go_Pressed.png-d94f6ab824c047ff083f1e23bb590e37.ctex"
+uid="uid://cawoy0tidh5yj"
+path="res://.godot/imported/Object_Hover.png-ee68a9243b5c0bb8e324b0e77b8db1e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INTERACTION/Lets_Go_Pressed.png"
-dest_files=["res://.godot/imported/Lets_Go_Pressed.png-d94f6ab824c047ff083f1e23bb590e37.ctex"]
+source_file="res://TRASH/Object_Hover.png"
+dest_files=["res://.godot/imported/Object_Hover.png-ee68a9243b5c0bb8e324b0e77b8db1e3.ctex"]
 
 [params]
 

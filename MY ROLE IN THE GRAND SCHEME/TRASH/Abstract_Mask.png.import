@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d27drsi862tfx"
+path="res://.godot/imported/Abstract_Mask.png-157672de343844059e718a7229d343aa.res"
+
+[deps]
+
+source_file="res://TRASH/Abstract_Mask.png"
+dest_files=["res://.godot/imported/Abstract_Mask.png-157672de343844059e718a7229d343aa.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

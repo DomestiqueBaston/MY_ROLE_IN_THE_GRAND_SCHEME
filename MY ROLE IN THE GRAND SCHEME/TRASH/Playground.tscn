@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://bgwcs2vpa1g2o"]
 
-[ext_resource type="Texture2D" uid="uid://b8bm2hx5j7ber" path="res://GRAPHICS/INTERACTION/Interaction_Normal.png" id="1_hyvyo"]
-[ext_resource type="Texture2D" uid="uid://b8vj64ok2avu6" path="res://GRAPHICS/INTERACTION/Interaction_Hover.png" id="2_tfvsa"]
-[ext_resource type="BitMap" uid="uid://45crvh6f1ryj" path="res://GRAPHICS/INTERACTION/Interaction_Mask.png" id="3_30400"]
-[ext_resource type="Texture2D" uid="uid://46t3wpqrnar0" path="res://GRAPHICS/INTERACTION/Object_Normal.png" id="4_8yroi"]
-[ext_resource type="Texture2D" uid="uid://cawoy0tidh5yj" path="res://GRAPHICS/INTERACTION/Object_Hover.png" id="5_sb18s"]
-[ext_resource type="BitMap" uid="uid://jrek8p60uv1u" path="res://GRAPHICS/INTERACTION/Object_Mask.png" id="6_s6rb0"]
-[ext_resource type="Texture2D" uid="uid://bvkdourlidtp6" path="res://GRAPHICS/INTERACTION/Abstract_Normal.png" id="7_83k1j"]
-[ext_resource type="Texture2D" uid="uid://dy0cnumgr77eg" path="res://GRAPHICS/INTERACTION/Abstract_Hover.png" id="8_0gfb8"]
-[ext_resource type="BitMap" uid="uid://d27drsi862tfx" path="res://GRAPHICS/INTERACTION/Abstract_Mask.png" id="9_fyjc3"]
+[ext_resource type="Texture2D" uid="uid://b8bm2hx5j7ber" path="res://TRASH/Interaction_Normal.png" id="1_hyvyo"]
+[ext_resource type="Texture2D" uid="uid://b8vj64ok2avu6" path="res://TRASH/Interaction_Hover.png" id="2_tfvsa"]
+[ext_resource type="BitMap" uid="uid://45crvh6f1ryj" path="res://TRASH/Interaction_Mask.png" id="3_30400"]
+[ext_resource type="Texture2D" uid="uid://46t3wpqrnar0" path="res://TRASH/Object_Normal.png" id="4_8yroi"]
+[ext_resource type="Texture2D" uid="uid://cawoy0tidh5yj" path="res://TRASH/Object_Hover.png" id="5_sb18s"]
+[ext_resource type="BitMap" uid="uid://jrek8p60uv1u" path="res://TRASH/Object_Mask.png" id="6_s6rb0"]
+[ext_resource type="Texture2D" uid="uid://bvkdourlidtp6" path="res://TRASH/Abstract_Normal.png" id="7_83k1j"]
+[ext_resource type="Texture2D" uid="uid://dy0cnumgr77eg" path="res://TRASH/Abstract_Hover.png" id="8_0gfb8"]
+[ext_resource type="BitMap" uid="uid://d27drsi862tfx" path="res://TRASH/Abstract_Mask.png" id="9_fyjc3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s0ns"]
 size = Vector2(76, 102)

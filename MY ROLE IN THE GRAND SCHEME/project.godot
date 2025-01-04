@@ -44,7 +44,7 @@ folder_colors={
 2d_physics/layer_2="Card_Top"
 2d_physics/layer_3="Pin"
 2d_physics/layer_4="Card_Detector"
-2d_physics/layer_5="Playground"
+2d_physics/layer_5="Interaction_Playground"
 2d_physics/layer_6="Card_Bottom"
 
 [rendering]

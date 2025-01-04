@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://46t3wpqrnar0"
-path="res://.godot/imported/Object_Normal.png-cc6c735577150a587838cad6ae984b47.ctex"
+uid="uid://b8bm2hx5j7ber"
+path="res://.godot/imported/Interaction_Normal.png-a0468ee306c563c25e1387bc33eacddd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INTERACTION/Object_Normal.png"
-dest_files=["res://.godot/imported/Object_Normal.png-cc6c735577150a587838cad6ae984b47.ctex"]
+source_file="res://TRASH/Interaction_Normal.png"
+dest_files=["res://.godot/imported/Interaction_Normal.png-a0468ee306c563c25e1387bc33eacddd.ctex"]
 
 [params]
 

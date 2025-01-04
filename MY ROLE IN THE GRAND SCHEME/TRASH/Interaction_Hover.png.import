@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cawoy0tidh5yj"
-path="res://.godot/imported/Object_Hover.png-e69b9dbd737fbe2bfeacace13cf06119.ctex"
+uid="uid://b8vj64ok2avu6"
+path="res://.godot/imported/Interaction_Hover.png-608ca93eebbb63bb7fe71cd292923896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INTERACTION/Object_Hover.png"
-dest_files=["res://.godot/imported/Object_Hover.png-e69b9dbd737fbe2bfeacace13cf06119.ctex"]
+source_file="res://TRASH/Interaction_Hover.png"
+dest_files=["res://.godot/imported/Interaction_Hover.png-608ca93eebbb63bb7fe71cd292923896.ctex"]
 
 [params]
 

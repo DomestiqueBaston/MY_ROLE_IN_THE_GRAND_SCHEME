@@ -52,6 +52,7 @@ position = Vector2(463, 206)
 visible = true
 
 [node name="Card3" parent="TMP" instance=ExtResource("4_nkome")]
+modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 
 [node name="Combat" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="0"]

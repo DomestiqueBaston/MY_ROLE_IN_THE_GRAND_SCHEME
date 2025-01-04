@@ -610,25 +610,24 @@ Les Cartes Objet
 
 Liste des cartes Objet (Élément de preuve possible) :
 	Ces objets sont TOUJOURS liés à un PNJ (car ils sont « nominatifs »).
-	- Clé
-	- Clé USB
+	- Agenda
 	- Badge d’accès
 	- Carnet de notes personnel
-	- Reçu
-	- Carte de visite
-	- Gourmette
-	- Agenda
-	- Téléphone portable
-	- Ordinateur portable
-	- Photographie
 	- Carnet de santé
-	- Porte-feuilles
+	- Carte de visite
+	- Clé
+	- Clé USB
 	- Contrat
-	- Ticket nominatif
-	- Réservation
 	- Empreintes digitales
 	- Empreintes génétiques
-	- Empreintes numériques (?)
+	- Empreintes numériques
+	- Facture (nominatif)
+	- Photographie
+	- Porte-feuilles
+	- Réservation
+	- Téléphone portable
+	- Ticket de transport (nominatif)
+	- Ordinateur portable 
 	- … 
 
 
@@ -640,32 +639,31 @@ Liste des cartes Objet (Arme ou pouvant servir d’arme et Élément de preuve p
 
 
 Liste des cartes Objet (banals/inutiles mais Élément de preuve impossible) :
-	- Livre
-	- Cahier
-	- Boîte
 	- Agrafeuse
-	- CD
 	- Baladeur
-	- Chargeur USB
 	- Briquet
-	- Paquet de cigarettes
+	- Boîte vide
 	- Boîte de pansements
-	- Serviettes en papier
-	- Marqueur
-	- Casque de vélo
-	- Pompe à vélo
-	- Stylo
-	- Casquette
 	- Boîte de préservatifs
+	- Cahier
+	- Casquette
+	- Casque de vélo
+	- CD
+	- Chargeur USB
 	- Lampe de poche
+	- Livre
 	- Lunettes de soleil
-	- Bobine de fil
+	- Marqueur
 	- Mètre ruban
+	- Paquet de cigarettes
+	- Pompe à vélo
+	- Serviettes en papier
+	- Stylo 
 	- …
 
 
 Les cartes PNJ :
-	- Elles affichent en permanence une jauge en haut à droite donnant un indice du dernier état de santé du PNJ « connu » par le joueur après leur derniere interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue). Tant qu’il n’y a pas eu d’interaction, cette jauge n’est pas affichée (c’est le Sans juste avant).
+	- Elles affichent en permanence une jauge en haut à droite donnant un indice du dernier état de santé « connu » du PNJ par le joueur après leur derniere interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue).
 	- Elles affichent une silhouette (Homme/Femme,  Grand/Moyen/Petit, Mince/Moyen/Gros) et les noms et prénoms dès qu’ils sont connus.
 	- (si besoin) Il existe 1 carte spéciale qui représente les personnes dont on ne sait rien, et qui ne présentera qu’une silhouette indéfinie avec un « ? » dessus.
 	- Rappel : la carte d’un PNJ mort ne sera pas retirée de l’enquête. Si la mort du PNJ est causée par le joueur, de toute manière l’enquête lui est retirée et +1Wan !

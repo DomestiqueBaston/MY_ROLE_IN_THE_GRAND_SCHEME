@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6lml47n2xq3m"
-path="res://.godot/imported/Evidences.png-80171861326f084f3e3f76d2c038afa7.ctex"
+uid="uid://dobmdhmiofn2w"
+path="res://.godot/imported/Lets_Go_Pressed.png-15a063dd59cba68791770c508bad3e73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INTERACTION/Evidences.png"
-dest_files=["res://.godot/imported/Evidences.png-80171861326f084f3e3f76d2c038afa7.ctex"]
+source_file="res://TRASH/Lets_Go_Pressed.png"
+dest_files=["res://.godot/imported/Lets_Go_Pressed.png-15a063dd59cba68791770c508bad3e73.ctex"]
 
 [params]
 
