@@ -93,8 +93,10 @@ visible = true
 [node name="Unplayable" parent="TMP/Card6/Card_Mask/Card_BG" index="4"]
 visible = true
 
-[node name="Lien_Pointillé_Exemple" type="Line2D" parent="TMP"]
-points = PackedVector2Array(256, 97, 472, 215)
+[node name="Links" type="Node2D" parent="TMP"]
+
+[node name="Lien_Pointillé_Exemple" type="Line2D" parent="TMP/Links"]
+points = PackedVector2Array(257, 92, 470, 213)
 width = 3.0
 texture = ExtResource("8_yqmfx")
 texture_mode = 1
@@ -103,8 +105,8 @@ end_cap_mode = 2
 round_precision = 3
 metadata/_edit_lock_ = true
 
-[node name="Lien_Pointillé_Blanc_Exemple" type="Line2D" parent="TMP"]
-points = PackedVector2Array(545, 74, 359, 46)
+[node name="Lien_Pointillé_Blanc_Exemple" type="Line2D" parent="TMP/Links"]
+points = PackedVector2Array(544, 64, 361, 45)
 width = 3.0
 texture = ExtResource("5_gsfxi")
 texture_mode = 1
@@ -113,8 +115,8 @@ end_cap_mode = 2
 round_precision = 3
 metadata/_edit_lock_ = true
 
-[node name="Lien_Plein_Exemple" type="Line2D" parent="TMP"]
-points = PackedVector2Array(229, 220, 521, 174)
+[node name="Lien_Plein_Exemple" type="Line2D" parent="TMP/Links"]
+points = PackedVector2Array(232, 220, 519, 170)
 width = 3.0
 texture = ExtResource("5_75utw")
 texture_mode = 1
@@ -123,47 +125,47 @@ end_cap_mode = 2
 round_precision = 3
 metadata/_edit_lock_ = true
 
-[node name="Pin_1" parent="TMP" instance=ExtResource("10_13y24")]
-offset_left = 251.0
-offset_top = 93.0
-offset_right = 259.0
-offset_bottom = 101.0
+[node name="Pin_1" parent="TMP/Links" instance=ExtResource("10_13y24")]
+offset_left = 257.0
+offset_top = 92.0
+offset_right = 265.0
+offset_bottom = 100.0
 
-[node name="Pin_2" parent="TMP" instance=ExtResource("10_13y24")]
-offset_left = 468.0
-offset_top = 211.0
-offset_right = 476.0
-offset_bottom = 219.0
+[node name="Pin_2" parent="TMP/Links" instance=ExtResource("10_13y24")]
+offset_left = 470.0
+offset_top = 213.0
+offset_right = 478.0
+offset_bottom = 221.0
 
-[node name="Pin_3" parent="TMP" instance=ExtResource("10_13y24")]
-offset_left = 224.0
-offset_top = 216.0
-offset_right = 232.0
-offset_bottom = 224.0
+[node name="Pin_3" parent="TMP/Links" instance=ExtResource("10_13y24")]
+offset_left = 232.0
+offset_top = 220.0
+offset_right = 240.0
+offset_bottom = 228.0
 
-[node name="Pin_4" parent="TMP" instance=ExtResource("10_13y24")]
+[node name="Pin_4" parent="TMP/Links" instance=ExtResource("10_13y24")]
 offset_left = 519.0
-offset_top = 169.0
+offset_top = 170.0
 offset_right = 527.0
-offset_bottom = 177.0
+offset_bottom = 178.0
 
-[node name="Pin_5" parent="TMP" instance=ExtResource("10_13y24")]
-offset_left = 355.0
-offset_top = 42.0
-offset_right = 363.0
-offset_bottom = 50.0
+[node name="Pin_5" parent="TMP/Links" instance=ExtResource("10_13y24")]
+offset_left = 361.0
+offset_top = 45.0
+offset_right = 369.0
+offset_bottom = 53.0
 
-[node name="Pin_6" parent="TMP" instance=ExtResource("10_13y24")]
-offset_left = 541.0
-offset_top = 70.0
-offset_right = 549.0
-offset_bottom = 78.0
+[node name="Pin_6" parent="TMP/Links" instance=ExtResource("10_13y24")]
+offset_left = 544.0
+offset_top = 64.0
+offset_right = 552.0
+offset_bottom = 72.0
 
 [node name="Player_Place" parent="TMP" instance=ExtResource("7_hutwy")]
-offset_left = 541.0
-offset_top = 70.0
-offset_right = 549.0
-offset_bottom = 78.0
+offset_left = 544.0
+offset_top = 64.0
+offset_right = 552.0
+offset_bottom = 72.0
 
 [node name="Base_Locations" type="Control" parent="."]
 layout_mode = 3
@@ -175,28 +177,39 @@ offset_bottom = 360.0
 metadata/_edit_lock_ = true
 
 [node name="Morpho_the_Dealer" parent="Base_Locations" instance=ExtResource("10_13y24")]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 3.0
 tooltip_text = "Morpho the Dealer"
 
 [node name="Investigation_Center" parent="Base_Locations" instance=ExtResource("10_13y24")]
-offset_left = 193.0
-offset_top = -78.0
-offset_right = 201.0
-offset_bottom = -70.0
+offset_left = 198.0
+offset_top = -74.0
+offset_right = 206.0
+offset_bottom = -66.0
 tooltip_text = "Investigation Center"
 
 [node name="Boutique" parent="Base_Locations" instance=ExtResource("10_13y24")]
-offset_left = 28.0
-offset_top = -127.0
-offset_right = 36.0
-offset_bottom = -119.0
+offset_left = 32.0
+offset_top = -122.0
+offset_right = 40.0
+offset_bottom = -114.0
 tooltip_text = "Boutique"
 
 [node name="Jail" parent="Base_Locations" instance=ExtResource("10_13y24")]
-offset_left = 257.0
-offset_top = -265.0
-offset_right = 265.0
-offset_bottom = -257.0
+offset_left = 261.0
+offset_top = -261.0
+offset_right = 269.0
+offset_bottom = -253.0
 tooltip_text = "Jail"
+
+[node name="Doctor" parent="Base_Locations" instance=ExtResource("10_13y24")]
+offset_left = 210.0
+offset_top = -275.0
+offset_right = 218.0
+offset_bottom = -267.0
+tooltip_text = "Doctor"
 
 [node name="Top_Left_Info" parent="." instance=ExtResource("5_u6ur1")]
 metadata/_edit_lock_ = true

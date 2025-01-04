@@ -48,21 +48,17 @@ _data = {
 [node name="Player_Place" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 8.0
-offset_bottom = 8.0
 tooltip_text = "You are here!"
 theme = ExtResource("1_efxgk")
 metadata/_edit_lock_ = true
 
 [node name="Ring" type="Sprite2D" parent="."]
-position = Vector2(4, 4)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_cf184")
 metadata/_edit_lock_ = true
 
 [node name="Pin" type="Sprite2D" parent="."]
 texture = ExtResource("3_cldar")
-centered = false
 metadata/_edit_lock_ = true
 
 [node name="Collider" type="Area2D" parent="."]
@@ -72,7 +68,6 @@ collision_mask = 18
 metadata/_edit_lock_ = true
 
 [node name="Pin" type="CollisionShape2D" parent="Collider"]
-position = Vector2(4, 4)
 shape = SubResource("CircleShape2D_bfoqd")
 metadata/_edit_lock_ = true
 
