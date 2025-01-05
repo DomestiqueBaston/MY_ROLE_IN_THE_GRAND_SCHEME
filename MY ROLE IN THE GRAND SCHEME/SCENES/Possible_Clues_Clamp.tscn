@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://lv8nyh7xqyqp"]
+
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_nce40"]
+[ext_resource type="Texture2D" uid="uid://daarosfqpf3li" path="res://GRAPHICS/MAIN/Pince_Haut.png" id="2_nb4pd"]
+
+[node name="Possible_Clues_Clamp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Possible_Clues" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 21.0
+offset_right = 98.0
+offset_bottom = 29.0
+tooltip_text = "Cards can be taken or returned here."
+mouse_filter = 0
+theme = ExtResource("1_nce40")
+theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
+text = "Possible Clues"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Clamp" type="Sprite2D" parent="."]
+position = Vector2(38, 20)
+texture = ExtResource("2_nb4pd")
+centered = false
+metadata/_edit_lock_ = true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bfpm6a5py123e"
+path="res://.godot/imported/Bring_It_On_Mask.png-c2115937d915afb057ec61b5568a9c65.res"
+
+[deps]
+
+source_file="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png"
+dest_files=["res://.godot/imported/Bring_It_On_Mask.png-c2115937d915afb057ec61b5568a9c65.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://gq7vbe70kt0a"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_1xv7m"]
+[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_fwbog"]
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/MIXETTE/Mixette__BG.png" id="1_v2vuv"]
 [ext_resource type="Texture2D" uid="uid://dnwfmqh7r8l1h" path="res://GRAPHICS/MIXETTE/Slider_01.png" id="2_003gq"]
 [ext_resource type="Texture2D" uid="uid://ryhx7vr28c7w" path="res://GRAPHICS/MIXETTE/Slider_02.png" id="3_fnxqd"]
@@ -30,7 +30,7 @@
 [ext_resource type="BitMap" uid="uid://bw4w5lbnuuckm" path="res://GRAPHICS/MIXETTE/Cancel_Mask.png" id="28_aeu40"]
 
 [node name="Mixette" type="Node2D"]
-script = ExtResource("1_1xv7m")
+script = ExtResource("1_fwbog")
 metadata/_edit_lock_ = true
 
 [node name="Mixette_BG" type="Sprite2D" parent="."]
@@ -123,9 +123,6 @@ texture_pressed = ExtResource("19_ieq8a")
 texture_hover = ExtResource("20_7b662")
 texture_click_mask = ExtResource("21_h7ql1")
 
-[node name="Shader_Overlay" parent="." instance=ExtResource("23_ki5ci")]
-visible = false
-
 [node name="Ok_Cancel_Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -149,3 +146,6 @@ offset_bottom = 40.0
 tooltip_text = "On second thought..."
 texture_hover = ExtResource("27_sm5hb")
 texture_click_mask = ExtResource("28_aeu40")
+
+[node name="Shader_Overlay" parent="." instance=ExtResource("23_ki5ci")]
+visible = false

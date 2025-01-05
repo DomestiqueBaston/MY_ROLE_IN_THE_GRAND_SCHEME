@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c2212iskhr34y"
+path="res://.godot/imported/Investigation_Mask.png-71a8650ba49ffc042e9a613a94967fde.res"
+
+[deps]
+
+source_file="res://TRASH/INV_DIA_COM/Investigation_Mask.png"
+dest_files=["res://.godot/imported/Investigation_Mask.png-71a8650ba49ffc042e9a613a94967fde.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

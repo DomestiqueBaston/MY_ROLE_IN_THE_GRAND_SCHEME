@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://b3bhykg1b1nm0"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_a46sv"]
-[ext_resource type="Texture2D" uid="uid://bwojpud0dsewx" path="res://TRASH/Interaction_BG.png" id="2_k52vi"]
-[ext_resource type="Texture2D" uid="uid://ci8paykoriwug" path="res://TRASH/Evidence.png" id="3_bg8q0"]
+[ext_resource type="Texture2D" uid="uid://bwojpud0dsewx" path="res://TRASH/INTERACTION_old/Interaction_BG.png" id="2_k52vi"]
+[ext_resource type="Texture2D" uid="uid://ci8paykoriwug" path="res://TRASH/INTERACTION_old/Evidence.png" id="3_bg8q0"]
 [ext_resource type="PackedScene" uid="uid://bgwcs2vpa1g2o" path="res://TRASH/Playground.tscn" id="4_2veec"]
-[ext_resource type="PackedScene" uid="uid://dldk5itfc6prx" path="res://SCENES/Top_Left_Screen.tscn" id="5_5jqme"]
+[ext_resource type="PackedScene" uid="uid://dldk5itfc6prx" path="res://TRASH/Top_Left_Screen.tscn" id="5_5jqme"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="6_v0c4c"]
 [ext_resource type="PackedScene" uid="uid://8r7milsx8op" path="res://TRASH/Oops_Lets_Go.tscn" id="7_16pam"]
 [ext_resource type="PackedScene" uid="uid://cdd2r2s4fujkx" path="res://SCENES/Bottom_Left_Info_Long.tscn" id="8_8q1ce"]
@@ -46,21 +46,6 @@ visible = false
 [node name="Investigation" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card1/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card1/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card3" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(427, 75)
 
@@ -69,21 +54,6 @@ visible = false
 
 [node name="Abstract" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card3/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card3/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card17" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(464, 233)
@@ -94,21 +64,6 @@ visible = false
 [node name="Investigation" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card17/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card17/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card18" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(482, 233)
 
@@ -118,38 +73,8 @@ visible = false
 [node name="Dialogue" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card18/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card18/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card19" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(501, 233)
-
-[node name="No_Health" parent="TMP/Card19/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card19/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card19/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card19/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card19/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card21" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(520, 233)
@@ -160,21 +85,6 @@ visible = false
 [node name="Abstract" parent="TMP/Card21/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card21/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card21/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card21/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card21/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card21/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card22" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(539, 233)
 
@@ -183,21 +93,6 @@ visible = false
 
 [node name="Abstract" parent="TMP/Card22/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card22/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card22/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card22/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card22/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card22/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card4" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(154, 233)
@@ -208,21 +103,6 @@ visible = false
 [node name="Investigation" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card4/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card4/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card5" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(173, 233)
 
@@ -231,21 +111,6 @@ visible = false
 
 [node name="Investigation" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card5/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card5/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card6" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(192, 233)
@@ -256,21 +121,6 @@ visible = false
 [node name="Investigation" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card6/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card6/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card7" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(211, 233)
 
@@ -279,21 +129,6 @@ visible = false
 
 [node name="Dialogue" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card7/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card7/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card8" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(230, 233)
@@ -304,92 +139,17 @@ visible = false
 [node name="Dialogue" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card8/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card8/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card9" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(249, 233)
-
-[node name="No_Health" parent="TMP/Card9/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card9/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card9/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card9/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card9/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card11" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(287, 233)
 
-[node name="No_Health" parent="TMP/Card11/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card11/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card11/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card11/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card11/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card12" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(306, 233)
 
-[node name="No_Health" parent="TMP/Card12/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card12/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card12/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card12/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card12/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card13" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(325, 233)
-
-[node name="No_Health" parent="TMP/Card13/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card13/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card13/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card13/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card13/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card14" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(344, 233)
@@ -400,21 +160,6 @@ visible = false
 [node name="Abstract" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card14/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card14/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card15" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(363, 233)
 
@@ -423,21 +168,6 @@ visible = false
 
 [node name="Abstract" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card15/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card15/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card16" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(382, 233)
@@ -448,57 +178,12 @@ visible = false
 [node name="Abstract" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card16/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card16/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card10" parent="TMP" instance=ExtResource("6_v0c4c")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(268, 201)
 
-[node name="No_Health" parent="TMP/Card10/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card10/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card10/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card10/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card10/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card20" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(351, 106)
-
-[node name="No_Health" parent="TMP/Card20/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card20/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card20/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card20/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card20/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card23" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(154, 61)
@@ -509,21 +194,6 @@ visible = false
 [node name="Lieu" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card23/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card23/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card24" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(154, 73)
 
@@ -532,21 +202,6 @@ visible = false
 
 [node name="Lieu" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card24/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card24/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card25" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(154, 85)
@@ -557,21 +212,6 @@ visible = false
 [node name="Object" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card25/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card25/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card26" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(154, 96)
 
@@ -580,21 +220,6 @@ visible = false
 
 [node name="Object" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card26/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card26/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Card27" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(154, 107)
@@ -605,21 +230,6 @@ visible = false
 [node name="Object" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="No_Health" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card27/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card27/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
-
 [node name="Card28" parent="TMP" instance=ExtResource("6_v0c4c")]
 position = Vector2(154, 118)
 
@@ -628,21 +238,6 @@ visible = false
 
 [node name="Object" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
-
-[node name="No_Health" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color/Pnj" index="0"]
-color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-
-[node name="Good_Health" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color/Pnj" index="1"]
-color = Color(0.16275, 0.75, 0.1425, 0.643137)
-
-[node name="Average_Health" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color/Pnj" index="2"]
-color = Color(0.7, 0.333083, 0.105, 0.643137)
-
-[node name="Low_Health" parent="TMP/Card28/Card_Mask/Card_BG/Card_Color/Pnj" index="3"]
-color = Color(0.53, 0, 0, 0.643137)
-
-[node name="Unplayable" parent="TMP/Card28/Card_Mask/Card_BG" index="4"]
-color = Color(0, 0, 0, 0.498039)
 
 [node name="Line2D" type="Line2D" parent="TMP"]
 position = Vector2(9, 11)

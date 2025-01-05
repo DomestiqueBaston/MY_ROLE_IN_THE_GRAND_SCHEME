@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://jrek8p60uv1u"
+path="res://.godot/imported/Object_Mask.png-ffec580341a5e1f2e9f204c916d067ff.res"
+
+[deps]
+
+source_file="res://TRASH/INTERACTION_old/Object_Mask.png"
+dest_files=["res://.godot/imported/Object_Mask.png-ffec580341a5e1f2e9f204c916d067ff.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

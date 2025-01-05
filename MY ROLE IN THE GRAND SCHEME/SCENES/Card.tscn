@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=18 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="2_y3cdu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dnyd4rhlcnw8v" path="res://GRAPHICS/CARD/Card_Break_In.png" id="5_rh7h4"]
 [ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Drawing_Card.ogg" id="6_1yy8m"]
 [ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Drawing_Card_Reverse.ogg" id="7_ofh61"]
+[ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Carte_Unplayable.png" id="9_e07m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4757"]
 size = Vector2(70, 71)
@@ -142,6 +143,18 @@ _data = {
 [node name="Card" type="Node2D"]
 metadata/_edit_lock_ = true
 
+[node name="Pins" type="Node2D" parent="."]
+position = Vector2(37, 6)
+metadata/_edit_lock_ = true
+
+[node name="Left_Pin_Position" type="Marker2D" parent="Pins"]
+position = Vector2(-30, 1)
+metadata/_edit_lock_ = true
+
+[node name="Right_Pin_Position" type="Marker2D" parent="Pins"]
+position = Vector2(30, 1)
+metadata/_edit_lock_ = true
+
 [node name="Card_Mask" type="Sprite2D" parent="."]
 clip_children = 1
 texture = ExtResource("1_8pu3o")
@@ -216,36 +229,36 @@ color = Color(0.59, 0.531, 0, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
-[node name="Lieu" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
+[node name="Place" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.1261, 0.018, 0.3, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
-[node name="Pnj" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
+[node name="Npc" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.1248, 0.4208, 0.48, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 63, 1, 63, 26)
 metadata/_edit_lock_ = true
 
-[node name="No_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+[node name="No_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.12549, 0.419608, 0.478431, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
-[node name="Good_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+[node name="Good_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 color = Color(0.16275, 0.75, 0.1425, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
-[node name="Average_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+[node name="Average_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.7, 0.333083, 0.105, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
-[node name="Low_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Pnj"]
+[node name="Low_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.53, 0, 0, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
@@ -301,10 +314,11 @@ centered = false
 hframes = 5
 metadata/_edit_lock_ = true
 
-[node name="Unplayable" type="Polygon2D" parent="Card_Mask/Card_BG"]
+[node name="Unplayable" type="Sprite2D" parent="Card_Mask/Card_BG"]
 visible = false
-color = Color(0, 0, 0, 0.498039)
-polygon = PackedVector2Array(0, 6, 1, 3, 3, 1, 6, 0, 68, 0, 71, 1, 73, 3, 74, 6, 74, 94, 73, 97, 71, 99, 68, 100, 6, 100, 3, 99, 1, 97, 0, 94)
+texture = ExtResource("9_e07m4")
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="Bottom_Collider" type="Area2D" parent="Card_Mask/Card_BG"]
 visible = false
@@ -325,18 +339,6 @@ metadata/_edit_lock_ = true
 [node name="Collider" type="CollisionShape2D" parent="Card_Mask/Card_BG/Top_Collider"]
 position = Vector2(37, 14.5)
 shape = SubResource("RectangleShape2D_ptib8")
-metadata/_edit_lock_ = true
-
-[node name="Pins" type="Node2D" parent="Card_Mask/Card_BG"]
-position = Vector2(37, 6)
-metadata/_edit_lock_ = true
-
-[node name="Left_Pin_Position" type="Marker2D" parent="Card_Mask/Card_BG/Pins"]
-position = Vector2(-30, 1)
-metadata/_edit_lock_ = true
-
-[node name="Right_Pin_Position" type="Marker2D" parent="Card_Mask/Card_BG/Pins"]
-position = Vector2(30, 1)
 metadata/_edit_lock_ = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]
