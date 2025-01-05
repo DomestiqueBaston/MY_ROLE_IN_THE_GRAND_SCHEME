@@ -13,7 +13,6 @@ Physique (PHY)
 Mental (MEN)
 
 Santé (HEA)  
-
 	- À la création du personnage, 11 points sont à répartir entre PHY, MEN et HEA avec un minimum de 3 et un maximum de 7.
 	- 0 PHY ou 0 MEN rend le joueur incapable d‘entreprendre quelque chose qui nécessite ces caractéristiques (voir Système de Santé).
 	- 0 HEA → mort du joueur.
@@ -172,48 +171,44 @@ Niveau de Wanted	Malus au Dé
 
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
-	- Policier : +1PHY, -1MEN (travail de nuit possible)
-	- Chômeur : +1PHY ou +1MEN ou +1HEA, -1 aux deux autres, (travail de nuit possible),
-	- Commerçant (alimentaire, vêtements, marché aux puces, etc.) : /
-	- Enseignant : +1 MEN
-	- Médecin : -1PHY, +1MEN, +1HEA
-	- Employé du secteur privé (commerce, etc.) : -1HEA
-	- Cariste : +1PHY (travail de nuit possible).
-	- Professeur de sport : +1PHY, +1HEA
-	- Restaurateur : -1MEN, +1 Objet arme à feu à 1/3 chance
-	- Serveur (Station service, bar, café, etc.) : /
-	- Employé municipal (bibliothèque, piscine, cimetière, etc.) : /
-	- Religieux : -1MEN, -1HEA
-	- Hôte de salle (de jeu, concert, discothèque, cinéma, hôtel, théâtre, bar, café, cybercafé) :  -1PHY, +1MEN (travail de nuit possible).
-	- Agent de nettoyage : +1PHY (travail de nuit possible).
-	- Curateur : +1MEN
-	- Écrivain : -1PHY, -1HEA, +1MEN (travail de nuit possible).
-	- Sportif : +1PHY, -1MEN, +1HEA
-	- Bibliothécaire : +1MEN, -1HEA
-	- Hôtelier : +1HEA (travail de nuit possible).
-	- Patron : -1PHY, -1MEN, -1HEA
-	- Ingénieur : +1 MEN, -1 HEA
-	- Gardien de parc : +1 PHY, -1 MEN
-	- Peintre : -1 PHY, -1MEN
-	- Scientifique : -1 PHY, +1 MEN
-	- Journaliste : +1 MEN, -1 HEA
-	- Psychologue : -1 PHY, +1 MEN, +1 HEA
-	- Militaire : +1 PHY, -1 MEN (travail de nuit possible).
-	- Développeur de jeux vidéo : -1 PHY, +1 MEN
-	- Vétérinaire : -1 PHY, +1 MEN, +1 HEA
-	- Mécanicien : +1 PHY, -1 MEN
 	- Agent immobilier : +1 MEN, -1 HEA
-	- Influenceur / Créateur de contenu : -1 PHY, +1 MEN
-	- Pharmacien : -1 PHY, +1 MEN, +1 HEA
-	- Libraire : -2PHY, +2MEN
-	- Serveur : -1 MEN, +1 HEA (travail de nuit possible).
-	- Pompier : +1 PHY, -1 HEA (travail de nuit possible).
-	- Coiffeur : +1 MEN, -1 HEA
+	- Agent de nettoyage : +1 PHY (travail de nuit possible)
+	- Agent de sécurité : +1 PHY, -1 MEN (travail de nuit possible)
 	- Assistante sociale : -1 PHY, +1 MEN, +1 HEA
-	- Historien : +1 MEN, -1 HEA
-	- Agent de sécurité : +1 PHY, -1 MEN, +1 Objet arme à feu (travail de nuit possible).
+	- Bibliothécaire : +1 MEN, -1 HEA
+	- Cariste : +1 PHY (travail de nuit possible)
+	- Chômeur : +1 PHY ou +1 MEN ou +1 HEA, -1 aux deux autres
+	- Coiffeur : +1 MEN, -1 HEA
+	- Commerçant (alimentaire, vêtements, marché aux puces, etc.) : /
+	- Curateur : +1 MEN
+	- Développeur de jeux vidéo : -1 PHY, +1 MEN
 	- Designer : -1 PHY, +1 MEN
+	- Écrivain : -1 PHY, -1 HEA, +1 MEN (travail de nuit possible)
+	- Employé du secteur privé (commerce, etc.) : -1 HEA
+	- Employé municipal (bibliothèque, piscine, cimetière, etc.) : /
+	- Enseignant : +1 MEN
+	- Gérant de restaurant : -1 MEN
+	- Gardien de parc : +1 PHY, -1 MEN
+	- Hôtelier : +1 HEA (travail de nuit possible)
+	- Historien : +1 MEN, -1 HEA
+	- Hôte de salle (de jeu, concert, discothèque, cinéma, hôtel, théâtre, bar, café, cybercafé) : -1 PHY, +1 MEN (travail de nuit possible)
+	- Ingénieur : +1 MEN, -1 HEA
+	- Influenceur / Créateur de contenu : -1 PHY, +1 MEN
+	- Journaliste : +1 MEN, -1 HEA
+	- Librarie : -2 PHY, +2 MEN
+	- Mécanicien : +1 PHY, -1 MEN
+	- Médecin : -1 PHY, +1 MEN, +1 HEA
+	- Militaire : +1 PHY, -1 MEN (travail de nuit possible)
 	- Musicien : -1 PHY, +1 HEA
+	- Pompier : +1 PHY, -1 HEA (travail de nuit possible)
+	- Policier : +1 PHY, -1 MEN (travail de nuit possible)
+	- Professeur de sport : +1 PHY, +1 HEA
+	- Psychologue : -1 PHY, +1 MEN, +1 HEA
+	- Serveur (Station service, bar, café, etc.) : /
+	- Serveur : -1 MEN, +1 HEA (travail de nuit possible)
+	- Scientifique : -1 PHY, +1 MEN
+	- Sportif : +1 PHY, -1 MEN, +1 HEA
+	- Vétérinaire : -1 PHY, +1 MEN, +1 HEA 
 
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
@@ -326,7 +321,6 @@ Durée de Sommeil	Effets sur la Santé Mentale (HEA)	Effets sur les Émotions (E
 	- Pour aller chez le médecin, dans l’écran de jeu principal, faire clic droit, « Aller chez le médecin ».
 
 Récupération (PNJs)
-
 	- Les PNJs récupèrent +2 HEA/jour.
 
 Le temps
@@ -673,24 +667,27 @@ Les interactions : Dialogue, Combat et Investigation
 
 	- On ne peut pas interagir sans poser aucune carte sur le tapis.
 	- On ne peut pas faire plusieurs interactions en même temps.
-	- Pour interagir avec un PNJ ou un Lieu, sur l’écran principal, on fait Clic droit, « Dialogue » ou « Combat » ou « Investiguer » sur la carte concernée.
-	- Si au moment de la demande d’interaction (Dialogue ou Combat), le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps ou exceptionnellement, le PNJ n’est simplement pas là), le jeu préviendra avec un Overlay qui dira « Je ne sais pas où se trouve cette personne en ce moment. » Et le temps ne passera bien entendu pas !
+	- Pour ajouter une carte à l’écran principal, on fera un Drag & Drop de la carte depuis la liste Possible Clues (en haut à gauche de l’écran).
+	- Sur l’écran principal, pour interagir avec une Carte, on fait Clic droit, « Dialogue » ou « Combat » ou « Investiguer » sur la carte concernée.
+	- Pour retirer une carte de l’écran principal, on fera un Drag & Drop de la carte dans la liste Possible Clues (en haut à gauche de l’écran). Cela retire automatiquement le caractère Evidence de la carte si celle-ci l’avait.
+	- Si au moment de la demande d’interaction (Dialogue ou Combat), le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps ou exceptionnellement, le PNJ n’est exceptionnellement pas là aujourd’hui), le jeu préviendra avec un Overlay qui dira « Je ne sais pas où se trouve cette personne en ce moment. » Et le temps ne passera bien entendu pas !
+	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier a menti, il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
 	- Pour Dialoguer directement avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci).
 	- Pour Combattre directement un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci).
+	- On ne peut pas savoir si un PNJ suit son emploi du temps autrement qu’en se rendant où il devrait être.
 	- Que se passe-t-il lorsque l’on se rend dans un endroit où un PNJ se trouve sans que l’on sache qu’il y était ?
-	- Si le joueur rencontre un PNJ sur un lieu sur lequel il n’est pas sensé être à cette heure-ci, au joueur d’en tirer les conclusions  sur la Fiche d’Enquête…
-	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier a menti, il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
+	- Si le joueur rencontre un PNJ sur un lieu sur lequel il n’est pas sensé être à cette heure-ci, au joueur d’en tirer les conclusions…
 	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom, Genre, Apparence. (voir aussi Dialogue). PAS DE MENSONGE possible !
-	- Après chaque interaction avec un PNJ, si ce PNJ a « perdu », -1Rep !
+	- On connaît en plus l’emploi du temps, éventuellement les soupçons, relations sociales, etc. des PNJs nommés au départ dans une Fiche d’enquête.
 	- Les jets de dé pour Combat et Dialogue sont basées sur un test de caractéristiques du joueur contre celles du PNJ.
 	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement.
 	- L’écran d’interaction, affiche :
-		- La pile de Maîtrise (Mastery) du joueur qui est la pile des actions que le joueur maîtrise et avec la quelle il n’a pas de malus. Elle contient uniquement des cartes Combat, Dialogue, Investigation ou Abstraite.
-		- La pile de Non-Maîtrise (Fallback) du joueur qui est la pile des actions que le joueur ne maîtrise pas et avec la quelle il a un malus de 1 au jets de dé (Rappel : un jet de dé est réussi si le score du jet est inférieur ou égal au score à obtenir). En fonction du contexte, les cartes hors de propos ne seront donc pas proposées (On ne va pas jouer « donner une baffe » en Investigation par exemple).
+		- La pile de Maîtrise (Mastery) du joueur qui est la pile des actions que le joueur maîtrise et avec la quelle il a un Bonus de 1 au jet de dé. Elle contient uniquement des cartes Combat, Dialogue, Investigation ou Abstraite.
+		- La pile de Non-Maîtrise (Fallback) du joueur qui est la pile des actions que le joueur ne maîtrise pas. En fonction du contexte, les cartes hors de propos ne seront donc pas proposées (On ne va pas jouer « donner une baffe » en Investigation par exemple). Pas de Bonus/Malus.
 		- La pile Preuve (Evidence) qui est la pile contenant tous les éléments considérés dans l’enquête comme des preuves (cartes avec des liens plein établis). Il ne peut s’agir de cartes Objet (ex. : arme du crime), Lieu (ex. : lieu du crime) ou PNJ (ex. : témoin). Bonus de 1 au jets de dé.
-		- La pile PNJ qui est la pile contenant les (autres) cartes PNJ liées à l’enquête.
-		- La pile Objets qui est la pile des Objets non qualifiés d’Evidences.
-		- La pile Lieu (Place) qui est la pile contenant les (autres) cartes Lieu liés à l’enquête.
+		- La pile PNJ qui est la pile contenant les (autres) cartes PNJ liées à l’enquête. Pas de Bonus/Malus.
+		- La pile Objets qui est la pile des Objets non qualifiés d’Evidences. Pas de Bonus/Malus.
+		- La pile Lieu (Place) qui est la pile contenant les (autres) cartes Lieu liés à l’enquête. Pas de Bonus/Malus.
 	- On ne peut plus passer à Dialogue après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de cartes de Combat spéciales qui le permettent.
 	- On ne peut pas investiguer en présence d’un PNJ sauf avec une autorisation de fouille (à 25 Dø) (voir Enquête). Il est donc possible d’investiguer après un Combat.
 	- On obtient une autorisation de fouille par la fiche de quête (Voir Enquête).
@@ -716,7 +713,7 @@ Cartes en Interaction
 Fin d’interaction
 	- À la fin d’une interaction, le joueur se verra proposer toutes les cartes d’interaction et Abstraites qu’il a jouées et avec lesquelles il a eu un succès. Il pourra en garder autant qu’il veut jusqu’à en avoir max. 10 dans sa pile (dont 3 Abstraite max.).
 	- Il sera bien entendu possible de rejeter des cartes présentes dans sa pile de Maîtrise. La seule contrainte étant donc de ne pas en avoir plus de 10.
-	- Une carte abandonnée reprend automatiquement son malus de non maîtrise (malus de 1 au jets de dé).
+	- Une carte abandonnée perd automatiquement son bonus de Maîtrise.
 Dialogue
 	- On ne peut pas jouer de carte Arme (Objet) en Dialogue !
 	- Un seul Dialogue avec un PNJ par jour.
@@ -829,7 +826,7 @@ Investigation
 	- On ne peut investiguer un Lieu qu’avec une autorisation de fouille (voir plus loin).
 	- Une autorisation de fouille utilisée (validé à la fin de l’Investigation) est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) !
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, bonus/malus Emo, Add et Wan (pas de Rep), Sommeil, Malus d’action de Nuit…
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes, de difficulté de l’enquête, bonus/malus Emo, Add et Wan (pas de Rep), Sommeil, Malus d’action de Nuit, Lieu…
 	- Le principe de fonctionnement est similaire aux deux précédents : résolution en 1 fois, interaction à 3 cartes (Investigation, Investigation Spécial et Abstraite).
 	- Une réussite critique donne +50 Dø.
 	- S’il y a des Objets (Evidence) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation.
@@ -877,7 +874,6 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 
 
 Evolution du statut des cartes en Preuves/Pièces à conviction
-
 	- Toute nouvelle carte Objet découverte en interaction comme Élément de preuve prendra par défaut un lien Violet dans la fiche d'enquête et sera ainsi lié au Lieu de découverte et au PNJ présent et au PNJ propriétaire et au Lieu où elle aura été trouvée. Le Lien Violet sera établi par le jeu.
 
 Fiche d'enquête :
@@ -922,13 +918,13 @@ Piratage – niveau 2 à 5
 Proxénétisme – niveau 3 à 4
 Racket – niveau 2 à 4
 Recèle – niveau 2 à 3
-Usage de faux – niveau 1 à 4
-Vente d'objet(s) volé(s) – niveau 1 à 3
 Sabotage – niveau 2 à 4
 Terrorisme – niveau 5
 Trafic – niveau 2 à 4
+Usage de faux – niveau 1 à 4
 Usurpation d'identité – niveau 2 à 4
 Vandalisme – niveau 1 à 2
+Vente d'objet(s) volé(s) – niveau 1 à 3
 Viol – niveau 4 à 5
 Vol (à l'étalage, pickpocket) – niveau 1 à 2
 
@@ -979,7 +975,7 @@ Résolution des enquêtes, gains et implications
 	- Une enquête perdue (+ de 10 % d’erreur) implique :
 		- Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0, Add ±1 → Add Min/Max ou Add -1 si Add = 0 (dans un maximum de 10 cartes qu'il peut garder en main (dont max. 3 Abstraites).
 	- Renoncer à une quête n’implique pas de malus (ni de bonus). Evidemment, toutes les cartes Objet, Lieu et PNJ sont retirées de la partie.
-	 - RAPPEL : Une carte abandonnée reprend automatiquement son malus de non maîtrise (malus de 1 au jets de dé). Ainsi, la maîtrise est avérée par le fait d'avoir été utilisée avec succès lorsqu'elle n’était pas dans le jeu de cartes du joueur.
+	 - RAPPEL : Une carte abandonnée perd automatiquement son bonus de Maîtrise.
 	- Si le joueur défausse des cartes liées à l’enquête, il les retrouvera automatiquement la prochaine fois qu’il reviendra interagir ici ou avec le(s) PNJ(s) avec lequel/lesquels il a interagi.
 	- Les cartes marquées Evidence ne peuvent être défaussées puisqu’elles ne font pas partie de la main de maîtrise.
 	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours.
