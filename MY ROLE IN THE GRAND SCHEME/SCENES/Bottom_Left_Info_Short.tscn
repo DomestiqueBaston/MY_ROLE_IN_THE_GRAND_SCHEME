@@ -27,7 +27,7 @@ custom_minimum_size = Vector2(106, 108)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
 theme_override_constants/shadow_offset_x = -1
@@ -36,9 +36,9 @@ theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
 text = "We are supposed to find infos here about a selected card for instance...
 
-But also a PNJ the player's selected...
+When nothing's selected, Infos will be related to the place, the PNJ(s) there, etc.
 
-It could also eventually be something else but I don't what it could be so far.
+It could also eventually be something else but I don't know what it could be so far.
 
 We'll find out about that later too!"
 horizontal_alignment = 1

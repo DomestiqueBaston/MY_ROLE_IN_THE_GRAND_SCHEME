@@ -52,13 +52,39 @@ tooltip_text = "You are here!"
 theme = ExtResource("1_efxgk")
 metadata/_edit_lock_ = true
 
-[node name="Ring" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_cf184")
+[node name="Pin" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cldar")
 metadata/_edit_lock_ = true
 
-[node name="Pin" type="Sprite2D" parent="."]
-texture = ExtResource("3_cldar")
+[node name="Ring" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+pivot_offset = Vector2(40, 40)
+tooltip_text = "You are here!"
+texture = ExtResource("2_cf184")
 metadata/_edit_lock_ = true
 
 [node name="Collider" type="Area2D" parent="."]

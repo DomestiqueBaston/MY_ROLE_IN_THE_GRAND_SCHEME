@@ -40,6 +40,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Main_Playmat" type="Node2D" parent="TMP"]
+metadata/_edit_lock_ = true
 
 [node name="Card1" parent="TMP/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(190, 85)
@@ -132,41 +133,41 @@ end_cap_mode = 2
 round_precision = 3
 metadata/_edit_lock_ = true
 
-[node name="Pin_1" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
+[node name="Pin" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 offset_left = 257.0
 offset_top = 92.0
-offset_right = 265.0
-offset_bottom = 100.0
+offset_right = 257.0
+offset_bottom = 92.0
 
-[node name="Pin_2" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
+[node name="Pin2" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 offset_left = 470.0
 offset_top = 213.0
-offset_right = 478.0
-offset_bottom = 221.0
+offset_right = 470.0
+offset_bottom = 213.0
 
-[node name="Pin_3" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
-offset_left = 232.0
-offset_top = 220.0
-offset_right = 240.0
-offset_bottom = 228.0
-
-[node name="Pin_4" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
+[node name="Pin3" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 offset_left = 519.0
 offset_top = 170.0
-offset_right = 527.0
-offset_bottom = 178.0
+offset_right = 519.0
+offset_bottom = 170.0
 
-[node name="Pin_5" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
+[node name="Pin4" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
+offset_left = 232.0
+offset_top = 220.0
+offset_right = 232.0
+offset_bottom = 220.0
+
+[node name="Pin5" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 offset_left = 361.0
 offset_top = 45.0
-offset_right = 369.0
-offset_bottom = 53.0
+offset_right = 361.0
+offset_bottom = 45.0
 
-[node name="Pin_6" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
+[node name="Pin6" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 offset_left = 544.0
 offset_top = 64.0
-offset_right = 552.0
-offset_bottom = 72.0
+offset_right = 544.0
+offset_bottom = 64.0
 
 [node name="Base_Locations" type="Control" parent="TMP/Main_Playmat"]
 layout_mode = 3
@@ -174,45 +175,52 @@ anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Morpho_the_Dealer" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 1
 offset_left = 232.0
 offset_top = 323.0
 offset_right = 232.0
 offset_bottom = 323.0
-tooltip_text = "Morpho the Dealer"
+tooltip_text = "Morpho the Dealer (is gone at the moment)"
 
 [node name="Investigation_Center" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
-offset_left = 428.0
-offset_top = 246.0
-offset_right = 436.0
-offset_bottom = 254.0
+layout_mode = 1
+offset_left = 364.0
+offset_top = 248.0
+offset_right = 364.0
+offset_bottom = 248.0
 tooltip_text = "Investigation Center"
 
-[node name="Boutique" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
-offset_left = 262.0
-offset_top = 198.0
-offset_right = 270.0
-offset_bottom = 206.0
-tooltip_text = "Boutique"
-
-[node name="Jail" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
-offset_left = 491.0
-offset_top = 59.0
-offset_right = 499.0
-offset_bottom = 67.0
-tooltip_text = "Jail"
+[node name="City_Jail" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
+layout_mode = 1
+offset_left = 485.0
+offset_top = 61.0
+offset_right = 485.0
+offset_bottom = 61.0
+tooltip_text = "City Jail"
 
 [node name="Doctor" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
-offset_left = 440.0
-offset_top = 45.0
-offset_right = 448.0
-offset_bottom = 53.0
+layout_mode = 1
+offset_left = 411.0
+offset_top = 270.0
+offset_right = 411.0
+offset_bottom = 270.0
 tooltip_text = "Doctor"
+
+[node name="Boutique" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 1
+offset_left = 437.0
+offset_top = 42.0
+offset_right = 437.0
+offset_bottom = 42.0
+tooltip_text = "Boutique (is closed at the moment)"
 
 [node name="Player_Place" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
 offset_left = 544.0
 offset_top = 64.0
-offset_right = 552.0
-offset_bottom = 72.0
+offset_right = 544.0
+offset_bottom = 64.0
 
 [node name="Possible_Clues_Cards_TMP" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true

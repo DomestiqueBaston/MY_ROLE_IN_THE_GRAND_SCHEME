@@ -155,6 +155,10 @@ metadata/_edit_lock_ = true
 position = Vector2(30, 1)
 metadata/_edit_lock_ = true
 
+[node name="Center_Position" type="Marker2D" parent="Pins"]
+position = Vector2(0, 1)
+metadata/_edit_lock_ = true
+
 [node name="Card_Mask" type="Sprite2D" parent="."]
 clip_children = 1
 texture = ExtResource("1_8pu3o")

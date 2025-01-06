@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_nce40")
 metadata/_edit_lock_ = true
 
 [node name="Possible_Clues" type="Label" parent="."]
@@ -20,8 +21,13 @@ offset_right = 98.0
 offset_bottom = 29.0
 tooltip_text = "Cards can be taken or returned here."
 mouse_filter = 0
-theme = ExtResource("1_nce40")
 theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25098)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.12549)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
 text = "Possible Clues"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
