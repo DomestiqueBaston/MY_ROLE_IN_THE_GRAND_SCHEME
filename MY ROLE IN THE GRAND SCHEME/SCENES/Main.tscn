@@ -214,7 +214,7 @@ offset_left = 437.0
 offset_top = 42.0
 offset_right = 437.0
 offset_bottom = 42.0
-tooltip_text = "Boutique (is closed at the moment)"
+tooltip_text = "Boutique (closed at the moment)"
 
 [node name="Player_Place" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
 offset_left = 544.0

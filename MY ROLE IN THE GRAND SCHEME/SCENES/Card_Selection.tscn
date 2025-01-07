@@ -28,10 +28,10 @@ tracks/0/path = NodePath("BG:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.2, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 2.5, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -40,10 +40,10 @@ tracks/1/path = NodePath("Card_Selection_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.333333),
-"transitions": PackedFloat32Array(1, 0.25, 1),
-"update": 0,
-"values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(0, 0)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(-128.461, 0), Vector2(-85.6403, 0), Vector2(-42.82, 0), Vector2(0, 0)]
 }
 tracks/2/type = "audio"
 tracks/2/imported = false
@@ -72,10 +72,10 @@ tracks/0/path = NodePath("BG:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 1, 2.5),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -84,10 +84,10 @@ tracks/1/path = NodePath("Card_Selection_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.333333),
-"transitions": PackedFloat32Array(1, 3, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-640, 0)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-10.0001, 0), Vector2(-220.001, 0), Vector2(-430.001, 0), Vector2(-640, 0)]
 }
 tracks/2/type = "audio"
 tracks/2/imported = false
@@ -223,16 +223,15 @@ metadata/_edit_lock_ = true
 position = Vector2(75, 75)
 
 [node name="Card2" parent="Card_Selection_Panel/TMP" instance=ExtResource("2_5myo3")]
-position = Vector2(238, 185)
+position = Vector2(245, 75)
 
 [node name="Card3" parent="Card_Selection_Panel/TMP" instance=ExtResource("2_5myo3")]
-position = Vector2(328, 185)
+position = Vector2(320, 75)
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_m6d4b")
 }
-autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0

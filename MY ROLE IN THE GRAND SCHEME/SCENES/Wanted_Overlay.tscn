@@ -35,12 +35,22 @@ tracks/1/path = NodePath("Center/Wanted_Outline:text")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.466667, 0.866667, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
 sileNt You!", "pMa^ \\]SY pT
 XNQJjY uTZ!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
 SILEnT yOU!", "YdJu sFjp Yk
 oehaSp ^kq!", "ThEy wAnt To
 sileNt You!"]
@@ -52,12 +62,22 @@ tracks/2/path = NodePath("Center/Wanted_Texture:text")
 tracks/2/interp = 0
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.466667, 0.866667, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
+sileNt You!", "ThEy wAnt To
 sileNt You!", "pMa^ \\]SY pT
 XNQJjY uTZ!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
+SILEnT yOU!", "tHeY WaNT tO
 SILEnT yOU!", "YdJu sFjp Yk
 oehaSp ^kq!", "ThEy wAnt To
 sileNt You!"]
@@ -121,10 +141,10 @@ tracks/0/path = NodePath("../Red_Filter:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667),
-"transitions": PackedFloat32Array(0.2, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(0.2, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.762695), Color(1, 1, 1, 0.841797), Color(1, 1, 1, 0.920898), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -133,10 +153,10 @@ tracks/1/path = NodePath("../Center:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.266667),
-"transitions": PackedFloat32Array(1, 0.2, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.25, 0.25), Vector2(1, 1)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 0.2, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.25, 0.25), Vector2(0.901234, 0.901234), Vector2(0.950617, 0.950617), Vector2(1, 1)]
 }
 tracks/2/type = "audio"
 tracks/2/imported = false
@@ -165,10 +185,10 @@ tracks/0/path = NodePath("../Red_Filter:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667),
-"transitions": PackedFloat32Array(1, 0.2),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 0.2),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.75), Color(1, 1, 1, 0.5), Color(1, 1, 1, 0.25), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -177,10 +197,10 @@ tracks/1/path = NodePath("../Center:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.266667),
-"transitions": PackedFloat32Array(1, 2, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 2, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.88889, 0.88889), Vector2(0.444451, 0.444451), Vector2(1e-05, 1e-05)]
 }
 tracks/2/type = "audio"
 tracks/2/imported = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
-[ext_resource type="Script" path="res://SCRIPTS/menu_button.gd" id="3_wxjko"]
+[ext_resource type="Script" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
 
 [node name="Top_Bar" type="Control"]
 layout_mode = 3

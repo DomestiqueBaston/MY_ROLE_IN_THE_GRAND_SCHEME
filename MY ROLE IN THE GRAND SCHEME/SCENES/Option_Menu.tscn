@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dxsbbamjqxk1s"]
+[gd_scene load_steps=31 format=3 uid="uid://dxsbbamjqxk1s"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_yehb7"]
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="2_48l2d"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Hover.png" id="27_ohohw"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Mask.png" id="28_w2fpp"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="29_2rx1x"]
+[ext_resource type="PackedScene" uid="uid://dpmpj36bqaoin" path="res://SCENES/Mouse_Cursor.tscn" id="29_17w45"]
 
 [node name="Option_Menu" type="Node2D"]
 script = ExtResource("1_yehb7")
@@ -294,6 +295,8 @@ text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="Mouse_Cursor" parent="." instance=ExtResource("29_17w45")]
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("29_2rx1x")]
 visible = false
