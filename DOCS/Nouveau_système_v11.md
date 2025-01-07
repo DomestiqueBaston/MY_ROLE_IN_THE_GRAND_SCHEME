@@ -18,7 +18,6 @@ Santé (HEA/HEAnom.)
 	- 0 PHY ou 0 MEN rend le joueur incapable d‘entreprendre quelque chose qui nécessite ces caractéristiques (voir Système de Santé).
 	- 0 HEA → mort du joueur.
 
-
 Les caractéristiques secondaires
 État émotionnel (Emo)  
 	- L’état émotionnel du joueur variera entre -3 et 3 et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Emo=0.
@@ -32,7 +31,6 @@ Emo	Effets et/ou modificateur de jet de dé
 2	-1
 3	Emo = 2 et +1 Add si Add > 0 ou -1 Add si Add ≤ 0 
 
-
 État d’addiction (Add)
 	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add=0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites/échecs critiques n’entraînent pas d’évolution de HEA ni HEAnom.
@@ -44,7 +42,6 @@ Add	Effet et/ou modificateur de jet de dé
 1	+1
 2	+3
 3	Mort si un jet contre HEA est raté (sinon -1 HEA, ±1Emo → Min/max et Add = 2)
-
 
 Réputation (Rep)
 	- La réputation sera évaluée de -3 à 3. Elle représentera la qualité des relations entre le joueur et le PNJ ainsi que directement un Bonus/Malus d’interaction avec le PNJ aux jets de dé suivant le tableau ci-dessous. Le joueur aura par défaut Rep=0 avec chaque PNJ.
@@ -59,8 +56,6 @@ Rep	Effet et/ou modificateur de jet de dé
 1 à 2	+1
 3	+2
 
-
-
 Recherché/Wanted (Wan)
 	- Le Wanted évolue de 0 à 5. 0 au début du jeu. Il représente le niveau d’emmerdes qu’a le joueur avec les autorités.
 	- Il est également un malus aux jets de dé suivant le tableau ci-dessous.
@@ -73,7 +68,6 @@ Niveau de Wanted	Malus au Dé
 3	-2
 4	-3
 5	Prison pendant 3 jours ou payement de 200dø de caution, Wan = 0
-
 
 Paranoïa (Par)
 	- La paranoïa est un cas extrême qui fait abandonner toutes les quêtes pour poursuivre la méga quête du jeu (uniquement accessible en devenant paranoïaque). Un complot mondial complètement con (voir Le complot et Système de santé/Paranoïa).
@@ -113,8 +107,7 @@ Backgrounds
 	- Vendeur de glaces : +50Dø au démarrage de la partie
 	- Vétérinaire : -50 % sur les interventions thérapeutiques (médecin) 
 
-
-Progression du joueur (pas les PNJs !)
+Progression du joueur (pas des PNJs !)
 	- Seules les réussites et échecs critiques (1 ou 10 « naturel » obtenus directement sur le dé, avant l’application de tout modificateur) font varier les caractéristiques principales du joueur par pas de ±1 et ce uniquement après avoir évalué le résultat de l’action entreprise.
 	- Aucune caractéristique ne pourra dépasser 10.
 	- La caractéristique qui évoluera sera sélectionnée aléatoirement parmi celles utilisées pour le jet de dé.
@@ -125,35 +118,32 @@ Les PNJs
 	- À la mort d’un PNJ causée par le joueur, +1Wan !
 
 Structure type (en rouge les infos que le joueur n’aura jamais):
-ID : PNJ001, PNJ002, etc.
-Nom : Prénom + nom
-Genre : M ou F
-Apparence : Grand (25%)/Moyen (50%)/Petit (25%) – Mince (25%)/Moyen (50%)/Gros (25%).
-Profession : (voir Professions)
-Caractéristiques : PHY, MEN, HEA/HEAnom. à la création du PNJ et Wan = 0.
-Rep (du joueur) : Rep_Joueur (auprès de ce PNJ)
-Lieux fréquentés (0 à 2) : Lieu(x) (en plus de ceux de son emploi du temps)
-Soupçon(s) : PNJ(s)
-Statut (Culpabilité réelle dans l’enquête) : Victime/Coupable/Complice/Suspect/Témoin/Aucun
-Relations sociales (pas forcément liées à l’enquête) :
-		en couple (0 à 1) : PNJ (homo 1/10 chance)
-		ami(s) (0 à 3) : PNJ
-		ennemi(s) (0 à 3) : PNJ
-		Collègue(s) (0 à 3): PNJ
-		Connaissance(s) (0 à 3) : PNJ
-		Liaison (Amant/Maîtresse) (0 à 1) : PNJ
-Emploi du temps :	Matin : (carte lieu)
-		Après-midi : (carte lieu)
-		Soirée : (carte lieu)
-		Nuit : (carte lieu)
-Objets et ressources (0 à 2) : carte(s) Objet/Evidence incriminantes.
-Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) : (Lien/carte Lieu/carte Objet – Evidence/Emploi du temps/etc.)
+ID : 					PNJ001, PNJ002, etc.
+Nom : 					Prénom + nom
+Profession : 				(voir Professions)
+Caractéristiques : 				PHY, MEN, HEA/HEAnom. à la création du PNJ et Wan = 0.
+Rep (du joueur) : 				Rep_Joueur (auprès de ce PNJ)
+Soupçon(s) : 				PNJ(s)
+Statut (Culpabilité réelle dans l’enquête) : 	Victime/Coupable/Complice/Suspect/Témoin/Aucun
+Relations sociales (possiblement liées à l’enquête) :
+					En couple (0 à 1) : PNJ (homo 1/10 chance)
+					Ami(s) (0 à 3) : PNJ
+					Ennemi(s) (0 à 3) : PNJ
+					Collègue(s) (0 à 3): PNJ
+					Connaissance(s) (0 à 3) : PNJ
+					Liaison (Amant/Maîtresse) (0 à 1) : PNJ
+Emploi du temps :				Matin : (carte lieu)
+					Après-midi : (carte lieu)
+					Soirée : (carte lieu)
+					Nuit : (carte lieu)
+Indices (0 à 2) : 				Carte(s) Objet/Evidence incriminantes + Liens, Relations (Liens).
+Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) : 
+					(Lien/carte Lieu/carte Objet – Evidence/Emploi du temps/etc.)
 
 
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
 	- Ces infos ne sont pas connues automatiquement du joueur. Cela dépendra de la fiche de quête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
 	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction (ainsi Emo et Add ne peuvent être des bonus/malus pour eux).
-	- Les cartes PNJ elles-mêmes se résument graphiquement à une silhouette (apparence, sexe et nom quand il est connu).
 	- Si un PNJ meurt, la carte du PNJ ne sera pas retirée de l’enquête pour autant.
 	- Si le joueur est responsable de la mort d’un PNJ, +1Wan !
 
@@ -170,7 +160,6 @@ Niveau de Wanted	Malus au Dé
 3	-2
 4	-3
 5	Prison
-
 
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
@@ -216,7 +205,6 @@ Professions possibles (le travail de nuit est à 25 % de chances) :
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
 	- Avec un PNJ, établir un ou plusieurs Lien(s) incriminant(s) plein(s) → -1Rep, le(s) défaire (tous) →  +1Rep.
-	
 
 Génération des caractéristiques des PNJs
 	- A la génération, les PNJs ont 11 points à répartir aléatoirement entre PHY, MEN et HEAnom. suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera également à ces 11 points un nombre de points égal au niveau de difficulté de l’enquête (voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
@@ -272,7 +260,6 @@ Système de santé
 Cas de PHY=0 et/ou MEN=0
 	- Si au moins une des deux caractéristiques atteint 0, le joueur ne sera plus capable d’entreprendre d’interaction (Combat, Dialogue ou Investigation). Il aura alors besoin d’une journée complète (24h) de repos pour récupérer et remettre sa ou ses caractéristiques à 1. Par la même occasion, il récupèrera sa santé selon les même bonus qu’une nuit de 12h (on n’appliquera pas ces bonus deux fois, bien entendu, on considèrera qu’une nuit de repos de 12h est donc incluse).
 	- Seul HEA=0 est mortel.
-
 
 Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par
 	- Si à l’issue d’une évaluation d’un jet de dé le joueur se retrouve à atteindre Emo ±3, Add ±3 ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (affichage de l’overlay PARANOÏA! Voir Système de Santé/Par). S’il y a lieu, on finira la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour sa quête ultime (voir Le complot et Système de Santé/Par). Dans tous les autres cas, Le joueur abandonne la phase en cours et va se concentrer sur sa quête ultime (voir Le complot et Système de Santé/Par) et plus rien d’autre ne lui sera accessible de toute manière !
@@ -358,7 +345,7 @@ Cycle Jour/Nuit
 	- Un système de temps discret (non continu). Seules certaines actions font avancer le temps en fonction de ce qui est défini pour ces actions (voir plus haut).
 	- Les PNJs suivent ce cycle par leur emploi du temps mais si le joueur les emmène au delà des limites par une interaction, ils le suivront puis reprendront leur emploi du temps normal sans effet pour eux. Rappel : la nuit, malus de 1 aux jets de dé du joueur.
 
-Veille / Sommeil
+Veille/Sommeil
 	- Le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de -1 au dé par heure. Il ne peut pas faire plus de 24h d’éveil d’affilé et « tombe de fatigue ». Il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil !
 	- Le joueur décidera de combien de temps il veut dormir (voir Récupération).
 	- On ne peut dormir qu’1 fois par jour (c’est la date et l’heure de déclenchement qui compte et ainsi, se coucher le lundi à 23h et se lever le mardi à 7h permettra encore de dormir le mardi soir.)
@@ -367,8 +354,6 @@ Veille / Sommeil
 	- Rappel : les testes de drogue se font toujours au réveil.
 
 	- Les PNJs ne subissent pas les effets de bonus/malus liés au cycle veille/sommeil.
-
-
 
 L’argent
 	- La monnaie du jeu, c’est le "Dough" noté Dø (Pognon noté Pø en français !).
@@ -382,7 +367,6 @@ Les factures
 	- Chaque facture impayée augmente de 10 % chaque semaine.
 	- Pour payer sa facture, à l’écran principal, faire clic droit, « Payer les factures » et cliquer sur la facture que l’on veut payer.
 	- Les factures ont 50 % de chance de varier de ±10 % chaque semaine.
-
 
 Les achats/dépenses
 	- Les cabinets médicaux, etc. ouvrent à 9h et ferment à 19h (sauf point de deal, voir au dessous).
@@ -425,7 +409,7 @@ Cartes Abstraites
 	- Par interaction, le joueur ne peut jouer qu’1 carte Abstraite.
 	- Une fois jouée, une carte abstraite est perdue.
 
-Liste des cartes Abstraites
+Liste des cartes Abstraites :
 	- Outre leur nom, elles informent également des caractéristiques sur lesquelles elles influent sans détail (par exemple, Assurance indiquera simplement qu’elle influe sur MEN et Emo.
       Assurance :
 	Description : Cette carte représente la confiance et la détermination du joueur. Elle améliore les capacités mentales en fonction de l'état émotionnel. 
@@ -659,7 +643,7 @@ Liste des cartes Objet (banals/inutiles mais Élément de preuve impossible) :
 	- …
 
 
-Les cartes PNJ :
+Les cartes PNJ
 	- Elles affichent en permanence une jauge en haut à droite donnant un indice du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue).
 	- Elles affichent une silhouette (Homme/Femme,  Grand/Moyen/Petit, Mince/Moyen/Gros) et les noms et prénoms dès qu’ils sont connus.
 	- (si besoin) Il existe 1 carte spéciale qui représente les personnes dont on ne sait rien, et qui ne présentera qu’une silhouette indéfinie avec un « ? » dessus.
@@ -893,7 +877,7 @@ Relations	Lien plein (confirmé), lien pointillé (probable) / Couleurs des lien
 Prime 	round(100 + (niveau de difficulté − 1) × 125 ) ±10% Dø
 Notes	Espace réservé au joueur
 
-Types d’enquêtes – Niveau de complexité (pas toujours très réaliste mais besoin d’une certaine répartition pour le jeu)
+Types d’enquêtes – Niveau de complexité (pas toujours très réaliste mais besoin d’une certaine répartition pour le jeu) :
 Adultère – niveau 1
 Agression (physique/verbale) – niveau 1 à 3
 Cambriolage – niveau 2 à 4
@@ -989,7 +973,7 @@ Résolution des enquêtes, gains et implications
 
 
 Résolution de la quête ultime (Les Alchimistes de la Vérité)
-	- Une fois la quête résolue, le joueur mourra de toute manière assassiné par les sbires de la secte des Alchimistes de la Vérité. - L’écran final sera affiché résumant les événements qui suivirent la résolution de la quête.
+	- Une fois la quête résolue, le joueur mourra de toute manière assassiné par des sbires liés à l’enquête finale. - L’écran final sera affiché résumant les événements qui suivirent la résolution de la quête.
 
 Éléments additionnels :
 	- On va probablement créer plusieurs quêtes finales pour la re-jouabilité. Au moins 2 ou 3 en plus ?
