@@ -250,11 +250,11 @@ Difficulté du jeu (écran d’OPTIONS)
 Les différentes piles de cartes du joueur (en interaction)
 	- Pile de maîtrise (cartes Dialogue, Combat, Investigation, Abstraite (max 3)) / 10 Max
 	- Pile de non-maîtrise (cartes Dialogue, Combat, Investigation, Abstraite) / 5 Max et aléatoires (mais possibles dans le contexte, pas de Dialogue en Combat, par exemple).
-	- Pile Evidence (cartes Objet, Lieu, PNJs)
-	- Pile Lieu (cartes Lieu)
+	- Pile Evidence (cartes Objet, PNJs, pas de Lieu)
 	- Pile PNJ (cartes PNJ)
 	- Pile Objet (cartes Objet)
-	Les piles Lieu, PNJ et Objet contiennent tout ce qui est connu du joueur et qui n’est pas qualifié d’Evidence.
+	- Pile Lieu (cartes Lieu)
+	Les piles PNJ, Objet et Lieu contiennent tout ce qui est connu du joueur et qui n’est pas qualifié d’Evidence.
 Système de santé
 
 Cas de PHY=0 et/ou MEN=0
@@ -476,7 +476,7 @@ Cartes de Lieu
 	- Elles servent aussi à se déplacer dans les endroits liés aux enquêtes.
 	- Elles servent également à savoir si un lieu est ouvert ou fermé le week-end.
 	- Une fois jouée, ces cartes ne sont pas perdues.
-	- Ces cartes se trouvent toujours dans la pile Lieu ou Evidence.
+	- Ces cartes se trouvent toujours dans la pile Lieu (uniquement).
 
 Liste des cartes Lieu (bonus/malus temporaires pour le joueur uniquement et seulement en étant sur place) :
 	- Appartement : /
@@ -672,10 +672,10 @@ Les interactions : Dialogue, Combat et Investigation
 	- L’écran d’interaction, affiche :
 		- La pile de Maîtrise (Mastery) du joueur qui est la pile des actions que le joueur maîtrise et avec la quelle il a un Bonus de 1 au jet de dé. Elle contient uniquement des cartes Combat, Dialogue, Investigation ou Abstraite.
 		- La pile de Non-Maîtrise (Fallback) du joueur qui est la pile des actions que le joueur ne maîtrise pas. En fonction du contexte, les cartes hors de propos ne seront donc pas proposées (On ne va pas jouer « donner une baffe » en Investigation par exemple). Pas de Bonus/Malus.
-		- La pile Preuve (Evidence) qui est la pile contenant tous les éléments considérés dans l’enquête comme des preuves (cartes avec des liens plein établis). Il peut s’agir de cartes Objet (ex. : arme du crime), Lieu (ex. : lieu du crime) ou PNJ (ex. : témoin). Bonus de 1 au jets de dé si le lien est bon (vrai).
+		- La pile Preuve (Evidence) qui est la pile contenant tous les éléments considérés dans l’enquête comme des preuves (cartes avec des liens plein établis). Il peut s’agir de cartes Objet (ex. : arme du crime) ou PNJ (ex. : témoin). Bonus de 1 au jets de dé si le lien est bon (vrai).
 		- La pile PNJ qui est la pile contenant les (autres) cartes PNJ liées à l’enquête. Pas de Bonus/Malus.
-		- La pile Objets qui est la pile des Objets non qualifiés d’Evidence. Pas de Bonus/Malus.
-		- La pile Lieu (Place) qui est la pile contenant les (autres) cartes Lieu liés à l’enquête. Pas de Bonus/Malus.
+		- La pile Objets qui est la pile des cartes Objets non qualifiées d’Evidence. Pas de Bonus/Malus.
+		- La pile Lieu (Place) qui est la pile contenant les cartes Lieu liées à l’enquête. Pas de Bonus/Malus.
 	- On ne peut plus passer à Dialogue après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de cartes de Combat spéciales qui le permettent.
 	- On obtient une autorisation de fouille par la fiche de quête (Voir Enquête).
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
@@ -717,7 +717,7 @@ Dialogue
 	- Pour poser des questions, le joueur utilise ses cartes de Dialogue, Abstraite et Objet/Lieu/PNJ/Evidence.
 	- En fonction de la marge de réussite, il obtiendra round(Marge de réussite) informations (vraies et/ou fausses, voir plus bas).
 	- Les informations obtenues sont choisies aléatoirement parmi celles obtenables auprès du PNJ.
-	Une carte Objet/Lieu/PNJ utilisée comme preuve/pièce à conviction à bon/mauvais escient rajoute un bonus/malus de ±1 au jet de dé.
+	- Une carte Objet/Lieu/PNJ utilisée comme preuve/pièce à conviction à bon/mauvais escient rajoute un bonus/malus de ±1 au jet de dé.
 	 - Chances que chaque information donnée soit fausse (errare humanum est) hors Nom, Genre et Apparence :
 		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
 		Auprès d’1 Coupable : (5+MEN)/(15+MEN)
@@ -730,6 +730,7 @@ Dialogue
 	 - Si une information donne lieu à la révélation d’un Objet, Lieu, Etc., sa carte passera automatiquement dans la catégorie des cartes Élément de preuve du joueur.
 	 - Si une information révélée concerne les informations personnelles d’un PNJ, elle seront consultables dans la fiche/carte du PNJ.
 	 - Pour la révélation d’une information cachée d’un PNJ, le joueur doit avoir eu une marge de réussite de 3+ au jet de dé de Dialogue ou avoir utilisé une carte Dialogue « Question piège ».
+	- Un PNJ ne donnera pas une info déjà existante dans la fiche d’enquête.
 	- Un PNJ a les mêmes chances de corriger une information précédemment donnée comme fausse (voir juste au dessus).
 	- Un PNJ ne corrigera pas une information vraie.
 	- En cas d’échec critique, le joueur prend -1Emo et -1Rep avec le PNJ.
@@ -794,7 +795,7 @@ Déclenchement d’un Combat par un PNJ « non lié » à l’enquête
 	- Si une attaque doit survenir, elle surviendra avant le démarrage de l’action suivante du joueur (y compris aller chez le médecin, etc.).
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +2HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale. Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sera envoyé.
-	- Tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un commenditaire et donc du ou d’un coupable de l’enquête. Au joueur d’en tirer les conséquences.
+	- Tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un commenditaire et donc du ou d’un coupable de l’enquête avec une probabilité de 33 %. Au joueur d’en tirer les conséquences.
 
 Fuir un Combat (Joueur)
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir.
@@ -848,16 +849,16 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 4	2
 5	1
 
-	- Une enquête peut-être abandonnée via le bouton Give up dans le Menu Cases.
+	- Une enquête peut-être abandonnée via le bouton Give up dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur place les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
 	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously).
-	- Pour se rendre à un endroit lié à l’enquête ou chez un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles (comme ici, Aller).
+	- Pour se rendre dans un endroit lié à l’enquête ou chez un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles (comme ici, Aller).
 	- Le joueur ne pourra jamais aller chez un PNJ s’il ne connaît pas son adresse ou ne sait pas où il est à cette heure-là.
-	- Le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas.
-	- On valide un Case (correspondant à une demande de validation de l’enquête) en faisant Clic droit, « Valider l’enquête » ou par le Menu Cases, « Valider l’enquête » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec jusqu’à 10 % d’erreur, moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
+	- Le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas (obviously).
+	- On valide un Case (correspondant à une demande de validation de l’enquête) en faisant Clic droit, « Validate Case » ou par le Menu Cases, « Validate Case » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec jusqu’à 10 % d’erreur, moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
 	- Rappel : faire et défaire des liens de culpabilité (liens Noir Plein) changera la Rep du joueur auprès des PNJs impliqués par ce lien. Seuls les liens pleins on un tel effet. Autrement dit : -1 Rep pour un ou des lien(s) plein(s) établi(s), Annulation du malus quand il n’y a plus de lien.
 	 - Dans une enquête, chaque information (carte) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
-	- Une Evidence découverte va automatiquement dans la pile de cartes Evidence avec ses liens Violets.
+	- Une carte qualifiée d’Evidence (lien Plein) va automatiquement dans la pile de cartes Evidence avec ses liens dans Main.tscn.
 
 Fiche d'enquête :
 
@@ -931,7 +932,7 @@ Liens entre les éléments de la Fiche d'enquête
 	- Couleurs des liens : À définir, par exemple :
           Blanc : Dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. 
 Gris : Témoin ? Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution (voir dans mon carnet mais pas idéal)…
-          Noir : Coupable/Complice/Preuve → -1Rep si lien plein (incriminant) fait, +1Rep si lien plein (incriminant) défait.
+          Noir : Coupable/Complice/Preuve
           Rose : Intime
           Vert foncé : Ami
 Orange : Ennemi
