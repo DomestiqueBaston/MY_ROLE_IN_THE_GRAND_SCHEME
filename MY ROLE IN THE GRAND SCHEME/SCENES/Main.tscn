@@ -207,15 +207,6 @@ offset_right = 411.0
 offset_bottom = 270.0
 tooltip_text = "Doctor"
 
-[node name="Boutique" parent="TMP/Main_Playmat/Base_Locations" instance=ExtResource("7_rfefp")]
-modulate = Color(1, 1, 1, 0.392157)
-layout_mode = 1
-offset_left = 437.0
-offset_top = 42.0
-offset_right = 437.0
-offset_bottom = 42.0
-tooltip_text = "Boutique (closed at the moment)"
-
 [node name="Player_Place" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
 offset_left = 544.0
 offset_top = 64.0

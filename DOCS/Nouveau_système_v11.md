@@ -4,7 +4,7 @@ My Role in the Grand Scheme
 Livret de règles (!)
 Caractéristiques du Joueur
 	- Le système de jeu repose sur 3 caractéristiques principales allant de 0 à 10.
-	- À noter qu’à la création du personnage, on peut mettre M, F ou n’importe quelle valeur entre les deux, on s’en fout, ça ne change rien au jeu.
+	- À noter qu’à la création du personnage, pour le sexe, on peut mettre M, F ou n’importe quelle valeur entre les deux, on s’en fout, ça ne change rien au jeu.
 	- Pas d’âge non plus, on s’en fout totalement aussi !
 
 Les caractéristiques principales
@@ -14,7 +14,7 @@ Mental (MEN)
 
 Santé (HEA/HEAnom.)  
 	- À la création du personnage, 11 points sont à répartir entre PHY, MEN et HEAnom. avec un minimum de 3 et un maximum de 7.
-	- A la création, le personnage a HEA=HEAnom.
+	- À la création, le personnage a HEA=HEAnom.
 	- 0 PHY ou 0 MEN rend le joueur incapable d‘entreprendre quelque chose qui nécessite ces caractéristiques (voir Système de Santé).
 	- 0 HEA → mort du joueur.
 
@@ -118,28 +118,28 @@ Les PNJs
 	- À la mort d’un PNJ causée par le joueur, +1Wan !
 
 Structure type (en rouge les infos que le joueur n’aura jamais):
-ID : 					PNJ001, PNJ002, etc.
-Nom : 					Prénom + nom
-Profession : 				(voir Professions)
-Caractéristiques : 				PHY, MEN, HEA/HEAnom. à la création du PNJ et Wan = 0.
-Rep (du joueur) : 				Rep_Joueur (auprès de ce PNJ)
-Soupçon(s) : 				PNJ(s)
-Statut (Culpabilité réelle dans l’enquête) : 	Victime/Coupable/Complice/Suspect/Témoin/Aucun
-Relations sociales (possiblement liées à l’enquête) :
-					En couple (0 à 1) : PNJ (homo 1/10 chance)
-					Ami(s) (0 à 3) : PNJ
-					Ennemi(s) (0 à 3) : PNJ
-					Collègue(s) (0 à 3): PNJ
-					Connaissance(s) (0 à 3) : PNJ
-					Liaison (Amant/Maîtresse) (0 à 1) : PNJ
-Emploi du temps :				Matin : (carte lieu)
-					Après-midi : (carte lieu)
-					Soirée : (carte lieu)
-					Nuit : (carte lieu)
-Indices (0 à 2) : 				Carte(s) Objet/Evidence incriminantes + Liens, Relations (Liens).
-Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) : 
-					(Lien/carte Lieu/carte Objet – Evidence/Emploi du temps/etc.)
-
+ID : 							PNJ001, PNJ002, etc.
+Nom : 							Prénom + nom
+Profession : 						(voir Professions)
+Caractéristiques : 						PHY, MEN, HEA/HEAnom. à la création du PNJ et Wan = 0.
+Rep (du joueur) : 						Rep_Joueur (auprès de ce PNJ)
+Soupçon(s) : 						PNJ(s)
+Statut (Culpabilité réelle dans l’enquête) : 			Victime/Coupable/Complice/Suspect/Témoin/Aucun
+Relations sociales (possiblement liées à l’enquête) :		En couple (0 à 1) : PNJ (homo 1/10 chance)
+							Ami(s) (0 à 3) : PNJ
+							Ennemi(s) (0 à 3) : PNJ
+							Connaissance(s) (0 à 4) : PNJ
+							Liaison (Amant/Maîtresse) (0 à 1) : PNJ
+Emploi du temps :						Matin : (carte lieu)
+							Après-midi : (carte lieu)
+							Soirée : (carte lieu)
+							Nuit : (carte lieu)
+							W-E matin : (carte lieu)
+							W-E après-midi : (carte lieu)
+							W-E (soirée) : (carte lieu)
+							W-E (nuit) : (carte lieu)
+Indices (0 à 2) : 						Carte(s) Objet/Evidence incriminantes + Liens, Relations (Liens).
+Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) :	(Lien/carte Lieu/carte Objet – Evidence/Emploi du temps/etc.)
 
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
 	- Ces infos ne sont pas connues automatiquement du joueur. Cela dépendra de la fiche de quête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
@@ -269,7 +269,7 @@ Addiction
 	- L’Add évolue au réveil (-1Add). Le joueur a besoin de sa dose (presque) quotidienne qui lui coûte de l’argent. Sans sa dose, -1Add et avec sa dose, +1Add.
 	- Le joueur peut prendre 2 doses maximum par jour. Au delà, ce serait une l’overdose !
 	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur. 1 simple clic dessus fait instantanément consommer 1 dose. 1 double clic fait instantanément consommer 2 doses. Pas plus de 2 par jour.
-	- Prendre de la drogue (simple ou double clic) prend indifféremment 1h.
+	- Prendre de la drogue (simple ou double clic) prend indifféremment 1h. (et uniquement sur Main.tscn).
 
 Crise liée à l’Addiction
 	- Cas d’Add à -3 ou +3 : voir Add au début des règles.
@@ -333,7 +333,12 @@ Le temps
 
 Les emploi du temps
 	- Ils sont découpés en 4 tranches horaires : Matin (8h/12h), Après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h)
-	- Le week-end, les emplois du temps sont variables aléatoirement (sauf la nuit).
+		- Un PNJ qui a un boulot sera sur son lieu de travail le Matin et l’Après-midi (la Nuit pour le travail de nuit).
+		- Un PNJ dormira chez lui la Nuit (ou le Matin et l’Après-midi lorsqu’il travaille de nuit).
+		- En soirée, un PNJ est TOUJOURS chez lui.
+		- Le Weekend en journée, un PNJ sera toujours sur un tier lieu le matin et chez lui l’Après-midi ou inversement et chez lui en soirée. S’il travaille de nuit, il sera chez lui tout le temps.
+		- Le Weekend, un PNJ dormira chez lui la nuit. S’il travaille de nuit, il dormira chez lui le Matin et l’Après-midi.
+		- On ne peut pas interagir avec un PNJ qui dort. Son domicile ne peut pas être pénétré non plus !
 	- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire par jour (il ne sera alors plus trouvable pendant cette tranche horaire) mais cela ne s’applique pas aux PNJs en prison.
 		Rappel : 1 PNJ qui a attaqué ou qui a fuit disparaîtra à la fin de l’interaction jusqu’à la fin du jour suivant (ex. : si un PNJ fuit à 10h le mardi, on ne pourra le revoir qu’à partir du jeudi).
 
@@ -363,18 +368,15 @@ L’argent
 
 Les factures
 	- Les factures se payent toujours le lundi matin pour la semaine passée. En cas d’impayé, les sommes ne s’additionnent pas, ce sont les factures qui s’accumulent. Ainsi, le joueur, s’il a 2 factures mais ne peut en payer qu’une pourra toujours en payer une. Il en a pour 100 Dø par semaine.
-	- On aura également accès à un agenda qui mentionnera toutes les échéances à venir connues du joueur (enquêtes, factures, etc.).
 	- Chaque facture impayée augmente de 10 % chaque semaine.
 	- Pour payer sa facture, à l’écran principal, faire clic droit, « Payer les factures » et cliquer sur la facture que l’on veut payer.
 	- Les factures ont 50 % de chance de varier de ±10 % chaque semaine.
 
 Les achats/dépenses
 	- Les cabinets médicaux, etc. ouvrent à 9h et ferment à 19h (sauf point de deal, voir au dessous).
-	- En boutique, le joueur pourra acheter (à prix d’or) diverses cartes (Interaction uniquement).
 	- Le joueur connaît un point de deal où il pourra acheter sa/ses dose(s). Uniquement pendant la période nocturne. 1 dose coûte 25 Dø.
 	- Une Autorisation de fouille coûte 25 Dø
 	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, faire clic droit, « Aller voir Morpho the Dealer ».
-	- À cause de rondes de police, le Dealer a également 1/5 chance de ne pas être présent au moment du passage du Joueur. Il faudra alors attendre 1h pour réessayer de le trouver à son point de vente (et il y aura à nouveau cette « chance » de ne pas être là...).
 	- Le joueur ne peut pas revendre de dose de drogue.
 	- Le dealer n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, il disparaît jusqu’au lundi suivant.
 Les cartes
@@ -474,6 +476,7 @@ Cartes de Lieu
 	- Elles servent aussi à se déplacer dans les endroits liés aux enquêtes.
 	- Elles servent également à savoir si un lieu est ouvert ou fermé le week-end.
 	- Une fois jouée, ces cartes ne sont pas perdues.
+	- Ces cartes se trouvent toujours dans la pile Lieu ou Evidence.
 
 Liste des cartes Lieu (bonus/malus temporaires pour le joueur uniquement et seulement en étant sur place) :
 	- Appartement : /
@@ -588,6 +591,7 @@ Liste des cartes Combat :
 
 Les Cartes Objet
 	- Une fois jouée, ces cartes ne sont pas perdues.
+	- Ces cartes se trouvent toujours dans la pile Objet ou Evidence.
 
 Liste des cartes Objet (Élément de preuve possible) :
 	Ces objets sont TOUJOURS liés à un PNJ (car ils sont « nominatifs »).
@@ -646,7 +650,6 @@ Liste des cartes Objet (banals/inutiles mais Élément de preuve impossible) :
 Les cartes PNJ
 	- Elles affichent en permanence une jauge en haut à droite donnant un indice du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue).
 	- Elles affichent une silhouette (Homme/Femme,  Grand/Moyen/Petit, Mince/Moyen/Gros) et les noms et prénoms dès qu’ils sont connus.
-	- (si besoin) Il existe 1 carte spéciale qui représente les personnes dont on ne sait rien, et qui ne présentera qu’une silhouette indéfinie avec un « ? » dessus.
 	- Rappel : la carte d’un PNJ mort ne sera pas retirée de l’enquête. Si la mort du PNJ est causée par le joueur, +1Wan !
 	- Ces cartes se trouvent toujours dans la pile PNJs ou Evidence.
 	- Une fois jouée, ces cartes ne sont pas perdues.
@@ -657,7 +660,7 @@ Les interactions : Dialogue, Combat et Investigation
 	- Pour ajouter une carte à l’écran principal, on fera un Drag & Drop de la carte depuis la liste Possible Clues (en haut à gauche de l’écran).
 	- Sur l’écran principal, pour interagir avec une Carte, on fait Clic droit, « Dialogue » ou « Combat » ou « Investiguer » sur la carte concernée.
 	- Pour retirer une carte de l’écran principal, on fera un Drag & Drop de la carte dans la liste Possible Clues (en haut à gauche de l’écran). Cela retire automatiquement le caractère Evidence de la carte si celle-ci l’avait.
-	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps ou exceptionnellement, le PNJ n’est exceptionnellement pas là aujourd’hui), le jeu préviendra avec un Overlay qui dira « Je ne sais pas où se trouve cette personne en ce moment. » Et le temps ne passera bien entendu pas !
+	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps ou, le PNJ n’est exceptionnellement pas là cette fois), le jeu préviendra avec un Overlay qui dira « Je ne sais pas où se trouve cette personne en ce moment. » Et le temps ne passera bien entendu pas !
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier a menti, il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
 	- Pour Dialoguer directement avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci).
 	- On ne peut pas savoir si un PNJ suit son emploi du temps autrement qu’en se rendant où il devrait être à l’heure dite.
@@ -669,9 +672,9 @@ Les interactions : Dialogue, Combat et Investigation
 	- L’écran d’interaction, affiche :
 		- La pile de Maîtrise (Mastery) du joueur qui est la pile des actions que le joueur maîtrise et avec la quelle il a un Bonus de 1 au jet de dé. Elle contient uniquement des cartes Combat, Dialogue, Investigation ou Abstraite.
 		- La pile de Non-Maîtrise (Fallback) du joueur qui est la pile des actions que le joueur ne maîtrise pas. En fonction du contexte, les cartes hors de propos ne seront donc pas proposées (On ne va pas jouer « donner une baffe » en Investigation par exemple). Pas de Bonus/Malus.
-		- La pile Preuve (Evidence) qui est la pile contenant tous les éléments considérés dans l’enquête comme des preuves (cartes avec des liens plein établis). Il ne peut s’agir de cartes Objet (ex. : arme du crime), Lieu (ex. : lieu du crime) ou PNJ (ex. : témoin). Bonus de 1 au jets de dé.
+		- La pile Preuve (Evidence) qui est la pile contenant tous les éléments considérés dans l’enquête comme des preuves (cartes avec des liens plein établis). Il peut s’agir de cartes Objet (ex. : arme du crime), Lieu (ex. : lieu du crime) ou PNJ (ex. : témoin). Bonus de 1 au jets de dé si le lien est bon (vrai).
 		- La pile PNJ qui est la pile contenant les (autres) cartes PNJ liées à l’enquête. Pas de Bonus/Malus.
-		- La pile Objets qui est la pile des Objets non qualifiés d’Evidences. Pas de Bonus/Malus.
+		- La pile Objets qui est la pile des Objets non qualifiés d’Evidence. Pas de Bonus/Malus.
 		- La pile Lieu (Place) qui est la pile contenant les (autres) cartes Lieu liés à l’enquête. Pas de Bonus/Malus.
 	- On ne peut plus passer à Dialogue après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de cartes de Combat spéciales qui le permettent.
 	- On obtient une autorisation de fouille par la fiche de quête (Voir Enquête).
@@ -714,7 +717,7 @@ Dialogue
 	- Pour poser des questions, le joueur utilise ses cartes de Dialogue, Abstraite et Objet/Lieu/PNJ/Evidence.
 	- En fonction de la marge de réussite, il obtiendra round(Marge de réussite) informations (vraies et/ou fausses, voir plus bas).
 	- Les informations obtenues sont choisies aléatoirement parmi celles obtenables auprès du PNJ.
-	Une carte Objet/Lieu, Etc. utilisée comme preuve/pièce à conviction à bon/mauvais escient rajoute un bonus/malus de ±1 au jet de dé. 
+	Une carte Objet/Lieu/PNJ utilisée comme preuve/pièce à conviction à bon/mauvais escient rajoute un bonus/malus de ±1 au jet de dé.
 	 - Chances que chaque information donnée soit fausse (errare humanum est) hors Nom, Genre et Apparence :
 		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
 		Auprès d’1 Coupable : (5+MEN)/(15+MEN)
@@ -757,7 +760,6 @@ Combat
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) une Rep = -3 auprès du PNJ impliqué.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat (voir Fuir un combat (Joueur) plus bas). Il pourra également jouer sa carte Combat (spéciale) Fuir pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici).
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible à partir de ce moment-là).
-	- Pour le joueur, déclencher un Combat fait +1Wan.
 
 Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
 	- À la première rencontre, il n’y a pas de risque !
@@ -789,7 +791,7 @@ Déclenchement d’un Combat par un PNJ « non lié » à l’enquête
 	- Uniquement si le joueur a au moins 1 enquête en cours.
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
 	- Probabilité d’attaque : (Niveau de difficulté d’enquête)% par tranche horaire.
-	- Si une attaque doit survenir, elle surviendra avant le démarrage de l’action suivante du joueur (y compris aller chez le médecin, aller à la boutique, etc.).
+	- Si une attaque doit survenir, elle surviendra avant le démarrage de l’action suivante du joueur (y compris aller chez le médecin, etc.).
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +2HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale. Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sera envoyé.
 	- Tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un commenditaire et donc du ou d’un coupable de l’enquête. Au joueur d’en tirer les conséquences.
@@ -816,7 +818,7 @@ Investigation
 	- Une réussite critique donne +50 Dø.
 	- S’il y a des Objets (Evidence) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation.
 	- Un échec critique donne -1 Objet (Evidence uniquement) découvert (0 au minimum!).
-	- Le joueur récupérera aussi des Objets plus ou moins « à la con » pendant ses investigations. Il y a 1/10 chances que le joueur en trouve.
+	- Le joueur récupérera aussi des Objets plus ou moins « à la con » pendant ses investigations.
 	- On ne peut pas découvrir plus d’Éléments de preuve qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
 	- Pendant une Investigation (Autorisation de Fouille ou pas), si un PNJ devait arriver (par son emploi du temps), il attendra la fin de l’investigation avant d’entrer.
 	- Rappel : Si jamais un combat doit avoir lieu, il aura lieu avant l’Investigation.
