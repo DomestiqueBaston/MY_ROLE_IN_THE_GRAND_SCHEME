@@ -46,6 +46,90 @@ position = Vector2(383, 246)
 shape = SubResource("RectangleShape2D_l5dcb")
 metadata/_edit_lock_ = true
 
+[node name="Card_Places" type="Node2D" parent="Interaction_BG"]
+metadata/_edit_lock_ = true
+
+[node name="Interaction_Card_Places" type="Node2D" parent="Interaction_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="Card_1" type="Marker2D" parent="Interaction_BG/Card_Places/Interaction_Card_Places"]
+position = Vector2(270, 196)
+metadata/_edit_lock_ = true
+
+[node name="Card_2" type="Marker2D" parent="Interaction_BG/Card_Places/Interaction_Card_Places"]
+position = Vector2(346, 196)
+metadata/_edit_lock_ = true
+
+[node name="Card_3" type="Marker2D" parent="Interaction_BG/Card_Places/Interaction_Card_Places"]
+position = Vector2(422, 196)
+metadata/_edit_lock_ = true
+
+[node name="Mastery_Card_Places" type="Node2D" parent="Interaction_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Mastery_Card_Places"]
+position = Vector2(170, 195)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Mastery_Card_Places"]
+position = Vector2(170, 232)
+metadata/_edit_lock_ = true
+
+[node name="Fallback_Card_Places" type="Node2D" parent="Interaction_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Fallback_Card_Places"]
+position = Vector2(522, 195)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Fallback_Card_Places"]
+position = Vector2(522, 232)
+metadata/_edit_lock_ = true
+
+[node name="Evidence_Card_Places" type="Node2D" parent="Interaction_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Evidence_Card_Places"]
+position = Vector2(155, 34)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Evidence_Card_Places"]
+position = Vector2(185, 34)
+metadata/_edit_lock_ = true
+
+[node name="NPC_Card_Places" type="Node2D" parent="Interaction_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_BG/Card_Places/NPC_Card_Places"]
+position = Vector2(272, 34)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_BG/Card_Places/NPC_Card_Places"]
+position = Vector2(302, 34)
+metadata/_edit_lock_ = true
+
+[node name="Object_Card_Places" type="Node2D" parent="Interaction_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Object_Card_Places"]
+position = Vector2(390, 34)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Object_Card_Places"]
+position = Vector2(420, 34)
+metadata/_edit_lock_ = true
+
+[node name="Place_Card_Places" type="Node2D" parent="Interaction_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Place_Card_Places"]
+position = Vector2(507, 34)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_BG/Card_Places/Place_Card_Places"]
+position = Vector2(537, 34)
+metadata/_edit_lock_ = true
+
 [node name="TMP" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
