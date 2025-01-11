@@ -997,10 +997,6 @@ Résolution des enquêtes, gains et implications
 	- Une enquête ne peut pas être rejetée à + d’1 jour de sa limite de validité.
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite qui restent dans la pile du joueur).
 
-
-Résolution de la quête ultime (Les Alchimistes de la Vérité)
-	- Une fois la quête résolue, le joueur mourra de toute manière assassiné par des sbires liés à l’enquête finale. - L’écran final sera affiché résumant les événements qui suivirent la résolution de la quête.
-
 Éléments additionnels (non facultatifs) :
 	- Je vais créer 2 ou 3 enquêtes finales (Paranoïa) pour la re-jouabilité.
 	- Il serait chouette de garder des PNJs pour les réintroduire dans d’autres enquêtes de temps en temps… Même si ça n’est pas vital.
