@@ -100,7 +100,6 @@ offset_bottom = 5.0
 texture_normal = ExtResource("6_f1shx")
 texture_pressed = ExtResource("8_se4yg")
 texture_hover = ExtResource("7_0vp85")
-texture_focused = ExtResource("7_0vp85")
 metadata/_edit_lock_ = true
 
 [node name="PHY_Plus" type="TextureButton" parent="Creation_Page/PHY"]
@@ -111,7 +110,6 @@ offset_bottom = 7.0
 texture_normal = ExtResource("7_0ruwj")
 texture_pressed = ExtResource("8_q8msu")
 texture_hover = ExtResource("9_v40rh")
-texture_focused = ExtResource("9_v40rh")
 metadata/_edit_lock_ = true
 
 [node name="MEN" type="Label" parent="Creation_Page"]
@@ -136,7 +134,6 @@ pivot_offset = Vector2(22, 62)
 texture_normal = ExtResource("6_f1shx")
 texture_pressed = ExtResource("8_se4yg")
 texture_hover = ExtResource("7_0vp85")
-texture_focused = ExtResource("7_0vp85")
 metadata/_edit_lock_ = true
 
 [node name="MEN_Plus" type="TextureButton" parent="Creation_Page/MEN"]
@@ -148,7 +145,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("7_0ruwj")
 texture_pressed = ExtResource("8_q8msu")
 texture_hover = ExtResource("9_v40rh")
-texture_focused = ExtResource("9_v40rh")
 metadata/_edit_lock_ = true
 
 [node name="HEA" type="Label" parent="Creation_Page"]
@@ -173,7 +169,6 @@ pivot_offset = Vector2(22, 62)
 texture_normal = ExtResource("6_f1shx")
 texture_pressed = ExtResource("8_se4yg")
 texture_hover = ExtResource("7_0vp85")
-texture_focused = ExtResource("7_0vp85")
 metadata/_edit_lock_ = true
 
 [node name="HEA_Plus" type="TextureButton" parent="Creation_Page/HEA"]
@@ -185,7 +180,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("7_0ruwj")
 texture_pressed = ExtResource("8_q8msu")
 texture_hover = ExtResource("9_v40rh")
-texture_focused = ExtResource("9_v40rh")
 metadata/_edit_lock_ = true
 
 [node name="Remaining_Points" type="Label" parent="Creation_Page"]
@@ -277,7 +271,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("12_rwrty")
 texture_pressed = ExtResource("13_pb7hu")
 texture_hover = ExtResource("14_yalwy")
-texture_focused = ExtResource("14_yalwy")
 metadata/_edit_lock_ = true
 
 [node name="Load" type="TextureButton" parent="Creation_Page"]
@@ -291,7 +284,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("15_v5br1")
 texture_pressed = ExtResource("16_rpfp5")
 texture_hover = ExtResource("17_528u2")
-texture_focused = ExtResource("17_528u2")
 metadata/_edit_lock_ = true
 
 [node name="Save" type="TextureButton" parent="Creation_Page"]
@@ -305,7 +297,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("18_16xvd")
 texture_pressed = ExtResource("19_g16jo")
 texture_hover = ExtResource("20_v1018")
-texture_focused = ExtResource("20_v1018")
 metadata/_edit_lock_ = true
 
 [node name="Delete" type="TextureButton" parent="Creation_Page"]
@@ -319,7 +310,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("21_550ov")
 texture_pressed = ExtResource("22_hwlkq")
 texture_hover = ExtResource("23_k3b1g")
-texture_focused = ExtResource("23_k3b1g")
 metadata/_edit_lock_ = true
 
 [node name="Cancel" type="TextureButton" parent="Creation_Page"]
@@ -333,7 +323,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("24_13g83")
 texture_pressed = ExtResource("25_e0ckp")
 texture_hover = ExtResource("26_dkphj")
-texture_focused = ExtResource("26_dkphj")
 metadata/_edit_lock_ = true
 
 [node name="Confirm" type="TextureButton" parent="Creation_Page"]
@@ -347,7 +336,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("27_kk3x8")
 texture_pressed = ExtResource("28_6l626")
 texture_hover = ExtResource("29_ivich")
-texture_focused = ExtResource("29_ivich")
 metadata/_edit_lock_ = true
 
 [node name="Story" type="Label" parent="."]

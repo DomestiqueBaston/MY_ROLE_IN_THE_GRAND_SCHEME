@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=16 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_yjiui"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="5_46aa5"]
 [ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="6_dhbug"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="6_v0c4c"]
+[ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="7_qrm58"]
 [ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="7_tawrq"]
 [ext_resource type="PackedScene" uid="uid://cdd2r2s4fujkx" path="res://SCENES/Bottom_Left_Info_Long.tscn" id="8_8q1ce"]
 [ext_resource type="PackedScene" uid="uid://dldk5itfc6prx" path="res://TRASH/Top_Left_Screen.tscn" id="9_rt5nv"]
@@ -260,7 +261,6 @@ points = PackedVector2Array(212, 218, 343, 204)
 width = 20.0
 gradient = SubResource("Gradient_7eyd2")
 end_cap_mode = 2
-round_precision = 12
 antialiased = true
 metadata/_edit_lock_ = true
 
@@ -384,9 +384,8 @@ offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Validate the Interaction"
 texture_normal = ExtResource("5_46aa5")
-texture_pressed = ExtResource("5_46aa5")
+texture_pressed = ExtResource("7_qrm58")
 texture_hover = ExtResource("6_dhbug")
-texture_focused = ExtResource("5_46aa5")
 texture_click_mask = ExtResource("7_tawrq")
 metadata/_edit_lock_ = true
 
