@@ -119,31 +119,6 @@ Progression du joueur (pas des PNJs !)
 Les PNJs
 
 	- Pour les besoin du jeu, les PNJs seront aussi représentés sous forme de cartes afin de pouvoir les « manipuler » en Interaction et sur la fiche d'enquête.
-
-Structure type (en rouge les infos que le joueur n’aura jamais):
-ID : 							PNJ001, PNJ002, etc.
-Nom : 							Prénom + nom
-Profession : 						(voir Professions) (bonus/malus inconnus du joueur)
-Caractéristiques : 						PHY, MEN, HEA/HEAnom. à la création du PNJ et Wan = 0.
-Rep (du joueur) : 						Rep_Joueur (auprès de ce PNJ)
-Soupçon(s) : 						PNJ(s) (0 à 2)
-Statut (Culpabilité réelle dans l’enquête) : 			Victime/Coupable/Complice/Suspect/Témoin/Aucun
-Relations sociales (possiblement liées à l’enquête) :		En couple (0 à 1) : PNJ (homo 1/10 chance)
-							Ami(s) (0 à 3) : PNJ
-							Ennemi(s) (0 à 3) : PNJ
-							Connaissance(s) (0 à 4) : PNJ
-							Liaison (Amant/Maîtresse) (0 à 1) : PNJ
-Emploi du temps :						Matin : (carte lieu)
-							Après-midi : (carte lieu)
-							Soirée : (carte lieu)
-							Nuit : (carte lieu)
-							W-E matin : (carte lieu)
-							W-E après-midi : (carte lieu)
-							W-E (soirée) : (carte lieu)
-							W-E (nuit) : (carte lieu)
-Indices (0 à 2) : 						Carte(s) Objet/Evidence incriminantes + Liens, Relations (Liens).
-Information(s) cachée(s) et incriminante(s) (1 ou 2 à 50%) :	(Lien/carte Lieu/carte Objet – Evidence/Emploi du temps/etc.)
-
 	- Ces infos ne sont pas connues automatiquement du joueur. Cela dépendra de la fiche de quête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
 	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction (ainsi Emo et Add ne peuvent être des bonus/malus pour eux).
@@ -397,266 +372,61 @@ Les cartes
 	- Les bonus/malus d’une carte sur HEA, HEAnom., Emo, Add et/ou Wan sont permanents !
 	- À noter que le Card_BG dans Card.tscn peut (et doit) être bougé pour chaque carte (juste pour varier un peu leur fond d’une carte à l’autre). Offset/offset en x entre -120 et 0 et en y entre -30 et 0 (on mettra un pas de 5 pixels de variation).
 
-Structure commune de carte
-	ID : COM001 (Combat), DIA001 (Dialogue), INV001 (Investigation), ABS001 (Abstraite), PNJ001 (PNJ), OBJ001 (Objet), PLA001 (Lieu/Place). (on incrémentera le numéro pour chaque nouvelle carte !)
-	Nom : Nom de la carte
-	Type : Dialogue/Combat/Investigation/Abstraite/Objet/Lieu/PNJ.
-	Description : Très brève description de la carte.
-	Preuve (Evidence) : Oui/Non.
-	Combinaisons Possibles : Dialogue/Combat/Investigation/Abstraite/Lieu/Objet/PNJ.
-	Combinaisons impossibles : Dialogue/Combat/Investigation/Abstraite/Lieu/Objet/PNJ.
-	Information(s) obtenable(s) : Lien (relations, emploi du temps) dans Fiche/fiche d'enquête/« Feuille de PNJ ».
-	Possession (pour un PNJ) : Carte(s) Objet (éventuellement carte(s) Evidence)
-	Ouverture : Matin / Après-midi / Soirée / Nuit (tous les jours) / Week-end (induit matin et après-midi uniquement) / H24.
-	Bonus/Malus temporaires : Modifications temporaires des caractéristiques principales en utilisant la carte (par exemple, +1PHY pour un test d'escalade, -1MEN en cas d'échec, etc.).
-	Bonus/Malus permanents : Modifications temporaires des caractéristiques principales en utilisant la carte (+1Add, -1Emo, etc.).
-
 Cartes Abstraites
-	- Elles représentent des dynamiques amenant des modifications aux jets de dé en interactions avec des PNJs ou l’environnement.	- Ces cartes se jouent à n’importe quel moment où on joue des cartes et peuvent être jouées seules.
+	- Elles représentent des dynamiques amenant des modifications aux jets de dé en interactions avec des PNJs ou l’environnement.	- Ces cartes se jouent à n’importe quel moment où on joue des cartes.
+	- Ces cartes peuvent être jouées seules.
 	- Par interaction, le joueur ne peut jouer qu’1 carte Abstraite.
-	- Une fois jouée, une carte abstraite est perdue.
+	- Une fois jouée, une carte abstraite EST perdue.
+	- Les cartes Abstraite se jouent en combinaison de n’importe quelle autre carte.
 
-Liste des cartes Abstraites :
-	- Outre leur nom, elles informent également des caractéristiques sur lesquelles elles influent sans détail (par exemple, Assurance indiquera simplement qu’elle influe sur MEN et Emo.
-      Assurance :
-	Description : Cette carte représente la confiance et la détermination du joueur. Elle améliore les capacités mentales en fonction de l'état émotionnel. 
-          Emo > 0 : +2MEN, -1Emo
-          Emo < 0 : +2MEN, +1Emo
-          Sinon :  +1MEN
+Cartes Dialogue :
+	- Elles sont des cartes qui se jouent uniquement en Dialogue.
+	- Ces cartes peuvent être jouées seules.
+	- Une fois jouées, ces cartes ne sont pas perdues.
+	- On ne joue qu’1 carte Dialogue par interaction.
+	- Elles peuvent être jouées en combinaison d’une carte Abstraite, Objet, PNJ ou Lieu uniquement.
 
-      Moral : 
-	Description : Cette carte représente le moral et la motivation du joueur. Elle améliore les capacités physiques et mentales en fonction de l'état émotionnel. 
-          Emo > 0 : +1PHY, +1MEN, +1Emo
-          Emo < 0 : +1PHY, +1MEN, +2Emo
-          Sinon : +1PHY, +1MEN
+Cartes Investigation :
+	- Elles sont des cartes qui se jouent uniquement en Investigation.
+	- Ces cartes peuvent être jouées seules.
+	- Une fois jouées, ces cartes ne sont pas perdues.
+	- On ne joue qu’1 carte Investigation par interaction.
+	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
+	- Une carte Investigation BREAK-IN ne peut pas être jouée en combinaison d’une autre carte Investigation.
 
-      Tempérament : 
-	Description : Cette carte représente le tempérament et la résilience du joueur. Elle améliore les capacités physiques et mentales en fonction de l'état émotionnel. 
-          Emo > 0 : +1PHY, -1MEN
-          Emo < 0 : +1HEA, +1Emo
-          Sinon : +1PHY, +1HEA, -1Emo
-
-      Intérêt : 
-	Description : Cette carte représente l'intérêt et la curiosité du joueur. Elle améliore les capacités mentales en fonction de l'état d'addiction. 
-          Add > 0 : +1MEN, ±1Emo → Min/Max le plus proche
-          Add < 0 : +2MEN, ±1Emo → Min/Max le plus proche
-          Sinon : +1MEN
-
-      Bravoure :
-	Description : Cette carte représente la bravoure et le courage du joueur. Elle améliore les capacités physiques et mentales en fonction de l'état d'addiction. 
-          Add > 0 : +1PHY, +1MEN, -1HEA
-          Add < -1 : +1PHY, +1MEN, +2Add
-          Sinon : +1PHY, +1MEN
-
-	Résilience :
-	Description : Cette carte représente la résilience et la capacité de récupération du joueur. Elle améliore les capacités de santé et mentales en fonction de l'état émotionnel. 
-		Emo > 0 : +2HEA, -1Emo
-		Emo < 0 : +1HEA, +1Emo
-		Sinon : +1HEA, +1PHY
-
-	Dopé :
-	Description : Cette carte représente l'état de dopage du joueur. Elle améliore les capacités physiques et mentales en fonction de l'état d'addiction. 
-		Si Add >0 : +1PHY, +1Add
-		Si Add = 0 : +1PHY, +1MEN, +2Add
-		Sinon : +2PHY, +2MEN, -2HEA, +3Add
-
-	Clarté mentale : Cette carte représente la clarté d'esprit et la capacité du joueur à gérer ses émotions et ses addictions. Elle améliore les capacités mentales en fonction de l'état émotionnel et de l'addiction du joueur. 
-	Description : 
-		Emo ≠ 0 et Add ≠ 0 : +2MEN, ±1 Emo → Min/Max le plus proche et ±1Add → Min/Max le plus proche
-		Emo ≠ 0 ou Add ≠ 0 : +1MEN, ±1 Emo → Min/Max le plus proche ou ±1Add → Min/Max le plus proche
-		Sinon : +1MEN, +1HEA
-
-	Équilibre Intérieur :
-	Description : Cette carte représente l'équilibre intérieur et la stabilité émotionnelle du joueur. Elle aide à maintenir un état mental et émotionnel stable en ajustant l’émotion et l’addiction. 
-          Emo = 0 et Add = 0 : +1HEA
-Sinon :
-Emo > 1 : -1Emo
-Emo < -1 : /
-Add > 1 : -1 Add
-Add < -1 : /
-
+Cartes Combat :
+	- Elles sont des cartes qui se jouent uniquement en Combat.
+	- Ces cartes peuvent être jouées seules.
+	- Une fois jouées, ces cartes ne sont pas perdues.
+	- On ne joue qu’1 carte Combat par interaction.
+	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
+	- Une carte Combat RUN AWAY ne peut pas être jouée en combinaison d’une autre carte Combat.
 
 Cartes de Lieu
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
+	- Ces cartes peuvent être jouées seules.
+	- On ne joue qu’1 carte Lieu par interaction.
 	- Leurs Bonus/malus s’appliquent en Investigation, Combat et Dialogue en étant sur place uniquement.
 	- Elles servent aussi à se déplacer dans les endroits liés aux enquêtes.
 	- Elles servent également à savoir si un lieu est ouvert ou fermé le week-end.
-	- Une fois jouée, ces cartes ne sont pas perdues.
+	- Une fois jouées, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Lieu (uniquement).
 
-Liste des cartes Lieu (bonus/malus temporaires pour le joueur uniquement et seulement en étant sur place) :
-	- Appartement (du PNJ) : /
-	- Atelier : -1PHY
-	- Bibliothèque : +1MEN
-	- Boutique/Magasin : -1MEN
-	- Bureau : /
-	- Cabinet : +1MEN
-	- Café : -1MEN
-	- Caserne : +1PHY, -1MEN (Combat impossible)
-	- Cimetière : +1MEN
-	- Cinéma : -1PHY
-	- Discothèque : -1MEN
-	- École : -1MEN
-	- Galerie d’art : +1MEN
-	- Garage : -1HEA
-	- Hangar : +1PHY
-	- Hôpital : -1PHY, +1HEA
-	- Hôtel : /
-	- Laboratoire : +1MEN
-	- Lieu de culte : -1PHY, -1MEN
-	- Marché aux puces : -1PHY
-	- Musée : -1PHY
-	- Parc : /
-	- Piscine : -1PHY
-	- Poste de Police : -1MEN (Combat impossible)
-	- Restaurant : -1MEN
-	- Salle de jeux : -1MEN
-	- Salle de spectacle : -1PHY, +1MEN
-	- Salle de sport : +1PHY, -1MEN
-	- Stade : +1PHY
-	- Station service : / 
-
-
-Les cartes Dialogue, Combat et Investigation
+Cartes Objet
+	- Elles sont des cartes qui se jouent uniquement en Dialogue.
+	- Ces cartes peuvent être jouées seules.
 	- Une fois jouées, ces cartes ne sont pas perdues.
-	- Les cartes SPECIAL se jouent en combinaison d’une pas SPECIAL de même type.
-	- Les cartes Break-In et Run Away : voir Investigation et Combat plus loin.
-
-Liste des cartes Dialogue :
-	- Argumentation logique : +1MEN
-	- Avertissement prévenant : -1PHY, +1MEN
-	- Conversation rassurante : +1Rep
-	- Discussion informelle : +1MEN, -1 info aléatoirement choisie (si applicable)
-	- Intimidation physique : +1PHY, -1Rep
-	- Interrogatoire bruyant : +1PHY, -1Rep
-	- Interrogatoire impitoyable : +2PHY, +1MEN, -2Rep
-	- Interrogatoire subtil : +1MEN, +1 info (si réussite et applicable)
-	- Interrogatoire violent : +2PHY, -2Rep
-	- Menace voilée : +1 PHY, -1Rep
-	- Mensonge convaincant : +1MEN, -1Rep si échec
-	- Mise en garde : +1MEN, -1Rep
-	- Offre de protection : +1 PHY, +1Rep
-	- Pot-de-vin : +1 info (si réussite et applicable), -10Dø × Difficulté de l’enquête, +1Rep pour réussite/échec
-	- Pot-de-vin généreux : +1MEN, -20Dø × Difficulté de l’enquête, +1 info (si réussite et applicable), +1Rep pour réussite/échec
-	- Pression psychologique : +2MEN, -2Rep
-	- Question indiscrète : +1MEN, +1 info (si réussite et applicable), -1Rep
-	- Question piège : +1MEN, +1 info cachée (si réussite et applicable), -1Rep si échec 
-	
-
-Liste des cartes Investigation :
-	- Analyse minutieuse : +1 MEN, ±1 Emo → 0
-	- Analyse succincte : -1MEN, -1 heure
-	- Examen complet : +1MEN, +1PHY, ±2 Emo → Min/Max, +1 Objet, +2 heures
-	- Examen méticuleux : +1PHY, -1Emo, +1 heure
-	- Fouille approfondie : +1 PHY, +1 Objet, +2 heures
-	- Fouille systématique : ±1 Emo → Min/Max
-	- Inspection détaillée : +1MEN, ±1 Emo → Min/Max
-	- Inspection rapide : -1PHY, -1MEN, ±1 Emo → 0 , -1 heure
-	- Jeter un œil en passant : -1PHY, -1MEN, -1 Objet (minimum de 0), -2 heures (!)
-	- Recherche méthodique : ±1 Emo → 0
-	- Recherche rapide : -1PHY, -2 heures 
-	SPECIAL (à jouer en combinaison avec une carte Investigation de la liste du dessus)
-	- Avec du Luminol ! : +1MEN, +1Emo, +1 heure
-	- Caméra endoscopique ! : -1PHY, +2MEN, +1 heure
-	- Coup de bol ! : bonus de 1 au jet de dé, +2Emo
-	- Démontage en règle ! : +1PHY, +2 heures
-	- Ni vu, ni connu ! : Annule les malus d’Emo de l’autre carte de Combat, malus de 1 au jet de dé
-	- Outils de crochetage ! : +2PHY, -1MEN, +1 heure
-	- Outils improvisés ! : +1PHY, -2MEN, +1 heure
-	- Prise d’empreintes ! : -1PHY, +1MEN, +1 heure
-	- Utiliser un détecteur ! : -2PHY, +2MEN 
-	BREAK-IN (avant Investigation)
-	- Enfoncer la porte : +2PHY, -2MEN
-	- Forcer la serrure : +1MEN, +1Emo
-	- Grimper le long de la gouttière : +1PHY, +1Emo
-	- Neutraliser la sécurité : +1MEN 
-
-Liste des cartes Combat :
-	- Attaque ciblée : +2PHY, -2Emo
-	- Charge : +1PHY, -1MEN, +1Emo
-	- Combat de rues : ±1Emo → Min/Max
-	- Contre-attaque : +1MEN, +1Emo
-	- Couverture : -1PHY, -1MEN, ±1Emo → 0, -2 dégâts si le joueur est touché
-	- Diversion : -1PHY, +2MEN, +1Emo
-	- Esquive : -1MEN, -1Emo, -1 dégâts si le joueur est touché
-	- Mouvements désordonnés : +2PHY, -1MEN, -2Emo
-	- Parade : -1PHY, +1Emo, -1 dégâts si le joueur est touché
-	- Provocation : +1MEN, ±1Emo → 0
-	- Techniques martiales : +1PHY, +1MEN, -1Emo
-	- Utiliser une arme : +3PHY, -1MEN, +2Emo → Min/Max
-	- Utiliser un objet : +1PHY 
-	SPECIAL (à jouer en combinaison avec une carte Combat de la liste du dessus)
-	- Adrénaline ! : bonus de 1 au jet de dé, ±1Add → Min/Max
-	- Désarmer ! : le PNJ aura un malus de 1 à son jet de dé
-	- Le tout pour le tout ! : bonus de 1 au jet de dé, les effets sur Emo sont augmentés de 1
-	- Ne pas tuer ! : si le PNJ visé devait mourir, alors il sera à Hea = 1 ! Dialogue ensuite possible avec le PNJ (bonus de 1 au jet de dé de Dialogue)
-	- Pas de bol ! : le PNJ aura un malus de 2 à son jet de dé et le joueur aura un malus de 1 à son jet de dé
-	- Self-control ! : Annule les malus d’Emo de l’autre carte de Combat, malus de 1 au jet de dé 
-	RUN AWAY (avant combat)
-	- Fuir : +1PHY, +1MEN
-
-
-
-Les Cartes Objet
-	- Une fois jouée, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Objet ou Evidence.
+	- On ne joue qu’1 carte Objet par interaction.
 
-Liste des cartes Objet (Evidence possible) :
-	Ces objets sont TOUJOURS liés à un PNJ (car ils sont « nominatifs »).
-	- Agenda
-	- Badge d’accès
-	- Carnet de notes personnel
-	- Carnet de santé
-	- Carte de visite
-	- Clé
-	- Clé USB
-	- Contrat
-	- Empreintes digitales
-	- Empreintes génétiques
-	- Empreintes numériques
-	- Facture (nominatif)
-	- Photographie
-	- Porte-feuilles
-	- Réservation
-	- Téléphone portable
-	- Ticket de transport (nominatif)
-	- Ordinateur portable 
-	- Couteau
-	- Pistolet
-	- Revolver
-	- …
-
-
-Liste des cartes Objet (Evidence impossible ou à moins d’empreintes ?) :
-	- Agrafeuse
-	- Baladeur
-	- Briquet
-	- Boîte vide
-	- Boîte de pansements
-	- Boîte de préservatifs
-	- Cahier
-	- Casquette
-	- Casque de vélo
-	- CD
-	- Chargeur USB
-	- Lampe de poche
-	- Livre
-	- Lunettes de soleil
-	- Marqueur
-	- Mètre ruban
-	- Paquet de cigarettes
-	- Pompe à vélo
-	- Serviettes en papier
-	- Stylo 
-	- …
-
-
-Les cartes PNJ
-	- Elles affichent en permanence une jauge en haut à droite donnant une idée du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue).
-	- Elles affichent une silhouette (Homme/Femme) et les noms et prénoms dès qu’ils sont connus.
+Cartes PNJ
+	- Elles affichent en permanence une jauge en haut à droite donnant une idée du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue). Elles affichent une silhouette (Homme/Femme) et les noms et prénoms dès qu’ils sont connus.
 	- Rappel : la carte d’un PNJ mort ne sera pas retirée de l’enquête. Si la mort du PNJ est causée par le joueur : +1Wan !
+	- Ces cartes peuvent être jouées seules.
 	- Ces cartes se trouvent toujours dans la pile PNJs ou Evidence.
-	- Une fois jouée, ces cartes ne sont pas perdues.
+	- Une fois jouées, ces cartes ne sont pas perdues.
+	- Elles sont des cartes qui se jouent uniquement en Dialogue.
+	- On ne joue qu’1 carte PNJ par interaction.
 Les interactions : Dialogue, Combat et Investigation
 
 	- On ne peut pas faire plusieurs interactions en même temps.
@@ -836,11 +606,11 @@ Investigation
 	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) !
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit, bonus/malus de Break-In (voir Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
-	- Une réussite critique donne +25Dø à +75Dø.
-	- S’il y a des Objets (Evidence) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation.
-	- Un échec critique donne -1Emo.
-	- Le joueur récupérera aussi des Objets plus ou moins « à la con » (non liés à l’enquête) pendant ses investigations (pour embrouiller le joueur et rendre les choses plus « logiques »).
-	- On ne peut pas découvrir plus d’Éléments de preuve qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
+	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation. Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes.
+	- Une réussite critique donne +25Dø à +50Dø en plus de ce qui est trouvé avec une réussite « normale ».
+	- Un échec donne -1Emo.
+	- 1 échec critique fait -1HEA en plus de l’échec « normal ».
+	- On ne peut pas découvrir plus d’Éléments de preuve (contenu caché) qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
 	- Pendant une Investigation, si un PNJ devait arriver (par son emploi du temps), il attendra que le joueur soit parti pour entrer.
 	- Rappel : Si jamais un combat doit avoir lieu (attaque de sbire), il aura lieu avant l’Investigation.
 
@@ -932,7 +702,7 @@ Vente d'objet(s) volé(s) – niveau 1 à 3
 Viol – niveau 4 à 5
 Vol (à l'étalage, pickpocket) – niveau 1 à 2
 
-Evolution du statut des cartes de « normal » à Preuves/Pièces à conviction et inversement
+Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
 	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).
 	- Seul le joueur peut donner le statut d’Evidence à une carte.
 	- Toute nouvelle carte découverte est placée en jeu (Main.tscn) avec un Lien Violet la liant au Lieu de découverte, à un ou des PNJs ou autres en fonction de la découverte et des liens qu’elle révèle.
