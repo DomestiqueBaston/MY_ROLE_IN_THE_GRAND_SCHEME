@@ -651,57 +651,6 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Rappel : une carte qualifiée d’Evidence (lien(s) Plein(s)) va automatiquement dans la pile de cartes Evidence avec son/ses lien(s) dans Main.tscn.
 
-Fiche d'enquête :
-
-Éléments de l'Enquête	Détails
-Titre de l'enquête (éventuellement)	Titre de l’enquête
-Crime	Voir la liste plus bas
-Heure du crime	Matin/Après-midi/Soirée/Nuit
-Difficulté	1 → 5
-Statut	En cours/nouvelle
-Délai imparti	round((niveau de difficulté × 5) ±0 à 10 % jours)
-Lieu du crime	Lieu
-Lieu(x) lié(s) à l’enquête	Lieu(x)
-Indices	Objet(s)
-Témoin(s)	PNJ(s)
-Suspect(s)	PNJ(s)
-Coupable(s)	PNJ(s)
-Complice(s)	PNJ(s)
-Relations	Lien plein (confirmé), lien pointillé (probable) / Couleurs des liens plus bas
-Notes	Espace réservé au joueur
-
-Types d’enquêtes – Niveau de complexité (pas toujours très réaliste mais besoin d’une certaine répartition pour le jeu) :
-Adultère – niveau 1
-Agression (physique/verbale) – niveau 1 à 3
-Cambriolage – niveau 2 à 4
-Chantage – niveau 2 à 4
-Contrefaçon – niveau 2 à 4
-Extorsion – niveau 2 à 4
-Corruption – niveau 3 à 4
-Délit de fuite – niveau 1 à 3
-Diffamation – niveau 1 à 2
-Enlèvement – niveau 2 à 5 (d’un chat à une ou plusieurs personnes)
-Espionnage – niveau 3 à 5
-Fraude – niveau 3 à 4
-Harcèlement – niveau 2 à 4
-Incendie criminel – niveau 3 à 5
-Intrusion – niveau 1 à 3
-Maltraitance – niveau 2 à 4
-Meurtre – niveau 5
-Piratage – niveau 2 à 5
-Proxénétisme – niveau 3 à 4
-Racket – niveau 2 à 4
-Recèle – niveau 2 à 3
-Sabotage – niveau 2 à 4
-Terrorisme – niveau 5
-Trafic – niveau 2 à 4
-Usage de faux – niveau 1 à 4
-Usurpation d'identité – niveau 2 à 4
-Vandalisme – niveau 1 à 2
-Vente d'objet(s) volé(s) – niveau 1 à 3
-Viol – niveau 4 à 5
-Vol (à l'étalage, pickpocket) – niveau 1 à 2
-
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
 	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).
 	- Seul le joueur peut donner le statut d’Evidence à une carte.
@@ -748,7 +697,6 @@ Système de Difficulté pour les Enquêtes
 	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 4 aux jets de dé !
 	- Plus le niveau de difficulté sera élevé et plus il faudra de preuves pour finaliser le dossier, plus il faudra désigner de coupables et/ou de complices (voir plus bas, à la fin du doc.).
 
-
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
 		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) Dø
@@ -766,7 +714,6 @@ Résolution des enquêtes, gains et implications
 	- Le joueur peut mener jusqu’à 5 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
 	- Une enquête ne peut pas être rejetée à + d’1 jour de sa limite de validité.
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite qui restent dans la pile du joueur).
-
 Éléments additionnels (non facultatifs) :
 	- Je vais créer 2 ou 3 enquêtes finales (Paranoïa) pour la re-jouabilité.
 	- Il serait chouette de garder des PNJs pour les réintroduire dans d’autres enquêtes de temps en temps… Même si ça n’est pas vital.
