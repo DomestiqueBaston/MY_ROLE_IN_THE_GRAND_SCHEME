@@ -646,7 +646,7 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 	- Pour Interacgir dans un Lieu lié à l’enquête ou avec un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles.
 	- Le joueur ne pourra jamais aller chez un PNJ s’il ne connaît pas sa localisation ou ne sait pas où il est à cette heure-là.
 	- Le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas (obviously).
-	- On valide un Case (correspondant à une demande de validation de l’enquête) en faisant Clic droit, « Validate Case » ou par le Menu Cases, « Validate Case » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec jusqu’à 10% d’erreur (minimum 1), moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
+	- On valide un Case (correspondant à une demande de validation de l’enquête) en faisant Clic droit, « Validate Case » ou par le Menu Cases, « Validate Case » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec une erreur de mobile, moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
 	- Rappel : faire et défaire des liens de culpabilité (liens Noir Plein) changera la Rep du joueur auprès des PNJs impliqués par ce(s) lien(s). Seuls les liens pleins on un tel effet. Autrement dit : -1 Rep pour un ou des lien(s) plein(s) établi(s), Annulation du malus quand il n’y a plus de lien.
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Rappel : une carte qualifiée d’Evidence (lien(s) Plein(s)) va automatiquement dans la pile de cartes Evidence avec son/ses lien(s) dans Main.tscn.
@@ -658,7 +658,7 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 		Carte PNJ : Toutes les couleurs de liens sont possibles depuis ou vers ces cartes.
 		Carte Objet : Noir, Rouge, Vert, Jaune et Violet sont possibles.
 		Carte Lieu : Blanc, Noir, Rouge/Jaune et Violet sont possibles.
-		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobiledans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête.
+		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête.
 	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Possible clues » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn). Cela permet, par ex., au joueur de sortir (temporairement) une carte qu’il pense n’avoir aucun intérêt pour l’enquête ou de la remettre en jeu.
 
 Liens entre les éléments de la Fiche d'enquête
@@ -702,11 +702,11 @@ Résolution des enquêtes, gains et implications
 		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) Dø
 		- autant que le niveau de difficulté de l’enquête+1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites (sans dépasser les limites de pile de Maîtrise une fois les choix du joueur faits).
 		- Emo = 0, Add=0, Wan=0
-	- Si l’enquête est résolue mais comporte des erreurs dans la marge des 10% d’erreur (minimum 1 erreur), il obtient :
+	- Si l’enquête est résolue mais comporte une erreur (de mobile), il obtient :
 		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) –25 % Dø.
 		- 1 carte Combat, Dialogue, Investigation ou Abstraite (sans dépasser les limites de pile de Maîtrise une fois le choix du joueur fait).
 		- ±1 Emo → 0, ±1 Add → O, Wan=0
- 	- Si le joueur valide une enquête et qu’il s’est trompé (+ de 10% d’erreur (plus d’1 erreur minimum)), l’enquête est terminée pour lui et implique :
+ 	- Si le joueur valide une enquête et qu’il s’est trompé (autre qu’une erreur de mobile, avec ou sans erreur de mobile), l’enquête est terminée pour lui et implique :
 		- Emo ±1 → Min/Max ou Emo -1 si Emo = 0, Add ±1 → Add Min/Max ou Add -1 si Add = 0
 	- Renoncer à une enquête n’implique pas de malus ni de bonus.
 	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0. 
