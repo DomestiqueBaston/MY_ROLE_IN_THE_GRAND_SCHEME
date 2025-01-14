@@ -431,7 +431,7 @@ Les interactions : Dialogue, Combat et Investigation
 
 	- On ne peut pas faire plusieurs interactions en même temps.
 	- On ne peut pas interagir sans poser aucune carte sur le tapis. Rappel : on ne peut jouer qu’1 carte Abstraite par Interaction.
-	- On joue au maximum 3 cartes par Interaction.
+	- On joue au maximum 3 cartes par Interaction (au minimum 1).
 	- Dans Main.tscn, pour ajouter une carte, on fera un Drag & Drop de la carte depuis la liste Possible Clues (en haut à gauche de l’écran).
 	- Dans Main.tscn, pour retirer une carte de l’écran principal, on fera un Drag & Drop de la carte dans la liste Possible Clues (en haut à gauche de l’écran). Cela retire automatiquement le caractère Evidence de la carte si celle-ci l’avait et tous ses liens sont détruits.
 	- Sur l’écran principal, pour interagir avec une Carte, on fait Clic droit, « Dialogue » ou « Combat » ou « Investiguer » sur la carte concernée.
@@ -650,6 +650,7 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 	- Rappel : faire et défaire des liens de culpabilité (liens Noir Plein) changera la Rep du joueur auprès des PNJs impliqués par ce(s) lien(s). Seuls les liens pleins on un tel effet. Autrement dit : -1 Rep pour un ou des lien(s) plein(s) établi(s), Annulation du malus quand il n’y a plus de lien.
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Rappel : une carte qualifiée d’Evidence (lien(s) Plein(s)) va automatiquement dans la pile de cartes Evidence avec son/ses lien(s) dans Main.tscn.
+	- Le niveau difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
 	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).
