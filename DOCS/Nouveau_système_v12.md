@@ -411,6 +411,7 @@ Cartes de Lieu
 	- Elles servent également à savoir si un lieu est ouvert ou fermé le week-end.
 	- Une fois jouées, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Lieu (uniquement).
+	- À moins d’y interagir, le joueur doit quitter un Lieu à chaque changement de tranche horaire.
 
 Cartes Objet
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
