@@ -698,6 +698,7 @@ Système de Difficulté pour les Enquêtes
 	- Au départ, le joueur n’a accès qu’aux enquêtes de niveau 1 et 2. Puis toutes les 3 enquêtes réussies dans ces niveaux de difficulté, il a accès au niveau de difficulté suivant et ainsi de suite.
 	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 4 aux jets de dé !
 	- Plus le niveau de difficulté sera élevé et plus il faudra de preuves pour finaliser le dossier, plus il faudra désigner de coupables et/ou de complices (voir plus bas, à la fin du doc.).
+	- Un type d’enquête mené ne réapparaît que toutes 5 enquêtes différentes menées ensuite (afin de « forcer » la variété). Par ex., Une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas 5 d’un autre type.
 
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
