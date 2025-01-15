@@ -2,9 +2,12 @@ My Role in the Grand Scheme
 (le jeu vidéo, Tadaaaa !)
 
 Livret de règles (!)
+
+
 Caractéristiques du Joueur
 	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/HEAnom.) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) allant de 0 à 10. Aucune caractéristique ne pourra jamais dépasser 10.
-	- À noter qu’à la création du personnage, pour le sexe, on peut mettre M, F ou n’importe quelle valeur entre les deux, on s’en fout, ça ne change rien au jeu (humour de merde inclus !). Pas d’âge non plus, on s’en fout totalement aussi !
+	- À noter qu’à la création du personnage, pour le sexe, on peut mettre M, F ou n’importe quelle valeur entre les deux, on s’en fout, ça ne change rien au jeu (humour de merde inclus !).
+	- Pas d’âge non plus, on s’en fout totalement aussi !
 
 Les caractéristiques principales
 	- À la création du personnage, 11 points sont à répartir entre PHY, MEN et HEAnom. avec un minimum de 3 et un maximum de 7.
@@ -17,7 +20,8 @@ Physique (PHY)
 Mental (MEN)
 	- Mesure les adptitudes intellectuelles et psychologiques du personnage. 
 Santé (HEA/HEAnom.) 
-	- HEAnom. représente la santé maximale. HEA représente la santé actuelle (ne peut jamais dépasser HEAnom.).
+	- HEAnom. représente la santé maximale.
+	- HEA représente la santé actuelle (ne peut jamais dépasser HEAnom.).
 
 
 Les caractéristiques secondaires
@@ -663,7 +667,7 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête.
 	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Possible clues » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn). Cela permet, par ex., au joueur de sortir (temporairement) une carte qu’il pense n’avoir aucun intérêt pour l’enquête ou de la remettre en jeu.
 
-Liens entre les éléments de la Fiche d'enquête
+Liens entre les éléments dans l’enquête (Main.tscn)
 	- Pour tracer un lien, sur l’écran principal, faire clic droit, « créer un lien », « choix de type », « plein ou pointillé » puis clic gauche sur le haut de la carte de départ, drag (trace une ligne) et drop sur le haut de la carte d’arrivée.
 	- Pour défaire un lien, sur l’écran principal, et sur le lien, fair clic droit, « Défaire le lien ».
 	- Pour changer le type, faire clic droit, « changer un lien », « choix de type » puis « plein ou pointillé ».
@@ -673,16 +677,16 @@ Liens entre les éléments de la Fiche d'enquête
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens : À définir, par exemple :
           Blanc : Dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. Le seul moyen de savoir si un PNJ suit effectivement son emploi du temps et de se rendre sur place.
-Gris : Dette/Influence
+Gris : Dette/Influence (pas utile à toutes les enquêtes)
           Noir : Coupable/Complice/Preuve (seuls liens habilités à la validation des enquêtes) Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
-          Rose : Intime
+          Rose : Intime (pas exploité dans toutes les enquêtes)
           Vert foncé : Ami
 Orange : Ennemi
 Bleu clair : Connaissance
-          Bleu foncé : Cause commune/Affinité idéologique
+          Bleu foncé : Affinité idéologique (pas exploité dans toutes les enquêtes)
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
-          Vert clair : Propriété/Appartenance 
+          Vert clair : Propriété
           Violet : nouveaux liens issus des interactions (Dialogue et/ou Investigation) toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ».
 
 Système de Difficulté pour les Enquêtes 
@@ -698,7 +702,7 @@ Système de Difficulté pour les Enquêtes
 	- Au départ, le joueur n’a accès qu’aux enquêtes de niveau 1 et 2. Puis toutes les 3 enquêtes réussies dans ces niveaux de difficulté, il a accès au niveau de difficulté suivant et ainsi de suite.
 	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 4 aux jets de dé !
 	- Plus le niveau de difficulté sera élevé et plus il faudra de preuves pour finaliser le dossier, plus il faudra désigner de coupables et/ou de complices (voir plus bas, à la fin du doc.).
-	- Un type d’enquête mené ne réapparaît que toutes 5 enquêtes différentes menées ensuite (afin de « forcer » la variété). Par ex., Une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas 5 d’un autre type.
+	- Un type d’enquête mené ne réapparaît que toutes 5 enquêtes différentes menées (résolues ou non) ensuite (afin de « forcer » la variété). Par ex., Une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas 5 d’un autre type.
 
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
