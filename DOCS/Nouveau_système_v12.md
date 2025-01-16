@@ -10,7 +10,7 @@ Caractéristiques du Joueur
 	- Pas d’âge non plus, on s’en fout totalement aussi !
 
 Les caractéristiques principales
-	- À la création du personnage, 11 points sont à répartir entre PHY, MEN et HEAnom. avec un minimum de 3 et un maximum de 7.
+	- À la création du personnage, 11 points à répartir entre PHY, MEN et HEAnom. avec un minimum de 3 et un maximum de 7.
 	- À la création, le personnage a HEA=HEAnom.
 	- PHY=0 et/ou MEN=0 → incapacité d‘Interagir (voir Système de Santé).
 	- HEA=0 → mort du joueur.
