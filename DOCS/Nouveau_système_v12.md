@@ -676,7 +676,7 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens : À définir, par exemple :
-          Blanc : Dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. Le seul moyen de savoir si un PNJ suit effectivement son emploi du temps et de se rendre sur place.
+          Blanc : Présence (dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. Le seul moyen de savoir si un PNJ suit effectivement son emploi du temps et de se rendre sur place)
 Gris : Dette/Influence (pas utile à toutes les enquêtes)
           Noir : Coupable/Complice/Preuve (seuls liens habilités à la validation des enquêtes) Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
           Rose : Intime (pas exploité dans toutes les enquêtes)
@@ -687,7 +687,8 @@ Bleu clair : Connaissance
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
           Vert clair : Propriété
-          Violet : nouveaux liens issus des interactions (Dialogue et/ou Investigation) toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ».
+		  Violet clair : Trouvé (sert à se souvenir d’où vient un objet)
+          Violet foncé : nouveaux liens (issus des interactions (Dialogue et/ou Investigation) toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet »)
 
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté (exemple)

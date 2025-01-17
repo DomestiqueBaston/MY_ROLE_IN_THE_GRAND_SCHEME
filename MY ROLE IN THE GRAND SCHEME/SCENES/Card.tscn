@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dnyd4rhlcnw8v" path="res://GRAPHICS/CARD/Card_Break_In.png" id="5_rh7h4"]
 [ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Drawing_Card.ogg" id="6_1yy8m"]
 [ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Drawing_Card_Reverse.ogg" id="7_ofh61"]
-[ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Carte_Unplayable.png" id="9_e07m4"]
+[ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Carte_Closed.png" id="9_e07m4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4757"]
 size = Vector2(70, 71)
@@ -342,7 +342,7 @@ centered = false
 hframes = 5
 metadata/_edit_lock_ = true
 
-[node name="Unplayable" type="Sprite2D" parent="Card_Mask/Card_BG"]
+[node name="Closed" type="Sprite2D" parent="Card_Mask/Card_BG"]
 visible = false
 texture = ExtResource("9_e07m4")
 centered = false

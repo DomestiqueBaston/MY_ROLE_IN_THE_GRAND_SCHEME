@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtnd8jygtcmpf"]
+
+[ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="1_3n552"]
+
+[node name="Right_Click_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -562.0
+offset_bottom = -207.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+size = Vector2i(78, 153)
+visible = true
+max_size = Vector2i(78, 153)
+keep_title_visible = true
+theme = ExtResource("1_3n552")
+submenu_popup_delay = 0.2
+item_count = 17
+item_0/text = "Dialogue"
+item_1/text = "Investigate"
+item_1/id = 1
+item_2/text = "  - - - - - - - -  "
+item_2/id = 2
+item_2/separator = true
+item_3/text = "Create link..."
+item_3/id = 3
+item_4/text = "Modify link..."
+item_4/id = 4
+item_5/text = "Certify link"
+item_5/id = 5
+item_6/text = "Uncertify link"
+item_6/id = 6
+item_7/text = "Delete link"
+item_7/id = 7
+item_8/text = "  - - - - - - - -  "
+item_8/id = 8
+item_8/separator = true
+item_9/text = "Pay bill..."
+item_9/id = 9
+item_10/text = "Buy search pass"
+item_10/id = 10
+item_11/text = "  - - - - - - - -  "
+item_11/id = 11
+item_11/separator = true
+item_12/text = "Visit the Doc."
+item_12/id = 12
+item_13/text = "See Morpho"
+item_13/id = 13
+item_14/text = "  - - - - - - - -  "
+item_14/id = 14
+item_14/separator = true
+item_15/text = "Go to sleep..."
+item_15/id = 15
+item_16/text = "Pass time"
+item_16/id = 16
