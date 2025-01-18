@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://dwmkmvdoaqflh"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://dwmkmvdoaqflh"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_urqm1"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_41kvq"]
 [ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="3_cm3n0"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_7hvia"]
+[ext_resource type="Texture2D" uid="uid://dlu5emhasmh3n" path="res://GRAPHICS/UI/Arrow_Normal_Right.png" id="5_ftk21"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -133,6 +134,7 @@ PopupMenu/icons/radio_checked = ExtResource("4_7hvia")
 PopupMenu/icons/radio_checked_disabled = ExtResource("4_7hvia")
 PopupMenu/icons/radio_unchecked = ExtResource("4_7hvia")
 PopupMenu/icons/radio_unchecked_disabled = ExtResource("4_7hvia")
+PopupMenu/icons/submenu = ExtResource("5_ftk21")
 PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
 PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")

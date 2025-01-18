@@ -4,23 +4,18 @@
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="Script" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
 
-[node name="Top_Bar" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 16.0
-theme = ExtResource("1_2tgjx")
+[node name="Top_Bar" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="Date_Time" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.005
 anchor_right = 0.005
-offset_left = -0.2
+offset_left = 3.0
 offset_top = 1.0
-offset_right = 53.8
+offset_right = 57.0
 offset_bottom = 9.0
+theme = ExtResource("1_2tgjx")
 metadata/_edit_lock_ = true
 
 [node name="Day" type="Label" parent="Date_Time"]
@@ -42,8 +37,7 @@ metadata/_edit_lock_ = true
 [node name="Menus" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 238.0
-offset_bottom = 13.0
+theme = ExtResource("1_2tgjx")
 metadata/_edit_lock_ = true
 
 [node name="Double_Bar_1" type="Label" parent="Menus"]
@@ -56,29 +50,42 @@ theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " ||"
 metadata/_edit_lock_ = true
 
-[node name="Calendar" type="MenuButton" parent="Menus"]
+[node name="Dailies" type="MenuButton" parent="Menus"]
 layout_mode = 2
-offset_left = 63.0
-offset_top = -3.0
-offset_right = 109.0
-offset_bottom = 13.0
+offset_left = 58.0
+offset_top = -1.0
+offset_right = 104.0
+offset_bottom = 11.0
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
-text = "Calendar"
-item_count = 3
-popup/item_0/text = "No"
-popup/item_1/text = "More"
+text = "Dailies"
+switch_on_hover = true
+item_count = 8
+popup/item_0/text = "Pay the bill..."
+popup/item_1/text = "Buy search warrant"
 popup/item_1/id = 1
-popup/item_2/text = "Calendar!"
+popup/item_2/text = " - - - - - - - - - - - "
 popup/item_2/id = 2
+popup/item_2/separator = true
+popup/item_3/text = "Visit the Doctor F."
+popup/item_3/id = 3
+popup/item_4/text = "See Morpho the dealer"
+popup/item_4/id = 4
+popup/item_5/text = " - - - - - - - - - - - "
+popup/item_5/id = 5
+popup/item_5/separator = true
+popup/item_6/text = "Go to sleep..."
+popup/item_6/id = 6
+popup/item_7/text = "Pass time"
+popup/item_7/id = 7
 script = ExtResource("3_wxjko")
 metadata/_edit_lock_ = true
 
 [node name="Single_Bar_1" type="Label" parent="Menus"]
 layout_mode = 2
-offset_left = 105.0
+offset_left = 94.0
 offset_top = 1.0
-offset_right = 114.0
+offset_right = 103.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
@@ -86,19 +93,22 @@ metadata/_edit_lock_ = true
 
 [node name="Cases" type="MenuButton" parent="Menus"]
 layout_mode = 2
-offset_left = 107.0
-offset_top = -3.0
-offset_right = 153.0
-offset_bottom = 13.0
+offset_left = 96.0
+offset_top = -1.0
+offset_right = 142.0
+offset_bottom = 11.0
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Cases"
+switch_on_hover = true
 item_count = 4
 popup/item_0/text = "Paused"
 popup/item_1/text = "Solved"
 popup/item_1/id = 1
+popup/item_1/disabled = true
 popup/item_2/text = "Revoked"
 popup/item_2/id = 2
+popup/item_2/disabled = true
 popup/item_3/text = "Give up case!"
 popup/item_3/id = 3
 script = ExtResource("3_wxjko")
@@ -106,9 +116,9 @@ metadata/_edit_lock_ = true
 
 [node name="Single_Bar_2" type="Label" parent="Menus"]
 layout_mode = 2
-offset_left = 142.0
+offset_left = 131.0
 offset_top = 1.0
-offset_right = 151.0
+offset_right = 140.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
@@ -116,11 +126,13 @@ metadata/_edit_lock_ = true
 
 [node name="Cards" type="MenuButton" parent="Menus"]
 layout_mode = 2
-offset_left = 144.0
-offset_top = -3.0
-offset_right = 190.0
-offset_bottom = 13.0
+offset_left = 133.0
+offset_top = -1.0
+offset_right = 179.0
+offset_bottom = 11.0
 theme = ExtResource("1_2tgjx")
+disabled = true
+keep_pressed_outside = true
 button_group = ExtResource("2_mdfj4")
 text = "Cards
 "
@@ -131,9 +143,9 @@ metadata/_edit_lock_ = true
 
 [node name="Single_Bar_3" type="Label" parent="Menus"]
 layout_mode = 2
-offset_left = 179.0
+offset_left = 168.0
 offset_top = 1.0
-offset_right = 188.0
+offset_right = 177.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
@@ -141,13 +153,14 @@ metadata/_edit_lock_ = true
 
 [node name="Whatever" type="MenuButton" parent="Menus"]
 layout_mode = 2
-offset_left = 186.0
-offset_top = -3.0
-offset_right = 235.0
-offset_bottom = 13.0
+offset_left = 176.0
+offset_top = -1.0
+offset_right = 225.0
+offset_bottom = 11.0
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Whatever"
+switch_on_hover = true
 item_count = 5
 popup/item_0/text = "Game"
 popup/item_1/text = "Graphics"
@@ -163,9 +176,9 @@ metadata/_edit_lock_ = true
 
 [node name="Double_Bar_2" type="Label" parent="Menus"]
 layout_mode = 2
-offset_left = 228.0
+offset_left = 221.0
 offset_top = 1.0
-offset_right = 237.0
+offset_right = 230.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " ||"
@@ -174,13 +187,12 @@ metadata/_edit_lock_ = true
 [node name="Character_Stats" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(364, 8)
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -366.0
+offset_left = 274.0
 offset_top = 1.0
-offset_right = -2.0
+offset_right = 638.0
 offset_bottom = 9.0
 grow_horizontal = 0
 pivot_offset = Vector2(325, 10)
@@ -205,7 +217,7 @@ offset_bottom = 8.0
 grow_horizontal = 0
 pivot_offset = Vector2(80, 0)
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
-text = "Player's name"
+text = "Player's name..."
 horizontal_alignment = 2
 metadata/_edit_lock_ = true
 

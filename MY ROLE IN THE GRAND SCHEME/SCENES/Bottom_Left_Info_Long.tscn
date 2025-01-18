@@ -2,20 +2,17 @@
 
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_litdg"]
 
-[node name="Bottom_Left_Info" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Bottom_Left_Info" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 143.0
 offset_right = 123.0
 offset_bottom = 343.0
-metadata/_edit_lock_ = true
-
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_litdg")

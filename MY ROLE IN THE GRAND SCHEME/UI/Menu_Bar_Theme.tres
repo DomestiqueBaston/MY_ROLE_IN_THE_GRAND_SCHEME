@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=28 format=3 uid="uid://de714pwpjqlk2"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://de714pwpjqlk2"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_wyjtv"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_lksj3"]
 [ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="3_x4acm"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_tcgu4"]
+[ext_resource type="Texture2D" uid="uid://dlu5emhasmh3n" path="res://GRAPHICS/UI/Arrow_Normal_Right.png" id="5_ce4ah"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -27,6 +28,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk2s2"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mav42"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d120g"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q4vc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmwgf"]
@@ -41,6 +46,7 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w20g5"]
 bg_color = Color(0, 0, 0, 0.686275)
+border_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
 
@@ -101,6 +107,8 @@ MenuButton/colors/font_hover_color = Color(1, 1, 1, 1)
 MenuButton/colors/font_pressed_color = Color(1, 1, 1, 1)
 MenuButton/font_sizes/font_size = 8
 MenuButton/fonts/font = ExtResource("2_lksj3")
+MenuButton/styles/disabled = SubResource("StyleBoxEmpty_mav42")
+MenuButton/styles/normal = SubResource("StyleBoxEmpty_d120g")
 OptionButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 OptionButton/colors/font_disabled_color = Color(0.2, 0.270588, 0.219608, 0.501961)
 OptionButton/colors/font_focus_color = Color(0.2, 0.270588, 0.219608, 0.823529)
@@ -112,10 +120,10 @@ OptionButton/icons/arrow = ExtResource("3_x4acm")
 OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0, 0, 0)
 PopupMenu/colors/font_color = Color(1, 1, 1, 0.686275)
-PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
+PopupMenu/colors/font_disabled_color = Color(1, 1, 1, 0.360784)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_outline_color = Color(0, 0, 0, 1)
-PopupMenu/colors/font_separator_color = Color(0.88, 0.88, 0.88, 0)
+PopupMenu/colors/font_separator_color = Color(1, 1, 1, 0.25098)
 PopupMenu/constants/item_end_padding = -2
 PopupMenu/constants/item_start_padding = 4
 PopupMenu/constants/outline_size = 3
@@ -126,6 +134,7 @@ PopupMenu/icons/radio_checked = ExtResource("4_tcgu4")
 PopupMenu/icons/radio_checked_disabled = ExtResource("4_tcgu4")
 PopupMenu/icons/radio_unchecked = ExtResource("4_tcgu4")
 PopupMenu/icons/radio_unchecked_disabled = ExtResource("4_tcgu4")
+PopupMenu/icons/submenu = ExtResource("5_ce4ah")
 PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
 PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxEmpty_50lrn")

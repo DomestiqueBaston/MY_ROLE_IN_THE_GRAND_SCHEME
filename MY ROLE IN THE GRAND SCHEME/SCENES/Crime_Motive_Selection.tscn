@@ -5,19 +5,14 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
 
-[node name="Crime_Motive_Selection" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Crime_Motive_Selection" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Motive_Selector" type="PanelContainer" parent="."]
 offset_left = 149.0
 offset_top = 29.0
 offset_right = 234.0
 offset_bottom = 146.0
-metadata/_edit_lock_ = true
-
-[node name="Motive_Selector" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_right = 85.0
-offset_bottom = 117.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
 metadata/_edit_lock_ = true
 
