@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=14 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_7t2xs"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -6,14 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Fonce_Rose.png" id="4_68wvn"]
 [ext_resource type="Texture2D" uid="uid://bng8mdjv28u6h" path="res://GRAPHICS/UI/Pointille_Blanc_Transparent.png" id="5_nrm53"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/UI/Plein_Jaune.png" id="6_jtpuj"]
-[ext_resource type="PackedScene" uid="uid://cmdruf4bxouoa" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
+[ext_resource type="PackedScene" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Place.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://lv8nyh7xqyqp" path="res://SCENES/Possible_Clues_Clamp.tscn" id="9_8aplo"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="10_rn5oa"]
 [ext_resource type="PackedScene" uid="uid://dyacbsj8nks3" path="res://SCENES/Crime_Motive_Selection.tscn" id="11_dx2ym"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
-[ext_resource type="PackedScene" uid="uid://dpmpj36bqaoin" path="res://SCENES/Mouse_Cursor.tscn" id="13_yr2vt"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7t2xs")
@@ -274,8 +273,6 @@ visible = true
 [node name="Crime_Motive_Selection" parent="." instance=ExtResource("11_dx2ym")]
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
-
-[node name="Mouse_Cursor" parent="." instance=ExtResource("13_yr2vt")]
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
 
