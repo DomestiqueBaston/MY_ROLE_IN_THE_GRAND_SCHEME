@@ -396,7 +396,6 @@ metadata/_edit_lock_ = true
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("10_27biq")]
-visible = false
 
 [editable path="TMP/Fallback/Card17"]
 [editable path="TMP/Fallback/Card18"]

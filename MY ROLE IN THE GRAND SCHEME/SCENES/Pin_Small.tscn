@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmdruf4bxouoa"]
+
+[ext_resource type="Texture2D" uid="uid://bttgel1ek480w" path="res://GRAPHICS/UI/Pin_Small.png" id="2_121c2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
+radius = 4.0
+
+[node name="Pin_Small" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Collider" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 18
+metadata/_edit_lock_ = true
+
+[node name="Pin" type="CollisionShape2D" parent="Collider"]
+shape = SubResource("CircleShape2D_bfoqd")
+metadata/_edit_lock_ = true
+
+[node name="Pin" type="Sprite2D" parent="."]
+texture = ExtResource("2_121c2")
+metadata/_edit_lock_ = true

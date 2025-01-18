@@ -16,6 +16,7 @@ shader_parameter/blur_samples = 15
 
 [node name="Shader_Overlay" type="CanvasLayer"]
 layer = 10
+visible = false
 
 [node name="Grain" type="ColorRect" parent="."]
 z_index = 10

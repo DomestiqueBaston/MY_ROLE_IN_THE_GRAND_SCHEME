@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bttgel1ek480w"
-path="res://.godot/imported/Pin.png-d98ea80e6061a9d8c1a40d051adcefd3.ctex"
+uid="uid://baudxdsufh5l1"
+path="res://.godot/imported/Mouse_Cross.png-d462e1a8c13ac28111dbe2d5775b2583.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/UI/Pin.png"
-dest_files=["res://.godot/imported/Pin.png-d98ea80e6061a9d8c1a40d051adcefd3.ctex"]
+source_file="res://GRAPHICS/UI/Mouse_Cross.png"
+dest_files=["res://.godot/imported/Mouse_Cross.png-d462e1a8c13ac28111dbe2d5775b2583.ctex"]
 
 [params]
 

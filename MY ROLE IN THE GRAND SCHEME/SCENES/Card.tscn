@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=20 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="2_y3cdu"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dnyd4rhlcnw8v" path="res://GRAPHICS/CARD/Card_Break_In.png" id="5_rh7h4"]
 [ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Drawing_Card.ogg" id="6_1yy8m"]
 [ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Drawing_Card_Reverse.ogg" id="7_ofh61"]
-[ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Carte_Closed.png" id="9_e07m4"]
+[ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Card_Closed.png" id="9_e07m4"]
+[ext_resource type="Texture2D" uid="uid://bo3kge1u3ick1" path="res://GRAPHICS/CARD/Card_Jail.png" id="9_xm6x5"]
+[ext_resource type="Texture2D" uid="uid://b28mg50sibecp" path="res://GRAPHICS/CARD/Card_Dead.png" id="11_v12mt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4757"]
 size = Vector2(70, 71)
@@ -342,9 +344,21 @@ centered = false
 hframes = 5
 metadata/_edit_lock_ = true
 
+[node name="Jail" type="Sprite2D" parent="Card_Mask/Card_BG"]
+visible = false
+texture = ExtResource("9_xm6x5")
+centered = false
+metadata/_edit_lock_ = true
+
 [node name="Closed" type="Sprite2D" parent="Card_Mask/Card_BG"]
 visible = false
 texture = ExtResource("9_e07m4")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Dead" type="Sprite2D" parent="Card_Mask/Card_BG"]
+visible = false
+texture = ExtResource("11_v12mt")
 centered = false
 metadata/_edit_lock_ = true
 

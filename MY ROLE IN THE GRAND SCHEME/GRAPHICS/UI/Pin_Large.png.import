@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkivcrqpevt45"
-path="res://.godot/imported/Carte_Closed.png-5d7b2dcbe1316888dee5291e5d1377c6.ctex"
+uid="uid://k5c2gq6lf752"
+path="res://.godot/imported/Pin_Large.png-60bf5ecaac2716d644dabf77fdb03e3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD/Carte_Closed.png"
-dest_files=["res://.godot/imported/Carte_Closed.png-5d7b2dcbe1316888dee5291e5d1377c6.ctex"]
+source_file="res://GRAPHICS/UI/Pin_Large.png"
+dest_files=["res://.godot/imported/Pin_Large.png-60bf5ecaac2716d644dabf77fdb03e3b.ctex"]
 
 [params]
 

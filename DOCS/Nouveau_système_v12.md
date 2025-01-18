@@ -196,7 +196,8 @@ Génération des caractéristiques des PNJs
 Progression des PNJs (pas du joueur)
 	- Les PNJs peuvent également progresser (de la même manière que le joueur).
 	- Seules les réussites et échecs critiques (1 ou 10 « naturel » obtenus directement sur le dé, avant l’application de tout modificateur) font varier les caractéristiques principales du joueur par pas de ±1 (réussite critique : +1 et échec critique : -1) et ce uniquement après avoir évalué le résultat de l’action en cours.
-	- Quand HEA évolue, HEAnom. aussi (et inversement).
+	- Dans ce cas, quand HEA évolue, HEAnom. aussi (et inversement) en respectant les valeurs minimales et maximales.
+	- Chaque jour, si les PNJs n’ont pas progressé en interagissant avec le joueur, ils auront 10% de chance qu’au hasard, 1 de leurs caractéristiques PHY, MEN et HEAnom (et donc HEA) évoluent de ±1 en respectant les valeurs minimales et maximales.
 Mécanismes de jeu
 
 Caractéristiques particulières du jeu
@@ -687,7 +688,7 @@ Bleu clair : Connaissance
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
           Vert clair : Propriété
-		  Violet clair : Trouvé (sert à se souvenir d’où vient un objet)
+Violet clair : Trouvé (sert à se souvenir d’où vient un objet)
           Violet foncé : nouveaux liens (issus des interactions (Dialogue et/ou Investigation) toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet »)
 
 Système de Difficulté pour les Enquêtes 

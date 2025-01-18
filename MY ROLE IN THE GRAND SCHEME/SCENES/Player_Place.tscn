@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://euyms52mpy48"]
+[gd_scene load_steps=11 format=3 uid="uid://euyms52mpy48"]
 
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_efxgk"]
 [ext_resource type="Texture2D" uid="uid://xjwjfkatpljx" path="res://GRAPHICS/UI/Player_Place.png" id="2_cf184"]
-[ext_resource type="Texture2D" uid="uid://bttgel1ek480w" path="res://GRAPHICS/UI/Pin.png" id="3_cldar"]
+[ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/UI/Pin_Large.png" id="2_fvhge"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
 
@@ -45,6 +45,45 @@ _data = {
 "Rotation": SubResource("Animation_3mb1w")
 }
 
+[sub_resource type="Animation" id="Animation_84ttp"]
+resource_name = "Blink"
+length = 0.666673
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.266667, 0.333333, 0.533333, 0.6, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0.4224, 0.46596, 0.66, 1), Color(0.4224, 0.46596, 0.66, 1), Color(0.3776, 0.41654, 0.59, 1), Color(0.2432, 0.26828, 0.38, 1), Color(0.243137, 0.266667, 0.380392, 1), Color(0.3328, 0.36712, 0.52, 1), Color(0.4224, 0.46596, 0.66, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wet12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Pin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.584314, 0.643137, 0.909804, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1jruo"]
+_data = {
+"Blink": SubResource("Animation_84ttp"),
+"RESET": SubResource("Animation_wet12")
+}
+
 [node name="Player_Place" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -52,7 +91,17 @@ tooltip_text = "You are here!"
 theme = ExtResource("1_efxgk")
 metadata/_edit_lock_ = true
 
+[node name="Collider" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 18
+metadata/_edit_lock_ = true
+
+[node name="Pin" type="CollisionShape2D" parent="Collider"]
+shape = SubResource("CircleShape2D_bfoqd")
+metadata/_edit_lock_ = true
+
 [node name="Pin" type="TextureRect" parent="."]
+self_modulate = Color(0.584314, 0.643137, 0.909804, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -65,7 +114,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_cldar")
+texture = ExtResource("2_fvhge")
 metadata/_edit_lock_ = true
 
 [node name="Ring" type="TextureRect" parent="."]
@@ -87,18 +136,15 @@ tooltip_text = "You are here!"
 texture = ExtResource("2_cf184")
 metadata/_edit_lock_ = true
 
-[node name="Collider" type="Area2D" parent="."]
-visible = false
-collision_layer = 4
-collision_mask = 18
-metadata/_edit_lock_ = true
-
-[node name="Pin" type="CollisionShape2D" parent="Collider"]
-shape = SubResource("CircleShape2D_bfoqd")
-metadata/_edit_lock_ = true
-
-[node name="Animation" type="AnimationPlayer" parent="."]
+[node name="Ring_Animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0d3ra")
 }
 autoplay = "Rotation"
+
+[node name="Pin_Animation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Ring_Animation")
+libraries = {
+"": SubResource("AnimationLibrary_1jruo")
+}
+autoplay = "Blink"
