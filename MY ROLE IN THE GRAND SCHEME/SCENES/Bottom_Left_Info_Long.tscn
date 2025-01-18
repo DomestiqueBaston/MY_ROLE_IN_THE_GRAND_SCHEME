@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_litdg"]
 
-[node name="Bottom_Left_Info" type="Node2D"]
+[node name="Bottom_Left_Info_Long" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]

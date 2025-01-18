@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=15 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_7t2xs"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -6,13 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Fonce_Rose.png" id="4_68wvn"]
 [ext_resource type="Texture2D" uid="uid://bng8mdjv28u6h" path="res://GRAPHICS/UI/Pointille_Blanc_Transparent.png" id="5_nrm53"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/UI/Plein_Jaune.png" id="6_jtpuj"]
-[ext_resource type="PackedScene" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
+[ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Place.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://lv8nyh7xqyqp" path="res://SCENES/Possible_Clues_Clamp.tscn" id="9_8aplo"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="10_rn5oa"]
 [ext_resource type="PackedScene" uid="uid://dyacbsj8nks3" path="res://SCENES/Crime_Motive_Selection.tscn" id="11_dx2ym"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km17i"]
+size = Vector2(106, 106)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7t2xs")
@@ -23,15 +26,44 @@ texture = ExtResource("2_ebllg")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Playground_Collider" type="Area2D" parent="."]
-visible = false
-collision_layer = 16
-collision_mask = 7
+[node name="Colliders" type="Node2D" parent="Main_BG"]
 metadata/_edit_lock_ = true
 
-[node name="Playground" type="CollisionPolygon2D" parent="Playground_Collider"]
+[node name="Playground_Collider" type="Area2D" parent="Main_BG/Colliders"]
+collision_layer = 0
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Playground" type="CollisionPolygon2D" parent="Main_BG/Colliders/Playground_Collider"]
 polygon = PackedVector2Array(234, 29, 618, 29, 618, 338, 148, 338, 148, 45, 234, 45)
 metadata/_edit_lock_ = true
+
+[node name="Clue_Collider" type="Area2D" parent="Main_BG/Colliders"]
+position = Vector2(1, 0)
+collision_layer = 0
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Clue" type="CollisionShape2D" parent="Main_BG/Colliders/Clue_Collider"]
+position = Vector2(66, 89)
+shape = SubResource("RectangleShape2D_km17i")
+metadata/_edit_lock_ = true
+
+[node name="Card_Places" type="Node2D" parent="Main_BG"]
+metadata/_edit_lock_ = true
+
+[node name="Mastery_Card_Places" type="Node2D" parent="Main_BG/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Main_BG/Card_Places/Mastery_Card_Places"]
+position = Vector2(16, 39)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Main_BG/Card_Places/Mastery_Card_Places"]
+position = Vector2(44, 39)
+metadata/_edit_lock_ = true
+
+[node name="Possible_Clues_Clamp" parent="." instance=ExtResource("9_8aplo")]
 
 [node name="TMP" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -146,11 +178,11 @@ position = Vector2(232, 220)
 [node name="Pin_Small5" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(519, 170)
 
+[node name="Pin_Small6" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
+position = Vector2(544, 64)
+
 [node name="Player_Place" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
-offset_left = 544.0
-offset_top = 64.0
-offset_right = 544.0
-offset_bottom = 64.0
+position = Vector2(544, 64)
 
 [node name="Possible_Clues_Cards_TMP" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
@@ -265,8 +297,6 @@ visible = false
 
 [node name="Average_Health" parent="TMP/Possible_Clues_Cards_TMP/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
 visible = true
-
-[node name="Possible_Clues_Clamp" parent="." instance=ExtResource("9_8aplo")]
 
 [node name="Bottom_Left_Info" parent="." instance=ExtResource("10_rn5oa")]
 

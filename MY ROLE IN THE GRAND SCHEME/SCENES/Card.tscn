@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=21 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="2_y3cdu"]
@@ -19,6 +19,9 @@ size = Vector2(70, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptib8"]
 size = Vector2(70, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
+size = Vector2(70, 23)
 
 [sub_resource type="Animation" id="Animation_kxf5h"]
 resource_name = "Expand_Card"
@@ -381,6 +384,14 @@ metadata/_edit_lock_ = true
 [node name="Collider" type="CollisionShape2D" parent="Card_Mask/Card_BG/Top_Collider"]
 position = Vector2(37, 14.5)
 shape = SubResource("RectangleShape2D_ptib8")
+metadata/_edit_lock_ = true
+
+[node name="Card_Collider" type="Area2D" parent="Card_Mask"]
+metadata/_edit_lock_ = true
+
+[node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Collider"]
+position = Vector2(37, 13.5)
+shape = SubResource("RectangleShape2D_hp5bo")
 metadata/_edit_lock_ = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]
