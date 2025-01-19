@@ -244,17 +244,16 @@ _data = {
 "RESET": SubResource("Animation_tqvto")
 }
 
-[node name="Paranoia_Overlay" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="Paranoia_Overlay" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="Center" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 960.0
+offset_bottom = 540.0
 pivot_offset = Vector2(320, 180)
 metadata/_edit_lock_ = true
 
@@ -297,7 +296,6 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Violet_Filter" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.54736, 0.1672, 0.88, 0.156863)

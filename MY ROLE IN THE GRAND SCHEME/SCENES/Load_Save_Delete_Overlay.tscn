@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://bldgrur6y3rhv"]
+[gd_scene load_steps=16 format=3 uid="uid://bldgrur6y3rhv"]
 
 [ext_resource type="Texture2D" uid="uid://do7g2c24mmsbk" path="res://GRAPHICS/LOAD_SAVE_DELETE/Load_Save_Delete_BG.png" id="1_b07ca"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="2_8ri13"]
-[ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="2_m3c2s"]
+[ext_resource type="Theme" uid="uid://bjtyhq3g0w8r3" path="res://UI/LSD_Theme.tres" id="1_x0dex"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_4fe4i"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="5_vtoms"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="6_gq8qs"]
@@ -141,15 +140,10 @@ _data = {
 "RESET": SubResource("Animation_nfkjl")
 }
 
-[node name="Load_Save_Delete" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="Load_Save_Delete" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
@@ -161,6 +155,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
+theme = ExtResource("1_x0dex")
 metadata/_edit_lock_ = true
 
 [node name="Load_Save_Delete_BG" type="Sprite2D" parent="Load_Save_Delete_Panel"]
@@ -174,13 +169,12 @@ offset_left = 87.0
 offset_top = 116.0
 offset_right = 230.0
 offset_bottom = 314.0
-theme = ExtResource("2_8ri13")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_t7fen")
 metadata/_edit_lock_ = true
 
 [node name="ItemList" type="ItemList" parent="Load_Save_Delete_Panel/PanelContainer"]
 layout_mode = 2
-theme = ExtResource("2_8ri13")
+theme = ExtResource("1_x0dex")
 item_count = 20
 item_0/text = "Test"
 item_1/text = "Autre test"
@@ -210,8 +204,9 @@ offset_left = 88.0
 offset_top = 97.0
 offset_right = 231.0
 offset_bottom = 105.0
-theme = ExtResource("2_m3c2s")
+theme = ExtResource("1_x0dex")
 theme_override_colors/font_color = Color(0.866667, 0.905882, 0.941176, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
 text = "     -      -       "
 horizontal_alignment = 1
 metadata/_edit_lock_ = true

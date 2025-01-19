@@ -1,19 +1,19 @@
 [gd_scene load_steps=20 format=3 uid="uid://c0ukqcgb1ay3s"]
 
-[ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_SELECTION/Frame.png" id="1_7kvak"]
-[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="2_5myo3"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="2_r8krp"]
-[ext_resource type="Texture2D" uid="uid://gvyelslcisso" path="res://GRAPHICS/CARD_SELECTION/Ok_Normal.png" id="3_mq53m"]
-[ext_resource type="Texture2D" uid="uid://chh72py8tur0" path="res://GRAPHICS/CARD_SELECTION/Ok_Hover.png" id="4_mosnf"]
-[ext_resource type="BitMap" uid="uid://drh3npcujiq6o" path="res://GRAPHICS/CARD_SELECTION/Ok_Mask.png" id="5_ky4y5"]
-[ext_resource type="Texture2D" uid="uid://cn782xqxlk71a" path="res://GRAPHICS/CARD_SELECTION/Exit_Normal.png" id="6_xc5go"]
-[ext_resource type="Texture2D" uid="uid://ilhb6s2w3iuo" path="res://GRAPHICS/CARD_SELECTION/Exit_Hover.png" id="7_q7f8a"]
-[ext_resource type="BitMap" uid="uid://davrldnroxoyu" path="res://GRAPHICS/CARD_SELECTION/Exit_Mask.png" id="8_l5fsx"]
-[ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/CARD_SELECTION/Trash_Normal.png" id="9_lssqb"]
-[ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/CARD_SELECTION/Trash_Hover.png" id="10_1h4u3"]
-[ext_resource type="BitMap" uid="uid://y603kq1ejhcn" path="res://GRAPHICS/CARD_SELECTION/Trash_Mask.png" id="11_ysq3u"]
-[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="13_y66ar"]
-[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="14_iwa52"]
+[ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_MANAGEMENT/Frame.png" id="1_f15cm"]
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="2_v66rt"]
+[ext_resource type="Texture2D" uid="uid://gvyelslcisso" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Normal.png" id="3_87iat"]
+[ext_resource type="Texture2D" uid="uid://chh72py8tur0" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Hover.png" id="4_1l4kf"]
+[ext_resource type="BitMap" uid="uid://drh3npcujiq6o" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Mask.png" id="5_8b577"]
+[ext_resource type="Texture2D" uid="uid://cn782xqxlk71a" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Normal.png" id="6_wbsna"]
+[ext_resource type="Texture2D" uid="uid://ilhb6s2w3iuo" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Hover.png" id="7_awawb"]
+[ext_resource type="BitMap" uid="uid://davrldnroxoyu" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Mask.png" id="8_cgtwl"]
+[ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Normal.png" id="9_eg8nv"]
+[ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Hover.png" id="10_6pms8"]
+[ext_resource type="BitMap" uid="uid://y603kq1ejhcn" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Mask.png" id="11_rshtu"]
+[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="12_1t2xr"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="13_iwurd"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="14_ukbs4"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_e1gkw"]
 
@@ -36,7 +36,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Card_Selection_Panel:position")
+tracks/1/path = NodePath("Card_Management_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -55,7 +55,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("13_y66ar")
+"stream": ExtResource("13_iwurd")
 }],
 "times": PackedFloat32Array(0.028334)
 }
@@ -80,7 +80,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Card_Selection_Panel:position")
+tracks/1/path = NodePath("Card_Management_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -99,7 +99,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("14_iwa52")
+"stream": ExtResource("14_ukbs4")
 }],
 "times": PackedFloat32Array(0.0808337)
 }
@@ -110,7 +110,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Card_Selection_Panel:position")
+tracks/0/path = NodePath("Card_Management_Panel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -139,99 +139,93 @@ _data = {
 "RESET": SubResource("Animation_vfroo")
 }
 
-[node name="Card_Selection" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="Card_Management" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 metadata/_edit_lock_ = true
 
-[node name="Card_Selection_Panel" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -640.0
-offset_bottom = 360.0
+[node name="Card_Management_Panel" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Painting" type="Sprite2D" parent="Card_Selection_Panel"]
-texture = ExtResource("1_7kvak")
+[node name="Painting" type="Sprite2D" parent="Card_Management_Panel"]
+texture = ExtResource("1_f15cm")
 centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
-[node name="Buttons" type="Control" parent="Card_Selection_Panel"]
+[node name="Buttons" type="Control" parent="Card_Management_Panel"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 340.0
-theme = ExtResource("2_r8krp")
+theme = ExtResource("2_v66rt")
 metadata/_edit_lock_ = true
 
-[node name="Ok" type="TextureButton" parent="Card_Selection_Panel/Buttons"]
+[node name="Ok" type="TextureButton" parent="Card_Management_Panel/Buttons"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Validate the Deck"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e1gkw")
-texture_normal = ExtResource("3_mq53m")
-texture_pressed = ExtResource("3_mq53m")
-texture_hover = ExtResource("4_mosnf")
-texture_click_mask = ExtResource("5_ky4y5")
+texture_normal = ExtResource("3_87iat")
+texture_pressed = ExtResource("3_87iat")
+texture_hover = ExtResource("4_1l4kf")
+texture_click_mask = ExtResource("5_8b577")
 metadata/_edit_lock_ = true
 
-[node name="Exit" type="TextureButton" parent="Card_Selection_Panel/Buttons"]
+[node name="Exit" type="TextureButton" parent="Card_Management_Panel/Buttons"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Close that screen!"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e1gkw")
-texture_normal = ExtResource("6_xc5go")
-texture_pressed = ExtResource("6_xc5go")
-texture_hover = ExtResource("7_q7f8a")
-texture_click_mask = ExtResource("8_l5fsx")
+texture_normal = ExtResource("6_wbsna")
+texture_pressed = ExtResource("6_wbsna")
+texture_hover = ExtResource("7_awawb")
+texture_click_mask = ExtResource("8_cgtwl")
 metadata/_edit_lock_ = true
 
-[node name="Trash" type="TextureButton" parent="Card_Selection_Panel/Buttons"]
+[node name="Trash" type="TextureButton" parent="Card_Management_Panel/Buttons"]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = 223.0
+offset_top = 184.0
+offset_right = 284.0
+offset_bottom = 264.0
 tooltip_text = "Throw that card away!"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_e1gkw")
-texture_normal = ExtResource("9_lssqb")
-texture_pressed = ExtResource("9_lssqb")
-texture_hover = ExtResource("10_1h4u3")
-texture_click_mask = ExtResource("11_ysq3u")
+texture_normal = ExtResource("9_eg8nv")
+texture_pressed = ExtResource("9_eg8nv")
+texture_hover = ExtResource("10_6pms8")
+texture_click_mask = ExtResource("11_rshtu")
 metadata/_edit_lock_ = true
 
-[node name="TMP" type="Node2D" parent="Card_Selection_Panel"]
+[node name="TMP" type="Node2D" parent="Card_Management_Panel"]
 metadata/_edit_lock_ = true
 
-[node name="Card" parent="Card_Selection_Panel/TMP" instance=ExtResource("2_5myo3")]
+[node name="Card" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
 position = Vector2(75, 75)
 
-[node name="Card2" parent="Card_Selection_Panel/TMP" instance=ExtResource("2_5myo3")]
+[node name="Card2" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
 position = Vector2(245, 75)
 
-[node name="Card3" parent="Card_Selection_Panel/TMP" instance=ExtResource("2_5myo3")]
+[node name="Card3" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
 position = Vector2(320, 75)
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_m6d4b")
 }
+autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0

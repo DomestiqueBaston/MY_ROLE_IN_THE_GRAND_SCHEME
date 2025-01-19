@@ -1,10 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=21 format=3 uid="uid://cet13n014p2ub"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_yjiui"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
 [ext_resource type="Texture2D" uid="uid://c0c1572gpljxx" path="res://GRAPHICS/INTERACTION/Interaction_Hover.png" id="3_6vqkd"]
 [ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="5_46aa5"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="5_453oe"]
+[ext_resource type="Theme" uid="uid://bjtyhq3g0w8r3" path="res://UI/LSD_Theme.tres" id="5_inusv"]
 [ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="6_dhbug"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="6_v0c4c"]
 [ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="7_qrm58"]
@@ -41,7 +40,6 @@ metadata/_snap_enabled = true
 metadata/_snap_count = 4
 
 [node name="Interaction" type="Node2D"]
-script = ExtResource("1_yjiui")
 metadata/_edit_lock_ = true
 
 [node name="Interaction_BG" type="Sprite2D" parent="."]
@@ -446,6 +444,7 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
+theme = ExtResource("5_inusv")
 metadata/_edit_lock_ = true
 
 [node name="Bring_It_On" type="TextureButton" parent="Button"]
@@ -453,7 +452,6 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Validate the Interaction"
-theme = ExtResource("5_453oe")
 texture_normal = ExtResource("5_46aa5")
 texture_pressed = ExtResource("7_qrm58")
 texture_hover = ExtResource("6_dhbug")
@@ -466,7 +464,7 @@ metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 
-[node name="Shader_Overlay" parent="." instance=ExtResource("10_27biq")]
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("10_27biq")]
 
 [editable path="TMP/Fallback/Card17"]
 [editable path="TMP/Fallback/Card18"]

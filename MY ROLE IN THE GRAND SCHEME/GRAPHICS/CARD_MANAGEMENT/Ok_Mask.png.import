@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://drh3npcujiq6o"
+path="res://.godot/imported/Ok_Mask.png-63fa21086c4990a284ddbb22f9fc5c3a.res"
+
+[deps]
+
+source_file="res://GRAPHICS/CARD_MANAGEMENT/Ok_Mask.png"
+dest_files=["res://.godot/imported/Ok_Mask.png-63fa21086c4990a284ddbb22f9fc5c3a.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

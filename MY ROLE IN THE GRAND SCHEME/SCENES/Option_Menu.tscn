@@ -1,10 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://dxsbbamjqxk1s"]
+[gd_scene load_steps=30 format=3 uid="uid://dxsbbamjqxk1s"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_yehb7"]
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="2_48l2d"]
-[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="3_32i1l"]
 [ext_resource type="ButtonGroup" uid="uid://s2v30wdlf28n" path="res://UI/Character_Generation_Button_Group.tres" id="4_2hmdr"]
+[ext_resource type="Texture2D" uid="uid://dpny7h4hu3sgy" path="res://GRAPHICS/SETTINGS/Secrets_Button_Pressed_Hover.png" id="4_7fqqp"]
 [ext_resource type="Texture2D" uid="uid://dmhmlsek5h32r" path="res://GRAPHICS/SETTINGS/Credits_Button_Pressed.png" id="5_ml4ta"]
+[ext_resource type="BitMap" uid="uid://d3y1at3b2ac08" path="res://GRAPHICS/SETTINGS/Secrets_Button_Mask.png" id="5_spbdo"]
 [ext_resource type="Texture2D" uid="uid://dpgqkv2v1cxrb" path="res://GRAPHICS/SETTINGS/Credits_Button_Hover.png" id="6_munto"]
 [ext_resource type="BitMap" uid="uid://b0aff0tqbymvi" path="res://GRAPHICS/SETTINGS/Credits_Button_Mask.png" id="7_qma0d"]
 [ext_resource type="Texture2D" uid="uid://mp2y4uhtqtyo" path="res://GRAPHICS/SETTINGS/Language_Button_Pressed.png" id="8_5e8cg"]
@@ -29,10 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Hover.png" id="27_ohohw"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/SETTINGS/Tutorial_Button_Mask.png" id="28_w2fpp"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="29_2rx1x"]
-[ext_resource type="PackedScene" uid="uid://dpmpj36bqaoin" path="res://SCENES/Mouse_Cursor.tscn" id="29_17w45"]
 
 [node name="Option_Menu" type="Node2D"]
-script = ExtResource("1_yehb7")
 metadata/_edit_lock_ = true
 
 [node name="Option_Menu_BG" type="Sprite2D" parent="."]
@@ -43,28 +41,14 @@ metadata/_edit_lock_ = true
 [node name="Drawer_Names" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
-[node name="Useless_Label" type="Label" parent="Drawer_Names"]
-self_modulate = Color(1, 0.91, 0.7, 0.686275)
+[node name="Secrets" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 287.0
-offset_right = 125.0
-offset_bottom = 307.0
-pivot_offset = Vector2(45, 11)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "Secrets they're
-hiding from us!"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_right = 640.0
+offset_bottom = 360.0
+texture_hover = ExtResource("4_7fqqp")
+texture_click_mask = ExtResource("5_spbdo")
 metadata/_edit_lock_ = true
 
 [node name="Credits" type="TextureButton" parent="Drawer_Names"]
@@ -78,23 +62,6 @@ texture_hover = ExtResource("6_munto")
 texture_click_mask = ExtResource("7_qma0d")
 metadata/_edit_lock_ = true
 
-[node name="Credits_Label" type="Label" parent="Drawer_Names/Credits"]
-layout_mode = 0
-offset_left = 34.995
-offset_top = 199.001
-offset_right = 112.995
-offset_bottom = 219.001
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "Credits"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
 [node name="Language" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 640.0
@@ -104,23 +71,6 @@ button_group = ExtResource("4_2hmdr")
 texture_pressed = ExtResource("8_5e8cg")
 texture_hover = ExtResource("9_y58cq")
 texture_click_mask = ExtResource("10_rhxs0")
-metadata/_edit_lock_ = true
-
-[node name="Language_Label" type="Label" parent="Drawer_Names/Language"]
-layout_mode = 0
-offset_left = 202.0
-offset_top = 199.0
-offset_right = 280.0
-offset_bottom = 220.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "Language (?)"
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Continue" type="TextureButton" parent="Drawer_Names"]
@@ -134,23 +84,6 @@ texture_hover = ExtResource("12_gnp67")
 texture_click_mask = ExtResource("13_ywf0i")
 metadata/_edit_lock_ = true
 
-[node name="Continue_Label" type="Label" parent="Drawer_Names/Continue"]
-layout_mode = 0
-offset_left = 362.0
-offset_top = 199.0
-offset_right = 438.0
-offset_bottom = 218.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "Continue"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
 [node name="Quit" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
@@ -160,23 +93,6 @@ button_group = ExtResource("4_2hmdr")
 texture_pressed = ExtResource("14_u8roj")
 texture_hover = ExtResource("15_2nddj")
 texture_click_mask = ExtResource("16_soeup")
-metadata/_edit_lock_ = true
-
-[node name="Quit_Label" type="Label" parent="Drawer_Names/Quit"]
-layout_mode = 0
-offset_left = 519.0
-offset_top = 198.0
-offset_right = 597.0
-offset_bottom = 219.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "QUIT"
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Settings" type="TextureButton" parent="Drawer_Names"]
@@ -190,24 +106,6 @@ texture_hover = ExtResource("18_mb02q")
 texture_click_mask = ExtResource("19_uatsv")
 metadata/_edit_lock_ = true
 
-[node name="Settings_Label" type="Label" parent="Drawer_Names/Settings"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 111.0
-offset_right = 282.0
-offset_bottom = 131.0
-pivot_offset = Vector2(45, 11)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
 [node name="New_Game" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
@@ -217,24 +115,6 @@ button_group = ExtResource("4_2hmdr")
 texture_pressed = ExtResource("20_n31dj")
 texture_hover = ExtResource("21_mtx5p")
 texture_click_mask = ExtResource("22_5xcgt")
-metadata/_edit_lock_ = true
-
-[node name="New Game_Label" type="Label" parent="Drawer_Names/New_Game"]
-layout_mode = 0
-offset_left = 366.0
-offset_top = 110.0
-offset_right = 444.0
-offset_bottom = 130.0
-pivot_offset = Vector2(45, 11)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "New Game"
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="LSD" type="TextureButton" parent="Drawer_Names"]
@@ -248,25 +128,6 @@ texture_hover = ExtResource("24_kgvmq")
 texture_click_mask = ExtResource("25_bv0mh")
 metadata/_edit_lock_ = true
 
-[node name="LSD_Label" type="Label" parent="Drawer_Names/LSD"]
-layout_mode = 0
-offset_left = 525.0
-offset_top = 110.0
-offset_right = 603.0
-offset_bottom = 130.0
-pivot_offset = Vector2(45, 11)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "Load/Save/Del.
-Game"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
 [node name="Tutorial" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
@@ -278,25 +139,4 @@ texture_hover = ExtResource("27_ohohw")
 texture_click_mask = ExtResource("28_w2fpp")
 metadata/_edit_lock_ = true
 
-[node name="Tutorial_Label" type="Label" parent="Drawer_Names/Tutorial"]
-layout_mode = 0
-offset_left = 197.0
-offset_top = 25.0
-offset_right = 275.0
-offset_bottom = 45.0
-pivot_offset = Vector2(45, 11)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_32i1l")
-theme_override_font_sizes/font_size = 8
-text = "Tutorial"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="Mouse_Cursor" parent="." instance=ExtResource("29_17w45")]
-
 [node name="Shader_Overlay" parent="." instance=ExtResource("29_2rx1x")]
-visible = false

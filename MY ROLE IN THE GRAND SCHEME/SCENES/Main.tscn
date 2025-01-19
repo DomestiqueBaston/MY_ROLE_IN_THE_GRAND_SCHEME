@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=14 format=3 uid="uid://cermbgl0xllko"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_7t2xs"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Fonce_Rose.png" id="4_68wvn"]
@@ -18,7 +17,6 @@
 size = Vector2(106, 106)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_7t2xs")
 metadata/_edit_lock_ = true
 
 [node name="Main_BG" type="Sprite2D" parent="."]
@@ -184,118 +182,118 @@ position = Vector2(544, 64)
 [node name="Player_Place" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
 position = Vector2(544, 64)
 
-[node name="Possible_Clues_Cards_TMP" type="Node2D" parent="TMP"]
+[node name="Possible_Clues_Cards" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
 
-[node name="Card7" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card7" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(16, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card7/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card7/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Object" parent="TMP/Possible_Clues_Cards_TMP/Card7/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="TMP/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card8" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card8" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(20, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card8/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card8/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Object" parent="TMP/Possible_Clues_Cards_TMP/Card8/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="TMP/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card9" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card9" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(24, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card9/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card9/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Object" parent="TMP/Possible_Clues_Cards_TMP/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="TMP/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card10" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card10" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(28, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card10/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Place" parent="TMP/Possible_Clues_Cards_TMP/Card10/Card_Mask/Card_BG/Card_Color" index="5"]
+[node name="Place" parent="TMP/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
-[node name="Card11" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card11" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(32, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card11/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Place" parent="TMP/Possible_Clues_Cards_TMP/Card11/Card_Mask/Card_BG/Card_Color" index="5"]
+[node name="Place" parent="TMP/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
-[node name="Card12" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card12" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(36, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card12/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Place" parent="TMP/Possible_Clues_Cards_TMP/Card12/Card_Mask/Card_BG/Card_Color" index="5"]
+[node name="Place" parent="TMP/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
-[node name="Card13" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card13" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(40, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card13/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Place" parent="TMP/Possible_Clues_Cards_TMP/Card13/Card_Mask/Card_BG/Card_Color" index="5"]
+[node name="Place" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
-[node name="Npc" parent="TMP/Possible_Clues_Cards_TMP/Card13/Card_Mask/Card_BG/Card_Color" index="6"]
+[node name="Npc" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="6"]
 visible = true
 
-[node name="Good_Health" parent="TMP/Possible_Clues_Cards_TMP/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="1"]
+[node name="Good_Health" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="1"]
 visible = false
 
-[node name="Low_Health" parent="TMP/Possible_Clues_Cards_TMP/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="3"]
+[node name="Low_Health" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="3"]
 visible = true
 
-[node name="Card14" parent="TMP/Possible_Clues_Cards_TMP" instance=ExtResource("3_b4mvu")]
+[node name="Card14" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(44, 39)
 
-[node name="Combat" parent="TMP/Possible_Clues_Cards_TMP/Card14/Card_Mask/Card_BG/Card_Color" index="0"]
+[node name="Combat" parent="TMP/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Special" parent="TMP/Possible_Clues_Cards_TMP/Card14/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="TMP/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Npc" parent="TMP/Possible_Clues_Cards_TMP/Card14/Card_Mask/Card_BG/Card_Color" index="6"]
+[node name="Npc" parent="TMP/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color" index="6"]
 visible = true
 
-[node name="Good_Health" parent="TMP/Possible_Clues_Cards_TMP/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="1"]
+[node name="Good_Health" parent="TMP/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="1"]
 visible = false
 
-[node name="Average_Health" parent="TMP/Possible_Clues_Cards_TMP/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
+[node name="Average_Health" parent="TMP/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
 visible = true
 
 [node name="Bottom_Left_Info" parent="." instance=ExtResource("10_rn5oa")]
@@ -304,7 +302,7 @@ visible = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
 
-[node name="Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
 
 [editable path="TMP/Main_Playmat/Card1"]
 [editable path="TMP/Main_Playmat/Card2"]
@@ -312,11 +310,11 @@ visible = true
 [editable path="TMP/Main_Playmat/Card4"]
 [editable path="TMP/Main_Playmat/Card5"]
 [editable path="TMP/Main_Playmat/Card6"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card7"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card8"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card9"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card10"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card11"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card12"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card13"]
-[editable path="TMP/Possible_Clues_Cards_TMP/Card14"]
+[editable path="TMP/Possible_Clues_Cards/Card7"]
+[editable path="TMP/Possible_Clues_Cards/Card8"]
+[editable path="TMP/Possible_Clues_Cards/Card9"]
+[editable path="TMP/Possible_Clues_Cards/Card10"]
+[editable path="TMP/Possible_Clues_Cards/Card11"]
+[editable path="TMP/Possible_Clues_Cards/Card12"]
+[editable path="TMP/Possible_Clues_Cards/Card13"]
+[editable path="TMP/Possible_Clues_Cards/Card14"]

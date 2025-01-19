@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ilhb6s2w3iuo"
-path="res://.godot/imported/Exit_Hover.png-af6d849a45ca0a297286033e64b015ba.ctex"
+uid="uid://x3ceo24nloow"
+path="res://.godot/imported/Tuto_BG.png-c64eea915da9fbd745a92bb4c3e4bb6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD_SELECTION/Exit_Hover.png"
-dest_files=["res://.godot/imported/Exit_Hover.png-af6d849a45ca0a297286033e64b015ba.ctex"]
+source_file="res://GRAPHICS/TUTO/Tuto_BG.png"
+dest_files=["res://.godot/imported/Tuto_BG.png-c64eea915da9fbd745a92bb4c3e4bb6d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn782xqxlk71a"
-path="res://.godot/imported/Exit_Normal.png-8b9b758cdce880532464d4e05aa05235.ctex"
+uid="uid://blk6yx3qvmvqn"
+path="res://.godot/imported/Chalk_Mask.png-91c417cecd6bb68dace6e227e415e678.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD_SELECTION/Exit_Normal.png"
-dest_files=["res://.godot/imported/Exit_Normal.png-8b9b758cdce880532464d4e05aa05235.ctex"]
+source_file="res://GRAPHICS/TUTO/Chalk_Mask.png"
+dest_files=["res://.godot/imported/Chalk_Mask.png-91c417cecd6bb68dace6e227e415e678.ctex"]
 
 [params]
 

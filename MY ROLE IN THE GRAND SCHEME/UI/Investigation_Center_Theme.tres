@@ -40,7 +40,8 @@ bg_color = Color(1, 1, 1, 0.392157)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jx3dr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84jwc"]
+bg_color = Color(1, 1, 1, 0.392157)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
 
@@ -124,7 +125,7 @@ PopupMenu/colors/font_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
 PopupMenu/constants/item_end_padding = -12
-PopupMenu/constants/item_start_padding = -12
+PopupMenu/constants/item_start_padding = -7
 PopupMenu/constants/v_separation = -2
 PopupMenu/font_sizes/font_size = 8
 PopupMenu/fonts/font = ExtResource("2_ji4tf")
@@ -137,7 +138,7 @@ PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
-PopupMenu/styles/panel = SubResource("StyleBoxEmpty_jx3dr")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_84jwc")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://euyms52mpy48"]
 
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_efxgk"]
+[ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_2ifjr"]
 [ext_resource type="Texture2D" uid="uid://xjwjfkatpljx" path="res://GRAPHICS/UI/Player_Place.png" id="2_cf184"]
 [ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/UI/Pin_Large.png" id="2_fvhge"]
 
@@ -101,7 +101,7 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "You are here!"
-theme = ExtResource("1_efxgk")
+theme = ExtResource("1_2ifjr")
 texture = ExtResource("2_fvhge")
 metadata/_edit_lock_ = true
 
@@ -119,7 +119,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(40, 40)
-theme = ExtResource("1_efxgk")
+tooltip_text = "You are here!"
+theme = ExtResource("1_2ifjr")
 texture = ExtResource("2_cf184")
 metadata/_edit_lock_ = true
 

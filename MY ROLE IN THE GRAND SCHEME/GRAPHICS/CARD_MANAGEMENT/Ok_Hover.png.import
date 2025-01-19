@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chh72py8tur0"
-path="res://.godot/imported/Ok_Hover.png-d870ac6ed6890d6643a813d8b9181c52.ctex"
+path="res://.godot/imported/Ok_Hover.png-52be6afa70ffeafa8ed348f13ed1fc4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD_SELECTION/Ok_Hover.png"
-dest_files=["res://.godot/imported/Ok_Hover.png-d870ac6ed6890d6643a813d8b9181c52.ctex"]
+source_file="res://GRAPHICS/CARD_MANAGEMENT/Ok_Hover.png"
+dest_files=["res://.godot/imported/Ok_Hover.png-52be6afa70ffeafa8ed348f13ed1fc4d.ctex"]
 
 [params]
 

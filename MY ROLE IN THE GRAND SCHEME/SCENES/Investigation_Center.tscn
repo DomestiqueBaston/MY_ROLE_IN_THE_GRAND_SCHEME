@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cb8ie0y4shgtb"]
+[gd_scene load_steps=14 format=3 uid="uid://cb8ie0y4shgtb"]
 
 [ext_resource type="Texture2D" uid="uid://cno0b6h8jyy04" path="res://GRAPHICS/INVESTIGATION_CENTER/Investigation_Center_BG.png" id="1_njt05"]
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_p3qnj"]
 [ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png" id="2_6ndse"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="3_5yoyy"]
 [ext_resource type="Theme" uid="uid://5eedmsqjoxtm" path="res://UI/Investigation_Center_Theme.tres" id="4_b1ixs"]
+[ext_resource type="Theme" uid="uid://b337xyo77pr1f" path="res://UI/Card_Selection_Theme.tres" id="5_7xt4t"]
 [ext_resource type="Script" path="res://SCRIPTS/Option_Button.gd" id="5_na0ew"]
 [ext_resource type="Texture2D" uid="uid://ct14fumdfmlob" path="res://GRAPHICS/INVESTIGATION_CENTER/Ok_Normal.png" id="6_msgya"]
 [ext_resource type="Texture2D" uid="uid://ckkv5jmen7tls" path="res://GRAPHICS/INVESTIGATION_CENTER/Ok_Hover.png" id="7_uxkdd"]
@@ -17,7 +16,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
 
 [node name="Investigation_Center" type="Node2D"]
-script = ExtResource("1_p3qnj")
 metadata/_edit_lock_ = true
 
 [node name="Investigation_Center_BG" type="Sprite2D" parent="."]
@@ -141,7 +139,7 @@ offset_left = 36.0
 offset_top = 32.0
 offset_right = 106.0
 offset_bottom = 40.0
-theme = ExtResource("3_5yoyy")
+theme = ExtResource("5_7xt4t")
 text = "Difficulty level:"
 metadata/_edit_lock_ = true
 
@@ -149,16 +147,17 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_left = 67.0
 offset_top = -6.0
-offset_right = 104.0
+offset_right = 97.0
 offset_bottom = 14.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fd502")
 metadata/_edit_lock_ = true
 
 [node name="Difficulty_List" type="OptionButton" parent="Chalkboard_Content/Chalk_Mask/Difficulty/Difficulty_Selector"]
 clip_contents = true
-custom_minimum_size = Vector2(35, 20)
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_vertical = 0
+tooltip_text = "Really?"
 theme = ExtResource("4_b1ixs")
 toggle_mode = false
 flat = true
@@ -182,7 +181,7 @@ offset_left = 176.0
 offset_top = 32.0
 offset_right = 198.0
 offset_bottom = 40.0
-theme = ExtResource("3_5yoyy")
+theme = ExtResource("5_7xt4t")
 text = "Case:"
 metadata/_edit_lock_ = true
 
@@ -200,6 +199,8 @@ clip_contents = true
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
 size_flags_vertical = 0
+tooltip_text = "I won't say what
+this menu is for..."
 theme = ExtResource("4_b1ixs")
 toggle_mode = false
 flat = true
@@ -237,5 +238,4 @@ texture_hover = ExtResource("10_cie2r")
 texture_click_mask = ExtResource("11_skuhm")
 metadata/_edit_lock_ = true
 
-[node name="Shader_Overlay" parent="." instance=ExtResource("12_byojy")]
-visible = false
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_byojy")]

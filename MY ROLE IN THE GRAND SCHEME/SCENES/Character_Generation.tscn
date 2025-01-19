@@ -1,8 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://cjvtdra3n1tqy"]
+[gd_scene load_steps=33 format=3 uid="uid://cjvtdra3n1tqy"]
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_gshkr"]
-[ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="3_73mc2"]
+[ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
 [ext_resource type="Script" path="res://SCRIPTS/Option_Button.gd" id="5_2k6nw"]
 [ext_resource type="Texture2D" uid="uid://buhsc5yt68kjy" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Normal.png" id="6_f1shx"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="6_ntsua"]
@@ -36,7 +35,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
 
 [node name="Character_Generation" type="Node2D"]
-script = ExtResource("1_gshkr")
 metadata/_edit_lock_ = true
 
 [node name="Character_Generation_BG" type="Sprite2D" parent="."]
@@ -49,6 +47,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 360.0
+theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
@@ -58,7 +57,6 @@ offset_left = 136.0
 offset_top = 61.0
 offset_right = 251.0
 offset_bottom = 77.0
-theme = ExtResource("3_73mc2")
 theme_override_colors/selection_color = Color(0.1998, 0.27, 0.21969, 0.341176)
 theme_override_colors/caret_color = Color(0.1998, 0.27, 0.21969, 0.662745)
 theme_override_colors/font_placeholder_color = Color(0.2, 0.270588, 0.219608, 0.341176)
@@ -207,11 +205,11 @@ metadata/_edit_lock_ = true
 custom_minimum_size = Vector2(153, 16)
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("3_73mc2")
+theme = ExtResource("3_2pyp5")
 toggle_mode = false
 flat = true
-selected = 7
-item_count = 23
+selected = 23
+item_count = 24
 popup/item_0/text = "Carpet Seller"
 popup/item_1/text = "Chorist"
 popup/item_1/id = 1
@@ -257,6 +255,9 @@ popup/item_21/text = "Vegan Chief"
 popup/item_21/id = 21
 popup/item_22/text = "Writer"
 popup/item_22/id = 22
+popup/item_23/text = "Select a background..."
+popup/item_23/id = 23
+popup/item_23/separator = true
 script = ExtResource("5_2k6nw")
 metadata/_edit_lock_ = true
 
@@ -365,7 +366,7 @@ offset_left = -13.0
 offset_top = -4.0
 offset_right = 13.0
 offset_bottom = 4.0
-theme = ExtResource("3_73mc2")
+theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("32_njtg4")]

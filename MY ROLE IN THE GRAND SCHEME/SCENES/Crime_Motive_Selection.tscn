@@ -13,6 +13,7 @@ offset_left = 149.0
 offset_top = 29.0
 offset_right = 234.0
 offset_bottom = 146.0
+theme = ExtResource("1_x652i")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
 metadata/_edit_lock_ = true
 
@@ -20,7 +21,6 @@ metadata/_edit_lock_ = true
 custom_minimum_size = Vector2(85, 16)
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("1_x652i")
 toggle_mode = false
 flat = true
 text_overrun_behavior = 3

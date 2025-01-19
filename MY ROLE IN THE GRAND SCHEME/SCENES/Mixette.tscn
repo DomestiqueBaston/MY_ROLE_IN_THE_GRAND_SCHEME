@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=28 format=3 uid="uid://gq7vbe70kt0a"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_fwbog"]
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/MIXETTE/Mixette__BG.png" id="1_v2vuv"]
 [ext_resource type="Texture2D" uid="uid://dnwfmqh7r8l1h" path="res://GRAPHICS/MIXETTE/Slider_01.png" id="2_003gq"]
 [ext_resource type="Texture2D" uid="uid://ryhx7vr28c7w" path="res://GRAPHICS/MIXETTE/Slider_02.png" id="3_fnxqd"]
@@ -8,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://d0wdijdw68aa" path="res://GRAPHICS/MIXETTE/Slider_04.png" id="5_vb0x7"]
 [ext_resource type="Texture2D" uid="uid://gm6pgw5j0nly" path="res://GRAPHICS/MIXETTE/Slider_05.png" id="6_fdw8f"]
 [ext_resource type="Texture2D" uid="uid://drc2p7n7g4cfm" path="res://GRAPHICS/MIXETTE/Blue_Button_01_Pressed.png" id="7_1ckbf"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="8_ficjw"]
 [ext_resource type="Texture2D" uid="uid://ntdkilmweyfl" path="res://GRAPHICS/MIXETTE/Blue_Button_01_Hover.png" id="8_hwl6s"]
+[ext_resource type="Theme" uid="uid://bjqtch5setyil" path="res://UI/Mixette_Theme.tres" id="8_popqy"]
 [ext_resource type="BitMap" uid="uid://bopk120g3fbqu" path="res://GRAPHICS/MIXETTE/Blue_Button_01_Mask.png" id="9_v4xwr"]
 [ext_resource type="Texture2D" uid="uid://cvhebuts8f6nt" path="res://GRAPHICS/MIXETTE/Blue_Button_02_Hover.png" id="10_5i6vf"]
 [ext_resource type="Texture2D" uid="uid://ga8x1gywguqq" path="res://GRAPHICS/MIXETTE/Blue_Button_02_Pressed.png" id="10_piu46"]
@@ -30,7 +29,6 @@
 [ext_resource type="BitMap" uid="uid://bw4w5lbnuuckm" path="res://GRAPHICS/MIXETTE/Cancel_Mask.png" id="28_aeu40"]
 
 [node name="Mixette" type="Node2D"]
-script = ExtResource("1_fwbog")
 metadata/_edit_lock_ = true
 
 [node name="Mixette_BG" type="Sprite2D" parent="."]
@@ -69,9 +67,7 @@ metadata/_edit_lock_ = true
 [node name="Blue_Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("8_ficjw")
+theme = ExtResource("8_popqy")
 
 [node name="Drug_Quality" type="TextureButton" parent="Blue_Buttons"]
 layout_mode = 0
@@ -128,7 +124,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme = ExtResource("8_ficjw")
+theme = ExtResource("8_popqy")
 
 [node name="Ok" type="TextureButton" parent="Ok_Cancel_Buttons"]
 layout_mode = 0
@@ -148,4 +144,3 @@ texture_hover = ExtResource("27_sm5hb")
 texture_click_mask = ExtResource("28_aeu40")
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("23_ki5ci")]
-visible = false

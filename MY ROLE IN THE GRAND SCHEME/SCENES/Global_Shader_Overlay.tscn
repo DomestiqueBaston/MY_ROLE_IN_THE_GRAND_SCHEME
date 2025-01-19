@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnkco2tyaesue"]
+[gd_scene load_steps=6 format=3 uid="uid://bnkco2tyaesue"]
 
+[ext_resource type="Script" path="res://SCRIPTS/Global_Shader_Overlay.gd" id="1_oba78"]
 [ext_resource type="Shader" path="res://SHADERS/Grain.gdshader" id="1_t6iqf"]
 [ext_resource type="Shader" path="res://SHADERS/Video.gdshader" id="1_x7fr2"]
 
@@ -14,9 +15,10 @@ shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 0.2
 shader_parameter/blur_samples = 15
 
-[node name="Shader_Overlay" type="CanvasLayer"]
+[node name="Global_Shader_Overlay" type="CanvasLayer"]
 layer = 10
 visible = false
+script = ExtResource("1_oba78")
 
 [node name="Grain" type="ColorRect" parent="."]
 z_index = 10

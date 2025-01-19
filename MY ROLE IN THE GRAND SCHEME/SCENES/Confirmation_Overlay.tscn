@@ -183,25 +183,16 @@ _data = {
 "RESET": SubResource("Animation_lpv2x")
 }
 
-[node name="Confirmation" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="Confirmation" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
-layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 metadata/_edit_lock_ = true
 
-[node name="Confirmation_Panel" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="Confirmation_Panel" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
 [node name="Confirmation_BG" type="Sprite2D" parent="Confirmation_Panel"]
@@ -210,7 +201,6 @@ texture = ExtResource("1_q44ut")
 metadata/_edit_lock_ = true
 
 [node name="Do_You_Confirm_That" type="Label" parent="Confirmation_Panel"]
-layout_mode = 0
 offset_left = 223.0
 offset_top = 146.0
 offset_right = 409.0
