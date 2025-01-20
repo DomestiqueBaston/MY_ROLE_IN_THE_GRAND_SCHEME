@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://dlmptat7076r"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://dlmptat7076r"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_qnqed"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_35qa7"]
@@ -44,6 +44,8 @@ bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
 bg_color = Color(1, 1, 1, 0.501961)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_he5hg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -146,6 +148,13 @@ PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_vr86x")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+RichTextLabel/colors/default_color = Color(1, 0.964706, 0.831373, 1)
+RichTextLabel/colors/selection_color = Color(1, 0.963167, 0.83, 0.784314)
+RichTextLabel/constants/line_separation = 5
+RichTextLabel/constants/outline_size = 5
+RichTextLabel/font_sizes/normal_font_size = 8
+RichTextLabel/fonts/normal_font = ExtResource("2_35qa7")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_he5hg")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=3 uid="uid://de714pwpjqlk2"]
+[gd_resource type="Theme" load_steps=33 format=3 uid="uid://de714pwpjqlk2"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_wyjtv"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_lksj3"]
@@ -49,6 +49,18 @@ bg_color = Color(0, 0, 0, 0.686275)
 border_color = Color(0, 0, 0, 0.686275)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ikbr"]
+bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0y1hd"]
+bg_color = Color(0.133333, 0.180392, 0.141176, 0.25098)
+border_width_left = 1
+border_width_bottom = 1
+border_color = Color(0.133333, 0.180392, 0.141176, 0.643137)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3nae"]
 bg_color = Color(1, 0.933333, 0.819608, 0.501961)
@@ -142,6 +154,11 @@ PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_w20g5")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+TooltipLabel/colors/font_color = Color(1, 1, 1, 0.960784)
+TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 0)
+TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+TooltipLabel/styles/normal = SubResource("StyleBoxFlat_2ikbr")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0y1hd")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_534da")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_js3gk")

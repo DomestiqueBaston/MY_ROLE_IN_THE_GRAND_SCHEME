@@ -342,17 +342,11 @@ position = Vector2(155, 34)
 [node name="Combat" parent="TMP/Evidences/Card23/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Place" parent="TMP/Evidences/Card23/Card_Mask/Card_BG/Card_Color" index="5"]
-visible = true
-
 [node name="Card24" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(164, 34)
 
 [node name="Combat" parent="TMP/Evidences/Card24/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
-
-[node name="Place" parent="TMP/Evidences/Card24/Card_Mask/Card_BG/Card_Color" index="5"]
-visible = true
 
 [node name="Card25" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(174, 34)

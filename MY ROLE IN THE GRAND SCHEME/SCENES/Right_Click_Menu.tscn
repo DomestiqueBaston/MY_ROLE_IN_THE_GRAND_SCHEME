@@ -14,14 +14,14 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
-size = Vector2i(78, 72)
+size = Vector2i(78, 90)
 visible = true
 unfocusable = true
 max_size = Vector2i(78, 153)
 keep_title_visible = true
 theme = ExtResource("1_3n552")
 submenu_popup_delay = 0.2
-item_count = 8
+item_count = 10
 item_0/text = "Dialogue"
 item_1/text = "Investigate"
 item_1/id = 1
@@ -38,3 +38,8 @@ item_6/text = "Uncertify link"
 item_6/id = 6
 item_7/text = "Delete link"
 item_7/id = 7
+item_8/text = "  - - - - - - - -  "
+item_8/id = 8
+item_8/separator = true
+item_9/text = "Throw it away!"
+item_9/id = 9

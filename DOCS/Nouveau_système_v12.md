@@ -395,7 +395,7 @@ Cartes Investigation :
 	- Elles sont des cartes qui se jouent uniquement en Investigation.
 	- Ces cartes peuvent être jouées seules.
 	- Une fois jouées, ces cartes ne sont pas perdues.
-	- On ne joue qu’1 carte Investigation par interaction.
+	- On ne joue qu’1 carte Investigation par interaction mais on peut y adjoindre 1 carte Investigation SPECIAL.
 	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
 	- Une carte Investigation BREAK-IN ne peut pas être jouée en combinaison d’une autre carte Investigation.
 
@@ -403,7 +403,7 @@ Cartes Combat :
 	- Elles sont des cartes qui se jouent uniquement en Combat.
 	- Ces cartes peuvent être jouées seules.
 	- Une fois jouées, ces cartes ne sont pas perdues.
-	- On ne joue qu’1 carte Combat par interaction.
+	- On ne joue qu’1 carte Combat par interaction mais on peut y adjoindre 1 carte Combat SPECIAL.
 	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
 	- Une carte Combat RUN AWAY ne peut pas être jouée en combinaison d’une autre carte Combat.
 
@@ -459,7 +459,7 @@ Les interactions : Dialogue, Combat et Investigation
 		- La pile PNJ qui est la pile contenant les (autres) cartes PNJ liées à l’enquête. Pas de Bonus/Malus.
 		- La pile Objets qui est la pile des cartes Objets non qualifiées d’Evidence. Pas de Bonus/Malus.
 		- La pile Lieu qui est la pile des cartes Lieu liées à l’enquête. Pas de Bonus/Malus.
-		- Pour se débarasser de cartes, onfait, sur une carte : clic droit, « Discard ». Toute carte rejetée fait perdre tous les liens qui y menaient dans Main.tscn. À noter que rien n’empêche le joueur de retomber ultérieurement sur des cartes/infos rejetées (heureusement, parce qu’en cas d’erreur…).
+		- Pour se débarrasser de cartes, on fait, sur une carte : clic droit, « Discard ». Toute carte rejetée fait perdre tous les liens qui y menaient dans Main.tscn. À noter que rien n’empêche le joueur de retomber ultérieurement sur des cartes/infos rejetées (heureusement, parce qu’en cas d’erreur…).
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet .
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
 	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir pour un Combat mais ça n’est pas vraiment une annulation).
@@ -468,7 +468,7 @@ Les interactions : Dialogue, Combat et Investigation
 Écrans d’interactions
 	- Un écran structuré de la même manière pour les dialogues/combats/investigations dans lequel on joue ses cartes pour l’interaction en cours et un bouton pour lancer le test de dé quand on est prêt.
 	- Il y a un menu Mobile dans la zone de jeu (Main.tscn) pour sélectionner le mobile du crime (c’est au joueur de décider quel est le mobile du crime).
-	- On se débarasse d’une carte en faisant dessus : « clic droit », « Discard ».
+	- On se débarrasse d’une carte en faisant dessus : « clic droit », « Discard ».
 	- Limite de 3 cartes mises en jeu dans une interaction.
 		- En Dialogue (également fuite et/ou agression en préambule pour le PNJ) : 1 Dialogue / 1 Objet ou Lieu ou PNJ (élément de preuve ou pas) / 1 Abstraite
 		- En combat (également fuite en préambule pour le joueur) : 1 Combat / 1 Combat Spéciale / 1 Abstraite

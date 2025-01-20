@@ -122,9 +122,6 @@ position = Vector2(537, 57)
 [node name="Combat" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
-[node name="Place" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG/Card_Color" index="5"]
-visible = true
-
 [node name="Closed" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG" index="5"]
 visible = true
 
@@ -230,9 +227,6 @@ visible = false
 [node name="Special" parent="TMP/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Place" parent="TMP/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color" index="5"]
-visible = true
-
 [node name="Card11" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(32, 39)
 
@@ -240,9 +234,6 @@ position = Vector2(32, 39)
 visible = false
 
 [node name="Special" parent="TMP/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Place" parent="TMP/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
 [node name="Card12" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
@@ -254,9 +245,6 @@ visible = false
 [node name="Special" parent="TMP/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Place" parent="TMP/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color" index="5"]
-visible = true
-
 [node name="Card13" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(40, 39)
 
@@ -264,9 +252,6 @@ position = Vector2(40, 39)
 visible = false
 
 [node name="Special" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Place" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="5"]
 visible = true
 
 [node name="Npc" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="6"]
