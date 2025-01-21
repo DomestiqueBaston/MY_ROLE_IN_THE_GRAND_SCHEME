@@ -53,7 +53,6 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Colliders" type="Node2D" parent="."]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Interaction_Area" type="Area2D" parent="Colliders"]
@@ -215,6 +214,9 @@ visible = false
 [node name="Investigation" parent="TMP/Fallback/Card17/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Fallback/Card17/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card18" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 204)
 
@@ -224,8 +226,14 @@ visible = false
 [node name="Dialogue" parent="TMP/Fallback/Card18/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Fallback/Card18/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card19" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 213)
+
+[node name="Card_Text" parent="TMP/Fallback/Card19/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card21" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 223)
@@ -236,6 +244,9 @@ visible = false
 [node name="Abstract" parent="TMP/Fallback/Card21/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Fallback/Card21/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card22" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 232)
 
@@ -244,6 +255,9 @@ visible = false
 
 [node name="Abstract" parent="TMP/Fallback/Card22/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Fallback/Card22/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Mastery" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
@@ -257,6 +271,9 @@ visible = false
 [node name="Investigation" parent="TMP/Mastery/Card5/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Mastery/Card5/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card6" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 199)
 
@@ -265,6 +282,9 @@ visible = false
 
 [node name="Investigation" parent="TMP/Mastery/Card6/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Mastery/Card6/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card7" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 203)
@@ -275,6 +295,9 @@ visible = false
 [node name="Dialogue" parent="TMP/Mastery/Card7/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Mastery/Card7/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card8" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 207)
 
@@ -284,11 +307,20 @@ visible = false
 [node name="Dialogue" parent="TMP/Mastery/Card8/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Mastery/Card8/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card9" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 211)
 
+[node name="Card_Text" parent="TMP/Mastery/Card9/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card11" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 219)
+
+[node name="Card_Text" parent="TMP/Mastery/Card11/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card12" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 223)
@@ -299,6 +331,9 @@ visible = false
 [node name="Abstract" parent="TMP/Mastery/Card12/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Mastery/Card12/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card13" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 227)
 
@@ -307,6 +342,9 @@ visible = false
 
 [node name="Abstract" parent="TMP/Mastery/Card13/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Mastery/Card13/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card14" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 232)
@@ -317,12 +355,21 @@ visible = false
 [node name="Abstract" parent="TMP/Mastery/Card14/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Mastery/Card14/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card10_Drag" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(185, 215)
 
+[node name="Card_Text" parent="TMP/Mastery/Card10_Drag/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card10_Drop" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(316, 201)
+
+[node name="Card_Text" parent="TMP/Mastery/Card10_Drop/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Drag_Drop_Line" type="Line2D" parent="TMP/Mastery"]
 position = Vector2(9, 11)
@@ -342,11 +389,17 @@ position = Vector2(155, 34)
 [node name="Combat" parent="TMP/Evidences/Card23/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
+[node name="Card_Text" parent="TMP/Evidences/Card23/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card24" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(164, 34)
 
 [node name="Combat" parent="TMP/Evidences/Card24/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
+
+[node name="Card_Text" parent="TMP/Evidences/Card24/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card25" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(174, 34)
@@ -357,6 +410,9 @@ visible = false
 [node name="Object" parent="TMP/Evidences/Card25/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Evidences/Card25/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card26" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(185, 34)
 
@@ -365,6 +421,9 @@ visible = false
 
 [node name="Object" parent="TMP/Evidences/Card26/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Evidences/Card26/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="NPCs" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
@@ -378,6 +437,9 @@ visible = false
 [node name="Investigation" parent="TMP/NPCs/Card1/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
+[node name="Card_Text" parent="TMP/NPCs/Card1/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card3" parent="TMP/NPCs" instance=ExtResource("6_v0c4c")]
 position = Vector2(286, 34)
 
@@ -387,8 +449,14 @@ visible = false
 [node name="Abstract" parent="TMP/NPCs/Card3/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
+[node name="Card_Text" parent="TMP/NPCs/Card3/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card20" parent="TMP/NPCs" instance=ExtResource("6_v0c4c")]
 position = Vector2(302, 34)
+
+[node name="Card_Text" parent="TMP/NPCs/Card20/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Objects" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
@@ -402,6 +470,9 @@ visible = false
 [node name="Object" parent="TMP/Objects/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Objects/Card27/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card28" parent="TMP/Objects" instance=ExtResource("6_v0c4c")]
 position = Vector2(421, 34)
 
@@ -410,6 +481,9 @@ visible = false
 
 [node name="Object" parent="TMP/Objects/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Objects/Card28/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Places" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
@@ -423,6 +497,9 @@ visible = false
 [node name="Object" parent="TMP/Places/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Places/Card27/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card28" parent="TMP/Places" instance=ExtResource("6_v0c4c")]
 position = Vector2(538, 34)
 
@@ -431,6 +508,9 @@ visible = false
 
 [node name="Object" parent="TMP/Places/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Places/Card28/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Button" type="Control" parent="."]
 layout_mode = 3

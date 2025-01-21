@@ -1,17 +1,33 @@
-[gd_scene load_steps=14 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=28 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
+[ext_resource type="Texture2D" uid="uid://m413x6mmdkt7" path="res://GRAPHICS/UI/Dashed_Blanc.png" id="3_f0utr"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Fonce_Rose.png" id="4_68wvn"]
 [ext_resource type="Texture2D" uid="uid://bng8mdjv28u6h" path="res://GRAPHICS/UI/Pointille_Blanc_Transparent.png" id="5_nrm53"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/UI/Plein_Jaune.png" id="6_jtpuj"]
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
-[ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Place.tscn" id="8_kn6w4"]
+[ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://lv8nyh7xqyqp" path="res://SCENES/Possible_Clues_Clamp.tscn" id="9_8aplo"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="10_rn5oa"]
 [ext_resource type="PackedScene" uid="uid://dyacbsj8nks3" path="res://SCENES/Crime_Motive_Selection.tscn" id="11_dx2ym"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
+[ext_resource type="Theme" uid="uid://d3q66pv8c2ydu" path="res://UI/Main_Theme.tres" id="13_06hym"]
+[ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/UI/Dashed_Violet_Fonce.png" id="15_0qkya"]
+[ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/UI/Plein_Gris.png" id="15_c4wun"]
+[ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/UI/Plein_Noir.png" id="16_mke16"]
+[ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/UI/Plein_Rose.png" id="17_7cnra"]
+[ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/UI/Plein_Vert_Fonce.png" id="18_u436f"]
+[ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/UI/Plein_Orange.png" id="19_eiutv"]
+[ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/UI/Plein_Bleu_Clair.png" id="20_oxby8"]
+[ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/UI/Plein_Bleu_Fonce.png" id="21_134b4"]
+[ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/UI/Plein_Rouge.png" id="22_eja4x"]
+[ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/UI/Plein_Vert_Clair.png" id="23_1cqhn"]
+[ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/UI/Plein_Violet_Clair.png" id="24_lp1fx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
+size = Vector2(470, 309)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km17i"]
 size = Vector2(106, 106)
@@ -32,8 +48,9 @@ collision_layer = 0
 collision_mask = 0
 metadata/_edit_lock_ = true
 
-[node name="Playground" type="CollisionPolygon2D" parent="Main_BG/Colliders/Playground_Collider"]
-polygon = PackedVector2Array(234, 29, 618, 29, 618, 338, 148, 338, 148, 45, 234, 45)
+[node name="Playground" type="CollisionShape2D" parent="Main_BG/Colliders/Playground_Collider"]
+position = Vector2(383, 183.5)
+shape = SubResource("RectangleShape2D_gfrfy")
 metadata/_edit_lock_ = true
 
 [node name="Clue_Collider" type="Area2D" parent="Main_BG/Colliders"]
@@ -61,6 +78,181 @@ metadata/_edit_lock_ = true
 position = Vector2(44, 39)
 metadata/_edit_lock_ = true
 
+[node name="Legend" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Colors" type="Control" parent="Legend"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 153.0
+offset_top = 342.0
+offset_right = 153.0
+offset_bottom = 342.0
+theme = ExtResource("13_06hym")
+
+[node name="Legend" type="Label" parent="Legend/Colors"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 8.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "Legend:"
+metadata/_edit_lock_ = true
+
+[node name="White" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 9.0
+tooltip_text = "Presence
+- Always dashed"
+texture = ExtResource("3_f0utr")
+metadata/_edit_lock_ = true
+
+[node name="Gray" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 1.0
+offset_right = 60.0
+offset_bottom = 9.0
+tooltip_text = "Debt/Influence
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("15_c4wun")
+metadata/_edit_lock_ = true
+
+[node name="Black" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 1.0
+offset_right = 73.0
+offset_bottom = 9.0
+tooltip_text = "Culprit/Accomplice/Evidence
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("16_mke16")
+metadata/_edit_lock_ = true
+
+[node name="Pink" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 1.0
+offset_right = 86.0
+offset_bottom = 9.0
+tooltip_text = "Intimacy
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("17_7cnra")
+metadata/_edit_lock_ = true
+
+[node name="Dark_Green" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 1.0
+offset_right = 99.0
+offset_bottom = 9.0
+tooltip_text = "Friend
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("18_u436f")
+metadata/_edit_lock_ = true
+
+[node name="Orange" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 9.0
+tooltip_text = "Enemy
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("19_eiutv")
+metadata/_edit_lock_ = true
+
+[node name="Light_Blue" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 112.0
+offset_bottom = 9.0
+tooltip_text = "Acquaintance
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("20_oxby8")
+metadata/_edit_lock_ = true
+
+[node name="Dark_Blue" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 1.0
+offset_right = 125.0
+offset_bottom = 9.0
+tooltip_text = "Ideological affinity
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("21_134b4")
+metadata/_edit_lock_ = true
+
+[node name="Red" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 1.0
+offset_right = 125.0
+offset_bottom = 9.0
+tooltip_text = "Contradiction
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("22_eja4x")
+metadata/_edit_lock_ = true
+
+[node name="Yellow" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 1.0
+offset_right = 138.0
+offset_bottom = 9.0
+tooltip_text = "Confirmation
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("6_jtpuj")
+metadata/_edit_lock_ = true
+
+[node name="Light_Green" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 139.0
+offset_top = 1.0
+offset_right = 151.0
+offset_bottom = 9.0
+tooltip_text = "Ownership
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("23_1cqhn")
+metadata/_edit_lock_ = true
+
+[node name="Light_Purple" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 1.0
+offset_right = 164.0
+offset_bottom = 9.0
+tooltip_text = "Found
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("24_lp1fx")
+metadata/_edit_lock_ = true
+
+[node name="Dark_Purple" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 1.0
+offset_right = 177.0
+offset_bottom = 9.0
+tooltip_text = "New
+- Always dashed"
+texture = ExtResource("15_0qkya")
+metadata/_edit_lock_ = true
+
 [node name="Possible_Clues_Clamp" parent="." instance=ExtResource("9_8aplo")]
 
 [node name="TMP" type="Node2D" parent="."]
@@ -75,11 +267,17 @@ position = Vector2(190, 85)
 [node name="Special" parent="TMP/Main_Playmat/Card1/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Main_Playmat/Card1/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card2" parent="TMP/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 
 [node name="Run_Away" parent="TMP/Main_Playmat/Card2/Card_Mask/Card_BG/Card_Color/Combat" index="1"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Main_Playmat/Card2/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card3" parent="TMP/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
@@ -94,6 +292,9 @@ visible = true
 [node name="Break_In" parent="TMP/Main_Playmat/Card3/Card_Mask/Card_BG/Card_Color/Investigation" index="1"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Main_Playmat/Card3/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card4" parent="TMP/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(165, 213)
 
@@ -106,6 +307,9 @@ visible = true
 [node name="Evidence" parent="TMP/Main_Playmat/Card4/Card_Mask/Card_BG" index="1"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Main_Playmat/Card4/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card5" parent="TMP/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(294, 38)
 
@@ -115,12 +319,18 @@ visible = false
 [node name="Npc" parent="TMP/Main_Playmat/Card5/Card_Mask/Card_BG/Card_Color" index="6"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Main_Playmat/Card5/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card6" parent="TMP/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
 
 [node name="Combat" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
+
+[node name="Card_Text" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Closed" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG" index="5"]
 visible = true
@@ -176,7 +386,7 @@ position = Vector2(519, 170)
 [node name="Pin_Small6" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(544, 64)
 
-[node name="Player_Place" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
+[node name="Player_Locator" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
 position = Vector2(544, 64)
 
 [node name="Possible_Clues_Cards" type="Node2D" parent="TMP"]
@@ -194,6 +404,9 @@ visible = true
 [node name="Object" parent="TMP/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card7/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card8" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(20, 39)
 
@@ -205,6 +418,9 @@ visible = true
 
 [node name="Object" parent="TMP/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card8/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card9" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(24, 39)
@@ -218,6 +434,9 @@ visible = true
 [node name="Object" parent="TMP/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card9/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card10" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(28, 39)
 
@@ -226,6 +445,9 @@ visible = false
 
 [node name="Special" parent="TMP/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card10/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card11" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(32, 39)
@@ -236,6 +458,9 @@ visible = false
 [node name="Special" parent="TMP/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card11/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card12" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(36, 39)
 
@@ -244,6 +469,9 @@ visible = false
 
 [node name="Special" parent="TMP/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
+
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card12/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card13" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(40, 39)
@@ -263,6 +491,9 @@ visible = false
 [node name="Low_Health" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="3"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card13/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Card14" parent="TMP/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(44, 39)
 
@@ -281,9 +512,13 @@ visible = false
 [node name="Average_Health" parent="TMP/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
 visible = true
 
+[node name="Card_Text" parent="TMP/Possible_Clues_Cards/Card14/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
 [node name="Bottom_Left_Info" parent="." instance=ExtResource("10_rn5oa")]
 
 [node name="Crime_Motive_Selection" parent="." instance=ExtResource("11_dx2ym")]
+position = Vector2(-2, -18)
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=135 format=3 uid="uid://6h0vwfyh2npe"]
 
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_3rnh5"]
+[ext_resource type="Theme" uid="uid://d3q66pv8c2ydu" path="res://UI/Main_Theme.tres" id="1_ytjqi"]
 [ext_resource type="Texture2D" uid="uid://b0im1pldeftlf" path="res://TRASH/Bouton_Blanc.png" id="2_j52sc"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/UI/Plein_Blanc.png" id="3_pbucl"]
 [ext_resource type="ButtonGroup" uid="uid://i3wthbsm1kbx" path="res://UI/Link_Button_Group.tres" id="3_qrn1h"]
@@ -382,7 +382,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 403.0
 offset_bottom = 58.0
-theme = ExtResource("1_3rnh5")
+theme = ExtResource("1_ytjqi")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]

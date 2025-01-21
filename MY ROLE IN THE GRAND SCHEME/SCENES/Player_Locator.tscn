@@ -84,7 +84,7 @@ _data = {
 "RESET": SubResource("Animation_wet12")
 }
 
-[node name="Player_Place" type="Node2D"]
+[node name="Player_Locator" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="Pin" type="TextureRect" parent="."]

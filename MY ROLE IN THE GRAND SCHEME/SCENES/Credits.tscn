@@ -1,0 +1,405 @@
+[gd_scene load_steps=40 format=3 uid="uid://ddckvg37ygsor"]
+
+[ext_resource type="Texture2D" uid="uid://hd0s0r4fdcia" path="res://GRAPHICS/CREDITS/Credits_BG.png" id="1_1n7ja"]
+[ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="2_4eum5"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="3_6jtqe"]
+[ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="4_wrat2"]
+[ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="5_f6yw2"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_y0tck"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="6_13yup"]
+[ext_resource type="Script" path="res://SCRIPTS/Credits_Typing.gd" id="7_xwskb"]
+[ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="9_vnu4b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5aaw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b0cj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdoj4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3eac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_684bo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kotw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d520k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wul7r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63chm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk2s2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q4vc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmwgf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqjub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jprso"]
+bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr86x"]
+bg_color = Color(1, 1, 1, 0.501961)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_he5hg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
+bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pnod"]
+bg_color = Color(0.1332, 0.18, 0.141, 0.25098)
+border_width_left = 1
+border_width_bottom = 1
+border_color = Color(0.1332, 0.18, 0.141, 0.643137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3nae"]
+bg_color = Color(0.99, 0.993167, 1, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_534da"]
+bg_color = Color(0.99, 0.993333, 1, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js3gk"]
+bg_color = Color(0.99, 0.993333, 1, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_083n0"]
+bg_color = Color(0.99, 0.993333, 1, 0.784314)
+border_width_left = 5
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="Theme" id="Theme_7saqr"]
+default_font = ExtResource("3_6jtqe")
+default_font_size = 8
+HSlider/icons/grabber = ExtResource("2_4eum5")
+HSlider/icons/grabber_disabled = ExtResource("2_4eum5")
+HSlider/icons/grabber_highlight = ExtResource("2_4eum5")
+HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_1rsf7")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_5aaw8")
+HSlider/styles/slider = SubResource("StyleBoxEmpty_5b0cj")
+ItemList/colors/font_color = Color(0, 0, 0, 0.756863)
+ItemList/colors/font_hovered_color = Color(0.0154, 0.07, 0.02086, 0.501961)
+ItemList/colors/font_selected_color = Color(0.616, 0.7, 0.6454, 0.858824)
+ItemList/colors/guide_color = Color(0.7, 0.7, 0.7, 0)
+ItemList/constants/v_separation = 3
+ItemList/styles/cursor = SubResource("StyleBoxEmpty_mdoj4")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_e3eac")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_684bo")
+ItemList/styles/hovered = SubResource("StyleBoxEmpty_2kotw")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_d520k")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_wul7r")
+ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_63chm")
+Label/colors/font_color = Color(1, 0.963167, 0.83, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.32549)
+Label/constants/line_spacing = 2
+Label/constants/outline_size = 5
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 15
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("3_6jtqe")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_pk2s2")
+MenuButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+MenuButton/colors/font_focus_color = Color(0.1998, 0.27, 0.21969, 0.501961)
+MenuButton/colors/font_hover_color = Color(0.1998, 0.27, 0.21969, 0.501961)
+MenuButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+MenuButton/font_sizes/font_size = 8
+MenuButton/fonts/font = ExtResource("3_6jtqe")
+OptionButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_disabled_color = Color(0.2, 0.270588, 0.219608, 0.501961)
+OptionButton/colors/font_focus_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_hover_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_hover_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/constants/arrow_margin = 5
+OptionButton/icons/arrow = ExtResource("4_wrat2")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
+PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
+PopupMenu/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
+PopupMenu/colors/font_hover_color = Color(0.048, 0.1, 0.0627333, 0.823529)
+PopupMenu/constants/item_start_padding = -12
+PopupMenu/constants/v_separation = 0
+PopupMenu/font_sizes/font_size = 8
+PopupMenu/fonts/font = ExtResource("3_6jtqe")
+PopupMenu/icons/radio_checked = ExtResource("5_f6yw2")
+PopupMenu/icons/radio_checked_disabled = ExtResource("5_f6yw2")
+PopupMenu/icons/radio_unchecked = ExtResource("5_f6yw2")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("5_f6yw2")
+PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
+PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_vr86x")
+PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+RichTextLabel/colors/default_color = Color(1, 0.964706, 0.831373, 1)
+RichTextLabel/colors/font_shadow_color = Color(0.04, 0.0292, 0.016, 0.254902)
+RichTextLabel/colors/selection_color = Color(1, 0.963167, 0.83, 0.784314)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 5
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 3
+RichTextLabel/constants/shadow_outline_size = 3
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("6_13yup")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_he5hg")
+TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_534da")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_js3gk")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_083n0")
+
+[sub_resource type="Animation" id="Animation_k0p28"]
+resource_name = "Text_appearance"
+length = 17.3333
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texts/Flavien:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texts/Geoff:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 6.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texts/Ferdi:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6, 9.33333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Texts/Here:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(11.6667, 13.6667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Texts/And_Here:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(15.3333, 17.3333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nxbww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texts/Flavien:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texts/Geoff:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texts/Ferdi:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Texts/Here:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Texts/And_Here:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t6vjt"]
+_data = {
+"RESET": SubResource("Animation_nxbww"),
+"Text_appearance": SubResource("Animation_k0p28")
+}
+
+[node name="Credits" type="Node2D"]
+
+[node name="Credits_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_1n7ja")
+centered = false
+
+[node name="Texts" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_7saqr")
+
+[node name="Credits" type="RichTextLabel" parent="Texts"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 58.0
+offset_right = 165.0
+offset_bottom = 82.0
+rotation = -0.191986
+bbcode_enabled = true
+text = "[color=#ff1c18][pulse freq=3.0 color=#ffffff15 ease=-100.0] Credits[/pulse][/color]"
+
+[node name="Flavien" type="RichTextLabel" parent="Texts"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 73.0
+offset_right = 548.0
+offset_bottom = 163.0
+rotation = -0.0872665
+bbcode_enabled = true
+text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Flavien[/shake][/color]:    [color=#ff8864][shake rate=10.0 level=5 connected=0]Composer/Musician[/shake][/color].
+[color=#ffffff]-[/color] Spends  too  much  time  [color=#ff8864][shake rate=10.0 level=5 connected=0]banging
+ on  stuff[/shake][/color]!
+[color=#ffffff]-[/color] Last  seen  [color=#ff8864][shake rate=10.0 level=5 connected=0]on  stage[/shake][/color]."
+scroll_active = false
+script = ExtResource("7_xwskb")
+
+[node name="Geoff" type="RichTextLabel" parent="Texts"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 158.0
+offset_right = 364.0
+offset_bottom = 236.0
+rotation = 0.0349066
+bbcode_enabled = true
+text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Geoff[/shake][/color]:    [color=#ff8864][shake rate=10.0 level=5 connected=0]Developper[/shake][/color].
+[color=#ffffff]-[/color] Sometimes   blows  into   a  [color=#ff8864][shake rate=10.0 level=5 connected=0]tuba[/shake][/color].
+[color=#ffffff]-[/color] For  sure  [color=#ff8864][shake rate=10.0 level=5 connected=0]somewhere  on  Earth[/shake][/color]!"
+scroll_active = false
+script = ExtResource("7_xwskb")
+
+[node name="Ferdi" type="RichTextLabel" parent="Texts"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 165.0
+offset_right = 569.0
+offset_bottom = 299.0
+rotation = 0.0872665
+bbcode_enabled = true
+text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Ferdi[/shake][/color]:    [color=#ff8864][shake rate=10.0 level=5 connected=0]Infographist[/shake][/color].
+[color=#ffffff]-[/color] Spends  a  lot  of  time
+ [color=#ff8864][shake rate=10.0 level=5 connected=0]daubing  paintings[/shake][/color].
+[color=#ffffff]-[/color] Said  to have  gone  to
+ [color=#ff8864][shake rate=10.0 level=5 connected=0]Britanny[/shake][/color]  for  good  (but  no  one  really  knows)."
+scroll_active = false
+script = ExtResource("7_xwskb")
+
+[node name="Here" type="RichTextLabel" parent="Texts"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 86.0
+offset_right = 277.0
+offset_bottom = 139.0
+rotation = 0.120698
+text = "Here,  a  space  where  we  can  add  friends..."
+script = ExtResource("7_xwskb")
+
+[node name="And_Here" type="RichTextLabel" parent="Texts"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 275.0
+offset_right = 320.0
+offset_bottom = 328.0
+rotation = -0.191986
+text = "... And  here  too!"
+script = ExtResource("7_xwskb")
+
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_y0tck")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t6vjt")
+}
+autoplay = "Text_appearance"
+
+[node name="Typing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vnu4b")
+volume_db = -10.0
+bus = &"FX"
