@@ -1,45 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtnd8jygtcmpf"]
+[gd_scene load_steps=15 format=3 uid="uid://dtnd8jygtcmpf"]
 
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="1_3n552"]
+[ext_resource type="Script" path="res://SCRIPTS/Right_Click_Menu.gd" id="1_ml82w"]
+[ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/UI/Plein_Blanc.png" id="3_ivttp"]
+[ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/UI/Plein_Gris.png" id="4_1nhxq"]
+[ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/UI/Plein_Noir.png" id="5_53bkr"]
+[ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/UI/Plein_Rose.png" id="6_4lavd"]
+[ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/UI/Plein_Vert_Fonce.png" id="7_3bb45"]
+[ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/UI/Plein_Orange.png" id="8_uin1q"]
+[ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/UI/Plein_Bleu_Clair.png" id="9_ormoe"]
+[ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/UI/Plein_Bleu_Fonce.png" id="10_u2wya"]
+[ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/UI/Plein_Rouge.png" id="11_qhnne"]
+[ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/UI/Plein_Jaune.png" id="12_6hqpd"]
+[ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/UI/Plein_Vert_Clair.png" id="13_lebha"]
+[ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/UI/Plein_Violet_Clair.png" id="14_hd70u"]
 
-[node name="Right_Click_Menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -562.0
-offset_bottom = -288.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Right_Click_Menu" type="Node2D" node_paths=PackedStringArray("popup_menu")]
+script = ExtResource("1_ml82w")
+popup_menu = NodePath("Create_Modify_PopupMenu")
 metadata/_edit_lock_ = true
 
-[node name="PopupMenu" type="PopupMenu" parent="."]
-size = Vector2i(78, 90)
-visible = true
-unfocusable = true
-max_size = Vector2i(78, 153)
-keep_title_visible = true
+[node name="Main_PopupMenu" type="PopupMenu" parent="."]
+transparent_bg = true
+size = Vector2i(93, 90)
+transparent = true
+min_size = Vector2i(93, 90)
+max_size = Vector2i(93, 90)
 theme = ExtResource("1_3n552")
 submenu_popup_delay = 0.2
+allow_search = false
 item_count = 10
 item_0/text = "Dialogue"
-item_1/text = "Investigate"
+item_1/text = "Investigation"
 item_1/id = 1
-item_2/text = "  - - - - - - - -  "
+item_2/text = "  - - - - - - - - - -  "
 item_2/id = 2
 item_2/separator = true
-item_3/text = "Create link..."
+item_3/text = "Create conf. link..."
 item_3/id = 3
-item_4/text = "Modify link..."
+item_4/text = "Create prob. link..."
 item_4/id = 4
-item_5/text = "Certify link"
+item_5/text = "Change link color..."
 item_5/id = 5
-item_6/text = "Uncertify link"
+item_6/text = "Confirmed/Probable"
 item_6/id = 6
 item_7/text = "Delete link"
 item_7/id = 7
-item_8/text = "  - - - - - - - -  "
+item_8/text = "  - - - - - - - - - -  "
 item_8/id = 8
 item_8/separator = true
-item_9/text = "Throw it away!"
+item_9/text = "Throw card away"
 item_9/id = 9
+
+[node name="Create_Modify_PopupMenu" type="PopupMenu" parent="."]
+transparent_bg = true
+size = Vector2i(93, 108)
+transparent = true
+min_size = Vector2i(93, 108)
+max_size = Vector2i(93, 108)
+theme = ExtResource("1_3n552")
+submenu_popup_delay = 0.2
+allow_search = false
+item_count = 12
+item_0/text = "Presence"
+item_0/icon = ExtResource("3_ivttp")
+item_1/text = "Debt/Infl."
+item_1/icon = ExtResource("4_1nhxq")
+item_1/id = 1
+item_2/text = "Culp./Acco./Evid."
+item_2/icon = ExtResource("5_53bkr")
+item_2/id = 2
+item_3/text = "Intimacy"
+item_3/icon = ExtResource("6_4lavd")
+item_3/id = 3
+item_4/text = "Friendship"
+item_4/icon = ExtResource("7_3bb45")
+item_4/id = 4
+item_5/text = "Enemy"
+item_5/icon = ExtResource("8_uin1q")
+item_5/id = 5
+item_6/text = "Acquaintance"
+item_6/icon = ExtResource("9_ormoe")
+item_6/id = 6
+item_7/text = "Ideo. Affi."
+item_7/icon = ExtResource("10_u2wya")
+item_7/id = 7
+item_8/text = "Contradiction"
+item_8/icon = ExtResource("11_qhnne")
+item_8/id = 8
+item_9/text = "Confirmation"
+item_9/icon = ExtResource("12_6hqpd")
+item_9/id = 9
+item_10/text = "Ownership"
+item_10/icon = ExtResource("13_lebha")
+item_10/id = 10
+item_11/text = "Found"
+item_11/icon = ExtResource("14_hd70u")
+item_11/id = 11

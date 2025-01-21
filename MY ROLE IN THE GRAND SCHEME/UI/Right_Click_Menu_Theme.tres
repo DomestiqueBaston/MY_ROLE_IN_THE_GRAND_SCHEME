@@ -35,14 +35,15 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqjub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jprso"]
-bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
+bg_color = Color(0.1054, 0.17, 0.123703, 0.498039)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr86x"]
-bg_color = Color(1, 1, 1, 0.501961)
+bg_color = Color(1, 1, 1, 0.643137)
+border_color = Color(1, 1, 1, 0.643137)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
 
@@ -122,11 +123,11 @@ OptionButton/constants/arrow_margin = 5
 OptionButton/icons/arrow = ExtResource("3_cm3n0")
 OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
-PopupMenu/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+PopupMenu/colors/font_color = Color(0.046, 0.1, 0.0613, 0.752941)
 PopupMenu/colors/font_disabled_color = Color(0.1998, 0.27, 0.21969, 0.4)
-PopupMenu/colors/font_hover_color = Color(0.048, 0.1, 0.0627333, 0.823529)
+PopupMenu/colors/font_hover_color = Color(0, 0.04, 0.0113333, 0.882353)
 PopupMenu/colors/font_separator_color = Color(0.1998, 0.27, 0.21969, 0.392157)
-PopupMenu/constants/item_start_padding = 2
+PopupMenu/constants/item_start_padding = 1
 PopupMenu/constants/v_separation = 1
 PopupMenu/font_sizes/font_size = 8
 PopupMenu/fonts/font = ExtResource("2_41kvq")

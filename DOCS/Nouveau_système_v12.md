@@ -308,7 +308,7 @@ Le temps
 		Les déplacements ne prennent pas de temps (il est inclus dans ce qui suit dans la liste – sauf cas particuliers).
 		Les interactions (Dialogues/Investigations/Combats) prendront 2h chacune (déplacement inclus).
 		Un rendez-vous chez le médecin prend 1h (déplacement inclus).
-		Aller voir Morpho le Dealer prend 1h (déplacement inclus).
+		Aller voir Rowena le Dealer prend 1h (déplacement inclus).
 		Aller à l’investigation Center prend 1h (déplacement inclus).
 		Obtenir une autorisation de fouille prend 1h (déplacement inclus). Rappel : coûte 25Dø .
 		Dormir prend le temps défini pour cette période.
@@ -364,10 +364,10 @@ Les achats/dépenses
 	- Les cabinets médicaux, etc. ouvrent à 9h et ferment à 19h (sauf point de deal, voir au dessous).
 	- Le joueur connaît un point de deal où il pourra acheter sa/ses dose(s). Uniquement pendant la période nocturne. 1 dose coûte 25 Dø.
 	- Une Autorisation de fouille coûte 25 Dø.
-	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, faire clic droit, « Aller voir Morpho the Dealer ».
+	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, faire clic droit, « Aller voir Rowena the Dealer ».
 	- Le joueur ne peut pas revendre de dose de drogue.
 	- Le dealer n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, il disparaît jusqu’au lundi suivant.
-	- Chaque jour, Morpho a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc éventuellement avant que le joueur n’arrive).
+	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc éventuellement avant que le joueur n’arrive).
 Les cartes
 	- Globalement, les cartes représentent des éléments de dialogue avec le jeu. Elles indiquent seulement leur nom et une description de leur utilisation, pas d’informations chiffrées !
 	- Les cartes sont de type Dialogue, Combat, Investigation, Abstraites , Objet, Lieu et PNJ.

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnc7gx1qqfp4t"]
+
+[ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="1_81j7o"]
+
+[sub_resource type="GDScript" id="GDScript_bb16w"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Interaction_Right_Click_Menu" type="Node2D"]
+script = SubResource("GDScript_bb16w")
+metadata/_edit_lock_ = true
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+size = Vector2i(62, 18)
+visible = true
+unfocusable = true
+max_size = Vector2i(78, 153)
+keep_title_visible = true
+theme = ExtResource("1_81j7o")
+submenu_popup_delay = 0.2
+allow_search = false
+item_count = 2
+item_0/text = "Throw away!"
+item_1/text = "Discard"
+item_1/id = 1
