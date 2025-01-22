@@ -7,7 +7,7 @@ var tutorial_text = ""
 func _process(_delta):
 	if $".".visible_ratio > 0.0 && $".".visible_ratio < 1.0:
 		if not $"../../Typing".is_playing():
-			# Il y a un délai indésirable avec le son de frappe...
+			# There is an unwanted delay with the typing sound...
 			if $".".visible_ratio > actual_value:
 				var typing_sound = $"../../Typing"
 				typing_sound.pitch_scale = pitch_values[randi() % pitch_values.size()]

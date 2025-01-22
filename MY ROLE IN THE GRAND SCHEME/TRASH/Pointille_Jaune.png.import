@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcjkx8yt1174k"
-path="res://.godot/imported/Pointille_Orange.png-66789d62de8f62a246402b3d95179fb0.ctex"
+uid="uid://qy843ym1f6s"
+path="res://.godot/imported/Pointille_Jaune.png-19a4aafe0541e2d9d8febccc8a6aa04f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/UI/Pointille_Orange.png"
-dest_files=["res://.godot/imported/Pointille_Orange.png-66789d62de8f62a246402b3d95179fb0.ctex"]
+source_file="res://TRASH/Pointille_Jaune.png"
+dest_files=["res://.godot/imported/Pointille_Jaune.png-19a4aafe0541e2d9d8febccc8a6aa04f.ctex"]
 
 [params]
 

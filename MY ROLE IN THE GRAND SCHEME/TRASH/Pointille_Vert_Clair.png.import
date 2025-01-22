@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clam1qayvgwll"
-path="res://.godot/imported/Pointille_Blanc.png-5dd472d36dbfcd2b3bf9a6d024b49edd.ctex"
+uid="uid://c3vmtih8w6ty"
+path="res://.godot/imported/Pointille_Vert_Clair.png-35f3fe519fe79ea8a0afd0ce28788e82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/UI/Pointille_Blanc.png"
-dest_files=["res://.godot/imported/Pointille_Blanc.png-5dd472d36dbfcd2b3bf9a6d024b49edd.ctex"]
+source_file="res://TRASH/Pointille_Vert_Clair.png"
+dest_files=["res://.godot/imported/Pointille_Vert_Clair.png-35f3fe519fe79ea8a0afd0ce28788e82.ctex"]
 
 [params]
 

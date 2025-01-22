@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=29 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/UI/Plein_Noir.png" id="16_mke16"]
 [ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/UI/Plein_Rose.png" id="17_7cnra"]
 [ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/UI/Plein_Vert_Fonce.png" id="18_u436f"]
+[ext_resource type="PackedScene" uid="uid://dew0fg5j62sga" path="res://SCENES/Link.tscn" id="18_y2x40"]
 [ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/UI/Plein_Orange.png" id="19_eiutv"]
 [ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/UI/Plein_Bleu_Clair.png" id="20_oxby8"]
 [ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/UI/Plein_Bleu_Fonce.png" id="21_134b4"]
@@ -164,6 +165,7 @@ offset_left = 100.0
 offset_top = 1.0
 offset_right = 112.0
 offset_bottom = 9.0
+pivot_offset = Vector2(30, 20)
 tooltip_text = "Enemy
 - Dashed: Probable
 - Solid: Confirmed"
@@ -172,10 +174,11 @@ metadata/_edit_lock_ = true
 
 [node name="Light_Blue" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 100.0
+offset_left = 113.0
 offset_top = 1.0
-offset_right = 112.0
+offset_right = 125.0
 offset_bottom = 9.0
+pivot_offset = Vector2(30, 20)
 tooltip_text = "Acquaintance
 - Dashed: Probable
 - Solid: Confirmed"
@@ -184,10 +187,11 @@ metadata/_edit_lock_ = true
 
 [node name="Dark_Blue" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 113.0
+offset_left = 126.0
 offset_top = 1.0
-offset_right = 125.0
+offset_right = 138.0
 offset_bottom = 9.0
+pivot_offset = Vector2(17, 20)
 tooltip_text = "Ideological affinity
 - Dashed: Probable
 - Solid: Confirmed"
@@ -196,10 +200,11 @@ metadata/_edit_lock_ = true
 
 [node name="Red" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 113.0
+offset_left = 139.0
 offset_top = 1.0
-offset_right = 125.0
+offset_right = 151.0
 offset_bottom = 9.0
+pivot_offset = Vector2(17, 20)
 tooltip_text = "Contradiction
 - Dashed: Probable
 - Solid: Confirmed"
@@ -208,10 +213,11 @@ metadata/_edit_lock_ = true
 
 [node name="Yellow" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 126.0
+offset_left = 152.0
 offset_top = 1.0
-offset_right = 138.0
+offset_right = 164.0
 offset_bottom = 9.0
+pivot_offset = Vector2(4, 20)
 tooltip_text = "Confirmation
 - Dashed: Probable
 - Solid: Confirmed"
@@ -220,10 +226,11 @@ metadata/_edit_lock_ = true
 
 [node name="Light_Green" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 139.0
+offset_left = 165.0
 offset_top = 1.0
-offset_right = 151.0
+offset_right = 177.0
 offset_bottom = 9.0
+pivot_offset = Vector2(-9, 20)
 tooltip_text = "Ownership
 - Dashed: Probable
 - Solid: Confirmed"
@@ -232,10 +239,11 @@ metadata/_edit_lock_ = true
 
 [node name="Light_Purple" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 152.0
+offset_left = 178.0
 offset_top = 1.0
-offset_right = 164.0
+offset_right = 190.0
 offset_bottom = 9.0
+pivot_offset = Vector2(-22, 20)
 tooltip_text = "Found
 - Dashed: Probable
 - Solid: Confirmed"
@@ -244,10 +252,11 @@ metadata/_edit_lock_ = true
 
 [node name="Dark_Purple" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 165.0
+offset_left = 191.0
 offset_top = 1.0
-offset_right = 177.0
+offset_right = 203.0
 offset_bottom = 9.0
+pivot_offset = Vector2(-35, 20)
 tooltip_text = "New
 - Always dashed"
 texture = ExtResource("15_0qkya")
@@ -329,44 +338,47 @@ position = Vector2(537, 57)
 [node name="Combat" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG/Card_Color" index="0"]
 visible = false
 
+[node name="Object" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
 [node name="Card_Text" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Closed" parent="TMP/Main_Playmat/Card6/Card_Mask/Card_BG" index="5"]
-visible = true
 
 [node name="Links" type="Node2D" parent="TMP/Main_Playmat"]
 metadata/_edit_lock_ = true
 
-[node name="Lien_Pointillé_Exemple" type="Line2D" parent="TMP/Main_Playmat/Links"]
-points = PackedVector2Array(257, 92, 470, 213)
-width = 3.0
+[node name="Link_Violet_Rose" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
+
+[node name="Link_Texture" parent="TMP/Main_Playmat/Links/Link_Violet_Rose" index="0"]
+offset_left = 257.0
+offset_top = 90.0
+offset_right = 503.0
+offset_bottom = 93.0
+rotation = 0.518363
+tooltip_text = "Intimacy - Probable"
 texture = ExtResource("4_68wvn")
-texture_mode = 1
-begin_cap_mode = 2
-end_cap_mode = 2
-round_precision = 3
-metadata/_edit_lock_ = true
 
-[node name="Lien_Pointillé_Blanc_Exemple" type="Line2D" parent="TMP/Main_Playmat/Links"]
-points = PackedVector2Array(544, 64, 361, 45)
-width = 3.0
+[node name="Link_Pointillé_Blanc" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
+
+[node name="Link_Texture" parent="TMP/Main_Playmat/Links/Link_Pointillé_Blanc" index="0"]
+offset_left = 361.0
+offset_top = 44.0
+offset_right = 545.0
+offset_bottom = 47.0
+rotation = 0.100997
+tooltip_text = "Presence - Probable"
 texture = ExtResource("5_nrm53")
-texture_mode = 1
-begin_cap_mode = 2
-end_cap_mode = 2
-round_precision = 3
-metadata/_edit_lock_ = true
 
-[node name="Lien_Plein_Exemple" type="Line2D" parent="TMP/Main_Playmat/Links"]
-points = PackedVector2Array(232, 220, 519, 170)
-width = 3.0
+[node name="Link_Plein_Jaune" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
+
+[node name="Link_Texture" parent="TMP/Main_Playmat/Links/Link_Plein_Jaune" index="0"]
+offset_left = 232.0
+offset_top = 219.0
+offset_right = 523.0
+offset_bottom = 222.0
+rotation = -0.174241
+tooltip_text = "Confirmation - Confirmed (!)"
 texture = ExtResource("6_jtpuj")
-texture_mode = 1
-begin_cap_mode = 2
-end_cap_mode = 2
-round_precision = 3
-metadata/_edit_lock_ = true
 
 [node name="Pin_Small" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(361, 45)
@@ -530,6 +542,9 @@ position = Vector2(-2, -18)
 [editable path="TMP/Main_Playmat/Card4"]
 [editable path="TMP/Main_Playmat/Card5"]
 [editable path="TMP/Main_Playmat/Card6"]
+[editable path="TMP/Main_Playmat/Links/Link_Violet_Rose"]
+[editable path="TMP/Main_Playmat/Links/Link_Pointillé_Blanc"]
+[editable path="TMP/Main_Playmat/Links/Link_Plein_Jaune"]
 [editable path="TMP/Possible_Clues_Cards/Card7"]
 [editable path="TMP/Possible_Clues_Cards/Card8"]
 [editable path="TMP/Possible_Clues_Cards/Card9"]

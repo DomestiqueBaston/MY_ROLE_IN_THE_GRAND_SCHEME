@@ -52,6 +52,7 @@ func _process(_delta):
 	
 	if $".".visible_ratio < 1.0:
 		if not $"../../../Typing".is_playing():
+			# There is an unwanted delay with the typing sound...
 			if $".".visible_ratio > actual_value:
 				var typing_sound = $"../../../Typing"
 				typing_sound.pitch_scale = pitch_values[randi() % pitch_values.size()]

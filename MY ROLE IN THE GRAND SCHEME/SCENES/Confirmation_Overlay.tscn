@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://bj832g1qup1fu"]
+[gd_scene load_steps=17 format=3 uid="uid://bj832g1qup1fu"]
 
 [ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/CONFIRMATION/Confirmation.png" id="1_q44ut"]
-[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_dg7km"]
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="2_hsb6e"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_6rqop"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_77qji"]
@@ -31,6 +30,30 @@ tracks/0/keys = {
 "values": ["Do you
 confirm that?"]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation_Panel/Yes_No/Yes:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Yes!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Confirmation_Panel/Yes_No/No:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["No..."]
+}
 
 [sub_resource type="Animation" id="Animation_wqng6"]
 resource_name = "Text_Animation"
@@ -53,6 +76,30 @@ coNFiRm THat?", "dO YoU
 COnfIrM thAT?", "dO YoU
 COnfIrM thAT?", "Do yOu
 coNFiRm THat?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation_Panel/Yes_No/Yes:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["yES", "Yes", "Yes", "yES", "yES"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Confirmation_Panel/Yes_No/No:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["No", "No", "nO", "nO", "No"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lew6r"]
@@ -201,9 +248,9 @@ texture = ExtResource("1_q44ut")
 metadata/_edit_lock_ = true
 
 [node name="Do_You_Confirm_That" type="Label" parent="Confirmation_Panel"]
-offset_left = 223.0
+offset_left = 222.0
 offset_top = 146.0
-offset_right = 409.0
+offset_right = 408.0
 offset_bottom = 213.0
 rotation = -0.197056
 theme_override_colors/font_color = Color(0.0781, 0.11, 0.0903283, 0.607843)
@@ -222,24 +269,25 @@ metadata/_edit_lock_ = true
 [node name="Yes_No" type="Control" parent="Confirmation_Panel"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 323.0
-offset_top = 217.0
-offset_right = 363.0
-offset_bottom = 257.0
+offset_left = 328.0
+offset_top = 214.0
+offset_right = 328.0
+offset_bottom = 214.0
+rotation = -0.191986
 metadata/_edit_lock_ = true
 
 [node name="Yes" type="Button" parent="Confirmation_Panel/Yes_No"]
 layout_mode = 0
-offset_left = -42.0
-offset_top = -4.0
-offset_right = -25.0
-offset_bottom = 4.0
-theme_override_colors/font_hover_color = Color(0.4896, 0.64, 0.3392, 1)
-theme_override_colors/font_color = Color(0.8091, 0.87, 0.7482, 0.882353)
+offset_left = -46.0
+offset_top = -6.0
+offset_right = -20.0
+offset_bottom = 8.0
+theme_override_colors/font_hover_color = Color(0.469, 0.67, 0.268, 0.843137)
+theme_override_colors/font_color = Color(0.7221, 0.87, 0.5742, 0.843137)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("2_dg7km")
-theme_override_font_sizes/font_size = 8
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hsb6e")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bt1u8")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rk6r8")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_imaw7")
@@ -251,16 +299,16 @@ metadata/_edit_lock_ = true
 
 [node name="No" type="Button" parent="Confirmation_Panel/Yes_No"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = -4.0
+offset_left = 20.0
+offset_top = -6.0
 offset_right = 42.0
-offset_bottom = 4.0
-theme_override_colors/font_hover_color = Color(0.79, 0.430813, 0.3002, 1)
-theme_override_colors/font_color = Color(0.94, 0.802133, 0.752, 0.882353)
+offset_bottom = 8.0
+theme_override_colors/font_hover_color = Color(0.75, 0.37375, 0.225, 0.843137)
+theme_override_colors/font_color = Color(0.94, 0.6298, 0.517, 0.843137)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("2_dg7km")
-theme_override_font_sizes/font_size = 8
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_hsb6e")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bt1u8")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rk6r8")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_imaw7")

@@ -13,20 +13,20 @@ script = ExtResource("1_8vgni")
 metadata/_edit_lock_ = true
 
 [node name="Cross" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = -5.0
 offset_top = -5.0
-offset_right = 11.0
-offset_bottom = 11.0
+offset_right = 5.0
+offset_bottom = 5.0
 texture = ExtResource("2_sb86a")
 stretch_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Arrow" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_right = 10.0
+offset_bottom = 10.0
 texture = ExtResource("1_a68nx")
 stretch_mode = 2
 metadata/_edit_lock_ = true

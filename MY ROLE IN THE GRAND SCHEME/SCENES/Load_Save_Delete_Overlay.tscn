@@ -159,15 +159,15 @@ theme = ExtResource("1_x0dex")
 metadata/_edit_lock_ = true
 
 [node name="Load_Save_Delete_BG" type="Sprite2D" parent="Load_Save_Delete_Panel"]
-position = Vector2(157, 176)
+position = Vector2(316, 176)
 texture = ExtResource("1_b07ca")
 metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="Load_Save_Delete_Panel"]
 layout_mode = 0
-offset_left = 87.0
+offset_left = 246.0
 offset_top = 116.0
-offset_right = 230.0
+offset_right = 389.0
 offset_bottom = 314.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_t7fen")
 metadata/_edit_lock_ = true
@@ -200,9 +200,9 @@ metadata/_edit_lock_ = true
 
 [node name="Load_Save_Delete" type="Label" parent="Load_Save_Delete_Panel"]
 layout_mode = 0
-offset_left = 88.0
+offset_left = 247.0
 offset_top = 97.0
-offset_right = 231.0
+offset_right = 390.0
 offset_bottom = 105.0
 theme = ExtResource("1_x0dex")
 theme_override_colors/font_color = Color(0.866667, 0.905882, 0.941176, 0.882353)
@@ -214,21 +214,18 @@ metadata/_edit_lock_ = true
 [node name="Yes_No" type="Control" parent="Load_Save_Delete_Panel"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 323.0
-offset_top = 217.0
-offset_right = 363.0
-offset_bottom = 257.0
+offset_left = 159.0
+offset_right = 159.0
 metadata/_edit_lock_ = true
 
 [node name="Load" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
-layout_mode = 0
-offset_left = -213.0
-offset_top = -120.0
-offset_right = -193.0
-offset_bottom = -112.0
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0.8648, 0.907413, 0.94, 0.882353)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
+offset_left = 110.0
+offset_top = 97.0
+offset_right = 130.0
+offset_bottom = 105.0
+theme_override_colors/font_hover_color = Color(0.40848, 0.74, 0.3848, 0.882353)
+theme_override_colors/font_color = Color(0.668027, 0.94, 0.6486, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_4fe4i")
 theme_override_font_sizes/font_size = 8
@@ -242,14 +239,13 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="Save" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
-layout_mode = 0
-offset_left = -179.0
-offset_top = -120.0
-offset_right = -159.0
-offset_bottom = -112.0
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0.8648, 0.907413, 0.94, 0.882353)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
+offset_left = 144.0
+offset_top = 97.0
+offset_right = 164.0
+offset_bottom = 105.0
+theme_override_colors/font_hover_color = Color(0.81, 0.56619, 0.1134, 0.882353)
+theme_override_colors/font_color = Color(0.97, 0.84099, 0.6014, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_4fe4i")
 theme_override_font_sizes/font_size = 8
@@ -263,14 +259,13 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="Delete" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
-layout_mode = 0
-offset_left = -145.0
-offset_top = -120.0
-offset_right = -116.0
-offset_bottom = -112.0
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0.8648, 0.907413, 0.94, 0.882353)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
+offset_left = 178.0
+offset_top = 97.0
+offset_right = 207.0
+offset_bottom = 105.0
+theme_override_colors/font_hover_color = Color(0.87, 0.3306, 0.3306, 0.882353)
+theme_override_colors/font_color = Color(0.94, 0.6486, 0.6486, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_4fe4i")
 theme_override_font_sizes/font_size = 8
