@@ -1,0 +1,497 @@
+[gd_scene load_steps=52 format=3 uid="uid://bxubj1onaew07"]
+
+[ext_resource type="Texture2D" uid="uid://dbmjuo4ovocyv" path="res://GRAPHICS/ROWENA/Rowena_BG.png" id="2_7yue0"]
+[ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="2_mlnrk"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_2tv21"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="3_jubhb"]
+[ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="4_2pkef"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_ktdcv"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_e7ucw"]
+[ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="5_x7yfi"]
+[ext_resource type="Texture2D" uid="uid://bnccay48pluv" path="res://GRAPHICS/ROWENA/Minus_Normal.png" id="7_rrx7e"]
+[ext_resource type="Texture2D" uid="uid://dsksdoxu1xfhi" path="res://GRAPHICS/ROWENA/Minus_Pressed.png" id="8_c4v3w"]
+[ext_resource type="Texture2D" uid="uid://c4tdk55kjldtf" path="res://GRAPHICS/ROWENA/Minus_Hover.png" id="9_oi8ju"]
+[ext_resource type="BitMap" uid="uid://dctue2soxk2cs" path="res://GRAPHICS/ROWENA/Minus_Mask.png" id="10_8mowk"]
+[ext_resource type="Texture2D" uid="uid://s5x8jgyl5u0p" path="res://GRAPHICS/ROWENA/Plus_Normal.png" id="11_r3ewp"]
+[ext_resource type="Texture2D" uid="uid://dkbajl6j7ktg5" path="res://GRAPHICS/ROWENA/Plus_Pressed.png" id="12_aqcnl"]
+[ext_resource type="Texture2D" uid="uid://bbs7ssu3nub6u" path="res://GRAPHICS/ROWENA/Plus_Hover.png" id="13_sp1we"]
+[ext_resource type="BitMap" uid="uid://dohqyo1qij7qr" path="res://GRAPHICS/ROWENA/Plus_Mask.png" id="14_dxmd3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5aaw8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5b0cj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdoj4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3eac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_684bo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2kotw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d520k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wul7r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63chm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk2s2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q4vc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmwgf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqjub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jprso"]
+bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr86x"]
+bg_color = Color(1, 1, 1, 0.501961)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
+bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pnod"]
+bg_color = Color(0.1332, 0.18, 0.141, 0.25098)
+border_width_left = 1
+border_width_bottom = 1
+border_color = Color(0.1332, 0.18, 0.141, 0.643137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3nae"]
+bg_color = Color(0.99, 0.993167, 1, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_534da"]
+bg_color = Color(0.99, 0.993333, 1, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js3gk"]
+bg_color = Color(0.99, 0.993333, 1, 0.784314)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_083n0"]
+bg_color = Color(0.99, 0.993333, 1, 0.784314)
+border_width_left = 5
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="Theme" id="Theme_bi5nw"]
+default_font = ExtResource("3_jubhb")
+default_font_size = 8
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("3_2tv21")
+HSlider/icons/grabber = ExtResource("2_mlnrk")
+HSlider/icons/grabber_disabled = ExtResource("2_mlnrk")
+HSlider/icons/grabber_highlight = ExtResource("2_mlnrk")
+HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_1rsf7")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_5aaw8")
+HSlider/styles/slider = SubResource("StyleBoxEmpty_5b0cj")
+ItemList/colors/font_color = Color(0, 0, 0, 0.756863)
+ItemList/colors/font_hovered_color = Color(0.0154, 0.07, 0.02086, 0.501961)
+ItemList/colors/font_selected_color = Color(0.616, 0.7, 0.6454, 0.858824)
+ItemList/colors/guide_color = Color(0.7, 0.7, 0.7, 0)
+ItemList/constants/v_separation = 3
+ItemList/styles/cursor = SubResource("StyleBoxEmpty_mdoj4")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_e3eac")
+ItemList/styles/focus = SubResource("StyleBoxEmpty_684bo")
+ItemList/styles/hovered = SubResource("StyleBoxEmpty_2kotw")
+ItemList/styles/panel = SubResource("StyleBoxEmpty_d520k")
+ItemList/styles/selected = SubResource("StyleBoxEmpty_wul7r")
+ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_63chm")
+Label/constants/line_spacing = 2
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("3_2tv21")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_pk2s2")
+MenuButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+MenuButton/colors/font_focus_color = Color(0.1998, 0.27, 0.21969, 0.501961)
+MenuButton/colors/font_hover_color = Color(0.1998, 0.27, 0.21969, 0.501961)
+MenuButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+MenuButton/font_sizes/font_size = 8
+MenuButton/fonts/font = ExtResource("3_jubhb")
+OptionButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_disabled_color = Color(0.2, 0.270588, 0.219608, 0.501961)
+OptionButton/colors/font_focus_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_hover_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_hover_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/constants/arrow_margin = 5
+OptionButton/icons/arrow = ExtResource("4_2pkef")
+OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
+PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
+PopupMenu/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
+PopupMenu/colors/font_hover_color = Color(0.048, 0.1, 0.0627333, 0.823529)
+PopupMenu/constants/item_start_padding = -12
+PopupMenu/constants/v_separation = 0
+PopupMenu/font_sizes/font_size = 8
+PopupMenu/fonts/font = ExtResource("3_jubhb")
+PopupMenu/icons/radio_checked = ExtResource("5_x7yfi")
+PopupMenu/icons/radio_checked_disabled = ExtResource("5_x7yfi")
+PopupMenu/icons/radio_unchecked = ExtResource("5_x7yfi")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("5_x7yfi")
+PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
+PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")
+PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_vr86x")
+PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_534da")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_js3gk")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_083n0")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3e1n3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qddky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6a1d6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihvqb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qy1b3"]
+
+[sub_resource type="Animation" id="Animation_6c0my"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rowena_Panel_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-640, 0), Vector2(-240, 0), Vector2(-75.9373, 0), Vector2(-50.6248, 0), Vector2(-25.3123, 0), Vector2(0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_ktdcv")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_6t1tt"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rowena_Panel_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-9.07405, 0), Vector2(-127.037, 0), Vector2(-245, 0), Vector2(-640, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_e7ucw")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_nfkjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rowena_Panel_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_girfw"]
+_data = {
+"Appearance": SubResource("Animation_6c0my"),
+"Disappearance": SubResource("Animation_6t1tt"),
+"RESET": SubResource("Animation_nfkjl")
+}
+
+[node name="Rowena_Overlay" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0946, 0.11, 0.09922, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Rowena_Panel_Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = SubResource("Theme_bi5nw")
+metadata/_edit_lock_ = true
+
+[node name="Rowena_BG" type="Sprite2D" parent="Rowena_Panel_Panel"]
+position = Vector2(316, 176)
+texture = ExtResource("2_7yue0")
+metadata/_edit_lock_ = true
+
+[node name="Drug_Store" type="Control" parent="Rowena_Panel_Panel"]
+modulate = Color(1, 1, 1, 0.784314)
+anchors_preset = 0
+offset_top = 12.0
+offset_right = 40.0
+offset_bottom = 52.0
+metadata/_edit_lock_ = true
+
+[node name="Stock" type="RichTextLabel" parent="Rowena_Panel_Panel/Drug_Store"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 114.0
+offset_right = 446.0
+offset_bottom = 181.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("3_2tv21")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center][color=#9c7f5f]I only have
+    dose(s)
+left for [color=#e85d68]25[/color] [color=#d41c2b]Dø[/color] each.[/color][/center]"
+metadata/_edit_lock_ = true
+
+[node name="Stock_Number" type="Label" parent="Rowena_Panel_Panel/Drug_Store/Stock"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 20.0
+offset_right = 96.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.84, 0.42672, 0.2352, 1)
+theme_override_constants/outline_size = 6
+text = "5"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="I_will_take" type="Label" parent="Rowena_Panel_Panel/Drug_Store"]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 204.0
+offset_right = 292.0
+offset_bottom = 225.0
+theme = SubResource("Theme_bi5nw")
+theme_override_colors/font_color = Color(0.427451, 0.509804, 0.258824, 1)
+theme_override_constants/outline_size = 6
+text = "Ok,  I'lL take"
+metadata/_edit_lock_ = true
+
+[node name="Puchase" type="Label" parent="Rowena_Panel_Panel/Drug_Store/I_will_take"]
+layout_mode = 0
+offset_left = 103.0
+offset_right = 138.0
+offset_bottom = 21.0
+theme_override_colors/font_color = Color(0.4514, 0.66304, 0.74, 1)
+theme_override_constants/outline_size = 6
+text = "X"
+metadata/_edit_lock_ = true
+
+[node name="Do" type="Label" parent="Rowena_Panel_Panel/Drug_Store/I_will_take"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = -1.0
+offset_right = 282.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.427451, 0.509804, 0.258824, 1)
+theme_override_constants/outline_size = 6
+text = "Dø"
+metadata/_edit_lock_ = true
+
+[node name="Price" type="Label" parent="Rowena_Panel_Panel/Drug_Store/I_will_take"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = -1.0
+offset_right = 243.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.68068, 0.77, 0.3234, 1)
+theme_override_constants/outline_size = 6
+text = "X"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Thanks_Nope" type="Control" parent="Rowena_Panel_Panel"]
+modulate = Color(1, 1, 1, 0.921569)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 159.0
+offset_right = 159.0
+metadata/_edit_lock_ = true
+
+[node name="Thanks" type="Button" parent="Rowena_Panel_Panel/Thanks_Nope"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 268.0
+offset_right = 270.0
+offset_bottom = 289.0
+theme_override_colors/font_hover_pressed_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
+theme_override_colors/font_hover_color = Color(0.641333, 0.74, 0.444, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
+theme_override_colors/font_focus_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
+theme_override_colors/font_color = Color(0.4267, 0.51, 0.2601, 0.921569)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_2tv21")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "Thanks!"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Nope" type="Button" parent="Rowena_Panel_Panel/Thanks_Nope"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 294.0
+offset_right = 322.0
+offset_bottom = 315.0
+rotation = -1.5708
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
+theme_override_colors/font_hover_color = Color(0.9, 0.5544, 0.468, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
+theme_override_colors/font_focus_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
+theme_override_colors/font_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_2tv21")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "Nope!"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Plus_Minus" type="Control" parent="Rowena_Panel_Panel"]
+modulate = Color(1, 1, 1, 0.901961)
+anchors_preset = 0
+offset_top = 12.0
+offset_right = 40.0
+offset_bottom = 52.0
+metadata/_edit_lock_ = true
+
+[node name="Minus" type="TextureButton" parent="Rowena_Panel_Panel/Plus_Minus"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 205.0
+offset_right = 338.0
+offset_bottom = 221.0
+texture_normal = ExtResource("7_rrx7e")
+texture_pressed = ExtResource("8_c4v3w")
+texture_hover = ExtResource("9_oi8ju")
+texture_click_mask = ExtResource("10_8mowk")
+metadata/_edit_lock_ = true
+
+[node name="Plus" type="TextureButton" parent="Rowena_Panel_Panel/Plus_Minus"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 206.0
+offset_right = 358.0
+offset_bottom = 222.0
+texture_normal = ExtResource("11_r3ewp")
+texture_pressed = ExtResource("12_aqcnl")
+texture_hover = ExtResource("13_sp1we")
+texture_click_mask = ExtResource("14_dxmd3")
+metadata/_edit_lock_ = true
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_girfw")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
