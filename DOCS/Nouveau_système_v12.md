@@ -5,7 +5,7 @@ Livret de règles (!)
 
 
 Caractéristiques du Joueur
-	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/HEAnom.) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) allant de 0 à 10. Aucune caractéristique ne pourra jamais dépasser 10.
+	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/HEAnom.) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) allant de 0 à 5. Aucune caractéristique ne pourra jamais dépasser 10.
 	- À noter qu’à la création du personnage, pour le sexe, on peut mettre M, F ou n’importe quelle valeur entre les deux, on s’en fout, ça ne change rien au jeu (humour de merde inclus !).
 	- Pas d’âge non plus, on s’en fout totalement aussi !
 
@@ -278,7 +278,7 @@ Récupération (joueur)
 	- Pas de sommeil pendant une crise de Paranoïa (donc pas de récupération) !
 	- Une nuit de sommeil (voir Veille/Sommeil) :
 
-Durée de Sommeil	Effets sur la Santé Mentale (HEA)	Effets sur les Émotions (Emo)	Bonus/Malus aux jets de dé jusqu’au prochain dodo
+Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonus/Malus aux jets de dé jusqu’au prochain dodo
 4 heures	/	+1 Emo → Min/Max et +1 Add → Min/max	Malus de 2
 5 heures	/	+1 Emo → Min/Max	Malus de 1
 6 heures	/	/	Malus de 1
@@ -293,7 +293,7 @@ Durée de Sommeil	Effets sur la Santé Mentale (HEA)	Effets sur les Émotions (E
 	- Intervention Thérapeutique (médecin) : +2 HEA, ±1 Emo → 0 et ±1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
 	- Pour une intervention thérapeutique, dans l’écran de jeu principal (Main.tscn), faire un clic droit puis sélectionner « Intervention thérapeutique ».
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa !
-	- Pour aller chez le médecin, dans l’écran de jeu principal, faire clic droit, « Aller chez le médecin ».
+	- Pour aller chez le médecin : Menu Dailies en haut de l’écran.
 	- Aller chez le médecin prend 1h.
 
 Récupération (PNJs)
@@ -310,7 +310,7 @@ Le temps
 		Un rendez-vous chez le médecin prend 1h (déplacement inclus).
 		Aller voir Rowena le Dealer prend 1h (déplacement inclus).
 		Aller à l’investigation Center prend 1h (déplacement inclus).
-		Obtenir une autorisation de fouille prend 1h (déplacement inclus). Rappel : coûte 25Dø .
+		Obtenir une autorisation de fouille prend 1h (déplacement inclus). Rappel : coûte 25Dø et 1 à la fois.
 		Dormir prend le temps défini pour cette période.
 		…
 	- On aura une horloge à l’écran en permanence avec la date et l’heure (en haut à gauche).
@@ -349,22 +349,22 @@ Veille/Sommeil
 
 L’argent
 	- La monnaie du jeu, c’est le « Dough » noté Dø (« Pognon » noté Pø en français !).
-	- Une partie démarre le lundi matin avec la facture de la semaine réglée et 100Dø en poche.
+	- Une partie démarre le lundi matin avec la facture de la semaine réglée et 75Dø en poche.
 	- Les PNJs n’ont pas de besoins d’argent.
 	- Le joueur peut avoir des dettes (voir Factures).
 
 Les factures
 	- Les factures se payent toujours le lundi matin pour la semaine passée. En cas d’impayé, les sommes ne s’additionnent pas, ce sont les factures qui s’accumulent. Ainsi, le joueur, s’il a 2 factures mais ne peut en payer qu’une pourra toujours en payer une. Il en a pour 100 Dø par semaine.
-	- Chaque facture impayée augmente de 10 % chaque semaine.
-	- Pour payer sa facture, à l’écran principal, faire clic droit, « Payer les factures » et « cliquer sur la facture que l’on veut payer ».
-	- Les factures ont 50 % de chance de varier de ±10 % chaque semaine.
-	- Au delà de 5 factures impayées, le joueur est jeté en prison et la partie est terminée !
+	- Chaque facture impayée augmente de 10% par semaine et implique un malus de 1 par semaine de retard aux jets de dé.
+	- Pour payer sa facture, à l’écran principal, faire Menu Dailies en haut de l’écran, « Payer les factures » et « cliquer sur la facture que l’on veut payer ».
+	- Les nouvelles factures ont 50% de chance de varier de ±10%.
+	- Au delà de 5 factures impayées, le joueur devient Paranoïaque !
 
 Les achats/dépenses
 	- Les cabinets médicaux, etc. ouvrent à 9h et ferment à 19h (sauf point de deal, voir au dessous).
 	- Le joueur connaît un point de deal où il pourra acheter sa/ses dose(s). Uniquement pendant la période nocturne. 1 dose coûte 25 Dø.
-	- Une Autorisation de fouille coûte 25 Dø.
-	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, faire clic droit, « Aller voir Rowena the Dealer ».
+	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois.
+	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, menu Dailies en haut de l’écran.
 	- Le joueur ne peut pas revendre de dose de drogue.
 	- Le dealer n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, il disparaît jusqu’au lundi suivant.
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc éventuellement avant que le joueur n’arrive).
@@ -440,7 +440,7 @@ Les interactions : Dialogue, Combat et Investigation
 	- On joue au maximum 3 cartes par Interaction (au minimum 1).
 	- Dans Main.tscn, pour ajouter une carte, on fera un Drag & Drop de la carte depuis la liste Possible Clues (en haut à gauche de l’écran).
 	- Dans Main.tscn, pour retirer une carte de l’écran principal, on fera un Drag & Drop de la carte dans la liste Possible Clues (en haut à gauche de l’écran). Cela retire automatiquement le caractère Evidence de la carte si celle-ci l’avait et tous ses liens sont détruits.
-	- Sur l’écran principal, pour interagir avec une Carte, on fait Clic droit, « Dialogue » ou « Combat » ou « Investiguer » sur la carte concernée.
+	- Sur l’écran principal, pour interagir avec une Carte, on fait Clic droit, « Dialogue » ou « Investiguer » sur la carte concernée.
 	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps ou, le PNJ n’est exceptionnellement pas là cette fois), le jeu préviendra avec un Overlay qui dira « Je ne sais pas où se trouve cette personne en ce moment. » Et le temps ne passera pas !
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire), il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
 	- Pour Dialoguer directement avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci :Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
@@ -494,7 +494,7 @@ Dialogue
 	- Le joueur ne peut pas fuir une agression d’avant Dialogue !
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue (incluses Spécial) et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Sommeil, de Lieu (sur place uniquement), d’Evidence, Malus d’action de Nuit, de Veille, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue (incluses Spécial) et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence, Malus d’action de Nuit, de Veille, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
 		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan.
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
 	- À partir du moment ou un Dialogue est engagé, le PNJ est soustrait à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
@@ -544,7 +544,7 @@ Combat
 	- Un Combat durera 2h.
 	- Si d’autres PNJs sont présents au moment du Combat, ils prennent la fuite automatiquement et ne seront pas accessibles avant le lendemain.
 	- Le jet de dé de base pour un Combat est : round((PHY×2 + MEN + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit.
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Facture, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit.
 		Pour le PNJ (seulement ses caractéristiques) : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
 	- Une réussite critique permet au joueur de ne pas tuer si jamais le PNJ aurait dû mourir. La victime sera à HEA=1 et le combat avec ce PNJ sera terminé. ±1Emo → O pour le joueur.
@@ -609,9 +609,9 @@ Investigation
 	- On ne peut pas jouer de carte Objet, Lieu ou PNJ en Investigation !
 	- On ne joue que des cartes Investigation, Investigation Spéciale et Abstraite. Maximum 1 de chaque.
 	- On ne peut investiguer un Lieu qu’avec une autorisation de fouille (voir plus loin).
-	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) !
+	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit, bonus/malus de Break-In (voir Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit, bonus/malus de Break-In (voir Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
 	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation. Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes.
 	- Une réussite critique donne +25Dø à +50Dø en plus de ce qui est trouvé avec une réussite « normale ».
 	- Un échec donne -1Emo.
@@ -646,7 +646,7 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 4	2
 5	1
 
-	- Une enquête peut-être abandonnée via le bouton Give up dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
+	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
 	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously).
 	- Pour Interacgir dans un Lieu lié à l’enquête ou avec un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles.
@@ -657,6 +657,7 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Rappel : une carte qualifiée d’Evidence (lien(s) Plein(s)) va automatiquement dans la pile de cartes Evidence avec son/ses lien(s) dans Main.tscn.
 	- Le niveau difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
+	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
 	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).
@@ -693,14 +694,16 @@ Violet clair : Trouvé (sert à se souvenir d’où vient un objet)
 
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté (exemple)
-		Difficulté 1 : 		Enquêtes très simples. (+3)
-		Difficulté 2 : 		Enquêtes modérément compliquées. (+1)
-		Difficulté 3 : 		Enquêtes normalement complexe. (/)
-		Difficulté 4 : 		Enquêtes très complexes. (-1)
-		Difficulté 5 : 		Enquêtes épouvantablement complexes. (-3)
-		Quête ultime (Parano) :	WTF !(-4)
+	
+Difficulté	Bonus/Malus
+1	Enquêtes très simples. (+2)
+2	Enquêtes modérément compliquées. (+1)
+3	Enquêtes normalement complexe. (/)
+4	Enquêtes très complexes. (-1)
+5	Enquêtes épouvantablement complexes. (-2)
+Enquête ultime (6)	WTF !(-3)
 
-	- Le niveau de difficulté de l’enquête s’appliquera en bonus/malus à tous les jets de dé du joueur dans cette enquête.
+	- Le niveau de difficulté impliquera un bonus/malus à tous les jets de dé du joueur dans cette enquête (voir tableau au dessus).
 	- Au départ, le joueur n’a accès qu’aux enquêtes de niveau 1 et 2. Puis toutes les 3 enquêtes réussies dans ces niveaux de difficulté, il a accès au niveau de difficulté suivant et ainsi de suite.
 	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 4 aux jets de dé !
 	- Plus le niveau de difficulté sera élevé et plus il faudra de preuves pour finaliser le dossier, plus il faudra désigner de coupables et/ou de complices (voir plus bas, à la fin du doc.).
@@ -725,7 +728,12 @@ Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite qui restent dans la pile du joueur).
 Éléments additionnels (non facultatifs) :
 	- Je vais créer 2 ou 3 enquêtes finales (Paranoïa) pour la re-jouabilité.
-	- Il serait chouette de garder des PNJs pour les réintroduire dans d’autres enquêtes de temps en temps… Même si ça n’est pas vital.
+	- Dans la scène Mixette.tscn, il y a 5 boutons pour augmenter encore la difficulté :
+		Drug Quality : Prix de la drogue +15%.
+		Plot Depth : Temps imparti pour résoudre une enquête : -15%.
+		Corruption : Autorisation de fouille portée à 35Dø.
+		Retail Investment :  Les factures augmentent de +15%.
+		Vice : Caution (prison) portée à 250Dø.
 
 Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre
 

@@ -109,9 +109,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Provided by Khoristan
-or
-Azteca"
+tooltip_text = "Khoristan
+or Azteca"
 toggle_mode = true
 texture_pressed = ExtResource("7_1ckbf")
 texture_hover = ExtResource("8_hwl6s")
@@ -135,9 +134,9 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "We can do things faster
+tooltip_text = "Aliot Cess
 or
-not..."
+El Napone"
 toggle_mode = true
 texture_pressed = ExtResource("13_j8d8s")
 texture_hover = ExtResource("14_n4t1p")

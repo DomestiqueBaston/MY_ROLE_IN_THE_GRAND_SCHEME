@@ -54,28 +54,28 @@ position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
 metadata/_edit_lock_ = true
 
-[node name="Clue_Collider" type="Area2D" parent="Main_BG/Colliders"]
+[node name="Possible_Clue_Collider" type="Area2D" parent="Main_BG/Colliders"]
 position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 0
 metadata/_edit_lock_ = true
 
-[node name="Clue" type="CollisionShape2D" parent="Main_BG/Colliders/Clue_Collider"]
+[node name="Possible_Clue" type="CollisionShape2D" parent="Main_BG/Colliders/Possible_Clue_Collider"]
 position = Vector2(66, 89)
 shape = SubResource("RectangleShape2D_km17i")
 metadata/_edit_lock_ = true
 
-[node name="Card_Places" type="Node2D" parent="Main_BG"]
+[node name="Card_Locations" type="Node2D" parent="Main_BG"]
 metadata/_edit_lock_ = true
 
-[node name="Mastery_Card_Places" type="Node2D" parent="Main_BG/Card_Places"]
+[node name="Possible_Clue_Card_Locations" type="Node2D" parent="Main_BG/Card_Locations"]
 metadata/_edit_lock_ = true
 
-[node name="First_Card" type="Marker2D" parent="Main_BG/Card_Places/Mastery_Card_Places"]
+[node name="First_Card" type="Marker2D" parent="Main_BG/Card_Locations/Possible_Clue_Card_Locations"]
 position = Vector2(16, 39)
 metadata/_edit_lock_ = true
 
-[node name="Last_Card" type="Marker2D" parent="Main_BG/Card_Places/Mastery_Card_Places"]
+[node name="Last_Card" type="Marker2D" parent="Main_BG/Card_Locations/Possible_Clue_Card_Locations"]
 position = Vector2(44, 39)
 metadata/_edit_lock_ = true
 
@@ -107,7 +107,7 @@ offset_top = 1.0
 offset_right = 47.0
 offset_bottom = 9.0
 tooltip_text = "Presence
-- Always dashed"
+- Modif. only"
 texture = ExtResource("3_f0utr")
 metadata/_edit_lock_ = true
 
@@ -258,7 +258,7 @@ offset_right = 203.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "New
-- Always dashed"
+- Modif. only"
 texture = ExtResource("15_0qkya")
 metadata/_edit_lock_ = true
 
@@ -355,7 +355,8 @@ offset_top = 90.0
 offset_right = 503.0
 offset_bottom = 93.0
 rotation = 0.518363
-tooltip_text = "Intimacy - Probable"
+tooltip_text = "Intimacy
+New"
 texture = ExtResource("4_68wvn")
 
 [node name="Link_Pointillé_Blanc" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
@@ -366,7 +367,7 @@ offset_top = 44.0
 offset_right = 545.0
 offset_bottom = 47.0
 rotation = 0.100997
-tooltip_text = "Presence - Probable"
+tooltip_text = "Presence"
 texture = ExtResource("5_nrm53")
 
 [node name="Link_Plein_Jaune" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
@@ -377,7 +378,8 @@ offset_top = 219.0
 offset_right = 523.0
 offset_bottom = 222.0
 rotation = -0.174241
-tooltip_text = "Confirmation - Confirmed (!)"
+tooltip_text = "Confirmation
+Confirmed (!)"
 texture = ExtResource("6_jtpuj")
 
 [node name="Pin_Small" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://uumss3awotqq"
+path="res://.godot/imported/Drawer_08_Mask.png-8243f68e455d6307c72ec99a12d267e9.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SLEEP/Drawer_08_Mask.png"
+dest_files=["res://.godot/imported/Drawer_08_Mask.png-8243f68e455d6307c72ec99a12d267e9.res"]
+
+[params]
+
+create_from=1
+threshold=0.5
