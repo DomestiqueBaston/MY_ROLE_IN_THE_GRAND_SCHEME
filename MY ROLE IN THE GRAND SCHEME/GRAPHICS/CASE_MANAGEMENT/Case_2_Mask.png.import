@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bm6gwym070hpa"
+path="res://.godot/imported/Case_2_Mask.png-608425e40559bb8af7bb2bd626800bc2.res"
+
+[deps]
+
+source_file="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Mask.png"
+dest_files=["res://.godot/imported/Case_2_Mask.png-608425e40559bb8af7bb2bd626800bc2.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

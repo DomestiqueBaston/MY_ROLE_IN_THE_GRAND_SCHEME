@@ -309,7 +309,7 @@ Le temps
 		Les interactions (Dialogues/Investigations/Combats) prendront 2h chacune (déplacement inclus).
 		Un rendez-vous chez le médecin prend 1h (déplacement inclus).
 		Aller voir Rowena le Dealer prend 1h (déplacement inclus).
-		Aller à l’investigation Center prend 1h (déplacement inclus).
+		Aller à l’investigation Center prend 1h (déplacement inclus). 1 seule fois par jour !
 		Obtenir une autorisation de fouille prend 1h (déplacement inclus). Rappel : coûte 25Dø et 1 à la fois.
 		Dormir prend le temps défini pour cette période.
 		…

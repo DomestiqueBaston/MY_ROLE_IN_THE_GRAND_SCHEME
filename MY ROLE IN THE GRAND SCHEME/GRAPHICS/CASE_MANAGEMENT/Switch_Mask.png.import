@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d27cusg1i2i8r"
+path="res://.godot/imported/Switch_Mask.png-3708b71d0d1ca9299efa89f441a5df59.res"
+
+[deps]
+
+source_file="res://GRAPHICS/CASE_MANAGEMENT/Switch_Mask.png"
+dest_files=["res://.godot/imported/Switch_Mask.png-3708b71d0d1ca9299efa89f441a5df59.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

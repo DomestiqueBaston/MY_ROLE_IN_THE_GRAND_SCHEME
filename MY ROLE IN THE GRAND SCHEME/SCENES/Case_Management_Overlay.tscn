@@ -1,0 +1,273 @@
+[gd_scene load_steps=28 format=3 uid="uid://cnsnou3voqm67"]
+
+[ext_resource type="Texture2D" uid="uid://bldatry1ckp7d" path="res://GRAPHICS/CASE_MANAGEMENT/Case_Management_BG.png" id="1_m0xss"]
+[ext_resource type="Theme" uid="uid://vbgd5rjttbbi" path="res://UI/Case_Management_Theme.tres" id="2_j02fd"]
+[ext_resource type="Texture2D" uid="uid://cailha23k34yd" path="res://GRAPHICS/CASE_MANAGEMENT/Cancel_Pressed.png" id="3_o220d"]
+[ext_resource type="Texture2D" uid="uid://s6d7fcwywqn" path="res://GRAPHICS/CASE_MANAGEMENT/Cancel_Hover.png" id="4_m5yw0"]
+[ext_resource type="BitMap" uid="uid://ddpxoqjmflj67" path="res://GRAPHICS/CASE_MANAGEMENT/Cancel_Mask.png" id="5_l6xj4"]
+[ext_resource type="Texture2D" uid="uid://cfl5hh4sme266" path="res://GRAPHICS/CASE_MANAGEMENT/Switch_Pressed.png" id="6_yqr2y"]
+[ext_resource type="Texture2D" uid="uid://bi3mbpnmxml5n" path="res://GRAPHICS/CASE_MANAGEMENT/Switch_Hover.png" id="7_mrc3k"]
+[ext_resource type="BitMap" uid="uid://d27cusg1i2i8r" path="res://GRAPHICS/CASE_MANAGEMENT/Switch_Mask.png" id="8_nk6tj"]
+[ext_resource type="Texture2D" uid="uid://c6pea0rm8v7xv" path="res://GRAPHICS/CASE_MANAGEMENT/Case_3_Pressed.png" id="9_ruk5w"]
+[ext_resource type="Texture2D" uid="uid://218whlb6p2ll" path="res://GRAPHICS/CASE_MANAGEMENT/Case_3_Hover.png" id="10_aw2ps"]
+[ext_resource type="BitMap" uid="uid://c6xmivbe78fph" path="res://GRAPHICS/CASE_MANAGEMENT/Case_3_Mask.png" id="11_am32a"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_j3b83"]
+[ext_resource type="Texture2D" uid="uid://bex3l5w8anmvy" path="res://GRAPHICS/CASE_MANAGEMENT/Case_4_Pressed.png" id="12_qh35q"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_4lxl5"]
+[ext_resource type="Texture2D" uid="uid://decf7ye0m55mr" path="res://GRAPHICS/CASE_MANAGEMENT/Case_4_Hover.png" id="13_dkmlf"]
+[ext_resource type="BitMap" uid="uid://b468gemeb4yv1" path="res://GRAPHICS/CASE_MANAGEMENT/Case_4_Mask.png" id="14_essm7"]
+[ext_resource type="Texture2D" uid="uid://d2paq6riqt4f2" path="res://GRAPHICS/CASE_MANAGEMENT/Case_1_Pressed.png" id="15_4yu50"]
+[ext_resource type="Texture2D" uid="uid://dn6iqo8hcrag5" path="res://GRAPHICS/CASE_MANAGEMENT/Case_1_Hover.png" id="16_3v870"]
+[ext_resource type="BitMap" uid="uid://1muvlh7ldcm0" path="res://GRAPHICS/CASE_MANAGEMENT/Case_1_Mask.png" id="17_ysxkr"]
+[ext_resource type="ButtonGroup" uid="uid://dt020cjh7e6ws" path="res://UI/Case_Management_group.tres" id="18_iv6fp"]
+[ext_resource type="Texture2D" uid="uid://tn484qetw520" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Pressed.png" id="18_x3v2j"]
+[ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Hover.png" id="19_03ieh"]
+[ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Mask.png" id="20_s0481"]
+
+[sub_resource type="Animation" id="Animation_4pq04"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Case_Management_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-468, 48), Vector2(-234, 48), Vector2(43.539, 48), Vector2(86.36, 48), Vector2(129.18, 48), Vector2(172, 48)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_j3b83")
+}],
+"times": PackedFloat32Array(0.028334)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_atwki"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Case_Management_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(172, 48), Vector2(172, 48), Vector2(162, 48), Vector2(-48.001, 48), Vector2(-258.001, 48), Vector2(-468, 48)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_4lxl5")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vfroo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Case_Management_Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
+_data = {
+"Appearance": SubResource("Animation_4pq04"),
+"Disappearance": SubResource("Animation_atwki"),
+"RESET": SubResource("Animation_vfroo")
+}
+
+[node name="Case_Management" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Case_Management_Panel" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Case_Management_BG" type="Sprite2D" parent="Case_Management_Panel"]
+position = Vector2(-31, -18)
+texture = ExtResource("1_m0xss")
+centered = false
+offset = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Buttons" type="Control" parent="Case_Management_Panel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -31.0
+offset_top = -18.0
+offset_right = -31.0
+offset_bottom = -18.0
+theme = ExtResource("2_j02fd")
+metadata/_edit_lock_ = true
+
+[node name="Cancel" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+tooltip_text = "I'd rather focus on
+my current case..."
+texture_pressed = ExtResource("3_o220d")
+texture_hover = ExtResource("4_m5yw0")
+texture_click_mask = ExtResource("5_l6xj4")
+metadata/_edit_lock_ = true
+
+[node name="Switch" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+tooltip_text = "Ok. Let's focus
+on that case!"
+texture_pressed = ExtResource("6_yqr2y")
+texture_hover = ExtResource("7_mrc3k")
+texture_click_mask = ExtResource("8_nk6tj")
+metadata/_edit_lock_ = true
+
+[node name="3" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+tooltip_text = "Here's the name
+of the case!"
+toggle_mode = true
+button_group = ExtResource("18_iv6fp")
+texture_pressed = ExtResource("9_ruk5w")
+texture_hover = ExtResource("10_aw2ps")
+texture_click_mask = ExtResource("11_am32a")
+metadata/_edit_lock_ = true
+
+[node name="4" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+tooltip_text = "Here's the name
+of the case!"
+toggle_mode = true
+button_group = ExtResource("18_iv6fp")
+texture_pressed = ExtResource("12_qh35q")
+texture_hover = ExtResource("13_dkmlf")
+texture_click_mask = ExtResource("14_essm7")
+metadata/_edit_lock_ = true
+
+[node name="1" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+tooltip_text = "Here's the name
+of the case!"
+toggle_mode = true
+button_group = ExtResource("18_iv6fp")
+texture_pressed = ExtResource("15_4yu50")
+texture_hover = ExtResource("16_3v870")
+texture_click_mask = ExtResource("17_ysxkr")
+metadata/_edit_lock_ = true
+
+[node name="2" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+tooltip_text = "Here's the name
+of the case!"
+toggle_mode = true
+button_group = ExtResource("18_iv6fp")
+texture_pressed = ExtResource("18_x3v2j")
+texture_hover = ExtResource("19_03ieh")
+texture_click_mask = ExtResource("20_s0481")
+metadata/_edit_lock_ = true
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m6d4b")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
