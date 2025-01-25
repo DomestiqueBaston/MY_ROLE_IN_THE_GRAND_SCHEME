@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhgxh8qnyumq0"]
+
+[ext_resource type="Texture2D" uid="uid://bg42bx7til5jt" path="res://GRAPHICS/LANGUAGE/Language_BG.png" id="1_6fems"]
+[ext_resource type="Theme" uid="uid://bmygb00a0tvqy" path="res://UI/Language_Theme.tres" id="2_ayvp8"]
+[ext_resource type="Texture2D" uid="uid://bq1iksdcbqtwl" path="res://GRAPHICS/LANGUAGE/Quit_Pressed.png" id="2_hxgus"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="2_sskbx"]
+[ext_resource type="Texture2D" uid="uid://wfsnljjvdro2" path="res://GRAPHICS/LANGUAGE/Quit_Hover.png" id="3_qv763"]
+[ext_resource type="BitMap" uid="uid://bbqk7a0ulfryl" path="res://GRAPHICS/LANGUAGE/Quit_Mask.png" id="4_pb8m6"]
+
+[node name="Language" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Language_Bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_6fems")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Quit_Button" type="Control" parent="Language_Bg"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_ayvp8")
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="TextureButton" parent="Language_Bg/Quit_Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "Quit, cancel,
+whatever..."
+texture_pressed = ExtResource("2_hxgus")
+texture_hover = ExtResource("3_qv763")
+texture_click_mask = ExtResource("4_pb8m6")
+metadata/_edit_lock_ = true
+
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("2_sskbx")]

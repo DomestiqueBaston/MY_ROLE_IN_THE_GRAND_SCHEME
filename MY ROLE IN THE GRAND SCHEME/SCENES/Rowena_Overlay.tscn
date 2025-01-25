@@ -431,9 +431,9 @@ metadata/_edit_lock_ = true
 
 [node name="Nope" type="Button" parent="Rowena_Panel_Panel/Thanks_Nope"]
 layout_mode = 0
-offset_left = 280.0
+offset_left = 283.0
 offset_top = 294.0
-offset_right = 322.0
+offset_right = 325.0
 offset_bottom = 315.0
 rotation = -1.5708
 theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.431373, 0.337255, 0.882353)

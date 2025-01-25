@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=30 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/UI/Plein_Jaune.png" id="6_jtpuj"]
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
-[ext_resource type="PackedScene" uid="uid://lv8nyh7xqyqp" path="res://SCENES/Possible_Clues_Clamp.tscn" id="9_8aplo"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="10_rn5oa"]
 [ext_resource type="PackedScene" uid="uid://dyacbsj8nks3" path="res://SCENES/Crime_Motive_Selection.tscn" id="11_dx2ym"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
@@ -16,7 +15,9 @@
 [ext_resource type="Theme" uid="uid://d3q66pv8c2ydu" path="res://UI/Main_Theme.tres" id="13_06hym"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/UI/Dashed_Violet_Fonce.png" id="15_0qkya"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/UI/Plein_Gris.png" id="15_c4wun"]
+[ext_resource type="Theme" uid="uid://qjm7plxdf41e" path="res://UI/Possible_Clues_Theme.tres" id="16_hg5r6"]
 [ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/UI/Plein_Noir.png" id="16_mke16"]
+[ext_resource type="Texture2D" uid="uid://daarosfqpf3li" path="res://GRAPHICS/MAIN/Pince_Haut.png" id="17_4l1ou"]
 [ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/UI/Plein_Rose.png" id="17_7cnra"]
 [ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/UI/Plein_Vert_Fonce.png" id="18_u436f"]
 [ext_resource type="PackedScene" uid="uid://dew0fg5j62sga" path="res://SCENES/Link.tscn" id="18_y2x40"]
@@ -262,7 +263,33 @@ tooltip_text = "New
 texture = ExtResource("15_0qkya")
 metadata/_edit_lock_ = true
 
-[node name="Possible_Clues_Clamp" parent="." instance=ExtResource("9_8aplo")]
+[node name="Possible_Clues_Clamp" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Possible_Clues" type="Label" parent="Possible_Clues_Clamp"]
+offset_left = 35.0
+offset_top = 21.0
+offset_right = 98.0
+offset_bottom = 29.0
+tooltip_text = "Cards can be taken or returned here."
+mouse_filter = 0
+theme = ExtResource("16_hg5r6")
+theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25098)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.12549)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+text = "Possible Clues"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Clamp" type="Sprite2D" parent="Possible_Clues_Clamp"]
+position = Vector2(38, 20)
+texture = ExtResource("17_4l1ou")
+centered = false
+metadata/_edit_lock_ = true
 
 [node name="TMP" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

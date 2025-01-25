@@ -130,8 +130,9 @@ metadata/_edit_lock_ = true
 anchors_preset = 0
 offset_left = 320.002
 offset_top = 180.0
-offset_right = 360.002
-offset_bottom = 220.0
+offset_right = 320.002
+offset_bottom = 180.0
+metadata/_edit_lock_ = true
 
 [node name="Death_Outline" type="Label" parent="Center"]
 layout_mode = 0

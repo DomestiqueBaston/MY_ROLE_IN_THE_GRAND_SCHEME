@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://btoprcqqk35dm"]
+[gd_scene load_steps=42 format=3 uid="uid://btoprcqqk35dm"]
 
 [ext_resource type="Texture2D" uid="uid://cecs6l03ghxq" path="res://GRAPHICS/SLEEP/Shop_BG.png" id="1_0cvhu"]
 [ext_resource type="Texture2D" uid="uid://bs1rlo8mp5odw" path="res://GRAPHICS/SLEEP/Quit_Hover.png" id="2_y7wlb"]
@@ -34,6 +34,49 @@
 [ext_resource type="Texture2D" uid="uid://co2s7d5k2xxom" path="res://GRAPHICS/SLEEP/Drawer_01_Open.png" id="31_m2dho"]
 [ext_resource type="Texture2D" uid="uid://bs3a082t7hyfi" path="res://GRAPHICS/SLEEP/Drawer_01_Hover.png" id="32_im2gk"]
 [ext_resource type="BitMap" uid="uid://cvtklig2xg1im" path="res://GRAPHICS/SLEEP/Drawer_01_Mask.png" id="33_h478i"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="35_mpood"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q374h"]
+bg_color = Color(0.4, 0.336, 0.272, 1)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.4, 0.337255, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrst2"]
+bg_color = Color(0.4, 0.336, 0.272, 1)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.4, 0.337255, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ildg8"]
+bg_color = Color(0.4, 0.336, 0.272, 1)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.4, 0.337255, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7wn0"]
+bg_color = Color(0.58, 0.4988, 0.4176, 1)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.580392, 0.498039, 0.415686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngn6x"]
+bg_color = Color(0.4, 0.336, 0.272, 1)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.4, 0.337255, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngqvd"]
+bg_color = Color(0.4, 0.336, 0.272, 1)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.4, 0.337255, 0.270588, 1)
 
 [node name="Sleep" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -63,16 +106,6 @@ offset_right = 443.0
 offset_bottom = 330.0
 mouse_filter = 2
 theme = ExtResource("4_8qj2k")
-metadata/_edit_lock_ = true
-
-[node name="Quit" type="TextureButton" parent="Drawers/Drawer_Names"]
-layout_mode = 0
-offset_right = 279.0
-offset_bottom = 330.0
-texture_normal = ExtResource("4_efy65")
-texture_pressed = ExtResource("5_hvfk5")
-texture_hover = ExtResource("2_y7wlb")
-texture_click_mask = ExtResource("3_lca5b")
 metadata/_edit_lock_ = true
 
 [node name="Drawer_09" type="TextureButton" parent="Drawers/Drawer_Names"]
@@ -172,4 +205,41 @@ button_group = ExtResource("5_qktmj")
 texture_pressed = ExtResource("31_m2dho")
 texture_hover = ExtResource("32_im2gk")
 texture_click_mask = ExtResource("33_h478i")
+metadata/_edit_lock_ = true
+
+[node name="Yes_No" type="Control" parent="Drawers"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="No" type="TextureButton" parent="Drawers/Yes_No"]
+layout_mode = 0
+offset_left = 164.0
+offset_right = 443.0
+offset_bottom = 330.0
+texture_normal = ExtResource("4_efy65")
+texture_pressed = ExtResource("5_hvfk5")
+texture_hover = ExtResource("2_y7wlb")
+texture_click_mask = ExtResource("3_lca5b")
+metadata/_edit_lock_ = true
+
+[node name="Yes" type="Button" parent="Drawers/Yes_No"]
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 0
+offset_left = 341.0
+offset_top = 313.0
+offset_right = 436.0
+offset_bottom = 321.0
+theme_override_colors/font_hover_color = Color(0.911525, 0.95, 0.8645, 1)
+theme_override_colors/font_color = Color(0.82124, 0.98, 0.6272, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("35_mpood")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_q374h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lrst2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ildg8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j7wn0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ngn6x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ngqvd")
+text = "Morpheus, I'm coming!"
 metadata/_edit_lock_ = true
