@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://c0ukqcgb1ay3s"]
 
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_MANAGEMENT/Frame.png" id="1_f15cm"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="2_v66rt"]
+[ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="2_yfns7"]
 [ext_resource type="Texture2D" uid="uid://gvyelslcisso" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Normal.png" id="3_87iat"]
 [ext_resource type="Texture2D" uid="uid://chh72py8tur0" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Hover.png" id="4_1l4kf"]
 [ext_resource type="BitMap" uid="uid://drh3npcujiq6o" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Mask.png" id="5_8b577"]
@@ -221,7 +221,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 340.0
-theme = ExtResource("2_v66rt")
+theme = ExtResource("2_yfns7")
 metadata/_edit_lock_ = true
 
 [node name="Ok" type="TextureButton" parent="Card_Management_Panel/Buttons"]
@@ -252,25 +252,30 @@ metadata/_edit_lock_ = true
 
 [node name="Trash" type="Control" parent="Card_Management_Panel/Buttons"]
 anchors_preset = 0
+offset_left = 234.0
+offset_top = 193.0
+offset_right = 275.0
+offset_bottom = 257.0
+tooltip_text = "Drop a card  here
+to discard it"
 metadata/_edit_lock_ = true
 
 [node name="Trash_Normal" type="TextureRect" parent="Card_Management_Panel/Buttons/Trash"]
 layout_mode = 0
-offset_left = 223.0
-offset_top = 184.0
-offset_right = 284.0
-offset_bottom = 264.0
-tooltip_text = "Throw that card away!"
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 50.0
+offset_bottom = 71.0
 texture = ExtResource("9_eg8nv")
 metadata/_edit_lock_ = true
 
 [node name="Trash_Hover" type="TextureRect" parent="Card_Management_Panel/Buttons/Trash"]
 visible = false
-offset_left = 223.0
-offset_top = 184.0
-offset_right = 284.0
-offset_bottom = 264.0
-tooltip_text = "Throw that card away!"
+layout_mode = 0
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 50.0
+offset_bottom = 71.0
 texture = ExtResource("10_6pms8")
 metadata/_edit_lock_ = true
 

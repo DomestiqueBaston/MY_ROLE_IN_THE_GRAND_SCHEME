@@ -1,9 +1,9 @@
 [gd_scene load_steps=42 format=3 uid="uid://btoprcqqk35dm"]
 
 [ext_resource type="Texture2D" uid="uid://cecs6l03ghxq" path="res://GRAPHICS/SLEEP/Shop_BG.png" id="1_0cvhu"]
+[ext_resource type="Theme" uid="uid://bleu1oddsbqsk" path="res://UI/Sleep_Theme.tres" id="2_8vv46"]
 [ext_resource type="Texture2D" uid="uid://bs1rlo8mp5odw" path="res://GRAPHICS/SLEEP/Quit_Hover.png" id="2_y7wlb"]
 [ext_resource type="BitMap" uid="uid://cx21c5rjifqwu" path="res://GRAPHICS/SLEEP/Quit_Mask.png" id="3_lca5b"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="4_8qj2k"]
 [ext_resource type="Texture2D" uid="uid://bwgock1si2585" path="res://GRAPHICS/SLEEP/Quit_Normal.png" id="4_efy65"]
 [ext_resource type="Texture2D" uid="uid://b0dcmqrajr586" path="res://GRAPHICS/SLEEP/Quit_Pressed.png" id="5_hvfk5"]
 [ext_resource type="ButtonGroup" uid="uid://snsroxg0p6rs" path="res://UI/Sleep_Button_Group.tres" id="5_qktmj"]
@@ -105,7 +105,7 @@ offset_left = 164.0
 offset_right = 443.0
 offset_bottom = 330.0
 mouse_filter = 2
-theme = ExtResource("4_8qj2k")
+theme = ExtResource("2_8vv46")
 metadata/_edit_lock_ = true
 
 [node name="Drawer_09" type="TextureButton" parent="Drawers/Drawer_Names"]

@@ -1,5 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://cermbgl0xllko"]
 
+[ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
 [ext_resource type="Texture2D" uid="uid://m413x6mmdkt7" path="res://GRAPHICS/UI/Dashed_Blanc.png" id="3_f0utr"]
@@ -12,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dyacbsj8nks3" path="res://SCENES/Crime_Motive_Selection.tscn" id="11_dx2ym"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
-[ext_resource type="Theme" uid="uid://d3q66pv8c2ydu" path="res://UI/Main_Theme.tres" id="13_06hym"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/UI/Dashed_Violet_Fonce.png" id="15_0qkya"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/UI/Plein_Gris.png" id="15_c4wun"]
 [ext_resource type="Theme" uid="uid://qjm7plxdf41e" path="res://UI/Possible_Clues_Theme.tres" id="16_hg5r6"]
@@ -90,7 +90,7 @@ offset_left = 153.0
 offset_top = 342.0
 offset_right = 153.0
 offset_bottom = 342.0
-theme = ExtResource("13_06hym")
+theme = ExtResource("2_2avoe")
 
 [node name="Legend" type="Label" parent="Legend/Colors"]
 layout_mode = 0

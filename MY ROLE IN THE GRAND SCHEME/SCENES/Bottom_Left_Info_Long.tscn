@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdd2r2s4fujkx"]
 
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_litdg"]
+[ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="1_qga56"]
 
 [node name="Bottom_Left_Info_Long" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -15,7 +15,7 @@ offset_right = 123.0
 offset_bottom = 343.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_litdg")
+theme = ExtResource("1_qga56")
 horizontal_scroll_mode = 3
 metadata/_edit_lock_ = true
 

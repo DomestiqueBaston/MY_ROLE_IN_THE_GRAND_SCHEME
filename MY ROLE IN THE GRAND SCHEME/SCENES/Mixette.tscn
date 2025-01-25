@@ -38,13 +38,13 @@ texture = ExtResource("1_v2vuv")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Sliders2" type="Control" parent="."]
+[node name="Sliders" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("8_popqy")
 metadata/_edit_lock_ = true
 
-[node name="Master" type="VSlider" parent="Sliders2"]
+[node name="Master" type="VSlider" parent="Sliders"]
 layout_mode = 0
 offset_left = 288.0
 offset_top = 246.0
@@ -55,7 +55,7 @@ theme_override_icons/grabber_highlight = ExtResource("2_003gq")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
 metadata/_edit_lock_ = true
 
-[node name="Music" type="VSlider" parent="Sliders2"]
+[node name="Music" type="VSlider" parent="Sliders"]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 245.0
@@ -66,7 +66,7 @@ theme_override_icons/grabber_highlight = ExtResource("3_fnxqd")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
 metadata/_edit_lock_ = true
 
-[node name="FX" type="VSlider" parent="Sliders2"]
+[node name="FX" type="VSlider" parent="Sliders"]
 layout_mode = 0
 offset_left = 354.0
 offset_top = 245.0
@@ -77,7 +77,7 @@ theme_override_icons/grabber_highlight = ExtResource("4_71ept")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
 metadata/_edit_lock_ = true
 
-[node name="UI" type="VSlider" parent="Sliders2"]
+[node name="UI" type="VSlider" parent="Sliders"]
 layout_mode = 0
 offset_left = 386.0
 offset_top = 245.0
@@ -88,7 +88,7 @@ theme_override_icons/grabber_highlight = ExtResource("5_vb0x7")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
 metadata/_edit_lock_ = true
 
-[node name="Voices" type="VSlider" parent="Sliders2"]
+[node name="Voices" type="VSlider" parent="Sliders"]
 layout_mode = 0
 offset_left = 417.0
 offset_top = 245.0

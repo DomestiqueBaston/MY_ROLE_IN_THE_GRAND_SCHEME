@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bldgrur6y3rhv"]
 
 [ext_resource type="Texture2D" uid="uid://do7g2c24mmsbk" path="res://GRAPHICS/LOAD_SAVE_DELETE/Load_Save_Delete_BG.png" id="1_b07ca"]
-[ext_resource type="Theme" uid="uid://bjtyhq3g0w8r3" path="res://UI/LSD_Theme.tres" id="1_x0dex"]
+[ext_resource type="Theme" uid="uid://3vnem16a7nmq" path="res://UI/Interaction_Theme.tres" id="1_b833j"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_4fe4i"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="5_vtoms"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="6_gq8qs"]
@@ -155,7 +155,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
-theme = ExtResource("1_x0dex")
+theme = ExtResource("1_b833j")
 metadata/_edit_lock_ = true
 
 [node name="Load_Save_Delete_BG" type="Sprite2D" parent="Load_Save_Delete_Panel"]
@@ -174,7 +174,7 @@ metadata/_edit_lock_ = true
 
 [node name="ItemList" type="ItemList" parent="Load_Save_Delete_Panel/PanelContainer"]
 layout_mode = 2
-theme = ExtResource("1_x0dex")
+theme = ExtResource("1_b833j")
 item_count = 20
 item_0/text = "Test"
 item_1/text = "Autre test"
@@ -204,7 +204,7 @@ offset_left = 247.0
 offset_top = 97.0
 offset_right = 390.0
 offset_bottom = 105.0
-theme = ExtResource("1_x0dex")
+theme = ExtResource("1_b833j")
 theme_override_colors/font_color = Color(0.866667, 0.905882, 0.941176, 0.882353)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.721569)
 text = "     -      -       "
@@ -219,6 +219,7 @@ offset_right = 159.0
 metadata/_edit_lock_ = true
 
 [node name="Load" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
+layout_mode = 0
 offset_left = 110.0
 offset_top = 97.0
 offset_right = 130.0
@@ -239,6 +240,7 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="Save" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 97.0
 offset_right = 164.0
@@ -259,6 +261,7 @@ flat = true
 metadata/_edit_lock_ = true
 
 [node name="Delete" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
+layout_mode = 0
 offset_left = 178.0
 offset_top = 97.0
 offset_right = 207.0

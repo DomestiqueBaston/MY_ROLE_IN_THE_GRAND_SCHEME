@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://codd8oehsbdvn"]
+[gd_scene load_steps=3 format=3 uid="uid://codd8oehsbdvn"]
 
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_litdg"]
+[ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="1_bgui1"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_ludnx"]
 
 [node name="Bottom_Left_Info_Short" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -16,7 +17,7 @@ offset_right = 122.0
 offset_bottom = 338.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_litdg")
+theme = ExtResource("1_bgui1")
 horizontal_scroll_mode = 3
 metadata/_edit_lock_ = true
 
@@ -32,6 +33,8 @@ theme_override_constants/shadow_offset_x = -1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_ludnx")
+theme_override_font_sizes/font_size = 8
 text = "We are supposed to find infos here about a selected card for instance...
 
 When nothing's selected, Infos will be related to the place, the PNJ(s) there, etc.
