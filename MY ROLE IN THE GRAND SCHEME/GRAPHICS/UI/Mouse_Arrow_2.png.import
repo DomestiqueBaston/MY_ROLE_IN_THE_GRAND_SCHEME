@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6sv0vvfv0gej"
-path="res://.godot/imported/Mouse_Arrow.png-895637d84838336b17fad51f78dcdb1c.ctex"
+uid="uid://jmdyjmxypuci"
+path="res://.godot/imported/Mouse_Arrow_2.png-47e52b2970c3dba7bcac9169a890839e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/UI/Mouse_Arrow.png"
-dest_files=["res://.godot/imported/Mouse_Arrow.png-895637d84838336b17fad51f78dcdb1c.ctex"]
+source_file="res://GRAPHICS/UI/Mouse_Arrow_2.png"
+dest_files=["res://.godot/imported/Mouse_Arrow_2.png-47e52b2970c3dba7bcac9169a890839e.ctex"]
 
 [params]
 

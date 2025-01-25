@@ -91,6 +91,7 @@ offset_top = 342.0
 offset_right = 153.0
 offset_bottom = 342.0
 theme = ExtResource("2_2avoe")
+metadata/_edit_lock_ = true
 
 [node name="Legend" type="Label" parent="Legend/Colors"]
 layout_mode = 0

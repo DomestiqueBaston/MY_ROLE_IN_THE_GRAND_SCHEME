@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpmpj36bqaoin"]
+[gd_scene load_steps=5 format=3 uid="uid://dpmpj36bqaoin"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Mouse_Cursor.gd" id="1_8vgni"]
-[ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow.png" id="1_a68nx"]
+[ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="1_a68nx"]
 [ext_resource type="Texture2D" uid="uid://baudxdsufh5l1" path="res://GRAPHICS/UI/Mouse_Cross.png" id="2_sb86a"]
+[ext_resource type="Texture2D" uid="uid://jmdyjmxypuci" path="res://GRAPHICS/UI/Mouse_Arrow_2.png" id="4_rjm60"]
 
 [node name="Mouse_Cursor" type="Control"]
 layout_mode = 3
@@ -13,6 +14,7 @@ script = ExtResource("1_8vgni")
 metadata/_edit_lock_ = true
 
 [node name="Cross" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -5.0
 offset_top = -5.0
@@ -22,11 +24,24 @@ texture = ExtResource("2_sb86a")
 stretch_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Arrow" type="TextureRect" parent="."]
-visible = false
+[node name="Arrow" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Arrow_1" type="TextureRect" parent="Arrow"]
 layout_mode = 0
 offset_right = 10.0
 offset_bottom = 10.0
 texture = ExtResource("1_a68nx")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Arrow_2" type="TextureRect" parent="Arrow"]
+visible = false
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("4_rjm60")
 stretch_mode = 2
 metadata/_edit_lock_ = true
