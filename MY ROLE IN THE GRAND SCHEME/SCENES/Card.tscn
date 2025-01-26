@@ -483,5 +483,5 @@ libraries = {
 }
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
-volume_db = -30.0
+volume_db = -25.0
 bus = &"FX"

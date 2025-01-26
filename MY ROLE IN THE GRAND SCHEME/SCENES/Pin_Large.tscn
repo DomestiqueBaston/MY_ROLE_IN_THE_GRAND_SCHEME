@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://p31mwloglsqa"]
 
-[ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/UI/Pin_Large.png" id="1_1jgvm"]
+[ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/LINK_PIN/Pin_Large.png" id="1_1jgvm"]
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_pdoi2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
