@@ -10,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = -16.0
 offset_top = -16.0
+mouse_filter = 2
 script = ExtResource("1_8vgni")
 metadata/_edit_lock_ = true
 

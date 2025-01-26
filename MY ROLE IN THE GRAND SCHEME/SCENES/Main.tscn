@@ -3,30 +3,30 @@
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
-[ext_resource type="Texture2D" uid="uid://m413x6mmdkt7" path="res://GRAPHICS/UI/Dashed_Blanc.png" id="3_f0utr"]
-[ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/UI/Pointille_Violet_Fonce_Rose.png" id="4_68wvn"]
-[ext_resource type="Texture2D" uid="uid://bng8mdjv28u6h" path="res://GRAPHICS/UI/Pointille_Blanc_Transparent.png" id="5_nrm53"]
-[ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/UI/Plein_Jaune.png" id="6_jtpuj"]
+[ext_resource type="Texture2D" uid="uid://m413x6mmdkt7" path="res://GRAPHICS/LINK/Dashed_Blanc.png" id="3_f0utr"]
+[ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK/Plein_Jaune.png" id="6_jtpuj"]
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="10_rn5oa"]
 [ext_resource type="PackedScene" uid="uid://dyacbsj8nks3" path="res://SCENES/Crime_Motive_Selection.tscn" id="11_dx2ym"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
-[ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/UI/Dashed_Violet_Fonce.png" id="15_0qkya"]
-[ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/UI/Plein_Gris.png" id="15_c4wun"]
+[ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK/Dashed_Violet_Fonce.png" id="15_0qkya"]
+[ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK/Plein_Gris.png" id="15_c4wun"]
 [ext_resource type="Theme" uid="uid://qjm7plxdf41e" path="res://UI/Possible_Clues_Theme.tres" id="16_hg5r6"]
-[ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/UI/Plein_Noir.png" id="16_mke16"]
+[ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/LINK/Plein_Noir.png" id="16_mke16"]
 [ext_resource type="Texture2D" uid="uid://daarosfqpf3li" path="res://GRAPHICS/MAIN/Pince_Haut.png" id="17_4l1ou"]
-[ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/UI/Plein_Rose.png" id="17_7cnra"]
-[ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/UI/Plein_Vert_Fonce.png" id="18_u436f"]
+[ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/LINK/Plein_Rose.png" id="17_7cnra"]
+[ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/LINK/Plein_Vert_Fonce.png" id="18_u436f"]
 [ext_resource type="PackedScene" uid="uid://dew0fg5j62sga" path="res://SCENES/Link.tscn" id="18_y2x40"]
-[ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/UI/Plein_Orange.png" id="19_eiutv"]
-[ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/UI/Plein_Bleu_Clair.png" id="20_oxby8"]
-[ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/UI/Plein_Bleu_Fonce.png" id="21_134b4"]
-[ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/UI/Plein_Rouge.png" id="22_eja4x"]
-[ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/UI/Plein_Vert_Clair.png" id="23_1cqhn"]
-[ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/UI/Plein_Violet_Clair.png" id="24_lp1fx"]
+[ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/LINK/Plein_Orange.png" id="19_eiutv"]
+[ext_resource type="Texture2D" uid="uid://cvore3on8x5bd" path="res://GRAPHICS/LINK/Pointille_Violet_Fonce_Bleu_Fonce.png" id="20_l3ehj"]
+[ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/LINK/Plein_Bleu_Clair.png" id="20_oxby8"]
+[ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/LINK/Plein_Bleu_Fonce.png" id="21_134b4"]
+[ext_resource type="Texture2D" uid="uid://ctwsfadud3vbk" path="res://GRAPHICS/LINK/Pointille_Blanc.png" id="21_u2t8c"]
+[ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/LINK/Plein_Rouge.png" id="22_eja4x"]
+[ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/LINK/Plein_Vert_Clair.png" id="23_1cqhn"]
+[ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK/Plein_Violet_Clair.png" id="24_lp1fx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
@@ -109,7 +109,7 @@ offset_top = 1.0
 offset_right = 47.0
 offset_bottom = 9.0
 tooltip_text = "Presence
-- Modif. only"
+- Automated"
 texture = ExtResource("3_f0utr")
 metadata/_edit_lock_ = true
 
@@ -385,7 +385,7 @@ offset_bottom = 93.0
 rotation = 0.518363
 tooltip_text = "Intimacy
 New"
-texture = ExtResource("4_68wvn")
+texture = ExtResource("20_l3ehj")
 
 [node name="Link_Pointillé_Blanc" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
 
@@ -396,7 +396,7 @@ offset_right = 545.0
 offset_bottom = 47.0
 rotation = 0.100997
 tooltip_text = "Presence"
-texture = ExtResource("5_nrm53")
+texture = ExtResource("21_u2t8c")
 
 [node name="Link_Plein_Jaune" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
 
