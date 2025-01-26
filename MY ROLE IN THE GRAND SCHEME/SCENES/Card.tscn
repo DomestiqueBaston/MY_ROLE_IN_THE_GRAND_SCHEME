@@ -1,6 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
+[ext_resource type="Script" path="res://SCRIPTS/Card.gd" id="2_2qjxn"]
 [ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="2_y3cdu"]
 [ext_resource type="Texture2D" uid="uid://vuxehd33t5yj" path="res://GRAPHICS/CARD/Card_Special.png" id="3_gk6lr"]
 [ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="3_l7psf"]
@@ -15,10 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b28mg50sibecp" path="res://GRAPHICS/CARD/Card_Dead.png" id="11_v12mt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
-size = Vector2(70, 23)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxupv"]
-size = Vector2(70, 73)
+size = Vector2(70, 96)
 
 [sub_resource type="Animation" id="Animation_kxf5h"]
 resource_name = "Expand_Card"
@@ -66,26 +64,38 @@ tracks/2/use_blend = true
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Card_Mask/Card_Colliders/Card_Bottom:scale")
+tracks/3/path = NodePath("Card_Mask/Card_BG/Card_Text/Card_Description:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 0.095), Vector2(1, 0.465), Vector2(1, 0.975), Vector2(1, 1)]
+"times": PackedFloat32Array(0, 0.133333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card_Bottom:position")
+tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(37, 25), Vector2(37, 28.5), Vector2(37, 42), Vector2(37, 60.5), Vector2(37, 61.5)]
+"update": 1,
+"values": [Vector2(37, 15), Vector2(37, 16), Vector2(37, 29.5), Vector2(37, 48), Vector2(37, 50)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Card_Mask/Card_Colliders/Card:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 0.27), Vector2(1, 0.292), Vector2(1, 0.575), Vector2(1, 0.96), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_0x2oy"]
@@ -117,25 +127,37 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Card_Mask/Card_Colliders/Card_Bottom:position")
+tracks/2/path = NodePath("Card_Mask/Card_BG/Card_Text/Card_Description:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(37, 61.5)]
+"update": 1,
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Card_Mask/Card_Colliders/Card_Bottom:scale")
+tracks/3/path = NodePath("Card_Mask/Card_Colliders/Card:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
+"values": [Vector2(37, 50)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [Vector2(1, 1)]
 }
 
@@ -185,26 +207,38 @@ tracks/2/use_blend = true
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Card_Mask/Card_Colliders/Card_Bottom:scale")
+tracks/3/path = NodePath("Card_Mask/Card_BG/Card_Text/Card_Description:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0666665, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.975), Vector2(1, 0.465), Vector2(1, 0.095), Vector2(1e-05, 1e-05)]
+"times": PackedFloat32Array(0, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card_Bottom:position")
+tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.0666665, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(37, 61.5), Vector2(37, 60.5), Vector2(37, 42), Vector2(37, 28.5), Vector2(37, 25)]
+"update": 1,
+"values": [Vector2(37, 50), Vector2(37, 48), Vector2(37, 29.5), Vector2(37, 16), Vector2(37, 15)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Card_Mask/Card_Colliders/Card:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0666665, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(1, 0.96), Vector2(1, 0.575), Vector2(1, 0.292), Vector2(1, 0.27)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
@@ -262,6 +296,7 @@ clip_children = 1
 texture = ExtResource("1_8pu3o")
 centered = false
 hframes = 5
+script = ExtResource("2_2qjxn")
 metadata/_edit_lock_ = true
 
 [node name="Card_BG" type="Sprite2D" parent="Card_Mask"]
@@ -438,15 +473,9 @@ metadata/_edit_lock_ = true
 [node name="Card_Colliders" type="Area2D" parent="Card_Mask"]
 metadata/_edit_lock_ = true
 
-[node name="Card_Top" type="CollisionShape2D" parent="Card_Mask/Card_Colliders"]
-position = Vector2(37, 13.5)
+[node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Colliders"]
+position = Vector2(37, 50)
 shape = SubResource("RectangleShape2D_hp5bo")
-metadata/_edit_lock_ = true
-
-[node name="Card_Bottom" type="CollisionShape2D" parent="Card_Mask/Card_Colliders"]
-position = Vector2(37, 61.5)
-shape = SubResource("RectangleShape2D_bxupv")
-metadata/_edit_lock_ = true
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
