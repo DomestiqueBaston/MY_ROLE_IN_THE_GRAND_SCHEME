@@ -10,9 +10,9 @@ metadata/_edit_lock_ = true
 
 [node name="Link_Texture" type="TextureRect" parent="."]
 texture_filter = 2
-custom_minimum_size = Vector2(8, 3)
+custom_minimum_size = Vector2(8, 2)
 offset_right = 8.0
-offset_bottom = 3.0
+offset_bottom = 2.0
 tooltip_text = "Nature of the link here."
 theme = ExtResource("1_3ne57")
 texture = ExtResource("2_2ltco")

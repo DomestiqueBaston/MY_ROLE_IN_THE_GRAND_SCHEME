@@ -2,13 +2,14 @@ extends Node2D
 
 @onready var start_marker : Sprite2D = $Start
 @onready var end_marker : Sprite2D = $End
-@onready var texture_rect : TextureRect = $Link_Texture
-@onready var texture_y = 8
+@onready var texture_rect : TextureRect = $Papa_Link/Link_Texture
+@onready var texture_y = 3
 
 var selected_marker : Sprite2D = null  # Variable pour garder une référence du marqueur sélectionné
 var dragging : bool = false  # Indicateur pour savoir si un marqueur est en train d'être déplacé
 
 func _ready():
+	texture_rect.visible = true
 	# Définir le pivot du TextureRect pour qu'il soit à gauche au milieu (pour un alignement précis)
 	texture_rect.pivot_offset = Vector2(0, texture_y / 2.0)
 
@@ -16,22 +17,22 @@ func _process(_delta):
 	# Si un marqueur est sélectionné, déplacer ce marqueur avec la souris
 	if selected_marker != null and dragging:
 		selected_marker.position = get_global_mouse_position()
-	
+
 	# Calculer la direction et la distance entre Start et End
 	var direction = end_marker.position - start_marker.position
 	var distance = direction.length()
-	
-	# Modifier uniquement la largeur du TextureRect
+
+	# Modifier uniquement la largeur du TextureRect pour qu'elle corresponde à la distance
 	texture_rect.size.x = distance
 
 	# Conserver la hauteur du TextureRect fixe
 	texture_rect.size.y = texture_y
 
-	# Positionner le TextureRect à la position du Start
-	texture_rect.position = start_marker.position
+	# Positionner le Papa_Link à la position du Start
+	$Papa_Link.position = start_marker.position
 
-	# Faire en sorte que l'orientation du TextureRect corresponde à la direction de Start à End
-	texture_rect.rotation = direction.angle()
+	# Faire en sorte que l'orientation du Papa_Link corresponde à la direction de Start à End
+	$Papa_Link.rotation = direction.angle()
 
 func _input(event):
 	# Vérifier si un clic de souris a eu lieu

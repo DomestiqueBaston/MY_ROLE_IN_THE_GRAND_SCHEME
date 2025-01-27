@@ -1,9 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://c70knjwv7pvfv"]
+[gd_scene load_steps=8 format=3 uid="uid://c70knjwv7pvfv"]
 
 [ext_resource type="Script" path="res://SCRIPTS/Link.gd" id="1_krxfu"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_8ja07"]
-[ext_resource type="Texture2D" uid="uid://dlifalo75nukw" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce.png" id="3_hyybo"]
+[ext_resource type="Texture2D" uid="uid://bjbq6sj1lrg5y" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Vert_Clair.png" id="3_rwd3e"]
 [ext_resource type="Texture2D" uid="uid://bttgel1ek480w" path="res://GRAPHICS/LINK_PIN/Pin_Small.png" id="5_6od4o"]
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="5_eppdx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbe3y"]
+bg_color = Color(0, 0, 0, 0.25098)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.25098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx1kt"]
+bg_color = Color(0, 0, 0, 0.25098)
+border_width_left = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.25098)
 
 [node name="Link" type="Node2D"]
 texture_filter = 1
@@ -11,35 +26,53 @@ texture_repeat = 2
 script = ExtResource("1_krxfu")
 metadata/_edit_lock_ = true
 
-[node name="Commentraire pour Geoff" type="Label" parent="."]
-offset_left = 148.0
-offset_top = 130.0
-offset_right = 576.0
-offset_bottom = 335.0
-text = "J'ai essayé de centrer le Link_Texture sur ses côtés
-(que l'origine soit au milieu du côté gauche et la fin
-au milieu du côté droit) afin
-que les pins ne soient pas décalés.
-Pour rendre ça visible, j'ai mis :
-@onready var texture_y = 8
-dans le code. En lançant la scène, on voit ce que je veux
-dire (normalement il faut un \"texture_y = 3\")."
+[node name="Papa_Link" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
-[node name="Link_Texture" type="TextureRect" parent="."]
+[node name="Link_Texture" type="TextureRect" parent="Papa_Link"]
+visible = false
 texture_filter = 2
-offset_top = -4.0
+custom_minimum_size = Vector2(8, 2)
+offset_top = -2.0
 offset_right = 8.0
-offset_bottom = 4.0
+offset_bottom = 1.0
 tooltip_text = "Nature of the link here."
 theme = ExtResource("2_8ja07")
-texture = ExtResource("3_hyybo")
+texture = ExtResource("3_rwd3e")
 expand_mode = 1
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Start" type="Sprite2D" parent="."]
-position = Vector2(159, 87)
+position = Vector2(288, 247)
 texture = ExtResource("5_6od4o")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Start"]
+offset_left = 3.0
+offset_top = -11.0
+offset_right = 42.0
+offset_bottom = -3.0
+theme = ExtResource("5_eppdx")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_nbe3y")
+text = "Move me!"
+metadata/_edit_lock_ = true
 
 [node name="End" type="Sprite2D" parent="."]
-position = Vector2(298, 111)
+position = Vector2(418, 303)
 texture = ExtResource("5_6od4o")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="End"]
+offset_left = 3.0
+offset_top = -11.0
+offset_right = 62.0
+offset_bottom = -3.0
+theme = ExtResource("5_eppdx")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lx1kt")
+text = "Move me too!"
+metadata/_edit_lock_ = true

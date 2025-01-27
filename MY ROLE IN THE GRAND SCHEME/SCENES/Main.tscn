@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=31 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://ctwsfadud3vbk" path="res://GRAPHICS/LINK_PIN/Pointille_Blanc.png" id="21_u2t8c"]
 [ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/LINK_PIN/Plein_Rouge.png" id="22_eja4x"]
 [ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair.png" id="23_1cqhn"]
+[ext_resource type="PackedScene" uid="uid://c70knjwv7pvfv" path="res://SCENES/TEST_LINK.tscn" id="23_pharv"]
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="24_lp1fx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
@@ -307,6 +308,12 @@ visible = true
 [node name="Card_Text" parent="TMP/Main_Playmat/Card1/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
+[node name="Card_Name" parent="TMP/Main_Playmat/Card1/Card_Mask/Card_BG/Card_Text" index="0"]
+text = "Clic the cards..."
+
+[node name="Card_Description" parent="TMP/Main_Playmat/Card1/Card_Mask/Card_BG/Card_Text" index="1"]
+text = "...in order to see the reduce/expand animations!"
+
 [node name="Card2" parent="TMP/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 
@@ -427,6 +434,8 @@ position = Vector2(519, 170)
 
 [node name="Pin_Small6" parent="TMP/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(544, 64)
+
+[node name="Link" parent="TMP/Main_Playmat/Links" instance=ExtResource("23_pharv")]
 
 [node name="Player_Locator" parent="TMP/Main_Playmat" instance=ExtResource("8_kn6w4")]
 position = Vector2(544, 64)
