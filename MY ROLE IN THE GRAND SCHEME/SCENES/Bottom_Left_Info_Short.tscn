@@ -35,9 +35,9 @@ theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("2_ludnx")
 theme_override_font_sizes/font_size = 8
-text = "We are supposed to find infos here about a selected card for instance...
+text = "By default, we'll find here info about the active case such as time left to solve it, etc.
 
-When nothing's selected, Infos will be related to the place, the PNJ(s) there, etc.
+Otherwise, depending on what's selected, info will be related to the place, the PNJ(s) there, etc.
 
 It could also eventually be something else but I don't know what it could be so far.
 
