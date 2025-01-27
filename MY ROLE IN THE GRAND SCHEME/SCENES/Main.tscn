@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Fonce.png" id="18_u436f"]
 [ext_resource type="PackedScene" uid="uid://dew0fg5j62sga" path="res://SCENES/Link.tscn" id="18_y2x40"]
 [ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/LINK_PIN/Plein_Orange.png" id="19_eiutv"]
-[ext_resource type="Texture2D" uid="uid://cvore3on8x5bd" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Fonce.png" id="20_l3ehj"]
+[ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png" id="20_gmr4o"]
 [ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair.png" id="20_oxby8"]
 [ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce.png" id="21_134b4"]
 [ext_resource type="Texture2D" uid="uid://ctwsfadud3vbk" path="res://GRAPHICS/LINK_PIN/Pointille_Blanc.png" id="21_u2t8c"]
@@ -44,6 +44,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Colliders" type="Node2D" parent="Main_BG"]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Playground_Collider" type="Area2D" parent="Main_BG/Colliders"]
@@ -392,7 +393,7 @@ offset_bottom = 93.0
 rotation = 0.518363
 tooltip_text = "Intimacy
 New"
-texture = ExtResource("20_l3ehj")
+texture = ExtResource("20_gmr4o")
 
 [node name="Link_Pointillé_Blanc" parent="TMP/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
 

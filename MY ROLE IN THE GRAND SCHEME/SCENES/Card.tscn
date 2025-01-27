@@ -251,43 +251,43 @@ _data = {
 [node name="Card" type="Node2D"]
 metadata/_edit_lock_ = true
 
-[node name="Pins" type="Node2D" parent="."]
+[node name="Pin_Locators" type="Node2D" parent="."]
 position = Vector2(37, 6)
 metadata/_edit_lock_ = true
 
-[node name="Top_Left_Pin_Position" type="Marker2D" parent="Pins"]
+[node name="Top_Left_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-30, 1)
 metadata/_edit_lock_ = true
 
-[node name="Top_Center_Left_Position" type="Marker2D" parent="Pins"]
+[node name="Top_Center_Left_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-15, 1)
 metadata/_edit_lock_ = true
 
-[node name="Top_Center_Position" type="Marker2D" parent="Pins"]
+[node name="Top_Center_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Top_Center_Right_Position" type="Marker2D" parent="Pins"]
+[node name="Top_Center_Right_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(16, 1)
 metadata/_edit_lock_ = true
 
-[node name="Top_Right_Pin_Position" type="Marker2D" parent="Pins"]
+[node name="Top_Right_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(30, 1)
 metadata/_edit_lock_ = true
 
-[node name="Left_Center_Pin_Position" type="Marker2D" parent="Pins"]
+[node name="Left_Center_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-30, 8)
 metadata/_edit_lock_ = true
 
-[node name="Left_Bottom_Pin_Position" type="Marker2D" parent="Pins"]
+[node name="Left_Bottom_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-30, 14)
 metadata/_edit_lock_ = true
 
-[node name="Right_Center_Pin_Position" type="Marker2D" parent="Pins"]
+[node name="Right_Center_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(30, 8)
 metadata/_edit_lock_ = true
 
-[node name="Right_Bottom_Pin_Position" type="Marker2D" parent="Pins"]
+[node name="Right_Bottom_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(30, 14)
 metadata/_edit_lock_ = true
 

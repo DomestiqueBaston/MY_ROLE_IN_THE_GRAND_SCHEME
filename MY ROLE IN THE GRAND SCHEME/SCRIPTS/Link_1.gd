@@ -12,6 +12,7 @@ func _ready():
 	texture_rect.visible = true
 	# Définir le pivot du TextureRect pour qu'il soit à gauche au milieu (pour un alignement précis)
 	texture_rect.pivot_offset = Vector2(0, texture_y / 2.0)
+	
 
 func _process(_delta):
 	# Si un marqueur est sélectionné, déplacer ce marqueur avec la souris
