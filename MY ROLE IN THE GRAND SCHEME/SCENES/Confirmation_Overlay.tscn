@@ -132,7 +132,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(-128.461, 0), Vector2(-85.6403, 0), Vector2(-42.82, 0), Vector2(0, 0)]
 }
@@ -176,7 +176,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(-10.0001, 0), Vector2(-220.001, 0), Vector2(-430.001, 0), Vector2(-640, 0)]
 }
@@ -283,7 +283,10 @@ offset_left = -46.0
 offset_top = -6.0
 offset_right = -20.0
 offset_bottom = 8.0
+theme_override_colors/font_hover_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
 theme_override_colors/font_hover_color = Color(0.41875, 0.67, 0.1675, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_focus_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
 theme_override_colors/font_color = Color(0.7221, 0.87, 0.5742, 0.843137)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_constants/outline_size = 6
@@ -304,7 +307,10 @@ offset_left = 20.0
 offset_top = -6.0
 offset_right = 42.0
 offset_bottom = 8.0
+theme_override_colors/font_hover_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
 theme_override_colors/font_hover_color = Color(0.75, 0.293125, 0.1125, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_focus_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
 theme_override_colors/font_color = Color(0.94, 0.6298, 0.517, 0.843137)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_constants/outline_size = 6

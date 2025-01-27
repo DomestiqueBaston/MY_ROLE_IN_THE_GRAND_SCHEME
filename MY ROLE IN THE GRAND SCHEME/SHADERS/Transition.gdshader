@@ -2,7 +2,7 @@ shader_type canvas_item;
 
 
 uniform sampler2D dissolve_pattern;
-uniform float dissolve_state : hint_range(0, 1.1) = 0;
+uniform float dissolve_state : hint_range(0, 1.01) = 0; // 1.01 was 1.1
 
 void fragment(){
 	COLOR = texture(TEXTURE, UV);

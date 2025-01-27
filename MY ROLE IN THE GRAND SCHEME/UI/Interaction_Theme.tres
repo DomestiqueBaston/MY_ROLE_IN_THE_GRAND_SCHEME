@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://3vnem16a7nmq"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://3vnem16a7nmq"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_e8ffr"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_m6acj"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="2_xvd75"]
 [ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="3_rq40c"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_tvvt0"]
 
@@ -102,10 +103,11 @@ ItemList/styles/hovered = SubResource("StyleBoxEmpty_2kotw")
 ItemList/styles/panel = SubResource("StyleBoxEmpty_d520k")
 ItemList/styles/selected = SubResource("StyleBoxEmpty_wul7r")
 ItemList/styles/selected_focus = SubResource("StyleBoxFlat_breck")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/line_spacing = 2
-Label/constants/outline_size = 3
-Label/font_sizes/font_size = 8
-Label/fonts/font = ExtResource("2_m6acj")
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("2_xvd75")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_pk2s2")
 MenuButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 MenuButton/colors/font_focus_color = Color(0.1998, 0.27, 0.21969, 0.501961)
