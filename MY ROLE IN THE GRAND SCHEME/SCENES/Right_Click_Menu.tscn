@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtnd8jygtcmpf"]
+[gd_scene load_steps=16 format=3 uid="uid://dtnd8jygtcmpf"]
 
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="1_3n552"]
 [ext_resource type="Script" path="res://SCRIPTS/Right_Click_Menu.gd" id="1_ml82w"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="12_6hqpd"]
 [ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair.png" id="13_lebha"]
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="14_hd70u"]
+[ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="15_t6tou"]
 
 [node name="Right_Click_Menu" type="Node2D" node_paths=PackedStringArray("popup_menu")]
 script = ExtResource("1_ml82w")
@@ -54,14 +55,15 @@ item_9/id = 9
 
 [node name="Create_Modify_PopupMenu" type="PopupMenu" parent="."]
 transparent_bg = true
-size = Vector2i(93, 108)
+size = Vector2i(93, 117)
+visible = true
 transparent = true
-min_size = Vector2i(93, 108)
-max_size = Vector2i(93, 108)
+min_size = Vector2i(93, 117)
+max_size = Vector2i(93, 117)
 theme = ExtResource("1_3n552")
 submenu_popup_delay = 0.2
 allow_search = false
-item_count = 12
+item_count = 13
 item_0/text = "Presence"
 item_0/icon = ExtResource("3_ivttp")
 item_1/text = "Debt/Infl."
@@ -97,3 +99,6 @@ item_10/id = 10
 item_11/text = "Found"
 item_11/icon = ExtResource("14_hd70u")
 item_11/id = 11
+item_12/text = "Home/Work/Hang."
+item_12/icon = ExtResource("15_t6tou")
+item_12/id = 12

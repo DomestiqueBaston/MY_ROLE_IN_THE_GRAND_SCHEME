@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=33 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/LINK_PIN/Plein_Rouge.png" id="22_eja4x"]
 [ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair.png" id="23_1cqhn"]
 [ext_resource type="PackedScene" uid="uid://c70knjwv7pvfv" path="res://SCENES/TEST_LINK.tscn" id="23_pharv"]
+[ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="24_35y2t"]
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="24_lp1fx"]
 [ext_resource type="Texture2D" uid="uid://djaa1uffmc675" path="res://GRAPHICS/MAIN/Card_Playground_Mask.png" id="25_47v8w"]
 
@@ -563,11 +564,24 @@ tooltip_text = "Ownership
 texture = ExtResource("23_1cqhn")
 metadata/_edit_lock_ = true
 
-[node name="Light_Purple" type="TextureRect" parent="Legend/Colors"]
+[node name="Brown" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 134.0
 offset_top = 1.0
 offset_right = 142.0
+offset_bottom = 9.0
+pivot_offset = Vector2(-35, 20)
+tooltip_text = "Home/Work/Hang out
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("24_35y2t")
+metadata/_edit_lock_ = true
+
+[node name="Light_Purple" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 1.0
+offset_right = 151.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Found
@@ -578,9 +592,9 @@ metadata/_edit_lock_ = true
 
 [node name="Dark_Purple" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 143.0
+offset_left = 152.0
 offset_top = 1.0
-offset_right = 151.0
+offset_right = 160.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "New
