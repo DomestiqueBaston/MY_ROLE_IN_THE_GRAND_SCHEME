@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=35 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/LINK_PIN/Plein_Orange.png" id="19_eiutv"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png" id="20_gmr4o"]
 [ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair.png" id="20_oxby8"]
+[ext_resource type="Texture2D" uid="uid://chw0hrxhbsjf" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise.png" id="21_43fd7"]
 [ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce.png" id="21_134b4"]
 [ext_resource type="Texture2D" uid="uid://ctwsfadud3vbk" path="res://GRAPHICS/LINK_PIN/Pointille_Blanc.png" id="21_u2t8c"]
 [ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/LINK_PIN/Plein_Rouge.png" id="22_eja4x"]
@@ -30,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="24_35y2t"]
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="24_lp1fx"]
 [ext_resource type="Texture2D" uid="uid://djaa1uffmc675" path="res://GRAPHICS/MAIN/Card_Playground_Mask.png" id="25_47v8w"]
+[ext_resource type="Texture2D" uid="uid://s6171shdoa65" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png" id="26_63nlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
@@ -571,17 +573,43 @@ offset_top = 1.0
 offset_right = 142.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
-tooltip_text = "Home/Work/Hang out
+tooltip_text = "Home
 - Dashed: Probable
 - Solid: Confirmed"
 texture = ExtResource("24_35y2t")
 metadata/_edit_lock_ = true
 
-[node name="Light_Purple" type="TextureRect" parent="Legend/Colors"]
+[node name="Turquoise" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 143.0
 offset_top = 1.0
 offset_right = 151.0
+offset_bottom = 9.0
+pivot_offset = Vector2(-22, 20)
+tooltip_text = "Work
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("21_43fd7")
+metadata/_edit_lock_ = true
+
+[node name="Darkest_Blue" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 1.0
+offset_right = 160.0
+offset_bottom = 9.0
+pivot_offset = Vector2(-35, 20)
+tooltip_text = "Hang out
+- Dashed: Probable
+- Solid: Confirmed"
+texture = ExtResource("26_63nlu")
+metadata/_edit_lock_ = true
+
+[node name="Light_Purple" type="TextureRect" parent="Legend/Colors"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 1.0
+offset_right = 169.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Found
@@ -592,9 +620,9 @@ metadata/_edit_lock_ = true
 
 [node name="Dark_Purple" type="TextureRect" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 152.0
+offset_left = 170.0
 offset_top = 1.0
-offset_right = 160.0
+offset_right = 178.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "New

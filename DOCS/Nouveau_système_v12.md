@@ -772,7 +772,9 @@ Bleu clair : Connaissance
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
           Vert clair : Propriété
-          Marron : Travail/Domicile/Fréquentation
+          Marron : Domicile
+Turquoise : Work
+Bleu très foncé : Lieu fréquenté
 Violet clair : Trouvé (sert à se souvenir d’où vient un objet)
           Violet foncé : nouveaux liens (issus des interactions (Dialogue et/ou Investigation) toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet »)
 
