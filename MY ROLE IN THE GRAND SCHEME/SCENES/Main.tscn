@@ -547,7 +547,7 @@ offset_top = 1.0
 offset_right = 124.0
 offset_bottom = 9.0
 pivot_offset = Vector2(4, 20)
-tooltip_text = "Confirmation
+tooltip_text = "Validation
 - Dashed: Probable
 - Solid: Confirmed"
 texture = ExtResource("6_jtpuj")

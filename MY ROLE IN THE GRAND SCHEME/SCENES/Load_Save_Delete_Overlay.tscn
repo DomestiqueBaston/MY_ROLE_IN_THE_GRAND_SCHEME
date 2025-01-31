@@ -118,7 +118,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -130,7 +130,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-640, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_girfw"]
@@ -144,6 +144,7 @@ _data = {
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
@@ -153,7 +154,7 @@ metadata/_edit_lock_ = true
 [node name="Load_Save_Delete_Panel" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
+offset_left = -640.0
 offset_bottom = 360.0
 theme = ExtResource("1_5ss04")
 metadata/_edit_lock_ = true

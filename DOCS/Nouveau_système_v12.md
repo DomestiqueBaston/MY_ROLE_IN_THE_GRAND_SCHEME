@@ -833,19 +833,22 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 	- Il faudrait trouver un moyen de lier les liens Rouges, jaunes et Gris au milieu d’un autre lien !
 	- Dans ce cadre, voici les éléments absolument nécessaires au minimum pour résoudre une enquête :
 		1 Coupable
-		1 « Preuve » (2 « preuves » si l’une est un témoin) (voir plus bas)
+		1 Evidence
 		1 Mobile
 	- Dans ce même cadre, voici les éléments possiblement nécessaires suivant les types d’enquêtes et la difficulté de l’enquête à résoudre :
-		1 (ou +) Complice
+		1 Complice
+	- Bien entendu, certaines enquêtes en demanderont éventuellement plusieurs de chaque type.
 	- Les preuves peuvent être :
 		Témoin, facture, arme, photo, enregistrement, document écrit et/ou numérique, relevé de compte, empreinte digitale et/ou génétique, etc.
 	- La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante : un Complice est lié (en Noir) au Coupable. Seul un Coupable est lié (en Noir) à la victime.
 	- Les témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable
-	- On pourra avoir des enquêtes avec 1 coupable et 1 victime dans les enquêtes de niveau 1 à 2 !
-	- On pourra avoir des enquêtes avec 1 coupable et 1 victime et jusqu’à 1 complice dans les enquêtes de niveau 3 !
-	- On pourra avoir des enquêtes avec 1 coupable et jusqu’à 2 complices ou jusqu’à 2 victimes dans les enquêtes de niveau 4 !
-	- On pourra avoir des enquêtes avec 2 coupables, jusqu’à 3 complices et 2 victimes dans les enquêtes de niveau 5 !
+	- Pour le nombre de coupables, victimes, etc. par niveau de difficulté d’enquête voir tableau dans le doc Fiche d’enquête.
 	- Dans ce qui suit, tout sera au pluriel mais concernera également les enquêtes à élément au « singulier » :
 		- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 		- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
-		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même).
+		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
+Écrans restants à réaliser
+
+	- Fin d’enquête
+	- Mort
+	- Fiche d’enquête (en plus des 2 Bottom Left Info scenes).
