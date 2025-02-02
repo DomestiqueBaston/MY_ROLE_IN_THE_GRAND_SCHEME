@@ -15,10 +15,14 @@ func _ready():
 
 func _process(_delta):
 	end_marker.position = ($"../Link_1/End".position + $"../Link_1/Start".position) / 2
-	
+
 	# Si un marqueur est sélectionné, déplacer ce marqueur avec la souris
 	if selected_marker == start_marker and dragging:
-		selected_marker.position = get_global_mouse_position()
+		var mouse_position = get_global_mouse_position()
+		# Restreindre la position de la souris aux limites spécifiées
+		mouse_position.x = clamp(mouse_position.x, 148, 617)
+		mouse_position.y = clamp(mouse_position.y, 29, 337)
+		selected_marker.position = mouse_position
 
 	# Calculer la direction et la distance entre Start et End
 	var direction = end_marker.position - start_marker.position
@@ -49,7 +53,7 @@ func _input(event):
 					# Sélectionner le marqueur Start pour déplacer
 					selected_marker = start_marker
 					dragging = true  # On commence à déplacer le marqueur
-					
+
 				# Vérifier si le clic est dans la zone du end_marker
 				elif end_marker.get_rect().has_point(end_marker.to_local(mouse_position)):
 					# Sélectionner le marqueur End pour déplacer

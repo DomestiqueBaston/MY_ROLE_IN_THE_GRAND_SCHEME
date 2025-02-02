@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c01br5utjrve0"
+path="res://.godot/imported/Continue_Button_Mask.png-2c58a7fa4f248a73ee6712677431fd3f.res"
+
+[deps]
+
+source_file="res://GRAPHICS/OPTIONS/Continue_Button_Mask.png"
+dest_files=["res://.godot/imported/Continue_Button_Mask.png-2c58a7fa4f248a73ee6712677431fd3f.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

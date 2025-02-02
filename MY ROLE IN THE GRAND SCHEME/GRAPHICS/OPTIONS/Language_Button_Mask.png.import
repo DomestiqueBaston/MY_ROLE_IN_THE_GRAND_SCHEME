@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b6cv0xue6e4ga"
+path="res://.godot/imported/Language_Button_Mask.png-6e91a6d599fc438589ad333efaffce76.res"
+
+[deps]
+
+source_file="res://GRAPHICS/OPTIONS/Language_Button_Mask.png"
+dest_files=["res://.godot/imported/Language_Button_Mask.png-6e91a6d599fc438589ad333efaffce76.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

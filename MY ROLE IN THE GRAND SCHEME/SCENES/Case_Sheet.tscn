@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://qtty7by1mcuf"]
+
+[ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/CASE/Case_BG.png" id="1_goi74"]
+[ext_resource type="Theme" uid="uid://chroo86qn1vv5" path="res://UI/Case_Sheet_Theme.tres" id="2_i67kc"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="3_8dveq"]
+[ext_resource type="PackedScene" uid="uid://dpmpj36bqaoin" path="res://SCENES/Mouse_Cursor.tscn" id="3_dfys6"]
+
+[node name="Case" type="Node2D"]
+
+[node name="Case_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_goi74")
+centered = false
+
+[node name="Sheet" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_i67kc")
+
+[node name="Part_1" type="RichTextLabel" parent="Sheet"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 75.0
+offset_right = 332.0
+offset_bottom = 281.0
+rotation = 0.0164725
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+[node name="Part_2" type="RichTextLabel" parent="Sheet"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 76.0
+offset_right = 479.0
+offset_bottom = 281.0
+rotation = 0.00840717
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+[node name="Button" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+theme = ExtResource("2_i67kc")
+
+[node name="Quit" type="Button" parent="Button"]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 286.0
+offset_right = 582.0
+offset_bottom = 318.0
+rotation = -0.0474417
+tooltip_text = "That was a
+good reminder!"
+text = "Allright!
+Back
+to
+business..."
+
+[node name="Mouse_Cursor" parent="." instance=ExtResource("3_dfys6")]
+
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("3_8dveq")]

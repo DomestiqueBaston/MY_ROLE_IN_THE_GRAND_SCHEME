@@ -1,0 +1,142 @@
+[gd_scene load_steps=30 format=3 uid="uid://dxsbbamjqxk1s"]
+
+[ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/OPTIONS/Settings_BG.png" id="1_7b261"]
+[ext_resource type="Texture2D" uid="uid://dpny7h4hu3sgy" path="res://GRAPHICS/OPTIONS/Secrets_Button_Pressed_Hover.png" id="2_12lbf"]
+[ext_resource type="BitMap" uid="uid://d3y1at3b2ac08" path="res://GRAPHICS/OPTIONS/Secrets_Button_Mask.png" id="3_v4876"]
+[ext_resource type="ButtonGroup" uid="uid://s2v30wdlf28n" path="res://UI/Character_Generation_Button_Group.tres" id="4_t0v3g"]
+[ext_resource type="Texture2D" uid="uid://dmhmlsek5h32r" path="res://GRAPHICS/OPTIONS/Credits_Button_Pressed.png" id="5_gaqfq"]
+[ext_resource type="Texture2D" uid="uid://dpgqkv2v1cxrb" path="res://GRAPHICS/OPTIONS/Credits_Button_Hover.png" id="6_0mhdf"]
+[ext_resource type="BitMap" uid="uid://b0aff0tqbymvi" path="res://GRAPHICS/OPTIONS/Credits_Button_Mask.png" id="7_3tyoq"]
+[ext_resource type="Texture2D" uid="uid://mp2y4uhtqtyo" path="res://GRAPHICS/OPTIONS/Language_Button_Pressed.png" id="8_rfy76"]
+[ext_resource type="Texture2D" uid="uid://dlu5db6a00ab0" path="res://GRAPHICS/OPTIONS/Language_Button_Hover.png" id="9_oahwa"]
+[ext_resource type="BitMap" uid="uid://b6cv0xue6e4ga" path="res://GRAPHICS/OPTIONS/Language_Button_Mask.png" id="10_280hd"]
+[ext_resource type="Texture2D" uid="uid://djkbprdt08vou" path="res://GRAPHICS/OPTIONS/Continue_Button_Pressed.png" id="11_8wg25"]
+[ext_resource type="Texture2D" uid="uid://dux624abav71v" path="res://GRAPHICS/OPTIONS/Continue_Button_Hover.png" id="12_do5rk"]
+[ext_resource type="BitMap" uid="uid://c01br5utjrve0" path="res://GRAPHICS/OPTIONS/Continue_Button_Mask.png" id="13_lkx3v"]
+[ext_resource type="Texture2D" uid="uid://gkjyjrrjqm4" path="res://GRAPHICS/OPTIONS/Quit_Button_Pressed.png" id="14_kcn31"]
+[ext_resource type="Texture2D" uid="uid://bhri06y4wwud5" path="res://GRAPHICS/OPTIONS/Quit_Button_Hover.png" id="15_k6mmp"]
+[ext_resource type="BitMap" uid="uid://dh37ysfoj22wq" path="res://GRAPHICS/OPTIONS/Quit_Button_Mask.png" id="16_oy2sw"]
+[ext_resource type="Texture2D" uid="uid://qmsemtrgn2lh" path="res://GRAPHICS/OPTIONS/Settings_Button_Pressed.png" id="17_cyw53"]
+[ext_resource type="Texture2D" uid="uid://yf08s0t0wboe" path="res://GRAPHICS/OPTIONS/Settings_Button_Hover.png" id="18_5gml8"]
+[ext_resource type="BitMap" uid="uid://dyx2wx00enl0p" path="res://GRAPHICS/OPTIONS/Settings_Button_Mask.png" id="19_5mr4n"]
+[ext_resource type="Texture2D" uid="uid://cwyb25ikdwm7f" path="res://GRAPHICS/OPTIONS/New_Game_Button_Pressed.png" id="20_gmknp"]
+[ext_resource type="Texture2D" uid="uid://okdg1e5jce7e" path="res://GRAPHICS/OPTIONS/New_Game_Button_Hover.png" id="21_v6bhl"]
+[ext_resource type="BitMap" uid="uid://dton6iewjr24f" path="res://GRAPHICS/OPTIONS/New_Game_Button_Mask.png" id="22_bf3ky"]
+[ext_resource type="Texture2D" uid="uid://dd8d724xh70jj" path="res://GRAPHICS/OPTIONS/LSD_Button_Pressed.png" id="23_h11g4"]
+[ext_resource type="Texture2D" uid="uid://bw2ns5k33wq4w" path="res://GRAPHICS/OPTIONS/LSD_Button_Hover.png" id="24_srw0v"]
+[ext_resource type="BitMap" uid="uid://cshny4khdlmjh" path="res://GRAPHICS/OPTIONS/LSD_Button_Mask.png" id="25_qftad"]
+[ext_resource type="Texture2D" uid="uid://c1qmuoj1q7n2c" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Pressed.png" id="26_2vyex"]
+[ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Hover.png" id="27_g1d07"]
+[ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Mask.png" id="28_qcawn"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="29_hc6fx"]
+
+[node name="Settings_Menu" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Settings_Menu_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_7b261")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Drawer_Names" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="Secrets" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture_hover = ExtResource("2_12lbf")
+texture_click_mask = ExtResource("3_v4876")
+metadata/_edit_lock_ = true
+
+[node name="Credits" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 78.0
+offset_bottom = 52.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("5_gaqfq")
+texture_hover = ExtResource("6_0mhdf")
+texture_click_mask = ExtResource("7_3tyoq")
+metadata/_edit_lock_ = true
+
+[node name="Language" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("8_rfy76")
+texture_hover = ExtResource("9_oahwa")
+texture_click_mask = ExtResource("10_280hd")
+metadata/_edit_lock_ = true
+
+[node name="Continue" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("11_8wg25")
+texture_hover = ExtResource("12_do5rk")
+texture_click_mask = ExtResource("13_lkx3v")
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("14_kcn31")
+texture_hover = ExtResource("15_k6mmp")
+texture_click_mask = ExtResource("16_oy2sw")
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("17_cyw53")
+texture_hover = ExtResource("18_5gml8")
+texture_click_mask = ExtResource("19_5mr4n")
+metadata/_edit_lock_ = true
+
+[node name="New_Game" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("20_gmknp")
+texture_hover = ExtResource("21_v6bhl")
+texture_click_mask = ExtResource("22_bf3ky")
+metadata/_edit_lock_ = true
+
+[node name="LSD" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("23_h11g4")
+texture_hover = ExtResource("24_srw0v")
+texture_click_mask = ExtResource("25_qftad")
+metadata/_edit_lock_ = true
+
+[node name="Tutorial" type="TextureButton" parent="Drawer_Names"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+button_group = ExtResource("4_t0v3g")
+texture_pressed = ExtResource("26_2vyex")
+texture_hover = ExtResource("27_g1d07")
+texture_click_mask = ExtResource("28_qcawn")
+metadata/_edit_lock_ = true
+
+[node name="Shader_Overlay" parent="." instance=ExtResource("29_hc6fx")]

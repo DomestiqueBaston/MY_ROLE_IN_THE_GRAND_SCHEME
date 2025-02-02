@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=28 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
 [ext_resource type="Texture2D" uid="uid://c0c1572gpljxx" path="res://GRAPHICS/INTERACTION/Interaction_Hover.png" id="3_6vqkd"]
@@ -8,10 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="6_v0c4c"]
 [ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="7_qrm58"]
 [ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="7_tawrq"]
-[ext_resource type="PackedScene" uid="uid://cdd2r2s4fujkx" path="res://SCENES/Bottom_Left_Info_Long.tscn" id="8_8q1ce"]
-[ext_resource type="PackedScene" uid="uid://dldk5itfc6prx" path="res://TRASH/Top_Left_Screen.tscn" id="9_rt5nv"]
+[ext_resource type="Texture2D" uid="uid://d2ys6h8r5nofg" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Dot_Animation.png" id="9_cx411"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="9_x1nkx"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="10_27biq"]
+[ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="10_jal5r"]
+[ext_resource type="Shader" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
+[ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
+[ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5dcb"]
 size = Vector2(230, 104)
@@ -38,6 +41,69 @@ size = Vector2(76, 139)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.870588)
 metadata/_snap_enabled = true
 metadata/_snap_count = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sho7k"]
+shader = ExtResource("10_n4tdx")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.05
+shader_parameter/resolution = Vector2(160, 120)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 2.5
+shader_parameter/roll_size = 81.493
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.001
+shader_parameter/noise_opacity = 0.206
+shader_parameter/noise_speed = 0.1
+shader_parameter/static_noise_intensity = 0.068
+shader_parameter/aberration = 0.02
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="Animation" id="Animation_1rth0"]
+resource_name = "Flat_Line"
+length = 2.33334
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Illustration_Animation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.53333, 1.6, 1.66667, 1.73333, 1.8, 1.86667, 1.93333, 2, 2.06667, 2.13333, 2.2, 2.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_cf71k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Illustration_Animation:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1j8t"]
+_data = {
+"Flat_Line": SubResource("Animation_1rth0"),
+"RESET": SubResource("Animation_cf71k")
+}
 
 [node name="Interaction" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -371,15 +437,6 @@ position = Vector2(316, 201)
 [node name="Card_Text" parent="TMP/Mastery/Card10_Drop/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Drag_Drop_Line" type="Line2D" parent="TMP/Mastery"]
-position = Vector2(9, 11)
-points = PackedVector2Array(212, 218, 343, 204)
-width = 20.0
-gradient = SubResource("Gradient_7eyd2")
-end_cap_mode = 2
-antialiased = true
-metadata/_edit_lock_ = true
-
 [node name="Evidences" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
 
@@ -512,6 +569,15 @@ visible = true
 [node name="Card_Text" parent="TMP/Places/Card28/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
+[node name="Drag_Drop_Line" type="Line2D" parent="."]
+position = Vector2(9, 11)
+points = PackedVector2Array(212, 218, 343, 204)
+width = 20.0
+gradient = SubResource("Gradient_7eyd2")
+end_cap_mode = 2
+antialiased = true
+metadata/_edit_lock_ = true
+
 [node name="Button" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -532,9 +598,75 @@ texture_hover = ExtResource("6_dhbug")
 texture_click_mask = ExtResource("7_tawrq")
 metadata/_edit_lock_ = true
 
-[node name="Top_Left_Screen" parent="." instance=ExtResource("9_rt5nv")]
+[node name="Top_Left_Screen" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
-[node name="Bottom_Left_Info_Long" parent="." instance=ExtResource("8_8q1ce")]
+[node name="Illustration_Animation" type="Sprite2D" parent="Top_Left_Screen"]
+self_modulate = Color(1, 1, 1, 0.25098)
+texture = ExtResource("9_cx411")
+centered = false
+hframes = 12
+metadata/_edit_lock_ = true
+
+[node name="Screen" type="Sprite2D" parent="Top_Left_Screen"]
+material = SubResource("ShaderMaterial_sho7k")
+position = Vector2(54, 54)
+scale = Vector2(0.8, 0.72)
+texture = ExtResource("11_e5wgu")
+metadata/_edit_lock_ = true
+
+[node name="Mask" type="Sprite2D" parent="Top_Left_Screen"]
+texture = ExtResource("12_rq7o5")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Line_Animation" type="AnimationPlayer" parent="Top_Left_Screen"]
+libraries = {
+"": SubResource("AnimationLibrary_v1j8t")
+}
+autoplay = "Flat_Line"
+
+[node name="Bottom_Left_Info_Long" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Bottom_Left_Info_Long"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 143.0
+offset_right = 123.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_jal5r")
+horizontal_scroll_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Info" type="Label" parent="Bottom_Left_Info_Long/ScrollContainer"]
+custom_minimum_size = Vector2(106, 108)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+text = "We are supposed to find infos here about a selected card for instance...
+
+But also a PNJ the player's selected...
+
+It could also eventually be something else but I don't know what it could be so far.
+
+We'll find out about that later too!
+
+Great news: we enlarged this frame in order to show more things!"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 

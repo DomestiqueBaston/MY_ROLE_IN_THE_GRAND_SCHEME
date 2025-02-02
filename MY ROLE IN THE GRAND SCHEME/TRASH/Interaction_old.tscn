@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dldk5itfc6prx" path="res://TRASH/Top_Left_Screen.tscn" id="5_5jqme"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="6_v0c4c"]
 [ext_resource type="PackedScene" uid="uid://8r7milsx8op" path="res://TRASH/Oops_Lets_Go.tscn" id="7_16pam"]
-[ext_resource type="PackedScene" uid="uid://cdd2r2s4fujkx" path="res://SCENES/Bottom_Left_Info_Long.tscn" id="8_8q1ce"]
+[ext_resource type="PackedScene" uid="uid://cdd2r2s4fujkx" path="res://TRASH/Bottom_Left_Info_Long.tscn" id="8_8q1ce"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="9_x1nkx"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="10_27biq"]
 

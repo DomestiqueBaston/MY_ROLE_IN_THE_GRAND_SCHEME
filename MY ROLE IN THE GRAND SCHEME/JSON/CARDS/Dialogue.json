@@ -1,0 +1,253 @@
+[
+  {
+    "id": "DIA001",
+    "name": "Logical Argument",
+    "type": "Dialogue",
+    "description": "A structured, logical argument to convince",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA002",
+    "name": "Warning Statement",
+    "type": "Dialogue",
+    "description": "A preemptive warning to avoid consequences",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA003",
+    "name": "Reassuring Conversation",
+    "type": "Dialogue",
+    "description": "A calming and reassuring conversation",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Rep": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA004",
+    "name": "Informal Discussion",
+    "type": "Dialogue",
+    "description": "Casual discussion with potential consequences",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Info": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA005",
+    "name": "Physical Intimidation",
+    "type": "Dialogue",
+    "description": "Using physical intimidation to extract information",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "Rep": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA006",
+    "name": "Loud Interrogation",
+    "type": "Dialogue",
+    "description": "A loud and aggressive interrogation",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Rep": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA007",
+    "name": "Merciless Interrogation",
+    "type": "Dialogue",
+    "description": "A brutal interrogation with no empathy",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+2", "MEN": "+1", "Rep": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "DIA008",
+    "name": "Subtle Interrogation",
+    "type": "Dialogue",
+    "description": "An interrogation with a more delicate approach",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "info": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA009",
+    "name": "Violent Interrogation",
+    "type": "Dialogue",
+    "description": "Aggressive and violent interrogation",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+2", "Rep": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "DIA010",
+    "name": "Veiled Threat",
+    "type": "Dialogue",
+    "description": "A subtle threat that may intimidate",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "Rep": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA011",
+    "name": "Convincing Lie",
+    "type": "Dialogue",
+    "description": "Lying convincingly to avoid consequences",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1"}
+      },
+      {
+        "condition": {"result": "failure"},
+        "effects": {"Rep": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA012",
+    "name": "Warning",
+    "type": "Dialogue",
+    "description": "A clear warning about potential consequences",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Rep": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA013",
+    "name": "Protection Offer",
+    "type": "Dialogue",
+    "description": "Offering protection in exchange for loyalty",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "Rep": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA014",
+    "name": "Bribery",
+    "type": "Dialogue",
+    "description": "Offering money in exchange for information",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"info": "+1", "Dø": "-10 × Difficulty", "Rep": "+1"}
+      },
+      {
+        "condition": {"result": "failure"},
+        "effects": {"Rep": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA015",
+    "name": "Generous Bribe",
+    "type": "Dialogue",
+    "description": "A more generous bribe for more valuable information",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Dø": "-20 × Difficulty", "info": "+1", "Rep": "+1"}
+      },
+      {
+        "condition": {"result": "failure"},
+        "effects": {"Rep": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "DIA016",
+    "name": "Psychological Pressure",
+    "type": "Dialogue",
+    "description": "Applying psychological pressure to force someone to speak",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+2", "Rep": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "DIA017",
+    "name": "Intrusive Question",
+    "type": "Dialogue",
+    "description": "Asking a personal question that may yield sensitive information",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "info": "+1", "Rep": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "DIA018",
+    "name": "Trap Question",
+    "type": "Dialogue",
+    "description": "A question that traps the person into revealing hidden information",
+    "possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "hidden_info": "+1"}
+      },
+      {
+        "condition": {"result": "failure"},
+        "effects": {"Rep": "-1"}
+      }
+    ]
+  }
+]
+

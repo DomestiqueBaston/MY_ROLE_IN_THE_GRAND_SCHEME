@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=39 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="6_jtpuj"]
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
-[ext_resource type="PackedScene" uid="uid://codd8oehsbdvn" path="res://SCENES/Bottom_Left_Info_Short.tscn" id="10_rn5oa"]
-[ext_resource type="PackedScene" uid="uid://dyacbsj8nks3" path="res://SCENES/Crime_Motive_Selection.tscn" id="11_dx2ym"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
@@ -32,12 +30,19 @@
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="24_lp1fx"]
 [ext_resource type="Texture2D" uid="uid://djaa1uffmc675" path="res://GRAPHICS/MAIN/Card_Playground_Mask.png" id="25_47v8w"]
 [ext_resource type="Texture2D" uid="uid://s6171shdoa65" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png" id="26_63nlu"]
+[ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="29_urjbe"]
+[ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="30_3y6u4"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="30_dhl0k"]
+[ext_resource type="Script" path="res://SCRIPTS/Option_Button.gd" id="31_u0oj1"]
+[ext_resource type="PackedScene" uid="uid://dpmpj36bqaoin" path="res://SCENES/Mouse_Cursor.tscn" id="34_mx7ef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km17i"]
 size = Vector2(106, 106)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
 
 [node name="Main" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -630,12 +635,92 @@ tooltip_text = "New
 texture = ExtResource("15_0qkya")
 metadata/_edit_lock_ = true
 
-[node name="Bottom_Left_Info" parent="." instance=ExtResource("10_rn5oa")]
+[node name="Bottom_Left_Info" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
-[node name="Crime_Motive_Selection" parent="." instance=ExtResource("11_dx2ym")]
+[node name="ScrollContainer" type="ScrollContainer" parent="Bottom_Left_Info"]
+custom_minimum_size = Vector2(106, 108)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 198.0
+offset_right = 122.0
+offset_bottom = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("29_urjbe")
+horizontal_scroll_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Info" type="Label" parent="Bottom_Left_Info/ScrollContainer"]
+custom_minimum_size = Vector2(106, 108)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("30_dhl0k")
+theme_override_font_sizes/font_size = 8
+text = "By default, we'll find here info about the active case such as time left to solve it, etc.
+
+Otherwise, depending on what's selected, info will be related to the place, the PNJ(s) there, etc.
+
+It could also eventually be something else but I don't know what it could be so far.
+
+We'll find out about that later too!"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Crime_Motive_Selection" type="Node2D" parent="."]
 position = Vector2(-2, -18)
+metadata/_edit_lock_ = true
+
+[node name="Motive_Selector" type="PanelContainer" parent="Crime_Motive_Selection"]
+offset_left = 149.0
+offset_top = 29.0
+offset_right = 234.0
+offset_bottom = 146.0
+mouse_filter = 2
+theme = ExtResource("30_3y6u4")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
+metadata/_edit_lock_ = true
+
+[node name="Motive_List" type="OptionButton" parent="Crime_Motive_Selection/Motive_Selector"]
+custom_minimum_size = Vector2(100, 16)
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Select the motive of the crime"
+toggle_mode = false
+flat = true
+text_overrun_behavior = 3
+selected = 5
+fit_to_longest_item = false
+item_count = 6
+popup/item_0/text = "Discovery of the Hidden Superego"
+popup/item_1/text = "Personal vengeance"
+popup/item_1/id = 1
+popup/item_2/text = "Persistent sexual dissatisfaction"
+popup/item_2/id = 2
+popup/item_3/text = "Search for influence"
+popup/item_3/id = 3
+popup/item_4/text = "Dissemination of E.T. genes"
+popup/item_4/id = 4
+popup/item_5/text = "Crime motive:"
+popup/item_5/id = 5
+popup/item_5/separator = true
+script = ExtResource("31_u0oj1")
+metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
+
+[node name="Mouse_Cursor" parent="." instance=ExtResource("34_mx7ef")]
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
 

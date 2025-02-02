@@ -1,0 +1,183 @@
+[
+  {
+    "id": "ABS001",
+    "name": "Confidence",
+    "type": "Abstract",
+    "description": "Improves mental abilities based on emotional state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Emo": ">0"},
+        "effects": {"MEN": "+2", "Emo": "-1"}
+      },
+      {
+        "condition": {"Emo": "<0"},
+        "effects": {"MEN": "+2", "Emo": "+1"}
+      },
+      {
+        "condition": {"Emo": "=0"},
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "ABS002",
+    "name": "Morale",
+    "type": "Abstract",
+    "description": "Improves physical and mental abilities based on emotional state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Emo": ">0"},
+        "effects": {"PHY": "+1", "MEN": "+1", "Emo": "+1"}
+      },
+      {
+        "condition": {"Emo": "<0"},
+        "effects": {"PHY": "+1", "MEN": "+1", "Emo": "+2"}
+      },
+      {
+        "condition": {"Emo": "=0"},
+        "effects": {"PHY": "+1", "MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "ABS003",
+    "name": "Temperament",
+    "type": "Abstract",
+    "description": "Improves physical ability, mental ability or Health based on emotional state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Emo": ">0"},
+        "effects": {"PHY": "+1", "MEN": "-1"}
+      },
+      {
+        "condition": {"Emo": "<0"},
+        "effects": {"HEA": "+1", "Emo": "+1"}
+      },
+      {
+        "condition": {"Emo": "=0"},
+        "effects": {"PHY": "+1", "HEA": "+1", "Emo": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "ABS004",
+    "name": "Interest",
+    "type": "Abstract",
+    "description": "Improves mental abilities based on addiction state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Add": ">0"},
+        "effects": {"MEN": "+1", "Emo": "1_toward_closest_min_max"}
+      },
+      {
+        "condition": {"Add": "<0"},
+        "effects": {"MEN": "+2", "Emo": "1_toward_closest_min_max"}
+      },
+      {
+        "condition": {"Add": "=0"},
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "ABS005",
+    "name": "Bravery",
+    "type": "Abstract",
+    "description": "Improves mainly physical and mental abilities based on addiction state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Add": ">0"},
+        "effects": {"PHY": "+1", "MEN": "+1", "HEA": "-1"}
+      },
+      {
+        "condition": {"Add": "<0"},
+        "effects": {"PHY": "+1", "MEN": "+1", "Add": "+2"}
+      },
+      {
+        "condition": {"Add": "=0"},
+        "effects": {"PHY": "+1", "MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "ABS006",
+    "name": "Resilience",
+    "type": "Abstract",
+    "description": "Improves mainly health based on emotional state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Emo": ">0"},
+        "effects": {"HEA": "+2", "Emo": "-1"}
+      },
+      {
+        "condition": {"Emo": "<0"},
+        "effects": {"HEA": "+1", "Emo": "+1"}
+      },
+      {
+        "condition": {"Emo": "=0"},
+        "effects": {"HEA": "+1", "PHY": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "ABS007",
+    "name": "Mental Clarity",
+    "type": "Abstract",
+    "description": "Improves mainly mental abilities based on emotional and addiction state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Emo": "=0", "Add": "=0"},
+        "effects": {"MEN": "+2", "Emo": "1_toward_closest_min_max", "Add": "1_toward_closest_min_max"}
+      },
+      {
+        "condition": {"Emo": "=0"},
+        "effects": {"MEN": "+1", "Emo": "1_toward_closest_min_max"}
+      },
+      {
+        "condition": {"Add": "=0"},
+        "effects": {"MEN": "+1", "Add": "1_toward_closest_min_max"}
+      },
+      {
+        "condition": {"Emo": "!=0", "Add": "!=0"},
+        "effects": {"MEN": "+1", "HEA": "+1", "Emo": "1_toward_closest_min_max", "Add": "1_toward_closest_min_max"}
+      }
+    ]
+  },
+  {
+    "id": "ABS008",
+    "name": "Inner Balance",
+    "type": "Abstract",
+    "description": "Improves mainly emotional or addiction state.",
+    "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
+    "bonus_malus": [
+      {
+        "condition": {"Emo": "=0", "Add": "=0"},
+        "effects": {"HEA": "+1"}
+      },
+      {
+        "condition": {"Emo": ">1"},
+        "effects": {"Emo": "-1"}
+      },
+      {
+        "condition": {"Emo": "<-1"},
+        "effects": {"Add": "1_toward_zero"}
+      },
+      {
+        "condition": {"Add": ">1"},
+        "effects": {"Add": "-1"}
+      },
+      {
+        "condition": {"Add": "<-1"},
+        "effects": {"Emo": "1_toward_closest_min_max"}
+      }
+    ]
+  }
+]
+

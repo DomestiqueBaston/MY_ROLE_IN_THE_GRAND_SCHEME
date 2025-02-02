@@ -1,0 +1,263 @@
+[
+  {
+    "id": "COM001",
+    "name": "Targeted Attack",
+    "type": "Combat",
+    "description": "Performs a precise and focused attack.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+2", "Emo": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "COM002",
+    "name": "Charge",
+    "type": "Combat",
+    "description": "A brutal attack with a cost in mental and emotional energy.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "MEN": "-1", "Emo": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "COM003",
+    "name": "Street Fight",
+    "type": "Combat",
+    "description": "An impromptu fight with fluctuating emotional stakes.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Emo": "1_toward_closest_min_max"}
+      }
+    ]
+  },
+  {
+    "id": "COM004",
+    "name": "Counterattack",
+    "type": "Combat",
+    "description": "A quick response after an enemy's attack.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Emo": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "COM005",
+    "name": "Cover",
+    "type": "Combat",
+    "description": "Take cover to reduce damage.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "MEN": "-1", "Emo": "1_toward_zero", "damage": "-2_if_hit"}
+      }
+    ]
+  },
+  {
+    "id": "COM006",
+    "name": "Diversion",
+    "type": "Combat",
+    "description": "Create a distraction to destabilize the enemy.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "MEN": "+2", "Emo": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "COM007",
+    "name": "Dodge",
+    "type": "Combat",
+    "description": "Evade the enemy's attack to reduce damage.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "-1", "Emo": "-1", "damage": "-1_if_hit"}
+      }
+    ]
+  },
+  {
+    "id": "COM008",
+    "name": "Erratic Movements",
+    "type": "Combat",
+    "description": "Unpredictable movements that increase physical strength at a cost.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+2", "MEN": "-1", "Emo": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "COM009",
+    "name": "Parry",
+    "type": "Combat",
+    "description": "Block an attack to reduce damage.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "Emo": "+1", "damage": "-1_if_hit"}
+      }
+    ]
+  },
+  {
+    "id": "COM010",
+    "name": "Provocation",
+    "type": "Combat",
+    "description": "Taunt the enemy to provoke a reaction.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Emo": "1_toward_zero"}
+      }
+    ]
+  },
+  {
+    "id": "COM011",
+    "name": "Martial Arts Techniques",
+    "type": "Combat",
+    "description": "Execute a series of advanced combat techniques.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "MEN": "+1", "Emo": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "COM012",
+    "name": "Use a Weapon",
+    "type": "Combat",
+    "description": "Use a weapon for a powerful attack with a mental and emotional cost.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+3", "MEN": "-1", "Emo": "2_toward_closest_min_max"}
+      }
+    ]
+  },
+  {
+    "id": "COM013",
+    "name": "Use an Item",
+    "type": "Combat",
+    "description": "Use an item to enhance your combat capabilities.",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "COS001",
+    "name": "Adrenaline!",
+    "type": "Combat SPECIAL",
+    "description": "Increase your dice roll by 1, emotional effects ±1.",
+    "possible_combinations": ["Combat", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"dice": "-1", "Add": "1_toward_closest_min_max"}
+      }
+    ]
+  },
+  {
+    "id": "COS002",
+    "name": "Disarm!",
+    "type": "Combat SPECIAL",
+    "description": "Disarm the opponent, giving them a penalty to their dice roll.",
+    "possible_combinations": ["Combat", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"opponent_dice": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "COS003",
+    "name": "All or Nothing!",
+    "type": "Combat SPECIAL",
+    "description": "Increase your dice roll by 1, and amplify emotional effects.",
+    "possible_combinations": ["Combat", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"dice": "-1", "Emo": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "COS004",
+    "name": "Do Not Kill!",
+    "type": "Combat SPECIAL",
+    "description": "If the opponent would die, their health is set to 1. Dialogue becomes available with the opponent.",
+    "possible_combinations": ["Combat", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"opponent_HEA_if_dead": "1", "Dialogue": "possible", "Dialogue_dice": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "COS005",
+    "name": "Bad Luck!",
+    "type": "Combat SPECIAL",
+    "description": "The opponent gets a -2 penalty to their dice roll, and you get a -1 penalty.",
+    "possible_combinations": ["Combat", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"opponent_dice": "+2", "player_dice": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "COS006",
+    "name": "Self-control!",
+    "type": "Combat SPECIAL",
+    "description": "Cancel some emotional effect.",
+    "possible_combinations": ["Combat", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Emo": "cancel_another_Combat_Emo_malus", "dice": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "COR001",
+    "name": "Flee",
+    "type": "Combat RUN-AWAY",
+    "description": "Escape the fight by increasing your physical and mental capabilities.",
+    "possible_combinations": ["Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "MEN": "+1"}
+      }
+    ]
+  }
+]
+

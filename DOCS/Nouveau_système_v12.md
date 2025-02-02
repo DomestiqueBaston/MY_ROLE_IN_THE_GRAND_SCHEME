@@ -851,4 +851,4 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 
 	- Fin d’enquête
 	- Mort
-	- Fiche d’enquête (en plus des 2 Bottom Left Info scenes).
+	- Fiche d’enquête complète (en plus des 2 zones de résumé en bas à gauche des écrans Main.tscn et Interaction.tscn).

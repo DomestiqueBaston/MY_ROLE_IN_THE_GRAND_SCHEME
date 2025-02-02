@@ -1,0 +1,314 @@
+[
+  {
+    "id": "INV001",
+    "name": "Detailed Analysis",
+    "type": "Investigation",
+    "description": "Examine the details with great precision.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Emo": "1_toward_zero"}
+      }
+    ]
+  },
+  {
+    "id": "INV002",
+    "name": "Brief Analysis",
+    "type": "Investigation",
+    "description": "Perform a quick examination, not very thorough.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "-1", "hours": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "INV003",
+    "name": "Complete Examination",
+    "type": "Investigation",
+    "description": "A full and thorough examination of the area.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "PHY": "+1", "Emo": "2_toward_closest_min_max", "Object": "+1", "hours": "+2"}
+      }
+    ]
+  },
+  {
+    "id": "INV004",
+    "name": "Meticulous Examination",
+    "type": "Investigation",
+    "description": "A very detailed examination, with a focus on every little aspect.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "Emo": "-1", "hours": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INV005",
+    "name": "Thorough Search",
+    "type": "Investigation",
+    "description": "Search the area carefully, ensuring no detail is overlooked.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "Object": "+1", "hours": "+2"}
+      }
+    ]
+  },
+  {
+    "id": "INV006",
+    "name": "Systematic Search",
+    "type": "Investigation",
+    "description": "A methodical and structured search.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Emo": "1_toward_closest_min_max"}
+      }
+    ]
+  },
+  {
+    "id": "INV007",
+    "name": "Detailed Inspection",
+    "type": "Investigation",
+    "description": "A comprehensive inspection with a focus on key aspects.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Emo": "1_toward_closest_min_max"}
+      }
+    ]
+  },
+  {
+    "id": "INV008",
+    "name": "Quick Inspection",
+    "type": "Investigation",
+    "description": "A fast inspection with minimal effort.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "MEN": "-1", "Emo": "1_toward_zero", "hours": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "INV009",
+    "name": "Quick Glance",
+    "type": "Investigation",
+    "description": "A fast but careless look around the area.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "MEN": "-1", "Object": "-1", "hours": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "INV010",
+    "name": "Methodical Search",
+    "type": "Investigation",
+    "description": "Search methodically, though not as thorough as a complete search.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Emo": "1_toward_zero"}
+      }
+    ]
+  },
+  {
+    "id": "INV011",
+    "name": "Fast Search",
+    "type": "Investigation",
+    "description": "A rushed search with little attention to detail.",
+    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "hours": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "INS001",
+    "name": "With Luminol!",
+    "type": "Investigation SPECIAL",
+    "description": "Use Luminol to reveal hidden traces.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Emo": "+1", "hours": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INS002",
+    "name": "Endoscopic Camera!",
+    "type": "Investigation SPECIAL",
+    "description": "Use an endoscopic camera for a detailed inspection.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "MEN": "+2", "hours": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INS003",
+    "name": "Stroke of Luck!",
+    "type": "Investigation SPECIAL",
+    "description": "A lucky break that boosts your chances.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"dice": "-1", "Emo": "+2"}
+      }
+    ]
+  },
+  {
+    "id": "INS004",
+    "name": "Systematic Dismantling!",
+    "type": "Investigation SPECIAL",
+    "description": "Carefully dismantle an object or device.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "hours": "+2"}
+      }
+    ]
+  },
+  {
+    "id": "INS005",
+    "name": "Unnoticed!",
+    "type": "Investigation SPECIAL",
+    "description": "Complete your task without leaving a trace.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Emo": "cancel_another_Investigation_Emo_malus", "dice": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INS006",
+    "name": "Lockpicking Tools!",
+    "type": "Investigation SPECIAL",
+    "description": "Use lockpicking tools to gain access.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+2", "MEN": "-1", "hours": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INS007",
+    "name": "Improvised Tools!",
+    "type": "Investigation SPECIAL",
+    "description": "Use improvised tools to access or disassemble.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "MEN": "-2", "hours": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INS008",
+    "name": "Fingerprinting!",
+    "type": "Investigation SPECIAL",
+    "description": "Take fingerprints from an object or surface.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-1", "MEN": "+1", "hours": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INS009",
+    "name": "Use a Detector!",
+    "type": "Investigation SPECIAL",
+    "description": "Use a detector to find hidden objects or traces.",
+    "possible_combinations": ["Investigation", "Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "-2", "MEN": "+2"}
+      }
+    ]
+  },
+  {
+    "id": "INB001",
+    "name": "Break the Door",
+    "type": "Investigation BREAK-IN",
+    "description": "Force your way through the door.",
+    "possible_combinations": ["Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+2", "MEN": "-2"}
+      }
+    ]
+  },
+  {
+    "id": "INB002",
+    "name": "Force the Lock",
+    "type": "Investigation BREAK-IN",
+    "description": "Pick the lock to gain access.",
+    "possible_combinations": ["Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1", "Emo": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INB003",
+    "name": "Climb the Gutter",
+    "type": "Investigation BREAK-IN",
+    "description": "Climb up the building using the gutter.",
+    "possible_combinations": ["Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+1", "Emo": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "INB004",
+    "name": "Disable the Security",
+    "type": "Investigation BREAK-IN",
+    "description": "Neutralize the security system.",
+    "possible_combinations": ["Abstract"],
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  }
+]

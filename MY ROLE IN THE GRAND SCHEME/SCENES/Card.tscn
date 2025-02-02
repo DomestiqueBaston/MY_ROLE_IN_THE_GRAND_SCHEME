@@ -421,8 +421,8 @@ metadata/_edit_lock_ = true
 
 [node name="Card_Name" type="Label" parent="Card_Mask/Card_BG/Card_Text"]
 layout_mode = 1
-offset_left = 9.0
-offset_right = 62.0
+offset_left = 8.0
+offset_right = 64.0
 offset_bottom = 23.0
 tooltip_text = "Whatever..."
 mouse_filter = 0
