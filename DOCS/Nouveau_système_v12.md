@@ -392,7 +392,7 @@ Les emploi du temps
 		Rappel : 1 PNJ qui a attaqué ou qui a fuit disparaîtra à la fin de l’interaction jusqu’à la fin du jour suivant (ex. : si un PNJ fuit à 10h le mardi, on ne pourra le revoir qu’à partir du jeudi) sauf cas particulier (voir Combat).
 
 Passer le temps
-	- Lorsqu’il ne dort pas (Main.tscn), le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure sans effet pour lui.
+	- Lorsqu’il ne dort pas (Main.tscn), le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure sans effet pour lui, accessible par le menu Dailies.
 
 Passer le temps pendant la paranoïa
 	- Lorsque le joueur est paranoïaque, on aura aussi sur l’écran principal (Main.tscn!) un bouton « Pass time » car il ne dort plus (mais les PNJs, eux, si) ! À utiliser quand le veut le joueur bien entendu. Le temps passera d’1h à chaque pression.
@@ -439,6 +439,7 @@ Les cartes
 	- En début de partie, pour la pile de Maîtrise, le jeu proposera au joueur 8 cartes d’interaction (2 Dialogue, 2 Combat, 2 Investigation y compris Special, Run Away ou Break-In et 2 Abstraite) choisies aléatoirement.
 	- Les effets d’une carte sur PHY et MEN sont temporaires !
 	- Les bonus/malus d’une carte sur HEA, HEAnom., Emo, Add et/ou Wan sont permanents !
+	- Lorsque des effets en cas d’échec sont mentionnés sur des cartes, ils sont à appliquer en cas d’échec après le jet de dé.
 	- À noter que le Card_BG dans Card.tscn peut (et doit) être bougé pour chaque carte (juste pour varier un peu leur fond d’une carte à l’autre). Offset/offset en x entre -120 et 0 et en y entre -30 et 0 (on mettra un pas de 5 pixels de variation).
 
 Cartes Abstraites
@@ -847,8 +848,3 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 		- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
 		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
-Écrans restants à réaliser
-
-	- Fin d’enquête
-	- Mort
-	- Fiche d’enquête complète (en plus des 2 zones de résumé en bas à gauche des écrans Main.tscn et Interaction.tscn).

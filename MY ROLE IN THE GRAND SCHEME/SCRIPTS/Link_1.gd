@@ -18,8 +18,8 @@ func _process(_delta):
 	if selected_marker != null and dragging:
 		var mouse_position = get_global_mouse_position()
 		# Restreindre la position de la souris aux limites spécifiées
-		mouse_position.x = clamp(mouse_position.x, 148, 617)
-		mouse_position.y = clamp(mouse_position.y, 29, 337)
+		mouse_position.x = clamp(mouse_position.x, 152, 615)
+		mouse_position.y = clamp(mouse_position.y, 32, 335)
 		selected_marker.position = mouse_position
 
 	# Calculer la direction et la distance entre Start et End

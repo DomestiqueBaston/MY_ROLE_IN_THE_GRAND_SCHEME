@@ -50,6 +50,7 @@ offset_left = 288.0
 offset_top = 246.0
 offset_right = 312.0
 offset_bottom = 322.0
+tooltip_text = "Overall volume"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("3_ngdns")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
@@ -61,6 +62,7 @@ offset_left = 321.0
 offset_top = 245.0
 offset_right = 346.0
 offset_bottom = 321.0
+tooltip_text = "Music volume"
 theme_override_icons/grabber = ExtResource("4_5sjnd")
 theme_override_icons/grabber_highlight = ExtResource("4_5sjnd")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
@@ -72,6 +74,7 @@ offset_left = 354.0
 offset_top = 245.0
 offset_right = 379.0
 offset_bottom = 322.0
+tooltip_text = "FX volume"
 theme_override_icons/grabber = ExtResource("5_fcheo")
 theme_override_icons/grabber_highlight = ExtResource("5_fcheo")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
@@ -83,6 +86,7 @@ offset_left = 386.0
 offset_top = 245.0
 offset_right = 411.0
 offset_bottom = 322.0
+tooltip_text = "UI volume"
 theme_override_icons/grabber = ExtResource("6_dp0m8")
 theme_override_icons/grabber_highlight = ExtResource("6_dp0m8")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
@@ -94,6 +98,7 @@ offset_left = 417.0
 offset_top = 245.0
 offset_right = 442.0
 offset_bottom = 323.0
+tooltip_text = "Voices volume"
 theme_override_icons/grabber = ExtResource("7_yumua")
 theme_override_icons/grabber_highlight = ExtResource("7_yumua")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
@@ -182,7 +187,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 tooltip_text = "I do agree with
-that choice."
+those choices."
 texture_hover = ExtResource("23_nlotf")
 texture_click_mask = ExtResource("24_o2nkk")
 metadata/_edit_lock_ = true
@@ -196,12 +201,69 @@ texture_hover = ExtResource("25_l1hsb")
 texture_click_mask = ExtResource("26_h7ebl")
 metadata/_edit_lock_ = true
 
+[node name="Useless_so_far" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_d824c")
+metadata/_edit_lock_ = true
+
+[node name="Nothing_Here_1" type="Label" parent="Useless_so_far"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 145.0
+offset_right = 310.0
+offset_bottom = 160.0
+tooltip_text = "Try the fader below..."
+mouse_filter = 0
+metadata/_edit_lock_ = true
+
+[node name="Nothing_Here_2" type="Label" parent="Useless_so_far"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 144.0
+offset_right = 344.0
+offset_bottom = 159.0
+tooltip_text = "Try the fader below..."
+mouse_filter = 0
+metadata/_edit_lock_ = true
+
+[node name="Nothing_Here_3" type="Label" parent="Useless_so_far"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 145.0
+offset_right = 377.0
+offset_bottom = 160.0
+tooltip_text = "Try the fader below..."
+mouse_filter = 0
+metadata/_edit_lock_ = true
+
+[node name="Nothing_Here_4" type="Label" parent="Useless_so_far"]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 145.0
+offset_right = 409.0
+offset_bottom = 160.0
+tooltip_text = "Try the fader below..."
+mouse_filter = 0
+metadata/_edit_lock_ = true
+
+[node name="Nothing_Here_5" type="Label" parent="Useless_so_far"]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 145.0
+offset_right = 442.0
+offset_bottom = 160.0
+tooltip_text = "Try the fader below..."
+mouse_filter = 0
+metadata/_edit_lock_ = true
+
 [node name="TO_DO" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_d824c")
 
-[node name="Label" type="Label" parent="TO_DO"]
+[node name="Mouse Cursor" type="Label" parent="TO_DO"]
 layout_mode = 0
 offset_left = 493.0
 offset_top = 143.0
@@ -209,5 +271,14 @@ offset_right = 554.0
 offset_bottom = 151.0
 rotation = -1.5708
 text = "Mouse Cursor"
+
+[node name="Video Shader" type="Label" parent="TO_DO"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 109.0
+offset_right = 122.0
+offset_bottom = 117.0
+rotation = -1.5708
+text = "Video Shader"
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("27_21avd")]

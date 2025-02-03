@@ -1,0 +1,674 @@
+[
+  {
+    "id": "LOC001",
+    "name": "Apartment",
+    "type": "Location",
+    "description": "A residential space where people live.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "N/A",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC002",
+    "name": "Workshop",
+    "type": "Location",
+    "description": "A place for crafting and repairing items.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC003",
+    "name": "Bar",
+    "type": "Location",
+    "description": "A social gathering place where drinks are served.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Evening, Night, WE_Evening, WE_Night",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC004",
+    "name": "Library",
+    "type": "Location",
+    "description": "A place for reading and studying.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC005",
+    "name": "Office",
+    "type": "Location",
+    "description": "A place for administrative work.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC006",
+    "name": "Medical Office",
+    "type": "Location",
+    "description": "A place for medical consultations.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC007",
+    "name": "Barracks",
+    "type": "Location",
+    "description": "A place for military personnel.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "H24",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "+1", "MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC008",
+    "name": "Cemetery",
+    "type": "Location",
+    "description": "A place for burials and remembrance.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC009",
+    "name": "Cinema",
+    "type": "Location",
+    "description": "A place for watching movies.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Afternoon, Evening, Night, WE_Afternoon, WE_Evening, WE_Night",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC010",
+    "name": "Nightclub",
+    "type": "Location",
+    "description": "A place for dancing and socializing.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Evening, Night, WE_Evening, WE_Night",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC011",
+    "name": "School",
+    "type": "Location",
+    "description": "A place for education and learning.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC012",
+    "name": "Art Gallery",
+    "type": "Location",
+    "description": "A place for displaying and appreciating art.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Afternoon, Evening, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC013",
+    "name": "Garage",
+    "type": "Location",
+    "description": "A place for vehicle repair and storage.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening",
+    "bonus_malus": [
+      {
+        "effects": {"HEA": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC014",
+    "name": "Hangar",
+    "type": "Location",
+    "description": "A place for storing stuff.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC015",
+    "name": "Hospital",
+    "type": "Location",
+    "description": "A place for medical treatment and care.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "H24",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1", "HEA": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC016",
+    "name": "Hotel",
+    "type": "Location",
+    "description": "A place for temporary lodging.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "H24",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC017",
+    "name": "Laboratory",
+    "type": "Location",
+    "description": "A place for scientific research and experiments.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC018",
+    "name": "Place of Worship",
+    "type": "Location",
+    "description": "A place for religious practices and gatherings.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1", "MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC019",
+    "name": "Store",
+    "type": "Location",
+    "description": "A place for buying and selling goods.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC020",
+    "name": "Flea Market",
+    "type": "Location",
+    "description": "A place for buying and selling second-hand items.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC021",
+    "name": "Museum",
+    "type": "Location",
+    "description": "A place for preserving and displaying artifacts.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC022",
+    "name": "Park",
+    "type": "Location",
+    "description": "A place for recreation and relaxation.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC023",
+    "name": "Swimming Pool",
+    "type": "Location",
+    "description": "A place for swimming and aquatic activities.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC024",
+    "name": "Post Office",
+    "type": "Location",
+    "description": "A place for postal services.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC025",
+    "name": "Restaurant",
+    "type": "Location",
+    "description": "A place for dining and socializing.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC026",
+    "name": "Arcade",
+    "type": "Location",
+    "description": "A place for playing games and entertainment.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Afternoon, Evening, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC027",
+    "name": "Theater",
+    "type": "Location",
+    "description": "A place for live performances and shows.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Afternoon, Evening, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1", "MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC028",
+    "name": "Sports Hall",
+    "type": "Location",
+    "description": "A place for indoor sports and activities.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "+1", "MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC029",
+    "name": "Stadium",
+    "type": "Location",
+    "description": "A place for outdoor sports and events.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC030",
+    "name": "Gas Station",
+    "type": "Location",
+    "description": "A place for refueling vehicles.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "H24",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC031",
+    "name": "Bank",
+    "type": "Location",
+    "description": "A place for financial services.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC032",
+    "name": "Police Station",
+    "type": "Location",
+    "description": "A place for law enforcement and public safety.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "H24",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC033",
+    "name": "Fire Station",
+    "type": "Location",
+    "description": "A place for emergency services and firefighting.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "H24",
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC034",
+    "name": "Café",
+    "type": "Location",
+    "description": "A place for hot drinks and light snacks.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+  },
+  {
+    "id": "LOC035",
+    "name": "Bakery",
+    "type": "Location",
+    "description": "A place for baked goods and pastries.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC036",
+    "name": "Pharmacy",
+    "type": "Location",
+    "description": "A place for medications and health products.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC037",
+    "name": "Grocery Store",
+    "type": "Location",
+    "description": "A place for buying food and household items.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC038",
+    "name": "Town Hall",
+    "type": "Location",
+    "description": "A place for local administrative services.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC039",
+    "name": "Beauty Salon",
+    "type": "Location",
+    "description": "A place for hair and personal care services.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC040",
+    "name": "Hardware Store",
+    "type": "Location",
+    "description": "A place for tools and building materials.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC041",
+    "name": "Florist",
+    "type": "Location",
+    "description": "A place for flowers and plants.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, WE_Morning, WE_Afternoon",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC042",
+    "name": "Pet Store",
+    "type": "Location",
+    "description": "A place for pet supplies and care.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": []
+  },
+  {
+    "id": "LOC043",
+    "name": "Laundromat",
+    "type": "Location",
+    "description": "A place for washing clothes.",
+    "property": "",
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "frequentation": "",
+    "contenu_trouvable": "",
+    "contenu_cache": "",
+    "open_hours": "Morning, Afternoon, Evening, WE_Morning, WE_Afternoon, WE_Evening",
+    "bonus_malus": []
+  }
+]
+

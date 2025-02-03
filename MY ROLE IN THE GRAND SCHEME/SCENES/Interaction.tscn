@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
 [ext_resource type="Texture2D" uid="uid://c0c1572gpljxx" path="res://GRAPHICS/INTERACTION/Interaction_Hover.png" id="3_6vqkd"]
 [ext_resource type="Theme" uid="uid://3vnem16a7nmq" path="res://UI/Interaction_Theme.tres" id="4_jbike"]
+[ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="4_som80"]
 [ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="5_46aa5"]
 [ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="6_dhbug"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="6_v0c4c"]
@@ -36,11 +37,6 @@ size = Vector2(76, 139)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8v8a"]
 size = Vector2(76, 139)
-
-[sub_resource type="Gradient" id="Gradient_7eyd2"]
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.870588)
-metadata/_snap_enabled = true
-metadata/_snap_count = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sho7k"]
 shader = ExtResource("10_n4tdx")
@@ -569,14 +565,7 @@ visible = true
 [node name="Card_Text" parent="TMP/Places/Card28/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Drag_Drop_Line" type="Line2D" parent="."]
-position = Vector2(9, 11)
-points = PackedVector2Array(212, 218, 343, 204)
-width = 20.0
-gradient = SubResource("Gradient_7eyd2")
-end_cap_mode = 2
-antialiased = true
-metadata/_edit_lock_ = true
+[node name="Drag_Drop_Line" parent="." instance=ExtResource("4_som80")]
 
 [node name="Button" type="Control" parent="."]
 layout_mode = 3

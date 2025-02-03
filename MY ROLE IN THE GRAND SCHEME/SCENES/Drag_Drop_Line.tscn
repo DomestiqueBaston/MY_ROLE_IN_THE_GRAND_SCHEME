@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfmit6at3wmw6"]
+
+[sub_resource type="Gradient" id="Gradient_7eyd2"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.870588)
+metadata/_snap_enabled = true
+metadata/_snap_count = 4
+
+[node name="Drag_Drop_Line" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Line" type="Line2D" parent="."]
+position = Vector2(9, 11)
+points = PackedVector2Array(212, 218, 343, 204)
+width = 20.0
+gradient = SubResource("Gradient_7eyd2")
+end_cap_mode = 2
+antialiased = true
+metadata/_edit_lock_ = true
