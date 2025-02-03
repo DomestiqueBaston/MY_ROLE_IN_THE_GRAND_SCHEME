@@ -6,6 +6,8 @@ extends Sprite2D
 # Variable pour suivre si la souris est sur le collider
 var is_hovering = false
 
+func _ready():
+	visible = false
 
 func _process(_delta):
 	var mouse_position = get_viewport().get_mouse_position()
