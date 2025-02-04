@@ -599,6 +599,7 @@ Quelles informations peuvent être révélées par un PNJ
 Fuir un Dialogue (PNJ)
 	- Un PNJ a 1/(MEN×5) chance de fuir un Dialogue.
 	- Pour un PNJ, fuir un Dialogue représente +1Wan.
+	- Un échec représente un malus de 1 au jet de dé de Dialogue à venir.
 	- Un PNJ déjà en prison ne peut pas fuir un Dialogue.
 	- Après avoir fuit, le PNJ ne sera plus accessible avant le lendemain.
 	- S’il y a fuite, on n’ajoute qu’1 heure au temps écoulé car l’Interaction n’aura pas eu lieu.
@@ -621,7 +622,6 @@ Combat
 	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller et aura 25% de chance de trouver 50dø et prendre +1Wan.
 
 Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
-	- Le joueur ne peut pas fuir cette agression !
 	- À la première rencontre, il n’y a pas de risque !
 	- À chaque fois que le joueur rencontre un PNJ, ce dernier, s’il ne fuit pas, peut agresser le joueur selon ces probabilités :
 	- Par défaut, il y a 0 % de chance d’attaque d’un PNJ.

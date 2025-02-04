@@ -1,0 +1,284 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2dn121b3l0e2"]
+
+[ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Short_Event_BG.png" id="1_sivc1"]
+[ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_dgbv7"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_is8fw"]
+
+[sub_resource type="Animation" id="Animation_4pq04"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Short_Event_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(-128.461, 0), Vector2(-85.6403, 0), Vector2(-42.82, 0), Vector2(0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_dgbv7")
+}],
+"times": PackedFloat32Array(0.028334)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_atwki"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Short_Event_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-10.0001, 0), Vector2(-220.001, 0), Vector2(-430.001, 0), Vector2(-640, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_is8fw")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vfroo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Short_Event_Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-640, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
+_data = {
+"Appearance": SubResource("Animation_4pq04"),
+"Disappearance": SubResource("Animation_atwki"),
+"RESET": SubResource("Animation_vfroo")
+}
+
+[node name="Short_Event" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Short_Event_Panel" type="Node2D" parent="."]
+position = Vector2(-640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Sprite2D" parent="Short_Event_Panel"]
+texture = ExtResource("1_sivc1")
+centered = false
+offset = Vector2(50, 0)
+metadata/_edit_lock_ = true
+
+[node name="Announce" type="Control" parent="Short_Event_Panel"]
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_vr7x7")
+
+[node name="Run_Away" type="Control" parent="Short_Event_Panel/Announce"]
+anchors_preset = 0
+
+[node name="Player_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Run_Away"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 47.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] fled  ([color=#ff8864]cowardly[/color])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How unexpected...[/color][/shake]
+Seems  like the thought of  actually facing  what  was in front  of  you  was  a bit  too  much to  handle.
+Was it the  challenge?  Or just [shake rate=7.0 level=5 connected=0][color=#ff8864]the fear[/color][/shake] of looking foolish?
+Either way,  you sure  know  how to  leave  an impression...
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not  the one[/color]  you were  aiming  for[/color][/shake]![/center]"
+
+[node name="Player_Failure" type="RichTextLabel" parent="Short_Event_Panel/Announce/Run_Away"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 47.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] failed to flee  ([shake rate=7.0 level=5 connected=0][color=#ff8864]pathetic[/color][/shake])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How  disappointing...[/color][/shake]
+You had one job: [shake rate=7.0 level=5 connected=0][color=#ff8864]escape[/color][/shake].
+But no, you chose to stay  and face it.
+Was it bravery?  Or just  pure
+[shake rate=7.0 level=5 connected=0][color=#ff8864]bad judgment[/color][/shake]?
+In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
+
+[node name="Break_In" type="Control" parent="Short_Event_Panel/Announce"]
+anchors_preset = 0
+
+[node name="Player_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Break_In"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 66.0
+offset_right = 474.0
+offset_bottom = 294.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded ([color=#ff8864]against  all  odds[/color])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Well, color me surprised…[/color][/shake]
+It’s  almost impressive how you managed to  pull that  off.
+Did you really  think  that  would  be  your biggest  challenge  today?
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Congratulations,  you’ve  done it...[/color][/shake]
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
+
+[node name="Player_Failure" type="RichTextLabel" parent="Short_Event_Panel/Announce/Break_In"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 47.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] tried  something  ([color=#ff8864]how  ambitious[/color])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]That  didn’t go  as  planned...[/color][/shake]
+It  seems  like you had  a grand idea, but the execution?
+Let’s just say it wasn’t exactly impressive.
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe next time, try thinking it through[/color][/shake].
+
+You sure know how to make  an entrance...
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  not  the best  one![/color][/shake][/center]"
+
+[node name="Dialogue" type="Control" parent="Short_Event_Panel/Announce"]
+anchors_preset = 0
+
+[node name="NPC_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Dialogue"]
+visible = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 53.0
+offset_right = 487.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The coward[/color][/pulse] has fled!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not exactly  a shocker[/color][/shake]. It  appears that the  mere thought  of  facing  you - or, you know,  any challenge - was simply too  much to  handle.
+
+It's  almost  as if one  had  a sudden, overwhelming  need to  [shake rate=7.0 level=5 connected=0][color=#ff8864]disappear[/color][/shake].
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Or could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
+
+[node name="NPC_Failure" type="RichTextLabel" parent="Short_Event_Panel/Announce/Dialogue"]
+visible = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 53.0
+offset_right = 487.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The bastard[/color][/pulse] tried to flee!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]You'd think someone would learn by now[/color][/shake].
+But no, despite all the chances, they decided to turn back...
+The  moment  of escape?  [shake rate=7.0 level=5 connected=0][color=#ff8864]Totally  [color=#ff1c18]missed[/color][/color][/shake].
+It’s  almost  as if they were just waiting  for  the  perfect  moment...
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Too bad that  moment  never  came[/color][/shake].
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m6d4b")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
