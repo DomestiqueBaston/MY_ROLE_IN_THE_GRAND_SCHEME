@@ -1,0 +1,257 @@
+[gd_scene load_steps=10 format=3 uid="uid://bialdyt2yrgkg"]
+
+[ext_resource type="Texture2D" uid="uid://6wn0yf5hibwo" path="res://GRAPHICS/INCOME/Income_BG.png" id="1_88mho"]
+[ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="2_ekhwe"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="3_681nn"]
+[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_ihpa3"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="4_5xymt"]
+
+[sub_resource type="Animation" id="Animation_4pq04"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Income_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(-128.461, 0), Vector2(-85.6403, 0), Vector2(-42.82, 0), Vector2(0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_681nn")
+}],
+"times": PackedFloat32Array(0.028334)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_atwki"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Income_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-10.0001, 0), Vector2(-220.001, 0), Vector2(-430.001, 0), Vector2(-640, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_5xymt")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vfroo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Income_Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-640, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
+_data = {
+"Appearance": SubResource("Animation_4pq04"),
+"Disappearance": SubResource("Animation_atwki"),
+"RESET": SubResource("Animation_vfroo")
+}
+
+[node name="Income" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Income_Panel" type="Node2D" parent="."]
+position = Vector2(-640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Sprite2D" parent="Income_Panel"]
+position = Vector2(200, 25)
+texture = ExtResource("1_88mho")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Information" type="Control" parent="Income_Panel"]
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_ekhwe")
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="Button" parent="Income_Panel/Information"]
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 303.0
+offset_right = 343.0
+offset_bottom = 313.0
+text = "Ok, nice..."
+metadata/_edit_lock_ = true
+
+[node name="Content" type="RichTextLabel" parent="Income_Panel/Information"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_left = 244.0
+offset_top = 70.0
+offset_right = 397.0
+offset_bottom = 278.0
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congratulations![/color][/pulse][/center]
+
+ - [color=#ff8864]Wow[/color]! Look at you! You've
+ solved that case and earned
+ that [color=#ff8864]amazing[/color] reward:
+
+  -    [color=#ff8864]Dø[/color] and   card(s) to
+ (try to) improve yourself...
+  - [color=#ff8864]Eased your[/color] [color=#ff1c18]mind[/color] and [color=#ff1c18]cooled[/color] [color=#ff8864]
+ it with the cops[/color].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Not that it’ll make any change!"
+metadata/_edit_lock_ = true
+
+[node name="Money" type="Label" parent="Income_Panel/Information/Content"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 48.0
+offset_right = 32.0
+offset_bottom = 56.0
+text = "XXX"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Card" type="Label" parent="Income_Panel/Information/Content"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 48.0
+offset_right = 74.0
+offset_bottom = 56.0
+text = "X"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Card_Places" type="Node2D" parent="Income_Panel/Information"]
+position = Vector2(0, 5)
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Income_Panel/Information/Card_Places"]
+position = Vector2(247, 152)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Income_Panel/Information/Card_Places"]
+position = Vector2(319, 152)
+metadata/_edit_lock_ = true
+
+[node name="TMP" type="Node2D" parent="Income_Panel/Information"]
+position = Vector2(0, 5)
+metadata/_edit_lock_ = true
+
+[node name="Card" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]
+position = Vector2(247, 152)
+
+[node name="Card3" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]
+position = Vector2(283, 152)
+
+[node name="Card2" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]
+position = Vector2(319, 152)
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m6d4b")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
