@@ -17,7 +17,6 @@ shader_parameter/blur_samples = 15
 
 [node name="Global_Shader_Overlay" type="CanvasLayer"]
 layer = 10
-visible = false
 script = ExtResource("1_oba78")
 
 [node name="Grain" type="ColorRect" parent="."]
