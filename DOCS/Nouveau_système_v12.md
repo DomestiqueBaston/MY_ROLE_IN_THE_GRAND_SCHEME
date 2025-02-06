@@ -243,7 +243,7 @@ Caractéristiques particulières du jeu
 Système de Dés
 	- Lors des jets de dé, il faut toujours que le jet de dé soit inférieur ou égal au score à effectuer (pour une réussite).
 	- Les actions seront résolues sur des jets d’1 dé à 10 faces(1D10).
-	- En Combat et Dialogue, on compare les scores du joueur avec celui du PNJ. La meilleure marge de réussite gagne si les deux font une réussite. On fait Jet de dé du joueur – jet de dé du PNJ pour avoir la marge de réussite/échec. En cas d’égalité, « status quo » : personne n’obtient ni ne perd rien. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
+	- En Combat et Dialogue, on compare les scores du joueur avec celui du PNJ. La meilleure marge de réussite gagne si les deux font une réussite. En cas d’égalité, « status quo » : personne n’obtient ni ne perd rien. La marge de réussite/échec est définie par la différence entre le jet à obtenir et le jet obtenu. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
 	- En Investigation, pas de comparaison avec un PNJ, c’est plus simple. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
 
 Difficulté du jeu (écran d’OPTIONS)
@@ -580,6 +580,7 @@ Dialogue
 		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) 
 		Auprès d’1 Coupable : (9+MEN)/(10+MEN)
 		Auprès d’1 Complice : (8+MEN)/(12+MEN)
+	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur (cumulable).
 	- Une information cachée est toujours donnée juste.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête).
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec ses liens Violet (à moins qu’elle existe déjà).

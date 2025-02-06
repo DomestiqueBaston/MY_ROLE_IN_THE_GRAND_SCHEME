@@ -1,9 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpdulbgbf1ie0"]
+[gd_scene load_steps=7 format=3 uid="uid://cpdulbgbf1ie0"]
 
 [ext_resource type="Texture2D" uid="uid://ddyok5fbos80x" path="res://GRAPHICS/INTERACTION_RESULT/Interaction_Result_BG.png" id="1_k2rcs"]
-[ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png" id="2_phl1h"]
+[ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
 [ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="3_c5hnn"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_ns222"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_tf6dw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iru61"]
+bg_color = Color(0.89, 0.87665, 0.8633, 1)
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+shadow_color = Color(0, 0, 0, 0.498039)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+anti_aliasing = false
 
 [node name="Interaction_Result" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -13,13 +26,15 @@ texture = ExtResource("1_k2rcs")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Chalkboard_Content" type="Node2D" parent="."]
+[node name="Chalkboard_Content" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Chalk_Mask" type="Sprite2D" parent="Chalkboard_Content"]
+[node name="Chalk_Mask" type="TextureRect" parent="Chalkboard_Content"]
 clip_children = 1
-texture = ExtResource("2_phl1h")
-centered = false
+layout_mode = 0
+texture = ExtResource("2_0koxd")
 metadata/_edit_lock_ = true
 
 [node name="Content" type="Control" parent="Chalkboard_Content/Chalk_Mask"]
@@ -68,10 +83,12 @@ autowrap_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Report" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content"]
+modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 0
 offset_left = 46.0
 offset_top = 50.0
 offset_right = 593.0
-offset_bottom = 325.0
+offset_bottom = 278.0
 text = "Meh... Look what I've got here. After all that sweet talk, I somehow managed to scrape together a few crumbs. A few measly breadcrumbs in this godforsaken mess of a case. Let's see if any of this is actually useful, or if it's just more noise in the chaos.
 
 
@@ -93,8 +110,7 @@ text = "Meh... Look what I've got here. After all that sweet talk, I somehow man
 
 
 
-
-Good luck piecing it all together, kid. Let's see if I can actually solve this case or if I'll just end up making an even bigger mess. Better not screw this up."
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -106,68 +122,147 @@ layout_mode = 0
 offset_left = 7.0
 offset_top = 61.0
 offset_right = 541.0
-offset_bottom = 233.0
+offset_bottom = 202.0
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Link_Information" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+[node name="Link_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+custom_minimum_size = Vector2(111, 141)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Link relation concerning:
+bbcode_enabled = true
+text = "[center][color=#ff8864]Link relation[/color]:[/center]
 
-- NPCXXX
-- 
-- 
-- 
-...
-"
-horizontal_alignment = 1
+ - [color=#ff1c18]NPC001[/color] & [color=#ff1c18]NPC002[/color]: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png[/img]
+ - [color=#ff1c18]NPC001[/color] & [color=#ff1c18]NPC003[/color]: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png[/img]
+ - [color=#ff1c18]NPC001[/color]: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Noir.png[/img]
+ - ..."
 metadata/_edit_lock_ = true
 
-[node name="NPC_Information" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+[node name="NPC_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+custom_minimum_size = Vector2(130, 141)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Personnal information about:
+bbcode_enabled = true
+text = "[center][color=#ff8864]Personal information[/color]:[/center]
 
-- NPCXXX
-- 
-- 
-- 
-...
-"
-horizontal_alignment = 1
+ - [color=#ff1c18]NPC001[/color]: schedule, address, etc.
+ - [color=#ff1c18]NPC002[/color]: possession, hang out, etc.
+ - ..."
 metadata/_edit_lock_ = true
 
-[node name="Location_Information" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+[node name="Object_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+custom_minimum_size = Vector2(101, 141)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Information related to:
+bbcode_enabled = true
+text = "[center][color=#ff8864]Information[/color] about:[/center]
 
-- LOCXXX
-- 
-- 
-- 
-...
-"
-horizontal_alignment = 1
+ - [color=#ff1c18]OBJXXX[/color]: property of [color=#ff1c18]NPC001[/color]
+ - [color=#ff1c18]OBJXXX[/color]: found in [color=#ff1c18]LOC001[/color]
+ - ... "
 metadata/_edit_lock_ = true
 
-[node name="Object_Information" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+[node name="Location_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Columns"]
+custom_minimum_size = Vector2(107, 141)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Information regarding:
+bbcode_enabled = true
+text = "[color=#ff8864]Information[/color] related to:
 
-- OBJXXX
-- 
-- 
-- 
-...
-"
+ - [color=#ff1c18]LOC001[/color] is where [color=#ff1c18]NPC001[/color] works.
+ - [color=#ff1c18]LOC001[/color] is owned by [color=#ff1c18]NPC001[/color]
+ - You've heard of [color=#ff1c18]LOC002[/color]
+ - ..."
+metadata/_edit_lock_ = true
+
+[node name="Personal_Report" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="Personal_Report_Positive" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Personal_Report"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 253.0
+offset_right = 555.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = -1
+text = "Looks like that conversation might’ve actually helped. Don’t get too excited, kid-it could still blow up in my face.
+But hey, maybe I’m finally getting the hang of this. Or maybe I’m just deluding myself."
 horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Personal_Report_Neutral" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Personal_Report"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 254.0
+offset_right = 555.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Good luck piecing it all together, kid. Let's see if I can actually solve this case or
+if I'll just end up making an even bigger mess. Better not screw this up."
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Personal_Report_Negative" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Personal_Report"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 253.0
+offset_right = 555.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+text = "Great, just great. That conversation left me feeling like I’m in over my head. Typical. Let’s hope this doesn’t
+turn into an even bigger disaster. But knowing my luck, it probably will."
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="Button" parent="Chalkboard_Content"]
+modulate = Color(1, 1, 1, 0.941176)
+offset_left = 300.0
+offset_top = 333.0
+offset_right = 340.0
+offset_bottom = 341.0
+tooltip_text = "Close that window!"
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.394975, 0.61, 0.3355, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_ns222")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_iru61")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_iru61")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iru61")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iru61")
+theme_override_styles/normal = SubResource("StyleBoxFlat_iru61")
+text = "Oh well!"
 metadata/_edit_lock_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_tf6dw")]

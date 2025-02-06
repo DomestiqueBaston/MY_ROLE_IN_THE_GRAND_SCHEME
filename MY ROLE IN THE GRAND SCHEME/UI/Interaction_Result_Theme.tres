@@ -1,9 +1,12 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://cp6iw3lgtp8ia"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://cp6iw3lgtp8ia"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_rykjm"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_gegyx"]
 [ext_resource type="Texture2D" uid="uid://c3kx8sceudfn5" path="res://GRAPHICS/INVESTIGATION_CENTER/Arrow_Down.png" id="3_ejtur"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_rtkwq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxoax"]
+bg_color = Color(0.89, 0.791062, 0.6853, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -83,6 +86,8 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_gegyx")
 default_font_size = 8
+Button/colors/font_color = Color(0.698085, 0.57644, 0.427451, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_lxoax")
 HBoxContainer/constants/separation = 15
 HSlider/icons/grabber = ExtResource("1_rykjm")
 HSlider/icons/grabber_disabled = ExtResource("1_rykjm")
@@ -146,6 +151,11 @@ PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_84jwc")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 0.784314)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.25098)
+RichTextLabel/constants/outline_size = 3
+RichTextLabel/constants/shadow_offset_x = -1
+RichTextLabel/constants/shadow_offset_y = 1
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
