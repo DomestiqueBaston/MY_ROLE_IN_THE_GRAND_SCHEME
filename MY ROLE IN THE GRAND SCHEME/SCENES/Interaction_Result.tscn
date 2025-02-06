@@ -185,7 +185,6 @@ anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Personal_Report_Positive" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Personal_Report"]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -205,6 +204,7 @@ autowrap_mode = 3
 metadata/_edit_lock_ = true
 
 [node name="Personal_Report_Neutral" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Personal_Report"]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0

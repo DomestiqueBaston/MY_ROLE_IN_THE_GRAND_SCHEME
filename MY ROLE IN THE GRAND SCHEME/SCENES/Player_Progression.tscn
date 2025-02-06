@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://bytf1ieq0kl80"]
+
+[ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_PROGRESSION/Player_Progression_BG.png" id="1_ey6em"]
+[ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_pornr"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_ff6x5"]
+[ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm_01.ogg" id="4_s4fmr"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_6rbyk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b38xp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dijps"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbbre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2yrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjt83"]
+
+[node name="Player_Progression" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Player_Progression_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_ey6em")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Informations" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+tooltip_text = "Ok..."
+theme = ExtResource("2_pornr")
+metadata/_edit_lock_ = true
+
+[node name="Positive" type="RichTextLabel" parent="Informations"]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 53.0
+offset_right = 408.0
+offset_bottom = 263.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh, bravo![/color][/pulse]
+
+You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don’t  get  too cocky, it’s  just  a  tiny step. Now let’s  see if you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up without tripping  over yourself[/color][/shake].[/center]"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="Negative" type="RichTextLabel" parent="Informations"]
+visible = false
+layout_mode = 0
+offset_left = 218.0
+offset_top = 53.0
+offset_right = 408.0
+offset_bottom = 263.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh, dear![/color][/pulse]
+
+You  managed to [shake rate=7.0 level=5 connected=0][color=#ff8864]make things  worse[/color][/shake], as usual. I hope it’s just a [shake rate=7.0 level=5 connected=0][color=#ff8864]tiny setback[/color][/shake].
+Now let’s see if you can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up without  tripping  over yourself  again[/color][/shake].[/center]"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="Button" parent="Informations"]
+modulate = Color(1, 1, 1, 0.941176)
+offset_left = 387.0
+offset_top = 287.0
+offset_right = 424.0
+offset_bottom = 308.0
+rotation = -0.12645
+tooltip_text = "Close that window!"
+theme_override_colors/font_hover_pressed_color = Color(0.925734, 0.874449, 0.6551, 1)
+theme_override_colors/font_hover_color = Color(1, 0.533455, 0.392279, 1)
+theme_override_colors/font_pressed_color = Color(0.92549, 0.87451, 0.654902, 1)
+theme_override_colors/font_focus_color = Color(0.92549, 0.87451, 0.654902, 1)
+theme_override_colors/font_color = Color(0.92549, 0.87451, 0.654902, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_ff6x5")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b38xp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dijps")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lbbre")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_r2yrj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tjt83")
+text = "Hm?"
+metadata/_edit_lock_ = true
+
+[node name="Alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_s4fmr")
+volume_db = -10.0
+autoplay = true
+bus = &"FX"
+
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_6rbyk")]

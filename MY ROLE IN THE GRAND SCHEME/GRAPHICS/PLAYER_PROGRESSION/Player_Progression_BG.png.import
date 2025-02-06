@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g6nyhnrbosl0"
-path="res://.godot/imported/Death_BG_02.png-1458d6968bb65aa09824f9bb35fe7bf3.ctex"
+uid="uid://crswnkw68ti3y"
+path="res://.godot/imported/Player_Progression_BG.png-9631ca00cc84a3a9f3ce1cb36c754e7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/DEATH/Death_BG_02.png"
-dest_files=["res://.godot/imported/Death_BG_02.png-1458d6968bb65aa09824f9bb35fe7bf3.ctex"]
+source_file="res://GRAPHICS/PLAYER_PROGRESSION/Player_Progression_BG.png"
+dest_files=["res://.godot/imported/Player_Progression_BG.png-9631ca00cc84a3a9f3ce1cb36c754e7d.ctex"]
 
 [params]
 

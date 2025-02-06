@@ -170,6 +170,7 @@ anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Player_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Run_Away"]
+visible = false
 layout_mode = 0
 offset_left = 159.0
 offset_top = 44.0
