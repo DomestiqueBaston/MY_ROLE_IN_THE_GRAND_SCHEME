@@ -724,6 +724,7 @@ metadata/_edit_lock_ = true
 [node name="Mouse_Cursor" parent="." instance=ExtResource("34_71f12")]
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
+visible = false
 
 [editable path="TMP_1/Main_Playmat/Card1"]
 [editable path="TMP_1/Main_Playmat/Card2"]

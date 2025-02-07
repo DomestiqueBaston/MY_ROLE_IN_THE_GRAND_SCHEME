@@ -63,6 +63,7 @@ metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Informations"]
 modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 0
 offset_left = 387.0
 offset_top = 287.0
 offset_right = 424.0
@@ -92,3 +93,4 @@ autoplay = true
 bus = &"FX"
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_6rbyk")]
+visible = false
