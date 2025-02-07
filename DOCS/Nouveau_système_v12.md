@@ -615,12 +615,12 @@ Combat
 		Pour le PNJ (seulement ses caractéristiques) : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
 	- Une réussite critique permet au joueur de ne pas tuer si jamais le PNJ aurait dû mourir. La victime sera à HEA=1 et le combat avec ce PNJ sera terminé. ±1Emo → O pour le joueur.
-	- La marge de réussite du « vainqueur » représente les dégats infligés à l’adversaire.
+	- La marge de réussite du « vainqueur » représente les dégâts infligés à l’adversaire.
 	- Un échec critique fait que le joueur ou le PNJ se blesse et prend 1HEA de dégâts en plus (et ±1Emo → Min/Max pour le joueur).
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) une Rep = -3 auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici). (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible à partir de ce moment-là dans l’enquête).
-	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller et aura 25% de chance de trouver 50dø et prendre +1Wan.
+	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller et aura 25% de chance de trouver 50dø (±10%) et prendre +1Wan.
 
 Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
 	- À la première rencontre, il n’y a pas de risque !

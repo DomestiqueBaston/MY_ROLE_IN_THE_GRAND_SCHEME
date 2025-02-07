@@ -31,7 +31,8 @@ tooltip_text = "Ok..."
 theme = ExtResource("2_pornr")
 metadata/_edit_lock_ = true
 
-[node name="Positive" type="RichTextLabel" parent="Informations"]
+[node name="Positive_Mental" type="RichTextLabel" parent="Informations"]
+visible = false
 layout_mode = 0
 offset_left = 218.0
 offset_top = 53.0
@@ -41,23 +42,59 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh, bravo![/color][/pulse]
 
-You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don’t  get  too cocky, it’s  just  a  tiny step. Now let’s  see if you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up without tripping  over yourself[/color][/shake].[/center]"
+You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don’t  get  too cocky, it’s  just  a  tiny step. Now let’s  see if you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up without tripping  over yourself[/color][/shake].
+At this  point,  you feel a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  stupid.[/color][/shake][/center]"
 fit_content = true
 metadata/_edit_lock_ = true
 
-[node name="Negative" type="RichTextLabel" parent="Informations"]
+[node name="Positive_Physic" type="RichTextLabel" parent="Informations"]
 visible = false
 layout_mode = 0
-offset_left = 218.0
+offset_left = 220.0
+offset_top = 73.0
+offset_right = 410.0
+offset_bottom = 283.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Hurrah![/color][/pulse]
+
+You’ve shown some [shake rate=7.0 level=5 connected=0][color=#ff8864]spark[/color][/shake], dude, but  don’t start celebrating  just  yet. You’ve got  a long  way to go...
+Anyway.  At  this  point, you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  weak[/color][/shake].[/center]
+"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="Negative_Mental" type="RichTextLabel" parent="Informations"]
+visible = false
+layout_mode = 0
+offset_left = 216.0
 offset_top = 53.0
-offset_right = 408.0
-offset_bottom = 263.0
+offset_right = 410.0
+offset_bottom = 305.0
 rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh, dear![/color][/pulse]
 
-You  managed to [shake rate=7.0 level=5 connected=0][color=#ff8864]make things  worse[/color][/shake], as usual. I hope it’s just a [shake rate=7.0 level=5 connected=0][color=#ff8864]tiny setback[/color][/shake].
-Now let’s see if you can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up without  tripping  over yourself  again[/color][/shake].[/center]"
+You managed to [shake rate=7.0 level=5 connected=0][color=#ff8864]make things worse[/color][/shake], as usual.  
+Let’s see if you can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up[/color][/shake] without [shake rate=7.0 level=5 connected=0][color=#ff8864]tripping  again[/color][/shake].
+
+That  being  said, you feel [shake rate=7.0 level=5 connected=0][color=#ff8864]dumber[/color][/shake] than ever.[/center]
+"
+fit_content = true
+metadata/_edit_lock_ = true
+
+[node name="Negative_Physic" type="RichTextLabel" parent="Informations"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 53.0
+offset_right = 410.0
+offset_bottom = 305.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]OmG![/color][/pulse]
+
+The \"[shake rate=7.0 level=5 connected=0][color=#ff8864]progress[/color][/shake]\" you've made is  almost impressive. But  hey, don't  worry, it's  [shake rate=7.0 level=5 connected=0][color=#ff8864]not[/color][/shake] like  anyone  expected [shake rate=7.0 level=5 connected=0][color=#ff8864]much  more[/color][/shake] at  this point, right?
+Honestly, you seem to be getting  [shake rate=7.0 level=5 connected=0][color=#ff8864]weaker[/color][/shake] by the  minute.[/center]"
 fit_content = true
 metadata/_edit_lock_ = true
 
@@ -70,12 +107,12 @@ offset_right = 424.0
 offset_bottom = 308.0
 rotation = -0.12645
 tooltip_text = "Close that window!"
-theme_override_colors/font_hover_pressed_color = Color(0.925734, 0.874449, 0.6551, 1)
-theme_override_colors/font_hover_color = Color(1, 0.533455, 0.392279, 1)
-theme_override_colors/font_pressed_color = Color(0.92549, 0.87451, 0.654902, 1)
-theme_override_colors/font_focus_color = Color(0.92549, 0.87451, 0.654902, 1)
-theme_override_colors/font_color = Color(0.92549, 0.87451, 0.654902, 1)
-theme_override_constants/outline_size = 3
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_ff6x5")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b38xp")

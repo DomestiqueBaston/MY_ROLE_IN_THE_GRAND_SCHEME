@@ -158,6 +158,7 @@ RichTextLabel/constants/shadow_offset_x = -1
 RichTextLabel/constants/shadow_offset_y = 1
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
+VBoxContainer/constants/separation = 5
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_534da")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_js3gk")
