@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=38 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -34,7 +34,6 @@
 [ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="30_3y6u4"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="30_dhl0k"]
 [ext_resource type="Script" path="res://SCRIPTS/Option_Button.gd" id="31_u0oj1"]
-[ext_resource type="PackedScene" uid="uid://dpmpj36bqaoin" path="res://SCENES/Mouse_Cursor.tscn" id="34_71f12"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
@@ -720,8 +719,6 @@ script = ExtResource("31_u0oj1")
 metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
-
-[node name="Mouse_Cursor" parent="." instance=ExtResource("34_71f12")]
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
 visible = false

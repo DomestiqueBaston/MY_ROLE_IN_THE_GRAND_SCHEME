@@ -206,7 +206,12 @@ centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
-[node name="Screen" type="Label" parent="Intercom_Panel/Interface"]
+[node name="Screens" type="Control" parent="Intercom_Panel/Interface"]
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="Away" type="Label" parent="Intercom_Panel/Interface/Screens"]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
@@ -218,6 +223,24 @@ theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 6
 text = "Sorry, NPC001 seems to be away..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Refuse" type="Label" parent="Intercom_Panel/Interface/Screens"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 271.0
+offset_top = 101.0
+offset_right = 368.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 6
+text = "Sorry, NPC001 doesn't want to talk to you."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
