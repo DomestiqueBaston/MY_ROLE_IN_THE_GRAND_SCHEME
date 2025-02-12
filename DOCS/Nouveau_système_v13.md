@@ -510,7 +510,7 @@ Les interactions : Dialogue, Combat et Investigation
  	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom (voir aussi Dialogue).
 	 - PAS DE MENSONGE possible sur le nom !
 	- On connaît le nom, l’emploi du temps, les soupçons, relations sociales, etc. (si ils existent) des PNJs (victimes) nommés au départ dans une Fiche d’enquête.
-	- On connaît le nom, l’emploi du temps (domicile uniquement) des PNJs (suspects) nommés au départ dans une Fiche d’enquête.
+	- On connaît le nom et l’emploi du temps des PNJs (suspects) nommés au départ dans une Fiche d’enquête.
 	- Les jets de dé pour Combat et Dialogue sont basés sur un test de caractéristiques du joueur contre celles du PNJ (hors bonus/malus).
 	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement (hors bonus/malus).
 	- L’écran d’interaction, affiche :
@@ -521,9 +521,9 @@ Les interactions : Dialogue, Combat et Investigation
 		- La pile Objets qui est la pile des cartes Objets non qualifiées d’Evidence. Pas de Bonus/Malus.
 		- La pile Lieu qui est la pile des cartes Lieu liées à l’enquête. Pas de Bonus/Malus.
 		- Pour se débarrasser de cartes, on fait, sur une carte : clic droit, « Discard ». Toute carte rejetée fait perdre tous les liens qui y menaient dans Main.tscn. À noter que rien n’empêche le joueur de retomber ultérieurement sur des cartes/infos rejetées (heureusement, parce qu’en cas d’erreur…).
-	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet .
+	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
-	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir pour un Combat mais ça n’est pas vraiment une annulation).
+	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir en cas de Combat mais ça n’est pas vraiment une annulation).
 
 Écrans d’interactions
 	- Un écran structuré de la même manière pour les dialogues/combats/investigations dans lequel on joue ses cartes pour l’interaction en cours et un bouton pour lancer le test de dé quand on est prêt.
@@ -553,10 +553,10 @@ Dialogue
 	- Le joueur ne peut pas fuir une agression d’avant Dialogue !
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue (incluses Spécial) et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence, Malus d’action de Nuit, de Veille, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
-		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan.
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue (incluses Spécial) et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence (voir plus bas), Malus d’action de Nuit, de Veille, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
+		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de mensonge (voir plus bas).
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
-	- À partir du moment ou un Dialogue est engagé, le PNJ est soustrait à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
+	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
 	- On ne rajoute le temps écoulé qu’à la fin du Dialogue.
 	- Pour poser des questions, le joueur utilise ses cartes de Dialogue, Abstraite et Objet/Lieu/PNJ/Evidence.
 	- En fonction de la marge de réussite, il obtiendra Marge de réussite informations (vraies et/ou fausses, voir plus bas). Jamais plus qu’un PNJ ne peut en délivrer.
@@ -564,31 +564,34 @@ Dialogue
 	- En cas de réussite critique, le joueur prend ±1Emo → 0 ainsi qu’1 information cachée (voir règle suivante).
 	- Pour la révélation d’une information cachée d’un PNJ, le joueur doit avoir eu une marge de réussite de 3+ au jet de dé de Dialogue, une réussite critique ou avoir utilisé une carte Dialogue « Question piège ».
 	- Les informations obtenues sont choisies aléatoirement parmi celles obtenables auprès du PNJ.
-	- Une carte Objet/PNJ utilisée comme Evidence à bon/mauvais escient rajoute un bonus/malus de ±1 au jet de dé.
+	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (n’est pas une preuve en réalité) rajoute un malus de 1 au jet de dé.
 	- Chances que chaque information donnée soit fausse (errare humanum est) :
 		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
-		Auprès d’1 Coupable : (5+MEN)/(15+MEN)
-		Auprès d’1 Complice : (3+MEN)/(18+MEN)
+		Auprès d’1 Coupable : (5+MEN)/(15+MEN) (prioritaire par rapport à Témoin/Suspect)
+		Auprès d’1 Complice : (3+MEN)/(18+MEN) (prioritaire par rapport à Témoin/Suspect)
 	 - Sauf pour les informations incriminantes (Fiche PNJ) :
 		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) 
-		Auprès d’1 Coupable : (9+MEN)/(10+MEN)
-		Auprès d’1 Complice : (8+MEN)/(12+MEN)
+		Auprès d’1 Coupable : (9+MEN)/(10+MEN) (prioritaire par rapport à Témoin/Suspect)
+		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur (cumulable).
 	- Une information cachée est toujours donnée juste.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête).
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec ses liens Violet (à moins qu’elle existe déjà).
+	- Si un lien nouveau est donné pour une carte pré-existante, uniquement les nouveaux liens seront Violet.
 	- Si une information donne lieu à la révélation d’un Objet, sa carte passera dans la pile Objets.
 	- Si une information donne lieu à la révélation d’un Lieu, sa carte de retrouvera dans la pile Lieux.
 	- Si une information donne lieu à la révélation d’un PNJ, sa carte de retrouvera dans la pile PNJs.
 	- Une nouvelle carte révélée ne peut donc pas être qualifiée d’Evidence automatiquement. C’est au joueur de faire ça.
+	- Le jeu n’établit pas non plus de lien pointillé Violet/Noir.
 	- Si une information révélée concerne les informations personnelles d’un PNJ, elle seront consultables dans la fiche/carte du PNJ. Je trouverai un moyen de prévenir le joueur de ça (par un overlay par exemple ou un clignotement quelque part) !
-	- Un PNJ peut donner/redonner une info déjà existante dans la fiche d’enquête ou déjà donnée préalablement.
+	- Un PNJ peut donner/redonner une info déjà existante dans la fiche d’enquête ou déjà donnée préalablement. Mais on ne change pas la nature du lien déjà présent s’il n’est plus Violet.
 	- Un PNJ a les mêmes chances de corriger une information précédemment donnée comme fausse (voir juste au dessus).
-	- Un PNJ ne corrigera pas une information vraie.
+	- Un PNJ ne corrigera pas une information vraie ou qui n’est plus en Violet.
 
 Quelles informations peuvent être révélées par un PNJ
 	- Si une carte Objet, Lieu ou PNJ est jouée en dialogue, les infos obtenues (en cas de réussite) seront en priorité liées à cette carte. Si d’autres infos doivent être obtenues (par ex. la réussite implique que plus soient révélées), alors les infos seront liées à des révélations d’ordre social, professionnel, etc.
 	- Dans tous les cas, le choix des infos révélées sera aléatoire parmi ce qu’il est possible d’être révélé (en tenant compte de ce qui a été dit à propos du vrai/faux plus haut).
+	- Quoi qu’il en soit, on ne révèlera forcément pas plus qu’il n’y a d’infos disponibles (PNJ de l’Interaction ou carte Objet/lieu/PNJ).
 
 Fuir un Dialogue (PNJ)
 	- Un PNJ a 1/(MEN×5) chance de fuir un Dialogue.
@@ -596,7 +599,7 @@ Fuir un Dialogue (PNJ)
 	- Un échec représente un malus de 1 au jet de dé de Dialogue à venir.
 	- Un PNJ déjà en prison ne peut pas fuir un Dialogue.
 	- Après avoir fuit, le PNJ ne sera plus accessible avant le lendemain.
-	- S’il y a fuite, on n’ajoute qu’1 heure au temps écoulé car l’Interaction n’aura pas eu lieu.
+	- S’il y a fuite, on n’ajoute qu’1 heure au temps écoulé (déplacement du joueur) car l’Interaction n’aura pas eu lieu.
 
 Combat
 	- Le joueur ne peut pas initier un Combat. Seul les PNJs le peuvent.
@@ -678,7 +681,7 @@ Investigation
 	- Une seule Investigation par Lieu par jour.
 	- On ne peut pas jouer de carte Objet, Lieu ou PNJ en Investigation !
 	- On ne joue que des cartes Investigation, Investigation Spéciale et Abstraite. Maximum 1 de chaque.
-	- On ne peut investiguer un Lieu qu’avec une autorisation de fouille (voir plus loin).
+	- On ne peut investiguer un Lieu qu’avec une autorisation de fouille (mais voir plus loin).
 	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit, bonus/malus de Break-In (voir Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
@@ -711,22 +714,22 @@ Enquête
 Niveau de difficulté
 Nombre max. d’enquêtes disponibles
 1
-3
+4
 2
+4
 3
 3
-2
 4
 2
 5
-1
+2
 
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
 	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously).
 	- Pour Interacgir dans un Lieu lié à l’enquête ou avec un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles.
 	- Le joueur ne pourra jamais aller chez un PNJ s’il ne connaît pas sa localisation ou ne sait pas où il est à cette heure-là.
-	- Le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas (obviously).
+	- Plus globalement : le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas (obviously).
 	- On valide un Case (correspondant à une demande de validation de l’enquête) en faisant Clic droit, « Validate Case » ou par le Menu Cases, « Validate Case » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec une erreur de mobile, moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Le niveau difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
@@ -737,10 +740,10 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 	- Seul le joueur peut donner le statut d’Evidence à une carte.
 	- Toute nouvelle carte découverte est placée en jeu (Main.tscn) avec un Lien Violet la liant au Lieu de découverte, à un ou des PNJs ou autres en fonction de la découverte et des liens qu’elle révèle.
 		Carte PNJ : Toutes les couleurs de liens sont possibles depuis ou vers ces cartes.
-		Carte Objet : Noir, Rouge, Vert, Jaune et Violet sont possibles.
-		Carte Lieu : Blanc, Noir, Rouge/Jaune et Violet sont possibles.
+		Carte Objet : Noir, Vert, Rouge/Jaune, Violet Clair et Violet sont possibles.
+		Carte Lieu : Blanc, Noir, Vert Clair, Marron, Turquoise, Bleu Très Foncé, Rouge/Jaune, Violet Clair et Violet sont possibles.
 		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête.
-	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Possible clues » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn). Cela permet, par ex., au joueur de sortir (temporairement) une carte qu’il pense n’avoir aucun intérêt pour l’enquête ou de la remettre en jeu.
+	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Possible clues » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn). Cela permet, par ex., au joueur de sortir (temporairement) une carte qu’il pense n’avoir aucun intérêt pour l’enquête ou de la remettre en jeu s’il change d’avis.
 
 Liens entre les éléments dans l’enquête (Main.tscn)
 	- Pour tracer un lien, sur l’écran principal, faire clic droit, « créer un lien », « choix de type », « plein ou pointillé » puis clic gauche sur le haut de la carte de départ, drag (trace une ligne) et drop sur le haut de la carte d’arrivée.
@@ -807,8 +810,8 @@ Résolution des enquêtes, gains et implications
 	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0. 
 	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours.
 	- Le joueur peut mener jusqu’à 5 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
-	- Une enquête ne peut pas être rejetée à + d’1 jour de sa limite de validité.
-	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite qui restent dans la pile du joueur).
+	- Une enquête ne peut pas être rejetée avant (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.
+	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite de la pile du joueur qui y restent).
 Éléments additionnels (non facultatifs) :
 	- Je vais créer 2 ou 3 enquêtes finales (Paranoïa) pour la re-jouabilité.
 	- Dans la scène Mixette.tscn, il y a 5 boutons pour augmenter encore la difficulté :
