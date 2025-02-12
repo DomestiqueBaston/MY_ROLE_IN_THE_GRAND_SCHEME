@@ -1,9 +1,21 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://tcgtchlqxtfj"]
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://tcgtchlqxtfj"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_doreb"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_d0clc"]
 [ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="3_7abmv"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_b3fer"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ham3f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ofgid"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0xi0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nqsyf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqw4b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y16gs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -83,6 +95,20 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_d0clc")
 default_font_size = 8
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.88, 0.77836, 0.6952, 0.752941)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("2_d0clc")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ham3f")
+Button/styles/focus = SubResource("StyleBoxEmpty_ofgid")
+Button/styles/hover = SubResource("StyleBoxEmpty_m0xi0")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_nqsyf")
+Button/styles/normal = SubResource("StyleBoxEmpty_sqw4b")
+Button/styles/pressed = SubResource("StyleBoxEmpty_y16gs")
 HSlider/icons/grabber = ExtResource("1_doreb")
 HSlider/icons/grabber_disabled = ExtResource("1_doreb")
 HSlider/icons/grabber_highlight = ExtResource("1_doreb")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://d4bv231xa7qfq"
+path="res://.godot/imported/Link_Mask.png-30e9ebbe05b12eebc7d59e111f567c63.res"
+
+[deps]
+
+source_file="res://GRAPHICS/LINK_PIN/Link_Mask.png"
+dest_files=["res://.godot/imported/Link_Mask.png-30e9ebbe05b12eebc7d59e111f567c63.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

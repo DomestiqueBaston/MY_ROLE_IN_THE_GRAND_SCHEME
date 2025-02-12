@@ -22,7 +22,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 0.25098)
 
-[node name="Super_Papa" type="Node2D"]
+[node name="TEST_LINK" type="Node2D"]
 
 [node name="Link_1" type="Node2D" parent="."]
 texture_filter = 1
