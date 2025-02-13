@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://bytf1ieq0kl80"]
 
-[ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_PROGRESSION/Player_Progression_BG.png" id="1_ey6em"]
-[ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_pornr"]
-[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_ff6x5"]
-[ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm_01.ogg" id="4_s4fmr"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_6rbyk"]
+[ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_IMPROVEMENT/Playe_Improvement_BG.png" id="1_n0w2h"]
+[ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_oudkr"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_v7iyf"]
+[ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm_01.ogg" id="4_gu3ap"]
+[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_woshb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b38xp"]
 
@@ -16,11 +16,11 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjt83"]
 
-[node name="Player_Progression" type="Node2D"]
+[node name="Player_Improvement" type="Node2D"]
 metadata/_edit_lock_ = true
 
-[node name="Player_Progression_BG" type="Sprite2D" parent="."]
-texture = ExtResource("1_ey6em")
+[node name="Player_Improvement_BG" type="Sprite2D" parent="."]
+texture = ExtResource("1_n0w2h")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -28,7 +28,7 @@ metadata/_edit_lock_ = true
 layout_mode = 3
 anchors_preset = 0
 tooltip_text = "Ok..."
-theme = ExtResource("2_pornr")
+theme = ExtResource("2_oudkr")
 metadata/_edit_lock_ = true
 
 [node name="Positive_Mental" type="RichTextLabel" parent="Informations"]
@@ -84,6 +84,7 @@ fit_content = true
 metadata/_edit_lock_ = true
 
 [node name="Negative_Physic" type="RichTextLabel" parent="Informations"]
+visible = false
 layout_mode = 0
 offset_left = 216.0
 offset_top = 53.0
@@ -113,7 +114,7 @@ theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("3_ff6x5")
+theme_override_fonts/font = ExtResource("3_v7iyf")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_b38xp")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dijps")
@@ -124,10 +125,10 @@ text = "Hm?"
 metadata/_edit_lock_ = true
 
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_s4fmr")
+stream = ExtResource("4_gu3ap")
 volume_db = -10.0
 autoplay = true
 bus = &"FX"
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_6rbyk")]
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_woshb")]
 visible = false

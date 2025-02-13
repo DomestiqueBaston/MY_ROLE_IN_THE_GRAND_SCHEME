@@ -35,3 +35,4 @@ texture_click_mask = ExtResource("4_pb8m6")
 metadata/_edit_lock_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("2_sskbx")]
+visible = false

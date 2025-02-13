@@ -140,3 +140,4 @@ texture_click_mask = ExtResource("28_qcawn")
 metadata/_edit_lock_ = true
 
 [node name="Shader_Overlay" parent="." instance=ExtResource("29_hc6fx")]
+visible = false

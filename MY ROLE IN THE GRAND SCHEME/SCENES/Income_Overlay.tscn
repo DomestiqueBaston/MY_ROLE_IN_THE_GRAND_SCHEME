@@ -157,7 +157,7 @@ theme = ExtResource("2_ekhwe")
 metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Income_Panel/Information"]
-modulate = Color(1, 1, 1, 0.941176)
+modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
 offset_left = 296.0
 offset_top = 303.0
@@ -237,7 +237,7 @@ metadata/_edit_lock_ = true
 position = Vector2(0, 5)
 metadata/_edit_lock_ = true
 
-[node name="Card" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]
+[node name="Card1" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]
 position = Vector2(247, 152)
 
 [node name="Card3" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]
