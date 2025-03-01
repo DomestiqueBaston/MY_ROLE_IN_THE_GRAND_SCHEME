@@ -29,59 +29,37 @@ Les caractéristiques secondaires
 État émotionnel (Emo)  
 	- L’état émotionnel du joueur variera entre -3 et 3 et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Emo=0.
 	- Emo à -3 ou +3 représente une excitation ou une déprime trop forte (voir conditions dans Système de santé).
-Emo
-Effets et/ou modificateur de jet de dé
--3
-Emo = -2 et -1 Add si Add < 0 ou +1 Add si Add ≥ 0 
--2
-Malus de 1
--1
-/
-0
-Bonus de 1
-1
-/
-2
-Malus de 1
-3
-Emo = 2 et +1 Add si Add > 0 ou -1 Add si Add ≤ 0 
+Emo	Effets et/ou modificateur de jet de dé
+-3	Emo = -2 et -1 Add si Add < 0 ou +1 Add si Add ≥ 0 
+-2	Malus de 1
+-1	/
+0	Bonus de 1
+1	/
+2	Malus de 1
+3	Emo = 2 et +1 Add si Add > 0 ou -1 Add si Add ≤ 0 
 
 État d’addiction (Add)
 	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add=0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites/échecs critiques n’entraînent pas d’évolution de HEA ni HEAnom.
-Add
-Effet et/ou modificateur de jet de dé
--3
-Mort si un jet (avec un bonus de 1) contre HEA est raté (sinon -1HEA, ±1Emo → Min/max et Add = -2)
--2
-Malus de 2
--1
-Malus de 1
-0
-/
-1
-Bonus de 1
-2
-Bonus de 3
-3
-Mort si un jet contre HEA est raté (sinon -1HEA, ±1Emo → Min/max et Add = 2)
+Add	Effet et/ou modificateur de jet de dé
+-3	Mort si un jet (avec un bonus de 1) contre HEA est raté (sinon -1HEA, ±1Emo → Min/max et Add = -2)
+-2	Malus de 2
+-1	Malus de 1
+0	/
+1	Bonus de 1
+2	Bonus de 3
+3	Mort si un jet contre HEA est raté (sinon -1HEA, ±1Emo → Min/max et Add = 2)
 
 Réputation (Rep)
 	- La réputation sera évaluée de -3 à 3. Elle représentera la qualité des relations entre le joueur et le PNJ ainsi que directement un Bonus/Malus d’interaction avec le PNJ aux jets de dé suivant le tableau ci-dessous. Le joueur aura par défaut Rep=0 avec chaque PNJ.
 	- La Rep du joueur est « contrôlée » par le PNJ et différera donc d’un PNJ à l’autre.
 	- La Rep du joueur auprès d’un PNJ ne sera jamais connue du joueur.
-Rep
-Effet et/ou modificateur de jet de dé
--3
-Malus de 2
--1 à -2
-Malus de 1
-0
-/
-1 à 2
-Bonus de 1
-3
-Bonus de 2
+Rep	Effet et/ou modificateur de jet de dé
+-3	Malus de 2
+-1 à -2	Malus de 1
+0	/
+1 à 2	Bonus de 1
+3	Bonus de 2
 
 Recherché/Wanted (Wan)
 	- Le Wanted évolue de 0 à 5. Au début du jeu : Wan=0. Il représente le niveau d’emmerdes qu’a le joueur avec les autorités.
@@ -89,18 +67,12 @@ Recherché/Wanted (Wan)
 	- À 5, le joueur est arrêté, va en prison et ne peut plus rien faire pendant 3 jours à moins de payer une caution de 200Dø. À la sortie de prison, Wan = 0.
 	- Résoudre une Enquête remet le Wan à 0.
 	- Une journée sans augmenter le Wan fait -1Wan.
-Niveau de Wanted
-Malus au Dé
-0
-/
-1 à 2
-Malus de 1
-3
-Malus de 2
-4
-Malus de 3
-5
-Prison pendant 3 jours ou payement de 200dø de caution, Wan = 0
+Niveau de Wanted	Malus au Dé
+0	/
+1 à 2	Malus de 1
+3	Malus de 2
+4	Malus de 3
+5	Prison pendant 3 jours ou payement de 200dø de caution, Wan = 0
 
 Paranoïa (Par)
 	- La paranoïa est un cas extrême qui fait abandonner toutes les quêtes pour poursuivre la méga quête du jeu (uniquement accessible en devenant paranoïaque). Un complot mondial complètement con (voir Le complot et Système de santé/Paranoïa).
@@ -163,18 +135,12 @@ Recherché/Wanted pour les PNJs (Wan)
 	- Son emploi du temps sera adapté en fonction (prison tout le temps et il dormira la nuit !).
 	- Il ne sera plus visitable que pour dialoguer, le matin et l’après-midi. 1 seule fois par jour.
 
-Niveau de Wanted
-Malus au Dé
-0
-/
-1 à 2
-Malus de 1
-3
-Malus de 2
-4
-Malus de 3
-5
-Prison
+Niveau de Wanted	Malus au Dé
+0	/
+1 à 2	Malus de 1
+3	Malus de 2
+4	Malus de 3
+5	Prison
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
 	- Agent immobilier : +1 MEN, -1 HEAnom.
@@ -311,46 +277,16 @@ Récupération (joueur)
 	- Pas de sommeil pendant une crise de Paranoïa (donc pas de récupération) !
 	- Une nuit de sommeil (voir Veille/Sommeil) :
 
-Durée de Sommeil
-Effets sur la Santé (HEA)
-Effets sur les Émotions (Emo)
-Bonus/Malus aux jets de dé jusqu’au prochain dodo
-4 heures
-/
-+1 Emo → Min/Max et +1 Add → Min/max
-Malus de 2
-5 heures
-/
-+1 Emo → Min/Max
-Malus de 1
-6 heures
-/
-/
-Malus de 1
-7 heures
-+1 HEA
-/
-/
-8 heures (normal)
-+1 HEA
-±1 Emo → 0
-/
-9 heures
-+1 HEA
-+2 Emo → 0
-/
-10 heures
-+2 HEA
-+1 Emo → 0
-Bonus de 1
-11 heures
-+2 HEA
-+2 Emo → 0
-Bonus de 1
-12 heures
-+3 HEA
-+1 Emo → 0
-Bonus de 2
+Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonus/Malus aux jets de dé jusqu’au prochain dodo
+4 heures	/	+1 Emo → Min/Max et +1 Add → Min/max	Malus de 2
+5 heures	/	+1 Emo → Min/Max	Malus de 1
+6 heures	/	/	Malus de 1
+7 heures	+1 HEA	/	/
+8 heures (normal)	+1 HEA	±1 Emo → 0	/
+9 heures	+1 HEA	+2 Emo → 0	/
+10 heures	+2 HEA	+1 Emo → 0	Bonus de 1
+11 heures	+2 HEA	+2 Emo → 0	Bonus de 1
+12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
 
 	- Intervention Thérapeutique (médecin) : +2 HEA, ±1 Emo → 0 et ±1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
@@ -624,34 +560,21 @@ Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
 	- Par défaut, il y a 0 % de chance d’attaque d’un PNJ.
 	- Un PNJ en prison ne peut pas déclencher un Combat.
 	- Rep modifie ces chances selon ce tableau :
-Rep
-Pourcentage en plus
--3
-+5 %
--2
-+2%
--1
-+1 %
-0
-0 %
-+1
--1 %
-+2
--2 %
-+3
--5 %
+Rep	Pourcentage en plus
+-3	+5 %
+-2	+2%
+-1	+1 %
+0	0 %
++1	-1 %
++2	-2 %
++3	-5 %
 
 	- Les types de liens dans la Fiche d'Enquête modifient aussi ces chances (les % s’appliquent quel que soit le nombre de lien de chaque type) :
-Type de lien (Incriminants)
-Pourcentage en plus
-Aucun
-0 %
-uniquement Pointillé
-+1 %
-Pointillé et plein
-+3 %
-uniquement Plein
-+5 %
+Type de lien (Incriminants)	Pourcentage en plus
+Aucun	0 %
+uniquement Pointillé	+1 %
+Pointillé et plein	+3 %
+uniquement Plein	+5 %
 
 	- Le niveau de difficulté de l’enquête s’applique en multiplicateur.
 	- Résumé en équation : Pourcentage de risque d’attaque = ((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque, évidemment!)
@@ -711,18 +634,12 @@ Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes (aléatoirement en fonction de ce à quoi il a accès au fur et à mesure (voir Échelle de difficulté plus bas) :
 
-Niveau de difficulté
-Nombre max. d’enquêtes disponibles
-1
-4
-2
-4
-3
-3
-4
-2
-5
-2
+Niveau de difficulté	Nombre max. d’enquêtes disponibles
+1	4
+2	4
+3	3
+4	2
+5	2
 
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
@@ -774,20 +691,13 @@ Violet clair : Trouvé (sert à se souvenir d’où vient un objet)
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté (exemple)
 	
-Difficulté
-Bonus/Malus
-1
-Enquêtes très simples. (+2)
-2
-Enquêtes modérément compliquées. (+1)
-3
-Enquêtes normalement complexe. (/)
-4
-Enquêtes très complexes. (-1)
-5
-Enquêtes épouvantablement complexes. (-2)
-Enquête ultime (6)
-WTF !(-3)
+Difficulté	Bonus/Malus
+1	Enquêtes très simples. (bonus de 2)
+2	Enquêtes modérément compliquées. (bonus de 1)
+3	Enquêtes normalement complexe. (/)
+4	Enquêtes très complexes. (malus de 1)
+5	Enquêtes épouvantablement complexes. (malus de 2)
+Enquête ultime (6)	WTF !(malus de 3)
 
 	- Le niveau de difficulté impliquera un bonus/malus à tous les jets de dé du joueur dans cette enquête (voir tableau au dessus).
 	- Au départ, le joueur n’a accès qu’aux enquêtes de niveau 1 et 2. Puis toutes les 3 enquêtes réussies dans ces niveaux de difficulté, il a accès au niveau de difficulté suivant et ainsi de suite.
@@ -798,7 +708,7 @@ WTF !(-3)
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
 		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) Dø
-		- autant que le niveau de difficulté de l’enquête+1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites (sans dépasser les limites de pile de Maîtrise une fois les choix du joueur faits).
+		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites (sans dépasser les limites de pile de Maîtrise une fois les choix du joueur faits).
 		- Emo = 0, Add=0, Wan=0
 	- Si l’enquête est résolue mais comporte une erreur (de mobile), il obtient :
 		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) –25 % Dø.
@@ -840,3 +750,4 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 		- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
 		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
+
