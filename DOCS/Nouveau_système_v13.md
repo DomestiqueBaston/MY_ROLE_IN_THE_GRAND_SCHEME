@@ -527,7 +527,8 @@ Dialogue
 Quelles informations peuvent être révélées par un PNJ
 	- Si une carte Objet, Lieu ou PNJ est jouée en dialogue, les infos obtenues (en cas de réussite) seront en priorité liées à cette carte. Si d’autres infos doivent être obtenues (par ex. la réussite implique que plus soient révélées), alors les infos seront liées à des révélations d’ordre social, professionnel, etc.
 	- Dans tous les cas, le choix des infos révélées sera aléatoire parmi ce qu’il est possible d’être révélé (en tenant compte de ce qui a été dit à propos du vrai/faux plus haut).
-	- Quoi qu’il en soit, on ne révèlera forcément pas plus qu’il n’y a d’infos disponibles (PNJ de l’Interaction ou carte Objet/lieu/PNJ).
+	- Quoi qu’il en soit, on ne révélera forcément pas plus qu’il n’y a d’infos disponibles (PNJ de l’Interaction ou carte Objet/lieu/PNJ).
+	- Si le joueur a utilisé une carte Objet qui n’est pas une preuve dans l’enquête, le joueur n’obtiendra QUE des informations concernant le PNJ avec lequel il discute.
 
 Fuir un Dialogue (PNJ)
 	- Un PNJ a 1/(MEN×5) chance de fuir un Dialogue.
