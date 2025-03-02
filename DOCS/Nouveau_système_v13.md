@@ -143,43 +143,43 @@ Niveau de Wanted	Malus au Dé
 5	Prison
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
-	- Real Estate Agent : +1 MEN, -1 HEAnom.
-	- Cleaner : +1 PHY (travail de nuit possible)
-	- Security Guard : +1 PHY, -1 MEN (travail de nuit possible)
-	- Social Worker : -1 PHY, +1 MEN, +1 HEAnom.
-	- Librarian : +1 MEN, -1 HEAnom.
-	- Forklift Operator : +1 PHY (travail de nuit possible)
-	- Unemployed : +1 PHY ou +1 MEN ou +1 HEAnom., -1 aux deux autres
-	- Hairdresser : +1 MEN, -1 HEAnom.
+	- Real Estate Agent : +1 MEN, -1 HEAnom et donc HEA.
+	- Cleaner : +1 PHY (travail de nuit possible).
+	- Security Guard : +1 PHY, -1 MEN (travail de nuit possible).
+	- Social Worker : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
+	- Librarian : +1 MEN, -1 HEAnom et donc HEA.
+	- Forklift Operator : +1 PHY (travail de nuit possible).
+	- Unemployed : +1 PHY ou +1 MEN ou +1 HEAnom et donc HEA, -1 aux deux autres.
+	- Hairdresser : +1 MEN, -1 HEAnom et donc HEA.
 	- Merchant (alimentaire, vêtements, marché aux puces, etc.) : /
 	- Curator : +1 MEN
 	- Game dev’ : -1 PHY, +1 MEN
 	- Designer : -1 PHY, +1 MEN
-	- Writer : -1 PHY, +1 MEN, -1 HEAnom. (travail de nuit possible)
-	- Private sector Employee (commerce, etc.) : -1 HEAnom.
+	- Writer : -1 PHY, +1 MEN, -1 HEAnom et donc HEA (travail de nuit possible).
+	- Private sector Employee (commerce, etc.) : -1 HEAnom et donc HEA.
 	- Public Servant (bibliothèque, piscine, cimetière, etc.) : /
 	- Teacher : +1 MEN
 	- Restaurant MAnager : -1 MEN
 	- Park Keeper : +1 PHY, -1 MEN
-	- Hotel Manager : +1 HEA (travail de nuit possible)
-	- Historian : +1 MEN, -1 HEAnom.
-	- Host (de jeu, concert, cinéma, hôtel, théâtre, bar, café, cybercafé) : -1 PHY, +1 MEN (travail de nuit possible)
-	- Nightclub server : -1 MEN, -1 HEAnom. (travail de nuit obligatoire)
-	- Engineer : +1 MEN, -1 HEAnom.
+	- Hotel Manager : +1 HEA et donc HEA (travail de nuit possible).
+	- Historian : +1 MEN, -1 HEAnom et donc HEA.
+	- Host (de jeu, concert, cinéma, hôtel, théâtre, bar, café, cybercafé) : -1 PHY, +1 MEN (travail de nuit possible).
+	- Nightclub server : -1 MEN, -1 HEAnom et donc HEA (travail de nuit obligatoire).
+	- Engineer : +1 MEN, -1 HEAnom et donc HEA.
 	- Influencer : +1 PHY, -1 MEN
-	- Journalist : +1 MEN, -1 HEAnom.
+	- Journalist : +1 MEN, -1 HEAnom et donc HEA.
 	- Bookseller : -2 PHY, +2 MEN
 	- Mechanic : +1 PHY, -1 MEN
-	- Doctor : -1 PHY, +1 MEN, +1 HEAnom.
-	- Military : +1 PHY, -1 MEN (travail de nuit possible)
-	- Musician : -1 PHY, +1 HEAnom.
-	- Firefighter : +1 PHY, -1 HEAnom. (travail de nuit possible)
-	- Police Officer : +1 PHY, -1 MEN (travail de nuit possible)
-	- Physical Education Teacher : +1 PHY, +1 HEAnom.
-	- Psychologist : -1 PHY, +1 MEN, +1 HEAnom.
+	- Doctor : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
+	- Military : +1 PHY, -1 MEN (travail de nuit possible).
+	- Musician : -1 PHY, +1 HEAnom et donc HEA.
+	- Firefighter : +1 PHY, -1 HEAnom et donc HEA (travail de nuit possible).
+	- Police Officer : +1 PHY, -1 MEN (travail de nuit possible).
+	- Physical Education Teacher : +1 PHY, +1 HEAnom et donc HEA.
+	- Psychologist : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
 	- Scientist : -1 PHY, +1 MEN
-	- Athlete : +1 PHY, -1 MEN, +1 HEAnom.
-	- Vétérinarian : -1 PHY, +1 MEN, +1 HEAnom.
+	- Athlete : +1 PHY, -1 MEN, +1 HEAnom et donc HEA.
+	- Vétérinarian : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
 
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
