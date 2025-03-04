@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jmdyjmxypuci" path="res://GRAPHICS/UI/Mouse_Arrow_2.png" id="4_rjm60"]
 
 [node name="Mouse_Cursor" type="Control"]
-z_index = 5
+z_index = 50
 layout_mode = 3
 anchors_preset = 0
 offset_left = -16.0

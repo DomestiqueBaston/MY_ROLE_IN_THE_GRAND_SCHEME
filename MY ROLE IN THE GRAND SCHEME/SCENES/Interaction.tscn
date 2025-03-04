@@ -613,7 +613,7 @@ metadata/_edit_lock_ = true
 
 [node name="Line_Animation" type="AnimationPlayer" parent="Top_Left_Screen"]
 libraries = {
-"": SubResource("AnimationLibrary_v1j8t")
+&"": SubResource("AnimationLibrary_v1j8t")
 }
 autoplay = "Flat_Line"
 
