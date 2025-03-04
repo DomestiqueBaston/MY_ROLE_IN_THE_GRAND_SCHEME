@@ -104,8 +104,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lew6r"]
 _data = {
-"RESET": SubResource("Animation_751i2"),
-"Text_Animation": SubResource("Animation_wqng6")
+&"RESET": SubResource("Animation_751i2"),
+&"Text_Animation": SubResource("Animation_wqng6")
 }
 
 [sub_resource type="Animation" id="Animation_o1fk7"]
@@ -225,9 +225,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0jcg2"]
 _data = {
-"Appearance": SubResource("Animation_o1fk7"),
-"Disappearance": SubResource("Animation_1sxob"),
-"RESET": SubResource("Animation_lpv2x")
+&"Appearance": SubResource("Animation_o1fk7"),
+&"Disappearance": SubResource("Animation_1sxob"),
+&"RESET": SubResource("Animation_lpv2x")
 }
 
 [node name="Confirmation" type="Node2D"]

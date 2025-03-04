@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://qodaipjl3nrl"]
 
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_x3l56"]
-[ext_resource type="Shader" path="res://SHADERS/Texture.gdshader" id="2_3adg2"]
+[ext_resource type="Shader" uid="uid://c84t7nfl20xo5" path="res://SHADERS/Texture.gdshader" id="2_3adg2"]
 [ext_resource type="Texture2D" uid="uid://cyqwu0fethhat" path="res://GRAPHICS/OVERLAYS/Texture_Dead.png" id="3_4ahyd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghmjl"]
@@ -66,8 +66,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8cfic"]
 _data = {
-"Dying": SubResource("Animation_lng1c"),
-"RESET": SubResource("Animation_1ttyk")
+&"Dying": SubResource("Animation_lng1c"),
+&"RESET": SubResource("Animation_1ttyk")
 }
 
 [node name="Death_Overlay" type="Control"]

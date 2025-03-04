@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnkco2tyaesue"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Global_Shader_Overlay.gd" id="1_oba78"]
-[ext_resource type="Shader" path="res://SHADERS/Grain.gdshader" id="1_t6iqf"]
-[ext_resource type="Shader" path="res://SHADERS/Video.gdshader" id="1_x7fr2"]
+[ext_resource type="Script" uid="uid://cyhou56ufy6l0" path="res://SCRIPTS/Global_Shader_Overlay.gd" id="1_oba78"]
+[ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="1_t6iqf"]
+[ext_resource type="Shader" uid="uid://dkp5ymdefrmn2" path="res://SHADERS/Video.gdshader" id="1_x7fr2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa556"]
 shader = ExtResource("1_t6iqf")
@@ -20,7 +20,7 @@ layer = 10
 script = ExtResource("1_oba78")
 
 [node name="Grain" type="ColorRect" parent="."]
-z_index = 10
+z_index = 11
 material = SubResource("ShaderMaterial_pa556")
 offset_right = 640.0
 offset_bottom = 360.0
@@ -28,7 +28,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="Video" type="ColorRect" parent="."]
-z_index = 10
+z_index = 12
 material = SubResource("ShaderMaterial_vn144")
 offset_right = 640.0
 offset_bottom = 360.0

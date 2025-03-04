@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cq57wrp3dfi0j" path="res://GRAPHICS/CARE_SHEET/Care_Sheet_BG.png" id="1_gt7nd"]
 [ext_resource type="Theme" uid="uid://bn5ihjhwbd0gk" path="res://UI/Care_Sheet_Theme.tres" id="2_ixkpq"]
-[ext_resource type="Script" path="res://SCRIPTS/Case_Management_Typing.gd" id="3_vnhhu"]
+[ext_resource type="Script" uid="uid://6s8ejpvawryf" path="res://SCRIPTS/Case_Management_Typing.gd" id="3_vnhhu"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_jhyu5"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="22_e4e1x"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="23_2qu0w"]
@@ -124,9 +124,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
 _data = {
-"Appearance": SubResource("Animation_4pq04"),
-"Disappearance": SubResource("Animation_atwki"),
-"RESET": SubResource("Animation_vfroo")
+&"Appearance": SubResource("Animation_4pq04"),
+&"Disappearance": SubResource("Animation_atwki"),
+&"RESET": SubResource("Animation_vfroo")
 }
 
 [sub_resource type="Animation" id="Animation_xnrmf"]
@@ -235,8 +235,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ij50u"]
 _data = {
-"RESET": SubResource("Animation_xnrmf"),
-"Writing": SubResource("Animation_cqm07")
+&"RESET": SubResource("Animation_xnrmf"),
+&"Writing": SubResource("Animation_cqm07")
 }
 
 [node name="Case_Management" type="Node2D"]

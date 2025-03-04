@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyacbsj8nks3"]
 
 [ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="1_x652i"]
-[ext_resource type="Script" path="res://SCRIPTS/Option_Button.gd" id="2_rj2oo"]
+[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Option_Button.gd" id="2_rj2oo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
 

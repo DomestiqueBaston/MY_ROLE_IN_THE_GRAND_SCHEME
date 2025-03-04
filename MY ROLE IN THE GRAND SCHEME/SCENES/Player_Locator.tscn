@@ -41,8 +41,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0d3ra"]
 _data = {
-"RESET": SubResource("Animation_4gwmr"),
-"Rotation": SubResource("Animation_3mb1w")
+&"RESET": SubResource("Animation_4gwmr"),
+&"Rotation": SubResource("Animation_3mb1w")
 }
 
 [sub_resource type="Animation" id="Animation_84ttp"]
@@ -80,8 +80,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1jruo"]
 _data = {
-"Blink": SubResource("Animation_84ttp"),
-"RESET": SubResource("Animation_wet12")
+&"Blink": SubResource("Animation_84ttp"),
+&"RESET": SubResource("Animation_wet12")
 }
 
 [node name="Player_Locator" type="Node2D"]

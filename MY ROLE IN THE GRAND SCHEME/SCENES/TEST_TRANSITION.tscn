@@ -1,15 +1,15 @@
 [gd_scene load_steps=10 format=3 uid="uid://bonccjxskay5"]
 
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_vqnlt"]
-[ext_resource type="Shader" path="res://SHADERS/Transition.gdshader" id="2_xdsvn"]
+[ext_resource type="Shader" uid="uid://bd85rbmyb41ao" path="res://SHADERS/Transition.gdshader" id="2_xdsvn"]
 [ext_resource type="Texture2D" uid="uid://p7s0wnrs0r8d" path="res://GRAPHICS/UI/Transition_04.png" id="3_emnbv"]
 [ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="4_36l1k"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_jkknq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlapj"]
 shader = ExtResource("2_xdsvn")
-shader_parameter/dissolve_state = 0.0
 shader_parameter/dissolve_pattern = ExtResource("3_emnbv")
+shader_parameter/dissolve_state = 0.0
 
 [sub_resource type="Animation" id="Animation_lj2vv"]
 resource_name = "Fade"
@@ -46,8 +46,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0o6y"]
 _data = {
-"Fade": SubResource("Animation_lj2vv"),
-"RESET": SubResource("Animation_7ty8d")
+&"Fade": SubResource("Animation_lj2vv"),
+&"RESET": SubResource("Animation_7ty8d")
 }
 
 [node name="TEST_TRANSITION" type="Node2D"]

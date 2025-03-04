@@ -128,9 +128,9 @@ tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
 _data = {
-"Expand_Card": SubResource("Animation_kxf5h"),
-"RESET": SubResource("Animation_0x2oy"),
-"Reduce_Card": SubResource("Animation_x7g54")
+&"Expand_Card": SubResource("Animation_kxf5h"),
+&"RESET": SubResource("Animation_0x2oy"),
+&"Reduce_Card": SubResource("Animation_x7g54")
 }
 
 [node name="Card" type="Node2D"]

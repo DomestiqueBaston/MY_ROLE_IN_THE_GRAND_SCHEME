@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpmpj36bqaoin"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Mouse_Cursor.gd" id="1_8vgni"]
+[ext_resource type="Script" uid="uid://cb08qaoq6sqr5" path="res://SCRIPTS/Mouse_Cursor.gd" id="1_8vgni"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="1_a68nx"]
 [ext_resource type="Texture2D" uid="uid://jmdyjmxypuci" path="res://GRAPHICS/UI/Mouse_Arrow_2.png" id="4_rjm60"]
 
 [node name="Mouse_Cursor" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_left = -16.0

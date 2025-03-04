@@ -139,9 +139,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
 _data = {
-"Appearance": SubResource("Animation_4pq04"),
-"Disappearance": SubResource("Animation_atwki"),
-"RESET": SubResource("Animation_vfroo")
+&"Appearance": SubResource("Animation_4pq04"),
+&"Disappearance": SubResource("Animation_atwki"),
+&"RESET": SubResource("Animation_vfroo")
 }
 
 [node name="Card_Management" type="Node2D"]

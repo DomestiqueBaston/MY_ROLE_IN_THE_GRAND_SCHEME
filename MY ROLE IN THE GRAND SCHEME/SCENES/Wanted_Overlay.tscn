@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bpkowclume2ch"]
 
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_d2h0h"]
-[ext_resource type="Shader" path="res://SHADERS/Texture.gdshader" id="2_ocisw"]
+[ext_resource type="Shader" uid="uid://c84t7nfl20xo5" path="res://SHADERS/Texture.gdshader" id="2_ocisw"]
 [ext_resource type="Texture2D" uid="uid://dvk5h8e7yhmvs" path="res://GRAPHICS/OVERLAYS/Texture_Wanted.png" id="3_dvpwx"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_j5gq4"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_aobqd"]
@@ -126,8 +126,8 @@ sileNt You!"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u4k8p"]
 _data = {
-"Pumping": SubResource("Animation_yu1ea"),
-"RESET": SubResource("Animation_ucfkd")
+&"Pumping": SubResource("Animation_yu1ea"),
+&"RESET": SubResource("Animation_ucfkd")
 }
 
 [sub_resource type="Animation" id="Animation_qppft"]
@@ -247,9 +247,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pwvx7"]
 _data = {
-"Appearance": SubResource("Animation_qppft"),
-"Disappearance": SubResource("Animation_2p2rl"),
-"RESET": SubResource("Animation_6b548")
+&"Appearance": SubResource("Animation_qppft"),
+&"Disappearance": SubResource("Animation_2p2rl"),
+&"RESET": SubResource("Animation_6b548")
 }
 
 [node name="Wanted_Overlay" type="Node2D"]

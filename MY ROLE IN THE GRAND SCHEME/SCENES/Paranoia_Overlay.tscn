@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bbkvt2bpth73k"]
 
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_j15aw"]
-[ext_resource type="Shader" path="res://SHADERS/Texture.gdshader" id="2_l3r6m"]
+[ext_resource type="Shader" uid="uid://c84t7nfl20xo5" path="res://SHADERS/Texture.gdshader" id="2_l3r6m"]
 [ext_resource type="Texture2D" uid="uid://b7mp13m7yu337" path="res://GRAPHICS/OVERLAYS/Texture_Paranoia.png" id="3_f7475"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_amqcs"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_vpb4g"]
@@ -118,8 +118,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqksm"]
 _data = {
-"RESET": SubResource("Animation_i7ibj"),
-"Vibration": SubResource("Animation_5xp84")
+&"RESET": SubResource("Animation_i7ibj"),
+&"Vibration": SubResource("Animation_5xp84")
 }
 
 [sub_resource type="Animation" id="Animation_7wckl"]
@@ -239,9 +239,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_asw7s"]
 _data = {
-"Appearance": SubResource("Animation_7wckl"),
-"Disappearance": SubResource("Animation_gko1x"),
-"RESET": SubResource("Animation_tqvto")
+&"Appearance": SubResource("Animation_7wckl"),
+&"Disappearance": SubResource("Animation_gko1x"),
+&"RESET": SubResource("Animation_tqvto")
 }
 
 [node name="Paranoia_Overlay" type="Node2D"]

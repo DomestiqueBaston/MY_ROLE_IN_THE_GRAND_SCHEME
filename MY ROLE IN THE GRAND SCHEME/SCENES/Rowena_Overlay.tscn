@@ -141,9 +141,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_girfw"]
 _data = {
-"Appearance": SubResource("Animation_6c0my"),
-"Disappearance": SubResource("Animation_6t1tt"),
-"RESET": SubResource("Animation_nfkjl")
+&"Appearance": SubResource("Animation_6c0my"),
+&"Disappearance": SubResource("Animation_6t1tt"),
+&"RESET": SubResource("Animation_nfkjl")
 }
 
 [node name="Rowena_Overlay" type="Node2D"]

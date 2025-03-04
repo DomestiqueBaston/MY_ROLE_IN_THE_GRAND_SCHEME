@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvpufjvlnfdpq"]
 
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="1_pwhdv"]
-[ext_resource type="Shader" path="res://SHADERS/Mini_Screen.gdshader" id="2_hc2fx"]
+[ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="2_hc2fx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0admw"]
 shader = ExtResource("2_hc2fx")

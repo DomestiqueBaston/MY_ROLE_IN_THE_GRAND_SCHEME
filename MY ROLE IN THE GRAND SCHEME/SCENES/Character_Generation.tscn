@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
 [ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
-[ext_resource type="Script" path="res://SCRIPTS/Option_Button.gd" id="5_2k6nw"]
+[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Option_Button.gd" id="5_2k6nw"]
 [ext_resource type="Texture2D" uid="uid://buhsc5yt68kjy" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Normal.png" id="6_f1shx"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="6_ntsua"]
 [ext_resource type="Texture2D" uid="uid://bsmeu2oywfdoq" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Normal.png" id="7_0ruwj"]

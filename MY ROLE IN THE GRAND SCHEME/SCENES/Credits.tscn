@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://hd0s0r4fdcia" path="res://GRAPHICS/CREDITS/Credits_BG.png" id="1_1n7ja"]
 [ext_resource type="Theme" uid="uid://tks2glp547ui" path="res://UI/Credits.tres" id="2_u3pji"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_y0tck"]
-[ext_resource type="Script" path="res://SCRIPTS/Credits_Typing.gd" id="7_xwskb"]
+[ext_resource type="Script" uid="uid://lgtv2sptyo1d" path="res://SCRIPTS/Credits_Typing.gd" id="7_xwskb"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="9_vnu4b"]
 
 [sub_resource type="Animation" id="Animation_nxbww"]
@@ -136,8 +136,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t6vjt"]
 _data = {
-"RESET": SubResource("Animation_nxbww"),
-"Text_appearance": SubResource("Animation_k0p28")
+&"RESET": SubResource("Animation_nxbww"),
+&"Text_appearance": SubResource("Animation_k0p28")
 }
 
 [node name="Credits" type="Node2D"]

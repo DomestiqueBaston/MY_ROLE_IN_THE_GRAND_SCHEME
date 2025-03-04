@@ -1,14 +1,14 @@
 [gd_scene load_steps=25 format=3 uid="uid://c5o7ly7rqeqj3"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_cke7k"]
-[ext_resource type="Shader" path="res://SHADERS/Glow.gdshader" id="2_ux1lb"]
+[ext_resource type="Script" uid="uid://dmc2lq0g1vdpj" path="res://SCRIPTS/Title.gd" id="1_cke7k"]
+[ext_resource type="Shader" uid="uid://bnirln5qw7a02" path="res://SHADERS/Glow.gdshader" id="2_ux1lb"]
 [ext_resource type="Texture2D" uid="uid://ck1yyiv0g6erf" path="res://TRASH/Title_BG.png" id="3_vkpb7"]
 [ext_resource type="Texture2D" uid="uid://dg8l5d2ihjr1t" path="res://TRASH/Title_BG_More_Blur.png" id="4_vcebj"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_7gqiq"]
-[ext_resource type="Shader" path="res://TRASH/Color_Dodge.gdshader" id="5_o7j1k"]
+[ext_resource type="Shader" uid="uid://dtq3werq32siu" path="res://TRASH/Color_Dodge.gdshader" id="5_o7j1k"]
 [ext_resource type="Texture2D" uid="uid://ct5lnh6q2plpg" path="res://TRASH/Title_White_Bis.png" id="6_6g84c"]
 [ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/TITLE/Hum.ogg" id="6_hxatv"]
-[ext_resource type="Shader" path="res://TRASH/Soft_Light.gdshader" id="7_nl6e8"]
+[ext_resource type="Shader" uid="uid://7sfiqw8cfnn3" path="res://TRASH/Soft_Light.gdshader" id="7_nl6e8"]
 [ext_resource type="Texture2D" uid="uid://cm3vtbisataho" path="res://TRASH/Title_Black.png" id="8_owt5y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3u8p3"]
@@ -265,9 +265,9 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ip08k"]
 _data = {
-"Intro_In": SubResource("Animation_m073f"),
-"Intro_Loop": SubResource("Animation_bf0ic"),
-"RESET": SubResource("Animation_nr3dl")
+&"Intro_In": SubResource("Animation_m073f"),
+&"Intro_Loop": SubResource("Animation_bf0ic"),
+&"RESET": SubResource("Animation_nr3dl")
 }
 
 [sub_resource type="Animation" id="Animation_hegj2"]
@@ -304,8 +304,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ucb6f"]
 _data = {
-"Intro_Loop": SubResource("Animation_hegj2"),
-"RESET": SubResource("Animation_ttgbo")
+&"Intro_Loop": SubResource("Animation_hegj2"),
+&"RESET": SubResource("Animation_ttgbo")
 }
 
 [sub_resource type="Animation" id="Animation_jk43y"]
@@ -342,8 +342,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ns74n"]
 _data = {
-"Hum": SubResource("Animation_jk43y"),
-"RESET": SubResource("Animation_fhnfq")
+&"Hum": SubResource("Animation_jk43y"),
+&"RESET": SubResource("Animation_fhnfq")
 }
 
 [node name="Title_Screen" type="Node2D"]

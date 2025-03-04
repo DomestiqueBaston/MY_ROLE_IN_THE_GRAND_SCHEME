@@ -127,9 +127,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
 _data = {
-"Appearance": SubResource("Animation_4pq04"),
-"Disappearance": SubResource("Animation_atwki"),
-"RESET": SubResource("Animation_vfroo")
+&"Appearance": SubResource("Animation_4pq04"),
+&"Disappearance": SubResource("Animation_atwki"),
+&"RESET": SubResource("Animation_vfroo")
 }
 
 [sub_resource type="Animation" id="Animation_gdsr2"]
@@ -167,8 +167,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mlhxe"]
 _data = {
-"Flashing": SubResource("Animation_gdsr2"),
-"RESET": SubResource("Animation_uln12")
+&"Flashing": SubResource("Animation_gdsr2"),
+&"RESET": SubResource("Animation_uln12")
 }
 
 [node name="Intercom" type="Node2D"]

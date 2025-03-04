@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dldk5itfc6prx"]
 
-[ext_resource type="Shader" path="res://SHADERS/Mini_Screen.gdshader" id="1_4fml0"]
+[ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="1_4fml0"]
 [ext_resource type="Texture2D" uid="uid://d2ys6h8r5nofg" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Dot_Animation.png" id="1_ghnj4"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="2_alt3g"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="3_ok5l7"]
@@ -64,8 +64,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1j8t"]
 _data = {
-"Flat_Line": SubResource("Animation_1rth0"),
-"RESET": SubResource("Animation_cf71k")
+&"Flat_Line": SubResource("Animation_1rth0"),
+&"RESET": SubResource("Animation_cf71k")
 }
 
 [node name="Top_Left_Screen" type="Node2D"]

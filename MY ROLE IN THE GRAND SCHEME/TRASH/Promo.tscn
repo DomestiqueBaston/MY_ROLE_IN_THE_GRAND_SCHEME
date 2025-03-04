@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://ccae6vdpqae43"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Title.gd" id="1_0b4lo"]
-[ext_resource type="Shader" path="res://SHADERS/Glow.gdshader" id="2_0xmer"]
+[ext_resource type="Script" uid="uid://dmc2lq0g1vdpj" path="res://SCRIPTS/Title.gd" id="1_0b4lo"]
+[ext_resource type="Shader" uid="uid://bnirln5qw7a02" path="res://SHADERS/Glow.gdshader" id="2_0xmer"]
 [ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="3_prkr3"]
 [ext_resource type="Texture2D" uid="uid://dunq7q0u73bfx" path="res://GRAPHICS/TITLE/Title_02.png" id="4_btady"]
 [ext_resource type="Texture2D" uid="uid://dhy6ji600mcxs" path="res://TRASH/Promo.png" id="5_n3n36"]
@@ -279,9 +279,9 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ip08k"]
 _data = {
-"Intro_In": SubResource("Animation_m073f"),
-"Intro_Loop": SubResource("Animation_bf0ic"),
-"RESET": SubResource("Animation_nr3dl")
+&"Intro_In": SubResource("Animation_m073f"),
+&"Intro_Loop": SubResource("Animation_bf0ic"),
+&"RESET": SubResource("Animation_nr3dl")
 }
 
 [sub_resource type="Animation" id="Animation_hegj2"]
@@ -319,8 +319,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ucb6f"]
 _data = {
-"Intro_Loop": SubResource("Animation_hegj2"),
-"RESET": SubResource("Animation_ttgbo")
+&"Intro_Loop": SubResource("Animation_hegj2"),
+&"RESET": SubResource("Animation_ttgbo")
 }
 
 [sub_resource type="Animation" id="Animation_jk43y"]
@@ -381,8 +381,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ns74n"]
 _data = {
-"Hum": SubResource("Animation_jk43y"),
-"RESET": SubResource("Animation_fhnfq")
+&"Hum": SubResource("Animation_jk43y"),
+&"RESET": SubResource("Animation_fhnfq")
 }
 
 [sub_resource type="Animation" id="Animation_mtcqc"]
@@ -420,8 +420,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aj6w3"]
 _data = {
-"Blink": SubResource("Animation_mtcqc"),
-"RESET": SubResource("Animation_18s7v")
+&"Blink": SubResource("Animation_mtcqc"),
+&"RESET": SubResource("Animation_18s7v")
 }
 
 [node name="Title_Screen" type="Node2D"]

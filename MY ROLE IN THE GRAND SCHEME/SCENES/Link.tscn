@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="1_3ne57"]
 [ext_resource type="Texture2D" uid="uid://dlifalo75nukw" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce.png" id="2_2ltco"]
-[ext_resource type="Script" path="res://SCRIPTS/Link_Collider.gd" id="3_bbe4p"]
+[ext_resource type="Script" uid="uid://ldx5rugxss32" path="res://SCRIPTS/Link_Collider.gd" id="3_bbe4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yi81"]
 size = Vector2(8, 3)

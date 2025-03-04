@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://binajvg6yf5et"]
 
-[ext_resource type="Script" path="res://SCRIPTS/Generic.gd" id="1_14yya"]
+[ext_resource type="Script" uid="uid://d35n102lw067c" path="res://SCRIPTS/Generic.gd" id="1_14yya"]
 [ext_resource type="Texture2D" uid="uid://bsn2bj0u3guk7" path="res://TRASH/CALENDAR/Calendar_BG.png" id="1_tfm5c"]
 [ext_resource type="PackedScene" uid="uid://dauwh3vjh26kl" path="res://TRASH/Top_Left_Info.tscn" id="3_7jkro"]
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="3_q45dv"]

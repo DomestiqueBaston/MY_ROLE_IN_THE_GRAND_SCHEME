@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
 [ext_resource type="Texture2D" uid="uid://c0c1572gpljxx" path="res://GRAPHICS/INTERACTION/Interaction_Hover.png" id="3_6vqkd"]
-[ext_resource type="Script" path="res://SCRIPTS/Show_Hide_Interaction_Zone.gd" id="3_wtwpt"]
+[ext_resource type="Script" uid="uid://csdep0b8nfi6b" path="res://SCRIPTS/Show_Hide_Interaction_Zone.gd" id="3_wtwpt"]
 [ext_resource type="Theme" uid="uid://3vnem16a7nmq" path="res://UI/Interaction_Theme.tres" id="4_jbike"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="4_som80"]
 [ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="5_46aa5"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="9_x1nkx"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="10_27biq"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="10_jal5r"]
-[ext_resource type="Shader" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
+[ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
 
@@ -98,8 +98,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1j8t"]
 _data = {
-"Flat_Line": SubResource("Animation_1rth0"),
-"RESET": SubResource("Animation_cf71k")
+&"Flat_Line": SubResource("Animation_1rth0"),
+&"RESET": SubResource("Animation_cf71k")
 }
 
 [node name="Interaction" type="Node2D"]

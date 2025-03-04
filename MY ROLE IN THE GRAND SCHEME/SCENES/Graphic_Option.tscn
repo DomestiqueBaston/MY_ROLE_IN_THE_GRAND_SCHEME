@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1icg5jw2bkoj" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_Hover.png" id="3_f3lv5"]
 [ext_resource type="BitMap" uid="uid://7wul0c8ie3pf" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_Mask.png" id="4_6uobu"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="5_b6suh"]
-[ext_resource type="Script" path="res://SCRIPTS/Graphic_Option_Texture_Button.gd" id="6_e2vee"]
+[ext_resource type="Script" uid="uid://dc5pdbse1yuqk" path="res://SCRIPTS/Graphic_Option_Texture_Button.gd" id="6_e2vee"]
 [ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="6_ho7pj"]
 
 [node name="Graphic_Option" type="Node2D"]
