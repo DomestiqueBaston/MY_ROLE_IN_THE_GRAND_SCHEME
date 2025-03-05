@@ -166,8 +166,17 @@ visible = false
 [node name="Npc" parent="TMP_1/Main_Playmat/Card5/Card_Mask/Card_BG/Card_Color" index="6"]
 visible = true
 
+[node name="No_Health" parent="TMP_1/Main_Playmat/Card5/Card_Mask/Card_BG/Card_Color/Npc" index="0"]
+visible = true
+
+[node name="Good_Health" parent="TMP_1/Main_Playmat/Card5/Card_Mask/Card_BG/Card_Color/Npc" index="1"]
+visible = false
+
 [node name="Card_Text" parent="TMP_1/Main_Playmat/Card5/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Dead_Status" parent="TMP_1/Main_Playmat/Card5/Card_Mask/Card_BG" index="6"]
+visible = true
 
 [node name="Card6" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
@@ -181,6 +190,9 @@ visible = true
 
 [node name="Card_Text" parent="TMP_1/Main_Playmat/Card6/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Jail_Status" parent="TMP_1/Main_Playmat/Card6/Card_Mask/Card_BG" index="4"]
+visible = true
 
 [node name="Card7" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
