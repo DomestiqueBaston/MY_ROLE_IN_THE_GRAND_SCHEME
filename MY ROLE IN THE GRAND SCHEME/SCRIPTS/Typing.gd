@@ -1,7 +1,7 @@
 extends RichTextLabel
 
 var actual_value = 0.0
-var pitch_values = [1.2, 0.8, 1.0]
+var pitch_values = [1.66, 0.66, 1.0]
 var tutorial_text = ""
 var json_files = [
 	"res://JSON/TUTORIAL/tutorial_01.json",
@@ -15,7 +15,7 @@ var click_delay = 1.0
 var time_since_last_click = 0.0
 
 func _ready():
-	animation_player = get_node("../../../AnimationPlayer")
+	animation_player = get_node("../../../Typing_Animation")
 	load_tutorial_text()
 
 func load_tutorial_text():
