@@ -33,7 +33,6 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
-mouse_cursor/custom_image="uid://pab3ekhqpek3"
 window/layer_1="Mouse"
 window/layer_2="Card_Top"
 window/layer_3="Pin"
