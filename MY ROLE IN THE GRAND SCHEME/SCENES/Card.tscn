@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=25 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card.gd" id="2_2qjxn"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://b28mg50sibecp" path="res://GRAPHICS/CARD/Card_Dead.png" id="11_v12mt"]
 [ext_resource type="Texture2D" uid="uid://dhdhudphptbpc" path="res://GRAPHICS/CARD/Card_Closed_Top.png" id="13_jl3bi"]
 [ext_resource type="Texture2D" uid="uid://bvx7t0pawe7tq" path="res://GRAPHICS/CARD/Card_Dead_Top.png" id="15_k4orq"]
+[ext_resource type="Texture2D" uid="uid://5fddem5mo8cu" path="res://GRAPHICS/CARD/Card_Disappeared.png" id="16_k4orq"]
+[ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="17_kusna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
 size = Vector2(70, 96)
@@ -172,6 +174,30 @@ tracks/11/keys = {
 "update": 1,
 "values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0x2oy"]
 length = 0.001
@@ -302,6 +328,30 @@ tracks/10/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail_Top:self_modulate"
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.882353)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -459,6 +509,30 @@ tracks/11/keys = {
 "update": 1,
 "values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
 _data = {
@@ -535,14 +609,14 @@ metadata/_edit_lock_ = true
 
 [node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
 visible = false
-self_modulate = Color(0, 0, 0, 0.643137)
+self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("3_gk6lr")
 centered = false
 metadata/_edit_lock_ = true
 
 [node name="Run_Away" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
 visible = false
-self_modulate = Color(0, 0, 0, 0.643137)
+self_modulate = Color(0, 0, 0, 0.588235)
 texture = ExtResource("4_xhv7k")
 centered = false
 metadata/_edit_lock_ = true
@@ -555,14 +629,14 @@ metadata/_edit_lock_ = true
 
 [node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
 visible = false
-self_modulate = Color(0, 0, 0, 0.643137)
+self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("3_gk6lr")
 centered = false
 metadata/_edit_lock_ = true
 
 [node name="Break_In" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
 visible = false
-self_modulate = Color(0, 0, 0, 0.643137)
+self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("5_rh7h4")
 centered = false
 metadata/_edit_lock_ = true
@@ -622,7 +696,7 @@ metadata/_edit_lock_ = true
 
 [node name="Evidence" type="Sprite2D" parent="Card_Mask/Card_BG"]
 visible = false
-self_modulate = Color(0, 0, 0, 0.643137)
+self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("3_uweet")
 centered = false
 metadata/_edit_lock_ = true
@@ -716,6 +790,22 @@ metadata/_edit_lock_ = true
 [node name="Dead_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Dead_Status"]
 self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("15_k4orq")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Disappeared_Status" type="Node2D" parent="Card_Mask/Card_BG"]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="Disappeared" type="Sprite2D" parent="Card_Mask/Card_BG/Disappeared_Status"]
+self_modulate = Color(1, 1, 1, 0.882353)
+texture = ExtResource("16_k4orq")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Disappeared_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Disappeared_Status"]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("17_kusna")
 centered = false
 metadata/_edit_lock_ = true
 

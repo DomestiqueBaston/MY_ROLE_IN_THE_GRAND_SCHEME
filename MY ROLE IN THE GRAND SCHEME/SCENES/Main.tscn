@@ -207,6 +207,9 @@ visible = true
 [node name="Card_Text" parent="TMP_1/Main_Playmat/Card7/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
+[node name="Disappeared_Status" parent="TMP_1/Main_Playmat/Card7/Card_Mask/Card_BG" index="7"]
+visible = true
+
 [node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
 metadata/_edit_lock_ = true
 
@@ -404,6 +407,7 @@ visible = true
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Colliders" type="Node2D" parent="."]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Playground_Collider" type="Area2D" parent="Colliders"]
