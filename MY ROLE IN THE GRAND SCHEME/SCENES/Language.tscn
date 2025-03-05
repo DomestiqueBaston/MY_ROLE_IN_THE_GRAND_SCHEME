@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bg42bx7til5jt" path="res://GRAPHICS/LANGUAGE/Language_BG.png" id="1_6fems"]
 [ext_resource type="Theme" uid="uid://bmygb00a0tvqy" path="res://UI/Language_Theme.tres" id="2_ayvp8"]
 [ext_resource type="Texture2D" uid="uid://bq1iksdcbqtwl" path="res://GRAPHICS/LANGUAGE/Quit_Pressed.png" id="2_hxgus"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="2_sskbx"]
 [ext_resource type="Texture2D" uid="uid://wfsnljjvdro2" path="res://GRAPHICS/LANGUAGE/Quit_Hover.png" id="3_qv763"]
 [ext_resource type="BitMap" uid="uid://bbqk7a0ulfryl" path="res://GRAPHICS/LANGUAGE/Quit_Mask.png" id="4_pb8m6"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="6_ay87b"]
 
 [node name="Language" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -34,5 +34,4 @@ texture_hover = ExtResource("3_qv763")
 texture_click_mask = ExtResource("4_pb8m6")
 metadata/_edit_lock_ = true
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("2_sskbx")]
-visible = false
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("6_ay87b")]

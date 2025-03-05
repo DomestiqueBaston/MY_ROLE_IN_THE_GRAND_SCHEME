@@ -12,11 +12,11 @@
 [ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="7_tawrq"]
 [ext_resource type="Texture2D" uid="uid://d2ys6h8r5nofg" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Dot_Animation.png" id="9_cx411"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="9_x1nkx"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="10_27biq"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="10_jal5r"]
 [ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="17_qi0bb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5dcb"]
 size = Vector2(230, 104)
@@ -661,8 +661,7 @@ metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("10_27biq")]
-visible = false
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("17_qi0bb")]
 
 [editable path="TMP/Fallback/Card17"]
 [editable path="TMP/Fallback/Card18"]

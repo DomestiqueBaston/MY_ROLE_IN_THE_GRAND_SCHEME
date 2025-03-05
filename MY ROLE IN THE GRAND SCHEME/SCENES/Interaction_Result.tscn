@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
 [ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="3_c5hnn"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_ns222"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_tf6dw"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_cgnsg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yobwp"]
 
@@ -43,10 +43,10 @@ layout_mode = 3
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Chalk_Mask" type="TextureRect" parent="Chalkboard_Content"]
+[node name="Chalk_Mask" type="Sprite2D" parent="Chalkboard_Content"]
 clip_children = 1
-layout_mode = 0
 texture = ExtResource("2_0koxd")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Content" type="Control" parent="Chalkboard_Content/Chalk_Mask"]
@@ -311,9 +311,9 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_hover_color = Color(0.211333, 1, 0.09, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
-theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_constants/outline_size = 3
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
@@ -329,9 +329,9 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_hover_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
-theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_constants/outline_size = 3
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
@@ -530,11 +530,11 @@ offset_right = 340.0
 offset_bottom = 341.0
 tooltip_text = "Close that window!"
 theme = ExtResource("3_c5hnn")
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 1)
 theme_override_colors/font_hover_color = Color(0.394975, 0.61, 0.3355, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.682353, 0.909804, 0.619608, 1)
+theme_override_colors/font_focus_color = Color(0.913725, 1, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.913725, 1, 0.890196, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_ns222")
 theme_override_font_sizes/font_size = 8
@@ -546,5 +546,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_iru61")
 text = "Oh well!"
 metadata/_edit_lock_ = true
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_tf6dw")]
-visible = false
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_cgnsg")]

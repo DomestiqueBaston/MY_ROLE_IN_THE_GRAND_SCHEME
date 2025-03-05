@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bn54pgv02evuj" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Normal.png" id="9_slrl8"]
 [ext_resource type="Texture2D" uid="uid://r7y4gcm0ux3n" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Hover.png" id="10_cie2r"]
 [ext_resource type="BitMap" uid="uid://d2gyl41vrcl4a" path="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Mask.png" id="11_skuhm"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_byojy"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_lwsdc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
 
@@ -164,6 +164,7 @@ flat = true
 selected = 0
 item_count = 5
 popup/item_0/text = "1"
+popup/item_0/id = 0
 popup/item_1/text = "2"
 popup/item_1/id = 1
 popup/item_2/text = "3"
@@ -238,4 +239,4 @@ texture_hover = ExtResource("10_cie2r")
 texture_click_mask = ExtResource("11_skuhm")
 metadata/_edit_lock_ = true
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_byojy")]
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_lwsdc")]

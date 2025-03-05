@@ -7,7 +7,7 @@
 [ext_resource type="BitMap" uid="uid://7wul0c8ie3pf" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_Mask.png" id="4_6uobu"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="5_b6suh"]
 [ext_resource type="Script" uid="uid://dc5pdbse1yuqk" path="res://SCRIPTS/Graphic_Option_Texture_Button.gd" id="6_e2vee"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="6_ho7pj"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="8_6117v"]
 
 [node name="Graphic_Option" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -74,4 +74,4 @@ bbcode_enabled = true
 text = "[center]...and  here,  it's  [color=#ff8864][shake rate=10.0 level=5 connected=0]off[/shake][/color]![/center]"
 metadata/_edit_lock_ = true
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("6_ho7pj")]
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("8_6117v")]
