@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_oudkr"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_v7iyf"]
 [ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm_01.ogg" id="4_gu3ap"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_woshb"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="4_p44op"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b38xp"]
 
@@ -110,9 +110,9 @@ rotation = -0.12645
 tooltip_text = "Close that window!"
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_hover_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
-theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_v7iyf")
 theme_override_font_sizes/font_size = 32
@@ -124,11 +124,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_tjt83")
 text = "Hm?"
 metadata/_edit_lock_ = true
 
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("4_p44op")]
+
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_gu3ap")
 volume_db = -10.0
 autoplay = true
 bus = &"FX"
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_woshb")]
-visible = false

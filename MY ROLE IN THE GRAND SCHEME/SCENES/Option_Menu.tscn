@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://c1qmuoj1q7n2c" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Pressed.png" id="26_2vyex"]
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Hover.png" id="27_g1d07"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Mask.png" id="28_qcawn"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="29_hc6fx"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="29_um1w5"]
 
 [node name="Settings_Menu" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -139,5 +139,4 @@ texture_hover = ExtResource("27_g1d07")
 texture_click_mask = ExtResource("28_qcawn")
 metadata/_edit_lock_ = true
 
-[node name="Shader_Overlay" parent="." instance=ExtResource("29_hc6fx")]
-visible = false
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("29_um1w5")]

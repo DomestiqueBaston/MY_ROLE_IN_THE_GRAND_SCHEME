@@ -479,7 +479,7 @@ shape = SubResource("RectangleShape2D_hp5bo")
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tcnxd")
+&"": SubResource("AnimationLibrary_tcnxd")
 }
 
 [node name="FX" type="AudioStreamPlayer" parent="."]

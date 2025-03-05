@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hd0s0r4fdcia" path="res://GRAPHICS/CREDITS/Credits_BG.png" id="1_1n7ja"]
 [ext_resource type="Theme" uid="uid://tks2glp547ui" path="res://UI/Credits.tres" id="2_u3pji"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_y0tck"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="4_5162v"]
 [ext_resource type="Script" uid="uid://lgtv2sptyo1d" path="res://SCRIPTS/Credits_Typing.gd" id="7_xwskb"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="9_vnu4b"]
 
@@ -235,11 +235,12 @@ text = "... And  here  too!"
 script = ExtResource("7_xwskb")
 metadata/_edit_lock_ = true
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_y0tck")]
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("4_5162v")]
+visible = false
 
 [node name="Writing" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_t6vjt")
+&"": SubResource("AnimationLibrary_t6vjt")
 }
 autoplay = "Text_appearance"
 

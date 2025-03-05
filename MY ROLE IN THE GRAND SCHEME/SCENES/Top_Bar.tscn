@@ -21,6 +21,8 @@ metadata/_edit_lock_ = true
 
 [node name="Day" type="Label" parent="Date_Time"]
 layout_mode = 2
+tooltip_text = "Today's the day!"
+mouse_filter = 0
 text = "Mon."
 metadata/_edit_lock_ = true
 
@@ -32,6 +34,8 @@ metadata/_edit_lock_ = true
 
 [node name="Time" type="Label" parent="Date_Time"]
 layout_mode = 2
+tooltip_text = "Tick-Tock..."
+mouse_filter = 0
 text = "12am"
 metadata/_edit_lock_ = true
 
@@ -57,6 +61,7 @@ offset_left = 58.0
 offset_top = -1.0
 offset_right = 104.0
 offset_bottom = 11.0
+tooltip_text = "Your daily actions"
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Dailies"
@@ -103,6 +108,7 @@ offset_left = 96.0
 offset_top = -1.0
 offset_right = 142.0
 offset_bottom = 11.0
+tooltip_text = "All your cases"
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Cases"
@@ -137,6 +143,7 @@ offset_left = 133.0
 offset_top = -1.0
 offset_right = 179.0
 offset_bottom = 11.0
+tooltip_text = "Manage your deck"
 theme = ExtResource("1_2tgjx")
 disabled = true
 keep_pressed_outside = true
@@ -165,6 +172,7 @@ offset_left = 176.0
 offset_top = -1.0
 offset_right = 225.0
 offset_bottom = 11.0
+tooltip_text = "Game options"
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Whatever"

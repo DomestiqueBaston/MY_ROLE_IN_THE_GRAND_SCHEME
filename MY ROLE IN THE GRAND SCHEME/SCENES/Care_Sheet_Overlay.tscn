@@ -298,9 +298,9 @@ offset_bottom = 216.0
 rotation = -0.0942478
 theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
-theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
+theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "No other
 choice, Doc."
 metadata/_edit_lock_ = true
@@ -314,16 +314,16 @@ offset_bottom = 260.0
 rotation = -0.0942478
 theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
-theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
 text = "On a second
 thought..."
 metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m6d4b")
+&"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
 
@@ -333,7 +333,7 @@ bus = &"UI"
 
 [node name="Writing" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ij50u")
+&"": SubResource("AnimationLibrary_ij50u")
 }
 autoplay = "Writing"
 

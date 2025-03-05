@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnkco2tyaesue"]
+[gd_scene load_steps=8 format=3 uid="uid://dveyb0ymavixi"]
 
 [ext_resource type="Script" uid="uid://cyhou56ufy6l0" path="res://SCRIPTS/Global_Shader_Overlay.gd" id="1_oba78"]
 [ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="1_t6iqf"]
 [ext_resource type="Shader" uid="uid://dkp5ymdefrmn2" path="res://SHADERS/Video.gdshader" id="1_x7fr2"]
+[ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_h0mro"]
+[ext_resource type="Script" uid="uid://cb08qaoq6sqr5" path="res://SCRIPTS/Mouse_Cursor.gd" id="3_xp67a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pa556"]
 shader = ExtResource("1_t6iqf")
@@ -17,7 +19,14 @@ shader_parameter/blur_samples = 15
 
 [node name="Global_Shader_Overlay" type="CanvasLayer"]
 layer = 10
+visible = false
 script = ExtResource("1_oba78")
+
+[node name="Mouse_Cursor" type="Sprite2D" parent="."]
+position = Vector2(-10, -10)
+texture = ExtResource("2_h0mro")
+centered = false
+script = ExtResource("3_xp67a")
 
 [node name="Grain" type="ColorRect" parent="."]
 z_index = 11

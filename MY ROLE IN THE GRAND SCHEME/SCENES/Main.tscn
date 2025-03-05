@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=55 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK_PIN/Plein_Gris.png" id="15_c4wun"]
 [ext_resource type="BitMap" uid="uid://d4bv231xa7qfq" path="res://GRAPHICS/LINK_PIN/Link_Mask.png" id="15_folsb"]
@@ -51,7 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://ccabfvx0eg0bn" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_50.png" id="41_x0owp"]
 [ext_resource type="Texture2D" uid="uid://cysslrwog7ibl" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_50.png" id="43_oyp1f"]
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="45_yku0u"]
-[ext_resource type="PackedScene" uid="uid://dpmpj36bqaoin" path="res://SCENES/Mouse_Cursor.tscn" id="51_1r0xb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
@@ -63,8 +62,6 @@ size = Vector2(106, 106)
 
 [node name="Main" type="Node2D"]
 metadata/_edit_lock_ = true
-
-[node name="Mouse_Cursor" parent="." instance=ExtResource("51_1r0xb")]
 
 [node name="Main_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_ebllg")
@@ -810,7 +807,6 @@ metadata/_edit_lock_ = true
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
-visible = false
 
 [editable path="TMP_1/Main_Playmat/Card1"]
 [editable path="TMP_1/Main_Playmat/Card2"]

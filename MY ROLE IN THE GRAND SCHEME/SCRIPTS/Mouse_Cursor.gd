@@ -1,7 +1,4 @@
-extends Control
-
-@onready var arrow_1 = $Arrow/Arrow_1
-@onready var arrow_2 = $Arrow/Arrow_2
+extends Sprite2D
 
 var _is_macos = (OS.get_name() == "macOS")
 
@@ -9,7 +6,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(_delta):
-	global_position = get_global_mouse_position()
+	global_position = get_global_mouse_position().round()
 	
 	# on platforms other than macOS, the cursor is always made visible when it
 	# leaves the window
@@ -18,11 +15,3 @@ func _process(_delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-#func _input(event):
-	#if event is InputEventMouseButton and event.pressed:
-		#toggle_arrows()
-
-func toggle_arrows():
-	arrow_1.visible = !arrow_1.visible
-	arrow_2.visible = !arrow_2.visible

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MY ROLE IN THE GRAND SCHEME"
-run/main_scene="res://SCENES/Title_Screen.tscn"
+run/main_scene="uid://cermbgl0xllko"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)

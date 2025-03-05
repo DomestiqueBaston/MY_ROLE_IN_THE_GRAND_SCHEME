@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://70e7q0rvnu72" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Opaque.png" id="28_6l626"]
 [ext_resource type="Texture2D" uid="uid://cqamtgs2prxsn" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Transparent.png" id="29_ivich"]
 [ext_resource type="Texture2D" uid="uid://0bd6dk6fhjn7" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_BG.png" id="29_t6v1g"]
-[ext_resource type="PackedScene" uid="uid://bnkco2tyaesue" path="res://SCENES/Global_Shader_Overlay.tscn" id="32_njtg4"]
+[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="31_36uq3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
 
@@ -211,6 +211,7 @@ flat = true
 selected = 23
 item_count = 24
 popup/item_0/text = "Carpet Seller"
+popup/item_0/id = 0
 popup/item_1/text = "Chorist"
 popup/item_1/id = 1
 popup/item_2/text = "Dancer"
@@ -369,4 +370,4 @@ offset_bottom = 4.0
 theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
 
-[node name="Shader_Overlay" parent="." instance=ExtResource("32_njtg4")]
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("31_36uq3")]
