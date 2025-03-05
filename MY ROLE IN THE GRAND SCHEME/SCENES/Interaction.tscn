@@ -593,7 +593,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Illustration_Animation" type="Sprite2D" parent="Top_Left_Screen"]
-self_modulate = Color(1, 1, 1, 0.25098)
+self_modulate = Color(1, 1, 1, 0.360784)
 texture = ExtResource("9_cx411")
 centered = false
 hframes = 12
