@@ -603,6 +603,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Combat" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
+visible = false
 color = Color(0.31, 0, 0.0464999, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
@@ -671,13 +672,13 @@ color = Color(0.1248, 0.4208, 0.48, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 63, 1, 63, 26)
 metadata/_edit_lock_ = true
 
-[node name="No_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
-visible = false
+[node name="No_Info" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 color = Color(0.12549, 0.419608, 0.478431, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
 
 [node name="Good_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
+visible = false
 color = Color(0.16275, 0.75, 0.1425, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true
@@ -817,7 +818,7 @@ metadata/_edit_lock_ = true
 position = Vector2(37, 50)
 shape = SubResource("RectangleShape2D_hp5bo")
 
-[node name="Animation" type="AnimationPlayer" parent="."]
+[node name="Card_Animations" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tcnxd")
 }

@@ -57,5 +57,5 @@ func is_mouse_in_collision(collision_shape: CollisionShape2D) -> bool:
 
 # Joue l'animation spécifiée
 func play_animation(anim_name: String):
-	$"../Animation".play(anim_name)
+	$"../Card_Animations".play(anim_name)
 	current_animation = anim_name  # Met à jour l'animation actuelle
