@@ -9,10 +9,8 @@ var json_files = [
 	"res://JSON/TUTORIAL/tutorial_03.json"
 ]
 var current_json_index = 0
-var typing_complete = false
 var animation_player : AnimationPlayer
 var click_delay = 1.0
-var time_since_last_click = 0.0
 
 func _ready():
 	animation_player = get_node("../../../Typing_Animation")
@@ -27,25 +25,14 @@ func load_tutorial_text():
 	json_parser.parse(json_data)
 	
 	tutorial_text = json_parser.get_data().get("tutorial", "")
-	typing_complete = false
 	actual_value = 0.0
 	text = ""
 
 func _process(_delta):
-	time_since_last_click += _delta
-	
-	if time_since_last_click >= click_delay:
-		if Input.is_action_pressed("Left_Click"):
-			current_json_index = (current_json_index + 1) % json_files.size()
-			load_tutorial_text()
-			animation_player.seek(0, true)
-			animation_player.play("Display_Text")
-			time_since_last_click = 0.0
-
 	if Input.is_action_pressed("Right_Click"):
-		animation_player.play("Display_Text", -1, 2.0)
+		animation_player.speed_scale = 10.0
 	else:
-		animation_player.play("Display_Text", -1, 1.0)
+		animation_player.speed_scale = 1.0
 
 	if tutorial_text != "":
 		text = tutorial_text
@@ -60,3 +47,9 @@ func _process(_delta):
 				actual_value += .001
 			else:
 				actual_value = 0.
+
+func _on_next_button_pressed():
+	current_json_index = (current_json_index + 1) % json_files.size()
+	load_tutorial_text()
+	animation_player.seek(0, true)
+	animation_player.play("Display_Text")

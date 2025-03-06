@@ -1,11 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6b1iqko6x5on"]
+[gd_scene load_steps=19 format=3 uid="uid://c6b1iqko6x5on"]
 
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_yb185"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="2_m6hlk"]
 [ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="3_5nlpe"]
 [ext_resource type="Script" uid="uid://dyualyplyafd2" path="res://SCRIPTS/Typing.gd" id="4_b7xnw"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_3xgcb"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_dc34s"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_gwqe6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lalru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s180t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0uj0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ymd"]
 
 [sub_resource type="Animation" id="Animation_du0wi"]
 resource_name = "Display_Text"
@@ -23,6 +34,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Chalk_Mask/Next_Button:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 49.9333, 50),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
 
 [sub_resource type="Animation" id="Animation_wablw"]
 length = 0.001
@@ -38,11 +61,62 @@ tracks/0/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Chalk_Mask/Next_Button:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_04g5n"]
 _data = {
 &"Display_Text": SubResource("Animation_du0wi"),
 &"RESET": SubResource("Animation_wablw")
+}
+
+[sub_resource type="Animation" id="Animation_lalru"]
+resource_name = "Flashing"
+length = 0.73334
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Chalk_Mask/Next_Button:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0.999975)]
+}
+
+[sub_resource type="Animation" id="Animation_s180t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Chalk_Mask/Next_Button:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uj0l"]
+_data = {
+&"Flashing": SubResource("Animation_lalru"),
+&"RESET": SubResource("Animation_s180t")
 }
 
 [node name="Tutorial" type="Node2D"]
@@ -73,6 +147,34 @@ visible_characters_behavior = 1
 script = ExtResource("4_b7xnw")
 metadata/_edit_lock_ = true
 
+[node name="Next_Button" type="Button" parent="Node2D/Chalk_Mask"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_dc34s")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_31ymd")
+text = "Next..."
+metadata/_edit_lock_ = true
+
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_3xgcb")]
 
 [node name="Typing_Animation" type="AnimationPlayer" parent="."]
@@ -81,7 +183,15 @@ libraries = {
 }
 autoplay = "Display_Text"
 
+[node name="Flashing_Button" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0uj0l")
+}
+autoplay = "Flashing"
+
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_gwqe6")
 volume_db = -10.0
 bus = &"FX"
+
+[connection signal="pressed" from="Node2D/Chalk_Mask/Next_Button" to="Node2D/Chalk_Mask/Tutorial_Text" method="_on_next_button_pressed"]
