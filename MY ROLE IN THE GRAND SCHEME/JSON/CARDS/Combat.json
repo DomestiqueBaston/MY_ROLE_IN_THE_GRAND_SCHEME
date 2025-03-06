@@ -3,7 +3,7 @@
     "id": "COM001",
     "name": "Targeted Attack",
     "type": "Combat",
-    "description": "Performs a precise and focused attack.",
+    "description": "Performs a precise and focused attack",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -16,7 +16,7 @@
     "id": "COM002",
     "name": "Charge",
     "type": "Combat",
-    "description": "A brutal attack with a cost in mental and emotional energy.",
+    "description": "A brutal attack with a cost in mental and emotional energy",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -29,7 +29,7 @@
     "id": "COM003",
     "name": "Street Fight",
     "type": "Combat",
-    "description": "An impromptu fight with fluctuating emotional stakes.",
+    "description": "An impromptu fight with fluctuating emotional stakes",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -42,7 +42,7 @@
     "id": "COM004",
     "name": "Counterattack",
     "type": "Combat",
-    "description": "A quick response after an enemy's attack.",
+    "description": "A quick response after an enemy's attack",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -55,7 +55,7 @@
     "id": "COM005",
     "name": "Cover",
     "type": "Combat",
-    "description": "Take cover to reduce damage.",
+    "description": "Take cover to reduce damage",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -68,7 +68,7 @@
     "id": "COM006",
     "name": "Diversion",
     "type": "Combat",
-    "description": "Create a distraction to destabilize the enemy.",
+    "description": "Create a distraction to destabilize the enemy",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -81,7 +81,7 @@
     "id": "COM007",
     "name": "Dodge",
     "type": "Combat",
-    "description": "Evade the enemy's attack to reduce damage.",
+    "description": "Evade the enemy's attack to reduce damage",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -94,7 +94,7 @@
     "id": "COM008",
     "name": "Erratic Movements",
     "type": "Combat",
-    "description": "Unpredictable movements that increase physical strength at a cost.",
+    "description": "Unpredictable movements that increase physical strength at a cost",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -107,7 +107,7 @@
     "id": "COM009",
     "name": "Parry",
     "type": "Combat",
-    "description": "Block an attack to reduce damage.",
+    "description": "Block an attack to reduce damage",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -120,7 +120,7 @@
     "id": "COM010",
     "name": "Provocation",
     "type": "Combat",
-    "description": "Taunt the enemy to provoke a reaction.",
+    "description": "Taunt the enemy to provoke a reaction",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -133,7 +133,7 @@
     "id": "COM011",
     "name": "Martial Arts Techniques",
     "type": "Combat",
-    "description": "Execute a series of advanced combat techniques.",
+    "description": "Execute a series of advanced combat techniques",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -146,7 +146,7 @@
     "id": "COM012",
     "name": "Use a Weapon",
     "type": "Combat",
-    "description": "Use a weapon for a powerful attack with a mental and emotional cost.",
+    "description": "Use a weapon for a powerful attack with a mental and emotional cost",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -159,7 +159,7 @@
     "id": "COM013",
     "name": "Use an Item",
     "type": "Combat",
-    "description": "Use an item to enhance your combat capabilities.",
+    "description": "Use an item to enhance your combat capabilities",
     "possible_combinations": ["Combat SPECIAL", "Abstract"],
     "bonus_malus": [
       {
@@ -172,7 +172,7 @@
     "id": "COS001",
     "name": "Adrenaline!",
     "type": "Combat SPECIAL",
-    "description": "Increase your dice roll by 1, emotional effects ±1.",
+    "description": "Increase your dice roll by 1, emotional effects ±1",
     "possible_combinations": ["Combat", "Abstract"],
     "bonus_malus": [
       {
@@ -185,7 +185,7 @@
     "id": "COS002",
     "name": "Disarm!",
     "type": "Combat SPECIAL",
-    "description": "Disarm the opponent, giving them a penalty to their dice roll.",
+    "description": "Disarm the opponent, giving them a penalty to their dice roll",
     "possible_combinations": ["Combat", "Abstract"],
     "bonus_malus": [
       {
@@ -198,7 +198,7 @@
     "id": "COS003",
     "name": "All or Nothing!",
     "type": "Combat SPECIAL",
-    "description": "Increase your dice roll by 1, and amplify emotional effects.",
+    "description": "Increase your dice roll by 1, and amplify emotional effects",
     "possible_combinations": ["Combat", "Abstract"],
     "bonus_malus": [
       {
@@ -211,7 +211,7 @@
     "id": "COS004",
     "name": "Do Not Kill!",
     "type": "Combat SPECIAL",
-    "description": "If the opponent would die, their health is set to 1. Dialogue becomes available with the opponent.",
+    "description": "If the opponent would die, their health is set to 1. Dialogue becomes available with the opponent",
     "possible_combinations": ["Combat", "Abstract"],
     "bonus_malus": [
       {
@@ -224,7 +224,7 @@
     "id": "COS005",
     "name": "Bad Luck!",
     "type": "Combat SPECIAL",
-    "description": "The opponent gets a -2 penalty to their dice roll, and you get a -1 penalty.",
+    "description": "The opponent gets a -2 penalty to their dice roll, and you get a -1 penalty",
     "possible_combinations": ["Combat", "Abstract"],
     "bonus_malus": [
       {
@@ -237,7 +237,7 @@
     "id": "COS006",
     "name": "Self-control!",
     "type": "Combat SPECIAL",
-    "description": "Cancel some emotional effect.",
+    "description": "Cancel some emotional effect",
     "possible_combinations": ["Combat", "Abstract"],
     "bonus_malus": [
       {
@@ -250,7 +250,7 @@
     "id": "COR001",
     "name": "Flee",
     "type": "Combat RUN-AWAY",
-    "description": "Escape the fight by increasing your physical and mental capabilities.",
+    "description": "Escape the fight by increasing your physical and mental capabilities",
     "possible_combinations": ["Abstract"],
     "bonus_malus": [
       {

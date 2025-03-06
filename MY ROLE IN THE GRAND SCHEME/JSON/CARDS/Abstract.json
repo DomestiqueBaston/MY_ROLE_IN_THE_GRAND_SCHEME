@@ -3,7 +3,7 @@
     "id": "ABS001",
     "name": "Confidence",
     "type": "Abstract",
-    "description": "Improves mental abilities based on emotional state.",
+    "description": "Improves mental abilities based on emotional state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
@@ -24,7 +24,7 @@
     "id": "ABS002",
     "name": "Morale",
     "type": "Abstract",
-    "description": "Improves physical and mental abilities based on emotional state.",
+    "description": "Improves physical and mental abilities based on emotional state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
@@ -45,7 +45,7 @@
     "id": "ABS003",
     "name": "Temperament",
     "type": "Abstract",
-    "description": "Improves physical ability, mental ability or Health based on emotional state.",
+    "description": "Improves physical ability, mental ability or Health based on emotional state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
@@ -66,7 +66,7 @@
     "id": "ABS004",
     "name": "Interest",
     "type": "Abstract",
-    "description": "Improves mental abilities based on addiction state.",
+    "description": "Improves mental abilities based on addiction state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
@@ -87,7 +87,7 @@
     "id": "ABS005",
     "name": "Bravery",
     "type": "Abstract",
-    "description": "Improves mainly physical and mental abilities based on addiction state.",
+    "description": "Improves mainly physical and mental abilities based on addiction state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
@@ -108,7 +108,7 @@
     "id": "ABS006",
     "name": "Resilience",
     "type": "Abstract",
-    "description": "Improves mainly health based on emotional state.",
+    "description": "Improves mainly health based on emotional state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
@@ -129,7 +129,7 @@
     "id": "ABS007",
     "name": "Mental Clarity",
     "type": "Abstract",
-    "description": "Improves mainly mental abilities based on emotional and addiction state.",
+    "description": "Improves mainly mental abilities based on emotional and addiction state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
@@ -154,7 +154,7 @@
     "id": "ABS008",
     "name": "Inner Balance",
     "type": "Abstract",
-    "description": "Improves mainly emotional or addiction state.",
+    "description": "Improves mainly emotional or addiction state",
     "possible_combinations": ["Dialogue", "Combat", "Combat SPECIAL", "Combat RUN-AWAY",  "Investigation", "Investigation SPECIAL", "Investigation BREAK-IN", "Location", "Object", "NPC"],
     "bonus_malus": [
       {
