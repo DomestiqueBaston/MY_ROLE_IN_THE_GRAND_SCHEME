@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=37 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
 [ext_resource type="Texture2D" uid="uid://c0c1572gpljxx" path="res://GRAPHICS/INTERACTION/Interaction_Hover.png" id="3_6vqkd"]
@@ -16,7 +16,10 @@
 [ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="15_fnmtu"]
+[ext_resource type="Script" uid="uid://b08whl1g6oj7o" path="res://SCRIPTS/Tv_On_Off_Button.gd" id="16_uvife"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="17_qi0bb"]
+[ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="17_uvife"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5dcb"]
 size = Vector2(230, 104)
@@ -63,6 +66,16 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e74pt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ois2d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w8ph6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v84v6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5shvk"]
+
 [sub_resource type="Animation" id="Animation_1rth0"]
 resource_name = "Flat_Line"
 length = 2.33334
@@ -75,10 +88,10 @@ tracks/0/path = NodePath("Illustration_Animation:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.53333, 1.6, 1.66667, 1.73333, 1.8, 1.86667, 1.93333, 2, 2.06667, 2.13333, 2.2, 2.26667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.46667, 1.53333, 1.6, 1.66667, 1.73333, 1.8, 1.86667, 1.93333, 2, 2.06667, 2.13333, 2.2, 2.26667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
 
 [sub_resource type="Animation" id="Animation_cf71k"]
@@ -110,9 +123,10 @@ texture = ExtResource("2_y864e")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Hover_Interaction_Zone" type="Sprite2D" parent="Interaction_BG"]
+[node name="Hover_Interaction_Zone" type="TextureRect" parent="Interaction_BG"]
+tooltip_text = "Whatcha gonna do, brother?"
+theme = ExtResource("4_jbike")
 texture = ExtResource("3_6vqkd")
-centered = false
 script = ExtResource("3_wtwpt")
 metadata/_edit_lock_ = true
 
@@ -272,9 +286,6 @@ metadata/_edit_lock_ = true
 [node name="Card17" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 195)
 
-[node name="Combat" parent="TMP/Fallback/Card17/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Investigation" parent="TMP/Fallback/Card17/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
@@ -283,9 +294,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card18" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 204)
-
-[node name="Combat" parent="TMP/Fallback/Card18/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Dialogue" parent="TMP/Fallback/Card18/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
@@ -302,9 +310,6 @@ modulate = Color(1, 1, 1, 0.882353)
 [node name="Card21" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 223)
 
-[node name="Combat" parent="TMP/Fallback/Card21/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Abstract" parent="TMP/Fallback/Card21/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
@@ -313,9 +318,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card22" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 232)
-
-[node name="Combat" parent="TMP/Fallback/Card22/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Abstract" parent="TMP/Fallback/Card22/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
@@ -329,9 +331,6 @@ metadata/_edit_lock_ = true
 [node name="Card5" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 195)
 
-[node name="Combat" parent="TMP/Mastery/Card5/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Investigation" parent="TMP/Mastery/Card5/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
@@ -340,9 +339,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card6" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 199)
-
-[node name="Combat" parent="TMP/Mastery/Card6/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Investigation" parent="TMP/Mastery/Card6/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
@@ -353,9 +349,6 @@ modulate = Color(1, 1, 1, 0.882353)
 [node name="Card7" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 203)
 
-[node name="Combat" parent="TMP/Mastery/Card7/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Dialogue" parent="TMP/Mastery/Card7/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
 
@@ -364,9 +357,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card8" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 207)
-
-[node name="Combat" parent="TMP/Mastery/Card8/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Dialogue" parent="TMP/Mastery/Card8/Card_Mask/Card_BG/Card_Color" index="2"]
 visible = true
@@ -389,9 +379,6 @@ modulate = Color(1, 1, 1, 0.882353)
 [node name="Card12" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 223)
 
-[node name="Combat" parent="TMP/Mastery/Card12/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Abstract" parent="TMP/Mastery/Card12/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
@@ -401,9 +388,6 @@ modulate = Color(1, 1, 1, 0.882353)
 [node name="Card13" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 227)
 
-[node name="Combat" parent="TMP/Mastery/Card13/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Abstract" parent="TMP/Mastery/Card13/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
 
@@ -412,9 +396,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card14" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 232)
-
-[node name="Combat" parent="TMP/Mastery/Card14/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Abstract" parent="TMP/Mastery/Card14/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
@@ -441,26 +422,17 @@ metadata/_edit_lock_ = true
 [node name="Card23" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(155, 34)
 
-[node name="Combat" parent="TMP/Evidences/Card23/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Card_Text" parent="TMP/Evidences/Card23/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card24" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(164, 34)
 
-[node name="Combat" parent="TMP/Evidences/Card24/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Card_Text" parent="TMP/Evidences/Card24/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card25" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(174, 34)
-
-[node name="Combat" parent="TMP/Evidences/Card25/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Object" parent="TMP/Evidences/Card25/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
@@ -470,9 +442,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card26" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(185, 34)
-
-[node name="Combat" parent="TMP/Evidences/Card26/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Object" parent="TMP/Evidences/Card26/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
@@ -486,9 +455,6 @@ metadata/_edit_lock_ = true
 [node name="Card1" parent="TMP/NPCs" instance=ExtResource("6_v0c4c")]
 position = Vector2(272, 34)
 
-[node name="Combat" parent="TMP/NPCs/Card1/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Investigation" parent="TMP/NPCs/Card1/Card_Mask/Card_BG/Card_Color" index="1"]
 visible = true
 
@@ -497,9 +463,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card3" parent="TMP/NPCs" instance=ExtResource("6_v0c4c")]
 position = Vector2(286, 34)
-
-[node name="Combat" parent="TMP/NPCs/Card3/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Abstract" parent="TMP/NPCs/Card3/Card_Mask/Card_BG/Card_Color" index="3"]
 visible = true
@@ -519,9 +482,6 @@ metadata/_edit_lock_ = true
 [node name="Card27" parent="TMP/Objects" instance=ExtResource("6_v0c4c")]
 position = Vector2(390, 34)
 
-[node name="Combat" parent="TMP/Objects/Card27/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Object" parent="TMP/Objects/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
@@ -530,9 +490,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card28" parent="TMP/Objects" instance=ExtResource("6_v0c4c")]
 position = Vector2(421, 34)
-
-[node name="Combat" parent="TMP/Objects/Card28/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Object" parent="TMP/Objects/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
@@ -546,9 +503,6 @@ metadata/_edit_lock_ = true
 [node name="Card27" parent="TMP/Places" instance=ExtResource("6_v0c4c")]
 position = Vector2(507, 34)
 
-[node name="Combat" parent="TMP/Places/Card27/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
-
 [node name="Object" parent="TMP/Places/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
@@ -557,9 +511,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card28" parent="TMP/Places" instance=ExtResource("6_v0c4c")]
 position = Vector2(538, 34)
-
-[node name="Combat" parent="TMP/Places/Card28/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = false
 
 [node name="Object" parent="TMP/Places/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
@@ -596,19 +547,40 @@ metadata/_edit_lock_ = true
 self_modulate = Color(1, 1, 1, 0.360784)
 texture = ExtResource("9_cx411")
 centered = false
-hframes = 12
+hframes = 13
 metadata/_edit_lock_ = true
 
 [node name="Screen" type="Sprite2D" parent="Top_Left_Screen"]
 material = SubResource("ShaderMaterial_sho7k")
-position = Vector2(54, 54)
+position = Vector2(53, 53.5)
 scale = Vector2(0.8, 0.72)
 texture = ExtResource("11_e5wgu")
 metadata/_edit_lock_ = true
 
-[node name="Mask" type="Sprite2D" parent="Top_Left_Screen"]
+[node name="Mask" type="TextureRect" parent="Top_Left_Screen"]
+tooltip_text = "This is a monitor, not a TV.
+Don't wait for your
+favorite show to start..."
+theme = ExtResource("4_jbike")
 texture = ExtResource("12_rq7o5")
-centered = false
+metadata/_edit_lock_ = true
+
+[node name="Tv_On_Off" type="Button" parent="Top_Left_Screen"]
+offset_left = 113.0
+offset_top = 90.0
+offset_right = 117.0
+offset_bottom = 94.0
+tooltip_text = "I wonder what's
+this button for?"
+theme = ExtResource("4_jbike")
+theme_override_fonts/font = ExtResource("15_fnmtu")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e74pt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ois2d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w8ph6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v84v6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5shvk")
+script = ExtResource("16_uvife")
 metadata/_edit_lock_ = true
 
 [node name="Line_Animation" type="AnimationPlayer" parent="Top_Left_Screen"]
@@ -616,6 +588,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_v1j8t")
 }
 autoplay = "Flat_Line"
+
+[node name="Tv_Switch" type="AudioStreamPlayer" parent="Top_Left_Screen"]
+stream = ExtResource("17_uvife")
+volume_db = -15.0
+bus = &"FX"
 
 [node name="Bottom_Left_Info_Long" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -662,6 +639,8 @@ metadata/_edit_lock_ = true
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("17_qi0bb")]
+
+[connection signal="pressed" from="Top_Left_Screen/Tv_On_Off" to="Top_Left_Screen/Tv_On_Off" method="_on_pressed"]
 
 [editable path="TMP/Fallback/Card17"]
 [editable path="TMP/Fallback/Card18"]

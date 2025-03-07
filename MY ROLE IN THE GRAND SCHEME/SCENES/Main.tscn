@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=54 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -42,7 +42,6 @@
 [ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="30_3y6u4"]
 [ext_resource type="Texture2D" uid="uid://bsmnr6a3s5m75" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce_50.png" id="30_d7dts"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="30_dhl0k"]
-[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Option_Button.gd" id="31_u0oj1"]
 [ext_resource type="Texture2D" uid="uid://dg3arog2xmnlv" path="res://GRAPHICS/LINK_PIN/Plein_Rouge_50.png" id="32_aslwm"]
 [ext_resource type="Texture2D" uid="uid://d0h2u5jichg1" path="res://GRAPHICS/LINK_PIN/Plein_Jaune_50.png" id="33_j2aac"]
 [ext_resource type="Texture2D" uid="uid://dqkayb3mri12f" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair_50.png" id="35_ywl4n"]
@@ -777,7 +776,6 @@ popup/item_4/id = 4
 popup/item_5/text = "Crime motive:"
 popup/item_5/id = 5
 popup/item_5/separator = true
-script = ExtResource("31_u0oj1")
 metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0ukqcgb1ay3s"]
+[gd_scene load_steps=23 format=3 uid="uid://c0ukqcgb1ay3s"]
 
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_MANAGEMENT/Frame.png" id="1_f15cm"]
 [ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="2_yfns7"]
@@ -9,10 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://ilhb6s2w3iuo" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Hover.png" id="7_awawb"]
 [ext_resource type="BitMap" uid="uid://davrldnroxoyu" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Mask.png" id="8_cgtwl"]
 [ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Normal.png" id="9_eg8nv"]
+[ext_resource type="Script" uid="uid://cj4kkd1mdr47l" path="res://SCRIPTS/Card_Management_Overlay_Trash.gd" id="9_t8k7k"]
 [ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Hover.png" id="10_6pms8"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="12_1t2xr"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="13_iwurd"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="14_ukbs4"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_e1gkw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r70rf"]
 size = Vector2(156, 102)
@@ -20,7 +23,8 @@ size = Vector2(156, 102)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovxvj"]
 size = Vector2(322, 102)
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_e1gkw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8k7k"]
+size = Vector2(38, 60)
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -165,32 +169,6 @@ centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
-[node name="Colliders" type="Node2D" parent="Card_Management_Panel"]
-metadata/_edit_lock_ = true
-
-[node name="Card_Pool_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
-metadata/_edit_lock_ = true
-
-[node name="Card_Pool" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Card_Pool_Collider"]
-position = Vector2(152, 125)
-shape = SubResource("RectangleShape2D_r70rf")
-metadata/_edit_lock_ = true
-
-[node name="Mastery_Hand_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
-metadata/_edit_lock_ = true
-
-[node name="Mastery_Hand" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Mastery_Hand_Collider"]
-position = Vector2(405, 125)
-shape = SubResource("RectangleShape2D_ovxvj")
-metadata/_edit_lock_ = true
-
-[node name="Trash_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
-metadata/_edit_lock_ = true
-
-[node name="Trash" type="CollisionPolygon2D" parent="Card_Management_Panel/Colliders/Trash_Collider"]
-polygon = PackedVector2Array(251, 218, 274, 210, 298, 218, 293, 278, 256, 278)
-metadata/_edit_lock_ = true
-
 [node name="Card_Locations" type="Node2D" parent="Card_Management_Panel"]
 metadata/_edit_lock_ = true
 
@@ -260,6 +238,7 @@ offset_right = 275.0
 offset_bottom = 257.0
 tooltip_text = "Drop a card  here
 to discard it"
+script = ExtResource("9_t8k7k")
 metadata/_edit_lock_ = true
 
 [node name="Trash_Normal" type="TextureRect" parent="Card_Management_Panel/Buttons/Trash"]
@@ -279,6 +258,33 @@ offset_top = -9.0
 offset_right = 50.0
 offset_bottom = 71.0
 texture = ExtResource("10_6pms8")
+metadata/_edit_lock_ = true
+
+[node name="Colliders" type="Node2D" parent="Card_Management_Panel"]
+metadata/_edit_lock_ = true
+
+[node name="Card_Pool_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
+metadata/_edit_lock_ = true
+
+[node name="Card_Pool" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Card_Pool_Collider"]
+position = Vector2(152, 125)
+shape = SubResource("RectangleShape2D_r70rf")
+metadata/_edit_lock_ = true
+
+[node name="Mastery_Hand_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
+metadata/_edit_lock_ = true
+
+[node name="Mastery_Hand" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Mastery_Hand_Collider"]
+position = Vector2(405, 125)
+shape = SubResource("RectangleShape2D_ovxvj")
+metadata/_edit_lock_ = true
+
+[node name="Trash_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
+metadata/_edit_lock_ = true
+
+[node name="Trash" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Trash_Collider"]
+position = Vector2(274, 246)
+shape = SubResource("RectangleShape2D_t8k7k")
 metadata/_edit_lock_ = true
 
 [node name="TMP" type="Node2D" parent="Card_Management_Panel"]
