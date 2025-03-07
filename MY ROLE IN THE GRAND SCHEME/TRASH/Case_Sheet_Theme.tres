@@ -1,10 +1,19 @@
-[gd_resource type="Theme" load_steps=32 format=3 uid="uid://tks2glp547ui"]
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://chroo86qn1vv5"]
 
-[ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_7dedp"]
-[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_ld8pc"]
-[ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="3_h6e3s"]
-[ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_1y2p1"]
-[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="5_7f5i7"]
+[ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_vvqct"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_s6o60"]
+[ext_resource type="Texture2D" uid="uid://cqg4hjaql7t" path="res://GRAPHICS/UI/Arrow_Down.png" id="3_j8gx1"]
+[ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_u6e2e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nmljd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fv65b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dtc5p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dv8w4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ynqbr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -35,18 +44,18 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqjub"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jprso"]
-bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
+bg_color = Color(0.1998, 0.27, 0.21969, 0.490196)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cr08y"]
+bg_color = Color(1, 1, 1, 0.494118)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr86x"]
-bg_color = Color(1, 1, 1, 0.501961)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwhs0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_he5hg"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq6ig"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -84,11 +93,22 @@ border_width_left = 5
 border_color = Color(0.8, 0.8, 0.8, 0)
 
 [resource]
-default_font = ExtResource("2_ld8pc")
+default_font = ExtResource("2_s6o60")
 default_font_size = 8
-HSlider/icons/grabber = ExtResource("1_7dedp")
-HSlider/icons/grabber_disabled = ExtResource("1_7dedp")
-HSlider/icons/grabber_highlight = ExtResource("1_7dedp")
+Button/colors/font_color = Color(0.49698, 0.66, 0.4092, 1)
+Button/colors/font_disabled_color = Color(0.498039, 0.658824, 0.407843, 1)
+Button/colors/font_focus_color = Color(0.498039, 0.658824, 0.407843, 1)
+Button/colors/font_hover_color = Color(0.65491, 0.79, 0.5767, 1)
+Button/colors/font_hover_pressed_color = Color(0.498039, 0.658824, 0.407843, 1)
+Button/constants/outline_size = 3
+Button/styles/disabled = SubResource("StyleBoxEmpty_nmljd")
+Button/styles/focus = SubResource("StyleBoxEmpty_fv65b")
+Button/styles/hover = SubResource("StyleBoxEmpty_dtc5p")
+Button/styles/normal = SubResource("StyleBoxEmpty_dv8w4")
+Button/styles/pressed = SubResource("StyleBoxEmpty_ynqbr")
+HSlider/icons/grabber = ExtResource("1_vvqct")
+HSlider/icons/grabber_disabled = ExtResource("1_vvqct")
+HSlider/icons/grabber_highlight = ExtResource("1_vvqct")
 HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_1rsf7")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_5aaw8")
 HSlider/styles/slider = SubResource("StyleBoxEmpty_5b0cj")
@@ -104,62 +124,64 @@ ItemList/styles/hovered = SubResource("StyleBoxEmpty_2kotw")
 ItemList/styles/panel = SubResource("StyleBoxEmpty_d520k")
 ItemList/styles/selected = SubResource("StyleBoxEmpty_wul7r")
 ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_63chm")
-Label/colors/font_color = Color(1, 0.963167, 0.83, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 0.32549)
-Label/constants/line_spacing = 2
-Label/constants/outline_size = 5
-Label/constants/shadow_offset_x = 0
-Label/constants/shadow_offset_y = 0
-Label/constants/shadow_outline_size = 15
+Label/colors/font_color = Color(0.0234379, 0.0156252, 0.00390631, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0.02, 0.01336, 0.0034, 0.12549)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 2
+Label/constants/shadow_offset_x = -1
+Label/constants/shadow_offset_y = 1
 Label/font_sizes/font_size = 8
-Label/fonts/font = ExtResource("2_ld8pc")
+Label/fonts/font = ExtResource("2_s6o60")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_pk2s2")
 MenuButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 MenuButton/colors/font_focus_color = Color(0.1998, 0.27, 0.21969, 0.501961)
 MenuButton/colors/font_hover_color = Color(0.1998, 0.27, 0.21969, 0.501961)
 MenuButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 MenuButton/font_sizes/font_size = 8
-MenuButton/fonts/font = ExtResource("2_ld8pc")
-OptionButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+MenuButton/fonts/font = ExtResource("2_s6o60")
+OptionButton/colors/font_color = Color(0.84, 1, 0.885333, 0.823529)
 OptionButton/colors/font_disabled_color = Color(0.2, 0.270588, 0.219608, 0.501961)
-OptionButton/colors/font_focus_color = Color(0.2, 0.270588, 0.219608, 0.823529)
-OptionButton/colors/font_hover_color = Color(0.2, 0.270588, 0.219608, 0.823529)
-OptionButton/colors/font_hover_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
-OptionButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
+OptionButton/colors/font_focus_color = Color(0.839216, 1, 0.886275, 0.823529)
+OptionButton/colors/font_hover_color = Color(0.84, 1, 0.888, 0.980392)
+OptionButton/colors/font_hover_pressed_color = Color(0.839216, 1, 0.886275, 0.980392)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 0.639216)
+OptionButton/colors/font_pressed_color = Color(0.839216, 1, 0.886275, 0.980392)
 OptionButton/constants/arrow_margin = 5
-OptionButton/icons/arrow = ExtResource("3_h6e3s")
+OptionButton/constants/outline_size = 3
+OptionButton/icons/arrow = ExtResource("3_j8gx1")
 OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
-PopupMenu/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
-PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
-PopupMenu/colors/font_hover_color = Color(0.048, 0.1, 0.0627333, 0.823529)
+PopupMenu/colors/font_color = Color(0.88, 1, 0.916, 0.941176)
+PopupMenu/colors/font_disabled_color = Color(0, 0, 0, 0)
+PopupMenu/colors/font_hover_color = Color(0.878431, 1, 0.917647, 0.941176)
+PopupMenu/colors/font_outline_color = Color(0, 0, 0, 0.654902)
+PopupMenu/colors/font_separator_color = Color(0.88, 0.88, 0.88, 0)
+PopupMenu/colors/font_separator_outline_color = Color(0, 0, 0, 0)
 PopupMenu/constants/item_start_padding = -12
+PopupMenu/constants/outline_size = 3
 PopupMenu/constants/v_separation = 0
 PopupMenu/font_sizes/font_size = 8
-PopupMenu/fonts/font = ExtResource("2_ld8pc")
-PopupMenu/icons/radio_checked = ExtResource("4_1y2p1")
-PopupMenu/icons/radio_checked_disabled = ExtResource("4_1y2p1")
-PopupMenu/icons/radio_unchecked = ExtResource("4_1y2p1")
-PopupMenu/icons/radio_unchecked_disabled = ExtResource("4_1y2p1")
+PopupMenu/fonts/font = ExtResource("2_s6o60")
+PopupMenu/icons/radio_checked = ExtResource("4_u6e2e")
+PopupMenu/icons/radio_checked_disabled = ExtResource("4_u6e2e")
+PopupMenu/icons/radio_unchecked = ExtResource("4_u6e2e")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("4_u6e2e")
 PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
 PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
-PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
-PopupMenu/styles/panel = SubResource("StyleBoxFlat_vr86x")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxFlat_cr08y")
+PopupMenu/styles/panel = SubResource("StyleBoxEmpty_gwhs0")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
-RichTextLabel/colors/default_color = Color(1, 0.964706, 0.831373, 1)
-RichTextLabel/colors/font_shadow_color = Color(0.04, 0.0292, 0.016, 0.254902)
-RichTextLabel/colors/selection_color = Color(1, 0.963167, 0.83, 0.784314)
-RichTextLabel/constants/line_separation = 0
-RichTextLabel/constants/outline_size = 5
-RichTextLabel/constants/shadow_offset_x = 1
-RichTextLabel/constants/shadow_offset_y = 3
-RichTextLabel/constants/shadow_outline_size = 3
-RichTextLabel/font_sizes/normal_font_size = 32
-RichTextLabel/fonts/normal_font = ExtResource("5_7f5i7")
-RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_he5hg")
+RichTextLabel/colors/default_color = Color(0.0234379, 0.0156252, 0.00390631, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 0.784314)
+RichTextLabel/colors/font_shadow_color = Color(0.02, 0.01336, 0.0034, 0.25098)
+RichTextLabel/constants/outline_size = 3
+RichTextLabel/constants/shadow_offset_x = -1
+RichTextLabel/font_sizes/normal_font_size = 8
+RichTextLabel/fonts/normal_font = ExtResource("2_s6o60")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_cq6ig")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")

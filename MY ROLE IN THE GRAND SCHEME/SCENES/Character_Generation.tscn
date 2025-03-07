@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c2251qd7ihk5w" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Opaque.png" id="8_q8msu"]
 [ext_resource type="Texture2D" uid="uid://bgpd3xdegc6ob" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Opaque.png" id="8_se4yg"]
 [ext_resource type="Texture2D" uid="uid://cig2kn14k747u" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Transparent.png" id="9_v40rh"]
-[ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="12_g67j6"]
 [ext_resource type="Texture2D" uid="uid://c3nnlrwvwsj8r" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Normal.png" id="12_rwrty"]
 [ext_resource type="Texture2D" uid="uid://csbweenpgy1r0" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Opaque.png" id="13_pb7hu"]
 [ext_resource type="Texture2D" uid="uid://e2o5gr620v4j" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Transparent.png" id="14_yalwy"]
@@ -28,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://b8ovyicsd5w38" path="res://GRAPHICS/CHARACTER_GENERATION/Cancel_Transparent.png" id="26_dkphj"]
 [ext_resource type="Texture2D" uid="uid://bgbodpr0111k8" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Normal.png" id="27_kk3x8"]
 [ext_resource type="Texture2D" uid="uid://70e7q0rvnu72" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Opaque.png" id="28_6l626"]
+[ext_resource type="Theme" uid="uid://ddf3ffeff7vkw" path="res://UI/Character_Generation_Story_Theme.tres" id="29_36uq3"]
 [ext_resource type="Texture2D" uid="uid://cqamtgs2prxsn" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Transparent.png" id="29_ivich"]
 [ext_resource type="Texture2D" uid="uid://0bd6dk6fhjn7" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_BG.png" id="29_t6v1g"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="31_36uq3"]
@@ -205,7 +205,6 @@ metadata/_edit_lock_ = true
 custom_minimum_size = Vector2(153, 16)
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("3_2pyp5")
 toggle_mode = false
 flat = true
 selected = 23
@@ -346,7 +345,7 @@ offset_left = 375.0
 offset_top = 32.0
 offset_right = 608.0
 offset_bottom = 330.0
-theme = ExtResource("12_g67j6")
+theme = ExtResource("29_36uq3")
 text = "	I spent years cleaning up after the bourgeois of New-Caelum, watching them exchange false smiles while spreading their venom. Just from the smell on the landings, I could guess their secrets. I was the janitor, invisible but always on alert.
 	One day, a scrap of paper fell at my feet: a note about a meeting in a corner of the neighborhood I thought I knew inside and out. Why was this place so well hidden from me? That question haunted me. Then, while polishing the brass on stairway A, I stumbled upon another slip mentioning yet another meeting in the same spot.
 	Adrenaline kicked in. I began to ask discreet questions, searching for leads. The urge to know propelled me into a world of intrigue. From simple janitor, I became a seeker of truths, ready to unearth what lurked in the shadows of this grimy city.

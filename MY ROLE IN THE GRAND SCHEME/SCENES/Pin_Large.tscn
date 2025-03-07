@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://p31mwloglsqa"]
 
 [ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/LINK_PIN/Pin_Large.png" id="1_1jgvm"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="1_pdoi2"]
+[ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_a7k5g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
 radius = 6.0
@@ -16,7 +16,7 @@ offset_top = -6.0
 offset_right = 6.0
 offset_bottom = 6.0
 tooltip_text = "Pin"
-theme = ExtResource("1_pdoi2")
+theme = ExtResource("1_a7k5g")
 texture = ExtResource("1_1jgvm")
 metadata/_edit_lock_ = true
 

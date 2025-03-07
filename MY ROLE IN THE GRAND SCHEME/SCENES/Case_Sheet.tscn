@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qtty7by1mcuf"]
 
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/CASE/Case_BG.png" id="1_goi74"]
-[ext_resource type="Theme" uid="uid://1y5oha74n3fk" path="res://UI/Death_Theme.tres" id="2_olaa7"]
+[ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="2_p31re"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="3_p31re"]
 
 [node name="Case" type="Node2D"]
@@ -13,7 +13,7 @@ centered = false
 [node name="Sheet" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-theme = ExtResource("2_olaa7")
+theme = ExtResource("2_p31re")
 
 [node name="Part_1" type="RichTextLabel" parent="Sheet"]
 layout_mode = 0
@@ -40,7 +40,7 @@ offset_left = 1.0
 offset_top = -1.0
 offset_right = 1.0
 offset_bottom = -1.0
-theme = ExtResource("2_olaa7")
+theme = ExtResource("2_p31re")
 
 [node name="Quit" type="Button" parent="Button"]
 layout_mode = 0

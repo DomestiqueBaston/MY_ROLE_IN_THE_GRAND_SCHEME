@@ -143,43 +143,43 @@ Niveau de Wanted	Malus au Dé
 5	Prison
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
-	- Real Estate Agent : +1 MEN, -1 HEAnom et donc HEA.
-	- Cleaner : +1 PHY (travail de nuit possible).
-	- Security Guard : +1 PHY, -1 MEN (travail de nuit possible).
-	- Social Worker : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
-	- Librarian : +1 MEN, -1 HEAnom et donc HEA.
-	- Forklift Operator : +1 PHY (travail de nuit possible).
-	- Unemployed : +1 PHY ou +1 MEN ou +1 HEAnom et donc HEA, -1 aux deux autres.
-	- Hairdresser : +1 MEN, -1 HEAnom et donc HEA.
+	- Real Estate Agent : +1 MEN, -1 HEAnom et donc HEA
+	- Cleaner : +1 PHY (travail de nuit possible)
+	- Security Guard : +1 PHY, -1 MEN (travail de nuit possible)
+	- Social Worker : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
+	- Librarian : +1 MEN, -1 HEAnom et donc HEA
+	- Forklift Operator : +1 PHY (travail de nuit possible)
+	- Unemployed : +1 PHY ou +1 MEN ou +1 HEAnom et donc HEA, -1 aux deux autres
+	- Hairdresser : +1 MEN, -1 HEAnom et donc HEA
 	- Merchant (alimentaire, vêtements, marché aux puces, etc.) : /
 	- Curator : +1 MEN
 	- Game dev’ : -1 PHY, +1 MEN
 	- Designer : -1 PHY, +1 MEN
-	- Writer : -1 PHY, +1 MEN, -1 HEAnom et donc HEA (travail de nuit possible).
-	- Private sector Employee (commerce, etc.) : -1 HEAnom et donc HEA.
+	- Writer : -1 PHY, +1 MEN, -1 HEAnom et donc HEA (travail de nuit possible)
+	- Private sector Employee (commerce, etc.) : -1 HEAnom et donc HEA
 	- Public Servant (bibliothèque, piscine, cimetière, etc.) : /
 	- Teacher : +1 MEN
 	- Restaurant MAnager : -1 MEN
 	- Park Keeper : +1 PHY, -1 MEN
-	- Hotel Manager : +1 HEA et donc HEA (travail de nuit possible).
-	- Historian : +1 MEN, -1 HEAnom et donc HEA.
-	- Host (de jeu, concert, cinéma, hôtel, théâtre, bar, café, cybercafé) : -1 PHY, +1 MEN (travail de nuit possible).
-	- Nightclub server : -1 MEN, -1 HEAnom et donc HEA (travail de nuit obligatoire).
-	- Engineer : +1 MEN, -1 HEAnom et donc HEA.
+	- Hotel Manager : +1 HEA et donc HEA (travail de nuit possible)
+	- Historian : +1 MEN, -1 HEAnom et donc HEA
+	- Host (de jeu, concert, cinéma, hôtel, théâtre, bar, café, cybercafé) : -1 PHY, +1 MEN (travail de nuit possible)
+	- Nightclub server : -1 MEN, -1 HEAnom et donc HEA (travail de nuit obligatoire)
+	- Engineer : +1 MEN, -1 HEAnom et donc HEA
 	- Influencer : +1 PHY, -1 MEN
-	- Journalist : +1 MEN, -1 HEAnom et donc HEA.
+	- Journalist : +1 MEN, -1 HEAnom et donc HEA
 	- Bookseller : -2 PHY, +2 MEN
 	- Mechanic : +1 PHY, -1 MEN
-	- Doctor : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
-	- Military : +1 PHY, -1 MEN (travail de nuit possible).
-	- Musician : -1 PHY, +1 HEAnom et donc HEA.
-	- Firefighter : +1 PHY, -1 HEAnom et donc HEA (travail de nuit possible).
-	- Police Officer : +1 PHY, -1 MEN (travail de nuit possible).
-	- Physical Education Teacher : +1 PHY, +1 HEAnom et donc HEA.
-	- Psychologist : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
+	- Doctor : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
+	- Military : +1 PHY, -1 MEN (travail de nuit possible)
+	- Musician : -1 PHY, +1 HEAnom et donc HEA
+	- Firefighter : +1 PHY, -1 HEAnom et donc HEA (travail de nuit possible)
+	- Police Officer : +1 PHY, -1 MEN (travail de nuit possible)
+	- Physical Education Teacher : +1 PHY, +1 HEAnom et donc HEA
+	- Psychologist : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
 	- Scientist : -1 PHY, +1 MEN
-	- Athlete : +1 PHY, -1 MEN, +1 HEAnom et donc HEA.
-	- Vétérinarian : -1 PHY, +1 MEN, +1 HEAnom et donc HEA.
+	- Athlete : +1 PHY, -1 MEN, +1 HEAnom et donc HEA
+	- Vétérinarian : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
 
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
@@ -315,20 +315,25 @@ Le temps
 	- Chaque fiche d’enquête indiquera le temps restant pour valider l’enquête.
 
 Les emploi du temps
-	- Ils sont découpés en 4 tranches horaires : Matin (8h/12h), Après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h)
-		- Un PNJ qui a un boulot sera sur son lieu de travail le Matin et l’Après-midi (la Nuit pour le travail de nuit).
+	- Les jours sont découpés en 4 tranches horaires : Matin (8h/12h), Après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h)
+		- Un PNJ qui a un boulot sera sur son lieu de travail pendant 2 tranches horaires de 4h consécutives (seulement la Nuit pour le travail de nuit).
+		- Lorsqu’un PNJ travaille (aussi) le Week-end, SON week-end sera les Lundi et mardi.
+		- Personne ne travail en soirée + la nuit.
 		- Un PNJ dormira chez lui la Nuit (ou le Matin et l’Après-midi lorsqu’il travaille de nuit).
-		- En soirée, un PNJ est TOUJOURS chez lui.
-		- Le Weekend en journée, un PNJ sera toujours sur un tier lieu le matin et chez lui l’Après-midi ou inversement et chez lui en soirée. S’il travaille de nuit, il sera chez lui tout le temps.
-		- Le Weekend, un PNJ dormira chez lui la nuit. S’il travaille de nuit, il dormira chez lui le Matin et l’Après-midi.
+		- Un PNJ qui travaille de nuit dormira donc le matin et l’après-midi.
 		- On ne peut pas interagir avec un PNJ qui dort. Son domicile ne peut pas être pénétré non plus !
-	- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire active par jour (il ne sera alors plus trouvable pendant cette tranche horaire). Cela ne s’applique pas aux PNJs en prison.
+		- Pendant la tranche horaire non travaillée de la journée, un PNJ est chez lui ou sur un lieu alternatif.
+		- Un PNJ qui travaille de nuit, sera en soirée chez lui ou sur un lieu alternatif.
+		- Le Week-end en journée, un PNJ sera toujours sur un lieu alternatif le matin et chez lui l’Après-midi ou inversement et chez lui en soirée. S’il travaille de nuit, il sera chez lui tout le temps.
+		- Le Weekend, un PNJ dormira chez lui la nuit. S’il travaille de nuit, il dormira chez lui le Matin et l’Après-midi.
+		- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire de travail par jour. Il sera alors trouvable UNIQUEMENT sur son Lieu secret). Si le PNJ travaille de nuit, alors il sera toute la nuit sur son lieu secret.
+		- Un PNJ en prison ne sera visitable que le matin ou l’après-midi.
 
 Passer le temps
-	- Lorsqu’il ne dort pas (Main.tscn), le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure sans effet pour lui, accessible par le menu Dailies.
+	- Lorsqu’il ne dort pas, le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure sans effet pour lui, accessible par le menu Dailies.
 
 Passer le temps pendant la paranoïa
-	- Lorsque le joueur est paranoïaque, on aura aussi sur l’écran principal (Main.tscn!) un bouton « Pass time » car il ne dort plus (mais les PNJs, eux, si) ! À utiliser quand le veut le joueur bien entendu. Le temps passera d’1h à chaque pression.
+	- Lorsque le joueur est paranoïaque, on aura aussi sur l’écran principal (Main.tscn!) un bouton « Pass time » car il ne dort plus (mais les PNJs, eux, si) ! À utiliser quand le veut le joueur bien entendu.  À chaque pression, le temps passera d’1h de jour et 2h de nuit.
 	- Chaque pression sur le bouton donne 1/5 chance d’avoir ±1 de PHY, MEN ou HEA (sans jamais dépasser Min/Max).
 
 Cycle Jour/Nuit
