@@ -11,6 +11,7 @@ var json_files = [
 var current_json_index = 0
 var animation_player : AnimationPlayer
 var click_delay = 1.0
+var end_of_tuto = 0
 
 func _ready():
 	animation_player = get_node("../../../Typing_Animation")
@@ -49,6 +50,11 @@ func _process(_delta):
 				actual_value = 0.
 
 func _on_next_button_pressed():
+	end_of_tuto += 1
+	if end_of_tuto == 2:
+		$"../Next_Button".text = "End of line!"
+	if end_of_tuto == 3:
+		get_tree().quit() #to change of course!
 	current_json_index = (current_json_index + 1) % json_files.size()
 	load_tutorial_text()
 	animation_player.seek(0, true)
