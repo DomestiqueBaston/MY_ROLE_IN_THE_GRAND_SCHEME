@@ -315,7 +315,8 @@ Le temps
 	- Chaque fiche d’enquête indiquera le temps restant pour valider l’enquête.
 
 Les emploi du temps
-	- Les jours sont découpés en 4 tranches horaires : Matin (8h/12h), Après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h)
+	- Les jours sont découpés en 4 tranches horaires : Matin (8h/12h), Après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h).
+		- On travaille 5 jours par semaine (en général du lundi au vendredi).
 		- Un PNJ qui a un boulot sera sur son lieu de travail pendant 2 tranches horaires de 4h consécutives (seulement la Nuit pour le travail de nuit).
 		- Lorsqu’un PNJ travaille (aussi) le Week-end, SON week-end sera les Lundi et mardi.
 		- Personne ne travail en soirée + la nuit.
@@ -654,7 +655,7 @@ Niveau de difficulté	Nombre max. d’enquêtes disponibles
 	- Plus globalement : le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas (obviously).
 	- On valide un Case (correspondant à une demande de validation de l’enquête) en faisant Clic droit, « Validate Case » ou par le Menu Cases, « Validate Case » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec une erreur de mobile, moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
-	- Le niveau difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
+	- Le niveau de difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
