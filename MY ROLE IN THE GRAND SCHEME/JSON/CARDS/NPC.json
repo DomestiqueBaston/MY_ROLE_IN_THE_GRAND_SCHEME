@@ -2,52 +2,53 @@
   {
     "id": "NPCxxx",
     "name": "Choisir aléatoirement un prénom et un nom dans le Noms_prenoms.json",
-    "Sex": "M",  // ou "F" pour féminin
-    "Job": "Choisir aléatoirement dans le NPC_jobs.json",
-    "Characteristics": {
+    "sex": "M",  // ou "F" pour féminin
+    "job": "Choisir aléatoirement dans le NPC_jobs.json",
+    "characteristics": {
       "PHY": 0,
       "MEN": 0,
       "HEA": 0,
       "HEAnom": 0,
       "Wan": 0
     },
-    "Health_meter": "No_Info",
-    "Minion": "no",
-    "Rep": 0,  // Réputation du NPC
+    "health_meter": "No_Info",
+    "minion": "no",
+    "rep": 0,  // Réputation du NPC
 
-    "Status": "Victim",  // Statut réel du NPC dans l'histoire ("Victim", "Culprit", "Accomplice", "Suspect", "Witness", "None")
-    "Couple": ["NPCxxx", "None"],  // (homo. si Couple homo. sinon homo 1/10 chance)
-    "Friend": ["NPCxxx", "None"],  // jusqu'à 2 amis
-    "Ennemy": ["NPCxxx", "None"],  // jusqu'à 2 ennemis
-    "Acquaintance": ["NPCxxx", "None"],  // jusqu'à 3 connaissances
-    "Affair": ["None", "NPCxxx"],  // (homo. si Couple homo. sinon homo 1/10 chance)
-    "Debt_influence": ["Creditor: NPCxxx", "None"],  // jusqu'à X Creditor(s) où X est lié au nombre de coupable(s)
-    "Ideological_affinity": ["NPCxxx", "None"],  // jusqu'à X où X est lié au nombre de coupable(s)+complice(s) (voir Fiche d'enquête)
+    "status": "Victim",  // Statut réel du NPC dans l'histoire ("Victim", "Culprit", "Accomplice", "Suspect", "Witness", "None")
+	"witness_clue": ["NPCxxx", "LOCxxx"],  // Pour rappel, les témoins se trompent à 50% (1 fois sur 2) au départ
+    "couple": ["NPCxxx", "None"],  // (homo. si Couple homo. sinon homo 1/10 chance)
+    "friend": ["NPCxxx", "None"],  // jusqu'à 2 amis
+    "ennemy": ["NPCxxx", "None"],  // jusqu'à 2 ennemis
+    "acquaintance": ["NPCxxx", "None"],  // jusqu'à 3 connaissances
+    "affair": ["None", "NPCxxx"],  // (homo. si Couple homo. sinon homo 1/10 chance)
+    "debt_influence": ["Creditor: NPCxxx", "None"],  // jusqu'à X Creditor(s) où X est lié au nombre de coupable(s)
+    "ideological_affinity": ["NPCxxx", "None"],  // jusqu'à X où X est lié au nombre de coupable(s)+complice(s) (voir Fiche d'enquête)
 
-    "Schedule": {
-      "Morning": "LOCxxx",
-      "Afternoon": "LOCxxx",
-      "Evening": "LOCxxx",
-      "Night": "LOCxxx",
-      "WE_Morning": "LOCxxx",
-      "WE_Afternoon": "LOCxxx",
-      "WE_Evening": "LOCxxx",
-      "WE_Night": "LOCxxx"
+    "schedule": {
+      "morning": "LOCxxx",
+      "afternoon": "LOCxxx",
+      "evening": "LOCxxx",
+      "night": "LOCxxx",
+      "we_morning": "LOCxxx",
+      "we_afternoon": "LOCxxx",
+      "we_evening": "LOCxxx",
+      "we_night": "LOCxxx"
     },
-    "Work_schedule": ["Morning", "Afternoon"],  // 2 périodes consécutives de 4h ou Night. Les autres choix sont : "Evening", "Night", "WE_Morning", "WE_Afternoon", "WE_Evening" et "WE_Night"
-    "Week_end": ["Saturday", "Sunday"],  // Si travail le week-end, alors "Monday", "Tuesday"
+    "work_schedule": ["Morning", "Afternoon"],  // 2 périodes consécutives de 4h ou Night. Les autres choix sont : "Evening", "Night", "WE_Morning", "WE_Afternoon", "WE_Evening" et "WE_Night"
+    "week_end": ["Saturday", "Sunday"],  // Si travail le week-end, alors "Monday" et "Tuesday"
 
-    "Home": ["LOCxxx"],
-    "Work": ["LOCxxx"],
-    "Owned_work_place": "no",  // "yes" ou "no"
-    "Hangouts": ["LOCxxx", "None"],  // jusqu'à 2
-    "Secret_Hangout": ["LOCxxx", "None"],  // jusqu'à 1
+    "home": ["LOCxxx"],
+    "work": ["LOCxxx"],
+    "owned_work_place": "no",  // "yes" ou "no" but probably useless...
+    "hangouts": ["LOCxxx", "None"],  // jusqu'à 2
+    "secret_hangout": ["LOCxxx", "None"],  // jusqu'à 1
 
-    "Information_on_NPC": [
+    "information_on_npc": [
       {
-        "NPC_id": "NPCxxx",
-        "Info_types": ["Couple", "Friend", "Ennemy", "Affair", "Debt_influence", "Ideological_affinity"]
+        "npc_id": "NPCxxx",
+        "info_type": ["Couple", "Friend", "Ennemy", "Affair", "Debt_influence", "Ideological_affinity"]
       }
-    ]
+    ] // 2 à 4 Informations déténues sur 1 à 2 NPCs
   }
 ]

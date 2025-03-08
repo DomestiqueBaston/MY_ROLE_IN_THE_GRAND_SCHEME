@@ -1,0 +1,305 @@
+[
+  {
+    "crime": "Adultery",
+    "motive": [
+      "Discovery of Hidden Superego",
+      "Dissemination of Extraterrestrial Genes",
+      "Persistent Sexual Dissatisfaction",
+      "Seeking Influence",
+      "Personal Revenge"
+    ]
+  },
+  {
+    "crime": "Assault",
+    "motive": [
+      "Hunting Reptilians",
+      "Perceived Humiliation",
+      "Anticipation of an Attack",
+      "Deliberate Provocation",
+      "Impulsive Reaction to an Insult",
+      "Finding the Galactic Christ",
+      "Personal Revenge"
+    ]
+  },
+  {
+    "crime": "Burglary",
+    "motive": [
+      "Need for Money",
+      "Bad Influence",
+      "Retrieving Compromising Evidence",
+      "Finding the First Edition of 'The Bio Revelation'",
+      "Stealing to Fund a Vice"
+    ]
+  },
+  {
+    "crime": "Blackmail",
+    "motive": [
+      "Psychological Manipulation",
+      "Obtaining Hidden Secrets",
+      "Need for Money",
+      "Revealing a Robotic Nature",
+      "Personal Revenge"
+    ]
+  },
+  {
+    "crime": "Counterfeiting",
+    "motive": [
+      "Manufacturing and Distributing Mind-Control Substances",
+      "Reducing Production Costs",
+      "Financial Fraud",
+      "Commercial Rivalry",
+      "Personal Satisfaction"
+    ]
+  },
+  {
+    "crime": "Corruption",
+    "motive": [
+      "Quick Personal Enrichment",
+      "Advancing a Personal Agenda",
+      "Maintaining a Position of Power",
+      "Obtaining Credits to Prove Earth's Flatness",
+      "Seeking Power"
+    ]
+  },
+  {
+    "crime": "Evasion",
+    "motive": [
+      "Desire to Avoid Trial",
+      "Escaping Pigeon-Drones",
+      "Fleeing Telepathic Cats",
+      "Fear of Punishment",
+      "Refusal to Face Consequences"
+    ]
+  },
+  {
+    "crime": "Defamation",
+    "motive": [
+      "Will to Discredit",
+      "Masking the Cosmic Conspiracy by Revealing the Dream Society",
+      "Protecting a Personal Secret",
+      "Professional Rivalry",
+      "Personal Revenge"
+    ]
+  },
+  {
+    "crime": "Kidnapping",
+    "motive": [
+      "Ransom Demand",
+      "Ideological Motivations",
+      "Proving the Clone Theory",
+      "Human Trafficking"
+    ]
+  },
+  {
+    "crime": "Espionage",
+    "motive": [
+      "Ideological Benefits",
+      "Compromising Digital Security",
+      "Controlling Sensitive Information",
+      "Industrial Espionage",
+      "Pathological Curiosity",
+      "Retrieving the Light Hamburger Recipe"
+    ]
+  },
+  {
+    "crime": "Extortion",
+    "motive": [
+      "Financial Need",
+      "Funding the Humans for Venus Experiments (H4VE)",
+      "Seeking Power",
+      "Punishment or Revenge",
+      "Destroying an Enemy",
+      "Obtaining Information"
+    ]
+  },
+  {
+    "crime": "Fraud",
+    "motive": [
+      "Fabrication of False Financial Reports",
+      "Funding Insurance against the Gorgoufle Invasion",
+      "Manipulating Documents to Alter Results",
+      "Obtaining Services Without Paying",
+      "Future Profit"
+    ]
+  },
+  {
+    "crime": "Harassment",
+    "motive": [
+      "Psychological Domination",
+      "Misogynistic Intimidation",
+      "Seeking Supernatural Powers",
+      "Revealing the Power of Black Magic",
+      "Professional Rivalry",
+      "Personal Revenge"
+    ]
+  },
+  {
+    "crime": "Arson",
+    "motive": [
+      "Destroying Evidence",
+      "Distracting from the Power of Rain",
+      "Pyromaniac Satisfaction",
+      "Ideological Claim",
+      "Fiery Revenge"
+    ]
+  },
+  {
+    "crime": "Trespassing",
+    "motive": [
+      "Obsession with a Place",
+      "Preparing a Satanic Mass",
+      "Searching for Secrets",
+      "Looking for Information",
+      "Attempting a More Serious Crime",
+      "Compulsive Voyeurism"
+    ]
+  },
+  {
+    "crime": "Abuse",
+    "motive": [
+      "Systemic Humiliation",
+      "Proving that Beavers Control the World",
+      "Vicious Psychopathy",
+      "Extreme Sadism"
+    ]
+  },
+  {
+    "crime": "Murder",
+    "motive": [
+      "Eliminating a Child-Eating Communist",
+      "Pathological Jealousy",
+      "Fear of Being Discovered",
+      "Murderous Psychopathy",
+      "Eliminating a Rival",
+      "Vigilante Justice"
+    ]
+  },
+  {
+    "crime": "Hacking",
+    "motive": [
+      "Compromising Corporate Security",
+      "Ideological Hacktivism",
+      "Proving the Malice of Quercus Castoreum",
+      "Instant Financial Gain",
+      "Seeking Sensitive Data",
+      "Personal Satisfaction"
+    ]
+  },
+  {
+    "crime": "Pimping and Prostitution",
+    "motive": [
+      "Drug Addiction",
+      "Urgent Need for Money",
+      "Sex Addiction",
+      "Exploitation of Vulnerability",
+      "Financing a Ticket to Mars"
+    ]
+  },
+  {
+    "crime": "Racketeering",
+    "motive": [
+      "Dire Need for Money",
+      "Funding the Powerful Crystalized Sodium Culinary Cartel",
+      "Threat-Based Submission"
+    ]
+  },
+  {
+    "crime": "Receiving Stolen Goods",
+    "motive": [
+      "Hiding Crime Traces",
+      "Diversion of Stolen Goods",
+      "Financial Profit",
+      "Protecting Evidence of Sabbat Mater"
+    ]
+  },
+  {
+    "crime": "Sabotage",
+    "motive": [
+      "Power Demonstration",
+      "Preventing the Spread of Picovirus",
+      "Ideological Claim",
+      "Professional Rivalry",
+      "Strategic Revenge through Targeted Destruction"
+    ]
+  },
+  {
+    "crime": "Terrorism",
+    "motive": [
+      "Creating Large-Scale Chaos",
+      "Extreme and Morbid Psychopathy",
+      "Ideological Claim",
+      "Terrorizing the Annunaki"
+    ]
+  },
+  {
+    "crime": "Trafficking",
+    "motive": [
+      "Creating a Clown Clone for Infinite Immortality",
+      "Personal Addiction",
+      "Exploitation of Human Vulnerabilities",
+      "Illegal Financial Profit from Drugs, Slavery, etc."
+    ]
+  },
+  {
+    "crime": "Identity Theft",
+    "motive": [
+      "Need for a New Identity",
+      "Digital Financial Fraud",
+      "Launching the Multiple Doppelganger Operation",
+      "Social and Digital Manipulation",
+      "Stealing Confidential Information"
+    ]
+  },
+  {
+    "crime": "Forgery",
+    "motive": [
+      "Evidence Concealment",
+      "Various Frauds",
+      "Manipulating Results",
+      "Taking the Place of the Grand Sphinctorum Diqpic",
+      "Illegal Financial Profit"
+    ]
+  },
+  {
+    "crime": "Selling Stolen Goods",
+    "motive": [
+      "Recurring Financial Need",
+      "Creating a Parallel Market",
+      "Funding a Personal Addiction",
+      "Financial Profit",
+      "Spreading Intimate Thought Recorders"
+    ]
+  },
+  {
+    "crime": "Vandalism",
+    "motive": [
+      "Playing Giant Tic-Tac-Toe Just Because We Can!",
+      "Marking a Territory",
+      "Artistic Protest",
+      "Revealing the Existence of the Visual Chaos Project",
+      "Material Revenge Against Property"
+    ]
+  },
+  {
+    "crime": "Rape",
+    "motive": [
+      "Convincing of the Need for a Male for Good",
+      "Degradation of the Victim",
+      "Absolute Domination Through Humiliation",
+      "Extreme Sexual Frustration",
+      "Launch the Operation Incubation of the Burnes Larvae",
+      "Sadistic Pleasure",
+      "Psychological Revenge"
+    ]
+  },
+  {
+    "crime": "Theft",
+    "motive": [
+      "Urgent Need for Money",
+      "Demonstrating the Possibility of a Swift Robbery",
+      "Personal Pleasure",
+      "Extreme Poverty",
+      "Acquiring the Secrets of LI+11"
+    ]
+  }
+]

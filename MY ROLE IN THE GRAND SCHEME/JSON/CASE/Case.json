@@ -1,0 +1,21 @@
+[
+  {
+    "id": "CASxxx",
+    "title": "Voir... Je ne sais pas encore mais probablement le pipotron de génération de title ou alors carrément, pas de titre",
+    "crime": "Voir Crime_Motive.json",
+    "mobile": "Voir Crime_Motive.json",
+    "Difficulty": de 1 à 5,  // 6 pour les enquêtes ultimes !
+    "status": ["active", "paused"], // 1 des 2
+	"duration": 9,  // round((niveau de difficulté × 4 + 10) × (1 ± 0,1))
+    "crime_place": ["none", "LOCxxx"],  // 1 seul
+    "clues": ["NPCxxx", "LOCxxx"],  // pour le nombre, voir Fiche_enquête_v02.odt
+	"evidence": ["OBJxxx", "NPCxxx"+"affair", "NPCxxx"+"debt_influence", "NPCxxx"+"ideological_affinity"],  // pour le nombre, voir Fiche_enquête_v02.odt
+	"victim": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_v02.odt
+	"witness": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_v02.odt
+	"suspect": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_v02.odt
+	"culprit": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_v02.odt
+	"min_resolution_evidence": 1,  // pour le nombre, voir Fiche_enquête_v02.odt
+	"total_evidences": 5,  // pour le nombre, voir Fiche_enquête_v02.odt
+  }
+]
+
