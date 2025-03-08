@@ -6,12 +6,14 @@ var tutorial_text = ""
 var json_files = [
 	"res://JSON/TUTORIAL/tutorial_01.json",
 	"res://JSON/TUTORIAL/tutorial_02.json",
-	"res://JSON/TUTORIAL/tutorial_03.json"
+	"res://JSON/TUTORIAL/tutorial_03.json",
+	"res://JSON/TUTORIAL/tutorial_04.json"
 ]
 var current_json_index = 0
 var animation_player : AnimationPlayer
 var click_delay = 1.0
 var end_of_tuto = 0
+var speed_factor = 1.0
 
 func _ready():
 	animation_player = get_node("../../../Typing_Animation")
@@ -31,9 +33,9 @@ func load_tutorial_text():
 
 func _process(_delta):
 	if Input.is_action_pressed("Right_Click"):
-		animation_player.speed_scale = 10.0
+		animation_player.speed_scale = 10.0 * speed_factor
 	else:
-		animation_player.speed_scale = 1.0
+		animation_player.speed_scale = 1.0 * speed_factor
 
 	if tutorial_text != "":
 		text = tutorial_text
@@ -51,9 +53,13 @@ func _process(_delta):
 
 func _on_next_button_pressed():
 	end_of_tuto += 1
-	if end_of_tuto == 2:
-		$"../Next_Button".text = "End of line!"
 	if end_of_tuto == 3:
+		$"../Next_Button".text = "End of line!"
+		$".".horizontal_alignment = 1
+		$".".size.y = 170
+		$".".position.y = 98
+		speed_factor = 2.5
+	if end_of_tuto == 4:
 		get_tree().quit() #to change of course!
 	current_json_index = (current_json_index + 1) % json_files.size()
 	load_tutorial_text()
