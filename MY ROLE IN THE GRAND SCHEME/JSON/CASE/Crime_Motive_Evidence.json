@@ -87,6 +87,7 @@
       "name": "Anticipation of an Attack",
       "evidence": [
         "OBJ006",
+		"OBJ015",
         "OBJ019"
 		
       ]
@@ -95,6 +96,7 @@
       "name": "Deliberate Provocation",
       "evidence": [
         "OBJ006",
+		"OBJ012",
         "OBJ015"
       ]
     },
@@ -102,7 +104,8 @@
       "name": "Impulsive Reaction to an Insult",
       "evidence": [
         "OBJ006",
-        "OBJ012"
+        "OBJ012",
+		"OBJ036"
       ]
     },
     {
@@ -183,7 +186,8 @@
       "name": "Psychological Manipulation",
       "evidence": [
         "OBJ006",
-        "OBJ012"
+        "OBJ012",
+		"OBJ079"
 		
       ]
     },
@@ -209,6 +213,7 @@
       "name": "Revealing a Robotic Nature",
       "evidence": [
         "OBJ023",
+		"OBJ045",
         "OBJ063"
       ]
     },
@@ -216,6 +221,7 @@
       "name": "Personal Revenge",
       "evidence": [
         "OBJ006",
+		"OBJ009",
         "OBJ012"
       ]
     }
@@ -245,6 +251,7 @@
       "evidence": [
         "OBJ007",
         "OBJ009",
+		"OBJ024",
 		"OBJ026",
 		"OBJ029",
 		"OBJ080"
@@ -253,7 +260,8 @@
     {
       "name": "Commercial Rivalry",
       "evidence": [
-        "OBJ025",
+        "OBJ009",
+		"OBJ025",
         "OBJ027",
 		"OBJ079"
       ]
@@ -278,6 +286,7 @@
       "name": "Quick Personal Enrichment",
       "evidence": [
         "OBJ009",
+		"OBJ026",
         "OBJ080"
       ]
     },
@@ -325,7 +334,10 @@
     {
       "name": "Desire to Avoid Trial",
       "evidence": [
-        "OBJ035"
+        "OBJ009",
+		"OBJ035",
+		"OBJ058",
+		"OBJ080"
       ]
     },
     {
@@ -349,7 +361,9 @@
       "name": "Fear of Punishment",
       "evidence": [
         "OBJ001",
-        "OBJ006"
+        "OBJ006",
+		"OBJ009"
+		
       ]
     },
     {
@@ -385,7 +399,8 @@
       "name": "Protecting a Personal Secret",
       "evidence": [
         "OBJ006",
-        "OBJ012"
+        "OBJ012",
+		"OBJ058"
       ]
     },
     {
@@ -423,7 +438,9 @@
     {
       "name": "Ideological Motivations",
       "evidence": [
-        "OBJ041"
+        "OBJ012",
+		"OBJ041",
+		"OBJ059"
       ]
     },
     {
@@ -460,6 +477,8 @@
       "evidence": [
         "OBJ031",
         "OBJ046",
+		"OBJ058",
+		"OBJ059",
 		"OBJ080"
       ]
     },
@@ -467,7 +486,9 @@
       "name": "Controlling Sensitive Information",
       "evidence": [
         "OBJ045",
-        "OBJ046"
+        "OBJ046",
+		"OBJ058",
+		"OBJ079"
       ]
     },
     {
@@ -491,6 +512,7 @@
       "name": "Retrieving the Light Hamburger Recipe",
       "evidence": [
         "OBJ043",
+		"OBJ059",
         "OBJ063"
       ]
     }
@@ -527,14 +549,17 @@
     {
       "name": "Punishment or Revenge",
       "evidence": [
-        "OBJ006"
+        "OBJ006",
+		"OBJ012",
+		"OBJ045"
       ]
     },
     {
       "name": "Destroying an Enemy",
       "evidence": [
         "OBJ001",
-        "OBJ006"
+        "OBJ006",
+		"OBJ058"
       ]
     },
     {
@@ -552,6 +577,18 @@
   "crime": "Fraud",
   "motive": [
     {
+      "name": "Uncovering Evidence of Quantum Manipulation of Elections",
+      "evidence": [
+		"OBJ012",
+		"OBJ026",
+		"OBJ030",
+		"OBJ045",
+		"OBJ046",
+		"OBJ058",
+		"OBJ059"
+      ]
+    },
+	{
       "name": "Fabrication of False Financial Reports",
       "evidence": [
         "OBJ001",
@@ -594,6 +631,7 @@
         "OBJ008",
         "OBJ024",
 		"OBJ046",
+		"OBJ059",
 		"OBJ079",
 		"OBJ080"
       ]
@@ -606,7 +644,8 @@
     {
       "name": "Psychological Domination",
       "evidence": [
-        "OBJ012",
+        "OBJ006",
+		"OBJ012",
         "OBJ036"
       ]
     },
@@ -614,21 +653,22 @@
       "name": "Misogynistic Intimidation",
       "evidence": [
         "OBJ006",
+		"OBJ012",
         "OBJ036"
       ]
     },
     {
       "name": "Seeking Supernatural Powers",
       "evidence": [
-        "OBJ081"
+        "OBJ063",
+		"OBJ081"
       ]
     },
     {
       "name": "Revealing the Power of Black Magic",
       "evidence": [
         "OBJ050",
-        "OBJ056",
-		"OBJ063"
+        "OBJ056"
       ]
     },
     {
@@ -643,6 +683,7 @@
       "name": "Personal Revenge",
       "evidence": [
         "OBJ006",
+		"OBJ012",
         "OBJ036"
       ]
     }
@@ -663,7 +704,8 @@
     {
       "name": "Distracting from the Power of Rain",
       "evidence": [
-        "OBJ052",
+        "OBJ012",
+		"OBJ052",
         "OBJ063"
       ]
     },
@@ -677,13 +719,16 @@
     {
       "name": "Ideological Claim",
       "evidence": [
-        "OBJ016"
+        "OBJ012",
+		"OBJ016",
+		"OBJ045"
       ]
     },
     {
       "name": "Fiery Revenge",
       "evidence": [
-        "OBJ051",
+        "OBJ012",
+		"OBJ051",
         "OBJ053"
       ]
     }
@@ -729,6 +774,7 @@
       "name": "Attempting a More Serious Crime",
       "evidence": [
         "OBJ006",
+		"OBJ021",
         "OBJ031"
       ]
     },
@@ -736,7 +782,8 @@
       "name": "Compulsive Voyeurism",
       "evidence": [
         "OBJ005",
-        "OBJ006"
+        "OBJ006",
+		"OBJ044"
       ]
     }
   ]
@@ -747,7 +794,9 @@
     {
       "name": "Systemic Humiliation",
       "evidence": [
-        "OBJ006"
+        "OBJ006",
+		"OBJ012",
+		"OBJ036"
       ]
     },
     {
@@ -760,14 +809,17 @@
     {
       "name": "Vicious Psychopathy",
       "evidence": [
-        "OBJ002"
+        "OBJ002",
+		"OBJ015",
+		"OBJ056"
       ]
     },
     {
       "name": "Extreme Sadism",
       "evidence": [
         "OBJ002",
-        "OBJ015"
+        "OBJ015",
+		"OBJ056"
       ]
     }
   ]
@@ -812,7 +864,8 @@
     {
       "name": "Eliminating a Rival",
       "evidence": [
-        "OBJ015",
+        "OBJ006",
+		"OBJ015",
         "OBJ044"
       ]
     },
@@ -820,7 +873,8 @@
       "name": "Vigilante Justice",
       "evidence": [
         "OBJ006",
-        "OBJ015"
+        "OBJ015",
+		"OBJ063"
       ]
     }
   ]
@@ -831,14 +885,16 @@
     {
       "name": "Compromising Corporate Security",
       "evidence": [
-        "OBJ059",
+		"OBJ047",
+		"OBJ059",
         "OBJ079"
       ]
     },
     {
       "name": "Ideological Hacktivism",
       "evidence": [
-        "OBJ045",
+        "OBJ031",
+		"OBJ045",
         "OBJ079"
       ]
     },
@@ -873,7 +929,9 @@
     {
       "name": "Personal Satisfaction",
       "evidence": [
-        "OBJ058"
+        "OBJ031",
+		"OBJ058",
+		"OBJ059"
       ]
     }
   ]
@@ -913,13 +971,15 @@
       "name": "Exploitation of Vulnerability",
       "evidence": [
         "OBJ009",
-        "OBJ012"
+        "OBJ012",
+		"OBJ041"
       ]
     },
     {
       "name": "Financing a Ticket to Mars",
       "evidence": [
         "OBJ008",
+		"OBJ009",
         "OBJ062"
       ]
     }
@@ -1017,6 +1077,7 @@
       "name": "Ideological Claim",
       "evidence": [
         "OBJ012",
+		"OBJ045",
         "OBJ067"
       ]
     },
@@ -1024,6 +1085,7 @@
       "name": "Professional Rivalry",
       "evidence": [
         "OBJ012",
+		"OBJ058",
         "OBJ079"
       ]
     },
@@ -1044,7 +1106,8 @@
       "name": "Creating Large-Scale Chaos",
       "evidence": [
         "OBJ012",
-        "OBJ016"
+        "OBJ016",
+		"OBJ063"
       ]
     },
     {
@@ -1092,7 +1155,8 @@
       "name": "Personal Addiction",
       "evidence": [
         "OBJ008",
-        "OBJ063"
+        "OBJ063",
+		"OBJ080"
       ]
     },
     {
@@ -1140,6 +1204,8 @@
       "name": "Launching the Multiple Doppelganger Operation",
       "evidence": [
         "OBJ012",
+		"OBJ041",
+		"OBJ042",
         "OBJ072"
       ]
     },
@@ -1156,7 +1222,8 @@
       "name": "Stealing Confidential Information",
       "evidence": [
         "OBJ058",
-        "OBJ059"
+        "OBJ059",
+		"OBJ079"
       ]
     }
   ]
@@ -1168,6 +1235,7 @@
       "name": "Evidence Concealment",
       "evidence": [
         "OBJ026",
+		"OBJ031",
         "OBJ045"
       ]
     },
@@ -1231,6 +1299,7 @@
         "OBJ009",
 		"OBJ022",
 		"OBJ031",
+		"OBJ047",
 		"OBJ060",
 		"OBJ079"
       ]
@@ -1282,7 +1351,8 @@
       "name": "Marking a Territory",
       "evidence": [
         "OBJ006",
-        "OBJ012"
+        "OBJ012",
+		"OBJ063"
       ]
     },
     {
@@ -1305,6 +1375,7 @@
       "name": "Material Revenge Against Property",
       "evidence": [
         "OBJ006",
+		"OBJ015",
         "OBJ068"
       ]
     }
@@ -1342,7 +1413,8 @@
       "name": "Extreme Sexual Frustration",
       "evidence": [
         "OBJ002",
-        "OBJ014"
+        "OBJ014",
+		"OBJ056"
       ]
     },
     {

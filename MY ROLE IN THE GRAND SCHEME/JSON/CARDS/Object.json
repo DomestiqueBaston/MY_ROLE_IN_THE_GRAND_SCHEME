@@ -1090,6 +1090,7 @@
     "id": "OBJ304",
     "type": "Object",
     "name": "Ball bearing",
+	"description": "Harmless at first glance, but could jam a mechanism or cause an accident",
     "found": ["LOCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",

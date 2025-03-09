@@ -427,6 +427,7 @@ Cartes Objet
 	- Une fois jouées, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Objet ou Evidence.
 	- On ne joue qu’1 carte Objet par interaction.
+	- Les cartes Objet qui ne sont JAMAIS des preuves (OBJ281 et plus) sont toujours soit chez leur propriétaire, soit sur leur lieu de travail.
 
 Cartes PNJ
 	- Elles affichent en permanence une jauge en haut à droite donnant une idée du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue). Elles affichent une silhouette (Homme/Femme) et les noms et prénoms dès qu’ils sont connus.
