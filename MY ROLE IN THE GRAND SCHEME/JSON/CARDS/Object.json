@@ -136,7 +136,7 @@
   {
     "id": "OBJ014",
     "type": "Object",
-    "name": "Used Condom",
+    "name": "Condom",
     "description": "Even empty, it's still a valid clue. And full...",
     "found": ["LOCxxx"],
     "property": ["NPCxxx", "NPCxxx"],
@@ -495,7 +495,7 @@
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
-    "id": "OBJ000",
+    "id": "OBJ081",
     "type": "Object",
     "name": "Handbook",
     "description": "How to Draw Stars",
@@ -517,7 +517,7 @@
   {
     "id": "OBJ051",
     "type": "Object",
-    "name": "Lighter",
+    "name": "Customized Lighter",
     "description": "In any other case, this lighter would be insignificant",
     "found": ["LOCxxx", "NPCxxx"],
     "property": ["NPCxxx"],
@@ -805,25 +805,8 @@
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   {
-    "id": "OBJ280",
+    "id": "OBJ080",
     "type": "Object",
     "name": "Credit card",
     "description": "It's enough to make you suspicious if it doesn't belong to you",
@@ -833,6 +816,23 @@
     "evidence": ["no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   {
     "id": "OBJ281",
     "type": "Object",
@@ -1145,6 +1145,17 @@
     "type": "Object",
     "name": "handcuffs",
     "description": "Engraved plastic handcuffs with 'Freedom from the Plastic Prison'",
+    "found": ["LOCxxx"],
+    "property": ["NPCxxx"],
+	"comment": "il est question ici d'un PNJ et de son domicile",
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ310",
+    "type": "Object",
+    "name": "Unmarked key",
+    "description": "Oh! Could this possibly be the one I lost two years ago?",
     "found": ["LOCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",

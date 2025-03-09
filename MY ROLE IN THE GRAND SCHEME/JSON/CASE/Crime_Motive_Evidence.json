@@ -1,0 +1,1429 @@
+[
+  {
+  "crime": "Adultery",
+  "motive": [
+    {
+      "name": "Discovery of Hidden Superego",
+      "evidence": [
+        "OBJ002",
+        "OBJ005",
+		"OBJ006",
+		"OBJ007",
+		"OBJ010",
+		"OBJ011",
+		"OBJ013",
+		"OBJ014",
+		"OBJ056",
+		"OBJ063"		
+      ]
+    },
+    {
+      "name": "Dissemination of Extraterrestrial Genes",
+      "evidence": [
+        "OBJ002",
+        "OBJ007",
+		"OBJ010",
+		"OBJ013",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Persistent Sexual Dissatisfaction",
+      "evidence": [
+        "OBJ002",
+        "OBJ005",
+		"OBJ010",
+		"OBJ012",
+		"OBJ013",
+		"OBJ014"
+      ]
+    },
+    {
+      "name": "Seeking Influence",
+      "evidence": [
+        "OBJ002",
+        "OBJ006",
+		"OBJ007",
+		"OBJ013",
+		"OBJ014",
+		"OBJ079"
+		
+      ]
+    },
+    {
+      "name": "Personal Revenge",
+      "evidence": [
+        "OBJ002",
+        "OBJ005",
+		"OBJ006",
+		"OBJ012",
+		"OBJ013",
+		"OBJ014"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Assault",
+  "motive": [
+    {
+      "name": "Hunting Reptilians",
+      "evidence": [
+        "OBJ003",
+        "OBJ005",
+		"OBJ018",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Perceived Humiliation",
+      "evidence": [
+        "OBJ006",
+		"OBJ012",
+        "OBJ015"
+      ]
+    },
+    {
+      "name": "Anticipation of an Attack",
+      "evidence": [
+        "OBJ006",
+        "OBJ019"
+		
+      ]
+    },
+    {
+      "name": "Deliberate Provocation",
+      "evidence": [
+        "OBJ006",
+        "OBJ015"
+      ]
+    },
+    {
+      "name": "Impulsive Reaction to an Insult",
+      "evidence": [
+        "OBJ006",
+        "OBJ012"
+      ]
+    },
+    {
+      "name": "Finding the Galactic Christ",
+      "evidence": [
+        "OBJ015",
+        "OBJ017",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Personal Revenge",
+      "evidence": [
+        "OBJ002",
+        "OBJ012",
+		"OBJ015",
+		"OBJ019"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Burglary",
+  "motive": [
+    {
+      "name": "Need for Money",
+      "evidence": [
+        "OBJ004",
+        "OBJ008",
+		"OBJ021",
+		"OBJ022",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Bad Influence",
+      "evidence": [
+        "OBJ002",
+        "OBJ004",
+		"OBJ008",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Retrieving Compromising Evidence",
+      "evidence": [
+        "OBJ001",
+        "OBJ005",
+		"OBJ021",
+		"OBJ031"
+      ]
+    },
+    {
+      "name": "Finding the First Edition of 'The Bio Revelation'",
+      "evidence": [
+        "OBJ005",
+        "OBJ020",
+		"OBJ021",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Stealing to Fund a Vice",
+      "evidence": [
+        "OBJ002",
+        "OBJ008",
+		"OBJ021",
+		"OBJ022",
+		"OBJ080"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Blackmail",
+  "motive": [
+    {
+      "name": "Psychological Manipulation",
+      "evidence": [
+        "OBJ006",
+        "OBJ012"
+		
+      ]
+    },
+    {
+      "name": "Obtaining Hidden Secrets",
+      "evidence": [
+        "OBJ001",
+        "OBJ006",
+		"OBJ009",
+		"OBJ012",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Need for Money",
+      "evidence": [
+        "OBJ001",
+        "OBJ008",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Revealing a Robotic Nature",
+      "evidence": [
+        "OBJ023",
+        "OBJ063"
+      ]
+    },
+    {
+      "name": "Personal Revenge",
+      "evidence": [
+        "OBJ006",
+        "OBJ012"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Counterfeiting",
+  "motive": [
+    {
+      "name": "Manufacturing and Distributing Mind-Control Substances",
+      "evidence": [
+        "OBJ026",
+        "OBJ028",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Reducing Production Costs",
+      "evidence": [
+        "OBJ025",
+        "OBJ027",
+		"OBJ031"
+      ]
+    },
+    {
+      "name": "Financial Fraud",
+      "evidence": [
+        "OBJ007",
+        "OBJ009",
+		"OBJ026",
+		"OBJ029",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Commercial Rivalry",
+      "evidence": [
+        "OBJ025",
+        "OBJ027",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Personal Satisfaction",
+      "evidence": [
+        "OBJ004",
+        "OBJ012",
+		"OBJ026",
+		"OBJ029",
+		"OBJ031",
+		"OBJ080"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Corruption",
+  "motive": [
+    {
+      "name": "Quick Personal Enrichment",
+      "evidence": [
+        "OBJ009",
+        "OBJ080"
+      ]
+    },
+    {
+      "name": "Advancing a Personal Agenda",
+      "evidence": [
+        "OBJ006",
+        "OBJ009",
+		"OBJ012",
+		"OBJ026",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Maintaining a Position of Power",
+      "evidence": [
+        "OBJ009",
+        "OBJ026",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Obtaining Credits to Prove Earth's Flatness",
+      "evidence": [
+        "OBJ008",
+        "OBJ009",
+		"OBJ032"
+      ]
+    },
+    {
+      "name": "Seeking Power",
+      "evidence": [
+        "OBJ006",
+        "OBJ009",
+		"OBJ012",
+		"OBJ026",
+		"OBJ079"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Evasion",
+  "motive": [
+    {
+      "name": "Desire to Avoid Trial",
+      "evidence": [
+        "OBJ035"
+      ]
+    },
+    {
+      "name": "Escaping Pigeon-Drones",
+      "evidence": [
+        "OBJ006",
+        "OBJ034",
+		"OBJ056",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Fleeing Telepathic Cats",
+      "evidence": [
+        "OBJ033",
+        "OBJ056",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Fear of Punishment",
+      "evidence": [
+        "OBJ001",
+        "OBJ006"
+      ]
+    },
+    {
+      "name": "Refusal to Face Consequences",
+      "evidence": [
+        "OBJ001",
+        "OBJ006",
+		"OBJ035"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Defamation",
+  "motive": [
+    {
+      "name": "Will to Discredit",
+      "evidence": [
+        "OBJ006",
+        "OBJ012",
+		"OBJ036"
+      ]
+    },
+    {
+      "name": "Masking the Cosmic Conspiracy by Revealing the Dream Society",
+      "evidence": [
+        "OBJ012",
+        "OBJ037",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Protecting a Personal Secret",
+      "evidence": [
+        "OBJ006",
+        "OBJ012"
+      ]
+    },
+    {
+      "name": "Professional Rivalry",
+      "evidence": [
+        "OBJ006",
+        "OBJ012",
+		"OBJ036",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Personal Revenge",
+      "evidence": [
+        "OBJ006",
+        "OBJ012",
+		"OBJ036"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Kidnapping",
+  "motive": [
+    {
+      "name": "Ransom Demand",
+      "evidence": [
+        "OBJ001",
+        "OBJ004",
+		"OBJ038",
+		"OBJ040",
+		"OBJ041"
+      ]
+    },
+    {
+      "name": "Ideological Motivations",
+      "evidence": [
+        "OBJ041"
+      ]
+    },
+    {
+      "name": "Proving the Clone Theory",
+      "evidence": [
+        "OBJ013",
+        "OBJ039",
+		"OBJ056",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Human Trafficking",
+      "evidence": [
+        "OBJ040",
+        "OBJ041"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Espionage",
+  "motive": [
+    {
+      "name": "Ideological Benefits",
+      "evidence": [
+        "OBJ006",
+        "OBJ044",
+		"OBJ045"
+      ]
+    },
+    {
+      "name": "Compromising Digital Security",
+      "evidence": [
+        "OBJ031",
+        "OBJ046",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Controlling Sensitive Information",
+      "evidence": [
+        "OBJ045",
+        "OBJ046"
+      ]
+    },
+    {
+      "name": "Industrial Espionage",
+      "evidence": [
+        "OBJ031",
+        "OBJ044",
+		"OBJ047",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Pathological Curiosity",
+      "evidence": [
+        "OBJ006",
+        "OBJ013",
+		"OBJ044"
+      ]
+    },
+    {
+      "name": "Retrieving the Light Hamburger Recipe",
+      "evidence": [
+        "OBJ043",
+        "OBJ063"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Extortion",
+  "motive": [
+    {
+      "name": "Financial Need",
+      "evidence": [
+        "OBJ009",
+        "OBJ079",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Funding the Humans for Venus Experiments (H4VE)",
+      "evidence": [
+        "OBJ008",
+        "OBJ048",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Seeking Power",
+      "evidence": [
+        "OBJ001",
+        "OBJ006",
+		"OBJ045",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Punishment or Revenge",
+      "evidence": [
+        "OBJ006"
+      ]
+    },
+    {
+      "name": "Destroying an Enemy",
+      "evidence": [
+        "OBJ001",
+        "OBJ006"
+      ]
+    },
+    {
+      "name": "Obtaining Information",
+      "evidence": [
+        "OBJ001",
+        "OBJ009",
+        "OBJ045",
+		"OBJ079"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Fraud",
+  "motive": [
+    {
+      "name": "Fabrication of False Financial Reports",
+      "evidence": [
+        "OBJ001",
+        "OBJ009",
+		"OBJ026",
+		"OBJ029"
+      ]
+    },
+    {
+      "name": "Funding Insurance against the Gorgoufle Invasion",
+      "evidence": [
+        "OBJ026",
+        "OBJ049",
+		"OBJ063",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Manipulating Documents to Alter Results",
+      "evidence": [
+        "OBJ026",
+        "OBJ029",
+		"OBJ031",
+		"OBJ058"
+      ]
+    },
+    {
+      "name": "Obtaining Services Without Paying",
+      "evidence": [
+        "OBJ009",
+        "OBJ026",
+		"OBJ046",
+		"OBJ058",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Future Profit",
+      "evidence": [
+        "OBJ008",
+        "OBJ024",
+		"OBJ046",
+		"OBJ079",
+		"OBJ080"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Harassment",
+  "motive": [
+    {
+      "name": "Psychological Domination",
+      "evidence": [
+        "OBJ012",
+        "OBJ036"
+      ]
+    },
+    {
+      "name": "Misogynistic Intimidation",
+      "evidence": [
+        "OBJ006",
+        "OBJ036"
+      ]
+    },
+    {
+      "name": "Seeking Supernatural Powers",
+      "evidence": [
+        "OBJ081"
+      ]
+    },
+    {
+      "name": "Revealing the Power of Black Magic",
+      "evidence": [
+        "OBJ050",
+        "OBJ056",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Professional Rivalry",
+      "evidence": [
+        "OBJ012",
+        "OBJ036",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Personal Revenge",
+      "evidence": [
+        "OBJ006",
+        "OBJ036"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Arson",
+  "motive": [
+    {
+      "name": "Destroying Evidence",
+      "evidence": [
+        "OBJ001",
+        "OBJ031",
+		"OBJ051",
+		"OBJ053"
+      ]
+    },
+    {
+      "name": "Distracting from the Power of Rain",
+      "evidence": [
+        "OBJ052",
+        "OBJ063"
+      ]
+    },
+    {
+      "name": "Pyromaniac Satisfaction",
+      "evidence": [
+        "OBJ051",
+        "OBJ053"
+      ]
+    },
+    {
+      "name": "Ideological Claim",
+      "evidence": [
+        "OBJ016"
+      ]
+    },
+    {
+      "name": "Fiery Revenge",
+      "evidence": [
+        "OBJ051",
+        "OBJ053"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Trespassing",
+  "motive": [
+    {
+      "name": "Obsession with a Place",
+      "evidence": [
+        "OBJ005",
+		"OBJ013",
+		"OBJ044"
+      ]
+    },
+    {
+      "name": "Preparing a Satanic Mass",
+      "evidence": [
+        "OBJ054",
+        "OBJ056",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Searching for Secrets",
+      "evidence": [
+        "OBJ004",
+        "OBJ005",
+		"OBJ006"
+      ]
+    },
+    {
+      "name": "Looking for Information",
+      "evidence": [
+        "OBJ004",
+        "OBJ005",
+		"OBJ006",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Attempting a More Serious Crime",
+      "evidence": [
+        "OBJ006",
+        "OBJ031"
+      ]
+    },
+    {
+      "name": "Compulsive Voyeurism",
+      "evidence": [
+        "OBJ005",
+        "OBJ006"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Abuse",
+  "motive": [
+    {
+      "name": "Systemic Humiliation",
+      "evidence": [
+        "OBJ006"
+      ]
+    },
+    {
+      "name": "Proving that Beavers Control the World",
+      "evidence": [
+        "OBJ055",
+        "OBJ063"
+      ]
+    },
+    {
+      "name": "Vicious Psychopathy",
+      "evidence": [
+        "OBJ002"
+      ]
+    },
+    {
+      "name": "Extreme Sadism",
+      "evidence": [
+        "OBJ002",
+        "OBJ015"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Murder",
+  "motive": [
+    {
+      "name": "Eliminating a Child-Eating Communist",
+      "evidence": [
+        "OBJ015",
+        "OBJ056",
+		"OBJ057"
+      ]
+    },
+    {
+      "name": "Pathological Jealousy",
+      "evidence": [
+        "OBJ002",
+        "OBJ015",
+		"OBJ044",
+		"OBJ056"
+      ]
+    },
+    {
+      "name": "Fear of Being Discovered",
+      "evidence": [
+        "OBJ001",
+        "OBJ002",
+		"OBJ006",
+		"OBJ015"
+      ]
+    },
+    {
+      "name": "Murderous Psychopathy",
+      "evidence": [
+        "OBJ002",
+        "OBJ015",
+		"OBJ056"
+      ]
+    },
+    {
+      "name": "Eliminating a Rival",
+      "evidence": [
+        "OBJ015",
+        "OBJ044"
+      ]
+    },
+    {
+      "name": "Vigilante Justice",
+      "evidence": [
+        "OBJ006",
+        "OBJ015"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Hacking",
+  "motive": [
+    {
+      "name": "Compromising Corporate Security",
+      "evidence": [
+        "OBJ059",
+        "OBJ079"
+      ]
+    },
+    {
+      "name": "Ideological Hacktivism",
+      "evidence": [
+        "OBJ045",
+        "OBJ079"
+      ]
+    },
+    {
+      "name": "Proving the Malice of Quercus Castoreum",
+      "evidence": [
+        "OBJ056",
+        "OBJ059",
+		"OBJ061"
+      ]
+    },
+    {
+      "name": "Instant Financial Gain",
+      "evidence": [
+        "OBJ001",
+        "OBJ009",
+		"OBJ058",
+		"OBJ059",
+		"OBJ079",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Seeking Sensitive Data",
+      "evidence": [
+        "OBJ045",
+        "OBJ058",
+		"OBJ059",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Personal Satisfaction",
+      "evidence": [
+        "OBJ058"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Pimping and Prostitution",
+  "motive": [
+    {
+      "name": "Drug Addiction",
+      "evidence": [
+        "OBJ002",
+        "OBJ006",
+		"OBJ013",
+		"OBJ063"
+      ]
+    },
+    {
+      "name": "Urgent Need for Money",
+      "evidence": [
+        "OBJ001",
+        "OBJ006",
+		"OBJ008",
+		"OBJ013",
+		"OBJ014"
+      ]
+    },
+    {
+      "name": "Sex Addiction",
+      "evidence": [
+        "OBJ002",
+        "OBJ006",
+		"OBJ013",
+		"OBJ014"
+      ]
+    },
+    {
+      "name": "Exploitation of Vulnerability",
+      "evidence": [
+        "OBJ009",
+        "OBJ012"
+      ]
+    },
+    {
+      "name": "Financing a Ticket to Mars",
+      "evidence": [
+        "OBJ008",
+        "OBJ062"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Racketeering",
+  "motive": [
+    {
+      "name": "Dire Need for Money",
+      "evidence": [
+        "OBJ001",
+        "OBJ006",
+		"OBJ008",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Funding the Powerful Crystalized Sodium Culinary Cartel",
+      "evidence": [
+        "OBJ008",
+        "OBJ009",
+		"OBJ064"
+      ]
+    },
+    {
+      "name": "Threat-Based Submission",
+      "evidence": [
+        "OBJ006",
+        "OBJ009",
+		"OBJ012"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Receiving Stolen Goods",
+  "motive": [
+    {
+      "name": "Hiding Crime Traces",
+      "evidence": [
+        "OBJ002",
+        "OBJ026",
+		"OBJ045"
+      ]
+    },
+    {
+      "name": "Diversion of Stolen Goods",
+      "evidence": [
+        "OBJ004",
+        "OBJ022",
+		"OBJ060"
+      ]
+    },
+    {
+      "name": "Financial Profit",
+      "evidence": [
+        "OBJ009",
+        "OBJ022",
+		"OBJ060",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Protecting Evidence of Sabbat Mater",
+      "evidence": [
+        "OBJ022",
+        "OBJ056",
+		"OBJ063",
+		"OBJ065"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Sabotage",
+  "motive": [
+    {
+      "name": "Power Demonstration",
+      "evidence": [
+        "OBJ006",
+        "OBJ067",
+		"OBJ068"
+      ]
+    },
+    {
+      "name": "Preventing the Spread of Picovirus",
+      "evidence": [
+        "OBJ006",
+        "OBJ056",
+		"OBJ066"
+      ]
+    },
+    {
+      "name": "Ideological Claim",
+      "evidence": [
+        "OBJ012",
+        "OBJ067"
+      ]
+    },
+    {
+      "name": "Professional Rivalry",
+      "evidence": [
+        "OBJ012",
+        "OBJ079"
+      ]
+    },
+    {
+      "name": "Strategic Revenge through Targeted Destruction",
+      "evidence": [
+        "OBJ006",
+        "OBJ067",
+		"OBJ068"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Terrorism",
+  "motive": [
+    {
+      "name": "Creating Large-Scale Chaos",
+      "evidence": [
+        "OBJ012",
+        "OBJ016"
+      ]
+    },
+    {
+      "name": "Extreme and Morbid Psychopathy",
+      "evidence": [
+        "OBJ015",
+        "OBJ051",
+		"OBJ053",
+		"OBJ056"
+      ]
+    },
+    {
+      "name": "Ideological Claim",
+      "evidence": [
+        "OBJ006",
+        "OBJ015",
+		"OBJ016"
+      ]
+    },
+    {
+      "name": "Terrorizing the Annunaki",
+      "evidence": [
+        "OBJ012",
+        "OBJ016",
+		"OBJ056",
+		"OBJ063",
+		"OBJ069"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Trafficking",
+  "motive": [
+    {
+      "name": "Creating a Clown Clone for Infinite Immortality",
+      "evidence": [
+        "OBJ008",
+        "OBJ009",
+		"OBJ063",
+		"OBJ070"
+      ]
+    },
+    {
+      "name": "Personal Addiction",
+      "evidence": [
+        "OBJ008",
+        "OBJ063"
+      ]
+    },
+    {
+      "name": "Exploitation of Human Vulnerabilities",
+      "evidence": [
+        "OBJ006",
+        "OBJ008",
+        "OBJ009"
+      ]
+    },
+    {
+      "name": "Illegal Financial Profit from Drugs, Slavery, etc.",
+      "evidence": [
+        "OBJ006",
+        "OBJ009",
+		"OBJ022",
+		"OBJ031",
+		"OBJ041",
+		"OBJ063"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Identity Theft",
+  "motive": [
+    {
+      "name": "Need for a New Identity",
+      "evidence": [
+        "OBJ012",
+        "OBJ041",
+		"OBJ042"
+      ]
+    },
+    {
+      "name": "Digital Financial Fraud",
+      "evidence": [
+        "OBJ009",
+        "OBJ058",
+		"OBJ079",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Launching the Multiple Doppelganger Operation",
+      "evidence": [
+        "OBJ012",
+        "OBJ072"
+      ]
+    },
+    {
+      "name": "Social and Digital Manipulation",
+      "evidence": [
+        "OBJ012",
+        "OBJ042",
+		"OBJ058",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Stealing Confidential Information",
+      "evidence": [
+        "OBJ058",
+        "OBJ059"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Forgery",
+  "motive": [
+    {
+      "name": "Evidence Concealment",
+      "evidence": [
+        "OBJ026",
+        "OBJ045"
+      ]
+    },
+    {
+      "name": "Various Frauds",
+      "evidence": [
+        "OBJ001",
+        "OBJ026",
+		"OBJ031",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Manipulating Results",
+      "evidence": [
+        "OBJ026",
+        "OBJ031",
+		"OBJ058"
+      ]
+    },
+    {
+      "name": "Taking the Place of the Grand Sphinctorum Diqpic",
+      "evidence": [
+        "OBJ058",
+        "OBJ063",
+		"OBJ071"
+      ]
+    },
+    {
+      "name": "Illegal Financial Profit",
+      "evidence": [
+        "OBJ009",
+        "OBJ026",
+		"OBJ058",
+		"OBJ079",
+		"OBJ080"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Selling Stolen Goods",
+  "motive": [
+    {
+      "name": "Recurring Financial Need",
+      "evidence": [
+        "OBJ001",
+        "OBJ008",
+		"OBJ009",
+		"OBJ022",
+		"OBJ059",
+		"OBJ060",
+		"OBJ079",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Creating a Parallel Market",
+      "evidence": [
+        "OBJ006",
+        "OBJ009",
+		"OBJ022",
+		"OBJ031",
+		"OBJ060",
+		"OBJ079"
+      ]
+    },
+    {
+      "name": "Funding a Personal Addiction",
+      "evidence": [
+        "OBJ008",
+        "OBJ060",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Financial Profit",
+      "evidence": [
+        "OBJ009",
+        "OBJ022",
+		"OBJ059",
+		"OBJ060",
+		"OBJ079",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Spreading Intimate Thought Recorders",
+      "evidence": [
+        "OBJ006",
+        "OBJ059",
+		"OBJ060",
+		"OBJ073"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Vandalism",
+  "motive": [
+    {
+      "name": "Playing Giant Tic-Tac-Toe Just Because We Can!",
+      "evidence": [
+        "OBJ002",
+        "OBJ004",
+		"OBJ006",
+		"OBJ056",
+		"OBJ075"
+      ]
+    },
+    {
+      "name": "Marking a Territory",
+      "evidence": [
+        "OBJ006",
+        "OBJ012"
+      ]
+    },
+    {
+      "name": "Artistic Protest",
+      "evidence": [
+        "OBJ006",
+        "OBJ012",
+		"OBJ013"
+      ]
+    },
+    {
+      "name": "Revealing the Existence of the Visual Chaos Project",
+      "evidence": [
+        "OBJ012",
+        "OBJ063",
+		"OBJ074"
+      ]
+    },
+    {
+      "name": "Material Revenge Against Property",
+      "evidence": [
+        "OBJ006",
+        "OBJ068"
+      ]
+    }
+  ]
+},
+  {
+  "crime": "Rape",
+  "motive": [
+    {
+      "name": "Convincing of the Need for a Male for Good",
+      "evidence": [
+        "OBJ002",
+        "OBJ056",
+		"OBJ063",
+		"OBJ076"
+      ]
+    },
+    {
+      "name": "Degradation of the Victim",
+      "evidence": [
+        "OBJ002",
+        "OBJ006",
+		"OBJ019"
+      ]
+    },
+    {
+      "name": "Absolute Domination Through Humiliation",
+      "evidence": [
+        "OBJ002",
+        "OBJ006",
+		"OBJ019"
+      ]
+    },
+    {
+      "name": "Extreme Sexual Frustration",
+      "evidence": [
+        "OBJ002",
+        "OBJ014"
+      ]
+    },
+    {
+      "name": "Launch the Operation Incubation of the Burnes Larvae",
+      "evidence": [
+        "OBJ002",
+        "OBJ019",
+		"OBJ056",
+		"OBJ077"
+      ]
+    },
+    {
+      "name": "Sadistic Pleasure",
+      "evidence": [
+        "OBJ002",
+		"OBJ015",
+        "OBJ019"
+      ]
+    },
+    {
+      "name": "Psychological Revenge",
+      "evidence": [
+        "OBJ002",
+        "OBJ006",
+		"OBJ012"
+      ]
+    }
+  ]
+},
+  
+  {
+  "crime": "Theft",
+  "motive": [
+    {
+      "name": "Urgent Need for Money",
+      "evidence": [
+        "OBJ002",
+        "OBJ004",
+		"OBJ005",
+		"OBJ008",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Demonstrating the Possibility of a Swift Robbery",
+      "evidence": [
+        "OBJ006",
+        "OBJ021",
+		"OBJ031"
+      ]
+    },
+    {
+      "name": "Personal Pleasure",
+      "evidence": [
+        "OBJ004",
+        "OBJ021",
+		"OBJ060",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Extreme Poverty",
+      "evidence": [
+        "OBJ002",
+        "OBJ004",
+		"OBJ005",
+		"OBJ006",
+		"OBJ008",
+		"OBJ080"
+      ]
+    },
+    {
+      "name": "Acquiring the Secrets of LI+11",
+      "evidence": [
+        "OBJ006",
+        "OBJ058",
+		"OBJ063",
+		"OBJ078"
+      ]
+    }
+  ]
+}
+
+]

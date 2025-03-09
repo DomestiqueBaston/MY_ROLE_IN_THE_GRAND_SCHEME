@@ -2,8 +2,8 @@
   {
     "id": "CASxxx",
     "title": "Voir... Je ne sais pas encore mais probablement le pipotron de génération de title ou alors carrément, pas de titre",
-    "crime": "Voir Crime_Motive.json",
-    "mobile": "Voir Crime_Motive.json",
+    "crime": "Voir Crime_Motive_Evidence.json",
+    "mobile": "Voir Crime_Motive_Evidence.json",
     "Difficulty": de 1 à 5,  // 6 pour les enquêtes ultimes !
     "status": ["active", "paused"], // 1 des 2
 	"duration": 9,  // round((niveau de difficulté × 4 + 10) × (1 ± 0,1))
