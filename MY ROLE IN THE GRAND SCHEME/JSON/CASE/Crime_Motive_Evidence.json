@@ -4,6 +4,7 @@
   "motive": [
     {
       "name": "Discovery of Hidden Superego",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ005",
@@ -19,6 +20,7 @@
     },
     {
       "name": "Dissemination of Extraterrestrial Genes",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ007",
@@ -29,6 +31,7 @@
     },
     {
       "name": "Persistent Sexual Dissatisfaction",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ005",
@@ -40,6 +43,7 @@
     },
     {
       "name": "Seeking Influence",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -52,6 +56,7 @@
     },
     {
       "name": "Personal Revenge",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ005",
@@ -68,6 +73,7 @@
   "motive": [
     {
       "name": "Hunting Reptilians",
+      "link": [],
       "evidence": [
         "OBJ003",
         "OBJ005",
@@ -77,6 +83,7 @@
     },
     {
       "name": "Perceived Humiliation",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -85,6 +92,7 @@
     },
     {
       "name": "Anticipation of an Attack",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ015",
@@ -94,6 +102,7 @@
     },
     {
       "name": "Deliberate Provocation",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -102,6 +111,7 @@
     },
     {
       "name": "Impulsive Reaction to an Insult",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -110,6 +120,7 @@
     },
     {
       "name": "Finding the Galactic Christ",
+      "link": [],
       "evidence": [
         "OBJ015",
         "OBJ017",
@@ -118,6 +129,7 @@
     },
     {
       "name": "Personal Revenge",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ012",
@@ -132,6 +144,7 @@
   "motive": [
     {
       "name": "Need for Money",
+      "link": [],
       "evidence": [
         "OBJ004",
         "OBJ008",
@@ -142,6 +155,7 @@
     },
     {
       "name": "Bad Influence",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -151,6 +165,7 @@
     },
     {
       "name": "Retrieving Compromising Evidence",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ005",
@@ -160,6 +175,7 @@
     },
     {
       "name": "Finding the First Edition of 'The Bio Revelation'",
+      "link": [],
       "evidence": [
         "OBJ005",
         "OBJ020",
@@ -169,6 +185,7 @@
     },
     {
       "name": "Stealing to Fund a Vice",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ008",
@@ -184,6 +201,7 @@
   "motive": [
     {
       "name": "Psychological Manipulation",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -193,6 +211,7 @@
     },
     {
       "name": "Obtaining Hidden Secrets",
+      "link": ["debt_influence", "intimacy"],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -203,6 +222,7 @@
     },
     {
       "name": "Need for Money",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ008",
@@ -211,6 +231,7 @@
     },
     {
       "name": "Revealing a Robotic Nature",
+      "link": [],
       "evidence": [
         "OBJ023",
 		"OBJ045",
@@ -219,6 +240,7 @@
     },
     {
       "name": "Personal Revenge",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ006",
 		"OBJ009",
@@ -232,6 +254,7 @@
   "motive": [
     {
       "name": "Manufacturing and Distributing Mind-Control Substances",
+      "link": [],
       "evidence": [
         "OBJ026",
         "OBJ028",
@@ -240,6 +263,7 @@
     },
     {
       "name": "Reducing Production Costs",
+      "link": [],
       "evidence": [
         "OBJ025",
         "OBJ027",
@@ -248,6 +272,7 @@
     },
     {
       "name": "Financial Fraud",
+      "link": [],
       "evidence": [
         "OBJ007",
         "OBJ009",
@@ -259,6 +284,7 @@
     },
     {
       "name": "Commercial Rivalry",
+      "link": [],
       "evidence": [
         "OBJ009",
 		"OBJ025",
@@ -268,6 +294,7 @@
     },
     {
       "name": "Personal Satisfaction",
+      "link": [],
       "evidence": [
         "OBJ004",
         "OBJ012",
@@ -284,6 +311,7 @@
   "motive": [
     {
       "name": "Quick Personal Enrichment",
+      "link": [],
       "evidence": [
         "OBJ009",
 		"OBJ026",
@@ -292,6 +320,7 @@
     },
     {
       "name": "Advancing a Personal Agenda",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -302,6 +331,7 @@
     },
     {
       "name": "Maintaining a Position of Power",
+      "link": [],
       "evidence": [
         "OBJ009",
         "OBJ026",
@@ -310,6 +340,7 @@
     },
     {
       "name": "Obtaining Credits to Prove Earth's Flatness",
+      "link": [],
       "evidence": [
         "OBJ008",
         "OBJ009",
@@ -318,6 +349,7 @@
     },
     {
       "name": "Seeking Power",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -333,6 +365,7 @@
   "motive": [
     {
       "name": "Desire to Avoid Trial",
+      "link": [],
       "evidence": [
         "OBJ009",
 		"OBJ035",
@@ -342,6 +375,7 @@
     },
     {
       "name": "Escaping Pigeon-Drones",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ034",
@@ -351,6 +385,7 @@
     },
     {
       "name": "Fleeing Telepathic Cats",
+      "link": [],
       "evidence": [
         "OBJ033",
         "OBJ056",
@@ -359,6 +394,7 @@
     },
     {
       "name": "Fear of Punishment",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -368,6 +404,7 @@
     },
     {
       "name": "Refusal to Face Consequences",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -381,6 +418,7 @@
   "motive": [
     {
       "name": "Will to Discredit",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -389,6 +427,7 @@
     },
     {
       "name": "Masking the Cosmic Conspiracy by Revealing the Dream Society",
+      "link": [],
       "evidence": [
         "OBJ012",
         "OBJ037",
@@ -397,6 +436,7 @@
     },
     {
       "name": "Protecting a Personal Secret",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -405,6 +445,7 @@
     },
     {
       "name": "Professional Rivalry",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -414,6 +455,7 @@
     },
     {
       "name": "Personal Revenge",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -427,6 +469,7 @@
   "motive": [
     {
       "name": "Ransom Demand",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ004",
@@ -437,6 +480,7 @@
     },
     {
       "name": "Ideological Motivations",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ012",
 		"OBJ041",
@@ -445,6 +489,7 @@
     },
     {
       "name": "Proving the Clone Theory",
+      "link": [],
       "evidence": [
         "OBJ013",
         "OBJ039",
@@ -454,6 +499,7 @@
     },
     {
       "name": "Human Trafficking",
+      "link": [],
       "evidence": [
         "OBJ040",
         "OBJ041"
@@ -466,6 +512,7 @@
   "motive": [
     {
       "name": "Ideological Benefits",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ044",
@@ -474,6 +521,7 @@
     },
     {
       "name": "Compromising Digital Security",
+      "link": [],
       "evidence": [
         "OBJ031",
         "OBJ046",
@@ -484,6 +532,7 @@
     },
     {
       "name": "Controlling Sensitive Information",
+      "link": [],
       "evidence": [
         "OBJ045",
         "OBJ046",
@@ -493,6 +542,7 @@
     },
     {
       "name": "Industrial Espionage",
+      "link": [],
       "evidence": [
         "OBJ031",
         "OBJ044",
@@ -502,6 +552,7 @@
     },
     {
       "name": "Pathological Curiosity",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ013",
@@ -510,6 +561,7 @@
     },
     {
       "name": "Retrieving the Light Hamburger Recipe",
+      "link": [],
       "evidence": [
         "OBJ043",
 		"OBJ059",
@@ -523,6 +575,7 @@
   "motive": [
     {
       "name": "Financial Need",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ009",
         "OBJ079",
@@ -531,6 +584,7 @@
     },
     {
       "name": "Funding the Humans for Venus Experiments (H4VE)",
+      "link": [],
       "evidence": [
         "OBJ008",
         "OBJ048",
@@ -539,6 +593,7 @@
     },
     {
       "name": "Seeking Power",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -548,6 +603,7 @@
     },
     {
       "name": "Punishment or Revenge",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -556,6 +612,7 @@
     },
     {
       "name": "Destroying an Enemy",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -564,6 +621,7 @@
     },
     {
       "name": "Obtaining Information",
+      "link": ["debt_influence", "intimacy"],
       "evidence": [
         "OBJ001",
         "OBJ009",
@@ -578,6 +636,7 @@
   "motive": [
     {
       "name": "Uncovering Evidence of Quantum Manipulation of Elections",
+      "link": ["ideological_affinity"],
       "evidence": [
 		"OBJ012",
 		"OBJ026",
@@ -590,6 +649,7 @@
     },
 	{
       "name": "Fabrication of False Financial Reports",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ009",
@@ -599,6 +659,7 @@
     },
     {
       "name": "Funding Insurance against the Gorgoufle Invasion",
+      "link": [],
       "evidence": [
         "OBJ026",
         "OBJ049",
@@ -608,6 +669,7 @@
     },
     {
       "name": "Manipulating Documents to Alter Results",
+      "link": [],
       "evidence": [
         "OBJ026",
         "OBJ029",
@@ -617,6 +679,7 @@
     },
     {
       "name": "Obtaining Services Without Paying",
+      "link": [],
       "evidence": [
         "OBJ009",
         "OBJ026",
@@ -627,6 +690,7 @@
     },
     {
       "name": "Future Profit",
+      "link": [],
       "evidence": [
         "OBJ008",
         "OBJ024",
@@ -643,6 +707,7 @@
   "motive": [
     {
       "name": "Psychological Domination",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -651,6 +716,7 @@
     },
     {
       "name": "Misogynistic Intimidation",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -659,6 +725,7 @@
     },
     {
       "name": "Seeking Supernatural Powers",
+      "link": [],
       "evidence": [
         "OBJ063",
 		"OBJ081"
@@ -666,6 +733,7 @@
     },
     {
       "name": "Revealing the Power of Black Magic",
+      "link": [],
       "evidence": [
         "OBJ050",
         "OBJ056"
@@ -673,6 +741,7 @@
     },
     {
       "name": "Professional Rivalry",
+      "link": [],
       "evidence": [
         "OBJ012",
         "OBJ036",
@@ -681,6 +750,7 @@
     },
     {
       "name": "Personal Revenge",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -694,6 +764,7 @@
   "motive": [
     {
       "name": "Destroying Evidence",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ031",
@@ -703,6 +774,7 @@
     },
     {
       "name": "Distracting from the Power of Rain",
+      "link": [],
       "evidence": [
         "OBJ012",
 		"OBJ052",
@@ -711,6 +783,7 @@
     },
     {
       "name": "Pyromaniac Satisfaction",
+      "link": [],
       "evidence": [
         "OBJ051",
         "OBJ053"
@@ -718,6 +791,7 @@
     },
     {
       "name": "Ideological Claim",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ012",
 		"OBJ016",
@@ -726,6 +800,7 @@
     },
     {
       "name": "Fiery Revenge",
+      "link": [],
       "evidence": [
         "OBJ012",
 		"OBJ051",
@@ -739,6 +814,7 @@
   "motive": [
     {
       "name": "Obsession with a Place",
+      "link": [],
       "evidence": [
         "OBJ005",
 		"OBJ013",
@@ -747,6 +823,7 @@
     },
     {
       "name": "Preparing a Satanic Mass",
+      "link": [],
       "evidence": [
         "OBJ054",
         "OBJ056",
@@ -755,6 +832,7 @@
     },
     {
       "name": "Searching for Secrets",
+      "link": [],
       "evidence": [
         "OBJ004",
         "OBJ005",
@@ -763,6 +841,7 @@
     },
     {
       "name": "Looking for Information",
+      "link": [],
       "evidence": [
         "OBJ004",
         "OBJ005",
@@ -772,6 +851,7 @@
     },
     {
       "name": "Attempting a More Serious Crime",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ021",
@@ -780,6 +860,7 @@
     },
     {
       "name": "Compulsive Voyeurism",
+      "link": [],
       "evidence": [
         "OBJ005",
         "OBJ006",
@@ -793,6 +874,7 @@
   "motive": [
     {
       "name": "Systemic Humiliation",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -801,6 +883,7 @@
     },
     {
       "name": "Proving that Beavers Control the World",
+      "link": [],
       "evidence": [
         "OBJ055",
         "OBJ063"
@@ -808,6 +891,7 @@
     },
     {
       "name": "Vicious Psychopathy",
+      "link": [],
       "evidence": [
         "OBJ002",
 		"OBJ015",
@@ -816,6 +900,7 @@
     },
     {
       "name": "Extreme Sadism",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ015",
@@ -829,6 +914,7 @@
   "motive": [
     {
       "name": "Eliminating a Child-Eating Communist",
+      "link": [],
       "evidence": [
         "OBJ015",
         "OBJ056",
@@ -837,6 +923,7 @@
     },
     {
       "name": "Pathological Jealousy",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ015",
@@ -846,6 +933,7 @@
     },
     {
       "name": "Fear of Being Discovered",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ002",
@@ -855,6 +943,7 @@
     },
     {
       "name": "Murderous Psychopathy",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ015",
@@ -863,6 +952,7 @@
     },
     {
       "name": "Eliminating a Rival",
+      "link": [],
       "evidence": [
         "OBJ006",
 		"OBJ015",
@@ -871,6 +961,7 @@
     },
     {
       "name": "Vigilante Justice",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ015",
@@ -884,6 +975,7 @@
   "motive": [
     {
       "name": "Compromising Corporate Security",
+      "link": [],
       "evidence": [
 		"OBJ047",
 		"OBJ059",
@@ -892,6 +984,7 @@
     },
     {
       "name": "Ideological Hacktivism",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ031",
 		"OBJ045",
@@ -900,6 +993,7 @@
     },
     {
       "name": "Proving the Malice of Quercus Castoreum",
+      "link": ["ideological_affinity],
       "evidence": [
         "OBJ056",
         "OBJ059",
@@ -908,6 +1002,7 @@
     },
     {
       "name": "Instant Financial Gain",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ009",
@@ -919,6 +1014,7 @@
     },
     {
       "name": "Seeking Sensitive Data",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ045",
         "OBJ058",
@@ -928,6 +1024,7 @@
     },
     {
       "name": "Personal Satisfaction",
+      "link": [],
       "evidence": [
         "OBJ031",
 		"OBJ058",
@@ -941,6 +1038,7 @@
   "motive": [
     {
       "name": "Drug Addiction",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -950,6 +1048,7 @@
     },
     {
       "name": "Urgent Need for Money",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -960,6 +1059,7 @@
     },
     {
       "name": "Sex Addiction",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -969,6 +1069,7 @@
     },
     {
       "name": "Exploitation of Vulnerability",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ009",
         "OBJ012",
@@ -977,6 +1078,7 @@
     },
     {
       "name": "Financing a Ticket to Mars",
+      "link": [],
       "evidence": [
         "OBJ008",
 		"OBJ009",
@@ -990,6 +1092,7 @@
   "motive": [
     {
       "name": "Dire Need for Money",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -999,6 +1102,7 @@
     },
     {
       "name": "Funding the Powerful Crystalized Sodium Culinary Cartel",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ008",
         "OBJ009",
@@ -1007,6 +1111,7 @@
     },
     {
       "name": "Threat-Based Submission",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -1020,6 +1125,7 @@
   "motive": [
     {
       "name": "Hiding Crime Traces",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ026",
@@ -1028,6 +1134,7 @@
     },
     {
       "name": "Diversion of Stolen Goods",
+      "link": [],
       "evidence": [
         "OBJ004",
         "OBJ022",
@@ -1036,6 +1143,7 @@
     },
     {
       "name": "Financial Profit",
+      "link": [],
       "evidence": [
         "OBJ009",
         "OBJ022",
@@ -1045,6 +1153,7 @@
     },
     {
       "name": "Protecting Evidence of Sabbat Mater",
+      "link": [],
       "evidence": [
         "OBJ022",
         "OBJ056",
@@ -1059,6 +1168,7 @@
   "motive": [
     {
       "name": "Power Demonstration",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ067",
@@ -1067,6 +1177,7 @@
     },
     {
       "name": "Preventing the Spread of Picovirus",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ056",
@@ -1075,6 +1186,7 @@
     },
     {
       "name": "Ideological Claim",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ012",
 		"OBJ045",
@@ -1083,6 +1195,7 @@
     },
     {
       "name": "Professional Rivalry",
+      "link": [],
       "evidence": [
         "OBJ012",
 		"OBJ058",
@@ -1091,6 +1204,7 @@
     },
     {
       "name": "Strategic Revenge through Targeted Destruction",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ067",
@@ -1104,6 +1218,7 @@
   "motive": [
     {
       "name": "Creating Large-Scale Chaos",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ012",
         "OBJ016",
@@ -1112,6 +1227,7 @@
     },
     {
       "name": "Extreme and Morbid Psychopathy",
+      "link": [],
       "evidence": [
         "OBJ015",
         "OBJ051",
@@ -1121,6 +1237,7 @@
     },
     {
       "name": "Ideological Claim",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ015",
@@ -1129,6 +1246,7 @@
     },
     {
       "name": "Terrorizing the Annunaki",
+      "link": [],
       "evidence": [
         "OBJ012",
         "OBJ016",
@@ -1144,6 +1262,7 @@
   "motive": [
     {
       "name": "Creating a Clown Clone for Infinite Immortality",
+      "link": [],
       "evidence": [
         "OBJ008",
         "OBJ009",
@@ -1153,6 +1272,7 @@
     },
     {
       "name": "Personal Addiction",
+      "link": [],
       "evidence": [
         "OBJ008",
         "OBJ063",
@@ -1161,6 +1281,7 @@
     },
     {
       "name": "Exploitation of Human Vulnerabilities",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ008",
@@ -1169,6 +1290,7 @@
     },
     {
       "name": "Illegal Financial Profit from Drugs, Slavery, etc.",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -1185,6 +1307,7 @@
   "motive": [
     {
       "name": "Need for a New Identity",
+      "link": [],
       "evidence": [
         "OBJ012",
         "OBJ041",
@@ -1193,6 +1316,7 @@
     },
     {
       "name": "Digital Financial Fraud",
+      "link": [],
       "evidence": [
         "OBJ009",
         "OBJ058",
@@ -1202,6 +1326,7 @@
     },
     {
       "name": "Launching the Multiple Doppelganger Operation",
+      "link": [],
       "evidence": [
         "OBJ012",
 		"OBJ041",
@@ -1211,6 +1336,7 @@
     },
     {
       "name": "Social and Digital Manipulation",
+      "link": [],
       "evidence": [
         "OBJ012",
         "OBJ042",
@@ -1220,6 +1346,7 @@
     },
     {
       "name": "Stealing Confidential Information",
+      "link": [],
       "evidence": [
         "OBJ058",
         "OBJ059",
@@ -1233,6 +1360,7 @@
   "motive": [
     {
       "name": "Evidence Concealment",
+      "link": [],
       "evidence": [
         "OBJ026",
 		"OBJ031",
@@ -1241,6 +1369,7 @@
     },
     {
       "name": "Various Frauds",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ026",
@@ -1250,6 +1379,7 @@
     },
     {
       "name": "Manipulating Results",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ026",
         "OBJ031",
@@ -1258,6 +1388,7 @@
     },
     {
       "name": "Taking the Place of the Grand Sphinctorum Diqpic",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ058",
         "OBJ063",
@@ -1266,6 +1397,7 @@
     },
     {
       "name": "Illegal Financial Profit",
+      "link": [],
       "evidence": [
         "OBJ009",
         "OBJ026",
@@ -1281,6 +1413,7 @@
   "motive": [
     {
       "name": "Recurring Financial Need",
+      "link": ["debt_influence"],
       "evidence": [
         "OBJ001",
         "OBJ008",
@@ -1294,6 +1427,7 @@
     },
     {
       "name": "Creating a Parallel Market",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -1306,6 +1440,7 @@
     },
     {
       "name": "Funding a Personal Addiction",
+      "link": [],
       "evidence": [
         "OBJ008",
         "OBJ060",
@@ -1314,6 +1449,7 @@
     },
     {
       "name": "Financial Profit",
+      "link": [],
       "evidence": [
         "OBJ009",
         "OBJ022",
@@ -1325,6 +1461,7 @@
     },
     {
       "name": "Spreading Intimate Thought Recorders",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ059",
@@ -1339,6 +1476,7 @@
   "motive": [
     {
       "name": "Playing Giant Tic-Tac-Toe Just Because We Can!",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -1349,6 +1487,7 @@
     },
     {
       "name": "Marking a Territory",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -1357,6 +1496,7 @@
     },
     {
       "name": "Artistic Protest",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -1365,6 +1505,7 @@
     },
     {
       "name": "Revealing the Existence of the Visual Chaos Project",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ012",
         "OBJ063",
@@ -1373,6 +1514,7 @@
     },
     {
       "name": "Material Revenge Against Property",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
 		"OBJ015",
@@ -1386,6 +1528,7 @@
   "motive": [
     {
       "name": "Convincing of the Need for a Male for Good",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ002",
         "OBJ056",
@@ -1395,6 +1538,7 @@
     },
     {
       "name": "Degradation of the Victim",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1403,6 +1547,7 @@
     },
     {
       "name": "Absolute Domination Through Humiliation",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1411,6 +1556,7 @@
     },
     {
       "name": "Extreme Sexual Frustration",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ014",
@@ -1419,6 +1565,7 @@
     },
     {
       "name": "Launch the Operation Incubation of the Burnes Larvae",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ019",
@@ -1428,6 +1575,7 @@
     },
     {
       "name": "Sadistic Pleasure",
+      "link": [],
       "evidence": [
         "OBJ002",
 		"OBJ015",
@@ -1436,6 +1584,7 @@
     },
     {
       "name": "Psychological Revenge",
+      "link": ["intimacy"],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1450,6 +1599,7 @@
   "motive": [
     {
       "name": "Urgent Need for Money",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -1460,6 +1610,7 @@
     },
     {
       "name": "Demonstrating the Possibility of a Swift Robbery",
+      "link": [],
       "evidence": [
         "OBJ006",
         "OBJ021",
@@ -1468,6 +1619,7 @@
     },
     {
       "name": "Personal Pleasure",
+      "link": [],
       "evidence": [
         "OBJ004",
         "OBJ021",
@@ -1477,6 +1629,7 @@
     },
     {
       "name": "Extreme Poverty",
+      "link": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -1488,6 +1641,7 @@
     },
     {
       "name": "Acquiring the Secrets of LI+11",
+      "link": ["ideological_affinity"],
       "evidence": [
         "OBJ006",
         "OBJ058",
