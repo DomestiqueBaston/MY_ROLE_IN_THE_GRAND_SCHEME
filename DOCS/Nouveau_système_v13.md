@@ -684,10 +684,10 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Noir : Coupable/Complice/Preuve (seuls liens habilités à la validation des enquêtes) Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
           Rose : Intime (pas exploité dans toutes les enquêtes)
-          Vert foncé : Ami
-Orange : Ennemi
+          Vert foncé : Ami (pas exploité dans toutes les enquêtes)
+Orange : Ennemi (pas exploité dans toutes les enquêtes)
 Bleu clair : Connaissance
-          Bleu foncé : Affinité idéologique (pas exploité dans toutes les enquêtes)
+          Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
           Vert clair : Propriété

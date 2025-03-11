@@ -428,7 +428,7 @@ theme_override_constants/outline_size = 2
 text = "Legend:"
 metadata/_edit_lock_ = true
 
-[node name="White" type="TextureButton" parent="Legend/Colors"]
+[node name="Presence_White" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 1.0
@@ -443,7 +443,7 @@ texture_hover = ExtResource("3_f0utr")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Gray" type="TextureButton" parent="Legend/Colors"]
+[node name="Debt_Influence_Gray" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 44.0
 offset_top = 1.0
@@ -459,7 +459,7 @@ texture_hover = ExtResource("15_c4wun")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Black" type="TextureButton" parent="Legend/Colors"]
+[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 53.0
 offset_top = 1.0
@@ -475,7 +475,7 @@ texture_hover = ExtResource("16_mke16")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Pink" type="TextureButton" parent="Legend/Colors"]
+[node name="Intimacy_Pink" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 62.0
 offset_top = 1.0
@@ -491,7 +491,7 @@ texture_hover = ExtResource("17_7cnra")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Dark_Green" type="TextureButton" parent="Legend/Colors"]
+[node name="Friend_Dark_Green" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 71.0
 offset_top = 1.0
@@ -507,7 +507,7 @@ texture_hover = ExtResource("18_u436f")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Orange" type="TextureButton" parent="Legend/Colors"]
+[node name="Enemy_Orange" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 80.0
 offset_top = 1.0
@@ -524,7 +524,7 @@ texture_hover = ExtResource("19_eiutv")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Light_Blue" type="TextureButton" parent="Legend/Colors"]
+[node name="Acquaintance_Light_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 89.0
 offset_top = 1.0
@@ -541,14 +541,14 @@ texture_hover = ExtResource("20_oxby8")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Dark_Blue" type="TextureButton" parent="Legend/Colors"]
+[node name="Ideology_Dark_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 98.0
 offset_top = 1.0
 offset_right = 106.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
-tooltip_text = "Ideological affinity
+tooltip_text = "Ideology
 - Dashed: Probable
 - Solid: Confirmed"
 toggle_mode = true
@@ -558,7 +558,7 @@ texture_hover = ExtResource("21_134b4")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Red" type="TextureButton" parent="Legend/Colors"]
+[node name="Contradiction_Red" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 1.0
@@ -575,7 +575,7 @@ texture_hover = ExtResource("22_eja4x")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Yellow" type="TextureButton" parent="Legend/Colors"]
+[node name="Validation_Yellow" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 116.0
 offset_top = 1.0
@@ -592,14 +592,14 @@ texture_hover = ExtResource("6_jtpuj")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Light_Green" type="TextureButton" parent="Legend/Colors"]
+[node name="Property_Light_Green" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 125.0
 offset_top = 1.0
 offset_right = 133.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-9, 20)
-tooltip_text = "Ownership
+tooltip_text = "Property
 - Dashed: Probable
 - Solid: Confirmed"
 toggle_mode = true
@@ -609,7 +609,7 @@ texture_hover = ExtResource("23_1cqhn")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Brown" type="TextureButton" parent="Legend/Colors"]
+[node name="Home_Brown" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 134.0
 offset_top = 1.0
@@ -626,7 +626,7 @@ texture_hover = ExtResource("24_35y2t")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Turquoise" type="TextureButton" parent="Legend/Colors"]
+[node name="Work_Turquoise" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 143.0
 offset_top = 1.0
@@ -643,7 +643,7 @@ texture_hover = ExtResource("21_43fd7")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Darkest_Blue" type="TextureButton" parent="Legend/Colors"]
+[node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 152.0
 offset_top = 1.0
@@ -660,7 +660,7 @@ texture_hover = ExtResource("26_63nlu")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Light_Purple" type="TextureButton" parent="Legend/Colors"]
+[node name="Found_Light_Purple" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 161.0
 offset_top = 1.0
@@ -677,7 +677,7 @@ texture_hover = ExtResource("24_lp1fx")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
-[node name="Dark_Purple" type="TextureButton" parent="Legend/Colors"]
+[node name="New_Dark_Purple" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 170.0
 offset_top = 1.0
