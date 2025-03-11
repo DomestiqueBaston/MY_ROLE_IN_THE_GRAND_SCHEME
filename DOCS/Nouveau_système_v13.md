@@ -159,7 +159,7 @@ Professions possibles (le travail de nuit est à 25 % de chances) :
 	- Private sector Employee (commerce, etc.) : -1 HEAnom et donc HEA
 	- Public Servant (bibliothèque, piscine, cimetière, etc.) : /
 	- Teacher : +1 MEN
-	- Restaurant MAnager : -1 MEN
+	- Restaurant Manager : -1 MEN
 	- Park Keeper : +1 PHY, -1 MEN
 	- Hotel Manager : +1 HEA et donc HEA (travail de nuit possible)
 	- Historian : +1 MEN, -1 HEAnom et donc HEA
@@ -180,6 +180,8 @@ Professions possibles (le travail de nuit est à 25 % de chances) :
 	- Scientist : -1 PHY, +1 MEN
 	- Athlete : +1 PHY, -1 MEN, +1 HEAnom et donc HEA
 	- Vétérinarian : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
+	- Politician : -1 PHY, +2MEN, -1 HEAnom et donc HEA
+	- CEO : /, -1 HEAnom et donc HEA
 
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
