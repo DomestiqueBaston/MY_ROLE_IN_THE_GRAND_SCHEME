@@ -5,6 +5,8 @@
     {
       "name": "Discovery of Hidden Superego",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ005",
@@ -21,6 +23,8 @@
     {
       "name": "Dissemination of Extraterrestrial Genes",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ007",
@@ -32,6 +36,8 @@
     {
       "name": "Persistent Sexual Dissatisfaction",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ005",
@@ -44,6 +50,8 @@
     {
       "name": "Seeking Influence",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -57,6 +65,8 @@
     {
       "name": "Personal Revenge",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ005",
@@ -74,6 +84,8 @@
     {
       "name": "Hunting Reptilians",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ003",
         "OBJ005",
@@ -84,6 +96,8 @@
     {
       "name": "Perceived Humiliation",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -93,6 +107,8 @@
     {
       "name": "Anticipation of an Attack",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ015",
@@ -103,6 +119,8 @@
     {
       "name": "Deliberate Provocation",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -112,6 +130,8 @@
     {
       "name": "Impulsive Reaction to an Insult",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -121,6 +141,8 @@
     {
       "name": "Finding the Galactic Christ",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ015",
         "OBJ017",
@@ -130,6 +152,8 @@
     {
       "name": "Personal Revenge",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ012",
@@ -145,6 +169,8 @@
     {
       "name": "Need for Money",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ004",
         "OBJ008",
@@ -156,6 +182,8 @@
     {
       "name": "Bad Influence",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -166,6 +194,8 @@
     {
       "name": "Retrieving Compromising Evidence",
       "link": ["debt_influence"],
+      "victim_profession": ["Journalist", "Politician", "CEO", "Scientist", "Police_Officer", "Private_Sector_Employee"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ005",
@@ -176,6 +206,8 @@
     {
       "name": "Finding the First Edition of 'The Bio Revelation'",
       "link": [],
+      "victim_profession": ["Librarian", "Writer", "Bookseller", "Historian", "Curator"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ005",
         "OBJ020",
@@ -186,6 +218,8 @@
     {
       "name": "Stealing to Fund a Vice",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ008",
@@ -202,6 +236,8 @@
     {
       "name": "Psychological Manipulation",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -212,6 +248,8 @@
     {
       "name": "Obtaining Hidden Secrets",
       "link": ["debt_influence", "intimacy"],
+      "victim_profession": ["Journalist", "Politician", "CEO", "Scientist", "Police_Officer", "Private_Sector_Employee"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -223,6 +261,8 @@
     {
       "name": "Need for Money",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ008",
@@ -232,6 +272,8 @@
     {
       "name": "Revealing a Robotic Nature",
       "link": [],
+      "victim_profession": ["Scientist", "Engineer", "Journalist"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ023",
 		"OBJ045",
@@ -241,6 +283,8 @@
     {
       "name": "Personal Revenge",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ009",
@@ -255,6 +299,8 @@
     {
       "name": "Manufacturing and Distributing Mind-Control Substances",
       "link": [],
+      "victim_profession": ["Scientist", "Engineer", "Doctor", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ026",
         "OBJ028",
@@ -264,6 +310,8 @@
     {
       "name": "Reducing Production Costs",
       "link": [],
+      "victim_profession": ["Engineer", "CEO", "Private_Sector_Employee"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ025",
         "OBJ027",
@@ -273,6 +321,8 @@
     {
       "name": "Financial Fraud",
       "link": [],
+      "victim_profession": ["CEO", "Politician", "Private_Sector_Employee", "Journalist", "Real_Estate_Agent", "Engineer", "Scientist", "Merchant", "Hotel_Manager", "Public_Servant"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ007",
         "OBJ009",
@@ -285,6 +335,8 @@
     {
       "name": "Commercial Rivalry",
       "link": [],
+      "victim_profession": ["Merchant", "CEO", "Private_Sector_Employee", "Engineer", "Journalist", "Hotel_Manager", "Real_Estate_Agent", "Public_Servant", "Bookseller", "Hairdresser", "Restaurant_Manager"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
 		"OBJ025",
@@ -295,6 +347,8 @@
     {
       "name": "Personal Satisfaction",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ004",
         "OBJ012",
@@ -312,6 +366,8 @@
     {
       "name": "Quick Personal Enrichment",
       "link": [],
+      "victim_profession": ["Politician", "CEO", "Private_Sector_Employee", "Public_Servant", "Real_Estate_Agent", "Hotel_Manager", "Doctor", "Engineer", "Scientist", "Journalist", "Merchant"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
 		"OBJ026",
@@ -321,6 +377,8 @@
     {
       "name": "Advancing a Personal Agenda",
       "link": ["intimacy"],
+      "victim_profession": ["Politician", "CEO", "Public_Servant", "Scientist", "Engineer", "Real_Estate_Agent", "Hotel_Manager", "Merchant"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -332,6 +390,8 @@
     {
       "name": "Maintaining a Position of Power",
       "link": [],
+      "victim_profession": ["Politician", "CEO", "Public_Servant", "Journalist", "Scientist", "Engineer", "Police_Officer", "Military", "Hotel_Manager", "Real_Estate_Agent", "Firefighter", "Doctor", "Veterinarian", "Influencer"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ026",
@@ -341,6 +401,8 @@
     {
       "name": "Obtaining Credits to Prove Earth's Flatness",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
         "OBJ009",
@@ -350,6 +412,8 @@
     {
       "name": "Seeking Power",
       "link": [],
+      "victim_profession": ["Politician", "CEO", "Military", "Police_Officer", "Influencer"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -366,6 +430,8 @@
     {
       "name": "Desire to Avoid Trial",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
 		"OBJ035",
@@ -376,6 +442,8 @@
     {
       "name": "Escaping Pigeon-Drones",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ034",
@@ -386,6 +454,8 @@
     {
       "name": "Fleeing Telepathic Cats",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ033",
         "OBJ056",
@@ -395,6 +465,8 @@
     {
       "name": "Fear of Punishment",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -405,6 +477,8 @@
     {
       "name": "Refusal to Face Consequences",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -419,6 +493,8 @@
     {
       "name": "Will to Discredit",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -428,6 +504,8 @@
     {
       "name": "Masking the Cosmic Conspiracy by Revealing the Dream Society",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
         "OBJ037",
@@ -437,6 +515,8 @@
     {
       "name": "Protecting a Personal Secret",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -446,6 +526,8 @@
     {
       "name": "Professional Rivalry",
       "link": [],
+      "victim_profession": ["Real_Estate_Agent", "Cleaner", "Security_Guard", "Social_Worker", "Librarian", "Forklift_Operator", "Hairdresser", "Merchant", "Curator", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Historian", "Host", "Nightclub_Server", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Military", "Musician", "Firefighter", "Police_Officer", "Physical_Education_Teacher", "Psychologist", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -456,6 +538,8 @@
     {
       "name": "Personal Revenge",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -470,6 +554,8 @@
     {
       "name": "Ransom Demand",
       "link": ["debt_influence"],
+      "victim_profession": ["Politician", "CEO", "Private_Sector_Employee", "Hotel_Manager", "Real_Estate_Agent", "Merchant", "Scientist", "Engineer", "Journalist", "Doctor", "Veterinarian", "Teacher", "Firefighter", "Police_Officer", "Psychologist", "Historian", "Bookseller"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ004",
@@ -481,6 +567,8 @@
     {
       "name": "Ideological Motivations",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Politician", "Journalist", "Teacher", "Public_Servant", "Military", "Police_Officer", "Historian"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
 		"OBJ041",
@@ -490,6 +578,8 @@
     {
       "name": "Proving the Clone Theory",
       "link": [],
+      "victim_profession": ["Scientist", "Journalist", "Politician", "Engineer", "Doctor", "Psychologist"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ013",
         "OBJ039",
@@ -500,6 +590,8 @@
     {
       "name": "Human Trafficking",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ040",
         "OBJ041"
@@ -513,6 +605,8 @@
     {
       "name": "Ideological Benefits",
       "link": [],
+      "victim_profession": ["Politician", "Journalist", "Teacher", "Military", "Police_Officer", "Historian"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ044",
@@ -522,6 +616,8 @@
     {
       "name": "Compromising Digital Security",
       "link": [],
+      "victim_profession": ["Scientist", "Engineer", "Journalist", "CEO", "Private_Sector_Employee", "Public_Servant", "Game_Developer", "Police_Officer"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ031",
         "OBJ046",
@@ -533,6 +629,8 @@
     {
       "name": "Controlling Sensitive Information",
       "link": [],
+      "victim_profession": ["Politician", "CEO", "Public_Servant", "Journalist", "Scientist", "Engineer", "Police_Officer", "Military"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ045",
         "OBJ046",
@@ -543,6 +641,8 @@
     {
       "name": "Industrial Espionage",
       "link": [],
+      "victim_profession": ["CEO", "Private_Sector_Employee", "Engineer", "Scientist", "Journalist", "Politician"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ031",
         "OBJ044",
@@ -553,6 +653,8 @@
     {
       "name": "Pathological Curiosity",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ013",
@@ -562,6 +664,8 @@
     {
       "name": "Retrieving the Light Hamburger Recipe",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ043",
 		"OBJ059",
@@ -576,6 +680,8 @@
     {
       "name": "Financial Need",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ079",
@@ -585,6 +691,8 @@
     {
       "name": "Funding the Humans for Venus Experiments (H4VE)",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
         "OBJ048",
@@ -594,6 +702,8 @@
     {
       "name": "Seeking Power",
       "link": ["debt_influence"],
+      "victim_profession": ["Politician", "CEO", "Public_Servant", "Military", "Police_Officer", "Journalist", "Scientist", "Engineer", "Influencer"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -604,6 +714,8 @@
     {
       "name": "Punishment or Revenge",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -612,7 +724,9 @@
     },
     {
       "name": "Destroying an Enemy",
-      "link": ["debt_influence"],
+      "link": ["enemy", "debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -622,6 +736,8 @@
     {
       "name": "Obtaining Information",
       "link": ["debt_influence", "intimacy"],
+      "victim_profession": ["Politician", "CEO", "Public_Servant", "Journalist", "Scientist", "Engineer", "Police_Officer", "Military", "Psychologist", "Doctor", "Real_Estate_Agent", "Hotel_Manager", "Private_Sector_Employee", "Influencer", "Historian"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ009",
@@ -637,6 +753,8 @@
     {
       "name": "Uncovering Evidence of Quantum Manipulation of Elections",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Politician", "Journalist", "Scientist", "Engineer", "Public_Servant"],
+      "culprit_profession": [],
       "evidence": [
 		"OBJ012",
 		"OBJ026",
@@ -650,6 +768,8 @@
 	{
       "name": "Fabrication of False Financial Reports",
       "link": ["debt_influence"],
+      "victim_profession": ["CEO", "Politician", "Private_Sector_Employee", "Public_Servant", "Real_Estate_Agent", "Hotel_Manager", "Merchant", "Bookseller", "Hairdresser", "Restaurant_Manager"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ009",
@@ -660,6 +780,8 @@
     {
       "name": "Funding Insurance against the Gorgoufle Invasion",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ026",
         "OBJ049",
@@ -670,6 +792,8 @@
     {
       "name": "Manipulating Documents to Alter Results",
       "link": [],
+      "victim_profession": ["Politician", "CEO", "Public_Servant", "Private_Sector_Employee", "Journalist", "Scientist", "Engineer", "Teacher", "Historian"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ026",
         "OBJ029",
@@ -680,6 +804,8 @@
     {
       "name": "Obtaining Services Without Paying",
       "link": [],
+      "victim_profession": ["Merchant", "Hotel_Manager", "Restaurant_Manager", "Bookseller", "Hairdresser", "Private_Sector_Employee", "Doctor", "Veterinarian", "Psychologist", "Mechanic", "Engineer", "Real_Estate_Agent"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ026",
@@ -691,6 +817,8 @@
     {
       "name": "Future Profit",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
         "OBJ024",
@@ -708,6 +836,8 @@
     {
       "name": "Psychological Domination",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -715,8 +845,10 @@
       ]
     },
     {
-      "name": "Misogynistic Intimidation",
+      "name": "Sexist Intimidation",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -726,6 +858,8 @@
     {
       "name": "Seeking Supernatural Powers",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ063",
 		"OBJ081"
@@ -734,6 +868,8 @@
     {
       "name": "Revealing the Power of Black Magic",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ050",
         "OBJ056"
@@ -742,6 +878,8 @@
     {
       "name": "Professional Rivalry",
       "link": [],
+      "victim_profession": ["Real_Estate_Agent", "Cleaner", "Security_Guard", "Social_Worker", "Librarian", "Forklift_Operator", "Hairdresser", "Merchant", "Curator", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Historian", "Host", "Nightclub_Server", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Military", "Musician", "Firefighter", "Police_Officer", "Physical_Education_Teacher", "Psychologist", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
         "OBJ036",
@@ -751,6 +889,8 @@
     {
       "name": "Personal Revenge",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -765,6 +905,8 @@
     {
       "name": "Destroying Evidence",
       "link": ["debt_influence"],
+      "victim_profession": ["Police_Officer", "Private_Sector_Employee", "Public_Servant", "Journalist", "Scientist", "Engineer", "CEO", "Politician"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ031",
@@ -775,6 +917,8 @@
     {
       "name": "Distracting from the Power of Rain",
       "link": [],
+      "victim_profession": ["Scientist", "Journalist", "Engineer", "Firefighter", "Politician"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
 		"OBJ052",
@@ -784,6 +928,8 @@
     {
       "name": "Pyromaniac Satisfaction",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ051",
         "OBJ053"
@@ -792,6 +938,8 @@
     {
       "name": "Ideological Claim",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
 		"OBJ016",
@@ -801,6 +949,8 @@
     {
       "name": "Fiery Revenge",
       "link": [],
+      "victim_profession": ["Firefighter", "Police_Officer", "Security_Guard", "Engineer", "Military", "Real_Estate_Agent"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
 		"OBJ051",
@@ -815,6 +965,8 @@
     {
       "name": "Obsession with a Place",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ005",
 		"OBJ013",
@@ -824,6 +976,8 @@
     {
       "name": "Preparing a Satanic Mass",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ054",
         "OBJ056",
@@ -833,6 +987,8 @@
     {
       "name": "Searching for Secrets",
       "link": [],
+      "victim_profession": ["Journalist", "Historian", "Scientist", "Police_Officer", "CEO", "Politician"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ004",
         "OBJ005",
@@ -842,6 +998,8 @@
     {
       "name": "Looking for Information",
       "link": [],
+      "victim_profession": ["Journalist", "Scientist", "Historian", "Librarian", "Police_Officer", "Curator", "CEO", "Politician", "Engineer", "Designer", "Game_Developer"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ004",
         "OBJ005",
@@ -852,6 +1010,8 @@
     {
       "name": "Attempting a More Serious Crime",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ021",
@@ -861,6 +1021,8 @@
     {
       "name": "Compulsive Voyeurism",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ005",
         "OBJ006",
@@ -875,6 +1037,8 @@
     {
       "name": "Systemic Humiliation",
       "link": [],
+      "victim_profession": ["Public_Servant", "Teacher", "Private_Sector_Employee", "Security_Guard", "Cleaner", "Restaurant_Manager", "Nightclub_Server", "Hotel_Manager", "Unemployed", "Social_Worker", "Librarian", "Mechanic", "Artist"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ012",
@@ -884,6 +1048,8 @@
     {
       "name": "Proving that Beavers Control the World",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ055",
         "OBJ063"
@@ -892,6 +1058,8 @@
     {
       "name": "Vicious Psychopathy",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
 		"OBJ015",
@@ -901,6 +1069,8 @@
     {
       "name": "Extreme Sadism",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ015",
@@ -915,6 +1085,8 @@
     {
       "name": "Eliminating a Child-Eating Communist",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ015",
         "OBJ056",
@@ -924,6 +1096,8 @@
     {
       "name": "Pathological Jealousy",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ015",
@@ -934,6 +1108,8 @@
     {
       "name": "Fear of Being Discovered",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ002",
@@ -944,6 +1120,8 @@
     {
       "name": "Murderous Psychopathy",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ015",
@@ -953,6 +1131,8 @@
     {
       "name": "Eliminating a Rival",
       "link": [],
+      "victim_profession": ["CEO", "Politician", "Private_Sector_Employee", "Merchant", "Designer", "Engineer", "Game_Developer", "Journalist", "Musician", "Athlete", "Influencer"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ015",
@@ -962,6 +1142,8 @@
     {
       "name": "Vigilante Justice",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ015",
@@ -976,6 +1158,8 @@
     {
       "name": "Compromising Corporate Security",
       "link": [],
+      "victim_profession": ["CEO", "Public_Servant", "Engineer", "Designer", "Game_Developer", "Scientist", "Private_Sector_Employee", "Journalist"],
+      "culprit_profession": [],
       "evidence": [
 		"OBJ047",
 		"OBJ059",
@@ -985,6 +1169,8 @@
     {
       "name": "Ideological Hacktivism",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Journalist", "Scientist", "Politician", "Public_Servant", "Engineer", "CEO", "Private_Sector_Employee", "Activist"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ031",
 		"OBJ045",
@@ -994,6 +1180,8 @@
     {
       "name": "Proving the Malice of Quercus Castoreum",
       "link": ["ideological_affinity],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ056",
         "OBJ059",
@@ -1003,6 +1191,8 @@
     {
       "name": "Instant Financial Gain",
       "link": ["debt_influence"],
+      "victim_profession": ["Merchant", "Small_Business_Owner", "CEO", "Private_Sector_Employee", "Public_Servant", "Influencer", "Journalist", "Mechanic", "Doctor", "Military", "Musician", "Police_Officer", "Firefighter", "Athlete", "Veterinarian"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ009",
@@ -1015,6 +1205,8 @@
     {
       "name": "Seeking Sensitive Data",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Engineer", "Journalist", "Scientist", "Politician", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ045",
         "OBJ058",
@@ -1025,6 +1217,8 @@
     {
       "name": "Personal Satisfaction",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ031",
 		"OBJ058",
@@ -1039,6 +1233,8 @@
     {
       "name": "Drug Addiction",
       "link": [],
+      "victim_profession": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1049,6 +1245,8 @@
     {
       "name": "Urgent Need for Money",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -1060,6 +1258,8 @@
     {
       "name": "Sex Addiction",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1070,6 +1270,8 @@
     {
       "name": "Exploitation of Vulnerability",
       "link": ["intimacy"],
+      "victim_profession": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ012",
@@ -1079,6 +1281,8 @@
     {
       "name": "Financing a Ticket to Mars",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
 		"OBJ009",
@@ -1093,6 +1297,8 @@
     {
       "name": "Dire Need for Money",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ006",
@@ -1103,6 +1309,8 @@
     {
       "name": "Funding the Powerful Crystalized Sodium Culinary Cartel",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
         "OBJ009",
@@ -1112,6 +1320,8 @@
     {
       "name": "Threat-Based Submission",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -1126,6 +1336,8 @@
     {
       "name": "Hiding Crime Traces",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ026",
@@ -1135,6 +1347,8 @@
     {
       "name": "Diversion of Stolen Goods",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ004",
         "OBJ022",
@@ -1144,6 +1358,8 @@
     {
       "name": "Financial Profit",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ022",
@@ -1154,6 +1370,8 @@
     {
       "name": "Protecting Evidence of Sabbat Mater",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ022",
         "OBJ056",
@@ -1169,6 +1387,8 @@
     {
       "name": "Power Demonstration",
       "link": ["ideological_affinity"],
+      "victim_profession": ["CEO", "Politician", "Engineer", "Military", "Doctor", "Scientist", "Journalist", "Private_Sector_Employee", "Public_Servant"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ067",
@@ -1178,6 +1398,8 @@
     {
       "name": "Preventing the Spread of Picovirus",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Doctor", "Scientist", "Military", "Public_Servant", "Engineer", "Private_Sector_Employee"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ056",
@@ -1187,6 +1409,8 @@
     {
       "name": "Ideological Claim",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Politician", "Journalist", "Influencer", "Writer", "Scientist", "Historian", "Public_Servant", "Teacher"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
 		"OBJ045",
@@ -1196,6 +1420,8 @@
     {
       "name": "Professional Rivalry",
       "link": [],
+      "victim_profession": ["Real_Estate_Agent", "Merchant", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Restaurant_Manager", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Musician", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
 		"OBJ058",
@@ -1205,6 +1431,8 @@
     {
       "name": "Strategic Revenge through Targeted Destruction",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Real_Estate_Agent", "Security_Guard", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Curator", "Influencer", "Journalist", "Mechanic", "Police_Officer", "Psychologist", "Scientist", "Veterinarian", "Politician", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ067",
@@ -1219,6 +1447,8 @@
     {
       "name": "Creating Large-Scale Chaos",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Military", "Engineer", "Scientist", "Police_Officer", "Politician", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
         "OBJ016",
@@ -1228,6 +1458,8 @@
     {
       "name": "Extreme and Morbid Psychopathy",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ015",
         "OBJ051",
@@ -1238,6 +1470,8 @@
     {
       "name": "Ideological Claim",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Politician", "CEO", "Journalist", "Scientist", "Teacher"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ015",
@@ -1247,6 +1481,8 @@
     {
       "name": "Terrorizing the Annunaki",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
         "OBJ016",
@@ -1263,6 +1499,8 @@
     {
       "name": "Creating a Clown Clone for Infinite Immortality",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
         "OBJ009",
@@ -1273,6 +1511,8 @@
     {
       "name": "Personal Addiction",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
         "OBJ063",
@@ -1282,6 +1522,8 @@
     {
       "name": "Exploitation of Human Vulnerabilities",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ008",
@@ -1291,6 +1533,8 @@
     {
       "name": "Illegal Financial Profit from Drugs, Slavery, etc.",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -1308,6 +1552,8 @@
     {
       "name": "Need for a New Identity",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
         "OBJ041",
@@ -1317,6 +1563,8 @@
     {
       "name": "Digital Financial Fraud",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ058",
@@ -1327,6 +1575,8 @@
     {
       "name": "Launching the Multiple Doppelganger Operation",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
 		"OBJ041",
@@ -1337,6 +1587,8 @@
     {
       "name": "Social and Digital Manipulation",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
         "OBJ042",
@@ -1347,6 +1599,8 @@
     {
       "name": "Stealing Confidential Information",
       "link": [],
+      "victim_profession": ["Politician", "CEO", "Journalist", "Scientist", "Engineer", "Military", "Police_Officer", "Public_Servant", "Doctor", "Psychologist"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ058",
         "OBJ059",
@@ -1361,6 +1615,8 @@
     {
       "name": "Evidence Concealment",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ026",
 		"OBJ031",
@@ -1370,6 +1626,8 @@
     {
       "name": "Various Frauds",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ026",
@@ -1380,6 +1638,8 @@
     {
       "name": "Manipulating Results",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Politician", "Journalist", "Scientist", "Influencer", "CEO"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ026",
         "OBJ031",
@@ -1389,6 +1649,8 @@
     {
       "name": "Taking the Place of the Grand Sphinctorum Diqpic",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ058",
         "OBJ063",
@@ -1398,6 +1660,8 @@
     {
       "name": "Illegal Financial Profit",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ026",
@@ -1414,6 +1678,8 @@
     {
       "name": "Recurring Financial Need",
       "link": ["debt_influence"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ001",
         "OBJ008",
@@ -1428,6 +1694,8 @@
     {
       "name": "Creating a Parallel Market",
       "link": [],
+      "victim_profession": ["Merchant", "CEO", "Private_Sector_Employee", "Politician", "Influencer", "Librarian", "Hairdresser", "Restaurant_Manager", "Hotel_Manager", "Bookseller"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ009",
@@ -1441,6 +1709,8 @@
     {
       "name": "Funding a Personal Addiction",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ008",
         "OBJ060",
@@ -1450,6 +1720,8 @@
     {
       "name": "Financial Profit",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ009",
         "OBJ022",
@@ -1462,6 +1734,8 @@
     {
       "name": "Spreading Intimate Thought Recorders",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ059",
@@ -1477,6 +1751,8 @@
     {
       "name": "Playing Giant Tic-Tac-Toe Just Because We Can!",
       "link": [],
+      "victim_profession": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -1488,6 +1764,8 @@
     {
       "name": "Marking a Territory",
       "link": [],
+      "victim_profession": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -1497,6 +1775,8 @@
     {
       "name": "Artistic Protest",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ012",
@@ -1506,6 +1786,8 @@
     {
       "name": "Revealing the Existence of the Visual Chaos Project",
       "link": ["ideological_affinity"],
+      "victim_profession": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
+      "culprit_profession": [],
       "evidence": [
         "OBJ012",
         "OBJ063",
@@ -1515,6 +1797,8 @@
     {
       "name": "Material Revenge Against Property",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
 		"OBJ015",
@@ -1529,6 +1813,8 @@
     {
       "name": "Convincing of the Need for a Male for Good",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ056",
@@ -1539,6 +1825,8 @@
     {
       "name": "Degradation of the Victim",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1548,6 +1836,8 @@
     {
       "name": "Absolute Domination Through Humiliation",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1557,6 +1847,8 @@
     {
       "name": "Extreme Sexual Frustration",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ014",
@@ -1566,6 +1858,8 @@
     {
       "name": "Launch the Operation Incubation of the Burnes Larvae",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ019",
@@ -1576,6 +1870,8 @@
     {
       "name": "Sadistic Pleasure",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
 		"OBJ015",
@@ -1585,6 +1881,8 @@
     {
       "name": "Psychological Revenge",
       "link": ["intimacy"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ006",
@@ -1600,6 +1898,8 @@
     {
       "name": "Urgent Need for Money",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -1611,6 +1911,8 @@
     {
       "name": "Demonstrating the Possibility of a Swift Robbery",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ021",
@@ -1620,6 +1922,8 @@
     {
       "name": "Personal Pleasure",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ004",
         "OBJ021",
@@ -1630,6 +1934,8 @@
     {
       "name": "Extreme Poverty",
       "link": [],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ002",
         "OBJ004",
@@ -1642,6 +1948,8 @@
     {
       "name": "Acquiring the Secrets of LI+11",
       "link": ["ideological_affinity"],
+      "victim_profession": [],
+      "culprit_profession": [],
       "evidence": [
         "OBJ006",
         "OBJ058",
