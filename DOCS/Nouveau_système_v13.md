@@ -747,6 +747,7 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		1 Coupable
 		1 Evidence
 		1 Mobile
+		1 Lien (s’il y a lieu)
 	- Dans ce même cadre, voici les éléments possiblement nécessaires suivant les types d’enquêtes et la difficulté de l’enquête à résoudre :
 		1 Complice
 	- Bien entendu, certaines enquêtes en demanderont éventuellement plusieurs de chaque type.
