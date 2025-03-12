@@ -643,7 +643,7 @@ Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
-		Difficulté = round(0.5 + ((nombre de victimes - 1) + (nombre de coupables - 1) + (nombre de complices / 2) + (nombre de suspects / 2) + (nombre de témoins témoins / 2) + nombre d’evidences et liens) / 13 * 5)
+		Difficulté=max(1,min(5,round(0.5+(nombre de victimes−1)+(nombre de coupables−1)+(nombre de complices÷2)+((3−nombre de suspects)÷2)+((3−nombre de témoins)÷2)+min((nombre de évidences+1 lien),4)÷8×5))) 
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
 	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously).
@@ -654,6 +654,11 @@ Enquête
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Le niveau de difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
+
+Lieu du crime et Lieu secret
+	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence.
+	- Le domicile du/des coupable(s) aussi.
+	- Le/les Lieux secrets des coupables/complices sont au moins le lieu du crime
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
 	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).
@@ -674,22 +679,22 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens : À définir, par exemple :
-          Blanc : Présence (dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. Le seul moyen de savoir si un PNJ suit effectivement son emploi du temps et de se rendre sur place)
+          Blanc : Présence (dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. Le seul moyen de savoir si un PNJ suit effectivement son emploi du temps et de se rendre sur place) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
-          Noir : Coupable/Complice/Preuve (seuls liens habilités à la validation des enquêtes) Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
+          Noir : Coupable/Complice/Preuve Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
           Rose : Intime (pas exploité dans toutes les enquêtes)
           Vert foncé : Ami (pas exploité dans toutes les enquêtes)
 Orange : Ennemi (pas exploité dans toutes les enquêtes)
-Bleu clair : Connaissance
+Bleu clair : Connaissance (pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
-Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
-Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution…
-          Vert clair : Propriété
-          Marron : Domicile
-Turquoise : Travail
-Bleu très foncé : Lieu fréquenté
-Violet clair : Trouvé (sert à se souvenir d’où vient un objet)
-          Violet foncé : nouveaux liens (issus des interactions Dialogue ou Investigation, toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet »)
+Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
+Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
+          Vert clair : Propriété NE SERT PAS À VALIDER UNE ENQUÊTE.
+          Marron : Domicile NE SERT PAS À VALIDER UNE ENQUÊTE.
+Turquoise : Travail NE SERT PAS À VALIDER UNE ENQUÊTE.
+Bleu très foncé : Lieu fréquenté NE SERT PAS À VALIDER UNE ENQUÊTE.
+Violet clair : Trouvé (sert à se souvenir d’où vient un objet) NE SERT PAS À VALIDER UNE ENQUÊTE.
+          Violet foncé : nouveaux liens (issus des interactions Dialogue ou Investigation, toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ») NE SERT PAS À VALIDER UNE ENQUÊTE.
 
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté et bonus/malus aux jets de dé
@@ -753,4 +758,3 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 		- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
 		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
-
