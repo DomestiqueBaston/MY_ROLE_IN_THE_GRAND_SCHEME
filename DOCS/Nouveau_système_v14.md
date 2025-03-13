@@ -143,45 +143,46 @@ Niveau de Wanted	Malus au Dé
 5	Prison
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
-	- Real Estate Agent : +1 MEN, -1 HEAnom et donc HEA
+	- Real Estate Agent : +1 MEN, -1 HEAnom et donc -1 HEA
 	- Cleaner : +1 PHY (travail de nuit possible)
 	- Security Guard : +1 PHY, -1 MEN (travail de nuit possible)
-	- Social Worker : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
-	- Librarian : +1 MEN, -1 HEAnom et donc HEA
+	- Social Worker : -1 PHY, +1 MEN, +1 HEAnom et donc +1 HEA
+	- Librarian : +1 MEN, -1 HEAnom et donc -1 HEA
 	- Forklift Operator : +1 PHY (travail de nuit possible)
-	- Unemployed : +1 PHY ou +1 MEN ou +1 HEAnom et donc HEA, -1 aux deux autres
-	- Hairdresser : +1 MEN, -1 HEAnom et donc HEA
+	- Unemployed : +1 PHY ou +1 MEN ou +1 HEAnom et donc +1 HEA, -1 aux deux autres (travail de nuit possible)
+	- Hairdresser : +1 MEN, -1 HEAnom et donc -1 HEA
 	- Merchant (alimentaire, vêtements, marché aux puces, etc.) : /
 	- Curator : +1 MEN
 	- Game dev’ : -1 PHY, +1 MEN
 	- Designer : -1 PHY, +1 MEN
-	- Writer : -1 PHY, +1 MEN, -1 HEAnom et donc HEA (travail de nuit possible)
-	- Private sector Employee (commerce, etc.) : -1 HEAnom et donc HEA
+	- Writer : -1 PHY, +1 MEN, -1 HEAnom et donc -1 HEA (travail de nuit possible)
+	- Private sector Employee (commerce, etc.) : -1 HEAnom et donc -1 HEA
 	- Public Servant (bibliothèque, piscine, cimetière, etc.) : /
 	- Teacher : +1 MEN
 	- Restaurant Manager : -1 MEN
 	- Park Keeper : +1 PHY, -1 MEN
 	- Hotel Manager : +1 HEA et donc HEA (travail de nuit possible)
-	- Historian : +1 MEN, -1 HEAnom et donc HEA
+	- Historian : +1 MEN, -1 HEAnom et donc -1 HEA
 	- Host (de jeu, concert, cinéma, hôtel, théâtre, bar, café, cybercafé) : -1 PHY, +1 MEN (travail de nuit possible)
-	- Nightclub server : -1 MEN, -1 HEAnom et donc HEA (travail de nuit obligatoire)
-	- Engineer : +1 MEN, -1 HEAnom et donc HEA
+	- Nightclub server : -1 MEN, -1 HEAnom et donc -1 HEA (travail de nuit obligatoire)
+	- Engineer : +1 MEN, -1 HEAnom et donc -1 HEA
 	- Influencer : +1 PHY, -1 MEN
-	- Journalist : +1 MEN, -1 HEAnom et donc HEA
+	- Journalist : +1 MEN, -1 HEAnom et donc -1 HEA
 	- Bookseller : -2 PHY, +2 MEN
 	- Mechanic : +1 PHY, -1 MEN
-	- Doctor : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
+	- Doctor : -1 PHY, +1 MEN, +1 HEAnom et donc +1 HEA
 	- Military : +1 PHY, -1 MEN (travail de nuit possible)
 	- Musician : -1 PHY, +1 HEAnom et donc HEA
 	- Firefighter : +1 PHY, -1 HEAnom et donc HEA (travail de nuit possible)
 	- Police Officer : +1 PHY, -1 MEN (travail de nuit possible)
-	- Physical Education Teacher : +1 PHY, +1 HEAnom et donc HEA
-	- Psychologist : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
-	- Scientist : -1 PHY, +1 MEN
-	- Athlete : +1 PHY, -1 MEN, +1 HEAnom et donc HEA
-	- Vétérinarian : -1 PHY, +1 MEN, +1 HEAnom et donc HEA
-	- Politician : -1 PHY, +2MEN, -1 HEAnom et donc HEA
-	- CEO : /, -1 HEAnom et donc HEA
+	- Physical Education Teacher : +1 PHY, +1 HEAnom et donc +1 HEA
+	- Psychologist : -1 PHY, +1 MEN, +1 HEAnom et donc +1 HEA
+	- Scientist : -1 PHY, +2 MEN
+	- Athlete : +1 PHY, -1 MEN, +1 HEAnom et donc +1 HEA
+	- Veterinarian : -1 PHY, +1 MEN
+	- Politician : -1 PHY, +2MEN, -1 HEAnom et donc -1 HEA
+	- CEO : /, -1 HEAnom et donc -1 HEA
+	-  Certains lieux ont des horaires d’ouverture « incompatibles » avec les horaires de travail des PNJs y travaillant cela implique qu’il sont sur leur lieu de travail mais que le joueur ne peut pas y entrer (à moins de forcer l’accès !)…
 
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
@@ -421,7 +422,7 @@ Cartes de Lieu
 	- Elles servent également à savoir si un lieu est ouvert ou fermé le week-end.
 	- Une fois jouées, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Lieu (uniquement).
-	- À moins d’y interagir, le joueur doit quitter un Lieu à chaque changement de tranche horaire.
+	- À moins d’y être en interaction, le joueur doit quitter un Lieu à chaque changement de tranche horaire.
 
 Cartes Objet
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
@@ -464,7 +465,7 @@ Les interactions : Dialogue, Combat et Investigation
 		- La pile PNJ qui est la pile contenant les (autres) cartes PNJ liées à l’enquête. Pas de Bonus/Malus.
 		- La pile Objets qui est la pile des cartes Objets non qualifiées d’Evidence. Pas de Bonus/Malus.
 		- La pile Lieu qui est la pile des cartes Lieu liées à l’enquête. Pas de Bonus/Malus.
-		- Pour se débarrasser de cartes, on fait, sur une carte : clic droit, « Discard ». Toute carte rejetée fait perdre tous les liens qui y menaient dans Main.tscn. À noter que rien n’empêche le joueur de retomber ultérieurement sur des cartes/infos rejetées (heureusement, parce qu’en cas d’erreur…).
+		- Pour se débarrasser de cartes, on fait, sur une carte : clic droit, « Discard ». Toute carte rejetée fait perdre tous les liens qui y menaient dans Main.tscn. À noter que rien n’empêche le joueur de retomber ultérieurement lors de nouvelles interactions sur des cartes/infos rejetées (heureusement, parce qu’en cas d’erreur…).
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
 	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir en cas de Combat mais ça n’est pas vraiment une annulation).
@@ -508,8 +509,8 @@ Dialogue
 	- En cas de réussite critique, le joueur prend ±1Emo → 0 ainsi qu’1 information cachée (voir règle suivante).
 	- Pour la révélation d’une information cachée d’un PNJ, le joueur doit avoir eu une marge de réussite de 3+ au jet de dé de Dialogue, une réussite critique ou avoir utilisé une carte Dialogue « Question piège ».
 	- Les informations obtenues sont choisies aléatoirement parmi celles obtenables auprès du PNJ.
-	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (n’est pas une preuve en réalité) rajoute un malus de 1 au jet de dé.
-	- Chances que chaque information donnée soit fausse (errare humanum est) :
+	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (pas une « vraie » preuve en réalité) rajoute un malus de 1 au jet de dé.
+	- Chances que chaque information donnée soit fausse (par erreur ou mensonge, peu importe) :
 		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
 		Auprès d’1 Coupable : (5+MEN)/(15+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (3+MEN)/(18+MEN) (prioritaire par rapport à Témoin/Suspect)
@@ -658,7 +659,6 @@ Enquête
 Lieu du crime et Lieu secret
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence.
 	- Le domicile du/des coupable(s) aussi.
-	- Le/les Lieux secrets des coupables/complices sont au moins le lieu du crime
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
 	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).

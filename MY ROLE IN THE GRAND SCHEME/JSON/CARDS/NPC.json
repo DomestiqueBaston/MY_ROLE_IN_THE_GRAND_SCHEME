@@ -40,9 +40,8 @@
 
     "home": ["LOCxxx"],
     "work": ["LOCxxx"],
-    "owned_work_place": "no",  // "yes" ou "no" but probably useless...
-    "hangouts": ["LOCxxx"],  // de 1 à 2
-    "secret_hangout": ["LOCxxx"],  // de 0 à 1
+    "hangouts": ["LOCxxx"],  // de 1 à 2 (voir liste des possibles dans Location.json avec "hangout": ["yes"])
+    "secret_hangout": ["LOCxxx"],  // de 0 à 1 (voir liste des possibles dans Location.json avec "hangout": ["secret"])
 
     "property": [
       {

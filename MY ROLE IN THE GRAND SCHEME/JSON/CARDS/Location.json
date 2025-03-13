@@ -8,9 +8,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
 	"impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["N/A"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["n/a"],
+	"hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -22,9 +23,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1"}
@@ -40,9 +42,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Afternoon", "Evening", "Night", "WE_Afternoon", "WE_Evening", "WE_Night"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening",],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -58,9 +61,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Break-in"],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "WE_Morning", "WE_Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no", "secret"],
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -76,9 +80,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -90,9 +95,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -108,9 +114,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Combat"],
     "not_needed_actions": ["Break-in"],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"PHY": "+1", "MEN": "-1"}
@@ -126,9 +133,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": ["Break-in"],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no", "secret"],
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -144,9 +152,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1"}
@@ -155,16 +164,17 @@
   },
   {
     "id": "LOC010",
-    "name": "Nightclub",
+    "name": "nightclub",
     "type": "Location",
     "description": "A place where 'music' is barely recognizable anymore",
     "property": [],
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Night", "WE_Night"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["night", "we_night"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -180,9 +190,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -198,9 +209,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Afternoon", "Evening", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -216,9 +228,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening"],
+    "hangout": ["no", "secret"],
     "bonus_malus": [
       {
         "effects": {"HEA": "-1"}
@@ -234,9 +247,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening"],
+    "hangout": ["no", "secret"],
     "bonus_malus": [
       {
         "effects": {"PHY": "+1"}
@@ -252,9 +266,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": ["Break-in"],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1", "HEA": "+1"}
@@ -270,9 +285,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no", "secret"],
     "bonus_malus": []
   },
   {
@@ -284,9 +300,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Break-in"],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -302,9 +319,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1", "MEN": "-1"}
@@ -320,9 +338,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -338,9 +357,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "WE_Morning", "WE_Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["yes", "secret"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1"}
@@ -356,9 +376,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Break-in"],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1"}
@@ -374,9 +395,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": ["Break-in"],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["yes", "secret"],
     "bonus_malus": []
   },
   {
@@ -388,9 +410,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1"}
@@ -406,9 +429,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Break-in"],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "WE_Morning", "WE_Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -424,9 +448,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["no", "secret"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -442,9 +467,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Afternoon", "Evening", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -460,9 +486,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Afternoon", "Evening", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"PHY": "-1", "MEN": "+1"}
@@ -478,9 +505,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"PHY": "+1", "MEN": "-1"}
@@ -496,9 +524,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening"],
+    "hangout": ["yes", "secret"],
     "bonus_malus": [
       {
         "effects": {"PHY": "+1"}
@@ -514,9 +543,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no", "secret"],
     "bonus_malus": []
   },
   {
@@ -528,9 +558,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Break-in"],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "WE_Morning", "WE_Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -542,9 +573,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Combat"],
     "not_needed_actions": ["Break-in"],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -560,9 +592,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Combat"],
     "not_needed_actions": ["Break-in"],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["H24"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no"],
     "bonus_malus": [
       {
         "effects": {"PHY": "+1"}
@@ -578,9 +611,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -596,9 +630,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "WE_Morning", "WE_Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -610,9 +645,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -624,9 +660,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -638,9 +675,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Break-in"],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "WE_Morning", "WE_Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -652,9 +690,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -666,9 +705,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -680,9 +720,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "WE_Morning", "WE_Afternoon"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -694,9 +735,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["no"],
     "bonus_malus": []
   },
   {
@@ -708,9 +750,10 @@
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
-    "contenu_trouvable": [],
-    "contenu_cache": [],
-    "open_hours": ["Morning", "Afternoon", "Evening", "WE_Morning", "WE_Afternoon", "WE_Evening"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+    "hangout": ["yes", "secret"],
     "bonus_malus": []
   }
 ]
