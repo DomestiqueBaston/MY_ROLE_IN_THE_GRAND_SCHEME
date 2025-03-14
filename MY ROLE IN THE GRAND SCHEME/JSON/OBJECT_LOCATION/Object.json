@@ -1,10 +1,11 @@
 [
   {
     "id": "OBJ001",
+	"obj_id": "OBJ001_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Debt aknowledgment",
     "description": "Potentially useful in resolving financial disputes",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx", "NPCxxx"],
 	"comment": "Il FAUT 2 propriétaires",
     "evidence": ["yes", "no"],
@@ -12,50 +13,55 @@
   },
   {
     "id": "OBJ002",
+	"obj_id": "OBJ002_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "DNA sample",
     "description": "Rarely leaves any doubt as to its origin",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ003",
+	"obj_id": "OBJ003_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Unknown DNA sample",
     "description": "Even of unknown origin, DNA can talk",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ004",
+	"obj_id": "OBJ004_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Fingerprints",
     "description": "Old-school style. It works just as well to find someone.",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ005",
+	"obj_id": "OBJ005_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Key",
     "description": "It could link someone to a crime scene",
-    "found": ["LOCxxx", "NPCxxx"],
-    "property": ["NPCxxx", "LOCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
+    "property": ["NPCxxx", "LOCxxxIDxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ006",
+	"obj_id": "OBJ006_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Recording",
     "description": "May contain relevant compromising material",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx", "NPCxxx", "NPCxxx"],
 	"comment": "il peut y avoir jusqu'à 3 propriétaires qui sont les personnes enregistrées",
     "evidence": ["yes", "no"],
@@ -63,60 +69,66 @@
   },
   {
     "id": "OBJ007",
+	"obj_id": "OBJ007_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Jeweler's bill",
     "description": "This could reveal something that shouldn't have happened",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ008",
+	"obj_id": "OBJ008_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "A large amount of money in bills",
     "description": "That much cash could mean an illegal transaction",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ009",
+	"obj_id": "OBJ009_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Bank receipt",
     "description": "A document proving a bank transaction",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ010",
+	"obj_id": "OBJ010_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Lingerie",
     "description": "Women's undergarments that shouldn't have been found there",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ011",
+	"obj_id": "OBJ011_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Book",
     "description": "Manual of Transcendental Spirituality",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
     {
     "id": "OBJ012",
+	"obj_id": "OBJ012_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Message",
     "description": "A communication that could serve as evidence",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx", "NPCxxx"],
 	"comment": "Il FAUT 2 propriétaires",
     "evidence": ["yes", "no"],
@@ -124,10 +136,11 @@
   },
   {
     "id": "OBJ013",
+	"obj_id": "OBJ013_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Photograph",
     "description": "A rather explicit scene in context",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx", "NPCxxx", "NPCxxx"],
 	"comment": "il peut y avoir jusqu'à 3 propriétaires qui sont les personnes photographiées",
     "evidence": ["yes", "no"],
@@ -135,10 +148,11 @@
   },
   {
     "id": "OBJ014",
+	"obj_id": "OBJ014_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Condom",
     "description": "Even empty, it's still a valid clue. And full...",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx", "NPCxxx"],
 	"comment": "il FAUT 2 propriétaires",
     "evidence": ["yes", "no"],
@@ -146,460 +160,506 @@
   },
   {
     "id": "OBJ015",
+	"obj_id": "OBJ015_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Weapon",
     "description": "They're rarely used just to make mashed potatoes",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ016",
+	"obj_id": "OBJ016_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Explosive",
     "description": "There's more than enough to make one hell of a firework",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ017",
+	"obj_id": "OBJ017_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Book",
     "description": "Book of the Galactic Prophecy",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ018",
+	"obj_id": "OBJ018_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Blueprint",
     "description": "Blueprint of a stach in the sewers",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ019",
+	"obj_id": "OBJ019_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Bloodstained cloth",
     "description": "those stains were not caused by menstrual blood",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ020",
+	"obj_id": "OBJ020_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Book",
     "description": "A recent edition of The Bio Revelation",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ021",
+	"obj_id": "OBJ021_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Lock pick",
     "description": "Not a toothpick, right? Not for the average Joe",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ022",
+	"obj_id": "OBJ022_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Artwork",
     "description": "Not sure this is the place for a Boutard",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ023",
+	"obj_id": "OBJ023_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Germanium diodes",
     "description": "Barely useless semiconductors for audio circuits",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ024",
+	"obj_id": "OBJ024_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Counterfeit money",
     "description": "It couldn't serve more as an evidence",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ025",
+	"obj_id": "OBJ025_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Counterfeit goods",
     "description": "I’m not qualified to judge the forger's skills",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ026",
+	"obj_id": "OBJ026_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Counterfeit documents",
     "description": "Photostore and a good printer can do wonders these days",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ027",
+	"obj_id": "OBJ027_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Counterfeit logos",
     "description": "There's enough to fill Amazonia's shelves with fake low-quality products",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ028",
+	"obj_id": "OBJ028_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Vial of Fluo liquid",
     "description": "This is no medicine. At all",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ029",
+	"obj_id": "OBJ029_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Copy machine",
     "description": "This machine has undergone many changes",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ030",
+	"obj_id": "OBJ030_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Manual",
     "description": "Manual of Static Wave Theory",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ031",
+	"obj_id": "OBJ031_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Inspection report",
     "description": "The kind of document that's damning in criminal court",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ032",
+	"obj_id": "OBJ032_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Documentary",
     "description": "The Proof of the Trihedral Earth",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ033",
+	"obj_id": "OBJ033_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Notebook",
     "description": "Notes on animal AI",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ034",
+	"obj_id": "OBJ034_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Photographs",
     "description": "Blurry photographs of pigeons",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ035",
+	"obj_id": "OBJ035_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Court summons",
     "description": "Such a document would easily serve as proof",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ036",
+	"obj_id": "OBJ036_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Web archive",
     "description": "All your past declarations are here, safe and sound",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ037",
+	"obj_id": "OBJ037_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Book",
     "description": "Book on Freud and the Mental Cosmology",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ038",
+	"obj_id": "OBJ038_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Pet",
     "description": "This animal will (probably) tell us more than we think",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ039",
+	"obj_id": "OBJ039_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Photographs",
     "description": "Collection of twin photos",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ040",
+	"obj_id": "OBJ040_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Draft ransom note",
     "description": "Denial is going to become complicated",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ041",
+	"obj_id": "OBJ041_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "ID",
     "description": "Such a document is usually in the possession of its owner",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ042",
+	"obj_id": "OBJ042_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Fake ID",
     "description": "A beautifully crafted fake, but a fake nonetheless",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ043",
+	"obj_id": "OBJ043_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Bottle",
     "description": "An hypolipidic oil bottle",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ044",
+	"obj_id": "OBJ044_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Micro camera",
     "description": "A device not easily found on the market",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ045",
+	"obj_id": "OBJ045_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Classified document",
     "description": "This document does not belong here",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ046",
+	"obj_id": "OBJ046_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Computer virus",
     "description": "Its code will probably tell us a lot",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ047",
+	"obj_id": "OBJ047_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Industrial project plan",
     "description": "Major investments were planned, but have also been slightly delayed in recent days",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ048",
+	"obj_id": "OBJ048_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Order",
     "description": "Purchase order for 500 electro-ejaculators",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ049",
+	"obj_id": "OBJ049_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Document",
     "description": "Document written with the left hand (by a right-handed person)",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ081",
+	"obj_id": "OBJ081_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Handbook",
     "description": "How to Draw Stars",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ050",
+	"obj_id": "OBJ050_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Talisman",
     "description": "Pentagram-shaped plastic talisman",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ051",
+	"obj_id": "OBJ051_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Customized Lighter",
     "description": "In any other case, this lighter would be insignificant",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ052",
+	"obj_id": "OBJ052_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Order",
     "description": "Purchase order for 50kg of silver iodide",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ053",
+	"obj_id": "OBJ053_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Flammable product",
     "description": "Enough to burn down a building",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ054",
+	"obj_id": "OBJ054_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Book",
     "description": "H.P. Lovecraft tells Aleister Crowley",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ055",
+	"obj_id": "OBJ055_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Manual",
     "description": "Dam Maintenance Manual",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ056",
+	"obj_id": "OBJ056_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Antidepressant",
     "description": "A treatment for people in poor psychological shape",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ057",
+	"obj_id": "OBJ057_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "File",
     "description": "Study on the Digestion of Human Flesh by Polar Bears",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ058",
+	"obj_id": "OBJ058_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Digital footprints",
     "description": "Will help identify individuals involved",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ059",
+	"obj_id": "OBJ059_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Stolen data",
     "description": "Data that should not be here",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "property définit le propriétaire de données copiées",
     "evidence": ["yes", "no"],
@@ -607,210 +667,231 @@
   },
   {
     "id": "OBJ060",
+	"obj_id": "OBJ060_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Stolen goods",
     "description": "These goods have no business being here",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ061",
+	"obj_id": "OBJ061_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "USB key",
     "description": "A beaver tail-shaped USB key",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ062",
+	"obj_id": "OBJ062_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Sex toy",
     "description": "A rocket-shaped sex toy",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ063",
+	"obj_id": "OBJ063_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Illicit substance",
     "description": "Only people who feel badly about themselves or society use them",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ064",
+	"obj_id": "OBJ064_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Samples",
     "description": "43 samples of see salt",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ065",
+	"obj_id": "OBJ065_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Hard drive",
     "description": "A hard drive full of requiems",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ066",
+	"obj_id": "OBJ066_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Cardboard box",
     "description": "A Cardboard box full of FFP2 masks",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ067",
+	"obj_id": "OBJ067_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Damaged equipment",
     "description": "Here's what could well be a solid piece of evidence",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ068",
+	"obj_id": "OBJ068_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Hand tools",
     "description": "In any other case, these tools would be harmless",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ069",
+	"obj_id": "OBJ069_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Sculpture",
     "description": "Plaster head of Marduk",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ070",
+	"obj_id": "OBJ070_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Toy",
     "description": "Indestructible whoopee cushion",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ071",
+	"obj_id": "OBJ071_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Lingerie",
     "description": "A leopard-print side thong",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ072",
+	"obj_id": "OBJ072_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Documentary",
     "description": "An AI-generated documentary about secret Greenland invasion project",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ073",
+	"obj_id": "OBJ073_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Headset",
     "description": "An USB noise-cancelling headset",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ074",
+	"obj_id": "OBJ074_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Spray paint",
     "description": "A can of 'glow-in-the-dark' spray paint",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ075",
+	"obj_id": "OBJ075_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Stencils",
     "description": "Circle and cross stencils",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ076",
+	"obj_id": "OBJ076_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Book",
     "description": "A Pamphlet of Malevolent Benevolence",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ077",
+	"obj_id": "OBJ077_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Tools",
     "description": "Surgical instruments for performing a tracheotomy",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ078",
+	"obj_id": "OBJ078_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "USB key",
     "description": "Genuine USB lightsaber",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ079",
+	"obj_id": "OBJ079_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Business card",
     "description": "A good way to establish links in an investigation",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   {
     "id": "OBJ080",
+	"obj_id": "OBJ080_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Credit card",
     "description": "It's enough to make you suspicious if it doesn't belong to you",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["no"],
@@ -835,10 +916,11 @@
   
   {
     "id": "OBJ281",
+	"obj_id": "OBJ281_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Clean latex gloves",
     "description": "That would leave no trace for sure",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["no"],
@@ -846,10 +928,11 @@
   },
   {
     "id": "OBJ282",
+	"obj_id": "OBJ282_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Cellphone battery",
     "description": "Could be useful in case of long absence",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -857,10 +940,11 @@
   },
   {
     "id": "OBJ283",
+	"obj_id": "OBJ283_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Muddy shoes",
     "description": "Mud? In the city? Perhaps",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -868,10 +952,11 @@
   },
   {
     "id": "OBJ284",
+	"obj_id": "OBJ284_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Used ticket",
     "description": "Of course, we all have the right to use the subway",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -879,10 +964,11 @@
   },
   {
     "id": "OBJ285",
+	"obj_id": "OBJ285_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Foreign currency",
     "description": "These days, few people can travel so far",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -890,10 +976,11 @@
   },
   {
     "id": "OBJ286",
+	"obj_id": "OBJ286_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Diary",
     "description": "Does it really record important information?",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -901,10 +988,11 @@
   },
   {
     "id": "OBJ287",
+	"obj_id": "OBJ287_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Disassembled device",
     "description": "Why would anyone want to take this thing apart?",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -912,10 +1000,11 @@
   },
   {
     "id": "OBJ288",
+	"obj_id": "OBJ288_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Empty SD card",
     "description": "Is it empty or has it been emptied?",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -923,10 +1012,11 @@
   },
   {
     "id": "OBJ289",
+	"obj_id": "OBJ289_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Prepaid SIM card",
     "description": "The kind of purchase you make to be anonymous",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -934,10 +1024,11 @@
   },
   {
     "id": "OBJ290",
+	"obj_id": "OBJ290_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Expired medication",
     "description": "It would probably make a good poison",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -945,10 +1036,11 @@
   },
   {
     "id": "OBJ291",
+	"obj_id": "OBJ291_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Cut-up newspaper",
     "description": "We used to do anonymous letters like that",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -956,10 +1048,11 @@
   },
   {
     "id": "OBJ292",
+	"obj_id": "OBJ292_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Binoculars",
     "description": "Eyes that see far",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -967,10 +1060,11 @@
   },
   {
     "id": "OBJ293",
+	"obj_id": "OBJ293_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Crowbar",
     "description": "In French, it means 'sketch'... No relation",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -978,10 +1072,11 @@
   },
   {
     "id": "OBJ294",
+	"obj_id": "OBJ294_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Bag of flour",
     "description": "...Or is it fake cocaine?",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -989,10 +1084,11 @@
   },
   {
     "id": "OBJ295",
+	"obj_id": "OBJ295_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Flying drone",
     "description": "Not only used to look at a naked neighbor",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1000,10 +1096,11 @@
   },
   {
     "id": "OBJ296",
+	"obj_id": "OBJ296_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "GPS tracker",
     "description": "A good alternative to a cellphone tracker",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1011,10 +1108,11 @@
   },
   {
     "id": "OBJ297",
+	"obj_id": "OBJ297_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Broken laptop",
     "description": "What could have happened to it?",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1022,10 +1120,11 @@
   },
   {
     "id": "OBJ298",
+	"obj_id": "OBJ298_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Cambodian cigarettes",
     "description": "From Cambodia? Could it be contraband?",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1033,10 +1132,11 @@
   },
   {
     "id": "OBJ299",
+	"obj_id": "OBJ299_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Hands-free kit",
     "description": "Handy for doing two things at once",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1044,10 +1144,11 @@
   },
   {
     "id": "OBJ300",
+	"obj_id": "OBJ300_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "First aid kit",
     "description": "You must have some pretty strange activities to need that around here",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1055,10 +1156,11 @@
   },
   {
     "id": "OBJ301",
+	"obj_id": "OBJ301_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Powerful flashlight",
     "description": "Not the kind of thing you really need in this town",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1066,10 +1168,11 @@
   },
   {
     "id": "OBJ302",
+	"obj_id": "OBJ302_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Padlock",
     "description": "Useful! if you have the key",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1077,10 +1180,11 @@
   },
   {
     "id": "OBJ303",
+	"obj_id": "OBJ303_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Empty matchbox",
     "description": "We've seen fires start with less equipment",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1088,10 +1192,11 @@
   },
   {
     "id": "OBJ304",
+	"obj_id": "OBJ304_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Ball bearing",
 	"description": "Harmless at first glance, but could jam a mechanism or cause an accident",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1099,10 +1204,11 @@
   },
   {
     "id": "OBJ305",
+	"obj_id": "OBJ305_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Roll of plastic wrap",
     "description": "There's enough to pack more than a dead cow",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1110,10 +1216,11 @@
   },
   {
     "id": "OBJ306",
+	"obj_id": "OBJ306_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Wig",
     "description": "I'm guilty of using this myself... For work",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1121,10 +1228,11 @@
   },
   {
     "id": "OBJ307",
+	"obj_id": "OBJ307_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Empty wallet",
     "description": "Has it been emptied or has it never been full?",
-    "found": ["LOCxxx", "NPCxxx"],
+    "found": ["LOCxxxIDxxx", "NPCxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1132,10 +1240,11 @@
   },
   {
     "id": "OBJ308",
+	"obj_id": "OBJ308_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Blacklight flashlight",
     "description": "We do lots of things with black light, not just funny",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1143,10 +1252,11 @@
   },
   {
     "id": "OBJ309",
+	"obj_id": "OBJ309_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "handcuffs",
     "description": "Engraved plastic handcuffs with 'Freedom from the Plastic Prison'",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
@@ -1154,10 +1264,11 @@
   },
   {
     "id": "OBJ310",
+	"obj_id": "OBJ310_ID001",  // ou ID002, ID003, ID004, etc.
     "type": "Object",
     "name": "Unmarked key",
     "description": "Oh! Could this possibly be the one I lost two years ago?",
-    "found": ["LOCxxx"],
+    "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],

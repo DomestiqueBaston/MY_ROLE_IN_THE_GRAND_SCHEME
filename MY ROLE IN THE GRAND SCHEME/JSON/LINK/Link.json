@@ -1,0 +1,196 @@
+{
+  "links": [
+    {
+      "id": "LIN001",
+	  "link_id": "LIN001_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "white",
+      "title": "hideout",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN002",
+	  "link_id": "LIN002_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "gray",
+      "title": "debt_influence",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN003",
+	  "link_id": "LIN003_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "black",
+      "title": "culprit_accomplice_evidence",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN004",
+	  "link_id": "LIN004_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "pink",
+      "title": "intimacy",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN005",
+	  "link_id": "LIN005_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "dark_green",
+      "title": "presence",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN006",
+	  "link_id": "LIN006_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "orange",
+      "title": "enemy",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN007",
+	  "link_id": "LIN007_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "light_blue",
+      "title": "acquaintance",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN008",
+	  "link_id": "LIN008_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "dark_blue",
+      "title": "ideology",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN009",
+	  "link_id": "LIN009_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "red",
+      "title": "contradiction",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "none",
+	  "ending_pin": ["none"],
+	  "ends_at_link": ["link_id"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN010",
+	  "link_id": "LIN010_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "yellow",
+      "title": "confirmation",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "none",
+	  "ending_pin": ["none"],
+	  "ends_at_link": ["link_id"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN011",
+	  "link_id": "LIN011_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "light_green",
+      "title": "property",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN012",
+	  "link_id": "LIN012_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "brown",
+      "title": "home",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN013",
+	  "link_id": "LIN013_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "turquoise",
+      "title": "work",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN014",
+	  "link_id": "LIN014_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "darkest_blue",
+      "title": "hang_out",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN015",
+	  "link_id": "LIN015_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "light_purple",
+      "title": "found",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed", "solid]  // l'un ou l'autre.
+    },
+	{
+      "id": "LIN016",
+	  "link_id": "LIN016_ID001",  // ou ID002, ID003, ID004, etc.
+      "color": "dark_purple",
+      "title": "new",
+      "start_at_card": "",  // l'id de la carte source
+	  "starting_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+      "ends_at_card": "",  // l'id de la carte cible
+	  "ending_pin": ["Top_Left_Pin_Position", "Top_Center_Left_Position", "Top_Center_Position", "Top_Center_Right_Position", "Top_Right_Pin_Position", "Left_Center_Pin_Position", "Left_Bottom_Pin_Position", "Right_Center_Pin_Position", "Right_Bottom_Pin_Position"]  // 1 seul !
+	  "ends_at_link": ["none"],
+	  "status": ["dashed"]  // dashed UNIQUEMENT !
+    }
+  ]
+}

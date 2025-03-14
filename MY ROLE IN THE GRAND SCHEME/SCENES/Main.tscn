@@ -3,16 +3,16 @@
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
-[ext_resource type="Texture2D" uid="uid://m413x6mmdkt7" path="res://GRAPHICS/LINK_PIN/Dashed_Blanc.png" id="3_f0utr"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="6_jtpuj"]
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
+[ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="14_d27u2"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
+[ext_resource type="Texture2D" uid="uid://dgclhxafihydp" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_50.png" id="15_1cl67"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK_PIN/Plein_Gris.png" id="15_c4wun"]
 [ext_resource type="BitMap" uid="uid://d4bv231xa7qfq" path="res://GRAPHICS/LINK_PIN/Link_Mask.png" id="15_folsb"]
-[ext_resource type="Texture2D" uid="uid://bs3dhj0xl84y5" path="res://GRAPHICS/LINK_PIN/Dashed_Blanc_50.png" id="15_m3cb2"]
 [ext_resource type="Theme" uid="uid://qjm7plxdf41e" path="res://UI/Possible_Clues_Theme.tres" id="16_hg5r6"]
 [ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/LINK_PIN/Plein_Noir.png" id="16_mke16"]
 [ext_resource type="Texture2D" uid="uid://daarosfqpf3li" path="res://GRAPHICS/MAIN/Pince_Haut.png" id="17_4l1ou"]
@@ -428,18 +428,19 @@ theme_override_constants/outline_size = 2
 text = "Legend:"
 metadata/_edit_lock_ = true
 
-[node name="Presence_White" type="TextureButton" parent="Legend/Colors"]
+[node name="Hideout_White" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 1.0
 offset_right = 43.0
 offset_bottom = 9.0
-tooltip_text = "Presence
-- Automated"
+tooltip_text = "Hideout
+- Dashed: Probable
+- Solid: Confirmed"
 toggle_mode = true
-texture_normal = ExtResource("3_f0utr")
-texture_pressed = ExtResource("15_m3cb2")
-texture_hover = ExtResource("3_f0utr")
+texture_normal = ExtResource("14_d27u2")
+texture_pressed = ExtResource("15_1cl67")
+texture_hover = ExtResource("14_d27u2")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 

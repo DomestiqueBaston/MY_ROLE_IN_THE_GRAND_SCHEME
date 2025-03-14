@@ -1,0 +1,68 @@
+[
+  {
+    "id": "NPCxxx",
+    "first_name": "",  // Choisir aléatoirement un prénom et un nom dans le Noms_prenoms.json
+	"name": "",  // Choisir aléatoirement un prénom et un nom dans le Noms_prenoms.json
+    "sex": ["m", "f"],
+    "job": "",  // Choisir aléatoirement dans le NPC_jobs.json
+	"sexual_orientation": ["f", "m"],  // (homo. à 10 % chance)
+    "characteristics": {
+      "PHY": 0,
+      "MEN": 0,
+      "HEA": 0,
+      "HEAnom": 0,
+      "Wan": 0
+    },
+    "health_meter": ["no_info", "good_health", "average_health", "low_health"],  // par défaut "no_info"
+    "minion": ["no", "yes"],  // peut être "yes"  // par défaut "no" car minion est un status particulier (voir Nouveau_système_vXX.odt)
+    "rep": 0,  // Réputation du Joueur par défaut. /!\ 3 pour un Minion !
+
+    "status": ["victim", "culprit", "accomplice", "suspect", "witness", "none"],  // Statut réel du NPC dans l'enquête
+    "witness_clue": ["NPCxxx", "LOCxxxIDxxx", "none"],  // Pour rappel, les témoins se trompent à 50% (1 fois sur 2) au départ ! "none" si "status" ≠ de "witness"
+    "couple": ["NPCxxx", "None"],  //  de 0 à 1 (homo. si Couple homo à 10 % chance)
+    "friend": ["NPCxxx", "None"],  // de 0 à 2 amis (50% partagent le lieu de travail et 50% un lieu fréquenté)
+    "ennemy": ["NPCxxx", "None"],  // de 0 à 2 ennemis (50% partagent le lieu de travail et 50% un lieu fréquenté)
+    "acquaintance": ["NPCxxx", "None"],  // de 0 à 3 connaissances (50% partagent le lieu de travail et 50% un lieu fréquenté)
+    "affair": ["None", "NPCxxx"],  // de 0 à 1 (homo. si Couple homo). Hors affaire de Adultery/Intimacy et Intimacy, alors "none"
+    "debt_influence": ["NPCxxx", "None"],  // de 0 à X Creditor(s) où X est lié au nombre de coupable(s). Hors affaire de debt_influence, alors "none".
+    "ideology": ["NPCxxx", "None"],  // de 0 à X où X est lié au nombre de coupable(s)+complice(s) (voir Fiche d'enquête). Hors affaire de ideology, alors "none".
+
+    "schedule": {
+      "morning": "LOCxxxIDxxx",
+      "afternoon": "LOCxxxIDxxx",
+      "evening": "LOCxxxIDxxx",
+      "night": "LOCxxxIDxxx",
+      "we_morning": "LOCxxxIDxxx",
+      "we_afternoon": "LOCxxxIDxxx",
+      "we_evening": "LOCxxxIDxxx",
+      "we_night": "LOCxxxIDxxx"
+    },
+    "work_schedule": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening" et "we_night"],  // 2 périodes consécutives de 4h ou night.
+    "week_end": ["saturday", "sunday"],  // /!\ Si travail le week-end, alors "monday" et "tuesday"
+
+    "home": ["LOCxxxIDxxx"],
+    "work": ["LOCxxxIDxxx"],
+    "hangouts": ["LOCxxxIDxxx"],  // de 1 à 2 (voir liste des possibles dans Location.json avec "hangout": ["yes"])
+    "secret_hangout": ["LOCxxxIDxxx"],  // de 0 à 1 (voir liste des possibles dans Location.json avec "hangout": ["secret"])
+
+    "property": [
+      {
+        "object_id": "OBJxxxIDxxx",
+        "location": "LOCxxxIDxxx",
+        "evidence_status": ["yes", "no"]
+      }
+    ],  // il y en aura de 1 à 4 (incluant éventuellement une/les evidence(s) s'il n'y en a pas ailleurs de définies)
+
+    "information_on_npc": [
+      {
+        "npc_id": "NPCxxx",
+        "info_type": [
+          {
+            "type_of_link": ["acquaintance", "intimacy", "friend", "debt_influence", "ideology", "enemy"],
+            "related_npcs": ["NPCxxx", "NPCxxx"]  // désigne les 2 NPCs concernés par le lien
+          }
+        ]
+      }
+    ] // 2 à 4 Informations déténues sur 1 à 2 NPCs
+  }
+]

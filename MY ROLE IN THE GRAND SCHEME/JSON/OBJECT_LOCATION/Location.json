@@ -1,0 +1,825 @@
+[
+  {
+    "id": "LOC001",
+    "loc_id": "LOC001_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Apartment",
+    "type": "Location",
+	"uniqueness": [],  // rien = unlimited, 1, 2, etc.
+    "description": "People's favorite place to live, sleep... and have sex",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["n/a"],
+    "hangout": ["no"],
+    "bonus_malus": []
+},
+{
+    "id": "LOC002",
+    "loc_id": "LOC002_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Workshop",
+    "type": "Location",
+    "uniqueness": [2],  // rien = unlimited, 1, 2, etc.
+    "description": "A place for crafting, repairing, and probably altering things",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
+},
+{
+    "id": "LOC003",
+    "loc_id": "LOC003_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Bar",
+    "type": "Location",
+    "uniqueness": [2],  // rien (appartment), 1, 2, etc.
+    "description": "Here, we drink freely, laugh, or make shady deals",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+},
+{
+    "id": "LOC004",
+    "loc_id": "LOC004_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Library",
+    "type": "Location",
+    "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+    "description": "Usually, people try to work on who-knows-what pointless theses here",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": ["Break-in"],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no", "secret"],
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+},
+{
+    "id": "LOC005",
+    "loc_id": "LOC005_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Office",
+    "type": "Location",
+    "uniqueness": [3],  // rien (appartment), 1, 2, etc.
+    "description": "One of those places where a lot of people wish they weren't working",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
+    "bonus_malus": []
+},
+{
+    "id": "LOC006",
+    "loc_id": "LOC006_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Medical Office",
+    "type": "Location",
+    "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+    "description": "As long as it's a general practitioner, there's no real reason to be scared to enter",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+},
+{
+    "id": "LOC007",
+    "loc_id": "LOC007_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Barracks",
+    "type": "Location",
+    "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+    "description": "Not the best place for talking literature. Everything else is fine enough",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": ["Combat"],
+    "not_needed_actions": ["Break-in"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no"],
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "+1", "MEN": "-1"}
+      }
+    ]
+},
+{
+    "id": "LOC008",
+    "loc_id": "LOC008_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Cemetery",
+    "type": "Location",
+    "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+    "description": "Not exactly a lively place for a chat. But hey, it's quiet",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": ["Break-in"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no", "secret"],
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
+},
+{
+    "id": "LOC009",
+    "loc_id": "LOC009_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Cinema",
+    "type": "Location",
+    "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+    "description": "Places like this are fading out - now it's just crap on the screen",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
+},
+{
+    "id": "LOC010",
+    "loc_id": "LOC010_ID001",  // ou ID002, ID003, ID004, etc.
+    "name": "Nightclub",
+    "type": "Location",
+    "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+    "description": "A place where 'music' is barely recognizable anymore",
+    "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["night", "we_night"],
+    "hangout": ["yes"],
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
+},
+  {
+  "id": "LOC011",
+  "loc_id": "LOC011_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "School",
+  "type": "Location",
+  "uniqueness": [2],  // rien (appartment), 1, 2, etc.
+  "description": "Originally, the idea behind this place wasn't terrible...",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC012",
+  "loc_id": "LOC012_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Art Gallery",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Art? Please... give me a break!",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "+1"}
+    }
+  ]
+},
+{
+  "id": "LOC013",
+  "loc_id": "LOC013_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Garage",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A place where 'repairs' often come with a little extra charge",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening"],
+  "hangout": ["no", "secret"],
+  "bonus_malus": [
+    {
+      "effects": {"HEA": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC014",
+  "loc_id": "LOC014_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Hangar",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "The kind of place where old crime novels ended with a police raid",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening"],
+  "hangout": ["no", "secret"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "+1"}
+    }
+  ]
+},
+{
+  "id": "LOC015",
+  "loc_id": "LOC015_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Hospital",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A place you're supposed to walk out of, not leave on a stretcher",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": ["Break-in"],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["h24"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "-1", "HEA": "+1"}
+    }
+  ]
+},
+{
+  "id": "LOC016",
+  "loc_id": "LOC016_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Hotel",
+  "type": "Location",
+  "uniqueness": [2],  // rien (appartment), 1, 2, etc.
+  "description": "People's favorite place to slee... sorry, I mean, mainly to have sex",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["h24"],
+  "hangout": ["no", "secret"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC017",
+  "loc_id": "LOC017_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Laboratory",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A place where science used to happen... or things just get weirder",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": ["Break-in"],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "+1"}
+    }
+  ]
+},
+{
+  "id": "LOC018",
+  "loc_id": "LOC018_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Place of Worship",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A lot of people who enter here have imaginary friends",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["yes"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "-1", "MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC019",
+  "loc_id": "LOC019_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "General Store",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A place where you can find anything... or nothing you actually need",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC021",
+  "loc_id": "LOC021_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Museum",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "The only place I know where they display dust",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": ["Break-in"],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["yes"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC022",
+  "loc_id": "LOC022_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Park",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Ah, trees, flowers... nature! And junkies, necessarily",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": ["Break-in"],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["h24"],
+  "hangout": ["yes", "secret"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC023",
+  "loc_id": "LOC023_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Swimming Pool",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "The perfect place to swim through floating vomit... and catch fungi",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["yes"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC024",
+  "loc_id": "LOC024_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Post Office",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "The place where packages get lost and time too",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": ["Break-in"],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC025",
+  "loc_id": "LOC025_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Restaurant",
+  "type": "Location",
+  "uniqueness": [2],  // rien (appartment), 1, 2, etc.
+  "description": "I occasionally visit places like this to eat... and get sick",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["no", "secret"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC026",
+  "loc_id": "LOC026_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Arcade",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A place for playing Domestique Baston, Kindergarten Massaker or Java Jolt",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+  "hangout": ["yes"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC027",
+  "loc_id": "LOC027_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Theater",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Where you pay to watch people pretend... and still get bored",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+  "hangout": ["yes"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "-1", "MEN": "+1"}
+    }
+  ]
+},
+{
+  "id": "LOC028",
+  "loc_id": "LOC028_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Sports Hall",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A place where people pay to do what they could do outside for free",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["yes"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "+1", "MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC029",
+  "loc_id": "LOC029_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Stadium",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Crowds gather in places like this to watch billionaires run after a ball",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening"],
+  "hangout": ["yes", "secret"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "+1"}
+    }
+  ]
+},
+  {
+  "id": "LOC030",
+  "loc_id": "LOC030_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Gas Station",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Here, the smell of gasoline is the only thing that gets you going",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["h24"],
+  "hangout": ["no", "secret"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC031",
+  "loc_id": "LOC031_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Bank",
+  "type": "Location",
+  "uniqueness": [2],  // rien (appartment), 1, 2, etc.
+  "description": "As Bernard once said: A place to stop by... if you're into redistributing",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": ["Break-in"],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC032",
+  "loc_id": "LOC032_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Police Station",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "The place with the most criminals per square meter in this city",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": ["Combat"],
+  "not_needed_actions": ["Break-in"],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["h24"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "-1"}
+    }
+  ]
+},
+{
+  "id": "LOC033",
+  "loc_id": "LOC033_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Fire Station",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "The only fire they won't put out is the one you've got in your pants",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": ["Combat"],
+  "not_needed_actions": ["Break-in"],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["h24"],
+  "hangout": ["no"],
+  "bonus_malus": [
+    {
+      "effects": {"PHY": "+1"}
+    }
+  ]
+},
+{
+  "id": "LOC034",
+  "loc_id": "LOC034_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Café",
+  "type": "Location",
+  "uniqueness": [2],  // rien (appartment), 1, 2, etc.
+  "description": "A place to sip overpriced coffee and pretend you're doing something important",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["yes"],
+  "bonus_malus": [
+    {
+      "effects": {"MEN": "+1"}
+    }
+  ]
+},
+{
+  "id": "LOC035",
+  "loc_id": "LOC035_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Bakery",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "I'd love to live in France just to step into one of these",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC036",
+  "loc_id": "LOC036_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Pharmacy",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Where you used to find cures, and now it's just sugar pills and hope",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC037",
+  "loc_id": "LOC037_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Grocery Store",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Did you mean 'Grossery'?",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC038",
+  "loc_id": "LOC038_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Town Hall",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Where big decisions are made... and instantly forgotten",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": ["Break-in"],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC039",
+  "loc_id": "LOC039_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Salon",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Where the only thing that gets hair-raising is the price",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC040",
+  "loc_id": "LOC040_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Hardware Store",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "A place where you buy tools that sure look good in your garage",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC041",
+  "loc_id": "LOC041_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Florist",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Didn't know that death could smell this good",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC042",
+  "loc_id": "LOC042_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Pet Store",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "There are other places to get love... and cheaper",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["no"],
+  "bonus_malus": []
+},
+{
+  "id": "LOC043",
+  "loc_id": "LOC043_ID001",  // ou ID002, ID003, ID004, etc.
+  "name": "Laundromat",
+  "type": "Location",
+  "uniqueness": [1],  // rien (appartment), 1, 2, etc.
+  "description": "Where you wash your dirty laundry... but in public",
+  "property": [],  // NPCxxx or rien.                 /!\ Probably useless
+  "possible_combinations": ["Dialogue", "Abstract"],
+  "impossible_actions": [],
+  "not_needed_actions": [],
+  "findable_content": [],
+  "hidden_content": [],
+  "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
+  "hangout": ["yes", "secret"],
+  "bonus_malus": []
+}
+]
+
