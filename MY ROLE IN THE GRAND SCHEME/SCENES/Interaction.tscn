@@ -623,15 +623,7 @@ theme_override_constants/shadow_offset_x = -1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
-text = "We are supposed to find infos here about a selected card for instance...
-
-But also a PNJ the player's selected...
-
-It could also eventually be something else but I don't know what it could be so far.
-
-We'll find out about that later too!
-
-Great news: we enlarged this frame in order to show more things!"
+text = "- INFO -"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
