@@ -1,0 +1,12 @@
+{
+  "regression_parts": [
+    {
+      "part": 1,
+      "choices": ["Crap! I think ", "Huh, looks like ", "Well, seems like "]
+    },
+    {
+      "part": 2,
+      "choices": ["I don’t get it anymore.", "I’m starting to loose something...", "It’s all slipping away...", "I'm doomed!]
+    }
+  ]
+}

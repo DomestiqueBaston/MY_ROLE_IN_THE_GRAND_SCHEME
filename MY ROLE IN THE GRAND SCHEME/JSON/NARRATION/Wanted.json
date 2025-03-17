@@ -1,0 +1,7 @@
+{
+  "trouble_parts": [
+    { "part": 1, "choices": ["Great, here comes trouble! ", "Guess it’s their turn to mess things up. ", "And now, trouble arrives. How charming. ", "Looks like enforcers will be making things messier. ", "Well, here come the ones who ruin everything. "] },
+    { "part": 2, "choices": ["Just when you thought it couldn't get worse: ", "Things just got worse: ", "Of course, it had to get complicated: ", "Right when you were almost there: ", "Now everything’s here to ruin what’s left: "] },
+    { "part": 3, "choices": ["and that's where the real issue begins. ", "brace yourself, it’s about to get ugly. ", "this is where it falls apart. ", "and now, the nightmare starts. ", "the chaos is now official."] }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "addiction_parts": [
+    { "part": 1, "choices": ["You’re on the edge, ", "The cravings are taking control, ", "You're nearing your breaking point, ", "You're losing your grip, "] },
+    { "part": 2, "choices": ["do something now or it’s going to get worse.", "you’re slipping fast, and there’s no stopping it.", "close to losing everything, and you can feel it.", "one more push, and you won’t come back from it.", "something’s about to snap, and you’re not ready."] }
+  ]
+}
