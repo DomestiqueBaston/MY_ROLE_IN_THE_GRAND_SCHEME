@@ -704,8 +704,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 198.0
-offset_right = 122.0
-offset_bottom = 338.0
+offset_right = 124.0
+offset_bottom = 342.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("29_urjbe")
@@ -726,13 +726,15 @@ theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("30_dhl0k")
 theme_override_font_sizes/font_size = 8
-text = "By default, we'll find here info about the active case such as time left to solve it, etc.
+text = "- PEN -
 
-Otherwise, depending on what's selected, info will be related to the place, the PNJ(s) there, etc.
+Machin qui sert à écrire (si on a du papier) et qu'il reste de l'encre dedans...
 
-It could also eventually be something else but I don't know what it could be so far.
+Found in: Library
 
-We'll find out about that later too!"
+Owned by: Jean-Marie Trancène
+
+Not marked as Evidence."
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_lock_ = true

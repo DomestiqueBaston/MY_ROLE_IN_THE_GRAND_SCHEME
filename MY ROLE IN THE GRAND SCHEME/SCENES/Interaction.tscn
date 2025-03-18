@@ -603,7 +603,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 143.0
-offset_right = 123.0
+offset_right = 124.0
 offset_bottom = 343.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -623,7 +623,11 @@ theme_override_constants/shadow_offset_x = -1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
-text = "- INFO -"
+text = "- CHARGE -
+
+A brutal and forceful attack, fueled by raw strength and aggression. This strike demands mental focus and puts a heavy toll on the user. It's an all-in move, with little regard for personal cost, but its sheer power can overwhelm an opponent in the right moment.
+
+''I won't hold back! Chaaaaarge!''"
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_lock_ = true

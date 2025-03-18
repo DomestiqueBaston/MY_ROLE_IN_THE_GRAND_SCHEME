@@ -2,7 +2,8 @@
   {
     "id": "LOC001",
     "loc_id": "LOC001_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Apartment",
+	"info_name": "- APARTMENT -",
+  "name": "Apartment",
     "type": "Location",
 	"uniqueness": [],  // rien = unlimited, 1, 2, etc.
     "description": "People's favorite place to live, sleep... and have sex",
@@ -19,7 +20,8 @@
 {
     "id": "LOC002",
     "loc_id": "LOC002_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Workshop",
+    "info_name": "- WORKSHOP -",
+  "name": "Workshop",
     "type": "Location",
     "uniqueness": [2],  // rien = unlimited, 1, 2, etc.
     "description": "A place for crafting, repairing, and probably altering things",
@@ -40,7 +42,8 @@
 {
     "id": "LOC003",
     "loc_id": "LOC003_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Bar",
+    "info_name": "- BAR -",
+  "name": "Bar",
     "type": "Location",
     "uniqueness": [2],  // rien (appartment), 1, 2, etc.
     "description": "Here, we drink freely, laugh, or make shady deals",
@@ -61,7 +64,8 @@
 {
     "id": "LOC004",
     "loc_id": "LOC004_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Library",
+    "info_name": "- LIBRARY -",
+  "name": "Library",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1, 2, etc.
     "description": "Usually, people try to work on who-knows-what pointless theses here",
@@ -82,7 +86,8 @@
 {
     "id": "LOC005",
     "loc_id": "LOC005_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Office",
+    "info_name": "- OFFICE -",
+  "name": "Office",
     "type": "Location",
     "uniqueness": [3],  // rien (appartment), 1, 2, etc.
     "description": "One of those places where a lot of people wish they weren't working",
@@ -99,7 +104,8 @@
 {
     "id": "LOC006",
     "loc_id": "LOC006_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Medical Office",
+    "info_name": "- MEDICAL OFFICE -",
+  "name": "Medical Office",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1, 2, etc.
     "description": "As long as it's a general practitioner, there's no real reason to be scared to enter",
@@ -120,7 +126,8 @@
 {
     "id": "LOC007",
     "loc_id": "LOC007_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Barracks",
+    "info_name": "- BARRACKS -",
+  "name": "Barracks",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1, 2, etc.
     "description": "Not the best place for talking literature. Everything else is fine enough",
@@ -141,7 +148,8 @@
 {
     "id": "LOC008",
     "loc_id": "LOC008_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Cemetery",
+    "info_name": "- CEMETERY -",
+  "name": "Cemetery",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1, 2, etc.
     "description": "Not exactly a lively place for a chat. But hey, it's quiet",
@@ -162,7 +170,8 @@
 {
     "id": "LOC009",
     "loc_id": "LOC009_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Cinema",
+    "info_name": "- CINEMA -",
+  "name": "Cinema",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1, 2, etc.
     "description": "Places like this are fading out - now it's just crap on the screen",
@@ -183,7 +192,8 @@
 {
     "id": "LOC010",
     "loc_id": "LOC010_ID001",  // ou ID002, ID003, ID004, etc.
-    "name": "Nightclub",
+    "info_name": "- NIGHTCLUB -",
+  "name": "Nightclub",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1, 2, etc.
     "description": "A place where 'music' is barely recognizable anymore",
@@ -204,6 +214,7 @@
   {
   "id": "LOC011",
   "loc_id": "LOC011_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- SCHOOL -",
   "name": "School",
   "type": "Location",
   "uniqueness": [2],  // rien (appartment), 1, 2, etc.
@@ -225,6 +236,7 @@
 {
   "id": "LOC012",
   "loc_id": "LOC012_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- ART GALLERY -",
   "name": "Art Gallery",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -246,6 +258,7 @@
 {
   "id": "LOC013",
   "loc_id": "LOC013_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- GARAGE -",
   "name": "Garage",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -267,6 +280,7 @@
 {
   "id": "LOC014",
   "loc_id": "LOC014_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- HANGAR -",
   "name": "Hangar",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -288,6 +302,7 @@
 {
   "id": "LOC015",
   "loc_id": "LOC015_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- HOSPITAL -",
   "name": "Hospital",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -309,6 +324,7 @@
 {
   "id": "LOC016",
   "loc_id": "LOC016_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- HOTEL -",
   "name": "Hotel",
   "type": "Location",
   "uniqueness": [2],  // rien (appartment), 1, 2, etc.
@@ -326,6 +342,7 @@
 {
   "id": "LOC017",
   "loc_id": "LOC017_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- LABORATORY -",
   "name": "Laboratory",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -347,6 +364,7 @@
 {
   "id": "LOC018",
   "loc_id": "LOC018_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- PLACE OF WORSHIP -",
   "name": "Place of Worship",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -368,6 +386,7 @@
 {
   "id": "LOC019",
   "loc_id": "LOC019_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- GENERAL STORE -",
   "name": "General Store",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -389,6 +408,7 @@
 {
   "id": "LOC021",
   "loc_id": "LOC021_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- MUSEUM -",
   "name": "Museum",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -410,6 +430,7 @@
 {
   "id": "LOC022",
   "loc_id": "LOC022_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- PARK -",
   "name": "Park",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -427,6 +448,7 @@
 {
   "id": "LOC023",
   "loc_id": "LOC023_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- SWIMMING POOL -",
   "name": "Swimming Pool",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -448,6 +470,7 @@
 {
   "id": "LOC024",
   "loc_id": "LOC024_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- POST OFFICE -",
   "name": "Post Office",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -469,6 +492,7 @@
 {
   "id": "LOC025",
   "loc_id": "LOC025_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- RESTAURANT -",
   "name": "Restaurant",
   "type": "Location",
   "uniqueness": [2],  // rien (appartment), 1, 2, etc.
@@ -490,6 +514,7 @@
 {
   "id": "LOC026",
   "loc_id": "LOC026_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- ARCADE -",
   "name": "Arcade",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -511,6 +536,7 @@
 {
   "id": "LOC027",
   "loc_id": "LOC027_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- THEATER -",
   "name": "Theater",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -532,6 +558,7 @@
 {
   "id": "LOC028",
   "loc_id": "LOC028_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- SPORTS HALL -",
   "name": "Sports Hall",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -553,6 +580,7 @@
 {
   "id": "LOC029",
   "loc_id": "LOC029_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- STADIUM -",
   "name": "Stadium",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -574,6 +602,7 @@
   {
   "id": "LOC030",
   "loc_id": "LOC030_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- GAS STATION -",
   "name": "Gas Station",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -591,6 +620,7 @@
 {
   "id": "LOC031",
   "loc_id": "LOC031_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- BANK -",
   "name": "Bank",
   "type": "Location",
   "uniqueness": [2],  // rien (appartment), 1, 2, etc.
@@ -608,6 +638,7 @@
 {
   "id": "LOC032",
   "loc_id": "LOC032_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- POLICE STATION -",
   "name": "Police Station",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -629,6 +660,7 @@
 {
   "id": "LOC033",
   "loc_id": "LOC033_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- FIRE STATION -",
   "name": "Fire Station",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -650,6 +682,7 @@
 {
   "id": "LOC034",
   "loc_id": "LOC034_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- CAFÉ -",
   "name": "Café",
   "type": "Location",
   "uniqueness": [2],  // rien (appartment), 1, 2, etc.
@@ -671,6 +704,7 @@
 {
   "id": "LOC035",
   "loc_id": "LOC035_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- BAKERY -",
   "name": "Bakery",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -688,6 +722,7 @@
 {
   "id": "LOC036",
   "loc_id": "LOC036_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- PHARMACIE -",
   "name": "Pharmacy",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -705,6 +740,7 @@
 {
   "id": "LOC037",
   "loc_id": "LOC037_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- GROCERY STORE -",
   "name": "Grocery Store",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -722,6 +758,7 @@
 {
   "id": "LOC038",
   "loc_id": "LOC038_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- TOWN HALL -",
   "name": "Town Hall",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -739,6 +776,7 @@
 {
   "id": "LOC039",
   "loc_id": "LOC039_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- SALON -",
   "name": "Salon",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -756,6 +794,7 @@
 {
   "id": "LOC040",
   "loc_id": "LOC040_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- HARDWARE STORE -",
   "name": "Hardware Store",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -773,6 +812,7 @@
 {
   "id": "LOC041",
   "loc_id": "LOC041_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- FLORIST -",
   "name": "Florist",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -790,6 +830,7 @@
 {
   "id": "LOC042",
   "loc_id": "LOC042_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- PET STORE -",
   "name": "Pet Store",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
@@ -807,6 +848,7 @@
 {
   "id": "LOC043",
   "loc_id": "LOC043_ID001",  // ou ID002, ID003, ID004, etc.
+  "info_name": "- LAUNDROMAT -",
   "name": "Laundromat",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1, 2, etc.
