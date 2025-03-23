@@ -378,7 +378,6 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_t0fdd")]
-visible = false
 
 [node name="Glow" type="AnimationPlayer" parent="."]
 libraries = {
