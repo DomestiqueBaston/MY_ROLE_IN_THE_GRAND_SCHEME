@@ -126,12 +126,25 @@ offset_bottom = 360.0
 theme = ExtResource("2_4l2mm")
 metadata/_edit_lock_ = true
 
+[node name="Situation" type="RichTextLabel" parent="Cops/Pay_Surrender"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 150.0
+offset_right = 534.0
+offset_bottom = 267.0
+bbcode_enabled = true
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff1c18]200 Dø[/color])."
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
 [node name="Surrender" type="Button" parent="Cops/Pay_Surrender"]
+layout_mode = 0
 offset_left = 415.0
 offset_top = 289.0
 offset_right = 534.0
 offset_bottom = 305.0
-tooltip_text = "3 days in jail..."
+tooltip_text = "Anyway, I needed a break..."
 toggle_mode = true
 button_group = ExtResource("3_dxykx")
 text = "Don't shoot, I surrender..."
@@ -139,11 +152,12 @@ alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="Pay" type="Button" parent="Cops/Pay_Surrender"]
+layout_mode = 0
 offset_left = 430.0
 offset_top = 273.0
 offset_right = 534.0
 offset_bottom = 289.0
-tooltip_text = "Pay 200Dø to leave now."
+tooltip_text = "Pay to leave now."
 theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
 theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)

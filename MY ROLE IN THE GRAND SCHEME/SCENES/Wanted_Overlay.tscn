@@ -144,7 +144,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(0.2, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.762695), Color(1, 1, 1, 0.841797), Color(1, 1, 1, 0.920898), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.686275), Color(1, 1, 1, 0.920898), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -313,14 +313,14 @@ metadata/_edit_lock_ = true
 
 [node name="Alert" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_u4k8p")
+&"": SubResource("AnimationLibrary_u4k8p")
 }
 autoplay = "Pumping"
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Alert")
 libraries = {
-"": SubResource("AnimationLibrary_pwvx7")
+&"": SubResource("AnimationLibrary_pwvx7")
 }
 autoplay = "Appearance"
 

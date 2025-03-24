@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=35 format=3 uid="uid://boxdoq12jj63m"]
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://boxdoq12jj63m"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_4c7nq"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_v38da"]
@@ -54,6 +54,20 @@ bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
 bg_color = Color(1, 1, 1, 0.501961)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c7nq"]
+bg_color = Color(1, 0.941333, 0.84, 0.196078)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0, 0, 0, 0)
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -122,9 +136,6 @@ ItemList/styles/hovered = SubResource("StyleBoxEmpty_2kotw")
 ItemList/styles/panel = SubResource("StyleBoxEmpty_d520k")
 ItemList/styles/selected = SubResource("StyleBoxEmpty_wul7r")
 ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_63chm")
-Label/constants/line_spacing = 2
-Label/font_sizes/font_size = 8
-Label/fonts/font = ExtResource("2_v38da")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_pk2s2")
 MenuButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 MenuButton/colors/font_focus_color = Color(0.1998, 0.27, 0.21969, 0.501961)
@@ -160,6 +171,10 @@ PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_vr86x")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+RichTextLabel/colors/default_color = Color(1, 0.970667, 0.92, 1)
+RichTextLabel/constants/line_separation = 3
+RichTextLabel/constants/outline_size = 6
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_4c7nq")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")

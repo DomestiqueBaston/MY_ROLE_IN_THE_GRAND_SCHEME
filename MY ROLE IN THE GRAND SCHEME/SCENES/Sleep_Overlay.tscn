@@ -376,7 +376,7 @@ metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_girfw")
+&"": SubResource("AnimationLibrary_girfw")
 }
 autoplay = "Appearance"
 
