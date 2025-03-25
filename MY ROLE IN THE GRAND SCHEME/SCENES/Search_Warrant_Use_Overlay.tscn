@@ -170,7 +170,7 @@ bbcode_enabled = true
 text = "[center]Now the
 question is:
 
-Should  I  use  my Search  WarRAnt?[/center]"
+Should  I  use  my Search  WarrAnt?[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Yes" type="Button" parent="Search_Warrant_Use_Panel/Texts"]
@@ -181,9 +181,9 @@ offset_right = 244.0
 offset_bottom = 249.0
 theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
-theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
+theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "No other
 choice!"
 alignment = 2
@@ -197,9 +197,9 @@ offset_right = 171.0
 offset_bottom = 249.0
 theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
-theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
 text = "Hm...
 Maybe not!"
 alignment = 0
@@ -207,7 +207,7 @@ metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m6d4b")
+&"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
 

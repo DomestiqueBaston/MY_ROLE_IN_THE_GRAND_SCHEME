@@ -170,7 +170,7 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
 offset_left = 244.0
-offset_top = 70.0
+offset_top = 72.0
 offset_right = 397.0
 offset_bottom = 278.0
 bbcode_enabled = true
@@ -183,7 +183,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
   -    [color=#ff8864]Dø[/color] and   card(s) to
  (try to) improve yourself...
   - [color=#ff8864]Eased your[/color] [color=#ff1c18]mind[/color] and [color=#ff1c18]cooled[/color] [color=#ff8864]
- it with the cops[/color].
+ it with the [/color][color=#ff1c18]cops[/color].
 
 
 
@@ -198,7 +198,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
 
 
 
- Not that it’ll make any change!"
+ Not that it'll make any change!"
 metadata/_edit_lock_ = true
 
 [node name="Money" type="Label" parent="Income_Panel/Information/Content"]
@@ -248,7 +248,7 @@ position = Vector2(319, 152)
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m6d4b")
+&"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
 

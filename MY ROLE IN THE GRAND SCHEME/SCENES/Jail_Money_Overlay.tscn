@@ -118,7 +118,7 @@ texture = ExtResource("1_knmnc")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Pay_Surrender" type="Control" parent="Cops"]
+[node name="Player" type="Control" parent="Cops"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -126,10 +126,10 @@ offset_bottom = 360.0
 theme = ExtResource("2_4l2mm")
 metadata/_edit_lock_ = true
 
-[node name="Situation" type="RichTextLabel" parent="Cops/Pay_Surrender"]
+[node name="Situation" type="RichTextLabel" parent="Cops/Player"]
 layout_mode = 0
-offset_left = 415.0
-offset_top = 150.0
+offset_left = 418.0
+offset_top = 148.0
 offset_right = 534.0
 offset_bottom = 267.0
 bbcode_enabled = true
@@ -138,7 +138,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="Surrender" type="Button" parent="Cops/Pay_Surrender"]
+[node name="Surrender" type="Button" parent="Cops/Player"]
 layout_mode = 0
 offset_left = 415.0
 offset_top = 289.0
@@ -151,7 +151,7 @@ text = "Don't shoot, I surrender..."
 alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="Pay" type="Button" parent="Cops/Pay_Surrender"]
+[node name="Pay" type="Button" parent="Cops/Player"]
 layout_mode = 0
 offset_left = 430.0
 offset_top = 273.0
@@ -167,6 +167,47 @@ theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1
 toggle_mode = true
 button_group = ExtResource("3_dxykx")
 text = "Easy, easy... I can pay!"
+alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="NPC" type="Control" parent="Cops"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("2_4l2mm")
+metadata/_edit_lock_ = true
+
+[node name="Situation" type="RichTextLabel" parent="Cops/NPC"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 191.0
+offset_right = 534.0
+offset_bottom = 283.0
+bbcode_enabled = true
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] That [color=#ff8864]idiot[/color] crossed the line, [color=#ff8864]the authorities[/color] have sent people to handle it, and that means spending [color=#ff1c18]several weeks[/color] [color=#ff8864]in jail[/color].
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_lock_ = true
+
+[node name="Pay" type="Button" parent="Cops/NPC"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 289.0
+offset_right = 534.0
+offset_bottom = 305.0
+tooltip_text = "Pay to leave now."
+theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_color = Color(0.329493, 0.64, 0.1856, 1)
+theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
+theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+toggle_mode = true
+button_group = ExtResource("3_dxykx")
+text = "Ha! Ha! See you in lockup!"
 alignment = 2
 metadata/_edit_lock_ = true
 

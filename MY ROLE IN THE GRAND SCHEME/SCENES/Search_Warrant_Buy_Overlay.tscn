@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://d0fot58ykyifw"]
 
-[ext_resource type="Texture2D" uid="uid://dpmd3nbe1pn1d" path="res://GRAPHICS/SEARCH_WARRANT/Search_Warrant_BG.png" id="1_66gjs"]
-[ext_resource type="Theme" uid="uid://b5dlwuuc55m44" path="res://UI/Search_Warrant_Theme.tres" id="2_tirn5"]
-[ext_resource type="Script" uid="uid://6s8ejpvawryf" path="res://SCRIPTS/Case_Management_Typing.gd" id="3_g814a"]
-[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_acd8d"]
-[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_r3ukh"]
-[ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_xqf4y"]
+[ext_resource type="Texture2D" uid="uid://dpmd3nbe1pn1d" path="res://GRAPHICS/SEARCH_WARRANT/Search_Warrant_BG.png" id="1_ub508"]
+[ext_resource type="Theme" uid="uid://b5dlwuuc55m44" path="res://UI/Search_Warrant_Theme.tres" id="2_lyw2x"]
+[ext_resource type="Script" uid="uid://6s8ejpvawryf" path="res://SCRIPTS/Case_Management_Typing.gd" id="3_syr8f"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_66kl2"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_tv78n"]
+[ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_kfqfx"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -45,7 +45,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_acd8d")
+"stream": ExtResource("4_66kl2")
 }],
 "times": PackedFloat32Array(0.028334)
 }
@@ -89,7 +89,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_r3ukh")
+"stream": ExtResource("5_tv78n")
 }],
 "times": PackedFloat32Array(0.0808337)
 }
@@ -239,7 +239,7 @@ _data = {
 &"Writing": SubResource("Animation_cqm07")
 }
 
-[node name="Search_Warrant" type="Node2D"]
+[node name="Search_Warrant_Buy" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
@@ -256,7 +256,7 @@ metadata/_edit_lock_ = true
 
 [node name="Search_Warrant_BG" type="Sprite2D" parent="Search_Warrant_Panel"]
 position = Vector2(-118, -53)
-texture = ExtResource("1_66gjs")
+texture = ExtResource("1_ub508")
 centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
@@ -268,7 +268,7 @@ offset_left = -31.0
 offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
-theme = ExtResource("2_tirn5")
+theme = ExtResource("2_lyw2x")
 metadata/_edit_lock_ = true
 
 [node name="Doctor_F" type="RichTextLabel" parent="Search_Warrant_Panel/Texts"]
@@ -284,7 +284,7 @@ text = "This Search Warrant isn't mere paper -it's worth [color=#992726]25Dø[/c
 visible_characters = 0
 visible_characters_behavior = 1
 visible_ratio = 0.0
-script = ExtResource("3_g814a")
+script = ExtResource("3_syr8f")
 metadata/_edit_lock_ = true
 
 [node name="Yes" type="Button" parent="Search_Warrant_Panel/Texts"]
@@ -295,9 +295,9 @@ offset_right = 320.0
 offset_bottom = 306.0
 theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
-theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
+theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "Yes, please, I
 need this one!"
 alignment = 2
@@ -311,9 +311,9 @@ offset_right = 247.0
 offset_bottom = 306.0
 theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
-theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
 text = "Well. Now that
 mention it..."
 alignment = 2
@@ -321,7 +321,7 @@ metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m6d4b")
+&"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
 
@@ -331,11 +331,11 @@ bus = &"UI"
 
 [node name="Writing" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ij50u")
+&"": SubResource("AnimationLibrary_ij50u")
 }
 autoplay = "Writing"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_xqf4y")
+stream = ExtResource("6_kfqfx")
 volume_db = -10.0
 bus = &"FX"
