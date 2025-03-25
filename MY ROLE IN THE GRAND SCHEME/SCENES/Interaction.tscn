@@ -600,25 +600,25 @@ visible = true
 [node name="Card_Text" parent="TMP/Objects/Card28/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Places" type="Node2D" parent="TMP"]
+[node name="Locations" type="Node2D" parent="TMP"]
 metadata/_edit_lock_ = true
 
-[node name="Card27" parent="TMP/Places" instance=ExtResource("6_v0c4c")]
+[node name="Card27" parent="TMP/Locations" instance=ExtResource("6_v0c4c")]
 position = Vector2(507, 34)
 
-[node name="Object" parent="TMP/Places/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="TMP/Locations/Card27/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card_Text" parent="TMP/Places/Card27/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="TMP/Locations/Card27/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card28" parent="TMP/Places" instance=ExtResource("6_v0c4c")]
+[node name="Card28" parent="TMP/Locations" instance=ExtResource("6_v0c4c")]
 position = Vector2(538, 34)
 
-[node name="Object" parent="TMP/Places/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="TMP/Locations/Card28/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card_Text" parent="TMP/Places/Card28/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="TMP/Locations/Card28/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("4_som80")]
@@ -817,5 +817,5 @@ metadata/_edit_lock_ = true
 [editable path="TMP/NPCs/Card20"]
 [editable path="TMP/Objects/Card27"]
 [editable path="TMP/Objects/Card28"]
-[editable path="TMP/Places/Card27"]
-[editable path="TMP/Places/Card28"]
+[editable path="TMP/Locations/Card27"]
+[editable path="TMP/Locations/Card28"]

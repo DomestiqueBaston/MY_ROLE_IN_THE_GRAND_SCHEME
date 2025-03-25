@@ -1,11 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://dew0fg5j62sga"]
+[gd_scene load_steps=9 format=3 uid="uid://dew0fg5j62sga"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="1_3ne57"]
 [ext_resource type="Texture2D" uid="uid://dlifalo75nukw" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce.png" id="2_2ltco"]
 [ext_resource type="Script" uid="uid://ldx5rugxss32" path="res://SCRIPTS/Link_Collider.gd" id="3_bbe4p"]
+[ext_resource type="AudioStream" uid="uid://bockrexv0ah1j" path="res://SOUND/LINK/Bip_Link.ogg" id="4_au33t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yi81"]
 size = Vector2(8, 3)
+
+[sub_resource type="Animation" id="Animation_4x26u"]
+resource_name = "Blink"
+length = 1.00001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Link_Texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.266667, 0.333333, 0.4, 0.466667, 0.6, 0.666667, 0.733333, 0.8, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.282353), Color(1, 1, 1, 0.282353), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.282353), Color(1, 1, 1, 0.282353), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.282353), Color(1, 1, 1, 0.282353), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bip_Link")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_au33t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_au33t")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_au33t")
+}],
+"times": PackedFloat32Array(0.133333, 0.466667, 0.8)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_au33t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Link_Texture:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iohy2"]
+_data = {
+&"Blink": SubResource("Animation_4x26u"),
+&"RESET": SubResource("Animation_au33t")
+}
 
 [node name="Link" type="Node2D"]
 texture_filter = 1
@@ -32,3 +94,12 @@ position = Vector2(4, 1.5)
 shape = SubResource("RectangleShape2D_8yi81")
 script = ExtResource("3_bbe4p")
 metadata/_edit_lock_ = true
+
+[node name="Link_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iohy2")
+}
+
+[node name="Bip_Link" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"FX"

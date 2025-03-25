@@ -104,9 +104,6 @@ metadata/_edit_lock_ = true
 [node name="Card1" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(190, 85)
 
-[node name="Combat" parent="TMP_1/Main_Playmat/Card1/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = true
-
 [node name="Special" parent="TMP_1/Main_Playmat/Card1/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
@@ -122,14 +119,14 @@ text = "...in order to see the reduce/expand animations!"
 [node name="Card2" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 
-[node name="Combat" parent="TMP_1/Main_Playmat/Card2/Card_Mask/Card_BG/Card_Color" index="0"]
-visible = true
-
 [node name="Run_Away" parent="TMP_1/Main_Playmat/Card2/Card_Mask/Card_BG/Card_Color/Combat" index="1"]
 visible = true
 
 [node name="Card_Text" parent="TMP_1/Main_Playmat/Card2/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card_Animations" parent="TMP_1/Main_Playmat/Card2" index="2"]
+autoplay = "Card_Blink"
 
 [node name="Card3" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
@@ -215,6 +212,9 @@ tooltip_text = "Intimacy
 New"
 texture = ExtResource("20_gmr4o")
 
+[node name="Link_Animation" parent="TMP_1/Main_Playmat/Links/Link_Violet_Rose" index="1"]
+autoplay = "Blink"
+
 [node name="Link_Pointillé_Blanc" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
 
 [node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/Link_Pointillé_Blanc" index="0"]
@@ -234,7 +234,7 @@ offset_top = 219.0
 offset_right = 523.0
 offset_bottom = 222.0
 rotation = -0.174241
-tooltip_text = "Confirmation
+tooltip_text = "Validation
 Confirmed (!)"
 texture = ExtResource("6_jtpuj")
 
@@ -246,6 +246,9 @@ position = Vector2(257, 92)
 
 [node name="Pin_Small3" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(470, 213)
+
+[node name="Pin_Animation" parent="TMP_1/Main_Playmat/Links/Pin_Small3" index="2"]
+autoplay = "Blink"
 
 [node name="Pin_Small4" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(232, 220)
@@ -795,6 +798,7 @@ metadata/_edit_lock_ = true
 [editable path="TMP_1/Main_Playmat/Links/Link_Violet_Rose"]
 [editable path="TMP_1/Main_Playmat/Links/Link_Pointillé_Blanc"]
 [editable path="TMP_1/Main_Playmat/Links/Link_Plein_Jaune"]
+[editable path="TMP_1/Main_Playmat/Links/Pin_Small3"]
 [editable path="TMP_2/Possible_Clues_Cards/Card7"]
 [editable path="TMP_2/Possible_Clues_Cards/Card8"]
 [editable path="TMP_2/Possible_Clues_Cards/Card9"]

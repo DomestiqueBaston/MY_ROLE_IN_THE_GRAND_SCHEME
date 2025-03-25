@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=27 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card.gd" id="2_2qjxn"]
@@ -19,9 +19,50 @@
 [ext_resource type="Texture2D" uid="uid://bvx7t0pawe7tq" path="res://GRAPHICS/CARD/Card_Dead_Top.png" id="15_k4orq"]
 [ext_resource type="Texture2D" uid="uid://5fddem5mo8cu" path="res://GRAPHICS/CARD/Card_Disappeared.png" id="16_k4orq"]
 [ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="17_kusna"]
+[ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="20_kusna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
 size = Vector2(70, 96)
+
+[sub_resource type="Animation" id="Animation_0byv1"]
+resource_name = "Card_Blink"
+length = 1.00001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Mask:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.266667, 0.333333, 0.4, 0.466667, 0.6, 0.666667, 0.733333, 0.8, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_kusna")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_kusna")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_kusna")
+}],
+"times": PackedFloat32Array(0.133333, 0.466667, 0.8)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_kxf5h"]
 resource_name = "Expand_Card"
@@ -357,6 +398,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Card_Mask:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_x7g54"]
 resource_name = "Reduce_Card"
@@ -536,6 +589,7 @@ tracks/13/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
 _data = {
+&"Card_Blink": SubResource("Animation_0byv1"),
 &"Expand_Card": SubResource("Animation_kxf5h"),
 &"RESET": SubResource("Animation_0x2oy"),
 &"Reduce_Card": SubResource("Animation_x7g54")
@@ -603,7 +657,6 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Combat" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-visible = false
 color = Color(0.31, 0, 0.0464999, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 metadata/_edit_lock_ = true

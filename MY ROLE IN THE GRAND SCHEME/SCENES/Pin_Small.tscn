@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjtpcqbs5puux"]
+[gd_scene load_steps=7 format=3 uid="uid://cjtpcqbs5puux"]
 
 [ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_eovho"]
 [ext_resource type="Texture2D" uid="uid://bttgel1ek480w" path="res://GRAPHICS/LINK_PIN/Pin_Small.png" id="2_121c2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
 radius = 4.0
+
+[sub_resource type="Animation" id="Animation_w454u"]
+resource_name = "Blink"
+length = 1.00001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.266667, 0.333333, 0.4, 0.466667, 0.6, 0.666667, 0.733333, 0.8, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i8ubj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tdxok"]
+_data = {
+&"Blink": SubResource("Animation_w454u"),
+&"RESET": SubResource("Animation_i8ubj")
+}
 
 [node name="Pin_Small" type="Node2D"]
 texture_filter = 1
@@ -28,3 +66,8 @@ metadata/_edit_lock_ = true
 [node name="Pin" type="CollisionShape2D" parent="Collider"]
 shape = SubResource("CircleShape2D_bfoqd")
 metadata/_edit_lock_ = true
+
+[node name="Pin_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tdxok")
+}
