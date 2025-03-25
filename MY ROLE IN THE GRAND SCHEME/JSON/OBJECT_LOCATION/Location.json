@@ -71,7 +71,7 @@
     "description": "Usually, people try to work on who-knows-what pointless theses here",
     "property": [],  // NPCxxx or rien.                 /!\ Probably useless
     "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": ["Break-in"],
+    "impossible_actions": ["Break_in"],
     "not_needed_actions": [],
     "findable_content": [],
     "hidden_content": [],
@@ -134,7 +134,7 @@
     "property": [],  // NPCxxx or rien.                 /!\ Probably useless
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Combat"],
-    "not_needed_actions": ["Break-in"],
+    "not_needed_actions": ["Break_in"],
     "findable_content": [],
     "hidden_content": [],
     "open_hours": ["h24"],
@@ -156,7 +156,7 @@
     "property": [],  // NPCxxx or rien.                 /!\ Probably useless
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
-    "not_needed_actions": ["Break-in"],
+    "not_needed_actions": ["Break_in"],
     "findable_content": [],
     "hidden_content": [],
     "open_hours": ["h24"],
@@ -310,7 +310,7 @@
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
-  "not_needed_actions": ["Break-in"],
+  "not_needed_actions": ["Break_in"],
   "findable_content": [],
   "hidden_content": [],
   "open_hours": ["h24"],
@@ -349,7 +349,7 @@
   "description": "A place where science used to happen... or things just get weirder",
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
-  "impossible_actions": ["Break-in"],
+  "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
   "findable_content": [],
   "hidden_content": [],
@@ -415,7 +415,7 @@
   "description": "The only place I know where they display dust",
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
-  "impossible_actions": ["Break-in"],
+  "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
   "findable_content": [],
   "hidden_content": [],
@@ -438,7 +438,7 @@
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
-  "not_needed_actions": ["Break-in"],
+  "not_needed_actions": ["Break_in"],
   "findable_content": [],
   "hidden_content": [],
   "open_hours": ["h24"],
@@ -477,7 +477,7 @@
   "description": "The place where packages get lost and time too",
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
-  "impossible_actions": ["Break-in"],
+  "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
   "findable_content": [],
   "hidden_content": [],
@@ -627,7 +627,7 @@
   "description": "As Bernard once said: A place to stop by... if you're into redistributing",
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
-  "impossible_actions": ["Break-in"],
+  "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
   "findable_content": [],
   "hidden_content": [],
@@ -646,7 +646,7 @@
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Combat"],
-  "not_needed_actions": ["Break-in"],
+  "not_needed_actions": ["Break_in"],
   "findable_content": [],
   "hidden_content": [],
   "open_hours": ["h24"],
@@ -668,7 +668,7 @@
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Combat"],
-  "not_needed_actions": ["Break-in"],
+  "not_needed_actions": ["Break_in"],
   "findable_content": [],
   "hidden_content": [],
   "open_hours": ["h24"],
@@ -765,7 +765,7 @@
   "description": "Where big decisions are made... and instantly forgotten",
   "property": [],  // NPCxxx or rien.                 /!\ Probably useless
   "possible_combinations": ["Dialogue", "Abstract"],
-  "impossible_actions": ["Break-in"],
+  "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
   "findable_content": [],
   "hidden_content": [],

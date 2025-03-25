@@ -119,6 +119,7 @@ Progression du joueur (pas des PNJs !)
 	- La caractéristique (principale) qui évoluera sera sélectionnée aléatoirement parmi celles utilisées pour le jet de dé.
 	- N’importe quel jet de dé (hors Mort par Add vu au dessus) impliquant PHY, MEN ou HEA peut amener à ces évolutions et la modification sera toujours effective après la résolution de l’action entreprise.
 	- Quand HEA évolue, HEAnom. aussi.
+
 Les PNJs
 
 	- Pour les besoin du jeu, les PNJs seront aussi représentés sous forme de cartes afin de pouvoir les « manipuler » en Interaction et sur la fiche d'enquête.
@@ -377,7 +378,7 @@ Les cartes
 	- Globalement, les cartes représentent des éléments de dialogue avec le jeu. Elles indiquent seulement leur nom et une description de leur utilisation, pas d’informations chiffrées !
 	- Les cartes sont de type Dialogue, Combat, Investigation, Abstraites , Objet, Lieu et PNJ.
 	- Le joueur disposera dans sa pile de maîtrise de max.10 cartes Dialogue/Combat/Investigation/Abstraite (dont 3 max. pour Abstraite). Ce sont ces cartes qui représentent les « actions » qu’il connaît et maîtrise.
-	- En début de partie, pour la pile de Maîtrise, le jeu proposera au joueur 8 cartes d’interaction (2 Dialogue, 2 Combat, 2 Investigation y compris Special, Run Away ou Break-In et 2 Abstraite) choisies aléatoirement.
+	- En début de partie, pour la pile de Maîtrise, le jeu proposera au joueur 8 cartes d’interaction (2 Dialogue, 2 Combat, 2 Investigation y compris Special, Run Away ou Break in et 2 Abstraite) choisies aléatoirement.
 	- Les effets d’une carte sur PHY et MEN sont temporaires !
 	- Les bonus/malus d’une carte sur HEA, HEAnom., Emo, Add et/ou Wan sont permanents !
 	- Lorsque des effets en cas d’échec sont mentionnés sur des cartes, ils sont à appliquer en cas d’échec après le jet de dé.
@@ -403,7 +404,7 @@ Cartes Investigation :
 	- Une fois jouées, ces cartes ne sont pas perdues.
 	- On ne joue qu’1 carte Investigation par interaction mais on peut y adjoindre 1 carte Investigation SPECIAL.
 	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
-	- Une carte Investigation BREAK-IN ne peut pas être jouée en combinaison d’une autre carte Investigation.
+	- Une carte Investigation BREAK IN ne peut pas être jouée en combinaison d’une autre carte Investigation.
 
 Cartes Combat :
 	- Elles sont des cartes qui se jouent uniquement en Combat.
@@ -617,7 +618,7 @@ Investigation
 	- On ne peut investiguer un Lieu qu’avec une autorisation de fouille (mais voir plus loin).
 	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit, bonus/malus de Break-In (voir Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit, bonus/malus de Break in (voir Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
 	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation. Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes.
 	- Une réussite critique donne +25Dø à +50Dø en plus de ce qui est trouvé avec une réussite « normale ».
 	- Un échec donne -1Emo.
@@ -634,9 +635,9 @@ Investigation en présence d’un PNJ sans autorisation de fouille
 Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 	- Il faut avant tout arriver à pénétrer dans le lieu et pour ce faire, il faut pouvoir « forcer » l’accès (grimper, forcer une serrure, etc.).
 	- ATTENTION : comme pour le reste, cette entreprise est testée en une fois.
-	- On ne peut jouer que 2 cartes maximum : Break-In et Abstraite (1 de chaque).
+	- On ne peut jouer que 2 cartes maximum : Break in et Abstraite (1 de chaque).
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
-	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes Break-In et Abstraite, de Difficulté d’enquête, Emo, Add et Wan, Sommeil, Veille, Nuit et de Lieu (uniquement sur place).
+	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Difficulté d’enquête, Emo, Add et Wan, Sommeil, Veille, Nuit et de Lieu (uniquement sur place).
 	- En cas de réussite critique, ±1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit.
 	- En cas d’échec, le joueur prendra +1Wan, ±1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
 	- En cas d’échec critique, -1HEA, ±1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain.

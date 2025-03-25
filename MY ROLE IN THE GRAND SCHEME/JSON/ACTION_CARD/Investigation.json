@@ -364,7 +364,7 @@ Using a detector allows you to uncover hidden items or traces that are otherwise
   {
     "id": "INB001",
     "name": "Break the Door",
-    "type": "Investigation BREAK-IN",
+    "type": "Investigation BREAK IN",
     "description": "Force your way through the door",
     "possible_combinations": ["Abstract"],
     "info": "- BREAK THE DOOR -
@@ -382,7 +382,7 @@ Force your way through the door, gaining immediate access but at the cost of men
   {
     "id": "INB002",
     "name": "Force the Lock",
-    "type": "Investigation BREAK-IN",
+    "type": "Investigation BREAK IN",
     "description": "Pick the lock to gain access",
     "possible_combinations": ["Abstract"],
     "info": "- FORCE THE LOCK -
@@ -400,7 +400,7 @@ Pick the lock to gain access quietly and efficiently. While this approach avoids
   {
     "id": "INB003",
     "name": "Climb the Gutter",
-    "type": "Investigation BREAK-IN",
+    "type": "Investigation BREAK IN",
     "description": "Climb up the building using the gutter",
     "possible_combinations": ["Abstract"],
     "info": "- CLIMB THE GUTTER -
@@ -418,7 +418,7 @@ Use the building's gutter to climb up and gain access. This method requires phys
   {
     "id": "INB004",
     "name": "Disable the Security",
-    "type": "Investigation BREAK-IN",
+    "type": "Investigation BREAK IN",
     "description": "Neutralize the security system",
     "possible_combinations": ["Abstract"],
     "info": "- DISABLE THE SECURITY -

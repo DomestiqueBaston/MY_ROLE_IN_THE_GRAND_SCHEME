@@ -1,5 +1,5 @@
 {
-  "noms_de_famille": ["Abdullah", "Abe", "Aguilar", "Akira", "Algans", "Alvarez", "Anderson", "Ansari", "Archer", "Baker", "Bao", 
+  "last_name": ["Abdullah", "Abe", "Aguilar", "Akira", "Algans", "Alvarez", "Anderson", "Ansari", "Archer", "Baker", "Bao", 
   "Barnes", "Becker", "Bell", "Bernard", "Bianchi", "Boutard", "Brown", "Chen", "Choi", "Clark", "Cohen", 
   "Collins", "Cruz", "Davis", "Diaz", "Dupont", "Eaton", "Edwards", "Fernandez", "Fischer", "Fitzgerald", 
   "Fujimoto", "Garcia", "Gonzalez", "Graham", "Green", "Guénard", "Gupta", "Hall", "Harris", "Hernandez", "Hiroshi", 
@@ -24,7 +24,7 @@
   "Wildwind", "Swiftwind", "Shadowhawk", "Eveningstar", "Nightstorm", "Moonstone", "Sparrowhawk", "Lightfeather", "Swiftstrike", "Thundermoon", 
   "Dawnrunner", "Eaglewing", "Talltree", "Redhawk", "Whitefeather", "Ironwolf", "Firebird", "Blackwolf", "Silverbear", "Snowfall"]
   ,
-  "prenoms_feminins": ["Ada", "Adelaide", "Aisha", "Akiko", "Alba", "Amina", "Anastasia", "Anita", "Ayana", "Bao", 
+  "female_first_name": ["Ada", "Adelaide", "Aisha", "Akiko", "Alba", "Amina", "Anastasia", "Anita", "Ayana", "Bao", 
   "Beatrice", "Bernadette", "Bianca", "Camila", "Carmen", "Caterina", "Charlotte", "Celeste", "Chika", "Clara", "Dalia", 
   "Daphne", "Daria", "Diana", "Elena", "Elvira", "Emilia", "Erika", "Esther", "Faiza", 
   "Felicia", "Fiona", "Gabriela", "Galina", "Giovanna", "Grazia", "Hana", "Hilda", "Iman", "Ingrid", 
@@ -40,7 +40,7 @@
   "Sevda", "Kirsten", "Lucinda", "Brigitte", "Anya", "Simona", "Lalita", "Nina", "Sabrina", 
   "Anita", "Karima", "Sian", "Soraya", "Aurelia", "Aiyana", "Takoda", "Wyanet", "Tashina", "Nayeli", "Atsadi", "Zitkála", "Aylen", "Sani", "Cheyenne"]
   ,
-  "prenoms_masculins": ["Abelardo", "Ade", "Adelardo", "Akira", "Alarico", "Alcide", "Alphonse", "Anselmo", "Archibald", "Baba", 
+  "male_first_name": ["Abelardo", "Ade", "Adelardo", "Akira", "Alarico", "Alcide", "Alphonse", "Anselmo", "Archibald", "Baba", 
   "Bao", "Barnabe", "Basilio", "Benito", "Boris", "Celestino", "Chen", "Chike", "Cipriano", "Dagoberto", 
   "Dai", "Diallo", "Dimitri", "Eamon", "Edmondo", "Edmund", "Ekon", "Emilio", "Eustaquio", "Faisal", 
   "Felix", "Femi", "Ferdinand", "Firmino", "Flavien", "Ganesh", "Gaspar", "Gbenga", "Geoff", "Godefroy", 

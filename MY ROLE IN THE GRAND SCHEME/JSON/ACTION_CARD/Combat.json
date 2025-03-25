@@ -345,14 +345,14 @@ A moment of clarity in the midst of chaos, allowing you to suppress overwhelming
   {
     "id": "COR001",
     "name": "Flee",
-    "type": "Combat RUN-AWAY",
+    "type": "Combat RUN AWAY",
     "description": "Escape the fight by increasing your physical and mental capabilities",
     "possible_combinations": ["Abstract"],
-    "info": "- RUN-AWAY -
+    "info": "- RUN AWAY -
 
 In the heat of battle, sometimes the best option is to escape, using your speed and mental sharpness to get away unscathed. A successful escape boosts both your physical endurance and mental clarity, but running away can still have its consequences.
 
-''I think, therefore I am. But maybe I should run-away now.''",
+''I think, therefore I am. But maybe I should run away now.''",
     "bonus_malus": [
       {
         "condition": {"result": "success"},
