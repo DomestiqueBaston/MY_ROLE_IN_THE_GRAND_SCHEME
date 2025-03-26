@@ -604,6 +604,8 @@ Déclenchement d’un Combat par un PNJ « sbire »
 Fuir un Combat (Joueur)
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir.
 	- On ne peut jouer que 2 cartes pour fuir (la carte Run Away + une carte Abstraite).
+	- On ne peut pas jouer une carte Abstraite seule.
+	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Run Away.
 	- On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 au jet de dé.
 	- Pour fuir un combat (avant qu’il ne commence), le joueur lance un dé contre round((PHY+MEN+HEA)÷3).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit…
@@ -636,6 +638,8 @@ Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 	- Il faut avant tout arriver à pénétrer dans le lieu et pour ce faire, il faut pouvoir « forcer » l’accès (grimper, forcer une serrure, etc.).
 	- ATTENTION : comme pour le reste, cette entreprise est testée en une fois.
 	- On ne peut jouer que 2 cartes maximum : Break in et Abstraite (1 de chaque).
+	- On ne peut pas jouer une carte Abstraite seule.
+	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Break in.
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
 	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Difficulté d’enquête, Emo, Add et Wan, Sommeil, Veille, Nuit et de Lieu (uniquement sur place).
 	- En cas de réussite critique, ±1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit.

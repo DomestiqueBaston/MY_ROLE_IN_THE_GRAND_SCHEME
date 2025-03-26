@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cg2uptmo3ewqh"
+path="res://.godot/imported/Small_Tv_Button_Mask.png-b6c46b44e40cc7ddad2e62968b5f20d6.res"
+
+[deps]
+
+source_file="res://GRAPHICS/INTERACTION/Small_Tv_Button_Mask.png"
+dest_files=["res://.godot/imported/Small_Tv_Button_Mask.png-b6c46b44e40cc7ddad2e62968b5f20d6.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

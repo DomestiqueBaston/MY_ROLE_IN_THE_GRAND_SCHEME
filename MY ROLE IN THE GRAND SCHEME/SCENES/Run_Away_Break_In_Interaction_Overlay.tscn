@@ -1,0 +1,286 @@
+[gd_scene load_steps=19 format=3 uid="uid://m7b4hvgtnl1h"]
+
+[ext_resource type="Texture2D" uid="uid://cydqmld1i1nfl" path="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/BG.png" id="1_lbetn"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="2_4cvnv"]
+[ext_resource type="Texture2D" uid="uid://c6b5jldeguvjc" path="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/Break_In.png" id="2_bmyt0"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="3_ccox1"]
+[ext_resource type="Texture2D" uid="uid://ccpmarqkfa7hg" path="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/Run_Away.png" id="3_t1hno"]
+[ext_resource type="Texture2D" uid="uid://cn2e8ojjmxn8j" path="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/Interaction_Zone.png" id="4_w2xc6"]
+[ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="5_lbetn"]
+[ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="6_ucujk"]
+[ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="7_v2y1h"]
+[ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="8_m6vde"]
+[ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="9_3oinn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbetn"]
+size = Vector2(154, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmyt0"]
+size = Vector2(76, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1hno"]
+size = Vector2(76, 139)
+
+[sub_resource type="Animation" id="Animation_4pq04"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interaction_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-468, 48), Vector2(-234, 48), Vector2(43.539, 48), Vector2(86.36, 48), Vector2(129.18, 48), Vector2(172, 48)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_4cvnv")
+}],
+"times": PackedFloat32Array(0.028334)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_atwki"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Interaction_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(172, 48), Vector2(172, 48), Vector2(162, 48), Vector2(-48.001, 48), Vector2(-258.001, 48), Vector2(-468, 48)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ccox1")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vfroo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Interaction_Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-468, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
+_data = {
+&"Appearance": SubResource("Animation_4pq04"),
+&"Disappearance": SubResource("Animation_atwki"),
+&"RESET": SubResource("Animation_vfroo")
+}
+
+[node name="Run_Away_Break_In_Interaction" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Interaction_Panel" type="Node2D" parent="."]
+position = Vector2(-468, 48)
+metadata/_edit_lock_ = true
+
+[node name="Interaction_BG" type="Sprite2D" parent="Interaction_Panel"]
+position = Vector2(-83, -33)
+texture = ExtResource("1_lbetn")
+centered = false
+offset = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Control" parent="Interaction_Panel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -172.0
+offset_top = -48.0
+offset_right = 468.0
+offset_bottom = 312.0
+mouse_filter = 2
+theme = ExtResource("5_lbetn")
+metadata/_edit_lock_ = true
+
+[node name="Bring_It_On" type="TextureButton" parent="Interaction_Panel/Button"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -46.0
+offset_right = 574.0
+offset_bottom = 314.0
+tooltip_text = "Validate the Interaction"
+texture_normal = ExtResource("6_ucujk")
+texture_pressed = ExtResource("7_v2y1h")
+texture_hover = ExtResource("8_m6vde")
+texture_click_mask = ExtResource("9_3oinn")
+metadata/_edit_lock_ = true
+
+[node name="Break_In" type="Sprite2D" parent="Interaction_Panel"]
+visible = false
+position = Vector2(-63, -13)
+texture = ExtResource("2_bmyt0")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Run_Away" type="Sprite2D" parent="Interaction_Panel"]
+position = Vector2(-63, -13)
+texture = ExtResource("3_t1hno")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Interaction_Zone" type="Sprite2D" parent="Interaction_Panel"]
+visible = false
+position = Vector2(-63, -13)
+texture = ExtResource("4_w2xc6")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Colliders" type="Node2D" parent="Interaction_Panel"]
+position = Vector2(-172, -48)
+metadata/_edit_lock_ = true
+
+[node name="Interaction_Area" type="Area2D" parent="Interaction_Panel/Colliders"]
+collision_layer = 0
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Interaction_Collider" type="CollisionShape2D" parent="Interaction_Panel/Colliders/Interaction_Area"]
+position = Vector2(316, 186)
+shape = SubResource("RectangleShape2D_lbetn")
+metadata/_edit_lock_ = true
+
+[node name="Mastery_Area" type="Area2D" parent="Interaction_Panel/Colliders"]
+metadata/_edit_lock_ = true
+
+[node name="Mastery" type="CollisionShape2D" parent="Interaction_Panel/Colliders/Mastery_Area"]
+position = Vector2(174, 220.5)
+shape = SubResource("RectangleShape2D_bmyt0")
+metadata/_edit_lock_ = true
+
+[node name="Fallback_Area" type="Area2D" parent="Interaction_Panel/Colliders"]
+metadata/_edit_lock_ = true
+
+[node name="Fallback" type="CollisionShape2D" parent="Interaction_Panel/Colliders/Fallback_Area"]
+position = Vector2(459, 221.5)
+shape = SubResource("RectangleShape2D_t1hno")
+metadata/_edit_lock_ = true
+
+[node name="Card_Places" type="Node2D" parent="Interaction_Panel"]
+metadata/_edit_lock_ = true
+
+[node name="Interaction_Card_Places" type="Node2D" parent="Interaction_Panel/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="Card_1" type="Marker2D" parent="Interaction_Panel/Card_Places/Interaction_Card_Places"]
+position = Vector2(69, 88)
+metadata/_edit_lock_ = true
+
+[node name="Card_2" type="Marker2D" parent="Interaction_Panel/Card_Places/Interaction_Card_Places"]
+position = Vector2(145, 88)
+metadata/_edit_lock_ = true
+
+[node name="Mastery_Card_Places" type="Node2D" parent="Interaction_Panel/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_Panel/Card_Places/Mastery_Card_Places"]
+position = Vector2(-35, 104)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_Panel/Card_Places/Mastery_Card_Places"]
+position = Vector2(-35, 141)
+metadata/_edit_lock_ = true
+
+[node name="Fallback_Card_Places" type="Node2D" parent="Interaction_Panel/Card_Places"]
+metadata/_edit_lock_ = true
+
+[node name="First_Card" type="Marker2D" parent="Interaction_Panel/Card_Places/Fallback_Card_Places"]
+position = Vector2(250, 105)
+metadata/_edit_lock_ = true
+
+[node name="Last_Card" type="Marker2D" parent="Interaction_Panel/Card_Places/Fallback_Card_Places"]
+position = Vector2(250, 142)
+metadata/_edit_lock_ = true
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m6d4b")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
