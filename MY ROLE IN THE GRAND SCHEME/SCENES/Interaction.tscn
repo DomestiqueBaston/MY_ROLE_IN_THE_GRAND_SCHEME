@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=59 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -73,23 +73,6 @@ shader_parameter/vignette_opacity = 0.5
 [sub_resource type="CircleShape2D" id="CircleShape2D_v84v6"]
 radius = 7.0
 
-[sub_resource type="Animation" id="Animation_iwlie"]
-resource_name = "Button_Rotation"
-length = 0.400007
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Rotary_Button:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266666, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 2, 3, 4, 5, 0]
-}
-
 [sub_resource type="Animation" id="Animation_y0drc"]
 length = 0.001
 tracks/0/type = "value"
@@ -105,15 +88,9 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lds6i"]
-_data = {
-&"Button_Rotation": SubResource("Animation_iwlie"),
-&"RESET": SubResource("Animation_y0drc")
-}
-
-[sub_resource type="Animation" id="Animation_5shvk"]
-resource_name = "Button_Rotation"
-length = 0.400007
+[sub_resource type="Animation" id="Animation_iwlie"]
+resource_name = "Position_1"
+length = 0.0666734
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -122,10 +99,106 @@ tracks/0/path = NodePath("Rotary_Button:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2, 3, 4, 5, 0, 1]
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_lds6i"]
+resource_name = "Position_2"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_5gn7j"]
+resource_name = "Position_3"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_xjgkp"]
+resource_name = "Position_4"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_f02d0"]
+resource_name = "Position_5"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_06ojl"]
+resource_name = "Position_6"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lds6i"]
+_data = {
+&"Position_1": SubResource("Animation_iwlie"),
+&"Position_2": SubResource("Animation_lds6i"),
+&"Position_3": SubResource("Animation_5gn7j"),
+&"Position_4": SubResource("Animation_xjgkp"),
+&"Position_5": SubResource("Animation_f02d0"),
+&"Position_6": SubResource("Animation_06ojl"),
+&"RESET": SubResource("Animation_y0drc")
 }
 
 [sub_resource type="Animation" id="Animation_rrbp0"]
@@ -143,9 +216,116 @@ tracks/0/keys = {
 "values": [2]
 }
 
+[sub_resource type="Animation" id="Animation_5shvk"]
+resource_name = "Position_1"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_k1rto"]
+resource_name = "Position_2"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_5imuv"]
+resource_name = "Position_3"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_jv51o"]
+resource_name = "Position_4"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_1c880"]
+resource_name = "Position_5"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_di8r4"]
+resource_name = "Position_6"
+length = 0.0666734
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rotary_Button:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y0drc"]
 _data = {
-&"Button_Rotation": SubResource("Animation_5shvk"),
+&"Position_1": SubResource("Animation_5shvk"),
+&"Position_2": SubResource("Animation_k1rto"),
+&"Position_3": SubResource("Animation_5imuv"),
+&"Position_4": SubResource("Animation_jv51o"),
+&"Position_5": SubResource("Animation_1c880"),
+&"Position_6": SubResource("Animation_di8r4"),
 &"RESET": SubResource("Animation_rrbp0")
 }
 
@@ -335,7 +515,8 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Hover_Interaction_Zone" type="TextureRect" parent="Interaction_BG"]
-tooltip_text = "Whatcha gonna do, brother?"
+tooltip_text = "Drop the cards you
+want to play here"
 theme = ExtResource("2_v84v6")
 texture = ExtResource("3_6vqkd")
 script = ExtResource("3_wtwpt")
@@ -854,10 +1035,14 @@ texture_click_mask = ExtResource("22_y0drc")
 script = ExtResource("16_uvife")
 metadata/_edit_lock_ = true
 
-[node name="Top_Rotary_Button" type="Node2D" parent="Top_Left_Screen"]
+[node name="Rotary_Buttons" type="Node2D" parent="Top_Left_Screen"]
+visible = false
 metadata/_edit_lock_ = true
 
-[node name="Rotary_Button" type="Sprite2D" parent="Top_Left_Screen/Top_Rotary_Button"]
+[node name="Top_Rotary_Button" type="Node2D" parent="Top_Left_Screen/Rotary_Buttons"]
+metadata/_edit_lock_ = true
+
+[node name="Rotary_Button" type="Sprite2D" parent="Top_Left_Screen/Rotary_Buttons/Top_Rotary_Button"]
 position = Vector2(107, 16)
 texture = ExtResource("22_rrbp0")
 centered = false
@@ -865,24 +1050,24 @@ hframes = 6
 frame = 1
 metadata/_edit_lock_ = true
 
-[node name="Top_Rotary_Button_Collider" type="Area2D" parent="Top_Left_Screen/Top_Rotary_Button"]
+[node name="Top_Rotary_Button_Collider" type="Area2D" parent="Top_Left_Screen/Rotary_Buttons/Top_Rotary_Button"]
 metadata/_edit_lock_ = true
 
-[node name="Rotary_Button_Collider" type="CollisionShape2D" parent="Top_Left_Screen/Top_Rotary_Button/Top_Rotary_Button_Collider"]
+[node name="Rotary_Button_Collider" type="CollisionShape2D" parent="Top_Left_Screen/Rotary_Buttons/Top_Rotary_Button/Top_Rotary_Button_Collider"]
 position = Vector2(115, 24)
 shape = SubResource("CircleShape2D_v84v6")
 metadata/_edit_lock_ = true
 
-[node name="Rotary_Button_Animation" type="AnimationPlayer" parent="Top_Left_Screen/Top_Rotary_Button"]
+[node name="Rotary_Button_Animation" type="AnimationPlayer" parent="Top_Left_Screen/Rotary_Buttons/Top_Rotary_Button"]
 libraries = {
 &"": SubResource("AnimationLibrary_lds6i")
 }
 
-[node name="Bottom_Rotary_Button" type="Node2D" parent="Top_Left_Screen"]
+[node name="Bottom_Rotary_Button" type="Node2D" parent="Top_Left_Screen/Rotary_Buttons"]
 position = Vector2(0, 25)
 metadata/_edit_lock_ = true
 
-[node name="Rotary_Button" type="Sprite2D" parent="Top_Left_Screen/Bottom_Rotary_Button"]
+[node name="Rotary_Button" type="Sprite2D" parent="Top_Left_Screen/Rotary_Buttons/Bottom_Rotary_Button"]
 position = Vector2(107, 16)
 texture = ExtResource("22_rrbp0")
 centered = false
@@ -890,16 +1075,16 @@ hframes = 6
 frame = 2
 metadata/_edit_lock_ = true
 
-[node name="Bottom_Rotary_Button_Collider" type="Area2D" parent="Top_Left_Screen/Bottom_Rotary_Button"]
+[node name="Bottom_Rotary_Button_Collider" type="Area2D" parent="Top_Left_Screen/Rotary_Buttons/Bottom_Rotary_Button"]
 position = Vector2(0, -25)
 metadata/_edit_lock_ = true
 
-[node name="Rotary_Button_Collider" type="CollisionShape2D" parent="Top_Left_Screen/Bottom_Rotary_Button/Bottom_Rotary_Button_Collider"]
+[node name="Rotary_Button_Collider" type="CollisionShape2D" parent="Top_Left_Screen/Rotary_Buttons/Bottom_Rotary_Button/Bottom_Rotary_Button_Collider"]
 position = Vector2(115, 49)
 shape = SubResource("CircleShape2D_v84v6")
 metadata/_edit_lock_ = true
 
-[node name="Rotary_Button_Animation" type="AnimationPlayer" parent="Top_Left_Screen/Bottom_Rotary_Button"]
+[node name="Rotary_Button_Animation" type="AnimationPlayer" parent="Top_Left_Screen/Rotary_Buttons/Bottom_Rotary_Button"]
 libraries = {
 &"": SubResource("AnimationLibrary_y0drc")
 }
