@@ -21,11 +21,13 @@ func _process(_delta):
 	var rect = Rect2(collider_global_position - shape.extents, shape.extents * 2)
 	if rect.has_point(mouse_position):
 		if not is_hovering:
+			$"../../../Trash_Open".play()
 			is_hovering = true
 			trash_normal.visible = false
 			trash_hover.visible = true
 	else:
 		if is_hovering:
+			$"../../../Trash_Close".play()
 			is_hovering = false
 			trash_normal.visible = true
 			trash_hover.visible = false

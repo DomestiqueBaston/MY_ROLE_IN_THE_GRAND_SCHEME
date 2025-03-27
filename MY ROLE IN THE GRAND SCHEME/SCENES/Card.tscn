@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=29 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card.gd" id="2_2qjxn"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://5fddem5mo8cu" path="res://GRAPHICS/CARD/Card_Disappeared.png" id="16_k4orq"]
 [ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="17_kusna"]
 [ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="20_kusna"]
+[ext_resource type="AudioStream" uid="uid://cugi11x6eeqoq" path="res://SOUND/MISC/Go_Front.ogg" id="21_a6amd"]
+[ext_resource type="AudioStream" uid="uid://mki238woun53" path="res://SOUND/MISC/Go_Back.ogg" id="22_ve1ow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
 size = Vector2(70, 96)
@@ -877,5 +879,13 @@ libraries = {
 }
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
-volume_db = -25.0
-bus = &"FX"
+volume_db = -15.0
+bus = &"UI"
+
+[node name="Go_Front" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_a6amd")
+bus = &"UI"
+
+[node name="Go_Back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_ve1ow")
+bus = &"UI"

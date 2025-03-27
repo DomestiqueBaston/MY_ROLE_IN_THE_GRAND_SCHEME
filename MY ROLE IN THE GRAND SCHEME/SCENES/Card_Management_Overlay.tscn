@@ -1,21 +1,45 @@
-[gd_scene load_steps=23 format=3 uid="uid://c0ukqcgb1ay3s"]
+[gd_scene load_steps=36 format=3 uid="uid://c0ukqcgb1ay3s"]
 
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_MANAGEMENT/Frame.png" id="1_f15cm"]
 [ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="2_yfns7"]
-[ext_resource type="Texture2D" uid="uid://gvyelslcisso" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Normal.png" id="3_87iat"]
-[ext_resource type="Texture2D" uid="uid://chh72py8tur0" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Hover.png" id="4_1l4kf"]
-[ext_resource type="BitMap" uid="uid://drh3npcujiq6o" path="res://GRAPHICS/CARD_MANAGEMENT/Ok_Mask.png" id="5_8b577"]
-[ext_resource type="Texture2D" uid="uid://cn782xqxlk71a" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Normal.png" id="6_wbsna"]
-[ext_resource type="Texture2D" uid="uid://ilhb6s2w3iuo" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Hover.png" id="7_awawb"]
-[ext_resource type="BitMap" uid="uid://davrldnroxoyu" path="res://GRAPHICS/CARD_MANAGEMENT/Exit_Mask.png" id="8_cgtwl"]
+[ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="3_edhgu"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="4_edhgu"]
 [ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Normal.png" id="9_eg8nv"]
 [ext_resource type="Script" uid="uid://cj4kkd1mdr47l" path="res://SCRIPTS/Card_Management_Overlay_Trash.gd" id="9_t8k7k"]
 [ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Hover.png" id="10_6pms8"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="12_1t2xr"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="13_iwurd"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="14_ukbs4"]
+[ext_resource type="AudioStream" uid="uid://e7mx8yp2bmn" path="res://SOUND/MISC/Trash_Close.ogg" id="15_3ah6p"]
+[ext_resource type="AudioStream" uid="uid://0xs5pryxxfxj" path="res://SOUND/MISC/Trash_Open.ogg" id="16_h48le"]
+[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="17_uasgl"]
+[ext_resource type="AudioStream" uid="uid://4dfb07ojptrw" path="res://SOUND/MISC/Cancel.ogg" id="18_h48le"]
+[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="20_341ss"]
+[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="20_i4e1y"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_e1gkw"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h48le"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4e1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_341ss"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yr746"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ga1rx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3wbb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d7lmg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uasgl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pp4jh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aeasn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4obmy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47f8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r70rf"]
 size = Vector2(156, 102)
@@ -202,33 +226,60 @@ offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 340.0
 theme = ExtResource("2_yfns7")
+script = ExtResource("3_edhgu")
 metadata/_edit_lock_ = true
 
-[node name="Ok" type="TextureButton" parent="Card_Management_Panel/Buttons"]
+[node name="Ok" type="Button" parent="Card_Management_Panel/Buttons"]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
-tooltip_text = "Validate the Deck"
-toggle_mode = true
-button_group = SubResource("ButtonGroup_e1gkw")
-texture_normal = ExtResource("3_87iat")
-texture_pressed = ExtResource("3_87iat")
-texture_hover = ExtResource("4_1l4kf")
-texture_click_mask = ExtResource("5_8b577")
-metadata/_edit_lock_ = true
+offset_left = 512.0
+offset_top = 218.0
+offset_right = 538.0
+offset_bottom = 239.0
+tooltip_text = "Validate
+and leave"
+theme_override_colors/font_disabled_color = Color(0.0785, 0.12, 0.0204, 0.756863)
+theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
+theme_override_colors/font_hover_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_color = Color(0.343, 0.49, 0.1372, 0.635294)
+theme_override_colors/font_focus_color = Color(0.76725, 0.93, 0.5394, 0.647059)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.490196, 0.137255, 0.635294)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_edhgu")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h48le")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_i4e1y")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_341ss")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yr746")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ga1rx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_t3wbb")
+text = "Ok!"
 
-[node name="Exit" type="TextureButton" parent="Card_Management_Panel/Buttons"]
+[node name="Exit" type="Button" parent="Card_Management_Panel/Buttons"]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
-tooltip_text = "Close that screen!"
-toggle_mode = true
-button_group = SubResource("ButtonGroup_e1gkw")
-texture_normal = ExtResource("6_wbsna")
-texture_pressed = ExtResource("6_wbsna")
-texture_hover = ExtResource("7_awawb")
-texture_click_mask = ExtResource("8_cgtwl")
-metadata/_edit_lock_ = true
+offset_left = 490.0
+offset_top = 241.0
+offset_right = 539.0
+offset_bottom = 262.0
+tooltip_text = "Cancel
+and leave"
+theme_override_colors/font_disabled_color = Color(0.13, 0.0546867, 0.0273, 0.847059)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.596078, 0.45098, 0.556863)
+theme_override_colors/font_hover_color = Color(1, 0.596078, 0.45098, 0.556863)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_color = Color(0.78, 0.32812, 0.1638, 0.631373)
+theme_override_colors/font_focus_color = Color(1, 0.596667, 0.45, 0.556863)
+theme_override_colors/font_pressed_color = Color(0.78, 0.32812, 0.1638, 0.631373)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_edhgu")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d7lmg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uasgl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_pp4jh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aeasn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4obmy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_47f8k")
+text = "Cancel"
 
 [node name="Trash" type="Control" parent="Card_Management_Panel/Buttons"]
 anchors_preset = 0
@@ -308,3 +359,36 @@ autoplay = "Appearance"
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
+
+[node name="Trash_Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_h48le")
+volume_db = -5.0
+bus = &"UI"
+
+[node name="Trash_Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_3ah6p")
+volume_db = -15.0
+bus = &"UI"
+
+[node name="Valid" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_uasgl")
+bus = &"UI"
+
+[node name="Cancel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_h48le")
+bus = &"UI"
+
+[node name="Leave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_341ss")
+bus = &"UI"
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_i4e1y")
+bus = &"UI"
+
+[connection signal="mouse_entered" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_switch_pressed"]
+[connection signal="mouse_entered" from="Card_Management_Panel/Buttons/Exit" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Card_Management_Panel/Buttons/Exit" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Card_Management_Panel/Buttons/Exit" to="Card_Management_Panel/Buttons" method="_on_cancel_pressed"]

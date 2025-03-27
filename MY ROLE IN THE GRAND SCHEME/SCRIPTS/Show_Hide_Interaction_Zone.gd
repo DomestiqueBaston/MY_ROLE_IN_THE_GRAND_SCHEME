@@ -1,9 +1,8 @@
 extends TextureRect
 
-# Référence au CollisionShape2D
+
 @onready var interaction_collider = $"../../Colliders/Interaction_Area/Interaction_Collider"
 
-# Variable pour suivre si la souris est sur le collider
 var is_hovering = false
 
 func _ready():
@@ -18,9 +17,11 @@ func _process(_delta):
 	var rect = Rect2(collider_global_position - shape.extents, shape.extents * 2)
 	if rect.has_point(mouse_position):
 		if not is_hovering:
+			$"../../Hover".play()
 			is_hovering = true
 			visible = true
 	else:
 		if is_hovering:
+			$"../../Leave".play()
 			is_hovering = false
 			visible = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://cnsnou3voqm67"]
+[gd_scene load_steps=34 format=3 uid="uid://cnsnou3voqm67"]
 
 [ext_resource type="Texture2D" uid="uid://bldatry1ckp7d" path="res://GRAPHICS/CASE_MANAGEMENT/Case_Management_BG.png" id="1_m0xss"]
 [ext_resource type="Theme" uid="uid://vbgd5rjttbbi" path="res://UI/Case_Management_Theme.tres" id="2_j02fd"]
+[ext_resource type="Script" uid="uid://w21ho5e5x33c" path="res://SCRIPTS/Case_Management_Buttons.gd" id="3_hmggj"]
 [ext_resource type="Texture2D" uid="uid://cailha23k34yd" path="res://GRAPHICS/CASE_MANAGEMENT/Cancel_Pressed.png" id="3_o220d"]
 [ext_resource type="Texture2D" uid="uid://s6d7fcwywqn" path="res://GRAPHICS/CASE_MANAGEMENT/Cancel_Hover.png" id="4_m5yw0"]
 [ext_resource type="BitMap" uid="uid://ddpxoqjmflj67" path="res://GRAPHICS/CASE_MANAGEMENT/Cancel_Mask.png" id="5_l6xj4"]
@@ -23,6 +24,11 @@
 [ext_resource type="Texture2D" uid="uid://tn484qetw520" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Pressed.png" id="18_x3v2j"]
 [ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Hover.png" id="19_03ieh"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Mask.png" id="20_s0481"]
+[ext_resource type="AudioStream" uid="uid://gaoc58dislyn" path="res://SOUND/MISC/Drawer.ogg" id="25_h1j4x"]
+[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="26_blqut"]
+[ext_resource type="AudioStream" uid="uid://4dfb07ojptrw" path="res://SOUND/MISC/Cancel.ogg" id="27_tgiar"]
+[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="28_6q2i7"]
+[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="28_tgiar"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -176,6 +182,7 @@ offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
 theme = ExtResource("2_j02fd")
+script = ExtResource("3_hmggj")
 metadata/_edit_lock_ = true
 
 [node name="Cancel" type="TextureButton" parent="Case_Management_Panel/Buttons"]
@@ -186,6 +193,8 @@ offset_right = 60.0
 offset_bottom = 60.0
 tooltip_text = "I'd rather focus on
 my current case..."
+toggle_mode = true
+button_group = ExtResource("18_iv6fp")
 texture_pressed = ExtResource("3_o220d")
 texture_hover = ExtResource("4_m5yw0")
 texture_click_mask = ExtResource("5_l6xj4")
@@ -199,12 +208,14 @@ offset_right = 60.0
 offset_bottom = 60.0
 tooltip_text = "Ok. Let's focus
 on that case!"
+toggle_mode = true
+button_group = ExtResource("18_iv6fp")
 texture_pressed = ExtResource("6_yqr2y")
 texture_hover = ExtResource("7_mrc3k")
 texture_click_mask = ExtResource("8_nk6tj")
 metadata/_edit_lock_ = true
 
-[node name="3" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+[node name="03" type="TextureButton" parent="Case_Management_Panel/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -219,7 +230,7 @@ texture_hover = ExtResource("10_aw2ps")
 texture_click_mask = ExtResource("11_am32a")
 metadata/_edit_lock_ = true
 
-[node name="4" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+[node name="04" type="TextureButton" parent="Case_Management_Panel/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -234,7 +245,7 @@ texture_hover = ExtResource("13_dkmlf")
 texture_click_mask = ExtResource("14_essm7")
 metadata/_edit_lock_ = true
 
-[node name="1" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+[node name="01" type="TextureButton" parent="Case_Management_Panel/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -249,7 +260,7 @@ texture_hover = ExtResource("16_3v870")
 texture_click_mask = ExtResource("17_ysxkr")
 metadata/_edit_lock_ = true
 
-[node name="2" type="TextureButton" parent="Case_Management_Panel/Buttons"]
+[node name="02" type="TextureButton" parent="Case_Management_Panel/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -266,10 +277,49 @@ metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m6d4b")
+&"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
+
+[node name="Drawer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_h1j4x")
+bus = &"UI"
+
+[node name="Valid" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_blqut")
+bus = &"UI"
+
+[node name="Cancel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_tgiar")
+bus = &"UI"
+
+[node name="Leave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_tgiar")
+bus = &"UI"
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_6q2i7")
+bus = &"UI"
+
+[connection signal="mouse_entered" from="Case_Management_Panel/Buttons/Cancel" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Case_Management_Panel/Buttons/Cancel" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Case_Management_Panel/Buttons/Cancel" to="Case_Management_Panel/Buttons" method="_on_cancel_pressed"]
+[connection signal="mouse_entered" from="Case_Management_Panel/Buttons/Switch" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Case_Management_Panel/Buttons/Switch" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Case_Management_Panel/Buttons/Switch" to="Case_Management_Panel/Buttons" method="_on_switch_pressed"]
+[connection signal="mouse_entered" from="Case_Management_Panel/Buttons/03" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Case_Management_Panel/Buttons/03" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Case_Management_Panel/Buttons/03" to="Case_Management_Panel/Buttons" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Case_Management_Panel/Buttons/04" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Case_Management_Panel/Buttons/04" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Case_Management_Panel/Buttons/04" to="Case_Management_Panel/Buttons" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Case_Management_Panel/Buttons/01" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Case_Management_Panel/Buttons/01" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Case_Management_Panel/Buttons/01" to="Case_Management_Panel/Buttons" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Case_Management_Panel/Buttons/02" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Case_Management_Panel/Buttons/02" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Case_Management_Panel/Buttons/02" to="Case_Management_Panel/Buttons" method="_on_any_button_pressed"]

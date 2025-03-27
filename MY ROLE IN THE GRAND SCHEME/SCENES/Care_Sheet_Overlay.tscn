@@ -339,5 +339,4 @@ autoplay = "Writing"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_jhyu5")
-volume_db = -10.0
 bus = &"FX"
