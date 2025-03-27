@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddckvg37ygsor"]
+[gd_scene load_steps=13 format=3 uid="uid://ddckvg37ygsor"]
 
 [ext_resource type="Texture2D" uid="uid://hd0s0r4fdcia" path="res://GRAPHICS/CREDITS/Credits_BG.png" id="1_1n7ja"]
 [ext_resource type="Theme" uid="uid://tks2glp547ui" path="res://UI/Credits_Theme.tres" id="2_u3pji"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="4_5162v"]
+[ext_resource type="Script" uid="uid://5dpcp7u12bvi" path="res://SCRIPTS/Credits_Button.gd" id="4_smm6m"]
+[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="7_v025g"]
 [ext_resource type="Script" uid="uid://lgtv2sptyo1d" path="res://SCRIPTS/Credits_Typing.gd" id="7_xwskb"]
+[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="8_qvh8d"]
+[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="9_sp6jc"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="9_vnu4b"]
 
 [sub_resource type="Animation" id="Animation_nxbww"]
@@ -235,6 +239,21 @@ text = "... And  here  too!"
 script = ExtResource("7_xwskb")
 metadata/_edit_lock_ = true
 
+[node name="Button" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_u3pji")
+script = ExtResource("4_smm6m")
+
+[node name="Ok" type="Button" parent="Button"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 283.0
+offset_right = 328.0
+offset_bottom = 299.0
+text = "Ok!"
+
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("4_5162v")]
 
 [node name="Writing" type="AnimationPlayer" parent="."]
@@ -245,5 +264,20 @@ autoplay = "Text_appearance"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_vnu4b")
-volume_db = -10.0
 bus = &"FX"
+
+[node name="Valid" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_v025g")
+bus = &"UI"
+
+[node name="Leave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_qvh8d")
+bus = &"UI"
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_sp6jc")
+bus = &"UI"
+
+[connection signal="mouse_entered" from="Button/Ok" to="Button" method="_on_ok_mouse_entered"]
+[connection signal="mouse_exited" from="Button/Ok" to="Button" method="_on_ok_mouse_exited"]
+[connection signal="pressed" from="Button/Ok" to="Button" method="_on_ok_pressed"]

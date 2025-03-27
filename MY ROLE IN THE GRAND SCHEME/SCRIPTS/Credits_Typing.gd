@@ -15,3 +15,5 @@ func _process(_delta):
 				actual_value += .001
 			else:
 				actual_value = 0.
+	if $"../And_Here".visible_ratio > 0.999:
+		$"../../Button".visible = true

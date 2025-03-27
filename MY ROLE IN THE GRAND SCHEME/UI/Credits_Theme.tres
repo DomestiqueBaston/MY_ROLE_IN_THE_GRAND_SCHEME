@@ -1,10 +1,22 @@
-[gd_resource type="Theme" load_steps=32 format=3 uid="uid://tks2glp547ui"]
+[gd_resource type="Theme" load_steps=38 format=3 uid="uid://tks2glp547ui"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_7dedp"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_ld8pc"]
 [ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="3_h6e3s"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_1y2p1"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="5_7f5i7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yj41f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npfxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mnbd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8v0fd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1onvy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wkh2c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -86,6 +98,21 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_ld8pc")
 default_font_size = 8
+Button/colors/font_color = Color(0.36974, 0.76, 0.1596, 0.705882)
+Button/colors/font_disabled_color = Color(0.368627, 0.760784, 0.160784, 0.705882)
+Button/colors/font_focus_color = Color(0.766, 1, 0.64, 0.705882)
+Button/colors/font_hover_color = Color(0.764706, 1, 0.639216, 0.705882)
+Button/colors/font_hover_pressed_color = Color(0.368627, 0.760784, 0.160784, 0.705882)
+Button/colors/font_pressed_color = Color(0.368627, 0.760784, 0.160784, 0.705882)
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("5_7f5i7")
+Button/styles/disabled = SubResource("StyleBoxEmpty_yj41f")
+Button/styles/focus = SubResource("StyleBoxEmpty_npfxq")
+Button/styles/hover = SubResource("StyleBoxEmpty_5mnbd")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_8v0fd")
+Button/styles/normal = SubResource("StyleBoxEmpty_1onvy")
+Button/styles/pressed = SubResource("StyleBoxEmpty_wkh2c")
 HSlider/icons/grabber = ExtResource("1_7dedp")
 HSlider/icons/grabber_disabled = ExtResource("1_7dedp")
 HSlider/icons/grabber_highlight = ExtResource("1_7dedp")

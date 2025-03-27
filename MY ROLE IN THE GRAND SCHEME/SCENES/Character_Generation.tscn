@@ -1,7 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjvtdra3n1tqy"]
+[gd_scene load_steps=40 format=3 uid="uid://cjvtdra3n1tqy"]
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
 [ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
+[ext_resource type="Script" uid="uid://c2csir6vwy570" path="res://SCRIPTS/Character_Generation_Creation_Page.gd" id="3_e7ryn"]
 [ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Option_Button.gd" id="5_2k6nw"]
 [ext_resource type="Texture2D" uid="uid://buhsc5yt68kjy" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Normal.png" id="6_f1shx"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="6_ntsua"]
@@ -30,7 +31,13 @@
 [ext_resource type="Theme" uid="uid://ddf3ffeff7vkw" path="res://UI/Character_Generation_Story_Theme.tres" id="29_36uq3"]
 [ext_resource type="Texture2D" uid="uid://cqamtgs2prxsn" path="res://GRAPHICS/CHARACTER_GENERATION/Confirm_Transparent.png" id="29_ivich"]
 [ext_resource type="Texture2D" uid="uid://0bd6dk6fhjn7" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_BG.png" id="29_t6v1g"]
+[ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="30_7d8wo"]
+[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="30_taxer"]
+[ext_resource type="AudioStream" uid="uid://4dfb07ojptrw" path="res://SOUND/MISC/Cancel.ogg" id="31_7d8wo"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="31_36uq3"]
+[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="32_yyi2n"]
+[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="33_7lqc7"]
+[ext_resource type="AudioStream" uid="uid://d10rphc4dsk4c" path="res://SOUND/MISC/Sex_choice.ogg" id="35_7d8wo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
 
@@ -48,6 +55,7 @@ anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 360.0
 theme = ExtResource("3_2pyp5")
+script = ExtResource("3_e7ryn")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
@@ -313,7 +321,7 @@ texture_pressed = ExtResource("22_hwlkq")
 texture_hover = ExtResource("23_k3b1g")
 metadata/_edit_lock_ = true
 
-[node name="Cancel" type="TextureButton" parent="Creation_Page"]
+[node name="Cancel_button" type="TextureButton" parent="Creation_Page"]
 self_modulate = Color(1, 1, 1, 0.901961)
 layout_mode = 0
 offset_left = 42.0
@@ -338,6 +346,32 @@ texture_normal = ExtResource("27_kk3x8")
 texture_pressed = ExtResource("28_6l626")
 texture_hover = ExtResource("29_ivich")
 metadata/_edit_lock_ = true
+
+[node name="Typing" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("30_7d8wo")
+bus = &"UI"
+
+[node name="Valid" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("30_taxer")
+bus = &"UI"
+
+[node name="Cancel" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("31_7d8wo")
+bus = &"UI"
+
+[node name="Leave" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("32_yyi2n")
+bus = &"UI"
+
+[node name="Hover" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("33_7lqc7")
+bus = &"UI"
+
+[node name="Sex_Choice" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("35_7d8wo")
+volume_db = -5.0
+bus = &"UI"
+parameters/looping = true
 
 [node name="Story" type="Label" parent="."]
 self_modulate = Color(1, 1, 1, 0.752941)
@@ -368,3 +402,26 @@ theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("31_36uq3")]
+
+[connection signal="pressed" from="Creation_Page/PHY/PHY_Moins" to="Creation_Page" method="_on_any_button_moins_pressed"]
+[connection signal="pressed" from="Creation_Page/PHY/PHY_Plus" to="Creation_Page" method="_on_any_button_plus_pressed"]
+[connection signal="pressed" from="Creation_Page/MEN/MEN_Moins" to="Creation_Page" method="_on_any_button_moins_pressed"]
+[connection signal="pressed" from="Creation_Page/MEN/MEN_Plus" to="Creation_Page" method="_on_any_button_plus_pressed"]
+[connection signal="pressed" from="Creation_Page/HEA/HEA_Moins" to="Creation_Page" method="_on_any_button_moins_pressed"]
+[connection signal="pressed" from="Creation_Page/HEA/HEA_Plus" to="Creation_Page" method="_on_any_button_plus_pressed"]
+[connection signal="button_down" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_down"]
+[connection signal="button_up" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_up"]
+[connection signal="item_selected" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_item_selected"]
+[connection signal="mouse_entered" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="pressed" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Creation_Page/Load" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="pressed" from="Creation_Page/Load" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Creation_Page/Save" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="pressed" from="Creation_Page/Save" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Creation_Page/Delete" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="pressed" from="Creation_Page/Delete" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Creation_Page/Cancel_button" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="pressed" from="Creation_Page/Cancel_button" to="Creation_Page" method="_on_cancel_pressed"]
+[connection signal="mouse_entered" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="pressed" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="value_changed" from="SliderBg/HSlider" to="Creation_Page" method="_on_h_slider_value_changed"]
