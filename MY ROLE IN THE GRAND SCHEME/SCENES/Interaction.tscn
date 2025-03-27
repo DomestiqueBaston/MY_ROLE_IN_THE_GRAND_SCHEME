@@ -803,8 +803,8 @@ offset_left = 110.0
 offset_top = 87.0
 offset_right = 120.0
 offset_bottom = 97.0
-tooltip_text = "What's this
-button for?"
+tooltip_text = "Turns TV
+On/Off..."
 theme = ExtResource("2_v84v6")
 toggle_mode = true
 texture_pressed = ExtResource("21_rrbp0")
