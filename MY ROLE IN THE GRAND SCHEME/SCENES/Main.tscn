@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=56 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
+[ext_resource type="Script" uid="uid://twxt7ns0olqm" path="res://SCRIPTS/Main_Buttons.gd" id="14_1r0xb"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="14_d27u2"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
 [ext_resource type="Texture2D" uid="uid://dgclhxafihydp" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_50.png" id="15_1cl67"]
@@ -50,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://ccabfvx0eg0bn" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_50.png" id="41_x0owp"]
 [ext_resource type="Texture2D" uid="uid://cysslrwog7ibl" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_50.png" id="43_oyp1f"]
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="45_yku0u"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="52_wvc8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
@@ -262,6 +264,14 @@ position = Vector2(544, 64)
 [node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("23_pharv")]
 metadata/_edit_lock_ = true
 
+[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_1/Papa_Link" index="0"]
+tooltip_text = "Property
+New"
+
+[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_2/Papa_Link" index="0"]
+tooltip_text = "Acquaintance
+New"
+
 [node name="Player_Locator" parent="TMP_1/Main_Playmat" instance=ExtResource("8_kn6w4")]
 position = Vector2(544, 64)
 
@@ -418,6 +428,7 @@ offset_top = 342.0
 offset_right = 153.0
 offset_bottom = 342.0
 theme = ExtResource("2_2avoe")
+script = ExtResource("14_1r0xb")
 metadata/_edit_lock_ = true
 
 [node name="Legend" type="Button" parent="Legend/Colors"]
@@ -428,14 +439,14 @@ tooltip_text = "Click to
 reset filter"
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-text = "Legend:"
+text = "Legends:"
 metadata/_edit_lock_ = true
 
 [node name="Hideout_White" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 35.0
+offset_left = 39.0
 offset_top = 1.0
-offset_right = 43.0
+offset_right = 47.0
 offset_bottom = 9.0
 tooltip_text = "Hideout
 - Dashed: Probable
@@ -449,9 +460,9 @@ metadata/_edit_lock_ = true
 
 [node name="Debt_Influence_Gray" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 44.0
+offset_left = 48.0
 offset_top = 1.0
-offset_right = 52.0
+offset_right = 56.0
 offset_bottom = 9.0
 tooltip_text = "Debt/Influence
 - Dashed: Probable
@@ -465,9 +476,9 @@ metadata/_edit_lock_ = true
 
 [node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 53.0
+offset_left = 57.0
 offset_top = 1.0
-offset_right = 61.0
+offset_right = 65.0
 offset_bottom = 9.0
 tooltip_text = "Culprit/Accomplice/Evidence
 - Dashed: Probable
@@ -481,9 +492,9 @@ metadata/_edit_lock_ = true
 
 [node name="Intimacy_Pink" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 62.0
+offset_left = 66.0
 offset_top = 1.0
-offset_right = 70.0
+offset_right = 74.0
 offset_bottom = 9.0
 tooltip_text = "Intimacy
 - Dashed: Probable
@@ -497,9 +508,9 @@ metadata/_edit_lock_ = true
 
 [node name="Friend_Dark_Green" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 71.0
+offset_left = 75.0
 offset_top = 1.0
-offset_right = 79.0
+offset_right = 83.0
 offset_bottom = 9.0
 tooltip_text = "Friend
 - Dashed: Probable
@@ -513,9 +524,9 @@ metadata/_edit_lock_ = true
 
 [node name="Enemy_Orange" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 80.0
+offset_left = 84.0
 offset_top = 1.0
-offset_right = 88.0
+offset_right = 92.0
 offset_bottom = 9.0
 pivot_offset = Vector2(30, 20)
 tooltip_text = "Enemy
@@ -530,9 +541,9 @@ metadata/_edit_lock_ = true
 
 [node name="Acquaintance_Light_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 89.0
+offset_left = 93.0
 offset_top = 1.0
-offset_right = 97.0
+offset_right = 101.0
 offset_bottom = 9.0
 pivot_offset = Vector2(30, 20)
 tooltip_text = "Acquaintance
@@ -547,9 +558,9 @@ metadata/_edit_lock_ = true
 
 [node name="Ideology_Dark_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 98.0
+offset_left = 102.0
 offset_top = 1.0
-offset_right = 106.0
+offset_right = 110.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
 tooltip_text = "Ideology
@@ -564,9 +575,9 @@ metadata/_edit_lock_ = true
 
 [node name="Contradiction_Red" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 107.0
+offset_left = 111.0
 offset_top = 1.0
-offset_right = 115.0
+offset_right = 119.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
 tooltip_text = "Contradiction
@@ -581,9 +592,9 @@ metadata/_edit_lock_ = true
 
 [node name="Validation_Yellow" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 116.0
+offset_left = 120.0
 offset_top = 1.0
-offset_right = 124.0
+offset_right = 128.0
 offset_bottom = 9.0
 pivot_offset = Vector2(4, 20)
 tooltip_text = "Validation
@@ -598,9 +609,9 @@ metadata/_edit_lock_ = true
 
 [node name="Property_Light_Green" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 125.0
+offset_left = 129.0
 offset_top = 1.0
-offset_right = 133.0
+offset_right = 137.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-9, 20)
 tooltip_text = "Property
@@ -615,9 +626,9 @@ metadata/_edit_lock_ = true
 
 [node name="Home_Brown" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 134.0
+offset_left = 138.0
 offset_top = 1.0
-offset_right = 142.0
+offset_right = 146.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "Home
@@ -632,9 +643,9 @@ metadata/_edit_lock_ = true
 
 [node name="Work_Turquoise" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 143.0
+offset_left = 147.0
 offset_top = 1.0
-offset_right = 151.0
+offset_right = 155.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Work
@@ -649,9 +660,9 @@ metadata/_edit_lock_ = true
 
 [node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 152.0
+offset_left = 156.0
 offset_top = 1.0
-offset_right = 160.0
+offset_right = 164.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "Hang out
@@ -666,9 +677,9 @@ metadata/_edit_lock_ = true
 
 [node name="Found_Light_Purple" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 161.0
+offset_left = 165.0
 offset_top = 1.0
-offset_right = 169.0
+offset_right = 173.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Found
@@ -683,9 +694,9 @@ metadata/_edit_lock_ = true
 
 [node name="New_Dark_Purple" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
-offset_left = 170.0
+offset_left = 174.0
 offset_top = 1.0
-offset_right = 178.0
+offset_right = 182.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "New
@@ -731,7 +742,7 @@ theme_override_fonts/font = ExtResource("30_dhl0k")
 theme_override_font_sizes/font_size = 8
 text = "- PEN -
 
-Machin qui sert à écrire (si on a du papier) et qu'il reste de l'encre dedans...
+Something used for writing (if you have paper) and that still has ink inside...
 
 Found in: Library
 
@@ -788,6 +799,60 @@ metadata/_edit_lock_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
 
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("52_wvc8p")]
+
+[connection signal="mouse_entered" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_legend_pressed"]
+[connection signal="mouse_entered" from="Legend/Colors/Hideout_White" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Hideout_White" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Hideout_White" to="Legend/Colors" method="_on_hideout_white_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Debt_Influence_Gray" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Debt_Influence_Gray" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Debt_Influence_Gray" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Culp_Acco_Evid_Black" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Culp_Acco_Evid_Black" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Culp_Acco_Evid_Black" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Intimacy_Pink" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Intimacy_Pink" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Intimacy_Pink" to="Legend/Colors" method="_on_intimacy_pink_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Friend_Dark_Green" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Friend_Dark_Green" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Friend_Dark_Green" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Enemy_Orange" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Enemy_Orange" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Enemy_Orange" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Acquaintance_Light_Blue" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Acquaintance_Light_Blue" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Acquaintance_Light_Blue" to="Legend/Colors" method="_on_acquaintance_light_blue_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Ideology_Dark_Blue" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Ideology_Dark_Blue" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Ideology_Dark_Blue" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Contradiction_Red" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Contradiction_Red" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Contradiction_Red" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Validation_Yellow" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Validation_Yellow" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Validation_Yellow" to="Legend/Colors" method="_on_validation_yellow_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Property_Light_Green" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Property_Light_Green" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Property_Light_Green" to="Legend/Colors" method="_on_property_light_green_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Home_Brown" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Home_Brown" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Home_Brown" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Work_Turquoise" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Work_Turquoise" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Work_Turquoise" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Hang_out_Darkest_Blue" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Hang_out_Darkest_Blue" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Hang_out_Darkest_Blue" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/Found_Light_Purple" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/Found_Light_Purple" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/Found_Light_Purple" to="Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Legend/Colors/New_Dark_Purple" to="Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Legend/Colors/New_Dark_Purple" to="Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Legend/Colors/New_Dark_Purple" to="Legend/Colors" method="_on_new_dark_purple_toggled"]
+
 [editable path="TMP_1/Main_Playmat/Card1"]
 [editable path="TMP_1/Main_Playmat/Card2"]
 [editable path="TMP_1/Main_Playmat/Card3"]
@@ -799,6 +864,7 @@ metadata/_edit_lock_ = true
 [editable path="TMP_1/Main_Playmat/Links/Link_Pointillé_Blanc"]
 [editable path="TMP_1/Main_Playmat/Links/Link_Plein_Jaune"]
 [editable path="TMP_1/Main_Playmat/Links/Pin_Small3"]
+[editable path="TMP_1/Main_Playmat/Links/TEST_LINK"]
 [editable path="TMP_2/Possible_Clues_Cards/Card7"]
 [editable path="TMP_2/Possible_Clues_Cards/Card8"]
 [editable path="TMP_2/Possible_Clues_Cards/Card9"]
@@ -807,3 +873,4 @@ metadata/_edit_lock_ = true
 [editable path="TMP_2/Possible_Clues_Cards/Card12"]
 [editable path="TMP_2/Possible_Clues_Cards/Card13"]
 [editable path="TMP_2/Possible_Clues_Cards/Card14"]
+[editable path="Shared_Interface_Sounds"]

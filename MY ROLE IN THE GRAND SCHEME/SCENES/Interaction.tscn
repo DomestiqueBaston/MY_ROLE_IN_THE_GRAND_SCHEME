@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=48 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -17,11 +17,8 @@
 [ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
 [ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="12_e74pt"]
-[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="12_f02d0"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
 [ext_resource type="VideoStream" uid="uid://bdb8kb1t3m6ew" path="res://GRAPHICS/INTERACTION/MFSC.ogv" id="12_v84v6"]
-[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="13_06ojl"]
-[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="14_f02d0"]
 [ext_resource type="Script" uid="uid://b08whl1g6oj7o" path="res://SCRIPTS/Tv_On_Off_Button.gd" id="16_uvife"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="17_qi0bb"]
 [ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="17_uvife"]
@@ -32,6 +29,7 @@
 [ext_resource type="BitMap" uid="uid://cg2uptmo3ewqh" path="res://GRAPHICS/INTERACTION/Small_Tv_Button_Mask.png" id="22_y0drc"]
 [ext_resource type="AudioStream" uid="uid://dtdh8de6r8ymv" path="res://SOUND/MISC/White_noise.ogg" id="25_iwlie"]
 [ext_resource type="AudioStream" uid="uid://dy0gaffd2m7hp" path="res://SOUND/MISC/Turn_Button.ogg" id="25_lds6i"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="33_06ojl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5dcb"]
 size = Vector2(230, 104)
@@ -682,18 +680,6 @@ texture_hover = ExtResource("6_dhbug")
 texture_click_mask = ExtResource("7_tawrq")
 metadata/_edit_lock_ = true
 
-[node name="Valid" type="AudioStreamPlayer" parent="Button"]
-stream = ExtResource("12_f02d0")
-bus = &"UI"
-
-[node name="Hover" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_06ojl")
-bus = &"UI"
-
-[node name="Leave" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_f02d0")
-bus = &"UI"
-
 [node name="Top_Left_Screen" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
@@ -901,6 +887,8 @@ metadata/_edit_lock_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("17_qi0bb")]
 
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("33_06ojl")]
+
 [connection signal="mouse_entered" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_exited"]
 [connection signal="pressed" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_pressed"]
@@ -933,3 +921,4 @@ metadata/_edit_lock_ = true
 [editable path="TMP/Objects/Card28"]
 [editable path="TMP/Locations/Card27"]
 [editable path="TMP/Locations/Card28"]
+[editable path="Shared_Interface_Sounds"]

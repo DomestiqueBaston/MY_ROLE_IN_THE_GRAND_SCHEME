@@ -2,14 +2,27 @@ extends Control
 
 
 func _on_any_button_mouse_entered():
-	$"../../Hover".play()
-
-func _on_cancel_pressed():
-	$"../../Cancel".play()
-	#await $"../../Cancel".finished
-
-func _on_switch_pressed():
-	$"../../Valid".play()
+	if $"../../Shared_Interface_Sounds/Leave".playing == true:
+		pass
+	else:
+		$"../../Shared_Interface_Sounds/Hover".play()
 
 func _on_any_button_mouse_exited():
-	$"../../Leave".play()
+	if $"../../Shared_Interface_Sounds/Hover".playing == true:
+		pass
+	else:
+		$"../../Shared_Interface_Sounds/Leave".play()
+	
+func _on_cancel_pressed():
+	$"../../Shared_Interface_Sounds/Cancel".play()
+	await $"../../Shared_Interface_Sounds/Cancel".finished
+	$"../../On_Off".play("Disappearance")
+	await $"../../On_Off".animation_finished
+	#get_tree().quit()
+
+func _on_switch_pressed():
+	$"../../Shared_Interface_Sounds/Valid".play()
+	await $"../../Shared_Interface_Sounds/Valid".finished
+	$"../../On_Off".play("Disappearance")
+	await $"../../On_Off".animation_finished
+	#get_tree().quit()

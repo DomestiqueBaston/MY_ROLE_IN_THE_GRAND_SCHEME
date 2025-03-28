@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c0ukqcgb1ay3s"]
+[gd_scene load_steps=33 format=3 uid="uid://c0ukqcgb1ay3s"]
 
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_MANAGEMENT/Frame.png" id="1_f15cm"]
 [ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="2_yfns7"]
@@ -12,10 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="14_ukbs4"]
 [ext_resource type="AudioStream" uid="uid://e7mx8yp2bmn" path="res://SOUND/MISC/Trash_Close.ogg" id="15_3ah6p"]
 [ext_resource type="AudioStream" uid="uid://0xs5pryxxfxj" path="res://SOUND/MISC/Trash_Open.ogg" id="16_h48le"]
-[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="17_uasgl"]
-[ext_resource type="AudioStream" uid="uid://4dfb07ojptrw" path="res://SOUND/MISC/Cancel.ogg" id="18_h48le"]
-[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="20_341ss"]
-[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="20_i4e1y"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="17_d7lmg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h48le"]
 
@@ -370,21 +367,7 @@ stream = ExtResource("15_3ah6p")
 volume_db = -15.0
 bus = &"UI"
 
-[node name="Valid" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_uasgl")
-bus = &"UI"
-
-[node name="Cancel" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_h48le")
-bus = &"UI"
-
-[node name="Leave" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_341ss")
-bus = &"UI"
-
-[node name="Hover" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_i4e1y")
-bus = &"UI"
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("17_d7lmg")]
 
 [connection signal="mouse_entered" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
@@ -392,3 +375,5 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Card_Management_Panel/Buttons/Exit" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Card_Management_Panel/Buttons/Exit" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Card_Management_Panel/Buttons/Exit" to="Card_Management_Panel/Buttons" method="_on_cancel_pressed"]
+
+[editable path="Shared_Interface_Sounds"]
