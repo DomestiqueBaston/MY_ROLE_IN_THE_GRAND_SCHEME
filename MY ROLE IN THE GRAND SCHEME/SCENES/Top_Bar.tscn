@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://hl8yhfvhjhtn"]
+[gd_scene load_steps=6 format=3 uid="uid://hl8yhfvhjhtn"]
 
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="4_0ibqv"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_0mfvj"]
 
 [node name="Top_Bar" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -381,3 +382,20 @@ item_0/id = 0
 item_1/text = "2 doses"
 item_1/id = 1
 item_1/disabled = true
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("5_0mfvj")]
+
+[connection signal="mouse_entered" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menus/Dailies" to="Menus/Dailies" method="_on_pressed"]
+[connection signal="mouse_entered" from="Menus/Cases" to="Menus/Dailies" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menus/Cases" to="Menus/Dailies" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menus/Cases" to="Menus/Dailies" method="_on_pressed"]
+[connection signal="mouse_entered" from="Menus/Cards" to="Menus/Dailies" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menus/Cards" to="Menus/Dailies" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menus/Cards" to="Menus/Dailies" method="_on_pressed"]
+[connection signal="mouse_entered" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menus/Whatever" to="Menus/Dailies" method="_on_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

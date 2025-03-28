@@ -866,12 +866,12 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Card_Colliders" type="Area2D" parent="Card_Mask"]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Colliders"]
 position = Vector2(37, 50)
 shape = SubResource("RectangleShape2D_hp5bo")
+metadata/_edit_lock_ = true
 
 [node name="Card_Animations" type="AnimationPlayer" parent="."]
 libraries = {

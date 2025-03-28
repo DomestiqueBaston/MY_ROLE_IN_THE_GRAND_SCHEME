@@ -17,6 +17,13 @@ func _ready():
 
 # Fonction appelée à chaque frame
 func _process(_delta):
+	# Ça "marche" pour la démo mais sinon, tous les z_index sont à revoir
+	# dans le projet pour pouvoir gérer mieux les "couches"...
+	#if is_mouse_in_collision(card):
+		#$"..".z_index = 1
+	#else:
+		#$"..".z_index = 0
+
 	if Input.is_action_just_pressed("Left_Click"):
 		if is_mouse_in_collision(card):
 			# Si l'animation en cours est RESET (carte déjà "expandée"), on ne fait rien
@@ -47,7 +54,7 @@ func is_mouse_in_collision(collision_shape: CollisionShape2D) -> bool:
 		var rect = shape as RectangleShape2D
 		return rect.extents.x > mouse_local_position.x and mouse_local_position.x > -rect.extents.x and rect.extents.y > mouse_local_position.y and mouse_local_position.y > -rect.extents.y
 	
-	# Vérification pour une forme circulaire
+	# Vérification pour une forme circulaire (inutile)
 	elif shape is CircleShape2D:
 		var circle = shape as CircleShape2D
 		return mouse_local_position.length() <= circle.radius
