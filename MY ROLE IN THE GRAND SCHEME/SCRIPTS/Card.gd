@@ -17,8 +17,10 @@ func _ready():
 
 # Fonction appelée à chaque frame
 func _process(_delta):
-	# Ça "marche" pour la démo mais sinon, tous les z_index sont à revoir
-	# dans le projet pour pouvoir gérer mieux les "couches"...
+	# Ce qui suit "marche" pour la démo mais sinon, tous les z_index sont à revoir
+	# dans le projet (voir Nouveau_système_v14.odt à la fin) pour pouvoir mieux
+	# gérer les "couches" :
+	
 	#if is_mouse_in_collision(card):
 		#$"..".z_index = 1
 	#else:
@@ -36,6 +38,17 @@ func _process(_delta):
 				play_animation(anim_expand)
 			elif current_animation == anim_expand:
 				play_animation(anim_reduce)
+
+## Je n'arrive pas à faire en sorte que lorsque deux instances de carte
+## se trouvent l'une sur l'autre, que la partie cachée de celle du dessous
+## ne reçoive pas les clics de souris...
+
+## Dans Interarction.tscn, lorsque l'on a une ribambelle de cartes les unes sur
+## les autres en ligne horizontale (ou verticale), celle sous le curseur de la
+## souris devra passer devant les autres et aussi bouger un peu en +Y ou -Y,
+## à voir en fonction des endroits à l'écran. L'idéal serait même que celles
+## autour de la carte en question bougent en Y aussi mais de 33% et celles
+## d'encore une carte plus loin de 66% pour faire comme une onde !
 
 # Fonction pour vérifier si la souris est dans la zone de la forme
 func is_mouse_in_collision(collision_shape: CollisionShape2D) -> bool:
