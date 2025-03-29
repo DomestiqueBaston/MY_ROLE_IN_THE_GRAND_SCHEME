@@ -48,7 +48,7 @@
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="47_4u05p"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="48_nil8s"]
 [ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="49_jspw4"]
-[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Option_Button.gd" id="50_jt3b4"]
+[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Character_Generation_Option_Button.gd" id="50_jt3b4"]
 [ext_resource type="PackedScene" uid="uid://c15s6qspe2m5f" path="res://TRASH/TEST_Global_Shader_Overlay.tscn" id="51_ljhct"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="51_m3jnh"]
 

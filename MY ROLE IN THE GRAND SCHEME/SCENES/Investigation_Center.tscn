@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png" id="2_6ndse"]
 [ext_resource type="Theme" uid="uid://5eedmsqjoxtm" path="res://UI/Investigation_Center_Theme.tres" id="4_b1ixs"]
 [ext_resource type="Theme" uid="uid://b337xyo77pr1f" path="res://UI/Card_Selection_Theme.tres" id="5_7xt4t"]
-[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Option_Button.gd" id="5_na0ew"]
+[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Character_Generation_Option_Button.gd" id="5_na0ew"]
 [ext_resource type="Texture2D" uid="uid://ct14fumdfmlob" path="res://GRAPHICS/INVESTIGATION_CENTER/Ok_Normal.png" id="6_msgya"]
 [ext_resource type="Texture2D" uid="uid://ckkv5jmen7tls" path="res://GRAPHICS/INVESTIGATION_CENTER/Ok_Hover.png" id="7_uxkdd"]
 [ext_resource type="BitMap" uid="uid://ddgekrtdupdrv" path="res://GRAPHICS/INVESTIGATION_CENTER/Ok_Mask.png" id="8_nj82a"]

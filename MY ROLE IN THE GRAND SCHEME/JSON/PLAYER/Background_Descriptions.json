@@ -5,371 +5,203 @@
 	"profession": "Carpet Dealer",
     "bonus_malus": {"MEN": 1},
 	"special": "",
-	"description": "I spent my days selling carpets, weaving stories into each sale. It was a simple life: customers came, chose their piece, and left, satisfied with their purchase. But everything changed when a man walked into my shop one afternoon.
-
-He pointed to a dusty rug in the back corner, paid in cash, and left without a word. It was odd, but I brushed it off. The next morning, I found the rug had shifted position, the patterns subtly altered. At first, I thought it was my imagination, but as days passed, I noticed more changes—symbols, unfamiliar and unsettling, began appearing along the edges.
-
-Curiosity turned into unease as I realized the whispers had started. At first, they were faint, like a soft murmur hidden beneath the fabric, but soon they grew louder, almost as though the rug was speaking to me, its language a tangled web of riddles and cryptic messages. This wasn't just a rug anymore, it had become a gateway to something far darker, something I wasn't prepared to confront. The more I tried to step back, the deeper I was drawn in. And so, I left the store behind, unable to escape the grip of the mystery that had taken hold of me."
+	"description": "I spent my days selling carpets, weaving stories into each sale. It was a simple life: customers came, chose their piece, and left, satisfied with their purchase. But everything changed when a man walked into my shop one afternoon.\n\nHe pointed to a dusty rug in the back corner, paid in cash, and left without a word. It was odd, but I brushed it off. The next morning, I found the rug had shifted position, the patterns subtly altered. At first, I thought it was my imagination, but as days passed, I noticed more changes—symbols, unfamiliar and unsettling, began appearing along the edges.\n\nCuriosity turned into unease as I realized the whispers had started. At first, they were faint, like a soft murmur hidden beneath the fabric, but soon they grew louder, almost as though the rug was speaking to me, its language a tangled web of riddles and cryptic messages. This wasn't just a rug anymore, it had become a gateway to something far darker, something I wasn't prepared to confront. The more I tried to step back, the deeper I was drawn in. And so, I left the store behind, unable to escape the grip of the mystery that had taken hold of me."
     },
     {
 	"id": "JOB002",
 	"profession": "Chorister",
 	"bonus_malus": {"PHY": 1},
 	"special": "",
-	"description": "The music was everything to me. Harmonies covered whispers, applause drowned out quiet deals, and the glow of the stage masked the shadows behind it. I had always thought our voices were the only thing that lifted us higher but I was wrong.
-
-It started with a missing soprano. One day she was there, hitting impossible notes with ease; the next, she was gone. No explanations, just a quiet replacement and nervous glances. Then I started noticing more: the jittery hands, the rehearsals skipped, the way some voices lost their shine too soon...
-
-One night, after a performance, I found a small bag tucked inside a music folder. It wasn't sheet music. I should have left it alone, but I couldn't. The deeper I dug, the more I realized our world wasn't just about music. Deals were made in dressing rooms, addictions hidden behind perfect harmonies.
-
-I walked away from the stage. My voice had once blended into the choir, but now it had a new purpose. It was time to stop singing and start listening to the truth."
+	"description": "The music was everything to me. Harmonies covered whispers, applause drowned out quiet deals, and the glow of the stage masked the shadows behind it. I had always thought our voices were the only thing that lifted us higher but I was wrong.\n\nIt started with a missing soprano. One day she was there, hitting impossible notes with ease; the next, she was gone. No explanations, just a quiet replacement and nervous glances. Then I started noticing more: the jittery hands, the rehearsals skipped, the way some voices lost their shine too soon...\n\nOne night, after a performance, I found a small bag tucked inside a music folder. It wasn't sheet music. I should have left it alone, but I couldn't. The deeper I dug, the more I realized our world wasn't just about music. Deals were made in dressing rooms, addictions hidden behind perfect harmonies.\n\nI walked away from the stage. My voice had once blended into the choir, but now it had a new purpose. It was time to stop singing and start listening to the truth."
     },
 	{
 	"id": "JOB003",
 	"profession": "CG Artist",
     "bonus_malus": {"PHY": -1, "MEN": -1, "HEAnom": -1, "HEA": -1},
 	"special": "",
-	"description": "Being a CG artist was my life: creating, animating, rendering... My routine was simple: meet deadlines, keep clients happy, and focus on the work. But that all changed. Art faded into the background (had it ever been on the table?) but that wasn't the real issue.
-
-The shift began with one project that felt different. My designs began to take on a strange energy. Characters I had crafted seemed to develop a life of their own, almost as though they were controlling their own movement, forcing me to revise elements I hadn't even touched. It was unsettling.
-
-One night, while working late, I found an encrypted file in my project folder. Curious, I managed to unlock it somehow. Inside were images that felt too vivid, too real, almost as though they belonged in the physical world. The longer I stared at them, the more I felt an unnerving presence, like someone was observing me from the other side of the screen.
-
-It stopped being about creating art. The designs and renders weren't just projects. They were pieces of a larger puzzle and I wasn't just a CG artist anymore. I had unknowingly stepped into something far deeper and more dangerous than I ever expected. And I did that as an investigator."
+	"description": "Being a CG artist was my life: creating, animating, rendering... My routine was simple: meet deadlines, keep clients happy, and focus on the work. But that all changed. Art faded into the background (had it ever been on the table?) but that wasn't the real issue.\n\nThe shift began with one project that felt different. My designs began to take on a strange energy. Characters I had crafted seemed to develop a life of their own, almost as though they were controlling their own movement, forcing me to revise elements I hadn't even touched. It was unsettling.\n\nOne night, while working late, I found an encrypted file in my project folder. Curious, I managed to unlock it somehow. Inside were images that felt too vivid, too real, almost as though they belonged in the physical world. The longer I stared at them, the more I felt an unnerving presence, like someone was observing me from the other side of the screen.\n\nIt stopped being about creating art. The designs and renders weren't just projects. They were pieces of a larger puzzle and I wasn't just a CG artist anymore. I had unknowingly stepped into something far deeper and more dangerous than I ever expected. And I did that as an investigator."
     },
 	{
 	"id": "JOB004",
 	"profession": "Construction Worker",
     "bonus_malus": {"PHY": 1, "MEN": -1, "HEAnom": -1, "HEA": -1},
 	"special": "",
-	"description": "Private detective is my life now, but it wasn't always that way. I used to be a construction worker, surrounded by concrete, steel, and the sounds of hammers. It was a job that gave me a sense of accomplishment: building, repairing, creating. But there was always something more, something beneath the surface that I couldn't quite put my finger on.
-
-One day, during a renovation, I found a hidden room in a dilapidated building, an old space no one knew about, filled with strange artifacts and papers. It wasn't a treasure, but there was something off about it, something that made my gut twist. I couldn't let it go. I began digging into the building's past, learning about its former occupants and their secrets.
-
-The deeper I went, the more I realized that my instincts for uncovering hidden things had a purpose beyond construction. The world around me was full of untold stories, mysteries wrapped in everyday life, just waiting to be uncovered.
-
-So, I left my tools behind and turned to investigation. My new life as a detective is less about bricks and mortar, and more about peeling away layers of secrets, one case at a time."
+	"description": "Private detective is my life now, but it wasn't always that way. I used to be a construction worker, surrounded by concrete, steel, and the sounds of hammers. It was a job that gave me a sense of accomplishment: building, repairing, creating. But there was always something more, something beneath the surface that I couldn't quite put my finger on.\n\nOne day, during a renovation, I found a hidden room in a dilapidated building, an old space no one knew about, filled with strange artifacts and papers. It wasn't a treasure, but there was something off about it, something that made my gut twist. I couldn't let it go. I began digging into the building's past, learning about its former occupants and their secrets.\n\nThe deeper I went, the more I realized that my instincts for uncovering hidden things had a purpose beyond construction. The world around me was full of untold stories, mysteries wrapped in everyday life, just waiting to be uncovered.\n\nSo, I left my tools behind and turned to investigation. My new life as a detective is less about bricks and mortar, and more about peeling away layers of secrets, one case at a time."
     },
 	{
 	"id": "JOB005",
 	"profession": "Dancer",
 	"bonus_malus": {"PHY": 1, "MEN": -1, "HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "The stage was always the same: endless rehearsals, bodies twisting, feet pounding the floor, movements repeated over and over until perfection. Dance had always been my everything. It was a language, a way to express myself without words, even though I'd never been a principal dancer.
-
-During a performance, I noticed something different. A dancer I didn't recognize, always in the wings, watching the others, dancing, but never on stage. His eyes never left the performers. Each time, he seemed more present, more obsessed.
-
-Who was that strange fella? Curious, I started asking questions. The more I dug, the more I realized that beneath the glitter and the spotlight, there were other things—secrets woven into the fabric of the dance world.
-
-I couldn't ignore it any longer. The art of dance no longer felt like my only focus (and as mentioned, I'd never been at the top of the heap). It was time to find out what was buried beneath the surface. I left the stage behind, and with it, my old life for a brand new one!"
+	"description": "The stage was always the same: endless rehearsals, bodies twisting, feet pounding the floor, movements repeated over and over until perfection. Dance had always been my everything. It was a language, a way to express myself without words, even though I'd never been a principal dancer.\n\nDuring a performance, I noticed something different. A dancer I didn't recognize, always in the wings, watching the others, dancing, but never on stage. His eyes never left the performers. Each time, he seemed more present, more obsessed.\n\nWho was that strange fella? Curious, I started asking questions. The more I dug, the more I realized that beneath the glitter and the spotlight, there were other things—secrets woven into the fabric of the dance world.\n\nI couldn't ignore it any longer. The art of dance no longer felt like my only focus (and as mentioned, I'd never been at the top of the heap). It was time to find out what was buried beneath the surface. I left the stage behind, and with it, my old life for a brand new one!"
     },
 	{
 	"id": "JOB006",
 	"profession": "Darts Champion",
 	"bonus_malus": {"PHY": -1, "MEN": 1},
 	"special": "",
-	"description": "The tournaments were always the same (long hours throwing darts), competing against players who made the sport their life. I had my share of wins (and losses), the thrill of the crowd, and the satisfaction of landing a perfect shot. But something about that boring routine started to feel empty.
-
-One night, after a few too many rounds, I noticed him, an unfamiliar player, sitting in the corner, watching me intently. At first, I thought nothing of it, but soon I realized he appeared at every tournament, always watching, never playing, barely blinking.
-
-I started asking around, but no one knew him. The more I inquired, the more I realized that the darts world had hidden layers I had never seen: high stakes, secretive figures, and shady dealings behind the scenes.
-
-The obsession grew. I couldn't focus solely on the game anymore. I had become an investigator, unraveling secrets that others had kept hidden.
-
-I left the game behind. My new focus wasn't the bullseye (and my skill began to fade), but the mysteries that lay beneath the surface. It was time to become a private eye."
+	"description": "The tournaments were always the same (long hours throwing darts), competing against players who made the sport their life. I had my share of wins (and losses), the thrill of the crowd, and the satisfaction of landing a perfect shot. But something about that boring routine started to feel empty.\n\nOne night, after a few too many rounds, I noticed him, an unfamiliar player, sitting in the corner, watching me intently. At first, I thought nothing of it, but soon I realized he appeared at every tournament, always watching, never playing, barely blinking.\n\nI started asking around, but no one knew him. The more I inquired, the more I realized that the darts world had hidden layers I had never seen: high stakes, secretive figures, and shady dealings behind the scenes.\n\nThe obsession grew. I couldn't focus solely on the game anymore. I had become an investigator, unraveling secrets that others had kept hidden.\n\nI left the game behind. My new focus wasn't the bullseye (and my skill began to fade), but the mysteries that lay beneath the surface. It was time to become a private eye."
     },
 	{
 	"id": "JOB007",
 	"profession": "Drug Addict",
     "bonus_malus": {"MEN": -1, "HEAnom": -1, "HEA": -1},
-	"special": "-50%"  // 50% de réduction sur les doses de drogue.
-	"description": "I've been to places most people wouldn't dare imagine, lost in a world where the boundaries of right and wrong blurred into nothing. The drugs, the chaos, the grime (it was all I knew for a time). I found myself in the depths, but eventually, something snapped. I pulled myself out (don't ask me how; I barely remember), but the scars, the remnants of that life, never truly disappeared.
-
-I thought I left it all behind. I found a new path, a new purpose. As a private detective now, I try to help others who are lost, guiding them out of their darkness. But the truth is, I've never fully escaped. Every case I take, every shadow I chase, pulls me back into that world I swore I'd left. The streets, the lies, the filth, it all comes rushing back. And to get over it, believe me, it takes strength I don't always have.
-
-I clean up the mess of others, but I can't help but feel I'm still wading through my own. Every mystery I solve reminds me that the grime I once lived in never really left. I still carry that burden. It's just a different kind of dirt I'm digging through now."
+	"special": "-50%",
+	"description": "I've been to places most people wouldn't dare imagine, lost in a world where the boundaries of right and wrong blurred into nothing. The drugs, the chaos, the grime (it was all I knew for a time). I found myself in the depths, but eventually, something snapped. I pulled myself out (don't ask me how; I barely remember), but the scars, the remnants of that life, never truly disappeared.\n\nI thought I left it all behind. I found a new path, a new purpose. As a private detective now, I try to help others who are lost, guiding them out of their darkness. But the truth is, I've never fully escaped. Every case I take, every shadow I chase, pulls me back into that world I swore I'd left. The streets, the lies, the filth, it all comes rushing back. And to get over it, believe me, it takes strength I don't always have.\n\nI clean up the mess of others, but I can't help but feel I'm still wading through my own. Every mystery I solve reminds me that the grime I once lived in never really left. I still carry that burden. It's just a different kind of dirt I'm digging through now."
     },
 	{
 	"id": "JOB008",
 	"profession": "Farrier",
 	"bonus_malus": {"PHY": 1, "HEAnom": -1, "HEA": -1},
 	"special": "",
-	"description": "Leather had always been my world. The feel of it beneath my hands, shaping raw hides into saddles, boots, and belts. It was a quiet life, a simple life, or so I thought. But one evening, two well-dressed men entered my shop, speaking in low voices about something more than just leather. They mentioned a missing object, something far more valuable than anything I'd ever worked with.
-
-I didn't think much of it at first, but something about their words didn't add up. My instincts, honed over years of stitching, told me there was more to their visit than they let on.
-
-Soon, I began paying closer attention, asking questions, and watching the patterns. Clues began to form: a world of secrets, hidden agendas, and lies, all right under my nose.
-
-I walked away from the workshop. Leather had been my craft, but uncovering truths became my new calling. I left it behind to become a private eye, searching for the hidden stories others thought they'd buried."
+	"description": "Leather had always been my world. The feel of it beneath my hands, shaping raw hides into saddles, boots, and belts. It was a quiet life, a simple life, or so I thought. But one evening, two well-dressed men entered my shop, speaking in low voices about something more than just leather. They mentioned a missing object, something far more valuable than anything I'd ever worked with.\n\nI didn't think much of it at first, but something about their words didn't add up. My instincts, honed over years of stitching, told me there was more to their visit than they let on.\n\nSoon, I began paying closer attention, asking questions, and watching the patterns. Clues began to form: a world of secrets, hidden agendas, and lies, all right under my nose.\n\nI walked away from the workshop. Leather had been my craft, but uncovering truths became my new calling. I left it behind to become a private eye, searching for the hidden stories others thought they'd buried."
     },
 	{
 	"id": "JOB009",
 	"profession": "Farmer",
 	"bonus_malus": {"PHY": 1, "MEN": -1, "HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "My whole life has been in the fields, hands deep in the earth, cultivating crops in harmony with nature. My farm was a refuge from the chaos of the modern world, where every vegetable and fruit had a story, a connection to the soil I nurtured. But one day, a group of wealthy buyers came to me, offering a vast sum of money for my land to use it for something far from natural. They spoke of profit, markets, and expansions. Possibly for me too...
-
-I turned them down, of course. But their words haunted me. Was I just another cog in the machine, a landowner blind to the larger forces shaping agriculture? Had I worked all these years without ever questioning the bigger picture?
-
-As time passed, I began to question everything. I looked beyond my farm, trying to understand the systems controlling agriculture and trade. What I once thought was a simple, pure life now seemed full of hidden truths.
-
-In the end, I left the land behind. The earth would always be a part of me, but I had become someone else (someone searching for deeper truths), a seeker of secrets buried beneath the surface, hidden by power and greed."
+	"description": "My whole life has been in the fields, hands deep in the earth, cultivating crops in harmony with nature. My farm was a refuge from the chaos of the modern world, where every vegetable and fruit had a story, a connection to the soil I nurtured. But one day, a group of wealthy buyers came to me, offering a vast sum of money for my land to use it for something far from natural. They spoke of profit, markets, and expansions. Possibly for me too...\n\nI turned them down, of course. But their words haunted me. Was I just another cog in the machine, a landowner blind to the larger forces shaping agriculture? Had I worked all these years without ever questioning the bigger picture?\n\nAs time passed, I began to question everything. I looked beyond my farm, trying to understand the systems controlling agriculture and trade. What I once thought was a simple, pure life now seemed full of hidden truths.\n\nIn the end, I left the land behind. The earth would always be a part of me, but I had become someone else (someone searching for deeper truths), a seeker of secrets buried beneath the surface, hidden by power and greed."
     },
 	{
 	"id": "JOB010",
 	"profession": "Garbage Collector",
     "bonus_malus": {"PHY": 1},
 	"special": "",
-	"description": "At first it was just a temporay job but the truth is I quickly started liking working in the streets. Cleaning up the mess the world left behind wasn't the subject. My job was simple: collect the trash, sort it, and make the city just a little bit cleaner. Until that day when at looked at what were those garbage...
-
-It started with the way people treated their waste. Some threw things away with careless abandon, while others seemed to hide certain items deep in the trash, as though they were afraid of being seen. Then, one day, I found something strange: an envelope tucked between the cans, filled with cryptic symbols and names. It was the start of something bigger.
-
-The more I uncovered, the clearer it became: I wasn't just cleaning up after people. There were secrets hidden in the garbage: hidden messages, covert operations, and whispers of a shadowy world just out of view. My life changed the day I picked up that envelope. At that moment, I wasn't just a collector of trash anymore; I had become a private eye."
+	"description": "At first it was just a temporay job but the truth is I quickly started liking working in the streets. Cleaning up the mess the world left behind wasn't the subject. My job was simple: collect the trash, sort it, and make the city just a little bit cleaner. Until that day when at looked at what were those garbage...\n\nIt started with the way people treated their waste. Some threw things away with careless abandon, while others seemed to hide certain items deep in the trash, as though they were afraid of being seen. Then, one day, I found something strange: an envelope tucked between the cans, filled with cryptic symbols and names. It was the start of something bigger.\n\nThe more I uncovered, the clearer it became: I wasn't just cleaning up after people. There were secrets hidden in the garbage: hidden messages, covert operations, and whispers of a shadowy world just out of view. My life changed the day I picked up that envelope. At that moment, I wasn't just a collector of trash anymore; I had become a private eye."
     },
 	{
 	"id": "JOB011",
 	"profession": "Ice Cream Vendor",
     "bonus_malus": {},
-	"special": "+100Dø ",  // +100Dø au départ du jeu
-	"description": "Selling ice cream seemed simple at first. On hot days, people would line up, eager for a cool treat. I'd serve them their cones with a smile, and for a while, that was enough. The joy of seeing someone's day a little sweeter, made it feel like I was doing something important.
-
-Besides, at the time, I never really cared about global warming. Barely noticing that, year after year, I sold more than the year before. I was content with my lie about my products' qualities, convincing myself I deserved it.
-
-But as time passed, I began to notice things. The way people avoided eye contact, the tension in their voices when they asked for a flavor, the subtle shifts in their mood as they handed over the money. There was always something more beneath the surface, something unspoken.
-
-Eventually, it became clear: serving ice cream wasn't enough. I needed to uncover the deeper truths, the stories people tried to hide. So, I traded my scoop for something else: a sharp mind. Now, as a private eye, I still observe people but instead of offering a sweet treat, I dig for the hidden truths, the secrets they keep buried. The job may have changed, but my thirst for uncovering the unseen has stayed the same."
+	"special": "+100Dø ",
+	"description": "Selling ice cream seemed simple at first. On hot days, people would line up, eager for a cool treat. I'd serve them their cones with a smile, and for a while, that was enough. The joy of seeing someone's day a little sweeter, made it feel like I was doing something important.\n\nBesides, at the time, I never really cared about global warming. Barely noticing that, year after year, I sold more than the year before. I was content with my lie about my products' qualities, convincing myself I deserved it.\n\nBut as time passed, I began to notice things. The way people avoided eye contact, the tension in their voices when they asked for a flavor, the subtle shifts in their mood as they handed over the money. There was always something more beneath the surface, something unspoken.\n\nEventually, it became clear: serving ice cream wasn't enough. I needed to uncover the deeper truths, the stories people tried to hide. So, I traded my scoop for something else: a sharp mind. Now, as a private eye, I still observe people but instead of offering a sweet treat, I dig for the hidden truths, the secrets they keep buried. The job may have changed, but my thirst for uncovering the unseen has stayed the same."
     },
 	{
 	"id": "JOB012",
 	"profession": "Janitor",
 	"bonus_malus": {"PHY": 1, "MEN": 1, "HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "I spent years cleaning up after the bourgeois of New-Caelum, watching them exchange false smiles while spreading their venom. Just from the smell on the landings, I could guess their secrets. I was the janitor, invisible but always on alert.
-
-One day, a scrap of paper fell at my feet: a note about a meeting in a corner of the neighborhood I thought I knew inside and out. Why was this place so well hidden from me? That question haunted me. Then, while polishing the brass on stairway A, I stumbled upon another slip mentioning yet another meeting in the same spot.
-
-Adrenaline kicked in. I began to ask discreet questions, searching for leads. The urge to know propelled me into a world of intrigue. From simple janitor, I became a seeker of truths, ready to unearth what lurked in the shadows of this grimy city.
-
-In the end, not much has changed; I still earn my living this way, stirring up other people's dirt!"
+	"description": "I spent years cleaning up after the bourgeois of New-Caelum, watching them exchange false smiles while spreading their venom. Just from the smell on the landings, I could guess their secrets. I was the janitor, invisible but always on alert.\n\nOne day, a scrap of paper fell at my feet: a note about a meeting in a corner of the neighborhood I thought I knew inside and out. Why was this place so well hidden from me? That question haunted me. Then, while polishing the brass on stairway A, I stumbled upon another slip mentioning yet another meeting in the same spot.\n\nAdrenaline kicked in. I began to ask discreet questions, searching for leads. The urge to know propelled me into a world of intrigue. From simple janitor, I became a seeker of truths, ready to unearth what lurked in the shadows of this grimy city.\n\nIn the end, not much has changed; I still earn my living this way, stirring up other people's dirt!"
     },
 	{
 	"id": "JOB013",
 	"profession": "Museum Attendant",
     "bonus_malus": {"PHY": -1, "MEN": 1, "HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "I merely observed the paintings. Every day, I passed by the masterpieces: the golden light bathing the scenes of Vermeer, the intensity of the gazes in Velázquez's royal portraits. The details fascinated me, but it remained a world at a distance.
-
-And something changed. I began to notice things that had slipped past me before. The way some artworks were placed, as if an invisible order ruled behind the walls, unseen by the visitors. There were shadows behind the frames, unfinished stories wandering between sculptures and canvases.
-
-One evening, as I was closing up the gallery, I stumbled upon a dusty book in a supposed empty room. It contained sketches, drawings of Velázquez's works, but altered. The signature wasn't the same. The description below referenced secret dealings between the greatest art collectors and a mysterious 'restorer'.
-
-This ignited a curiosity I couldn't ignore. Art wasn't just about preservation anymore, it was about unveiling the stories hidden beneath the surface, the untold truths behind the masterpieces. Something darker and far more elusive was at play. This changed my life!"
+	"description": "I merely observed the paintings. Every day, I passed by the masterpieces: the golden light bathing the scenes of Vermeer, the intensity of the gazes in Velázquez's royal portraits. The details fascinated me, but it remained a world at a distance.\n\nAnd something changed. I began to notice things that had slipped past me before. The way some artworks were placed, as if an invisible order ruled behind the walls, unseen by the visitors. There were shadows behind the frames, unfinished stories wandering between sculptures and canvases.\n\nOne evening, as I was closing up the gallery, I stumbled upon a dusty book in a supposed empty room. It contained sketches, drawings of Velázquez's works, but altered. The signature wasn't the same. The description below referenced secret dealings between the greatest art collectors and a mysterious 'restorer'.\n\nThis ignited a curiosity I couldn't ignore. Art wasn't just about preservation anymore, it was about unveiling the stories hidden beneath the surface, the untold truths behind the masterpieces. Something darker and far more elusive was at play. This changed my life!"
     },
 	{
 	"id": "JOB014",
 	"profession": "Parking Enforcement Officer",
     "bonus_malus": {"MEN": -1, "HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "Being an investigator is all about uncovering secrets, finding hidden truths, and solving puzzles. It's what I do now, but it wasn't always my life. My story began with a very different job, one most people would forget easily.
-
-My days were spent checking meters and writing tickets for those who parked without paying. It wasn't glamorous, but it was steady work. I was mostly invisible to the people around me: I used to be a parking enforcement officer.
-
-But then I started noticing things. A car parked oddly, a pattern in the way some vehicles were left unattended. Details others overlooked became clues, and one day, a strange situation led me down a trail of mystery. That's when I realized I was more than just a 'pervenche' as they used to call us in France.
-
-I left it all behind, trading parking tickets for private investigations. Now, every case feels like the next piece of a much bigger puzzle."
+	"description": "Being an investigator is all about uncovering secrets, finding hidden truths, and solving puzzles. It's what I do now, but it wasn't always my life. My story began with a very different job, one most people would forget easily.\n\nMy days were spent checking meters and writing tickets for those who parked without paying. It wasn't glamorous, but it was steady work. I was mostly invisible to the people around me: I used to be a parking enforcement officer.\n\nBut then I started noticing things. A car parked oddly, a pattern in the way some vehicles were left unattended. Details others overlooked became clues, and one day, a strange situation led me down a trail of mystery. That's when I realized I was more than just a 'pervenche' as they used to call us in France.\n\nI left it all behind, trading parking tickets for private investigations. Now, every case feels like the next piece of a much bigger puzzle."
     },
 	{
 	"id": "JOB015",
 	"profession": "Philosopher",
     "bonus_malus": {"MEN": 1},
 	"special": "",
-	"description": "The truth has always been something that haunted me—unseen, just out of reach. As a detective, it's my job to find it. But that wasn't always my path. I didn't start chasing shadows and solving mysteries. My life used to be far more grounded, far more... conventional.
-
-I used to work in a small, stuffy office, handling mundane tasks (paperwork, filing, and the kind of work that doesn't really make you think). It wasn't terrible, but it was dull, and something inside me yearned for more. I spent my breaks reading detective novels, daydreaming uncovering truths no one else could see.
-
-One day, a curious incident at work caught my attention. Something didn't add up, and I couldn't shake the feeling that there was a deeper story hidden beneath the surface. I couldn't let it go, and that small spark of curiosity grew into something bigger.
-
-So, I walked away from that office job, traded in my desk for a magnifying glass, and became a detective. But in doing so, I found that what I was truly seeking wasn't just answers: it was the deeper understanding of the world around me. That's when it hit me. I wasn't just solving cases. I was a philosopher in disguise."
+	"description": "The truth has always been something that haunted me—unseen, just out of reach. As a detective, it's my job to find it. But that wasn't always my path. I didn't start chasing shadows and solving mysteries. My life used to be far more grounded, far more... conventional.\n\nI used to work in a small, stuffy office, handling mundane tasks (paperwork, filing, and the kind of work that doesn't really make you think). It wasn't terrible, but it was dull, and something inside me yearned for more. I spent my breaks reading detective novels, daydreaming uncovering truths no one else could see.\n\nOne day, a curious incident at work caught my attention. Something didn't add up, and I couldn't shake the feeling that there was a deeper story hidden beneath the surface. I couldn't let it go, and that small spark of curiosity grew into something bigger.\n\nSo, I walked away from that office job, traded in my desk for a magnifying glass, and became a detective. But in doing so, I found that what I was truly seeking wasn't just answers: it was the deeper understanding of the world around me. That's when it hit me. I wasn't just solving cases. I was a philosopher in disguise."
     },
 	{
 	"id": "JOB016",
 	"profession": "Policeman",
     "bonus_malus": {},
-	"special": "1/3",  // 1/3 chance de ne pas aller en prison ou de devoir de caution à Wan=5
-	"description": "The uniform was all I knew. Day after day, I patrolled the streets, answered calls, and enforced the law. It became routine: no questions, no surprises. The world outside seemed chaotic, but I thought I was doing my part, keeping order.
-
-But over time, I began to see cracks. I noticed things I had ignored before, such as corruption within my own ranks, blind obedience to orders that no longer made sense. I began to question the very system I'd sworn to protect. What was I really serving? Justice? Or something darker?
-
-One night, after a particularly troubling case, it became clear: I wasn't fighting for what was right anymore. I was just part of the machine, spinning wheels in a never-ending cycle. It felt like I had another boss I knew nothing about.
-
-I couldn't ignore it any longer. I left the badge behind, turned my back on the uniform, and stepped into a world where I could pursue real answers. Truth was now my mission, and it was time to reveal its true nature."
+	"special": "1/3",
+	"description": "The uniform was all I knew. Day after day, I patrolled the streets, answered calls, and enforced the law. It became routine: no questions, no surprises. The world outside seemed chaotic, but I thought I was doing my part, keeping order.\n\nBut over time, I began to see cracks. I noticed things I had ignored before, such as corruption within my own ranks, blind obedience to orders that no longer made sense. I began to question the very system I'd sworn to protect. What was I really serving? Justice? Or something darker?\n\nOne night, after a particularly troubling case, it became clear: I wasn't fighting for what was right anymore. I was just part of the machine, spinning wheels in a never-ending cycle. It felt like I had another boss I knew nothing about.\n\nI couldn't ignore it any longer. I left the badge behind, turned my back on the uniform, and stepped into a world where I could pursue real answers. Truth was now my mission, and it was time to reveal its true nature."
     },
 	{
 	"id": "JOB017",
 	"profession": "Priest",
 	"bonus_malus": {"PHY": -1, "HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "Devotion, guiding my parishioners, offering counsel, and performing rites. It was a simple life, or so I thought. But then, something began to change.
-
-It started when a parishioner came to me, her eyes filled with fear (God it makes me nervous). She spoke of strange things happening in the town, suspicious activities, whispers in the shadows. The more I listened, the more I realized there were severe things being hidden, even in my own community.
-
-One night, as I prepared for mass, I found an unusual envelope hidden beneath the altar. It was filled with information that didn't belong in the church: documents, names, and plans for something sinister. Even a Great Evil was mentioned.
-
-I couldn't ignore it any longer. I wasn't just here to lead prayers anymore. I had to uncover the truth, not only for my own peace but for the safety of those I was meant to protect.
-
-I left the pulpit behind, and with it, my former life. Now, my mission was clear: I had become a seeker of hidden truths, far beyond the walls of the church. Another way to serve in a sens."
+	"description": "Devotion, guiding my parishioners, offering counsel, and performing rites. It was a simple life, or so I thought. But then, something began to change.\n\nIt started when a parishioner came to me, her eyes filled with fear (God it makes me nervous). She spoke of strange things happening in the town, suspicious activities, whispers in the shadows. The more I listened, the more I realized there were severe things being hidden, even in my own community.\n\nOne night, as I prepared for mass, I found an unusual envelope hidden beneath the altar. It was filled with information that didn't belong in the church: documents, names, and plans for something sinister. Even a Great Evil was mentioned.\n\nI couldn't ignore it any longer. I wasn't just here to lead prayers anymore. I had to uncover the truth, not only for my own peace but for the safety of those I was meant to protect.\n\nI left the pulpit behind, and with it, my former life. Now, my mission was clear: I had become a seeker of hidden truths, far beyond the walls of the church. Another way to serve in a sens."
     },
 	{
 	"id": "JOB018",
 	"profession": "Part-time Superhero",
     "bonus_malus": {"PHY": 2, "MEN": -2},
 	"special": "",
-	"description": "I used to walk around in brightly colored tights and a cape, convinced I was destined to save the world. Sure, the world didn't always appreciate my efforts and I'd catch the occasional eye roll but I believed in what I was doing. To me, it wasn't about the costume (or the laughter); it was about making a difference. I was out there, rescuing stray animals and generally being the hero I thought the world needed. My heart was in the right place, and in my mind, I was a true superhero.
-
-In reality, I was more like a 'mall Santa' than anything else (playing a role that others didn't take seriously, but believing in it all the same). I never cared that people made fun of me. To me, I was doing important work, even if no one else saw it that way. But, deep down, I couldn't ignore the fact that I wasn't actually changing the world.
-
-Eventually, I realized it was time to step out of the tights and cape. I hung up my costume, shook off the delusion of saving the world, and decided to turn my focus elsewhere. I became a private detective. No more playing pretend. Just real mysteries to solve, and for once, I could finally make an actual difference without the (pathetic) costumes."
+	"description": "I used to walk around in brightly colored tights and a cape, convinced I was destined to save the world. Sure, the world didn't always appreciate my efforts and I'd catch the occasional eye roll but I believed in what I was doing. To me, it wasn't about the costume (or the laughter); it was about making a difference. I was out there, rescuing stray animals and generally being the hero I thought the world needed. My heart was in the right place, and in my mind, I was a true superhero.\n\nIn reality, I was more like a 'mall Santa' than anything else (playing a role that others didn't take seriously, but believing in it all the same). I never cared that people made fun of me. To me, I was doing important work, even if no one else saw it that way. But, deep down, I couldn't ignore the fact that I wasn't actually changing the world.\n\nEventually, I realized it was time to step out of the tights and cape. I hung up my costume, shook off the delusion of saving the world, and decided to turn my focus elsewhere. I became a private detective. No more playing pretend. Just real mysteries to solve, and for once, I could finally make an actual difference without the (pathetic) costumes."
     },
 	{
 	"id": "JOB019",
 	"profession": "Quantum Physicist",
 	"bonus_malus": {"PHY": -1, "MEN": 2, "HEAnom": -1, "HEA": -1},
 	"special": "",
-	"description": "The intricacies of quantum mechanics had always captivated me, yet something was beginning to feel off. The more I studied the minute particles and subatomic phenomena, the more I realized there were discrepancies, anomalies that didn't quite align with the conventional understanding of the universe.
-
-One evening, while examining an obscure set of data, I stumbled upon a troubling inconsistency, an experiment that had been swept under the rug. It spoke of theories that didn't fit the current scientific narrative, and I knew right away that it was being intentionally ignored.
-
-The more I probed, the more I unearthed: whispers of scientific misconduct, and secrets concealed by the very people who were meant to bring clarity to the world. The lines between fact and fiction began to blur, and I could no longer just stand by.
-
-I left my career in physics behind right away. The quest for answers no longer lay within the confines of the lab. I had become a private investigator, chasing truths that were hidden in plain sight, truths that were far greater than anything I could have imagined."
+	"description": "The intricacies of quantum mechanics had always captivated me, yet something was beginning to feel off. The more I studied the minute particles and subatomic phenomena, the more I realized there were discrepancies, anomalies that didn't quite align with the conventional understanding of the universe.\n\nOne evening, while examining an obscure set of data, I stumbled upon a troubling inconsistency, an experiment that had been swept under the rug. It spoke of theories that didn't fit the current scientific narrative, and I knew right away that it was being intentionally ignored.\n\nThe more I probed, the more I unearthed: whispers of scientific misconduct, and secrets concealed by the very people who were meant to bring clarity to the world. The lines between fact and fiction began to blur, and I could no longer just stand by.\n\nI left my career in physics behind right away. The quest for answers no longer lay within the confines of the lab. I had become a private investigator, chasing truths that were hidden in plain sight, truths that were far greater than anything I could have imagined."
     },
 	{
 	"id": "JOB020",
 	"profession": "Retired",
     "bonus_malus": {"PHY": -1, "MEN": 1, "HEAnom": -2, "HEA": -2},
 	"special": "",
-	"description": "Retirement gave me a new perspective on life. At first, it was just about enjoying the quiet time to read, to relax, to do the things I never had time for before. But somewhere along the way, I started to notice the things I hadn't seen before. The little details, the things people said without speaking. The stories that were hidden in plain sight.
-
-I began paying attention to the odd behavior, things like that. My days were filled with observations, small clues that started to form a bigger picture. I had been retired for years, but it felt like I was just beginning to learn what I had been meant to do all along.
-
-One day, I realized I was no longer content with just observing. I had been a detective in my own way for years, piecing together mysteries from afar. It wasn't enough anymore. I needed to dig deeper. I decided it was time to leave retirement behind and step into a new role, one where I could chase the mysteries that had once only passed through my mind.
-
-So, I became a private detective. It wasn't a big leap, really. It was a matter of following the clues I had been gathering for years, no longer just watching from the sidelines. I was a player in the game."
+	"description": "Retirement gave me a new perspective on life. At first, it was just about enjoying the quiet time to read, to relax, to do the things I never had time for before. But somewhere along the way, I started to notice the things I hadn't seen before. The little details, the things people said without speaking. The stories that were hidden in plain sight.\n\nI began paying attention to the odd behavior, things like that. My days were filled with observations, small clues that started to form a bigger picture. I had been retired for years, but it felt like I was just beginning to learn what I had been meant to do all along.\n\nOne day, I realized I was no longer content with just observing. I had been a detective in my own way for years, piecing together mysteries from afar. It wasn't enough anymore. I needed to dig deeper. I decided it was time to leave retirement behind and step into a new role, one where I could chase the mysteries that had once only passed through my mind.\n\nSo, I became a private detective. It wasn't a big leap, really. It was a matter of following the clues I had been gathering for years, no longer just watching from the sidelines. I was a player in the game."
     },
 	{
 	"id": "JOB021",
 	"profession": "Taxidermist",
     "bonus_malus": {"MEN": -1, "HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "I worked a whole life as a taxidermist, surrounded by the pungent smells of chemicals and preserved animals. The job required precision, skill, and a certain detachment from the decay I handled daily. But over each creature, there were stories, lives that had once been full of motion, now frozen in time. And as I worked, I started to notice details that spoke to me of mysteries.
-
-The stench of chemicals, the sights of bodies in various states of preservation, they became a backdrop for something deeper. I was 'preserving' lives, yes, but I was also about hidden truths, albeit in a different way. The more I dug into the lives of these animals, the more I realized I was yearning for something more, something beyond static bodies.
-
-One day, the realization hit me: instead of preserving what's already gone, I wanted to chase the living, breathing mysteries around me. So, I left the taxidermy shop behind, but the odor of decay never quite left me. Now, as a detective, I uncover secrets, stories that, like the smell of formaldehyde, linger in the air, waiting to be revealed."
+	"description": "I worked a whole life as a taxidermist, surrounded by the pungent smells of chemicals and preserved animals. The job required precision, skill, and a certain detachment from the decay I handled daily. But over each creature, there were stories, lives that had once been full of motion, now frozen in time. And as I worked, I started to notice details that spoke to me of mysteries.\n\nThe stench of chemicals, the sights of bodies in various states of preservation, they became a backdrop for something deeper. I was 'preserving' lives, yes, but I was also about hidden truths, albeit in a different way. The more I dug into the lives of these animals, the more I realized I was yearning for something more, something beyond static bodies.\n\nOne day, the realization hit me: instead of preserving what's already gone, I wanted to chase the living, breathing mysteries around me. So, I left the taxidermy shop behind, but the odor of decay never quite left me. Now, as a detective, I uncover secrets, stories that, like the smell of formaldehyde, linger in the air, waiting to be revealed."
     },
 	{
 	"id": "JOB022",
 	"profession": "Teacher",
     "bonus_malus": {"MEN": 1, "HEAnom": -1, "HEA": -1},
 	"special": "",
-	"description": "Every morning, I stood in front of my class, chalk in hand, teaching the same lessons: multiplication tables, grammar rules, the basics of history. My job was clear: help them learn, keep them safe, prepare them for the future and I never questioned it.
-
-It was during a spelling test that I first noticed something was off. One of the desks, empty since the beginning of the year, had a fresh pencil mark on it: a single word, half-erased. I barely paid attention until the same word reappeared on the board the next day, written in shaky, childlike handwriting.
-
-At recess, I overheard two children whispering about “the other boy” who sometimes sat at the back of the class. They laughed, but one of them wouldn't meet my eyes when I asked about it. That afternoon, when I checked the old attendance logs, I saw a name I didn't recognize. A student supposedly in my class, but one I had never met.
-
-I tried to dismiss it, to focus on my lessons. But the next morning, when I turned to write on the board, I found a note waiting for me in that same unsteady handwriting: "You see me now." Teaching wasn't my job anymore."
+	"description": "Every morning, I stood in front of my class, chalk in hand, teaching the same lessons: multiplication tables, grammar rules, the basics of history. My job was clear: help them learn, keep them safe, prepare them for the future and I never questioned it.\n\nIt was during a spelling test that I first noticed something was off. One of the desks, empty since the beginning of the year, had a fresh pencil mark on it: a single word, half-erased. I barely paid attention until the same word reappeared on the board the next day, written in shaky, childlike handwriting.\n\nAt recess, I overheard two children whispering about “the other boy” who sometimes sat at the back of the class. They laughed, but one of them wouldn't meet my eyes when I asked about it. That afternoon, when I checked the old attendance logs, I saw a name I didn't recognize. A student supposedly in my class, but one I had never met.\n\nI tried to dismiss it, to focus on my lessons. But the next morning, when I turned to write on the board, I found a note waiting for me in that same unsteady handwriting: ''You see me now!'' Teaching wasn't my job anymore."
     },
 	{
 	"id": "JOB023",
 	"profession": "Tour Guide",
 	"bonus_malus": {"PHY": 1, "MEN": 1, "HEAnom": -1, "HEA": -1},
 	"special": "",
-	"description": "My life as a tour guide was simple. I'd stand at the entrance, greet the tourists with a smile, and share facts about their history or significance. Whatever. I loved the excitement in their eyes as I led them through ancient streets or past famous paintings.
-
-But I started noticing the way some visitors would glance nervously around when a certain subject was brought up. How certain questions would be quickly diverted or ignored by the staff. One day, after a long tour, I overheard two visitors discussing something that wasn't part of any history book. They were talking about a hidden room beneath a famous cathedral.
-
-I was stung! I had spent years walking these streets, guiding hundreds of people, but there were corners I had never been shown, secrets I hadn't been taught. As I studied it, the truth began to unravel. Whispers about lost treasures, secret meetings beneath our feet, and truths hidden in plain sight.
-
-That was the moment everything shifted. I was no longer just guiding people through history; I was uncovering it. What I thought was just a hobby now became a mission. And I wasn't just a tour guide anymore: I was a man on a mission."
+	"description": "My life as a tour guide was simple. I'd stand at the entrance, greet the tourists with a smile, and share facts about their history or significance. Whatever. I loved the excitement in their eyes as I led them through ancient streets or past famous paintings.\n\nBut I started noticing the way some visitors would glance nervously around when a certain subject was brought up. How certain questions would be quickly diverted or ignored by the staff. One day, after a long tour, I overheard two visitors discussing something that wasn't part of any history book. They were talking about a hidden room beneath a famous cathedral.\n\nI was stung! I had spent years walking these streets, guiding hundreds of people, but there were corners I had never been shown, secrets I hadn't been taught. As I studied it, the truth began to unravel. Whispers about lost treasures, secret meetings beneath our feet, and truths hidden in plain sight.\n\nThat was the moment everything shifted. I was no longer just guiding people through history; I was uncovering it. What I thought was just a hobby now became a mission. And I wasn't just a tour guide anymore: I was a man on a mission."
     },
 	{
 	"id": "JOB024",
 	"profession": "Unemployed",
 	"bonus_malus": {},
 	"special": "",
-	"description": "No alarm clock, no schedules, no paychecks. At first, it felt like freedom. Then it started to feel like falling. Days blurred into nights, job applications turned into rejection letters, and the city moved on without me. It's strange how you frantically start needing to find a place in society as no one seems to care about you.
-
-Desperation has a way of sharpening the senses. I started seeing things, little inconsistencies, small details others ignored. The neighbor who left every morning with a briefcase but never seemed to work. The same black car parked outside my building three nights in a row. A missing person poster that disappeared too quickly.
-
-One day, I followed a hunch. A simple curiosity about a man who didn't seem to belong. I trailed him through the streets, past shops and stations, until he slipped into an unmarked door. What I saw inside changed everything.
-
-I didn't have a job, but I had a purpose. No office, no boss, just instincts and a growing list of questions. I had fallen, but I had landed on something real. It was time to stop searching for work and start searching for the truth."
+	"description": "No alarm clock, no schedules, no paychecks. At first, it felt like freedom. Then it started to feel like falling. Days blurred into nights, job applications turned into rejection letters, and the city moved on without me. It's strange how you frantically start needing to find a place in society as no one seems to care about you.\n\nDesperation has a way of sharpening the senses. I started seeing things, little inconsistencies, small details others ignored. The neighbor who left every morning with a briefcase but never seemed to work. The same black car parked outside my building three nights in a row. A missing person poster that disappeared too quickly.\n\nOne day, I followed a hunch. A simple curiosity about a man who didn't seem to belong. I trailed him through the streets, past shops and stations, until he slipped into an unmarked door. What I saw inside changed everything.\n\nI didn't have a job, but I had a purpose. No office, no boss, just instincts and a growing list of questions. I had fallen, but I had landed on something real. It was time to stop searching for work and start searching for the truth."
     },
 	{
 	"id": "JOB025",
 	"profession": "Vegan Cook",
 	"bonus_malus": {},
 	"special": "",
-	"description": "For years, I worked in a modest kitchen, crafting plant-based meals for people who didn't understand what went into the food. To them, it was just ingredients; to me, it was an art, a way to speak without words.
-
- But after all this time, I began to feel something was missing, something more than what I could create in a pot or on a plate. Then, one evening, I found a strange note while organizing my recipes. It referenced some secret meeting, hidden things, and ideas not meant for mainstream kitchens. I couldn't shake the feeling that I had been left out. Why hadn't I been invited into this world?
-
- My curiosity quickly turned into an obsession. I began to investigate, following the trail of whispered rumors and underground hideouts. The deeper I went, the clearer it became: my life wasn't about cooking anymore. It was about uncovering truths, exposing what others kept hidden.
-
- In the end, I realized I had become something else: a private eye. I left the kitchen behind, focused on uncovering secrets that lay beneath the surface. It was a new kind of hunger, a thirst for answers that could never be satisfied."
+	"description": "For years, I worked in a modest kitchen, crafting plant-based meals for people who didn't understand what went into the food. To them, it was just ingredients; to me, it was an art, a way to speak without words.\n\n But after all this time, I began to feel something was missing, something more than what I could create in a pot or on a plate. Then, one evening, I found a strange note while organizing my recipes. It referenced some secret meeting, hidden things, and ideas not meant for mainstream kitchens. I couldn't shake the feeling that I had been left out. Why hadn't I been invited into this world?\n\n My curiosity quickly turned into an obsession. I began to investigate, following the trail of whispered rumors and underground hideouts. The deeper I went, the clearer it became: my life wasn't about cooking anymore. It was about uncovering truths, exposing what others kept hidden.\n\n In the end, I realized I had become something else: a private eye. I left the kitchen behind, focused on uncovering secrets that lay beneath the surface. It was a new kind of hunger, a thirst for answers that could never be satisfied."
     },
 	{
 	"id": "JOB026",
 	"profession": "Veterinarian",
     "bonus_malus": {},
-	"special": "-50%",  // -50% sur les interventions médicales
-	"description": "You know what a veterinarian is, right? It's all about healing animals, fixing what is broken, and bringing relief where it is needed.
-
-It was satisfying work, but I began to notice something more. With every creature I treated, I could sense there was always more: the pain, the hidden struggles, the silent stories. Those creatures could tell so much more.
-
-Animals don't lie. Their eyes, their behavior, and the smallest of their movements spoke volumes. I started to understand their condition in ways others didn't. It wasn't just about medicine; it was about reading between the lines.
-
-Eventually, I realized that my true calling wasn't just about healing animals. It was about finding out the hidden parts of life, no matter who they belonged to. So, I left the clinic behind and became a detective. Now, I seek the mysteries people hide, using the same instincts I once used to heal."
+	"special": "-50%",
+	"description": "You know what a veterinarian is, right? It's all about healing animals, fixing what is broken, and bringing relief where it is needed.\n\nIt was satisfying work, but I began to notice something more. With every creature I treated, I could sense there was always more: the pain, the hidden struggles, the silent stories. Those creatures could tell so much more.\n\nAnimals don't lie. Their eyes, their behavior, and the smallest of their movements spoke volumes. I started to understand their condition in ways others didn't. It wasn't just about medicine; it was about reading between the lines.\n\nEventually, I realized that my true calling wasn't just about healing animals. It was about finding out the hidden parts of life, no matter who they belonged to. So, I left the clinic behind and became a detective. Now, I seek the mysteries people hide, using the same instincts I once used to heal."
     },
 	{
 	"id": "JOB027",
 	"profession": "Wrestler",
 	"bonus_malus": {"PHY": 1, "MEN": -1},
 	"special": "",
-	"description": "I was once a hero in the ring, known for my strength, my moves, and the roar of the crowd. But all those cheers... they began to feel hollow. The bright lights never told the full story (behind the show, there were things hidden from the public eye).
-
-One evening, as I was getting ready for a match, I overheard a security conversation that wasn't meant for me to hear. A whisper about a hidden network, and names (girls, young girls) that had nothing to do with wrestling. They were speaking in codes, talking about business that didn't belong in a ring.
-
-Curiosity struck me. What was it? What were they involved in? I started watching them closely, piecing together fragments of conversations, catching sight of things no one else seemed to notice. I began to realize that the world I'd been part of (the wrestling world) was just a diversion for something far more dangerous and complex.
-
-It wasn't long before I stepped out of the ring. The crowd's cheers were replaced by the quiet thrill of uncovering the hidden truths beneath the surface. My new life began as a private eye: digging through the shadows, searching for what was really going on."
+	"description": "I was once a hero in the ring, known for my strength, my moves, and the roar of the crowd. But all those cheers... they began to feel hollow. The bright lights never told the full story (behind the show, there were things hidden from the public eye).\n\nOne evening, as I was getting ready for a match, I overheard a security conversation that wasn't meant for me to hear. A whisper about a hidden network, and names (girls, young girls) that had nothing to do with wrestling. They were speaking in codes, talking about business that didn't belong in a ring.\n\nCuriosity struck me. What was it? What were they involved in? I started watching them closely, piecing together fragments of conversations, catching sight of things no one else seemed to notice. I began to realize that the world I'd been part of (the wrestling world) was just a diversion for something far more dangerous and complex.\n\nIt wasn't long before I stepped out of the ring. The crowd's cheers were replaced by the quiet thrill of uncovering the hidden truths beneath the surface. My new life began as a private eye: digging through the shadows, searching for what was really going on."
     },
 	{
 	"id": "JOB028",
 	"profession": "Writer",
     "bonus_malus": {"PHY": -1, "MEN": 1, "HEAnom": -1, "HEA": -1},
 	"special": "",
-	"description": "Words were my world. They always had been. Characters, plots, and endless pages—everything I created felt real, but over time, something started to feel off.
-
-It began with an anonymous letter I received, just a few cryptic lines. At first, I thought it was part of a story, but soon I realized it was referring to something (or someone) real. So, I began researching it, and the more I investigated, the more I found connections between my fiction and the world around me. People I knew were turning up in my books, events I had written about were unfolding in real life.
-
-The deeper I went, the clearer it became: I wasn't just writing stories anymore. The lines between fiction and reality were blurring, and I couldn't ignore it. I had guided people into crime.
-
-So, I walked away from my desk, set down my pen, and left the world of imagination behind. The truth had become my new plot, and I had to read between the lines. So, I became a private investigator, chasing the secrets buried in basements."
+	"description": "Words were my world. They always had been. Characters, plots, and endless pages—everything I created felt real, but over time, something started to feel off.\n\nIt began with an anonymous letter I received, just a few cryptic lines. At first, I thought it was part of a story, but soon I realized it was referring to something (or someone) real. So, I began researching it, and the more I investigated, the more I found connections between my fiction and the world around me. People I knew were turning up in my books, events I had written about were unfolding in real life.\n\nThe deeper I went, the clearer it became: I wasn't just writing stories anymore. The lines between fiction and reality were blurring, and I couldn't ignore it. I had guided people into crime.\n\nSo, I walked away from my desk, set down my pen, and left the world of imagination behind. The truth had become my new plot, and I had to read between the lines. So, I became a private investigator, chasing the secrets buried in basements."
     },
 	{
 	"id": "JOB029",
 	"profession": "Yoga Teacher",
 	"bonus_malus": {"HEAnom": 1, "HEA": 1},
 	"special": "",
-	"description": "My life now revolves around solving mysteries, piecing together puzzles that others avoid. It's all about uncovering truths hidden in plain sight. But it wasn't always like this.
-
-I spent my days observing people, noticing the things they didn't say, the shifts in their behavior that hinted at something more. The world was full of unspoken stories, and I found myself increasingly drawn to them. I could sense when something was off, when the smallest detail could lead to a bigger truth.
-
-Then one day, after an encounter that left me questioning everything, it hit me: I had always been seeking answers, but not in the way I thought. My curiosity had always pushed me toward understanding the layers beneath the surface. And that's when I realized what I had been doing for years was far from ordinary.
-
-My previous job was to help people find balance and clarity, guiding them through poses, listening to their stories, and sensing the energy they carried. But beneath the calmness, I found myself more and more intrigued by the hidden truths people carried with them. And so, I left the yoga studio behind, trading in mat and poses for cases to solve. Now, I unravel mysteries, using the same intuition, but in a different way."
+	"description": "My life now revolves around solving mysteries, piecing together puzzles that others avoid. It's all about uncovering truths hidden in plain sight. But it wasn't always like this.\n\nI spent my days observing people, noticing the things they didn't say, the shifts in their behavior that hinted at something more. The world was full of unspoken stories, and I found myself increasingly drawn to them. I could sense when something was off, when the smallest detail could lead to a bigger truth.\n\nThen one day, after an encounter that left me questioning everything, it hit me: I had always been seeking answers, but not in the way I thought. My curiosity had always pushed me toward understanding the layers beneath the surface. And that's when I realized what I had been doing for years was far from ordinary.\n\nMy previous job was to help people find balance and clarity, guiding them through poses, listening to their stories, and sensing the energy they carried. But beneath the calmness, I found myself more and more intrigued by the hidden truths people carried with them. And so, I left the yoga studio behind, trading in mat and poses for cases to solve. Now, I unravel mysteries, using the same intuition, but in a different way."
     }
   ]
 }

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
 [ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
 [ext_resource type="Script" uid="uid://c2csir6vwy570" path="res://SCRIPTS/Character_Generation_Creation_Page.gd" id="3_e7ryn"]
-[ext_resource type="Script" uid="uid://bgoqaqd6y044o" path="res://SCRIPTS/Option_Button.gd" id="5_2k6nw"]
+[ext_resource type="Script" uid="uid://bmxi3h6w8e6tp" path="res://SCRIPTS/Character_Generation_Option_Button.gd" id="5_2k6nw"]
 [ext_resource type="Texture2D" uid="uid://buhsc5yt68kjy" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Normal.png" id="6_f1shx"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="6_ntsua"]
 [ext_resource type="Texture2D" uid="uid://bsmeu2oywfdoq" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Normal.png" id="7_0ruwj"]
@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://maus5jo4knov" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Normal.png" id="18_16xvd"]
 [ext_resource type="Texture2D" uid="uid://c45s2pghkecvu" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Opaque.png" id="19_g16jo"]
 [ext_resource type="Texture2D" uid="uid://chcxqx81qfe27" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Transparent.png" id="20_v1018"]
-[ext_resource type="Texture2D" uid="uid://p0d1aufwk72f" path="res://GRAPHICS/CHARACTER_GENERATION/Delete_Normal.png" id="21_550ov"]
-[ext_resource type="Texture2D" uid="uid://chw1ovo035v2u" path="res://GRAPHICS/CHARACTER_GENERATION/Delete_Opaque.png" id="22_hwlkq"]
-[ext_resource type="Texture2D" uid="uid://g11clgp6gvms" path="res://GRAPHICS/CHARACTER_GENERATION/Delete_Transparent.png" id="23_k3b1g"]
+[ext_resource type="Texture2D" uid="uid://oi5y2ypfosf8" path="res://GRAPHICS/CHARACTER_GENERATION/Reset_Normal.png" id="21_7d8wo"]
+[ext_resource type="Texture2D" uid="uid://nfvrv00xhkjm" path="res://GRAPHICS/CHARACTER_GENERATION/Reset_Opaque.png" id="22_yyi2n"]
+[ext_resource type="Texture2D" uid="uid://d05ni5qa4gcsb" path="res://GRAPHICS/CHARACTER_GENERATION/Reset_Transparent.png" id="23_7lqc7"]
 [ext_resource type="Texture2D" uid="uid://dtjnjrfff61av" path="res://GRAPHICS/CHARACTER_GENERATION/Cancel_Normal.png" id="24_13g83"]
 [ext_resource type="Texture2D" uid="uid://bo51kin1mm6i3" path="res://GRAPHICS/CHARACTER_GENERATION/Cancel_Opaque.png" id="25_e0ckp"]
 [ext_resource type="Texture2D" uid="uid://b8ovyicsd5w38" path="res://GRAPHICS/CHARACTER_GENERATION/Cancel_Transparent.png" id="26_dkphj"]
@@ -65,6 +65,8 @@ offset_left = 136.0
 offset_top = 61.0
 offset_right = 251.0
 offset_bottom = 77.0
+tooltip_text = "Choose a first name
+and a last name"
 theme_override_colors/selection_color = Color(0.1998, 0.27, 0.21969, 0.341176)
 theme_override_colors/caret_color = Color(0.1998, 0.27, 0.21969, 0.662745)
 theme_override_colors/font_placeholder_color = Color(0.2, 0.270588, 0.219608, 0.341176)
@@ -91,10 +93,12 @@ offset_left = 166.0
 offset_top = 90.0
 offset_right = 175.0
 offset_bottom = 98.0
+tooltip_text = "Add or subtract
+Physical stat points."
+mouse_filter = 0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-text = "10"
 metadata/_edit_lock_ = true
 
 [node name="PHY_Moins" type="TextureButton" parent="Creation_Page/PHY"]
@@ -124,10 +128,12 @@ offset_left = 166.0
 offset_top = 115.0
 offset_right = 175.0
 offset_bottom = 123.0
+tooltip_text = "Add or subtract
+Mental stat points."
+mouse_filter = 0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-text = "10"
 metadata/_edit_lock_ = true
 
 [node name="MEN_Moins" type="TextureButton" parent="Creation_Page/MEN"]
@@ -159,10 +165,12 @@ offset_left = 166.0
 offset_top = 140.0
 offset_right = 175.0
 offset_bottom = 148.0
+tooltip_text = "Add or substract
+Health stat points."
+mouse_filter = 0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-text = "10"
 metadata/_edit_lock_ = true
 
 [node name="HEA_Moins" type="TextureButton" parent="Creation_Page/HEA"]
@@ -197,7 +205,6 @@ offset_bottom = 198.0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-text = "13"
 metadata/_edit_lock_ = true
 
 [node name="Background_Selector" type="PanelContainer" parent="Creation_Page"]
@@ -215,57 +222,8 @@ layout_mode = 2
 size_flags_vertical = 0
 toggle_mode = false
 flat = true
-selected = 23
-item_count = 24
-popup/item_0/text = "Carpet Seller"
+item_count = 1
 popup/item_0/id = 0
-popup/item_1/text = "Chorist"
-popup/item_1/id = 1
-popup/item_2/text = "Dancer"
-popup/item_2/id = 2
-popup/item_3/text = "Darts Champion"
-popup/item_3/id = 3
-popup/item_4/text = "Drug Addict"
-popup/item_4/id = 4
-popup/item_5/text = "CG Artist"
-popup/item_5/id = 5
-popup/item_6/text = "Ice Cream Seller"
-popup/item_6/id = 6
-popup/item_7/text = "Janitor"
-popup/item_7/id = 7
-popup/item_8/text = "Museum Guard"
-popup/item_8/id = 8
-popup/item_9/text = "Organic Farmer"
-popup/item_9/id = 9
-popup/item_10/text = "Parking Enforcer Officer"
-popup/item_10/id = 10
-popup/item_11/text = "Part-Time Superhero"
-popup/item_11/id = 11
-popup/item_12/text = "Philosopher"
-popup/item_12/id = 12
-popup/item_13/text = "Priest"
-popup/item_13/id = 13
-popup/item_14/text = "Prison Guard"
-popup/item_14/id = 14
-popup/item_15/text = "Pro Wrestler"
-popup/item_15/id = 15
-popup/item_16/text = "Quantum Physics Researcher"
-popup/item_16/id = 16
-popup/item_17/text = "Retiree"
-popup/item_17/id = 17
-popup/item_18/text = "Taxidermist"
-popup/item_18/id = 18
-popup/item_19/text = "Teacher"
-popup/item_19/id = 19
-popup/item_20/text = "Tour Guide"
-popup/item_20/id = 20
-popup/item_21/text = "Vegan Chief"
-popup/item_21/id = 21
-popup/item_22/text = "Writer"
-popup/item_22/id = 22
-popup/item_23/text = "Select a background..."
-popup/item_23/id = 23
-popup/item_23/separator = true
 script = ExtResource("5_2k6nw")
 metadata/_edit_lock_ = true
 
@@ -277,6 +235,8 @@ offset_top = 238.0
 offset_right = 98.0
 offset_bottom = 246.0
 pivot_offset = Vector2(9, 64)
+tooltip_text = "Randomize PHY, MEN
+and HEA points"
 texture_normal = ExtResource("12_rwrty")
 texture_pressed = ExtResource("13_pb7hu")
 texture_hover = ExtResource("14_yalwy")
@@ -290,6 +250,8 @@ offset_top = 251.0
 offset_right = 67.0
 offset_bottom = 259.0
 pivot_offset = Vector2(9, 64)
+tooltip_text = "Load a saved
+Character"
 texture_normal = ExtResource("15_v5br1")
 texture_pressed = ExtResource("16_rpfp5")
 texture_hover = ExtResource("17_528u2")
@@ -303,12 +265,13 @@ offset_top = 264.0
 offset_right = 67.0
 offset_bottom = 272.0
 pivot_offset = Vector2(9, 64)
+tooltip_text = "Save that Character"
 texture_normal = ExtResource("18_16xvd")
 texture_pressed = ExtResource("19_g16jo")
 texture_hover = ExtResource("20_v1018")
 metadata/_edit_lock_ = true
 
-[node name="Delete" type="TextureButton" parent="Creation_Page"]
+[node name="Reset" type="TextureButton" parent="Creation_Page"]
 self_modulate = Color(1, 1, 1, 0.901961)
 layout_mode = 0
 offset_left = 42.0
@@ -316,9 +279,9 @@ offset_top = 277.0
 offset_right = 80.0
 offset_bottom = 285.0
 pivot_offset = Vector2(9, 64)
-texture_normal = ExtResource("21_550ov")
-texture_pressed = ExtResource("22_hwlkq")
-texture_hover = ExtResource("23_k3b1g")
+texture_normal = ExtResource("21_7d8wo")
+texture_pressed = ExtResource("22_yyi2n")
+texture_hover = ExtResource("23_7lqc7")
 metadata/_edit_lock_ = true
 
 [node name="Cancel_button" type="TextureButton" parent="Creation_Page"]
@@ -403,23 +366,23 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("31_36uq3")]
 
-[connection signal="pressed" from="Creation_Page/PHY/PHY_Moins" to="Creation_Page" method="_on_any_button_moins_pressed"]
-[connection signal="pressed" from="Creation_Page/PHY/PHY_Plus" to="Creation_Page" method="_on_any_button_plus_pressed"]
-[connection signal="pressed" from="Creation_Page/MEN/MEN_Moins" to="Creation_Page" method="_on_any_button_moins_pressed"]
-[connection signal="pressed" from="Creation_Page/MEN/MEN_Plus" to="Creation_Page" method="_on_any_button_plus_pressed"]
-[connection signal="pressed" from="Creation_Page/HEA/HEA_Moins" to="Creation_Page" method="_on_any_button_moins_pressed"]
-[connection signal="pressed" from="Creation_Page/HEA/HEA_Plus" to="Creation_Page" method="_on_any_button_plus_pressed"]
+[connection signal="pressed" from="Creation_Page/PHY/PHY_Moins" to="Creation_Page" method="_on_phy_moins_pressed"]
+[connection signal="pressed" from="Creation_Page/PHY/PHY_Plus" to="Creation_Page" method="_on_phy_plus_pressed"]
+[connection signal="pressed" from="Creation_Page/MEN/MEN_Moins" to="Creation_Page" method="_on_men_moins_pressed"]
+[connection signal="pressed" from="Creation_Page/MEN/MEN_Plus" to="Creation_Page" method="_on_men_plus_pressed"]
+[connection signal="pressed" from="Creation_Page/HEA/HEA_Moins" to="Creation_Page" method="_on_hea_moins_pressed"]
+[connection signal="pressed" from="Creation_Page/HEA/HEA_Plus" to="Creation_Page" method="_on_hea_plus_pressed"]
 [connection signal="button_down" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_down"]
 [connection signal="button_up" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_up"]
 [connection signal="item_selected" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_item_selected"]
 [connection signal="mouse_entered" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_mouse_entered"]
-[connection signal="pressed" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="pressed" from="Creation_Page/Randomize" to="Creation_Page" method="_on_randomize_pressed"]
 [connection signal="mouse_entered" from="Creation_Page/Load" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="pressed" from="Creation_Page/Load" to="Creation_Page" method="_on_any_button_pressed"]
 [connection signal="mouse_entered" from="Creation_Page/Save" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="pressed" from="Creation_Page/Save" to="Creation_Page" method="_on_any_button_pressed"]
-[connection signal="mouse_entered" from="Creation_Page/Delete" to="Creation_Page" method="_on_any_button_mouse_entered"]
-[connection signal="pressed" from="Creation_Page/Delete" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="mouse_entered" from="Creation_Page/Reset" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="pressed" from="Creation_Page/Reset" to="Creation_Page" method="_on_reset_pressed"]
 [connection signal="mouse_entered" from="Creation_Page/Cancel_button" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="pressed" from="Creation_Page/Cancel_button" to="Creation_Page" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_mouse_entered"]

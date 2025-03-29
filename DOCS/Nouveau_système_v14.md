@@ -10,7 +10,7 @@ Caractéristiques du Joueur
 	- Pas d’âge non plus, on s’en fout totalement aussi !
 
 Les caractéristiques principales
-	- À la création du personnage, 11 points à répartir entre PHY, MEN et HEAnom. avec un minimum de 3 et un maximum de 7.
+	- À la création du personnage, 15 points à répartir entre PHY, MEN et HEAnom. avec un minimum de 3 et un maximum de 7.
 	- À la création, le personnage a HEA=HEAnom.
 	- PHY=0 et/ou MEN=0 → incapacité d‘Interagir (voir Système de Santé).
 	- HEA=0 → mort du joueur.
@@ -191,7 +191,7 @@ La réputation (du joueur auprès du PNJ)
 	- Le joueur a TOUJOURS Rep=-3 avec un « sbire » (voir Combat).
 
 Génération des caractéristiques des PNJs
-	- A la génération, les PNJs ont 11 points à répartir aléatoirement entre PHY, MEN et HEAnom. (HEA=HEAnom.) suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 11 points un nombre de points égal au niveau de difficulté de l’enquête (les PNJs de la quête finale ont 6 points)(voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
+	- A la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et HEAnom. (HEA=HEAnom.) suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (les PNJs de la quête finale ont 6 points)(voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
 	- On ajoutera ensuite les bonus/malus liés à la profession.
 	- Aucune caractéristique ne pourra dépasser 10.
 
