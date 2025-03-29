@@ -24,7 +24,13 @@ func _ready():
 func _process(_delta):
 	if top_button.button_position != last_top_button_position or bottom_button.button_position != last_bottom_button_position:
 		if not $"../../Movies/MFSC".paused:
-			stop_movie()
+			stop_movie_MFSC()
+		elif not $"../../Movies/DB".paused:
+			stop_movie_DB()
+		elif not $"../../Movies/KM".paused:
+			stop_movie_KM()
+		elif not $"../../Movies/JJ".paused:
+			stop_movie_JJ()
 
 		last_top_button_position = top_button.button_position
 		last_bottom_button_position = bottom_button.button_position
@@ -48,7 +54,31 @@ func _process(_delta):
 		if is_condition_met:
 			time_elapsed += _delta
 			if time_elapsed >= 0.666:
-				go_movie()
+				go_movie_MFSC()
+		else:
+			is_condition_met = true
+			time_elapsed = 0.0
+	elif top_button.button_position == 3 and bottom_button.button_position == 6:
+		if is_condition_met:
+			time_elapsed += _delta
+			if time_elapsed >= 0.666:
+				go_movie_DB()
+		else:
+			is_condition_met = true
+			time_elapsed = 0.0
+	elif top_button.button_position == 3 and bottom_button.button_position == 2:
+		if is_condition_met:
+			time_elapsed += _delta
+			if time_elapsed >= 0.666:
+				go_movie_KM()
+		else:
+			is_condition_met = true
+			time_elapsed = 0.0
+	elif top_button.button_position == 6 and bottom_button.button_position == 5:
+		if is_condition_met:
+			time_elapsed += _delta
+			if time_elapsed >= 0.666:
+				go_movie_JJ()
 		else:
 			is_condition_met = true
 			time_elapsed = 0.0
@@ -67,25 +97,94 @@ func update_texture():
 	if button_position >= 1 and button_position <= 6:
 		texture_normal = load(textures[button_position - 1])
 
-func go_movie():
+func go_movie_MFSC():
 	if $"../../Tv_On_Off".button_pressed == false:
 		$"../../Line_Animation".visible = false
 		$"../../Interaction".visible = false
-		$"../../Movies".visible = true
+		$"../../Movies/MFSC".visible = true
 		$"../../Movies/MFSC".paused = false
 	else:
-		stop_movie()
+		stop_movie_MFSC()
 
-func stop_movie():
+func stop_movie_MFSC():
 	if $"../../Tv_On_Off".button_pressed == false:
 		$"../../Movies/MFSC".paused = true
-		$"../../Movies".visible = false
+		$"../../Movies/MFSC".visible = false
 		$"../../Line_Animation".visible = not $"../../Line_Animation".visible
 		$"../../Interaction".visible = not $"../../Interaction".visible
 		$"../../Screen".visible = true
 	else:
 		$"../../Movies/MFSC".paused = true
-		$"../../Movies".visible = false
+		$"../../Movies/MFSC".visible = false
+		$"../../Line_Animation".visible = false
+		$"../../Interaction".visible = false
+		$"../../Screen".visible = false
+
+func go_movie_DB():
+	if $"../../Tv_On_Off".button_pressed == false:
+		$"../../Line_Animation".visible = false
+		$"../../Interaction".visible = false
+		$"../../Movies/DB".visible = true
+		$"../../Movies/DB".paused = false
+	else:
+		stop_movie_DB()
+		
+func stop_movie_DB():
+	if $"../../Tv_On_Off".button_pressed == false:
+		$"../../Movies/DB".paused = true
+		$"../../Movies/DB".visible = false
+		$"../../Line_Animation".visible = not $"../../Line_Animation".visible
+		$"../../Interaction".visible = not $"../../Interaction".visible
+		$"../../Screen".visible = true
+	else:
+		$"../../Movies/DB".paused = true
+		$"../../Movies/DB".visible = false
+		$"../../Line_Animation".visible = false
+		$"../../Interaction".visible = false
+		$"../../Screen".visible = false
+		
+func go_movie_KM():
+	if $"../../Tv_On_Off".button_pressed == false:
+		$"../../Line_Animation".visible = false
+		$"../../Interaction".visible = false
+		$"../../Movies/KM".visible = true
+		$"../../Movies/KM".paused = false
+	else:
+		stop_movie_KM()
+		
+func stop_movie_KM():
+	if $"../../Tv_On_Off".button_pressed == false:
+		$"../../Movies/KM".paused = true
+		$"../../Movies/KM".visible = false
+		$"../../Line_Animation".visible = not $"../../Line_Animation".visible
+		$"../../Interaction".visible = not $"../../Interaction".visible
+		$"../../Screen".visible = true
+	else:
+		$"../../Movies/KM".paused = true
+		$"../../Movies/KM".visible = false
+		$"../../Line_Animation".visible = false
+		$"../../Interaction".visible = false
+		$"../../Screen".visible = false
+		
+func go_movie_JJ():
+	if $"../../Tv_On_Off".button_pressed == false:
+		$"../../Line_Animation".visible = false
+		$"../../Interaction".visible = false
+		$"../../Movies/JJ".visible = true
+		$"../../Movies/JJ".paused = false
+	else:
+		stop_movie_JJ()
+		
+func stop_movie_JJ():
+	if $"../../Tv_On_Off".button_pressed == false:
+		$"../../Movies/JJ".paused = true
+		$"../../Movies/JJ".visible = false
+		$"../../Line_Animation".visible = not $"../../Line_Animation".visible
+		$"../../Interaction".visible = not $"../../Interaction".visible
+		$"../../Screen".visible = true
+	else:
+		$"../../Movies/JJ".paused = true
+		$"../../Movies/JJ".visible = false
 		$"../../Line_Animation".visible = false
 		$"../../Interaction".visible = false
 		$"../../Screen".visible = false
