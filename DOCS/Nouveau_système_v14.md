@@ -763,3 +763,49 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 		- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
 		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
+
+Structure de Main.tscn et Interaction.tscn
+
+
+Layers constituant Main.tscn (zone de jeu uniquement) :
+	DESSUS
+	- Global_Shader_Overlay
+	- Top_Bar (menu)
+	- Menu Crime_Motive et Legends
+	- Mask_Card_Playground
+	- Punaises
+	- Liens
+	- Cartes
+	- Main_BG
+	DESSOUS
+
+Layers constituant Main.tscn (zone à gauche uniquement) :
+	DESSUS
+	- Global_Shader_Overlay
+	- Top_Bar (menu)
+	- Bottom_Left_Info et zone des cartes
+	- Mask_Card_Playground
+	- Zone des cartes et cartes
+	- Main_BG
+	DESSOUS
+
+Layers constituant Interaction.tscn (zone de jeu uniquement) :
+	DESSUS
+	- Global_Shader_Overlay
+	- Top_Bar (menu)
+	- Mask_Card_Playground
+	- Drag_Drop_Line
+	- Zone des cartes et cartes
+	- Main_BG
+	DESSOUS
+
+Layers constituant Interaction.tscn (zone à gauche uniquement) :
+	DESSUS
+	- Global_Shader_Overlay
+	- Top_Bar (menu)
+	- Bottom_Left_Info_Long et zone TV
+	- Mask_Card_Playground
+	- Drag_Drop_Line
+	- Zone des cartes et cartes
+	- Main_BG
+	DESSOUS
