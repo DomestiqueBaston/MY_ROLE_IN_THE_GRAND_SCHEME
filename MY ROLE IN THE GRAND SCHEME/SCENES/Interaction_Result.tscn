@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpdulbgbf1ie0"]
+[gd_scene load_steps=15 format=3 uid="uid://cpdulbgbf1ie0"]
 
 [ext_resource type="Texture2D" uid="uid://ddyok5fbos80x" path="res://GRAPHICS/INTERACTION_RESULT/Interaction_Result_BG.png" id="1_k2rcs"]
 [ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
 [ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="3_c5hnn"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_ns222"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_cgnsg"]
+[ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="5_vxlp8"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="7_snesv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yobwp"]
 
@@ -544,6 +546,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_iru61")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_iru61")
 theme_override_styles/normal = SubResource("StyleBoxFlat_iru61")
 text = "Oh well!"
+script = ExtResource("5_vxlp8")
 metadata/_edit_lock_ = true
 
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_cgnsg")]
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("7_snesv")]
+
+[connection signal="mouse_entered" from="Chalkboard_Content/Quit" to="Chalkboard_Content/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Chalkboard_Content/Quit" to="Chalkboard_Content/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Chalkboard_Content/Quit" to="Chalkboard_Content/Quit" method="_on_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

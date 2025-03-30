@@ -1,9 +1,18 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://5eedmsqjoxtm"]
+[gd_resource type="Theme" load_steps=39 format=3 uid="uid://5eedmsqjoxtm"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_3rpo3"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="1_uvujw"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_ji4tf"]
 [ext_resource type="Texture2D" uid="uid://c3kx8sceudfn5" path="res://GRAPHICS/INVESTIGATION_CENTER/Arrow_Down.png" id="3_q80y0"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_85c8v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mafkv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jdkw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vaho"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hotnc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -28,6 +37,19 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk2s2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q4vc"]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvujw"]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ndie"]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t3fuf"]
+content_margin_left = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2kat"]
+content_margin_left = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmwgf"]
 
@@ -83,6 +105,13 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_ji4tf")
 default_font_size = 8
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_uvujw")
+Button/styles/focus = SubResource("StyleBoxEmpty_mafkv")
+Button/styles/hover = SubResource("StyleBoxEmpty_2jdkw")
+Button/styles/normal = SubResource("StyleBoxEmpty_7vaho")
+Button/styles/pressed = SubResource("StyleBoxEmpty_hotnc")
 HSlider/icons/grabber = ExtResource("1_3rpo3")
 HSlider/icons/grabber_disabled = ExtResource("1_3rpo3")
 HSlider/icons/grabber_highlight = ExtResource("1_3rpo3")
@@ -120,12 +149,16 @@ OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
 OptionButton/constants/arrow_margin = 5
 OptionButton/icons/arrow = ExtResource("3_q80y0")
 OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
+OptionButton/styles/hover = SubResource("StyleBoxEmpty_uvujw")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxEmpty_5ndie")
+OptionButton/styles/normal = SubResource("StyleBoxEmpty_t3fuf")
+OptionButton/styles/pressed = SubResource("StyleBoxEmpty_i2kat")
 PopupMenu/colors/font_accelerator_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
-PopupMenu/constants/item_end_padding = -12
-PopupMenu/constants/item_start_padding = -7
+PopupMenu/constants/item_end_padding = 7
+PopupMenu/constants/item_start_padding = -9
 PopupMenu/constants/v_separation = -2
 PopupMenu/font_sizes/font_size = 8
 PopupMenu/fonts/font = ExtResource("2_ji4tf")

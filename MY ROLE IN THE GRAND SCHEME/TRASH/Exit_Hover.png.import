@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct14fumdfmlob"
-path="res://.godot/imported/Ok_Normal.png-c4ee4a742ba9bd0bb271cd964c95f155.ctex"
+uid="uid://ilhb6s2w3iuo"
+path="res://.godot/imported/Exit_Hover.png-19deaee13f9c22c1c43315b1af161deb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INVESTIGATION_CENTER/Ok_Normal.png"
-dest_files=["res://.godot/imported/Ok_Normal.png-c4ee4a742ba9bd0bb271cd964c95f155.ctex"]
+source_file="res://TRASH/Exit_Hover.png"
+dest_files=["res://.godot/imported/Exit_Hover.png-19deaee13f9c22c1c43315b1af161deb.ctex"]
 
 [params]
 

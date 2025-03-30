@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn54pgv02evuj"
-path="res://.godot/imported/Cancel_Normal.png-2e6768c4cf9874748ef5ab94bcdc2907.ctex"
+path="res://.godot/imported/Cancel_Normal.png-9a12c53b471cf134b42c19a5bd536e7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INVESTIGATION_CENTER/Cancel_Normal.png"
-dest_files=["res://.godot/imported/Cancel_Normal.png-2e6768c4cf9874748ef5ab94bcdc2907.ctex"]
+source_file="res://TRASH/Cancel_Normal.png"
+dest_files=["res://.godot/imported/Cancel_Normal.png-9a12c53b471cf134b42c19a5bd536e7b.ctex"]
 
 [params]
 

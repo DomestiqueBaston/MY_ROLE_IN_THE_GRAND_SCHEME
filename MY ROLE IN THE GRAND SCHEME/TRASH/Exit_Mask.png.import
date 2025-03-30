@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://davrldnroxoyu"
+path="res://.godot/imported/Exit_Mask.png-e5cd119f63697286d9b4fc6ee60f62f6.res"
+
+[deps]
+
+source_file="res://TRASH/Exit_Mask.png"
+dest_files=["res://.godot/imported/Exit_Mask.png-e5cd119f63697286d9b4fc6ee60f62f6.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

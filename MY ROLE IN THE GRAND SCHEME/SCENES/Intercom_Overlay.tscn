@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://duod2wunat5ok"]
+[gd_scene load_steps=19 format=3 uid="uid://duod2wunat5ok"]
 
 [ext_resource type="Texture2D" uid="uid://ckrgff87loeg1" path="res://GRAPHICS/INTERCOM/Intercom_BG.png" id="1_qdy3q"]
 [ext_resource type="Theme" uid="uid://q1cw5cyqn10g" path="res://UI/Intercom_Theme.tres" id="2_g5ffr"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b42ohp0p7jqiq" path="res://GRAPHICS/INTERCOM/Red_Button_Normal.png" id="4_2884x"]
 [ext_resource type="AudioStream" uid="uid://cd8g0rywkt8i3" path="res://SOUND/MISC/Intercom.ogg" id="5_la3rq"]
 [ext_resource type="Texture2D" uid="uid://jdptx3olu22w" path="res://GRAPHICS/INTERCOM/Red_Button_Hover.png" id="6_xspdp"]
+[ext_resource type="Script" uid="uid://rcrpg5ifpj3v" path="res://SCRIPTS/Intercom_Overlay_Button.gd" id="7_8t383"]
 [ext_resource type="BitMap" uid="uid://ds00ff5fyqqv" path="res://GRAPHICS/INTERCOM/Red_Button_Mask.png" id="7_wbo7i"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="11_uyo1l"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_cjivl"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_kvqxw"]
 
@@ -414,11 +416,12 @@ texture_normal = ExtResource("4_2884x")
 texture_pressed = ExtResource("4_2884x")
 texture_hover = ExtResource("6_xspdp")
 texture_click_mask = ExtResource("7_wbo7i")
+script = ExtResource("7_8t383")
 metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m6d4b")
+&"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
 
@@ -434,6 +437,14 @@ bus = &"FX"
 
 [node name="Green_Button" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_mlhxe")
+&"": SubResource("AnimationLibrary_mlhxe")
 }
 autoplay = "Flashing"
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("11_uyo1l")]
+
+[connection signal="mouse_entered" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

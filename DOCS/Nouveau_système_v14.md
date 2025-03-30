@@ -650,6 +650,7 @@ Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
 		Difficulté=max(1,min(5,round(0.5+(nombre de victimes−1)+(nombre de coupables−1)+(nombre de complices÷2)+((3−nombre de suspects)÷2)+((3−nombre de témoins)÷2)+min((nombre de évidences+1 lien),4)÷8×5))) 
+	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
 	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously).
