@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmhrh8s6j2ac2"]
+[gd_scene load_steps=17 format=3 uid="uid://bmhrh8s6j2ac2"]
 
 [ext_resource type="Texture2D" uid="uid://dc4wk8w30205h" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_BG.png" id="1_lh0wt"]
 [ext_resource type="Texture2D" uid="uid://b6qxukgmr0kia" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_Normal.png" id="2_iu7rp"]
@@ -8,6 +8,20 @@
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="5_b6suh"]
 [ext_resource type="Script" uid="uid://dc5pdbse1yuqk" path="res://SCRIPTS/Graphic_Option_Texture_Button.gd" id="6_e2vee"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="8_6117v"]
+[ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="8_wudxl"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="9_r4hka"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wudxl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rx7jg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wb15f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdkta"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pvgr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4nikt"]
 
 [node name="Graphic_Option" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -20,6 +34,7 @@ metadata/_edit_lock_ = true
 [node name="Graphics_Hover" type="Sprite2D" parent="Graphics_BG"]
 texture = ExtResource("3_f3lv5")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Shader_Button" type="TextureButton" parent="Graphics_BG"]
 offset_right = 40.0
@@ -41,7 +56,7 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/normal_font = ExtResource("5_b6suh")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center][color=#ff8864]Video Shader[/color] ([color=#ff1c18][shake rate=10.0 level=5 connected=0]on[/shake][/color]/[color=#ff1c18][shake rate=10.0 level=5 connected=0]off[/shake][/color])[/center]"
+text = "                                                                                     [color=#ff8864]Video Shader[/color]: [color=#ff1c18][shake rate=10.0 level=5 connected=0]on[/shake][/color]"
 metadata/_edit_lock_ = true
 
 [node name="On" type="RichTextLabel" parent="."]
@@ -74,4 +89,41 @@ bbcode_enabled = true
 text = "[center]...and  here,  it's  [color=#ff8864][shake rate=10.0 level=5 connected=0]off[/shake][/color]![/center]"
 metadata/_edit_lock_ = true
 
+[node name="Ok" type="Button" parent="."]
+offset_left = 601.0
+offset_top = 330.0
+offset_right = 627.0
+offset_bottom = 351.0
+theme_override_colors/font_disabled_color = Color(0.309804, 0.490196, 0.141176, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.309804, 0.490196, 0.141176, 1)
+theme_override_colors/font_hover_color = Color(0.678431, 0.929412, 0.447059, 0.87451)
+theme_override_colors/icon_hover_pressed_color = Color(0.309804, 0.490196, 0.141176, 1)
+theme_override_colors/font_color = Color(0.310252, 0.49, 0.1421, 1)
+theme_override_colors/font_focus_color = Color(0.309804, 0.490196, 0.141176, 1)
+theme_override_colors/font_pressed_color = Color(0.309804, 0.490196, 0.141176, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_b6suh")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wudxl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rx7jg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wb15f")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mdkta")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pvgr4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4nikt")
+text = "Ok!"
+metadata/_edit_lock_ = true
+
+[node name="Switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wudxl")
+volume_db = -5.0
+bus = &"UI"
+
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("8_6117v")]
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("9_r4hka")]
+
+[connection signal="mouse_entered" from="Ok" to="Graphics_BG/Shader_Button" method="_on_ok_mouse_entered"]
+[connection signal="mouse_exited" from="Ok" to="Graphics_BG/Shader_Button" method="_on_ok_mouse_exited"]
+[connection signal="pressed" from="Ok" to="Graphics_BG/Shader_Button" method="_on_ok_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://qtty7by1mcuf"]
+[gd_scene load_steps=6 format=3 uid="uid://qtty7by1mcuf"]
 
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/CASE/Case_BG.png" id="1_goi74"]
 [ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="2_p31re"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="3_p31re"]
 [ext_resource type="Script" uid="uid://dehax7ahs4pb1" path="res://SCRIPTS/Case_Sheet_Button.gd" id="3_vk2ku"]
-[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="4_etsv3"]
-[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="6_j3yfv"]
-[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="7_t7ilk"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_c461k"]
 
 [node name="Case" type="Node2D"]
 
@@ -47,7 +45,7 @@ offset_bottom = -1.0
 theme = ExtResource("2_p31re")
 script = ExtResource("3_vk2ku")
 
-[node name="Quit" type="Button" parent="Button"]
+[node name="Close" type="Button" parent="Button"]
 layout_mode = 0
 offset_left = 539.0
 offset_top = 286.0
@@ -62,20 +60,12 @@ to
 business..."
 metadata/_edit_lock_ = true
 
-[node name="Valid" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_etsv3")
-bus = &"UI"
-
-[node name="Leave" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_j3yfv")
-bus = &"UI"
-
-[node name="Hover" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_t7ilk")
-bus = &"UI"
-
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("3_p31re")]
 
-[connection signal="mouse_entered" from="Button/Quit" to="Button" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Button/Quit" to="Button" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Button/Quit" to="Button" method="_on_quit_pressed"]
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("5_c461k")]
+
+[connection signal="mouse_entered" from="Button/Close" to="Button" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Button/Close" to="Button" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Button/Close" to="Button" method="_on_quit_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

@@ -359,12 +359,12 @@ bus = &"UI"
 
 [node name="Trash_Open" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_h48le")
-volume_db = -5.0
+volume_db = -7.5
 bus = &"UI"
 
 [node name="Trash_Close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_3ah6p")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"UI"
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("17_d7lmg")]

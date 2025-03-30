@@ -14,22 +14,33 @@ func _ready():
 	for button in buttons:
 		button.pressed.connect(play_sound)
 
-func _on_any_button_pressed():
-	play_sound()
-
 func _on_any_button_mouse_entered():
-	$"../../Hover".play()
+	if $"../../Shared_Interface_Sounds/Leave".playing == true or $"../../Shared_Interface_Sounds/Hover".playing == true:
+		pass
+	else:
+		$"../../Shared_Interface_Sounds/Hover".play()
 
 func _on_cancel_pressed():
-	$"../../Cancel".play()
-	#await $"../../Cancel".finished
+	$"../../Shared_Interface_Sounds/Cancel".play()
+	await $"../../Shared_Interface_Sounds/Cancel".finished
+	$"../../On_Off".play("Disappearance")
+	await $"../../On_Off".animation_finished
 
 func _on_switch_pressed():
-	$"../../Valid".play()
+	# Ca ne marche pas, il y a un truc que je n'ai pas compris...
+	if $"01".button_pressed == true or $"02".button_pressed == true or $"03".button_pressed == true or $"04".button_pressed == true:
+		$"../../Shared_Interface_Sounds/Valid".play()
+		await $"../../Shared_Interface_Sounds/Valid".finished
+		$"../../On_Off".play("Disappearance")
+		await $"../../On_Off".animation_finished
+	else:
+		$Switch.button_pressed = false
 
 func _on_any_button_mouse_exited():
-	pass
-	#$"../../Leave".play()
+	if $"../../Shared_Interface_Sounds/Hover".playing == true or $"../../Shared_Interface_Sounds/Leave".playing == true:
+		pass
+	else:
+		$"../../Shared_Interface_Sounds/Leave".play()
 
 func play_sound():
 	$"../../Drawer".volume_db = 0.0

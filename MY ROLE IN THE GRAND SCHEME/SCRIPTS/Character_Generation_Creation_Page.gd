@@ -9,18 +9,26 @@ var remaining = total_points - (phy + men + hea)  # Initialiser remaining
 
 
 func _on_any_button_pressed():
-	$Valid.play()
+	$"../Shared_Interface_Sounds/Valid".play()
+	await $"../Shared_Interface_Sounds/Valid".finished
 
 func _on_cancel_pressed():
-	$Cancel.play()
+	$"../Shared_Interface_Sounds/Cancel".play()
+	await $"../Shared_Interface_Sounds/Cancel".finished
 
 func _on_any_button_mouse_entered():
-	$Hover.play()
+	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
+		pass
+	else:
+		$"../Shared_Interface_Sounds/Hover".play()
 	
 func _on_any_button_mouse_exited():
-	$Leave.play()
+	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
+		pass
+	else:
+		$"../Shared_Interface_Sounds/Leave".play()
 
-func _on_h_slider_value_changed(value: float): #le "_" de _index temporairement pour éviter l'erreur...
+func _on_h_slider_value_changed(value: float):
 	var pitch = lerp(0.5, 0.504, value)
 	$Sex_Choice.pitch_scale = pitch
 	if not $Sex_Choice.playing:
@@ -44,42 +52,42 @@ func _process(_delta):
 
 
 func _on_phy_moins_pressed():
-	$Cancel.play()
+	$"../Shared_Interface_Sounds/Cancel".play()
 	if phy > 3:  # Vérifier si phy est supérieur à 3 avant de décrémenter
 		phy -= 1
 		remaining += 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_phy_plus_pressed():
-	$Valid.play()
+	$"../Shared_Interface_Sounds/Valid".play()
 	if phy < 7 and remaining > 0:  # Vérifier si phy est inférieur à 7 avant d'incrémenter
 		phy += 1
 		remaining -= 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_men_moins_pressed():
-	$Cancel.play()
+	$"../Shared_Interface_Sounds/Cancel".play()
 	if men > 3:  # Vérifier si men est supérieur à 3 avant de décrémenter
 		men -= 1
 		remaining += 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_men_plus_pressed():
-	$Valid.play()
+	$"../Shared_Interface_Sounds/Valid".play()
 	if men < 7 and remaining > 0:  # Vérifier si men est inférieur à 7 avant d'incrémenter
 		men += 1
 		remaining -= 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_hea_moins_pressed():
-	$Cancel.play()
+	$"../Shared_Interface_Sounds/Cancel".play()
 	if hea > 3:  # Vérifier si hea est supérieur à 3 avant de décrémenter
 		hea -= 1
 		remaining += 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_hea_plus_pressed():
-	$Valid.play()
+	$"../Shared_Interface_Sounds/Valid".play()
 	if hea < 7 and remaining > 0:  # Vérifier si hea est inférieur à 7 avant d'incrémenter
 		hea += 1
 		remaining -= 1
@@ -95,7 +103,7 @@ func update_remaining():
 
 
 func _on_randomize_pressed():
-	$Valid.play()
+	$"../Shared_Interface_Sounds/Valid".play()
 	# Répartition aléatoire des points entre 3 et 7 pour phy, men, et hea
 	phy = randi_range(3, 7)
 	men = randi_range(3, 7)
@@ -103,7 +111,7 @@ func _on_randomize_pressed():
 
 	# Ajuster la somme des points pour qu'elle soit égale à total_points (15)
 	var total_assigned = phy + men + hea
-	var diff = total_assigned - total_points
+	#var diff = total_assigned - total_points
 
 	# Si la somme dépasse total_points, on doit ajuster les valeurs
 	while total_assigned != total_points:
@@ -130,7 +138,7 @@ func _on_randomize_pressed():
 
 
 func _on_reset_pressed():
-	$Cancel.play()
+	$"../Shared_Interface_Sounds/Cancel".play()
 	phy = 3
 	men = 3
 	hea = 3

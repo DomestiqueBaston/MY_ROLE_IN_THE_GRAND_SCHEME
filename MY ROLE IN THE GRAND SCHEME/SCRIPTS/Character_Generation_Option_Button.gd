@@ -35,7 +35,7 @@ func _ready():
 
 # Signal émis lorsque l'utilisateur sélectionne un item
 func _on_item_selected(index: int):
-	$"../../Valid".play()
+	$"../../../Shared_Interface_Sounds/Valid".play()
 
 	# Vérifier si l'index est valide avant d'y accéder
 	if index >= 0 and index < description_array.size():
@@ -46,7 +46,7 @@ func _on_item_selected(index: int):
 
 
 func _on_button_down():
-	$"../../Hover".play()
+	$"../../../Shared_Interface_Sounds/Hover".play()
 
 func _on_button_up():
-	$"../../Leave".play()
+	$"../../../Shared_Interface_Sounds/Leave".play()
