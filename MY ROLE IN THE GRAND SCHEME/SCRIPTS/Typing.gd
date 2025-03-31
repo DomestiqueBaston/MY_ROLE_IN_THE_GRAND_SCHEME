@@ -52,6 +52,7 @@ func _process(_delta):
 				actual_value = 0.
 
 func _on_next_button_pressed():
+	$"../../../Shared_Interface_Sounds/Valid".play()
 	end_of_tuto += 1
 	if end_of_tuto == 3:
 		$"../Next_Button".text = "End of line!"
@@ -65,3 +66,17 @@ func _on_next_button_pressed():
 	load_tutorial_text()
 	animation_player.seek(0, true)
 	animation_player.play("Display_Text")
+
+
+func _on_next_button_mouse_entered():
+	if $"../../../Shared_Interface_Sounds/Leave".playing == true or $"../../../Shared_Interface_Sounds/Hover".playing == true:
+		pass
+	else:
+		$"../../../Shared_Interface_Sounds/Hover".play()
+
+
+func _on_next_button_mouse_exited():
+	if $"../../../Shared_Interface_Sounds/Leave".playing == true or $"../../../Shared_Interface_Sounds/Hover".playing == true:
+		pass
+	else:
+		$"../../../Shared_Interface_Sounds/Leave".play()

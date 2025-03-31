@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0fot58ykyifw"]
+[gd_scene load_steps=16 format=3 uid="uid://d0fot58ykyifw"]
 
 [ext_resource type="Texture2D" uid="uid://dpmd3nbe1pn1d" path="res://GRAPHICS/SEARCH_WARRANT/Search_Warrant_BG.png" id="1_ub508"]
 [ext_resource type="Theme" uid="uid://b5dlwuuc55m44" path="res://UI/Search_Warrant_Theme.tres" id="2_lyw2x"]
+[ext_resource type="Script" uid="uid://brevba5yoh0la" path="res://SCRIPTS/Search_Warrant_Buy_Overlay_Buttons.gd" id="3_66kl2"]
 [ext_resource type="Script" uid="uid://6s8ejpvawryf" path="res://SCRIPTS/Case_Management_Typing.gd" id="3_syr8f"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_66kl2"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_tv78n"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_kfqfx"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_tv78n"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -269,18 +271,19 @@ offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
 theme = ExtResource("2_lyw2x")
+script = ExtResource("3_66kl2")
 metadata/_edit_lock_ = true
 
 [node name="Doctor_F" type="RichTextLabel" parent="Search_Warrant_Panel/Texts"]
-modulate = Color(1, 1, 1, 0.745098)
+modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
 offset_left = 15.0
-offset_top = 120.0
+offset_top = 128.0
 offset_right = 288.0
-offset_bottom = 270.0
+offset_bottom = 278.0
 rotation = -0.0945688
 bbcode_enabled = true
-text = "This Search Warrant isn't mere paper -it's worth [color=#992726]25Dø[/color] of effort and I have better things to do than drafting Search Warrants all day..."
+text = "[center]This Search  Warrant isn't  mere paper -it's  worth [color=#992726]25Dø[/color] of effort and  I  have  better things to  do than  drafting  Search  Warrants all day...[/center]"
 visible_characters = 0
 visible_characters_behavior = 1
 visible_ratio = 0.0
@@ -337,5 +340,15 @@ autoplay = "Writing"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kfqfx")
-volume_db = -10.0
 bus = &"FX"
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("8_tv78n")]
+
+[connection signal="mouse_entered" from="Search_Warrant_Panel/Texts/Yes" to="Search_Warrant_Panel/Texts" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Search_Warrant_Panel/Texts/Yes" to="Search_Warrant_Panel/Texts" method="_on_mouse_exited"]
+[connection signal="pressed" from="Search_Warrant_Panel/Texts/Yes" to="Search_Warrant_Panel/Texts" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Search_Warrant_Panel/Texts/No" to="Search_Warrant_Panel/Texts" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Search_Warrant_Panel/Texts/No" to="Search_Warrant_Panel/Texts" method="_on_mouse_exited"]
+[connection signal="pressed" from="Search_Warrant_Panel/Texts/No" to="Search_Warrant_Panel/Texts" method="_on_no_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

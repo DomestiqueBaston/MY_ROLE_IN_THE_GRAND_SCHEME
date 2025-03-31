@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c6b1iqko6x5on"]
+[gd_scene load_steps=20 format=3 uid="uid://c6b1iqko6x5on"]
 
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_yb185"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="2_m6hlk"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_3xgcb"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_dc34s"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_gwqe6"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_lalru"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
 
@@ -193,4 +194,10 @@ autoplay = "Flashing"
 stream = ExtResource("6_gwqe6")
 bus = &"UI"
 
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("8_lalru")]
+
+[connection signal="mouse_entered" from="Node2D/Chalk_Mask/Next_Button" to="Node2D/Chalk_Mask/Tutorial_Text" method="_on_next_button_mouse_entered"]
+[connection signal="mouse_exited" from="Node2D/Chalk_Mask/Next_Button" to="Node2D/Chalk_Mask/Tutorial_Text" method="_on_next_button_mouse_exited"]
 [connection signal="pressed" from="Node2D/Chalk_Mask/Next_Button" to="Node2D/Chalk_Mask/Tutorial_Text" method="_on_next_button_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

@@ -22,3 +22,5 @@ func _on_mouse_exited():
 
 func _on_pressed():
 	$"../../Shared_Interface_Sounds/Valid".play()
+
+# Pas de son dans les PopupMenu des menus car je ne sais pas comment faire...

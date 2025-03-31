@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ce6l6qp2o5tie"]
+[gd_scene load_steps=11 format=3 uid="uid://ce6l6qp2o5tie"]
 
 [ext_resource type="Texture2D" uid="uid://vduyten8dj5h" path="res://GRAPHICS/SEARCH_WARRANT/Search_Warrant_Use_BG.png" id="1_2t5lr"]
 [ext_resource type="Theme" uid="uid://q40hqc75ju80" path="res://UI/Search_Warrant_Use_Theme.tres" id="2_jqh0k"]
+[ext_resource type="Script" uid="uid://cn3ukiwadh7rv" path="res://SCRIPTS/Search_Warrant_Use_Overlay_Buttons.gd" id="3_tmf0n"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_q0hm2"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_c2iim"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_gx8le"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -157,20 +159,24 @@ offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
 theme = ExtResource("2_jqh0k")
+script = ExtResource("3_tmf0n")
 metadata/_edit_lock_ = true
 
 [node name="Use_It" type="RichTextLabel" parent="Search_Warrant_Use_Panel/Texts"]
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
 offset_left = 108.0
-offset_top = 70.0
-offset_right = 244.0
-offset_bottom = 258.0
+offset_top = 64.0
+offset_right = 249.0
+offset_bottom = 222.0
+rotation = 0.0165557
 bbcode_enabled = true
 text = "[center]Now the
 question is:
 
-Should  I  use  my Search  WarrAnt?[/center]"
+Should  I  use  my so expensive
+Search  WarrAnt
+(or is it  racket)?[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Yes" type="Button" parent="Search_Warrant_Use_Panel/Texts"]
@@ -214,3 +220,14 @@ autoplay = "Appearance"
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("5_gx8le")]
+
+[connection signal="mouse_entered" from="Search_Warrant_Use_Panel/Texts/Yes" to="Search_Warrant_Use_Panel/Texts" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Search_Warrant_Use_Panel/Texts/Yes" to="Search_Warrant_Use_Panel/Texts" method="_on_mouse_exited"]
+[connection signal="pressed" from="Search_Warrant_Use_Panel/Texts/Yes" to="Search_Warrant_Use_Panel/Texts" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Search_Warrant_Use_Panel/Texts/No" to="Search_Warrant_Use_Panel/Texts" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Search_Warrant_Use_Panel/Texts/No" to="Search_Warrant_Use_Panel/Texts" method="_on_mouse_exited"]
+[connection signal="pressed" from="Search_Warrant_Use_Panel/Texts/No" to="Search_Warrant_Use_Panel/Texts" method="_on_no_pressed"]
+
+[editable path="Shared_Interface_Sounds"]
