@@ -1,7 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://dxsbbamjqxk1s"]
+[gd_scene load_steps=34 format=3 uid="uid://dxsbbamjqxk1s"]
 
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/OPTIONS/Settings_BG.png" id="1_7b261"]
 [ext_resource type="Texture2D" uid="uid://dpny7h4hu3sgy" path="res://GRAPHICS/OPTIONS/Secrets_Button_Pressed_Hover.png" id="2_12lbf"]
+[ext_resource type="Script" uid="uid://43uwyes6nwlp" path="res://SCRIPTS/Option_Menu_Buttons.gd" id="2_itek0"]
+[ext_resource type="Theme" uid="uid://c0htwuiuqc8ik" path="res://UI/Option_Menu_Theme.tres" id="2_wcpfb"]
 [ext_resource type="BitMap" uid="uid://d3y1at3b2ac08" path="res://GRAPHICS/OPTIONS/Secrets_Button_Mask.png" id="3_v4876"]
 [ext_resource type="ButtonGroup" uid="uid://s2v30wdlf28n" path="res://UI/Character_Generation_Button_Group.tres" id="4_t0v3g"]
 [ext_resource type="Texture2D" uid="uid://dmhmlsek5h32r" path="res://GRAPHICS/OPTIONS/Credits_Button_Pressed.png" id="5_gaqfq"]
@@ -29,6 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Hover.png" id="27_g1d07"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Mask.png" id="28_qcawn"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="29_um1w5"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="31_gbwls"]
+[ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="31_wcpfb"]
 
 [node name="Settings_Menu" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -41,12 +45,16 @@ metadata/_edit_lock_ = true
 [node name="Drawer_Names" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("2_wcpfb")
+script = ExtResource("2_itek0")
 metadata/_edit_lock_ = true
 
 [node name="Secrets" type="TextureButton" parent="Drawer_Names"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
+tooltip_text = "That drawer is locked,
+how convinient!"
 texture_hover = ExtResource("2_12lbf")
 texture_click_mask = ExtResource("3_v4876")
 metadata/_edit_lock_ = true
@@ -55,6 +63,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 78.0
 offset_bottom = 52.0
+tooltip_text = "The game credits
+(don’t dig too deep)."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("5_gaqfq")
@@ -66,6 +76,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
+tooltip_text = "Welcome to the
+world of Newspeak."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("8_rfy76")
@@ -77,6 +89,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
+tooltip_text = "I wouldn't do that
+if I were you!"
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("11_8wg25")
@@ -88,6 +102,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "Exactly what they
+want you to do."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("14_kcn31")
@@ -99,6 +115,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "Don't let them
+rule your life!"
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("17_cyw53")
@@ -110,6 +128,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "Ha! Ha! Ha!
+Whatever..."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("20_gmknp")
@@ -121,6 +141,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "Your choices,
+their records."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("23_h11g4")
@@ -132,6 +154,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "The first step to
+indoctrination."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("26_2vyex")
@@ -139,4 +163,40 @@ texture_hover = ExtResource("27_g1d07")
 texture_click_mask = ExtResource("28_qcawn")
 metadata/_edit_lock_ = true
 
+[node name="Drawer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_wcpfb")
+bus = &"UI"
+
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("29_um1w5")]
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("31_gbwls")]
+
+[connection signal="mouse_entered" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_Cancel_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/Credits" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/Credits" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/Credits" to="Drawer_Names" method="_on_Valid_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/Language" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/Language" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/Language" to="Drawer_Names" method="_on_Valid_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/Continue" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/Continue" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/Continue" to="Drawer_Names" method="_on_Valid_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/Quit" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/Quit" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/Quit" to="Drawer_Names" method="_on_Cancel_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/Settings" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/Settings" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/Settings" to="Drawer_Names" method="_on_Valid_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/New_Game" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/New_Game" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/New_Game" to="Drawer_Names" method="_on_Valid_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/LSD" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/LSD" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/LSD" to="Drawer_Names" method="_on_Valid_pressed"]
+[connection signal="mouse_entered" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_Valid_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

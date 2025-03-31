@@ -16,7 +16,6 @@
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="10_jal5r"]
 [ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
-[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="12_e74pt"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
 [ext_resource type="VideoStream" uid="uid://bdb8kb1t3m6ew" path="res://GRAPHICS/INTERACTION/MFSC.ogv" id="12_v84v6"]
 [ext_resource type="Texture2D" uid="uid://br15hgwsu8gpi" path="res://GRAPHICS/INTERACTION/Card_Playground_Mask.png" id="12_xjgkp"]
@@ -26,6 +25,7 @@
 [ext_resource type="VideoStream" uid="uid://q17krx83pp8o" path="res://GRAPHICS/INTERACTION/JJ.ogv" id="17_jv51o"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="17_qi0bb"]
 [ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="17_uvife"]
+[ext_resource type="Theme" uid="uid://c0htwuiuqc8ik" path="res://UI/Option_Menu_Theme.tres" id="18_k1rto"]
 [ext_resource type="Texture2D" uid="uid://3ux6y70r4r60" path="res://GRAPHICS/INTERACTION/Rotary_Button_1.png" id="20_rrbp0"]
 [ext_resource type="Texture2D" uid="uid://biydqmbviwsi7" path="res://GRAPHICS/INTERACTION/Small_Tv_Button_Off.png" id="21_rrbp0"]
 [ext_resource type="BitMap" uid="uid://bhllrrfv72aau" path="res://GRAPHICS/INTERACTION/Rotary_Button_Mask.png" id="21_y0drc"]
@@ -783,7 +783,7 @@ offset_left = 12.0
 offset_top = 19.0
 offset_right = 94.0
 offset_bottom = 33.0
-theme = ExtResource("12_e74pt")
+theme = ExtResource("18_k1rto")
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Label" parent="Top_Left_Screen/Interaction"]

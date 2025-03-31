@@ -732,7 +732,7 @@ Résolution des enquêtes, gains et implications
 	- Renoncer à une enquête n’implique pas de malus ni de bonus.
 	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0. 
 	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours.
-	- Le joueur peut mener jusqu’à 5 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
+	- Le joueur peut mener jusqu’à 4 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
 	- Une enquête ne peut pas être rejetée avant (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite de la pile du joueur qui y restent).
 Éléments additionnels (non facultatifs) :

@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://yl6icb273od"]
+[gd_scene load_steps=11 format=3 uid="uid://yl6icb273od"]
 
 [ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/JAIL_MONEY/Cops.png" id="1_knmnc"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="2_4l2mm"]
 [ext_resource type="AudioStream" uid="uid://bnim7widv0v1h" path="res://SOUND/MISC/This_Is_Da_Police.ogg" id="2_knmnc"]
+[ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Overlay_Buttons.gd" id="2_s0xyu"]
 [ext_resource type="ButtonGroup" uid="uid://bna0povlgtisn" path="res://UI/Jail_Money_group.tres" id="3_dxykx"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="6_mk7dn"]
 
 [sub_resource type="Animation" id="Animation_6c0my"]
 resource_name = "Appearance"
@@ -118,7 +120,14 @@ texture = ExtResource("1_knmnc")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Player" type="Control" parent="Cops"]
+[node name="Info" type="Control" parent="Cops"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_s0xyu")
+metadata/_edit_lock_ = true
+
+[node name="Player" type="Control" parent="Cops/Info"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
@@ -126,7 +135,7 @@ offset_bottom = 360.0
 theme = ExtResource("2_4l2mm")
 metadata/_edit_lock_ = true
 
-[node name="Situation" type="RichTextLabel" parent="Cops/Player"]
+[node name="Situation" type="RichTextLabel" parent="Cops/Info/Player"]
 layout_mode = 0
 offset_left = 418.0
 offset_top = 148.0
@@ -138,7 +147,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="Surrender" type="Button" parent="Cops/Player"]
+[node name="Surrender" type="Button" parent="Cops/Info/Player"]
 layout_mode = 0
 offset_left = 415.0
 offset_top = 289.0
@@ -151,7 +160,7 @@ text = "Don't shoot, I surrender..."
 alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="Pay" type="Button" parent="Cops/Player"]
+[node name="Pay" type="Button" parent="Cops/Info/Player"]
 layout_mode = 0
 offset_left = 430.0
 offset_top = 273.0
@@ -170,7 +179,7 @@ text = "Easy, easy... I can pay!"
 alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="NPC" type="Control" parent="Cops"]
+[node name="NPC" type="Control" parent="Cops/Info"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -179,7 +188,7 @@ offset_bottom = 360.0
 theme = ExtResource("2_4l2mm")
 metadata/_edit_lock_ = true
 
-[node name="Situation" type="RichTextLabel" parent="Cops/NPC"]
+[node name="Situation" type="RichTextLabel" parent="Cops/Info/NPC"]
 layout_mode = 0
 offset_left = 418.0
 offset_top = 191.0
@@ -192,7 +201,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="Pay" type="Button" parent="Cops/NPC"]
+[node name="Pay" type="Button" parent="Cops/Info/NPC"]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 289.0
@@ -222,3 +231,17 @@ stream = ExtResource("2_knmnc")
 volume_db = -15.0
 autoplay = true
 bus = &"FX"
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("6_mk7dn")]
+
+[connection signal="mouse_entered" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_surrender_pressed"]
+[connection signal="mouse_entered" from="Cops/Info/Player/Pay" to="Cops/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cops/Info/Player/Pay" to="Cops/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Cops/Info/Player/Pay" to="Cops/Info" method="_on_pay_pressed"]
+[connection signal="mouse_entered" from="Cops/Info/NPC/Pay" to="Cops/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cops/Info/NPC/Pay" to="Cops/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Cops/Info/NPC/Pay" to="Cops/Info" method="_on_pay_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://tn484qetw520" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Pressed.png" id="18_x3v2j"]
 [ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Hover.png" id="19_03ieh"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Mask.png" id="20_s0481"]
-[ext_resource type="AudioStream" uid="uid://gaoc58dislyn" path="res://SOUND/MISC/Drawer.ogg" id="25_h1j4x"]
+[ext_resource type="AudioStream" uid="uid://gaoc58dislyn" path="res://SOUND/MISC/Wooden_Drawer.ogg" id="25_h1j4x"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="26_h1j4x"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]

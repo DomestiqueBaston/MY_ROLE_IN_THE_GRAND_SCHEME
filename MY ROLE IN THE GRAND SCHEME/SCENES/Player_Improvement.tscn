@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bytf1ieq0kl80"]
+[gd_scene load_steps=13 format=3 uid="uid://bytf1ieq0kl80"]
 
 [ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_IMPROVEMENT/Playe_Improvement_BG.png" id="1_n0w2h"]
 [ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_oudkr"]
+[ext_resource type="Script" uid="uid://bt5qe37nll5h5" path="res://SCRIPTS/Player_improvement_Button.gd" id="3_71brr"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_v7iyf"]
-[ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm_01.ogg" id="4_gu3ap"]
+[ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm.ogg" id="4_gu3ap"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="4_p44op"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="7_i2g1c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b38xp"]
 
@@ -29,18 +31,19 @@ layout_mode = 3
 anchors_preset = 0
 tooltip_text = "Ok..."
 theme = ExtResource("2_oudkr")
+script = ExtResource("3_71brr")
 metadata/_edit_lock_ = true
 
 [node name="Positive_Mental" type="RichTextLabel" parent="Informations"]
 visible = false
 layout_mode = 0
-offset_left = 218.0
-offset_top = 53.0
-offset_right = 408.0
-offset_bottom = 263.0
+offset_left = 217.0
+offset_top = 48.0
+offset_right = 407.0
+offset_bottom = 300.0
 rotation = -0.0964869
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh, bravo![/color][/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh, bravo![/color][/pulse]
 
 You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don’t  get  too cocky, it’s  just  a  tiny step. Now let’s  see if you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up without tripping  over yourself[/color][/shake].
 At this  point,  you feel a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  stupid.[/color][/shake][/center]"
@@ -50,13 +53,13 @@ metadata/_edit_lock_ = true
 [node name="Positive_Physic" type="RichTextLabel" parent="Informations"]
 visible = false
 layout_mode = 0
-offset_left = 220.0
-offset_top = 73.0
-offset_right = 410.0
-offset_bottom = 283.0
+offset_left = 219.0
+offset_top = 68.0
+offset_right = 409.0
+offset_bottom = 278.0
 rotation = -0.0964869
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Hurrah![/color][/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Hurrah![/color][/pulse]
 
 You’ve shown some [shake rate=7.0 level=5 connected=0][color=#ff8864]spark[/color][/shake], dude, but  don’t start celebrating  just  yet. You’ve got  a long  way to go...
 Anyway.  At  this  point, you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  weak[/color][/shake].[/center]
@@ -64,16 +67,32 @@ Anyway.  At  this  point, you feel  a  little  [shake rate=7.0 level=5 connected
 fit_content = true
 metadata/_edit_lock_ = true
 
+[node name="Positive_Health" type="RichTextLabel" parent="Informations"]
+visible = false
+layout_mode = 0
+offset_left = 217.0
+offset_top = 48.0
+offset_right = 407.0
+offset_bottom = 300.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Well done![/color][/pulse]
+
+You’ve  managed to  push  through  a little [shake rate=7.0 level=5 connected=0][color=#ff8864]resilience[/color][/shake], but  don’t get  ahead  of yourself. This is just  a  fleeting  moment, not  a breakthrough.
+For now,  though,  you feel  a  bit  [shake rate=7.0 level=5 connected=0][color=#ff8864]less fragile[/color][/shake].[/center]"
+fit_content = true
+metadata/_edit_lock_ = true
+
 [node name="Negative_Mental" type="RichTextLabel" parent="Informations"]
 visible = false
 layout_mode = 0
-offset_left = 216.0
-offset_top = 53.0
-offset_right = 410.0
-offset_bottom = 305.0
+offset_left = 215.0
+offset_top = 48.0
+offset_right = 409.0
+offset_bottom = 300.0
 rotation = -0.0964869
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh, dear![/color][/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh, dear![/color][/pulse]
 
 You managed to [shake rate=7.0 level=5 connected=0][color=#ff8864]make things worse[/color][/shake], as usual.  
 Let’s see if you can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up[/color][/shake] without [shake rate=7.0 level=5 connected=0][color=#ff8864]tripping  again[/color][/shake].
@@ -86,21 +105,37 @@ metadata/_edit_lock_ = true
 [node name="Negative_Physic" type="RichTextLabel" parent="Informations"]
 visible = false
 layout_mode = 0
-offset_left = 216.0
-offset_top = 53.0
-offset_right = 410.0
-offset_bottom = 305.0
+offset_left = 215.0
+offset_top = 48.0
+offset_right = 409.0
+offset_bottom = 300.0
 rotation = -0.0964869
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]OmG![/color][/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh my God![/color][/pulse]
 
 The \"[shake rate=7.0 level=5 connected=0][color=#ff8864]progress[/color][/shake]\" you've made is  almost impressive. But  hey, don't  worry, it's  [shake rate=7.0 level=5 connected=0][color=#ff8864]not[/color][/shake] like  anyone  expected [shake rate=7.0 level=5 connected=0][color=#ff8864]much  more[/color][/shake] at  this point, right?
 Honestly, you seem to be getting  [shake rate=7.0 level=5 connected=0][color=#ff8864]weaker[/color][/shake] by the  minute.[/center]"
 fit_content = true
 metadata/_edit_lock_ = true
 
+[node name="Negative_Health" type="RichTextLabel" parent="Informations"]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 48.0
+offset_right = 409.0
+offset_bottom = 300.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oops![/color][/pulse]
+
+You’ve somehow managed to  [shake rate=7.0 level=5 connected=0][color=#ff8864]dig  a  deeper hole[/color][/shake],  as expected.
+Let’s  see  how long it takes  before  you [shake rate=7.0 level=5 connected=0][color=#ff8864]fall even further[/color][/shake].
+For now,  though,  you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]more broken[/color][/shake].[/center]"
+fit_content = true
+metadata/_edit_lock_ = true
+
 [node name="Quit" type="Button" parent="Informations"]
-modulate = Color(1, 1, 1, 0.941176)
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 387.0
 offset_top = 287.0
@@ -124,10 +159,18 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_tjt83")
 text = "Hm?"
 metadata/_edit_lock_ = true
 
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("4_p44op")]
-
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_gu3ap")
-volume_db = -10.0
+volume_db = -15.0
 autoplay = true
 bus = &"FX"
+
+[node name="Global_Shader_Overlay" parent="." instance=ExtResource("4_p44op")]
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("7_i2g1c")]
+
+[connection signal="mouse_entered" from="Informations/Quit" to="Informations" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Informations/Quit" to="Informations" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Informations/Quit" to="Informations" method="_on_quit_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

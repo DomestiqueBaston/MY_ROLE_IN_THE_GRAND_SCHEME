@@ -27,7 +27,6 @@ func _on_cancel_pressed():
 	await $"../../On_Off".animation_finished
 
 func _on_switch_pressed():
-	# Ca ne marche pas, il y a un truc que je n'ai pas compris...
 	if $"01".button_pressed == true or $"02".button_pressed == true or $"03".button_pressed == true or $"04".button_pressed == true:
 		$"../../Shared_Interface_Sounds/Valid".play()
 		await $"../../Shared_Interface_Sounds/Valid".finished

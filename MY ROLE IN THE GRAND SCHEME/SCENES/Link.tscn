@@ -102,4 +102,4 @@ libraries = {
 
 [node name="Bip_Link" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
-bus = &"FX"
+bus = &"UI"

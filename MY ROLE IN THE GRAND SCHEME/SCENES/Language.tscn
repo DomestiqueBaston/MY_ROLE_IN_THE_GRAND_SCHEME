@@ -1,11 +1,52 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhgxh8qnyumq0"]
+[gd_scene load_steps=12 format=3 uid="uid://bhgxh8qnyumq0"]
 
 [ext_resource type="Texture2D" uid="uid://bg42bx7til5jt" path="res://GRAPHICS/LANGUAGE/Language_BG.png" id="1_6fems"]
 [ext_resource type="Theme" uid="uid://bmygb00a0tvqy" path="res://UI/Language_Theme.tres" id="2_ayvp8"]
 [ext_resource type="Texture2D" uid="uid://bq1iksdcbqtwl" path="res://GRAPHICS/LANGUAGE/Quit_Pressed.png" id="2_hxgus"]
 [ext_resource type="Texture2D" uid="uid://wfsnljjvdro2" path="res://GRAPHICS/LANGUAGE/Quit_Hover.png" id="3_qv763"]
+[ext_resource type="Script" uid="uid://c1q5tswr73jvo" path="res://SCRIPTS/Language_Button.gd" id="4_0r7xq"]
 [ext_resource type="BitMap" uid="uid://bbqk7a0ulfryl" path="res://GRAPHICS/LANGUAGE/Quit_Mask.png" id="4_pb8m6"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="6_ay87b"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_uxqja"]
+
+[sub_resource type="Animation" id="Animation_ay87b"]
+resource_name = "Blink"
+length = 0.266673
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Language_Bg/Quit_Blink:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gvwtn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Language_Bg/Quit_Blink:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0r7xq"]
+_data = {
+&"Blink": SubResource("Animation_ay87b"),
+&"RESET": SubResource("Animation_gvwtn")
+}
 
 [node name="Language" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -15,12 +56,18 @@ texture = ExtResource("1_6fems")
 centered = false
 metadata/_edit_lock_ = true
 
+[node name="Quit_Blink" type="Sprite2D" parent="Language_Bg"]
+texture = ExtResource("3_qv763")
+centered = false
+metadata/_edit_lock_ = true
+
 [node name="Quit_Button" type="Control" parent="Language_Bg"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("2_ayvp8")
+script = ExtResource("4_0r7xq")
 metadata/_edit_lock_ = true
 
 [node name="Quit" type="TextureButton" parent="Language_Bg/Quit_Button"]
@@ -34,4 +81,18 @@ texture_hover = ExtResource("3_qv763")
 texture_click_mask = ExtResource("4_pb8m6")
 metadata/_edit_lock_ = true
 
+[node name="Quit_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0r7xq")
+}
+autoplay = "Blink"
+
 [node name="Global_Shader_Overlay" parent="." instance=ExtResource("6_ay87b")]
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("8_uxqja")]
+
+[connection signal="mouse_entered" from="Language_Bg/Quit_Button/Quit" to="Language_Bg/Quit_Button" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Language_Bg/Quit_Button/Quit" to="Language_Bg/Quit_Button" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Language_Bg/Quit_Button/Quit" to="Language_Bg/Quit_Button" method="_on_quit_pressed"]
+
+[editable path="Shared_Interface_Sounds"]
