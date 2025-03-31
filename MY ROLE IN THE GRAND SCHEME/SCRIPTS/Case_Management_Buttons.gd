@@ -44,7 +44,7 @@ func _on_any_button_mouse_exited():
 func play_sound():
 	$"../../Drawer".volume_db = 0.0
 	if $Cancel.button_pressed == true or $Switch.button_pressed == true:
-		$"../../Drawer".volume_db = -7.5
+		$"../../Drawer".volume_db = -5.0
 	var pitches = [0.666, 1.0, 1.5]
 	var pitch = pitches[randi() % pitches.size()]
 	$"../../Drawer".pitch_scale = pitch

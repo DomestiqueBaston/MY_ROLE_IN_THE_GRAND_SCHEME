@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dtnd8jygtcmpf"]
+[gd_scene load_steps=19 format=3 uid="uid://dtnd8jygtcmpf"]
 
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="1_3n552"]
 [ext_resource type="Script" uid="uid://d27igqil8us1m" path="res://SCRIPTS/Right_Click_Menu.gd" id="1_ml82w"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="15_t6tou"]
 [ext_resource type="Texture2D" uid="uid://chw0hrxhbsjf" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise.png" id="16_7vosm"]
 [ext_resource type="Texture2D" uid="uid://s6171shdoa65" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png" id="17_jli82"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="18_ddtsa"]
 
 [node name="Right_Click_Menu" type="Node2D" node_paths=PackedStringArray("popup_menu")]
 script = ExtResource("1_ml82w")
@@ -24,9 +25,7 @@ popup_menu = NodePath("Create_Modify_PopupMenu")
 metadata/_edit_lock_ = true
 
 [node name="Main_PopupMenu" type="PopupMenu" parent="."]
-transparent_bg = true
 size = Vector2i(93, 90)
-transparent = true
 min_size = Vector2i(93, 90)
 max_size = Vector2i(93, 90)
 theme = ExtResource("1_3n552")
@@ -34,6 +33,7 @@ submenu_popup_delay = 0.2
 allow_search = false
 item_count = 10
 item_0/text = "Dialogue"
+item_0/id = 0
 item_1/text = "Investigation"
 item_1/id = 1
 item_2/text = "  - - - - - - - - - -  "
@@ -56,9 +56,7 @@ item_9/text = "Throw card away"
 item_9/id = 9
 
 [node name="Create_Modify_PopupMenu" type="PopupMenu" parent="."]
-transparent_bg = true
 size = Vector2i(93, 135)
-transparent = true
 min_size = Vector2i(93, 135)
 max_size = Vector2i(93, 135)
 theme = ExtResource("1_3n552")
@@ -67,6 +65,7 @@ allow_search = false
 item_count = 15
 item_0/text = "Presence"
 item_0/icon = ExtResource("3_ivttp")
+item_0/id = 0
 item_1/text = "Debt/Influence"
 item_1/icon = ExtResource("4_1nhxq")
 item_1/id = 1
@@ -109,3 +108,7 @@ item_13/id = 13
 item_14/text = "Hang out"
 item_14/icon = ExtResource("17_jli82")
 item_14/id = 14
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("18_ddtsa")]
+
+[editable path="Shared_Interface_Sounds"]

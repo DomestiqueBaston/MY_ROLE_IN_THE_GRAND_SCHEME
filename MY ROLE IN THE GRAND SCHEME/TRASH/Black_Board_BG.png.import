@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crswnkw68ti3y"
-path="res://.godot/imported/Playe_Improvement_BG.png-dac6f866d131ce3e40245d8aa38970ae.ctex"
+uid="uid://dmab1rfxnfndi"
+path="res://.godot/imported/Black_Board_BG.png-f7af957a12290c9d7fda6b8779a3918e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/PLAYER_IMPROVEMENT/Playe_Improvement_BG.png"
-dest_files=["res://.godot/imported/Playe_Improvement_BG.png-dac6f866d131ce3e40245d8aa38970ae.ctex"]
+source_file="res://TRASH/Black_Board_BG.png"
+dest_files=["res://.godot/imported/Black_Board_BG.png-f7af957a12290c9d7fda6b8779a3918e.ctex"]
 
 [params]
 

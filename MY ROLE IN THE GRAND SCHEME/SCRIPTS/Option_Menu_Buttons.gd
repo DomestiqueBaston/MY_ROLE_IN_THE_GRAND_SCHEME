@@ -42,7 +42,7 @@ func play_sound():
 	if $Secrets.button_pressed == true:
 		return
 	if $Quit.button_pressed == true:
-		$"../Drawer".volume_db = -7.5
+		$"../Drawer".volume_db = -5.0
 	var pitches = [0.75, 1.0, 1.25]
 	var pitch = pitches[randi() % pitches.size()]
 	$"../Drawer".pitch_scale = pitch

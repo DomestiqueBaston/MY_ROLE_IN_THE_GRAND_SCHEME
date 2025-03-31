@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bytf1ieq0kl80"]
 
-[ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_IMPROVEMENT/Playe_Improvement_BG.png" id="1_n0w2h"]
+[ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_IMPROVEMENT/Player_Improvement_BG.png" id="1_n0w2h"]
 [ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_oudkr"]
 [ext_resource type="Script" uid="uid://bt5qe37nll5h5" path="res://SCRIPTS/Player_improvement_Button.gd" id="3_71brr"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_v7iyf"]

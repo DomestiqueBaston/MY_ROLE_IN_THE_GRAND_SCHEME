@@ -1,11 +1,8 @@
-[gd_scene load_steps=48 format=3 uid="uid://btoprcqqk35dm"]
+[gd_scene load_steps=53 format=3 uid="uid://btoprcqqk35dm"]
 
 [ext_resource type="Texture2D" uid="uid://cecs6l03ghxq" path="res://GRAPHICS/SLEEP/Shop_BG.png" id="1_0cvhu"]
 [ext_resource type="Theme" uid="uid://bleu1oddsbqsk" path="res://UI/Sleep_Theme.tres" id="2_8vv46"]
-[ext_resource type="Texture2D" uid="uid://bs1rlo8mp5odw" path="res://GRAPHICS/SLEEP/Quit_Hover.png" id="2_y7wlb"]
-[ext_resource type="BitMap" uid="uid://cx21c5rjifqwu" path="res://GRAPHICS/SLEEP/Quit_Mask.png" id="3_lca5b"]
-[ext_resource type="Texture2D" uid="uid://bwgock1si2585" path="res://GRAPHICS/SLEEP/Quit_Normal.png" id="4_efy65"]
-[ext_resource type="Texture2D" uid="uid://b0dcmqrajr586" path="res://GRAPHICS/SLEEP/Quit_Pressed.png" id="5_hvfk5"]
+[ext_resource type="Script" uid="uid://cyjp6v2sykuxq" path="res://SCRIPTS/Sleep_Overlay_Buttons.gd" id="3_wylhd"]
 [ext_resource type="ButtonGroup" uid="uid://snsroxg0p6rs" path="res://UI/Sleep_Button_Group.tres" id="5_qktmj"]
 [ext_resource type="Texture2D" uid="uid://icsmti0hocf5" path="res://GRAPHICS/SLEEP/Drawer_08_Open.png" id="10_y3l2k"]
 [ext_resource type="Texture2D" uid="uid://xg1jx7tb6hxd" path="res://GRAPHICS/SLEEP/Drawer_08_Hover.png" id="11_h8l8o"]
@@ -34,51 +31,35 @@
 [ext_resource type="Texture2D" uid="uid://co2s7d5k2xxom" path="res://GRAPHICS/SLEEP/Drawer_01_Open.png" id="31_m2dho"]
 [ext_resource type="Texture2D" uid="uid://bs3a082t7hyfi" path="res://GRAPHICS/SLEEP/Drawer_01_Hover.png" id="32_im2gk"]
 [ext_resource type="BitMap" uid="uid://cvtklig2xg1im" path="res://GRAPHICS/SLEEP/Drawer_01_Mask.png" id="33_h478i"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="35_ijttc"]
+[ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="35_kdwin"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="35_mpood"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="36_sebfh"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="37_3hpmd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q374h"]
-bg_color = Color(0.4, 0.336, 0.272, 1)
-border_width_left = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.4, 0.337255, 0.270588, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eldf4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrst2"]
-bg_color = Color(0.4, 0.336, 0.272, 1)
-border_width_left = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.4, 0.337255, 0.270588, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dgc0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ildg8"]
-bg_color = Color(0.4, 0.336, 0.272, 1)
-border_width_left = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.4, 0.337255, 0.270588, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bq3h4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7wn0"]
-bg_color = Color(0.58, 0.4988, 0.4176, 1)
-border_width_left = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.580392, 0.498039, 0.415686, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tvvkq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngn6x"]
-bg_color = Color(0.4, 0.336, 0.272, 1)
-border_width_left = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.4, 0.337255, 0.270588, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uuns4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngqvd"]
-bg_color = Color(0.4, 0.336, 0.272, 1)
-border_width_left = 2
-border_width_right = 1
-border_width_bottom = 2
-border_color = Color(0.4, 0.337255, 0.270588, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3sey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sp07g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2yok"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wylhd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ijttc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdwin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_108il"]
 
 [sub_resource type="Animation" id="Animation_6c0my"]
 resource_name = "Appearance"
@@ -213,8 +194,12 @@ size_flags_horizontal = 0
 color = Color(0.0946, 0.11, 0.09922, 0.498039)
 metadata/_edit_lock_ = true
 
-[node name="Drawers" type="Node2D" parent="."]
-position = Vector2(-640, 0)
+[node name="Drawers" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -640.0
+offset_right = -640.0
+theme = ExtResource("2_8vv46")
 metadata/_edit_lock_ = true
 
 [node name="Shop_BG" type="Sprite2D" parent="Drawers"]
@@ -231,7 +216,7 @@ offset_top = 15.0
 offset_right = 458.0
 offset_bottom = 345.0
 mouse_filter = 2
-theme = ExtResource("2_8vv46")
+script = ExtResource("3_wylhd")
 metadata/_edit_lock_ = true
 
 [node name="Drawer_09" type="TextureButton" parent="Drawers/Drawer_Names"]
@@ -342,36 +327,58 @@ offset_right = 15.0
 offset_bottom = 15.0
 metadata/_edit_lock_ = true
 
-[node name="No" type="TextureButton" parent="Drawers/Yes_No"]
-layout_mode = 0
-offset_left = 164.0
-offset_right = 443.0
-offset_bottom = 330.0
-texture_normal = ExtResource("4_efy65")
-texture_pressed = ExtResource("5_hvfk5")
-texture_hover = ExtResource("2_y7wlb")
-texture_click_mask = ExtResource("3_lca5b")
-metadata/_edit_lock_ = true
-
 [node name="Yes" type="Button" parent="Drawers/Yes_No"]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
-offset_left = 341.0
+offset_left = 327.0
 offset_top = 313.0
-offset_right = 436.0
+offset_right = 422.0
 offset_bottom = 321.0
-theme_override_colors/font_hover_color = Color(0.911525, 0.95, 0.8645, 1)
-theme_override_colors/font_color = Color(0.82124, 0.98, 0.6272, 1)
+rotation = -0.0122173
+tooltip_text = "Go!"
+theme_override_colors/font_disabled_color = Color(0.52052, 0.77, 0.2156, 0.827451)
+theme_override_colors/font_hover_pressed_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
+theme_override_colors/font_hover_color = Color(0.892, 1, 0.76, 1)
+theme_override_colors/font_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
+theme_override_colors/font_focus_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
+theme_override_colors/font_pressed_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("35_mpood")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxFlat_q374h")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_lrst2")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ildg8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j7wn0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ngn6x")
-theme_override_styles/normal = SubResource("StyleBoxFlat_ngqvd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eldf4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6dgc0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_bq3h4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tvvkq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uuns4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p3sey")
 text = "Morpheus, I'm coming!"
+metadata/_edit_lock_ = true
+
+[node name="No" type="Button" parent="Drawers/Yes_No"]
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 0
+offset_left = 325.0
+offset_top = 10.0
+offset_right = 435.0
+offset_bottom = 18.0
+rotation = -0.0126771
+tooltip_text = "I'd rather not..."
+theme_override_colors/font_disabled_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
+theme_override_colors/font_hover_pressed_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
+theme_override_colors/font_hover_color = Color(1, 0.75, 0.7, 1)
+theme_override_colors/font_color = Color(0.98, 0.4655, 0.3626, 0.823529)
+theme_override_colors/font_focus_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
+theme_override_colors/font_pressed_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("35_mpood")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sp07g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w2yok")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wylhd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ijttc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_kdwin")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_108il")
+text = "To sleep is to die a bit!"
 metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
@@ -383,3 +390,36 @@ autoplay = "Appearance"
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
+
+[node name="Drawer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_kdwin")
+bus = &"UI"
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("35_ijttc")]
+
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_09" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_09" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_08" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_08" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_07" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_07" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_06" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_06" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_05" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_05" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_04" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_04" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_03" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_03" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_02" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_02" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_01" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_01" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Drawers/Yes_No/Yes" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Yes_No/Yes" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawers/Yes_No/Yes" to="Drawers/Drawer_Names" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Drawers/Yes_No/No" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Drawers/Yes_No/No" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Drawers/Yes_No/No" to="Drawers/Drawer_Names" method="_on_no_pressed"]
+
+[editable path="Shared_Interface_Sounds"]

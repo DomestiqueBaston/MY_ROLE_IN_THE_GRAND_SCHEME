@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=11 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Short_Event_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
+[ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Overlay_Button.gd" id="3_8qa11"]
+[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="6_wm5ht"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_dgbv7"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_is8fw"]
 
@@ -153,6 +155,7 @@ modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_vr7x7")
+script = ExtResource("3_8qa11")
 metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Short_Event_Panel/Announce"]
@@ -338,10 +341,18 @@ metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m6d4b")
+&"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
+
+[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("6_wm5ht")]
+
+[connection signal="mouse_entered" from="Short_Event_Panel/Announce/Quit" to="Short_Event_Panel/Announce" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Short_Event_Panel/Announce/Quit" to="Short_Event_Panel/Announce" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Short_Event_Panel/Announce/Quit" to="Short_Event_Panel/Announce" method="_on_quit_pressed"]
+
+[editable path="Shared_Interface_Sounds"]
