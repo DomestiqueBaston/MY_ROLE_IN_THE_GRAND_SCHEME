@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=31 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card.gd" id="2_2qjxn"]
@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ddd34x72ghu57" path="res://GRAPHICS/CARD/Card_Run_Away.png" id="4_xhv7k"]
 [ext_resource type="Texture2D" uid="uid://ct7lvffsjl4m6" path="res://GRAPHICS/CARD/Card_Outline_Animation.png" id="5_m7h77"]
 [ext_resource type="Texture2D" uid="uid://dnyd4rhlcnw8v" path="res://GRAPHICS/CARD/Card_Break_In.png" id="5_rh7h4"]
-[ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Drawing_Card.ogg" id="6_1yy8m"]
-[ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Drawing_Card_Reverse.ogg" id="7_ofh61"]
+[ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Reduce_Card.ogg" id="6_1yy8m"]
+[ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Expand_Card.ogg" id="7_ofh61"]
 [ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Card_Closed.png" id="9_e07m4"]
 [ext_resource type="Texture2D" uid="uid://bo3kge1u3ick1" path="res://GRAPHICS/CARD/Card_Jail.png" id="9_xm6x5"]
 [ext_resource type="Texture2D" uid="uid://cmh3sf00aio1m" path="res://GRAPHICS/CARD/Card_Jail_Top.png" id="11_0cggu"]
@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="17_kusna"]
 [ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="20_kusna"]
 [ext_resource type="AudioStream" uid="uid://cugi11x6eeqoq" path="res://SOUND/MISC/Go_Front.ogg" id="21_a6amd"]
+[ext_resource type="AudioStream" uid="uid://cbentdu5jvok7" path="res://SOUND/CARD/Drop_Card.ogg" id="21_tg66g"]
+[ext_resource type="AudioStream" uid="uid://dnbr6d7wdvn0j" path="res://SOUND/CARD/Take_Card.ogg" id="22_iuyk4"]
 [ext_resource type="AudioStream" uid="uid://mki238woun53" path="res://SOUND/MISC/Go_Back.ogg" id="22_ve1ow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
@@ -45,7 +47,7 @@ tracks/0/keys = {
 tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("FX")
+tracks/1/path = NodePath("Sounds/FX")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -97,7 +99,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FX")
+tracks/2/path = NodePath("Sounds/FX")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -444,7 +446,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("FX")
+tracks/2/path = NodePath("Sounds/FX")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -878,14 +880,24 @@ libraries = {
 &"": SubResource("AnimationLibrary_tcnxd")
 }
 
-[node name="FX" type="AudioStreamPlayer" parent="."]
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Drop_Card" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("21_tg66g")
+volume_db = -15.0
+
+[node name="Take_Card" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("22_iuyk4")
+volume_db = -12.5
+
+[node name="FX" type="AudioStreamPlayer" parent="Sounds"]
 volume_db = -15.0
 bus = &"UI"
 
-[node name="Go_Front" type="AudioStreamPlayer" parent="."]
+[node name="Go_Front" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("21_a6amd")
-bus = &"UI"
+bus = &"FX"
 
-[node name="Go_Back" type="AudioStreamPlayer" parent="."]
+[node name="Go_Back" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("22_ve1ow")
-bus = &"UI"
+bus = &"FX"

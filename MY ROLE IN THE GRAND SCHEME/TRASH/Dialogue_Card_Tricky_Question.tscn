@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://k8gtuwwg7pxm" path="res://GRAPHICS/CARD/Card_Evidence.png" id="3_e8s72"]
 [ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="4_yvifw"]
 [ext_resource type="Texture2D" uid="uid://ct7lvffsjl4m6" path="res://GRAPHICS/CARD/Card_Outline_Animation.png" id="5_rughf"]
-[ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Drawing_Card_Reverse.ogg" id="6_41588"]
-[ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Drawing_Card.ogg" id="7_g75nf"]
+[ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Expand_Card.ogg" id="6_41588"]
+[ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Reduce_Card.ogg" id="7_g75nf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptib8"]
 size = Vector2(70, 23)
