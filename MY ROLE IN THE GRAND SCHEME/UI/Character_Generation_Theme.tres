@@ -38,8 +38,7 @@ bg_color = Color(0.27, 0.25362, 0.1998, 0.294118)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cr08y"]
-bg_color = Color(1, 1, 1, 0.494118)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obw43"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwhs0"]
 
@@ -145,7 +144,7 @@ PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
 PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
-PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxFlat_cr08y")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_obw43")
 PopupMenu/styles/panel = SubResource("StyleBoxEmpty_gwhs0")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")

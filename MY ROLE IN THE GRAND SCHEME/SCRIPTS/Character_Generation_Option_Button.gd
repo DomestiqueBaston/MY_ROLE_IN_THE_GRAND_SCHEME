@@ -17,7 +17,7 @@ func _ready():
 	
 	var data = backgrounds.get_data()
 
-	var backgrounds_array = data["Background"]
+	var backgrounds_array = data["background"]
 
 	clear()
 

@@ -217,6 +217,8 @@ metadata/_edit_lock_ = true
 custom_minimum_size = Vector2(153, 16)
 layout_mode = 2
 size_flags_vertical = 0
+tooltip_text = "You need
+a past..."
 toggle_mode = false
 flat = true
 item_count = 1
