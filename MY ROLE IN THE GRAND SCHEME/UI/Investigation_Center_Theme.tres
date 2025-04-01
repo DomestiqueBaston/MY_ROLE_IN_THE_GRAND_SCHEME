@@ -60,12 +60,12 @@ bg_color = Color(1, 1, 1, 0.392157)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvckk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84jwc"]
 bg_color = Color(1, 1, 1, 0.392157)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6g8ty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -157,6 +157,7 @@ PopupMenu/colors/font_accelerator_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_separator_color = Color(0.88, 0.88, 0.88, 0)
 PopupMenu/constants/item_end_padding = 7
 PopupMenu/constants/item_start_padding = -9
 PopupMenu/constants/v_separation = -2
@@ -170,9 +171,9 @@ PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
 PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
-PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_dvckk")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_84jwc")
-PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+PopupMenu/styles/separator = SubResource("StyleBoxEmpty_6g8ty")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
