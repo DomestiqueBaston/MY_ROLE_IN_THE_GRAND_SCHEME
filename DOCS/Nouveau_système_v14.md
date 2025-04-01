@@ -765,6 +765,9 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
 		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
 
+	/!\ Tout petit point important :
+		- je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste !
+
 Structure de Main.tscn et Interaction.tscn
 
 
