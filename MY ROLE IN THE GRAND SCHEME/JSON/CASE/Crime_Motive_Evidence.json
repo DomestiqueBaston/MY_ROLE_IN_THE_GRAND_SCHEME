@@ -4,8 +4,8 @@
   "motive": [
     {
       "id": "MOT_ADU_001",
-      "crime_id": "MOT_ADU_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Discovery of Hidden Superego",
+      "crime_id": "MOT_ADU_001_ID_xxx",
+      "name": "Revelation of the Hidden Self",
       "link": ["intimacy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -19,7 +19,7 @@
     },
     {
       "id": "MOT_ADU_002",
-      "crime_id": "MOT_ADU_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
+      "crime_id": "MOT_ADU_002_ID_xxx",
       "name": "Dissemination of Extraterrestrial Genes",
       "link": ["intimacy"],
       "victims_professions": [],
@@ -34,8 +34,8 @@
     },
     {
       "id": "MOT_ADU_003",
-      "crime_id": "MOT_ADU_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Persistent Sexual Dissatisfaction",
+      "crime_id": "MOT_ADU_003_ID_xxx",
+      "name": "Chasing Unfulfilled Desires",
       "link": ["intimacy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -49,8 +49,8 @@
     },
     {
       "id": "MOT_ADU_004",
-      "crime_id": "MOT_ADU_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Seeking Influence",
+      "crime_id": "MOT_ADU_004_ID_xxx",
+      "name": "Manipulating Affections for Advantage",
       "link": ["intimacy"],
       "victims_professions": ["Politician", "CEO", "Journalist", "Influencer", "Real_Estate_Agent", "Curator", "Private_Sector_Employee", "Public_Servant", "Restaurant_Manager", "Hotel_Manager", "Engineer", "Military", "Firefighter", "Police_Officer", "Scientist"],
       "culprits_professions": [],
@@ -64,8 +64,8 @@
     },
     {
       "id": "MOT_ADU_005",
-      "crime_id": "MOT_ADU_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Personal Revenge",
+      "crime_id": "MOT_ADU_005_ID_xxx",
+      "name": "Revenge Through Emotional Betrayal",
       "link": ["enemy", "intimacy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -84,8 +84,8 @@
   "motive": [
     {
       "id": "MOT_ASS_001",
-      "crime_id": "MOT_ASS_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Hunting Reptilians",
+      "crime_id": "MOT_ASS_001_ID_xxx",
+      "name": "Chasing Shadows of the Lizard Elite",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -99,8 +99,8 @@
     },
     {
       "id": "MOT_ASS_002",
-      "crime_id": "MOT_ASS_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Perceived Humiliation",
+      "crime_id": "MOT_ASS_002_ID_xxx",
+      "name": "Seeking Revenge for Public Disrespect",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -114,8 +114,8 @@
     },
     {
       "id": "MOT_ASS_003",
-      "crime_id": "MOT_ASS_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Anticipation of an Attack",
+      "crime_id": "MOT_ASS_003_ID_xxx",
+      "name": "Preemptive Strike Against Perceived Threat",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -129,8 +129,8 @@
     },
     {
       "id": "MOT_ASS_004",
-      "crime_id": "MOT_ASS_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Deliberate Provocation",
+      "crime_id": "MOT_ASS_004_ID_xxx",
+      "name": "Instigating Conflict for Control",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -144,8 +144,8 @@
     },
     {
       "id": "MOT_ASS_005",
-      "crime_id": "MOT_ASS_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Impulsive Reaction to an Insult",
+      "crime_id": "MOT_ASS_005_ID_xxx",
+      "name": "Fighting Back Against Insults",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -159,7 +159,7 @@
     },
     {
       "id": "MOT_ASS_006",
-      "crime_id": "MOT_ASS_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
+      "crime_id": "MOT_ASS_006_ID_xxx",
       "name": "Finding the Galactic Christ",
       "link": ["none"],
       "victims_professions": [],
@@ -174,8 +174,8 @@
     },
     {
       "id": "MOT_ASS_007",
-      "crime_id": "MOT_ASS_007_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Personal Revenge",
+      "crime_id": "MOT_ASS_007_ID_xxx",
+      "name": "Vengeance for a Forgotten Grudge",
       "link": ["enemy", "acquaintance", "friend"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -194,8 +194,8 @@
   "motive": [
     {
       "id": "MOT_BUR_001",
-      "crime_id": "MOT_BUR_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Need for Money",
+      "crime_id": "MOT_BUR_001_ID_xxx",
+      "name": "Desperation for Financial Escape",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist", "Physical_Education_Teacher", "Athlete"],
@@ -209,8 +209,8 @@
     },
     {
       "id": "MOT_BUR_002",
-      "crime_id": "MOT_BUR_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Bad Influence",
+      "crime_id": "MOT_BUR_002_ID_xxx",
+      "name": "Succumbing to Temptation",
       "link": ["acquaintance", "friend"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -224,8 +224,8 @@
     },
     {
       "id": "MOT_BUR_003",
-      "crime_id": "MOT_BUR_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Retrieving Compromising Evidence",
+      "crime_id": "MOT_BUR_003_ID_xxx",
+      "name": "Recovering Secrets to Expose the Hidden Truth",
       "link": ["debt_influence", "enemy"],
       "victims_professions": ["Journalist", "Politician", "CEO", "Scientist", "Police_Officer", "Private_Sector_Employee"],
       "culprits_professions": [],
@@ -239,8 +239,8 @@
     },
     {
       "id": "MOT_BUR_004",
-      "crime_id": "MOT_BUR_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Finding the First Edition of 'The Bio Revelation'",
+      "crime_id": "MOT_BUR_004_ID_xxx",
+      "name": "Hunting for the Lost Knowledge",
       "link": ["none"],
       "victims_professions": ["Librarian", "Writer", "Bookseller", "Historian", "Curator"],
       "culprits_professions": [],
@@ -254,8 +254,8 @@
     },
     {
       "id": "MOT_BUR_005",
-      "crime_id": "MOT_BUR_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Stealing to Fund a Vice",
+      "crime_id": "MOT_BUR_005_ID_xxx",
+      "name": "Funding Addictions Through Crime",
       "link": ["none", "friend", "acquaintance"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -274,8 +274,8 @@
   "motive": [
     {
       "id": "MOT_BLA_001",
-      "crime_id": "MOT_BLA_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Psychological Manipulation",
+      "crime_id": "MOT_BLA_001_ID_xxx",
+      "name": "Leveraging Secrets for Control",
       "link": ["friend", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -289,8 +289,8 @@
     },
     {
       "id": "MOT_BLA_002",
-      "crime_id": "MOT_BLA_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Obtaining Hidden Secrets",
+      "crime_id": "MOT_BLA_002_ID_xxx",
+      "name": "Uncovering Truths to Exploit Weaknesses",
       "link": ["debt_influence", "intimacy"],
       "victims_professions": ["Journalist", "Politician", "CEO", "Scientist", "Police_Officer", "Private_Sector_Employee"],
       "culprits_professions": [],
@@ -304,8 +304,8 @@
     },
     {
       "id": "MOT_BLA_003",
-      "crime_id": "MOT_BLA_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Need for Money",
+      "crime_id": "MOT_BLA_003_ID_xxx",
+      "name": "Shaking Down for Cash",
       "link": ["debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -319,8 +319,8 @@
     },
     {
       "id": "MOT_BLA_004",
-      "crime_id": "MOT_BLA_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Revealing a Robotic Nature",
+      "crime_id": "MOT_BLA_004_ID_xxx",
+      "name": "Exposing the Synthetic Truth",
       "link": ["friend", "intimacy"],
       "victims_professions": ["Scientist", "Engineer", "Journalist"],
       "culprits_professions": [],
@@ -334,8 +334,8 @@
     },
     {
       "id": "MOT_BLA_005",
-      "crime_id": "MOT_BLA_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Personal Revenge",
+      "crime_id": "MOT_BLA_005_ID_xxx",
+      "name": "Taking Revenge Through the Hidden Hand",
       "link": ["intimacy", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -354,8 +354,8 @@
   "motive": [
     {
       "id": "MOT_COU_001",
-      "crime_id": "MOT_COU_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Manufacturing and Distributing Mind-Control Substances",
+      "crime_id": "MOT_COU_001_ID_xxx",
+      "name": "Producing Substances with Unexpected Effects",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": ["Scientist", "Engineer", "Doctor", "CEO"],
@@ -369,8 +369,8 @@
     },
     {
       "id": "MOT_COU_002",
-      "crime_id": "MOT_COU_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Reducing Production Costs",
+      "crime_id": "MOT_COU_002_ID_xxx",
+      "name": "Cutting Corners for Maximum Profit",
       "link": ["none", "debt_influence"],
       "victims_professions": ["Unemployed"],
       "culprits_professions": ["Engineer", "CEO", "Private_Sector_Employee"],
@@ -384,8 +384,8 @@
     },
     {
       "id": "MOT_COU_003",
-      "crime_id": "MOT_COU_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Financial Fraud",
+      "crime_id": "MOT_COU_003_ID_xxx",
+      "name": "Printing Wealth from Thin Air",
       "link": ["none", "debt_influence"],
       "victims_professions": ["Politician", "Public_Servant"],
       "culprits_professions": ["CEO", "Politician", "Private_Sector_Employee", "Journalist", "Real_Estate_Agent", "Engineer", "Scientist", "Merchant", "Hotel_Manager", "Public_Servant"],
@@ -399,8 +399,8 @@
     },
     {
       "id": "MOT_COU_004",
-      "crime_id": "MOT_COU_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Commercial Rivalry",
+      "crime_id": "MOT_COU_004_ID_xxx",
+      "name": "Sabotaging the Competition Through Fakes",
       "link": ["none"],
       "victims_professions": ["Merchant", "CEO", "Private_Sector_Employee", "Engineer", "Journalist", "Hotel_Manager", "Real_Estate_Agent", "Bookseller", "Hairdresser", "Restaurant_Manager"],
       "culprits_professions": ["Merchant", "CEO", "Private_Sector_Employee", "Engineer", "Journalist", "Hotel_Manager", "Real_Estate_Agent", "Bookseller", "Hairdresser", "Restaurant_Manager"],
@@ -415,8 +415,8 @@
     },
     {
       "id": "MOT_COU_005",
-      "crime_id": "MOT_COU_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Personal Satisfaction",
+      "crime_id": "MOT_COU_005_ID_xxx",
+      "name": "Crafting Perfection for Personal Satisfaction",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -435,8 +435,8 @@
   "motive": [
     {
       "id": "MOT_COR_001",
-      "crime_id": "MOT_COR_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Quick Personal Enrichment",
+      "crime_id": "MOT_COR_001_ID_xxx",
+      "name": "Grabbing Wealth from the System",
       "link": ["none"],
       "victims_professions": ["Politician", "CEO", "Private_Sector_Employee", "Public_Servant", "Real_Estate_Agent", "Hotel_Manager", "Doctor", "Engineer", "Scientist", "Journalist", "Merchant"],
       "culprits_professions": [],
@@ -450,8 +450,8 @@
     },
     {
       "id": "MOT_COR_002",
-      "crime_id": "MOT_COR_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Advancing a Personal Agenda",
+      "crime_id": "MOT_COR_002_ID_xxx",
+      "name": "Fulfilling Hidden Desires for Power",
       "link": ["intimacy", "friend"],
       "victims_professions": ["Politician", "CEO", "Public_Servant", "Scientist", "Engineer", "Real_Estate_Agent", "Hotel_Manager", "Merchant"],
       "culprits_professions": [],
@@ -465,8 +465,8 @@
     },
     {
       "id": "MOT_COR_003",
-      "crime_id": "MOT_COR_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Maintaining a Position of Power",
+      "crime_id": "MOT_COR_003_ID_xxx",
+      "name": "Holding On to the Throne at Any Cost",
       "link": ["enemy", "friend", "ideology"],
       "victims_professions": ["Politician", "CEO", "Public_Servant", "Journalist", "Scientist", "Engineer", "Police_Officer", "Military", "Hotel_Manager", "Real_Estate_Agent", "Firefighter", "Doctor", "Veterinarian", "Influencer"],
       "culprits_professions": ["Politician", "CEO", "Public_Servant", "Journalist", "Scientist", "Engineer", "Police_Officer", "Military", "Hotel_Manager", "Real_Estate_Agent", "Firefighter", "Doctor", "Veterinarian", "Influencer"],
@@ -481,8 +481,8 @@
     },
     {
       "id": "MOT_COR_004",
-      "crime_id": "MOT_COR_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Obtaining Credits to Prove Earth's Flatness",
+      "crime_id": "MOT_COR_004_ID_xxx",
+      "name": "Funding the Truth Behind an Alternative Theory",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -496,8 +496,8 @@
     },
     {
       "id": "MOT_COR_005",
-      "crime_id": "MOT_COR_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Seeking Power",
+      "crime_id": "MOT_COR_005_ID_xxx",
+      "name": "Corrupting for Control",
       "link": ["none"],
       "victims_professions": ["Politician", "CEO", "Military", "Police_Officer", "Influencer"],
       "culprits_professions": [],
@@ -516,8 +516,8 @@
   "motive": [
     {
       "id": "MOT_EVA_001",
-      "crime_id": "MOT_EVA_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Desire to Avoid Trial",
+      "crime_id": "MOT_EVA_001_ID_xxx",
+      "name": "Escaping the Consequences of a Forgotten Crime",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -531,8 +531,8 @@
     },
     {
       "id": "MOT_EVA_002",
-      "crime_id": "MOT_EVA_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Escaping Pigeon-Drones",
+      "crime_id": "MOT_EVA_002_ID_xxx",
+      "name": "Evading the Watchful Eyes of the Sky",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -546,8 +546,8 @@
     },
     {
       "id": "MOT_EVA_003",
-      "crime_id": "MOT_EVA_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Fleeing Telepathic Cats",
+      "crime_id": "MOT_EVA_003_ID_xxx",
+      "name": "Running From Minds That Know Too Much",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -561,8 +561,8 @@
     },
     {
       "id": "MOT_EVA_004",
-      "crime_id": "MOT_EVA_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Fear of Punishment",
+      "crime_id": "MOT_EVA_004_ID_xxx",
+      "name": "Running From the Inevitable Reckoning",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -576,8 +576,8 @@
     },
     {
       "id": "MOT_EVA_005",
-      "crime_id": "MOT_EVA_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Refusal to Face Consequences",
+      "crime_id": "MOT_EVA_005_ID_xxx",
+      "name": "Dodging the Price of Past Actions",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -596,8 +596,8 @@
   "motive": [
     {
       "id": "MOT_DEF_001",
-      "crime_id": "MOT_DEF_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Will to Discredit",
+      "crime_id": "MOT_DEF_001_ID_xxx",
+      "name": "Destroying Reputations for Personal Gain",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -611,8 +611,8 @@
     },
     {
       "id": "MOT_DEF_002",
-      "crime_id": "MOT_DEF_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Masking the Cosmic Conspiracy by Revealing the Dream Society",
+      "crime_id": "MOT_DEF_002_ID_xxx",
+      "name": "Unveiling a Hidden Society to Distract from Greater Truths",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -626,8 +626,8 @@
     },
     {
       "id": "MOT_DEF_003",
-      "crime_id": "MOT_DEF_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Protecting a Personal Secret",
+      "crime_id": "MOT_DEF_003_ID_xxx",
+      "name": "Silencing the Truth to Protect Yourself",
       "link": ["intimacy", "ideology", "friend", "acquaintance"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -641,8 +641,8 @@
     },
     {
       "id": "MOT_DEF_004",
-      "crime_id": "MOT_DEF_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Professional Rivalry",
+      "crime_id": "MOT_DEF_004_ID_xxx",
+      "name": "Crushing Competition Through Lies",
       "link": ["none"],
       "victims_professions": ["Real_Estate_Agent", "Cleaner", "Security_Guard", "Social_Worker", "Librarian", "Forklift_Operator", "Hairdresser", "Merchant", "Curator", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Historian", "Host", "Nightclub_Server", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Military", "Musician", "Firefighter", "Police_Officer", "Physical_Education_Teacher", "Psychologist", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
       "culprits_professions": ["Real_Estate_Agent", "Cleaner", "Security_Guard", "Social_Worker", "Librarian", "Forklift_Operator", "Hairdresser", "Merchant", "Curator", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Historian", "Host", "Nightclub_Server", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Military", "Musician", "Firefighter", "Police_Officer", "Physical_Education_Teacher", "Psychologist", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
@@ -657,8 +657,8 @@
     },
     {
       "id": "MOT_DEF_005",
-      "crime_id": "MOT_DEF_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Personal Revenge",
+      "crime_id": "MOT_DEF_005_ID_xxx",
+      "name": "Revenge Through Ruin",
       "link": ["intimacy", "enemy", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -677,8 +677,8 @@
   "motive": [
     {
       "id": "MOT_KID_001",
-      "crime_id": "MOT_KID_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Ransom Demand",
+      "crime_id": "MOT_KID_001_ID_xxx",
+      "name": "Extorting for a Payoff",
       "link": ["debt_influence"],
       "victims_professions": ["Politician", "CEO", "Private_Sector_Employee", "Hotel_Manager", "Real_Estate_Agent", "Merchant", "Scientist", "Engineer", "Journalist", "Doctor", "Veterinarian", "Teacher", "Firefighter", "Police_Officer", "Psychologist", "Historian", "Bookseller"],
       "culprits_professions": [],
@@ -692,8 +692,8 @@
     },
     {
       "id": "MOT_KID_002",
-      "crime_id": "MOT_KID_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Ideological Motivations",
+      "crime_id": "MOT_KID_002_ID_xxx",
+      "name": "Capturing for a Cause",
       "link": ["ideology"],
       "victims_professions": ["Politician", "Journalist", "Teacher", "Public_Servant", "Military", "Police_Officer", "Historian"],
       "culprits_professions": [],
@@ -707,8 +707,8 @@
     },
     {
       "id": "MOT_KID_003",
-      "crime_id": "MOT_KID_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Proving the Clone Theory",
+      "crime_id": "MOT_KID_003_ID_xxx",
+      "name": "Capturing for Genetic Experimentation",
       "link": ["none"],
       "victims_professions": ["Scientist", "Journalist", "Politician", "Engineer", "Doctor", "Psychologist"],
       "culprits_professions": [],
@@ -722,8 +722,8 @@
     },
     {
       "id": "MOT_KID_004",
-      "crime_id": "MOT_KID_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Human Trafficking",
+      "crime_id": "MOT_KID_004_ID_xxx",
+      "name": "Trading Lives for Profit",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -742,8 +742,8 @@
   "motive": [
     {
       "id": "MOT_ESP_001",
-      "crime_id": "MOT_ESP_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Ideological Benefits",
+      "crime_id": "MOT_ESP_001_ID_xxx",
+      "name": "Serving a Greater Cause Through Secrets",
       "link": ["ideology"],
       "victims_professions": ["Politician", "Journalist", "Teacher", "Military", "Police_Officer", "Historian"],
       "culprits_professions": [],
@@ -757,8 +757,8 @@
     },
     {
       "id": "MOT_ESP_002",
-      "crime_id": "MOT_ESP_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Compromising Digital Security",
+      "crime_id": "MOT_ESP_002_ID_xxx",
+      "name": "Exposing Weaknesses in the System",
       "link": ["none"],
       "victims_professions": ["Scientist", "Engineer", "Journalist", "CEO", "Private_Sector_Employee", "Public_Servant", "Game_Developer", "Police_Officer"],
       "culprits_professions": [],
@@ -772,8 +772,8 @@
     },
     {
       "id": "MOT_ESP_003",
-      "crime_id": "MOT_ESP_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Controlling Sensitive Information",
+      "crime_id": "MOT_ESP_003_ID_xxx",
+      "name": "Holding the Keys to Hidden Knowledge",
       "link": ["none", "debt_influence"],
       "victims_professions": ["Politician", "CEO", "Public_Servant", "Journalist", "Scientist", "Engineer", "Police_Officer", "Military"],
       "culprits_professions": [],
@@ -787,8 +787,8 @@
     },
     {
       "id": "MOT_ESP_004",
-      "crime_id": "MOT_ESP_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Industrial Espionage",
+      "crime_id": "MOT_ESP_004_ID_xxx",
+      "name": "Stealing Innovation for Competitive Edge",
       "link": ["none", "ideology", "debt_influence"],
       "victims_professions": ["CEO", "Private_Sector_Employee", "Engineer", "Scientist", "Journalist", "Politician"],
       "culprits_professions": [],
@@ -802,8 +802,8 @@
     },
     {
       "id": "MOT_ESP_005",
-      "crime_id": "MOT_ESP_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Pathological Curiosity",
+      "crime_id": "MOT_ESP_005_ID_xxx",
+      "name": "Digging Where No One Else Dares",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -817,8 +817,8 @@
     },
     {
       "id": "MOT_ESP_006",
-      "crime_id": "MOT_ESP_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Retrieving the Light Hamburger Recipe",
+      "crime_id": "MOT_ESP_006_ID_xxx",
+      "name": "Recovering a Lost Recipe of Great Value",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -837,8 +837,8 @@
   "motive": [
     {
       "id": "MOT_EXT_001",
-      "crime_id": "MOT_EXT_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Financial Need",
+      "crime_id": "MOT_EXT_001_ID_xxx",
+      "name": "Forcing Wealth Into the Right Hands",
       "link": ["debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -852,8 +852,8 @@
     },
     {
       "id": "MOT_EXT_002",
-      "crime_id": "MOT_EXT_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Funding the Humans for Venus Experiments (H4VE)",
+      "crime_id": "MOT_EXT_002_ID_xxx",
+      "name": "Securing Funds for a Groundbreaking Experiment",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -867,8 +867,8 @@
     },
     {
       "id": "MOT_EXT_003",
-      "crime_id": "MOT_EXT_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Seeking Power",
+      "crime_id": "MOT_EXT_003_ID_xxx",
+      "name": "Bending Others to Your Will",
       "link": ["none"],
       "victims_professions": ["Politician", "CEO", "Public_Servant", "Military", "Police_Officer", "Journalist", "Scientist", "Engineer", "Influencer"],
       "culprits_professions": [],
@@ -882,8 +882,8 @@
     },
     {
       "id": "MOT_EXT_004",
-      "crime_id": "MOT_EXT_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Punishment or Revenge",
+      "crime_id": "MOT_EXT_004_ID_xxx",
+      "name": "Making Them Pay in More Ways Than One",
       "link": ["enemy", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -897,8 +897,8 @@
     },
     {
       "id": "MOT_EXT_005",
-      "crime_id": "MOT_EXT_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Destroying an Enemy",
+      "crime_id": "MOT_EXT_005_ID_xxx",
+      "name": "Breaking an Opponent Without Lifting a Finger",
       "link": ["enemy", "debt_influence", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -912,8 +912,8 @@
     },
     {
       "id": "MOT_EXT_006",
-      "crime_id": "MOT_EXT_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Obtaining Information",
+      "crime_id": "MOT_EXT_006_ID_xxx",
+      "name": "Forcing the Truth Out, One Way or Another",
       "link": ["debt_influence", "intimacy", "acquaintance"],
       "victims_professions": ["Politician", "CEO", "Public_Servant", "Journalist", "Scientist", "Engineer", "Police_Officer", "Military", "Psychologist", "Doctor", "Real_Estate_Agent", "Hotel_Manager", "Private_Sector_Employee", "Influencer", "Historian"],
       "culprits_professions": [],
@@ -932,8 +932,8 @@
   "motive": [
     {
       "id": "MOT_FRA_001",
-      "crime_id": "MOT_FRA_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Uncovering Evidence of Quantum Manipulation of Elections",
+      "crime_id": "MOT_FRA_001_ID_xxx",
+      "name": "Revealing the Hidden Forces Behind Democracy",
       "link": ["ideology"],
       "victims_professions": ["Politician", "Journalist", "Scientist", "Engineer", "Public_Servant"],
       "culprits_professions": [],
@@ -947,8 +947,8 @@
     },
     {
       "id": "MOT_FRA_002",
-      "crime_id": "MOT_FRA_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Fabrication of False Financial Reports",
+      "crime_id": "MOT_FRA_002_ID_xxx",
+      "name": "Redefining Success on Paper",
       "link": ["none", "debt_influence"],
       "victims_professions": ["CEO", "Politician", "Private_Sector_Employee", "Public_Servant", "Real_Estate_Agent", "Hotel_Manager", "Merchant", "Bookseller", "Hairdresser", "Restaurant_Manager"],
       "culprits_professions": [],
@@ -962,8 +962,8 @@
     },
     {
       "id": "MOT_FRA_003",
-      "crime_id": "MOT_FRA_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Funding Insurance against the Gorgoufle Invasion",
+      "crime_id": "MOT_FRA_003_ID_xxx",
+      "name": "Preparing for a Threat No One Believes In",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -977,8 +977,8 @@
     },
     {
       "id": "MOT_FRA_004",
-      "crime_id": "MOT_FRA_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Manipulating Documents to Alter Results",
+      "crime_id": "MOT_FRA_004_ID_xxx",
+      "name": "Rewriting Reality Through Paperwork",
       "link": ["ideology"],
       "victims_professions": ["Politician", "CEO", "Public_Servant", "Private_Sector_Employee", "Journalist", "Scientist", "Engineer", "Teacher", "Historian"],
       "culprits_professions": [],
@@ -992,8 +992,8 @@
     },
     {
       "id": "MOT_FRA_005",
-      "crime_id": "MOT_FRA_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Obtaining Services Without Paying",
+      "crime_id": "MOT_FRA_005_ID_xxx",
+      "name": "Getting What’s Owed Without the Cost",
       "link": ["none"],
       "victims_professions": ["Merchant", "Hotel_Manager", "Restaurant_Manager", "Bookseller", "Hairdresser", "Private_Sector_Employee", "Doctor", "Veterinarian", "Psychologist", "Mechanic", "Engineer", "Real_Estate_Agent"],
       "culprits_professions": [],
@@ -1007,8 +1007,8 @@
     },
     {
       "id": "MOT_FRA_006",
-      "crime_id": "MOT_FRA_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Future Profit",
+      "crime_id": "MOT_FRA_006_ID_xxx",
+      "name": "Investing in a Lie That Pays Off",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1027,8 +1027,8 @@
   "motive": [
     {
       "id": "MOT_HAR_001",
-      "crime_id": "MOT_HAR_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Psychological Domination",
+      "crime_id": "MOT_HAR_001_ID_xxx",
+      "name": "Establishing Superiority Through Persistence",
       "link": ["intimacy", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1042,8 +1042,8 @@
     },
     {
       "id": "MOT_HAR_002",
-      "crime_id": "MOT_HAR_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Sexist Intimidation",
+      "crime_id": "MOT_HAR_002_ID_xxx",
+      "name": "Enforcing the Natural Order",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1057,8 +1057,8 @@
     },
     {
       "id": "MOT_HAR_003",
-      "crime_id": "MOT_HAR_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Seeking Supernatural Powers",
+      "crime_id": "MOT_HAR_003_ID_xxx",
+      "name": "Testing the Limits of Fear-Induced Power",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1072,8 +1072,8 @@
     },
     {
       "id": "MOT_HAR_004",
-      "crime_id": "MOT_HAR_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Revealing the Power of Black Magic",
+      "crime_id": "MOT_HAR_004_ID_xxx",
+      "name": "Proving the Occult Through Fear",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1087,8 +1087,8 @@
     },
     {
       "id": "MOT_HAR_005",
-      "crime_id": "MOT_HAR_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Professional Rivalry",
+      "crime_id": "MOT_HAR_005_ID_xxx",
+      "name": "Crushing the Competition, One Mind at a Time",
       "link": ["none", "enemy"],
       "victims_professions": ["Real_Estate_Agent", "Cleaner", "Security_Guard", "Social_Worker", "Librarian", "Forklift_Operator", "Hairdresser", "Merchant", "Curator", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Historian", "Host", "Nightclub_Server", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Military", "Musician", "Firefighter", "Police_Officer", "Physical_Education_Teacher", "Psychologist", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
       "culprits_professions": ["Real_Estate_Agent", "Cleaner", "Security_Guard", "Social_Worker", "Librarian", "Forklift_Operator", "Hairdresser", "Merchant", "Curator", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Historian", "Host", "Nightclub_Server", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Military", "Musician", "Firefighter", "Police_Officer", "Physical_Education_Teacher", "Psychologist", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
@@ -1103,8 +1103,8 @@
     },
     {
       "id": "MOT_HAR_006",
-      "crime_id": "MOT_HAR_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Personal Revenge",
+      "crime_id": "MOT_HAR_006_ID_xxx",
+      "name": "Wearing Down Those Who Deserve It",
       "link": ["intimacy", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1123,8 +1123,8 @@
   "motive": [
     {
       "id": "MOT_ARS_001",
-      "crime_id": "MOT_ARS_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Destroying Evidence",
+      "crime_id": "MOT_ARS_001_ID_xxx",
+      "name": "Erasing Proof the Old-Fashioned Way",
       "link": ["debt_influence"],
       "victims_professions": ["Police_Officer", "Private_Sector_Employee", "Public_Servant", "Journalist", "Scientist", "Engineer", "CEO", "Politician"],
       "culprits_professions": [],
@@ -1138,8 +1138,8 @@
     },
     {
       "id": "MOT_ARS_002",
-      "crime_id": "MOT_ARS_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Distracting from the Power of Rain",
+      "crime_id": "MOT_ARS_002_ID_xxx",
+      "name": "Proving Fire Is Stronger Than the Storm",
       "link": ["none", "ideology"],
       "victims_professions": ["Scientist", "Journalist", "Engineer", "Firefighter", "Politician"],
       "culprits_professions": [],
@@ -1153,8 +1153,8 @@
     },
     {
       "id": "MOT_ARS_003",
-      "crime_id": "MOT_ARS_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Pyromaniac Satisfaction",
+      "crime_id": "MOT_ARS_003_ID_xxx",
+      "name": "Finding Beauty in the Flames",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1168,8 +1168,8 @@
     },
     {
       "id": "MOT_ARS_004",
-      "crime_id": "MOT_ARS_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Ideological Claim",
+      "crime_id": "MOT_ARS_004_ID_xxx",
+      "name": "Making a Statement That Leaves Only Ashes",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1183,8 +1183,8 @@
     },
     {
       "id": "MOT_ARS_005",
-      "crime_id": "MOT_ARS_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Fiery Revenge",
+      "crime_id": "MOT_ARS_005_ID_xxx",
+      "name": "Settling the Score in Flames",
       "link": ["none"],
       "victims_professions": ["Firefighter", "Police_Officer", "Security_Guard", "Engineer", "Military", "Real_Estate_Agent"],
       "culprits_professions": [],
@@ -1203,8 +1203,8 @@
   "motive": [
     {
       "id": "MOT_TRE_001",
-      "crime_id": "MOT_TRE_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Obsession with a Place",
+      "crime_id": "MOT_TRE_001_ID_xxx",
+      "name": "Going Where the Mind Keeps Wandering",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1218,8 +1218,8 @@
     },
     {
       "id": "MOT_TRE_002",
-      "crime_id": "MOT_TRE_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Preparing a Satanic Mass",
+      "crime_id": "MOT_TRE_002_ID_xxx",
+      "name": "Setting the Stage for a Forbidden Ritual",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1233,8 +1233,8 @@
     },
     {
       "id": "MOT_TRE_003",
-      "crime_id": "MOT_TRE_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Searching for Secrets",
+      "crime_id": "MOT_TRE_003_ID_xxx",
+      "name": "Unlocking the Hidden Truth Beneath Closed Doors",
       "link": ["ideology", "debt_influence", "enemy"],
       "victims_professions": ["Journalist", "Historian", "Scientist", "Police_Officer", "CEO", "Politician"],
       "culprits_professions": [],
@@ -1248,8 +1248,8 @@
     },
     {
       "id": "MOT_TRE_004",
-      "crime_id": "MOT_TRE_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Looking for Information",
+      "crime_id": "MOT_TRE_004_ID_xxx",
+      "name": "Gathering Clues Where They Shouldn’t Be Found",
       "link": ["none", "ideology", "debt_influence", "enemy"],
       "victims_professions": ["Journalist", "Scientist", "Historian", "Librarian", "Police_Officer", "Curator", "CEO", "Politician", "Engineer", "Designer", "Game_Developer"],
       "culprits_professions": [],
@@ -1263,8 +1263,8 @@
     },
     {
       "id": "MOT_TRE_005",
-      "crime_id": "MOT_TRE_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Attempting a More Serious Crime",
+      "crime_id": "MOT_TRE_005_ID_xxx",
+      "name": "A First Step Toward Something Bigger",
       "link": ["none", "ideology", "debt_influence", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1278,8 +1278,8 @@
     },
     {
       "id": "MOT_TRE_006",
-      "crime_id": "MOT_TRE_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Compulsive Voyeurism",
+      "crime_id": "MOT_TRE_006_ID_xxx",
+      "name": "Drawn to the Forbidden Glimpse",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1298,8 +1298,8 @@
   "motive": [
     {
       "id": "MOT_ABU_001",
-      "crime_id": "MOT_ABU_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Systemic Humiliation",
+      "crime_id": "MOT_ABU_001_ID_xxx",
+      "name": "Breaking Down Through Constant Belittling",
       "link": ["none", "ideology", "enemy"],
       "victims_professions": ["Public_Servant", "Teacher", "Private_Sector_Employee", "Security_Guard", "Cleaner", "Restaurant_Manager", "Nightclub_Server", "Hotel_Manager", "Unemployed", "Social_Worker", "Librarian", "Mechanic", "Artist"],
       "culprits_professions": [],
@@ -1313,8 +1313,8 @@
     },
     {
       "id": "MOT_ABU_002",
-      "crime_id": "MOT_ABU_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Proving that Beavers Control the World",
+      "crime_id": "MOT_ABU_002_ID_xxx",
+      "name": "Imposing a New Reality by Force of Nature",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1328,8 +1328,8 @@
     },
     {
       "id": "MOT_ABU_003",
-      "crime_id": "MOT_ABU_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Vicious Psychopathy",
+      "crime_id": "MOT_ABU_003_ID_xxx",
+      "name": "Indulging in Pure Cruelty for No Reason",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1343,8 +1343,8 @@
     },
     {
       "id": "MOT_ABU_004",
-      "crime_id": "MOT_ABU_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Extreme Sadism",
+      "crime_id": "MOT_ABU_004_ID_xxx",
+      "name": "Deriving Pleasure from Others’ Pain",
       "link": ["none", "intimacy", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1363,8 +1363,8 @@
   "motive": [
     {
       "id": "MOT_MUR_001",
-      "crime_id": "MOT_MUR_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Eliminating a Child-Eating Communist",
+      "crime_id": "MOT_MUR_001_ID_xxx",
+      "name": "Removing an Unwanted Force from Society",
       "link": ["ideology", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1378,8 +1378,8 @@
     },
     {
       "id": "MOT_MUR_002",
-      "crime_id": "MOT_MUR_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Pathological Jealousy",
+      "crime_id": "MOT_MUR_002_ID_xxx",
+      "name": "Cleansing the World of a Rival’s Influence",
       "link": ["intimacy", "friend", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1393,8 +1393,8 @@
     },
     {
       "id": "MOT_MUR_003",
-      "crime_id": "MOT_MUR_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Fear of Being Discovered",
+      "crime_id": "MOT_MUR_003_ID_xxx",
+      "name": "Erasing a Threat Before It Escapes",
       "link": ["debt_influence", "acquaintance", "enemy", "acquaintance"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1408,8 +1408,8 @@
     },
     {
       "id": "MOT_MUR_004",
-      "crime_id": "MOT_MUR_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Murderous Psychopathy",
+      "crime_id": "MOT_MUR_004_ID_xxx",
+      "name": "Taking Control Through Finality",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1423,8 +1423,8 @@
     },
     {
       "id": "MOT_MUR_005",
-      "crime_id": "MOT_MUR_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Eliminating a Rival",
+      "crime_id": "MOT_MUR_005_ID_xxx",
+      "name": "Removing the Obstacle to Ultimate Victory",
       "link": ["enemy", "ideology"],
       "victims_professions": ["CEO", "Politician", "Private_Sector_Employee", "Merchant", "Designer", "Engineer", "Game_Developer", "Journalist", "Musician", "Athlete", "Influencer"],
       "culprits_professions": ["CEO", "Politician", "Private_Sector_Employee", "Merchant", "Designer", "Engineer", "Game_Developer", "Journalist", "Musician", "Athlete", "Influencer"],
@@ -1439,8 +1439,8 @@
     },
     {
       "id": "MOT_MUR_006",
-      "crime_id": "MOT_MUR_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Vigilante Justice",
+      "crime_id": "MOT_MUR_006_ID_xxx",
+      "name": "Righting Wrongs with Final Authority",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1459,8 +1459,8 @@
   "motive": [
     {
       "id": "MOT_HAC_001",
-      "crime_id": "MOT_HAC_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Compromising Corporate Security",
+      "crime_id": "MOT_HAC_001_ID_xxx",
+      "name": "Exposing the Hidden Flaws in the System",
       "link": ["ideology", "debt_influence"],
       "victims_professions": ["CEO", "Public_Servant", "Engineer", "Designer", "Game_Developer", "Scientist", "Private_Sector_Employee", "Journalist"],
       "culprits_professions": [],
@@ -1474,8 +1474,8 @@
     },
     {
       "id": "MOT_HAC_002",
-      "crime_id": "MOT_HAC_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Ideological Hacktivism",
+      "crime_id": "MOT_HAC_002_ID_xxx",
+      "name": "Challenging the Powers That Be from Within",
       "link": ["ideology"],
       "victims_professions": ["Journalist", "Scientist", "Politician", "Public_Servant", "Engineer", "CEO", "Private_Sector_Employee"],
       "culprits_professions": [],
@@ -1489,8 +1489,8 @@
     },
     {
       "id": "MOT_HAC_003",
-      "crime_id": "MOT_HAC_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Proving the Malice of Quercus Castoreum",
+      "crime_id": "MOT_HAC_003_ID_xxx",
+      "name": "Revealing the Dark Secrets of a Hidden Organization",
       "link": ["ideology", "none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1504,8 +1504,8 @@
     },
     {
       "id": "MOT_HAC_004",
-      "crime_id": "MOT_HAC_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Instant Financial Gain",
+      "crime_id": "MOT_HAC_004_ID_xxx",
+      "name": "Capitalizing on a System’s Weakness",
       "link": ["debt_influence", "none"],
       "victims_professions": ["Merchant", "Small_Business_Owner", "CEO", "Private_Sector_Employee", "Public_Servant", "Influencer", "Journalist", "Mechanic", "Doctor", "Military", "Musician", "Police_Officer", "Firefighter", "Athlete", "Veterinarian"],
       "culprits_professions": [],
@@ -1519,8 +1519,8 @@
     },
     {
       "id": "MOT_HAC_005",
-      "crime_id": "MOT_HAC_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Seeking Sensitive Data",
+      "crime_id": "MOT_HAC_005_ID_xxx",
+      "name": "Unlocking the Vaults of the Unknown",
       "link": ["ideology", "debt_influence", "enemy"],
       "victims_professions": ["Engineer", "Journalist", "Scientist", "Politician", "CEO"],
       "culprits_professions": [],
@@ -1534,8 +1534,8 @@
     },
     {
       "id": "MOT_HAC_006",
-      "crime_id": "MOT_HAC_006_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Personal Satisfaction",
+      "crime_id": "MOT_HAC_006_ID_xxx",
+      "name": "Satiating Curiosity Through Digital Intrusion",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1554,8 +1554,8 @@
   "motive": [
     {
       "id": "MOT_PIM_001",
-      "crime_id": "MOT_PIM_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Drug Addiction",
+      "crime_id": "MOT_PIM_001_ID_xxx",
+      "name": "Fulfilling an Addiction by Managing Others’ Desires",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist", "Physical_Education_Teacher", "Athlete"],
@@ -1569,8 +1569,8 @@
     },
     {
       "id": "MOT_PIM_002",
-      "crime_id": "MOT_PIM_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Urgent Need for Money",
+      "crime_id": "MOT_PIM_002_ID_xxx",
+      "name": "Desperately Leveraging Others for Quick Cash",
       "link": ["debt_influence"],
       "victims_professions": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist", "Physical_Education_Teacher", "Athlete"],
       "culprits_professions": [],
@@ -1584,8 +1584,8 @@
     },
     {
       "id": "MOT_PIM_003",
-      "crime_id": "MOT_PIM_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Sex Addiction",
+      "crime_id": "MOT_PIM_003_ID_xxx",
+      "name": "Turning an Obsession Into a Business",
       "link": ["intimacy", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1599,8 +1599,8 @@
     },
     {
       "id": "MOT_PIM_004",
-      "crime_id": "MOT_PIM_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Exploitation of Vulnerability",
+      "crime_id": "MOT_PIM_004_ID_xxx",
+      "name": "Profiting from Desperation and Weakness",
       "link": ["intimacy", "debt_influence"],
       "victims_professions": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist", "Physical_Education_Teacher", "Athlete"],
       "culprits_professions": [],
@@ -1614,8 +1614,8 @@
     },
     {
       "id": "MOT_PIM_005",
-      "crime_id": "MOT_PIM_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Financing a Ticket to Mars",
+      "crime_id": "MOT_PIM_005_ID_xxx",
+      "name": "Raising Funds for a Grand Escape",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1634,8 +1634,8 @@
   "motive": [
     {
       "id": "MOT_RAC_001",
-      "crime_id": "MOT_RAC_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Dire Need for Money",
+      "crime_id": "MOT_RAC_001_ID_xxx",
+      "name": "Building an Empire from the Shadows",
       "link": ["debt_influence"],
       "victims_professions": [],
       "culprits_professions": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist", "Physical_Education_Teacher", "Athlete"],
@@ -1649,8 +1649,8 @@
     },
     {
       "id": "MOT_RAC_002",
-      "crime_id": "MOT_RAC_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Funding the Powerful Crystalized Sodium Culinary Cartel",
+      "crime_id": "MOT_RAC_002_ID_xxx",
+      "name": "Financing a Hidden Force in the Culinary World",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1664,8 +1664,8 @@
     },
     {
       "id": "MOT_RAC_003",
-      "crime_id": "MOT_RAC_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Threat-Based Submission",
+      "crime_id": "MOT_RAC_003_ID_xxx",
+      "name": "Forcing Allegiance Through Fear and Power",
       "link": ["ideology", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1684,8 +1684,8 @@
   "motive": [
     {
       "id": "MOT_REC_001",
-      "crime_id": "MOT_REC_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Hiding Crime Traces",
+      "crime_id": "MOT_REC_001_ID_xxx",
+      "name": "Concealing Evidence for a Cleaner Future",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1699,8 +1699,8 @@
     },
     {
       "id": "MOT_REC_002",
-      "crime_id": "MOT_REC_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Diversion of Stolen Goods",
+      "crime_id": "MOT_REC_002_ID_xxx",
+      "name": "Redirecting the Unseen to the Hidden",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1714,8 +1714,8 @@
     },
     {
       "id": "MOT_REC_003",
-      "crime_id": "MOT_REC_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Financial Profit",
+      "crime_id": "MOT_REC_003_ID_xxx",
+      "name": "Turning Others' Losses Into Your Gain",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1729,8 +1729,8 @@
     },
     {
       "id": "MOT_REC_004",
-      "crime_id": "MOT_REC_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Protecting Evidence of Sabbat Mater",
+      "crime_id": "MOT_REC_004_ID_xxx",
+      "name": "Concealing the Sacred Relics of the Past",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1749,8 +1749,8 @@
   "motive": [
     {
       "id": "MOT_SAB_001",
-      "crime_id": "MOT_SAB_001_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Power Demonstration",
+      "crime_id": "MOT_SAB_001_ID_xxx",
+      "name": "Exerting Control Through Destruction",
       "link": ["ideology"],
       "victims_professions": ["CEO", "Politician", "Engineer", "Military", "Doctor", "Scientist", "Journalist", "Private_Sector_Employee", "Public_Servant"],
       "culprits_professions": [],
@@ -1764,8 +1764,8 @@
     },
     {
       "id": "MOT_SAB_002",
-      "crime_id": "MOT_SAB_002_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Preventing the Spread of Picovirus",
+      "crime_id": "MOT_SAB_002_ID_xxx",
+      "name": "Cutting Off a Threat Before It Spreads",
       "link": ["ideology"],
       "victims_professions": ["Doctor", "Scientist", "Military", "Public_Servant", "Engineer", "Private_Sector_Employee"],
       "culprits_professions": [],
@@ -1779,8 +1779,8 @@
     },
     {
       "id": "MOT_SAB_003",
-      "crime_id": "MOT_SAB_003_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Ideological Claim",
+      "crime_id": "MOT_SAB_003_ID_xxx",
+      "name": "Shattering the System to Reveal the Truth",
       "link": ["ideology"],
       "victims_professions": ["Politician", "Journalist", "Influencer", "Writer", "Scientist", "Historian", "Public_Servant", "Teacher"],
       "culprits_professions": [],
@@ -1794,8 +1794,8 @@
     },
     {
       "id": "MOT_SAB_004",
-      "crime_id": "MOT_SAB_004_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Professional Rivalry",
+      "crime_id": "MOT_SAB_004_ID_xxx",
+      "name": "Eliminating Competition to Secure Victory",
       "link": ["none", "ideology"],
       "victims_professions": ["Real_Estate_Agent", "Merchant", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Restaurant_Manager", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Musician", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
       "culprits_professions": ["Real_Estate_Agent", "Merchant", "Game_Developer", "Designer", "Writer", "Private_Sector_Employee", "Restaurant_Manager", "Engineer", "Influencer", "Journalist", "Bookseller", "Mechanic", "Doctor", "Musician", "Scientist", "Athlete", "Veterinarian", "Politician", "CEO"],
@@ -1810,8 +1810,8 @@
     },
     {
       "id": "MOT_SAB_005",
-      "crime_id": "MOT_SAB_005_ID_xxx",  // ou ID_001, ID_002, ID_003, etc.
-      "name": "Strategic Revenge through Targeted Destruction",
+      "crime_id": "MOT_SAB_005_ID_xxx",
+      "name": "Striking with Purpose to Balance the Scales",
       "link": ["ideology"],
       "victims_professions": ["Real_Estate_Agent", "Security_Guard", "Private_Sector_Employee", "Public_Servant", "Teacher", "Restaurant_Manager", "Park_Keeper", "Hotel_Manager", "Curator", "Influencer", "Journalist", "Mechanic", "Police_Officer", "Psychologist", "Scientist", "Veterinarian", "Politician", "CEO"],
       "culprits_professions": [],
@@ -1831,7 +1831,7 @@
     {
       "id": "MOT_TER_001",
       "crime_id": "MOT_TER_001_ID_xxx",
-      "name": "Creating Large-Scale Chaos",
+      "name": "Spreading Disruption to Wake the Masses",
       "link": ["ideology"],
       "victims_professions": ["Military", "Engineer", "Scientist", "Police_Officer", "Politician", "CEO"],
       "culprits_professions": [],
@@ -1846,7 +1846,7 @@
     {
       "id": "MOT_TER_002",
       "crime_id": "MOT_TER_002_ID_xxx",
-      "name": "Extreme and Morbid Psychopathy",
+      "name": "Embracing Darkness to Ease a Tormented Mind",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1861,7 +1861,7 @@
     {
       "id": "MOT_TER_003",
       "crime_id": "MOT_TER_003_ID_xxx",
-      "name": "Ideological Claim",
+      "name": "Challenging the System with Unthinkable Acts",
       "link": ["ideology"],
       "victims_professions": ["Politician", "CEO", "Journalist", "Scientist", "Teacher"],
       "culprits_professions": [],
@@ -1876,7 +1876,7 @@
     {
       "id": "MOT_TER_004",
       "crime_id": "MOT_TER_004_ID_xxx",
-      "name": "Terrorizing the Annunaki",
+      "name": "Challenging the Annunaki's Control Over Our Fate",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1896,7 +1896,7 @@
     {
       "id": "MOT_TRA_001",
       "crime_id": "MOT_TRA_001_ID_xxx",
-      "name": "Creating a Clown Clone for Infinite Immortality",
+      "name": "Unlocking Immortality Through Unconventional Means",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1911,7 +1911,7 @@
     {
       "id": "MOT_TRA_002",
       "crime_id": "MOT_TRA_002_ID_xxx",
-      "name": "Personal Addiction",
+      "name": "Feeding a Habit by Exploiting Others",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1926,7 +1926,7 @@
     {
       "id": "MOT_TRA_003",
       "crime_id": "MOT_TRA_003_ID_xxx",
-      "name": "Exploitation of Human Vulnerabilities",
+      "name": "Capitalizing on Weakness for Personal Gain",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1941,7 +1941,7 @@
     {
       "id": "MOT_TRA_004",
       "crime_id": "MOT_TRA_004_ID_xxx",
-      "name": "Illegal Financial Profit from Drugs, Slavery, etc.",
+      "name": "Profit from the Shadows of Society",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1961,7 +1961,7 @@
     {
       "id": "MOT_IDE_001",
       "crime_id": "MOT_IDE_001_ID_xxx",
-      "name": "Need for a New Identity",
+      "name": "Shaping a New Life by Shredding the Old One",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1976,7 +1976,7 @@
     {
       "id": "MOT_IDE_002",
       "crime_id": "MOT_IDE_002_ID_xxx",
-      "name": "Digital Financial Fraud",
+      "name": "Manipulating the Digital World for Personal Gain",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -1991,7 +1991,7 @@
     {
       "id": "MOT_IDE_003",
       "crime_id": "MOT_IDE_003_ID_xxx",
-      "name": "Launching the Multiple Doppelganger Operation",
+      "name": "Creating New Faces to Leave the Old One Behind",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2006,7 +2006,7 @@
     {
       "id": "MOT_IDE_004",
       "crime_id": "MOT_IDE_004_ID_xxx",
-      "name": "Social and Digital Manipulation",
+      "name": "Crafting a New Persona to Reap the Rewards",
       "link": ["none", "ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2021,7 +2021,7 @@
     {
       "id": "MOT_IDE_005",
       "crime_id": "MOT_IDE_005_ID_xxx",
-      "name": "Stealing Confidential Information",
+      "name": "Extracting Secrets from the Digital Veil",
       "link": ["none", "ideology", "debt_influence"],
       "victims_professions": ["Politician", "CEO", "Journalist", "Scientist", "Engineer", "Military", "Police_Officer", "Public_Servant", "Doctor", "Psychologist"],
       "culprits_professions": [],
@@ -2041,7 +2041,7 @@
     {
       "id": "MOT_FOR_001",
       "crime_id": "MOT_FOR_001_ID_xxx",
-      "name": "Evidence Concealment",
+      "name": "Distorting the Past to Shape the Future",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2056,7 +2056,7 @@
     {
       "id": "MOT_FOR_002",
       "crime_id": "MOT_FOR_002_ID_xxx",
-      "name": "Various Frauds",
+      "name": "Shaping False Realities to Control the Outcome",
       "link": ["debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2071,7 +2071,7 @@
     {
       "id": "MOT_FOR_003",
       "crime_id": "MOT_FOR_003_ID_xxx",
-      "name": "Manipulating Results",
+      "name": "Shaping Outcomes with a Hidden Hand",
       "link": ["ideology"],
       "victims_professions": ["Politician", "Journalist", "Scientist", "CEO"],
       "culprits_professions": [],
@@ -2086,7 +2086,7 @@
     {
       "id": "MOT_FOR_004",
       "crime_id": "MOT_FOR_004_ID_xxx",
-      "name": "Taking the Place of the Grand Sphinctorum Diqpic",
+      "name": "Assuming the Role That Should Never Be Mine",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2101,7 +2101,7 @@
     {
       "id": "MOT_FOR_005",
       "crime_id": "MOT_FOR_005_ID_xxx",
-      "name": "Illegal Financial Profit",
+      "name": "Transforming Falsehoods Into Wealth",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2121,7 +2121,7 @@
     {
       "id": "MOT_SEL_001",
       "crime_id": "MOT_SEL_001_ID_xxx",
-      "name": "Recurring Financial Need",
+      "name": "Turning Unwanted Items into Quick Profit",
       "link": ["debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2136,7 +2136,7 @@
     {
       "id": "MOT_SEL_002",
       "crime_id": "MOT_SEL_002_ID_xxx",
-      "name": "Creating a Parallel Market",
+      "name": "Building a New Economy from the Underground",
       "link": ["none", "ideology"],
       "victims_professions": ["Merchant", "CEO", "Private_Sector_Employee", "Politician", "Influencer", "Librarian", "Hairdresser", "Restaurant_Manager", "Hotel_Manager", "Bookseller"],
       "culprits_professions": [],
@@ -2151,7 +2151,7 @@
     {
       "id": "MOT_SEL_003",
       "crime_id": "MOT_SEL_003_ID_xxx",
-      "name": "Funding a Personal Addiction",
+      "name": "Turning Items into the Means to Feed the Habit",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2166,7 +2166,7 @@
     {
       "id": "MOT_SEL_004",
       "crime_id": "MOT_SEL_004_ID_xxx",
-      "name": "Financial Profit",
+      "name": "Transforming What’s Unwanted into Wealth",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2181,7 +2181,7 @@
     {
       "id": "MOT_SEL_005",
       "crime_id": "MOT_SEL_005_ID_xxx",
-      "name": "Spreading Intimate Thought Recorders",
+      "name": "Trading Forbidden Whispers for Hidden Treasures",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2201,7 +2201,7 @@
     {
       "id": "MOT_VAN_001",
       "crime_id": "MOT_VAN_001_ID_xxx",
-      "name": "Playing Giant Tic-Tac-Toe Just Because We Can!",
+      "name": "Painting Chaos for Possible Fun",
       "link": ["none"],
       "victims_professions": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
       "culprits_professions": [],
@@ -2216,7 +2216,7 @@
     {
       "id": "MOT_VAN_002",
       "crime_id": "MOT_VAN_002_ID_xxx",
-      "name": "Marking a Territory",
+      "name": "Claiming Space in the World",
       "link": ["none"],
       "victims_professions": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
       "culprits_professions": [],
@@ -2231,7 +2231,7 @@
     {
       "id": "MOT_VAN_003",
       "crime_id": "MOT_VAN_003_ID_xxx",
-      "name": "Artistic Protest",
+      "name": "Destroying to Create New Perspectives",
       "link": ["ideology"],
       "victims_professions": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
       "culprits_professions": [],
@@ -2246,7 +2246,7 @@
     {
       "id": "MOT_VAN_004",
       "crime_id": "MOT_VAN_004_ID_xxx",
-      "name": "Revealing the Existence of the Visual Chaos Project",
+      "name": "Unveiling the Truth Hidden in Plain Sight",
       "link": ["ideology"],
       "victims_professions": ["Real_Estate_Agent", "Librarian", "Park_Keeper", "Hotel_Manager", "Restaurant_Manager", "Curator", "Bookseller", "Mechanic", "Firefighter", "Police_Officer", "Hairdresser", "Merchant", "Bookseller", "Mechanic"],
       "culprits_professions": [],
@@ -2261,7 +2261,7 @@
     {
       "id": "MOT_VAN_005",
       "crime_id": "MOT_VAN_005_ID_xxx",
-      "name": "Material Revenge Against Property",
+      "name": "Tearing Down to Balance Order",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2281,7 +2281,7 @@
     {
       "id": "MOT_RAP_001",
       "crime_id": "MOT_RAP_001_ID_xxx",
-      "name": "Convincing of the Need for a Male for Good",
+      "name": "Rewriting the Script of Nature",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2296,7 +2296,7 @@
     {
       "id": "MOT_RAP_002",
       "crime_id": "MOT_RAP_002_ID_xxx",
-      "name": "Degradation of the Victim",
+      "name": "Breaking the Mold for Revenge",
       "link": ["enemy", "none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2311,7 +2311,7 @@
     {
       "id": "MOT_RAP_003",
       "crime_id": "MOT_RAP_003_ID_xxx",
-      "name": "Absolute Domination Through Humiliation",
+      "name": "Creating Order by Breaking People",
       "link": ["intimacy", "enemy", "none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2326,7 +2326,7 @@
     {
       "id": "MOT_RAP_004",
       "crime_id": "MOT_RAP_004_ID_xxx",
-      "name": "Extreme Sexual Frustration",
+      "name": "Unleashing Repressed Desires with Chaos",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2341,7 +2341,7 @@
     {
       "id": "MOT_RAP_005",
       "crime_id": "MOT_RAP_005_ID_xxx",
-      "name": "Launch the Operation Incubation of the Burnes Larvae",
+      "name": "Activating Hidden Reproduction Plans",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2356,7 +2356,7 @@
     {
       "id": "MOT_RAP_006",
       "crime_id": "MOT_RAP_006_ID_xxx",
-      "name": "Sadistic Pleasure",
+      "name": "Finding Delight in the Disorder",
       "link": ["none", "intimacy", "enemy"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2371,7 +2371,7 @@
     {
       "id": "MOT_RAP_007",
       "crime_id": "MOT_RAP_007_ID_xxx",
-      "name": "Psychological Revenge",
+      "name": "Playing Mind Games for Questionable Justice",
       "link": ["intimacy", "enemy", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2406,7 +2406,7 @@
     {
       "id": "MOT_THE_002",
       "crime_id": "MOT_THE_002_ID_xxx",
-      "name": "Demonstrating the Possibility of a Swift Robbery",
+      "name": "Proving It Can Be Done",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2421,7 +2421,7 @@
     {
       "id": "MOT_THE_003",
       "crime_id": "MOT_THE_003_ID_xxx",
-      "name": "Personal Pleasure",
+      "name": "Stealing for the Fun of It",
       "link": ["none"],
       "victims_professions": [],
       "culprits_professions": [],
@@ -2436,7 +2436,7 @@
     {
       "id": "MOT_THE_004",
       "crime_id": "MOT_THE_004_ID_xxx",
-      "name": "Extreme Poverty",
+      "name": "Grabbing What’s Left to Survive",
       "link": ["none", "debt_influence"],
       "victims_professions": [],
       "culprits_professions": ["Unemployed", "Cleaner", "Park_Keeper", "Host", "Nightclub_Server", "Writer", "Musician", "Artist", "Physical_Education_Teacher", "Athlete"],
@@ -2451,7 +2451,7 @@
     {
       "id": "MOT_THE_005",
       "crime_id": "MOT_THE_005_ID_xxx",
-      "name": "Acquiring the Secrets of LI+11",
+      "name": "Unlocking Forbidden Knowledge and Secrets",
       "link": ["ideology"],
       "victims_professions": [],
       "culprits_professions": [],
