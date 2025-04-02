@@ -37,14 +37,18 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cr08y"]
-bg_color = Color(1, 1, 1, 0.494118)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bdbuh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvitc"]
 bg_color = Color(0, 0, 0, 0.686275)
 border_color = Color(0, 0, 0, 0.686275)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdbuh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 5
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+shadow_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -112,9 +116,9 @@ MenuButton/colors/font_hover_color = Color(0.1998, 0.27, 0.21969, 0.501961)
 MenuButton/colors/font_pressed_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 MenuButton/font_sizes/font_size = 8
 MenuButton/fonts/font = ExtResource("2_wgfem")
-OptionButton/colors/font_color = Color(1, 0.981333, 0.92, 0.823529)
+OptionButton/colors/font_color = Color(1, 0.981333, 0.92, 0.784314)
 OptionButton/colors/font_disabled_color = Color(0.2, 0.270588, 0.219608, 0.501961)
-OptionButton/colors/font_focus_color = Color(1, 0.981333, 0.92, 0.823529)
+OptionButton/colors/font_focus_color = Color(1, 0.981333, 0.92, 0.784314)
 OptionButton/colors/font_hover_color = Color(1, 0.981333, 0.92, 0.980392)
 OptionButton/colors/font_hover_pressed_color = Color(1, 0.981333, 0.92, 0.980392)
 OptionButton/colors/font_outline_color = Color(0, 0, 0, 0.639216)
@@ -126,13 +130,14 @@ OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
 PopupMenu/colors/font_color = Color(1, 1, 1, 0.686275)
 PopupMenu/colors/font_disabled_color = Color(0, 0, 0, 0)
-PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_hover_color = Color(1, 0.532333, 0.39, 0.72549)
 PopupMenu/colors/font_outline_color = Color(0, 0, 0, 0.654902)
-PopupMenu/colors/font_separator_color = Color(0.88, 0.88, 0.88, 0)
-PopupMenu/colors/font_separator_outline_color = Color(0, 0, 0, 0)
+PopupMenu/colors/font_separator_color = Color(1, 0.105167, 0.09, 0.72549)
+PopupMenu/colors/font_separator_outline_color = Color(0, 0, 0, 0.784314)
 PopupMenu/constants/item_end_padding = 2
 PopupMenu/constants/item_start_padding = -16
 PopupMenu/constants/outline_size = 3
+PopupMenu/constants/separator_outline_size = 6
 PopupMenu/constants/v_separation = -4
 PopupMenu/font_sizes/font_size = 8
 PopupMenu/fonts/font = ExtResource("2_wgfem")
@@ -144,9 +149,9 @@ PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
 PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
 PopupMenu/styles/hover = SubResource("StyleBoxEmpty_rvitc")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
-PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxFlat_cr08y")
+PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bdbuh")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_rvitc")
-PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+PopupMenu/styles/separator = SubResource("StyleBoxFlat_bdbuh")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")

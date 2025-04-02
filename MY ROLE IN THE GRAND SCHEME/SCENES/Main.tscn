@@ -771,7 +771,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
 custom_minimum_size = Vector2(100, 16)
 layout_mode = 2
 size_flags_vertical = 0
-tooltip_text = "Select the motive of the crime"
 toggle_mode = false
 flat = true
 text_overrun_behavior = 3
