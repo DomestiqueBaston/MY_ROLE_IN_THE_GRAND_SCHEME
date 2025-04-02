@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=28 format=3 uid="uid://gq7vbe70kt0a"]
 
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_jebf2"]
 [ext_resource type="Theme" uid="uid://bjqtch5setyil" path="res://UI/Settings_Theme.tres" id="2_d824c"]
@@ -26,7 +26,6 @@
 [ext_resource type="BitMap" uid="uid://di3bjdfgjxkwl" path="res://GRAPHICS/SETTINGS/Ok_Mask.png" id="24_o2nkk"]
 [ext_resource type="Texture2D" uid="uid://bkwc25bp4mdfa" path="res://GRAPHICS/SETTINGS/Cancel_Pressed.png" id="25_l1hsb"]
 [ext_resource type="BitMap" uid="uid://bw4w5lbnuuckm" path="res://GRAPHICS/SETTINGS/Cancel_Mask.png" id="26_h7ebl"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="27_kldhl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h80l4"]
 
@@ -280,5 +279,3 @@ offset_right = 122.0
 offset_bottom = 117.0
 rotation = -1.5708
 text = "Video Shader"
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("27_kldhl")]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://c6b1iqko6x5on"]
+[gd_scene load_steps=19 format=3 uid="uid://c6b1iqko6x5on"]
 
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_yb185"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="2_m6hlk"]
 [ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="3_5nlpe"]
 [ext_resource type="Script" uid="uid://dyualyplyafd2" path="res://SCRIPTS/Typing.gd" id="4_b7xnw"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_3xgcb"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_dc34s"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_gwqe6"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_lalru"]
@@ -178,8 +177,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_31ymd")
 text = "Next..."
 metadata/_edit_lock_ = true
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_3xgcb")]
 
 [node name="Typing_Animation" type="AnimationPlayer" parent="."]
 libraries = {

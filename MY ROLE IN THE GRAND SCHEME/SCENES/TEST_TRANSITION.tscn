@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bonccjxskay5"]
+[gd_scene load_steps=11 format=3 uid="uid://bonccjxskay5"]
 
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_vqnlt"]
 [ext_resource type="Shader" uid="uid://bd85rbmyb41ao" path="res://SHADERS/Transition.gdshader" id="2_xdsvn"]
 [ext_resource type="Texture2D" uid="uid://p7s0wnrs0r8d" path="res://GRAPHICS/UI/Transition_04.png" id="3_emnbv"]
 [ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="4_36l1k"]
 [ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_sslsy"]
+[ext_resource type="AudioStream" uid="uid://d06a05w8j0q0i" path="res://SOUND/OVERLAYS/Transition.ogg" id="6_r48pn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlapj"]
 shader = ExtResource("2_xdsvn")
@@ -28,6 +29,25 @@ tracks/0/keys = {
 "update": 1,
 "values": [0.0, 0.0511024, 0.289079, 0.720921, 0.958898, 1.01, 1.01, 1.01, 1.01, 1.01, 1.01, 1.01, 1.01, 1.01, 1.01, 1.01, 0.958892, 0.72091, 0.289071, 0.0511011, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_r48pn")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_r48pn")
+}],
+"times": PackedFloat32Array(0.0666667, 1.06667)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_7ty8d"]
 length = 0.001
@@ -68,3 +88,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_o0o6y")
 }
 autoplay = "Fade"
+
+[node name="Transition" type="AudioStreamPlayer" parent="."]
+bus = &"UI"

@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://mnqpfr0mjern"]
+[gd_scene load_steps=19 format=3 uid="uid://mnqpfr0mjern"]
 
 [ext_resource type="Script" uid="uid://dmc2lq0g1vdpj" path="res://SCRIPTS/Title.gd" id="1_h84ee"]
 [ext_resource type="Shader" uid="uid://bnirln5qw7a02" path="res://SHADERS/Glow.gdshader" id="2_f1yrr"]
 [ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="2_swx03"]
 [ext_resource type="Texture2D" uid="uid://dunq7q0u73bfx" path="res://GRAPHICS/TITLE/Title_02.png" id="4_r8mk4"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="5_t0fdd"]
 [ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/TITLE/Hum.ogg" id="6_6wwaa"]
 [ext_resource type="AudioStream" uid="uid://6dboj77v7md2" path="res://SOUND/TITLE/City_Noise.ogg" id="7_ov33t"]
 
@@ -376,8 +375,6 @@ position = Vector2(-1, 0)
 texture = ExtResource("4_r8mk4")
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("5_t0fdd")]
 
 [node name="Glow" type="AnimationPlayer" parent="."]
 libraries = {

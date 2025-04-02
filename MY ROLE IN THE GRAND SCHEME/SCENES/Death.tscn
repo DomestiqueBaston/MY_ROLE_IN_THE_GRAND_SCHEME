@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi4o2lo7ruf38"]
+[gd_scene load_steps=5 format=3 uid="uid://bi4o2lo7ruf38"]
 
 [ext_resource type="Texture2D" uid="uid://g6nyhnrbosl0" path="res://GRAPHICS/DEATH/Death_BG.png" id="1_7kl8g"]
 [ext_resource type="Theme" uid="uid://1y5oha74n3fk" path="res://UI/Death_Theme.tres" id="2_rdigb"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="3_r1x32"]
 [ext_resource type="Script" uid="uid://ctw3muakni8fe" path="res://SCRIPTS/Death_Quit_Button.gd" id="3_t38sc"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="4_x2h1q"]
 
@@ -45,8 +44,6 @@ offset_bottom = 300.0
 text = "Case closed"
 script = ExtResource("3_t38sc")
 metadata/_edit_lock_ = true
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("3_r1x32")]
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("4_x2h1q")]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bmhrh8s6j2ac2"]
+[gd_scene load_steps=16 format=3 uid="uid://bmhrh8s6j2ac2"]
 
 [ext_resource type="Texture2D" uid="uid://dc4wk8w30205h" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_BG.png" id="1_lh0wt"]
 [ext_resource type="Texture2D" uid="uid://b6qxukgmr0kia" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_Normal.png" id="2_iu7rp"]
@@ -7,7 +7,6 @@
 [ext_resource type="BitMap" uid="uid://7wul0c8ie3pf" path="res://GRAPHICS/GRAPHIC_OPTION/Graphics_Mask.png" id="4_6uobu"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="5_b6suh"]
 [ext_resource type="Script" uid="uid://dc5pdbse1yuqk" path="res://SCRIPTS/Graphic_Option_Texture_Button.gd" id="6_e2vee"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="8_6117v"]
 [ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="8_wudxl"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="9_r4hka"]
 
@@ -117,8 +116,6 @@ metadata/_edit_lock_ = true
 stream = ExtResource("8_wudxl")
 volume_db = -5.0
 bus = &"UI"
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("8_6117v")]
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("9_r4hka")]
 

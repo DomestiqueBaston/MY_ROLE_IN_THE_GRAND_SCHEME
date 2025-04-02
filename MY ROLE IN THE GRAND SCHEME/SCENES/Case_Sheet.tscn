@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://qtty7by1mcuf"]
+[gd_scene load_steps=5 format=3 uid="uid://qtty7by1mcuf"]
 
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/CASE/Case_BG.png" id="1_goi74"]
 [ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="2_p31re"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="3_p31re"]
 [ext_resource type="Script" uid="uid://dehax7ahs4pb1" path="res://SCRIPTS/Case_Sheet_Button.gd" id="3_vk2ku"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_c461k"]
 
@@ -59,8 +58,6 @@ Back
 to
 business..."
 metadata/_edit_lock_ = true
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("3_p31re")]
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("5_c461k")]
 

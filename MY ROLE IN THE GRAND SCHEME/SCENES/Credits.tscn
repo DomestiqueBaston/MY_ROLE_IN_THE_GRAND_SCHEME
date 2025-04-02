@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddckvg37ygsor"]
+[gd_scene load_steps=10 format=3 uid="uid://ddckvg37ygsor"]
 
 [ext_resource type="Texture2D" uid="uid://hd0s0r4fdcia" path="res://GRAPHICS/CREDITS/Credits_BG.png" id="1_1n7ja"]
 [ext_resource type="Theme" uid="uid://tks2glp547ui" path="res://UI/Credits_Theme.tres" id="2_u3pji"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="4_5162v"]
 [ext_resource type="Script" uid="uid://5dpcp7u12bvi" path="res://SCRIPTS/Credits_Button.gd" id="4_smm6m"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="6_qy37s"]
 [ext_resource type="Script" uid="uid://lgtv2sptyo1d" path="res://SCRIPTS/Credits_Typing.gd" id="7_xwskb"]
@@ -255,8 +254,6 @@ text = "Ok!"
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_vnu4b")
 bus = &"UI"
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("4_5162v")]
 
 [node name="Writing" type="AnimationPlayer" parent="."]
 libraries = {

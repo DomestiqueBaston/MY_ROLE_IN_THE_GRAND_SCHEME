@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb8ie0y4shgtb"]
+[gd_scene load_steps=8 format=3 uid="uid://cb8ie0y4shgtb"]
 
 [ext_resource type="Texture2D" uid="uid://cno0b6h8jyy04" path="res://GRAPHICS/INVESTIGATION_CENTER/Investigation_Center_BG.png" id="1_njt05"]
 [ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png" id="2_6ndse"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://d0qlesy3dsiqa" path="res://SCRIPTS/Investigation_Center_Case_List.gd" id="4_iw720"]
 [ext_resource type="Script" uid="uid://fw3knsksudbs" path="res://SCRIPTS/Investigation_Center_Buttons.gd" id="4_lj007"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="6_3f0nw"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_lwsdc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
 
@@ -226,8 +225,6 @@ theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0
 text = "I'm in!"
 script = ExtResource("4_lj007")
 metadata/_edit_lock_ = true
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_lwsdc")]
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("6_3f0nw")]
 
