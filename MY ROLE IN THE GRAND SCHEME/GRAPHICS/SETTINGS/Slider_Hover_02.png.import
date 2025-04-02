@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b31mscpp581yk"
-path="res://.godot/imported/Graphics_On.png-5b3e347a66d3cb6ecdbc78407ec46fa2.ctex"
+uid="uid://cjuyquy8j7gd6"
+path="res://.godot/imported/Slider_Hover_02.png-006b4239a4272b5b6f22051c1a90fddf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/GRAPHIC_OPTION/Graphics_On.png"
-dest_files=["res://.godot/imported/Graphics_On.png-5b3e347a66d3cb6ecdbc78407ec46fa2.ctex"]
+source_file="res://GRAPHICS/SETTINGS/Slider_Hover_02.png"
+dest_files=["res://.godot/imported/Slider_Hover_02.png-006b4239a4272b5b6f22051c1a90fddf.ctex"]
 
 [params]
 

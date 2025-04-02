@@ -770,8 +770,8 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 
 Structure de Main.tscn et Interaction.tscn
 
-A priori, tous les overlays (exception faite de Global_Shader_Overlay.tscn) se placent entre Top_Bar et Global_Shader_Overlay
-Les écrans « stand-alone » (par exemple Graphic_Option.tscn) viennent s’afficher directement sous Global_Shader_Overlay avec l’effet de transition en démo dans la scène TEST_TRANSITION.tscn
+- À priori, tous les overlays (exception faite de Global_Shader_Overlay.tscn) se placent entre Top_Bar et Global_Shader_Overlay avec leurs « simples » transitions intégrées dans les scènes.
+- Les écrans « stand-alone » (par exemple Graphic_Option.tscn) viennent s’afficher directement sous Global_Shader_Overlay avec l’effet de transition en démo dans la scène TEST_TRANSITION.tscn
 
 
 Layers constituant Main.tscn (zone de jeu uniquement) :
