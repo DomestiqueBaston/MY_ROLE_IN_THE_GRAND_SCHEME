@@ -160,6 +160,9 @@ offset_right = 13.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
+tooltip_text = "Next time, right-click
+to fast-forward..."
+theme = ExtResource("3_5nlpe")
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)

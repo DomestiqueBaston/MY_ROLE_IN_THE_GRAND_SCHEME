@@ -1,15 +1,15 @@
 [
   {
-    "id": "CASxxxx",  // 4 'x' au cas où une partie aille vraiment loin !
-    "title": "Voir... Je ne sais pas encore mais probablement le pipotron de génération de title ou alors carrément, pas de titre",
-    "crime": "Voir Crime_Motive_Evidence.json",
-    "mobile": "Voir Crime_Motive_Evidence.json",
+	"id": "CASxxxx",  // 4 'x' au cas où une partie aille vraiment loin !
+	"title": "Voir... Je ne sais pas encore mais probablement le pipotron de génération de title ou alors carrément, pas de titre",
+	"crime": "Voir Crime_Motive_Evidence.json",
+	"mobile": "Voir Crime_Motive_Evidence.json",
 	"crime_id": "Voir Crime_Motive_Evidence.json"
-    "Difficulty": [1, 2, 3, 4, 5, 6],  // 6 uniquement pour les enquêtes ultimes !                               /!\
-    "status": ["active", "paused"], // 1 des 2
+	"Difficulty": [1, 2, 3, 4, 5, 6],  // 6 uniquement pour les enquêtes ultimes !                               /!\
+	"status": ["active", "paused"], // 1 des 2
 	"duration": 9,  // round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
-    "crime_place": ["none", "LOCxxx_IDxxx"],  // 1 seul
-    "clues": ["NPCxxx", "LOCxxx_IDxxx"],  // pour le nombre, voir Fiche_enquête_v02.odt et attention à la règles des "mensonges/erreurs"
+	"crime_place": ["none", "LOCxxx_IDxxx"],  // 1 seul
+	"clues": ["NPCxxx", "LOCxxx_IDxxx"],  // pour le nombre, voir Fiche_enquête_v02.odt et attention à la règles des "mensonges/erreurs"
 	"evidence": ["OBJxxx_IDxxx", "LINxxx_IDxxx"]  // pour le nombre, voir Fiche_enquête_v02.odt                  /!\
 	"victim": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_v02.odt
 	"witness": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_v02.odt
@@ -19,4 +19,3 @@
 	"total_evidences": 5,  // pour le nombre, voir Fiche_enquête_v02.odt
   }
 ]
-
