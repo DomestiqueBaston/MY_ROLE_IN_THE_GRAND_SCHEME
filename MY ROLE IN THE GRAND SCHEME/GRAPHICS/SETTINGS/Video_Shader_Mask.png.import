@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cal13u7eewqas"
+path="res://.godot/imported/Video_Shader_Mask.png-07b9b22f0a10ce9e9fe8430f15c08f7e.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/Video_Shader_Mask.png"
+dest_files=["res://.godot/imported/Video_Shader_Mask.png-07b9b22f0a10ce9e9fe8430f15c08f7e.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

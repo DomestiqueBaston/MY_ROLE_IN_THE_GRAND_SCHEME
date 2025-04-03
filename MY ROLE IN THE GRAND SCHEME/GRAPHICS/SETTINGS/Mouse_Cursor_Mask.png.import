@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dvld6tgb3qylx"
+path="res://.godot/imported/Mouse_Cursor_Mask.png-e59781b3501710b98675030ac3237134.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/Mouse_Cursor_Mask.png"
+dest_files=["res://.godot/imported/Mouse_Cursor_Mask.png-e59781b3501710b98675030ac3237134.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

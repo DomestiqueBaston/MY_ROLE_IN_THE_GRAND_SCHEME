@@ -24,3 +24,7 @@ func _on_ok_pressed():
 
 func _on_any_blue_button_pressed():
 	$"../Shared_Interface_Sounds/Valid".play()
+
+
+func _on_VS_MC_pressed():
+	$"../Shared_Interface_Sounds/Valid".play()
