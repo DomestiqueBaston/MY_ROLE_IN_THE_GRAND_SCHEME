@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=56 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="12_r3xxe"]
 [ext_resource type="Script" uid="uid://twxt7ns0olqm" path="res://SCRIPTS/Main_Buttons.gd" id="14_1r0xb"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="14_d27u2"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
@@ -789,8 +788,6 @@ script = ExtResource("50_wvc8p")
 metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("12_r3xxe")]
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("52_wvc8p")]
 

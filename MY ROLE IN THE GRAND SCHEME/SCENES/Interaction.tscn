@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=51 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -23,7 +23,6 @@
 [ext_resource type="VideoStream" uid="uid://cbrvs84gmgpot" path="res://GRAPHICS/INTERACTION/KM.ogv" id="16_5imuv"]
 [ext_resource type="Script" uid="uid://b08whl1g6oj7o" path="res://SCRIPTS/Tv_On_Off_Button.gd" id="16_uvife"]
 [ext_resource type="VideoStream" uid="uid://q17krx83pp8o" path="res://GRAPHICS/INTERACTION/JJ.ogv" id="17_jv51o"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="17_qi0bb"]
 [ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="17_uvife"]
 [ext_resource type="Theme" uid="uid://c0htwuiuqc8ik" path="res://UI/Option_Menu_Theme.tres" id="18_k1rto"]
 [ext_resource type="Texture2D" uid="uid://3ux6y70r4r60" path="res://GRAPHICS/INTERACTION/Rotary_Button_1.png" id="20_rrbp0"]
@@ -787,6 +786,7 @@ theme = ExtResource("18_k1rto")
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Label" parent="Top_Left_Screen/Interaction"]
+visible = false
 layout_mode = 0
 offset_right = 82.0
 offset_bottom = 8.0
@@ -946,8 +946,6 @@ autowrap_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("17_qi0bb")]
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("33_06ojl")]
 

@@ -1,4 +1,31 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://bjpppm5p2ber0"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://bjpppm5p2ber0"]
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_5t1r3"]
+resource_name = "EQ"
+band_db/32_hz = -60.0
+band_db/100_hz = -60.0
+band_db/320_hz = -60.0
+band_db/1000_hz = -60.0
+band_db/3200_hz = 15.0
+band_db/10000_hz = -60.0
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_n8wo2"]
+resource_name = "EQ"
+band_db/32_hz = -60.0
+band_db/100_hz = -60.0
+band_db/320_hz = -60.0
+band_db/1000_hz = -60.0
+band_db/3200_hz = 15.0
+band_db/10000_hz = -60.0
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_g28q7"]
+resource_name = "EQ"
+band_db/32_hz = -60.0
+band_db/100_hz = -60.0
+band_db/320_hz = -60.0
+band_db/1000_hz = 10.0
+band_db/3200_hz = -60.0
+band_db/10000_hz = -60.0
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
 resource_name = "EQ"
@@ -23,18 +50,24 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -10.0
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectEQ_5t1r3")
+bus/2/effect/0/enabled = true
 bus/3/name = &"UI"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = -10.0
 bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectEQ_n8wo2")
+bus/3/effect/0/enabled = true
 bus/4/name = &"AMBIANCE"
 bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = -10.0
 bus/4/send = &"Master"
+bus/4/effect/0/effect = SubResource("AudioEffectEQ_g28q7")
+bus/4/effect/0/enabled = true
 bus/5/name = &"VIDEO"
 bus/5/solo = false
 bus/5/mute = false

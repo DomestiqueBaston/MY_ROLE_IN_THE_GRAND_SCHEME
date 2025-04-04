@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cl1icx1l184x"]
+
+[node name="Main_Structure" type="Node"]
+
+[node name="BG" type="Node" parent="."]
+
+[node name="Right_Zone" type="Node" parent="."]
+
+[node name="Cards" type="Node" parent="Right_Zone"]
+
+[node name="Links" type="Node" parent="Right_Zone"]
+
+[node name="Pins" type="Node" parent="Right_Zone"]
+
+[node name="Mask_Card_Playground" type="Node" parent="."]
+
+[node name="Crime_Motive_And_Legends_Menus" type="Node" parent="Mask_Card_Playground"]
+
+[node name="Left_Zone" type="Node" parent="."]
+
+[node name="Bottom_Left_Info" type="Node" parent="Left_Zone"]
+
+[node name="Top_Left_Cards" type="Node" parent="Left_Zone"]
+
+[node name="Cards" type="Node" parent="Left_Zone/Top_Left_Cards"]
+
+[node name="Top_Bar_Menu" type="Node" parent="."]
+
+[node name="Global_Video_Shader_And_Mouse" type="Node" parent="."]
+
+[node name="Shared_Interface_Sounds" type="Node" parent="."]
+
+[node name="Background_Sound" type="Node" parent="."]
