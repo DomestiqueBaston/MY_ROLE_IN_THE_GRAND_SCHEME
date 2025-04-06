@@ -1,6 +1,9 @@
 extends Control
 
 
+# Il y a des cas qui ne fonctionnent pas d'activation/désactivation quand des liens partagent
+# plusieurs couleurs mais je crois que pour la démo, on a l'idée.
+
 func reset_all_buttons():
 	for child in get_children():
 		if child is Button or TextureButton:
