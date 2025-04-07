@@ -1,6 +1,8 @@
 extends Label
 
 
+var actual_value = 0.0
+var pitch_values = [1.66, 0.66, 1.0]
 var json_path = "res://JSON/NARRATION/SMS.json"
 var json_data = {}
 
@@ -27,3 +29,15 @@ func show_random_message():
 	var random_message_key = message_keys[randi() % message_keys.size()]
 
 	text = messages[random_message_key]
+
+func _process(_delta):
+	if $".".visible_ratio < 1.0:
+		if not $"../../../Typing".is_playing():
+			# There is an unwanted delay with the typing sound...
+			if $".".visible_ratio > actual_value:
+				var typing_sound = $"../../../Typing"
+				typing_sound.pitch_scale = pitch_values[randi() % pitch_values.size()]
+				typing_sound.play()
+				actual_value += .001
+			else:
+				actual_value = 0.

@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cg0xclws2s26w"]
+[gd_scene load_steps=23 format=3 uid="uid://cg0xclws2s26w"]
 
 [ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/CELL_PHONE/CellPhone_BG.png" id="1_gexgo"]
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/Cell_Phone_Theme.tres" id="2_f8ijm"]
 [ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="3_f8ijm"]
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="3_lsuee"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_08tf7"]
+[ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="8_lsuee"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="9_xxx8q"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="10_5tvv7"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="13_67kqe"]
@@ -40,7 +41,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Card_Management_Panel:position")
+tracks/1/path = NodePath("Cell_Phone_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -84,7 +85,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Card_Management_Panel:position")
+tracks/1/path = NodePath("Cell_Phone_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -114,7 +115,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Card_Management_Panel:position")
+tracks/0/path = NodePath("Cell_Phone_Panel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -143,7 +144,69 @@ _data = {
 &"RESET": SubResource("Animation_vfroo")
 }
 
-[node name="Card_Management" type="Node2D"]
+[sub_resource type="Animation" id="Animation_f8ijm"]
+resource_name = "Typing"
+length = 3.00001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cell_Phone_Panel/Message_Window/Message:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cell_Phone_Panel/Buttons/Ok:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_lsuee"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cell_Phone_Panel/Message_Window/Message:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cell_Phone_Panel/Buttons/Ok:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08tf7"]
+_data = {
+&"RESET": SubResource("Animation_lsuee"),
+&"Typing": SubResource("Animation_f8ijm")
+}
+
+[node name="Cell_Phone_Overlay" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
@@ -154,18 +217,18 @@ size_flags_horizontal = 0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 metadata/_edit_lock_ = true
 
-[node name="Card_Management_Panel" type="Node2D" parent="."]
+[node name="Cell_Phone_Panel" type="Node2D" parent="."]
 position = Vector2(-640, 0)
 metadata/_edit_lock_ = true
 
-[node name="Painting" type="Sprite2D" parent="Card_Management_Panel"]
+[node name="Cell_Phone" type="Sprite2D" parent="Cell_Phone_Panel"]
 position = Vector2(211, 30)
 texture = ExtResource("1_gexgo")
 centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
-[node name="Message_Window" type="Control" parent="Card_Management_Panel"]
+[node name="Message_Window" type="Control" parent="Cell_Phone_Panel"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -173,20 +236,23 @@ offset_bottom = 40.0
 theme = ExtResource("2_f8ijm")
 metadata/_edit_lock_ = true
 
-[node name="Message" type="Label" parent="Card_Management_Panel/Message_Window"]
+[node name="Message" type="Label" parent="Cell_Phone_Panel/Message_Window"]
 layout_mode = 0
 offset_left = 271.0
 offset_top = 94.0
 offset_right = 369.0
 offset_bottom = 212.0
-text = "Message..."
+text = "Message... Message, message, message...
+Message... Message, message, message... Message..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
 script = ExtResource("3_f8ijm")
 metadata/_edit_lock_ = true
 
-[node name="Buttons" type="Control" parent="Card_Management_Panel"]
+[node name="Buttons" type="Control" parent="Cell_Phone_Panel"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 20.0
@@ -197,7 +263,8 @@ theme = ExtResource("2_f8ijm")
 script = ExtResource("3_lsuee")
 metadata/_edit_lock_ = true
 
-[node name="Ok" type="Button" parent="Card_Management_Panel/Buttons"]
+[node name="Ok" type="Button" parent="Cell_Phone_Panel/Buttons"]
+visible = false
 layout_mode = 0
 offset_left = 294.0
 offset_top = 210.0
@@ -230,14 +297,25 @@ libraries = {
 }
 autoplay = "Appearance"
 
+[node name="Typing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_lsuee")
+volume_db = -5.0
+bus = &"UI"
+
+[node name="Typing_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_08tf7")
+}
+autoplay = "Typing"
+
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("13_67kqe")]
 
-[connection signal="mouse_entered" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_switch_pressed"]
+[connection signal="mouse_entered" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_switch_pressed"]
 
 [editable path="Shared_Interface_Sounds"]
