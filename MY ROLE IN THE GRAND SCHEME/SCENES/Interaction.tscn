@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ys6h8r5nofg" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Dot_Animation.png" id="9_cx411"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="9_x1nkx"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="10_jal5r"]
-[ext_resource type="Shader" uid="uid://dmiamrfg32wob" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
+[ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
 [ext_resource type="VideoStream" uid="uid://bdb8kb1t3m6ew" path="res://GRAPHICS/INTERACTION/MFSC.ogv" id="12_v84v6"]
