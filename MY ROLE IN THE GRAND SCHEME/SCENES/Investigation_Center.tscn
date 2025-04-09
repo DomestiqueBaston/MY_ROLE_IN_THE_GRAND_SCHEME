@@ -59,9 +59,11 @@ position = Vector2(0, 69)
 metadata/_edit_lock_ = true
 
 [node name="Line_01" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(0, -45)
+position = Vector2(-2.98713, -45)
+scale = Vector2(1.103, 1)
 points = PackedVector2Array(30, 47, 494, 47)
 width = 1.0
+metadata/_edit_lock_ = true
 
 [node name="Line_02" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
 position = Vector2(0, 217)
@@ -81,14 +83,17 @@ width = 1.0
 metadata/_edit_lock_ = true
 
 [node name="Line_05" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(576, 5)
+position = Vector2(589.325, 5)
+scale = Vector2(0.570175, 1)
 points = PackedVector2Array(30, 38, -82, 38)
 width = 1.0
+metadata/_edit_lock_ = true
 
 [node name="Line_06" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(631, 0)
+position = Vector2(679, 0)
 points = PackedVector2Array(-137, 2, -137, 43)
 width = 1.0
+metadata/_edit_lock_ = true
 
 [node name="Case_Report" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
 offset_left = 30.0
@@ -193,9 +198,9 @@ script = ExtResource("4_iw720")
 metadata/_edit_lock_ = true
 
 [node name="Cancel" type="Button" parent="Chalkboard_Content/Chalk_Mask"]
-offset_left = 508.0
+offset_left = 552.0
 offset_top = 85.0
-offset_right = 557.0
+offset_right = 601.0
 offset_bottom = 106.0
 rotation = -0.102811
 theme = ExtResource("4_b1ixs")

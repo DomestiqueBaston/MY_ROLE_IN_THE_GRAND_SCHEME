@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dxsbbamjqxk1s"]
+[gd_scene load_steps=35 format=3 uid="uid://dxsbbamjqxk1s"]
 
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/OPTIONS/Settings_BG.png" id="1_7b261"]
 [ext_resource type="Texture2D" uid="uid://dpny7h4hu3sgy" path="res://GRAPHICS/OPTIONS/Secrets_Button_Pressed_Hover.png" id="2_12lbf"]
@@ -32,6 +32,8 @@
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Mask.png" id="28_qcawn"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="31_gbwls"]
 [ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="31_wcpfb"]
+[ext_resource type="AudioStream" uid="uid://b47jc8y3wwi28" path="res://SOUND/MISC/Minions_On.ogg" id="32_asrw6"]
+[ext_resource type="AudioStream" uid="uid://ege78tbsp417" path="res://SOUND/MISC/Minions_Off.ogg" id="33_6fk48"]
 
 [node name="Settings_Menu" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -163,6 +165,18 @@ texture_click_mask = ExtResource("28_qcawn")
 metadata/_edit_lock_ = true
 
 [node name="Drawer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_wcpfb")
+bus = &"UI"
+
+[node name="Minions_On" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_asrw6")
+bus = &"UI"
+
+[node name="Minions_Off" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_6fk48")
+bus = &"UI"
+
+[node name="Drawer3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_wcpfb")
 bus = &"UI"
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cvshygx3m611h"
+path="res://.godot/imported/Minions_Mask.png-a8fb190bbdadeec4b519ad457beb418f.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/Minions_Mask.png"
+dest_files=["res://.godot/imported/Minions_Mask.png-a8fb190bbdadeec4b519ad457beb418f.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

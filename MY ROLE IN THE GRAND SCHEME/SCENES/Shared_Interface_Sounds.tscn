@@ -17,10 +17,10 @@ bus = &"UI"
 
 [node name="Leave" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_wrn8t")
-volume_db = 15.0
+volume_db = 12.5
 bus = &"UI"
 
 [node name="Hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_20aqp")
-volume_db = 7.5
+volume_db = 12.5
 bus = &"UI"
