@@ -38,7 +38,7 @@ uniform float noise_speed = 0.1; // There is a movement in the noise pattern tha
 
 uniform float static_noise_intensity : hint_range(0.0, 1.0) = 0.068;
 
-uniform float aberration : hint_range(-1.0, 1.0) = 0.02; // Chromatic aberration, a distortion on each color channel.
+uniform float aberration : hint_range(-1.0, 1.0) = 0.005; // Chromatic aberration, a distortion on each color channel.
 uniform float brightness = 1.4; // When adding scanline gaps and grille the image can get very dark. Brightness tries to compensate for that.
 uniform bool discolor = false; // Add a discolor effect simulating a VHS
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=52 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
 [ext_resource type="VideoStream" uid="uid://bdb8kb1t3m6ew" path="res://GRAPHICS/INTERACTION/MFSC.ogv" id="12_v84v6"]
 [ext_resource type="Texture2D" uid="uid://br15hgwsu8gpi" path="res://GRAPHICS/INTERACTION/Card_Playground_Mask.png" id="12_xjgkp"]
+[ext_resource type="Texture2D" uid="uid://5gc8juwd4b3v" path="res://GRAPHICS/INTERACTION/test_01.png" id="14_k1rto"]
 [ext_resource type="VideoStream" uid="uid://cg658u2alfml5" path="res://GRAPHICS/INTERACTION/DB.ogv" id="15_k1rto"]
 [ext_resource type="VideoStream" uid="uid://cbrvs84gmgpot" path="res://GRAPHICS/INTERACTION/KM.ogv" id="16_5imuv"]
 [ext_resource type="Script" uid="uid://b08whl1g6oj7o" path="res://SCRIPTS/Tv_On_Off_Button.gd" id="16_uvife"]
@@ -71,7 +72,7 @@ shader_parameter/distort_intensity = 0.001
 shader_parameter/noise_opacity = 0.206
 shader_parameter/noise_speed = 0.1
 shader_parameter/static_noise_intensity = 0.068
-shader_parameter/aberration = 0.02
+shader_parameter/aberration = 0.00500005
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.0
@@ -692,10 +693,15 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Line_Animation" type="Sprite2D" parent="Top_Left_Screen"]
-self_modulate = Color(1, 1, 1, 0.501961)
+modulate = Color(1, 1, 1, 0.501961)
 texture = ExtResource("9_cx411")
 centered = false
 hframes = 13
+metadata/_edit_lock_ = true
+
+[node name="test" type="Sprite2D" parent="Top_Left_Screen/Line_Animation"]
+texture = ExtResource("14_k1rto")
+centered = false
 metadata/_edit_lock_ = true
 
 [node name="Movies" type="Control" parent="Top_Left_Screen"]
