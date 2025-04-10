@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://c3a2qdqqshf00"
+path="res://.godot/imported/Mentirosos_Mask.png-37305e37ee321df10d95e2d9c3121127.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/Mentirosos_Mask.png"
+dest_files=["res://.godot/imported/Mentirosos_Mask.png-37305e37ee321df10d95e2d9c3121127.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=52 format=3 uid="uid://gq7vbe70kt0a"]
 
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_jebf2"]
 [ext_resource type="Theme" uid="uid://bjqtch5setyil" path="res://UI/Settings_Theme.tres" id="2_d824c"]
@@ -37,12 +37,15 @@
 [ext_resource type="Texture2D" uid="uid://cq66iywsndgqy" path="res://GRAPHICS/SETTINGS/Ok_Hover.png" id="30_3u7do"]
 [ext_resource type="Texture2D" uid="uid://caeebb87ycnyx" path="res://GRAPHICS/SETTINGS/Minions_Hover.png" id="30_xxbya"]
 [ext_resource type="BitMap" uid="uid://cvshygx3m611h" path="res://GRAPHICS/SETTINGS/Minions_Mask.png" id="31_cafje"]
+[ext_resource type="Texture2D" uid="uid://bneeoy2tbkyvq" path="res://GRAPHICS/SETTINGS/Mentirosos_Pressed.png" id="32_28wos"]
 [ext_resource type="Texture2D" uid="uid://cosmyhal644mo" path="res://GRAPHICS/SETTINGS/Video_Shader_Pressed.png" id="33_71mlm"]
 [ext_resource type="Texture2D" uid="uid://b545wu66nbhqj" path="res://GRAPHICS/SETTINGS/Reset_Pressed.png" id="33_k42nh"]
 [ext_resource type="Texture2D" uid="uid://dylituv7kae24" path="res://GRAPHICS/SETTINGS/Cancel_Hover.png" id="33_nuwcj"]
+[ext_resource type="Texture2D" uid="uid://rv7ctj28ib4r" path="res://GRAPHICS/SETTINGS/Mentirosos_Hover.png" id="33_y56al"]
 [ext_resource type="Texture2D" uid="uid://ctnfofyoqhm41" path="res://GRAPHICS/SETTINGS/Reset_Hover.png" id="34_3y8mq"]
 [ext_resource type="Texture2D" uid="uid://bebohjfrtfrdu" path="res://GRAPHICS/SETTINGS/Video_Shader_Hover.png" id="34_dq4ab"]
 [ext_resource type="BitMap" uid="uid://bj8jdcfma7i15" path="res://GRAPHICS/SETTINGS/Reset_Mask.png" id="34_lqmfg"]
+[ext_resource type="BitMap" uid="uid://c3a2qdqqshf00" path="res://GRAPHICS/SETTINGS/Mentirosos_Mask.png" id="34_vfauo"]
 [ext_resource type="BitMap" uid="uid://cal13u7eewqas" path="res://GRAPHICS/SETTINGS/Video_Shader_Mask.png" id="35_1t4xg"]
 [ext_resource type="Texture2D" uid="uid://uick62nh853s" path="res://GRAPHICS/SETTINGS/Mouse_Cursor_Pressed.png" id="36_665vc"]
 [ext_resource type="Texture2D" uid="uid://dqqaf7s5rp20u" path="res://GRAPHICS/SETTINGS/Mouse_Cursor_Hover.png" id="37_fl83n"]
@@ -80,6 +83,7 @@ tooltip_text = "Overall volume"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+value = 50.0
 metadata/_edit_lock_ = true
 
 [node name="Music" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -92,6 +96,7 @@ tooltip_text = "Music volume"
 theme_override_icons/grabber = ExtResource("4_5sjnd")
 theme_override_icons/grabber_highlight = ExtResource("7_n2fpq")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+value = 50.0
 metadata/_edit_lock_ = true
 
 [node name="FX" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -104,6 +109,7 @@ tooltip_text = "FX volume"
 theme_override_icons/grabber = ExtResource("5_fcheo")
 theme_override_icons/grabber_highlight = ExtResource("9_wkevm")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+value = 50.0
 metadata/_edit_lock_ = true
 
 [node name="UI" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -116,29 +122,43 @@ tooltip_text = "UI volume"
 theme_override_icons/grabber = ExtResource("6_dp0m8")
 theme_override_icons/grabber_highlight = ExtResource("11_wkevm")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+value = 50.0
 metadata/_edit_lock_ = true
 
-[node name="Voices" type="VSlider" parent="Buttons_Sliders/Sliders"]
+[node name="Ambiance" type="VSlider" parent="Buttons_Sliders/Sliders"]
 layout_mode = 0
 offset_left = 417.0
 offset_top = 245.0
 offset_right = 442.0
 offset_bottom = 322.0
-tooltip_text = "Voices volume"
+tooltip_text = "Ambiance volume"
 theme_override_icons/grabber = ExtResource("7_yumua")
 theme_override_icons/grabber_highlight = ExtResource("11_d1nio")
 theme_override_icons/grabber_disabled = ExtResource("7_yumua")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
-editable = false
+value = 50.0
 metadata/_edit_lock_ = true
 
-[node name="Blue_Buttons" type="Control" parent="Buttons_Sliders"]
+[node name="Video" type="VSlider" parent="Buttons_Sliders/Sliders"]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 246.0
+offset_right = 475.0
+offset_bottom = 322.0
+tooltip_text = "Who remembers this?"
+theme_override_icons/grabber = ExtResource("3_ngdns")
+theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+value = 50.0
+metadata/_edit_lock_ = true
+
+[node name="Buttons" type="Control" parent="Buttons_Sliders"]
 modulate = Color(1, 1, 1, 0.823529)
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Drug_Quality" type="TextureButton" parent="Buttons_Sliders/Blue_Buttons"]
+[node name="Drug_Quality" type="TextureButton" parent="Buttons_Sliders/Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -150,7 +170,7 @@ texture_hover = ExtResource("9_xmmom")
 texture_click_mask = ExtResource("10_vme2i")
 metadata/_edit_lock_ = true
 
-[node name="Plot_Depth" type="TextureButton" parent="Buttons_Sliders/Blue_Buttons"]
+[node name="Plot_Depth" type="TextureButton" parent="Buttons_Sliders/Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -163,7 +183,7 @@ texture_hover = ExtResource("12_fdgbm")
 texture_click_mask = ExtResource("13_1cwnt")
 metadata/_edit_lock_ = true
 
-[node name="Corruption" type="TextureButton" parent="Buttons_Sliders/Blue_Buttons"]
+[node name="Corruption" type="TextureButton" parent="Buttons_Sliders/Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -176,7 +196,7 @@ texture_hover = ExtResource("15_5ns6u")
 texture_click_mask = ExtResource("16_dr4o6")
 metadata/_edit_lock_ = true
 
-[node name="Retail_Investment" type="TextureButton" parent="Buttons_Sliders/Blue_Buttons"]
+[node name="Retail_Investment" type="TextureButton" parent="Buttons_Sliders/Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -189,7 +209,7 @@ texture_hover = ExtResource("18_jdi3y")
 texture_click_mask = ExtResource("19_q88u0")
 metadata/_edit_lock_ = true
 
-[node name="Vice" type="TextureButton" parent="Buttons_Sliders/Blue_Buttons"]
+[node name="Vice" type="TextureButton" parent="Buttons_Sliders/Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -202,24 +222,31 @@ texture_hover = ExtResource("21_etjho")
 texture_click_mask = ExtResource("22_l5huo")
 metadata/_edit_lock_ = true
 
-[node name="Hardboiled_Minions" type="TextureButton" parent="Buttons_Sliders/Blue_Buttons"]
+[node name="Hardboiled_Minions" type="TextureButton" parent="Buttons_Sliders/Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Authoritarian nationalism
-or
-Anarcho-communism"
+tooltip_text = "Tougher morons"
 toggle_mode = true
 texture_pressed = ExtResource("29_mg7qw")
 texture_hover = ExtResource("30_xxbya")
 texture_click_mask = ExtResource("31_cafje")
 metadata/_edit_lock_ = true
 
+[node name="Mentirosos" type="TextureButton" parent="Buttons_Sliders/Buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "Liars, more liars!"
+toggle_mode = true
+texture_pressed = ExtResource("32_28wos")
+texture_hover = ExtResource("33_y56al")
+texture_click_mask = ExtResource("34_vfauo")
+metadata/_edit_lock_ = true
+
 [node name="Ok_Cancel_Reset_Buttons" type="Control" parent="Buttons_Sliders"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="Ok" type="TextureButton" parent="Buttons_Sliders/Ok_Cancel_Reset_Buttons"]
@@ -310,12 +337,12 @@ tooltip_text = "Try the fader below..."
 mouse_filter = 0
 metadata/_edit_lock_ = true
 
-[node name="TO_DO" type="Control" parent="Buttons_Sliders"]
+[node name="Cosmetic_Buttons" type="Control" parent="Buttons_Sliders"]
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Video_Shader" type="TextureButton" parent="Buttons_Sliders/TO_DO"]
+[node name="Video_Shader" type="TextureButton" parent="Buttons_Sliders/Cosmetic_Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -327,7 +354,7 @@ texture_hover = ExtResource("34_dq4ab")
 texture_click_mask = ExtResource("35_1t4xg")
 metadata/_edit_lock_ = true
 
-[node name="Mouse_Cursor" type="TextureButton" parent="Buttons_Sliders/TO_DO"]
+[node name="Mouse_Cursor" type="TextureButton" parent="Buttons_Sliders/Cosmetic_Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -348,26 +375,31 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_exited" from="Buttons_Sliders/Sliders/FX" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Buttons_Sliders/Sliders/UI" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Sliders/UI" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Buttons_Sliders/Sliders/Voices" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Voices" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Buttons_Sliders/Blue_Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/Blue_Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/Blue_Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
-[connection signal="mouse_entered" from="Buttons_Sliders/Blue_Buttons/Plot_Depth" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/Blue_Buttons/Plot_Depth" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/Blue_Buttons/Plot_Depth" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
-[connection signal="mouse_entered" from="Buttons_Sliders/Blue_Buttons/Corruption" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/Blue_Buttons/Corruption" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/Blue_Buttons/Corruption" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
-[connection signal="mouse_entered" from="Buttons_Sliders/Blue_Buttons/Retail_Investment" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/Blue_Buttons/Retail_Investment" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/Blue_Buttons/Retail_Investment" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
-[connection signal="mouse_entered" from="Buttons_Sliders/Blue_Buttons/Vice" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/Blue_Buttons/Vice" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/Blue_Buttons/Vice" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
-[connection signal="mouse_entered" from="Buttons_Sliders/Blue_Buttons/Hardboiled_Minions" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/Blue_Buttons/Hardboiled_Minions" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/Blue_Buttons/Hardboiled_Minions" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Sliders/Ambiance" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Ambiance" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Sliders/Video" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Video" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Plot_Depth" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Plot_Depth" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/Plot_Depth" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Corruption" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Corruption" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/Corruption" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Retail_Investment" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Retail_Investment" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/Retail_Investment" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Vice" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Vice" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/Vice" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Hardboiled_Minions" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Hardboiled_Minions" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/Hardboiled_Minions" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Mentirosos" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Mentirosos" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/Mentirosos" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
 [connection signal="mouse_entered" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok" to="Buttons_Sliders" method="_on_ok_pressed"]
@@ -377,11 +409,11 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Reset" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Reset" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Reset" to="Buttons_Sliders" method="_on_cancel_pressed"]
-[connection signal="mouse_entered" from="Buttons_Sliders/TO_DO/Video_Shader" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/TO_DO/Video_Shader" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/TO_DO/Video_Shader" to="Buttons_Sliders" method="_on_VS_MC_pressed"]
-[connection signal="mouse_entered" from="Buttons_Sliders/TO_DO/Mouse_Cursor" to="Buttons_Sliders" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Buttons_Sliders/TO_DO/Mouse_Cursor" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/TO_DO/Mouse_Cursor" to="Buttons_Sliders" method="_on_VS_MC_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Cosmetic_Buttons/Video_Shader" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Cosmetic_Buttons/Video_Shader" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Cosmetic_Buttons/Video_Shader" to="Buttons_Sliders" method="_on_VS_MC_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Cosmetic_Buttons/Mouse_Cursor" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Cosmetic_Buttons/Mouse_Cursor" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Cosmetic_Buttons/Mouse_Cursor" to="Buttons_Sliders" method="_on_VS_MC_pressed"]
 
 [editable path="Shared_Interface_Sounds"]
