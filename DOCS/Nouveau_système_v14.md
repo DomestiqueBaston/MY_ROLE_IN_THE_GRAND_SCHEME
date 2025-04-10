@@ -445,8 +445,8 @@ Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas faire plusieurs interactions en même temps.
 	- On ne peut pas interagir sans poser aucune carte sur le tapis.
 	- On joue au maximum 3 cartes par Interaction (au minimum 1).
-	- Dans Main.tscn, pour ajouter une carte, on fera un Drag & Drop de la carte depuis la liste Possible Clues (en haut à gauche de l’écran).
-	- Dans Main.tscn, pour retirer une carte de l’écran principal, on fera un Drag & Drop de la carte dans la liste Possible Clues (en haut à gauche de l’écran). Cela retire automatiquement le caractère Evidence de la carte si celle-ci l’avait et tous ses liens sont détruits.
+	- Dans Main.tscn, pour ajouter une carte, on fera un Drag & Drop de la carte depuis la liste Reserve (en haut à gauche de l’écran).
+	- Dans Main.tscn, pour retirer une carte de l’écran principal, on fera un Drag & Drop de la carte dans la liste Reserve (en haut à gauche de l’écran). Cela retire automatiquement le caractère Evidence de la carte si celle-ci l’avait et tous ses liens sont détruits.
 	- Sur l’écran principal, pour interagir avec une Carte, on fait Clic droit, « Dialogue » ou « Investiguer » sur la carte concernée.
 	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps ou, le PNJ n’est exceptionnellement pas là cette fois), le jeu préviendra avec un Overlay qui dira « Je ne sais pas où se trouve cette personne en ce moment. » Et le temps ne passera pas !
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire), il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
@@ -674,7 +674,7 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 		Carte Objet : Noir, Vert, Rouge/Jaune, Violet Clair et Violet sont possibles.
 		Carte Lieu : Blanc, Noir, Vert Clair, Marron, Turquoise, Bleu Très Foncé, Rouge/Jaune, Violet Clair et Violet sont possibles.
 		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête.
-	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Possible clues » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn). Cela permet, par ex., au joueur de sortir (temporairement) une carte qu’il pense n’avoir aucun intérêt pour l’enquête ou de la remettre en jeu s’il change d’avis.
+	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Reserve » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn). Cela permet, par ex., au joueur de sortir (temporairement) une carte qu’il pense n’avoir aucun intérêt pour l’enquête ou de la remettre en jeu s’il change d’avis.
 
 Liens entre les éléments dans l’enquête (Main.tscn)
 	- Pour tracer un lien, sur l’écran principal, faire clic droit, « créer un lien », « choix de type », « plein ou pointillé » puis clic gauche sur le haut de la carte de départ, drag (trace une ligne) et drop sur le haut de la carte d’arrivée.

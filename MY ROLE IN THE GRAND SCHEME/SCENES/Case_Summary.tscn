@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://qtty7by1mcuf"]
+[gd_scene load_steps=7 format=3 uid="uid://qtty7by1mcuf"]
 
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/CASE/Case_BG.png" id="1_goi74"]
 [ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="2_p31re"]
 [ext_resource type="Script" uid="uid://dehax7ahs4pb1" path="res://SCRIPTS/Case_Sheet_Button.gd" id="3_vk2ku"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_c461k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsifl"]
+content_margin_left = 15.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kptx7"]
+content_margin_left = 15.0
 
 [node name="Case" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -19,24 +25,359 @@ anchors_preset = 0
 theme = ExtResource("2_p31re")
 metadata/_edit_lock_ = true
 
-[node name="Part_1" type="RichTextLabel" parent="Sheet"]
+[node name="Left_Page" type="VBoxContainer" parent="Sheet"]
 layout_mode = 0
-offset_left = 185.0
-offset_top = 75.0
-offset_right = 332.0
-offset_bottom = 281.0
-rotation = 0.0164725
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+offset_left = 180.0
+offset_top = 72.0
+offset_right = 325.0
+offset_bottom = 285.0
 metadata/_edit_lock_ = true
 
-[node name="Part_2" type="RichTextLabel" parent="Sheet"]
+[node name="Case" type="Label" parent="Sheet/Left_Page"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98, 0.975427, 0.9604, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+text = "- Case Ac51/Dc4.5 -"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Introduction" type="Label" parent="Sheet/Left_Page"]
+modulate = Color(1, 1, 1, 0.882353)
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+text = "There are moments when everything falls apart and there's a coldness in the air as if the world itself is holding back. There's a presence just beyond sight in the space between thoughts, hiding in plain sight. The atmosphere is charged, like something is bound to happen. as if something is being kept from you what's been buried for too long. The minutes stretch on echoing through the stillness. and there's no getting away from it. A thought that refuses to let go but it slips just out of reach. A moment approaches and everything will come undone. Time moves on, but nothing changes because it's too far gone."
+horizontal_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Right_Page" type="VBoxContainer" parent="Sheet"]
+modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
 offset_left = 347.0
 offset_top = 76.0
 offset_right = 479.0
 offset_bottom = 281.0
-rotation = 0.00840717
-text = "C'est bien joli tout ça mais il ne faudra pas oublier de lister tous les éléments connus de l'enquête dans cette page (je veux dire, celle de droite vu que celle de gauche sert surtout à raconter de la merde) !"
+metadata/_edit_lock_ = true
+
+[node name="Summary" type="Label" parent="Sheet/Right_Page"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.976471, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "- What's known -
+"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Victims_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Victims" type="Label" parent="Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+text = "Victim(s):"
+metadata/_edit_lock_ = true
+
+[node name="Victim_1" type="Label" parent="Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Dead/Alive
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.88, 0.1936, 0.21648, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsifl")
+text = "Amanda Lear"
+metadata/_edit_lock_ = true
+
+[node name="Victim_2" type="Label" parent="Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Dead/Alive
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.88, 0.1936, 0.21648, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsifl")
+text = "Sean Connery"
+metadata/_edit_lock_ = true
+
+[node name="Victim_3" type="Label" parent="Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Dead/Alive
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.88, 0.1936, 0.21648, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsifl")
+text = "John Cena"
+metadata/_edit_lock_ = true
+
+[node name="Suspect_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Suspects" type="Label" parent="Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+text = "Suspect(s):"
+metadata/_edit_lock_ = true
+
+[node name="Suspect_1" type="Label" parent="Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.79, 0.474, 0.158, 1)
+theme_override_colors/font_shadow_color = Color(0.02, 0.012, 0.004, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Donald Trunk"
+metadata/_edit_lock_ = true
+
+[node name="Suspect_2" type="Label" parent="Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.788235, 0.47451, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "R.E. Cede"
+metadata/_edit_lock_ = true
+
+[node name="Suspect_3" type="Label" parent="Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.788235, 0.47451, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Manu Micron"
+metadata/_edit_lock_ = true
+
+[node name="Witness_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Witnesses" type="Label" parent="Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+text = "Witness(es):"
+metadata/_edit_lock_ = true
+
+[node name="Witness_1" type="Label" parent="Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation
+- Info"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.3969, 0.50706, 0.81, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Geoff Levner"
+metadata/_edit_lock_ = true
+
+[node name="Witness_2" type="Label" parent="Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation
+- Info"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.396078, 0.505882, 0.811765, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Ferdi Boutard"
+metadata/_edit_lock_ = true
+
+[node name="Witness_3" type="Label" parent="Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation
+- Info"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.396078, 0.505882, 0.811765, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Flavien Algans"
+metadata/_edit_lock_ = true
+
+[node name="Clue_Container_TO_DELETE" type="VBoxContainer" parent="Sheet/Right_Page"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Clues" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
+layout_mode = 2
+text = "Clue(s):"
+metadata/_edit_lock_ = true
+
+[node name="Clue_1" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Link
+- Location"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.65875, 0.4675, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Geoff Levner"
+metadata/_edit_lock_ = true
+
+[node name="Clue_2" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Property
+- Found"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.658824, 0.466667, 0.85098, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "USB key"
+metadata/_edit_lock_ = true
+
+[node name="Clue_3" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Opening days
+- Opening hours"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.658824, 0.466667, 0.85098, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "General Store"
+metadata/_edit_lock_ = true
+
+[node name="Separator" type="Label" parent="Sheet/Right_Page"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Time_Limit_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Time_Limit" type="Label" parent="Sheet/Right_Page/Time_Limit_Container"]
+layout_mode = 2
+text = "Time limit:"
+metadata/_edit_lock_ = true
+
+[node name="Days" type="Label" parent="Sheet/Right_Page/Time_Limit_Container"]
+layout_mode = 2
+tooltip_text = "Days left to
+solve the case"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.5152, 0.69, 0.138, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "15 days left / 15 days"
+metadata/_edit_lock_ = true
+
+[node name="Crime_Location_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Crime_Location" type="Label" parent="Sheet/Right_Page/Crime_Location_Container"]
+layout_mode = 2
+text = "Crime Location:"
+metadata/_edit_lock_ = true
+
+[node name="Location" type="Label" parent="Sheet/Right_Page/Crime_Location_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Opening days
+- Opening hours"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.65, 0.65, 0.13, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Library"
 metadata/_edit_lock_ = true
 
 [node name="Button" type="Control" parent="."]
