@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://qtty7by1mcuf"]
+[gd_scene load_steps=8 format=3 uid="uid://qtty7by1mcuf"]
 
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/CASE/Case_BG.png" id="1_goi74"]
 [ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="2_p31re"]
+[ext_resource type="Script" uid="uid://b51y22y7k7qvt" path="res://SCRIPTS/Case_Serial_Number_Generator.gd" id="3_kptx7"]
 [ext_resource type="Script" uid="uid://dehax7ahs4pb1" path="res://SCRIPTS/Case_Sheet_Button.gd" id="3_vk2ku"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_c461k"]
 
@@ -40,8 +41,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_offset_y = 2
-text = "- Case Ac51/Dc4.5 -"
+text = "- Case Ac#51-Dc4.5 -"
 horizontal_alignment = 1
+script = ExtResource("3_kptx7")
 metadata/_edit_lock_ = true
 
 [node name="Introduction" type="Label" parent="Sheet/Left_Page"]
@@ -202,6 +204,21 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
 text = "Manu Micron"
 metadata/_edit_lock_ = true
 
+[node name="None" type="Label" parent="Sheet/Right_Page/Suspect_Container"]
+visible = false
+layout_mode = 2
+tooltip_text = "Available Information:
+- None"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.788235, 0.47451, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "None"
+metadata/_edit_lock_ = true
+
 [node name="Witness_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
 layout_mode = 2
 theme_override_constants/separation = 0
@@ -269,89 +286,19 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
 text = "Flavien Algans"
 metadata/_edit_lock_ = true
 
-[node name="Clue_Container_TO_DELETE" type="VBoxContainer" parent="Sheet/Right_Page"]
+[node name="None" type="Label" parent="Sheet/Right_Page/Witness_Container"]
 visible = false
 layout_mode = 2
-theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
-
-[node name="Clues" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
-layout_mode = 2
-text = "Clue(s):"
-metadata/_edit_lock_ = true
-
-[node name="Clue_1" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
-layout_mode = 2
 tooltip_text = "Available Information:
-- Link
-- Location"
+- None"
 mouse_filter = 0
-theme_override_colors/font_color = Color(0.65875, 0.4675, 0.85, 1)
+theme_override_colors/font_color = Color(0.396078, 0.505882, 0.811765, 1)
 theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_offset_y = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
-text = "Geoff Levner"
-metadata/_edit_lock_ = true
-
-[node name="Clue_2" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
-layout_mode = 2
-tooltip_text = "Available Information:
-- Property
-- Found"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0.658824, 0.466667, 0.85098, 1)
-theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -2
-theme_override_constants/shadow_offset_y = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
-text = "USB key"
-metadata/_edit_lock_ = true
-
-[node name="Clue_3" type="Label" parent="Sheet/Right_Page/Clue_Container_TO_DELETE"]
-layout_mode = 2
-tooltip_text = "Available Information:
-- Address
-- Opening days
-- Opening hours"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0.658824, 0.466667, 0.85098, 1)
-theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -2
-theme_override_constants/shadow_offset_y = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
-text = "General Store"
-metadata/_edit_lock_ = true
-
-[node name="Separator" type="Label" parent="Sheet/Right_Page"]
-layout_mode = 2
-metadata/_edit_lock_ = true
-
-[node name="Time_Limit_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
-layout_mode = 2
-theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
-
-[node name="Time_Limit" type="Label" parent="Sheet/Right_Page/Time_Limit_Container"]
-layout_mode = 2
-text = "Time limit:"
-metadata/_edit_lock_ = true
-
-[node name="Days" type="Label" parent="Sheet/Right_Page/Time_Limit_Container"]
-layout_mode = 2
-tooltip_text = "Days left to
-solve the case"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0.5152, 0.69, 0.138, 1)
-theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = -2
-theme_override_constants/shadow_offset_y = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
-text = "15 days left / 15 days"
+text = "None"
 metadata/_edit_lock_ = true
 
 [node name="Crime_Location_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
@@ -378,6 +325,51 @@ theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_offset_y = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
 text = "Library"
+metadata/_edit_lock_ = true
+
+[node name="Unkown_Or_Missing" type="Label" parent="Sheet/Right_Page/Crime_Location_Container"]
+visible = false
+layout_mode = 2
+tooltip_text = "Available Information:
+- None"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.65, 0.65, 0.13, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Unknown or missing"
+metadata/_edit_lock_ = true
+
+[node name="Separator" type="Label" parent="Sheet/Right_Page"]
+layout_mode = 2
+text = "-----"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Time_Limit_Container" type="VBoxContainer" parent="Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Time_Limit" type="Label" parent="Sheet/Right_Page/Time_Limit_Container"]
+layout_mode = 2
+text = "Time limit:"
+metadata/_edit_lock_ = true
+
+[node name="Days" type="Label" parent="Sheet/Right_Page/Time_Limit_Container"]
+layout_mode = 2
+tooltip_text = "Days left to
+solve the case"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.6511, 0.391, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "15 days left"
 metadata/_edit_lock_ = true
 
 [node name="Button" type="Control" parent="."]
