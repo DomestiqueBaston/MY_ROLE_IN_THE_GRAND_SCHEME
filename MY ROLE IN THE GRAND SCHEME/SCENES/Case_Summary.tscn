@@ -29,10 +29,9 @@ metadata/_edit_lock_ = true
 [node name="Left_Page" type="VBoxContainer" parent="Sheet"]
 layout_mode = 0
 offset_left = 180.0
-offset_top = 72.0
-offset_right = 325.0
-offset_bottom = 285.0
-metadata/_edit_lock_ = true
+offset_top = 68.0
+offset_right = 329.0
+offset_bottom = 289.0
 
 [node name="Case" type="Label" parent="Sheet/Left_Page"]
 layout_mode = 2
@@ -50,7 +49,7 @@ metadata/_edit_lock_ = true
 modulate = Color(1, 1, 1, 0.882353)
 custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
-text = "There are moments when everything falls apart and there's a coldness in the air as if the world itself is holding back. There's a presence just beyond sight in the space between thoughts, hiding in plain sight. The atmosphere is charged, like something is bound to happen. as if something is being kept from you what's been buried for too long. The minutes stretch on echoing through the stillness. and there's no getting away from it. A thought that refuses to let go but it slips just out of reach. A moment approaches and everything will come undone. Time moves on, but nothing changes because it's too far gone."
+text = "It wasn't just a fire, lit with intent, and it burned clean through the silence, like it was never meant to be stopped. The structure fell too fast, as if someone guided it, and what it spared matters more than what it took. Ash covers more than debris, but traces remain under the surface, like a ghost that clings to the walls. No accelerants were found - officially, but that doesn't fit the timing, and the timeline feels constructed, as if someone wanted to bury the truth in flame. There's satisfaction in watching it fall, but about clearing a path, because some things are meant to be erased, especially when written in flame. Now the site is cordoned off, because the damage did its job."
 horizontal_alignment = 1
 autowrap_mode = 3
 metadata/_edit_lock_ = true

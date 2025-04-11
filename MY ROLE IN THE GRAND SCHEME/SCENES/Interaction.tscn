@@ -693,7 +693,6 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Line_Animation" type="Sprite2D" parent="Top_Left_Screen"]
-modulate = Color(1, 1, 1, 0.501961)
 texture = ExtResource("9_cx411")
 centered = false
 hframes = 13
@@ -723,7 +722,7 @@ offset_right = 87.0
 offset_bottom = 70.0
 scale = Vector2(1.035, 1.08)
 stream = ExtResource("12_v84v6")
-volume_db = -35.0
+volume_db = -30.0
 autoplay = true
 paused = true
 loop = true
@@ -740,7 +739,7 @@ offset_right = 87.0
 offset_bottom = 70.0
 scale = Vector2(1.035, 1.08)
 stream = ExtResource("15_k1rto")
-volume_db = -32.5
+volume_db = -27.5
 autoplay = true
 paused = true
 loop = true
@@ -757,7 +756,7 @@ offset_right = 87.0
 offset_bottom = 70.0
 scale = Vector2(1.035, 1.08)
 stream = ExtResource("16_5imuv")
-volume_db = -32.5
+volume_db = -25.0
 autoplay = true
 paused = true
 loop = true
@@ -774,7 +773,7 @@ offset_right = 87.0
 offset_bottom = 70.0
 scale = Vector2(1.035, 1.08)
 stream = ExtResource("17_jv51o")
-volume_db = -27.5
+volume_db = -25.0
 autoplay = true
 paused = true
 loop = true
@@ -793,6 +792,7 @@ metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Label" parent="Top_Left_Screen/Interaction"]
 visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_right = 82.0
 offset_bottom = 8.0
@@ -802,7 +802,7 @@ horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Investigation" type="Label" parent="Top_Left_Screen/Interaction"]
-visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_right = 82.0
 offset_bottom = 8.0
@@ -813,6 +813,7 @@ metadata/_edit_lock_ = true
 
 [node name="Combat" type="Label" parent="Top_Left_Screen/Interaction"]
 visible = false
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_right = 82.0
 offset_bottom = 8.0

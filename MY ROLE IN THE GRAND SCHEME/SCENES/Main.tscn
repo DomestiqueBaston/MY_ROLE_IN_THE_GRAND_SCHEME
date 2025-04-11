@@ -226,7 +226,7 @@ offset_top = 44.0
 offset_right = 545.0
 offset_bottom = 47.0
 rotation = 0.100997
-tooltip_text = "Presence"
+tooltip_text = "Hideout"
 texture = ExtResource("21_u2t8c")
 
 [node name="Link_Plein_Jaune" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("18_y2x40")]

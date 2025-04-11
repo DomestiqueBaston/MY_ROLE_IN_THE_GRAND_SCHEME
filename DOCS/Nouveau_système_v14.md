@@ -685,13 +685,12 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens : À définir, par exemple :
-          Blanc : Présence (dit où devrait être un PNJ à l’heure actuelle (lien automatique). Il n’y a pas/plus de lien lorsque l’information n’est pas connue à l’heure dite. Le seul moyen de savoir si un PNJ suit effectivement son emploi du temps et de se rendre sur place) NE SERT PAS À VALIDER UNE ENQUÊTE.
-Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Noir : Coupable/Complice/Preuve Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
+          Vert foncé : Ami (pas exploité dans toutes les enquêtes) SERT À VALIDER UNE ENQUÊTE ?
+Orange : Ennemi (pas exploité dans toutes les enquêtes) SERT À VALIDER UNE ENQUÊTE ?
+Bleu clair : Connaissance (pas exploité dans toutes les enquêtes) SERT À VALIDER UNE ENQUÊTE ?
+Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Rose : Intime (pas exploité dans toutes les enquêtes)
-          Vert foncé : Ami (pas exploité dans toutes les enquêtes)
-Orange : Ennemi (pas exploité dans toutes les enquêtes)
-Bleu clair : Connaissance (pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
@@ -699,6 +698,7 @@ Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attach
           Marron : Domicile NE SERT PAS À VALIDER UNE ENQUÊTE.
 Turquoise : Travail NE SERT PAS À VALIDER UNE ENQUÊTE.
 Bleu très foncé : Lieu fréquenté NE SERT PAS À VALIDER UNE ENQUÊTE.
+Blanc : Planque (Hideout) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Violet clair : Trouvé (sert à se souvenir d’où vient un objet) NE SERT PAS À VALIDER UNE ENQUÊTE.
           Violet foncé : nouveaux liens (issus des interactions Dialogue ou Investigation, toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ») NE SERT PAS À VALIDER UNE ENQUÊTE.
 
@@ -711,7 +711,7 @@ Difficulté	Bonus/Malus
 3	Enquêtes normalement complexe. (/)
 4	Enquêtes très complexes. (malus de 1)
 5	Enquêtes épouvantablement complexes. (malus de 2)
-Enquête ultime (6)	WTF !(malus de 3)
+Enquête ultime (6)	WTF!(malus de 3)
 
 	- Le niveau de difficulté impliquera un bonus/malus à tous les jets de dé du joueur dans cette enquête (voir tableau au dessus).
 	- Dès le départ, le joueur a accès à n’importe quelle enquête de n’importe quel niveau (la valeur du niveau de difficulté ne lui sera pas communiquée). A lui d’estimer sa capacité à la gérer avec les informations connues au départ de l’enquête.
