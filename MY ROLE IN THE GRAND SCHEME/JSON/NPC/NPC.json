@@ -18,7 +18,6 @@
     "rep": 0,  // Réputation du Joueur par défaut. /!\ 3 pour un Minion !
 
     "status": ["victim", "culprit", "accomplice", "suspect", "witness", "none"],  // Statut réel du NPC dans l'enquête
-    "witness_clue": ["NPCxxx", "LOCxxxIDxxx", "none"],  // Pour rappel, les témoins se trompent à 50% (1 fois sur 2) au départ ! "none" si "status" ≠ de "witness"
     "couple": ["NPCxxx", "None"],  //  de 0 à 1 (homo. si Couple homo à 10 % chance)
     "friend": ["NPCxxx", "None"],  // de 0 à 2 amis (50% partagent le lieu de travail et 50% un lieu fréquenté)
     "ennemy": ["NPCxxx", "None"],  // de 0 à 2 ennemis (50% partagent le lieu de travail et 50% un lieu fréquenté)
@@ -42,8 +41,8 @@
 
     "home": ["LOCxxxIDxxx"],
     "work": ["LOCxxxIDxxx"],
-    "hangouts": ["LOCxxxIDxxx"],  // de 1 à 2 (voir liste des possibles dans Location.json avec "hangout": ["yes"])
-    "secret_hangout": ["LOCxxxIDxxx"],  // de 0 à 1 (voir liste des possibles dans Location.json avec "hangout": ["secret"])
+    "hangout": ["LOCxxxIDxxx"],  // de 1 à 2 (voir liste des possibles dans Location.json avec "hangout": ["yes"])
+    "hide_out": ["LOCxxxIDxxx"],  // de 0 à 1 INFO SECRETE (voir liste des possibles dans Location.json avec "hangout": ["secret"]) !
 
     "property": [
       {

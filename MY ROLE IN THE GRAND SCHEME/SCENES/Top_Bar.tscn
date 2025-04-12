@@ -149,10 +149,10 @@ offset_bottom = 11.0
 tooltip_text = "Manage your deck"
 theme = ExtResource("1_2tgjx")
 disabled = true
-keep_pressed_outside = true
 button_group = ExtResource("2_mdfj4")
 text = "Cards
 "
+switch_on_hover = true
 item_count = 1
 popup/item_0/text = "Card management"
 popup/item_0/id = 0

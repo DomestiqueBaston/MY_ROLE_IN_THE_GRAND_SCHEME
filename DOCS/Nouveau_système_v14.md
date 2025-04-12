@@ -520,8 +520,9 @@ Dialogue
 		Auprès d’1 Coupable : (9+MEN)/(10+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur (cumulable).
-	- Une information cachée est toujours donnée juste.
-	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête).
+	- Une information cachée (par ex : hide_out) est toujours révélée juste.
+	- Une information fausse pour un lien désignera 2 PNJs dans un lien de n’importe quelle nature pour debt_influence, intimacy, friend, enemy, acquaintance ou ideology, ou bien 1 PNJ pour property, homework ou hangout.
+	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux.
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec ses liens Violet (à moins qu’elle existe déjà).
 	- Si un lien nouveau est donné pour une carte pré-existante, uniquement les nouveaux liens seront Violet.
 	- Si une information donne lieu à la révélation d’un Objet, sa carte passera dans la pile Objets.
