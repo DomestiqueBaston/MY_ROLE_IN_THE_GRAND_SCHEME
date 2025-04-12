@@ -22,7 +22,7 @@ func _ready():
 
 	generated_text += "\n" + "..."
 
-	text = generated_text.strip_edges()
+	text = generated_text  #.strip_edges()
 
 func load_json() -> Variant:
 	var file = FileAccess.open(json_path, FileAccess.READ)

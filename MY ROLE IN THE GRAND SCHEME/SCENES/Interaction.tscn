@@ -693,6 +693,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Line_Animation" type="Sprite2D" parent="Top_Left_Screen"]
+modulate = Color(1, 1, 1, 0.792749)
 texture = ExtResource("9_cx411")
 centered = false
 hframes = 13
@@ -792,7 +793,7 @@ metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Label" parent="Top_Left_Screen/Interaction"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.784314)
+self_modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
 offset_right = 82.0
 offset_bottom = 8.0
@@ -802,7 +803,7 @@ horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Investigation" type="Label" parent="Top_Left_Screen/Interaction"]
-self_modulate = Color(1, 1, 1, 0.784314)
+self_modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
 offset_right = 82.0
 offset_bottom = 8.0
@@ -813,7 +814,7 @@ metadata/_edit_lock_ = true
 
 [node name="Combat" type="Label" parent="Top_Left_Screen/Interaction"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.784314)
+self_modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
 offset_right = 82.0
 offset_bottom = 8.0

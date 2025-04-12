@@ -7,8 +7,8 @@
 				"Sometimes, things just seem ",
 				"On days like this ",
 				"Some nights, the world shifts ",
-				"In the dim hours, something feels ",
-				"At the break of dawn, everything is still ",
+				"In the dim hours, something feels like",
+				"At the break of dawn, everything is still and ",
 				"In the dead of night, nothing moves ",
 				"When dusk settles, it's as though "
 			]
@@ -251,7 +251,7 @@
 				"There are moments when something just feels off, ",
 				"At certain times, the world feels different, ",
 				"In certain spaces, the air changes, ",
-				"When the day ends, there’s an eerie calm, "
+				"When the day ends, there's an eerie calm, "
 			]
 		},
 		{
@@ -289,7 +289,7 @@
 			"choices": [
 				"A presence lingers, ",
 				"An unknown force moves just beyond reach, ",
-				"There’s something stirring in the silence, ",
+				"There's something stirring in the silence, ",
 				"A shadow crosses your mind, ",
 				"Something feels different, "
 			]
@@ -377,11 +377,11 @@
 		{
 			"part": 14,
 			"choices": [
-				"A memory you can’t quite recall, ",
+				"A memory you can't quite recall, ",
 				"A sensation that clings to you, ",
 				"A thought that keeps returning, ",
-				"A feeling you can’t shake, ",
-				"An image that won’t fade, "
+				"A feeling you can't shake, ",
+				"An image that won't fade, "
 			]
 		},
 		{
@@ -401,7 +401,7 @@
 				"Something you're meant to find, ",
 				"A truth that hides beneath, ",
 				"A whisper you can almost hear, ",
-				"A moment that’s approaching, "
+				"A moment that's approaching, "
 			]
 		},
 		{
@@ -411,13 +411,13 @@
 				"and it's almost too much to ignore. ",
 				"and it's pulling you in. ",
 				"and it feels inevitable. ",
-				"and you can’t stop it. "
+				"and you can't stop it. "
 			]
 		},
 		{
 			"part": 18,
 			"choices": [
-				"There’s no turning back now. ",
+				"There's no turning back now. ",
 				"The end is coming. ",
 				"It will change everything. ",
 				"Everything will be different. ",
@@ -429,8 +429,8 @@
 			"choices": [
 				"all you can do is wait ",
 				"the only thing left is to see ",
-				"nothing can change what’s coming ",
-				"it’s already begun ",
+				"nothing can change what's coming ",
+				"it's already begun ",
 				"the path ahead is clear "
 			]
 		},
@@ -441,7 +441,7 @@
 				"as it's already started. ",
 				"as it's too far gone. ",
 				"as nothing can hold it back. ",
-				"as it’s here now."
+				"as it's here now."
 			]
 		}
 	],
@@ -1137,12 +1137,12 @@
 		{
 			"part": 2,
 			"choices": [
-				"and the price is always too high ",
-				"and the shadows grow deeper ",
-				"and nothing is ever as it seems ",
-				"and everything has a consequence ",
-				"and some things just can't stay hidden ",
-				"and every action pulls a thread "
+				"and the price is always too high. ",
+				"and the shadows grow deeper. ",
+				"and nothing is ever as it seems. ",
+				"and everything has a consequence. ",
+				"and some things just can't stay hidden. ",
+				"and every action pulls a thread. "
 			]
 		},
 		{
@@ -1181,22 +1181,22 @@
 		{
 			"part": 6,
 			"choices": [
-				"could change everything. ",
-				"might be the key. ",
-				"leaves everything exposed. ",
-				"starts the chain reaction. ",
-				"was all it took. ",
-				"sends the message loud and clear. "
+				"could change everything ",
+				"might be the key ",
+				"leaves everything exposed ",
+				"starts the chain reaction ",
+				"is all it takes ",
+				"sends the message loud and clear "
 			]
 		},
 		{
 			"part": 7,
 			"choices": [
-				"And in the dark, someone waits ",
-				"And somewhere, the trap is set ",
-				"And every moment feels like a countdown ",
-				"And the silence becomes a threat ",
-				"And the shadows conceal more than just danger "
+				"and in the dark, someone waits. ",
+				"and somewhere, the trap is set. ",
+				"and every moment feels like a countdown. ",
+				"and the silence becomes a threat. ",
+				"and the shadows conceal more than just danger. "
 			]
 		},
 		{
@@ -2808,9 +2808,9 @@
 			"choices": [
 				"and just like that, ",
 				"and without making a sound, ",
-				"and no one double-checks, ",
-				"and it passes review, ",
-				"and it's approved instantly, "
+				"and no one double-checks: ",
+				"and it passes review: ",
+				"and approval appears instantly: "
 			]
 		},
 		{
@@ -3794,7 +3794,7 @@
 				"A child lost to twisted ideology ",
 				"A rival who stood in the way ",
 				"A partner consumed by jealousy ",
-				"A killer born without empathy ",
+				"A monster born without empathy ",
 				"A predator met with justice ",
 				"A threat that needed erasing "
 			]
@@ -3894,7 +3894,7 @@
 				"Still, doubt lingers. ",
 				"And the shadows stretch longer. ",
 				"Now everyone's a suspect. ",
-				"But the killer stayed calm. ",
+				"But the monster stayed calm. ",
 				"And the game isn't over. "
 			]
 		},
@@ -3927,7 +3927,7 @@
 				"Someone wanted it to look accidental ",
 				"This was about control ",
 				"Someone planned every second ",
-				"The killer knew their target ",
+				"The target was known",
 				"This wasn't their first time "
 			]
 		},
@@ -3956,9 +3956,9 @@
 		{
 			"part": 20,
 			"choices": [
-				"because murder always leaves a trace.",
+				"because crime (almost) always leaves a trace.",
 				"because guilt doesn't stay buried.",
-				"because no killer is perfect.",
+				"because (almost) no crime is perfect.",
 				"because the dead still speak.",
 				"because justice demands answers.",
 				"because the story isn't over."
@@ -5426,10 +5426,10 @@
 		{
 			"part": 1,
 			"choices": [
-				"The need for a new identity arises ",
+				"The need for an identity arises ",
 				"A new life begins in the shadows ",
 				"A face no one will ever recognize ",
-				"The search for someone else's name ",
+				"The search for a name is an emergency ",
 				"A fresh start built on lies ",
 				"A new persona forged in secrecy "
 			]
@@ -5558,11 +5558,11 @@
 		{
 			"part": 14,
 			"choices": [
-				"and the narrative shifts to fit the needs of the moment. ",
-				"and each interaction furthers the plan. ",
-				"and the world is shaped in real time. ",
-				"and the agenda becomes reality. ",
-				"and the truth becomes malleable. "
+				"as the narrative shifts to fit the needs of the moment. ",
+				"as each interaction furthers the plan. ",
+				"as the world is shaped in real time. ",
+				"as the agenda becomes reality. ",
+				"as the truth becomes malleable. "
 			]
 		},
 		{
@@ -5578,11 +5578,11 @@
 		{
 			"part": 16,
 			"choices": [
-				"and the world begins to bend to unseen will. ",
-				"and the lines are controlled from behind the scenes. ",
-				"and the world shifts in unpredictable ways. ",
-				"and the influence spreads across borders. ",
-				"and everything begins to fall into place. "
+				"while the world begins to bend to unseen will. ",
+				"while the lines are controlled from behind the scenes. ",
+				"while the world shifts in unpredictable ways. ",
+				"while the influence spreads across borders. ",
+				"while everything begins to fall into place. "
 			]
 		},
 		{
@@ -5618,11 +5618,11 @@
 		{
 			"part": 20,
 			"choices": [
-				"and the plan reaches its final stage.",
-				"and the consequences take shape over time.",
-				"and those who hold the reins remain hidden.",
-				"and the future unfolds based on the knowledge gained.",
-				"and the world is irrevocably altered."
+				"so the plan reaches its final stage.",
+				"so the consequences take shape over time.",
+				"so those who hold the reins remain hidden.",
+				"so the future unfolds based on the knowledge gained.",
+				"so the world is irrevocably altered."
 			]
 		}
 	],
@@ -5835,7 +5835,7 @@
 				"It started with a need, ",
 				"A simple desire grew into a necessity, ",
 				"It all began with a pressing urge, ",
-				"It wasn’t long before the need became overwhelming, ",
+				"It wasn't long before the need became overwhelming, ",
 				"What seemed like a small transaction quickly escalated, "
 			]
 		},
@@ -6094,11 +6094,11 @@
 		{
 			"part": 7,
 			"choices": [
-				"This wasn’t about art, ",
-				"This wasn’t about making a statement, ",
-				"This wasn’t about expression, ",
-				"This wasn’t about beauty, ",
-				"This wasn’t about creativity, "
+				"This wasn't about art, ",
+				"This wasn't about making a statement, ",
+				"This wasn't about expression, ",
+				"This wasn't about beauty, ",
+				"This wasn't about creativity, "
 			]
 		},
 		{
@@ -6125,7 +6125,7 @@
 			"part": 10,
 			"choices": [
 				"and no one could ignore it. ",
-				"and it couldn’t be overlooked. ",
+				"and it couldn't be overlooked. ",
 				"and it was impossible to miss. ",
 				"and it was there for all to see. ",
 				"and it became undeniable. "
@@ -6134,11 +6134,11 @@
 		{
 			"part": 11,
 			"choices": [
-				"It wasn’t just a joke anymore, ",
-				"It wasn’t simply an action, ",
-				"It wasn’t just an impulse, ",
-				"It wasn’t just a mark, ",
-				"It wasn’t just a message, "
+				"It wasn't just a joke anymore, ",
+				"It wasn't simply an action, ",
+				"It wasn't just an impulse, ",
+				"It wasn't just a mark, ",
+				"It wasn't just a message, "
 			]
 		},
 		{
@@ -6165,7 +6165,7 @@
 			"part": 14,
 			"choices": [
 				"and it started to spread. ",
-				"and it couldn’t be stopped. ",
+				"and it couldn't be stopped. ",
 				"and it gained momentum. ",
 				"and it rapidly escalated. ",
 				"and it spread like wildfire. "
@@ -6206,9 +6206,9 @@
 			"choices": [
 				"but no one could truly understand. ",
 				"but no one was ready for it. ",
-				"but it wasn’t fully embraced. ",
+				"but it wasn't fully embraced. ",
 				"but it was ignored by most. ",
-				"but it wasn’t fully accepted. "
+				"but it wasn't fully accepted. "
 			]
 		},
 		{
@@ -6296,7 +6296,7 @@
 		{
 			"part": 7,
 			"choices": [
-				"and it couldn’t be ignored forever. ",
+				"and it couldn't be ignored forever. ",
 				"but it was already too late to turn back. ",
 				"and the consequences became clear. ",
 				"and everything began to unravel. ",
@@ -6390,7 +6390,7 @@
 				"Signs were scattered, but not connected, ",
 				"The clues were hidden in plain sight, ",
 				"The traces were faint but persistent, ",
-				"The pieces didn’t quite add up, "
+				"The pieces didn't quite add up, "
 			]
 		},
 		{
@@ -6429,7 +6429,7 @@
 				"But the whispers continue, never stopping. ",
 				"A shadow lingers, unseen but ever-present. ",
 				"The silence is deafening in its absence. ",
-				"No one speaks of it anymore, yet it’s still felt. ",
+				"No one speaks of it anymore, yet it's still felt. ",
 				"The quiet is louder than words. "
 			]
 		}
@@ -6488,7 +6488,7 @@
 		{
 			"part": 6,
 			"choices": [
-				"yet something didn’t feel right. ",
+				"yet something didn't feel right. ",
 				"but a strange unease lingered. ",
 				"and doubts started to surface. ",
 				"yet the risk seemed worth it. ",
@@ -6542,7 +6542,7 @@
 				"the consequences began to reveal themselves. ",
 				"the weight of the act began to sink in. ",
 				"the reality of what happened started to settle. ",
-				"the aftereffects couldn’t be ignored. "
+				"the aftereffects couldn't be ignored. "
 			]
 		},
 		{
@@ -6558,10 +6558,10 @@
 		{
 			"part": 13,
 			"choices": [
-				"but it wasn’t enough to keep things quiet. ",
+				"but it wasn't enough to keep things quiet. ",
 				"soon, things started to unravel. ",
 				"the silence became unbearable. ",
-				"the consequences couldn’t be avoided. ",
+				"the consequences couldn't be avoided. ",
 				"the pressure built with every passing moment. "
 			]
 		},
@@ -6590,7 +6590,7 @@
 			"choices": [
 				"No one could ignore it anymore. ",
 				"Everyone began to notice. ",
-				"The signs couldn’t be denied. ",
+				"The signs couldn't be denied. ",
 				"People started to question. ",
 				"The situation became too obvious. "
 			]
