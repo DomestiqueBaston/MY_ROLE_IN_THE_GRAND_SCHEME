@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://qtty7by1mcuf"]
+[gd_scene load_steps=9 format=3 uid="uid://qtty7by1mcuf"]
 
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/CASE/Case_BG.png" id="1_goi74"]
 [ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="2_p31re"]
 [ext_resource type="Script" uid="uid://b51y22y7k7qvt" path="res://SCRIPTS/Case_Serial_Number_Generator.gd" id="3_kptx7"]
 [ext_resource type="Script" uid="uid://dehax7ahs4pb1" path="res://SCRIPTS/Case_Sheet_Button.gd" id="3_vk2ku"]
+[ext_resource type="Script" uid="uid://ed1yo6ny1onq" path="res://SCRIPTS/Case_Introduction_Generator.gd" id="4_h4tws"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_c461k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsifl"]
@@ -26,32 +27,46 @@ anchors_preset = 0
 theme = ExtResource("2_p31re")
 metadata/_edit_lock_ = true
 
-[node name="Left_Page" type="VBoxContainer" parent="Sheet"]
-layout_mode = 0
+[node name="Left_Page" type="Control" parent="Sheet"]
+anchors_preset = 0
 offset_left = 180.0
 offset_top = 68.0
 offset_right = 329.0
 offset_bottom = 289.0
+metadata/_edit_lock_ = true
 
 [node name="Case" type="Label" parent="Sheet/Left_Page"]
 layout_mode = 2
+offset_right = 149.0
+offset_bottom = 8.0
 theme_override_colors/font_color = Color(0.98, 0.975427, 0.9604, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_offset_y = 2
-text = "- Case Ac#51-Dc4.5 -"
+text = "- Case Serial -"
 horizontal_alignment = 1
 script = ExtResource("3_kptx7")
 metadata/_edit_lock_ = true
 
-[node name="Introduction" type="Label" parent="Sheet/Left_Page"]
+[node name="Introduction_Scroll_Container" type="ScrollContainer" parent="Sheet/Left_Page"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 18.0
+offset_right = 146.0
+offset_bottom = 217.0
+horizontal_scroll_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Introduction" type="Label" parent="Sheet/Left_Page/Introduction_Scroll_Container"]
 modulate = Color(1, 1, 1, 0.882353)
 custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
-text = "It wasn't just a fire, lit with intent, and it burned clean through the silence, like it was never meant to be stopped. The structure fell too fast, as if someone guided it, and what it spared matters more than what it took. Ash covers more than debris, but traces remain under the surface, like a ghost that clings to the walls. No accelerants were found - officially, but that doesn't fit the timing, and the timeline feels constructed, as if someone wanted to bury the truth in flame. There's satisfaction in watching it fall, but about clearing a path, because some things are meant to be erased, especially when written in flame. Now the site is cordoned off, because the damage did its job."
+text = "Introduction"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("4_h4tws")
 metadata/_edit_lock_ = true
 
 [node name="Right_Page" type="VBoxContainer" parent="Sheet"]
@@ -343,7 +358,9 @@ metadata/_edit_lock_ = true
 
 [node name="Separator" type="Label" parent="Sheet/Right_Page"]
 layout_mode = 2
-text = "-----"
+text = "
+...
+"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
