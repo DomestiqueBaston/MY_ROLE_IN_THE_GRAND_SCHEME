@@ -650,7 +650,7 @@ Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
-		Difficulté = round(((nombre de victimes + nombre de coupables + (nombre de complices × 0.5) + nombre d’evidences) − 3) ÷ 7.5 × 4 + 1)
+		Difficulté = round(((nombre de victimes + nombre de coupables + (nombre de complices × 0.5) + nombre d’evidences) − 3) ÷ 7.5 × 4 + 1). Cela devrait donner un niveau de difficulté entre 1 et 5.
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
@@ -665,7 +665,8 @@ Enquête
 
 Lieu du crime et Lieu secret
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence.
-	- Le domicile du/des coupable(s) aussi.
+	- Le domicile du/des coupable(s) peut aussi contenir 1 evidence.
+	- Le lieu du crime est connu dès le départ en suivant : 0, 0.25, 0.5, 0.75 ou 1 sur 1 (dans Crime_Motive_Evidence.json à « known_crime_location »).
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
 	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).
