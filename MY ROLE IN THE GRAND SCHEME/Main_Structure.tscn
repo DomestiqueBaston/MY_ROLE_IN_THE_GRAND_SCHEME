@@ -2,6 +2,18 @@
 
 [node name="Main_Structure" type="Node"]
 
+[node name="ATTENTION" type="Label" parent="."]
+offset_left = 201.0
+offset_top = 99.0
+offset_right = 462.0
+offset_bottom = 238.0
+text = "ATTENTION
+Ici, les Cards passent d'un z_index à un autre (ainsi que noeud parent) quand elle sont déplacées de Left_Zone à Right_Zone (et inversement) !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
 [node name="BG" type="Node" parent="."]
 
 [node name="Right_Zone" type="Node" parent="."]
@@ -25,6 +37,10 @@
 [node name="Cards" type="Node" parent="Left_Zone/Top_Left_Cards"]
 
 [node name="Top_Bar_Menu" type="Node" parent="."]
+
+[node name="None_Overlay_Scenes" type="Node" parent="."]
+
+[node name="Overlay_Scenes" type="Node" parent="."]
 
 [node name="Global_Video_Shader_And_Mouse" type="Node" parent="."]
 

@@ -9,14 +9,14 @@
 	"status": ["active", "paused"], // 1 des 2
 	"duration": 9,  // round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	"crime_location": ["none", "LOCxxx_IDxxx"],  // 1 seul
-	"clues": ["NPCxxx", "LOCxxx_IDxxx"],  // pour le nombre, voir Fiche_enquête_v03.odt et attention à la règles des "mensonges/erreurs"
-	"evidences": ["OBJxxx_IDxxx", "LINxxx_IDxxx"]  // pour le nombre, voir Fiche_enquête_v03.odt                  /!\
-	"victims": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_v03.odt
+	"clues": ["NPCxxx", "LOCxxx_IDxxx"],  // pour le nombre, voir Fiche_enquête_vXX.odt et attention à la règles des "mensonges/erreurs"
+	"evidences": ["OBJxxx_IDxxx", "LINxxx_IDxxx"]  // pour le nombre, voir Fiche_enquête_vXX.odt                  /!\
+	"victims": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_vXX.odt
 	"dead_victims": ["no", "yes", "disappeared", "random"],
-	"witnesses": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_v03.odt
-	"suspects": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_v03.odt
-	"culprits": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_v03.odt
-	"min_resolution_evidences": 1,  // pour le nombre, voir Fiche_enquête_v03.odt
-	"total_evidences": 5,  // pour le nombre, voir Fiche_enquête_v03.odt
+	"witnesses": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_vXX.odt
+	"suspects": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_vXX.odt
+	"culprits": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_vXX.odt
+	"min_resolution_evidences": 1,  // pour le nombre, voir Fiche_enquête_vXX.odt
+	"total_evidences": 5,  // pour le nombre, voir Fiche_enquête_vXX.odt
   }
 ]

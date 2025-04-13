@@ -20,6 +20,10 @@
 
 [node name="Top_Bar_Menu" type="Node" parent="."]
 
+[node name="None_Overlay_Scenes" type="Node" parent="."]
+
+[node name="Overlay_Scenes" type="Node" parent="."]
+
 [node name="Global_Video_Shader_And_Mouse" type="Node" parent="."]
 
 [node name="Shared_Interface_Sounds" type="Node" parent="."]

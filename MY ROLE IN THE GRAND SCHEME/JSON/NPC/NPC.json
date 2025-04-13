@@ -14,7 +14,7 @@
       "Wan": 0
     },
     "health_meter": ["no_info", "good_health", "average_health", "low_health"],  // par défaut "no_info"
-    "minion": ["no", "yes"],  // peut être "yes"  // par défaut "no" car minion est un status particulier (voir Nouveau_système_vXX.odt)
+    "minion": ["no", "yes"],  // peut être "yes",  par défaut "no" car minion est un status particulier (voir Nouveau_système_vXX.odt)
     "rep": 0,  // Réputation du Joueur par défaut. /!\ 3 pour un Minion !
 
     "status": ["victim", "culprit", "accomplice", "suspect", "witness", "none"],  // Statut réel du NPC dans l'enquête
@@ -59,9 +59,17 @@
           {
             "type_of_link": ["acquaintance", "intimacy", "friend", "debt_influence", "ideology", "enemy"],
             "related_npcs": ["NPCxxx", "NPCxxx"]  // désigne les 2 NPCs concernés par le lien
+          },
+		  {
+            "location": ["hangout"],
+            "related_npcs": ["NPCxxx", "LOCxxxIDxxx"]  // désigne le NPC concerné par le lien ET le lieu
+          },
+		  {
+            "object": ["OBJxxxIDxxx"],
+            "related_npcs": ["NPCxxx"]  // désigne le NPC concerné par la propriété
           }
         ]
       }
-    ] // 2 à 4 Informations déténues sur 1 à 2 NPCs
+    ] // 2 à 4 Informations déténues sur 1 à 2 NPCs (2 max. si 1 NPC)
   }
 ]

@@ -1,0 +1,100 @@
+ALGORITHME COMPLET – INTERACTION D’INVESTIGATION (PSEUDO-CODE LOGIQUE)
+
+// === 1. PRÉ-CONDITIONS ===
+SI (PHY == 0 OU MEN == 0) ALORS
+    afficher("Impossible d’investiguer, tu es trop mal en point.")
+    TERMINER
+
+SI (Déjà investigué ce lieu aujourd’hui) ALORS
+    afficher("Tu ne peux pas investiguer deux fois au même endroit dans la même journée.")
+    TERMINER
+
+SI (Lieu à investiguer est FERMÉ) ALORS
+    afficher("Ce lieu est fermé, accès impossible.")
+    TERMINER
+
+// === 2. PRÉSENCE DE PNJ SUR PLACE ===
+SI (PNJ présent sur place) ALORS
+    SI (Pas d’autorisation de fouille) ALORS
+        afficher("Tu ne peux pas investiguer ici sans autorisation.")
+        TERMINER
+    SINON
+        Rep_PNJ -= 1
+
+// === 3. ACCÈS AU LIEU – CAS SPÉCIAL : BREAK IN ===
+SI (lieu verrouillé ou accès hors heures) ET (aucun PNJ présent) ALORS
+    proposerOption("Forcer l’entrée ?")
+    SI oui ALORS
+        cartes ← sélectionnerCartes("Break In", "Abstraite")
+        modif ← calculerModificateurs(cartes + Emo, Add, Wan, Veille, Sommeil, Difficulté)
+
+        score_break ← arrondi((PHY + MEN + HEA) / 3) + modif
+        jet_break ← lancerDé(1,10)
+
+        SI jet_break == 1 ALORS
+            modifierEmo(+1 vers 0)
+            bonus_suivant = +1
+            afficher("Réussite critique : infiltration parfaite.")
+        SINON SI jet_break ≤ score_break ALORS
+            afficher("Tu es entré discrètement.")
+        SINON SI jet_break == 10 ALORS
+            modifierHEA(-1)
+            modifierEmo(-1 Min/Max)
+            joueur.Wan += 1
+            afficher("Échec critique, blessé et repéré !")
+            TERMINER
+        SINON
+            modifierEmo(-1 Min/Max)
+            joueur.Wan += 1
+            afficher("Échec. Tu ne peux pas rentrer aujourd’hui.")
+            TERMINER
+
+// === 4. INVESTIGATION NORMALE ===
+cartes_invest ← sélectionnerCartes("Investigation", "Investigation Spécial", "Abstraite")
+modif ← calculerModificateurs(cartes_invest + Emo, Add, Wan, Veille, Sommeil, Difficulté)
+
+score_joueur ← arrondi((PHY + MEN + HEA) / 3) + modif
+jet ← lancerDé(1,10)
+
+SI jet == 1 ALORS
+    afficher("Réussite critique ! Jackpot !")
+    trouverBonusArgent(25 à 50 Dø)
+    découvertes = déterminerDécouvertes(marge = max)
+    allerÀFinInvestigation
+
+SI jet == 10 ALORS
+    afficher("Échec critique, aïe.")
+    modifierEmo(-1)
+    modifierHEA(-1)
+    découvertes = 0
+    allerÀFinInvestigation
+
+SI jet ≤ score_joueur ALORS
+    marge ← score_joueur - jet
+    découvertes = déterminerDécouvertes(marge)
+    SI marge ≥ 3 → révélerUnContenuCaché
+    afficher("Investigation réussie. Tu trouves " + découvertes + " élément(s).")
+
+SINON
+    afficher("Tu n’as rien trouvé.")
+    modifierEmo(-1)
+    découvertes = 0
+
+// === 5. POST-INVESTIGATION ===
+temps += 2h
+autorisation_fouille → consommée (si utilisée)
+cartes_invest réussies → possibilité de les ajouter à la pile Maîtrise (max 10)
+mettre à jour la pile Objets / Lieux / PNJs si des cartes sont révélées
+ajouter liens violets pour les découvertes
+
+// === 6. PROGRESSION DES CARACTÉRISTIQUES ===
+SI jet == 1 OU jet == 10 ALORS
+    stat ← aléatoire([PHY, MEN, HEA])
+    SI jet == 1 → stat += 1
+    SI jet == 10 → stat -= 1
+
+// === 7. PNJs ENTRANT SUR LE LIEU ===
+SI PNJ devait arriver pendant interaction ALORS
+    il attend dehors → PNJ bloqué jusqu’à fin de l’Investigation
+
+FIN

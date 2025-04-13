@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=55 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -19,9 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
 [ext_resource type="VideoStream" uid="uid://bdb8kb1t3m6ew" path="res://GRAPHICS/INTERACTION/MFSC.ogv" id="12_v84v6"]
 [ext_resource type="Texture2D" uid="uid://br15hgwsu8gpi" path="res://GRAPHICS/INTERACTION/Card_Playground_Mask.png" id="12_xjgkp"]
-[ext_resource type="Texture2D" uid="uid://5gc8juwd4b3v" path="res://GRAPHICS/INTERACTION/test_01.png" id="14_k1rto"]
+[ext_resource type="Script" uid="uid://cslcuvmg0o82w" path="res://SCRIPTS/Random_Interaction.gd" id="14_1c880"]
+[ext_resource type="Texture2D" uid="uid://43qya3ji5i5" path="res://GRAPHICS/INTERACTION/Dialogue_TV.png" id="14_k1rto"]
+[ext_resource type="Texture2D" uid="uid://cvlbkv18hita5" path="res://GRAPHICS/INTERACTION/Combat_TV.png" id="15_5imuv"]
 [ext_resource type="VideoStream" uid="uid://cg658u2alfml5" path="res://GRAPHICS/INTERACTION/DB.ogv" id="15_k1rto"]
 [ext_resource type="VideoStream" uid="uid://cbrvs84gmgpot" path="res://GRAPHICS/INTERACTION/KM.ogv" id="16_5imuv"]
+[ext_resource type="Texture2D" uid="uid://cororpxjkvmhy" path="res://GRAPHICS/INTERACTION/Investigation_TV.png" id="16_jv51o"]
 [ext_resource type="Script" uid="uid://b08whl1g6oj7o" path="res://SCRIPTS/Tv_On_Off_Button.gd" id="16_uvife"]
 [ext_resource type="VideoStream" uid="uid://q17krx83pp8o" path="res://GRAPHICS/INTERACTION/JJ.ogv" id="17_jv51o"]
 [ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="17_uvife"]
@@ -694,13 +697,31 @@ metadata/_edit_lock_ = true
 
 [node name="Line_Animation" type="Sprite2D" parent="Top_Left_Screen"]
 modulate = Color(1, 1, 1, 0.792749)
+scale = Vector2(0.97, 1)
 texture = ExtResource("9_cx411")
 centered = false
 hframes = 13
+script = ExtResource("14_1c880")
 metadata/_edit_lock_ = true
 
-[node name="test" type="Sprite2D" parent="Top_Left_Screen/Line_Animation"]
+[node name="Dialogue" type="Sprite2D" parent="Top_Left_Screen/Line_Animation"]
+visible = false
+scale = Vector2(1.03093, 1)
 texture = ExtResource("14_k1rto")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Combat" type="Sprite2D" parent="Top_Left_Screen/Line_Animation"]
+visible = false
+scale = Vector2(1.03093, 1)
+texture = ExtResource("15_5imuv")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Investigation" type="Sprite2D" parent="Top_Left_Screen/Line_Animation"]
+visible = false
+scale = Vector2(1.03093, 1)
+texture = ExtResource("16_jv51o")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -786,8 +807,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_left = 12.0
 offset_top = 19.0
-offset_right = 94.0
-offset_bottom = 33.0
+offset_right = 12.0
+offset_bottom = 19.0
 theme = ExtResource("18_k1rto")
 metadata/_edit_lock_ = true
 
@@ -795,20 +816,11 @@ metadata/_edit_lock_ = true
 visible = false
 self_modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
+offset_top = 59.0
 offset_right = 82.0
-offset_bottom = 8.0
+offset_bottom = 67.0
 theme_override_colors/font_color = Color(0.32, 0.501333, 1, 1)
 text = "Dialogue"
-horizontal_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="Investigation" type="Label" parent="Top_Left_Screen/Interaction"]
-self_modulate = Color(1, 1, 1, 0.843137)
-layout_mode = 0
-offset_right = 82.0
-offset_bottom = 8.0
-theme_override_colors/font_color = Color(0.50049, 0.67, 0.3618, 1)
-text = "Investigation"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -816,10 +828,23 @@ metadata/_edit_lock_ = true
 visible = false
 self_modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 0
+offset_top = 59.0
 offset_right = 82.0
-offset_bottom = 8.0
+offset_bottom = 67.0
 theme_override_colors/font_color = Color(1, 0.35, 0.35, 1)
 text = "Combat"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Investigation" type="Label" parent="Top_Left_Screen/Interaction"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.843137)
+layout_mode = 0
+offset_top = 59.0
+offset_right = 82.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.50049, 0.67, 0.3618, 1)
+text = "Investigation"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
