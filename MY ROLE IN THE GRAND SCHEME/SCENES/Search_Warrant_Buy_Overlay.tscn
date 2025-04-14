@@ -317,9 +317,9 @@ theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-text = "Well. Now that
-mention it..."
-alignment = 2
+text = "Well, now that
+you mention it..."
+alignment = 0
 metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
