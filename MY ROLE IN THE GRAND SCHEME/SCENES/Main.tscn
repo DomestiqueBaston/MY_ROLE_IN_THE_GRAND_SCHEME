@@ -129,7 +129,7 @@ visible = true
 [node name="Card_Text" parent="TMP_1/Main_Playmat/Card2/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card_Animations" parent="TMP_1/Main_Playmat/Card2" index="2"]
+[node name="Card_Animations" parent="TMP_1/Main_Playmat/Card2" index="3"]
 autoplay = "Card_Blink"
 
 [node name="Card3" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
