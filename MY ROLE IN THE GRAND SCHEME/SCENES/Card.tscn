@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=35 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
+[ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card.gd" id="2_2qjxn"]
 [ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="2_y3cdu"]
 [ext_resource type="Texture2D" uid="uid://vuxehd33t5yj" path="res://GRAPHICS/CARD/Card_Special.png" id="3_gk6lr"]
@@ -24,6 +25,11 @@
 [ext_resource type="AudioStream" uid="uid://cbentdu5jvok7" path="res://SOUND/CARD/Drop_Card.ogg" id="21_tg66g"]
 [ext_resource type="AudioStream" uid="uid://dnbr6d7wdvn0j" path="res://SOUND/CARD/Take_Card.ogg" id="22_iuyk4"]
 [ext_resource type="AudioStream" uid="uid://mki238woun53" path="res://SOUND/MISC/Go_Back.ogg" id="22_ve1ow"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_02fmt"]
+shader = ExtResource("1_iuyk4")
+shader_parameter/shadow_offset = Vector2(2, 4)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
 size = Vector2(70, 96)
@@ -67,6 +73,30 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.133333, 0.466667, 0.8)
 }
 tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card_Shadow:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.266667, 0.333333, 0.4, 0.466667, 0.6, 0.666667, 0.733333, 0.8, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Card_Shadow:material:shader_parameter/shadow_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.266667, 0.333333, 0.4, 0.466667, 0.6, 0.666667, 0.733333, 0.8, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.3)]
+}
 
 [sub_resource type="Animation" id="Animation_kxf5h"]
 resource_name = "Expand_Card"
@@ -243,6 +273,18 @@ tracks/13/keys = {
 "update": 1,
 "values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Card_Shadow:frame")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 3, 2, 1, 0]
+}
 
 [sub_resource type="Animation" id="Animation_0x2oy"]
 length = 0.001
@@ -413,6 +455,54 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Card_Shadow:frame")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Card_Shadow:material:shader_parameter/shadow_color")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.3)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Card_Shadow:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -4)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Card_Shadow:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_x7g54"]
@@ -590,13 +680,85 @@ tracks/13/keys = {
 "update": 1,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Card_Shadow:frame")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_nk8id"]
+resource_name = "Shadow_On"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-2, -4), Vector2(-1, -3), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Shadow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_s04w5"]
+resource_name = "Shadow_Off"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Shadow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-1, -1), Vector2(-2, -4), Vector2(-2, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Shadow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7.45058e-09, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
 _data = {
 &"Card_Blink": SubResource("Animation_0byv1"),
 &"Expand_Card": SubResource("Animation_kxf5h"),
 &"RESET": SubResource("Animation_0x2oy"),
-&"Reduce_Card": SubResource("Animation_x7g54")
+&"Reduce_Card": SubResource("Animation_x7g54"),
+&"Shadow_Off": SubResource("Animation_s04w5"),
+&"Shadow_On": SubResource("Animation_nk8id")
 }
 
 [node name="Card" type="Node2D"]
@@ -640,6 +802,16 @@ metadata/_edit_lock_ = true
 
 [node name="Right_Bottom_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(30, 14)
+metadata/_edit_lock_ = true
+
+[node name="Card_Shadow" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_02fmt")
+position = Vector2(-2, -4)
+texture = ExtResource("1_8pu3o")
+centered = false
+hframes = 5
+script = ExtResource("2_2qjxn")
 metadata/_edit_lock_ = true
 
 [node name="Card_Mask" type="Sprite2D" parent="."]
