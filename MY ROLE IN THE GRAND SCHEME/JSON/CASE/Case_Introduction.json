@@ -5810,11 +5810,11 @@
 		{
 			"part": 19,
 			"choices": [
-				"and it cannot be undone.",
-				"and no one can go back.",
-				"and the consequences linger.",
-				"and it's too late to reverse it.",
-				"and the damage is done."
+				"and it cannot be undone. ",
+				"and no one can go back. ",
+				"and the consequences linger. ",
+				"and it's too late to reverse it. ",
+				"and the damage is done. "
 			]
 		},
 		{

@@ -5,12 +5,12 @@ Livret de règles (!)
 
 
 Caractéristiques du Joueur
-	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/HEAnom.) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) allant de 0 à 5. Aucune caractéristique ne pourra jamais dépasser 10.
+	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/HEAnom) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) allant de 0 à 5. Aucune caractéristique ne pourra jamais dépasser 10.
 	- À noter qu’à la création du personnage, pour le sexe, on peut mettre M, F ou n’importe quelle valeur entre les deux, on s’en fout, ça ne change rien au jeu (humour de merde inclus !).
 	- Pas d’âge non plus, on s’en fout totalement aussi !
 
 Les caractéristiques principales
-	- À la création du personnage, 15 points à répartir entre PHY, MEN et HEAnom. avec un minimum de 3 et un maximum de 7.
+	- À la création du personnage, 15 points à répartir entre PHY, MEN et HEAnom avec un minimum de 3 et un maximum de 7.
 	- À la création, le personnage a HEA=HEAnom.
 	- PHY=0 et/ou MEN=0 → incapacité d‘Interagir (voir Système de Santé).
 	- HEA=0 → mort du joueur.
@@ -19,9 +19,9 @@ Physique (PHY)
 	- Mesure les aptitudes d’habileté et physiques du personnage. 
 Mental (MEN)
 	- Mesure les adptitudes intellectuelles et psychologiques du personnage. 
-Santé (HEA/HEAnom.) 
-	- HEAnom. représente la santé maximale.
-	- HEA représente la santé actuelle (ne peut jamais dépasser HEAnom.).
+Santé (HEA/HEAnom) 
+	- HEAnom représente la santé maximale.
+	- HEA représente la santé actuelle (ne peut jamais dépasser HEAnom).
 
 
 Les caractéristiques secondaires
@@ -110,7 +110,7 @@ Backgrounds
 	- Retraité : -1PHY, +1MEN, -2HEA et HEAnom
 	- Super héro à temps partiel : +2PHY, -2MEN
 	- Taxidermiste : -1MEN, +1HEA et HEAnom
-	- Toxicomane : -1MEN, -1HEA et HEAnom. -50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose
+	- Toxicomane : -1MEN, -1HEA et HEAnom -50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose
 	- Vendeur de glaces : +100Dø au démarrage de la partie
 	- Vétérinaire : -50 % sur les interventions thérapeutiques (médecin) 
 
@@ -118,7 +118,7 @@ Progression du joueur (pas des PNJs !)
 	- Seules les réussites et échecs critiques (1 ou 10 « naturel » obtenus directement sur le dé, avant l’application de tout modificateur) font varier les caractéristiques principales du joueur par pas de ±1 (réussite critique : +1 et échec critique : -1) et ce uniquement après avoir évalué le résultat de l’action entreprise.
 	- La caractéristique (principale) qui évoluera sera sélectionnée aléatoirement parmi celles utilisées pour le jet de dé.
 	- N’importe quel jet de dé (hors Mort par Add vu au dessus) impliquant PHY, MEN ou HEA peut amener à ces évolutions et la modification sera toujours effective après la résolution de l’action entreprise.
-	- Quand HEA évolue, HEAnom. aussi.
+	- Quand HEA évolue, HEAnom aussi.
 
 Les PNJs
 
@@ -191,14 +191,14 @@ La réputation (du joueur auprès du PNJ)
 	- Le joueur a TOUJOURS Rep=-3 avec un « sbire » (voir Combat).
 
 Génération des caractéristiques des PNJs
-	- A la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et HEAnom. (HEA=HEAnom.) suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (les PNJs de la quête finale ont 6 points)(voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
+	- A la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et HEAnom (HEA=HEAnom) suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (les PNJs de la quête finale ont 6 points)(voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
 	- On ajoutera ensuite les bonus/malus liés à la profession.
 	- Aucune caractéristique ne pourra dépasser 10.
 
 Progression des PNJs (pas du joueur)
 	- Les PNJs peuvent également progresser (de la même manière que le joueur).
 	- Seules les réussites et échecs critiques (1 ou 10 « naturel » obtenus directement sur le dé, avant l’application de tout modificateur) font varier les caractéristiques principales du joueur par pas de ±1 (réussite critique : +1 et échec critique : -1) et ce uniquement après avoir évalué le résultat de l’action en cours.
-	- Dans ce cas, quand HEA évolue, HEAnom. aussi (et inversement) en respectant les valeurs minimales et maximales.
+	- Dans ce cas, quand HEA évolue, HEAnom aussi (et inversement) en respectant les valeurs minimales et maximales.
 	- Chaque jour, si les PNJs n’ont pas progressé en interagissant avec le joueur, ils auront 10% de chance qu’au hasard, 1 de leurs caractéristiques PHY, MEN et HEAnom (et donc HEA) évoluent de ±1 en respectant les valeurs minimales et maximales.
 Mécanismes de jeu
 
@@ -216,11 +216,11 @@ Système de Dés
 
 Difficulté du jeu (écran d’OPTIONS)
 	- 5 niveaux de difficulté :
-		Hobbie : bonus de 1 aux jets de dé, +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom. à la génération.
-		Tranquille : +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom. à la génération.
+		Hobbie : bonus de 1 aux jets de dé, +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom à la génération.
+		Tranquille : +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom à la génération.
 		Routine : /
-		Stressant : -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom. à la génération.
-		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom. à la génération.
+		Stressant : -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
+		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
 
 	- En difficulté de jeu Hobbie, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
 		C’est pas gagné ! : le joueur a très peu de chances de réussir l'action. (<20 % de chances de réussite)
@@ -271,7 +271,7 @@ Paranoïa
 	- Le joueur va tout d'un coup, quand le cap défini est franchi, devenir paranoïaque (on finira l’éventuelle interaction en cours de type Combat, Dialogue ou Investigation avant malgré tout comme dit au dessus dans Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par).
 	- Tous les bonus/malus temporaires du joueur disparaissent (s’il y en avait) : le joueur ne sera plus affecté par un quelconque état émotionnel (Emo=0). Il n’aura plus de besoin vitaux (sommeil, drogue, etc. ce qui impliquera notamment Add=0) et il aura 7 jours pour résoudre l’enquête ultime puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné.
 	- Les effets de la Paranoïa seront les suivants (sans jamais dépasser les seuils max/min) :
-		Bonus : +2 en PHY ou MEN ou HEAnom. (et HEA) aléatoirement (sans dépasser le maximum).
+		Bonus : +2 en PHY ou MEN ou HEAnom (et HEA) aléatoirement (sans dépasser le maximum).
 		Malus : -1 dans les autres caractéristiques principales (sans passer sous le seuil minimum).
 
 Récupération (joueur)
@@ -380,7 +380,7 @@ Les cartes
 	- Le joueur disposera dans sa pile de maîtrise de max.10 cartes Dialogue/Combat/Investigation/Abstraite (dont 3 max. pour Abstraite). Ce sont ces cartes qui représentent les « actions » qu’il connaît et maîtrise.
 	- En début de partie, pour la pile de Maîtrise, le jeu proposera au joueur 8 cartes d’interaction (2 Dialogue, 2 Combat, 2 Investigation y compris Special, Run Away ou Break in et 2 Abstraite) choisies aléatoirement.
 	- Les effets d’une carte sur PHY et MEN sont temporaires !
-	- Les bonus/malus d’une carte sur HEA, HEAnom., Emo, Add et/ou Wan sont permanents !
+	- Les bonus/malus d’une carte sur HEA, HEAnom, Emo, Add et/ou Wan sont permanents !
 	- Lorsque des effets en cas d’échec sont mentionnés sur des cartes, ils sont à appliquer en cas d’échec après le jet de dé.
 	- À noter que le Card_BG dans Card.tscn peut (et doit) être bougé pour chaque carte (juste pour varier un peu leur fond d’une carte à l’autre). Offset/offset en x entre -120 et 0 et en y entre -30 et 0 (on mettra un pas de 5 pixels de variation).
 
@@ -598,7 +598,7 @@ Déclenchement d’un Combat par un PNJ « sbire »
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
 	- Probabilité d’attaque : (Niveau de difficulté d’enquête)% par tranche horaire (10% pour l’enquête finale).
 	- Si une attaque doit survenir, elle surviendra toujours avant l’execution de l’action suivante du joueur (y compris aller chez le médecin, etc.).
-	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale (HEAnom.). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
+	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale (HEAnom). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sera envoyé.
 	- Tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un commenditaire et donc du ou d’un coupable de l’enquête avec une probabilité de 33 % (établissement d’un Lien Violet). Au joueur d’en tirer les conséquences.
 
@@ -768,4 +768,4 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
 
 	/!\ Tout petit point important :
-		- je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste !
+		- je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!

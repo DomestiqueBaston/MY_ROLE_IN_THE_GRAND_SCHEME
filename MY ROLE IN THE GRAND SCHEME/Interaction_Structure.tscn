@@ -20,7 +20,7 @@
 
 [node name="Top_Bar_Menu" type="Node" parent="."]
 
-[node name="None_Overlay_Scenes" type="Node" parent="."]
+[node name="Non_Overlay_Scenes" type="Node" parent="."]
 
 [node name="Overlay_Scenes" type="Node" parent="."]
 
@@ -29,3 +29,5 @@
 [node name="Shared_Interface_Sounds" type="Node" parent="."]
 
 [node name="Background_Sound" type="Node" parent="."]
+
+[node name="Music" type="Node" parent="."]

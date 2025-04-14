@@ -14,5 +14,6 @@ points = PackedVector2Array(212, 218, 343, 204)
 width = 20.0
 gradient = SubResource("Gradient_7eyd2")
 end_cap_mode = 2
+round_precision = 16
 antialiased = true
 metadata/_edit_lock_ = true

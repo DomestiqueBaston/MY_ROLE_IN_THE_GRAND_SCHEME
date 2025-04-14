@@ -540,7 +540,7 @@ texture_hover = ExtResource("6_dhbug")
 texture_click_mask = ExtResource("7_tawrq")
 metadata/_edit_lock_ = true
 
-[node name="CardPlaygroundMask" type="Sprite2D" parent="."]
+[node name="Card_Playground_Mask" type="Sprite2D" parent="."]
 texture = ExtResource("12_xjgkp")
 centered = false
 metadata/_edit_lock_ = true

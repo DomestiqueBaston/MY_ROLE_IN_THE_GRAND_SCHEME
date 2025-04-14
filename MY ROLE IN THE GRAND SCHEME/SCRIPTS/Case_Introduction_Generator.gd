@@ -1,7 +1,7 @@
 extends Label
 
 
-var json_path = "res://JSON/NARRATION/Case_Introduction.json"
+var json_path = "res://JSON/CASE/Case_Introduction.json"
 
 
 func _ready():

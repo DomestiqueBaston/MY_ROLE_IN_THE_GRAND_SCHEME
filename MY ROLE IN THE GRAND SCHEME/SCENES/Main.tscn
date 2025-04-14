@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=58 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
+[ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="13_ksebp"]
 [ext_resource type="Script" uid="uid://twxt7ns0olqm" path="res://SCRIPTS/Main_Buttons.gd" id="14_1r0xb"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="14_d27u2"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
@@ -389,6 +390,27 @@ visible = true
 
 [node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card_Ghost" parent="TMP_2" instance=ExtResource("3_b4mvu")]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(60, 47)
+
+[node name="Special" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Card_Text" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card_Name" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="0"]
+text = "Clic the cards..."
+
+[node name="Card_Description" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="1"]
+text = "...in order to see the reduce/expand animations!"
+
+[node name="Drag_Drop_Line" parent="." instance=ExtResource("13_ksebp")]
+
+[node name="Line" parent="Drag_Drop_Line" index="0"]
+points = PackedVector2Array(86, 50, 217, 88)
 
 [node name="Colliders" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -776,6 +798,7 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme = ExtResource("30_3y6u4")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
+metadata/_edit_lock_ = true
 
 [node name="Motive_List" type="OptionButton" parent="Crime_Motive_Selection/Motive_Selector"]
 custom_minimum_size = Vector2(100, 16)
@@ -866,4 +889,6 @@ metadata/_edit_lock_ = true
 [editable path="TMP_2/Possible_Clues_Cards/Card12"]
 [editable path="TMP_2/Possible_Clues_Cards/Card13"]
 [editable path="TMP_2/Possible_Clues_Cards/Card14"]
+[editable path="TMP_2/Card_Ghost"]
+[editable path="Drag_Drop_Line"]
 [editable path="Shared_Interface_Sounds"]

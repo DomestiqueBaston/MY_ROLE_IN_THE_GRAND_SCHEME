@@ -1,10 +1,97 @@
-[gd_scene load_steps=6 format=3 uid="uid://hl8yhfvhjhtn"]
+[gd_scene load_steps=9 format=3 uid="uid://hl8yhfvhjhtn"]
 
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="4_0ibqv"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_0mfvj"]
+
+[sub_resource type="Animation" id="Animation_0mfvj"]
+resource_name = "Alert"
+length = 2.17
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Stats/Emo:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.17),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character_Stats/Add:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.17),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shared_Interface_Sounds/Soft_Alarm:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_nvp8u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Stats/Emo:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character_Stats/Add:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Shared_Interface_Sounds/Soft_Alarm:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2yfei"]
+_data = {
+&"Alert": SubResource("Animation_0mfvj"),
+&"RESET": SubResource("Animation_nvp8u")
+}
 
 [node name="Top_Bar" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -216,7 +303,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = ExtResource("1_2tgjx")
 bbcode_enabled = true
-text = "[color=#ff1c18]PHY[/color]: [color=#ff8864] [/color] | [color=#ff1c18]MEN[/color]: [color=#ff8864] [/color] | [color=#ff1c18]HEA[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Emo[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Add[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Wan[/color]: [color=#00000000]|8[/color]| [color=#ff1c18]Drug[/color]: [color=#ff8864] [/color][color=#00000000]|[/color] | [color=#ff8864]    [/color][color=#ff1c18]Dø[/color]"
+text = "[color=#ff1c18]PHY[/color]: [color=#ff8864] [/color] | [color=#ff1c18]MEN[/color]: [color=#ff8864] [/color] | [color=#ff1c18]HEA[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Emo[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Add[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Wan[/color]: [color=#00000000]|8[/color]| [color=#ff1c18]Drug[/color]: [color=#ff8864] [/color][color=#00000000]|[/color] | [color=#ff8864][/color][color=#ff1c18]Dø[/color]: [color=#ff8864][color=#00000000]|811[/color]"
 scroll_active = false
 autowrap_mode = 0
 text_direction = 2
@@ -227,8 +314,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -403.0
-offset_right = -320.0
+offset_left = -406.0
+offset_right = -324.0
 offset_bottom = 8.0
 grow_horizontal = 0
 pivot_offset = Vector2(80, 0)
@@ -240,12 +327,11 @@ text = "Player's name..."
 horizontal_alignment = 1
 text_overrun_behavior = 3
 ellipsis_char = "."
-metadata/_edit_lock_ = true
 
 [node name="Double_Bar" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 43.0
-offset_right = 52.0
+offset_left = 41.0
+offset_right = 50.0
 offset_bottom = 8.0
 text = "||"
 horizontal_alignment = 1
@@ -253,74 +339,75 @@ metadata/_edit_lock_ = true
 
 [node name="PHY" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 74.0
-offset_right = 83.0
+offset_left = 73.0
+offset_right = 82.0
 offset_bottom = 8.0
 tooltip_text = "Physical abilities"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "10"
-horizontal_alignment = 1
+horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="MEN" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 114.0
-offset_right = 123.0
+offset_left = 113.0
+offset_right = 122.0
 offset_bottom = 8.0
 tooltip_text = "Mental abilities"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "10"
-horizontal_alignment = 1
+horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="HEA" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 153.0
-offset_right = 162.0
+offset_left = 152.0
+offset_right = 161.0
 offset_bottom = 8.0
-tooltip_text = "Health state"
+tooltip_text = "Health state
+(full Health = XX)"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "10"
-horizontal_alignment = 1
+horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="Emo" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 193.0
-offset_right = 202.0
+offset_left = 192.0
+offset_right = 201.0
 offset_bottom = 8.0
 tooltip_text = "Emotional state"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "-2"
-horizontal_alignment = 1
+horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="Add" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 232.0
-offset_right = 241.0
+offset_left = 231.0
+offset_right = 240.0
 offset_bottom = 8.0
 tooltip_text = "Drug craving"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "+2"
-horizontal_alignment = 1
+horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="Wan" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 270.0
-offset_right = 279.0
+offset_left = 268.0
+offset_right = 277.0
 offset_bottom = 8.0
 tooltip_text = "Authority trouble"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
-text = "9"
-horizontal_alignment = 1
+text = "5"
+horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="Drug" type="Label" parent="Character_Stats"]
@@ -332,13 +419,13 @@ tooltip_text = "Dose(s) left"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "99"
-horizontal_alignment = 1
+horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
 [node name="Dough" type="Label" parent="Character_Stats"]
 layout_mode = 0
-offset_left = 332.0
-offset_right = 352.0
+offset_left = 344.0
+offset_right = 364.0
 offset_bottom = 8.0
 tooltip_text = "Available funds"
 mouse_filter = 0
@@ -382,6 +469,12 @@ item_0/id = 0
 item_1/text = "2 doses"
 item_1/id = 1
 item_1/disabled = true
+
+[node name="Stat_Alert" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2yfei")
+}
+autoplay = "Alert"
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("5_0mfvj")]
 
