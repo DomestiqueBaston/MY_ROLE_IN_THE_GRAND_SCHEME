@@ -62,6 +62,15 @@ func _process(_delta):
 			elif current_animation == anim_expand:
 				play_animation(anim_reduce)
 
+	# -- AJOUT : synchronisation dynamique de l'ombre avec la transparence de la carte
+	# L’ombre (Card_Shadow) devient plus transparente si la carte l’est aussi
+	var card_alpha := modulate.a  # Alpha (transparence) de la carte actuelle
+	var target_shadow_alpha := card_alpha * 0.3  # On veut max 30% d’opacité pour l’ombre
+
+	var shadow_material: ShaderMaterial = $"../Card_Shadow".material
+	if shadow_material:
+		shadow_material.set_shader_parameter("shadow_color", Color(0, 0, 0, target_shadow_alpha))
+
 ## Je n'arrive pas à faire en sorte que lorsque deux instances de carte
 ## se trouvent l'une sur l'autre, que la partie cachée de celle du dessous
 ## ne reçoive pas les clics de souris (ni même ne voit la souris ?)...

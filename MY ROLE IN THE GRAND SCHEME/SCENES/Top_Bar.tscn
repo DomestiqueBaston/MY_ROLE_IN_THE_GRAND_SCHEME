@@ -478,6 +478,9 @@ autoplay = "Alert"
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("5_0mfvj")]
 
+[node name="Soft_Alarm" parent="Shared_Interface_Sounds" index="4"]
+volume_db = -10.0
+
 [connection signal="mouse_entered" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menus/Dailies" to="Menus/Dailies" method="_on_pressed"]

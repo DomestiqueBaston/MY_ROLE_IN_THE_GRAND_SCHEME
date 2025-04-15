@@ -4,10 +4,13 @@
 //COMATIBLE WITH : GLES2, GLES3
 //GITHUB LINK : https://github.com/keijiro/KinoTube/
 
+
+
 shader_type canvas_item;
 
-const float PI = 3.14159265359;
+const float PIPI = 3.14159265359;
 
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform float _bleeding :hint_range(0, 1) = 0.0;
 uniform float _fringing :hint_range(0, 1) = 0.0;
 uniform float _scanline :hint_range(0, 1) = 0.0;
@@ -52,7 +55,7 @@ void fragment(){
 	float bleedWidth = 0.04 * _bleeding;  // width of bleeding
 	float bleedStep = 2.5 / (1.0 / SCREEN_PIXEL_SIZE).x; // max interval of taps
 	float bleedTaps = ceil(bleedWidth / bleedStep);
-	float bleedDelta = bleedWidth / bleedTaps;
+	// float bleedDelta = bleedWidth / bleedTaps;
 	float fringeWidth = 0.0025 * _fringing; // width of fringing
 	
 	vec2 uv = FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE).xy;
@@ -72,7 +75,7 @@ void fragment(){
         yiq.yz += y2 - y1;
 
         // Scanline
-        float scan = sin(uv.y * 500.0 * PI);
+        float scan = sin(uv.y * 500.0 * PIPI);
         scan = mix(1.0, (scan + 1.0) / 2.0, _scanline);
 
         COLOR =  vec4(YIQ2RGB(yiq * scan), 1);
