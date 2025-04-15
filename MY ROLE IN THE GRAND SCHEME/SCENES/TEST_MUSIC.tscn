@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwn8qn4srh5qb"]
+
+[ext_resource type="AudioStream" uid="uid://bc027u0o5hhwu" path="res://TRASH/LOW.ogg" id="1_anp3l"]
+[ext_resource type="Script" uid="uid://covy1ek4aqwff" path="res://SCRIPTS/Test_Music.gd" id="1_cuvie"]
+[ext_resource type="AudioStream" uid="uid://jc7m27afh7i8" path="res://TRASH/NORMAL.ogg" id="2_cuvie"]
+[ext_resource type="AudioStream" uid="uid://doffhxrjn7uol" path="res://TRASH/HIGH.ogg" id="3_i7154"]
+
+[sub_resource type="Animation" id="Animation_lfakm"]
+resource_name = "Mixer"
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LOW")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_anp3l")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NORMAL")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_cuvie")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HIGH")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_i7154")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0hcj"]
+_data = {
+&"Mixer": SubResource("Animation_lfakm")
+}
+
+[node name="TEST_MUSIC" type="Node"]
+script = ExtResource("1_cuvie")
+
+[node name="LOW" type="AudioStreamPlayer" parent="."]
+bus = &"MUSIC"
+
+[node name="NORMAL" type="AudioStreamPlayer" parent="."]
+bus = &"MUSIC"
+
+[node name="HIGH" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+bus = &"MUSIC"
+
+[node name="Music_Mixer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a0hcj")
+}
+autoplay = "Mixer"
