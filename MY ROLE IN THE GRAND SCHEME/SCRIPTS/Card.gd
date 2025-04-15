@@ -6,6 +6,7 @@ extends Sprite2D
 
 var current_animation : String
 var card : CollisionShape2D  # Un seul collider nommé "Card"
+var was_hovered : bool = false  # Pour suivre l'état de survol précédent
 
 # Fonction appelée au démarrage
 func _ready():
@@ -19,15 +20,32 @@ func _ready():
 func _process(_delta):
 	# Ce qui suit "marche" pour la démo mais sinon, tous les z_index sont à revoir
 	# dans le projet (voir Nouveau_système_v14.odt à la fin) pour pouvoir mieux
-	# gérer les "couches" :
+	# gérer les "couches" (il sera aussi certainement judiceux de regarder les scènes
+	# Interaction_Structure.tscn et Main_Structure.tscn).
+	# Dans ce sens, j'ai modifié quelques z_index en manuel
+	# (dans Main.tscn et Interaction.tscn) mais il faudra que ça
+	# soit géré par le script sinon, ça va être la misère.
+	# Voir aussi commentaires plus bas
 	
-	#if is_mouse_in_collision(card):
-		#$"..".z_index = 1
-	#else:
-		#$"..".z_index = 0
+	if is_mouse_in_collision(card):
+		$"..".z_index = 1
+	else:
+		$"..".z_index = 0
+
+	# -- Ajout : détection de survol de la souris et gestion des animations de shadow
+	# Il faudra aussi faire en sorte que seule LA carte sous la souris affiche son
+	# ombre. Même quand plusieurs cartes se chevauchent.
+	# Voir aussi commentaires plus bas
+	var is_hovered = is_mouse_in_collision(card)
+
+	if is_hovered and not was_hovered:
+		$"../Shadow_Animations".play("Shadow_On")
+	elif not is_hovered and was_hovered:
+		$"../Shadow_Animations".play("Shadow_Off")
+	was_hovered = is_hovered
 
 	if Input.is_action_just_pressed("Left_Click"):
-		if is_mouse_in_collision(card):
+		if is_hovered:
 			# Si l'animation en cours est RESET (carte déjà "expandée"), on ne fait rien
 			if current_animation == anim_reset:
 				# La carte est déjà dans son état "expandé", donc on ne joue pas Expand_Card
@@ -41,7 +59,7 @@ func _process(_delta):
 
 ## Je n'arrive pas à faire en sorte que lorsque deux instances de carte
 ## se trouvent l'une sur l'autre, que la partie cachée de celle du dessous
-## ne reçoive pas les clics de souris...
+## ne reçoive pas les clics de souris (ni même ne voit la souris ?)...
 
 ## Dans Interarction.tscn, lorsque l'on a une ribambelle de cartes les unes sur
 ## les autres en ligne horizontale (ou verticale), celle sous le curseur de la
@@ -79,3 +97,7 @@ func is_mouse_in_collision(collision_shape: CollisionShape2D) -> bool:
 func play_animation(anim_name: String):
 	$"../Card_Animations".play(anim_name)
 	current_animation = anim_name  # Met à jour l'animation actuelle
+
+# -- Nouvelle fonction : Joue l'animation de survol (ombre)
+func play_shadow_animation(anim_name: String):
+	$"../Card_Animations".play(anim_name)

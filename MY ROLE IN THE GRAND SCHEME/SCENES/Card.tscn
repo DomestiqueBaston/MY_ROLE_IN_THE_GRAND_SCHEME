@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=37 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
@@ -693,33 +693,68 @@ tracks/14/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_s04w5"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
+_data = {
+&"Card_Blink": SubResource("Animation_0byv1"),
+&"Expand_Card": SubResource("Animation_kxf5h"),
+&"RESET": SubResource("Animation_0x2oy"),
+&"Reduce_Card": SubResource("Animation_x7g54")
+}
+
+[sub_resource type="Animation" id="Animation_iuyk4"]
 resource_name = "Shadow_Off"
 length = 0.200007
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Card_Shadow:position")
+tracks/0/path = NodePath("Card_Shadow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, 0), Vector2(-1, -1), Vector2(-2, -4), Vector2(-2, -4)]
+"values": [true, true, false, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Card_Shadow:visible")
+tracks/1/path = NodePath("Card_Shadow:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(7.45058e-09, 0.0666667, 0.133333, 0.2),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [true, true, false, false]
+"values": [Vector2(0, 0), Vector2(-1, -1), Vector2(-2, -4), Vector2(-2, -4)]
+}
+
+[sub_resource type="Animation" id="Animation_02fmt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Shadow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, -4)]
 }
 
 [sub_resource type="Animation" id="Animation_nk8id"]
@@ -729,35 +764,32 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Card_Shadow:position")
+tracks/0/path = NodePath("Card_Shadow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(-2, -4), Vector2(-1, -3), Vector2(0, 0), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Card_Shadow:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-2, -4), Vector2(-1, -3), Vector2(0, 0), Vector2(0, 0)]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s04w5"]
 _data = {
-&"Card_Blink": SubResource("Animation_0byv1"),
-&"Expand_Card": SubResource("Animation_kxf5h"),
-&"RESET": SubResource("Animation_0x2oy"),
-&"Reduce_Card": SubResource("Animation_x7g54"),
-&"Shadow_Off": SubResource("Animation_s04w5"),
+&"RESET": SubResource("Animation_02fmt"),
+&"Shadow_Off": SubResource("Animation_iuyk4"),
 &"Shadow_On": SubResource("Animation_nk8id")
 }
 
@@ -811,7 +843,6 @@ position = Vector2(-2, -4)
 texture = ExtResource("1_8pu3o")
 centered = false
 hframes = 5
-script = ExtResource("2_2qjxn")
 metadata/_edit_lock_ = true
 
 [node name="Card_Mask" type="Sprite2D" parent="."]
@@ -1050,6 +1081,11 @@ metadata/_edit_lock_ = true
 [node name="Card_Animations" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_tcnxd")
+}
+
+[node name="Shadow_Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_s04w5")
 }
 
 [node name="Sounds" type="Node" parent="."]

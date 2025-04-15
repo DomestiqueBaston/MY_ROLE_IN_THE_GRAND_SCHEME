@@ -518,6 +518,7 @@ visible = true
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("4_som80")]
+z_index = 1
 
 [node name="Button" type="Control" parent="."]
 layout_mode = 3
