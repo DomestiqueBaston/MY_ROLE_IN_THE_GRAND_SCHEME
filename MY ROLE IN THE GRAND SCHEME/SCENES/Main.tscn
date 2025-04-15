@@ -410,6 +410,7 @@ text = "Clic the cards..."
 text = "...in order to see the reduce/expand animations!"
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("13_ksebp")]
+z_index = 2
 
 [node name="Line" parent="Drag_Drop_Line" index="0"]
 points = PackedVector2Array(86, 50, 217, 88)
