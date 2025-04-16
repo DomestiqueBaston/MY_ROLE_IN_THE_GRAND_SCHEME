@@ -111,7 +111,7 @@ Backgrounds
 	- Super héro à temps partiel : +2PHY, -2MEN
 	- Taxidermiste : -1MEN, +1HEA et HEAnom
 	- Toxicomane : -1MEN, -1HEA et HEAnom -50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose
-	- Vendeur de glaces : +100Dø au démarrage de la partie
+	- Vendeur de glaces : +150Dø au démarrage de la partie
 	- Vétérinaire : -50 % sur les interventions thérapeutiques (médecin) 
 
 Progression du joueur (pas des PNJs !)
