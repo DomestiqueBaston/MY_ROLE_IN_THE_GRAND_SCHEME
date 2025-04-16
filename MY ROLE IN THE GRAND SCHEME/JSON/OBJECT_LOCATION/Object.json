@@ -1,7 +1,7 @@
 [
   {
     "id": "OBJ001",
-	"obj_id": "OBJ001_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ001_IDxxx",
     "type": "Object",
     "info_name": "- DEBT AKNOWLEDGMENT -",
     "name": "Debt aknowledgment",
@@ -14,7 +14,7 @@
   },
   {
     "id": "OBJ002",
-	"obj_id": "OBJ002_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ002_IDxxx",
     "type": "Object",
     "info_name": "- DNA SAMPLE -",
     "name": "DNA sample",
@@ -26,7 +26,7 @@
   },
   {
     "id": "OBJ003",
-	"obj_id": "OBJ003_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ003_IDxxx",
     "type": "Object",
     "info_name": "- UNKNOWN DNA SAMPLE -",
     "name": "Unknown DNA sample",
@@ -38,7 +38,7 @@
   },
   {
     "id": "OBJ004",
-	"obj_id": "OBJ004_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ004_IDxxx",
     "type": "Object",
     "info_name": "- FINGERPRINTS -",
     "name": "Fingerprints",
@@ -50,7 +50,7 @@
   },
   {
     "id": "OBJ005",
-	"obj_id": "OBJ005_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ005_IDxxx",
     "type": "Object",
     "info_name": "- KEY -",
     "name": "Key",
@@ -62,7 +62,7 @@
   },
   {
     "id": "OBJ006",
-	"obj_id": "OBJ006_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ006_IDxxx",
     "type": "Object",
     "info_name": "- RECORDING -",
     "name": "Recording",
@@ -75,7 +75,7 @@
   },
   {
     "id": "OBJ007",
-	"obj_id": "OBJ007_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ007_IDxxx",
     "type": "Object",
     "info_name": "- JEWELER'S BILL -",
     "name": "Jeweler's bill",
@@ -87,7 +87,7 @@
   },
   {
     "id": "OBJ008",
-	"obj_id": "OBJ008_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ008_IDxxx",
     "type": "Object",
     "info_name": "- LARGE SUM OF CASH -",
     "name": "Large sum of cash",
@@ -99,7 +99,7 @@
   },
   {
     "id": "OBJ009",
-	"obj_id": "OBJ009_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ009_IDxxx",
     "type": "Object",
     "info_name": "- BANK RECEIPT -",
     "name": "Bank receipt",
@@ -111,7 +111,7 @@
   },
   {
     "id": "OBJ010",
-	"obj_id": "OBJ010_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ010_IDxxx",
     "type": "Object",
     "info_name": "- LINGERIE -",
     "name": "Lingerie",
@@ -123,7 +123,7 @@
   },
   {
     "id": "OBJ011",
-	"obj_id": "OBJ011_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ011_IDxxx",
     "type": "Object",
     "info_name": "- BOOK -",
     "name": "Book",
@@ -135,7 +135,7 @@
   },
     {
     "id": "OBJ012",
-	"obj_id": "OBJ012_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ012_IDxxx",
     "type": "Object",
     "info_name": "- MESSAGE -",
     "name": "Message",
@@ -148,7 +148,7 @@
   },
   {
     "id": "OBJ013",
-	"obj_id": "OBJ013_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ013_IDxxx",
     "type": "Object",
     "info_name": "- PHOTOGRAPH -",
     "name": "Photograph",
@@ -161,7 +161,7 @@
   },
   {
     "id": "OBJ014",
-	"obj_id": "OBJ014_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ014_IDxxx",
     "type": "Object",
     "info_name": "- CONDOM -",
     "name": "Condom",
@@ -174,7 +174,7 @@
   },
   {
     "id": "OBJ015",
-	"obj_id": "OBJ015_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ015_IDxxx",
     "type": "Object",
     "info_name": "- WEAPON -",
     "name": "Weapon",
@@ -186,7 +186,7 @@
   },
   {
     "id": "OBJ016",
-	"obj_id": "OBJ016_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ016_IDxxx",
     "type": "Object",
     "info_name": "- EXPLOSIVE -",
     "name": "Explosive",
@@ -198,7 +198,7 @@
   },
   {
     "id": "OBJ017",
-	"obj_id": "OBJ017_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ017_IDxxx",
     "type": "Object",
     "info_name": "- BOOK -",
     "name": "Book",
@@ -210,7 +210,7 @@
   },
   {
     "id": "OBJ018",
-	"obj_id": "OBJ018_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ018_IDxxx",
     "type": "Object",
     "info_name": "- BLUEPRINT -",
     "name": "Blueprint",
@@ -222,7 +222,7 @@
   },
   {
     "id": "OBJ019",
-	"obj_id": "OBJ019_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ019_IDxxx",
     "type": "Object",
     "info_name": "- BLOODSTAINED CLOTH -",
     "name": "Bloodstained cloth",
@@ -234,7 +234,7 @@
   },
   {
     "id": "OBJ020",
-	"obj_id": "OBJ020_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ020_IDxxx",
     "type": "Object",
     "info_name": "- BOOK -",
     "name": "Book",
@@ -246,7 +246,7 @@
   },
   {
     "id": "OBJ021",
-	"obj_id": "OBJ021_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ021_IDxxx",
     "type": "Object",
     "info_name": "- LOCK PICK -",
     "name": "Lock pick",
@@ -258,7 +258,7 @@
   },
   {
     "id": "OBJ022",
-	"obj_id": "OBJ022_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ022_IDxxx",
     "type": "Object",
     "info_name": "- ARTWORK -",
     "name": "Artwork",
@@ -270,7 +270,7 @@
   },
   {
     "id": "OBJ023",
-	"obj_id": "OBJ023_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ023_IDxxx",
     "type": "Object",
     "info_name": "- GERMANIUM DIODES -",
     "name": "Germanium diodes",
@@ -282,7 +282,7 @@
   },
   {
     "id": "OBJ024",
-	"obj_id": "OBJ024_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ024_IDxxx",
     "type": "Object",
     "info_name": "- COUNTERFEIT MONEY -",
     "name": "Counterfeit money",
@@ -294,7 +294,7 @@
   },
   {
     "id": "OBJ025",
-	"obj_id": "OBJ025_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ025_IDxxx",
     "type": "Object",
     "info_name": "- COUNTERFEIT GOODS -",
     "name": "Counterfeit goods",
@@ -306,10 +306,9 @@
   },
   {
     "id": "OBJ026",
-	"obj_id": "OBJ026_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ026_IDxxx",
     "type": "Object",
-    "info_name": "- COUNTERFEIT -
-- DOCUMENTS -",
+    "info_name": "- COUNTERFEIT -\n- DOCUMENTS -",
     "name": "Counterfeit documents",
     "description": "Photostore and a good printer can do wonders these days",
     "found": ["LOCxxxIDxxx"],
@@ -319,7 +318,7 @@
   },
   {
     "id": "OBJ027",
-	"obj_id": "OBJ027_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ027_IDxxx",
     "type": "Object",
     "info_name": "- COUNTERFEIT LOGOS -",
     "name": "Counterfeit logos",
@@ -331,10 +330,9 @@
   },
   {
     "id": "OBJ028",
-	"obj_id": "OBJ028_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ028_IDxxx",
     "type": "Object",
-    "info_name": "- VIAL OF -
-- FLUO LIQUID -",
+    "info_name": "- VIAL OF -\n- FLUO LIQUID -",
     "name": "Vial of Fluo liquid",
     "description": "This is no medicine. At all",
     "found": ["LOCxxxIDxxx"],
@@ -344,7 +342,7 @@
   },
   {
     "id": "OBJ029",
-	"obj_id": "OBJ029_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ029_IDxxx",
     "type": "Object",
     "info_name": "- COPY MACHINE -",
     "name": "Copy machine",
@@ -356,7 +354,7 @@
   },
   {
     "id": "OBJ030",
-	"obj_id": "OBJ030_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ030_IDxxx",
     "type": "Object",
     "info_name": "- MANUEL -",
     "name": "Manual",
@@ -368,7 +366,7 @@
   },
   {
     "id": "OBJ031",
-	"obj_id": "OBJ031_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ031_IDxxx",
     "type": "Object",
     "info_name": "- INSPECTION REPORT -",
     "name": "Inspection report",
@@ -380,7 +378,7 @@
   },
   {
     "id": "OBJ032",
-	"obj_id": "OBJ032_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ032_IDxxx",
     "type": "Object",
     "info_name": "- DOCUMENTARY -",
     "name": "Documentary",
@@ -392,7 +390,7 @@
   },
   {
     "id": "OBJ033",
-	"obj_id": "OBJ033_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ033_IDxxx",
     "type": "Object",
     "info_name": "- NOTEBOOK -",
     "name": "Notebook",
@@ -404,7 +402,7 @@
   },
   {
     "id": "OBJ034",
-	"obj_id": "OBJ034_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ034_IDxxx",
     "type": "Object",
     "info_name": "- PHOTOGRAPHS -",
     "name": "Photographs",
@@ -416,7 +414,7 @@
   },
   {
     "id": "OBJ035",
-	"obj_id": "OBJ035_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ035_IDxxx",
     "type": "Object",
     "info_name": "- COURT SUMMONS -",
     "name": "Court summons",
@@ -428,7 +426,7 @@
   },
   {
     "id": "OBJ036",
-	"obj_id": "OBJ036_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ036_IDxxx",
     "type": "Object",
     "info_name": "- WEB ARCHIVE -",
     "name": "Web archive",
@@ -440,7 +438,7 @@
   },
   {
     "id": "OBJ037",
-	"obj_id": "OBJ037_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ037_IDxxx",
     "type": "Object",
     "info_name": "- BOOK -",
     "name": "Book",
@@ -452,7 +450,7 @@
   },
   {
     "id": "OBJ038",
-	"obj_id": "OBJ038_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ038_IDxxx",
     "type": "Object",
     "info_name": "- PET -",
     "name": "Pet",
@@ -464,7 +462,7 @@
   },
   {
     "id": "OBJ039",
-	"obj_id": "OBJ039_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ039_IDxxx",
     "type": "Object",
     "info_name": "- PHOTOGRAPHS -",
     "name": "Photographs",
@@ -476,7 +474,7 @@
   },
   {
     "id": "OBJ040",
-	"obj_id": "OBJ040_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ040_IDxxx",
     "type": "Object",
     "info_name": "- DRAFT RANSOM NOTE -",
     "name": "Draft ransom note",
@@ -488,7 +486,7 @@
   },
   {
     "id": "OBJ041",
-	"obj_id": "OBJ041_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ041_IDxxx",
     "type": "Object",
     "info_name": "- ID -",
     "name": "ID",
@@ -500,7 +498,7 @@
   },
   {
     "id": "OBJ042",
-	"obj_id": "OBJ042_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ042_IDxxx",
     "type": "Object",
     "info_name": "- FAKE ID -",
     "name": "Fake ID",
@@ -512,7 +510,7 @@
   },
   {
     "id": "OBJ043",
-	"obj_id": "OBJ043_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ043_IDxxx",
     "type": "Object",
     "info_name": "- BOTTLE -",
     "name": "Bottle",
@@ -524,7 +522,7 @@
   },
   {
     "id": "OBJ044",
-	"obj_id": "OBJ044_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ044_IDxxx",
     "type": "Object",
     "info_name": "- MICRO CAMERA -",
     "name": "Micro camera",
@@ -536,7 +534,7 @@
   },
   {
     "id": "OBJ045",
-	"obj_id": "OBJ045_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ045_IDxxx",
     "type": "Object",
     "info_name": "- CLASSIFIED DOCUMENT -",
     "name": "Classified document",
@@ -548,7 +546,7 @@
   },
   {
     "id": "OBJ046",
-	"obj_id": "OBJ046_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ046_IDxxx",
     "type": "Object",
     "info_name": "- COMPUTER VIRUS -",
     "name": "Computer virus",
@@ -560,10 +558,9 @@
   },
   {
     "id": "OBJ047",
-	"obj_id": "OBJ047_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ047_IDxxx",
     "type": "Object",
-    "info_name": "- INDUSTRIAL -
-- PROJECT PLAN -",
+    "info_name": "- INDUSTRIAL -\n- PROJECT PLAN -",
     "name": "Industrial project plan",
     "description": "Major investments were planned, but have also been slightly delayed in recent days",
     "found": ["LOCxxxIDxxx"],
@@ -573,7 +570,7 @@
   },
   {
     "id": "OBJ048",
-	"obj_id": "OBJ048_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ048_IDxxx",
     "type": "Object",
     "info_name": "- PURCHASE ORDER -",
     "name": "Purchase order",
@@ -585,7 +582,7 @@
   },
   {
     "id": "OBJ049",
-	"obj_id": "OBJ049_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ049_IDxxx",
     "type": "Object",
     "info_name": "- DOCUMENT -",
     "name": "Document",
@@ -597,7 +594,7 @@
   },
   {
     "id": "OBJ081",
-	"obj_id": "OBJ081_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ081_IDxxx",
     "type": "Object",
     "info_name": "- HANDBOOK -",
     "name": "Handbook",
@@ -609,7 +606,7 @@
   },
   {
     "id": "OBJ050",
-	"obj_id": "OBJ050_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ050_IDxxx",
     "type": "Object",
     "info_name": "- TALISMAN -",
     "name": "Talisman",
@@ -621,7 +618,7 @@
   },
   {
     "id": "OBJ051",
-	"obj_id": "OBJ051_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ051_IDxxx",
     "type": "Object",
     "info_name": "- CUSTOMIZED LIGHTER -",
     "name": "Customized Lighter",
@@ -633,7 +630,7 @@
   },
   {
     "id": "OBJ052",
-	"obj_id": "OBJ052_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ052_IDxxx",
     "type": "Object",
     "info_name": "- PURCHASE ORDER -",
     "name": "Purchase order",
@@ -645,7 +642,7 @@
   },
   {
     "id": "OBJ053",
-	"obj_id": "OBJ053_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ053_IDxxx",
     "type": "Object",
     "info_name": "- FLAMMABLE PRODUCT -",
     "name": "Flammable product",
@@ -657,7 +654,7 @@
   },
   {
     "id": "OBJ054",
-	"obj_id": "OBJ054_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ054_IDxxx",
     "type": "Object",
     "info_name": "- BOOK -",
     "name": "Book",
@@ -669,7 +666,7 @@
   },
   {
     "id": "OBJ055",
-	"obj_id": "OBJ055_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ055_IDxxx",
     "type": "Object",
     "info_name": "- MANUAL -",
     "name": "Manual",
@@ -681,7 +678,7 @@
   },
   {
     "id": "OBJ056",
-	"obj_id": "OBJ056_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ056_IDxxx",
     "type": "Object",
     "info_name": "- ANTIDEPRESSANT -",
     "name": "Antidepressant",
@@ -693,7 +690,7 @@
   },
   {
     "id": "OBJ057",
-	"obj_id": "OBJ057_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ057_IDxxx",
     "type": "Object",
     "info_name": "- FILE -",
     "name": "File",
@@ -705,7 +702,7 @@
   },
   {
     "id": "OBJ058",
-	"obj_id": "OBJ058_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ058_IDxxx",
     "type": "Object",
     "info_name": "- DIGITAL FOOTPRINTS -",
     "name": "Digital footprints",
@@ -717,7 +714,7 @@
   },
   {
     "id": "OBJ059",
-	"obj_id": "OBJ059_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ059_IDxxx",
     "type": "Object",
     "info_name": "- STOLEN DATA -",
     "name": "Stolen data",
@@ -730,7 +727,7 @@
   },
   {
     "id": "OBJ060",
-	"obj_id": "OBJ060_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ060_IDxxx",
     "type": "Object",
     "info_name": "- STOLEN GOODS -",
     "name": "Stolen goods",
@@ -742,7 +739,7 @@
   },
   {
     "id": "OBJ061",
-	"obj_id": "OBJ061_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ061_IDxxx",
     "type": "Object",
     "info_name": "- USB KEY -",
     "name": "USB key",
@@ -754,7 +751,7 @@
   },
   {
     "id": "OBJ062",
-	"obj_id": "OBJ062_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ062_IDxxx",
     "type": "Object",
     "info_name": "- SEX TOY -",
     "name": "Sex toy",
@@ -766,7 +763,7 @@
   },
   {
     "id": "OBJ063",
-	"obj_id": "OBJ063_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ063_IDxxx",
     "type": "Object",
     "info_name": "- ILLICIT SUBSTANCE -",
     "name": "Illicit substance",
@@ -778,7 +775,7 @@
   },
   {
     "id": "OBJ064",
-	"obj_id": "OBJ064_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ064_IDxxx",
     "type": "Object",
     "info_name": "- SAMPLES -",
     "name": "Samples",
@@ -790,7 +787,7 @@
   },
   {
     "id": "OBJ065",
-	"obj_id": "OBJ065_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ065_IDxxx",
     "type": "Object",
     "info_name": "- HARD DRIVE -",
     "name": "Hard drive",
@@ -802,7 +799,7 @@
   },
   {
     "id": "OBJ066",
-	"obj_id": "OBJ066_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ066_IDxxx",
     "type": "Object",
     "info_name": "- CARDBOARD BOX -",
     "name": "Cardboard box",
@@ -814,7 +811,7 @@
   },
   {
     "id": "OBJ067",
-	"obj_id": "OBJ067_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ067_IDxxx",
     "type": "Object",
     "info_name": "- DAMAGED EQUIPMENT -",
     "name": "Damaged equipment",
@@ -826,7 +823,7 @@
   },
   {
     "id": "OBJ068",
-	"obj_id": "OBJ068_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ068_IDxxx",
     "type": "Object",
     "info_name": "- HAND TOOLS -",
     "name": "Hand tools",
@@ -838,7 +835,7 @@
   },
   {
     "id": "OBJ069",
-	"obj_id": "OBJ069_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ069_IDxxx",
     "type": "Object",
     "info_name": "- SCULPTURE -",
     "name": "Sculpture",
@@ -850,7 +847,7 @@
   },
   {
     "id": "OBJ070",
-	"obj_id": "OBJ070_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ070_IDxxx",
     "type": "Object",
     "info_name": "- TOY -",
     "name": "Toy",
@@ -862,7 +859,7 @@
   },
   {
     "id": "OBJ071",
-	"obj_id": "OBJ071_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ071_IDxxx",
     "type": "Object",
     "info_name": "- LINGERIE -",
     "name": "Lingerie",
@@ -874,7 +871,7 @@
   },
   {
     "id": "OBJ072",
-	"obj_id": "OBJ072_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ072_IDxxx",
     "type": "Object",
     "info_name": "- DOCUMENTARY -",
     "name": "Documentary",
@@ -886,7 +883,7 @@
   },
   {
     "id": "OBJ073",
-	"obj_id": "OBJ073_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ073_IDxxx",
     "type": "Object",
     "info_name": "- HEADSET -",
     "name": "Headset",
@@ -898,7 +895,7 @@
   },
   {
     "id": "OBJ074",
-	"obj_id": "OBJ074_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ074_IDxxx",
     "type": "Object",
     "info_name": "- SPRAY PAINT -",
     "name": "Spray paint",
@@ -910,7 +907,7 @@
   },
   {
     "id": "OBJ075",
-	"obj_id": "OBJ075_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ075_IDxxx",
     "type": "Object",
     "info_name": "- STENCILS -",
     "name": "Stencils",
@@ -922,7 +919,7 @@
   },
   {
     "id": "OBJ076",
-	"obj_id": "OBJ076_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ076_IDxxx",
     "type": "Object",
     "info_name": "- BOOK -",
     "name": "Book",
@@ -934,7 +931,7 @@
   },
   {
     "id": "OBJ077",
-	"obj_id": "OBJ077_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ077_IDxxx",
     "type": "Object",
     "info_name": "- TOOLS -",
     "name": "Tools",
@@ -946,7 +943,7 @@
   },
   {
     "id": "OBJ078",
-	"obj_id": "OBJ078_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ078_IDxxx",
     "type": "Object",
     "info_name": "- USB KEY -",
     "name": "USB key",
@@ -958,7 +955,7 @@
   },
   {
     "id": "OBJ079",
-	"obj_id": "OBJ079_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ079_IDxxx",
     "type": "Object",
     "info_name": "- BUSINESS CARD -",
     "name": "Business card",
@@ -970,7 +967,7 @@
   },
   {
     "id": "OBJ080",
-	"obj_id": "OBJ080_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ080_IDxxx",
     "type": "Object",
     "info_name": "- CREDIT CARD -",
     "name": "Credit card",
@@ -1000,7 +997,7 @@
   
   {
     "id": "OBJ281",
-	"obj_id": "OBJ281_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ281_IDxxx",
     "type": "Object",
     "info_name": "- CLEAN LATEX GLOVES -",
     "name": "Clean latex gloves",
@@ -1013,7 +1010,7 @@
   },
   {
     "id": "OBJ282",
-	"obj_id": "OBJ282_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ282_IDxxx",
     "type": "Object",
     "info_name": "- CELLPHONE BATTERY -",
     "name": "Cellphone battery",
@@ -1026,7 +1023,7 @@
   },
   {
     "id": "OBJ283",
-	"obj_id": "OBJ283_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ283_IDxxx",
     "type": "Object",
     "info_name": "- MUDDY SHOES -",
     "name": "Muddy shoes",
@@ -1039,7 +1036,7 @@
   },
   {
     "id": "OBJ284",
-	"obj_id": "OBJ284_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ284_IDxxx",
     "type": "Object",
     "info_name": "- USED TICKET -",
     "name": "Used ticket",
@@ -1052,7 +1049,7 @@
   },
   {
     "id": "OBJ285",
-	"obj_id": "OBJ285_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ285_IDxxx",
     "type": "Object",
     "info_name": "- FOREIGN CURRENCY -",
     "name": "Foreign currency",
@@ -1065,7 +1062,7 @@
   },
   {
     "id": "OBJ286",
-	"obj_id": "OBJ286_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ286_IDxxx",
     "type": "Object",
     "info_name": "- DIARY -",
     "name": "Diary",
@@ -1078,7 +1075,7 @@
   },
   {
     "id": "OBJ287",
-	"obj_id": "OBJ287_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ287_IDxxx",
     "type": "Object",
     "info_name": "- DISASSEMBLED DEVICE -",
     "name": "Disassembled device",
@@ -1091,7 +1088,7 @@
   },
   {
     "id": "OBJ288",
-	"obj_id": "OBJ288_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ288_IDxxx",
     "type": "Object",
     "info_name": "- EMPTY SD-CARD -",
     "name": "Empty SD-card",
@@ -1104,7 +1101,7 @@
   },
   {
     "id": "OBJ289",
-	"obj_id": "OBJ289_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ289_IDxxx",
     "type": "Object",
     "info_name": "- PREPAID SIM-CARD -",
     "name": "Prepaid SIM-card",
@@ -1117,7 +1114,7 @@
   },
   {
     "id": "OBJ290",
-	"obj_id": "OBJ290_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ290_IDxxx",
     "type": "Object",
     "info_name": "- EXPIRED MEDICATION -",
     "name": "Expired medication",
@@ -1130,7 +1127,7 @@
   },
   {
     "id": "OBJ291",
-	"obj_id": "OBJ291_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ291_IDxxx",
     "type": "Object",
     "info_name": "- CUT-UP NEWSPAPER -",
     "name": "Cut-up newspaper",
@@ -1143,7 +1140,7 @@
   },
   {
     "id": "OBJ292",
-	"obj_id": "OBJ292_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ292_IDxxx",
     "type": "Object",
     "info_name": "- BINOCULARS -",
     "name": "Binoculars",
@@ -1156,7 +1153,7 @@
   },
   {
     "id": "OBJ293",
-	"obj_id": "OBJ293_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ293_IDxxx",
     "type": "Object",
     "info_name": "- CROWBAR -",
     "name": "Crowbar",
@@ -1169,7 +1166,7 @@
   },
   {
     "id": "OBJ294",
-	"obj_id": "OBJ294_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ294_IDxxx",
     "type": "Object",
     "info_name": "- BAG OF FLOUR -",
     "name": "Bag of flour",
@@ -1182,7 +1179,7 @@
   },
   {
     "id": "OBJ295",
-	"obj_id": "OBJ295_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ295_IDxxx",
     "type": "Object",
     "info_name": "- FLYING DRONE -",
     "name": "Flying drone",
@@ -1195,7 +1192,7 @@
   },
   {
     "id": "OBJ296",
-	"obj_id": "OBJ296_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ296_IDxxx",
     "type": "Object",
     "info_name": "- GPS TRACKER -",
     "name": "GPS tracker",
@@ -1208,7 +1205,7 @@
   },
   {
     "id": "OBJ297",
-	"obj_id": "OBJ297_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ297_IDxxx",
     "type": "Object",
     "info_name": "- BROKEN LAPTOP -",
     "name": "Broken laptop",
@@ -1221,7 +1218,7 @@
   },
   {
     "id": "OBJ298",
-	"obj_id": "OBJ298_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ298_IDxxx",
     "type": "Object",
     "info_name": "- CAMBODIAN -
 - CIGARETTES -",
@@ -1235,7 +1232,7 @@
   },
   {
     "id": "OBJ299",
-	"obj_id": "OBJ299_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ299_IDxxx",
     "type": "Object",
     "info_name": "- HANDS-FREE KIT -",
     "name": "Hands-free kit",
@@ -1248,7 +1245,7 @@
   },
   {
     "id": "OBJ300",
-	"obj_id": "OBJ300_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ300_IDxxx",
     "type": "Object",
     "info_name": "- FIRST AID KIT -",
     "name": "First aid kit",
@@ -1261,7 +1258,7 @@
   },
   {
     "id": "OBJ301",
-	"obj_id": "OBJ301_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ301_IDxxx",
     "type": "Object",
     "info_name": "- POWERFUL FLASHLIGHT -",
     "name": "Powerful flashlight",
@@ -1274,7 +1271,7 @@
   },
   {
     "id": "OBJ302",
-	"obj_id": "OBJ302_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ302_IDxxx",
     "type": "Object",
     "info_name": "- PADLOCK -",
     "name": "Padlock",
@@ -1287,7 +1284,7 @@
   },
   {
     "id": "OBJ303",
-	"obj_id": "OBJ303_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ303_IDxxx",
     "type": "Object",
     "info_name": "- EMPTY MATCHBOX -",
     "name": "Empty matchbox",
@@ -1300,7 +1297,7 @@
   },
   {
     "id": "OBJ304",
-	"obj_id": "OBJ304_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ304_IDxxx",
     "type": "Object",
     "info_name": "- BALL BEARING -",
     "name": "Ball bearing",
@@ -1313,7 +1310,7 @@
   },
   {
     "id": "OBJ305",
-	"obj_id": "OBJ305_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ305_IDxxx",
     "type": "Object",
     "info_name": "- ROLL OF -
 - PLASTIC WRAP -",
@@ -1327,7 +1324,7 @@
   },
   {
     "id": "OBJ306",
-	"obj_id": "OBJ306_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ306_IDxxx",
     "type": "Object",
     "info_name": "- WIG -",
     "name": "Wig",
@@ -1340,7 +1337,7 @@
   },
   {
     "id": "OBJ307",
-	"obj_id": "OBJ307_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ307_IDxxx",
     "type": "Object",
     "info_name": "- EMPTY WALLET -",
     "name": "Empty wallet",
@@ -1353,7 +1350,7 @@
   },
   {
     "id": "OBJ308",
-	"obj_id": "OBJ308_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ308_IDxxx",
     "type": "Object",
     "info_name": "- BLACKLIGHT -
 - FLASHLIGHT -",
@@ -1367,7 +1364,7 @@
   },
   {
     "id": "OBJ309",
-	"obj_id": "OBJ309_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ309_IDxxx",
     "type": "Object",
     "info_name": "- HANDCUFFS -",
     "name": "handcuffs",
@@ -1380,7 +1377,7 @@
   },
   {
     "id": "OBJ310",
-	"obj_id": "OBJ310_ID001",  // ou ID002, ID003, ID004, etc.
+	"obj_id": "OBJ310_IDxxx",
     "type": "Object",
     "info_name": "- UNMARKED KEY -",
     "name": "Unmarked key",
@@ -1390,6 +1387,486 @@
 	"comment": "il est question ici d'un PNJ et de son domicile",
     "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
-  }
+  },
+  {
+  "id": "OBJ311",
+  "obj_id": "OBJ311_IDxxx",
+  "type": "Object",
+  "info_name": "- LOYALTY CARD -",
+  "name": "Loyalty card",
+  "description": "One more stamp and the reward is yours. Whatever it is.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ312",
+  "obj_id": "OBJ312_IDxxx",
+  "type": "Object",
+  "info_name": "- EXPIRED PARKING -\n- PERMIT -",
+  "name": "Expired parking permit",
+  "description": "Was valid during a major crime event. Coincidence?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ313",
+  "obj_id": "OBJ313_IDxxx",
+  "type": "Object",
+  "info_name": "- USB ADAPTER -",
+  "name": "USB adapter",
+  "description": "Nobody uses this standard anymore. Or do they?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ314",
+  "obj_id": "OBJ314_IDxxx",
+  "type": "Object",
+  "info_name": "- FOLDED MAP -",
+  "name": "Folded city map",
+  "description": "Three locations are circled. Three no longer exist.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ315",
+  "obj_id": "OBJ315_IDxxx",
+  "type": "Object",
+  "info_name": "- TORN NOTEBOOK PAGE -",
+  "name": "Notebook page",
+  "description": "Page 42 is missing. Why only the one with THE answer?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ316",
+  "obj_id": "OBJ316_IDxxx",
+  "type": "Object",
+  "info_name": "- REPLACEMENT FUSE -",
+  "name": "Replacement fuse",
+  "description": "Still in packaging. But who cares?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ317",
+  "obj_id": "OBJ317_IDxxx",
+  "type": "Object",
+  "info_name": "- USB FAN -",
+  "name": "USB fan",
+  "description": "Works. Makes a weird noise, though.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ318",
+  "obj_id": "OBJ318_IDxxx",
+  "type": "Object",
+  "info_name": "- SAFE MANUAL -",
+  "name": "Small safe instruction manual",
+  "description": "Model number doesn't match any known safe.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ319",
+  "obj_id": "OBJ319_IDxxx",
+  "type": "Object",
+  "info_name": "- CONTACT LENS CASE -",
+  "name": "Contact lens case",
+  "description": "Labels are rubbed off. L and R?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ320",
+  "obj_id": "OBJ320_IDxxx",
+  "type": "Object",
+  "info_name": "- MIXED SCREWS -",
+  "name": "Bag of mixed screws",
+  "description": "None of them match any visible object.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ321",
+  "obj_id": "OBJ321_IDxxx",
+  "type": "Object",
+  "info_name": "- WIRELESS MOUSE -",
+  "name": "Wireless mouse",
+  "description": "Useless, unless someone has the receiver.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ322",
+  "obj_id": "OBJ322_IDxxx",
+  "type": "Object",
+  "info_name": "- LAMINATED NOTE -",
+  "name": "Laminated note",
+  "description": "No indication of what to not forget.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ323",
+  "obj_id": "OBJ323_IDxxx",
+  "type": "Object",
+  "info_name": "- REMOTE CONTROL -",
+  "name": "Obsolete remote control",
+  "description": "The buttons are labeled A–J. No clue what it controls.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ324",
+  "obj_id": "OBJ324_IDxxx",
+  "type": "Object",
+  "info_name": "- FIBER OPTIC CABLE -",
+  "name": "Fiber optic cable",
+  "description": "Professionally cut. Was it reused or intercepted?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ325",
+  "obj_id": "OBJ325_IDxxx",
+  "type": "Object",
+  "info_name": "- COORDINATES NOTE -",
+  "name": "Folded paper with coordinates",
+  "description": "No names, no titles. Just latitude and longitude.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ326",
+  "obj_id": "OBJ326_IDxxx",
+  "type": "Object",
+  "info_name": "- PLASTIC CASING -\n- FRAGMENT -",
+  "name": "Piece of plastic casing",
+  "description": "Clearly broken off something. Just not from here.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ327",
+  "obj_id": "OBJ327_IDxxx",
+  "type": "Object",
+  "info_name": "- WALL CALENDAR -",
+  "name": "Wall calendar",
+  "description": "All weekends are crossed out with red ink.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ328",
+  "obj_id": "OBJ328_IDxxx",
+  "type": "Object",
+  "info_name": "- MAGNETIC CARD -",
+  "name": "Magnetic card",
+  "description": "Strip is damaged. Writing is faded. Junk?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ329",
+  "obj_id": "OBJ329_IDxxx",
+  "type": "Object",
+  "info_name": "- BROKEN STYLUS -",
+  "name": "Broken stylus",
+  "description": "Looks recent. But no devices in sight.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ330",
+  "obj_id": "OBJ330_IDxxx",
+  "type": "Object",
+  "info_name": "- POWER SUPPLY -",
+  "name": "Power supply",
+  "description": "Would fry most electronics. Who needed it?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ331",
+  "obj_id": "OBJ331_IDxxx",
+  "type": "Object",
+  "info_name": "- CONTACT LIST -",
+  "name": "Contact list printout",
+  "description": "Names, numbers... and one name is underlined twice: Furax!",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ332",
+  "obj_id": "OBJ332_IDxxx",
+  "type": "Object",
+  "info_name": "- SERVER PANEL -",
+  "name": "Dusty server rack panel",
+  "description": "Part of a larger system, clearly disconnected.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ333",
+  "obj_id": "OBJ333_IDxxx",
+  "type": "Object",
+  "info_name": "- METAL BRACKET -",
+  "name": "Metal bracket with barcode",
+  "description": "The barcode doesn’t match any known inventory. So far...",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ334",
+  "obj_id": "OBJ334_IDxxx",
+  "type": "Object",
+  "info_name": "- MISSING PAGE MANUAL -",
+  "name": "User manual",
+  "description": "No brand, no context. Just steps 2 to 9.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ335",
+  "obj_id": "OBJ335_IDxxx",
+  "type": "Object",
+  "info_name": "- BLANK RFID BADGE -",
+  "name": "Blank RFID access badge",
+  "description": "Not programmed. Or wiped. Interesting.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ336",
+  "obj_id": "OBJ336_IDxxx",
+  "type": "Object",
+  "info_name": "- ANTENNA FRAGMENT -",
+  "name": "Fragment of a broken antenna",
+  "description": "Looks like it came from an old transceiver.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ337",
+  "obj_id": "OBJ337_IDxxx",
+  "type": "Object",
+  "info_name": "- CLIPBOARD -",
+  "name": "Clipboard with pencil marks only",
+  "description": "Someone erased everything. Intentionally.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ338",
+  "obj_id": "OBJ338_IDxxx",
+  "type": "Object",
+  "info_name": "- SECURITY SEAL -",
+  "name": "Security seal",
+  "description": "Serial number half-scratched.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ339",
+  "obj_id": "OBJ339_IDxxx",
+  "type": "Object",
+  "info_name": "- NOISE DETECTOR -",
+  "name": "Noise detector",
+  "description": "Battery removed. Why install it, then disable it?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ340",
+  "obj_id": "OBJ340_IDxxx",
+  "type": "Object",
+  "info_name": "- CUT CABLE TIES -",
+  "name": "Cable tie bundle",
+  "description": "Looks like something was forcibly uninstalled.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ341",
+  "obj_id": "OBJ341_IDxxx",
+  "type": "Object",
+  "info_name": "- INFRARED TRIGGER -",
+  "name": "Infrared remote trigger",
+  "description": "Designed to activate something. No markings.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ342",
+  "obj_id": "OBJ342_IDxxx",
+  "type": "Object",
+  "info_name": "- FAKE INSPECTION -\n- CARD -",
+  "name": "Elevator inspection card",
+  "description": "Details look right until you read the signature...",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ343",
+  "obj_id": "OBJ343_IDxxx",
+  "type": "Object",
+  "info_name": "- EMPTY WATCH CASING -",
+  "name": "Watch casing",
+  "description": "No mechanism inside. Just the shell.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ344",
+  "obj_id": "OBJ344_IDxxx",
+  "type": "Object",
+  "info_name": "- HEADPHONE JACK -\n- ADAPTER -",
+  "name": "Headphone jack adapter",
+  "description": "Used by no modern device. Kept for a reason?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ345",
+  "obj_id": "OBJ345_IDxxx",
+  "type": "Object",
+  "info_name": "- CIRCUIT BOARD -\n- FRAGMENT -",
+  "name": "Circuit board fragment",
+  "description": "Too complex for a household device.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ346",
+  "obj_id": "OBJ346_IDxxx",
+  "type": "Object",
+  "info_name": "- ESCAPE PLAN -",
+  "name": "Emergency escape diagram",
+  "description": "Floor plan doesn't match any known building.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ347",
+  "obj_id": "OBJ347_IDxxx",
+  "type": "Object",
+  "info_name": "- SERIAL LABEL -",
+  "name": "Paper label with serial code",
+  "description": "Code is not linked to anything identifiable. Swell!",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ348",
+  "obj_id": "OBJ348_IDxxx",
+  "type": "Object",
+  "info_name": "- LOCKED POUCH -",
+  "name": "Locked pouch",
+  "description": "No opening visible. Soft and silent.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ349",
+  "obj_id": "OBJ349_IDxxx",
+  "type": "Object",
+  "info_name": "- THERMAL SENSOR UNIT -",
+  "name": "Thermal sensor unit",
+  "description": "Seems to have been monitoring someone.",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+  "id": "OBJ350",
+  "obj_id": "OBJ350_IDxxx",
+  "type": "Object",
+  "info_name": "- MAINTENANCE TAG -",
+  "name": "Maintenance tag",
+  "description": "Stamped 'VOID' in red. But on which machine?",
+  "found": ["LOCxxxIDxxx"],
+  "property": ["NPCxxx"],
+  "evidence": ["yes", "no"],
+  "possible_combinations": ["Dialogue", "Abstract"]
+} 
 ]
 
