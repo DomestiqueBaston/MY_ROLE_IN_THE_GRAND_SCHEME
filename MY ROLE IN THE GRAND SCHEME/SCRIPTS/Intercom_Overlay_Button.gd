@@ -19,3 +19,8 @@ func _on_mouse_exited():
 		pass
 	else:
 		$"../../../Shared_Interface_Sounds/Leave".play()
+
+
+func _on_on_off_animation_finished(_anim_name: StringName) -> void:
+	await get_tree().create_timer(0.4).timeout
+	$"../Screens".show()

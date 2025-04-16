@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Low_Alarm.ogg-800663377b454e27161e7e02f9f7c29
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0

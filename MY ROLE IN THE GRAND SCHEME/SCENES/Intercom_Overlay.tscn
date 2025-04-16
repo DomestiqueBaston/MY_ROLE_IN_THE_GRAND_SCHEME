@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://duod2wunat5ok"]
+[gd_scene load_steps=22 format=3 uid="uid://duod2wunat5ok"]
 
 [ext_resource type="Texture2D" uid="uid://ckrgff87loeg1" path="res://GRAPHICS/INTERCOM/Intercom_BG.png" id="1_qdy3q"]
 [ext_resource type="Theme" uid="uid://q1cw5cyqn10g" path="res://UI/Intercom_Theme.tres" id="2_g5ffr"]
@@ -11,6 +11,45 @@
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="11_uyo1l"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_cjivl"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_kvqxw"]
+
+[sub_resource type="Animation" id="Animation_8t383"]
+resource_name = "Flash"
+length = 0.800007
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom_Panel/Interface/Screens:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333, 0.533333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.917647), Color(1, 1, 1, 0.792157), Color(1, 1, 1, 0.909804), Color(1, 1, 1, 0.811765), Color(1, 1, 1, 0.917647)]
+}
+
+[sub_resource type="Animation" id="Animation_uyo1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom_Panel/Interface/Screens:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bt1qh"]
+_data = {
+&"Flash": SubResource("Animation_8t383"),
+&"RESET": SubResource("Animation_uyo1l")
+}
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -209,16 +248,16 @@ offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
 [node name="Screens" type="Control" parent="Intercom_Panel/Interface"]
+visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Away" type="Label" parent="Intercom_Panel/Interface/Screens"]
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
 offset_top = 101.0
-offset_right = 368.0
+offset_right = 370.0
 offset_bottom = 142.0
 theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
 theme_override_constants/shadow_offset_x = -3
@@ -236,7 +275,7 @@ modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
 offset_top = 101.0
-offset_right = 368.0
+offset_right = 370.0
 offset_bottom = 142.0
 theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
 theme_override_constants/shadow_offset_x = -3
@@ -419,6 +458,12 @@ texture_click_mask = ExtResource("7_wbo7i")
 script = ExtResource("7_8t383")
 metadata/_edit_lock_ = true
 
+[node name="Message_Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bt1qh")
+}
+autoplay = "Flash"
+
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_m6d4b")
@@ -446,5 +491,6 @@ autoplay = "Flashing"
 [connection signal="mouse_entered" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_pressed"]
+[connection signal="animation_finished" from="On_Off" to="Intercom_Panel/Interface/Quit" method="_on_on_off_animation_finished"]
 
 [editable path="Shared_Interface_Sounds"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnn5crpao5xva"]
+[gd_scene load_steps=21 format=3 uid="uid://bnn5crpao5xva"]
 
 [ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_IMPROVEMENT/Player_Improvement_BG.png" id="1_6qbtx"]
 [ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_6gkv5"]
@@ -139,6 +139,67 @@ _data = {
 &"Appearance": SubResource("Animation_4pq04"),
 &"Disappearance": SubResource("Animation_atwki"),
 &"RESET": SubResource("Animation_vfroo")
+}
+
+[sub_resource type="Animation" id="Animation_6qbtx"]
+resource_name = "Alarm"
+length = 7.60001
+step = 0.0666667
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alarm")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_rdtt0")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_rdtt0")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_rdtt0")
+}],
+"times": PackedFloat32Array(0.2, 2.66011, 5.12017)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Alarm:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.4, 5.86667, 7.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-15.0, -15.0, -30.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_6gkv5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Alarm:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sdhsh"]
+_data = {
+&"Alarm": SubResource("Animation_6qbtx"),
+&"RESET": SubResource("Animation_6gkv5")
 }
 
 [node name="Income" type="Node2D"]
@@ -296,9 +357,7 @@ text = "Hm?"
 metadata/_edit_lock_ = true
 
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_rdtt0")
-volume_db = -15.0
-autoplay = true
+volume_db = -80.0
 bus = &"FX"
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
@@ -306,6 +365,12 @@ libraries = {
 &"": SubResource("AnimationLibrary_m6d4b")
 }
 autoplay = "Appearance"
+
+[node name="Alarm_Anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sdhsh")
+}
+autoplay = "Alarm"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0

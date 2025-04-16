@@ -173,7 +173,6 @@ anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Player_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Run_Away"]
-visible = false
 layout_mode = 0
 offset_left = 159.0
 offset_top = 44.0
@@ -185,7 +184,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
 Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
-Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) [shake rate=7.0 level=5 connected=0][color=#ff8864] the [color=#ff1c18]fear[/color][/color][/shake]?
+Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
 
 Either way, you sure  know  how  to  leave an impression...
 
@@ -214,11 +213,11 @@ In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 con
 metadata/_edit_lock_ = true
 
 [node name="Break_In" type="Control" parent="Short_Event_Panel/Announce"]
+visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Player_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Break_In"]
-visible = false
 layout_mode = 0
 offset_left = 178.0
 offset_top = 70.0
@@ -257,11 +256,11 @@ You sure know how to make  an entrance...
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Control" parent="Short_Event_Panel/Announce"]
+visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="NPC_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Dialogue"]
-visible = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 58.0

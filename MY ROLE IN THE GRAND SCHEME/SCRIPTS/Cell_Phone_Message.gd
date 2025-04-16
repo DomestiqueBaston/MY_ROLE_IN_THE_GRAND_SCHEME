@@ -1,11 +1,10 @@
 extends Label
 
-
 var actual_value = 0.0
-var pitch_values = [1.66, 0.66, 1.0]
+var pitch_values = [1.1, 0.95, 1.0]
 var json_path = "res://JSON/NARRATION/SMS.json"
 var json_data = {}
-
+var signatures = ["Anonymous", "Le corbeau", "D.B."]
 
 func _ready():
 	var file = FileAccess.open(json_path, FileAccess.READ)
@@ -28,12 +27,16 @@ func show_random_message():
 	var message_keys = messages.keys()
 	var random_message_key = message_keys[randi() % message_keys.size()]
 
-	text = messages[random_message_key]
+	# Choisir une signature aléatoire
+	var random_signature = signatures[randi() % signatures.size()]
+
+	# Ajouter la signature au message
+	text = messages[random_message_key] + "\n\n" + random_signature
 
 func _process(_delta):
 	if $".".visible_ratio < 1.0:
 		if not $"../../../Typing".is_playing():
-			# There is an unwanted delay with the typing sound...
+			# Il y a un délai indésirable avec le son de frappe...
 			if $".".visible_ratio > actual_value:
 				var typing_sound = $"../../../Typing"
 				typing_sound.pitch_scale = pitch_values[randi() % pitch_values.size()]

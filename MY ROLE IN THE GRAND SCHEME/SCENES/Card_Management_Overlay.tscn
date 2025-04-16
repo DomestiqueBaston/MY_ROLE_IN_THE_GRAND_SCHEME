@@ -1,9 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://c0ukqcgb1ay3s"]
+[gd_scene load_steps=36 format=3 uid="uid://c0ukqcgb1ay3s"]
 
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_MANAGEMENT/Frame.png" id="1_f15cm"]
+[ext_resource type="Texture2D" uid="uid://cgclmrs55a25d" path="res://GRAPHICS/CARD_MANAGEMENT/Left_Zone.png" id="2_edhgu"]
 [ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="2_yfns7"]
+[ext_resource type="Script" uid="uid://b4r5r5y6144de" path="res://SCRIPTS/Card_Management_Zones.gd" id="3_d7lmg"]
 [ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="3_edhgu"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="4_edhgu"]
+[ext_resource type="Texture2D" uid="uid://d2oe083rsfyp0" path="res://GRAPHICS/CARD_MANAGEMENT/Right_Zone.png" id="4_uasgl"]
 [ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Normal.png" id="9_eg8nv"]
 [ext_resource type="Script" uid="uid://cj4kkd1mdr47l" path="res://SCRIPTS/Card_Management_Overlay_Trash.gd" id="9_t8k7k"]
 [ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Hover.png" id="10_6pms8"]
@@ -190,6 +193,28 @@ centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
+[node name="Left_Zone" type="TextureRect" parent="Card_Management_Panel/Painting"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 340.0
+texture = ExtResource("2_edhgu")
+script = ExtResource("3_d7lmg")
+target_collider_path = NodePath("../../Colliders/Card_Pool_Collider/Card_Pool")
+metadata/_edit_lock_ = true
+
+[node name="Right_Zone" type="TextureRect" parent="Card_Management_Panel/Painting"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 340.0
+texture = ExtResource("4_uasgl")
+script = ExtResource("3_d7lmg")
+target_collider_path = NodePath("../../Colliders/Mastery_Hand_Collider/Mastery_Hand")
+metadata/_edit_lock_ = true
+
 [node name="Card_Locations" type="Node2D" parent="Card_Management_Panel"]
 metadata/_edit_lock_ = true
 
@@ -290,141 +315,22 @@ script = ExtResource("9_t8k7k")
 metadata/_edit_lock_ = true
 
 [node name="Trash_Normal" type="TextureRect" parent="Card_Management_Panel/Buttons/Trash"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 2
-auto_translate_mode = 0
-editor_description = ""
-visible = true
-modulate = Color(1, 1, 1, 1)
-self_modulate = Color(1, 1, 1, 1)
-show_behind_parent = false
-top_level = false
-clip_children = 0
-light_mask = 1
-visibility_layer = 1
-z_index = 0
-z_as_relative = true
-y_sort_enabled = false
-texture_filter = 0
-texture_repeat = 0
-material = null
-use_parent_material = false
-clip_contents = false
-custom_minimum_size = Vector2(0, 0)
-layout_direction = 0
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = -11.0
 offset_top = -9.0
 offset_right = 50.0
 offset_bottom = 71.0
-grow_horizontal = 1
-grow_vertical = 1
-rotation = 0.0
-scale = Vector2(1, 1)
-pivot_offset = Vector2(0, 0)
-size_flags_horizontal = 1
-size_flags_vertical = 1
-size_flags_stretch_ratio = 1.0
-localize_numeral_system = true
-tooltip_text = ""
-tooltip_auto_translate_mode = 0
-focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
-focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
-focus_next = NodePath("")
-focus_previous = NodePath("")
-focus_mode = 0
-mouse_filter = 1
-mouse_force_pass_scroll_events = true
-mouse_default_cursor_shape = 0
-theme = null
-theme_type_variation = &""
 texture = ExtResource("9_eg8nv")
-expand_mode = 0
-stretch_mode = 0
-flip_h = false
-flip_v = false
-script = null
 metadata/_edit_lock_ = true
 
 [node name="Trash_Hover" type="TextureRect" parent="Card_Management_Panel/Buttons/Trash"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 2
-auto_translate_mode = 0
-editor_description = ""
 visible = false
-modulate = Color(1, 1, 1, 1)
-self_modulate = Color(1, 1, 1, 1)
-show_behind_parent = false
-top_level = false
-clip_children = 0
-light_mask = 1
-visibility_layer = 1
-z_index = 0
-z_as_relative = true
-y_sort_enabled = false
-texture_filter = 0
-texture_repeat = 0
-material = null
-use_parent_material = false
-clip_contents = false
-custom_minimum_size = Vector2(0, 0)
-layout_direction = 0
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = -11.0
 offset_top = -9.0
 offset_right = 50.0
 offset_bottom = 71.0
-grow_horizontal = 1
-grow_vertical = 1
-rotation = 0.0
-scale = Vector2(1, 1)
-pivot_offset = Vector2(0, 0)
-size_flags_horizontal = 1
-size_flags_vertical = 1
-size_flags_stretch_ratio = 1.0
-localize_numeral_system = true
-tooltip_text = ""
-tooltip_auto_translate_mode = 0
-focus_neighbor_left = NodePath("")
-focus_neighbor_top = NodePath("")
-focus_neighbor_right = NodePath("")
-focus_neighbor_bottom = NodePath("")
-focus_next = NodePath("")
-focus_previous = NodePath("")
-focus_mode = 0
-mouse_filter = 1
-mouse_force_pass_scroll_events = true
-mouse_default_cursor_shape = 0
-theme = null
-theme_type_variation = &""
 texture = ExtResource("10_6pms8")
-expand_mode = 0
-stretch_mode = 0
-flip_h = false
-flip_v = false
-script = null
 metadata/_edit_lock_ = true
 
 [node name="Colliders" type="Node2D" parent="Card_Management_Panel"]

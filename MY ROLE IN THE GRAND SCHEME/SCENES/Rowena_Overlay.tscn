@@ -219,14 +219,14 @@ theme_override_constants/outline_size = 6
 text = "Ok,  I'lL take"
 metadata/_edit_lock_ = true
 
-[node name="Puchase" type="Label" parent="Rowena_Panel_Panel/Drug_Store/I_will_take"]
+[node name="Purchase" type="Label" parent="Rowena_Panel_Panel/Drug_Store/I_will_take"]
 layout_mode = 0
 offset_left = 103.0
 offset_right = 138.0
 offset_bottom = 21.0
 theme_override_colors/font_color = Color(0.4514, 0.66304, 0.74, 1)
 theme_override_constants/outline_size = 6
-text = "X"
+text = "0"
 metadata/_edit_lock_ = true
 
 [node name="Do" type="Label" parent="Rowena_Panel_Panel/Drug_Store/I_will_take"]
@@ -248,7 +248,7 @@ offset_right = 243.0
 offset_bottom = 20.0
 theme_override_colors/font_color = Color(0.68068, 0.77, 0.3234, 1)
 theme_override_constants/outline_size = 6
-text = "X"
+text = "0"
 horizontal_alignment = 2
 metadata/_edit_lock_ = true
 

@@ -94,7 +94,8 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_dnbw7")
 default_font_size = 8
-Button/constants/outline_size = 3
+Button/colors/font_outline_color = Color(0, 0, 0, 0.752941)
+Button/constants/outline_size = 6
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("5_6gtfe")
 Button/styles/disabled = SubResource("StyleBoxEmpty_wg6ey")

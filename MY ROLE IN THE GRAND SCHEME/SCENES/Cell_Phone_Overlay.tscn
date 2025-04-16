@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="3_f8ijm"]
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="3_lsuee"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_08tf7"]
-[ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="8_lsuee"]
+[ext_resource type="AudioStream" uid="uid://kdl6h3k4sfel" path="res://SOUND/MISC/Phone_Beep.ogg" id="8_lsuee"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="9_xxx8q"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="10_5tvv7"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="13_67kqe"]
@@ -173,7 +173,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_f8ijm"]
 resource_name = "Typing"
-length = 3.00001
+length = 3.33334
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -182,7 +182,7 @@ tracks/0/path = NodePath("Cell_Phone_Panel/Message_Window/Message:visible_ratio"
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.93333),
+"times": PackedFloat32Array(0.333333, 3.26666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -194,7 +194,7 @@ tracks/1/path = NodePath("Cell_Phone_Panel/Buttons/Ok:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0.333333, 3.33333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -242,8 +242,7 @@ offset_left = 271.0
 offset_top = 94.0
 offset_right = 369.0
 offset_bottom = 212.0
-text = "Message... Message, message, message...
-Message... Message, message, message... Message..."
+text = "Message..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

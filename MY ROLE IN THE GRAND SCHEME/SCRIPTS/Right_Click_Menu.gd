@@ -15,3 +15,6 @@ func _input(_event):
 		popup_menu.hide()
 
 # Il manque le code pour les sons de navigation dans le menu...
+# Dernières nouvelles : il semble que cela soit fait exprès dans Godot,
+# on n'y a accès "normalement" uniquement pour la navigation au clavier
+# dans les menus.

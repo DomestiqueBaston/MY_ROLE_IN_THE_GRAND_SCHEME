@@ -127,7 +127,6 @@ script = ExtResource("2_s0xyu")
 metadata/_edit_lock_ = true
 
 [node name="Player" type="Control" parent="Cops/Info"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
