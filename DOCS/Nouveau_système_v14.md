@@ -20,7 +20,7 @@ Physique (PHY)
 Mental (MEN)
 	- Mesure les adptitudes intellectuelles et psychologiques du personnage. 
 Santé (HEA/HEAnom) 
-	- HEAnom représente la santé maximale.
+	- HEAnom représente la santé maximale actuelle.
 	- HEA représente la santé actuelle (ne peut jamais dépasser HEAnom).
 
 

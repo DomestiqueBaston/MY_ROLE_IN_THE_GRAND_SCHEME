@@ -1,22 +1,22 @@
 [
   {
-	"id": "CASxxxx",  // 4 'x' au cas où une partie aille vraiment loin !
-	"title": "Voir... Je ne sais pas encore mais probablement le pipotron de génération de title ou alors carrément, pas de titre",
-	"crime": "Voir Crime_Motive_Evidence.json",
-	"mobile": "Voir Crime_Motive_Evidence.json",
+    "id": "CASxxx",
+    "title": "Voir Case_Serial_Number_Generator.gd",
+    "crime": "Voir Crime_Motive_Evidence.json",
+    "mobile": "Voir Crime_Motive_Evidence.json",
 	"crime_id": "Voir Crime_Motive_Evidence.json",
-	"Difficulty": [1, 2, 3, 4, 5, 6],  // 6 uniquement pour les enquêtes ultimes !                               /!\
-	"status": ["active", "paused"], // 1 des 2
+    "Difficulty": [1, 2, 3, 4, 5, 6],  // 6 uniquement pour les enquêtes ultimes !
+    "status": ["active", "paused"], // 1 des 2
 	"duration": 9,  // round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
-	"crime_location": ["none", "LOCxxx_IDxxx"],  // 1 seul
-	"clues": ["NPCxxx", "LOCxxx_IDxxx"],  // pour le nombre, voir Fiche_enquête_vXX.odt et attention à la règles des "mensonges/erreurs"
-	"evidences": ["OBJxxx_IDxxx", "LINxxx_IDxxx"]  // pour le nombre, voir Fiche_enquête_vXX.odt                  /!\
-	"victims": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_vXX.odt
-	"dead_victims": ["no", "yes", "disappeared", "random"],
-	"witnesses": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_vXX.odt
-	"suspects": ["NPCxxx", "none"]  // pour le nombre, voir Fiche_enquête_vXX.odt
-	"culprits": ["NPCxxx"],  // pour le nombre, voir Fiche_enquête_vXX.odt
-	"min_resolution_evidences": 1,  // pour le nombre, voir Fiche_enquête_vXX.odt
-	"total_evidences": 5,  // pour le nombre, voir Fiche_enquête_vXX.odt
+    "crime_location": ["none", "LOCxxx_IDxxx"],  // 1 seul
+    "clues": [0, 1, 2, 3],  // pour le nombre, voir Crime_Motive_Evidence.json ("witnesses") et attention à la règles des "mensonges/erreurs" !
+	"evidences": ["OBJxxx_IDxxx", "LINxxx_IDxxx"]  // pour le nombre, voir Crime_Motive_Evidence.json
+	"victims": ["NPCxxx"],  // pour le nombre, voir Crime_Motive_Evidence.json
+	"dead_victims": ["no", "yes", "disappeared", "random"], voir Crime_Motive_Evidence.json
+	"witnesses": ["NPCxxx", "none"]  // pour le nombre, voir Crime_Motive_Evidence.json
+	"suspects": ["NPCxxx", "none"]  // pour le nombre, voir Crime_Motive_Evidence.json
+	"culprits": ["NPCxxx"],  // pour le nombre, voir Crime_Motive_Evidence.json
+	"total_evidences": 3,  // pour le nombre, voir Crime_Motive_Evidence.json
   }
 ]
+
