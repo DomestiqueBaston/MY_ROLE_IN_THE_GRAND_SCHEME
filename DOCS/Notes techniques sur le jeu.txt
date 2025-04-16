@@ -1,3 +1,45 @@
-
-
 - Seules les cartes Location et NPC peuvent être réduites ("reduced_card" dans les json) et uniquement sur la partie de droite de Main.tscn
+
+
+
+- Pour ce qui suit, je n'ai pas pris en compte les scènes "à la con" comme Link, Pin, Shared_Interface_Sounds, Top_Bar, Global_Shader_Overlay, etc.
+
+Liste des scènes Overlay (sans compter leur fond gris translucide, leur contenu ne fait pas toute la taille de l'écran) qui peuvent s'afficher en jeu sans vraiment de transition:
+Card_Management_Overlay
+Care_Sheet_Overlay
+Case_Management_Overlay
+Cell_Phone_Overlay
+Confirmation_Overlay
+Income_Overlay
+Intercom_Overlay
+Jail_Money_Overlay
+Load_Save_Delete_Overlay
+Paranoia_Overlay
+Player_Improvement_Overlay
+Rowena_Overlay
+Run_Away_Break_In_Interaction_Overlay
+Run_Away_Break_In_Overlay
+Search_Warrant_Buy_Overlay
+Search_Warrant_Use_Overlay
+Settings
+Short_Event_Overlay
+Sleep_Overlay
+Wanted_Overlay
+
+Liste des scènes à vraie transition (comme dans Kindergarten Massaker et voir TEST_TRANSITION.tscn) et qui apparaissent en jeu (y'en a qui sont utilisées avant le jeu) :
+Case_Summary
+Death
+Interaction_Result
+Investigation_Center
+Settings
+
+Liste des scènes qui peuvent s'afficher AVANT le jeu (je mets avec les quelques scènes à overlay avec) :
+Character_Generation
+Confirmation_Overlay
+Credits
+Language
+Load_Save_Delete_Overlay
+Option_Menu
+Settings
+Title_Screen
+Tutorial
