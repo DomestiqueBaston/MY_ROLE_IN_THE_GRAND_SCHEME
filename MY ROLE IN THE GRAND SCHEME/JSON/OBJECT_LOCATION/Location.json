@@ -15,6 +15,7 @@
     "hidden_content": [],
     "open_hours": ["n/a"],
     "hangout": ["no"],
+	"reduced_card": false,
     "bonus_malus": []
 },
 {
@@ -33,6 +34,7 @@
     "hidden_content": [],
     "open_hours": ["morning", "afternoon"],
     "hangout": ["no"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"PHY": "-1"}
@@ -55,6 +57,7 @@
     "hidden_content": [],
     "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
     "hangout": ["yes"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}
@@ -77,6 +80,7 @@
     "hidden_content": [],
     "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
     "hangout": ["no", "secret"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -99,6 +103,7 @@
     "hidden_content": [],
     "open_hours": ["morning", "afternoon"],
     "hangout": ["no"],
+	"reduced_card": false,
     "bonus_malus": []
 },
 {
@@ -117,6 +122,7 @@
     "hidden_content": [],
     "open_hours": ["morning", "afternoon"],
     "hangout": ["no"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -139,6 +145,7 @@
     "hidden_content": [],
     "open_hours": ["h24"],
     "hangout": ["no"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"PHY": "+1", "MEN": "-1"}
@@ -161,6 +168,7 @@
     "hidden_content": [],
     "open_hours": ["h24"],
     "hangout": ["no", "secret"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"MEN": "+1"}
@@ -183,6 +191,7 @@
     "hidden_content": [],
     "open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
     "hangout": ["yes"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"PHY": "-1"}
@@ -205,6 +214,7 @@
     "hidden_content": [],
     "open_hours": ["night", "we_night"],
     "hangout": ["yes"],
+	"reduced_card": false,
     "bonus_malus": [
       {
         "effects": {"MEN": "-1"}

@@ -70,6 +70,7 @@
           }
         ]
       }
-    ] // 2 à 4 Informations déténues sur 1 à 2 NPCs (2 max. si 1 NPC)
+    ], // 2 à 4 Informations déténues sur 1 à 2 NPCs (2 max. si 1 NPC)
+	"reduced_card": false
   }
 ]

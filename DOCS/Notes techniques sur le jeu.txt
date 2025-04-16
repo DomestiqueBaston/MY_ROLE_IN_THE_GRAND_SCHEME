@@ -1,0 +1,3 @@
+
+
+- Seules les cartes Location et NPC peuvent être réduites ("reduced_card" dans les json) et uniquement sur la partie de droite de Main.tscn
