@@ -517,7 +517,7 @@ visible = true
 [node name="Card_Text" parent="TMP/Locations/Card28/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Drag_Drop_Line" parent="." instance=ExtResource("4_som80")]
+[node name="Drag_Drop_Line" parent="TMP" instance=ExtResource("4_som80")]
 z_index = 1
 
 [node name="Button" type="Control" parent="."]
