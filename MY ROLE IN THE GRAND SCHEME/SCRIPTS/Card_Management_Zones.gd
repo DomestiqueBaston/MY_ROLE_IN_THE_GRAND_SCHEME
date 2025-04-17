@@ -45,7 +45,7 @@ func _process(_delta):
 func _play_sound(sound_type: String):
 	if sound_type == "Hover":
 		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-			hover_sound.play()
+			Globals.hover_sound.play()
 	elif sound_type == "Leave":
 		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-			leave_sound.play()
+			Globals.leave_sound.play()
