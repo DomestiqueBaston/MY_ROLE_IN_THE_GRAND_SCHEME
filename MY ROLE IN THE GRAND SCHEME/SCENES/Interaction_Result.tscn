@@ -134,16 +134,27 @@ visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Positive_Report" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
-anchors_preset = 0
+[node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
+visible = false
+offset_top = 56.0
+offset_right = 547.0
+offset_bottom = 268.0
+
+[node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
+custom_minimum_size = Vector2(107, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]Well, that was intense, but I'm glad we had the conversation.
+It's a lot to take in, but I know I'm capable of handling it.
+Here's hoping things move in the right direction from here.
+And who knows - maybe this will all turn out better than expected.[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Critical_Success_Emo" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
-custom_minimum_size = Vector2(547, 10)
-layout_mode = 0
-offset_top = 56.0
-offset_right = 547.0
-offset_bottom = 66.0
+custom_minimum_size = Vector2(547, 12)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
@@ -151,16 +162,7 @@ text = "[center]Good news is, I can feel I'm [color=#ff1c18]emotionally[/color] 
 metadata/_edit_lock_ = true
 
 [node name="Report_Content_Including_Critical" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = 73.0
-offset_right = 548.0
-offset_bottom = 268.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 alignment = 1
 metadata/_edit_lock_ = true
 
@@ -226,19 +228,17 @@ offset_right = 547.0
 offset_bottom = 268.0
 
 [node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
-visible = false
-custom_minimum_size = Vector2(107, 50)
+custom_minimum_size = Vector2(107, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]Great, just great. That conversation left me feeling like I’m in over my head. Typical.
-Let’s hope this doesn’t turn into an even bigger disaster.
+text = "[center]Great, just great. That conversation left me feeling like I'm in over my head. Typical.
+Let's hope this doesn't turn into an even bigger disaster.
 But knowing my luck, it probably will.[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Rep_Critical_Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
-visible = false
 custom_minimum_size = Vector2(107, 10)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -248,7 +248,6 @@ text = "[center]Anyway. It seems like [color=#ff1c18]NPC001[/color] is a bit [co
 metadata/_edit_lock_ = true
 
 [node name="Emo_Critical_Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
-visible = false
 custom_minimum_size = Vector2(107, 10)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -270,29 +269,27 @@ offset_bottom = 268.0
 metadata/_edit_lock_ = true
 
 [node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
-custom_minimum_size = Vector2(107, 40)
+custom_minimum_size = Vector2(107, 22)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]I hate when it comes to this. violence never feels like a win, even when you’re the one left standing.
-Let’s just hope this is the end of it. But who am I kidding with that?[/center]"
+text = "[center]I hate when it comes to this. violence never feels like a win, even when you're the one left standing.
+Let's just hope this is the end of it. But who am I kidding with that?[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Normal_Success_Dead" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
-visible = false
 custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
-custom_minimum_size = Vector2(107, 26)
+custom_minimum_size = Vector2(107, 25)
 layout_mode = 2
 offset_right = 547.0
 offset_bottom = 22.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_constants/line_separation = 5
 bbcode_enabled = true
 text = "[center]By Zeus! The [color=#ff8864]bastard[/color] is [color=#ff1c18]dead[/color]. I went [color=#ff8864]too hard[/color]. Damn, this is just my luck!
 Should I [color=#ff1c18]search[/color] the [color=#ff8864]mofo[/color]?[/center]"
@@ -350,7 +347,7 @@ offset_top = 41.0
 offset_right = 547.0
 offset_bottom = 51.0
 bbcode_enabled = true
-text = "[center]Ok, I found [color=#ff1c18]XXdø[/color].[/center]"
+text = "[center]Ok, I found [color=#ff1c18]XXdø[/color] (and I'll keep that as a refund).[/center]"
 metadata/_edit_lock_ = true
 
 [node name="And_If_Seen_Then_Wan" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
@@ -359,15 +356,14 @@ layout_mode = 2
 offset_top = 56.0
 offset_right = 547.0
 offset_bottom = 82.0
-theme_override_constants/line_separation = 5
 bbcode_enabled = true
-text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff8864]already know I searched the body[/color]. Crap!
+text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff8864]already know that[/color]. Crap!
 I must have been watched...[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Normal_Success_Alive" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 visible = false
-custom_minimum_size = Vector2(0, 21)
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 metadata/_edit_lock_ = true
 
@@ -386,13 +382,12 @@ metadata/_edit_lock_ = true
 
 [node name="Critical_Success" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 visible = false
-custom_minimum_size = Vector2(107, 30)
+custom_minimum_size = Vector2(107, 25)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]It seems like [color=#ff1c18]NPC001[/color] is [color=#ff1c18]out[/color] now. And I'm [color=#ff1c18]emotionally[/color] relieved I [color=#ff8864]didn't kill[/color] the mofo.
-
+text = "[center]It seems like [color=#ff1c18]NPC001[/color] is [color=#ff1c18]out[/color] now. And I'm [color=#ff1c18]emotionally[/color] relieved [color=#ff8864]I didn't kill[/color] the mofo.
 Even though I'm pretty sure that we [color=#ff1c18]won't [color=#ff8864]be[/color] best friends[/color] [color=#ff8864]anymore[/color]...[/center]"
 metadata/_edit_lock_ = true
 
@@ -424,15 +419,15 @@ metadata/_edit_lock_ = true
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation"]
+[node name="Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation"]
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
 offset_bottom = 268.0
 metadata/_edit_lock_ = true
 
-[node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report"]
-custom_minimum_size = Vector2(107, 40)
+[node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
+custom_minimum_size = Vector2(107, 35)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -443,7 +438,7 @@ Each discovery is a piece of the puzzle, slowly revealing the bigger picture.
 But the journey is never easy, and the truth often remains elusive until the very end.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Critical_Success_Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report"]
+[node name="Critical_Success_Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 visible = false
 custom_minimum_size = Vector2(107, 12)
 layout_mode = 2
@@ -455,13 +450,12 @@ text = "[center][color=#ff8864]Lucky me[/color]! I found [color=#ff1c18]XXDø[/c
 "
 metadata/_edit_lock_ = true
 
-[node name="Normal_Success" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report"]
-visible = false
+[node name="Normal_And_Critical_Success" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 layout_mode = 2
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Location_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report/Normal_Success"]
+[node name="Location_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(107, 141)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -474,7 +468,7 @@ text = "[color=#ff8864]Information[/color] related to this place:
  - ..."
 metadata/_edit_lock_ = true
 
-[node name="Object_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report/Normal_Success"]
+[node name="Object_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(101, 141)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -488,7 +482,7 @@ text = "[center][color=#ff8864]Stuff[/color] I found here:[/center]
  - ... "
 metadata/_edit_lock_ = true
 
-[node name="Link_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report/Normal_Success"]
+[node name="Link_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(111, 141)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -501,7 +495,8 @@ text = "[center][color=#ff8864]Link relation[/color]:[/center]
  - ..."
 metadata/_edit_lock_ = true
 
-[node name="Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report"]
+[node name="Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
+visible = false
 custom_minimum_size = Vector2(107, 22)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -512,7 +507,8 @@ text = "[center]what? [color=#ff1c18]Nothing here[/color]?
 Hm... [color=#ff8864]This isn't good[/color] at all. I was pretty sure I'd find something... [color=#ff1c18]I'm doomed[/color]![/center]"
 metadata/_edit_lock_ = true
 
-[node name="Critical_Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Positive_Report"]
+[node name="Critical_Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
+visible = false
 custom_minimum_size = Vector2(107, 25)
 layout_mode = 2
 size_flags_horizontal = 3
