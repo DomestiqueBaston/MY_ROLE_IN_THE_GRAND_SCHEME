@@ -650,7 +650,7 @@ Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
-		Difficulté = round(((nombre de victimes + nombre de coupables + (nombre de complices × 0.5) + nombre d’evidences) − 3) ÷ 7.5 × 4 + 1). Cela devrait donner un niveau de difficulté entre 1 et 5.
+		Difficulté = round(((nombre de victimes + nombre de coupables + (nombre de complices × 0.5)+(nombre de liens × 0.5) + nombre d’evidences) − 3) ÷ 9 × 4 + 1). Cela devrait donner un niveau de difficulté entre 1 et 5.
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
@@ -675,7 +675,7 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 		Carte PNJ : Toutes les couleurs de liens sont possibles depuis ou vers ces cartes.
 		Carte Objet : Noir, Vert, Rouge/Jaune, Violet Clair et Violet sont possibles.
 		Carte Lieu : Blanc, Noir, Vert Clair, Marron, Turquoise, Bleu Très Foncé, Rouge/Jaune, Violet Clair et Violet sont possibles.
-		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête.
+		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête mais dans une écrasante majorité des cas, il faudra aussi au moins 1 lien sinon le menu « Validate Case » ne sera pas activé.
 	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Reserve » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn). Cela permet, par ex., au joueur de sortir (temporairement) une carte qu’il pense n’avoir aucun intérêt pour l’enquête ou de la remettre en jeu s’il change d’avis.
 
 Liens entre les éléments dans l’enquête (Main.tscn)
@@ -703,6 +703,7 @@ Bleu très foncé : Lieu fréquenté NE SERT PAS À VALIDER UNE ENQUÊTE.
 Blanc : Planque (Hideout) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Violet clair : Trouvé (sert à se souvenir d’où vient un objet) NE SERT PAS À VALIDER UNE ENQUÊTE.
           Violet foncé : nouveaux liens (issus des interactions Dialogue ou Investigation, toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ») NE SERT PAS À VALIDER UNE ENQUÊTE.
+	- Des précisions ont été apportées concernant les résolutions d’enquête et les liens. Pour ça, voir Fiche_enquête_vXX.odt !
 
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté et bonus/malus aux jets de dé

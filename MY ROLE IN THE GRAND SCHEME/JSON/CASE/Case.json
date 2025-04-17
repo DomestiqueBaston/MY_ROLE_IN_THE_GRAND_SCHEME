@@ -5,7 +5,7 @@
 	"crime": "Voir Crime_Motive_Evidence.json",
 	"mobile": "Voir Crime_Motive_Evidence.json",
 	"crime_id": "Voir Crime_Motive_Evidence.json",
-	"Difficulty": [1, 2, 3, 4, 5, 6],  // 6 uniquement pour les enquêtes ultimes !
+	"Difficulty": [1, 2, 3, 4, 5, 6],  // 6, uniquement pour les enquêtes ultimes !
 	"status": ["active", "paused"], // 1 des 2
 	"duration": 9,  // round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	"crime_location": ["none", "LOCxxx_IDxxx"],  // 1 seul
@@ -16,6 +16,7 @@
 	"witnesses": ["NPCxxx", "none"]  // pour le nombre, voir Crime_Motive_Evidence.json
 	"suspects": ["NPCxxx", "none"]  // pour le nombre, voir Crime_Motive_Evidence.json
 	"culprits": ["NPCxxx"],  // pour le nombre, voir Crime_Motive_Evidence.json
-	"total_evidences": 3,  // pour le nombre, voir Crime_Motive_Evidence.json
+	"total_evidences": [1, 2, 3]  // pour le nombre, voir Crime_Motive_Evidence.json
+	"link": [LINxxx_IDxxx, LINxxx_IDxxx, LINxxx_IDxxx]  // 3 liens max, voir Crime_Motive_Evidence.json
   }
 ]
