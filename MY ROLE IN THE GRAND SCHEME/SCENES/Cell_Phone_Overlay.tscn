@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cg0xclws2s26w"]
+[gd_scene load_steps=22 format=3 uid="uid://cg0xclws2s26w"]
 
 [ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/CELL_PHONE/CellPhone_BG.png" id="1_gexgo"]
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/Cell_Phone_Theme.tres" id="2_f8ijm"]
@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://kdl6h3k4sfel" path="res://SOUND/MISC/Phone_Beep.ogg" id="8_lsuee"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="9_xxx8q"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="10_5tvv7"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="13_67kqe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h48le"]
 
@@ -311,10 +310,6 @@ autoplay = "Typing"
 volume_db = -25.0
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("13_67kqe")]
-
 [connection signal="mouse_entered" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_switch_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

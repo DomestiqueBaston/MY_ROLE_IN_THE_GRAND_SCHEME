@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhgxh8qnyumq0"]
+[gd_scene load_steps=10 format=3 uid="uid://bhgxh8qnyumq0"]
 
 [ext_resource type="Texture2D" uid="uid://bg42bx7til5jt" path="res://GRAPHICS/LANGUAGE/Language_BG.png" id="1_6fems"]
 [ext_resource type="Theme" uid="uid://bmygb00a0tvqy" path="res://UI/Language_Theme.tres" id="2_ayvp8"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://wfsnljjvdro2" path="res://GRAPHICS/LANGUAGE/Quit_Hover.png" id="3_qv763"]
 [ext_resource type="Script" uid="uid://c1q5tswr73jvo" path="res://SCRIPTS/Language_Button.gd" id="4_0r7xq"]
 [ext_resource type="BitMap" uid="uid://bbqk7a0ulfryl" path="res://GRAPHICS/LANGUAGE/Quit_Mask.png" id="4_pb8m6"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_uxqja"]
 
 [sub_resource type="Animation" id="Animation_ay87b"]
 resource_name = "Blink"
@@ -86,10 +85,6 @@ libraries = {
 }
 autoplay = "Blink"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("8_uxqja")]
-
 [connection signal="mouse_entered" from="Language_Bg/Quit_Button/Quit" to="Language_Bg/Quit_Button" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Language_Bg/Quit_Button/Quit" to="Language_Bg/Quit_Button" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Language_Bg/Quit_Button/Quit" to="Language_Bg/Quit_Button" method="_on_quit_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cjvtdra3n1tqy"]
+[gd_scene load_steps=35 format=3 uid="uid://cjvtdra3n1tqy"]
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
 [ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
@@ -33,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://0bd6dk6fhjn7" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_BG.png" id="29_t6v1g"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="30_7d8wo"]
 [ext_resource type="AudioStream" uid="uid://d10rphc4dsk4c" path="res://SOUND/MISC/Sex_choice.ogg" id="35_7d8wo"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="35_7g1dg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
 
@@ -346,8 +345,6 @@ offset_bottom = 4.0
 theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("35_7g1dg")]
-
 [connection signal="pressed" from="Creation_Page/PHY/PHY_Moins" to="Creation_Page" method="_on_phy_moins_pressed"]
 [connection signal="pressed" from="Creation_Page/PHY/PHY_Plus" to="Creation_Page" method="_on_phy_plus_pressed"]
 [connection signal="pressed" from="Creation_Page/MEN/MEN_Moins" to="Creation_Page" method="_on_men_moins_pressed"]
@@ -376,5 +373,3 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_exited" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_pressed"]
 [connection signal="value_changed" from="SliderBg/HSlider" to="Creation_Page" method="_on_h_slider_value_changed"]
-
-[editable path="Shared_Interface_Sounds"]

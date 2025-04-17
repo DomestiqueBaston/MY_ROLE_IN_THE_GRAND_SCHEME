@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://btoprcqqk35dm"]
+[gd_scene load_steps=52 format=3 uid="uid://btoprcqqk35dm"]
 
 [ext_resource type="Texture2D" uid="uid://cecs6l03ghxq" path="res://GRAPHICS/SLEEP/Shop_BG.png" id="1_0cvhu"]
 [ext_resource type="Theme" uid="uid://bleu1oddsbqsk" path="res://UI/Sleep_Theme.tres" id="2_8vv46"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://co2s7d5k2xxom" path="res://GRAPHICS/SLEEP/Drawer_01_Open.png" id="31_m2dho"]
 [ext_resource type="Texture2D" uid="uid://bs3a082t7hyfi" path="res://GRAPHICS/SLEEP/Drawer_01_Hover.png" id="32_im2gk"]
 [ext_resource type="BitMap" uid="uid://cvtklig2xg1im" path="res://GRAPHICS/SLEEP/Drawer_01_Mask.png" id="33_h478i"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="35_ijttc"]
 [ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="35_kdwin"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="35_mpood"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="36_sebfh"]
@@ -395,8 +394,6 @@ bus = &"UI"
 stream = ExtResource("35_kdwin")
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("35_ijttc")]
-
 [connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_09" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Drawers/Drawer_Names/Drawer_09" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_08" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
@@ -421,5 +418,3 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Drawers/Yes_No/No" to="Drawers/Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Drawers/Yes_No/No" to="Drawers/Drawer_Names" method="_on_mouse_exited"]
 [connection signal="pressed" from="Drawers/Yes_No/No" to="Drawers/Drawer_Names" method="_on_no_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

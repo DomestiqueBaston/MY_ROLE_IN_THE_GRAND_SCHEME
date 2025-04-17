@@ -3,16 +3,12 @@ extends Control
 
 
 func _on_bring_it_on_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 
 func _on_bring_it_on_mouse_entered():
-	if $"../Shared_Interface_Sounds/Leave".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Hover".play()
+	if not Globals.leave_sound.playing:
+		Globals.hover_sound.play()
 
 func _on_bring_it_on_mouse_exited():
-	if $"../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Leave".play()
+	if not Globals.hover_sound.playing:
+		Globals.leave_sound.play()

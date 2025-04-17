@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bialdyt2yrgkg"]
+[gd_scene load_steps=11 format=3 uid="uid://bialdyt2yrgkg"]
 
 [ext_resource type="Texture2D" uid="uid://6wn0yf5hibwo" path="res://GRAPHICS/INCOME/Income_BG.png" id="1_88mho"]
 [ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="2_ekhwe"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_ihpa3"]
 [ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="3_kabnn"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="4_5xymt"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="7_jivdg"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -259,10 +258,6 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("7_jivdg")]
-
 [connection signal="mouse_entered" from="Income_Panel/Information/Quit" to="Income_Panel/Information/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Income_Panel/Information/Quit" to="Income_Panel/Information/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Income_Panel/Information/Quit" to="Income_Panel/Information/Quit" method="_on_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

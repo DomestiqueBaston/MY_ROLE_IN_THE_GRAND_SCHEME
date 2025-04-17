@@ -4,7 +4,7 @@
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="4_0ibqv"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="5_0mfvj"]
+[ext_resource type="AudioStream" uid="uid://dmrut6mhf4tp3" path="res://SOUND/MISC/Soft_Alarm.ogg" id="5_0mfvj"]
 
 [sub_resource type="Animation" id="Animation_0mfvj"]
 resource_name = "Alert"
@@ -38,7 +38,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Shared_Interface_Sounds/Soft_Alarm:playing")
+tracks/2/path = NodePath("Soft_Alarm:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -77,7 +77,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = false
-tracks/2/path = NodePath("Shared_Interface_Sounds/Soft_Alarm:playing")
+tracks/2/path = NodePath("Soft_Alarm:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -476,10 +476,10 @@ libraries = {
 }
 autoplay = "Alert"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("5_0mfvj")]
-
-[node name="Soft_Alarm" parent="Shared_Interface_Sounds" index="4"]
+[node name="Soft_Alarm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0mfvj")
 volume_db = -10.0
+bus = &"UI"
 
 [connection signal="mouse_entered" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_exited"]
@@ -493,5 +493,3 @@ volume_db = -10.0
 [connection signal="mouse_entered" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menus/Whatever" to="Menus/Dailies" method="_on_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

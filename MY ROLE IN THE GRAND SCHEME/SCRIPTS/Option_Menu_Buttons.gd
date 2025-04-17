@@ -20,24 +20,20 @@ func _ready():
 		button.pressed.connect(play_sound)
 
 func _on_Valid_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
-	await $"../Shared_Interface_Sounds/Valid".finished
+	Globals.valid_sound.play()
+	await Globals.valid_sound.finished
 
 func _on_Cancel_pressed():
-	$"../Shared_Interface_Sounds/Cancel".play()
-	await $"../Shared_Interface_Sounds/Cancel".finished
+	Globals.cancel_sound.play()
+	await Globals.cancel_sound.finished
 
 func _on_mouse_entered():
-	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Hover".play()
+	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+		Globals.hover_sound.play()
 
 func _on_mouse_exited():
-	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Leave".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()
 
 func play_sound():
 	$"../Drawer".volume_db = 0.0

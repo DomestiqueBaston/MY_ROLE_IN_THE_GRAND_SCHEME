@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7yxbbm1q32sw"]
+[gd_scene load_steps=12 format=3 uid="uid://c7yxbbm1q32sw"]
 
-[ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCENES/Globals.gd" id="1_p5kqw"]
+[ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCRIPTS/Globals.gd" id="1_p5kqw"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
 [ext_resource type="Script" uid="uid://cb08qaoq6sqr5" path="res://SCRIPTS/Mouse_Cursor.gd" id="3_hi0n3"]
 [ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="4_f2dh2"]
 [ext_resource type="Shader" uid="uid://dkp5ymdefrmn2" path="res://SHADERS/Video.gdshader" id="5_kpwuy"]
+[ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="6_baqg5"]
+[ext_resource type="AudioStream" uid="uid://4dfb07ojptrw" path="res://SOUND/MISC/Cancel.ogg" id="7_xi55q"]
+[ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="8_8eio1"]
+[ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="9_wgutn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vnh2"]
 shader = ExtResource("4_f2dh2")
@@ -44,3 +48,23 @@ material = SubResource("ShaderMaterial_yrhxf")
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
+
+[node name="UI_Sounds" type="Node" parent="."]
+
+[node name="Valid" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("6_baqg5")
+bus = &"UI"
+
+[node name="Cancel" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("7_xi55q")
+bus = &"UI"
+
+[node name="Leave" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("8_8eio1")
+volume_db = 12.5
+bus = &"UI"
+
+[node name="Hover" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("9_wgutn")
+volume_db = 12.5
+bus = &"UI"

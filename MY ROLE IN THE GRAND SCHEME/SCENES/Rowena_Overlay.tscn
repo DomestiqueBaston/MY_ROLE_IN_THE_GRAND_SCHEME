@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bxubj1onaew07"]
+[gd_scene load_steps=24 format=3 uid="uid://bxubj1onaew07"]
 
 [ext_resource type="Theme" uid="uid://bwhe2wx8ls2rq" path="res://UI/Rowena_Theme.tres" id="1_8jhki"]
 [ext_resource type="Texture2D" uid="uid://dbmjuo4ovocyv" path="res://GRAPHICS/ROWENA/Rowena_BG.png" id="2_7yue0"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://dkbajl6j7ktg5" path="res://GRAPHICS/ROWENA/Plus_Pressed.png" id="12_aqcnl"]
 [ext_resource type="Texture2D" uid="uid://bbs7ssu3nub6u" path="res://GRAPHICS/ROWENA/Plus_Hover.png" id="13_sp1we"]
 [ext_resource type="BitMap" uid="uid://dohqyo1qij7qr" path="res://GRAPHICS/ROWENA/Plus_Mask.png" id="14_dxmd3"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="15_1046p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3e1n3"]
 
@@ -351,8 +350,6 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("15_1046p")]
-
 [connection signal="mouse_entered" from="Rowena_Panel_Panel/Thanks_Nope/Thanks" to="Rowena_Panel_Panel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Rowena_Panel_Panel/Thanks_Nope/Thanks" to="Rowena_Panel_Panel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Rowena_Panel_Panel/Thanks_Nope/Thanks" to="Rowena_Panel_Panel" method="_on_thanks_pressed"]
@@ -365,5 +362,3 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Rowena_Panel_Panel/Plus_Minus/Plus" to="Rowena_Panel_Panel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Rowena_Panel_Panel/Plus_Minus/Plus" to="Rowena_Panel_Panel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Rowena_Panel_Panel/Plus_Minus/Plus" to="Rowena_Panel_Panel" method="_on_plus_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

@@ -37,12 +37,12 @@ func _process(_delta):
 		mastery_zone.visible = false
 
 	if hovering and not is_hovering:
-		if not $"../../../Shared_Interface_Sounds/Leave".playing and not $"../../../Shared_Interface_Sounds/Hover".playing:
-			$"../../../Shared_Interface_Sounds/Hover".play()
+		if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+			Globals.hover_sound.play()
 		is_hovering = true
 	elif not hovering and is_hovering:
-		if not $"../../../Shared_Interface_Sounds/Hover".playing and not $"../../../Shared_Interface_Sounds/Leave".playing:
-			$"../../../Shared_Interface_Sounds/Leave".play()
+		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+			Globals.leave_sound.play()
 		is_hovering = false
 
 func _is_mouse_over(collider, mouse_position):

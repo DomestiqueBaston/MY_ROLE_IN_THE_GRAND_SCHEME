@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bj832g1qup1fu"]
+[gd_scene load_steps=18 format=3 uid="uid://bj832g1qup1fu"]
 
 [ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/CONFIRMATION/Confirmation.png" id="1_q44ut"]
 [ext_resource type="Script" uid="uid://hwofijnch3v5" path="res://SCRIPTS/Confirmation_Overlay_Buttons.gd" id="3_gia5o"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_vckhk"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_6rqop"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_77qji"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="6_284kg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1u8"]
 
@@ -346,13 +345,9 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("6_284kg")]
-
 [connection signal="mouse_entered" from="Confirmation_Panel/Yes_No/Yes" to="Confirmation_Panel/Yes_No" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Confirmation_Panel/Yes_No/Yes" to="Confirmation_Panel/Yes_No" method="_on_any_button_exited"]
 [connection signal="pressed" from="Confirmation_Panel/Yes_No/Yes" to="Confirmation_Panel/Yes_No" method="_on_yes_pressed"]
 [connection signal="mouse_entered" from="Confirmation_Panel/Yes_No/No" to="Confirmation_Panel/Yes_No" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Confirmation_Panel/Yes_No/No" to="Confirmation_Panel/Yes_No" method="_on_any_button_exited"]
 [connection signal="pressed" from="Confirmation_Panel/Yes_No/No" to="Confirmation_Panel/Yes_No" method="_on_no_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

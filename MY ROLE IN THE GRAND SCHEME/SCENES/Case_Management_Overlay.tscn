@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cnsnou3voqm67"]
+[gd_scene load_steps=31 format=3 uid="uid://cnsnou3voqm67"]
 
 [ext_resource type="Texture2D" uid="uid://bldatry1ckp7d" path="res://GRAPHICS/CASE_MANAGEMENT/Case_Management_BG.png" id="1_m0xss"]
 [ext_resource type="Theme" uid="uid://vbgd5rjttbbi" path="res://UI/Case_Management_Theme.tres" id="2_j02fd"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Hover.png" id="19_03ieh"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/CASE_MANAGEMENT/Case_2_Mask.png" id="20_s0481"]
 [ext_resource type="AudioStream" uid="uid://gaoc58dislyn" path="res://SOUND/MISC/Wooden_Drawer.ogg" id="25_h1j4x"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="26_h1j4x"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -287,8 +286,6 @@ bus = &"UI"
 stream = ExtResource("25_h1j4x")
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("26_h1j4x")]
-
 [connection signal="mouse_entered" from="Case_Management_Panel/Buttons/Cancel" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Case_Management_Panel/Buttons/Cancel" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Case_Management_Panel/Buttons/Cancel" to="Case_Management_Panel/Buttons" method="_on_cancel_pressed"]
@@ -303,5 +300,3 @@ bus = &"UI"
 [connection signal="mouse_exited" from="Case_Management_Panel/Buttons/01" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="mouse_entered" from="Case_Management_Panel/Buttons/02" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Case_Management_Panel/Buttons/02" to="Case_Management_Panel/Buttons" method="_on_any_button_mouse_exited"]
-
-[editable path="Shared_Interface_Sounds"]

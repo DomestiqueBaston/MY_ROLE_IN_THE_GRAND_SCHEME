@@ -2,25 +2,21 @@ extends Control
 
 
 func _on_yes_pressed():
-	$"../../Shared_Interface_Sounds/Valid".play()
-	await $"../../Shared_Interface_Sounds/Valid".finished
+	Globals.valid_sound.play()
+	await Globals.valid_sound.finished
 	$"../../On_Off".play("Disappearance")
 	await $"../../On_Off".animation_finished
 
 func _on_no_pressed():
-	$"../../Shared_Interface_Sounds/Cancel".play()
-	await $"../../Shared_Interface_Sounds/Cancel".finished
+	Globals.cancel_sound.play()
+	await Globals.cancel_sound.finished
 	$"../../On_Off".play("Disappearance")
 	await $"../../On_Off".animation_finished
 
 func _on_any_button_entered():
-	if $"../../Shared_Interface_Sounds/Hover".playing == true or $"../../Shared_Interface_Sounds/Leave".playing == true:
-		pass
-	else:
-		$"../../Shared_Interface_Sounds/Hover".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.hover_sound.play()
 
 func _on_any_button_exited():
-	if $"../../Shared_Interface_Sounds/Hover".playing == true or $"../../Shared_Interface_Sounds/Leave".playing == true:
-		pass
-	else:
-		$"../../Shared_Interface_Sounds/Leave".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()

@@ -29,33 +29,25 @@ func _on_TextureButton_pressed():
 
 func _on_mouse_entered():
 	graphics_hover.show()
-	if $"../../Shared_Interface_Sounds/Leave".playing == true or $"../../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../../Shared_Interface_Sounds/Hover".play()
+	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+		Globals.hover_sound.play()
 
 func _on_mouse_exited():
 	graphics_hover.hide()
-	if $"../../Shared_Interface_Sounds/Hover".playing == true or $"../../Shared_Interface_Sounds/Leave".playing == true:
-		pass
-	else:
-		$"../../Shared_Interface_Sounds/Leave".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()
 
 
 func _on_ok_pressed():
-	$"../../Shared_Interface_Sounds/Cancel".play()
-	await $"../../Shared_Interface_Sounds/Cancel".finished
+	Globals.cancel_sound.play()
+	await Globals.cancel_sound.finished
 
 
 func _on_ok_mouse_entered():
-	if $"../../Shared_Interface_Sounds/Leave".playing == true or $"../../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../../Shared_Interface_Sounds/Hover".play()
+	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+		Globals.hover_sound.play()
 
 
 func _on_ok_mouse_exited():
-	if $"../../Shared_Interface_Sounds/Hover".playing == true or $"../../Shared_Interface_Sounds/Leave".playing == true:
-		pass
-	else:
-		$"../../Shared_Interface_Sounds/Leave".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()

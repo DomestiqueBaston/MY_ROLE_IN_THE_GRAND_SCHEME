@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0fot58ykyifw"]
+[gd_scene load_steps=15 format=3 uid="uid://d0fot58ykyifw"]
 
 [ext_resource type="Texture2D" uid="uid://dpmd3nbe1pn1d" path="res://GRAPHICS/SEARCH_WARRANT/Search_Warrant_BG.png" id="1_ub508"]
 [ext_resource type="Theme" uid="uid://b5dlwuuc55m44" path="res://UI/Search_Warrant_Theme.tres" id="2_lyw2x"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_66kl2"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_tv78n"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_kfqfx"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_tv78n"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -342,13 +341,9 @@ autoplay = "Writing"
 stream = ExtResource("6_kfqfx")
 bus = &"FX"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("8_tv78n")]
-
 [connection signal="mouse_entered" from="Search_Warrant_Panel/Texts/Yes" to="Search_Warrant_Panel/Texts" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Search_Warrant_Panel/Texts/Yes" to="Search_Warrant_Panel/Texts" method="_on_mouse_exited"]
 [connection signal="pressed" from="Search_Warrant_Panel/Texts/Yes" to="Search_Warrant_Panel/Texts" method="_on_yes_pressed"]
 [connection signal="mouse_entered" from="Search_Warrant_Panel/Texts/No" to="Search_Warrant_Panel/Texts" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Search_Warrant_Panel/Texts/No" to="Search_Warrant_Panel/Texts" method="_on_mouse_exited"]
 [connection signal="pressed" from="Search_Warrant_Panel/Texts/No" to="Search_Warrant_Panel/Texts" method="_on_no_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

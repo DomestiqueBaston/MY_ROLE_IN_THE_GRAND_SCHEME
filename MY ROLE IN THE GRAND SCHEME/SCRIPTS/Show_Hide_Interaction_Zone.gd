@@ -17,17 +17,13 @@ func _process(_delta):
 	var rect = Rect2(collider_global_position - shape.extents, shape.extents * 2)
 	if rect.has_point(mouse_position):
 		if not is_hovering:
-			if $"../../Shared_Interface_Sounds/Leave".playing == true or $"../../Shared_Interface_Sounds/Hover".playing == true:
-				pass
-			else:
-				$"../../Shared_Interface_Sounds/Hover".play()
+			if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+				Globals.hover_sound.play()
 			is_hovering = true
 			visible = true
 	else:
 		if is_hovering:
-			if $"../../Shared_Interface_Sounds/Hover".playing == true or $"../../Shared_Interface_Sounds/Leave".playing == true:
-				pass
-			else:
-				$"../../Shared_Interface_Sounds/Leave".play()
+			if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+				Globals.leave_sound.play()
 			is_hovering = false
 			visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=54 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -36,7 +36,6 @@
 [ext_resource type="BitMap" uid="uid://cg2uptmo3ewqh" path="res://GRAPHICS/INTERACTION/Small_Tv_Button_Mask.png" id="22_y0drc"]
 [ext_resource type="AudioStream" uid="uid://dtdh8de6r8ymv" path="res://SOUND/MISC/White_noise.ogg" id="25_iwlie"]
 [ext_resource type="AudioStream" uid="uid://dy0gaffd2m7hp" path="res://SOUND/MISC/Turn_Button.ogg" id="25_lds6i"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="33_06ojl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5dcb"]
 size = Vector2(230, 104)
@@ -981,8 +980,6 @@ metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("33_06ojl")]
-
 [connection signal="mouse_entered" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_exited"]
 [connection signal="pressed" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_pressed"]
@@ -1015,4 +1012,3 @@ metadata/_edit_lock_ = true
 [editable path="TMP/Objects/Card28"]
 [editable path="TMP/Locations/Card27"]
 [editable path="TMP/Locations/Card28"]
-[editable path="Shared_Interface_Sounds"]

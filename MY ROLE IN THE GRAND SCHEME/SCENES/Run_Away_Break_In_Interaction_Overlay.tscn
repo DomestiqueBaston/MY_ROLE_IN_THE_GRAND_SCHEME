@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://m7b4hvgtnl1h"]
+[gd_scene load_steps=23 format=3 uid="uid://m7b4hvgtnl1h"]
 
 [ext_resource type="Texture2D" uid="uid://cydqmld1i1nfl" path="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/BG.png" id="1_lbetn"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="2_4cvnv"]
@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="7_v2y1h"]
 [ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="8_m6vde"]
 [ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="9_3oinn"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="13_h2ttd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbetn"]
 size = Vector2(154, 104)
@@ -311,10 +310,6 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("13_h2ttd")]
-
 [connection signal="mouse_entered" from="Interaction_Panel/Button/Bring_It_On" to="Interaction_Panel/Button" method="_on_bring_it_on_mouse_entered"]
 [connection signal="mouse_exited" from="Interaction_Panel/Button/Bring_It_On" to="Interaction_Panel/Button" method="_on_bring_it_on_mouse_exited"]
 [connection signal="pressed" from="Interaction_Panel/Button/Bring_It_On" to="Interaction_Panel/Button" method="_on_bring_it_on_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

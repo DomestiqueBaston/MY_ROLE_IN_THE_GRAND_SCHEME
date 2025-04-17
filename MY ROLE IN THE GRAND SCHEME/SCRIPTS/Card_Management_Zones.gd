@@ -43,9 +43,9 @@ func _process(_delta):
 			visible = false
 
 func _play_sound(sound_type: String):
-	var hover_sound = $"../../../Shared_Interface_Sounds/Hover"
-	var leave_sound = $"../../../Shared_Interface_Sounds/Leave"
-	if sound_type == "Hover" and not hover_sound.playing and not leave_sound.playing:
-		hover_sound.play()
-	elif sound_type == "Leave" and not hover_sound.playing and not leave_sound.playing:
-		leave_sound.play()
+	if sound_type == "Hover":
+		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+			hover_sound.play()
+	elif sound_type == "Leave":
+		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+			leave_sound.play()

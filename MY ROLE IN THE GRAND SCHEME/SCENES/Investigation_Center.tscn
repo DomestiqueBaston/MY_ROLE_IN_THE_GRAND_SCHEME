@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cb8ie0y4shgtb"]
+[gd_scene load_steps=7 format=3 uid="uid://cb8ie0y4shgtb"]
 
 [ext_resource type="Texture2D" uid="uid://cno0b6h8jyy04" path="res://GRAPHICS/INVESTIGATION_CENTER/Investigation_Center_BG.png" id="1_njt05"]
 [ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png" id="2_6ndse"]
 [ext_resource type="Theme" uid="uid://5eedmsqjoxtm" path="res://UI/Investigation_Center_Theme.tres" id="4_b1ixs"]
 [ext_resource type="Script" uid="uid://d0qlesy3dsiqa" path="res://SCRIPTS/Investigation_Center_Case_List.gd" id="4_iw720"]
 [ext_resource type="Script" uid="uid://fw3knsksudbs" path="res://SCRIPTS/Investigation_Center_Buttons.gd" id="4_lj007"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="6_3f0nw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
 
@@ -257,8 +256,6 @@ text = "I'm in!"
 script = ExtResource("4_lj007")
 metadata/_edit_lock_ = true
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("6_3f0nw")]
-
 [connection signal="button_down" from="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_down"]
 [connection signal="button_up" from="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_up"]
 [connection signal="item_selected" from="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_item_selected"]
@@ -268,5 +265,3 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_entered" from="Chalkboard_Content/Chalk_Mask/Ok" to="Chalkboard_Content/Chalk_Mask/Ok" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Chalkboard_Content/Chalk_Mask/Ok" to="Chalkboard_Content/Chalk_Mask/Ok" method="_on_mouse_exited"]
 [connection signal="pressed" from="Chalkboard_Content/Chalk_Mask/Ok" to="Chalkboard_Content/Chalk_Mask/Ok" method="_on_ok_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

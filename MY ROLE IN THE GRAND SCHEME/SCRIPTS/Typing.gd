@@ -52,7 +52,7 @@ func _process(_delta):
 				actual_value = 0.
 
 func _on_next_button_pressed():
-	$"../../../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 	end_of_tuto += 1
 	if end_of_tuto == 3:
 		$"../Next_Button".text = "End of line!"
@@ -69,14 +69,10 @@ func _on_next_button_pressed():
 
 
 func _on_next_button_mouse_entered():
-	if $"../../../Shared_Interface_Sounds/Leave".playing == true or $"../../../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../../../Shared_Interface_Sounds/Hover".play()
+	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+		Globals.hover_sound.play()
 
 
 func _on_next_button_mouse_exited():
-	if $"../../../Shared_Interface_Sounds/Leave".playing == true or $"../../../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../../../Shared_Interface_Sounds/Leave".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()

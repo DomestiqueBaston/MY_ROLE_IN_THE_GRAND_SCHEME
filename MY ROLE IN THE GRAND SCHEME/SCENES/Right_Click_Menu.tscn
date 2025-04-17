@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtnd8jygtcmpf"]
+[gd_scene load_steps=18 format=3 uid="uid://dtnd8jygtcmpf"]
 
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="1_3n552"]
 [ext_resource type="Script" uid="uid://d27igqil8us1m" path="res://SCRIPTS/Right_Click_Menu.gd" id="1_ml82w"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="15_t6tou"]
 [ext_resource type="Texture2D" uid="uid://chw0hrxhbsjf" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise.png" id="16_7vosm"]
 [ext_resource type="Texture2D" uid="uid://s6171shdoa65" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png" id="17_jli82"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="18_ddtsa"]
 
 [node name="Right_Click_Menu" type="Node2D" node_paths=PackedStringArray("popup_menu")]
 script = ExtResource("1_ml82w")
@@ -108,7 +107,3 @@ item_13/id = 13
 item_14/text = "Found"
 item_14/icon = ExtResource("14_hd70u")
 item_14/id = 14
-
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("18_ddtsa")]
-
-[editable path="Shared_Interface_Sounds"]

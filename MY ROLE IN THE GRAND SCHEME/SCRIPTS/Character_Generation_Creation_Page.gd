@@ -9,24 +9,20 @@ var remaining = total_points - (phy + men + hea)  # Initialiser remaining
 
 
 func _on_any_button_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
-	await $"../Shared_Interface_Sounds/Valid".finished
+	Globals.valid_sound.play()
+	await Globals.valid_sound.finished
 
 func _on_cancel_pressed():
-	$"../Shared_Interface_Sounds/Cancel".play()
-	await $"../Shared_Interface_Sounds/Cancel".finished
+	Globals.cancel_sound.play()
+	await Globals.cancel_sound.finished
 
 func _on_any_button_mouse_entered():
-	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Hover".play()
+	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+		Globals.hover_sound.play()
 	
 func _on_any_button_mouse_exited():
-	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Leave".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()
 
 func _on_h_slider_value_changed(value: float):
 	var pitch = lerp(0.5, 0.504, value)
@@ -52,42 +48,42 @@ func _process(_delta):
 
 
 func _on_phy_moins_pressed():
-	$"../Shared_Interface_Sounds/Cancel".play()
+	Globals.cancel_sound.play()
 	if phy > 3:  # Vérifier si phy est supérieur à 3 avant de décrémenter
 		phy -= 1
 		remaining += 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_phy_plus_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 	if phy < 7 and remaining > 0:  # Vérifier si phy est inférieur à 7 avant d'incrémenter
 		phy += 1
 		remaining -= 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_men_moins_pressed():
-	$"../Shared_Interface_Sounds/Cancel".play()
+	Globals.cancel_sound.play()
 	if men > 3:  # Vérifier si men est supérieur à 3 avant de décrémenter
 		men -= 1
 		remaining += 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_men_plus_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 	if men < 7 and remaining > 0:  # Vérifier si men est inférieur à 7 avant d'incrémenter
 		men += 1
 		remaining -= 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_hea_moins_pressed():
-	$"../Shared_Interface_Sounds/Cancel".play()
+	Globals.cancel_sound.play()
 	if hea > 3:  # Vérifier si hea est supérieur à 3 avant de décrémenter
 		hea -= 1
 		remaining += 1
 		update_remaining()  # Mettre à jour le nombre de points restants
 
 func _on_hea_plus_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 	if hea < 7 and remaining > 0:  # Vérifier si hea est inférieur à 7 avant d'incrémenter
 		hea += 1
 		remaining -= 1
@@ -103,7 +99,7 @@ func update_remaining():
 
 
 func _on_randomize_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 	# Répartition aléatoire des points entre 3 et 7 pour phy, men, et hea
 	phy = randi_range(3, 7)
 	men = randi_range(3, 7)
@@ -138,7 +134,7 @@ func _on_randomize_pressed():
 
 
 func _on_reset_pressed():
-	$"../Shared_Interface_Sounds/Cancel".play()
+	Globals.cancel_sound.play()
 	phy = 3
 	men = 3
 	hea = 3

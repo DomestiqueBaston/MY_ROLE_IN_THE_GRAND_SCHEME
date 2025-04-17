@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dxsbbamjqxk1s"]
+[gd_scene load_steps=34 format=3 uid="uid://dxsbbamjqxk1s"]
 
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/OPTIONS/Settings_BG.png" id="1_7b261"]
 [ext_resource type="Texture2D" uid="uid://dpny7h4hu3sgy" path="res://GRAPHICS/OPTIONS/Secrets_Button_Pressed_Hover.png" id="2_12lbf"]
@@ -30,7 +30,6 @@
 [ext_resource type="Texture2D" uid="uid://c1qmuoj1q7n2c" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Pressed.png" id="26_2vyex"]
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Hover.png" id="27_g1d07"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Mask.png" id="28_qcawn"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="31_gbwls"]
 [ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="31_wcpfb"]
 [ext_resource type="AudioStream" uid="uid://b47jc8y3wwi28" path="res://SOUND/MISC/Minions_On.ogg" id="32_asrw6"]
 [ext_resource type="AudioStream" uid="uid://ege78tbsp417" path="res://SOUND/MISC/Minions_Off.ogg" id="33_6fk48"]
@@ -180,8 +179,6 @@ bus = &"UI"
 stream = ExtResource("31_wcpfb")
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("31_gbwls")]
-
 [connection signal="mouse_entered" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_mouse_exited"]
 [connection signal="pressed" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_Cancel_pressed"]
@@ -209,5 +206,3 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_mouse_exited"]
 [connection signal="pressed" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_Valid_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

@@ -2,10 +2,10 @@ extends OptionButton
 
 
 func _on_button_down():
-	$"../../../../../Shared_Interface_Sounds/Hover".play()
+	Globals.hover_sound.play()
 
 func _on_button_up():
-	$"../../../../../Shared_Interface_Sounds/Leave".play()
+	Globals.leave_sound.play()
 
 func _on_item_selected(_index: int):
-	$"../../../../../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()

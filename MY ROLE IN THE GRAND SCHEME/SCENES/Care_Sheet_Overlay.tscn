@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://btr68tuomua02"]
+[gd_scene load_steps=15 format=3 uid="uid://btr68tuomua02"]
 
 [ext_resource type="Texture2D" uid="uid://cq57wrp3dfi0j" path="res://GRAPHICS/CARE_SHEET/Care_Sheet_BG.png" id="1_gt7nd"]
 [ext_resource type="Theme" uid="uid://bn5ihjhwbd0gk" path="res://UI/Care_Sheet_Theme.tres" id="2_ixkpq"]
 [ext_resource type="Script" uid="uid://6s8ejpvawryf" path="res://SCRIPTS/Case_Management_Typing.gd" id="3_vnhhu"]
 [ext_resource type="Script" uid="uid://5amx8lvvjfx" path="res://SCRIPTS/Care_Sheet_Overlay_Buttons.gd" id="4_cb7cy"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_jhyu5"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_m5sa3"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="22_e4e1x"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="23_2qu0w"]
 
@@ -345,13 +344,9 @@ autoplay = "Writing"
 stream = ExtResource("6_jhyu5")
 bus = &"FX"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("8_m5sa3")]
-
 [connection signal="mouse_entered" from="Care_Sheet_Panel/Texts/Yes" to="Care_Sheet_Panel/Texts/Yes" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Care_Sheet_Panel/Texts/Yes" to="Care_Sheet_Panel/Texts/Yes" method="_on_any_button_exited"]
 [connection signal="pressed" from="Care_Sheet_Panel/Texts/Yes" to="Care_Sheet_Panel/Texts/Yes" method="_on_yes_pressed"]
 [connection signal="mouse_entered" from="Care_Sheet_Panel/Texts/No" to="Care_Sheet_Panel/Texts/No" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Care_Sheet_Panel/Texts/No" to="Care_Sheet_Panel/Texts/No" method="_on_any_button_exited"]
 [connection signal="pressed" from="Care_Sheet_Panel/Texts/No" to="Care_Sheet_Panel/Texts/No" method="_on_no_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

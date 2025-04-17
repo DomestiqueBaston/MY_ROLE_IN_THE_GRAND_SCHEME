@@ -5,26 +5,22 @@ extends Control
 # que lorsque l'on clique sur le grabber, pas dans le grabber area (ce qui est le cas actuellement).
 
 func _on_mouse_entered():
-	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Hover".play()
+	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+		Globals.hover_sound.play()
 
 func _on_mouse_exited():
-	if $"../Shared_Interface_Sounds/Leave".playing == true or $"../Shared_Interface_Sounds/Hover".playing == true:
-		pass
-	else:
-		$"../Shared_Interface_Sounds/Leave".play()
+	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()
 
 func _on_cancel_pressed():
-	$"../Shared_Interface_Sounds/Cancel".play()
+	Globals.cancel_sound.play()
 
 func _on_ok_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 
 func _on_any_blue_button_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()
 
 
 func _on_VS_MC_pressed():
-	$"../Shared_Interface_Sounds/Valid".play()
+	Globals.valid_sound.play()

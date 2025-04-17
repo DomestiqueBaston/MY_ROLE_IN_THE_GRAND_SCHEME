@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bnn5crpao5xva"]
+[gd_scene load_steps=20 format=3 uid="uid://bnn5crpao5xva"]
 
 [ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/PLAYER_IMPROVEMENT/Player_Improvement_BG.png" id="1_6qbtx"]
 [ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="2_6gkv5"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm.ogg" id="5_rdtt0"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="6_b8m7i"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="7_bsn7d"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="8_eq38o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vdp1"]
 
@@ -376,10 +375,6 @@ autoplay = "Alarm"
 volume_db = -25.0
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("8_eq38o")]
-
 [connection signal="mouse_entered" from="Income_Panel/Informations/Quit" to="Income_Panel/Informations" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Income_Panel/Informations/Quit" to="Income_Panel/Informations" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Income_Panel/Informations/Quit" to="Income_Panel/Informations" method="_on_quit_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

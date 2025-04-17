@@ -1,5 +1,10 @@
 extends Node
 
+@onready var valid_sound: AudioStreamPlayer = $UI_Sounds/Valid
+@onready var cancel_sound: AudioStreamPlayer = $UI_Sounds/Cancel
+@onready var leave_sound: AudioStreamPlayer = $UI_Sounds/Leave
+@onready var hover_sound: AudioStreamPlayer = $UI_Sounds/Hover
+
 func _ready():
 	# the mouse is drawn on top of menus
 	$MouseLayer.set_layer(1025)
@@ -8,7 +13,7 @@ func _ready():
 	# and the shaders are visible even if they are turned off in the editor
 	$ShaderOverlayLayer.visible = true
 
-func _input(event: InputEvent):
+func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("Full_Screen"):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)

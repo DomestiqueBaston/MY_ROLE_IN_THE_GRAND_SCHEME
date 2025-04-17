@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://yl6icb273od"]
+[gd_scene load_steps=10 format=3 uid="uid://yl6icb273od"]
 
 [ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/JAIL_MONEY/Cops.png" id="1_knmnc"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="2_4l2mm"]
 [ext_resource type="AudioStream" uid="uid://bnim7widv0v1h" path="res://SOUND/MISC/This_Is_Da_Police.ogg" id="2_knmnc"]
 [ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Overlay_Buttons.gd" id="2_s0xyu"]
 [ext_resource type="ButtonGroup" uid="uid://bna0povlgtisn" path="res://UI/Jail_Money_group.tres" id="3_dxykx"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="6_mk7dn"]
 
 [sub_resource type="Animation" id="Animation_6c0my"]
 resource_name = "Appearance"
@@ -231,8 +230,6 @@ volume_db = -15.0
 autoplay = true
 bus = &"FX"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("6_mk7dn")]
-
 [connection signal="mouse_entered" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_mouse_exited"]
 [connection signal="pressed" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_surrender_pressed"]
@@ -242,5 +239,3 @@ bus = &"FX"
 [connection signal="mouse_entered" from="Cops/Info/NPC/Pay" to="Cops/Info" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cops/Info/NPC/Pay" to="Cops/Info" method="_on_mouse_exited"]
 [connection signal="pressed" from="Cops/Info/NPC/Pay" to="Cops/Info" method="_on_pay_pressed"]
-
-[editable path="Shared_Interface_Sounds"]

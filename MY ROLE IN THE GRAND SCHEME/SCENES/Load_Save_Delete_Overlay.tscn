@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bldgrur6y3rhv"]
+[gd_scene load_steps=17 format=3 uid="uid://bldgrur6y3rhv"]
 
 [ext_resource type="Theme" uid="uid://bjtyhq3g0w8r3" path="res://UI/LSD_Theme.tres" id="1_5ss04"]
 [ext_resource type="Texture2D" uid="uid://do7g2c24mmsbk" path="res://GRAPHICS/LOAD_SAVE_DELETE/Load_Save_Delete_BG.png" id="1_b07ca"]
@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_sl6l7"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="5_vtoms"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="6_gq8qs"]
-[ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="7_xrtbk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7fen"]
 
@@ -307,8 +306,6 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
-[node name="Shared_Interface_Sounds" parent="." instance=ExtResource("7_xrtbk")]
-
 [connection signal="item_selected" from="Load_Save_Delete_Panel/PanelContainer/Item_List" to="Load_Save_Delete_Panel" method="_on_item_list_item_selected"]
 [connection signal="mouse_entered" from="Load_Save_Delete_Panel/PanelContainer/Item_List" to="Load_Save_Delete_Panel" method="_on_item_list_mouse_entered"]
 [connection signal="mouse_exited" from="Load_Save_Delete_Panel/PanelContainer/Item_List" to="Load_Save_Delete_Panel" method="_on_item_list_mouse_exited"]
@@ -321,5 +318,3 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Load_Save_Delete_Panel/Yes_No/Delete" to="Load_Save_Delete_Panel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Load_Save_Delete_Panel/Yes_No/Delete" to="Load_Save_Delete_Panel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Load_Save_Delete_Panel/Yes_No/Delete" to="Load_Save_Delete_Panel" method="_on_delete_pressed"]
-
-[editable path="Shared_Interface_Sounds"]
