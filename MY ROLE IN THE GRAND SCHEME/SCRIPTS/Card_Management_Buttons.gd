@@ -17,6 +17,6 @@ func _on_cancel_pressed():
 
 func _on_switch_pressed():
 	Globals.valid_sound.play()
-	await Globals.Valid_sound.finished
+	await Globals.valid_sound.finished
 	$"../../On_Off".play("Disappearance")
 	await $"../../On_Off".animation_finished
