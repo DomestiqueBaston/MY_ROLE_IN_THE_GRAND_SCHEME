@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7yxbbm1q32sw"]
+
+[ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCENES/Globals.gd" id="1_p5kqw"]
+[ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
+[ext_resource type="Script" uid="uid://cb08qaoq6sqr5" path="res://SCRIPTS/Mouse_Cursor.gd" id="3_hi0n3"]
+[ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="4_f2dh2"]
+[ext_resource type="Shader" uid="uid://dkp5ymdefrmn2" path="res://SHADERS/Video.gdshader" id="5_kpwuy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vnh2"]
+shader = ExtResource("4_f2dh2")
+shader_parameter/strength = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrhxf"]
+shader = ExtResource("5_kpwuy")
+shader_parameter/wiggle = 0.025
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.2
+shader_parameter/blur_samples = 15
+
+[node name="Globals" type="Node"]
+script = ExtResource("1_p5kqw")
+
+[node name="MouseLayer" type="CanvasLayer" parent="."]
+
+[node name="Mouse_Cursor" type="Sprite2D" parent="MouseLayer"]
+position = Vector2(-10, -10)
+texture = ExtResource("2_j2txx")
+centered = false
+script = ExtResource("3_hi0n3")
+
+[node name="ShaderOverlayLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Grain" type="ColorRect" parent="ShaderOverlayLayer"]
+z_index = 11
+material = SubResource("ShaderMaterial_2vnh2")
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="Video" type="ColorRect" parent="ShaderOverlayLayer"]
+z_index = 12
+material = SubResource("ShaderMaterial_yrhxf")
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2

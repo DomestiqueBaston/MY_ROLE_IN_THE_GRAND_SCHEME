@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=57 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
@@ -52,7 +52,6 @@
 [ext_resource type="Texture2D" uid="uid://cysslrwog7ibl" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_50.png" id="43_oyp1f"]
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="45_yku0u"]
 [ext_resource type="Script" uid="uid://d4lltsouavalw" path="res://SCRIPTS/Main_Motive_List.gd" id="50_wvc8p"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="52_ksebp"]
 [ext_resource type="PackedScene" uid="uid://dy2y27agpdc13" path="res://SCENES/Shared_Interface_Sounds.tscn" id="52_wvc8p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
@@ -815,8 +814,6 @@ script = ExtResource("50_wvc8p")
 metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("52_ksebp")]
 
 [node name="Shared_Interface_Sounds" parent="." instance=ExtResource("52_wvc8p")]
 

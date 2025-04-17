@@ -22,7 +22,7 @@ run/vsync/vsync_mode=1
 
 [autoload]
 
-Autoload="*res://SCRIPTS/Autoload.gd"
+Globals="*res://SCENES/Globals.tscn"
 
 [display]
 
@@ -36,12 +36,6 @@ window/vsync/vsync_mode=0
 window/layer_1="Mouse"
 window/layer_2="Card_Top"
 window/layer_3="Pin"
-
-[file_customization]
-
-folder_colors={
-"res://TRASH/": "red"
-}
 
 [gui]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://mnqpfr0mjern"]
+[gd_scene load_steps=25 format=3 uid="uid://mnqpfr0mjern"]
 
 [ext_resource type="Script" uid="uid://dmc2lq0g1vdpj" path="res://SCRIPTS/Title.gd" id="1_h84ee"]
 [ext_resource type="Shader" uid="uid://bnirln5qw7a02" path="res://SHADERS/Glow.gdshader" id="2_f1yrr"]
@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/TITLE/Hum.ogg" id="6_6wwaa"]
 [ext_resource type="Texture2D" uid="uid://tl6n5jdquak3" path="res://GRAPHICS/TITLE/Title_Name_Overlay.png" id="7_1srmu"]
 [ext_resource type="AudioStream" uid="uid://6dboj77v7md2" path="res://SOUND/TITLE/City_Noise.ogg" id="7_ov33t"]
-[ext_resource type="PackedScene" uid="uid://dveyb0ymavixi" path="res://SCENES/Global_Shader_Overlay.tscn" id="7_t0fdd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3u8p3"]
 shader = ExtResource("2_f1yrr")
@@ -544,7 +543,5 @@ stream = ExtResource("7_ov33t")
 volume_db = -25.0
 autoplay = true
 bus = &"AMBIANCE"
-
-[node name="Global_Shader_Overlay" parent="." instance=ExtResource("7_t0fdd")]
 
 [connection signal="animation_finished" from="Glow" to="." method="_on_animation_player_animation_finished"]
