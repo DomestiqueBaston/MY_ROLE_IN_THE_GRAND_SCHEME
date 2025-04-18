@@ -72,10 +72,6 @@ metadata/_edit_lock_ = true
 
 [node name="Overlay_Scenes" type="Node" parent="Common"]
 
-[node name="Global_Video_Shader_And_Mouse" type="Node" parent="Common"]
-
-[node name="Shared_Interface_Sounds" type="Node" parent="Common"]
-
 [node name="Background_Sound" type="Node" parent="Common"]
 
 [node name="Music" type="Node" parent="Common"]
