@@ -488,7 +488,7 @@ tooltip_text = "Hideout
 toggle_mode = true
 texture_normal = ExtResource("14_d27u2")
 texture_pressed = ExtResource("15_1cl67")
-texture_hover = ExtResource("14_d27u2")
+texture_hover = ExtResource("15_1cl67")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -504,7 +504,7 @@ tooltip_text = "Debt/Influence
 toggle_mode = true
 texture_normal = ExtResource("15_c4wun")
 texture_pressed = ExtResource("18_el4mc")
-texture_hover = ExtResource("15_c4wun")
+texture_hover = ExtResource("18_el4mc")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -520,7 +520,7 @@ tooltip_text = "Culprit/Accomplice/Evidence
 toggle_mode = true
 texture_normal = ExtResource("16_mke16")
 texture_pressed = ExtResource("18_bjn3g")
-texture_hover = ExtResource("16_mke16")
+texture_hover = ExtResource("18_bjn3g")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -536,7 +536,7 @@ tooltip_text = "Intimacy
 toggle_mode = true
 texture_normal = ExtResource("17_7cnra")
 texture_pressed = ExtResource("22_l5fu3")
-texture_hover = ExtResource("17_7cnra")
+texture_hover = ExtResource("22_l5fu3")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -552,7 +552,7 @@ tooltip_text = "Friend
 toggle_mode = true
 texture_normal = ExtResource("18_u436f")
 texture_pressed = ExtResource("24_j6pb0")
-texture_hover = ExtResource("18_u436f")
+texture_hover = ExtResource("24_j6pb0")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -569,7 +569,7 @@ tooltip_text = "Enemy
 toggle_mode = true
 texture_normal = ExtResource("19_eiutv")
 texture_pressed = ExtResource("26_njmm0")
-texture_hover = ExtResource("19_eiutv")
+texture_hover = ExtResource("26_njmm0")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -586,7 +586,7 @@ tooltip_text = "Acquaintance
 toggle_mode = true
 texture_normal = ExtResource("20_oxby8")
 texture_pressed = ExtResource("28_bepi5")
-texture_hover = ExtResource("20_oxby8")
+texture_hover = ExtResource("28_bepi5")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -603,7 +603,7 @@ tooltip_text = "Ideology
 toggle_mode = true
 texture_normal = ExtResource("21_134b4")
 texture_pressed = ExtResource("30_d7dts")
-texture_hover = ExtResource("21_134b4")
+texture_hover = ExtResource("30_d7dts")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -620,7 +620,7 @@ tooltip_text = "Contradiction
 toggle_mode = true
 texture_normal = ExtResource("22_eja4x")
 texture_pressed = ExtResource("32_aslwm")
-texture_hover = ExtResource("22_eja4x")
+texture_hover = ExtResource("32_aslwm")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -637,7 +637,7 @@ tooltip_text = "Validation
 toggle_mode = true
 texture_normal = ExtResource("6_jtpuj")
 texture_pressed = ExtResource("33_j2aac")
-texture_hover = ExtResource("6_jtpuj")
+texture_hover = ExtResource("33_j2aac")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -654,7 +654,7 @@ tooltip_text = "Property
 toggle_mode = true
 texture_normal = ExtResource("23_1cqhn")
 texture_pressed = ExtResource("35_ywl4n")
-texture_hover = ExtResource("23_1cqhn")
+texture_hover = ExtResource("35_ywl4n")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -671,7 +671,7 @@ tooltip_text = "Home
 toggle_mode = true
 texture_normal = ExtResource("24_35y2t")
 texture_pressed = ExtResource("37_053p6")
-texture_hover = ExtResource("24_35y2t")
+texture_hover = ExtResource("37_053p6")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -688,7 +688,7 @@ tooltip_text = "Work
 toggle_mode = true
 texture_normal = ExtResource("21_43fd7")
 texture_pressed = ExtResource("39_4lyd8")
-texture_hover = ExtResource("21_43fd7")
+texture_hover = ExtResource("39_4lyd8")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -705,7 +705,7 @@ tooltip_text = "Hang out
 toggle_mode = true
 texture_normal = ExtResource("26_63nlu")
 texture_pressed = ExtResource("41_x0owp")
-texture_hover = ExtResource("26_63nlu")
+texture_hover = ExtResource("41_x0owp")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -722,7 +722,7 @@ tooltip_text = "Found
 toggle_mode = true
 texture_normal = ExtResource("24_lp1fx")
 texture_pressed = ExtResource("43_oyp1f")
-texture_hover = ExtResource("24_lp1fx")
+texture_hover = ExtResource("43_oyp1f")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
@@ -738,7 +738,7 @@ tooltip_text = "New
 toggle_mode = true
 texture_normal = ExtResource("15_0qkya")
 texture_pressed = ExtResource("45_yku0u")
-texture_hover = ExtResource("15_0qkya")
+texture_hover = ExtResource("45_yku0u")
 texture_click_mask = ExtResource("15_folsb")
 metadata/_edit_lock_ = true
 
