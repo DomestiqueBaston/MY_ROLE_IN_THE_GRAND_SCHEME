@@ -37,6 +37,12 @@ window/layer_1="Mouse"
 window/layer_2="Card_Top"
 window/layer_3="Pin"
 
+[file_customization]
+
+folder_colors={
+"res://TRASH (NEW)/": "red"
+}
+
 [gui]
 
 timers/tooltip_delay_sec=0.4
