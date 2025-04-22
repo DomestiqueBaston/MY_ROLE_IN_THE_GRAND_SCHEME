@@ -1,5 +1,6 @@
-[gd_scene load_steps=56 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=58 format=3 uid="uid://cermbgl0xllko"]
 
+[ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_wvc8p"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
@@ -52,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://cysslrwog7ibl" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_50.png" id="43_oyp1f"]
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="45_yku0u"]
 [ext_resource type="Script" uid="uid://d4lltsouavalw" path="res://SCRIPTS/Main_Motive_List.gd" id="50_wvc8p"]
+[ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="54_ksebp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
@@ -62,6 +64,7 @@ size = Vector2(106, 106)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_wvc8p")
 metadata/_edit_lock_ = true
 
 [node name="Main_BG" type="Sprite2D" parent="."]
@@ -813,6 +816,72 @@ script = ExtResource("50_wvc8p")
 metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
+
+[node name="Popup" type="Node2D" parent="."]
+
+[node name="Main_Menu" type="PopupMenu" parent="Popup"]
+auto_translate_mode = 1
+size = Vector2i(93, 90)
+min_size = Vector2i(93, 90)
+max_size = Vector2i(93, 90)
+theme = ExtResource("54_ksebp")
+submenu_popup_delay = 0.2
+allow_search = false
+
+[node name="Sub_Menu" type="PopupMenu" parent="Popup/Main_Menu"]
+auto_translate_mode = 1
+size = Vector2i(93, 135)
+min_size = Vector2i(93, 135)
+max_size = Vector2i(93, 135)
+theme = ExtResource("54_ksebp")
+submenu_popup_delay = 0.2
+allow_search = false
+item_count = 15
+item_0/text = "Hideout"
+item_0/icon = ExtResource("14_d27u2")
+item_0/id = 0
+item_1/text = "Debt/Influence"
+item_1/icon = ExtResource("15_c4wun")
+item_1/id = 1
+item_2/text = "Culp./Accom./Evid."
+item_2/icon = ExtResource("16_mke16")
+item_2/id = 2
+item_3/text = "Intimacy"
+item_3/icon = ExtResource("17_7cnra")
+item_3/id = 3
+item_4/text = "Friendship"
+item_4/icon = ExtResource("18_u436f")
+item_4/id = 4
+item_5/text = "Enemy"
+item_5/icon = ExtResource("19_eiutv")
+item_5/id = 5
+item_6/text = "Acquaintance"
+item_6/icon = ExtResource("20_oxby8")
+item_6/id = 6
+item_7/text = "Ideologic Affinity"
+item_7/icon = ExtResource("21_134b4")
+item_7/id = 7
+item_8/text = "Contradiction"
+item_8/icon = ExtResource("22_eja4x")
+item_8/id = 8
+item_9/text = "Validation"
+item_9/icon = ExtResource("6_jtpuj")
+item_9/id = 9
+item_10/text = "Ownership"
+item_10/icon = ExtResource("23_1cqhn")
+item_10/id = 10
+item_11/text = "Home"
+item_11/icon = ExtResource("24_35y2t")
+item_11/id = 11
+item_12/text = "Work"
+item_12/icon = ExtResource("21_43fd7")
+item_12/id = 12
+item_13/text = "Hang out"
+item_13/icon = ExtResource("26_63nlu")
+item_13/id = 13
+item_14/text = "Found"
+item_14/icon = ExtResource("24_lp1fx")
+item_14/id = 14
 
 [connection signal="mouse_entered" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_any_button_mouse_exited"]

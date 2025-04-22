@@ -19,5 +19,7 @@ func _unhandled_input(event: InputEvent):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("Escape"):
 		get_tree().quit()
+		get_viewport().set_input_as_handled()
