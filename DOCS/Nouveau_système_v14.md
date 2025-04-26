@@ -312,6 +312,7 @@ Le temps
 		Un rendez-vous chez le médecin prend 1h (déplacement inclus).
 		Aller voir Rowena le Dealer prend 1h (déplacement inclus).
 		Aller à l’investigation Center prend 1h (déplacement inclus). 1 seule fois par jour !
+		Retourner au Bureau prend 1h (déplacement inclus).
 		Obtenir une autorisation de fouille prend 1h (déplacement inclus).
 		Dormir prend le temps défini pour cette période.
 		…
@@ -467,6 +468,7 @@ Les interactions : Dialogue, Combat et Investigation
 		- La pile Objets qui est la pile des cartes Objets non qualifiées d’Evidence. Pas de Bonus/Malus.
 		- La pile Lieu qui est la pile des cartes Lieu liées à l’enquête. Pas de Bonus/Malus.
 		- Pour se débarrasser de cartes, on fait, sur une carte : clic droit, « Discard ». Toute carte rejetée fait perdre tous les liens qui y menaient dans Main.tscn. À noter que rien n’empêche le joueur de retomber ultérieurement lors de nouvelles interactions sur des cartes/infos rejetées (heureusement, parce qu’en cas d’erreur…).
+	- On ne peut pas se débarrasser de la carte sur laquelle « Player_Location.tscn » se trouve. Pour cela, il faut quitter le lieu.
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
 	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir en cas de Combat mais ça n’est pas vraiment une annulation).

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjtpcqbs5puux"]
+[gd_scene load_steps=9 format=3 uid="uid://cjtpcqbs5puux"]
 
 [ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_eovho"]
 [ext_resource type="Texture2D" uid="uid://bttgel1ek480w" path="res://GRAPHICS/LINK_PIN/Pin_Small.png" id="2_121c2"]
+[ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="3_i8ubj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
 radius = 4.0
@@ -38,9 +39,42 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_tdxok"]
+resource_name = "Delete_Pin"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pin:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0.50196), Color(1, 1, 1, 0.250979), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_i8ubj")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tdxok"]
 _data = {
 &"Blink": SubResource("Animation_w454u"),
+&"Delete_Pin": SubResource("Animation_tdxok"),
 &"RESET": SubResource("Animation_i8ubj")
 }
 
@@ -71,3 +105,7 @@ metadata/_edit_lock_ = true
 libraries = {
 &"": SubResource("AnimationLibrary_tdxok")
 }
+
+[node name="UI" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+bus = &"UI"

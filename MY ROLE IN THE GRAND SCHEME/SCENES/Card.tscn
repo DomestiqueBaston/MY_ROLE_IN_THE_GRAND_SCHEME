@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=39 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="20_kusna"]
 [ext_resource type="AudioStream" uid="uid://cugi11x6eeqoq" path="res://SOUND/MISC/Go_Front.ogg" id="21_a6amd"]
 [ext_resource type="AudioStream" uid="uid://cbentdu5jvok7" path="res://SOUND/CARD/Drop_Card.ogg" id="21_tg66g"]
+[ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="22_02fmt"]
 [ext_resource type="AudioStream" uid="uid://dnbr6d7wdvn0j" path="res://SOUND/CARD/Take_Card.ogg" id="22_iuyk4"]
 [ext_resource type="AudioStream" uid="uid://mki238woun53" path="res://SOUND/MISC/Go_Back.ogg" id="22_ve1ow"]
 
@@ -53,7 +54,7 @@ tracks/0/keys = {
 tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sounds/FX")
+tracks/1/path = NodePath("UI_Sounds/UI")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -98,6 +99,62 @@ tracks/3/keys = {
 "values": [Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.3)]
 }
 
+[sub_resource type="Animation" id="Animation_s04w5"]
+resource_name = "Delete_Card"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Mask:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI_Sounds/UI")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("22_02fmt")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card_Shadow:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Card_Shadow:material:shader_parameter/shadow_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.223529), Color(0, 0, 0, 0.14902), Color(0, 0, 0, 0.0745098), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_kxf5h"]
 resource_name = "Expand_Card"
 length = 0.33334
@@ -129,7 +186,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sounds/FX")
+tracks/2/path = NodePath("UI_Sounds/UI")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -504,6 +561,18 @@ tracks/17/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Card_Shadow:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.501961)]
+}
 
 [sub_resource type="Animation" id="Animation_x7g54"]
 resource_name = "Reduce_Card"
@@ -536,7 +605,7 @@ tracks/1/keys = {
 tracks/2/type = "audio"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sounds/FX")
+tracks/2/path = NodePath("UI_Sounds/UI")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -696,6 +765,7 @@ tracks/14/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
 _data = {
 &"Card_Blink": SubResource("Animation_0byv1"),
+&"Delete_Card": SubResource("Animation_s04w5"),
 &"Expand_Card": SubResource("Animation_kxf5h"),
 &"RESET": SubResource("Animation_0x2oy"),
 &"Reduce_Card": SubResource("Animation_x7g54")
@@ -838,6 +908,7 @@ metadata/_edit_lock_ = true
 
 [node name="Card_Shadow" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(1, 1, 1, 0.501961)
 material = SubResource("ShaderMaterial_02fmt")
 position = Vector2(-2, -4)
 texture = ExtResource("1_8pu3o")
@@ -1088,24 +1159,26 @@ libraries = {
 &"": SubResource("AnimationLibrary_s04w5")
 }
 
-[node name="Sounds" type="Node" parent="."]
+[node name="UI_Sounds" type="Node" parent="."]
 
-[node name="Drop_Card" type="AudioStreamPlayer" parent="Sounds"]
+[node name="Drop_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("21_tg66g")
-volume_db = -15.0
-
-[node name="Take_Card" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("22_iuyk4")
-volume_db = -12.5
-
-[node name="FX" type="AudioStreamPlayer" parent="Sounds"]
 volume_db = -15.0
 bus = &"UI"
 
-[node name="Go_Front" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("21_a6amd")
-bus = &"FX"
+[node name="Take_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("22_iuyk4")
+volume_db = -12.5
+bus = &"UI"
 
-[node name="Go_Back" type="AudioStreamPlayer" parent="Sounds"]
+[node name="UI" type="AudioStreamPlayer" parent="UI_Sounds"]
+volume_db = -15.0
+bus = &"UI"
+
+[node name="Go_Front" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("21_a6amd")
+bus = &"UI"
+
+[node name="Go_Back" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("22_ve1ow")
-bus = &"FX"
+bus = &"UI"
