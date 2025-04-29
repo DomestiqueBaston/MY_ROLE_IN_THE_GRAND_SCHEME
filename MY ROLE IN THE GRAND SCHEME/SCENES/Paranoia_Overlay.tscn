@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bbkvt2bpth73k"]
+[gd_scene load_steps=19 format=3 uid="uid://bbkvt2bpth73k"]
 
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_j15aw"]
 [ext_resource type="Shader" uid="uid://c84t7nfl20xo5" path="res://SHADERS/Texture.gdshader" id="2_l3r6m"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="4_654ki"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_amqcs"]
 [ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="5_654ki"]
+[ext_resource type="Script" uid="uid://8m3qwndeyy8w" path="res://SCRIPTS/Paranoya_Overlay_Message.gd" id="5_re1fv"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_vpb4g"]
 [ext_resource type="AudioStream" uid="uid://be2742fcue6hc" path="res://SOUND/MISC/Alarm_02.ogg" id="6_akqqg"]
 
@@ -67,6 +68,30 @@ tracks/3/keys = {
 "update": 1,
 "values": ["PARaNOIa!"]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Inner_Voice/Black_BG/Replacer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, -10)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Inner_Voice/Black_BG/Replacer:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0698132]
+}
 
 [sub_resource type="Animation" id="Animation_5xp84"]
 resource_name = "Vibration"
@@ -120,6 +145,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["PARaNOIa!", "pArANoIA!", "parAnOiA!", "PaRaNOia!", "PArAnoIa!", "pAraNoIA!", "PARaNOIa!", "pArANoIa!", "parAnOiA!", "PaRaNOia!", "PARAnoIa!", "pAraNoIA!", "PARaNOIa!", "pArANoIA!", "parAnOiA!", "PaRaNOia!", "PArAnoIa!", "pAraNoIA!", "PARaNOIa!", "pArANoIa!", "PARaNOIa!"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Inner_Voice/Black_BG/Replacer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533334, 0.6, 0.666667, 0.733334, 0.8, 0.866667, 0.933334, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-24, -1), Vector2(-16, 0), Vector2(-16, 0), Vector2(-12, -1), Vector2(-19, -1), Vector2(-9, -1), Vector2(-1, -5), Vector2(4, 8), Vector2(3, -3), Vector2(6, -10), Vector2(1, 4), Vector2(4, -6), Vector2(15, 5), Vector2(11, 4), Vector2(10, 12), Vector2(6, 3), Vector2(22, 4), Vector2(23, 3), Vector2(15, 4), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Inner_Voice/Black_BG/Replacer:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533334, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -0.00792696, 0.00415424, 0.0198751, 0.00972699, -0.0142596, -0.0072914, 0.0478783, -0.00673004, 0.0610865, 0.0698132, 0.0280309, 0.0523599, -0.00872665, 0.00872665, -0.0166696, -0.0187518, -0.008533, 0.0167885, -0.0313811, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqksm"]
@@ -384,22 +433,30 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_lock_ = true
 
 [node name="Black_BG" type="ColorRect" parent="Inner_Voice"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.068198, 0, 0.0859375, 1)
 metadata/_edit_lock_ = true
 
-[node name="Message" type="RichTextLabel" parent="Inner_Voice/Black_BG"]
+[node name="Replacer" type="Control" parent="Inner_Voice/Black_BG"]
+anchors_preset = 0
+offset_left = 6.0
+offset_top = -10.0
+offset_right = 6.0
+offset_bottom = -10.0
+rotation = 0.0698132
+
+[node name="Message" type="RichTextLabel" parent="Inner_Voice/Black_BG/Replacer"]
 self_modulate = Color(1, 1, 1, 0.752941)
 layout_mode = 0
-offset_left = 37.0
-offset_top = -15.0
-offset_right = 637.0
-offset_bottom = 305.0
-rotation = 0.0872665
+offset_left = 20.0
+offset_right = 620.0
+offset_bottom = 340.0
 theme_override_constants/outline_size = 6
 theme_override_constants/line_separation = -4
 theme_override_fonts/normal_font = ExtResource("4_654ki")
@@ -427,6 +484,7 @@ Hey! [color=#ff8864]You[/color], there, [color=#ff1c18]WHAT DO YOU KNOW[/color]?
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("5_re1fv")
 metadata/_edit_lock_ = true
 
 [node name="Grain" type="ColorRect" parent="Inner_Voice"]
@@ -447,7 +505,7 @@ autoplay = "Vibration"
 libraries = {
 &"": SubResource("AnimationLibrary_asw7s")
 }
-autoplay = "Appearance"
+autoplay = "Disappearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0
@@ -455,6 +513,6 @@ bus = &"UI"
 
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_akqqg")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
-bus = &"UI"
+bus = &"FX"

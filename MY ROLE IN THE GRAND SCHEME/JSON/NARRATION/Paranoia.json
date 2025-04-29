@@ -1,0 +1,172 @@
+{
+  "blocks": [
+    {
+      "id": 1,
+      "label": "revelation",
+      "choices": [
+        "[shake rate=60 level=11 connected=0][color=#ff1c18]I got it[/color]!",
+        "[shake rate=60 level=11 connected=0][color=#ff1c18]It makes sense now[/color]!",
+        "[shake rate=60 level=11 connected=0][color=#ff1c18]I finally understand[/color]!",
+        "[shake rate=60 level=11 connected=0][color=#ff1c18]I see it now[/color]!",
+        "[shake rate=60 level=11 connected=0][color=#ff1c18]The truth is clear[/color]!",
+        "[shake rate=60 level=11 connected=0][color=#ff1c18]It all fits together[/color]!"
+      ]
+    },
+    {
+      "id": 2,
+      "label": "realization",
+      "choices": [
+        "[color=#ff8864]They[/color] don't want me to [color=#ff1c18]find out[/color]. [color=#ff8864]They[/color] don't want me to [color=#ff8864]see[/color] it.",
+        "[color=#ff8864]They[/color] are trying to stop me from [color=#ff1c18]learning[/color]. [color=#ff8864]They[/color] want to keep me in the dark.",
+        "[color=#ff8864]They[/color] don't want me to [color=#ff1c18]discover[/color] it. [color=#ff8864]They[/color] are keeping it hidden.",
+        "[color=#ff8864]They[/color] are [color=#ff1c18]hiding[/color] something. [color=#ff8864]They[/color] fear what I might find.",
+        "[color=#ff8864]They[/color] don't want me [color=#ff1c18]near the truth[/color]. [color=#ff8864]They[/color] are blocking me.",
+        "[color=#ff8864]They[/color] cover [color=#ff1c18]their tracks[/color] because they know [color=#ff1c18]I'm getting close[/color]."
+      ]
+    },
+    {
+      "id": 3,
+      "label": "confirmation",
+      "choices": [
+        "[color=#ff1c18]I'm on the right track[/color]. [color=#ff8864]Finally[/color]!",
+        "[color=#ff1c18]Everything lines up[/color]. [color=#ff8864]At last[/color]!",
+        "[color=#ff1c18]The clues match[/color]. [color=#ff8864]It's all here[/color]!",
+        "[color=#ff1c18]This is it[/color]. [color=#ff8864]I knew it[/color]!",
+        "[color=#ff1c18]My suspicions were right[/color]. [color=#ff8864]Now it begins[/color]!",
+        "[color=#ff1c18]It's finally adding up[/color]. [color=#ff8864]No more doubt[/color]!"
+      ]
+    },
+    {
+      "id": 4,
+      "label": "mission",
+      "choices": [
+        "I'll [color=#ff8864]track them down[/color], [color=#ff8864]find them[/color], [color=#ff1c18]show the world[/color].\n",
+        "I will [color=#ff8864]uncover them[/color], [color=#ff8864]expose them[/color], [color=#ff1c18]make it public[/color].\n",
+        "[color=#ff8864]No more hiding[/color] - I'll [color=#ff8864]chase[/color], [color=#ff8864]catch[/color], and [color=#ff1c18]reveal everything[/color].\n",
+        "[color=#ff8864]They[/color]'ll fall. I'll [color=#ff8864]hunt them[/color] and [color=#ff1c18]bring the truth[/color] to light.\n",
+        "[color=#ff1c18]I will shine a light[/color] on their lies. [color=#ff8864]They can't run[/color].\n",
+        "No mercy. [color=#ff8864]I'll expose it all[/color], [color=#ff1c18]no matter the cost[/color].\n"
+      ]
+    },
+    {
+      "id": 5,
+      "label": "doubt",
+      "choices": [
+        "[color=#ff8864]Wait.[/color] [color=#ff1c18]What if it's a trap[/color]? [color=#ff8864]They're [color=#ff1c18]capable[/color][/color] of that.",
+        "[color=#ff8864]Hold on[/color]... [color=#ff1c18]Am I being baited[/color]?",
+        "Could this be a [color=#ff1c18]setup[/color]? [color=#ff8864]They've done worse[/color].",
+        "[color=#ff1c18]What if[/color] it's just [color=#ff8864]part of their plan[/color]? [color=#ff8864]I can't ignore the risk[/color].",
+        "Is this [color=#ff1c18]too easy[/color]? [color=#ff8864]That scares me[/color].",
+        "[color=#ff8864]They[/color]'re smart. [color=#ff1c18]Smart enough[/color] to [color=#ff8864]trap me[/color]."
+      ]
+    },
+    {
+      "id": 6,
+      "label": "suspicion",
+      "choices": [
+        "[color=#ff1c18]What if[/color] they [color=#ff8864]planned[/color] it? [color=#ff1c18]What if they [color=#ff8864]WANTED[/color] me to [color=#ff8864]find[/color] it[/color]?",
+        "[color=#ff1c18]What if[/color] this was [color=#ff8864]their plan[/color] from the [color=#ff8864]start[/color]? Did [color=#ff1c18]they[/color] want me to [color=#ff1c18]discover[/color] it?",
+        "Could this all be part of [color=#ff1c18]their scheme[/color]? [color=#ff8864]What if [color=#ff1c18]they[/color] know[/color]? [color=#ff1c18]I'll find it[/color]?",
+        "Maybe I'm just doing exactly what [color=#ff1c18]they[/color] want: [color=#ff8864]to fall right into it[/color]?",
+        "Did [color=#ff1c18]they[/color] [color=#ff8864]guide me here[/color]? [color=#ff8864]On purpose[/color]?",
+        "[color=#ff1c18]What if[/color] this was [color=#ff8864]planted[/color]? [color=#ff8864]For me to uncover[/color]?"
+      ]
+    },
+    {
+      "id": 7,
+      "label": "defiance",
+      "choices": [
+        "No. They know [color=#ff1c18]nothing[/color]. [color=#ff8864]They think I'm too stupid[/color]... [color=#ff1c18]but they're wrong[/color].\n",
+        "No. [color=#ff1c18]They underestimate me[/color]. [color=#ff8864]They'll regret it[/color].\n",
+        "[color=#ff1c18]They think I'm blind[/color], but I see everything. [color=#ff8864]They're fools[/color].\n",
+        "[color=#ff8864]They count on my silence[/color] - [color=#ff1c18]they miscalculated[/color].\n",
+        "[color=#ff8864]They think they're safe[/color], [color=#ff1c18]but I'm coming[/color].\n",
+        "[color=#ff1c18]They wrote me off[/color], [color=#ff8864]but I'm the variable[/color] they didn't expect.\n"
+      ]
+    },
+    {
+      "id": 8,
+      "label": "hesitation",
+      "choices": [
+        "But... What if [color=#ff1c18]they[/color]'re [color=#ff8864]ahead[/color]? Could... [color=#ff1c18]could they[/color]?! They think I'll give up.",
+        "Maybe [color=#ff1c18]they[/color]'re still [color=#ff8864]a step ahead[/color]. Maybe [color=#ff1c18]they[/color]'re [color=#ff8864]watching[/color].",
+        "[color=#ff1c18]They[/color] could be [color=#ff8864]leading[/color] me still. [color=#ff1c18]Do I risk it[/color]?",
+        "[color=#ff1c18]They[/color] know [color=#ff8864]my moves[/color]. [color=#ff8864]They anticipate[/color] me.",
+        "[color=#ff1c18]They[/color]'re already [color=#ff8864]adjusting[/color]. [color=#ff1c18]Too fast[/color].",
+        "Am I chasing [color=#ff8864]shadows[/color]? [color=#ff1c18]Is it too late[/color]?"
+      ]
+    },
+    {
+      "id": 9,
+      "label": "resolve",
+      "choices": [
+        "[color=#ff8864]No[/color]. [color=#ff1c18]No[/color]! I won't [color=#ff8864]give in[/color]. [color=#ff1c18]I can't[/color].",
+        "[color=#ff1c18]Never[/color]. I will [color=#ff8864]fight[/color] to the end.",
+        "[color=#ff1c18]They won't break me[/color]. [color=#ff8864]Not ever[/color].",
+        "[color=#ff1c18]I'm stronger than this[/color]. [color=#ff8864]I won't fall[/color].",
+        "[color=#ff1c18]Giving up is not an option[/color]. [color=#ff8864]Not now[/color].",
+        "[color=#ff1c18]They want surrender[/color]? [color=#ff8864]They'll get fire[/color]."
+      ]
+    },
+    {
+      "id": 10,
+      "label": "warning",
+      "choices": [
+        "[color=#ff1c18]They'll regret it.[/color] I'll keep pushing. If I stop... [color=#ff8864]I'm a fool[/color]. [color=#ff1c18]And I'm no fool[/color].\n",
+        "[color=#ff1c18]They made a mistake[/color] coming after me. [color=#ff1c18]Stopping[/color] means defeat. [color=#ff8864]I won't[/color].\n",
+        "[color=#ff1c18]They wanted war[/color]? [color=#ff8864]They got it[/color]. [color=#ff1c18]Quitting is for the weak[/color]. [color=#ff8864]Not me[/color].\n",
+        "[color=#ff1c18]I won't stop[/color] - [color=#ff8864]no matter what[/color]. [color=#ff1c18]They'd win[/color] if I walked away. [color=#ff8864]I refuse[/color].\n",
+        "[color=#ff1c18]They'll wish they never crossed me[/color]. [color=#ff1c18]I know too much[/color] to turn back. [color=#ff8864]Too late[/color].\n",
+        "[color=#ff1c18]Relentless[/color], that's who I am. [color=#ff1c18]I keep going[/color] because I have to. [color=#ff8864]It's who I am[/color].\n"
+      ]
+    },
+    {
+      "id": 11,
+      "label": "obsession",
+      "choices": [
+        "I [color=#ff8864]don't care anymore[/color]. [color=#ff1c18]I don't care[/color]! [color=#ff1c18]I[/color]... [color=#ff1c18]DON'T[/color]... [color=#ff1c18]CARE[/color]!",
+        "[color=#ff1c18]It’s all I have[/color]! [color=#ff8864]I gave up everything[/color]! [color=#ff1c18]And I’d do it again[/color]!",
+        "[color=#ff8864]Nothing else matters[/color]! [color=#ff1c18]I live for this[/color]! [color=#ff8864]I BREATHE THIS[/color]!",
+        "[color=#ff1c18]They took it all[/color]! [color=#ff8864]So I gave myself[/color] - [color=#ff1c18]completely[/color], [color=#ff1c18]utterly[/color]!",
+        "[color=#ff1c18]Sleep? Gone[/color]. [color=#ff8864]Peace? Dead[/color]. [color=#ff1c18]Only the mission[/color] remains in me!",
+        "[color=#ff8864]Let it destroy me[/color]! [color=#ff1c18]Let it consume me[/color]! [color=#ff8864]I don’t care anymore[/color]!"
+      ]
+    },
+    {
+      "id": 12,
+      "label": "truth",
+      "choices": [
+        "Stop [color=#ff8864]eating[/color], [color=#ff8864]sleeping[/color], [color=#ff1c18]living[/color] - fine. I'll [color=#ff8864]reveal the truth[/color]. [color=#ff1c18]I WILL[/color]!\n",
+        "Take [color=#ff8864]my time[/color], [color=#ff8864]my mind[/color], [color=#ff1c18]my breath[/color] - fine. I’ll [color=#ff8864]expose the truth[/color]. [color=#ff1c18]I SWEAR[/color]!\n",
+        "Rip [color=#ff8864]me apart[/color], [color=#ff8864]break me[/color], [color=#ff1c18]erase me[/color] - fine. I’ll [color=#ff8864]tell the truth[/color]. [color=#ff1c18]LOUD[/color]!\n",
+        "Forget [color=#ff8864]rest[/color], [color=#ff8864]hope[/color], [color=#ff1c18]safety[/color] - fine. I’ll [color=#ff8864]drag out the truth[/color]. [color=#ff1c18]MYSELF[/color]!\n",
+        "Burn [color=#ff8864]my sleep[/color], [color=#ff8864]my joy[/color], [color=#ff1c18]my life[/color] - fine. I’ll [color=#ff8864]unleash the truth[/color]. [color=#ff1c18]ALONE[/color]!\n",
+        "Lose [color=#ff8864]everything[/color], [color=#ff8864]everyone[/color], [color=#ff1c18]myself[/color] - fine. I’ll [color=#ff8864]speak the truth[/color]. [color=#ff1c18]HA[/color]! [color=#ff1c18]HA[/color]!\n"
+      ]
+    },
+    {
+      "id": 13,
+      "label": "confrontation",
+      "choices": [
+        "[color=#ff8864]No turning back[/color]. They won't get away. [color=#ff1c18]I WILL NOT LET THEM[/color].\n",
+        "[color=#ff8864]This is the line[/color]. No escape now. [color=#ff1c18]I WON’T BACK DOWN[/color].\n",
+        "[color=#ff8864]Too late for mercy[/color]. They crossed me. [color=#ff1c18]I’M COMING FOR THEM[/color].\n",
+        "[color=#ff8864]They had their chance[/color]. Now it’s over. [color=#ff1c18]I’LL MAKE THEM PAY[/color].\n",
+        "[color=#ff8864]Turn back[/color]? Never. The damage is done. [color=#ff1c18]I’LL FINISH THIS[/color].\n",
+        "[color=#ff8864]They lit the fuse[/color]. Now it burns. [color=#ff1c18]I’M THE EXPLOSION[/color].\n"
+      ]
+    },
+	{
+      "id": 14,
+      "label": "warning_you",
+      "choices": [
+        "Hey! [color=#ff8864]You[/color], there, [color=#ff1c18]WHAT DO YOU KNOW[/color]?![/shake]",
+        "You! [color=#ff8864]Don't move[/color]. [color=#ff1c18]WHAT DID YOU SEE[/color]?![/shake]",
+        "[color=#ff1c18]You were there[/color]. [color=#ff8864]Speak[/color]! [color=#ff1c18]WHAT DO YOU KNOW[/color]?![/shake]",
+        "No more hiding. [color=#ff8864]I see [color=#ff1c18]you[/color][/color]. [color=#ff1c18]NOW TALK[/color]![/shake]",
+        "Hey! [color=#ff1c18]Answer me[/color] - [color=#ff8864]NOW[/color]! WHAT DO YOU [color=#ff1c18]KNOW[/color]?![/shake]",
+        "[color=#ff1c18]You[/color] were [color=#ff8864]part of it[/color], weren’t you?! [color=#ff1c18]TELL ME[/color]![/shake]"
+      ]
+    }
+  ]
+}
