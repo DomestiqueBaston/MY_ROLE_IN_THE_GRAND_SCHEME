@@ -5,7 +5,7 @@
     {
       "id": "MOT_ULT_001",
       "crime_id": "MOT_ULT_001_ID_xxx",
-      "name": "The Conspiracy",
+      "name": ["Concealment of the Hideous Truth about Strawberries", "The Moon Landing was Faked, but Venus Was Real", "Climate Change is by Design", "We Are All Only Code", "The Ultimate Financial Heist", "They Feed AI with Our Minds", "There is Only One Dimension of Reality", "Scientists Have Discovered that Infinity is Actually Finite", "Reincarnation is Real, but We Don't Have Access to It", "Pandemics Are Just Global Experiments", "The Sun Will Explode in Fifty Years"],
 	  "more_explicit_name": "The Conspiracy",
       "link": ["Ideology", "Acquaintance"],
 	  "crime_location": ["any"],
