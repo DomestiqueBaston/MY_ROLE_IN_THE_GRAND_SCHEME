@@ -1,0 +1,26 @@
+[
+  {
+  "crime": "Conspiracy",
+  "motive": [
+    {
+      "id": "MOT_ULT_001",
+      "crime_id": "MOT_ULT_001_ID_xxx",
+      "name": "The Conspiracy",
+	  "more_explicit_name": "The Conspiracy",
+      "link": ["Ideology", "Acquaintance"],
+	  "crime_location": ["any"],
+	  "known_crime_location": 0.0,
+      "victims_professions": [],
+      "culprits_professions": [],
+      "victims": [4, 5, 6],
+	  "dead_victims": "yes",
+      "culprits": [3, 4],
+      "accomplices": [4, 5, 6],
+      "suspects": [0],
+      "witnesses": [0],
+      "evidence_number": [3, 4, 5],
+      "evidences": []
+    }
+  ]
+}
+]
