@@ -825,7 +825,7 @@ size = Vector2i(93, 90)
 min_size = Vector2i(93, 90)
 max_size = Vector2i(93, 90)
 theme = ExtResource("54_ksebp")
-submenu_popup_delay = 0.2
+submenu_popup_delay = 0.1
 allow_search = false
 
 [node name="Sub_Menu" type="PopupMenu" parent="Popup/Main_Menu"]
@@ -834,7 +834,7 @@ size = Vector2i(93, 135)
 min_size = Vector2i(93, 135)
 max_size = Vector2i(93, 135)
 theme = ExtResource("54_ksebp")
-submenu_popup_delay = 0.2
+submenu_popup_delay = 0.1
 allow_search = false
 item_count = 15
 item_0/text = "Hideout"
