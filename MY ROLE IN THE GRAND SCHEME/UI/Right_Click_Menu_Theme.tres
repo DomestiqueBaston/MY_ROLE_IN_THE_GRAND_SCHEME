@@ -34,18 +34,19 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqjub"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jprso"]
-bg_color = Color(0.1054, 0.17, 0.123703, 0.498039)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7bk5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agji4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bvefx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr86x"]
-bg_color = Color(1, 1, 1, 0.643137)
-border_color = Color(1, 1, 1, 0.643137)
+bg_color = Color(0, 0, 0, 0.686275)
+border_width_left = 1
+border_color = Color(0, 0, 0, 0.686275)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pg38"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -123,11 +124,12 @@ OptionButton/constants/arrow_margin = 5
 OptionButton/icons/arrow = ExtResource("3_cm3n0")
 OptionButton/styles/focus = SubResource("StyleBoxEmpty_0q4vc")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0)
-PopupMenu/colors/font_color = Color(0.046, 0.1, 0.0613, 0.843137)
-PopupMenu/colors/font_disabled_color = Color(0.1998, 0.27, 0.21969, 0.4)
-PopupMenu/colors/font_hover_color = Color(0, 0.04, 0.0113333, 0.960784)
-PopupMenu/colors/font_outline_color = Color(0.96, 0.9392, 0.912, 0.701961)
-PopupMenu/colors/font_separator_color = Color(0.074, 0.1, 0.0813667, 0.392157)
+PopupMenu/colors/font_color = Color(1, 1, 1, 0.686275)
+PopupMenu/colors/font_disabled_color = Color(0.4, 0.266667, 0.266667, 0.882353)
+PopupMenu/colors/font_hover_color = Color(1, 0.533333, 0.388235, 0.72549)
+PopupMenu/colors/font_outline_color = Color(0, 0, 0, 0.654902)
+PopupMenu/colors/font_separator_color = Color(1, 0.105882, 0.0901961, 0.72549)
+PopupMenu/colors/font_separator_outline_color = Color(0, 0, 0, 0.784314)
 PopupMenu/constants/item_start_padding = 1
 PopupMenu/constants/outline_size = 3
 PopupMenu/constants/v_separation = 1
@@ -140,11 +142,11 @@ PopupMenu/icons/radio_unchecked_disabled = ExtResource("4_7hvia")
 PopupMenu/icons/submenu = ExtResource("5_ftk21")
 PopupMenu/styles/embedded_border = SubResource("StyleBoxEmpty_xmwgf")
 PopupMenu/styles/embedded_unfocused_border = SubResource("StyleBoxEmpty_dqjub")
-PopupMenu/styles/hover = SubResource("StyleBoxFlat_jprso")
+PopupMenu/styles/hover = SubResource("StyleBoxEmpty_o7bk5")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxEmpty_agji4")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_vr86x")
-PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
+PopupMenu/styles/separator = SubResource("StyleBoxFlat_4pg38")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
