@@ -18,8 +18,8 @@
       "accomplices": [4, 5, 6],
       "suspects": [0],
       "witnesses": [0],
-      "evidence_number": [3, 4, 5],
-      "evidences": []
+      "evidence_number": [4, 5],
+      "evidences": ["OBJ250", "OBJ251", "OBJ252", "OBJ253", "OBJ254", "OBJ255", "OBJ256", "OBJ257", "OBJ258", "OBJ259", "OBJ260", "OBJ004", "OBJ013", "OBJ015", "OBJ042", "OBJ045", "OBJ058", "OBJ063", ]
     }
   ]
 }

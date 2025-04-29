@@ -887,7 +887,7 @@
     "type": "Object",
     "info_name": "- HEADSET -",
     "name": "Headset",
-    "description": "An USB noise-cancelling headset",
+    "description": "An SCSI noise-cancelling headset",
     "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
     "evidence": ["yes", "no"],
@@ -975,7 +975,148 @@
     "found": ["LOCxxxIDxxx"],
     "property": ["NPCxxx"],
 	"comment": "il est question ici d'un PNJ et de son domicile",
-    "evidence": ["no"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   {
+    "id": "OBJ250",
+	"obj_id": "OBJ250_IDxxx",
+    "type": "Object",
+    "info_name": "- ENCRYPTED VOICEMAIL -",
+    "name": "Encrypted voicemail",
+    "description": "Playback starts mid-sentence: ''...the pigeons know everything...''",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+   {
+    "id": "OBJ251",
+	"obj_id": "OBJ251_IDxxx",
+    "type": "Object",
+    "info_name": "- TIME-STAMPED -\n- POLAROID -",
+    "name": "Dated photography",
+    "description": "Shows tomorrow’s newspaper headline. No sign of editing",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+   {
+    "id": "OBJ252",
+	"obj_id": "OBJ252_IDxxx",
+    "type": "Object",
+    "info_name": "- ORGANIC MICROCHIP -",
+    "name": "Organic microchip",
+    "description": "Still warm. Blinks when held near teeth",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ253",
+	"obj_id": "OBJ253_IDxxx",
+    "type": "Object",
+    "info_name": "- SYNTHETIC EYELID -",
+    "name": "Synthetic eyelid",
+    "description": "Still twitching. Implants registered to an unknown biometric profile",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ254",
+	"obj_id": "OBJ254_IDxxx",
+    "type": "Object",
+    "info_name": "- BLACK CUBE -",
+    "name": "Black cube",
+    "description": "Absorbs light. Emits low-frequency hum only audible when eyes are closed",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ255",
+	"obj_id": "OBJ255_IDxxx",
+    "type": "Object",
+    "info_name": "- EGG-LIKE DEVICE -",
+    "name": "Pulsing egg",
+    "description": "Vibrates every 666 seconds. Screams faintly when submerged in salt water",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ256",
+	"obj_id": "OBJ256_IDxxx",
+    "type": "Object",
+    "info_name": "- KNIGSHANE -\n- NEUROPATCH -",
+    "name": "KingShane neuroPatch",
+    "description": "Sticks only to the neck. Vibrates when lying. Broken English ad on the back",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ257",
+	"obj_id": "OBJ257_IDxxx",
+    "type": "Object",
+    "info_name": "- VOICE TRANSLATOR V3 -",
+    "name": "Voice translator v3.016b",
+    "description": "Mistranslates everything... except whispers",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ258",
+	"obj_id": "OBJ258_IDxxx",
+    "type": "Object",
+    "info_name": "- TACTICAL SPOON -",
+    "name": "Tactical spoon",
+    "description": "Military-grade cutlery. Leaves no fingerprints. Cuts glass somehow",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ259",
+	"obj_id": "OBJ259_IDxxx",
+    "type": "Object",
+    "info_name": "- BIODEGRADABLE BULLET -",
+    "name": "Biodegradable bullet",
+    "description": "Melts mid-air. Deeply disappoints gun nuts",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
+    "possible_combinations": ["Dialogue", "Abstract"]
+  },
+  {
+    "id": "OBJ260",
+	"obj_id": "OBJ260_IDxxx",
+    "type": "Object",
+    "info_name": "- WIFI SABER -",
+    "name": "WiFi saber",
+    "description": "Blade made of unstable internet connection. Cuts only during lag spikes",
+    "found": ["LOCxxxIDxxx"],
+    "property": ["NPCxxx"],
+    "evidence": ["yes", "no"],
     "possible_combinations": ["Dialogue", "Abstract"]
   },
   
