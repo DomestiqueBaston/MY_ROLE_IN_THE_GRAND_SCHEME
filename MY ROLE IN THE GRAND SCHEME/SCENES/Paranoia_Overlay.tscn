@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbkvt2bpth73k"]
+[gd_scene load_steps=22 format=3 uid="uid://bbkvt2bpth73k"]
 
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_j15aw"]
+[ext_resource type="Script" uid="uid://d180ar25m8udl" path="res://SCRIPTS/Paranoia_Overlay.gd" id="1_kx442"]
 [ext_resource type="Shader" uid="uid://c84t7nfl20xo5" path="res://SHADERS/Texture.gdshader" id="2_l3r6m"]
 [ext_resource type="Texture2D" uid="uid://b7mp13m7yu337" path="res://GRAPHICS/OVERLAYS/Texture_Paranoia.png" id="3_f7475"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="4_654ki"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" uid="uid://8m3qwndeyy8w" path="res://SCRIPTS/Paranoya_Overlay_Message.gd" id="5_re1fv"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_vpb4g"]
 [ext_resource type="AudioStream" uid="uid://be2742fcue6hc" path="res://SOUND/MISC/Alarm_02.ogg" id="6_akqqg"]
+[ext_resource type="AudioStream" uid="uid://dtdh8de6r8ymv" path="res://SOUND/MISC/White_noise.ogg" id="10_1sn5l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghmjl"]
 shader = ExtResource("2_l3r6m")
@@ -220,6 +222,42 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Alarm:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -20.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("In_Out:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("White_Noise:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -80.0]
+}
 
 [sub_resource type="Animation" id="Animation_gko1x"]
 resource_name = "Disappearance"
@@ -300,6 +338,54 @@ tracks/5/keys = {
 "update": 1,
 "values": [0.0, 12.5, 25.0, 62.5, 100.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("White_Noise:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-80.0, -15.0, -10.0, -7.0, -5.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("White_Noise:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Alarm:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("In_Out:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
 
 [sub_resource type="Animation" id="Animation_tqvto"]
 length = 0.001
@@ -363,15 +449,193 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("White_Noise:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("White_Noise:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Alarm:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("In_Out:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+
+[sub_resource type="Animation" id="Animation_re1fv"]
+resource_name = "Final_Disappearance"
+length = 0.266673
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Violet_Filter:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.2),
+"update": 1,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Center:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_vpb4g")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Inner_Voice/Black_BG:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0666663, 0.133333, 0.2, 0.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.62549), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.0941176), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Inner_Voice/Grain:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0666663, 0.133333, 0.2, 0.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.62549), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.12549), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Inner_Voice/Grain:material:shader_parameter/strength")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0666663, 0.133333, 0.2, 0.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [100.0, 62.5, 25.0, 12.5, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("White_Noise:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-5.0, -7.0, -10.0, -15.0, -80.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("White_Noise:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Alarm:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-20.0, -80.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("In_Out:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_asw7s"]
 _data = {
 &"Appearance": SubResource("Animation_7wckl"),
 &"Disappearance": SubResource("Animation_gko1x"),
+&"Final_Disappearance": SubResource("Animation_re1fv"),
 &"RESET": SubResource("Animation_tqvto")
 }
 
 [node name="Paranoia_Overlay" type="Node2D"]
+script = ExtResource("1_kx442")
 metadata/_edit_lock_ = true
 
 [node name="Center" type="Control" parent="."]
@@ -506,14 +770,19 @@ autoplay = "Vibration"
 libraries = {
 &"": SubResource("AnimationLibrary_asw7s")
 }
-autoplay = "Disappearance"
+autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
-volume_db = -20.0
+volume_db = -80.0
 bus = &"UI"
 
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_akqqg")
-volume_db = -20.0
+volume_db = -80.0
 autoplay = true
+bus = &"FX"
+
+[node name="White_Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_1sn5l")
+volume_db = -80.0
 bus = &"FX"
