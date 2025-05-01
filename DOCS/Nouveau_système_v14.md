@@ -347,7 +347,7 @@ Cycle Jour/Nuit
 	- Les PNJs suivent ce cycle par leur emploi du temps mais si le joueur les emmène au delà des limites par une interaction, ils suivront le joueur puis reprendront leur emploi du temps normal sans effet pour eux en fin d’Interaction.
 
 Veille/Sommeil
-	- Le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 au dé par heure. Il ne peut pas faire plus de 24h d’éveil d’affilé et « tombe de fatigue ». Il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil !
+	- Le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 au dé par tranche de 2 heures. Il ne peut pas faire plus de 24h d’éveil d’affilé et « tombe de fatigue ». Il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil !
 	- Le joueur décidera de combien de temps il veut dormir (voir Récupération).
 	- On ne peut dormir qu’1 fois par jour (c’est la date et l’heure de déclenchement qui compte et ainsi, se coucher le lundi à 23h et se lever le mardi à 7h permettra encore de dormir le mardi soir.)
 	- Les Bonus/Malus au jets de dé dus au sommeil ne durent que jusqu’au prochain dodo.
@@ -741,7 +741,7 @@ Résolution des enquêtes, gains et implications
 	- Une enquête ne peut pas être rejetée avant (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite de la pile du joueur qui y restent).
 Éléments additionnels (non facultatifs) :
-	- Je vais créer 2 ou 3 enquêtes finales (Paranoïa) pour la re-jouabilité.
+	- La quête finale sera générée aléatoirement aussi !
 	- Dans la scène Mixette.tscn, il y a 5 boutons pour augmenter encore la difficulté :
 		Drug Quality : Prix de la drogue +15%.
 		Plot Depth : Temps imparti pour résoudre une enquête : -15%.

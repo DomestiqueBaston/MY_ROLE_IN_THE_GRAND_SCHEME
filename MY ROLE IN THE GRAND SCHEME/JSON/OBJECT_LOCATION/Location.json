@@ -5,7 +5,7 @@
 	"info_name": "- APARTMENT -",
   "name": "Apartment",
     "type": "Location",
-	"uniqueness": [],  // rien = unlimited, 1 ou 2
+	"uniqueness": [],
     "description": "People's favorite place to live, sleep... and have sex",
     "property": [],  // NPCxxx or rien
     "possible_combinations": ["Dialogue", "Abstract"],
@@ -24,7 +24,7 @@
     "info_name": "- WORKSHOP -",
   "name": "Workshop",
     "type": "Location",
-    "uniqueness": [2],  // rien = unlimited, 1 ou 2
+    "uniqueness": [2],
     "description": "A place for crafting, repairing, and probably altering things",
     "property": [],  // NPCxxx or rien
     "possible_combinations": ["Dialogue", "Abstract"],
@@ -732,7 +732,7 @@
 {
   "id": "LOC036",
   "loc_id": "LOC036_IDxxx",
-  "info_name": "- PHARMACIE -",
+  "info_name": "- PHARMACY -",
   "name": "Pharmacy",
   "type": "Location",
   "uniqueness": [1],  // rien (appartment), 1 ou 2
