@@ -86,7 +86,6 @@ anti_aliasing = false
 metadata/_edit_lock_ = true
 
 [node name="BG" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_ku4pt")
 centered = false
 hframes = 14
