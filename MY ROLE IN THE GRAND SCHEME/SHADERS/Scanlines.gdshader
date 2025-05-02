@@ -1,3 +1,4 @@
+//https://godotshaders.com/shader/very-simple-crt-shader/
 shader_type canvas_item;
 
 uniform vec2 screen_resolution = vec2(480, 270);
