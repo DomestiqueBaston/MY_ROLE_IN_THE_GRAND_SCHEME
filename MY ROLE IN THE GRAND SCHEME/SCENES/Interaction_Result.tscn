@@ -129,12 +129,10 @@ visible_characters_behavior = 1
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
-visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
-visible = false
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
@@ -416,6 +414,7 @@ It won't help me focus, and that makes me even [color=#ff8864]more nervous[/colo
 metadata/_edit_lock_ = true
 
 [node name="Investigation" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
+visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
@@ -461,7 +460,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[color=#ff8864]Information[/color] related to this place:
+text = "[center][color=#ff8864]Information[/color] related to this place:[/center]
 
  - [color=#ff1c18]NPC001[/color] works here.
  - [color=#ff1c18]NPC001[/color] owns that place.

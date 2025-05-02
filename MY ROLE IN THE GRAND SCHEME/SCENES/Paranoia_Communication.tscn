@@ -1,10 +1,55 @@
-[gd_scene load_steps=22 format=3 uid="uid://6u8qm8dm4oy4"]
+[gd_scene load_steps=28 format=3 uid="uid://6u8qm8dm4oy4"]
 
 [ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://GRAPHICS/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_ku4pt"]
 [ext_resource type="Theme" uid="uid://bnunycy4luos4" path="res://UI/Paranoia_Communication_Theme.tres" id="2_if43b"]
 [ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="3_mltda"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_e3ppe"]
 [ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="5_445rt"]
+[ext_resource type="Shader" uid="uid://b378yoqi4ij68" path="res://SHADERS/Scanlines.gdshader" id="6_e3ppe"]
+[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/TITLE/Hum.ogg" id="6_mltda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucoie"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_445rt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7fl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3ppe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1f8k7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wivm1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23cf0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guovx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns335"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1vkl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if43b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mltda"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spda6"]
+bg_color = Color(0.027451, 0.14902, 0.0705882, 0.545098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.009, 0.05, 0.02335, 0.960784)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_445rt"]
+shader = ExtResource("6_e3ppe")
+shader_parameter/screen_resolution = Vector2(320, 180)
+shader_parameter/scanline_intensity = 0.03
+shader_parameter/color_bleed_weight = 0.37
 
 [sub_resource type="Animation" id="Animation_ku4pt"]
 resource_name = "BG_Cycle"
@@ -45,42 +90,44 @@ _data = {
 &"RESET": SubResource("Animation_orgvn")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spda6"]
-bg_color = Color(0.027451, 0.14902, 0.0705882, 0.545098)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.009, 0.05, 0.02335, 0.960784)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing = false
+[sub_resource type="Animation" id="Animation_mltda"]
+resource_name = "Shake"
+length = 0.73334
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Content:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0738823, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(1, -1), Vector2(-1, 0), Vector2(1, 1), Vector2(0, 1), Vector2(-1, -1), Vector2(0, -1), Vector2(-1, 0), Vector2(0, 0), Vector2(0, 1), Vector2(1, -1), Vector2(0, 0)]
+}
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucoie"]
+[sub_resource type="Animation" id="Animation_e3ppe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Content:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_445rt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7fl1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3ppe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1f8k7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wivm1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23cf0"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guovx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns335"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1vkl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if43b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mltda"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_445rt"]
+_data = {
+&"RESET": SubResource("Animation_e3ppe"),
+&"Shake": SubResource("Animation_mltda")
+}
 
 [node name="Paranoia_Communication" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -98,19 +145,13 @@ offset_bottom = 360.0
 color = Color(0.027, 0.15, 0.07005, 0.25098)
 metadata/_edit_lock_ = true
 
-[node name="BG_Animation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_2y8y0")
-}
-autoplay = "BG_Cycle"
-
-[node name="Control" type="Control" parent="."]
+[node name="Content" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_if43b")
 metadata/_edit_lock_ = true
 
-[node name="Label" type="RichTextLabel" parent="Control"]
+[node name="Frame" type="RichTextLabel" parent="Content"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 28.0
@@ -120,47 +161,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Chalkboard_Content" type="Control" parent="Control"]
+[node name="Frame_Content" type="Control" parent="Content"]
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Quit" type="Button" parent="Control/Chalkboard_Content"]
-self_modulate = Color(1, 1, 1, 0.784314)
-layout_mode = 0
-offset_left = 298.0
-offset_top = 339.0
-offset_right = 342.0
-offset_bottom = 354.0
-tooltip_text = "Close that window!"
-theme = ExtResource("3_mltda")
-theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 0.882353)
-theme_override_colors/font_hover_color = Color(0.394975, 0.61, 0.3355, 0.882353)
-theme_override_colors/font_color = Color(0.9765, 1, 0.97, 0.882353)
-theme_override_colors/font_focus_color = Color(0.681893, 0.91, 0.6188, 0.882353)
-theme_override_colors/font_pressed_color = Color(0.681893, 0.91, 0.6188, 0.882353)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("4_e3ppe")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxFlat_spda6")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_spda6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_spda6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_spda6")
-theme_override_styles/normal = SubResource("StyleBoxFlat_spda6")
-text = "Oh well!"
-script = ExtResource("5_445rt")
-metadata/_edit_lock_ = true
-
-[node name="Content" type="Control" parent="Control/Chalkboard_Content"]
-layout_mode = 3
+[node name="Title" type="Control" parent="Content/Frame_Content"]
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
-[node name="Title" type="Control" parent="Control/Chalkboard_Content/Content"]
-anchors_preset = 0
-metadata/_edit_lock_ = true
-
-[node name="Dialogue" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/Title"]
+[node name="Dialogue" type="RichTextLabel" parent="Content/Frame_Content/Title"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -180,7 +190,7 @@ text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Combat" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/Title"]
+[node name="Combat" type="RichTextLabel" parent="Content/Frame_Content/Title"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -200,7 +210,7 @@ text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Investigation" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/Title"]
+[node name="Investigation" type="RichTextLabel" parent="Content/Frame_Content/Title"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -219,7 +229,7 @@ text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/Chalkboard_Content/Content"]
+[node name="Report_Margin" type="MarginContainer" parent="Content/Frame_Content"]
 layout_mode = 0
 offset_left = 46.0
 offset_top = 53.0
@@ -230,13 +240,13 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 metadata/_edit_lock_ = true
 
-[node name="Report" type="Label" parent="Control/Chalkboard_Content/Content/MarginContainer"]
+[node name="Report" type="Label" parent="Content/Frame_Content/Report_Margin"]
 modulate = Color(1, 1, 1, 0.752941)
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_vertical = 1
 text = "At last! My hands can still do their job. Things seem to be piecing together, like I'm onto a lead.
-But now I'm not sure if I uncovered something... or if I was led here on purpose?
+But now I'm not sure if I uncovered something... or if I was led here on purpose.
 Maybe it's real. Maybe just another planted illusion...
 
 
@@ -262,7 +272,7 @@ autowrap_mode = 3
 visible_characters_behavior = 1
 metadata/_edit_lock_ = true
 
-[node name="Dialogue" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report"]
+[node name="Dialogue" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -270,8 +280,7 @@ offset_top = 10.0
 offset_bottom = 10.0
 metadata/_edit_lock_ = true
 
-[node name="Positive_Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue"]
-visible = false
+[node name="Positive_Report" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 39.0
@@ -279,7 +288,7 @@ offset_right = 530.0
 offset_bottom = 252.0
 metadata/_edit_lock_ = true
 
-[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report"]
+[node name="Generic_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(520, 40)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -293,8 +302,7 @@ Here's hoping things actually go right... or maybe that's exactly what they want
 And who knows, maybe this will turn out better... or maybe they've already set me up for the fall.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Critical_Success_Emo" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report"]
-visible = false
+[node name="Critical_Success_Emo" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(520, 27)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -305,15 +313,14 @@ text = "[center][color=#ff8864]The good news[/color]? I can feel some [color=#ff
 After that little chat, I'm starting to wonder if they've been [color=#ff1c18]planting thoughts in my head[/color] [color=#ff8864]all along[/color].[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Report_Content_Including_Critical" type="HBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report"]
-visible = false
+[node name="Report_Content_Including_Critical" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report"]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Link_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(111, 153)
+[node name="Link_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(111, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -325,8 +332,8 @@ text = "[center][color=#ff8864]Link relation[/color]:[/center]
  - ..."
 metadata/_edit_lock_ = true
 
-[node name="NPC_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(130, 153)
+[node name="NPC_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(130, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -337,8 +344,8 @@ text = "[center][color=#ff8864]Personal information[/color]:[/center]
  - ..."
 metadata/_edit_lock_ = true
 
-[node name="Object_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(101, 153)
+[node name="Object_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(101, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -349,8 +356,8 @@ text = "[center][color=#ff8864]Information[/color] about:[/center]
  - ... "
 metadata/_edit_lock_ = true
 
-[node name="Location_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(107, 153)
+[node name="Location_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(107, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -362,7 +369,8 @@ text = "[color=#ff8864]Information[/color] related to:
  - ..."
 metadata/_edit_lock_ = true
 
-[node name="Negative_Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue"]
+[node name="Negative_Report" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue"]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 39.0
@@ -370,7 +378,7 @@ offset_right = 530.0
 offset_bottom = 274.0
 metadata/_edit_lock_ = true
 
-[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Negative_Report"]
+[node name="Generic_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(107, 30)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -383,7 +391,7 @@ Let's hope this doesn't spiral into something worse, but it feels like they've a
 Knowing my luck, it's all going according to their script.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Rep_Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Negative_Report"]
+[node name="Rep_Critical_Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(107, 27)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -394,7 +402,7 @@ text = "[center]Anyway, looks like [color=#ff1c18]NPC001[/color] is a bit [color
 Funny how people change, or maybe it's all part of the [color=#ff1c18]bigger plan[/color] [color=#ff8864]I'm not seeing[/color].[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Emo_Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Negative_Report"]
+[node name="Emo_Critical_Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
 visible = false
 custom_minimum_size = Vector2(107, 16)
 layout_mode = 2
@@ -404,7 +412,7 @@ bbcode_enabled = true
 text = "[center]What's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color]. Maybe that's the point.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Combat" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report"]
+[node name="Combat" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -412,7 +420,7 @@ offset_top = 10.0
 offset_bottom = 10.0
 metadata/_edit_lock_ = true
 
-[node name="Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat"]
+[node name="Report" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 39.0
@@ -420,7 +428,7 @@ offset_right = 530.0
 offset_bottom = 274.0
 metadata/_edit_lock_ = true
 
-[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+[node name="Generic_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
 custom_minimum_size = Vector2(107, 22)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -432,12 +440,12 @@ text = "[center]I hate when it comes to this. Violence never feels like a win, n
 Let's hope this is the end of it. But who am I kidding?[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Normal_Success_Dead" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+[node name="Normal_Success_Dead" type="Control" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
 custom_minimum_size = Vector2(0, 76)
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead"]
+[node name="Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead"]
 custom_minimum_size = Vector2(107, 44)
 layout_mode = 1
 anchors_preset = 10
@@ -452,7 +460,7 @@ text = "[center]By Zeus! The [color=#ff8864]bastard[/color] is [color=#ff1c18]de
 Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/color] or is it another setup?[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Yes_No" type="HBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead/Information"]
+[node name="Yes_No" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Information"]
 custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
 offset_top = 27.0
@@ -461,7 +469,7 @@ offset_bottom = 38.0
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Yes" type="Button" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead/Information/Yes_No"]
+[node name="Yes" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Information/Yes_No"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
@@ -479,7 +487,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_c1vkl")
 text = "Yes!"
 metadata/_edit_lock_ = true
 
-[node name="No" type="Button" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead/Information/Yes_No"]
+[node name="No" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Information/Yes_No"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
@@ -497,7 +505,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_c1vkl")
 text = "No..."
 metadata/_edit_lock_ = true
 
-[node name="If_Yes" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead"]
+[node name="If_Yes" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead"]
 custom_minimum_size = Vector2(520, 16)
 layout_mode = 1
 anchors_preset = 14
@@ -512,7 +520,7 @@ bbcode_enabled = true
 text = "[center]Ok, I found [color=#ff1c18]XXdø[/color] (and I'll keep it as a refund, but let's hope there's no tracker).[/center]"
 metadata/_edit_lock_ = true
 
-[node name="And_If_Seen_Then_Wan" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead"]
+[node name="And_If_Seen_Then_Wan" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead"]
 custom_minimum_size = Vector2(520, 26)
 layout_mode = 2
 offset_top = 70.0
@@ -524,13 +532,13 @@ text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff88
 I must've been tracked... They're always watching.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Normal_Success_Alive" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+[node name="Normal_Success_Alive" type="Control" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
 visible = false
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Alive"]
+[node name="Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Alive"]
 custom_minimum_size = Vector2(107, 20)
 layout_mode = 2
 offset_right = 520.0
@@ -543,7 +551,7 @@ text = "[center]Ok! [color=#ff8864]We're both [color=#ff1c18]alive[/color][/colo
 See you next time, moron, don't think for a second I'm letting you slip away. I'll be watching you.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Critical_Success" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+[node name="Critical_Success" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
 visible = false
 custom_minimum_size = Vector2(107, 27)
 layout_mode = 2
@@ -555,7 +563,7 @@ text = "[center]But... It seems like [color=#ff1c18]NPC001[/color] is [color=#ff
 Even though I'm pretty sure we'll never be 'friends' again... unless they've got something else planned.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+[node name="Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
 visible = false
 custom_minimum_size = Vector2(107, 27)
 layout_mode = 2
@@ -567,7 +575,7 @@ text = "[center]Ouch! [color=#ff1c18]I'm hurt[/color].
 I don't trust this for a second. Pretty sure I [color=#ff1c18]lost[/color] my best buddy... or maybe it was all part of their plan.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+[node name="Critical_Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
 visible = false
 custom_minimum_size = Vector2(107, 26)
 layout_mode = 2
@@ -579,14 +587,14 @@ text = "[center]Great! Just great! I [color=#ff1c18]hurt myself[/color] badly...
 I can't focus like this, and [color=#ff8864]that's exactly what[/color] [color=#ff1c18]they want[/color]. It makes me even [color=#ff8864]more nervous[/color].[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Investigation" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report"]
+[node name="Investigation" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 10.0
 offset_bottom = 10.0
 metadata/_edit_lock_ = true
 
-[node name="Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation"]
+[node name="Report" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Investigation"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 39.0
@@ -594,7 +602,7 @@ offset_right = 530.0
 offset_bottom = 264.0
 metadata/_edit_lock_ = true
 
-[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+[node name="Generic_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report"]
 custom_minimum_size = Vector2(107, 33)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -607,7 +615,7 @@ Each fragment feels like part of a larger design (but whose)?
 The path twists endlessly, and what lies at the end may not be meant to be found.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Critical_Success_Money" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+[node name="Critical_Success_Money" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report"]
 custom_minimum_size = Vector2(107, 16)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -618,25 +626,25 @@ text = "[center]Guess [color=#ff8864]I[/color] got [color=#ff8864]close enough[/
 "
 metadata/_edit_lock_ = true
 
-[node name="Normal_And_Critical_Success" type="HBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+[node name="Normal_And_Critical_Success" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report"]
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Location_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report/Normal_And_Critical_Success"]
+[node name="Location_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(107, 156)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[color=#ff8864]Information[/color] related to this place:
+text = "[center][color=#ff8864]Information[/color] related to this place:[/center]
 
  - [color=#ff1c18]NPC001[/color] works here.
  - [color=#ff1c18]NPC001[/color] owns that place.
  - ..."
 metadata/_edit_lock_ = true
 
-[node name="Object_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report/Normal_And_Critical_Success"]
+[node name="Object_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(107, 156)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -649,7 +657,7 @@ text = "[center][color=#ff8864]Stuff[/color] I found here:[/center]
  - ... "
 metadata/_edit_lock_ = true
 
-[node name="Link_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report/Normal_And_Critical_Success"]
+[node name="Link_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(107, 156)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -661,7 +669,7 @@ text = "[center][color=#ff8864]Link relation[/color]:[/center]
  - ..."
 metadata/_edit_lock_ = true
 
-[node name="Separator_Normal_And_Critical_Sucess" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+[node name="Separator_Normal_And_Critical_Sucess" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report"]
 custom_minimum_size = Vector2(107, 8)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -670,7 +678,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mltda")
 bbcode_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+[node name="Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report"]
 visible = false
 custom_minimum_size = Vector2(107, 28)
 layout_mode = 2
@@ -683,7 +691,7 @@ Hm... [color=#ff1c18]They[/color] [color=#ff8864]must have got here[/color] [col
 "
 metadata/_edit_lock_ = true
 
-[node name="Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+[node name="Critical_Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Investigation/Report"]
 visible = false
 custom_minimum_size = Vector2(75, 28)
 layout_mode = 2
@@ -696,6 +704,55 @@ Is there [color=ff1c18]something else I'm blind to[/color]?[/center]
 "
 metadata/_edit_lock_ = true
 
-[connection signal="mouse_entered" from="Control/Chalkboard_Content/Quit" to="Control/Chalkboard_Content/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Control/Chalkboard_Content/Quit" to="Control/Chalkboard_Content/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Control/Chalkboard_Content/Quit" to="Control/Chalkboard_Content/Quit" method="_on_pressed"]
+[node name="Quit" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 297.0
+offset_top = 338.0
+offset_right = 341.0
+offset_bottom = 353.0
+tooltip_text = "Close that window!"
+theme = ExtResource("3_mltda")
+theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 0.882353)
+theme_override_colors/font_hover_color = Color(0.394975, 0.61, 0.3355, 0.882353)
+theme_override_colors/font_color = Color(0.9765, 1, 0.97, 0.882353)
+theme_override_colors/font_focus_color = Color(0.681893, 0.91, 0.6188, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.681893, 0.91, 0.6188, 0.882353)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_e3ppe")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_spda6")
+text = "Oh well!"
+script = ExtResource("5_445rt")
+metadata/_edit_lock_ = true
+
+[node name="Scanlines" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_445rt")
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+
+[node name="Hum" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_mltda")
+volume_db = -30.0
+autoplay = true
+bus = &"FX"
+
+[node name="BG_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2y8y0")
+}
+autoplay = "BG_Cycle"
+
+[node name="Report_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_445rt")
+}
+autoplay = "Shake"
+
+[connection signal="mouse_entered" from="Quit" to="Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Quit" to="Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Quit" to="Quit" method="_on_pressed"]
