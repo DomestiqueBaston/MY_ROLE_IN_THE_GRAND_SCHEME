@@ -1,0 +1,702 @@
+[gd_scene load_steps=22 format=3 uid="uid://6u8qm8dm4oy4"]
+
+[ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://GRAPHICS/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_ku4pt"]
+[ext_resource type="Theme" uid="uid://bnunycy4luos4" path="res://UI/Paranoia_Communication_Theme.tres" id="2_if43b"]
+[ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="3_mltda"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_e3ppe"]
+[ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="5_445rt"]
+
+[sub_resource type="Animation" id="Animation_ku4pt"]
+resource_name = "BG_Cycle"
+length = 1.80001
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333, 1.4, 1.46667, 1.53333, 1.6, 1.66667, 1.73333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+}
+
+[sub_resource type="Animation" id="Animation_orgvn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2y8y0"]
+_data = {
+&"BG_Cycle": SubResource("Animation_ku4pt"),
+&"RESET": SubResource("Animation_orgvn")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spda6"]
+bg_color = Color(0.027451, 0.14902, 0.0705882, 0.545098)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.009, 0.05, 0.02335, 0.960784)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucoie"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_445rt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7fl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e3ppe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1f8k7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wivm1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23cf0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guovx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns335"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1vkl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if43b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mltda"]
+
+[node name="Paranoia_Communication" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_ku4pt")
+centered = false
+hframes = 14
+vframes = 2
+metadata/_edit_lock_ = true
+
+[node name="Filter" type="ColorRect" parent="BG"]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.027, 0.15, 0.07005, 0.25098)
+metadata/_edit_lock_ = true
+
+[node name="BG_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2y8y0")
+}
+autoplay = "BG_Cycle"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_if43b")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 28.0
+offset_right = 598.0
+offset_bottom = 333.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Chalkboard_Content" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="Button" parent="Control/Chalkboard_Content"]
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 298.0
+offset_top = 339.0
+offset_right = 342.0
+offset_bottom = 354.0
+tooltip_text = "Close that window!"
+theme = ExtResource("3_mltda")
+theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 0.882353)
+theme_override_colors/font_hover_color = Color(0.394975, 0.61, 0.3355, 0.882353)
+theme_override_colors/font_color = Color(0.9765, 1, 0.97, 0.882353)
+theme_override_colors/font_focus_color = Color(0.681893, 0.91, 0.6188, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.681893, 0.91, 0.6188, 0.882353)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_e3ppe")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_spda6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_spda6")
+text = "Oh well!"
+script = ExtResource("5_445rt")
+metadata/_edit_lock_ = true
+
+[node name="Content" type="Control" parent="Control/Chalkboard_Content"]
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Control" parent="Control/Chalkboard_Content/Content"]
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="Dialogue" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/Title"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 257.0
+offset_top = 37.0
+offset_right = 383.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ucoie")
+bbcode_enabled = true
+text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Interrogation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Combat" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/Title"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 257.0
+offset_top = 37.0
+offset_right = 383.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ucoie")
+bbcode_enabled = true
+text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Combat Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Investigation" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 257.0
+offset_top = 37.0
+offset_right = 383.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ucoie")
+bbcode_enabled = true
+text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Investigation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Chalkboard_Content/Content"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 53.0
+offset_right = 593.0
+offset_bottom = 328.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+metadata/_edit_lock_ = true
+
+[node name="Report" type="Label" parent="Control/Chalkboard_Content/Content/MarginContainer"]
+modulate = Color(1, 1, 1, 0.752941)
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 1
+text = "At last! My hands can still do their job. Things seem to be piecing together, like I'm onto a lead.
+But now I'm not sure if I uncovered something... or if I was led here on purpose?
+Maybe it's real. Maybe just another planted illusion...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+visible_characters_behavior = 1
+metadata/_edit_lock_ = true
+
+[node name="Dialogue" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 10.0
+offset_bottom = 10.0
+metadata/_edit_lock_ = true
+
+[node name="Positive_Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue"]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 530.0
+offset_bottom = 252.0
+metadata/_edit_lock_ = true
+
+[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report"]
+custom_minimum_size = Vector2(520, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_445rt")
+bbcode_enabled = true
+text = "[center]Well, that was intense, but now I'm wondering if it was all just a test.
+It's a lot to process, but they've probably seen it all coming.
+Here's hoping things actually go right... or maybe that's exactly what they want me to think.
+And who knows, maybe this will turn out better... or maybe they've already set me up for the fall.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Critical_Success_Emo" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report"]
+visible = false
+custom_minimum_size = Vector2(520, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center][color=#ff8864]The good news[/color]? I can feel some [color=#ff1c18]emotional[/color] recovery... but [color=#ff8864]how much of this confidence is actually mine[/color]?
+After that little chat, I'm starting to wonder if they've been [color=#ff1c18]planting thoughts in my head[/color] [color=#ff8864]all along[/color].[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Report_Content_Including_Critical" type="HBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Link_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(111, 153)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Link relation[/color]:[/center]
+
+ - [color=#ff1c18]NPC001[/color] & [color=#ff1c18]NPC002[/color]: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png[/img]
+ - [color=#ff1c18]NPC001[/color] & [color=#ff1c18]NPC003[/color]: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png[/img]
+ - [color=#ff1c18]NPC001[/color]: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Noir.png[/img]
+ - ..."
+metadata/_edit_lock_ = true
+
+[node name="NPC_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(130, 153)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Personal information[/color]:[/center]
+
+ - [color=#ff1c18]NPC001[/color]: schedule, address, etc.
+ - [color=#ff1c18]NPC002[/color]: possession, hang out, etc.
+ - ..."
+metadata/_edit_lock_ = true
+
+[node name="Object_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(101, 153)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Information[/color] about:[/center]
+
+ - [color=#ff1c18]OBJ001[/color]: property of [color=#ff1c18]NPC001[/color]
+ - [color=#ff1c18]OBJ002[/color]: found in [color=#ff1c18]LOC001[/color]
+ - ... "
+metadata/_edit_lock_ = true
+
+[node name="Location_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
+custom_minimum_size = Vector2(107, 153)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#ff8864]Information[/color] related to:
+
+ - [color=#ff1c18]LOC001[/color] is where [color=#ff1c18]NPC001[/color] works.
+ - [color=#ff1c18]LOC001[/color] is owned by [color=#ff1c18]NPC001[/color]
+ - You've heard of [color=#ff1c18]LOC002[/color]
+ - ..."
+metadata/_edit_lock_ = true
+
+[node name="Negative_Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 530.0
+offset_bottom = 274.0
+metadata/_edit_lock_ = true
+
+[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Negative_Report"]
+custom_minimum_size = Vector2(107, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w7fl1")
+bbcode_enabled = true
+text = "[center]Great, just great. That conversation felt like I've been played but am I even in control anymore?
+Let's hope this doesn't spiral into something worse, but it feels like they've already planned the next step.
+Knowing my luck, it's all going according to their script.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Rep_Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Negative_Report"]
+custom_minimum_size = Vector2(107, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]Anyway, looks like [color=#ff1c18]NPC001[/color] is a bit [color=#ff8864]less fond[/color] of me now.
+Funny how people change, or maybe it's all part of the [color=#ff1c18]bigger plan[/color] [color=#ff8864]I'm not seeing[/color].[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Emo_Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Dialogue/Negative_Report"]
+visible = false
+custom_minimum_size = Vector2(107, 16)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]What's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color]. Maybe that's the point.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Combat" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = 10.0
+offset_bottom = 10.0
+metadata/_edit_lock_ = true
+
+[node name="Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 530.0
+offset_bottom = 274.0
+metadata/_edit_lock_ = true
+
+[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+custom_minimum_size = Vector2(107, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e3ppe")
+bbcode_enabled = true
+text = "[center]I hate when it comes to this. Violence never feels like a win, not when they're pulling the strings.
+Let's hope this is the end of it. But who am I kidding?[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Normal_Success_Dead" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead"]
+custom_minimum_size = Vector2(107, 44)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]By Zeus! The [color=#ff8864]bastard[/color] is [color=#ff1c18]dead[/color]. I went [color=#ff8864]too hard[/color]. Damn, was this part of their plan?
+Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/color] or is it another setup?[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Yes_No" type="HBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead/Information"]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+offset_top = 27.0
+offset_right = 547.0
+offset_bottom = 38.0
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Yes" type="Button" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead/Information/Yes_No"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(0.211333, 1, 0.09, 1)
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1f8k7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wivm1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_23cf0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_guovx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ns335")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c1vkl")
+text = "Yes!"
+metadata/_edit_lock_ = true
+
+[node name="No" type="Button" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead/Information/Yes_No"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1f8k7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wivm1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_23cf0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_guovx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ns335")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c1vkl")
+text = "No..."
+metadata/_edit_lock_ = true
+
+[node name="If_Yes" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead"]
+custom_minimum_size = Vector2(520, 16)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 11.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]Ok, I found [color=#ff1c18]XXdø[/color] (and I'll keep it as a refund, but let's hope there's no tracker).[/center]"
+metadata/_edit_lock_ = true
+
+[node name="And_If_Seen_Then_Wan" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Dead"]
+custom_minimum_size = Vector2(520, 26)
+layout_mode = 2
+offset_top = 70.0
+offset_right = 520.0
+offset_bottom = 94.0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff8864]already know[/color]. Crap!
+I must've been tracked... They're always watching.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Normal_Success_Alive" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+visible = false
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report/Normal_Success_Alive"]
+custom_minimum_size = Vector2(107, 20)
+layout_mode = 2
+offset_right = 520.0
+offset_bottom = 27.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]Ok! [color=#ff8864]We're both [color=#ff1c18]alive[/color][/color]. At least, [color=#ff1c18]I am[/color].
+See you next time, moron, don't think for a second I'm letting you slip away. I'll be watching you.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Critical_Success" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+visible = false
+custom_minimum_size = Vector2(107, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]But... It seems like [color=#ff1c18]NPC001[/color] is [color=#ff1c18]out[/color] now. And I'm [color=#ff1c18]emotionally[/color] relieved [color=#ff8864]I didn't kill[/color] the mofo.
+Even though I'm pretty sure we'll never be 'friends' again... unless they've got something else planned.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+visible = false
+custom_minimum_size = Vector2(107, 27)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]Ouch! [color=#ff1c18]I'm hurt[/color].
+I don't trust this for a second. Pretty sure I [color=#ff1c18]lost[/color] my best buddy... or maybe it was all part of their plan.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Combat/Report"]
+visible = false
+custom_minimum_size = Vector2(107, 26)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]Great! Just great! I [color=#ff1c18]hurt myself[/color] badly... This feels off. It's making me [color=#ff1c18]nervous[/color]...
+I can't focus like this, and [color=#ff8864]that's exactly what[/color] [color=#ff1c18]they want[/color]. It makes me even [color=#ff8864]more nervous[/color].[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Investigation" type="Control" parent="Control/Chalkboard_Content/Content/MarginContainer/Report"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 10.0
+offset_bottom = 10.0
+metadata/_edit_lock_ = true
+
+[node name="Report" type="VBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 530.0
+offset_bottom = 264.0
+metadata/_edit_lock_ = true
+
+[node name="Generic_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+custom_minimum_size = Vector2(107, 33)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if43b")
+bbcode_enabled = true
+text = "[center]Searching every corner, every shadowed space, unsure if I'm uncovering truth or falling into a trap.  
+Each fragment feels like part of a larger design (but whose)?  
+The path twists endlessly, and what lies at the end may not be meant to be found.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Critical_Success_Money" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+custom_minimum_size = Vector2(107, 16)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltda")
+bbcode_enabled = true
+text = "[center]Guess [color=#ff8864]I[/color] got [color=#ff8864]close enough[/color]! I found [color=#ff1c18]XXDø[/color]. Sorry, but this one's not leaving my hands...[/center]
+"
+metadata/_edit_lock_ = true
+
+[node name="Normal_And_Critical_Success" type="HBoxContainer" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Location_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report/Normal_And_Critical_Success"]
+custom_minimum_size = Vector2(107, 156)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#ff8864]Information[/color] related to this place:
+
+ - [color=#ff1c18]NPC001[/color] works here.
+ - [color=#ff1c18]NPC001[/color] owns that place.
+ - ..."
+metadata/_edit_lock_ = true
+
+[node name="Object_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report/Normal_And_Critical_Success"]
+custom_minimum_size = Vector2(107, 156)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Stuff[/color] I found here:[/center]
+
+ - [color=#ff1c18]OBJ001[/color]: property of [color=#ff1c18]NPC001[/color]
+ - [color=#ff1c18]OBJ002[/color]: /
+ - [color=#ff1c18]OBJ003[/color]: /
+ - ... "
+metadata/_edit_lock_ = true
+
+[node name="Link_Information" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report/Normal_And_Critical_Success"]
+custom_minimum_size = Vector2(107, 156)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Link relation[/color]:[/center]
+
+ - [color=#ff1c18]This place[/color] belongs to [color=#ff1c18]NPC002[/color]: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png[/img]
+ - [color=#ff1c18]NPC001[/color] comes here from time to time: [img=8x6]res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png[/img]
+ - ..."
+metadata/_edit_lock_ = true
+
+[node name="Separator_Normal_And_Critical_Sucess" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+custom_minimum_size = Vector2(107, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltda")
+bbcode_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+visible = false
+custom_minimum_size = Vector2(107, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 3
+bbcode_enabled = true
+text = "[center]what? [color=#ff8864]No way[/color]! [color=#ff1c18]Wiped clean[/color]?  
+Hm... [color=#ff1c18]They[/color] [color=#ff8864]must have got here[/color] [color=#ff1c18]first[/color]. I was sure this was it... [color=#ff1c18]I'm being watched[/color]![/center]
+"
+metadata/_edit_lock_ = true
+
+[node name="Critical_Failure" type="RichTextLabel" parent="Control/Chalkboard_Content/Content/MarginContainer/Report/Investigation/Report"]
+visible = false
+custom_minimum_size = Vector2(75, 28)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 3
+bbcode_enabled = true
+text = "[center]Damn! [color=#ff1c18]They[/color] made me [color=ff1c18]hurt myself[/color]... or [color=#ff8864]was that the plan all along[/color]?  
+Is there [color=ff1c18]something else I'm blind to[/color]?[/center]
+"
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="Control/Chalkboard_Content/Quit" to="Control/Chalkboard_Content/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Chalkboard_Content/Quit" to="Control/Chalkboard_Content/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/Chalkboard_Content/Quit" to="Control/Chalkboard_Content/Quit" method="_on_pressed"]

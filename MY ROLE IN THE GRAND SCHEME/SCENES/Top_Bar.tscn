@@ -293,7 +293,7 @@ metadata/_edit_lock_ = true
 [node name="Time" type="Label" parent="Date_Time"]
 self_modulate = Color(1, 1, 1, 0.4)
 layout_mode = 2
-tooltip_text = "Tick-Tock..."
+tooltip_text = "You need to sleep!"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = "12am"
