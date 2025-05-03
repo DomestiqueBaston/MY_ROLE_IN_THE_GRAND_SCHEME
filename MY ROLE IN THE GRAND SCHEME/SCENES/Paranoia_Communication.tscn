@@ -90,6 +90,21 @@ _data = {
 &"RESET": SubResource("Animation_orgvn")
 }
 
+[sub_resource type="Animation" id="Animation_e3ppe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Content:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_mltda"]
 resource_name = "Shake"
 length = 0.73334
@@ -106,21 +121,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(1, -1), Vector2(-1, 0), Vector2(1, 1), Vector2(0, 1), Vector2(-1, -1), Vector2(0, -1), Vector2(-1, 0), Vector2(0, 0), Vector2(0, 1), Vector2(1, -1), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_e3ppe"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Content:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_445rt"]
@@ -211,6 +211,7 @@ autowrap_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="Investigation" type="RichTextLabel" parent="Content/Frame_Content/Title"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -226,6 +227,25 @@ grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ucoie")
 bbcode_enabled = true
 text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Investigation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
+autowrap_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Grim_Discovery" type="RichTextLabel" parent="Content/Frame_Content/Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 257.0
+offset_top = 37.0
+offset_right = 383.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ucoie")
+bbcode_enabled = true
+text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Grim Discovery[/color][/pulse] [color=#ff8864]-[/color][/center]"
 autowrap_mode = 2
 metadata/_edit_lock_ = true
 
@@ -245,9 +265,9 @@ modulate = Color(1, 1, 1, 0.752941)
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_vertical = 1
-text = "At last! My hands can still do their job. Things seem to be piecing together, like I'm onto a lead.
-But now I'm not sure if I uncovered something... or if I was led here on purpose.
-Maybe it's real. Maybe just another planted illusion...
+text = "When I walked in, I felt something, like a dead rat was nearby. Turns out, there's something dead here.
+But it's not rats. It's... human.
+Something went wrong here, at some point. Look at this mess!
 
 
 
@@ -588,6 +608,7 @@ I can't focus like this, and [color=#ff8864]that's exactly what[/color] [color=#
 metadata/_edit_lock_ = true
 
 [node name="Investigation" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = 10.0
@@ -704,19 +725,74 @@ Is there [color=ff1c18]something else I'm blind to[/color]?[/center]
 "
 metadata/_edit_lock_ = true
 
+[node name="Grim_Discovery" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 10.0
+offset_bottom = 10.0
+metadata/_edit_lock_ = true
+
+[node name="Report" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Grim_Discovery"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 39.0
+offset_right = 530.0
+offset_bottom = 264.0
+metadata/_edit_lock_ = true
+
+[node name="Generic_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Grim_Discovery/Report"]
+custom_minimum_size = Vector2(107, 33)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_if43b")
+bbcode_enabled = true
+text = "[center]That's so weird! Who did this? And why leave it like this? My stomach's turning; I can barely breathe now that it's adding to the smell...
+They want me to find it, for sure! I'm being pulled deeper into this mess, but I'll figure it out. I have to![/center]"
+metadata/_edit_lock_ = true
+
+[node name="Normal_And_Critical_Success" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Grim_Discovery/Report"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Body_Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Grim_Discovery/Report/Normal_And_Critical_Success"]
+custom_minimum_size = Vector2(200, 156)
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+text = "[center][color=#ff8864]Body information[/color]:[/center]
+
+ - [color=#ff1c18]NPC001[/color] is barely recognizable and died here agonizing.
+ - [color=#ff1c18]NPC002[/color]'s all over the place now, and he won't be going anywhere alone.
+ - [color=#ff1c18]NPC003[/color] is almost unidentifiable now, and as it seems, died in this corner.
+ - [color=#ff1c18]NPC004[/color] died from suffering endured here."
+metadata/_edit_lock_ = true
+
+[node name="Separator_Normal_And_Critical_Sucess" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Grim_Discovery/Report"]
+custom_minimum_size = Vector2(107, 8)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltda")
+bbcode_enabled = true
+metadata/_edit_lock_ = true
+
 [node name="Quit" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0.784314)
-offset_left = 297.0
+offset_left = 275.0
 offset_top = 338.0
-offset_right = 341.0
+offset_right = 365.0
 offset_bottom = 353.0
-tooltip_text = "Close that window!"
+tooltip_text = "Close the window!"
 theme = ExtResource("3_mltda")
 theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 0.882353)
-theme_override_colors/font_hover_color = Color(0.394975, 0.61, 0.3355, 0.882353)
+theme_override_colors/font_hover_color = Color(0.77, 0.12243, 0.1001, 0.643137)
 theme_override_colors/font_color = Color(0.9765, 1, 0.97, 0.882353)
 theme_override_colors/font_focus_color = Color(0.681893, 0.91, 0.6188, 0.882353)
-theme_override_colors/font_pressed_color = Color(0.681893, 0.91, 0.6188, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.77, 0.444418, 0.3157, 0.643137)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_e3ppe")
 theme_override_font_sizes/font_size = 8
@@ -725,7 +801,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_spda6")
-text = "Oh well!"
+text = "Ok. I'm done here!"
 script = ExtResource("5_445rt")
 metadata/_edit_lock_ = true
 
@@ -734,10 +810,11 @@ material = SubResource("ShaderMaterial_445rt")
 offset_right = 640.0
 offset_bottom = 360.0
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="Hum" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_mltda")
-volume_db = -30.0
+volume_db = 5.0
 autoplay = true
 bus = &"FX"
 
