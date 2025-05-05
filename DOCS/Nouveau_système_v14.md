@@ -214,26 +214,6 @@ Système de Dés
 	- En Combat et Dialogue, on compare les scores du joueur avec celui du PNJ. La meilleure marge de réussite gagne si les deux font une réussite. En cas d’égalité, « status quo » : personne n’obtient ni ne perd rien. La marge de réussite/échec est définie par la différence entre le jet à obtenir et le jet obtenu. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
 	- En Investigation, pas de comparaison avec un PNJ, c’est plus simple. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
 
-Difficulté du jeu (écran d’OPTIONS)
-	- 5 niveaux de difficulté :
-		Hobbie : bonus de 1 aux jets de dé, +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom à la génération.
-		Tranquille : +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom à la génération.
-		Routine : /
-		Stressant : -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
-		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
-
-	- En difficulté de jeu Hobbie, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
-		C’est pas gagné ! : le joueur a très peu de chances de réussir l'action. (<20 % de chances de réussite)
-		C’est compliqué… : le joueur a une faible chance de réussir, mais cela reste possible. (20 à 40 % de chances de réussite) 
-		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (40 à 60 % % de chances de réussite)
-		Ça passe, mais ça reste risqué... : le joueur a une chance conséquente de réussir, mais une part d'incertitude subsiste. (60 à 80 % de chances de réussite) 
-		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>80 % de chances de réussite)
-
-	- En difficulté de jeu Tranquille, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
-		C’est pas gagné ! : le joueur a peu de chances de réussir l'action. (<33 % de chances de réussite)
-		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (33 à 66 % de chances de réussite)
-		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>66 % de chances de réussite)
-
 Les différentes piles de cartes du joueur (en interaction)
 	- Pile de maîtrise (cartes Dialogue, Combat, Investigation, Abstraite (max 3)) / 10 Max
 	- Pile de non-maîtrise (cartes Dialogue, Combat, Investigation, Abstraite) / 5 Max et aléatoires (mais possibles dans le contexte, pas de Dialogue en Combat, par exemple).
@@ -667,6 +647,7 @@ Enquête
 	- Le niveau de difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	- Voir à la fin pour les enquêtes de niveau 0 !
+	- Finalement, l’enquête finale sera aussi générée procéduralement/aléatoirement.
 
 Lieu du crime et Lieu secret
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence.
@@ -744,15 +725,6 @@ Résolution des enquêtes, gains et implications
 	- Le joueur peut mener jusqu’à 4 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
 	- Une enquête ne peut pas être rejetée à plus de (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.  Pour les enquêtes de niveau 0, voir à la fin !
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’Interaction et Abstraite de la pile du joueur qui y restent).
-Éléments additionnels (non facultatifs) :
-	- L’enquête finale sera générée aléatoirement aussi !
-	- Dans la scène Mixette.tscn, il y a 5 boutons pour augmenter encore la difficulté :
-		Drug Quality : Prix de la drogue +15%.
-		Plot Depth : Temps imparti pour résoudre une enquête : -15%.
-		Corruption : Autorisation de fouille portée à 35Dø.
-		Retail Investment :  Les factures augmentent de +15%.
-		Vice : Caution (prison) portée à 250Dø.
-
 Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre
 
 	- Il faudrait trouver un moyen de lier les liens Rouges, jaunes et Gris au milieu d’un autre lien !
@@ -777,6 +749,39 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
  /!\ Tout petit point important :
  - je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!
 
+
+
+Difficulté du jeu (écran d’OPTIONS)
+	- 5 niveaux de difficulté :
+		Hobbie : bonus de 1 aux jets de dé, +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom à la génération.
+		Tranquille : +10 % de Dø en fin de quête réussie, PNJs: -1 à PHY, MEN et HEAnom à la génération.
+		Routine : /
+		Stressant : -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
+		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
+
+	- En difficulté de jeu Hobbie, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
+		C’est pas gagné ! : le joueur a très peu de chances de réussir l'action. (<20 % de chances de réussite)
+		C’est compliqué… : le joueur a une faible chance de réussir, mais cela reste possible. (20 à 40 % de chances de réussite) 
+		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (40 à 60 % % de chances de réussite)
+		Ça passe, mais ça reste risqué... : le joueur a une chance conséquente de réussir, mais une part d'incertitude subsiste. (60 à 80 % de chances de réussite) 
+		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>80 % de chances de réussite)
+
+	- En difficulté de jeu Tranquille, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
+		C’est pas gagné ! : le joueur a peu de chances de réussir l'action. (<33 % de chances de réussite)
+		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (33 à 66 % de chances de réussite)
+		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>66 % de chances de réussite)
+
+Éléments additionnels (écran d’OPTIONS)
+	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
+		Drug Quality : Prix de la drogue +20%.
+		Plot Depth : Temps imparti pour résoudre une enquête : -20%.
+		Corruption : Autorisation de fouille portée à 50Dø (+20%).
+		Retail Investment :  Les factures augmentent de +20%.
+		Vice : Caution (prison) portée à 250Dø (+25%).
+		Mentirosos : +10 % de chances de mensonge.
+		Hardboiled Minions : +20% HEA (et HEAnom).
+
+
 Enquêtes niveau 0 :
  - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
  - Chaque semaine, n’importe quel jour, le joueur aura 33% de chance de ce voir proposé 1 mission de niveau 0 par un PNJ quelconque.
@@ -788,4 +793,4 @@ Enquêtes niveau 0 :
 	- Le temps imparti pour résoudre une telle enquête est de : 6, 7 ou 8 jours.
 	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
 	- Si on recycle les PNJs, alors refuser une enquête fera -1Rep et accepter +1Rep avec le PNJ.
-	- 
+	- Pas de sbires !
