@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=52 format=3 uid="uid://gq7vbe70kt0a"]
 
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_jebf2"]
 [ext_resource type="Theme" uid="uid://bjqtch5setyil" path="res://UI/Settings_Theme.tres" id="2_d824c"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bpm4ep8r4dx4s" path="res://GRAPHICS/SETTINGS/Slider_Hover_04.png" id="11_wkevm"]
 [ext_resource type="Texture2D" uid="uid://cvhebuts8f6nt" path="res://GRAPHICS/SETTINGS/Blue_Button_02_Hover.png" id="12_fdgbm"]
 [ext_resource type="BitMap" uid="uid://ce5f8fyx7x76" path="res://GRAPHICS/SETTINGS/Blue_Button_02_Mask.png" id="13_1cwnt"]
+[ext_resource type="Script" uid="uid://dbwljidso1ee2" path="res://SCRIPTS/Settings_Difficulty_Slider.gd" id="14_28wos"]
 [ext_resource type="Texture2D" uid="uid://dkapvkvwe78pp" path="res://GRAPHICS/SETTINGS/Blue_Button_03_Pressed.png" id="14_sddwl"]
 [ext_resource type="Texture2D" uid="uid://bsf7senmgtxh0" path="res://GRAPHICS/SETTINGS/Blue_Button_03_Hover.png" id="15_5ns6u"]
 [ext_resource type="BitMap" uid="uid://ds5jv55bfgrcq" path="res://GRAPHICS/SETTINGS/Blue_Button_03_Mask.png" id="16_dr4o6"]
@@ -149,6 +150,21 @@ theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
 value = 50.0
+metadata/_edit_lock_ = true
+
+[node name="Difficulty" type="VSlider" parent="Buttons_Sliders/Sliders"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 256.0
+offset_right = 587.0
+offset_bottom = 318.0
+theme_override_icons/grabber = ExtResource("3_ngdns")
+theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+min_value = 1.0
+max_value = 5.0
+value = 3.0
+script = ExtResource("14_28wos")
 metadata/_edit_lock_ = true
 
 [node name="Buttons" type="Control" parent="Buttons_Sliders"]
@@ -359,6 +375,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 tooltip_text = "Switch mouse cursor"
 toggle_mode = true
+button_pressed = true
 texture_pressed = ExtResource("36_665vc")
 texture_hover = ExtResource("37_fl83n")
 texture_click_mask = ExtResource("38_k42nh")
@@ -376,6 +393,9 @@ metadata/_edit_lock_ = true
 [connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Ambiance" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Buttons_Sliders/Sliders/Video" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Video" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Sliders/Difficulty" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Difficulty" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="value_changed" from="Buttons_Sliders/Sliders/Difficulty" to="Buttons_Sliders/Sliders/Difficulty" method="_on_value_changed"]
 [connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons_Sliders/Buttons/Drug_Quality" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]

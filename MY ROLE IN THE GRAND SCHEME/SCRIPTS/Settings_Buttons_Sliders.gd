@@ -25,3 +25,4 @@ func _on_any_blue_button_pressed():
 
 func _on_VS_MC_pressed():
 	Globals.valid_sound.play()
+	

@@ -938,9 +938,8 @@ bus = &"FX"
 
 [node name="White_Noise" type="AudioStreamPlayer" parent="Top_Left_Screen"]
 stream = ExtResource("25_iwlie")
-volume_db = -7.5
 autoplay = true
-bus = &"FX"
+bus = &"VIDEO"
 
 [node name="Bottom_Left_Info_Long" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
