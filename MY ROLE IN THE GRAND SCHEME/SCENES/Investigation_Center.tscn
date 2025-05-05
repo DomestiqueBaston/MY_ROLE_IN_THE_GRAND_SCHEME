@@ -103,72 +103,86 @@ theme = ExtResource("4_b1ixs")
 text = "Case Report:"
 metadata/_edit_lock_ = true
 
-[node name="Report_Info" type="Label" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
+[node name="Report_Info" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 4.0
 offset_top = 16.0
-offset_right = 510.0
-offset_bottom = 54.0
-text = "Case ID: (see Case_Serial_Number_Generator.gd)
-Status: Open
-Delivery: (see case.json or the rules)
+offset_right = 508.0
+offset_bottom = 56.0
+bbcode_enabled = true
+text = "Case ID: [color=#ff1c18](see Case_Serial_Number_Generator.gd)[/color]
+Status: [color=#ff8864]Unassigned[/color]
+Delivery: [color=#ff1c18](see case.json or the rules)[/color]
 -----------------------"
 autowrap_mode = 2
 metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
 layout_mode = 0
-offset_top = 62.0
+offset_top = 60.0
 offset_right = 574.0
 offset_bottom = 273.0
 pivot_offset = Vector2(102, 219)
-
-[node name="Report_Description" type="Label" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
-custom_minimum_size = Vector2(50, 25)
-layout_mode = 2
-text = "Summary: Mia Turner, key witness in a criminal case, has gone missing. Last contacted 48 hours ago. She was set to testify against a local gang involved in illegal arms trade."
-autowrap_mode = 3
-
-[node name="Report_Infos_1" type="Label" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
-custom_minimum_size = Vector2(50, 40)
-layout_mode = 2
-text = "Objectives:
-    Investigate Mia's apartment for clues.
-    Interview her friend, Emma Wright, for any leads.
-    Check phone records for unusual activity."
-autowrap_mode = 3
 metadata/_edit_lock_ = true
 
-[node name="Report_Infos_2" type="Label" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+[node name="Report_Description" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
-text = "Leads:
-    Surveillance footage near Mia's apartment.
-    Neighbor reported hearing voices the night Mia vanished.
-    Anonymous tip suggests Mia may have fled town voluntarily."
-autowrap_mode = 3
+bbcode_enabled = true
+text = "At this stage, [color=#ff8864]the information available[/color] regarding these [color=#ff1c18]cases[/color] is [color=#ff8864]extremely limited[/color].
+[color=#ff8864]The data[/color] currently [color=#ff8864]on record[/color] is [color=#ff1c18]incomplete[/color], and [color=#ff1c18]no additional details[/color] are [color=#ff8864]expected to be provided[/color].
+[color=#ff8864]The files[/color] remain in a [color=#ff1c18]preliminary state[/color], pending [color=#ff8864]manual review[/color] or [color=#ff8864]assignment[/color].
+"
+horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Report_Infos_3" type="Label" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
-custom_minimum_size = Vector2(50, 40)
+[node name="Victims_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+custom_minimum_size = Vector2(50, 54)
 layout_mode = 2
-text = "Next Steps:
-    Visit Mia's apartment.
-    Speak with Emma Wright.
-    Analyze phone records."
-autowrap_mode = 3
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Victims[/color]:
+- [color=#ff1c18]NPC001[/color]
+- [color=#ff1c18]NPC002[/color]
+- [color=#ff1c18]NPC003[/color]
+- [color=#ff1c18]NPC004[/color][/center]"
+metadata/_edit_lock_ = true
+
+[node name="Witnesses" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+custom_minimum_size = Vector2(50, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Witnesses[/color]:
+- [color=#ff1c18]None[/color].
+- [color=#ff1c18]NPC001[/color]
+- [color=#ff1c18]NPC002[/color]
+- [color=#ff1c18]NPC003[/color][/center]"
+metadata/_edit_lock_ = true
+
+[node name="Suspects" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+custom_minimum_size = Vector2(50, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]Suspects[/color]:
+- [color=#ff1c18]None[/color].
+- [color=#ff1c18]NPC001[/color]
+- [color=#ff1c18]NPC002[/color]
+- [color=#ff1c18]NPC003[/color][/center]"
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Chalkboard_Content/Chalk_Mask"]
-self_modulate = Color(1, 0.992667, 0.98, 0.156863)
+self_modulate = Color(1, 0.992667, 0.98, 0.282353)
 offset_left = 222.0
 offset_top = 28.0
 offset_right = 425.0
-offset_bottom = 43.0
+offset_bottom = 45.0
 pivot_offset = Vector2(110, 68)
+color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Case" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
+[node name="Case_Empty" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
 modulate = Color(1, 1, 1, 0.752941)
 offset_left = 225.0
 offset_top = 31.0
@@ -180,7 +194,7 @@ theme_override_constants/outline_size = 6
 text = "Case:"
 metadata/_edit_lock_ = true
 
-[node name="Case_Selector" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Case"]
+[node name="Case_Selector" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Empty"]
 layout_mode = 0
 offset_left = 24.0
 offset_top = -6.0
@@ -189,7 +203,7 @@ offset_bottom = 14.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fd502")
 metadata/_edit_lock_ = true
 
-[node name="Case_List" type="OptionButton" parent="Chalkboard_Content/Chalk_Mask/Case/Case_Selector"]
+[node name="Case_List" type="OptionButton" parent="Chalkboard_Content/Chalk_Mask/Case_Empty/Case_Selector"]
 clip_contents = true
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
@@ -256,9 +270,9 @@ text = "I'm in!"
 script = ExtResource("4_lj007")
 metadata/_edit_lock_ = true
 
-[connection signal="button_down" from="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_down"]
-[connection signal="button_up" from="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_up"]
-[connection signal="item_selected" from="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_item_selected"]
+[connection signal="button_down" from="Chalkboard_Content/Chalk_Mask/Case_Empty/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case_Empty/Case_Selector/Case_List" method="_on_button_down"]
+[connection signal="button_up" from="Chalkboard_Content/Chalk_Mask/Case_Empty/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case_Empty/Case_Selector/Case_List" method="_on_button_up"]
+[connection signal="item_selected" from="Chalkboard_Content/Chalk_Mask/Case_Empty/Case_Selector/Case_List" to="Chalkboard_Content/Chalk_Mask/Case_Empty/Case_Selector/Case_List" method="_on_item_selected"]
 [connection signal="mouse_entered" from="Chalkboard_Content/Chalk_Mask/Cancel" to="Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Chalkboard_Content/Chalk_Mask/Cancel" to="Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Chalkboard_Content/Chalk_Mask/Cancel" to="Chalkboard_Content/Chalk_Mask/Cancel" method="_on_cancel_pressed"]

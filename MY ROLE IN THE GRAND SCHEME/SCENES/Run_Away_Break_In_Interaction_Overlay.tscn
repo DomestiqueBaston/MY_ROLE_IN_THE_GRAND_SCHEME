@@ -212,7 +212,8 @@ offset_left = -66.0
 offset_top = -46.0
 offset_right = 574.0
 offset_bottom = 314.0
-tooltip_text = "Validate the Interaction"
+tooltip_text = "Validate the
+Interaction"
 texture_normal = ExtResource("6_ucujk")
 texture_pressed = ExtResource("7_v2y1h")
 texture_hover = ExtResource("8_m6vde")

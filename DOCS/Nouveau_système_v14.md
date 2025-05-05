@@ -186,12 +186,12 @@ Professions possibles (le travail de nuit est à 25 % de chances) :
 	-  Certains lieux ont des horaires d’ouverture « incompatibles » avec les horaires de travail des PNJs y travaillant cela implique qu’il sont sur leur lieu de travail mais que le joueur ne peut pas y entrer (à moins de forcer l’accès !)…
 
 La réputation (du joueur auprès du PNJ)
-	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep.
+	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep. Pour les enquêtes de niveau 0, on compte comme niveau 1)
 	- Établir un ou plusieurs Lien(s) plein(s) avec un PNJ → -1Rep, le(s) défaire (tous) →  +1Rep.
 	- Le joueur a TOUJOURS Rep=-3 avec un « sbire » (voir Combat).
 
 Génération des caractéristiques des PNJs
-	- A la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et HEAnom (HEA=HEAnom) suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (les PNJs de la quête finale ont 6 points)(voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
+	- A la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et HEAnom (HEA=HEAnom) suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (les PNJs de la quête finale ont 6 points et des enquêtes niveau 0 aucun)(voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
 	- On ajoutera ensuite les bonus/malus liés à la profession.
 	- Aucune caractéristique ne pourra dépasser 10.
 
@@ -361,7 +361,7 @@ L’argent
 	- Le joueur peut avoir des dettes (voir Factures).
 
 Les factures
-	- Les factures se payent toujours le lundi matin pour la semaine passée. En cas d’impayé, les sommes ne s’additionnent pas, ce sont les factures qui s’accumulent. Ainsi, le joueur, s’il a 2 factures mais ne peut en payer qu’une pourra toujours en payer une. Il en a pour 100 Dø par semaine.
+	- Les factures se payent toujours le lundi matin pour la semaine passée. En cas d’impayé, les sommes ne s’additionnent pas, ce sont les factures qui s’accumulent. Ainsi, le joueur, s’il a 2 factures mais ne peut en payer qu’une pourra toujours en payer une. Il en a pour 75 Dø par semaine.
 	- Chaque facture impayée augmente de 10% par semaine et implique un malus de 1 par semaine de retard aux jets de dé.
 	- Pour payer sa facture, à l’écran principal, faire Menu Dailies en haut de l’écran, « Payer les factures » et « cliquer sur la facture que l’on veut payer ».
 	- Les nouvelles factures ont 50% de chance de varier de ±10%.
@@ -590,15 +590,15 @@ uniquement Pointillé	+1 %
 Pointillé et plein	+3 %
 uniquement Plein	+5 %
 
-	- Le niveau de difficulté de l’enquête s’applique en multiplicateur.
-	- Résumé en équation : Pourcentage de risque d’attaque = ((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque, évidemment!)
+	- Le niveau de difficulté de l’enquête s’applique en multiplicateur. Pour les enquêtes de niveau 0, on compte comme niveau 1
+	- Résumé en équation : Pourcentage de risque d’attaque = ((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque, évidemment!) Pour les enquêtes de niveau 0, on compte comme niveau 1 !
 
 Déclenchement d’un Combat par un PNJ « sbire »
 	- Un sbire est un agresseur envoyé par le/les coupable(s) dans une enquête. Il a donc aussi une fiche/carte PNJ (Toujours Rep=-3).
 	- La Rep auprès d’un « sbire » est TOUJOURS Rep=-3.
 	- Uniquement si le joueur a au moins 1 enquête en cours.
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
-	- Probabilité d’attaque : (Niveau de difficulté d’enquête)% par tranche horaire (10% pour l’enquête finale).
+	- Probabilité d’attaque : (Niveau de difficulté d’enquête)% par tranche horaire (10% pour l’enquête finale). Pour les enquêtes de niveau 0, on compte comme niveau 1.
 	- Si une attaque doit survenir, elle surviendra toujours avant l’execution de l’action suivante du joueur (y compris aller chez le médecin, etc.).
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale (HEAnom). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sera envoyé.
@@ -650,9 +650,11 @@ Accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 	- En cas d’échec critique, -1HEA, ±1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain.
 
 Enquête
+	- Pour les enquêtes « niveau 0 », voir la fin de cette partie consacrée aux enquêtes.
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
 		Difficulté = round(((nombre de victimes + nombre de coupables + (nombre de complices × 0.5)+(nombre de liens × 0.5) + nombre d’evidences) − 3) ÷ 9 × 4 + 1). Cela devrait donner un niveau de difficulté entre 1 et 5.
+	- Les enquêtes de niveau 0 sont particulières (et à part).
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases ou Clic droit, « Validate Case » dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
@@ -664,6 +666,7 @@ Enquête
 	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Le niveau de difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
+	- Voir à la fin pour les enquêtes de niveau 0 !
 
 Lieu du crime et Lieu secret
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence.
@@ -711,6 +714,7 @@ Système de Difficulté pour les Enquêtes
 	- Échelle de Difficulté et bonus/malus aux jets de dé
 	
 Difficulté	Bonus/Malus
+Enquête à la con (0)	Enquêtes vraiment très simples. (bonus de 3)
 1	Enquêtes très simples. (bonus de 2)
 2	Enquêtes modérément compliquées. (bonus de 1)
 3	Enquêtes normalement complexe. (/)
@@ -720,28 +724,28 @@ Enquête ultime (6)	WTF!(malus de 3)
 
 	- Le niveau de difficulté impliquera un bonus/malus à tous les jets de dé du joueur dans cette enquête (voir tableau au dessus).
 	- Dès le départ, le joueur a accès à n’importe quelle enquête de n’importe quel niveau (la valeur du niveau de difficulté ne lui sera pas communiquée). A lui d’estimer sa capacité à la gérer avec les informations connues au départ de l’enquête.
-	- La quête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 3 aux jets de dé !
+	- L’enquête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 3 aux jets de dé !
 	- Un type d’enquête mené ne réapparaît que toutes 5 enquêtes différentes menées ensuite (résolues ou non, afin de « forcer » la variété). Par ex., Une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas 5 d’un autre type.
 
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
-		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) Dø
+		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) Dø (voir à la fin pour Niveau 0)
 		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites (sans dépasser les limites de pile de Maîtrise une fois les choix du joueur faits).
 		- Emo = 0, Add=0, Wan=0
 	- Si l’enquête est résolue mais comporte une erreur (de mobile), il obtient :
-		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) –25 % Dø.
+		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) –50 % Dø. Pour les enquêtes de niveau 0, voir à la fin !
 		- 1 carte Combat, Dialogue, Investigation ou Abstraite (sans dépasser les limites de pile de Maîtrise une fois le choix du joueur fait).
 		- ±1 Emo → 0, ±1 Add → O, Wan=0
  	- Si le joueur valide une enquête et qu’il s’est trompé (autre qu’une erreur de mobile), l’enquête est terminée pour lui et implique :
 		- Emo ±1 → Min/Max ou Emo -1 si Emo = 0, Add ±1 → Add Min/Max ou Add -1 si Add = 0
 	- Renoncer à une enquête n’implique pas de malus ni de bonus.
-	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0. 
-	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours.
+	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0. L’annonce se fera avec Short_Event_Overlay.
+	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours. Pour les enquêtes de niveau 0, on compte comme niveau 1
 	- Le joueur peut mener jusqu’à 4 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
-	- Une enquête ne peut pas être rejetée avant (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.
-	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’interaction et Abstraite de la pile du joueur qui y restent).
+	- Une enquête ne peut pas être rejetée à plus de (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.  Pour les enquêtes de niveau 0, voir à la fin !
+	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’Interaction et Abstraite de la pile du joueur qui y restent).
 Éléments additionnels (non facultatifs) :
-	- La quête finale sera générée aléatoirement aussi !
+	- L’enquête finale sera générée aléatoirement aussi !
 	- Dans la scène Mixette.tscn, il y a 5 boutons pour augmenter encore la difficulté :
 		Drug Quality : Prix de la drogue +15%.
 		Plot Depth : Temps imparti pour résoudre une enquête : -15%.
@@ -759,16 +763,29 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		1 Lien (s’il y a lieu)
 	- Dans ce même cadre, voici les éléments possiblement nécessaires suivant les types d’enquêtes et la difficulté de l’enquête à résoudre :
 		1 Complice
-	- Bien entendu, certaines enquêtes en demanderont éventuellement plusieurs de chaque type.
-	- Les preuves peuvent être :
-		Témoin, facture, arme, photo, enregistrement, document écrit et/ou numérique, relevé de compte, empreinte digitale et/ou génétique, etc.
-	- La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante : un Complice est lié (en Noir) au Coupable. Seul un Coupable est lié (en Noir) à la victime.
-	- Les témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable
-	- Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
-	- Dans ce qui suit, tout sera au pluriel mais concernera également les enquêtes à élément au « singulier » :
-		- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
-		- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
-		- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
+- Bien entendu, certaines enquêtes en demanderont éventuellement plusieurs de chaque type.
+ - Les preuves peuvent être :
+ Témoin, facture, arme, photo, enregistrement, document écrit et/ou numérique, relevé de compte, empreinte digitale et/ou génétique, etc.
+ - La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante : un Complice est lié (en Noir) au Coupable. Seul un Coupable est lié (en Noir) à la victime.
+ - Les témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable
+ - Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
+ - Dans ce qui suit, tout sera au pluriel mais concernera également les enquêtes à élément au « singulier » :
+ - Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
+ - Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
+ - Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
 
-	/!\ Tout petit point important :
-		- je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!
+ /!\ Tout petit point important :
+ - je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!
+
+Enquêtes niveau 0 :
+ - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
+ - Chaque semaine, n’importe quel jour, le joueur aura 33% de chance de ce voir proposé 1 mission de niveau 0 par un PNJ quelconque.
+	- Pour ces crimes, un mobile ne sera pas nécessaire (le menu Crime Motive sera désactivé).
+	- Les emplacements des preuves sont précisés dans le json !
+	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 25 à 50Dø.
+	- Les enquêtes de niveau 0 sont soit pleinement résolues, soit échouées (pas d’erreur de mobile possible puisqu’il n’y en a pas) ! 
+	- Le joueur à un bonus de 3 à ses jets de dé dans ces enquêtes.
+	- Le temps imparti pour résoudre une telle enquête est de : 6, 7 ou 8 jours.
+	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
+	- Si on recycle les PNJs, alors refuser une enquête fera -1Rep et accepter +1Rep avec le PNJ.
+	- 

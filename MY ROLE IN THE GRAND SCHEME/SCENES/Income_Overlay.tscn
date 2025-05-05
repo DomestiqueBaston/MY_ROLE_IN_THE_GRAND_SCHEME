@@ -164,6 +164,7 @@ offset_left = 296.0
 offset_top = 303.0
 offset_right = 343.0
 offset_bottom = 313.0
+tooltip_text = "I'm releaved!"
 text = "Ok, nice..."
 script = ExtResource("3_kabnn")
 metadata/_edit_lock_ = true

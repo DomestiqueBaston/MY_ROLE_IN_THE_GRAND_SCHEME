@@ -256,6 +256,7 @@ RichTextLabel/constants/shadow_offset_y = 2
 RichTextLabel/font_sizes/normal_font_size = 8
 RichTextLabel/fonts/normal_font = ExtResource("2_cj7tf")
 RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_cq6ig")
+TooltipLabel/colors/font_color = Color(0.88, 0.818987, 0.7656, 0.921569)
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")

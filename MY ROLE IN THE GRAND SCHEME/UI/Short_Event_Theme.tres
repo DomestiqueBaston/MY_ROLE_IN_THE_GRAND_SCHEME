@@ -63,7 +63,8 @@ bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pnod"]
 bg_color = Color(0.1332, 0.18, 0.141, 0.25098)
-border_width_left = 1
+border_width_left = 2
+border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.1332, 0.18, 0.141, 0.643137)
 
@@ -185,6 +186,8 @@ RichTextLabel/constants/shadow_offset_y = 2
 RichTextLabel/font_sizes/normal_font_size = 32
 RichTextLabel/fonts/normal_font = ExtResource("5_nc1lp")
 RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_cq6ig")
+TooltipLabel/colors/font_color = Color(0.878431, 0.811765, 0.721569, 0.960784)
+TooltipLabel/colors/font_outline_color = Color(0.08, 0.07376, 0.0656, 0.882353)
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")

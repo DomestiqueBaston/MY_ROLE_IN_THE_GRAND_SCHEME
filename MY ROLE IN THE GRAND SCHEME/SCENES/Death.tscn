@@ -40,6 +40,7 @@ offset_left = 231.0
 offset_top = 292.0
 offset_right = 284.0
 offset_bottom = 300.0
+tooltip_text = "End of the road, Dude!"
 text = "Case closed"
 script = ExtResource("3_t38sc")
 metadata/_edit_lock_ = true

@@ -450,6 +450,7 @@ offset_left = 227.0
 offset_top = 56.0
 offset_right = 408.0
 offset_bottom = 306.0
+tooltip_text = "Damn!"
 texture_normal = ExtResource("4_2884x")
 texture_pressed = ExtResource("4_2884x")
 texture_hover = ExtResource("6_xspdp")

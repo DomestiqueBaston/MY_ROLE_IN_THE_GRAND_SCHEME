@@ -19,7 +19,6 @@ func _process(_delta):
 	var mouse_position = get_viewport().get_mouse_position()
 	var hovering = false
 
-	# Vérifier la collision pour chaque zone et afficher la zone correspondante
 	if _is_mouse_over(interaction_collider, mouse_position):
 		hovering = true
 		interaction_zone.visible = true
@@ -35,6 +34,10 @@ func _process(_delta):
 		fallback_zone.visible = true
 		interaction_zone.visible = false
 		mastery_zone.visible = false
+	else:
+		interaction_zone.visible = false
+		mastery_zone.visible = false
+		fallback_zone.visible = false
 
 	if hovering and not is_hovering:
 		if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
