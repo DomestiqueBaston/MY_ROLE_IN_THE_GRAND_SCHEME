@@ -267,15 +267,15 @@ metadata/_edit_lock_ = true
 
 [node name="A_VIRER_2" type="RichTextLabel" parent="."]
 offset_left = 437.0
-offset_top = -136.0
+offset_top = -145.0
 offset_right = 516.0
-offset_bottom = -2.0
+offset_bottom = -11.0
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 1
 bbcode_enabled = true
 text = "[center]Lorsque [color=ff1c18]Add[/color] et/ou [color=ff1c18]Emo[/color] atteignent [color=ff1c18]-2[/color] ou [color=ff1c18]2[/color], on jouera [color=ff1c18]Emo_Alert[/color] et/ou [color=ff1c18]Add_Alert[/color] et on aura [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color]. Pas de modification du Tooltip !
-||
-V[/center]"
+||              ||
+ V                V[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Date_Time" type="HBoxContainer" parent="."]
