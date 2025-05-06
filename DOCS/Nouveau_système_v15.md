@@ -39,7 +39,7 @@ Emo	Effets et/ou modificateur de jet de dé
 3	Emo = 2 et +1 Add si Add > 0 ou -1 Add si Add ≤ 0 
 
 État d’addiction (Add)
-	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add=0.
+	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites/échecs critiques n’entraînent pas d’évolution de HEA ni HEAnom.
 Add	Effet et/ou modificateur de jet de dé
 -3	Mort si un jet (avec un bonus de 1) contre HEA est raté (sinon -1HEA, ±1Emo → Min/max et Add = -2)
@@ -51,18 +51,18 @@ Add	Effet et/ou modificateur de jet de dé
 3	Mort si un jet contre HEA est raté (sinon -1HEA, ±1Emo → Min/max et Add = 2)
 
 Réputation (Rep)
-	- La réputation sera évaluée de -3 à 3. Elle représentera la qualité des relations entre le joueur et le PNJ ainsi que directement un Bonus/Malus d’interaction avec le PNJ aux jets de dé suivant le tableau ci-dessous. Le joueur aura par défaut Rep=0 avec chaque PNJ.
+	- La réputation sera évaluée de -2 à 2. Elle représentera la qualité des relations entre le joueur et le PNJ ainsi que directement un Bonus/Malus d’interaction avec le PNJ aux jets de dé suivant le tableau ci-dessous. Le joueur aura par défaut Rep = 0 avec chaque PNJ.
 	- La Rep du joueur est « contrôlée » par le PNJ et différera donc d’un PNJ à l’autre.
 	- La Rep du joueur auprès d’un PNJ ne sera jamais connue du joueur.
 Rep	Effet et/ou modificateur de jet de dé
--3	Malus de 2
--1 à -2	Malus de 1
+-2	Malus de 2
+-1	Malus de 1
 0	/
-1 à 2	Bonus de 1
-3	Bonus de 2
+1	Bonus de 1
+2	Bonus de 2
 
 Recherché/Wanted (Wan)
-	- Le Wanted évolue de 0 à 5. Au début du jeu : Wan=0. Il représente le niveau d’emmerdes qu’a le joueur avec les autorités.
+	- Le Wanted évolue de 0 à 5. Au début du jeu : Wan = 0. Il représente le niveau d’emmerdes qu’a le joueur avec les autorités.
 	- Il est également un malus aux jets de dé suivant le tableau ci-dessous.
 	- À 5, le joueur est arrêté, va en prison et ne peut plus rien faire pendant 3 jours à moins de payer une caution de 200Dø. À la sortie de prison, Wan = 0.
 	- Résoudre une Enquête remet le Wan à 0.
@@ -96,7 +96,7 @@ Backgrounds
 	- Curé : -1PHY, +1HEA et HEAnom
 	- Danseur : +1PHY, -1MEN, +1HEA et HEAnom
 	- Écrivain : -1PHY, +1MEN, -1HEA et HEAnom
-	- Flic : 1/3 chance de ne pas aller en prison ou devoir de caution à Wan=5
+	- Flic : 1/3 chance de ne pas aller en prison ou devoir de caution à Wan = 5
 	- Gardien de musée : -1PHY, +1MEN, +1HEA et HEAnom
 	- Éboueur : +1PHY
 	- Guide touristique : +1PHY, +1MEN, -1HEA et HEAnom
@@ -188,7 +188,7 @@ Professions possibles (le travail de nuit est à 25 % de chances) :
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep. Pour les enquêtes de niveau 0, on compte comme niveau 1)
 	- Établir un ou plusieurs Lien(s) plein(s) avec un PNJ → -1Rep, le(s) défaire (tous) →  +1Rep.
-	- Le joueur a TOUJOURS Rep=-3 avec un « sbire » (voir Combat).
+	- Le joueur a TOUJOURS Rep = -2 avec un « sbire » (voir Combat).
 
 Génération des caractéristiques des PNJs
 	- A la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et HEAnom (HEA=HEAnom) suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (les PNJs de la quête finale ont 6 points et des enquêtes niveau 0 aucun)(voir Échelle de difficulté de l’enquête) toujours à répartir aléatoirement.
@@ -229,7 +229,7 @@ Cas de PHY=0 et/ou MEN=0
 	- Seul HEA=0 est mortel.
 
 Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par
-	- Si à l’issue de évaluation d’un jet de dé le joueur se retrouve à atteindre Emo ±3 et/ou Add ±3 et/ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (affichage de l’overlay PARANOÏA! Voir Système de Santé/Par). S’il y a lieu, on finira la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour sa quête ultime s’il déclenche une crise de Paranoïa (voir Le complot et Système de Santé/Par). Dans tous les autres cas, Le joueur abandonne la phase en cours et va se concentrer sur sa quête ultime (voir Le complot et Système de Santé/Par) et plus rien d’autre ne lui sera accessible de toute manière !
+	- Si à l’issue de évaluation d’un jet de dé, le joueur se retrouve à atteindre Emo ±3 et/ou Add ±3 et/ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (affichage de l’overlay PARANOÏA! Voir Système de Santé/Par). S’il y a lieu, on finira la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour sa quête ultime s’il déclenche une crise de Paranoïa (voir Le complot et Système de Santé/Par). Dans tous les autres cas, Le joueur abandonne la phase en cours et va se concentrer sur sa quête ultime (voir Le complot et Système de Santé/Par) et plus rien d’autre ne lui sera accessible de toute manière !
 	- L’overlay Paranoïa ne se déclenchera qu’après la fin de l’interaction (Combat, Dialogue ou Investigation) en cours.
 
 Addiction
@@ -243,16 +243,21 @@ Crise liée à l’Addiction
 
 Paranoïa
 	- La paranoïa se déclenche après :
-		3 tests consécutifs (réussis) contre la Mort par sur/sous-dose de drogue.
-	ou	5 enquêtes ratées d’affilé ou 15 enquêtes ratées au total.
-	ou	Après 3 nuits de 4h (le minimum de durée) en 6 jours ou 20 au total.
+		5 tests consécutifs (réussis) contre la Mort par sur/sous-dose de drogue.
+	ou	5 enquêtes ratées d’affilé.
+	ou	Après 10 nuits de 4h (le minimum de durée) au total.
 	ou	5 jours consécutifs à PHY, MEN et HEA ≤ 2.
-	ou	5 semaines d’affilé sans payer la facture hebdomadaire.
+	ou	10 combats avec des sbires.
+	ou	la réception de 10 SMS anonymes.
+	ou	10 factures non réglées le lundi.
+
+	- Au fur et à mesure que le joueur se rapproche de la crise de Paranoïa, le volume sonore de Paranoia_Voices (dans Ambiance_Sound.tscn) va monter (pour « informer » le joueur de son état) :
+		- le volume sonore sera défini par le niveau le plus proche du déclenchement d’une crise (parmi la précédente liste au dessus).
 	- Le joueur va tout d'un coup, quand le cap défini est franchi, devenir paranoïaque (on finira l’éventuelle interaction en cours de type Combat, Dialogue ou Investigation avant malgré tout comme dit au dessus dans Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par).
-	- Tous les bonus/malus temporaires du joueur disparaissent (s’il y en avait) : le joueur ne sera plus affecté par un quelconque état émotionnel (Emo=0). Il n’aura plus de besoin vitaux (sommeil, drogue, etc. ce qui impliquera notamment Add=0) et il aura 7 jours pour résoudre l’enquête ultime puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné.
+	- Tous les bonus/malus temporaires du joueur disparaissent (s’il y en avait) : le joueur ne sera plus affecté par un quelconque état émotionnel (Emo=0). Il n’aura plus de besoin vitaux (sommeil, drogue, etc. ce qui impliquera notamment Add = 0) et il aura 15 jours pour résoudre l’enquête ultime puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné.
 	- Les effets de la Paranoïa seront les suivants (sans jamais dépasser les seuils max/min) :
-		Bonus : +2 en PHY ou MEN ou HEAnom (et HEA) aléatoirement (sans dépasser le maximum).
-		Malus : -1 dans les autres caractéristiques principales (sans passer sous le seuil minimum).
+		Bonus : +2 en PHY ou MEN ou HEAnom (et HEA, forcément) aléatoirement (sans dépasser le maximum).
+		Malus : -1 dans toutes les autres caractéristiques principales (sans passer sous le seuil minimum).
 
 Récupération (joueur)
 	- En aucun cas le joueur ne pourra récupérer plus que HEAnom.
@@ -543,7 +548,7 @@ Combat
 	- Une réussite critique permet au joueur de ne pas tuer si jamais le PNJ aurait dû mourir. La victime sera à HEA=1 et le combat avec ce PNJ sera terminé. ±1Emo → O pour le joueur.
 	- La marge de réussite du « vainqueur » représente les dégâts infligés à l’adversaire.
 	- Un échec critique fait que le joueur ou le PNJ se blesse et prend 1HEA de dégâts en plus (et ±1Emo → Min/Max pour le joueur).
-	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) une Rep = -3 auprès du PNJ.
+	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) une Rep = -2 auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici). (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible à partir de ce moment-là dans l’enquête).
 	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller et aura 25% de chance de trouver 50dø (±10%) et prendre +1Wan.
@@ -555,13 +560,11 @@ Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
 	- Un PNJ en prison ne peut pas déclencher un Combat.
 	- Rep modifie ces chances selon ce tableau :
 Rep	Pourcentage en plus
--3	+5 %
--2	+2%
--1	+1 %
+-2	+5 %
+-1	+2 %
 0	0 %
-+1	-1 %
-+2	-2 %
-+3	-5 %
++1	-2%
++2	-5 %
 
 	- Les types de liens dans la Fiche d'Enquête modifient aussi ces chances (les % s’appliquent quel que soit le nombre de lien de chaque type) :
 Type de lien (Incriminants)	Pourcentage en plus
@@ -574,11 +577,11 @@ uniquement Plein	+5 %
 	- Résumé en équation : Pourcentage de risque d’attaque = ((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque, évidemment!) Pour les enquêtes de niveau 0, on compte comme niveau 1 !
 
 Déclenchement d’un Combat par un PNJ « sbire »
-	- Un sbire est un agresseur envoyé par le/les coupable(s) dans une enquête. Il a donc aussi une fiche/carte PNJ (Toujours Rep=-3).
-	- La Rep auprès d’un « sbire » est TOUJOURS Rep=-3.
+	- Un sbire est un agresseur envoyé par le/les coupable(s) dans une enquête. Il a donc aussi une fiche/carte PNJ (Toujours Rep = -2).
+	- La Rep auprès d’un « sbire » est TOUJOURS Rep = -2.
 	- Uniquement si le joueur a au moins 1 enquête en cours.
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
-	- Probabilité d’attaque : (Niveau de difficulté d’enquête)% par tranche horaire (10% pour l’enquête finale). Pour les enquêtes de niveau 0, on compte comme niveau 1.
+	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale). Pour les enquêtes de niveau 0, pas de possibilité de telles attaques !
 	- Si une attaque doit survenir, elle surviendra toujours avant l’execution de l’action suivante du joueur (y compris aller chez le médecin, etc.).
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale (HEAnom). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sera envoyé.
@@ -712,11 +715,11 @@ Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
 		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) Dø (voir à la fin pour Niveau 0)
 		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites (sans dépasser les limites de pile de Maîtrise une fois les choix du joueur faits).
-		- Emo = 0, Add=0, Wan=0
+		- Emo = 0, Add = 0, Wan = 0
 	- Si l’enquête est résolue mais comporte une erreur (de mobile), il obtient :
 		- round((100 + ((niveau de difficulté − 1) × 125) ) ±10%) –50 % Dø. Pour les enquêtes de niveau 0, voir à la fin !
 		- 1 carte Combat, Dialogue, Investigation ou Abstraite (sans dépasser les limites de pile de Maîtrise une fois le choix du joueur fait).
-		- ±1 Emo → 0, ±1 Add → O, Wan=0
+		- ±1 Emo → 0, ±1 Add → O, Wan = 0
  	- Si le joueur valide une enquête et qu’il s’est trompé (autre qu’une erreur de mobile), l’enquête est terminée pour lui et implique :
 		- Emo ±1 → Min/Max ou Emo -1 si Emo = 0, Add ±1 → Add Min/Max ou Add -1 si Add = 0
 	- Renoncer à une enquête n’implique pas de malus ni de bonus.
@@ -759,19 +762,7 @@ Difficulté du jeu (écran d’OPTIONS)
 		Stressant : -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
 		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin de quête réussie, PNJs: +1 à PHY, MEN et HEAnom à la génération.
 
-	- En difficulté de jeu Hobbie, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
-		C’est pas gagné ! : le joueur a très peu de chances de réussir l'action. (<20 % de chances de réussite)
-		C’est compliqué… : le joueur a une faible chance de réussir, mais cela reste possible. (20 à 40 % de chances de réussite) 
-		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (40 à 60 % % de chances de réussite)
-		Ça passe, mais ça reste risqué... : le joueur a une chance conséquente de réussir, mais une part d'incertitude subsiste. (60 à 80 % de chances de réussite) 
-		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>80 % de chances de réussite)
-
-	- En difficulté de jeu Tranquille, avant chaque jet de dé, le joueur aura à l’écran une évaluation de ses chances de réussite de manière qualitative et approximative au fur et à mesure qu’il place des cartes afin qu’il décide en « connaissance de cause » :
-		C’est pas gagné ! : le joueur a peu de chances de réussir l'action. (<33 % de chances de réussite)
-		Ça pourrait le faire… : le joueur a une chance raisonnable de réussir, l'issue est incertaine. (33 à 66 % de chances de réussite)
-		Du gâteau ! : le joueur est presque certain de réussir l'action, sauf si un élément imprévu se produit. (>66 % de chances de réussite)
-
-Éléments additionnels (écran d’OPTIONS)
+Éléments additionnels de difficulté (écran d’OPTIONS)
 	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
 		Drug Quality : Prix de la drogue +20%.
 		Plot Depth : Temps imparti pour résoudre une enquête : -20%.

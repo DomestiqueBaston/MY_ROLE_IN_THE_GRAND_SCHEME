@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://v3woj62rewwe"]
+
+[ext_resource type="AudioStream" uid="uid://6dboj77v7md2" path="res://SOUND/AMBIANCE/City_Noise.ogg" id="1_7r1sf"]
+[ext_resource type="AudioStream" uid="uid://o44fpyspcawl" path="res://SOUND/AMBIANCE/Paranoia_Voices.ogg" id="2_avcqn"]
+[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/AMBIANCE/Hum.ogg" id="3_x813a"]
+
+[node name="Ambiance_Sound" type="Node"]
+
+[node name="City_Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_7r1sf")
+volume_db = -5.0
+bus = &"AMBIANCE"
+parameters/looping = true
+
+[node name="Paranoia_Voices" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_avcqn")
+volume_db = -10.0
+bus = &"AMBIANCE"
+
+[node name="Hum" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x813a")
+bus = &"AMBIANCE"

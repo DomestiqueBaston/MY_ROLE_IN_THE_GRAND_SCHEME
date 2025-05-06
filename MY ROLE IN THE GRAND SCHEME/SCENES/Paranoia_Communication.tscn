@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_e3ppe"]
 [ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="5_445rt"]
 [ext_resource type="Shader" uid="uid://b378yoqi4ij68" path="res://SHADERS/Scanlines.gdshader" id="6_e3ppe"]
-[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/TITLE/Hum.ogg" id="6_mltda"]
+[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/AMBIANCE/Hum.ogg" id="6_mltda"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucoie"]
 

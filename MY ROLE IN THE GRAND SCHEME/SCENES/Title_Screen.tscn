@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dunq7q0u73bfx" path="res://GRAPHICS/TITLE/Title_02.png" id="4_r8mk4"]
 [ext_resource type="Texture2D" uid="uid://dlgdfk68c40vw" path="res://GRAPHICS/TITLE/Map_01.png" id="5_80vj3"]
 [ext_resource type="Texture2D" uid="uid://dcgosxdulwu14" path="res://GRAPHICS/TITLE/Map_02.png" id="6_1srmu"]
-[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/TITLE/Hum.ogg" id="6_6wwaa"]
+[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/AMBIANCE/Hum.ogg" id="6_6wwaa"]
 [ext_resource type="Texture2D" uid="uid://tl6n5jdquak3" path="res://GRAPHICS/TITLE/Title_Name_Overlay.png" id="7_1srmu"]
-[ext_resource type="AudioStream" uid="uid://6dboj77v7md2" path="res://SOUND/TITLE/City_Noise.ogg" id="7_ov33t"]
+[ext_resource type="AudioStream" uid="uid://6dboj77v7md2" path="res://SOUND/AMBIANCE/City_Noise.ogg" id="7_ov33t"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="8_1srmu"]
 [ext_resource type="Theme" uid="uid://d0whwbov3y3o3" path="res://UI/Title_Screen_Theme.tres" id="8_ql7ww"]
 
@@ -641,7 +641,7 @@ libraries = {
 stream = ExtResource("6_6wwaa")
 volume_db = -30.0
 autoplay = true
-bus = &"FX"
+bus = &"AMBIANCE"
 
 [node name="City_Noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ov33t")

@@ -212,8 +212,7 @@ offset_left = -66.0
 offset_top = -46.0
 offset_right = 574.0
 offset_bottom = 314.0
-tooltip_text = "Validate the
-Interaction"
+tooltip_text = "Let's go!"
 texture_normal = ExtResource("6_ucujk")
 texture_pressed = ExtResource("7_v2y1h")
 texture_hover = ExtResource("8_m6vde")
@@ -222,6 +221,7 @@ metadata/_edit_lock_ = true
 
 [node name="Title" type="Node2D" parent="Interaction_Panel"]
 position = Vector2(-63, -13)
+metadata/_edit_lock_ = true
 
 [node name="Break_In" type="Sprite2D" parent="Interaction_Panel/Title"]
 visible = false
