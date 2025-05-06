@@ -277,9 +277,10 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
 
+	- 25% de chance de faire un rêve/cauchemar qui aura un effet sur la récupération : rêve = +1 HEA et cauchemar -1 HEA (on peut perdre des HEA en dormant) !
 	- Intervention Thérapeutique (médecin) : +2 HEA, ±1 Emo → 0 et ±1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
 	- Pour une intervention thérapeutique, dans l’écran de jeu principal (Main.tscn), faire un clic droit puis sélectionner « Intervention thérapeutique ».
-	- Pas d’intervention thérapeutique pendant une crise de Paranoïa !
+	- Pas d’intervention thérapeutique pendant une crise de Paranoïa (menu désactivé) !
 	- Pour aller chez le médecin : Menu Dailies en haut de l’écran.
 	- Aller chez le médecin prend 1h.
 
@@ -785,3 +786,23 @@ Enquêtes niveau 0 :
 	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
 	- Si on recycle les PNJs, alors refuser une enquête fera -1Rep et accepter +1Rep avec le PNJ.
 	- Pas de sbires !
+
+
+Notes de fabrication (au fur et à mesure que j’y pense) :
+	- 1 fois par jour, le joueur aura 10% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) !
+	- Dans l’enquête finale/ultime, à chaque fois que le joueur entrera dans un lieu dans lequel il va découvrir des victimes, il recevra un SMS anonyme.
+	- Seules les cartes Lieu, Objet et NPJ sont susceptibles de donner accès à des infos supplémentaires comme suit (les autres affichent déjà tout ce qu’elles peuvent communiquer au joueur).
+	-(Je crois que c’est trop « compliqué » à mettre en place… Trop de HboxContainers et VboxContainers imbriqués les uns dans les autres, Geoff, tu vas me maudire si je fais ça, d’autant qu’il y aurait pas mal d’écran à travailler !) Lorsque l’on survole le nom (hors carte) d’un Lieu, d’un Objet ou d’un PNJ, le tooltip affichera les informations principales relatives à la carte :
+		- Objet (en fonction de ce qui est connu et ou établi par le joueur) :
+			- name
+			- property
+			- found
+		- Lieu :
+			- name
+			- property
+			- open_hours (?)
+		- PNJ :
+			- name
+			- job
+			- status
+	- Lorsque l’on survole une carte les infos relatives à la carte s’affiche dans la zone en bas à gauche de l’écran (Main.tscn et Interaction.tscn) sinon, on aura accès aux infos de tooltip.

@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=3 uid="uid://cg0xclws2s26w"]
 
-[ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/CELL_PHONE/CellPhone_BG.png" id="1_gexgo"]
-[ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/Cell_Phone_Theme.tres" id="2_f8ijm"]
-[ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="3_f8ijm"]
-[ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="3_lsuee"]
-[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_08tf7"]
-[ext_resource type="AudioStream" uid="uid://kdl6h3k4sfel" path="res://SOUND/MISC/Phone_Beep.ogg" id="8_lsuee"]
-[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="9_xxx8q"]
-[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="10_5tvv7"]
+[ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/CELL_PHONE/CellPhone_BG.png" id="1_rnq15"]
+[ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/CellPhone_Theme.tres" id="2_brwrd"]
+[ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="3_vp1ik"]
+[ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="4_dq6i6"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_vfbvc"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="6_pfg73"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="7_423j2"]
+[ext_resource type="AudioStream" uid="uid://kdl6h3k4sfel" path="res://SOUND/MISC/Phone_Beep.ogg" id="8_yodoh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h48le"]
 
@@ -40,7 +40,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cell_Phone_Panel:position")
+tracks/1/path = NodePath("Cellphone_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -59,7 +59,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("9_xxx8q")
+"stream": ExtResource("6_pfg73")
 }],
 "times": PackedFloat32Array(0.028334)
 }
@@ -84,7 +84,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cell_Phone_Panel:position")
+tracks/1/path = NodePath("Cellphone_Panel:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -103,7 +103,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("10_5tvv7")
+"stream": ExtResource("7_423j2")
 }],
 "times": PackedFloat32Array(0.0808337)
 }
@@ -114,7 +114,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cell_Phone_Panel:position")
+tracks/0/path = NodePath("Cellphone_Panel:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -148,7 +148,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cell_Phone_Panel/Message_Window/Message:visible_ratio")
+tracks/0/path = NodePath("Cellphone_Panel/Message_Window/Message:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -160,7 +160,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cell_Phone_Panel/Buttons/Ok:visible")
+tracks/1/path = NodePath("Cellphone_Panel/Buttons/Ok:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -177,7 +177,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Cell_Phone_Panel/Message_Window/Message:visible_ratio")
+tracks/0/path = NodePath("Cellphone_Panel/Message_Window/Message:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -189,7 +189,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Cell_Phone_Panel/Buttons/Ok:visible")
+tracks/1/path = NodePath("Cellphone_Panel/Buttons/Ok:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -205,7 +205,7 @@ _data = {
 &"Typing": SubResource("Animation_f8ijm")
 }
 
-[node name="Cell_Phone_Overlay" type="Node2D"]
+[node name="Cellphone_Overlay" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
@@ -216,26 +216,26 @@ size_flags_horizontal = 0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 metadata/_edit_lock_ = true
 
-[node name="Cell_Phone_Panel" type="Node2D" parent="."]
+[node name="Cellphone_Panel" type="Node2D" parent="."]
 position = Vector2(-640, 0)
 metadata/_edit_lock_ = true
 
-[node name="Cell_Phone" type="Sprite2D" parent="Cell_Phone_Panel"]
+[node name="Cellphone" type="Sprite2D" parent="Cellphone_Panel"]
 position = Vector2(211, 30)
-texture = ExtResource("1_gexgo")
+texture = ExtResource("1_rnq15")
 centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
-[node name="Message_Window" type="Control" parent="Cell_Phone_Panel"]
+[node name="Message_Window" type="Control" parent="Cellphone_Panel"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme = ExtResource("2_f8ijm")
+theme = ExtResource("2_brwrd")
 metadata/_edit_lock_ = true
 
-[node name="Message" type="Label" parent="Cell_Phone_Panel/Message_Window"]
+[node name="Message" type="Label" parent="Cellphone_Panel/Message_Window"]
 layout_mode = 0
 offset_left = 271.0
 offset_top = 94.0
@@ -247,21 +247,21 @@ vertical_alignment = 1
 autowrap_mode = 3
 visible_characters = 0
 visible_ratio = 0.0
-script = ExtResource("3_f8ijm")
+script = ExtResource("3_vp1ik")
 metadata/_edit_lock_ = true
 
-[node name="Buttons" type="Control" parent="Cell_Phone_Panel"]
+[node name="Buttons" type="Control" parent="Cellphone_Panel"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 340.0
-theme = ExtResource("2_f8ijm")
-script = ExtResource("3_lsuee")
+theme = ExtResource("2_brwrd")
+script = ExtResource("4_dq6i6")
 metadata/_edit_lock_ = true
 
-[node name="Ok" type="Button" parent="Cell_Phone_Panel/Buttons"]
+[node name="Ok" type="Button" parent="Cellphone_Panel/Buttons"]
 visible = false
 layout_mode = 0
 offset_left = 294.0
@@ -270,15 +270,15 @@ offset_right = 306.0
 offset_bottom = 218.0
 tooltip_text = "That was a real
 eye-opener..."
-theme_override_colors/font_disabled_color = Color(0.431373, 0.243137, 0.0784314, 0.635294)
-theme_override_colors/font_hover_pressed_color = Color(0.678431, 0.521569, 0.380392, 0.635294)
-theme_override_colors/font_hover_color = Color(0.43, 0.241947, 0.0774, 0.635294)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
-theme_override_colors/font_color = Color(0.68, 0.520427, 0.3808, 0.635294)
-theme_override_colors/font_focus_color = Color(0.431373, 0.243137, 0.0784314, 0.635294)
-theme_override_colors/font_pressed_color = Color(0.678431, 0.521569, 0.380392, 0.635294)
+theme_override_colors/font_disabled_color = Color(0.55, 0.309467, 0.099, 0.635294)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.612267, 0.448, 0.635294)
+theme_override_colors/font_hover_color = Color(0.54902, 0.309804, 0.0980392, 0.635294)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.823529)
+theme_override_colors/font_color = Color(0.8, 0.611765, 0.447059, 0.635294)
+theme_override_colors/font_focus_color = Color(0.54902, 0.309804, 0.0980392, 0.635294)
+theme_override_colors/font_pressed_color = Color(0.8, 0.611765, 0.447059, 0.635294)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("4_08tf7")
+theme_override_fonts/font = ExtResource("5_vfbvc")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h48le")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_i4e1y")
@@ -296,7 +296,7 @@ libraries = {
 autoplay = "Appearance"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_lsuee")
+stream = ExtResource("8_yodoh")
 volume_db = -5.0
 bus = &"UI"
 
@@ -310,6 +310,6 @@ autoplay = "Typing"
 volume_db = -25.0
 bus = &"UI"
 
-[connection signal="mouse_entered" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Cell_Phone_Panel/Buttons/Ok" to="Cell_Phone_Panel/Buttons" method="_on_switch_pressed"]
+[connection signal="mouse_entered" from="Cellphone_Panel/Buttons/Ok" to="Cellphone_Panel/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Cellphone_Panel/Buttons/Ok" to="Cellphone_Panel/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Cellphone_Panel/Buttons/Ok" to="Cellphone_Panel/Buttons" method="_on_switch_pressed"]

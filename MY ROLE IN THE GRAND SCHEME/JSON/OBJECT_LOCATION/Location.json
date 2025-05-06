@@ -3,7 +3,7 @@
     "id": "LOC001",
     "loc_id": "LOC001_IDxxx",
 	"info_name": "- APARTMENT -",
-  "name": "Apartment",
+    "name": "Apartment",
     "type": "Location",
 	"uniqueness": [],
     "description": "People's favorite place to live, sleep... and have sex",
@@ -22,7 +22,7 @@
     "id": "LOC002",
     "loc_id": "LOC002_IDxxx",
     "info_name": "- WORKSHOP -",
-  "name": "Workshop",
+    "name": "Workshop",
     "type": "Location",
     "uniqueness": [2],
     "description": "A place for crafting, repairing, and probably altering things",
@@ -45,7 +45,7 @@
     "id": "LOC003",
     "loc_id": "LOC003_IDxxx",
     "info_name": "- BAR -",
-  "name": "Bar",
+    "name": "Bar",
     "type": "Location",
     "uniqueness": [2],  // rien (appartment), 1 ou 2
     "description": "Here, we drink freely, laugh, or make shady deals",
@@ -68,7 +68,7 @@
     "id": "LOC004",
     "loc_id": "LOC004_IDxxx",
     "info_name": "- LIBRARY -",
-  "name": "Library",
+    "name": "Library",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1 ou 2
     "description": "Usually, people try to work on who-knows-what pointless theses here",
@@ -91,7 +91,7 @@
     "id": "LOC005",
     "loc_id": "LOC005_IDxxx",
     "info_name": "- OFFICE -",
-  "name": "Office",
+    "name": "Office",
     "type": "Location",
     "uniqueness": [],  // rien (appartment), 1 ou 2
     "description": "One of those places where a lot of people wish they weren't working",
@@ -110,7 +110,7 @@
     "id": "LOC006",
     "loc_id": "LOC006_IDxxx",
     "info_name": "- MEDICAL OFFICE -",
-  "name": "Medical Office",
+    "name": "Medical Office",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1 ou 2
     "description": "As long as it's a general practitioner, there's no real reason to be scared to enter",
@@ -133,7 +133,7 @@
     "id": "LOC007",
     "loc_id": "LOC007_IDxxx",
     "info_name": "- BARRACKS -",
-  "name": "Barracks",
+    "name": "Barracks",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1 ou 2
     "description": "Not the best place for talking literature. Everything else is fine enough",
@@ -156,7 +156,7 @@
     "id": "LOC008",
     "loc_id": "LOC008_IDxxx",
     "info_name": "- CEMETERY -",
-  "name": "Cemetery",
+    "name": "Cemetery",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1 ou 2
     "description": "Not exactly a lively place for a chat. But hey, it's quiet",
@@ -179,7 +179,7 @@
     "id": "LOC009",
     "loc_id": "LOC009_IDxxx",
     "info_name": "- CINEMA -",
-  "name": "Cinema",
+    "name": "Cinema",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1 ou 2
     "description": "Places like this are fading out - now it's just crap on the screen",
@@ -202,7 +202,7 @@
     "id": "LOC010",
     "loc_id": "LOC010_IDxxx",
     "info_name": "- NIGHTCLUB -",
-  "name": "Nightclub",
+    "name": "Nightclub",
     "type": "Location",
     "uniqueness": [1],  // rien (appartment), 1 ou 2
     "description": "A place where 'music' is barely recognizable anymore",
