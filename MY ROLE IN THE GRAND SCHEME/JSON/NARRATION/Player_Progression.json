@@ -1,12 +1,12 @@
 {
   "progress_parts": [
-    {
-      "part": 1,
-      "choices": ["Ok, I think ", "Huh, looks like ", "Well, seems like "]
-    },
-    {
-      "part": 2,
-      "choices": ["I’ve learned something here...", "I get it now...", "I’m starting to see it...", "It’s finally clicking..."]
-    }
+	{
+	  "part": 1,
+	  "choices": ["Ok, I think ", "Huh, looks like ", "Well, seems like "]
+	},
+	{
+	  "part": 2,
+	  "choices": ["I’ve learned something here...", "I get it now...", "I’m starting to see it...", "It’s finally clicking..."]
+	}
   ]
 }

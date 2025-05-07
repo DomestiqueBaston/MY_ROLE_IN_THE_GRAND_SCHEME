@@ -33,7 +33,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mltda"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spda6"]
-bg_color = Color(0.027451, 0.14902, 0.0705882, 0.545098)
+bg_color = Color(0.1984, 0.32, 0.257173, 0.545098)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -43,6 +43,7 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+expand_margin_bottom = 1.0
 anti_aliasing = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_445rt"]
@@ -786,14 +787,15 @@ offset_left = 275.0
 offset_top = 338.0
 offset_right = 365.0
 offset_bottom = 353.0
-tooltip_text = "Close the window!"
+tooltip_text = "I'm done here!"
 theme = ExtResource("3_mltda")
 theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 0.882353)
-theme_override_colors/font_hover_color = Color(0.77, 0.12243, 0.1001, 0.643137)
+theme_override_colors/font_hover_color = Color(0.4648, 0.83, 0.531753, 0.643137)
+theme_override_colors/font_outline_color = Color(0.04, 0.03616, 0.0304, 0.784314)
 theme_override_colors/font_color = Color(0.9765, 1, 0.97, 0.882353)
 theme_override_colors/font_focus_color = Color(0.681893, 0.91, 0.6188, 0.882353)
-theme_override_colors/font_pressed_color = Color(0.77, 0.444418, 0.3157, 0.643137)
-theme_override_constants/outline_size = 3
+theme_override_colors/font_pressed_color = Color(0.976471, 1, 0.968627, 0.882353)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_e3ppe")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/focus = SubResource("StyleBoxFlat_spda6")
@@ -801,7 +803,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_spda6")
-text = "Ok. I'm done here!"
+text = "I've seen enough."
 script = ExtResource("5_445rt")
 metadata/_edit_lock_ = true
 

@@ -8,7 +8,7 @@
 
 [sub_resource type="Animation" id="Animation_2yfei"]
 resource_name = "Alert_No_Sound"
-length = 2.20001
+length = 1.46667
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -18,15 +18,15 @@ tracks/0/path = NodePath("Character_Stats/Emo:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_0mfvj"]
 resource_name = "Alert_Sound"
-length = 6.73334
+length = 4.40001
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,10 +35,10 @@ tracks/0/path = NodePath("Character_Stats/Emo:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 2.2, 2.26667, 2.66667, 4.46667, 4.53333, 4.93333, 6.73333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -47,7 +47,7 @@ tracks/1/path = NodePath("Soft_Alarm:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.26667, 4.53333),
+"times": PackedFloat32Array(0, 1.46667, 2.93333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, true]
@@ -89,7 +89,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_xloq7"]
 resource_name = "Alert_No_Sound"
-length = 2.20001
+length = 1.46667
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -99,15 +99,15 @@ tracks/0/path = NodePath("Character_Stats/Add:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_7xf6s"]
 resource_name = "Alert_Sound"
-length = 6.73334
+length = 4.40001
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -116,10 +116,10 @@ tracks/0/path = NodePath("Character_Stats/Add:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 2.2, 2.26667, 2.66667, 4.46667, 4.53333, 4.93333, 6.73333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -128,7 +128,7 @@ tracks/1/path = NodePath("Soft_Alarm:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.26667, 4.53333),
+"times": PackedFloat32Array(0, 1.46667, 2.93333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, true]
@@ -170,7 +170,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_rc027"]
 resource_name = "Alert_No_Sound"
-length = 2.20001
+length = 1.46667
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -180,15 +180,15 @@ tracks/0/path = NodePath("Date_Time/Time:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_7kwh6"]
 resource_name = "Alert_Sound"
-length = 6.73334
+length = 4.40001
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -197,10 +197,10 @@ tracks/0/path = NodePath("Date_Time/Time:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 2.2, 2.26667, 2.66667, 4.46667, 4.53333, 4.93333, 6.73333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -209,7 +209,7 @@ tracks/1/path = NodePath("Soft_Alarm:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.26667, 4.53333),
+"times": PackedFloat32Array(0, 1.46667, 2.93333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, true]
@@ -291,7 +291,7 @@ metadata/_edit_lock_ = true
 
 [node name="Day" type="Label" parent="Date_Time"]
 layout_mode = 2
-tooltip_text = "Today's the day!"
+tooltip_text = "Monday"
 mouse_filter = 0
 text = "Mon."
 metadata/_edit_lock_ = true
@@ -511,6 +511,7 @@ text = "Player's name..."
 horizontal_alignment = 1
 text_overrun_behavior = 3
 ellipsis_char = "."
+metadata/_edit_lock_ = true
 
 [node name="Double_Bar" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -638,16 +639,16 @@ item_3/id = 3
 
 [node name="Drug_Fix_PopupMenu" type="PopupMenu" parent="."]
 auto_translate_mode = 1
-size = Vector2i(50, 22)
-min_size = Vector2i(50, 22)
+size = Vector2i(62, 22)
+min_size = Vector2i(62, 22)
 max_size = Vector2i(50, 22)
 theme = ExtResource("1_2tgjx")
 submenu_popup_delay = 0.01
 allow_search = false
 item_count = 2
-item_0/text = "1 dose"
+item_0/text = "Use 1 dose"
 item_0/id = 0
-item_1/text = "2 doses"
+item_1/text = "Use 2 doses"
 item_1/id = 1
 
 [node name="Emo_Alert" type="AnimationPlayer" parent="."]

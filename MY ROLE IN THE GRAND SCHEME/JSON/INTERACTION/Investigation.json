@@ -1,436 +1,436 @@
 [
   {
-    "id": "INV001",
-    "name": "Detailed Analysis",
-    "type": "Investigation",
-    "description": "Examine the details with great precision",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- DETAILED ANALYSIS -
+	"id": "INV001",
+	"name": "Detailed Analysis",
+	"type": "Investigation",
+	"description": "Examine the details with great precision",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- DETAILED ANALYSIS -
 
 Examine the details with great precision, using your mental focus to uncover the hidden truths. A successful analysis sharpens your mind and provides clarity, and it can also create a sense equilibrium, distancing you from the emotional aspects of the situation.
 
 ''The devil is in the details.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"MEN": 1, "Emo": "+1_toward_zero"}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"MEN": 1, "Emo": "+1_toward_zero"}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV002",
-    "name": "Brief Analysis",
-    "type": "Investigation",
-    "description": "Perform a quick examination, not very thorough",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- BRIEF ANALYSIS -
+	"id": "INV002",
+	"name": "Brief Analysis",
+	"type": "Investigation",
+	"description": "Perform a quick examination, not very thorough",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- BRIEF ANALYSIS -
 
 Perform a quick examination of the situation, making the best use of available time. While this analysis is less thorough, it still provides a snapshot of key details, but at the cost of losing some mental clarity and focus over time.
 
 ''I don't have much time, but let's see what I can catch in a hurry...''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"MEN": -1, "hours": -1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"MEN": -1, "hours": -1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV003",
-    "name": "Complete Examination",
-    "type": "Investigation",
-    "description": "A full and thorough examination of the area",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- COMPLETE -
+	"id": "INV003",
+	"name": "Complete Examination",
+	"type": "Investigation",
+	"description": "A full and thorough examination of the area",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- COMPLETE -
 - EXAMINATION -
 
 Conduct a thorough and methodical examination of the area, uncovering valuable insights and hidden details. While it sharpens your understanding and offers a sense of accomplishment, it demands significant focus and time.
 
 ''You can't solve a mystery with half the facts.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"MEN": 1, "PHY": 1, "Emo": "+2_toward_closest_min_max", "Object": 1, "hours": 2}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"MEN": 1, "PHY": 1, "Emo": "+2_toward_closest_min_max", "Object": 1, "hours": 2}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV004",
-    "name": "Meticulous Examination",
-    "type": "Investigation",
-    "description": "A very detailed examination, with a focus on every little aspect",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- METICULOUS -
+	"id": "INV004",
+	"name": "Meticulous Examination",
+	"type": "Investigation",
+	"description": "A very detailed examination, with a focus on every little aspect",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- METICULOUS -
 - EXAMINATION -
 
 Engage in a highly detailed investigation, focusing on every small aspect and nuance. This careful analysis enhances your physical endurance but drains your emotional energy, consuming a portion of your time.
 
 ''Every little detail counts... I need to make sure I don't miss anything.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": 1, "Emo": -1, "hours": 1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": 1, "Emo": -1, "hours": 1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV005",
-    "name": "Thorough Search",
-    "type": "Investigation",
-    "description": "Search the area carefully, ensuring no detail is overlooked",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- THOROUGH SEARCH -
+	"id": "INV005",
+	"name": "Thorough Search",
+	"type": "Investigation",
+	"description": "Search the area carefully, ensuring no detail is overlooked",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- THOROUGH SEARCH -
 
 Carefully search the area, making sure no detail goes unnoticed. This meticulous approach enhances your physical endurance and allows you to find valuable items, though it consumes a significant amount of time.
 
 ''You never know what you might find... Better check everything, just to be sure.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": 1, "Object": 1, "hours": 2}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": 1, "Object": 1, "hours": 2}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV006",
-    "name": "Systematic Search",
-    "type": "Investigation",
-    "description": "A methodical and structured search",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- SYSTEMATIC SEARCH -
+	"id": "INV006",
+	"name": "Systematic Search",
+	"type": "Investigation",
+	"description": "A methodical and structured search",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- SYSTEMATIC SEARCH -
 
 A methodical and structured approach to searching, ensuring that no corner is left unchecked. This thoroughness offers clarity and emotional balance but requires a steady pace.
 
 ''Step by step, I'll find what's hidden... patience is key.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"Emo": "+1_toward_closest_min_max"}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"Emo": "+1_toward_closest_min_max"}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV007",
-    "name": "Detailed Inspection",
-    "type": "Investigation",
-    "description": "A comprehensive inspection with a focus on key aspects",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- DETAILED INSPECTION -
+	"id": "INV007",
+	"name": "Detailed Inspection",
+	"type": "Investigation",
+	"description": "A comprehensive inspection with a focus on key aspects",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- DETAILED INSPECTION -
 
 A comprehensive inspection with a focus on key aspects. This focused approach sharpens your mental clarity and enhances emotional balance, but it requires you to narrow your attention to the most critical details.
 
 ''Only the essentials matter right now. Let's focus on what counts.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"MEN": 1, "Emo": "+1_toward_closest_min_max"}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"MEN": 1, "Emo": "+1_toward_closest_min_max"}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV008",
-    "name": "Quick Inspection",
-    "type": "Investigation",
-    "description": "A fast inspection with minimal effort",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- QUICK INSPECTION -
+	"id": "INV008",
+	"name": "Quick Inspection",
+	"type": "Investigation",
+	"description": "A fast inspection with minimal effort",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- QUICK INSPECTION -
 
 A fast and minimal inspection, designed to give you a brief overview of the situation. This hasty approach drains your physical and mental energy, but it offers a quick look at what's important, with a slight emotional boost.
 
 ''I don't have time for details... let's get this over with.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": -1, "MEN": -1, "Emo": "+1_toward_zero", "hours": -1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": -1, "MEN": -1, "Emo": "+1_toward_zero", "hours": -1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV009",
-    "name": "Quick Glance",
-    "type": "Investigation",
-    "description": "A fast but careless look around the area",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- QUICK GLANCE -
+	"id": "INV009",
+	"name": "Quick Glance",
+	"type": "Investigation",
+	"description": "A fast but careless look around the area",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- QUICK GLANCE -
 
 A rapid and careless survey of the area, aiming for speed over thoroughness. This fleeting glance uses up both your physical and mental energy, leaving little time for deeper analysis, and may even cause you to overlook important details.
 
 ''You only get one chance to make a first impression.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": -1, "MEN": -1, "Object": -1, "hours": -2}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": -1, "MEN": -1, "Object": -1, "hours": -2}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV010",
-    "name": "Methodical Search",
-    "type": "Investigation",
-    "description": "Search methodically, though not as thorough as a complete search",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- METHODICAL SEARCH -
+	"id": "INV010",
+	"name": "Methodical Search",
+	"type": "Investigation",
+	"description": "Search methodically, though not as thorough as a complete search",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- METHODICAL SEARCH -
 
 Take a steady and deliberate approach to searching, ensuring that each area is checked carefully, though not as thoroughly as a complete search. This process offers a balanced emotional state and clarity, but it may not uncover every hidden detail.
 
 ''Slow and steady wins the race.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"Emo": "+1_toward_zero"}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"Emo": "+1_toward_zero"}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INV011",
-    "name": "Fast Search",
-    "type": "Investigation",
-    "description": "A rushed search with little attention to detail",
-    "possible_combinations": ["Investigation SPECIAL", "Abstract"],
-    "info": "- FAST SEARCH -
+	"id": "INV011",
+	"name": "Fast Search",
+	"type": "Investigation",
+	"description": "A rushed search with little attention to detail",
+	"possible_combinations": ["Investigation SPECIAL", "Abstract"],
+	"info": "- FAST SEARCH -
 
 A rushed search, focusing on speed rather than thoroughness. While you save time, the lack of attention to detail means you might miss important clues, and the physical toll takes a toll on your stamina.
 
 ''Gotta move fast, no time to waste!''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": -1, "hours": -2}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": -1, "hours": -2}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS001",
-    "name": "With Luminol!",
-    "type": "Investigation SPECIAL",
-    "description": "Use Luminol to reveal hidden traces",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- WITH LUMINOL! -
+	"id": "INS001",
+	"name": "With Luminol!",
+	"type": "Investigation SPECIAL",
+	"description": "Use Luminol to reveal hidden traces",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- WITH LUMINOL! -
 
 Use Luminol to uncover hidden traces that would otherwise remain invisible to the naked eye. This powerful tool enhances your mental focus and provides clarity, while giving you a stronger emotional response to what you uncover. However, it also consumes time.
 
 ''Let's see what the darkness is hiding... Luminol reveals all.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"MEN": 1, "Emo": 1, "hours": 1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"MEN": 1, "Emo": 1, "hours": 1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS002",
-    "name": "Endoscopic Camera!",
-    "type": "Investigation SPECIAL",
-    "description": "Use an endoscopic camera for a detailed inspection",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- ENDOSCOPIC CAMERA! -
+	"id": "INS002",
+	"name": "Endoscopic Camera!",
+	"type": "Investigation SPECIAL",
+	"description": "Use an endoscopic camera for a detailed inspection",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- ENDOSCOPIC CAMERA! -
 
 Use an endoscopic camera to perform a detailed inspection in hard-to-reach areas. This advanced tool enhances your ability to gather insights, though it requires focus and time, and might leave you physically drained.
 
 ''Sometimes, you need to look where others can't reach...''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": -1, "MEN": 2, "hours": 1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": -1, "MEN": 2, "hours": 1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS003",
-    "name": "Stroke of Luck!",
-    "type": "Investigation SPECIAL",
-    "description": "A lucky break that boosts your chances",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- STROKE OF LUCK! -
+	"id": "INS003",
+	"name": "Stroke of Luck!",
+	"type": "Investigation SPECIAL",
+	"description": "A lucky break that boosts your chances",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- STROKE OF LUCK! -
 
 A fortunate turn of events that boosts your chances of success. This stroke of luck sharpens your emotional state, giving you a burst of optimism, though it might come with some unpredictable effects on your actions.
 
 ''Sometimes, it's all about being in the right place at the right time...''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"dice": -1, "Emo": 2}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"dice": -1, "Emo": 2}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS004",
-    "name": "Systematic Dismantling!",
-    "type": "Investigation SPECIAL",
-    "description": "Carefully dismantle an object or device",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- SYSTEMATIC DISMANTLING! -
+	"id": "INS004",
+	"name": "Systematic Dismantling!",
+	"type": "Investigation SPECIAL",
+	"description": "Carefully dismantle an object or device",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- SYSTEMATIC DISMANTLING! -
 
 Carefully dismantle an object or device, taking your time to ensure every part is examined and removed with precision. This methodical approach increases your physical endurance as you work but consumes a fair amount of time.
 
 ''Patience is key... every piece tells a story.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": 1, "hours": 2}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": 1, "hours": 2}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS005",
-    "name": "Unnoticed!",
-    "type": "Investigation SPECIAL",
-    "description": "Complete your task without leaving a trace",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- UNNOTICED! -
+	"id": "INS005",
+	"name": "Unnoticed!",
+	"type": "Investigation SPECIAL",
+	"description": "Complete your task without leaving a trace",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- UNNOTICED! -
 
 Complete your task without leaving a trace, ensuring no evidence of your actions is found. This stealthy approach helps restore your emotional balance and gives you a boost in your next attempt, though it requires subtlety and careful execution.
 
 ''Like a shadow, unseen and unheard...''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"Emo": "cancel_another_Investigation_Emo_malus", "dice": 1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"Emo": "cancel_another_Investigation_Emo_malus", "dice": 1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS006",
-    "name": "Lockpicking Tools!",
-    "type": "Investigation SPECIAL",
-    "description": "Use lockpicking tools to gain access",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- LOCKPICKING TOOLS! -
+	"id": "INS006",
+	"name": "Lockpicking Tools!",
+	"type": "Investigation SPECIAL",
+	"description": "Use lockpicking tools to gain access",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- LOCKPICKING TOOLS! -
 
 Utilize lockpicking tools to gain access to locked areas or objects. This skill boosts your physical endurance but requires mental focus and time, making it a delicate balance between speed and precision.
 
 ''With the right tools, there's always a way in... but it costs me a bit of time and energy.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": 2, "MEN": -1, "hours": 1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": 2, "MEN": -1, "hours": 1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS007",
-    "name": "Improvised Tools!",
-    "type": "Investigation SPECIAL",
-    "description": "Use improvised tools to access or disassemble",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- IMPROVISED TOOLS! -
+	"id": "INS007",
+	"name": "Improvised Tools!",
+	"type": "Investigation SPECIAL",
+	"description": "Use improvised tools to access or disassemble",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- IMPROVISED TOOLS! -
 
 Use whatever you can find to fashion makeshift tools, allowing you to access or disassemble objects. While this method boosts your physical abilities, it drains your mental focus and consumes time.
 
 ''Not ideal, but when there's no choice, you make do with what's around.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": 1, "MEN": -2, "hours": 1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": 1, "MEN": -2, "hours": 1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS008",
-    "name": "Tracing!",
-    "type": "Investigation SPECIAL",
-    "description": "Looking for traces on objects or surfaces",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- TRACING! -
+	"id": "INS008",
+	"name": "Tracing!",
+	"type": "Investigation SPECIAL",
+	"description": "Looking for traces on objects or surfaces",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- TRACING! -
 
 Conduct a meticulous search for traces left behind in the environment, revealing subtle clues and offering insights into what happened. It requires attention to detail but can be done quickly, uncovering hidden narratives along the way.
 
 ''Every trace tells a story.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": -1, "MEN": 1, "hours": 1}  // Something to see, here!
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": -1, "MEN": 1, "hours": 1}  // Something to see, here!
+	  }
+	]
   },
   {
-    "id": "INS009",
-    "name": "Use a Detector!",
-    "type": "Investigation SPECIAL",
-    "description": "Use a detector to find hidden objects or traces",
-    "possible_combinations": ["Investigation", "Abstract"],
-    "info": "- USE A DETECTOR! -
+	"id": "INS009",
+	"name": "Use a Detector!",
+	"type": "Investigation SPECIAL",
+	"description": "Use a detector to find hidden objects or traces",
+	"possible_combinations": ["Investigation", "Abstract"],
+	"info": "- USE A DETECTOR! -
 
 Using a detector allows you to uncover hidden items or traces that are otherwise invisible. It provides a clearer perspective on the environment but at the cost of physical energy and mental focus.
 
 ''Sometimes the most obvious clues are hidden from sight, but with the right tool, they're impossible to miss.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": -2, "MEN": 2}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": -2, "MEN": 2}
+	  }
+	]
   },
   {
-    "id": "INB001",
-    "name": "Break the Door",
-    "type": "Investigation BREAK IN",
-    "description": "Force your way through the door",
-    "possible_combinations": ["Abstract"],
-    "info": "- BREAK THE DOOR -
+	"id": "INB001",
+	"name": "Break the Door",
+	"type": "Investigation BREAK IN",
+	"description": "Force your way through the door",
+	"possible_combinations": ["Abstract"],
+	"info": "- BREAK THE DOOR -
 
 Force your way through the door, gaining immediate access but at the cost of mental fatigue. This method is fast but loud, leaving you vulnerable and possibly attracting unwanted attention.
 
 ''Sometimes, force is the only way through.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": 2, "MEN": -2}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": 2, "MEN": -2}
+	  }
+	]
   },
   {
-    "id": "INB002",
-    "name": "Force the Lock",
-    "type": "Investigation BREAK IN",
-    "description": "Pick the lock to gain access",
-    "possible_combinations": ["Abstract"],
-    "info": "- FORCE THE LOCK -
+	"id": "INB002",
+	"name": "Force the Lock",
+	"type": "Investigation BREAK IN",
+	"description": "Pick the lock to gain access",
+	"possible_combinations": ["Abstract"],
+	"info": "- FORCE THE LOCK -
 
 Pick the lock to gain access quietly and efficiently. While this approach avoids making noise, it demands mental focus and precision, providing a small boost after success.
 
 ''A delicate touch can open the hardest of doors.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"MEN": 1, "Emo": 1}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"MEN": 1, "Emo": 1}
+	  }
+	]
   },
   {
-    "id": "INB003",
-    "name": "Climb the Gutter",
-    "type": "Investigation BREAK IN",
-    "description": "Climb up the building using the gutter",
-    "possible_combinations": ["Abstract"],
-    "info": "- CLIMB THE GUTTER -
+	"id": "INB003",
+	"name": "Climb the Gutter",
+	"type": "Investigation BREAK IN",
+	"description": "Climb up the building using the gutter",
+	"possible_combinations": ["Abstract"],
+	"info": "- CLIMB THE GUTTER -
 
 Use the building's gutter to climb up and gain access. This method requires physical strength and agility, but rewards you with an easy access.
 
 ''When the door's locked, sometimes the only way in is up.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"PHY": 1, "Emo": 1}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"PHY": 1, "Emo": 1}
+	  }
+	]
   },
   {
-    "id": "INB004",
-    "name": "Disable the Security",
-    "type": "Investigation BREAK IN",
-    "description": "Neutralize the security system",
-    "possible_combinations": ["Abstract"],
-    "info": "- DISABLE THE SECURITY -
+	"id": "INB004",
+	"name": "Disable the Security",
+	"type": "Investigation BREAK IN",
+	"description": "Neutralize the security system",
+	"possible_combinations": ["Abstract"],
+	"info": "- DISABLE THE SECURITY -
 
 Neutralize the security system to gain unrestricted access. This task sharpens your mental focus but may come with a sense of tension or stress, as it requires precision and concentration.
 
 ''Silence the alarms, and the path will be clear.''",
-    "bonus_malus": [
-      {
-        "condition": {"result": "success"},
-        "effects": {"MEN": 1}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"condition": {"result": "success"},
+		"effects": {"MEN": 1}
+	  }
+	]
   }
 ]
