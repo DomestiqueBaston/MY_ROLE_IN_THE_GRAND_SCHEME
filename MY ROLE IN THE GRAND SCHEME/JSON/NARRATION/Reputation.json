@@ -1,15 +1,15 @@
 {
   "relationship_parts": [
-    {
-      "part": 1,
-      "choices": ["A brief pause settles in and ", "The silence grows heavier and ", "A moment of stillness lingers and ", "You sense a hesitation in the air and ", "An awkward stillness hangs between you and "]
-    },
-    {
-      "part": 2,
-      "choices": {
-        "positive": ["curiosity seems to linger.", "the atmosphere feels finally lighter.", "eagerness quietly builds.", "a sense of calm settles in."],
-        "negative": ["tension remains palpable.", "the atmosphere feels heavy.", "a faint discomfort lingers.", "unease seems to hang in the air."]
-      }
-    }
+	{
+	  "part": 1,
+	  "choices": ["A brief pause settles in and ", "The silence grows heavier and ", "A moment of stillness lingers and ", "You sense a hesitation in the air and ", "An awkward stillness hangs between you and "]
+	},
+	{
+	  "part": 2,
+	  "choices": {
+		"positive": ["curiosity seems to linger.", "the atmosphere feels finally lighter.", "eagerness quietly builds.", "a sense of calm settles in."],
+		"negative": ["tension remains palpable.", "the atmosphere feels heavy.", "a faint discomfort lingers.", "unease seems to hang in the air."]
+	  }
+	}
   ]
 }
