@@ -46,7 +46,7 @@
 	"id": "JOB007",
 	"profession": "Drug Addict",
 	"bonus_malus": {"MEN": -1, "HEAnom": -1, "HEA": -1},
-	"special": {"-50%", "bonus 1"},
+	"special": {"discount": "-50%", "bonus": "bonus 1"},
 	"comment_1": "-50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose",
 	"description": "I've been to places most people wouldn't dare imagine, lost in a world where the boundaries of right and wrong blurred into nothing. The drugs, the chaos, the grime (it was all I knew for a time). I found myself in the depths, but eventually, something snapped. I pulled myself out (don't ask me how; I barely remember), but the scars, the remnants of that life, never truly disappeared.\n\nI thought I left it all behind. I found a new path, a new purpose. As a private detective now, I try to help others who are lost, guiding them out of their darkness. But the truth is, I've never fully escaped. Every case I take, every shadow I chase, pulls me back into that world I swore I'd left. The streets, the lies, the filth, it all comes rushing back. And to get over it, believe me, it takes strength I don't always have.\n\nI clean up the mess of others, but I can't help but feel I'm still wading through my own. Every mystery I solve reminds me that the grime I once lived in never really left. I still carry that burden. It's just a different kind of dirt I'm digging through now."
 	},
