@@ -1,363 +1,294 @@
 [
   {
-	"id": "COM001",
-	"name": "Targeted Attack",
-	"type": "Combat",
-	"description": "Performs a precise and focused attack",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- TARGETED ATTACK -
-
-A focused and calculated strike that targets a specific weak spot. While powerful, it demands significant mental concentration, leaving the user emotionally drained.
-
-''Don't move, you bastard, don't move! I'm going for your face!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": 2, "Emo": -2}
-	  }
-	]
+    "id": "COM001",
+    "name": "Targeted Attack",
+    "type": "Combat",
+    "description": "Performs a precise and focused attack",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+	"info": "- TARGETED ATTACK -\n\nA focused and calculated strike that targets a specific weak spot. While powerful, it demands significant mental concentration, leaving the user emotionally drained.\n\n''Don't move, you bastard, don't move! I'm going for your face!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": 2, "Emo": -2}
+      }
+    ]
   },
   {
-	"id": "COM002",
-	"name": "Charge",
-	"type": "Combat",
-	"description": "A brutal attack with a cost in mental and emotional energy",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- CHARGE -
-
-A brutal and forceful attack, fueled by raw strength and aggression. This strike demands mental focus and puts a heavy toll on the user. It's an all-in move, with little regard for personal cost, but its sheer power can overwhelm an opponent in the right moment.
-
-''I won't hold back! Chaaaaarge!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": 1, "MEN": -1, "Emo": 1}
-	  }
-	]
+    "id": "COM002",
+    "name": "Charge",
+    "type": "Combat",
+    "description": "A brutal attack with a cost in mental and emotional energy",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- CHARGE -\n\nA brutal and forceful attack, fueled by raw strength and aggression. This strike demands mental focus and puts a heavy toll on the user. It's an all-in move, with little regard for personal cost, but its sheer power can overwhelm an opponent in the right moment.\n\n''I won't hold back! Chaaaaarge!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": 1, "MEN": -1, "Emo": 1}
+      }
+    ]
   },
   {
-	"id": "COM003",
-	"name": "Street Fight",
-	"type": "Combat",
-	"description": "An impromptu fight with fluctuating emotional stakes",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- STREET FIGHT -
-
-An unpredictable and chaotic battle, where emotions run high and can shift rapidly. The stakes are always changing, and each action is influenced by the fluctuating emotional state of the fighters. It's a fight where control is often lost.
-
-''Come on, bring it, Ryu! Let's see who can stay cool!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"Emo": "+1_toward_closest_min_max"}  // Something to see, here!
-	  }
-	]
+    "id": "COM003",
+    "name": "Street Fight",
+    "type": "Combat",
+    "description": "An impromptu fight with fluctuating emotional stakes",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- STREET FIGHT -\n\nAn unpredictable and chaotic battle, where emotions run high and can shift rapidly. The stakes are always changing, and each action is influenced by the fluctuating emotional state of the fighters. It's a fight where control is often lost.\n\n''Come on, bring it, Ryu! Let's see who can stay cool!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Emo": "+1_toward_closest_min_max"},
+		"comment_1": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COM004",
-	"name": "Counterattack",
-	"type": "Combat",
-	"description": "A quick response after an enemy's attack",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- COUNTERATTACK -
-
-A swift and decisive response to an opponent's strike. Reacting at the perfect moment requires mental sharpness and emotional control. Successfully countering an attack boosts confidence and morale, turning the tide of battle.
-
-''Ha! I saw that coming a mile away, pal!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"MEN": 1, "Emo": 1}
-	  }
-	]
+    "id": "COM004",
+    "name": "Counterattack",
+    "type": "Combat",
+    "description": "A quick response after an enemy's attack",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- COUNTERATTACK -\n\nA swift and decisive response to an opponent's strike. Reacting at the perfect moment requires mental sharpness and emotional control. Successfully countering an attack boosts confidence and morale, turning the tide of battle.\n\n''Ha! I saw that coming a mile away, pal!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": 1, "Emo": 1}
+      }
+    ]
   },
   {
-	"id": "COM005",
-	"name": "Cover",
-	"type": "Combat",
-	"description": "Take cover to reduce damage",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- COVER -
-
-Taking cover minimizes incoming damage but at a cost. While it provides protection, the tension of hiding and waiting wears on the mind and body. It's a temporary respite, but hesitation can cost you the fight.
-
-''Hold your breath...  Just stay low...''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": -1, "MEN": -1, "Emo": "+1_toward_zero", "damage": "-2_if_hit"}  // Something to see, here!
-	  }
-	]
+    "id": "COM005",
+    "name": "Cover",
+    "type": "Combat",
+    "description": "Take cover to reduce damage",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- COVER -\n\nTaking cover minimizes incoming damage but at a cost. While it provides protection, the tension of hiding and waiting wears on the mind and body. It's a temporary respite, but hesitation can cost you the fight.\n\n''Hold your breath...  Just stay low...''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": -1, "MEN": -1, "Emo": "+1_toward_zero", "damage": "-2_if_hit"},
+		"comment_2": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COM006",
-	"name": "Diversion",
-	"type": "Combat",
-	"description": "Create a distraction to destabilize the enemy",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- DIVERSION -
-
-A clever distraction can throw an opponent off balance, creating an opening for a decisive move. However, executing it requires agility and quick thinking. When successful, it sharpens the mind and boosts confidence, but mistiming it can be costly.
-
-''Over here, idiot! Oops! Too slow!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": -1, "MEN": 2, "Emo": 1}
-	  }
-	]
+    "id": "COM006",
+    "name": "Diversion",
+    "type": "Combat",
+    "description": "Create a distraction to destabilize the enemy",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- DIVERSION -\n\nA clever distraction can throw an opponent off balance, creating an opening for a decisive move. However, executing it requires agility and quick thinking. When successful, it sharpens the mind and boosts confidence, but mistiming it can be costly.\n\n''Over here, idiot! Oops! Too slow!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": -1, "MEN": 2, "Emo": 1}
+      }
+    ]
   },
   {
-	"id": "COM007",
-	"name": "Dodge",
-	"type": "Combat",
-	"description": "Evade the enemy's attack to reduce damage",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- DODGE -
-
-Evading an enemy's attack requires quick reflexes and sharp awareness. While it reduces damage, it takes a toll on the mind and emotions as you focus on your movements but the stress can wear you down. A successful dodge saves you from a hit.
-
-''' did you think you could do with that, my friend? Ha! Ha!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"MEN": -1, "Emo": -1, "damage": "-1_if_hit"}  // Something to see, here!
-	  }
-	]
+    "id": "COM007",
+    "name": "Dodge",
+    "type": "Combat",
+    "description": "Evade the enemy's attack to reduce damage",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- DODGE -\n\nEvading an enemy's attack requires quick reflexes and sharp awareness. While it reduces damage, it takes a toll on the mind and emotions as you focus on your movements but the stress can wear you down. A successful dodge saves you from a hit.\n\n'' did you think you could do with that, my friend? Ha! Ha!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": -1, "Emo": -1, "damage": "-1_if_hit"},
+		"comment_3": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COM008",
-	"name": "Erratic Movements",
-	"type": "Combat",
-	"description": "Unpredictable movements that increase physical strength at a cost",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- ERRATIC MOVEMENTS -
-
-A wild and unpredictable series of moves that enhance physical strength in the heat of battle. However, the chaotic nature of this technique taxes both the mind and the spirit, leaving you mentally drained and emotionally unstable afterward.
-
-''You never know ''s coming next... and neither do I!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": 2, "MEN": -1, "Emo": -2}
-	  }
-	]
+    "id": "COM008",
+    "name": "Erratic Movements",
+    "type": "Combat",
+    "description": "Unpredictable movements that increase physical strength at a cost",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- ERRATIC MOVEMENTS -\n\nA wild and unpredictable series of moves that enhance physical strength in the heat of battle. However, the chaotic nature of this technique taxes both the mind and the spirit, leaving you mentally drained and emotionally unstable afterward.\n\n''You never know ''s coming next... and neither do I!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": 2, "MEN": -1, "Emo": -2}
+      }
+    ]
   },
   {
-	"id": "COM009",
-	"name": "Parry",
-	"type": "Combat",
-	"description": "Block an attack to reduce damage",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- PARRY -
-
-A precise and controlled block that redirects an incoming attack, reducing its impact. While it demands physical precision, successfully parrying boosts your confidence and morale. It's a skillful move, but it requires focus and can leave you momentarily off-balance.
-
-''Nice try, but that was my elbow, not my chin, you moron!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": -1, "Emo": 1, "damage": "-1_if_hit"}  // Something to see, here!
-	  }
-	]
+    "id": "COM009",
+    "name": "Parry",
+    "type": "Combat",
+    "description": "Block an attack to reduce damage",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- PARRY -\n\nA precise and controlled block that redirects an incoming attack, reducing its impact. While it demands physical precision, successfully parrying boosts your confidence and morale. It's a skillful move, but it requires focus and can leave you momentarily off-balance.\n\n''Nice try, but that was my elbow, not my chin, you moron!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": -1, "Emo": 1, "damage": "-1_if_hit"},
+		"comment_4": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COM010",
-	"name": "Provocation",
-	"type": "Combat",
-	"description": "Taunt the enemy to provoke a reaction",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- PROVOCATION -
-
-A calculated taunt designed to provoke your opponent into making a rash move. While it boosts mental clarity and sharpens your focus, it also risks leaving you unsettled.
-
-''''s the matter? Is that all you've got, dickhead?''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"MEN": 1, "Emo": "+1_toward_zero"}  // Something to see, here!
-	  }
-	]
+    "id": "COM010",
+    "name": "Provocation",
+    "type": "Combat",
+    "description": "Taunt the enemy to provoke a reaction",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- PROVOCATION -\n\nA calculated taunt designed to provoke your opponent into making a rash move. While it boosts mental clarity and sharpens your focus, it also risks leaving you unsettled.\n\n''s the matter? Is that all you've got, dickhead?''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"MEN": 1, "Emo": "+1_toward_zero"},
+		"comment_5": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COM011",
-	"name": "Martial Arts Techniques",
-	"type": "Combat",
-	"description": "Execute a series of advanced combat techniques",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- MARTIAL ARTS -
-- TECHNIQUES -
-
-A series of fluid, precise movements that combine strength and focus. The technique pushes your body to its limits and sharpens your mind, but the effort required can leave you somewhat emotionally drained.
-
-''When you can take the pebble from me, it will be time for me to leave.''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": 1, "MEN": 1, "Emo": -1}
-	  }
-	]
+    "id": "COM011",
+    "name": "Martial Arts Techniques",
+    "type": "Combat",
+    "description": "Execute a series of advanced combat techniques",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- MARTIAL ARTS -\n- TECHNIQUES -\n\nA series of fluid, precise movements that combine strength and focus. The technique pushes your body to its limits and sharpens your mind, but the effort required can leave you somewhat emotionally drained.\n\n''When you can take the pebble from me, it will be time for me to leave.''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": 1, "MEN": 1, "Emo": -1}
+      }
+    ]
   },
   {
-	"id": "COM012",
-	"name": "Use a Weapon",
-	"type": "Combat",
-	"description": "Use a weapon for a powerful attack with a mental and emotional cost",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- USE A WEAPON -
-
-Unleash a powerful strike with a weapon, channeling strength and precision into a single devastating blow. While the attack is formidable, it requires significant mental focus and emotional energy, leaving you momentarily vulnerable once it's delivered.
-
-''Oh! Did you hear that? Yippee-ki-yay, motherfucker!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": "+3", "MEN": -1, "Emo": "+2_toward_closest_min_max"}  // Something to see, here!
-	  }
-	]
+    "id": "COM012",
+    "name": "Use a Weapon",
+    "type": "Combat",
+    "description": "Use a weapon for a powerful attack with a mental and emotional cost",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- USE A WEAPON -\n\nUnleash a powerful strike with a weapon, channeling strength and precision into a single devastating blow. While the attack is formidable, it requires significant mental focus and emotional energy, leaving you momentarily vulnerable once it's delivered.\n\n''Oh! Did you hear that? Yippee-ki-yay, motherfucker!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": "+3", "MEN": -1, "Emo": "+2_toward_closest_min_max"},
+		"comment_6": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COM013",
-	"name": "Use an Item",
-	"type": "Combat",
-	"description": "Use an item to enhance your combat capabilities",
-	"possible_combinations": ["Combat SPECIAL", "Abstract"],
-	"info": "- USE AN ITEM -
-
-Using an item surrounding you that enhances your combat abilities. Whether it's a boost to your physical prowess or an item that gives you an edge, the right tool at the right moment can turn the tide in your favor.
-
-''The perfect moment to see if this thing is actually more useful for fighting than... Whatever...''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": 1}
-	  }
-	]
+    "id": "COM013",
+    "name": "Use an Item",
+    "type": "Combat",
+    "description": "Use an item to enhance your combat capabilities",
+    "possible_combinations": ["Combat SPECIAL", "Abstract"],
+    "info": "- USE AN ITEM -\n\nUsing an item surrounding you that enhances your combat abilities. Whether it's a boost to your physical prowess or an item that gives you an edge, the right tool at the right moment can turn the tide in your favor.\n\n''The perfect moment to see if this thing is actually more useful for fighting than... Whatever...''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": 1}
+      }
+    ]
   },
   {
-	"id": "COS001",
-	"name": "Adrenaline!",
-	"type": "Combat SPECIAL",
-	"description": "Increase your dice roll by 1, emotional effects ±1",
-	"possible_combinations": ["Combat", "Abstract"],
-	"info": "- ADRENALINE! -
-
-A surge of energy courses through your veins, heightening your reflexes and strength for a crucial moment. This sudden rush gives you an extra boost on your next move, but the emotional volatility of the moment may leave you more susceptible to emotional swings.
-
-''I live for this shit! Get some!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"dice": -1, "Add": "+1_toward_closest_min_max"}  // Something to see, here!
-	  }
-	]
+    "id": "COS001",
+    "name": "Adrenaline!",
+    "type": "Combat SPECIAL",
+    "description": "Increase your dice roll by 1, emotional effects ±1",
+    "possible_combinations": ["Combat", "Abstract"],
+    "info": "- ADRENALINE! -\n\nA surge of energy courses through your veins, heightening your reflexes and strength for a crucial moment. This sudden rush gives you an extra boost on your next move, but the emotional volatility of the moment may leave you more susceptible to emotional swings.\n\n''I live for this shit! Get some!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"dice": -1, "Add": "+1_toward_closest_min_max"},
+		"comment_7": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COS002",
-	"name": "Disarm!",
-	"type": "Combat SPECIAL",
-	"description": "Disarm the opponent, giving them a penalty to their dice roll",
-	"possible_combinations": ["Combat", "Abstract"],
-	"info": "- DISARM! -
-
-A swift move to disarm your opponent, leaving them without their advantage and reducing their effectiveness. By taking control of the situation, you force them into a defensive position. The success of such a move depends on perfect timing and precision.
-
-''You'll have to try harder than that if you want to keep your edge!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"opponent_dice": -1}  // Something to see, here!
-	  }
-	]
+    "id": "COS002",
+    "name": "Disarm!",
+    "type": "Combat SPECIAL",
+    "description": "Disarm the opponent, giving them a penalty to their dice roll",
+    "possible_combinations": ["Combat", "Abstract"],
+    "info": "- DISARM! -\n\nA swift move to disarm your opponent, leaving them without their advantage and reducing their effectiveness. By taking control of the situation, you force them into a defensive position. The success of such a move depends on perfect timing and precision.\n\n''You'll have to try harder than that if you want to keep your edge!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"opponent_dice": -1},
+		"comment_8": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COS003",
-	"name": "All or Nothing!",
-	"type": "Combat SPECIAL",
-	"description": "Increase your dice roll by 1, and amplify emotional effects",
-	"possible_combinations": ["Combat", "Abstract"],
-	"info": "- ALL OR NOTHING! -
-
-You go all in, taking a risky approach that amplifies your power at the cost of your emotional stability. The stakes are high as you push yourself to the limit, but the result could either be a game-changer or a total collapse, depending on how well you manage the intensity of the moment.
-
-''This is it! No turning back now!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"dice": -1, "Emo": 1}
-	  }
-	]
+    "id": "COS003",
+    "name": "All or Nothing!",
+    "type": "Combat SPECIAL",
+    "description": "Increase your dice roll by 1, and amplify emotional effects",
+    "possible_combinations": ["Combat", "Abstract"],
+    "info": "- ALL OR NOTHING! -\n\nYou go all in, taking a risky approach that amplifies your power at the cost of your emotional stability. The stakes are high as you push yourself to the limit, but the result could either be a game-changer or a total collapse, depending on how well you manage the intensity of the moment.\n\n''This is it! No turning back now!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"dice": -1, "Emo": 1}
+      }
+    ]
   },
   {
-	"id": "COS004",
-	"name": "Do Not Kill!",
-	"type": "Combat SPECIAL",
-	"description": "If the opponent would die, their health is set to 1. Dialogue becomes available with the opponent",
-	"possible_combinations": ["Combat", "Abstract"],
-	"info": "- DO NOT KILL! -
-
-A decision in the heat of battle to spare your opponent's life, offering them a chance to survive and converse. This action allows for a moment of dialogue, but the cost is a temporary reduction in your emotional intensity, as mercy comes at a personal cost.
-
-''I could end this... but I won't. Let's talk, now, you little rat!''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"opponent_HEA_if_dead": "1", "Dialogue": "possible", "Dialogue_dice": -1}  // Something to see, here!
-	  }
-	]
+    "id": "COS004",
+    "name": "Do Not Kill!",
+    "type": "Combat SPECIAL",
+    "description": "If the opponent would die, their health is set to 1. Dialogue becomes available with the opponent",
+    "possible_combinations": ["Combat", "Abstract"],
+    "info": "- DO NOT KILL! -\n\nA decision in the heat of battle to spare your opponent's life, offering them a chance to survive and converse. This action allows for a moment of dialogue, but the cost is a temporary reduction in your emotional intensity, as mercy comes at a personal cost.\n\n''I could end this... but I won't. Let's talk, now, you little rat!''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"opponent_HEA_if_dead": "1", "Dialogue": "possible", "Dialogue_dice": -1},
+		"comment_9": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COS005",
-	"name": "Bad Luck!",
-	"type": "Combat SPECIAL",
-	"description": "The opponent gets a -2 penalty to their dice roll, and you get a -1 penalty",
-	"possible_combinations": ["Combat", "Abstract"],
-	"info": "- BAD LUCK! -
-
-A twist of fate strikes the opponent, causing them to suffer some handicaps. However, the same misfortune seems to affect you as well, causing a slight setback in your own chances. It's a gamble, but sometimes, fate favors the bold.
-
-''Bad luck (Fale)! But it looks like it's catching up with me, too...''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"opponent_dice": 2, "player_dice": 1}  // Something to see, here!
-	  }
-	]
+    "id": "COS005",
+    "name": "Bad Luck!",
+    "type": "Combat SPECIAL",
+    "description": "The opponent gets a -2 penalty to their dice roll, and you get a -1 penalty",
+    "possible_combinations": ["Combat", "Abstract"],
+    "info": "- BAD LUCK! -\n\nA twist of fate strikes the opponent, causing them to suffer some handicaps. However, the same misfortune seems to affect you as well, causing a slight setback in your own chances. It's a gamble, but sometimes, fate favors the bold.\n\n''Bad luck (Fale)! But it looks like it's catching up with me, too...''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"opponent_dice": 2, "player_dice": 1},
+		"comment_10": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COS006",
-	"name": "Self-control!",
-	"type": "Combat SPECIAL",
-	"description": "Cancel some emotional effect",
-	"possible_combinations": ["Combat", "Abstract"],
-	"info": "- SELF-CONTROL! -
-	
-A moment of clarity in the midst of chaos, allowing you to suppress overwhelming emotions and regain control. While you can neutralize some of the emotional toll, this discipline boosts your mental focus, giving you an edge in your next move.
-
-''Steady... Keep it together... focus, focus...''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"Emo": "cancel_another_Combat_Emo_malus", "dice": 1}  // Something to see, here!
-	  }
-	]
+    "id": "COS006",
+    "name": "Self-control!",
+    "type": "Combat SPECIAL",
+    "description": "Cancel some emotional effect",
+    "possible_combinations": ["Combat", "Abstract"],
+    "info": "- SELF-CONTROL! -\n\nA moment of clarity in the midst of chaos, allowing you to suppress overwhelming emotions and regain control. While you can neutralize some of the emotional toll, this discipline boosts your mental focus, giving you an edge in your next move.\n\n''Steady... Keep it together... focus, focus...''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"Emo": "cancel_another_Combat_Emo_malus", "dice": 1},
+		"comment_11": "Something to see, here"
+      }
+    ]
   },
   {
-	"id": "COR001",
-	"name": "Flee",
-	"type": "Combat RUN AWAY",
-	"description": "Escape the fight by increasing your physical and mental capabilities",
-	"possible_combinations": ["Abstract"],
-	"info": "- RUN AWAY -
-
-In the heat of battle, sometimes the best option is to escape, using your speed and mental sharpness to get away unscathed. A successful escape boosts both your physical endurance and mental clarity, but running away can still have its consequences.
-
-''I think, therefore I am. But maybe I should run away now.''",
-	"bonus_malus": [
-	  {
-		"condition": {"result": "success"},
-		"effects": {"PHY": 1, "MEN": 1}
-	  }
-	]
+    "id": "COR001",
+    "name": "Flee",
+    "type": "Combat RUN AWAY",
+    "description": "Escape the fight by increasing your physical and mental capabilities",
+    "possible_combinations": ["Abstract"],
+    "info": "- RUN AWAY -\n\nIn the heat of battle, sometimes the best option is to escape, using your speed and mental sharpness to get away unscathed. A successful escape boosts both your physical endurance and mental clarity, but running away can still have its consequences.\n\n''I think, therefore I am. But maybe I should run away now.''",
+    "bonus_malus": [
+      {
+        "condition": {"result": "success"},
+        "effects": {"PHY": 1, "MEN": 1}
+      }
+    ]
   }
 ]
+

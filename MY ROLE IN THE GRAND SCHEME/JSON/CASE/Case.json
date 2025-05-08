@@ -6,17 +6,29 @@
 	"mobile": "Voir Crime_Motive_Evidence.json",
 	"crime_id": "Voir Crime_Motive_Evidence.json",
 	"Difficulty": [0, 1, 2, 3, 4, 5, 6],
-	"status": ["active", "paused"], // 1 des 2
-	"duration": "",  // voir Enquête dans Nouveau_système_vxx.odt
-	"crime_location": ["none", "LOCxxx_IDxxx"],  // 1 seul
-	"clues": [0, 1, 2, 3],  // pour le nombre, voir Crime_Motive_Evidence.json
-	"evidences": ["OBJxxx_IDxxx", "LINxxx_IDxxx"]  // pour le nombre, voir Crime_Motive_Evidence.json
-	"victims": ["NPCxxx"],  // pour le nombre, voir Crime_Motive_Evidence.json
-	"dead_victims": ["no", "yes", "disappeared", "random"], voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json
-	"witnesses": ["NPCxxx", "none"]  // voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json
-	"suspects": ["NPCxxx", "none"]  // voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.jsonon
-	"culprits": ["NPCxxx"],  // voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.jsonn
-	"total_evidences": [1, 2, 3],  // voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.jsonon
-	"link": ["LINxxx_IDxxx"]  // voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json
+	"status": ["active", "paused"],
+	"comment_1": "1 des 2",
+	"duration": "",
+	"comment_2": "voir Enquête dans Nouveau_système_vxx.odt",
+	"crime_location": ["none", "LOCxxx_IDxxx"],
+	"comment_3": "1 seul",
+	"clues": [0, 1, 2, 3],
+	"comment_4": "voir Crime_Motive_Evidence.json",
+	"evidences": ["OBJxxx_IDxxx", "LINxxx_IDxxx"],
+	"comment_5": "voir Crime_Motive_Evidence.json",
+	"victims": ["NPCxxx"],
+	"comment_6": "voir Crime_Motive_Evidence.json",
+	"dead_victims": ["no", "yes", "disappeared", "random"],
+	"comment_7": "voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json",
+	"witnesses": ["NPCxxx", "none"],
+	"comment_8": "voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json",
+	"suspects": ["NPCxxx", "none"],
+	"comment_9": "voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json",
+	"culprits": ["NPCxxx"],
+	"comment_10": "voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json",
+	"total_evidences": [1, 2, 3],
+	"comment_11": "voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json",
+	"link": ["LINxxx_IDxxx"],
+	"comment_12": "voir Crime_Motive_Evidence.json, Final_Crime_Motive_Evidence.json et Zero_Level_Crime_Motive_Evidence.json"
   }
 ]

@@ -76,7 +76,7 @@ Niveau de Wanted	Malus au Dé
 
 Paranoïa (Par)
 	- La paranoïa est un cas extrême qui fait abandonner toutes les quêtes pour poursuivre la méga quête du jeu (uniquement accessible en devenant paranoïaque). Un complot mondial complètement con (voir Le complot et Système de santé/Paranoïa).
-	- Être paranoïaque annule les besoins de Add (drogue), les effets d’Emo, les besoins de sommeil (le joueur ne dort plus), le joueur ne va plus chez le médecin, ne paye plus ses factures et doit continuer la partie avec l’argent qui lui reste.
+	- Être paranoïaque annule les besoins de Add (drogue), les effets d’Emo, les besoins de sommeil (le joueur ne dort plus), le joueur ne va plus chez le médecin, ne paye plus ses factures (menu désactivé) et doit continuer la partie avec l’argent qui lui reste.
 	- Quand le joueur est paranoïaque, Add et Emo ne sont plus des modificateurs de jets de dé.
 
 Backgrounds
@@ -128,6 +128,7 @@ Les PNJs
 	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction (ainsi Emo et Add ne peuvent être des bonus/malus pour eux).
 	- Si un PNJ meurt, la carte du PNJ ne sera pas retirée de l’enquête.
 	- Si le joueur est responsable de la mort d’un PNJ : +1Wan !
+	- Par défaut, n’importe quel PNJ à de 50% à 100% de son HEA (Heanom reste normal).
 
 Recherché/Wanted pour les PNJs (Wan)
 	- Le Wanted des PNJs évolue de 0 à 5. 0 au début du jeu. Il représente le niveau d’emmerdes avec les autorités qu’a un PNJ.
@@ -243,13 +244,13 @@ Crise liée à l’Addiction
 
 Paranoïa
 	- La paranoïa se déclenche après :
-		5 tests consécutifs (réussis) contre la Mort par sur/sous-dose de drogue.
+		5 tests (réussis) contre la Mort par sur/sous-dose de drogue.
 	ou	5 enquêtes ratées d’affilé.
 	ou	Après 10 nuits de 4h (le minimum de durée) au total.
-	ou	5 jours consécutifs à PHY, MEN et HEA ≤ 2.
+	ou	7 jours consécutifs à PHY, MEN et HEA ≤ 2.
 	ou	10 combats avec des sbires.
 	ou	la réception de 10 SMS anonymes.
-	ou	10 factures non réglées le lundi.
+	ou	10 factures non réglées le lundi au total.
 
 	- Au fur et à mesure que le joueur se rapproche de la crise de Paranoïa, le volume sonore de Paranoia_Voices (dans Ambiance_Sound.tscn) va monter (pour « informer » le joueur de son état) :
 		- le volume sonore sera défini par le niveau le plus proche du déclenchement d’une crise (parmi la précédente liste au dessus).
@@ -342,23 +343,22 @@ Veille/Sommeil
 
 L’argent
 	- La monnaie du jeu, c’est le « Dough » noté Dø (« Pognon » noté Pø en français !).
-	- Une partie démarre le lundi matin avec la facture de la semaine réglée et 75Dø en poche.
+	- Une partie démarre le lundi matin avec la facture de la semaine réglée et 100Dø en poche.
 	- Les PNJs n’ont pas de besoins d’argent.
 	- Le joueur peut avoir des dettes (voir Factures).
 
 Les factures
 	- Les factures se payent toujours le lundi matin pour la semaine passée. En cas d’impayé, les sommes ne s’additionnent pas, ce sont les factures qui s’accumulent. Ainsi, le joueur, s’il a 2 factures mais ne peut en payer qu’une pourra toujours en payer une. Il en a pour 75 Dø par semaine.
-	- Chaque facture impayée augmente de 10% par semaine et implique un malus de 1 par semaine de retard aux jets de dé.
+	- Chaque facture impayée augmente de 10% par semaine et implique un malus de 1 aux jets de dé.
 	- Pour payer sa facture, à l’écran principal, faire Menu Dailies en haut de l’écran, « Payer les factures » et « cliquer sur la facture que l’on veut payer ».
 	- Les nouvelles factures ont 50% de chance de varier de ±10%.
-	- Au delà de 5 factures impayées, le joueur devient Paranoïaque !
+	- Le joueur ne peut pas avoir plus de 5 factures impayées. Au delà, il va en prison pour 3 jours et redescend à 4 factures impayées car la plus ancienne sera « automatiquement » réglée.
 
 Les achats/dépenses
-	- Les cabinets médicaux, etc. ouvrent à 9h et ferment à 19h (sauf point de deal, voir au dessous).
-	- Le joueur connaît un point de deal où il pourra acheter sa/ses dose(s). Uniquement pendant la période nocturne. 1 dose coûte 25 Dø.
-	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois.
+	- Les cabinets médicaux, etc. ouvrent à 9h et ferment à 19h (sauf point de deal, voir au dessous). Fermé le weekend.
+	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois. Ouvert pendant les 3 premières tranches horaires de la journée et hors weekend.
+	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement pendant la période nocturne. 1 dose coûte 25 Dø.
 	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, menu Dailies en haut de l’écran.
-	- Le joueur ne peut pas revendre de dose de drogue.
 	- Le dealer n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, il disparaît jusqu’au lundi suivant.
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc éventuellement avant que le joueur n’arrive).
 Les cartes
@@ -771,7 +771,7 @@ Difficulté du jeu (écran d’OPTIONS)
 		Retail Investment :  Les factures augmentent de +20%.
 		Vice : Caution (prison) portée à 250Dø (+25%).
 		Mentirosos : +10 % de chances de mensonge.
-		Hardboiled Minions : +20% HEA (et HEAnom).
+		Hardboiled Minions : +10% HEA (et HEAnom).
 
 
 Enquêtes niveau 0 :

@@ -6,8 +6,10 @@
     "name": "Apartment",
     "type": "Location",
 	"uniqueness": [],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "People's favorite place to live, sleep... and have sex",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
@@ -25,8 +27,10 @@
     "name": "Workshop",
     "type": "Location",
     "uniqueness": [2],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "A place for crafting, repairing, and probably altering things",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
@@ -47,9 +51,11 @@
     "info_name": "- BAR -",
     "name": "Bar",
     "type": "Location",
-    "uniqueness": [2],  // rien (appartment), 1 ou 2
+    "uniqueness": [2],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "Here, we drink freely, laugh, or make shady deals",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
@@ -70,9 +76,11 @@
     "info_name": "- LIBRARY -",
     "name": "Library",
     "type": "Location",
-    "uniqueness": [1],  // rien (appartment), 1 ou 2
+    "uniqueness": [1],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "Usually, people try to work on who-knows-what pointless theses here",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Break_in"],
     "not_needed_actions": [],
@@ -93,9 +101,11 @@
     "info_name": "- OFFICE -",
     "name": "Office",
     "type": "Location",
-    "uniqueness": [],  // rien (appartment), 1 ou 2
+    "uniqueness": [],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "One of those places where a lot of people wish they weren't working",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
@@ -112,9 +122,11 @@
     "info_name": "- MEDICAL OFFICE -",
     "name": "Medical Office",
     "type": "Location",
-    "uniqueness": [1],  // rien (appartment), 1 ou 2
+    "uniqueness": [1],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "As long as it's a general practitioner, there's no real reason to be scared to enter",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
@@ -135,9 +147,11 @@
     "info_name": "- BARRACKS -",
     "name": "Barracks",
     "type": "Location",
-    "uniqueness": [1],  // rien (appartment), 1 ou 2
+    "uniqueness": [1],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "Not the best place for talking literature. Everything else is fine enough",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": ["Combat"],
     "not_needed_actions": ["Break_in"],
@@ -158,9 +172,11 @@
     "info_name": "- CEMETERY -",
     "name": "Cemetery",
     "type": "Location",
-    "uniqueness": [1],  // rien (appartment), 1 ou 2
+    "uniqueness": [1],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "Not exactly a lively place for a chat. But hey, it's quiet",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": ["Break_in"],
@@ -181,9 +197,11 @@
     "info_name": "- CINEMA -",
     "name": "Cinema",
     "type": "Location",
-    "uniqueness": [1],  // rien (appartment), 1 ou 2
+    "uniqueness": [1],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "Places like this are fading out - now it's just crap on the screen",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
@@ -204,9 +222,11 @@
     "info_name": "- NIGHTCLUB -",
     "name": "Nightclub",
     "type": "Location",
-    "uniqueness": [1],  // rien (appartment), 1 ou 2
+    "uniqueness": [1],
+	"comment_1": "rien (appartment), 1 ou 2",
     "description": "A place where 'music' is barely recognizable anymore",
-    "property": [],  // NPCxxx or rien
+    "property": [],
+	"comment_2": "NPCxxx or rien",
     "possible_combinations": ["Dialogue", "Abstract"],
     "impossible_actions": [],
     "not_needed_actions": [],
@@ -227,9 +247,11 @@
   "info_name": "- SCHOOL -",
   "name": "School",
   "type": "Location",
-  "uniqueness": [2],  // rien (appartment), 1 ou 2
+  "uniqueness": [2],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Originally, the idea behind this place wasn't terrible...",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -249,9 +271,11 @@
   "info_name": "- ART GALLERY -",
   "name": "Art Gallery",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Art? Please... give me a break!",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -271,9 +295,11 @@
   "info_name": "- GARAGE -",
   "name": "Garage",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where 'repairs' often come with a little extra charge",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -293,9 +319,11 @@
   "info_name": "- HANGAR -",
   "name": "Hangar",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "The kind of place where old crime novels ended with a police raid",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -315,9 +343,11 @@
   "info_name": "- HOSPITAL -",
   "name": "Hospital",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place you're supposed to walk out of, not leave on a stretcher",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": ["Break_in"],
@@ -337,9 +367,11 @@
   "info_name": "- HOTEL -",
   "name": "Hotel",
   "type": "Location",
-  "uniqueness": [2],  // rien (appartment), 1 ou 2
+  "uniqueness": [2],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "People's favorite place to slee... sorry, I mean, mainly to have sex",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -355,9 +387,11 @@
   "info_name": "- LABORATORY -",
   "name": "Laboratory",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where science used to happen... or things just get weirder",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
@@ -377,9 +411,11 @@
   "info_name": "- PLACE OF WORSHIP -",
   "name": "Place of Worship",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A lot of people who enter here have imaginary friends",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -399,9 +435,11 @@
   "info_name": "- GENERAL STORE -",
   "name": "General Store",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where you can find anything... or nothing you actually need",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -421,9 +459,11 @@
   "info_name": "- MUSEUM -",
   "name": "Museum",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "The only place I know where they display dust",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
@@ -443,9 +483,11 @@
   "info_name": "- PARK -",
   "name": "Park",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Ah, trees, flowers... nature! And junkies, necessarily",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": ["Break_in"],
@@ -461,9 +503,11 @@
   "info_name": "- SWIMMING POOL -",
   "name": "Swimming Pool",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "The perfect place to swim through floating vomit... and catch fungi",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -483,9 +527,11 @@
   "info_name": "- POST OFFICE -",
   "name": "Post Office",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "The place where packages get lost and time too",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
@@ -505,9 +551,11 @@
   "info_name": "- RESTAURANT -",
   "name": "Restaurant",
   "type": "Location",
-  "uniqueness": [2],  // rien (appartment), 1 ou 2
+  "uniqueness": [2],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "I occasionally visit places like this to eat... and get sick",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -527,9 +575,11 @@
   "info_name": "- ARCADE -",
   "name": "Arcade",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place for playing Domestique Baston, Kindergarten Massaker or Java Jolt",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -549,9 +599,11 @@
   "info_name": "- THEATER -",
   "name": "Theater",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where you pay to watch people pretend... and still get bored",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -571,9 +623,11 @@
   "info_name": "- SPORTS HALL -",
   "name": "Sports Hall",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where people pay to do what they could do outside for free",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -593,9 +647,11 @@
   "info_name": "- STADIUM -",
   "name": "Stadium",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Crowds gather in places like this to watch billionaires run after a ball",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -615,9 +671,11 @@
   "info_name": "- GAS STATION -",
   "name": "Gas Station",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Here, the smell of gasoline is the only thing that gets you going",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -633,9 +691,11 @@
   "info_name": "- BANK -",
   "name": "Bank",
   "type": "Location",
-  "uniqueness": [2],  // rien (appartment), 1 ou 2
+  "uniqueness": [2],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "As Bernard once said: A place to stop by... if you're into redistributing",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
@@ -651,9 +711,11 @@
   "info_name": "- POLICE STATION -",
   "name": "Police Station",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "The place with the most criminals per square meter in this city",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Combat"],
   "not_needed_actions": ["Break_in"],
@@ -673,9 +735,11 @@
   "info_name": "- FIRE STATION -",
   "name": "Fire Station",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "The only fire they won't put out is the one you've got in your pants",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Combat"],
   "not_needed_actions": ["Break_in"],
@@ -695,9 +759,11 @@
   "info_name": "- CAFÉ -",
   "name": "Café",
   "type": "Location",
-  "uniqueness": [2],  // rien (appartment), 1 ou 2
+  "uniqueness": [2],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place to sip overpriced coffee and pretend you're doing something important",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -717,9 +783,11 @@
   "info_name": "- BAKERY -",
   "name": "Bakery",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "I'd love to live in France just to step into one of these",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -735,9 +803,11 @@
   "info_name": "- PHARMACY -",
   "name": "Pharmacy",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where you used to find cures, and now it's just sugar pills and hope",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -753,9 +823,11 @@
   "info_name": "- GROCERY STORE -",
   "name": "Grocery Store",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Did you mean 'Grossery'?",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -771,9 +843,11 @@
   "info_name": "- TOWN HALL -",
   "name": "Town Hall",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where big decisions are made... and instantly forgotten",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": ["Break_in"],
   "not_needed_actions": [],
@@ -789,9 +863,11 @@
   "info_name": "- SALON -",
   "name": "Salon",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where the only thing that gets hair-raising is the price",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -807,9 +883,11 @@
   "info_name": "- HARDWARE STORE -",
   "name": "Hardware Store",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where you buy tools that sure look good in your garage",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -825,9 +903,11 @@
   "info_name": "- FLORIST -",
   "name": "Florist",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Didn't know that death could smell this good",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -843,9 +923,11 @@
   "info_name": "- PET STORE -",
   "name": "Pet Store",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "There are other places to get love... and cheaper",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
@@ -861,9 +943,11 @@
   "info_name": "- LAUNDROMAT -",
   "name": "Laundromat",
   "type": "Location",
-  "uniqueness": [1],  // rien (appartment), 1 ou 2
+  "uniqueness": [1],
+  "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where you wash your dirty laundry... but in public",
-  "property": [],  // NPCxxx or rien
+  "property": [],
+  "comment_2": "NPCxxx or rien",
   "possible_combinations": ["Dialogue", "Abstract"],
   "impossible_actions": [],
   "not_needed_actions": [],
