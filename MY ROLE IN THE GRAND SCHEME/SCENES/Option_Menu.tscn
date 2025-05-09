@@ -165,18 +165,17 @@ metadata/_edit_lock_ = true
 
 [node name="Drawer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_wcpfb")
+volume_db = -15.0
 bus = &"UI"
 
 [node name="Minions_On" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("32_asrw6")
+volume_db = -10.0
 bus = &"UI"
 
 [node name="Minions_Off" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_6fk48")
-bus = &"UI"
-
-[node name="Drawer3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("31_wcpfb")
+volume_db = -11.5
 bus = &"UI"
 
 [connection signal="mouse_entered" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_mouse_entered"]

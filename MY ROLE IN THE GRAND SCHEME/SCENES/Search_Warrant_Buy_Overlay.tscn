@@ -341,6 +341,7 @@ autoplay = "Writing"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_kfqfx")
+volume_db = -5.0
 bus = &"FX"
 
 [connection signal="mouse_entered" from="Search_Warrant_Panel/Texts/Yes" to="Search_Warrant_Panel/Texts" method="_on_mouse_entered"]

@@ -40,13 +40,16 @@ func _process(_delta):
 	# -- Ajout : détection de survol de la souris et gestion des animations de shadow
 	# Il faudra aussi faire en sorte que seule LA carte sous la souris affiche son
 	# ombre. Même quand plusieurs cartes se chevauchent.
-	# Voir aussi commentaires plus bas
+	# -- Ajout du son pour le survol.
+	# Voir aussi commentaires plus bas...
 	var is_hovered = is_mouse_in_collision(card)
 
 	if is_hovered and not was_hovered:
 		$"../Shadow_Animations".play("Shadow_On")
+		$"../UI_Sounds/Go_Front".play()
 	elif not is_hovered and was_hovered:
 		$"../Shadow_Animations".play("Shadow_Off")
+		$"../UI_Sounds/Go_Back".play()
 	was_hovered = is_hovered
 
 	if Input.is_action_just_pressed("Left_Click"):
@@ -71,17 +74,6 @@ func _process(_delta):
 	if shadow_material:
 		shadow_material.set_shader_parameter("shadow_color", Color(0, 0, 0, target_shadow_alpha))
 
-## Je n'arrive pas à faire en sorte que lorsque deux instances de carte
-## se trouvent l'une sur l'autre, que la partie cachée de celle du dessous
-## ne reçoive pas les clics de souris (ni même ne voit la souris ?)...
-
-## Dans Interarction.tscn, lorsque l'on a une ribambelle de cartes les unes sur
-## les autres en ligne horizontale (ou verticale), celle sous le curseur de la
-## souris devra passer devant les autres et aussi bouger un peu en +Y ou -Y,
-## à voir en fonction des endroits à l'écran. L'idéal serait même que celles
-## autour de la carte en question bougent en Y aussi mais de 33% et celles
-## d'encore une carte plus loin de 66% pour faire comme une onde !
-
 # Fonction pour vérifier si la souris est dans la zone de la forme
 func is_mouse_in_collision(collision_shape: CollisionShape2D) -> bool:
 	var shape = collision_shape.shape
@@ -104,7 +96,7 @@ func is_mouse_in_collision(collision_shape: CollisionShape2D) -> bool:
 		var circle = shape as CircleShape2D
 		return mouse_local_position.length() <= circle.radius
 	
-	# Ajoute d'autres formes ici si nécessaire (Polygon, etc.)
+	# Ajoute d'autres formes ici si nécessaire (Polygon, etc.) (inutile)
 	return false
 
 # Joue l'animation spécifiée

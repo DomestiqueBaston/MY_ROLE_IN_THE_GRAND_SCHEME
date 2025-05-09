@@ -53,18 +53,20 @@ mouse_filter = 2
 
 [node name="Valid" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("6_baqg5")
+volume_db = -5.0
 bus = &"UI"
 
 [node name="Cancel" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("7_xi55q")
+volume_db = -2.5
 bus = &"UI"
 
 [node name="Leave" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("8_8eio1")
-volume_db = 12.5
+volume_db = 7.5
 bus = &"UI"
 
 [node name="Hover" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("9_wgutn")
-volume_db = 12.5
+volume_db = 5.0
 bus = &"UI"

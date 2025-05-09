@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://yl6icb273od"]
+[gd_scene load_steps=12 format=3 uid="uid://yl6icb273od"]
 
 [ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/JAIL_MONEY/Cops.png" id="1_knmnc"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="2_4l2mm"]
 [ext_resource type="AudioStream" uid="uid://bnim7widv0v1h" path="res://SOUND/MISC/This_Is_Da_Police.ogg" id="2_knmnc"]
 [ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Overlay_Buttons.gd" id="2_s0xyu"]
 [ext_resource type="ButtonGroup" uid="uid://bna0povlgtisn" path="res://UI/Jail_Money_group.tres" id="3_dxykx"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="5_mk7dn"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="6_7ffip"]
 
 [sub_resource type="Animation" id="Animation_6c0my"]
 resource_name = "Appearance"
@@ -34,6 +36,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2(-640, 0), Vector2(-240, 0), Vector2(-75.9373, 0), Vector2(-50.6248, 0), Vector2(-25.3123, 0), Vector2(0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_mk7dn")
+}],
+"times": PackedFloat32Array(0.0303795)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_6t1tt"]
 resource_name = "Disappearance"
@@ -63,6 +80,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(-9.07405, 0), Vector2(-127.037, 0), Vector2(-245, 0), Vector2(-640, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_7ffip")
+}],
+"times": PackedFloat32Array(0.0814937)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nfkjl"]
 length = 0.001
@@ -140,7 +172,7 @@ offset_top = 148.0
 offset_right = 534.0
 offset_bottom = 267.0
 bbcode_enabled = true
-text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff1c18]200 Dø[/color])."
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff1c18]200Dø[/color])."
 horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_lock_ = true
@@ -218,6 +250,17 @@ text = "Ha! Ha! See you in lockup!"
 alignment = 2
 metadata/_edit_lock_ = true
 
+[node name="A_VIRER" type="Label" parent="Cops/Info"]
+offset_left = 650.0
+offset_top = 219.0
+offset_right = 945.0
+offset_bottom = 300.0
+text = "          Attention ! Il faudra
+<=     changer la somme (200) en
+          fonction des options de jeu !"
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_girfw")
@@ -226,9 +269,13 @@ autoplay = "Appearance"
 
 [node name="Police" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_knmnc")
-volume_db = -15.0
+volume_db = -22.5
 autoplay = true
 bus = &"FX"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
 
 [connection signal="mouse_entered" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Cops/Info/Player/Surrender" to="Cops/Info" method="_on_mouse_exited"]

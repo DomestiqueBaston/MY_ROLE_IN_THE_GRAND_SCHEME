@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bonccjxskay5"]
 
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_vqnlt"]
-[ext_resource type="Shader" uid="uid://dd3wo43uox5d5" path="res://SHADERS/Transition.gdshader" id="2_xdsvn"]
+[ext_resource type="Shader" uid="uid://bd85rbmyb41ao" path="res://SHADERS/Transition.gdshader" id="2_xdsvn"]
 [ext_resource type="Texture2D" uid="uid://p7s0wnrs0r8d" path="res://GRAPHICS/UI/Transition_04.png" id="3_emnbv"]
 [ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="4_36l1k"]
 [ext_resource type="AudioStream" uid="uid://dp0w6weh47mk3" path="res://SOUND/OVERLAYS/Transition.ogg" id="5_sslsy"]
@@ -10,33 +10,6 @@
 shader = ExtResource("2_xdsvn")
 shader_parameter/dissolve_pattern = ExtResource("3_emnbv")
 shader_parameter/dissolve_state = 0.0
-
-[sub_resource type="Animation" id="Animation_7ty8d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Title01:material:shader_parameter/dissolve_state")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Transition:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-5.0]
-}
 
 [sub_resource type="Animation" id="Animation_lj2vv"]
 resource_name = "Fade"
@@ -80,6 +53,33 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [-5.0, -5.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_7ty8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title01:material:shader_parameter/dissolve_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-5.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0o6y"]

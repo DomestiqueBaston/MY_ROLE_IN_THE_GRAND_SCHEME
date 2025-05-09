@@ -191,7 +191,8 @@ autoplay = "Flashing"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_gwqe6")
-bus = &"UI"
+volume_db = -5.0
+bus = &"FX"
 
 [connection signal="mouse_entered" from="Node2D/Chalk_Mask/Next_Button" to="Node2D/Chalk_Mask/Tutorial_Text" method="_on_next_button_mouse_entered"]
 [connection signal="mouse_exited" from="Node2D/Chalk_Mask/Next_Button" to="Node2D/Chalk_Mask/Tutorial_Text" method="_on_next_button_mouse_exited"]

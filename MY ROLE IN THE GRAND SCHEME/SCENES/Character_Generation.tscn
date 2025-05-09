@@ -309,7 +309,8 @@ metadata/_edit_lock_ = true
 
 [node name="Typing" type="AudioStreamPlayer" parent="Creation_Page"]
 stream = ExtResource("30_7d8wo")
-bus = &"UI"
+volume_db = -5.0
+bus = &"FX"
 
 [node name="Sex_Choice" type="AudioStreamPlayer" parent="Creation_Page"]
 stream = ExtResource("35_7d8wo")

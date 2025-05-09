@@ -159,7 +159,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.666667, 0.933333, 1.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [-15.0, -15.0, -50.0, -80.0]
+"values": [-25.0, -25.0, -55.0, -80.0]
 }
 
 [sub_resource type="Animation" id="Animation_53ag3"]
@@ -432,7 +432,7 @@ volume_db = -25.0
 bus = &"UI"
 
 [node name="LowAlarm" type="AudioStreamPlayer" parent="."]
-volume_db = -15.0
+volume_db = -80.0
 bus = &"FX"
 
 [connection signal="mouse_entered" from="Short_Event_Panel/Announce/Quit" to="Short_Event_Panel/Announce" method="_on_quit_mouse_entered"]

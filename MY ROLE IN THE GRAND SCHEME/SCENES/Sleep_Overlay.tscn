@@ -402,6 +402,7 @@ bus = &"UI"
 
 [node name="Drawer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("35_kdwin")
+volume_db = -15.0
 bus = &"UI"
 
 [connection signal="mouse_entered" from="Drawers/Drawer_Names/Drawer_09" to="Drawers/Drawer_Names" method="_on_mouse_entered"]

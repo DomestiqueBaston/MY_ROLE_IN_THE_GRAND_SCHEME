@@ -387,12 +387,13 @@ bus = &"UI"
 
 [node name="Trash_Open" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_h48le")
-volume_db = -7.5
+volume_db = -10.0
+autoplay = true
 bus = &"UI"
 
 [node name="Trash_Close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_3ah6p")
-volume_db = -20.0
+volume_db = -27.5
 bus = &"UI"
 
 [connection signal="mouse_entered" from="Card_Management_Panel/Buttons/Ok" to="Card_Management_Panel/Buttons" method="_on_any_button_mouse_entered"]

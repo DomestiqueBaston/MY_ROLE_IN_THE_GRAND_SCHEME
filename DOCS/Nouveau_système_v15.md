@@ -708,7 +708,7 @@ Enquête à la con (0)	Enquêtes vraiment très simples. (bonus de 3)
 Enquête ultime (6)	WTF!(malus de 3)
 
 	- Le niveau de difficulté impliquera un bonus/malus à tous les jets de dé du joueur dans cette enquête (voir tableau au dessus).
-	- Dès le départ, le joueur a accès à n’importe quelle enquête de n’importe quel niveau (la valeur du niveau de difficulté ne lui sera pas communiquée). A lui d’estimer sa capacité à la gérer avec les informations connues au départ de l’enquête.
+	- Dès le départ, le joueur a accès à n’importe quelle enquête de n’importe quel niveau (la valeur du niveau de difficulté ne lui sera pas communiquée). À lui d’estimer sa capacité à la gérer avec les informations connues au départ de l’enquête.
 	- L’enquête ultime (voir Le complot) a un niveau de difficulté spécial de 6 avec un malus de 3 aux jets de dé !
 	- Un type d’enquête mené ne réapparaît que toutes 5 enquêtes différentes menées ensuite (résolues ou non, afin de « forcer » la variété). Par ex., Une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas 5 d’un autre type.
 
@@ -729,6 +729,7 @@ Résolution des enquêtes, gains et implications
 	- Le joueur peut mener jusqu’à 4 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
 	- Une enquête ne peut pas être rejetée à plus de (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.  Pour les enquêtes de niveau 0, voir à la fin !
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’Interaction et Abstraite de la pile du joueur qui y restent).
+	- À la suite d’une enquête réussie, l’écran Income_Overlay.tscn s’affiche avec les gains. Ensuite, on enchaîne directement sur l’écran Card_Management_Overlay.tscn pour modifier le deck (si besoin).
 Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre
 
 	- Il faudrait trouver un moyen de lier les liens Rouges, jaunes et Gris au milieu d’un autre lien !

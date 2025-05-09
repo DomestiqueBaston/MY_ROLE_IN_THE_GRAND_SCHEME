@@ -1,7 +1,7 @@
 extends Control
 
 @onready var buttons = [
-	$"Secrets", # Il y aura un truc à activer/désactiver dans ce tiroir: des sbires avec +3HEA/HEAnom !
+	$"Secrets", # Il y aura un truc SECRET à activer/désactiver dans ce tiroir !
 	$"Credits",
 	$"Language",
 	$"Continue",
@@ -36,7 +36,7 @@ func _on_mouse_exited():
 		Globals.leave_sound.play()
 
 func play_sound():
-	$"../Drawer".volume_db = 0.0
+	#$"../Drawer".volume_db = 0.0
 	if $Secrets.button_pressed == true:
 		secret_clicks += 1
 		
@@ -48,8 +48,8 @@ func play_sound():
 			minions_state = !minions_state
 		return
 
-	if $Quit.button_pressed == true:
-		$"../Drawer".volume_db = -5.0
+	#if $Quit.button_pressed == true:
+		#$"../Drawer".volume_db = -15.0
 	var pitches = [0.75, 1.0, 1.25]
 	var pitch = pitches[randi() % pitches.size()]
 	$"../Drawer".pitch_scale = pitch
