@@ -230,7 +230,6 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Run_Away" type="Sprite2D" parent="Interaction_Panel/Title"]
-visible = false
 texture = ExtResource("3_t1hno")
 centered = false
 metadata/_edit_lock_ = true
