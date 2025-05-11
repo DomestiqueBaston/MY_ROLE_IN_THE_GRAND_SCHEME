@@ -10,7 +10,8 @@
 	"property": ["NPCxxx", "NPCxxx"],
 	"comment_1": "Il FAUT 2 propriétaires",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ002",
@@ -22,7 +23,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ003",
@@ -34,7 +36,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ004",
@@ -46,7 +49,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ005",
@@ -58,7 +62,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx", "LOCxxxIDxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ006",
@@ -71,7 +76,8 @@
 	"property": ["NPCxxx", "NPCxxx", "NPCxxx"],
 	"comment_1": "il peut y avoir jusqu'à 3 propriétaires qui sont les personnes enregistrées",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ007",
@@ -83,7 +89,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ008",
@@ -95,7 +102,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ009",
@@ -107,7 +115,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ010",
@@ -119,7 +128,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ011",
@@ -131,7 +141,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
 	{
 	"id": "OBJ012",
@@ -144,7 +155,8 @@
 	"property": ["NPCxxx", "NPCxxx"],
 	"comment_1": "Il FAUT 2 propriétaires",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ013",
@@ -157,7 +169,8 @@
 	"property": ["NPCxxx", "NPCxxx", "NPCxxx"],
 	"comment_1": "il peut y avoir jusqu'à 3 propriétaires qui sont les personnes photographiées",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ014",
@@ -170,7 +183,8 @@
 	"property": ["NPCxxx", "NPCxxx"],
 	"comment_1": "il FAUT 2 propriétaires",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ015",
@@ -182,7 +196,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ016",
@@ -194,7 +209,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ017",
@@ -206,7 +222,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ018",
@@ -218,7 +235,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ019",
@@ -230,7 +248,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ020",
@@ -242,7 +261,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ021",
@@ -254,7 +274,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ022",
@@ -266,7 +287,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ023",
@@ -278,7 +300,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ024",
@@ -290,7 +313,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ025",
@@ -302,7 +326,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ026",
@@ -314,7 +339,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ027",
@@ -326,7 +352,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ028",
@@ -338,7 +365,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ029",
@@ -350,7 +378,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ030",
@@ -362,7 +391,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ031",
@@ -374,7 +404,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ032",
@@ -386,7 +417,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ033",
@@ -398,7 +430,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ034",
@@ -410,7 +443,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ035",
@@ -422,7 +456,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ036",
@@ -434,7 +469,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ037",
@@ -446,7 +482,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ038",
@@ -458,7 +495,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ039",
@@ -470,7 +508,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ040",
@@ -482,7 +521,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ041",
@@ -494,7 +534,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ042",
@@ -506,7 +547,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ043",
@@ -518,7 +560,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ044",
@@ -530,7 +573,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ045",
@@ -542,7 +586,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ046",
@@ -554,7 +599,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ047",
@@ -566,7 +612,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ048",
@@ -578,7 +625,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ049",
@@ -590,7 +638,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ081",
@@ -602,7 +651,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ050",
@@ -614,7 +664,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ051",
@@ -626,7 +677,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ052",
@@ -638,7 +690,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ053",
@@ -650,7 +703,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ054",
@@ -662,7 +716,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ055",
@@ -674,7 +729,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ056",
@@ -686,7 +742,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ057",
@@ -698,7 +755,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ058",
@@ -710,7 +768,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ059",
@@ -723,7 +782,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "property définit le propriétaire de données copiées",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ060",
@@ -735,7 +795,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ061",
@@ -747,7 +808,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ062",
@@ -759,7 +821,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ063",
@@ -771,7 +834,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ064",
@@ -783,7 +847,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ065",
@@ -795,7 +860,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ066",
@@ -807,7 +873,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ067",
@@ -819,7 +886,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ068",
@@ -831,7 +899,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ069",
@@ -843,7 +912,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ070",
@@ -855,7 +925,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ071",
@@ -867,7 +938,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ072",
@@ -879,7 +951,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ073",
@@ -891,7 +964,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ074",
@@ -903,7 +977,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ075",
@@ -915,7 +990,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ076",
@@ -927,7 +1003,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ077",
@@ -939,7 +1016,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ078",
@@ -951,7 +1029,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ079",
@@ -963,7 +1042,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ080",
@@ -976,7 +1056,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   
   
@@ -997,7 +1078,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
    {
 	"id": "OBJ251",
@@ -1009,7 +1091,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
    {
 	"id": "OBJ252",
@@ -1021,7 +1104,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ253",
@@ -1033,7 +1117,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ254",
@@ -1045,7 +1130,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ255",
@@ -1057,7 +1143,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ256",
@@ -1069,7 +1156,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ257",
@@ -1081,7 +1169,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ258",
@@ -1093,7 +1182,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ259",
@@ -1105,7 +1195,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ260",
@@ -1117,7 +1208,8 @@
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   
   
@@ -1147,7 +1239,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ282",
@@ -1160,7 +1253,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ283",
@@ -1173,7 +1267,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ284",
@@ -1186,7 +1281,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ285",
@@ -1199,7 +1295,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ286",
@@ -1212,7 +1309,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ287",
@@ -1225,7 +1323,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ288",
@@ -1238,7 +1337,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ289",
@@ -1251,7 +1351,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ290",
@@ -1264,7 +1365,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ291",
@@ -1277,7 +1379,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ292",
@@ -1290,7 +1393,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ293",
@@ -1303,7 +1407,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ294",
@@ -1316,7 +1421,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ295",
@@ -1329,7 +1435,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ296",
@@ -1342,7 +1449,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ297",
@@ -1355,7 +1463,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ298",
@@ -1369,7 +1478,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ299",
@@ -1382,7 +1492,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ300",
@@ -1395,7 +1506,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ301",
@@ -1408,7 +1520,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ302",
@@ -1421,7 +1534,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ303",
@@ -1434,7 +1548,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ304",
@@ -1447,7 +1562,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ305",
@@ -1461,7 +1577,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ306",
@@ -1474,7 +1591,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ307",
@@ -1487,7 +1605,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ308",
@@ -1501,7 +1620,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ309",
@@ -1514,7 +1634,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
 	"id": "OBJ310",
@@ -1527,7 +1648,8 @@
 	"property": ["NPCxxx"],
 	"comment_1": "il est question ici d'un PNJ et de son domicile",
 	"evidence": ["yes", "no"],
-	"possible_combinations": ["Dialogue", "Abstract"]
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ311",
@@ -1539,7 +1661,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ312",
@@ -1551,7 +1674,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ313",
@@ -1563,7 +1687,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ314",
@@ -1575,7 +1700,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ315",
@@ -1587,7 +1713,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ316",
@@ -1599,7 +1726,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ317",
@@ -1611,7 +1739,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ318",
@@ -1623,7 +1752,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ319",
@@ -1635,7 +1765,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ320",
@@ -1647,7 +1778,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ321",
@@ -1659,7 +1791,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ322",
@@ -1671,7 +1804,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ323",
@@ -1683,7 +1817,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ324",
@@ -1695,7 +1830,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ325",
@@ -1707,7 +1843,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ326",
@@ -1719,7 +1856,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ327",
@@ -1731,7 +1869,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ328",
@@ -1743,7 +1882,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ329",
@@ -1755,7 +1895,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ330",
@@ -1767,7 +1908,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ331",
@@ -1779,7 +1921,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ332",
@@ -1791,7 +1934,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ333",
@@ -1803,7 +1947,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ334",
@@ -1815,7 +1960,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ335",
@@ -1827,7 +1973,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ336",
@@ -1839,7 +1986,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ337",
@@ -1851,7 +1999,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ338",
@@ -1863,7 +2012,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ339",
@@ -1875,7 +2025,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ340",
@@ -1887,7 +2038,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ341",
@@ -1899,7 +2051,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ342",
@@ -1911,7 +2064,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ343",
@@ -1923,7 +2077,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ344",
@@ -1935,7 +2090,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ345",
@@ -1947,7 +2103,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ346",
@@ -1959,7 +2116,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ347",
@@ -1971,7 +2129,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ348",
@@ -1983,7 +2142,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ349",
@@ -1995,7 +2155,8 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
   },
   {
   "id": "OBJ350",
@@ -2007,6 +2168,7 @@
   "found": ["LOCxxxIDxxx"],
   "property": ["NPCxxx"],
   "evidence": ["yes", "no"],
-  "possible_combinations": ["Dialogue", "Abstract"]
+  "possible_combinations": ["Dialogue", "Abstract"],
+	"reduced_card": false
 } 
 ]

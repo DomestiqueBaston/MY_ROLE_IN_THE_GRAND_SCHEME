@@ -116,6 +116,7 @@ Button/styles/focus = SubResource("StyleBoxEmpty_mafkv")
 Button/styles/hover = SubResource("StyleBoxEmpty_2jdkw")
 Button/styles/normal = SubResource("StyleBoxEmpty_7vaho")
 Button/styles/pressed = SubResource("StyleBoxEmpty_hotnc")
+HFlowContainer/constants/h_separation = 0
 HSlider/icons/grabber = ExtResource("1_3rpo3")
 HSlider/icons/grabber_disabled = ExtResource("1_3rpo3")
 HSlider/icons/grabber_highlight = ExtResource("1_3rpo3")

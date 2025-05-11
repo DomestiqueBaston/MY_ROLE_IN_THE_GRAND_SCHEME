@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bialdyt2yrgkg"]
+[gd_scene load_steps=12 format=3 uid="uid://bialdyt2yrgkg"]
 
 [ext_resource type="Texture2D" uid="uid://6wn0yf5hibwo" path="res://GRAPHICS/INCOME/Income_BG.png" id="1_88mho"]
 [ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="2_ekhwe"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_ihpa3"]
 [ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="3_kabnn"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="4_5xymt"]
+[ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="4_kabnn"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -169,13 +170,18 @@ text = "Ok, nice..."
 script = ExtResource("3_kabnn")
 metadata/_edit_lock_ = true
 
-[node name="Content" type="RichTextLabel" parent="Income_Panel/Information"]
-modulate = Color(1, 1, 1, 0.882353)
-layout_mode = 0
-offset_left = 244.0
-offset_top = 72.0
-offset_right = 397.0
-offset_bottom = 278.0
+[node name="Chalk" type="Sprite2D" parent="Income_Panel/Information"]
+clip_children = 1
+position = Vector2(315, 178)
+texture = ExtResource("4_kabnn")
+metadata/_edit_lock_ = true
+
+[node name="Content" type="RichTextLabel" parent="Income_Panel/Information/Chalk"]
+offset_left = -71.0
+offset_top = -108.0
+offset_right = 82.0
+offset_bottom = 121.0
+theme = ExtResource("2_ekhwe")
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congratulations![/color][/pulse][/center]
 
@@ -183,7 +189,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
  solved that case and earned
  that [color=#ff8864]amazing[/color] reward:
 
-  -    [color=#ff8864]Dø[/color] and   card(s) to
+  - [color=#ff1c18]XXX[/color][color=#ff8864]Dø[/color] and [color=#ff1c18]X[/color] [color=#ff8864]card(s)[/color] to
  (try to) improve yourself...
   - [color=#ff8864]Eased your[/color] [color=#ff1c18]mind[/color] and [color=#ff1c18]cooled[/color] [color=#ff8864]
  it with the [/color][color=#ff1c18]cops[/color].
@@ -199,33 +205,11 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
 
 
 
-
-
  Not that it'll make any change!"
 metadata/_edit_lock_ = true
 
-[node name="Money" type="Label" parent="Income_Panel/Information/Content"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 48.0
-offset_right = 32.0
-offset_bottom = 56.0
-text = "XXX"
-horizontal_alignment = 2
-metadata/_edit_lock_ = true
-
-[node name="Card" type="Label" parent="Income_Panel/Information/Content"]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 48.0
-offset_right = 74.0
-offset_bottom = 56.0
-text = "X"
-horizontal_alignment = 2
-metadata/_edit_lock_ = true
-
 [node name="Card_Places" type="Node2D" parent="Income_Panel/Information"]
-position = Vector2(0, 5)
+position = Vector2(0, 13)
 metadata/_edit_lock_ = true
 
 [node name="First_Card" type="Marker2D" parent="Income_Panel/Information/Card_Places"]
@@ -237,7 +221,7 @@ position = Vector2(319, 152)
 metadata/_edit_lock_ = true
 
 [node name="TMP" type="Node2D" parent="Income_Panel/Information"]
-position = Vector2(0, 5)
+position = Vector2(0, 13)
 metadata/_edit_lock_ = true
 
 [node name="Card1" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]

@@ -136,31 +136,254 @@ text = "At this stage, [color=#ff8864]the information available[/color] regardin
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Victims_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
-custom_minimum_size = Vector2(50, 54)
+[node name="Victim_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[center][color=#ff8864]Victims[/color]:
-- [color=#ff1c18]NPC001[/color]
-- [color=#ff1c18]NPC002[/color]
-- [color=#ff1c18]NPC003[/color]
-- [color=#ff1c18]NPC004[/color][/center]"
+theme_override_constants/separation = 0
 metadata/_edit_lock_ = true
 
-[node name="Witnesses" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
-custom_minimum_size = Vector2(50, 54)
+[node name="Victim" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
-size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[center][color=#ff8864]Witnesses[/color]:
-- [color=#ff1c18]None[/color].
-- [color=#ff1c18]NPC001[/color]
-- [color=#ff1c18]NPC002[/color]
-- [color=#ff1c18]NPC003[/color][/center]"
+text = "[color=#ff8864]Victim[/color]:"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_01"]
+layout_mode = 2
+text = "- "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_01"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Jessica Rémencone"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_02"]
+layout_mode = 2
+text = "- "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_02"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Jean Trancène"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_03"]
+layout_mode = 2
+text = "- "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_03"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Simon Cussonez"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Witness_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Witness" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=#ff8864]Witness[/color]:"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_01"]
+layout_mode = 2
+text = "- "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_01"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "None"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_02"]
+layout_mode = 2
+text = "- "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_02"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "José Paldir"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_03"]
+layout_mode = 2
+text = "- "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_03"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Sarah Croche"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Suspect_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Suspect" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=#ff8864]Suspect[/color]:"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_01"]
+layout_mode = 2
+text = " - "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_01"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Aude Toilète"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_02"]
+layout_mode = 2
+text = " - "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_02"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Armelle Couvair"
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_03"]
+layout_mode = 2
+text = " - "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_03"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Garcin Lasare"
+fit_content = true
+autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Suspects" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(50, 54)
 layout_mode = 2
 size_flags_horizontal = 3

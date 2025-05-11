@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cg0xclws2s26w"]
+[gd_scene load_steps=26 format=3 uid="uid://cg0xclws2s26w"]
 
 [ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/CELL_PHONE/CellPhone_BG.png" id="1_rnq15"]
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/CellPhone_Theme.tres" id="2_brwrd"]
+[ext_resource type="Texture2D" uid="uid://5gxa8b1vcj0n" path="res://GRAPHICS/CELL_PHONE/CellPhone_Blinking_Button.png" id="2_vp1ik"]
 [ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="3_vp1ik"]
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="4_dq6i6"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_vfbvc"]
@@ -172,7 +173,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_f8ijm"]
 resource_name = "Typing"
-length = 3.33334
+length = 3.66668
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -181,7 +182,7 @@ tracks/0/path = NodePath("Cellphone_Panel/Message_Window/Message:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.333333, 3.26666),
+"times": PackedFloat32Array(0.333333, 3.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -193,7 +194,7 @@ tracks/1/path = NodePath("Cellphone_Panel/Buttons/Ok:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.333333, 3.33333),
+"times": PackedFloat32Array(0.333333, 3.66667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -203,6 +204,45 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_lsuee"),
 &"Typing": SubResource("Animation_f8ijm")
+}
+
+[sub_resource type="Animation" id="Animation_dq6i6"]
+resource_name = "Blinking"
+length = 0.53334
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cellphone_Panel/Cellphone/Cellphone_Blinking_Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_vfbvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cellphone_Panel/Cellphone/Cellphone_Blinking_Button:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pfg73"]
+_data = {
+&"Blinking": SubResource("Animation_dq6i6"),
+&"RESET": SubResource("Animation_vfbvc")
 }
 
 [node name="Cellphone_Overlay" type="Node2D"]
@@ -227,11 +267,15 @@ centered = false
 offset = Vector2(20, 20)
 metadata/_edit_lock_ = true
 
+[node name="Cellphone_Blinking_Button" type="Sprite2D" parent="Cellphone_Panel/Cellphone"]
+texture = ExtResource("2_vp1ik")
+centered = false
+offset = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
 [node name="Message_Window" type="Control" parent="Cellphone_Panel"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 theme = ExtResource("2_brwrd")
 metadata/_edit_lock_ = true
 
@@ -272,7 +316,7 @@ tooltip_text = "That was a real
 eye-opener..."
 theme_override_colors/font_disabled_color = Color(0.55, 0.309467, 0.099, 0.635294)
 theme_override_colors/font_hover_pressed_color = Color(0.8, 0.612267, 0.448, 0.635294)
-theme_override_colors/font_hover_color = Color(0.54902, 0.309804, 0.0980392, 0.635294)
+theme_override_colors/font_hover_color = Color(0.93, 0.82088, 0.7254, 0.87451)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.823529)
 theme_override_colors/font_color = Color(0.8, 0.611765, 0.447059, 0.635294)
 theme_override_colors/font_focus_color = Color(0.54902, 0.309804, 0.0980392, 0.635294)
@@ -309,6 +353,12 @@ autoplay = "Typing"
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
+
+[node name="Blinking_Button" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pfg73")
+}
+autoplay = "Blinking"
 
 [connection signal="mouse_entered" from="Cellphone_Panel/Buttons/Ok" to="Cellphone_Panel/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Cellphone_Panel/Buttons/Ok" to="Cellphone_Panel/Buttons" method="_on_any_button_mouse_exited"]

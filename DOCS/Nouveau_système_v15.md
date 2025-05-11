@@ -1,4 +1,4 @@
-My Role in the Grand Scheme
+ailMy Role in the Grand Scheme
 (le jeu vidéo, Tadaaaa !)
 
 Livret de règles (!)
@@ -318,7 +318,7 @@ Les emploi du temps
 		- Un PNJ qui travaille de nuit, sera en soirée chez lui ou sur un lieu alternatif.
 		- Le Week-end en journée, un PNJ sera toujours sur un lieu alternatif le matin et chez lui l’Après-midi ou inversement et chez lui en soirée. S’il travaille de nuit, il sera chez lui tout le temps.
 		- Le Weekend, un PNJ dormira chez lui la nuit. S’il travaille de nuit, il dormira chez lui le Matin et l’Après-midi.
-		- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire de travail par jour. Il sera alors trouvable UNIQUEMENT sur son Lieu secret). Si le PNJ travaille de nuit, alors il sera toute la nuit sur son lieu secret.
+		- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire de travail par jour. Il sera alors trouvable UNIQUEMENT sur son Lieu caché). Si le PNJ travaille de nuit, alors il sera toute la nuit sur son lieu caché.
 		- Un PNJ en prison ne sera visitable que le matin ou l’après-midi.
 
 Passer le temps
@@ -551,7 +551,7 @@ Combat
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici). (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).
-	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller et aura 25% de chance de trouver 50dø (±10%) et prendre +1Wan.
+	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 50dø (±10%) et 25% de chance de prendre +1Wan. On peut ne rien trouver sauf +1Wan ! 
 
 Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
 	- À la première rencontre, il n’y a pas de risque !
@@ -654,7 +654,7 @@ Enquête
 	- Voir à la fin pour les enquêtes de niveau 0 !
 	- Finalement, l’enquête ultime sera aussi générée procéduralement/aléatoirement.
 
-Lieu du crime et Lieu secret
+Lieu du crime et Lieu caché
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence.
 	- Le domicile du/des coupable(s) peut aussi contenir 1 evidence.
 	- Le lieu du crime est connu dès le départ en suivant : 0, 0.25, 0.5, 0.75 ou 1 sur 1 (dans Crime_Motive_Evidence.json à « known_crime_location »).
@@ -796,7 +796,7 @@ Notes de fabrication (au fur et à mesure que j’y pense) :
 	- 1 fois par jour, le joueur aura 10% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) !
 	- Dans l’enquête finale/ultime, à chaque fois que le joueur entrera dans un lieu dans lequel il va découvrir des victimes, il recevra un SMS anonyme.
 	- Seules les cartes Lieu, Objet et NPJ sont susceptibles de donner accès à des infos supplémentaires comme suit (les autres affichent déjà tout ce qu’elles peuvent communiquer au joueur).
-	-(Je crois que c’est trop « compliqué » à mettre en place… Trop de HboxContainers et VboxContainers imbriqués les uns dans les autres, Geoff, tu vas me maudire si je fais ça, d’autant qu’il y aurait pas mal d’écran à travailler !) Lorsque l’on survole le nom (hors carte) d’un Lieu, d’un Objet ou d’un PNJ, le tooltip affichera les informations principales relatives à la carte :
+	- Lorsque l’on survole le nom (hors carte) d’un Lieu, d’un Objet ou d’un PNJ, le tooltip affichera les informations principales relatives à la carte :
 		- Objet (en fonction de ce qui est connu et ou établi par le joueur) :
 			- name
 			- property
@@ -810,3 +810,6 @@ Notes de fabrication (au fur et à mesure que j’y pense) :
 			- job
 			- status
 	- Lorsque l’on survole une carte les infos relatives à la carte s’affiche dans la zone en bas à gauche de l’écran (Main.tscn et Interaction.tscn) sinon, on aura accès aux infos de tooltip.
+
+
+	- Dans les json (je pense à NPC, OBJ, CASE…) on n’aura que des infos vraies. Les fausses sont générées aléatoirement en jeu.

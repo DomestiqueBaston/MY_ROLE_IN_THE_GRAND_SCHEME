@@ -225,7 +225,7 @@ script = ExtResource("5_2k6nw")
 metadata/_edit_lock_ = true
 
 [node name="Randomize" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 1, 1, 0.901961)
+self_modulate = Color(1, 0.83, 0.83, 0.901961)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 238.0
@@ -269,7 +269,7 @@ texture_hover = ExtResource("20_v1018")
 metadata/_edit_lock_ = true
 
 [node name="Reset" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 1, 1, 0.901961)
+self_modulate = Color(1, 0.960333, 0.93, 0.901961)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 277.0
@@ -282,7 +282,7 @@ texture_hover = ExtResource("23_7lqc7")
 metadata/_edit_lock_ = true
 
 [node name="Cancel_button" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 1, 1, 0.901961)
+self_modulate = Color(0.7365, 1, 0.69, 0.901961)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 302.0
@@ -295,7 +295,7 @@ texture_hover = ExtResource("26_dkphj")
 metadata/_edit_lock_ = true
 
 [node name="Confirm" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 1, 1, 0.901961)
+self_modulate = Color(0.87, 0.7134, 0.7134, 0.901961)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 314.0

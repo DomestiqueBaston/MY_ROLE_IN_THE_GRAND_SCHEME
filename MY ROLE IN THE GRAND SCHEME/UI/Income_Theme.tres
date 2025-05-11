@@ -250,6 +250,7 @@ PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
 RichTextLabel/colors/default_color = Color(0.925734, 0.874449, 0.6551, 1)
 RichTextLabel/colors/font_outline_color = Color(0.0366, 0.04791, 0.06, 1)
 RichTextLabel/colors/font_shadow_color = Color(0.02, 0.01336, 0.0034, 0.25098)
+RichTextLabel/constants/line_separation = 1
 RichTextLabel/constants/outline_size = 6
 RichTextLabel/constants/shadow_offset_x = -3
 RichTextLabel/constants/shadow_offset_y = 2

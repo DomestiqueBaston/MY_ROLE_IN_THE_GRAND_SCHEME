@@ -240,6 +240,7 @@ theme = ExtResource("2_g5ffr")
 metadata/_edit_lock_ = true
 
 [node name="Green_Button" type="Sprite2D" parent="Intercom_Panel/Interface"]
+modulate = Color(1, 1, 1, 0.686275)
 position = Vector2(208, 36)
 texture = ExtResource("3_dtapb")
 centered = false
@@ -450,7 +451,8 @@ offset_left = 227.0
 offset_top = 56.0
 offset_right = 408.0
 offset_bottom = 306.0
-tooltip_text = "Damn!"
+tooltip_text = "Alright,
+I'll be back!"
 texture_normal = ExtResource("4_2884x")
 texture_pressed = ExtResource("4_2884x")
 texture_hover = ExtResource("6_xspdp")

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=32 format=3 uid="uid://bnunycy4luos4"]
+[gd_resource type="Theme" load_steps=30 format=3 uid="uid://bnunycy4luos4"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_86xcc"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_kva0k"]
@@ -25,18 +25,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63chm"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86xcc"]
-bg_color = Color(0.0255, 0.15, 0.069075, 0.545098)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.0144, 0.08, 0.03736, 0.796078)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pk2s2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0q4vc"]
@@ -56,20 +44,6 @@ bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
 bg_color = Color(1, 1, 1, 0.501961)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kva0k"]
-content_margin_left = 6.0
-content_margin_right = 6.0
-bg_color = Color(0.027451, 0.14902, 0.0705882, 0.545098)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.0108, 0.06, 0.02802, 0.843137)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -109,6 +83,8 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_kva0k")
 default_font_size = 8
+HFlowContainer/constants/h_separation = 0
+HFlowContainer/constants/v_separation = 0
 HSlider/icons/grabber = ExtResource("1_86xcc")
 HSlider/icons/grabber_disabled = ExtResource("1_86xcc")
 HSlider/icons/grabber_highlight = ExtResource("1_86xcc")
@@ -130,7 +106,6 @@ ItemList/styles/selected_focus = SubResource("StyleBoxEmpty_63chm")
 Label/constants/line_spacing = 2
 Label/font_sizes/font_size = 8
 Label/fonts/font = ExtResource("2_kva0k")
-Label/styles/normal = SubResource("StyleBoxFlat_86xcc")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_pk2s2")
 MenuButton/colors/font_color = Color(0.2, 0.270588, 0.219608, 0.823529)
 MenuButton/colors/font_focus_color = Color(0.1998, 0.27, 0.21969, 0.501961)
@@ -167,7 +142,6 @@ PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxEmpty_bvefx")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_vr86x")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
 RichTextLabel/constants/line_separation = 2
-RichTextLabel/styles/normal = SubResource("StyleBoxFlat_kva0k")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")
