@@ -1,4 +1,4 @@
-ailMy Role in the Grand Scheme
+My Role in the Grand Scheme
 (le jeu vidéo, Tadaaaa !)
 
 Livret de règles (!)
