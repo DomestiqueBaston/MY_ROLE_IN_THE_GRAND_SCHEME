@@ -11,7 +11,7 @@ var was_hovered : bool = false  # Pour suivre l'état de survol précédent
 # Fonction appelée au démarrage
 func _ready():
 	# On récupère la référence du CollisionShape2D (Card)
-	card = $Card_Colliders/Card
+	card = $Card_Collider/Card
 	
 	current_animation = anim_reset  # Commence avec l'animation RESET
 	play_animation(current_animation)

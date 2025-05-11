@@ -213,7 +213,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card:position")
+tracks/4/path = NodePath("Card_Mask/Card_Collider/Card:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -225,7 +225,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Card_Mask/Card_Colliders/Card:scale")
+tracks/5/path = NodePath("Card_Mask/Card_Collider/Card:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -384,7 +384,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Card_Mask/Card_Colliders/Card:position")
+tracks/3/path = NodePath("Card_Mask/Card_Collider/Card:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -396,7 +396,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card:scale")
+tracks/4/path = NodePath("Card_Mask/Card_Collider/Card:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -632,7 +632,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Card_Mask/Card_Colliders/Card:position")
+tracks/4/path = NodePath("Card_Mask/Card_Collider/Card:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -644,7 +644,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Card_Mask/Card_Colliders/Card:scale")
+tracks/5/path = NodePath("Card_Mask/Card_Collider/Card:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -1141,10 +1141,10 @@ texture = ExtResource("17_kusna")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Card_Colliders" type="Area2D" parent="Card_Mask"]
+[node name="Card_Collider" type="Area2D" parent="Card_Mask"]
 metadata/_edit_lock_ = true
 
-[node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Colliders"]
+[node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Collider"]
 position = Vector2(37, 50)
 shape = SubResource("RectangleShape2D_hp5bo")
 metadata/_edit_lock_ = true
