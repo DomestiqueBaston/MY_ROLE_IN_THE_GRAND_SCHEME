@@ -122,6 +122,7 @@ Progression du joueur (pas des PNJs !)
 Les PNJs
 
 	- Pour les besoin du jeu, les PNJs seront aussi représentés sous forme de cartes afin de pouvoir les « manipuler » en Interaction.
+	- Les PNJs sont aussi définis par PHY, MEN, HEA (et HEAnom) pour les caractéristiques principales. Et Wan pour les secondaires (voir plus bas).
 	- Leurs infos ne sont pas automatiquement connues du joueur. Cela dépendra de la fiche d’enquête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
 	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction (ainsi Emo et Add ne peuvent être des bonus/malus pour eux).
@@ -341,7 +342,6 @@ Veille/Sommeil
 
 L’argent
 	- La monnaie du jeu, c’est le « Dough » noté Dø (« Pognon » noté Pø en français !).
-	- Une partie démarre le lundi matin avec 100Dø en poche.
 	- Les PNJs n’ont pas de besoins d’argent.
 	- Le joueur peut avoir des dettes (voir Factures).
 
@@ -359,11 +359,16 @@ Les achats/dépenses
 	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, menu Dailies en haut de l’écran. Menu désactivé quand Rowena n’est pas là.
 	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, il disparaît jusqu’au lundi suivant.
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc éventuellement avant que le joueur n’arrive).
+
+Démarrage d’une partie
+	- Une partie démarre le lundi matin à 8h.
+	- 100Dø en poche.
+	- 3 doses de Drogue.
 Les cartes
 	- Globalement, les cartes représentent des moyens de « dialogue » avec le jeu. Elles indiquent seulement leur nom et une description de leur utilisation, pas d’informations chiffrées !
 	- Les cartes sont de type Dialogue, Combat, Investigation, Abstraites , Objet, Lieu et PNJ.
 	- Le joueur disposera dans sa pile de maîtrise de max.10 cartes Dialogue/Combat/Investigation/Abstraite (dont 3 max. pour Abstraite). Ce sont ces cartes qui représentent les « actions » qu’il connaît et maîtrise.
-	- En début de partie, pour la pile de Maîtrise, le jeu proposera au joueur 8 cartes d’interaction (2 Dialogue, 2 Combat, 2 Investigation y compris Special, Run Away ou Break in et 2 Abstraite) choisies aléatoirement.
+	- En début de partie, pour la pile de Maîtrise, le jeu proposera au joueur 4 cartes d’interaction : Dialogue, Combat, Investigation (y compris Special, Run Away ou Break in et Abstraite) choisies aléatoirement.
 	- Les effets d’une carte sur PHY et MEN sont temporaires !
 	- Les effets d’une carte sur HEA, HEAnom, Emo, Add et/ou Wan sont permanents !
 	- Lorsque des effets en cas d’échec sont mentionnés sur des cartes, ils sont à appliquer (en cas d’échec) après le jet de dé.
@@ -638,7 +643,7 @@ Enquête
 	- Pour les enquêtes « niveau 0 », voir la fin de cette partie consacrée aux enquêtes.
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
-		Difficulté = round(((nombre de victimes + nombre de coupables + (nombre de complices × 0.5)+(nombre de liens × 0.5) + nombre d’evidences) − 3) ÷ 9 × 4 + 1). Cela devrait donner un niveau de difficulté entre 1 et 5.
+		Difficulté = round(clamp(((victimes + coupables + (complices × 0.5) + (liens × 0.5) + evidences - (suspects × 0.5) - (témoins × 0.5)) × 19 ÷ 50 + 1), 1, 5). Cela devrait donner un niveau de difficulté entre 1 et 5.
 	- Les enquêtes de niveau 0 sont particulières (et à part).
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases dans Main.tscn.
