@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7yxbbm1q32sw"]
+[gd_scene load_steps=14 format=3 uid="uid://c7yxbbm1q32sw"]
 
 [ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCRIPTS/Globals.gd" id="1_p5kqw"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://4dfb07ojptrw" path="res://SOUND/MISC/Cancel.ogg" id="7_xi55q"]
 [ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="8_8eio1"]
 [ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="9_wgutn"]
+[ext_resource type="AudioStream" uid="uid://cugi11x6eeqoq" path="res://SOUND/MISC/Go_Front.ogg" id="10_xi55q"]
+[ext_resource type="AudioStream" uid="uid://mki238woun53" path="res://SOUND/MISC/Go_Back.ogg" id="11_8eio1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vnh2"]
 shader = ExtResource("4_f2dh2")
@@ -69,4 +71,14 @@ bus = &"UI"
 [node name="Hover" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("9_wgutn")
 volume_db = 5.0
+bus = &"UI"
+
+[node name="Card_Entered" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("10_xi55q")
+volume_db = -5.0
+bus = &"UI"
+
+[node name="Card_Exited" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("11_8eio1")
+volume_db = -5.0
 bus = &"UI"

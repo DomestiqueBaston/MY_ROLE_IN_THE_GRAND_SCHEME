@@ -1,16 +1,21 @@
 class_name Card extends Node2D
 
-@export var anim_expand : String = "Expand_Card"  # Nom de l'animation pour agrandir
-@export var anim_reduce : String = "Reduce_Card"  # Nom de l'animation pour réduire
-@export var anim_reset : String = "RESET"  # Nom de l'animation pour réinitialiser
-
 var _is_expanded = true
 
 func _ready():
-	$Card_Animations.play(anim_reset)
+	$Card_Animations.play("RESET")
 
 func get_card_name():
 	return $Card_Mask/Card_BG/Card_Text/Card_Name.text
+
+#
+# Modifies the opacity of both the card and its shadow.
+#
+func set_opacity(opacity: float):
+	$Card_Mask.modulate = opacity
+	if $Card_Shadow.material:
+		$Card_Shadow.material.set_shader_parameter(
+			"shadow_color", Color(0, 0, 0, opacity * 0.3))
 
 func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouse and event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
@@ -18,16 +23,31 @@ func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shap
 		Globals.popup_card_menu.emit(event.global_position, self)
 	elif event.is_action_pressed("Left_Click"):
 		if _is_expanded:
-			$Card_Animations.play(anim_reduce)
+			$Card_Animations.play("Reduce_Card")
 		else:
-			$Card_Animations.play(anim_expand)
+			$Card_Animations.play("Expand_Card")
 		_is_expanded = not _is_expanded
 
 func _on_card_collider_mouse_entered():
 	$Shadow_Animations.play("Shadow_On")
-	$UI_Sounds/Go_Front.play()
-	move_to_front()
+	if Globals.card_exited_sound.playing:
+		Globals.card_exited_sound.stop()
+	if not Globals.card_entered_sound.playing:
+		Globals.card_entered_sound.play()
+	_move_card_to_top()
+
 
 func _on_card_collider_mouse_exited():
 	$Shadow_Animations.play("Shadow_Off")
-	$UI_Sounds/Go_Back.play()
+	if not Globals.card_entered_sound.playing:
+		Globals.card_exited_sound.play()
+
+func _move_card_to_top():
+	var parent = get_parent()
+	if parent:
+		var z = 0
+		for child in parent.get_children():
+			if child is Card and child != self:
+				child.z_index = z
+				z += 1
+		z_index = z

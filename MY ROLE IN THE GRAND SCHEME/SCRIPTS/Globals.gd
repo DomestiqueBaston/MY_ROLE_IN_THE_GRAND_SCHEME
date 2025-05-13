@@ -4,6 +4,8 @@ extends Node
 @onready var cancel_sound: AudioStreamPlayer = $UI_Sounds/Cancel
 @onready var leave_sound: AudioStreamPlayer = $UI_Sounds/Leave
 @onready var hover_sound: AudioStreamPlayer = $UI_Sounds/Hover
+@onready var card_entered_sound: AudioStreamPlayer = $UI_Sounds/Card_Entered
+@onready var card_exited_sound: AudioStreamPlayer = $UI_Sounds/Card_Exited
 
 # signal emitted when the user right clicks on a card
 @warning_ignore("unused_signal")
