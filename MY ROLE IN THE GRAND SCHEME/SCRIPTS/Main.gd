@@ -13,8 +13,17 @@ func _ready():
 	popup.add_item("Delete link")
 	popup.add_separator("  - - - - - - - - - -  ")
 	popup.add_item("Throw card away")
+	
+	Globals.popup_card_menu.connect(_popup_menu)
+	Globals.popup_link_menu.connect(_popup_menu)
 
-func _unhandled_input(event: InputEvent):
-	if event is InputEventMouse and event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
-		popup.popup(Rect2i(event.global_position, Vector2i()))
-		get_viewport().set_input_as_handled()
+func _popup_menu(pos: Vector2, node: Node2D):
+	if node is Card:
+		if node.find_parent("TMP_2"):
+			return
+		print("popup menu for card ", node.get_card_name())
+	elif node is Link:
+		print("popup menu for link ", node.get_name())
+	else:
+		print("popup menu for node ", node.get_name())
+	popup.popup(Rect2i(pos, Vector2i()))

@@ -5,6 +5,14 @@ extends Node
 @onready var leave_sound: AudioStreamPlayer = $UI_Sounds/Leave
 @onready var hover_sound: AudioStreamPlayer = $UI_Sounds/Hover
 
+# signal emitted when the user right clicks on a card
+@warning_ignore("unused_signal")
+signal popup_card_menu(pos: Vector2, card: Card)
+
+# signal emitted when the user right clicks on a link
+@warning_ignore("unused_signal")
+signal popup_link_menu(pos: Vector2, link: Link)
+
 func _ready():
 	# the mouse is drawn on top of menus
 	$MouseLayer.set_layer(1025)
@@ -12,6 +20,12 @@ func _ready():
 	$ShaderOverlayLayer.set_layer(1026)
 	# and the shaders are visible even if they are turned off in the editor
 	$ShaderOverlayLayer.visible = true
+	
+	# only topmost cards and links receive input events
+	var viewport = get_viewport()
+	viewport.physics_object_picking = true
+	viewport.physics_object_picking_sort = true
+	viewport.physics_object_picking_first_only = true
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("Full_Screen"):

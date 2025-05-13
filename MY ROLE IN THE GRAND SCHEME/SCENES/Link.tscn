@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dew0fg5j62sga"]
+[gd_scene load_steps=12 format=3 uid="uid://dew0fg5j62sga"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="1_3ne57"]
+[ext_resource type="Script" uid="uid://bvn3rvbg4w7dg" path="res://SCRIPTS/Link.gd" id="1_vn4vw"]
 [ext_resource type="Texture2D" uid="uid://dlifalo75nukw" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce.png" id="2_2ltco"]
 [ext_resource type="Script" uid="uid://ldx5rugxss32" path="res://SCRIPTS/Link_Collider.gd" id="3_bbe4p"]
 [ext_resource type="AudioStream" uid="uid://bockrexv0ah1j" path="res://SOUND/LINK/Bip_Link.ogg" id="4_au33t"]
@@ -106,6 +107,7 @@ _data = {
 [node name="Link" type="Node2D"]
 texture_filter = 1
 texture_repeat = 2
+script = ExtResource("1_vn4vw")
 metadata/_edit_lock_ = true
 
 [node name="Link_Texture" type="TextureRect" parent="."]
@@ -137,3 +139,5 @@ libraries = {
 [node name="UI" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0
 bus = &"UI"
+
+[connection signal="input_event" from="Link_Texture/Link_Collider" to="." method="_on_link_collider_input_event"]
