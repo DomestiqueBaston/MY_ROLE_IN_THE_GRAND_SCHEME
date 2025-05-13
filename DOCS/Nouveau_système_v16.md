@@ -683,9 +683,9 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens :
           Noir : Coupable/Complice/Preuve Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
-          Vert foncé : Ami (pas exploité dans toutes les enquêtes) SERT À VALIDER UNE ENQUÊTE ?
-Orange : Ennemi (pas exploité dans toutes les enquêtes) SERT À VALIDER UNE ENQUÊTE ?
-Bleu clair : Connaissance (pas exploité dans toutes les enquêtes) SERT À VALIDER UNE ENQUÊTE ?
+          Vert foncé : Ami (pas exploité dans toutes les enquêtes)
+Orange : Ennemi (pas exploité dans toutes les enquêtes)
+Bleu clair : Connaissance (pas exploité dans toutes les enquêtes)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Rose : Intime (pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
