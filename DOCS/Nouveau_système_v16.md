@@ -213,7 +213,7 @@ Système de Dés
 	- Lors des jets de dé, il faut toujours que le jet de dé soit inférieur ou égal au score à effectuer (pour une réussite).
 	- Ainsi, contre intuitivement (pour moi, en tout cas), un bonus est négatif (par ex. : -1) et un malus est positif (par ex. : +1) !
 	- Les actions seront résolues sur des jets d’1 dé à 10 faces(1D10).
-	- En Combat et Dialogue, on compare les scores du joueur avec celui du PNJ. La meilleure marge de réussite gagne si les deux font une réussite. En cas d’égalité, « status quo » : personne n’obtient ni ne perd rien. La marge de réussite/échec est définie par la différence entre le jet à obtenir et le jet obtenu. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
+	- En Combat et Dialogue, on compare les scores du joueur avec celui du PNJ. La meilleure marge de réussite gagne si les deux font une réussite. En cas d’égalité, « status quo » : personne n’obtient ni ne perd rien. La marge de réussite/échec est définie par la différence entre le jet à obtenir et le jet obtenu. À la fin de la confrontation, les règles de progression (échec/réussite critique) s’appliquent toujours quel que soit le résultat.
 	- En Investigation, pas de comparaison avec un PNJ, c’est plus simple. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
 
 Les différentes piles de cartes du joueur (en interaction)
@@ -482,6 +482,14 @@ Cartes en Interaction
 	- Une pile Objet (en Dialogue) composée de tous les Objets découverts par le joueur dans l’enquête (non Evidence).
 	- Une pile Lieu (en Dialogue) composée de tous les Lieux découverts par le joueur dans l’enquête.
 
+Jet de dé et évaluation des scores
+	- Le joueur et le PNJ lance 1d10.
+	- Un résultat ≤  au score cible est une réussite.
+	- Si les deux réussissent, c’est la plus grosse marge de réussite qui s’impose.
+	- Si les marges de réussite sont identiques, c’est un échec sans effet négatif !
+	- Si les deux sont une réussite critique (quelque soit la marge de réussite), c’est un échec sans effet négatif mais on applique la règle de progression tout de même.
+	- Sinon, c’est un échec.
+
 Fin d’interaction
 	- À la fin d’une interaction, le joueur se verra proposer toutes les cartes d’interaction et Abstraites qu’il a jouées et avec lesquelles il a eu un succès (rien en cas d’échec, bien entendu). Il pourra en garder autant qu’il veut jusqu’à en avoir max. 10 dans sa pile (dont 3 Abstraite max.).
 	- Il sera bien entendu possible de rejeter des cartes présentes dans sa pile de Maîtrise. La seule contrainte étant donc de ne pas en avoir plus de 10.
@@ -499,9 +507,10 @@ Dialogue
 	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
 	- On ne rajoute le temps écoulé qu’à la fin du Dialogue.
 	- Pour poser des questions, le joueur utilise ses cartes de Dialogue, Abstraite et Objet/Lieu/PNJ/Evidence.
-	- En fonction de la marge de réussite, il obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). Jamais plus qu’un PNJ ne peut en délivrer.
+	- En cas de réussite normale,  fonction de la marge de réussite, il obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). Jamais plus qu’un PNJ ne peut en délivrer.
+	- En cas d’échec normal : rien.
 	- En cas d’échec critique, le joueur prend ±1Emo → Min/Max ainsi que -1Rep avec le PNJ.
-	- En cas de réussite critique, le joueur prend ±1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante).
+	- En cas de réussite critique, le joueur prend ±1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante) en plus de réussite normale.
 	- En cas de mise en jeu d’une carte Objet ou Lieu ou PNJ, s’il y a réussite, les infos récupérées concernent en priorité la carte jouée et ce qui s’y rattache, bien entendu.
 	- Pour la révélation d’une information cachée d’un PNJ, le joueur doit avoir eu une marge de réussite de 3+ au jet de dé de Dialogue, une réussite critique ou avoir utilisé une carte Dialogue « Question piège ».
 	- Les informations obtenues sont choisies aléatoirement parmi celles obtenables auprès du PNJ.
@@ -514,18 +523,19 @@ Dialogue
 		Auprès d’1 Victime, Témoin et Suspect : (1+MEN)/(20+MEN) 
 		Auprès d’1 Coupable : (9+MEN)/(10+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
-	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur (cumulable).
+	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau).
 	- Une information cachée (par ex : hideout) est toujours révélée juste.
-	- Une information fausse pour un lien désignera 2 PNJs (1 des 2 peut être bon pour autant) dans un lien de n’importe quelle nature pour debt_influence, intimacy, friend, enemy, acquaintance ou ideology, ou bien 1 PNJ pour property, homework ou hangout.
+	- Une information fausse pour un lien désignera 2 PNJs dans un lien de n’importe quelle nature pour debt_influence, intimacy, friend, enemy, acquaintance ou ideology, ou bien 1 PNJ pour property, homework ou hangout.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux.
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec ses liens Violet (à moins qu’elle existe déjà).
 	- Si un lien nouveau est donné pour une carte pré-existante, uniquement les nouveaux liens seront Violet.
 	- Une nouvelle carte révélée n’est pas qualifiée d’Evidence automatiquement. C’est au joueur de le faire.
 	- Le jeu n’établit pas non plus de lien pointillé Violet/Noir.
 	- Si une information révélée concerne les informations personnelles d’un PNJ, elle seront consultables dans la fiche/carte du PNJ (dans Main.tscn, tout se qui se raccorde à la carte clignotera en bipant) !
-	- Un PNJ peut donner/redonner une info déjà existante dans la fiche d’enquête ou déjà donnée préalablement. Mais on ne change pas la nature du lien déjà présent s’il n’est plus Violet.
+	- Un PNJ peut donner/redonner une info déjà existante dans la fiche d’enquête ou déjà donnée préalablement. Mais on ne change pas la nature du lien déjà présent s’il n’est plus Violet. Si l’info devrait modifier une info déjà établie, alors on affichera le Warning sur le lien (le tooltip affichera une info relative au changement) !
 	- Un PNJ a les mêmes chances de corriger une information précédemment donnée comme fausse (voir juste au dessus).
 	- Un PNJ ne corrigera pas une information vraie ou qui n’est plus en Violet.
+	- Le Dialogue a-t-il eu lieu avec un PNJ qui dormait (il a été réveillé!) ? Si oui, -1Rep.
 
 Quelles informations peuvent être révélées par un PNJ
 	- Si une carte Objet, Lieu ou PNJ est jouée en dialogue, les infos obtenues (en cas de réussite) seront en priorité liées à cette carte. Si d’autres infos doivent être obtenues (par ex. la réussite implique que plus soient révélées), alors les infos seront liées à des révélations d’ordre social, professionnel, etc.

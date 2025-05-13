@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://6u8qm8dm4oy4"]
+[gd_scene load_steps=33 format=3 uid="uid://6u8qm8dm4oy4"]
 
 [ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://GRAPHICS/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_ku4pt"]
 [ext_resource type="Theme" uid="uid://bnunycy4luos4" path="res://UI/Paranoia_Communication_Theme.tres" id="2_if43b"]
@@ -28,6 +28,8 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucoie"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guovx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wk6x6"]
 
@@ -306,12 +308,12 @@ visible_characters_behavior = 1
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Positive_Report" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue"]
+visible = false
 layout_mode = 0
 offset_top = 56.0
 offset_right = 539.0
@@ -1096,10 +1098,9 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Negative_Report" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue"]
-visible = false
 layout_mode = 0
 offset_top = 56.0
-offset_right = 547.0
+offset_right = 539.0
 offset_bottom = 268.0
 metadata/_edit_lock_ = true
 
@@ -1114,17 +1115,24 @@ Let's hope this doesn't turn into an even bigger disaster.
 But knowing my luck, it probably will.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Rep_Critical_Failure" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
+[node name="Rep_Critical_Failure_Container" type="PanelContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_guovx")
+metadata/_edit_lock_ = true
+
+[node name="Rep_Critical_Failure" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 0
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report/Rep_Critical_Failure"]
+[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "Anyway. It seems like "
@@ -1133,7 +1141,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="NPC_01" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report/Rep_Critical_Failure"]
+[node name="NPC_01" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1147,10 +1155,10 @@ autowrap_mode = 0
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report/Rep_Critical_Failure"]
+[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 size_flags_vertical = 0
 bbcode_enabled = true
 text = " is a bit [color=#ff8864]less fond[/color] of me now."
@@ -1168,6 +1176,7 @@ text = "[center]What's more, I can't say it's made me [color=#ff8864]any more [c
 metadata/_edit_lock_ = true
 
 [node name="Combat" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 metadata/_edit_lock_ = true

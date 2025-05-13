@@ -272,7 +272,6 @@ position = Vector2(519, 170)
 position = Vector2(544, 64)
 
 [node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("23_pharv")]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_1/Papa_Link" index="0"]

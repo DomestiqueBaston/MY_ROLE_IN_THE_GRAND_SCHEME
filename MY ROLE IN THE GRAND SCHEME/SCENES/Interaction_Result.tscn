@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqhearrxagi71"]
+[gd_scene load_steps=19 format=3 uid="uid://dqhearrxagi71"]
 
 [ext_resource type="Texture2D" uid="uid://ddyok5fbos80x" path="res://GRAPHICS/INTERACTION_RESULT/Interaction_Result_BG.png" id="1_k2rcs"]
 [ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://c3oj1c6jo6ikm" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Turquoise.png" id="7_wphtr"]
 [ext_resource type="Texture2D" uid="uid://dmuhwilbaywkx" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Tres_Fonce.png" id="8_v86ur"]
 [ext_resource type="Texture2D" uid="uid://cnkohi6nkpx16" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Blanc.png" id="9_eugly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wphtr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yobwp"]
 
@@ -127,6 +129,7 @@ anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
+visible = false
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
@@ -874,7 +877,6 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Negative_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
-visible = false
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
@@ -892,17 +894,24 @@ Let's hope this doesn't turn into an even bigger disaster.
 But knowing my luck, it probably will.[/center]"
 metadata/_edit_lock_ = true
 
-[node name="Rep_Critical_Failure" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
+[node name="Rep_Critical_Failure_Container" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wphtr")
+metadata/_edit_lock_ = true
+
+[node name="Rep_Critical_Failure" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 0
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Beginning" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure"]
+[node name="Beginning" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "Anyway. It seems like "
@@ -911,7 +920,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 metadata/_edit_lock_ = true
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -925,10 +934,10 @@ autowrap_mode = 0
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="End" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure"]
+[node name="End" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 size_flags_vertical = 0
 bbcode_enabled = true
 text = " is a bit [color=#ff8864]less fond[/color] of me now."
