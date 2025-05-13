@@ -213,7 +213,7 @@
       "accomplices": [0, 1],
       "suspects": [1, 2],
       "witnesses": [0, 1],
-      "evidence_number": [1],
+      "evidence_number": [1, 2],
       "evidences": ["OBJ015", "OBJ017", "OBJ063"]
     },
     {
@@ -940,7 +940,7 @@
       "accomplices": [0],
       "suspects": [1, 2],
       "witnesses": [0, 1],
-      "evidence_number": [1],
+      "evidence_number": [1, 2],
       "evidences": ["OBJ006", "OBJ044", "OBJ045"]
     },
     {
@@ -1593,7 +1593,7 @@
       "accomplices": [0, 1, 2],
       "suspects": [2, 3],
       "witnesses": [0, 1, 2, 3],
-      "evidence_number": [1],
+      "evidence_number": [1, 2, 3],
       "evidences": ["OBJ006", "OBJ021", "OBJ031"]
     },
     {
@@ -2300,7 +2300,7 @@
       "accomplices": [0, 1, 2],
       "suspects": [1, 2, 3],
       "witnesses": [0, 1, 2],
-      "evidence_number": [1],
+      "evidence_number": [1, 2],
       "evidences": ["OBJ012", "OBJ016", "OBJ063"]
     },
     {
@@ -2338,7 +2338,7 @@
       "accomplices": [0, 1, 2],
       "suspects": [1, 2],
       "witnesses": [0, 1, 2],
-      "evidence_number": [1],
+      "evidence_number": [1, 2],
       "evidences": ["OBJ006", "OBJ015", "OBJ016"]
     },
     {

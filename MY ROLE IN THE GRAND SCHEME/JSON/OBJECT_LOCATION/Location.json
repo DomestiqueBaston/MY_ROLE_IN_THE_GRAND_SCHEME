@@ -1,245 +1,265 @@
 [
   {
-	"id": "LOC001",
-	"loc_id": "LOC001_IDxxx",
+    "id": "LOC001",
+    "loc_id": "LOC001_IDxxx",
 	"info_name": "- APARTMENT -",
-	"name": "Apartment",
-	"type": "Location",
+    "name": "Apartment",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
 	"uniqueness": [],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "People's favorite place to live, sleep... and have sex",
-	"home_of": ["", "NPCxxx", "NPCxxx"],
+    "description": "People's favorite place to live, sleep... and have sex",
+    "home_of": ["", "NPCxxx", "NPCxxx"],
 	"comment_2": "1 ou 2 NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["n/a"],
-	"hangout": ["no"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["n/a"],
+    "hangout": ["no"],
 	"reduced_card": false,
-	"bonus_malus": []
+    "bonus_malus": []
 },
 {
-	"id": "LOC002",
-	"loc_id": "LOC002_IDxxx",
-	"info_name": "- WORKSHOP -",
-	"name": "Workshop",
-	"type": "Location",
-	"uniqueness": [2],
+    "id": "LOC002",
+    "loc_id": "LOC002_IDxxx",
+    "info_name": "- WORKSHOP -",
+    "name": "Workshop",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [2],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "A place for crafting, repairing, and probably altering things",
-	"home_of": [],
+    "description": "A place for crafting, repairing, and probably altering things",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["morning", "afternoon"],
-	"hangout": ["no"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"PHY": "-1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
 },
 {
-	"id": "LOC003",
-	"loc_id": "LOC003_IDxxx",
-	"info_name": "- BAR -",
-	"name": "Bar",
-	"type": "Location",
-	"uniqueness": [2],
+    "id": "LOC003",
+    "loc_id": "LOC003_IDxxx",
+    "info_name": "- BAR -",
+    "name": "Bar",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [2],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "Here, we drink freely, laugh, or make shady deals",
-	"home_of": [],
+    "description": "Here, we drink freely, laugh, or make shady deals",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
-	"hangout": ["yes"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"MEN": "-1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
 },
 {
-	"id": "LOC004",
-	"loc_id": "LOC004_IDxxx",
-	"info_name": "- LIBRARY -",
-	"name": "Library",
-	"type": "Location",
-	"uniqueness": [1],
+    "id": "LOC004",
+    "loc_id": "LOC004_IDxxx",
+    "info_name": "- LIBRARY -",
+    "name": "Library",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [1],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "Usually, people try to work on who-knows-what pointless theses here",
-	"home_of": [],
+    "description": "Usually, people try to work on who-knows-what pointless theses here",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": ["Break_in"],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
-	"hangout": ["no", "secret"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": ["Break_in"],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+    "hangout": ["no", "secret"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"MEN": "+1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
 },
 {
-	"id": "LOC005",
-	"loc_id": "LOC005_IDxxx",
-	"info_name": "- OFFICE -",
-	"name": "Office",
-	"type": "Location",
-	"uniqueness": [],
+    "id": "LOC005",
+    "loc_id": "LOC005_IDxxx",
+    "info_name": "- OFFICE -",
+    "name": "Office",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "One of those places where a lot of people wish they weren't working",
-	"home_of": [],
+    "description": "One of those places where a lot of people wish they weren't working",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["morning", "afternoon"],
-	"hangout": ["no"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
 	"reduced_card": false,
-	"bonus_malus": []
+    "bonus_malus": []
 },
 {
-	"id": "LOC006",
-	"loc_id": "LOC006_IDxxx",
-	"info_name": "- MEDICAL OFFICE -",
-	"name": "Medical Office",
-	"type": "Location",
-	"uniqueness": [1],
+    "id": "LOC006",
+    "loc_id": "LOC006_IDxxx",
+    "info_name": "- MEDICAL OFFICE -",
+    "name": "Medical Office",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [1],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "As long as it's a general practitioner, there's no real reason to be scared to enter",
-	"home_of": [],
+    "description": "As long as it's a general practitioner, there's no real reason to be scared to enter",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["morning", "afternoon"],
-	"hangout": ["no"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon"],
+    "hangout": ["no"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"MEN": "+1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
 },
 {
-	"id": "LOC007",
-	"loc_id": "LOC007_IDxxx",
-	"info_name": "- BARRACKS -",
-	"name": "Barracks",
-	"type": "Location",
-	"uniqueness": [1],
+    "id": "LOC007",
+    "loc_id": "LOC007_IDxxx",
+    "info_name": "- BARRACKS -",
+    "name": "Barracks",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [1],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "Not the best place for talking literature. Everything else is fine enough",
-	"home_of": [],
+    "description": "Not the best place for talking literature. Everything else is fine enough",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": ["Combat"],
-	"not_needed_actions": ["Break_in"],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["h24"],
-	"hangout": ["no"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": ["Combat"],
+    "not_needed_actions": ["Break_in"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"PHY": "+1", "MEN": "-1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "+1", "MEN": "-1"}
+      }
+    ]
 },
 {
-	"id": "LOC008",
-	"loc_id": "LOC008_IDxxx",
-	"info_name": "- CEMETERY -",
-	"name": "Cemetery",
-	"type": "Location",
-	"uniqueness": [1],
+    "id": "LOC008",
+    "loc_id": "LOC008_IDxxx",
+    "info_name": "- CEMETERY -",
+    "name": "Cemetery",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [1],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "Not exactly a lively place for a chat. But hey, it's quiet",
-	"home_of": [],
+    "description": "Not exactly a lively place for a chat. But hey, it's quiet",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": ["Break_in"],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["h24"],
-	"hangout": ["no", "secret"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": ["Break_in"],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["h24"],
+    "hangout": ["no", "secret"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"MEN": "+1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "+1"}
+      }
+    ]
 },
 {
-	"id": "LOC009",
-	"loc_id": "LOC009_IDxxx",
-	"info_name": "- CINEMA -",
-	"name": "Cinema",
-	"type": "Location",
-	"uniqueness": [1],
+    "id": "LOC009",
+    "loc_id": "LOC009_IDxxx",
+    "info_name": "- CINEMA -",
+    "name": "Cinema",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [1],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "Places like this are fading out - now it's just crap on the screen",
-	"home_of": [],
+    "description": "Places like this are fading out - now it's just crap on the screen",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
-	"hangout": ["yes"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
+    "hangout": ["yes"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"PHY": "-1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"PHY": "-1"}
+      }
+    ]
 },
 {
-	"id": "LOC010",
-	"loc_id": "LOC010_IDxxx",
-	"info_name": "- NIGHTCLUB -",
-	"name": "Nightclub",
-	"type": "Location",
-	"uniqueness": [1],
+    "id": "LOC010",
+    "loc_id": "LOC010_IDxxx",
+    "info_name": "- NIGHTCLUB -",
+    "name": "Nightclub",
+    "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
+    "uniqueness": [1],
 	"comment_1": "rien (appartment), 1 ou 2",
-	"description": "A place where 'music' is barely recognizable anymore",
-	"home_of": [],
+    "description": "A place where 'music' is barely recognizable anymore",
+    "home_of": [],
 	"comment_2": "NPCxxx or rien",
-	"possible_combinations": ["Dialogue", "Abstract"],
-	"impossible_actions": [],
-	"not_needed_actions": [],
-	"findable_content": [],
-	"hidden_content": [],
-	"open_hours": ["night", "we_night"],
-	"hangout": ["yes"],
+    "possible_combinations": ["Dialogue", "Abstract"],
+    "impossible_actions": [],
+    "not_needed_actions": [],
+    "findable_content": [],
+    "hidden_content": [],
+    "open_hours": ["night", "we_night"],
+    "hangout": ["yes"],
 	"reduced_card": false,
-	"bonus_malus": [
-	  {
-		"effects": {"MEN": "-1"}
-	  }
-	]
+    "bonus_malus": [
+      {
+        "effects": {"MEN": "-1"}
+      }
+    ]
 },
   {
   "id": "LOC011",
@@ -247,6 +267,8 @@
   "info_name": "- SCHOOL -",
   "name": "School",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [2],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Originally, the idea behind this place wasn't terrible...",
@@ -260,9 +282,9 @@
   "open_hours": ["morning", "afternoon"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "-1"}
-	}
+    {
+      "effects": {"MEN": "-1"}
+    }
   ]
 },
 {
@@ -271,6 +293,8 @@
   "info_name": "- ART GALLERY -",
   "name": "Art Gallery",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Art? Please... give me a break!",
@@ -284,9 +308,9 @@
   "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "+1"}
-	}
+    {
+      "effects": {"MEN": "+1"}
+    }
   ]
 },
 {
@@ -295,6 +319,8 @@
   "info_name": "- GARAGE -",
   "name": "Garage",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where 'repairs' often come with a little extra charge",
@@ -308,9 +334,9 @@
   "open_hours": ["morning", "afternoon", "evening"],
   "hangout": ["no", "secret"],
   "bonus_malus": [
-	{
-	  "effects": {"HEA": "-1"}
-	}
+    {
+      "effects": {"HEA": "-1"}
+    }
   ]
 },
 {
@@ -319,6 +345,8 @@
   "info_name": "- HANGAR -",
   "name": "Hangar",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "The kind of place where old crime novels ended with a police raid",
@@ -332,9 +360,9 @@
   "open_hours": ["morning", "afternoon", "evening"],
   "hangout": ["no", "secret"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "+1"}
-	}
+    {
+      "effects": {"PHY": "+1"}
+    }
   ]
 },
 {
@@ -343,6 +371,8 @@
   "info_name": "- HOSPITAL -",
   "name": "Hospital",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place you're supposed to walk out of, not leave on a stretcher",
@@ -356,9 +386,9 @@
   "open_hours": ["h24"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "-1", "HEA": "+1"}
-	}
+    {
+      "effects": {"PHY": "-1", "HEA": "+1"}
+    }
   ]
 },
 {
@@ -367,6 +397,8 @@
   "info_name": "- HOTEL -",
   "name": "Hotel",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [2],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "People's favorite place to slee... sorry, I mean, mainly to have sex",
@@ -387,6 +419,8 @@
   "info_name": "- LABORATORY -",
   "name": "Laboratory",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where science used to happen... or things just get weirder",
@@ -400,9 +434,9 @@
   "open_hours": ["morning", "afternoon"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "+1"}
-	}
+    {
+      "effects": {"MEN": "+1"}
+    }
   ]
 },
 {
@@ -411,6 +445,8 @@
   "info_name": "- PLACE OF WORSHIP -",
   "name": "Place of Worship",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A lot of people who enter here have imaginary friends",
@@ -424,9 +460,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "-1", "MEN": "-1"}
-	}
+    {
+      "effects": {"PHY": "-1", "MEN": "-1"}
+    }
   ]
 },
 {
@@ -435,6 +471,8 @@
   "info_name": "- GENERAL STORE -",
   "name": "General Store",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where you can find anything... or nothing you actually need",
@@ -448,9 +486,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "-1"}
-	}
+    {
+      "effects": {"MEN": "-1"}
+    }
   ]
 },
 {
@@ -459,6 +497,8 @@
   "info_name": "- MUSEUM -",
   "name": "Museum",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "The only place I know where they display dust",
@@ -472,9 +512,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "-1"}
-	}
+    {
+      "effects": {"PHY": "-1"}
+    }
   ]
 },
 {
@@ -483,6 +523,8 @@
   "info_name": "- PARK -",
   "name": "Park",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Ah, trees, flowers... nature! And junkies, necessarily",
@@ -503,6 +545,8 @@
   "info_name": "- SWIMMING POOL -",
   "name": "Swimming Pool",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "The perfect place to swim through floating vomit... and catch fungi",
@@ -516,9 +560,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "-1"}
-	}
+    {
+      "effects": {"PHY": "-1"}
+    }
   ]
 },
 {
@@ -527,6 +571,8 @@
   "info_name": "- POST OFFICE -",
   "name": "Post Office",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "The place where packages get lost and time too",
@@ -540,9 +586,9 @@
   "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "-1"}
-	}
+    {
+      "effects": {"MEN": "-1"}
+    }
   ]
 },
 {
@@ -551,6 +597,8 @@
   "info_name": "- RESTAURANT -",
   "name": "Restaurant",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [2],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "I occasionally visit places like this to eat... and get sick",
@@ -564,9 +612,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["no", "secret"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "-1"}
-	}
+    {
+      "effects": {"MEN": "-1"}
+    }
   ]
 },
 {
@@ -575,6 +623,8 @@
   "info_name": "- ARCADE -",
   "name": "Arcade",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place for playing Domestique Baston, Kindergarten Massaker or Java Jolt",
@@ -588,9 +638,9 @@
   "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "-1"}
-	}
+    {
+      "effects": {"MEN": "-1"}
+    }
   ]
 },
 {
@@ -599,6 +649,8 @@
   "info_name": "- THEATER -",
   "name": "Theater",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where you pay to watch people pretend... and still get bored",
@@ -612,9 +664,9 @@
   "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "-1", "MEN": "+1"}
-	}
+    {
+      "effects": {"PHY": "-1", "MEN": "+1"}
+    }
   ]
 },
 {
@@ -623,6 +675,8 @@
   "info_name": "- SPORTS HALL -",
   "name": "Sports Hall",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where people pay to do what they could do outside for free",
@@ -636,9 +690,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "+1", "MEN": "-1"}
-	}
+    {
+      "effects": {"PHY": "+1", "MEN": "-1"}
+    }
   ]
 },
 {
@@ -647,6 +701,8 @@
   "info_name": "- STADIUM -",
   "name": "Stadium",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Crowds gather in places like this to watch billionaires run after a ball",
@@ -660,9 +716,9 @@
   "open_hours": ["morning", "afternoon", "evening"],
   "hangout": ["yes", "secret"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "+1"}
-	}
+    {
+      "effects": {"PHY": "+1"}
+    }
   ]
 },
   {
@@ -671,6 +727,8 @@
   "info_name": "- GAS STATION -",
   "name": "Gas Station",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Here, the smell of gasoline is the only thing that gets you going",
@@ -691,6 +749,8 @@
   "info_name": "- BANK -",
   "name": "Bank",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [2],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "As Bernard once said: A place to stop by... if you're into redistributing",
@@ -711,6 +771,8 @@
   "info_name": "- POLICE STATION -",
   "name": "Police Station",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "The place with the most criminals per square meter in this city",
@@ -724,9 +786,9 @@
   "open_hours": ["h24"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "-1"}
-	}
+    {
+      "effects": {"MEN": "-1"}
+    }
   ]
 },
 {
@@ -735,6 +797,8 @@
   "info_name": "- FIRE STATION -",
   "name": "Fire Station",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "The only fire they won't put out is the one you've got in your pants",
@@ -748,9 +812,9 @@
   "open_hours": ["h24"],
   "hangout": ["no"],
   "bonus_malus": [
-	{
-	  "effects": {"PHY": "+1"}
-	}
+    {
+      "effects": {"PHY": "+1"}
+    }
   ]
 },
 {
@@ -759,6 +823,8 @@
   "info_name": "- CAFÉ -",
   "name": "Café",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [2],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place to sip overpriced coffee and pretend you're doing something important",
@@ -772,9 +838,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-	{
-	  "effects": {"MEN": "+1"}
-	}
+    {
+      "effects": {"MEN": "+1"}
+    }
   ]
 },
 {
@@ -783,6 +849,8 @@
   "info_name": "- BAKERY -",
   "name": "Bakery",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "I'd love to live in France just to step into one of these",
@@ -803,6 +871,8 @@
   "info_name": "- PHARMACY -",
   "name": "Pharmacy",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where you used to find cures, and now it's just sugar pills and hope",
@@ -823,6 +893,8 @@
   "info_name": "- GROCERY STORE -",
   "name": "Grocery Store",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Did you mean 'Grossery'?",
@@ -843,6 +915,8 @@
   "info_name": "- TOWN HALL -",
   "name": "Town Hall",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where big decisions are made... and instantly forgotten",
@@ -863,6 +937,8 @@
   "info_name": "- SALON -",
   "name": "Salon",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where the only thing that gets hair-raising is the price",
@@ -883,6 +959,8 @@
   "info_name": "- HARDWARE STORE -",
   "name": "Hardware Store",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "A place where you buy tools that sure look good in your garage",
@@ -903,6 +981,8 @@
   "info_name": "- FLORIST -",
   "name": "Florist",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Didn't know that death could smell this good",
@@ -923,6 +1003,8 @@
   "info_name": "- PET STORE -",
   "name": "Pet Store",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "There are other places to get love... and cheaper",
@@ -943,6 +1025,8 @@
   "info_name": "- LAUNDROMAT -",
   "name": "Laundromat",
   "type": "Location",
+	"useless_content": [0, 1, 2, 3],
+	"comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
   "uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
   "description": "Where you wash your dirty laundry... but in public",
@@ -958,3 +1042,4 @@
   "bonus_malus": []
 }
 ]
+

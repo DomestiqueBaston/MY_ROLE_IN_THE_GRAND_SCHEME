@@ -110,7 +110,7 @@ Backgrounds
 	- Super héro à temps partiel : +2PHY, -2MEN
 	- Taxidermiste : -1MEN, +1HEA et HEAnom
 	- Toxicomane : -1MEN, -1HEA et HEAnom -50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose
-	- Vendeur de glaces : +150Dø au démarrage de la partie
+	- Vendeur de glaces : +300Dø au démarrage de la partie
 	- Vétérinaire : -50 % sur les interventions thérapeutiques (médecin) 
 
 Progression du joueur (pas des PNJs !)
@@ -362,7 +362,7 @@ Les achats/dépenses
 
 Démarrage d’une partie
 	- Une partie démarre le lundi matin à 8h.
-	- 100Dø en poche.
+	- 300Dø en poche.
 	- 3 doses de Drogue.
 Les cartes
 	- Globalement, les cartes représentent des moyens de « dialogue » avec le jeu. Elles indiquent seulement leur nom et une description de leur utilisation, pas d’informations chiffrées !
@@ -556,7 +556,7 @@ Combat
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici). (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).
-	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 50dø (±10%) et 25% de chance de prendre +1Wan. On peut ne rien trouver sauf +1Wan ! 
+	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 100dø (±10%) et 25% de chance de prendre +1Wan. On peut ne rien trouver sauf +1Wan ! 
 
 Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
 	- À la première rencontre, il n’y a pas de risque !
@@ -613,7 +613,7 @@ Investigation
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place, évidemment), Malus d’action de Nuit, bonus/malus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
 	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation. Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes (si applicable).
-	- Une réussite critique donne de +25Dø à +50Dø en plus de ce qui est trouvé avec une réussite « normale ».
+	- Une réussite critique donne de +50Dø à +100Dø en plus de ce qui est trouvé avec une réussite « normale ».
 	- Un échec donne -1Emo.
 	- 1 échec critique fait -1HEA en plus de l’échec « normal ».
 	- On ne peut pas découvrir plus d’Evidence (contenu caché) qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
@@ -644,7 +644,7 @@ Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
 		Difficulté = round(clamp(((victimes + coupables + (complices × 0.5) + (liens × 0.5) + evidences - (suspects × 0.5) - (témoins × 0.5)) × 19 ÷ 50 + 1), 1, 5). Cela devrait donner un niveau de difficulté entre 1 et 5.
-	- Les enquêtes de niveau 0 sont particulières (et à part).
+	- Les enquêtes de niveau 0 sont particulières (voir plus loin...).
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
@@ -652,16 +652,15 @@ Enquête
 	- Pour Interagir dans un Lieu lié à l’enquête ou avec un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles.
 	- Le joueur ne pourra jamais aller chez un PNJ s’il ne connaît pas sa localisation ou ne sait pas où il est à cette heure-là.
 	- Plus globalement : le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas (obviously).
-	- On valide un Case (correspondant à une demande de validation de l’enquête par le Menu Cases, « Validate Case » et si tous les liens incriminants de l’enquête sont bons : gros bonus. Avec une erreur de mobile, moins de bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
-	 - Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
-	- Le niveau de difficulté ne reflète pas la gravité des crimes mais leur complexité quant à leur résolution.
+	- On valide un Case (correspondant à une demande de validation de l’enquête par le Menu Cases, « Validate Case » et si c’est bon : gros bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
+	- Moins de 5 liens autres que noirs supplémentaires faux n’est pas considéré comme une erreur !
+	- Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’1 PNJ (ou plus, suivant la carte).
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	- Voir à la fin pour les enquêtes de niveau 0 !
-	- Finalement, l’enquête ultime sera aussi générée procéduralement/aléatoirement.
 
 Lieu du crime et Lieu caché
-	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence.
-	- Le domicile du/des coupable(s) peut aussi contenir 1 evidence.
+	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
+	- Le domicile du/des coupable(s) peut aussi contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
 	- Le lieu du crime est connu dès le départ en suivant : 0, 0.25, 0.5, 0.75 ou 1 sur 1 (dans Crime_Motive_Evidence.json à « known_crime_location »).
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
@@ -701,6 +700,40 @@ Violet clair : Trouvé (sert à se souvenir d’où vient un objet) NE SERT PAS
           Violet foncé : nouveaux liens (issus des interactions Dialogue ou Investigation, toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ») NE SERT PAS À VALIDER UNE ENQUÊTE.
 	- Des précisions ont été apportées concernant les résolutions d’enquête et les liens. Pour ça, voir Fiche_enquête_vXX.odt !
 
+Fiche d'enquête :
+
+Éléments de l'Enquête	Détails
+Titre de l'enquête (éventuellement)	Titre de l’enquête
+Crime	Voir la liste
+Mobile	Voir la liste
+Difficulté	1 → 5 (6 pour enquête ultime et 0 pour les enquêtes « à la con »)
+Statut	En cours/En pause (niveau 6 : ne peut pas être en pause)
+Délai imparti	round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours (15 ± 2 jours pour niveau de difficulté 6)
+Lieu du crime	Lieu (possiblement inconnu au départ et automatiquement connu lorsque la victime est morte sauf pour niveau 6 : voir plus bas)
+Nombre de PNJs inutiles	Voir Nombre de PNJs en plus de ceux liés à l’enquêtes (PNJs « inutiles »)
+Indices/témoins	PNJ(s) (témoin : erreur (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)). 1 seule info (lien uniquement et concernant d’autres NPCs que lui mais pas un inconnu). Voir règles pour info fausse ! (niveau 6 : 0)
+Evidence(s)	Objet(s), PNJ(s), Liens
+Victime(s)	Voir json des mobiles (niveau 6 : les victimes ne sont pas trouvées au départ : il faut les rechercher !)
+Témoin(s)	Voir json des mobiles
+Suspect(s) de départ	Voir json des mobiles
+Coupable(s)	Voir json des mobiles
+Complice(s)	Voir json des mobiles
+Relations entre les PNJs	Lien(s) plein(s) (confirmé(s)), lien(s) pointillé(s) (probable(s)) / Couleur(s)s du/des lien(s)
+
+Nombre de preuves matérielles (OBJs) nécessaires par niveau de difficulté d’enquête :
+	- Il faut toujours découvrir toutes les preuves de l’enquête pour avoir une chance de la valider avec un plein succès.	
+
+Nombre de PNJs par enquête :
+	- Le nombre de preuves disponibles sera bien entendu toujours supérieur ou égal au nombre de preuves minimum à découvrir pour valider l’enquête.
+
+Liens et validation d’enquête :
+	- En rapport avec Crime_Mobile_Evidence.json (établissement des liens AVANT début de l’enquête):
+		- Par défaut, tous les liens sont à établir dans l’enquête. Mais…
+		- « debt_influence », « intimacy » et « ideology » peuvent tout à fait se cumuler. Choix aléatoire et chacun a une chance sur deux d’être présent.
+		- lorsqu’on a « friend » ou/et « enemy » ou/et acquaintance, l’enquête choisira l’un des trois. Choix aléatoire et chacun a une chance sur deux d’être présent donc on peut n’en avoir aucun.
+		- Lorsque « none » et d’autres choix sont possibles, si « none » est choisi, aucun autre lien ne sera ajouté (« none » est toujours seul).
+		- Lorsqu’un choix « none » est possible, c’est le premier à être testé (une chance sur deux…) !
+
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté et bonus/malus aux jets de dé
 	
@@ -719,13 +752,9 @@ Enquête ultime (6)	WTF!(malus de 3)
 
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
-		- round((niveau de difficulté) × 100) ±10% Dø (voir à la fin pour Niveau 0)
+		- round((niveau de difficulté) × 200) ±10% Dø (voir à la fin pour Niveau 0)
 		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites (toujours sans dépasser les limites de pile de Maîtrise une fois les choix du joueur faits).
 		- Emo = 0, Add = 0, Wan = 0
-	- Si l’enquête est résolue mais comporte une erreur (de mobile), il obtient :
-		- round(((niveau de difficulté) × 100) ±10% Dø) –50 % Dø. Pour les enquêtes de niveau 0, voir à la fin !
-		- 1 carte Combat, Dialogue, Investigation ou Abstraite (sans dépasser les limites de pile de Maîtrise une fois le choix du joueur fait).
-		- ±1 Emo → 0, ±1 Add → O, Wan = 0
  	- Si le joueur valide une enquête et qu’il s’est trompé, l’enquête est terminée pour lui et implique :
 		- Emo ±1 → Min/Max ou Emo -1 si Emo = 0, Add ±1 → Add Min/Max ou Add -1 si Add = 0
 	- Renoncer à une enquête n’implique pas de malus ni de bonus.
@@ -748,20 +777,116 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		1 ou plus autre Coupable
 		1 ou plus autre Evidence
 		1 ou plus autre Lien
-
-	 - Les preuves peuvent être :
+	- Les preuves matérielles (evidence) peuvent être :
  Témoin, facture, arme, photo, enregistrement, document écrit et/ou numérique, relevé de compte, empreinte digitale et/ou génétique, etc.
-	 - La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante : un Complice est lié (en Noir) au Coupable. Seul un Coupable est lié (en Noir) à la victime.
-	 - Les témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable
-	 - Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
-	 - Dans ce qui suit, tout sera au pluriel mais concernera également les enquêtes à élément au « singulier » :
-	 - Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
-	 - Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
+	 - La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante :
+		- Un Coupable est lié (en Noir) à la victime.
+		- Un Complice est lié (en Noir) au Coupable.
+	- Les témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable.
+	- Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
+	- Dans ce qui suit, tout sera au pluriel mais concernera également les enquêtes à élément au « singulier » :
+	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
+	- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
 	- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
 
-	/!\ Tout petit point important :
+ /!\ Tout petit point important :
 	- je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!
 
+
+Nombre de PNJs en plus de ceux liés à l’enquêtes (PNJs « inutiles »)
+
+Niveau de difficulté	PNJs inutiles min	PNJs inutiles max
+0	3	4
+1	5	7
+2	7	10
+3	9	13
+4	11	16
+5	13	19
+6	15	22
+
+Enquêtes niveau 0 :
+ - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
+ - Chaque semaine, n’importe quel jour, et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposé 1 mission de niveau 0 par un PNJ quelconque.
+	- Pour ces crimes, un mobile ne sera pas nécessaire (le menu Crime Motive sera désactivé).
+	- Les emplacements des preuves sont précisés dans le json !
+	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 200Dø.
+	- Le joueur à un bonus de 3 à ses jets de dé dans ces enquêtes.
+	- Le temps imparti pour résoudre une telle enquête est de : 6, 7 ou 8 jours.
+	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
+	- Si on recycle les PNJs, alors refuser une enquête fera -1Rep et accepter +1Rep avec le PNJ.
+	- Pas de sbires !
+
+NOTE EN COURS DE DÉVELOPPEMENT !
+
+	- Chaque PNJ doit connaître au moins 1 autre PNJ (en plus de son éventuel conjoint).
+	- Les PNJs qui se connaissent doivent partager un Lieu Fréquenté (+ appartement pour les couples).
+
+	- Tous les mobiles ayant un lien « Intimacy » (voir Crime_Motive_Evidence.json) imposent un couple dans l’enquête. Les enquêtes d’adultère nécessitent un/une amant/amante en plus du couple.
+
+	- Dans les enquêtes où la victime est décédée (crime « Murder » uniquement, il me semble), la victime qui ne peut plus être interrogée (!) doit avoir au minimum 1 lien connu au départ de l’enquête avec un PNJ (coupable, complice, témoin, suspect…).
+
+	- Chaque lieu peut contenir de 0 à 3 objets à la con (pas evidence) !
+
+COMMENT REPARTIR LES EVIDENCES ?
+	- Les evidences sont réparties entre les coupables avec un minimum d’1 evidence par coupable.
+	- 1 evidence appartenant à la victime peut se trouver, chez le coupable ou dans son hideout.
+	- 1 evidence appartenant au coupable peut se trouver chez la victime ou sur le lieu du crime. 
+
+COMMENT LIMITER LE NOMBRE DE LIEUX DANS UNE ENQUÊTE ?
+
+1. Lieux nécessaires à l'enquête
+Les lieux indispensables à la résolution de l’enquête ne sont pas soumis à aucune limitation.
+Ils incluent :
+    • Le lieu du crime.
+    • Les lieux où se trouvent les preuves essentielles (objets, documents...).
+    • Les domiciles, lieux de travail, planques et lieux de sortie des PNJs impliqués dans l’enquête (victimes, coupables, complices, témoins).
+    • Les lieux servant de points de passage pour les liens noirs (les liens indispensables à la résolution).
+Ces lieux sont toujours générés en priorité.
+🧍‍2. PNJs inutiles : règles spécifiques de génération
+Ces personnages doivent enrichir le monde sans surcharger inutilement le nombre de lieux.
+Domicile
+    • Chaque PNJ inutile a son propre domicile.
+    • Les domiciles ne sont jamais partagés, sauf pour les couples (déjà géré).
+    • Ces domiciles comptent dans le plafond global des lieux non nécessaires.
+Lieu de travail
+    • Chaque PNJ a un métier.
+    • Le nombre de lieux de travail distincts est déterminé par la valeur de uniqueness associée au métier :
+        ◦ Si uniqueness = 1 → un seul lieu pour tous les PNJs ayant ce métier.
+        ◦ Si uniqueness > 1 → on répartira aléatoirement les PNJs.
+        ◦ Sinon → chaque PNJ a son propre lieu de travail.
+    • Un lieu de travail partagé compte une seule fois dans le total des lieux.
+    • Pour Unemployed, le lieu de travail (home) ne peut être partagé qu’avec un conjoint s’il y en a un/une.
+Lieu de sortie (hangout)
+    • Ces lieux doivent être tirés prioritairement parmi les lieux déjà générés pour d’autres hangouts ou pour des liens non cruciaux.
+Lieu de planque (hideout)
+    • Les PNJs inutiles ont une planque à 25 % de chance.
+3. Réutilisation des lieux existants
+    • Avant de générer un nouveau lieu, on doit toujours tenter de réutiliser un lieu existant compatible (en fonction du type : travail, public, etc.).
+    • Cela concerne :
+        ◦ Lieux de travail (si uniqueness le permet)
+        ◦ Hangouts
+    • Cela ne concerne pas Hideout.
+4. Quand il reste des PNJs inutiles mais plus de lieux
+    • Une fois que tous les lieux générés pour les PNJs liés à l’enquête ont été réutilisés autant que possible pour les PNJs inutiles et qu’il reste encore des PNJs inutiles à générer, tout nouveau lieu généré pour un PNJ inutile restant devient immédiatement disponible pour être réutilisé par les autres PNJs inutiles restants.
+
+COMMENT LIMITER LE NOMBRE DE LIENS DANS UNE ENQUÊTE ?
+1. Liens nécessaires à la résolution
+Les liens indispensables pour établir le mobile et identifier les coupables ne sont soumis à aucune limitation.
+Ils incluent :
+    • Tous les liens noirs, c’est-à-dire ceux qui relient les preuves, les coupables et le mobile de manière incriminante.
+    • Les liens permettant de valider la logique de l’enquête (chaîne causale, justification des actions, etc.).
+Ces liens sont générés en priorité et doivent être cohérents, suffisants et complets pour rendre l’enquête solvable.
+2. Liens non incriminants
+Ces liens servent à densifier l’univers narratif, sans être nécessaires à la résolution.
+    • Peuvent aussi exister entre PNJs impliqués et inutiles.
+    • Peuvent être tirés de manière aléatoire, en favorisant les PNJs ayant déjà une relation dans l’enquête.
+3. Réutilisation des PNJs dans les liens
+    • Avant de créer de nouveaux PNJs pour établir un lien, il faut favoriser les PNJs déjà présents dans l’enquête.
+    • Cela permet de concentrer les relations et d’éviter une prolifération inutile de nouveaux personnages.
+    • Un même PNJ peut être impliqué dans plusieurs liens.
+4. Quand il reste des liens à créer mais peu de PNJs
+    • Si le système doit encore générer des liens non cruciaux alors que la plupart des PNJs sont déjà utilisés :
+        ◦ Il est possible de réutiliser des PNJs inutiles pour tisser un maillage narratif plus dense.
 
 
 Difficulté du jeu (écran d’OPTIONS)
@@ -781,20 +906,9 @@ Difficulté du jeu (écran d’OPTIONS)
 		Vice : Caution (prison) portée à 250Dø (+25%).
 		Mentirosos : +10 % de chances de mensonge.
 		Hardboiled Minions : +10% HEA (et HEAnom).
-
-
-Enquêtes niveau 0 :
- - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
- - Chaque semaine, n’importe quel jour, et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposé 1 mission de niveau 0 par un PNJ quelconque.
-	- Pour ces crimes, un mobile ne sera pas nécessaire (le menu Crime Motive sera désactivé).
-	- Les emplacements des preuves sont précisés dans le json !
-	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 25 à 100Dø.
-	- Les enquêtes de niveau 0 sont soit pleinement résolues, soit échouées (pas d’erreur de mobile possible puisqu’il n’y en a pas) ! 
-	- Le joueur à un bonus de 3 à ses jets de dé dans ces enquêtes.
-	- Le temps imparti pour résoudre une telle enquête est de : 6, 7 ou 8 jours.
-	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
-	- Si on recycle les PNJs, alors refuser une enquête fera -1Rep et accepter +1Rep avec le PNJ.
-	- Pas de sbires !
+		Over Crowded City : +20% de PNJs inutiles.
+	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on la désactive de la même manière):
+		Quicker time : toutes les actions prennent 33% de temps en plus mais l’horloge n’affiche que les heures entières (pas les minutes) !
 
 
 Notes de fabrication (au fur et à mesure que j’y pense) :
@@ -815,6 +929,5 @@ Notes de fabrication (au fur et à mesure que j’y pense) :
 			- job
 			- status
 	- Lorsque l’on survole une carte les infos relatives à la carte s’affiche dans la zone en bas à gauche de l’écran (Main.tscn et Interaction.tscn) sinon, on aura accès aux infos de tooltip.
-
 
 	- Dans les json (je pense à NPC, OBJ, CASE…) on n’aura que des infos vraies. Les fausses sont générées aléatoirement en jeu.
