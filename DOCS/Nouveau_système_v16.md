@@ -425,7 +425,7 @@ Cartes Objet
 	- Les cartes Objet qui ne sont JAMAIS des preuves (OBJ281 et plus) sont toujours soit chez leur propriétaire, soit sur leur lieu de travail.
 
 Cartes PNJ
-	- Elles affichent en permanence une jauge en haut à droite donnant une idée du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue). Elles affichent une silhouette (Homme/Femme) et les noms et prénoms dès qu’ils sont connus.
+	- Elles affichent en permanence une jauge en haut à droite donnant une idée du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue). Elles affichent les noms et prénoms dès qu’ils sont connus.
 	- La jauge est mise à jour à chaque fois que le joueur rencontre le PNJ.
 	- Ces cartes peuvent être jouées seules.
 	- Ces cartes se trouvent toujours dans la pile PNJs ou Evidence.
@@ -444,10 +444,11 @@ Les interactions : Dialogue, Combat et Investigation
 	- Pour Dialoguer directement avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci :Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
 	- On ne peut pas savoir si un PNJ suit son emploi du temps autrement qu’en se rendant où il devrait être à l’heure dite.
 	- Si le joueur rencontre un PNJ sur un lieu sur lequel il n’est pas sensé être à cette heure-ci, au joueur d’en tirer les conclusions…
- 	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom (voir aussi Dialogue).
-	 - PAS DE MENSONGE possible sur le nom !
+ 	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom et Adresse (voir aussi Dialogue).
+	 - PAS DE MENSONGE possible sur le nom et l’adresse!
 	- On connaît le nom, l’emploi du temps, les soupçons, relations sociales, etc. (si ils existent) des PNJs (victimes) nommés au départ dans une Fiche d’enquête.
-	- On connaît le nom et l’emploi du temps des PNJs (suspects) nommés au départ dans une Fiche d’enquête (donc adresse et lieu de travail).
+	- On connaît le nom, l’adresse, le job et l’emploi du temps des PNJs (suspects et témoins) nommés au départ dans une Fiche d’enquête.
+	- Tout PNJ découvert ultérieurement sera connu, SANS MENSONGE, avec son nom et son adresse. Le reste des infos sera sujet à mensonge (voir règle concernant les mensonges plus bas) MAIS… Un PNJ ne peut pas mentir concernant les informations liées à leur relations sociales et de hangout à moins d’être coupable ou complice !
 	- Les jets de dé pour Combat et Dialogue sont basés sur un test de caractéristiques du joueur contre celles du PNJ (hors bonus/malus).
 	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement (hors bonus/malus).
 	- L’écran d’interaction, affiche :
@@ -694,7 +695,7 @@ Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attach
           Vert clair : Propriété NE SERT PAS À VALIDER UNE ENQUÊTE.
           Marron : Domicile NE SERT PAS À VALIDER UNE ENQUÊTE.
 Turquoise : Travail NE SERT PAS À VALIDER UNE ENQUÊTE.
-Bleu très foncé : Lieu fréquenté NE SERT PAS À VALIDER UNE ENQUÊTE.
+Bleu très foncé : Lieu fréquenté (hangout) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Blanc : Planque (Hideout) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Violet clair : Trouvé (sert à se souvenir d’où vient un objet) NE SERT PAS À VALIDER UNE ENQUÊTE.
           Violet foncé : nouveaux liens (issus des interactions Dialogue ou Investigation, toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ») NE SERT PAS À VALIDER UNE ENQUÊTE.
@@ -711,7 +712,7 @@ Statut	En cours/En pause (niveau 6 : ne peut pas être en pause)
 Délai imparti	round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours (15 ± 2 jours pour niveau de difficulté 6)
 Lieu du crime	Lieu (possiblement inconnu au départ et automatiquement connu lorsque la victime est morte sauf pour niveau 6 : voir plus bas)
 Nombre de PNJs inutiles	Voir Nombre de PNJs en plus de ceux liés à l’enquêtes (PNJs « inutiles »)
-Indices/témoins	PNJ(s) (témoin : erreur (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)). 1 seule info (lien uniquement et concernant d’autres NPCs que lui mais pas un inconnu). Voir règles pour info fausse ! (niveau 6 : 0)
+Indices/témoins	PNJ(s) (témoin : erreur (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)). 1 seule info (lien uniquement et concernant d’autres NPCs que lui mais pas PNJ inutile). Voir règles pour info fausse ! (niveau 6 : 0)
 Evidence(s)	Objet(s), PNJ(s), Liens
 Victime(s)	Voir json des mobiles (niveau 6 : les victimes ne sont pas trouvées au départ : il faut les rechercher !)
 Témoin(s)	Voir json des mobiles
@@ -880,6 +881,7 @@ Ces liens sont générés en priorité et doivent être cohérents, suffisants e
 Ces liens servent à densifier l’univers narratif, sans être nécessaires à la résolution.
     • Peuvent aussi exister entre PNJs impliqués et inutiles.
     • Peuvent être tirés de manière aléatoire, en favorisant les PNJs ayant déjà une relation dans l’enquête.
+    • D’une manière générale, on établira tous les liens entres tous les PNJs (inutiles ou pas).
 3. Réutilisation des PNJs dans les liens
     • Avant de créer de nouveaux PNJs pour établir un lien, il faut favoriser les PNJs déjà présents dans l’enquête.
     • Cela permet de concentrer les relations et d’éviter une prolifération inutile de nouveaux personnages.
@@ -927,6 +929,7 @@ Notes de fabrication (au fur et à mesure que j’y pense) :
 		- PNJ :
 			- name
 			- job
+			- Schedule
 			- status
 	- Lorsque l’on survole une carte les infos relatives à la carte s’affiche dans la zone en bas à gauche de l’écran (Main.tscn et Interaction.tscn) sinon, on aura accès aux infos de tooltip.
 
