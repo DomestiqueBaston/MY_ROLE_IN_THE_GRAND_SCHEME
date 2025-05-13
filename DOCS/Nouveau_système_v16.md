@@ -133,7 +133,7 @@ Les PNJs
 Recherché/Wanted pour les PNJs (Wan)
 	- Le Wanted des PNJs évolue de 0 à 4. Au début du jeu, aléatoirement de 0 à 3. Il représente le niveau d’emmerdes avec les autorités qu’a un PNJ.
 	- Il est également un malus aux jets de dé du PNJ suivant le tableau ci-dessous.
-	- À 5, le PNJ est arrêté et le joueur ne pourra plus Dialoguer avec lui qu’en allant le voir en prison (jusqu’à la fin de l’enquête).
+	- À 4, le PNJ est arrêté et le joueur ne pourra plus Dialoguer avec lui qu’en allant le voir en prison (jusqu’à la fin de l’enquête).
 	- Son emploi du temps sera adapté en fonction (prison tout le temps et il dormira la nuit !).
 	- Il ne sera plus visitable que pour dialoguer, le matin et l’après-midi. 1 seule fois par jour.
 
@@ -184,7 +184,7 @@ Professions possibles (le travail de nuit est à 25 % de chances) :
 	- Veterinarian : -1 PHY, +1 MEN
 	- Politician : -1 PHY, +2MEN, -1 HEAnom et donc -1 HEA
 	- CEO : /, -1 HEAnom et donc -1 HEA
-	- Certains lieux ont des horaires d’ouverture « incompatibles » avec les horaires de travail des PNJs y travaillant cela implique qu’ils sont sur leur lieu de travail mais que le joueur ne peut pas y entrer (à moins de forcer l’accès !)…
+	- Un PNJ ne peut pas travailler en dehors des horaires prévus par son lieu de travail !
 
 La réputation (du joueur auprès du PNJ)
 	- Après (jour × niveau de difficulté de l’enquête) sans interaction : +1 Rep. Pour les enquêtes de niveau 0, on compte comme niveau 1)
@@ -314,7 +314,7 @@ Les emploi du temps
 		- Personne ne travail en soirée + la nuit.
 		- Un PNJ dormira chez lui la Nuit (ou le Matin et l’Après-midi lorsqu’il travaille de nuit).
 		- Un PNJ qui travaille de nuit dormira donc le matin et l’après-midi.
-		- On ne peut pas interagir avec un PNJ qui dort. Son domicile ne peut pas être pénétré non plus !
+		- On peut interagir avec un PNJ qui dort mais -1Rep !
 		- Pendant la tranche horaire non travaillée de la journée, un PNJ est chez lui ou sur un lieu alternatif.
 		- Un PNJ qui travaille de nuit, sera en soirée chez lui ou sur un lieu alternatif.
 		- Le Week-end en journée, un PNJ sera toujours sur un lieu alternatif le matin et chez lui l’Après-midi ou inversement et chez lui en soirée. S’il travaille de nuit, il sera chez lui tout le temps.
@@ -443,7 +443,7 @@ Les interactions : Dialogue, Combat et Investigation
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire), il ne trouvera personne. Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
 	- Pour Dialoguer directement avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci :Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
 	- On ne peut pas savoir si un PNJ suit son emploi du temps autrement qu’en se rendant où il devrait être à l’heure dite.
-	- Si le joueur rencontre un PNJ sur un lieu sur lequel il n’est pas sensé être à cette heure-ci, au joueur d’en tirer les conclusions…
+	- Si le joueur « rencontre » un PNJ sur un lieu sur lequel il n’est pas sensé être à cette heure-ci, au joueur d’en tirer les conclusions…
  	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom et Adresse (voir aussi Dialogue).
 	 - PAS DE MENSONGE possible sur le nom et l’adresse!
 	- On connaît le nom, l’emploi du temps, les soupçons, relations sociales, etc. (si ils existent) des PNJs (victimes) nommés au départ dans une Fiche d’enquête.
@@ -515,7 +515,7 @@ Dialogue
 		Auprès d’1 Coupable : (9+MEN)/(10+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur (cumulable).
-	- Une information cachée (par ex : hide_out) est toujours révélée juste.
+	- Une information cachée (par ex : hideout) est toujours révélée juste.
 	- Une information fausse pour un lien désignera 2 PNJs (1 des 2 peut être bon pour autant) dans un lien de n’importe quelle nature pour debt_influence, intimacy, friend, enemy, acquaintance ou ideology, ou bien 1 PNJ pour property, homework ou hangout.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux.
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec ses liens Violet (à moins qu’elle existe déjà).
