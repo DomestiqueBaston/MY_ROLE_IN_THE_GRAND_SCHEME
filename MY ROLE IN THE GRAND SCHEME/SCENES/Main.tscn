@@ -65,15 +65,12 @@ size = Vector2(106, 106)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wvc8p")
-metadata/_edit_lock_ = true
 
 [node name="Main_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_ebllg")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Possible_Clues_Clamp" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Possible_Clues" type="Label" parent="Possible_Clues_Clamp"]
 offset_left = 35.0
@@ -92,19 +89,15 @@ theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
 text = "Possible Clues"
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Clamp" type="Sprite2D" parent="Possible_Clues_Clamp"]
 position = Vector2(38, 20)
 texture = ExtResource("17_4l1ou")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="TMP_1" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Main_Playmat" type="Node2D" parent="TMP_1"]
-metadata/_edit_lock_ = true
 
 [node name="Card1" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(190, 85)
@@ -204,7 +197,6 @@ visible = true
 
 [node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
 z_index = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_Violet_Rose" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
 
@@ -272,7 +264,6 @@ position = Vector2(519, 170)
 position = Vector2(544, 64)
 
 [node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("23_pharv")]
-metadata/_edit_lock_ = true
 
 [node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_1/Papa_Link" index="0"]
 offset_top = 0.0
@@ -293,13 +284,10 @@ position = Vector2(544, 64)
 [node name="Mask_Card_Playground" type="Sprite2D" parent="."]
 texture = ExtResource("25_47v8w")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="TMP_2" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Possible_Clues_Cards" type="Node2D" parent="TMP_2"]
-metadata/_edit_lock_ = true
 
 [node name="Card7" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(16, 39)
@@ -411,51 +399,42 @@ text = "Clic the cards..."
 text = "...in order to see the reduce/expand animations!"
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("13_ksebp")]
+visible = false
 z_index = 2
 
 [node name="Line" parent="Drag_Drop_Line" index="0"]
 points = PackedVector2Array(86, 50, 217, 88)
 
 [node name="Colliders" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Playground_Collider" type="Area2D" parent="Colliders"]
 collision_layer = 0
 collision_mask = 0
-metadata/_edit_lock_ = true
 
 [node name="Playground" type="CollisionShape2D" parent="Colliders/Playground_Collider"]
 position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
-metadata/_edit_lock_ = true
 
 [node name="Possible_Clue_Collider" type="Area2D" parent="Colliders"]
 position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 0
-metadata/_edit_lock_ = true
 
 [node name="Possible_Clue" type="CollisionShape2D" parent="Colliders/Possible_Clue_Collider"]
 position = Vector2(66, 89)
 shape = SubResource("RectangleShape2D_km17i")
-metadata/_edit_lock_ = true
 
 [node name="Card_Locations" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Possible_Clue_Card_Locations" type="Node2D" parent="Card_Locations"]
-metadata/_edit_lock_ = true
 
 [node name="First_Card" type="Marker2D" parent="Card_Locations/Possible_Clue_Card_Locations"]
 position = Vector2(16, 39)
-metadata/_edit_lock_ = true
 
 [node name="Last_Card" type="Marker2D" parent="Card_Locations/Possible_Clue_Card_Locations"]
 position = Vector2(44, 39)
-metadata/_edit_lock_ = true
 
 [node name="Legend" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Colors" type="Control" parent="Legend"]
 layout_mode = 3
@@ -466,7 +445,6 @@ offset_right = 153.0
 offset_bottom = 342.0
 theme = ExtResource("2_2avoe")
 script = ExtResource("14_1r0xb")
-metadata/_edit_lock_ = true
 
 [node name="Legend" type="Button" parent="Legend/Colors"]
 layout_mode = 0
@@ -477,7 +455,6 @@ reset filter"
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 text = "Legends:"
-metadata/_edit_lock_ = true
 
 [node name="Hideout_White" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -493,7 +470,6 @@ texture_normal = ExtResource("14_d27u2")
 texture_pressed = ExtResource("15_1cl67")
 texture_hover = ExtResource("15_1cl67")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Debt_Influence_Gray" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -509,7 +485,6 @@ texture_normal = ExtResource("15_c4wun")
 texture_pressed = ExtResource("18_el4mc")
 texture_hover = ExtResource("18_el4mc")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -525,7 +500,6 @@ texture_normal = ExtResource("16_mke16")
 texture_pressed = ExtResource("18_bjn3g")
 texture_hover = ExtResource("18_bjn3g")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Intimacy_Pink" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -541,7 +515,6 @@ texture_normal = ExtResource("17_7cnra")
 texture_pressed = ExtResource("22_l5fu3")
 texture_hover = ExtResource("22_l5fu3")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Friend_Dark_Green" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -557,7 +530,6 @@ texture_normal = ExtResource("18_u436f")
 texture_pressed = ExtResource("24_j6pb0")
 texture_hover = ExtResource("24_j6pb0")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Enemy_Orange" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -574,7 +546,6 @@ texture_normal = ExtResource("19_eiutv")
 texture_pressed = ExtResource("26_njmm0")
 texture_hover = ExtResource("26_njmm0")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Acquaintance_Light_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -591,7 +562,6 @@ texture_normal = ExtResource("20_oxby8")
 texture_pressed = ExtResource("28_bepi5")
 texture_hover = ExtResource("28_bepi5")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Ideology_Dark_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -608,7 +578,6 @@ texture_normal = ExtResource("21_134b4")
 texture_pressed = ExtResource("30_d7dts")
 texture_hover = ExtResource("30_d7dts")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Contradiction_Red" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -625,7 +594,6 @@ texture_normal = ExtResource("22_eja4x")
 texture_pressed = ExtResource("32_aslwm")
 texture_hover = ExtResource("32_aslwm")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Validation_Yellow" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -642,7 +610,6 @@ texture_normal = ExtResource("6_jtpuj")
 texture_pressed = ExtResource("33_j2aac")
 texture_hover = ExtResource("33_j2aac")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Property_Light_Green" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -659,7 +626,6 @@ texture_normal = ExtResource("23_1cqhn")
 texture_pressed = ExtResource("35_ywl4n")
 texture_hover = ExtResource("35_ywl4n")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Home_Brown" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -676,7 +642,6 @@ texture_normal = ExtResource("24_35y2t")
 texture_pressed = ExtResource("37_053p6")
 texture_hover = ExtResource("37_053p6")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Work_Turquoise" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -693,7 +658,6 @@ texture_normal = ExtResource("21_43fd7")
 texture_pressed = ExtResource("39_4lyd8")
 texture_hover = ExtResource("39_4lyd8")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -710,7 +674,6 @@ texture_normal = ExtResource("26_63nlu")
 texture_pressed = ExtResource("41_x0owp")
 texture_hover = ExtResource("41_x0owp")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Found_Light_Purple" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -727,7 +690,6 @@ texture_normal = ExtResource("24_lp1fx")
 texture_pressed = ExtResource("43_oyp1f")
 texture_hover = ExtResource("43_oyp1f")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="New_Dark_Purple" type="TextureButton" parent="Legend/Colors"]
 layout_mode = 0
@@ -743,10 +705,8 @@ texture_normal = ExtResource("15_0qkya")
 texture_pressed = ExtResource("45_yku0u")
 texture_hover = ExtResource("45_yku0u")
 texture_click_mask = ExtResource("15_folsb")
-metadata/_edit_lock_ = true
 
 [node name="Bottom_Left_Info" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Bottom_Left_Info"]
 custom_minimum_size = Vector2(106, 108)
@@ -761,7 +721,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("29_urjbe")
 horizontal_scroll_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="Info" type="Label" parent="Bottom_Left_Info/ScrollContainer"]
 custom_minimum_size = Vector2(106, 108)
@@ -788,11 +747,9 @@ Owned by: Jean-Marie Trancène
 Not marked as Evidence."
 horizontal_alignment = 1
 autowrap_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Crime_Motive_Selection" type="Node2D" parent="."]
 position = Vector2(147, 11)
-metadata/_edit_lock_ = true
 
 [node name="Motive_Selector" type="PanelContainer" parent="Crime_Motive_Selection"]
 custom_minimum_size = Vector2(191, 0)
@@ -802,7 +759,6 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme = ExtResource("30_3y6u4")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
-metadata/_edit_lock_ = true
 
 [node name="Motive_List" type="OptionButton" parent="Crime_Motive_Selection/Motive_Selector"]
 custom_minimum_size = Vector2(100, 16)
@@ -813,7 +769,6 @@ flat = true
 text_overrun_behavior = 3
 fit_to_longest_item = false
 script = ExtResource("50_wvc8p")
-metadata/_edit_lock_ = true
 
 [node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
 

@@ -108,7 +108,6 @@ _data = {
 texture_filter = 1
 texture_repeat = 2
 script = ExtResource("1_vn4vw")
-metadata/_edit_lock_ = true
 
 [node name="Link_Texture" type="TextureRect" parent="."]
 texture_filter = 2
@@ -120,16 +119,13 @@ theme = ExtResource("1_3ne57")
 texture = ExtResource("2_2ltco")
 expand_mode = 1
 stretch_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_Collider" type="Area2D" parent="Link_Texture"]
-metadata/_edit_lock_ = true
 
 [node name="Collider" type="CollisionShape2D" parent="Link_Texture/Link_Collider"]
 position = Vector2(4, 1.5)
 shape = SubResource("RectangleShape2D_8yi81")
 script = ExtResource("3_bbe4p")
-metadata/_edit_lock_ = true
 
 [node name="Link_Animation" type="AnimationPlayer" parent="."]
 libraries = {

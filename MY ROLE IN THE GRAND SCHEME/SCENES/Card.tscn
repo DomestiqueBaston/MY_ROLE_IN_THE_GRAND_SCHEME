@@ -864,47 +864,36 @@ _data = {
 
 [node name="Card" type="Node2D"]
 script = ExtResource("2_2qjxn")
-metadata/_edit_lock_ = true
 
 [node name="Pin_Locators" type="Node2D" parent="."]
 position = Vector2(37, 6)
-metadata/_edit_lock_ = true
 
 [node name="Top_Left_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-30, 1)
-metadata/_edit_lock_ = true
 
 [node name="Top_Center_Left_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-15, 1)
-metadata/_edit_lock_ = true
 
 [node name="Top_Center_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(0, 1)
-metadata/_edit_lock_ = true
 
 [node name="Top_Center_Right_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(16, 1)
-metadata/_edit_lock_ = true
 
 [node name="Top_Right_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(30, 1)
-metadata/_edit_lock_ = true
 
 [node name="Left_Center_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-30, 8)
-metadata/_edit_lock_ = true
 
 [node name="Left_Bottom_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(-30, 14)
-metadata/_edit_lock_ = true
 
 [node name="Right_Center_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(30, 8)
-metadata/_edit_lock_ = true
 
 [node name="Right_Bottom_Pin_Position" type="Marker2D" parent="Pin_Locators"]
 position = Vector2(30, 14)
-metadata/_edit_lock_ = true
 
 [node name="Card_Shadow" type="Sprite2D" parent="."]
 visible = false
@@ -914,7 +903,6 @@ position = Vector2(-2, -4)
 texture = ExtResource("1_8pu3o")
 centered = false
 hframes = 5
-metadata/_edit_lock_ = true
 
 [node name="Card_Mask" type="Sprite2D" parent="."]
 clip_children = 1
@@ -922,116 +910,97 @@ texture = ExtResource("1_8pu3o")
 centered = false
 hframes = 5
 script = ExtResource("4_nk8id")
-metadata/_edit_lock_ = true
 
 [node name="Card_BG" type="Sprite2D" parent="Card_Mask"]
 editor_description = "Card_BG Offset must be between x=0 / y = 0 and x=-120 / y=-30"
 texture = ExtResource("2_y3cdu")
 centered = false
 offset = Vector2(-120, -30)
-metadata/_edit_lock_ = true
 
 [node name="Card_Color" type="Node2D" parent="Card_Mask/Card_BG"]
-metadata/_edit_lock_ = true
 
 [node name="Combat" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 color = Color(0.31, 0, 0.0464999, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
 visible = false
 self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("3_gk6lr")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Run_Away" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
 visible = false
 self_modulate = Color(0, 0, 0, 0.588235)
 texture = ExtResource("4_xhv7k")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Investigation" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.051, 0.18, 0, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
 visible = false
 self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("3_gk6lr")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Break_In" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
 visible = false
 self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("5_rh7h4")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0, 0.0941176, 0.329412, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Abstract" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.57, 0.2622, 0.53409, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Object" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.59, 0.531, 0, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Location" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.1261, 0.018, 0.3, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Npc" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 visible = false
 color = Color(0.1248, 0.4208, 0.48, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 63, 1, 63, 26)
-metadata/_edit_lock_ = true
 
 [node name="No_Info" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 color = Color(0.12549, 0.419608, 0.478431, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Good_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.16275, 0.75, 0.1425, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Average_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.7, 0.333083, 0.105, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Low_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.53, 0, 0, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-metadata/_edit_lock_ = true
 
 [node name="Evidence" type="Sprite2D" parent="Card_Mask/Card_BG"]
 visible = false
 self_modulate = Color(1, 1, 1, 0.588235)
 texture = ExtResource("3_uweet")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Card_Text" type="Control" parent="Card_Mask/Card_BG"]
 modulate = Color(1, 1, 1, 0.921569)
@@ -1043,7 +1012,6 @@ offset_right = 72.0
 offset_bottom = 98.0
 mouse_filter = 1
 theme = ExtResource("3_l7psf")
-metadata/_edit_lock_ = true
 
 [node name="Card_Name" type="Label" parent="Card_Mask/Card_BG/Card_Text"]
 layout_mode = 1
@@ -1056,7 +1024,6 @@ text = "Card Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="Card_Description" type="Label" parent="Card_Mask/Card_BG/Card_Text"]
 layout_mode = 0
@@ -1070,85 +1037,69 @@ text = "Short card description."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="Card_Outlines" type="Sprite2D" parent="Card_Mask/Card_BG"]
 texture = ExtResource("5_m7h77")
 centered = false
 hframes = 5
-metadata/_edit_lock_ = true
 
 [node name="Jail_Status" type="Node2D" parent="Card_Mask/Card_BG"]
 visible = false
-metadata/_edit_lock_ = true
 
 [node name="Jail" type="Sprite2D" parent="Card_Mask/Card_BG/Jail_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
 texture = ExtResource("9_xm6x5")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Jail_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Jail_Status"]
 self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("11_0cggu")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Closed_Status" type="Node2D" parent="Card_Mask/Card_BG"]
 visible = false
-metadata/_edit_lock_ = true
 
 [node name="Closed" type="Sprite2D" parent="Card_Mask/Card_BG/Closed_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
 texture = ExtResource("9_e07m4")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Closed_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Closed_Status"]
 self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("13_jl3bi")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Dead_Status" type="Node2D" parent="Card_Mask/Card_BG"]
 visible = false
-metadata/_edit_lock_ = true
 
 [node name="Dead" type="Sprite2D" parent="Card_Mask/Card_BG/Dead_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
 texture = ExtResource("11_v12mt")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Dead_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Dead_Status"]
 self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("15_k4orq")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Disappeared_Status" type="Node2D" parent="Card_Mask/Card_BG"]
 visible = false
-metadata/_edit_lock_ = true
 
 [node name="Disappeared" type="Sprite2D" parent="Card_Mask/Card_BG/Disappeared_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
 texture = ExtResource("16_k4orq")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Disappeared_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Disappeared_Status"]
 self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("17_kusna")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Card_Collider" type="Area2D" parent="Card_Mask"]
-metadata/_edit_lock_ = true
 
 [node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Collider"]
 position = Vector2(37, 50)
 shape = SubResource("RectangleShape2D_hp5bo")
-metadata/_edit_lock_ = true
 
 [node name="Card_Animations" type="AnimationPlayer" parent="."]
 libraries = {

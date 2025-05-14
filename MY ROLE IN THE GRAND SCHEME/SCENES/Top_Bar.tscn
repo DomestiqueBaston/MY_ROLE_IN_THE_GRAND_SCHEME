@@ -250,7 +250,6 @@ _data = {
 }
 
 [node name="Top_Bar" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="A_VIRER_1" type="RichTextLabel" parent="."]
 offset_left = 7.0
@@ -263,7 +262,6 @@ bbcode_enabled = true
 text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h, je le rappelle), on aura l'animation [color=ff1c18]Sleep_Alert[/color] jouée, [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color] et le Tooltip affichera \"[color=ff1c18]You need to sleep![/color]\" à la place de \"Tick-Tock...\"
 ||
 V[/center]"
-metadata/_edit_lock_ = true
 
 [node name="A_VIRER_2" type="RichTextLabel" parent="."]
 offset_left = 437.0
@@ -276,7 +274,6 @@ bbcode_enabled = true
 text = "[center]Lorsque [color=ff1c18]Add[/color] et/ou [color=ff1c18]Emo[/color] atteignent [color=ff1c18]-2[/color] ou [color=ff1c18]2[/color], on jouera [color=ff1c18]Emo_Alert[/color] et/ou [color=ff1c18]Add_Alert[/color] et on aura [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color]. Pas de modification du Tooltip !
 ||              ||
  V                V[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Date_Time" type="HBoxContainer" parent="."]
 anchors_preset = -1
@@ -287,19 +284,16 @@ offset_top = 1.0
 offset_right = 57.0
 offset_bottom = 9.0
 theme = ExtResource("1_2tgjx")
-metadata/_edit_lock_ = true
 
 [node name="Day" type="Label" parent="Date_Time"]
 layout_mode = 2
 mouse_filter = 0
 text = "Mon."
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="Label" parent="Date_Time"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = "-"
-metadata/_edit_lock_ = true
 
 [node name="Time" type="Label" parent="Date_Time"]
 layout_mode = 2
@@ -307,13 +301,11 @@ tooltip_text = "You need to sleep!"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "12am"
-metadata/_edit_lock_ = true
 
 [node name="Menus" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_2tgjx")
-metadata/_edit_lock_ = true
 
 [node name="Double_Bar_1" type="Label" parent="Menus"]
 layout_mode = 2
@@ -323,7 +315,6 @@ offset_right = 62.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " ||"
-metadata/_edit_lock_ = true
 
 [node name="Dailies" type="MenuButton" parent="Menus"]
 layout_mode = 2
@@ -362,7 +353,6 @@ popup/item_9/id = 9
 popup/item_10/text = "Pass time"
 popup/item_10/id = 10
 script = ExtResource("3_wxjko")
-metadata/_edit_lock_ = true
 
 [node name="Single_Bar_1" type="Label" parent="Menus"]
 layout_mode = 2
@@ -372,7 +362,6 @@ offset_right = 103.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
-metadata/_edit_lock_ = true
 
 [node name="Cases" type="MenuButton" parent="Menus"]
 layout_mode = 2
@@ -399,7 +388,6 @@ popup/item_3/disabled = true
 popup/item_4/text = "Give up case..."
 popup/item_4/id = 4
 script = ExtResource("3_wxjko")
-metadata/_edit_lock_ = true
 
 [node name="Single_Bar_2" type="Label" parent="Menus"]
 layout_mode = 2
@@ -409,7 +397,6 @@ offset_right = 140.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
-metadata/_edit_lock_ = true
 
 [node name="Cards" type="MenuButton" parent="Menus"]
 layout_mode = 2
@@ -427,7 +414,6 @@ item_count = 1
 popup/item_0/text = "Card management"
 popup/item_0/id = 0
 script = ExtResource("3_wxjko")
-metadata/_edit_lock_ = true
 
 [node name="Single_Bar_3" type="Label" parent="Menus"]
 layout_mode = 2
@@ -437,7 +423,6 @@ offset_right = 177.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
-metadata/_edit_lock_ = true
 
 [node name="Whatever" type="MenuButton" parent="Menus"]
 layout_mode = 2
@@ -458,7 +443,6 @@ popup/item_1/id = 1
 popup/item_2/text = "Quit"
 popup/item_2/id = 2
 script = ExtResource("3_wxjko")
-metadata/_edit_lock_ = true
 
 [node name="Double_Bar_2" type="Label" parent="Menus"]
 layout_mode = 2
@@ -468,7 +452,6 @@ offset_right = 230.0
 offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " ||"
-metadata/_edit_lock_ = true
 
 [node name="Character_Stats" type="RichTextLabel" parent="."]
 clip_contents = false
@@ -490,7 +473,6 @@ text = "[color=#ff1c18]PHY[/color]: [color=#ff8864] [/color] | [color=#ff1c18]ME
 scroll_active = false
 autowrap_mode = 0
 text_direction = 2
-metadata/_edit_lock_ = true
 
 [node name="Player_Name" type="Label" parent="Character_Stats"]
 layout_mode = 1
@@ -510,7 +492,6 @@ text = "Player's name..."
 horizontal_alignment = 1
 text_overrun_behavior = 3
 ellipsis_char = "."
-metadata/_edit_lock_ = true
 
 [node name="Double_Bar" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -519,7 +500,6 @@ offset_right = 50.0
 offset_bottom = 8.0
 text = "||"
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="PHY" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -531,7 +511,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "10"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="MEN" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -543,7 +522,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "10"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="HEA" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -555,7 +533,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "10"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Emo" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -567,7 +544,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "-2"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Add" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -579,7 +555,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "+2"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Wan" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -591,7 +566,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "4"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Drug" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -603,7 +577,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "99"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Dough" type="Label" parent="Character_Stats"]
 layout_mode = 0
@@ -615,7 +588,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "-999"
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Bill_PopupMenu" type="PopupMenu" parent="."]
 auto_translate_mode = 1
