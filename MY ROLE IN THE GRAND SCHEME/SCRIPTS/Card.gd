@@ -4,6 +4,7 @@ var _is_expanded = true
 
 func _ready():
 	$Card_Animations.play("RESET")
+	z_index = 0
 
 func get_card_name():
 	return $Card_Mask/Card_BG/Card_Text/Card_Name.text
@@ -34,20 +35,11 @@ func _on_card_collider_mouse_entered():
 		Globals.card_exited_sound.stop()
 	if not Globals.card_entered_sound.playing:
 		Globals.card_entered_sound.play()
-	_move_card_to_top()
+	z_index = 1
 
 
 func _on_card_collider_mouse_exited():
 	$Shadow_Animations.play("Shadow_Off")
 	if not Globals.card_entered_sound.playing:
 		Globals.card_exited_sound.play()
-
-func _move_card_to_top():
-	var parent = get_parent()
-	if parent:
-		var z = 0
-		for child in parent.get_children():
-			if child is Card and child != self:
-				child.z_index = z
-				z += 1
-		z_index = z
+	z_index = 0
