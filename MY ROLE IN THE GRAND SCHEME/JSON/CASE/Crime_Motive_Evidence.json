@@ -456,7 +456,7 @@
 	  "accomplices": [0, 1, 2],
 	  "suspects": [0, 1, 2],
 	  "witnesses": [0, 1, 2],
-	  "evidence_number": [1],
+	  "evidence_number": [1, 2],
 	  "evidences": ["OBJ026", "OBJ028", "OBJ063"]
 	},
 	{

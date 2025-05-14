@@ -319,7 +319,7 @@ Les emploi du temps
 		- Un PNJ qui travaille de nuit, sera en soirée chez lui ou sur un lieu alternatif.
 		- Le Week-end en journée, un PNJ sera toujours sur un lieu alternatif le matin et chez lui l’Après-midi ou inversement et chez lui en soirée. S’il travaille de nuit, il sera chez lui tout le temps.
 		- Le Weekend, un PNJ dormira chez lui la nuit. S’il travaille de nuit, il dormira chez lui le Matin et l’Après-midi.
-		- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire de travail par jour. Il sera alors trouvable UNIQUEMENT sur son Lieu caché). Si le PNJ travaille de nuit, alors il sera toute la nuit sur son lieu caché.
+		- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire de travail par jour. Il sera alors trouvable UNIQUEMENT sur son Hideout et s’il n’en a pas, son Hangout). Si le PNJ travaille de nuit, alors il sera toute la nuit sur son lieu caché.
 		- Un PNJ en prison ne sera visitable que le matin ou l’après-midi.
 
 Passer le temps
@@ -495,7 +495,7 @@ Fin d’interaction
 	- Il sera bien entendu possible de rejeter des cartes présentes dans sa pile de Maîtrise. La seule contrainte étant donc de ne pas en avoir plus de 10.
 	- Une carte abandonnée perd automatiquement son bonus de Maîtrise.
 Dialogue
-	- Un seul Dialogue avec un PNJ par tranche horaire.
+	- Un seul Dialogue avec un PNJ par jour.
 	- Un Dialogue durera 2h (déplacement compris). 
 	- On joue 3 cartes maximum par Dialogue : Dialogue, Objet ou PNJ ou Lieu et Abstraite (maximum 1 de chaque). 1 carte Dialogue minimum.
 	- Le joueur ne peut pas fuir une agression d’avant Dialogue !
@@ -524,8 +524,8 @@ Dialogue
 		Auprès d’1 Coupable : (9+MEN)/(10+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau).
-	- Une information cachée (par ex : hideout) est toujours révélée juste.
-	- Une information fausse pour un lien désignera 2 PNJs dans un lien de n’importe quelle nature pour debt_influence, intimacy, friend, enemy, acquaintance ou ideology, ou bien 1 PNJ pour property, homework ou hangout.
+	- Une information cachée (hideout) est toujours révélée juste.
+	- Une information fausse pour un lien désignera 2 PNJs aléatoires dans un lien de n’importe laquelle des natures suivantes : debt_influence, intimacy, friend, enemy, acquaintance ou ideology.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux.
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec ses liens Violet (à moins qu’elle existe déjà).
 	- Si un lien nouveau est donné pour une carte pré-existante, uniquement les nouveaux liens seront Violet.
@@ -554,6 +554,7 @@ Fuir un Dialogue (PNJ)
 
 Combat
 	- Le joueur ne peut pas initier un Combat. Seul les PNJs le peuvent.
+	- Uniquement si le joueur a au moins 1 enquête en cours.
 	- Seules les cartes Combat, Combat Special et Abstraites peuvent être jouées. En tout 3 maximum (1 de chaque). 1 Carte combat minimum.
 	- Un Combat durera 2h.
 	- Si d’autres PNJs (connus, les autres « on s’en fout ») sont présents au moment du Combat, ils prennent la fuite automatiquement et ne seront pas accessibles avant le lendemain.
@@ -565,11 +566,11 @@ Combat
 	- La marge de réussite du « vainqueur » représente les dégâts infligés à l’adversaire.
 	- Un échec critique fait que le joueur ou le PNJ se blesse et prend 1HEA de dégâts en plus (et ±1Emo → Min/Max pour le joueur).
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
-	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances (uniquement s’il a cette carte, pas de main de non maîtrise ici). (voir Fuir un combat (Joueur) plus bas)
+	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances. (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).
 	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 100dø (±10%) et 25% de chance de prendre +1Wan. On peut ne rien trouver sauf +1Wan ! 
 
-Déclenchement extérieur d’un combat par un PNJ lié à l’enquête
+Déclenchement d’un combat par un PNJ lié à l’enquête
 	- À la première rencontre, il n’y a pas de risque !
 	- Ensuite, à chaque fois que le joueur rencontre ce PNJ, ce dernier, s’il ne fuit pas, peut agresser le joueur selon ces probabilités :
 	- Par défaut, il y a 0% de chance d’attaque d’un PNJ.
@@ -589,23 +590,23 @@ uniquement Pointillé	+1 %
 Pointillé et plein	+3 %
 uniquement Plein	+5 %
 
-	- Le niveau de difficulté de l’enquête s’applique en multiplicateur. Pour les enquêtes de niveau 0, on compte comme niveau 1
-	- Résumé en équation : Pourcentage de risque d’attaque = ((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque, évidemment!) Pour les enquêtes de niveau 0, on compte comme niveau 1 !
+	- Le niveau de difficulté de l’enquête s’applique en multiplicateur.
+	- Résumé en équation : Pourcentage de risque d’attaque = ((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque, évidemment!).
 
 Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- Un sbire est un agresseur envoyé par le/les coupable(s) dans une enquête. Il a donc aussi une fiche/carte PNJ.
 	- La Rep auprès d’un « sbire » : TOUJOURS Rep = -2.
-	- Uniquement si le joueur a au moins 1 enquête en cours.
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
-	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale). Pour les enquêtes de niveau 0, pas de possibilité de telles attaques !
+	- Comme on le voit ci-dessous : pas d’attaque de sbire dans les enquêtes de niveau 0.
+	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale).
 	- Si une attaque doit survenir, elle surviendra toujours avant l’execution de l’action suivante du joueur (y compris aller chez le médecin, etc.).
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale (HEAnom). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
-	- Tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un des commanditaire(s) et donc du ou d’un coupable de l’enquête avec une probabilité de 33% (établissement d’un Lien Violet). Au joueur d’en tirer les conséquences.
+	-  Avec une probabilité de 33%, tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un des commanditaire(s) du crime de l’enquête et donc du ou d’un coupable de l’enquête (établissement d’un Lien Violet). Au joueur d’en tirer les conséquences. Être attaqué, malgré la révélation n’est pas une preuve pour l’enquête.
 
 Fuir un Combat (Joueur)
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir.
-	- On ne peut jouer que 2 cartes pour fuir (la carte Run Away + une carte Abstraite). Au minimum Run Away.
+	- On ne peut jouer que 2 cartes maximum pour fuir (la carte Run Away + une carte Abstraite). Au minimum Run Away.
 	- On ne peut pas jouer une carte Abstraite seule.
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Run Away.
 	- On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 au jet de dé .
@@ -623,18 +624,19 @@ Investigation
 	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place, évidemment), Malus d’action de Nuit, bonus/malus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
-	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par la marge de réussite de l’investigation. Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes (si applicable).
+	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par round(marge de réussite de l’investigation÷3). Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes (si applicable).
 	- Une réussite critique donne de +50Dø à +100Dø en plus de ce qui est trouvé avec une réussite « normale ».
 	- Un échec donne -1Emo.
 	- 1 échec critique fait -1HEA en plus de l’échec « normal ».
-	- On ne peut pas découvrir plus d’Evidence (contenu caché) qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
+	- On ne peut pas découvrir plus de contenu qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
 	- Pendant une Investigation, si un PNJ devait arriver (par son emploi du temps), il attendra que le joueur soit parti pour entrer.
 
 Investigation en présence d’un PNJ AVEC autorisation de fouille
 	- Avec une autorisation de fouille (à obtenir depuis la Fiche d’enquête), on peut Investiguer en présence d’un PNJ lié à l’enquête mais cela causera -1Rep.
+	- On applique les même règles qu’en Dialogue pour savoir si le PNJ présent attaque (le faire fuir n’a pas grand intérêt) ou pas.
 
 Investigation en présence d’un PNJ SANS autorisation de fouille
-	- Investigation impossible !
+	- Investigation impossible ! → +1h !
 
 Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ
 	- Il faut avant tout arriver à pénétrer dans le lieu et pour ce faire, il faut pouvoir « forcer » l’accès (grimper, forcer une serrure, etc.).
@@ -776,8 +778,6 @@ Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue ou abandonnée, tout ce qui est lié à cette enquête est aussi retiré du jeu (sauf cartes d’Interaction et Abstraite de la pile du joueur qui y restent).
 	- À la suite d’une enquête réussie, l’écran Income_Overlay.tscn s’affiche avec les gains. Ensuite, on enchaîne directement sur l’écran Card_Management_Overlay.tscn pour modifier le deck (si besoin).
 Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre
-
-	- Il faudrait trouver un moyen de lier les liens Rouges, jaunes et Gris au milieu d’un autre lien !
 	- Dans ce cadre, voici les éléments absolument nécessaires au minimum pour résoudre une enquête :
 		1 Coupable
 		1 Evidence
@@ -798,10 +798,10 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 	- Dans ce qui suit, tout sera au pluriel mais concernera également les enquêtes à élément au « singulier » :
 	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 	- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
-	- Il faudra découvrir le mobile du crime dans une liste de mobiles dans laquelle le joueur devra sélectionner le bon mobile (en fonction du type d’enquête, tout de même). Ce dernier étant beaucoup plus sujet à la subjectivité, il est le facteur « facultatif » qui ne fait pas perdre une enquête s’il est mal sélectionné mais réduit les gains de la résolution de l’enquête.
+	- Il faudra découvrir le mobile du crime dans la liste de mobiles dont les mobiles incompatibles avec ce qu’a établi le joueur disparaitront.
 
  /!\ Tout petit point important :
-	- je reviens finalement sur un point que j’avais délaissé. Le crime ne sera finalement pas défini dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet). Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!
+	- Le crime ne sera pas connu du joueur dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet) et compatibles avec les infos connues au départ de l’enquête. Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!
 
 
 Nombre de PNJs en plus de ceux liés à l’enquêtes (PNJs « inutiles »)
@@ -815,6 +815,8 @@ Niveau de difficulté	PNJs inutiles min	PNJs inutiles max
 5	13	19
 6	15	22
 
+/!\  Les sbires ne font pas partie du pool de PNJs, ils sont générés à chaque besoin et on se fout de tout les concernant à part leurs stats principales et secondaires, on va dire. /!\ 
+
 Enquêtes niveau 0 :
  - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
  - Chaque semaine, n’importe quel jour, et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposé 1 mission de niveau 0 par un PNJ quelconque.
@@ -826,6 +828,37 @@ Enquêtes niveau 0 :
 	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
 	- Si on recycle les PNJs, alors refuser une enquête fera -1Rep et accepter +1Rep avec le PNJ.
 	- Pas de sbires !
+
+Enquête ultime (Le complot)
+	- Nom du complot : "The Conspiracy"
+	- Dans Final_Crime_Motive_Evidence.json, il y a la listes des mobiles du crime. Il sont là pour peupler le menu lorsque le joueur se trouve en crise de paranoïa et se lance dans son enquête ultime. Peu importe le mobile que le joueur choisira, de toute manière, il mourra… Peu importe les preuves qu’il pourra trouver, aucun des mobiles de disparaîtra jamais de la liste (il ne pourra donc jamais choisir un mobile en étant un tant soit peu sûr de lui). Je rappelle que si le joueur à survécu jusqu’à déclencher la validation de son enquête ultime, il mourra avant de savoir, tué par les millions (et les millions) de sbires de la Conspiracy !:)
+	- Les lieux du crime sont choisis aléatoirement dans la liste de lieux.
+	- Les victimes seront trouvables lors de la première visite de ces lieux.
+	- Lorsque le joueur ira la première fois sur un lieu de crime, il sera informé de la chose par un écran !
+	- Aucune info sur les victimes que leurs noms/prénoms/adresses lors de la découverte des corps.
+
+Fiche de quête
+Éléments de l'Enquête	Détails
+Titre de l'enquête	Voir avec le générateur de noms (gdscript)
+Difficulté	6 (Difficulté spéciale) 
+Mobile	Voir Final_Crime_Motive_Evidence.json
+Statut	Active
+Délai imparti	15 jours ± 1 jour
+Lieu(x) du crime	aléatoire(s)
+Indice(s)	/
+Suspect(s)	/
+Témoin(s)	/
+Coupable(s)	Voir Final_Crime_Motive_Evidence.json
+Complice(s)	Voir Final_Crime_Motive_Evidence.json
+Élément(s) de preuve	Voir Final_Crime_Motive_Evidence.json
+Relations entre personnages	Voir Final_Crime_Motive_Evidence.json
+
+	- La quête finale se lance automatiquement après la crise de PARANOIA sur absolument aucun indice qui serait donné par le jeu. Il ne s’agit plus ici d’une enquête que le joueur aura prise à l’Investigation Center). Le joueur se lance de lui-même dans ce projet après avoir déclenché sa crise de paranoïa. Il faut donc trouver un moyen de donner une direction au joueur pour son enquête. Car sans Lieu/Objet/PNJ/Lien/etc., il ne peut rien faire.
+	- Une fois l’écran de paranoïa fermé, on enchaîne directement sur un écran d’interaction de Dialogue avec le PNJ random que le joueur vient d’interpeler dans la rue.
+	- à l’issue de cette (fausse) interaction, le joueur obtiendra 1 info (on considérera que le joueur a fait le score minimum pour ça). C’est un peu forcé et ça se repère à la longue...
+	OU
+	- tant que le joueur n’aura pas obtenu 3 infos sur l’affaire, le joueur ira interpeler d’autres PNJs random (mais ça peut être long avec pas mal de malchance) !
+	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) mais la fois suivante, les cadavres auront été débarrassés (police ou autre, on s’en fout) !
 
 NOTE EN COURS DE DÉVELOPPEMENT !
 
@@ -840,8 +873,9 @@ NOTE EN COURS DE DÉVELOPPEMENT !
 
 COMMENT REPARTIR LES EVIDENCES ?
 	- Les evidences sont réparties entre les coupables avec un minimum d’1 evidence par coupable.
-	- 1 evidence appartenant à la victime peut se trouver, chez le coupable ou dans son hideout.
-	- 1 evidence appartenant au coupable peut se trouver chez la victime ou sur le lieu du crime. 
+	- 1 evidence appartenant à la victime doit se trouver dans le hideout d’un coupable ou chez lui (s’il n’a pas de Hideout).
+	et/ou (ou, s’il n’y a qu’une preuve) :
+	- 1 evidence appartenant au coupable doit se trouver chez la victime ou sur le lieu du crime (s’il y en a un). 
 
 COMMENT LIMITER LE NOMBRE DE LIEUX DANS UNE ENQUÊTE ?
 
@@ -853,7 +887,7 @@ Ils incluent :
     • Les domiciles, lieux de travail, planques et lieux de sortie des PNJs impliqués dans l’enquête (victimes, coupables, complices, témoins).
     • Les lieux servant de points de passage pour les liens noirs (les liens indispensables à la résolution).
 Ces lieux sont toujours générés en priorité.
-🧍‍2. PNJs inutiles : règles spécifiques de génération
+2. PNJs inutiles : règles spécifiques de génération
 Ces personnages doivent enrichir le monde sans surcharger inutilement le nombre de lieux.
 Domicile
     • Chaque PNJ inutile a son propre domicile.
@@ -944,3 +978,8 @@ Notes de fabrication (au fur et à mesure que j’y pense) :
 	- Lorsque l’on survole une carte les infos relatives à la carte s’affiche dans la zone en bas à gauche de l’écran (Main.tscn et Interaction.tscn) sinon, on aura accès aux infos de tooltip.
 
 	- Dans les json (je pense à NPC, OBJ, CASE…) on n’aura que des infos vraies. Les fausses sont générées aléatoirement en jeu.
+
+
+
+
+	- Si on en venait à vouloir recycler les PNJs d’une enquête à l’autre, peut-être qu’en fait, ce qui simplifierait les choses, serait de générer toute une population de PNJs dans laquelle on viendrait piocher au fur et à mesure des besoins des diverses enquêtes !

@@ -33,7 +33,7 @@
 	"comment_10": "de 0 à 1 (hors besoin impératif pour le crime/mobile, 50% de chance d'être en couple) (homo. si Couple homo à 10 % chance)",
 	"friend": ["NPCxxx", "None"],
 	"comment_11": "de 0 à 2 amis (50% partagent le lieu de travail et 50% un lieu fréquenté)",
-	"ennemy": ["NPCxxx", "None"],
+	"enemy": ["NPCxxx", "None"],
 	"comment_12": "de 0 à 2 ennemis (50% partagent le lieu de travail et 50% un lieu fréquenté)",
 	"acquaintance": ["NPCxxx", "None"],
 	"comment_13": "de 0 à 3 connaissances (50% partagent le lieu de travail et 50% un lieu fréquenté)",
@@ -62,7 +62,7 @@
 	"work": ["LOCxxxIDxxx"],
 	"hangout": ["LOCxxxIDxxx"],
 	"comment_19": "1 à 2 (voir liste des possibles dans Location.json avec hangout = yes)",
-	"hide_out": ["LOCxxxIDxxx"],
+	"hideout": ["LOCxxxIDxxx"],
 	"comment_20": "de 0 à 1 INFO SECRETE (voir liste des possibles dans Location.json avec hangout = secret). Hideout à 25% de chance pour useless_npc = yes",
 	
 	"property": [

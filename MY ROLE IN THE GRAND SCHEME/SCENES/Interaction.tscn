@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=56 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -36,6 +36,7 @@
 [ext_resource type="BitMap" uid="uid://cg2uptmo3ewqh" path="res://GRAPHICS/INTERACTION/Small_Tv_Button_Mask.png" id="22_y0drc"]
 [ext_resource type="AudioStream" uid="uid://dtdh8de6r8ymv" path="res://SOUND/MISC/White_noise.ogg" id="25_iwlie"]
 [ext_resource type="AudioStream" uid="uid://dy0gaffd2m7hp" path="res://SOUND/MISC/Turn_Button.ogg" id="25_lds6i"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="36_1c880"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5dcb"]
 size = Vector2(230, 104)
@@ -958,7 +959,12 @@ theme = ExtResource("10_jal5r")
 horizontal_scroll_mode = 3
 metadata/_edit_lock_ = true
 
-[node name="Info" type="Label" parent="Bottom_Left_Info_Long/ScrollContainer"]
+[node name="Info_Object" type="HFlowContainer" parent="Bottom_Left_Info_Long/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Info2" type="Label" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
 custom_minimum_size = Vector2(106, 108)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -978,6 +984,115 @@ A brutal and forceful attack, fueled by raw strength and aggression. This strike
 horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_lock_ = true
+
+[node name="Name" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "- THERMAL SENSOR -
+- UNIT -"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Something used for writing (if you have paper) and that still has ink inside..."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Found" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Found in:
+[color=#cf2317]Library[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Property" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Owned by:
+[color=#cf2317]Jean-Marie Trancène[/color]
+[color=#cf2317]Sylvie Culture[/color]
+[color=#cf2317]Hortence Hiaenpot[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Marked: [color=#cf2317]Evidence[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="Bottom_Left_Info_Long/ScrollContainer/Info_Object"]
+visible = false
+custom_minimum_size = Vector2(106, 108)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("36_1c880")
+theme_override_font_sizes/font_size = 8
+text = "- PEN -
+
+Something used for writing (if you have paper) and that still has ink inside...
+
+Found in: Library
+
+Owned by: Jean-Marie Trancène
+
+Not marked as Evidence."
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 

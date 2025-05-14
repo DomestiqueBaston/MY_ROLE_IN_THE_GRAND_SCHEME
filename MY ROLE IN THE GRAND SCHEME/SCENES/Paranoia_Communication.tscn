@@ -332,13 +332,22 @@ Here's hoping things move in the right direction from here.
 And who knows - maybe this will all turn out better than expected.[/center]"
 metadata/_edit_lock_ = true
 
+[node name="Sleeping_PNJ" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report"]
+custom_minimum_size = Vector2(107, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
+metadata/_edit_lock_ = true
+
 [node name="Critical_Success_Emo" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(107, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]Good news is, I can feel I'm [color=#ff1c18]emotionally[/color] regaining some [color=#ff8864]confidence[/color] after that little chat session.[/center]"
+text = "[center]But good news is, I can feel I'm [color=#ff1c18]emotionally[/color] regaining some [color=#ff8864]confidence[/color] after that little chat session.[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report"]
@@ -1115,6 +1124,15 @@ Let's hope this doesn't turn into an even bigger disaster.
 But knowing my luck, it probably will.[/center]"
 metadata/_edit_lock_ = true
 
+[node name="Sleeping_PNJ" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
+custom_minimum_size = Vector2(107, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
+metadata/_edit_lock_ = true
+
 [node name="Rep_Critical_Failure_Container" type="PanelContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
@@ -1172,7 +1190,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]What's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color].[/center]"
+text = "[center]And what's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color].[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Combat" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]

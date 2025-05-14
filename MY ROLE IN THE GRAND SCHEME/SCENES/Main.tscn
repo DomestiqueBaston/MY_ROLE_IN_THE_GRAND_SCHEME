@@ -383,6 +383,7 @@ visible = true
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card_Ghost" parent="TMP_2" instance=ExtResource("3_b4mvu")]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(60, 47)
 
@@ -708,7 +709,7 @@ texture_click_mask = ExtResource("15_folsb")
 
 [node name="Bottom_Left_Info" type="Node2D" parent="."]
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Bottom_Left_Info"]
+[node name="Info_Scroller" type="ScrollContainer" parent="Bottom_Left_Info"]
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
 anchor_right = 1.0
@@ -722,7 +723,95 @@ grow_vertical = 2
 theme = ExtResource("29_urjbe")
 horizontal_scroll_mode = 3
 
-[node name="Info" type="Label" parent="Bottom_Left_Info/ScrollContainer"]
+[node name="Info_Object" type="HFlowContainer" parent="Bottom_Left_Info/Info_Scroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "- THERMAL SENSOR -
+- UNIT -"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Something used for writing (if you have paper) and that still has ink inside..."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Found" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Found in:
+[color=#cf2317]Library[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Property" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Owned by:
+[color=#cf2317]Jean-Marie Trancène[/color]
+[color=#cf2317]Sylvie Culture[/color]
+[color=#cf2317]Hortence Hiaenpot[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Marked: [color=#cf2317]Evidence[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+visible = false
 custom_minimum_size = Vector2(106, 108)
 layout_mode = 2
 size_flags_horizontal = 3

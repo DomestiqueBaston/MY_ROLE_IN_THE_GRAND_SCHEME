@@ -129,11 +129,10 @@ anchors_preset = 0
 metadata/_edit_lock_ = true
 
 [node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
-visible = false
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
-offset_bottom = 268.0
+offset_bottom = 286.0
 metadata/_edit_lock_ = true
 
 [node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
@@ -148,13 +147,22 @@ Here's hoping things move in the right direction from here.
 And who knows - maybe this will all turn out better than expected.[/center]"
 metadata/_edit_lock_ = true
 
+[node name="Sleeping_PNJ" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
+custom_minimum_size = Vector2(107, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
+metadata/_edit_lock_ = true
+
 [node name="Critical_Success_Emo" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(547, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]Good news is, I can feel I'm [color=#ff1c18]emotionally[/color] regaining some [color=#ff8864]confidence[/color] after that little chat session.[/center]"
+text = "[center]But good news is, I can feel I'm [color=#ff1c18]emotionally[/color] regaining some [color=#ff8864]confidence[/color] after that little chat session.[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Report_Content_Including_Critical" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
@@ -163,7 +171,7 @@ alignment = 1
 metadata/_edit_lock_ = true
 
 [node name="Link_Relation" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(111, 141)
+custom_minimum_size = Vector2(111, 124)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -183,7 +191,7 @@ metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -389,7 +397,7 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="NPC_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(130, 141)
+custom_minimum_size = Vector2(130, 124)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -409,7 +417,7 @@ metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -578,7 +586,7 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Object_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(101, 141)
+custom_minimum_size = Vector2(101, 124)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -598,7 +606,7 @@ metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -725,7 +733,7 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Location_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
-custom_minimum_size = Vector2(107, 141)
+custom_minimum_size = Vector2(107, 124)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -745,7 +753,7 @@ metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -877,6 +885,7 @@ autowrap_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Negative_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
+visible = false
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
@@ -892,6 +901,15 @@ bbcode_enabled = true
 text = "[center]Great, just great. That conversation left me feeling like I'm in over my head. Typical.
 Let's hope this doesn't turn into an even bigger disaster.
 But knowing my luck, it probably will.[/center]"
+metadata/_edit_lock_ = true
+
+[node name="Sleeping_PNJ" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
+custom_minimum_size = Vector2(107, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Rep_Critical_Failure_Container" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
@@ -951,7 +969,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]What's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color].[/center]"
+text = "[center]And what's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color].[/center]"
 metadata/_edit_lock_ = true
 
 [node name="Combat" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
@@ -1202,7 +1220,7 @@ metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -1269,7 +1287,7 @@ metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 3
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -1311,7 +1329,7 @@ metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 3
 metadata/_edit_lock_ = true
 
 [node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
@@ -1352,7 +1370,7 @@ metadata/_edit_lock_ = true
 
 [node name="Separator_03" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 3
 metadata/_edit_lock_ = true
 
 [node name="Link_04" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
@@ -1395,7 +1413,7 @@ metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -1463,7 +1481,7 @@ metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 3
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -1545,7 +1563,7 @@ metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 4
+theme_override_font_sizes/font_size = 3
 metadata/_edit_lock_ = true
 
 [node name="Link_04" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
