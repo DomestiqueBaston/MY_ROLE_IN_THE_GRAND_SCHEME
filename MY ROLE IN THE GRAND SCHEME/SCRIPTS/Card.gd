@@ -1,12 +1,23 @@
 class_name Card extends Node2D
 
+@export var auto_select = true
+
 var _is_expanded = true
+var _is_current = false
 
 func _ready():
 	$Card_Animations.play("RESET")
+	if auto_select:
+		$Card_Mask/Card_Collider.mouse_entered.connect(_on_card_collider_mouse_entered)
+		$Card_Mask/Card_Collider.mouse_exited.connect(_on_card_collider_mouse_exited)
 
 func get_card_name():
 	return $Card_Mask/Card_BG/Card_Text/Card_Name.text
+
+func get_size():
+	return Vector2i(
+		$Card_Mask.texture.get_width() / $Card_Mask.hframes,
+		$Card_Mask.texture.get_height() / $Card_Mask.vframes)
 
 func expand_or_reduce():
 	if _is_expanded:
@@ -14,6 +25,31 @@ func expand_or_reduce():
 	else:
 		$Card_Animations.play("Expand_Card")
 	_is_expanded = not _is_expanded
+
+func set_current(current: bool):
+	if _is_current == current:
+		return
+	_is_current = current
+	if current:
+		$Shadow_Animations.play("Shadow_On")
+		if Globals.card_exited_sound.playing:
+			Globals.card_exited_sound.stop()
+		if not Globals.card_entered_sound.playing:
+			Globals.card_entered_sound.play()
+		#var parent = get_parent()
+		#if parent:
+			#var last_child = parent.get_child(-1)
+			#if last_child != self:
+				#if last_child is Card:
+					#parent.move_child(last_child, 0)
+				#move_to_front()
+		z_index = 1
+		Globals.set_current_card.emit(self)
+	else:
+		$Shadow_Animations.play("Shadow_Off")
+		if not Globals.card_entered_sound.playing:
+			Globals.card_exited_sound.play()
+		z_index = 0
 
 #
 # Modifies the opacity of both the card and its shadow.
@@ -37,22 +73,7 @@ func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shap
 				Globals.card_left_click.emit(event.global_position, self)
 
 func _on_card_collider_mouse_entered():
-	$Shadow_Animations.play("Shadow_On")
-	if Globals.card_exited_sound.playing:
-		Globals.card_exited_sound.stop()
-	if not Globals.card_entered_sound.playing:
-		Globals.card_entered_sound.play()
-	var parent = get_parent()
-	if parent:
-		var last_child = parent.get_child(-1)
-		if last_child != self:
-			if last_child is Card:
-				parent.move_child(last_child, 0)
-			move_to_front()
-	Globals.card_entered.emit(self)
+	set_current(true)
 
 func _on_card_collider_mouse_exited():
-	$Shadow_Animations.play("Shadow_Off")
-	if not Globals.card_entered_sound.playing:
-		Globals.card_exited_sound.play()
-	Globals.card_exited.emit(self)
+	set_current(false)

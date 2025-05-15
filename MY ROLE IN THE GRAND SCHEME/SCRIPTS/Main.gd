@@ -18,7 +18,7 @@ func _ready():
 	
 	Globals.card_right_click.connect(_popup_menu)
 	Globals.card_double_click.connect(_expand_or_reduce_card)
-	Globals.card_entered.connect(_show_card_info)
+	Globals.set_current_card.connect(_show_card_info)
 	Globals.link_right_click.connect(_popup_menu)
 
 func _popup_menu(pos: Vector2, node: Node2D):
