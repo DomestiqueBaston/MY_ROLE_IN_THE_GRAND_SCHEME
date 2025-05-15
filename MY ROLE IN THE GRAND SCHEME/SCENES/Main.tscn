@@ -301,135 +301,6 @@ z_index = 1
 texture = ExtResource("25_47v8w")
 centered = false
 
-[node name="TMP_2" type="Node2D" parent="Mask_Card_Playground"]
-
-[node name="Possible_Clues_Cards" type="Node2D" parent="Mask_Card_Playground/TMP_2"]
-position = Vector2(0, 39)
-script = ExtResource("14_ksebp")
-
-[node name="Card7" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(16, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color" index="4"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card8" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(20, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color" index="4"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card9" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(24, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card10" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(28, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card11" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(32, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card12" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(36, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card13" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(40, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Npc" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="6"]
-visible = true
-
-[node name="Low_Health" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="3"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card14" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(44, 0)
-auto_select = false
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Npc" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color" index="6"]
-visible = true
-
-[node name="Average_Health" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card_Ghost" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("3_b4mvu")]
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(60, 47)
-
-[node name="Special" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
-visible = true
-
-[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG" index="2"]
-modulate = Color(1, 1, 1, 0.882353)
-
-[node name="Card_Name" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="0"]
-text = "Clic the cards..."
-
-[node name="Card_Description" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="1"]
-text = "...in order to see the reduce/expand animations!"
-
-[node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
-z_index = 2
-
-[node name="Line" parent="Mask_Card_Playground/TMP_2/Drag_Drop_Line" index="0"]
-points = PackedVector2Array(86, 50, 217, 88)
-
 [node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
 
 [node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
@@ -2321,6 +2192,135 @@ flat = true
 text_overrun_behavior = 3
 fit_to_longest_item = false
 script = ExtResource("50_wvc8p")
+
+[node name="TMP_2" type="Node2D" parent="Mask_Card_Playground"]
+
+[node name="Possible_Clues_Cards" type="Node2D" parent="Mask_Card_Playground/TMP_2"]
+position = Vector2(0, 39)
+script = ExtResource("14_ksebp")
+
+[node name="Card7" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(16, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card8" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(20, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card9" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(24, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card10" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(28, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card11" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(32, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card12" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(36, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card13" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(40, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Npc" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="6"]
+visible = true
+
+[node name="Low_Health" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="3"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card14" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(44, 0)
+auto_select = false
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Npc" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color" index="6"]
+visible = true
+
+[node name="Average_Health" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card_Ghost" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("3_b4mvu")]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(60, 47)
+
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+visible = true
+
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG" index="2"]
+modulate = Color(1, 1, 1, 0.882353)
+
+[node name="Card_Name" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="0"]
+text = "Clic the cards..."
+
+[node name="Card_Description" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="1"]
+text = "...in order to see the reduce/expand animations!"
+
+[node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
+z_index = 2
+
+[node name="Line" parent="Mask_Card_Playground/TMP_2/Drag_Drop_Line" index="0"]
+points = PackedVector2Array(86, 50, 217, 88)
 
 [node name="Top_Bar" parent="Mask_Card_Playground" instance=ExtResource("11_f08ro")]
 
