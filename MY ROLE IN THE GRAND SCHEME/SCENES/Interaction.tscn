@@ -2486,6 +2486,9 @@ modulate = Color(1, 1, 1, 0.882353)
 [node name="Drag_Drop_Line" parent="TMP" instance=ExtResource("4_som80")]
 z_index = 1
 
+[node name="Drag_Drop_Line_Animation" parent="TMP/Drag_Drop_Line" index="1"]
+autoplay = "Appearance"
+
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 
 [node name="Dailies" parent="Top_Bar/Menus" index="1"]
@@ -2535,4 +2538,5 @@ button_group = SubResource("ButtonGroup_jv51o")
 [editable path="TMP/Objects/Card28"]
 [editable path="TMP/Locations/Card27"]
 [editable path="TMP/Locations/Card28"]
+[editable path="TMP/Drag_Drop_Line"]
 [editable path="Top_Bar"]

@@ -1,7 +1,7 @@
 extends TextureRect
 
 
-@onready var interaction_collider = $"../../Colliders/Interaction_Area/Interaction_Collider"
+@onready var interaction_collider = $"../Colliders/Interaction_Area/Interaction_Collider"
 
 var is_hovering = false
 

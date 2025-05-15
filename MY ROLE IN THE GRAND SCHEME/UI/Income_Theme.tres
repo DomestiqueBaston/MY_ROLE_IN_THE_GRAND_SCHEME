@@ -125,7 +125,8 @@ bg_color = Color(1, 1, 1, 0.494118)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cq6ig"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0ipt"]
+content_margin_left = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -256,7 +257,7 @@ RichTextLabel/constants/shadow_offset_x = -3
 RichTextLabel/constants/shadow_offset_y = 2
 RichTextLabel/font_sizes/normal_font_size = 8
 RichTextLabel/fonts/normal_font = ExtResource("2_cj7tf")
-RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_cq6ig")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_m0ipt")
 TooltipLabel/colors/font_color = Color(0.88, 0.818987, 0.7656, 0.921569)
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")

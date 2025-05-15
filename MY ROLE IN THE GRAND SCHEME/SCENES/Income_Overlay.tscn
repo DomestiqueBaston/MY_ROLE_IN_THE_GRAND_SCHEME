@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bialdyt2yrgkg"]
+[gd_scene load_steps=13 format=3 uid="uid://bialdyt2yrgkg"]
 
 [ext_resource type="Texture2D" uid="uid://6wn0yf5hibwo" path="res://GRAPHICS/INCOME/Income_BG.png" id="1_88mho"]
 [ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="2_ekhwe"]
@@ -7,6 +7,10 @@
 [ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="3_kabnn"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="4_5xymt"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="4_kabnn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kabnn"]
+content_margin_left = 2.0
+content_margin_bottom = 1.0
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -131,7 +135,6 @@ _data = {
 }
 
 [node name="Income" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -139,24 +142,20 @@ offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
-metadata/_edit_lock_ = true
 
 [node name="Income_Panel" type="Node2D" parent="."]
 position = Vector2(-640, 0)
-metadata/_edit_lock_ = true
 
 [node name="Panel" type="Sprite2D" parent="Income_Panel"]
 position = Vector2(200, 25)
 texture = ExtResource("1_88mho")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Information" type="Control" parent="Income_Panel"]
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_ekhwe")
-metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Income_Panel/Information"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -168,19 +167,17 @@ offset_bottom = 313.0
 tooltip_text = "I'm releaved!"
 text = "Ok, nice..."
 script = ExtResource("3_kabnn")
-metadata/_edit_lock_ = true
 
 [node name="Chalk" type="Sprite2D" parent="Income_Panel/Information"]
 clip_children = 1
 position = Vector2(315, 178)
 texture = ExtResource("4_kabnn")
-metadata/_edit_lock_ = true
 
 [node name="Content" type="RichTextLabel" parent="Income_Panel/Information/Chalk"]
-offset_left = -71.0
+offset_left = -73.0
 offset_top = -108.0
 offset_right = 82.0
-offset_bottom = 121.0
+offset_bottom = 101.0
 theme = ExtResource("2_ekhwe")
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congratulations![/color][/pulse][/center]
@@ -189,10 +186,10 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
  solved that case and earned
  that [color=#ff8864]amazing[/color] reward:
 
-  - [color=#ff1c18]XXX[/color][color=#ff8864]Dø[/color] and [color=#ff1c18]X[/color] [color=#ff8864]card(s)[/color] to
- (try to) improve yourself...
-  - [color=#ff8864]Eased your[/color] [color=#ff1c18]mind[/color] and [color=#ff1c18]cooled[/color] [color=#ff8864]
- it with the [/color][color=#ff1c18]cops[/color].
+
+
+
+
 
 
 
@@ -206,23 +203,87 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
 
 
  Not that it'll make any change!"
-metadata/_edit_lock_ = true
+
+[node name="Money_Cards" type="FlowContainer" parent="Income_Panel/Information/Chalk"]
+offset_left = -73.0
+offset_top = -56.0
+offset_right = 82.0
+offset_bottom = -18.0
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = 0
+
+[node name="Dash" type="RichTextLabel" parent="Income_Panel/Information/Chalk/Money_Cards"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ekhwe")
+bbcode_enabled = true
+text = " - "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Money" type="RichTextLabel" parent="Income_Panel/Information/Chalk/Money_Cards"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ekhwe")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "XXX"
+fit_content = true
+autowrap_mode = 0
+
+[node name="And" type="RichTextLabel" parent="Income_Panel/Information/Chalk/Money_Cards"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ekhwe")
+bbcode_enabled = true
+text = "[color=#ff8864]Dø[/color] and "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Cards" type="RichTextLabel" parent="Income_Panel/Information/Chalk/Money_Cards"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ekhwe")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "X"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Beginning_Of_End" type="RichTextLabel" parent="Income_Panel/Information/Chalk/Money_Cards"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_ekhwe")
+bbcode_enabled = true
+text = " [color=#ff8864]card(s)[/color] to (try "
+fit_content = true
+autowrap_mode = 0
+
+[node name="End_Of_End" type="RichTextLabel" parent="Income_Panel/Information/Chalk/Money_Cards"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("2_ekhwe")
+theme_override_constants/line_separation = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kabnn")
+bbcode_enabled = true
+text = " to) improve yourself...
+ - [color=#ff8864]Eased your[/color] [color=#ff1c18]mind[/color] and [color=#ff1c18]cooled[/color] [color=#ff8864]
+ it with the [/color][color=#ff1c18]cops[/color]."
+fit_content = true
+autowrap_mode = 0
 
 [node name="Card_Places" type="Node2D" parent="Income_Panel/Information"]
-position = Vector2(0, 13)
-metadata/_edit_lock_ = true
+position = Vector2(0, 12)
 
 [node name="First_Card" type="Marker2D" parent="Income_Panel/Information/Card_Places"]
 position = Vector2(247, 152)
-metadata/_edit_lock_ = true
 
 [node name="Last_Card" type="Marker2D" parent="Income_Panel/Information/Card_Places"]
 position = Vector2(319, 152)
-metadata/_edit_lock_ = true
 
 [node name="TMP" type="Node2D" parent="Income_Panel/Information"]
-position = Vector2(0, 13)
-metadata/_edit_lock_ = true
+position = Vector2(0, 12)
 
 [node name="Card1" parent="Income_Panel/Information/TMP" instance=ExtResource("3_ihpa3")]
 position = Vector2(247, 152)
