@@ -606,12 +606,13 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 
 Fuir un Combat (Joueur)
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir.
-	- On ne peut jouer que 2 cartes maximum pour fuir (la carte Run Away + une carte Abstraite). Au minimum Run Away.
+	- On ne peut jouer que 2 cartes maximum pour fuir (la carte Run Away + une carte Abstraite).
+	- On peut jouer Run Away seule.
 	- On ne peut pas jouer une carte Abstraite seule.
-	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Run Away.
-	- On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 au jet de dé .
+	- /!\ On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 supplémentaire au jet de dé.
+	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Run Away (il ne peut y avoir qu’une carte Run Away).
 	- Pour fuir un combat (avant qu’il ne commence), le joueur lance un dé contre round((PHY×2 + MEN + HEA)÷4).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit…
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit et (donc) malus de jeu sans aucune carte…
 	- En cas de réussite, aucun effet, le joueur fuit.
 	- En cas de réussite critique, ±1Emo → 0.
 	- En cas d’échec, le joueur prend +1Emo → Min/Max et reste pour le Combat qui va suivre.

@@ -424,7 +424,6 @@ visible = true
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card_Ghost" parent="TMP_2" instance=ExtResource("3_b4mvu")]
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(60, 47)
 
@@ -441,7 +440,6 @@ text = "Clic the cards..."
 text = "...in order to see the reduce/expand animations!"
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("13_ksebp")]
-visible = false
 z_index = 2
 
 [node name="Line" parent="Drag_Drop_Line" index="0"]
@@ -1051,6 +1049,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Time_Slot_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1060,6 +1059,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Time_Slot_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2307,7 +2307,8 @@ text = "Attention, il y aura (possiblement) des
 tooltips pour les
 NPC, Objets et Lieu.   =>
 J'en ai mis pour
-donner un exemple...
+donner un exemple
+dans Scroller_Location.
 Si l'idée est annulée,
 il faudra les virer !"
 horizontal_alignment = 1

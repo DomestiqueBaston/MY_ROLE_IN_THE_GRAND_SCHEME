@@ -779,9 +779,16 @@ fit_content = true
 autowrap_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="Where" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
+[node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
-text = " is where "
+text = ": "
+fit_content = true
+autowrap_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Where2" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
+layout_mode = 2
+text = "is where "
 fit_content = true
 autowrap_mode = 0
 metadata/_edit_lock_ = true
