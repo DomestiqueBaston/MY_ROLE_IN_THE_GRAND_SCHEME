@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var popup: PopupMenu = $Popup/Main_Menu
 
+var _current_card: Card
+
 func _ready():
 	popup.add_item("Dialogue")
 	popup.add_item("Investigation")
@@ -14,8 +16,10 @@ func _ready():
 	popup.add_separator("  - - - - - - - - - -  ")
 	popup.add_item("Throw card away")
 	
-	Globals.popup_card_menu.connect(_popup_menu)
-	Globals.popup_link_menu.connect(_popup_menu)
+	Globals.card_right_click.connect(_popup_menu)
+	Globals.card_double_click.connect(_expand_or_reduce_card)
+	Globals.card_entered.connect(_show_card_info)
+	Globals.link_right_click.connect(_popup_menu)
 
 func _popup_menu(pos: Vector2, node: Node2D):
 	if node is Card:
@@ -27,3 +31,11 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	else:
 		print("popup menu for node ", node.get_name())
 	popup.popup(Rect2i(pos, Vector2i()))
+
+func _expand_or_reduce_card(_pos: Vector2, card: Card):
+	card.expand_or_reduce()
+
+func _show_card_info(card: Card):
+	if card != _current_card:
+		print("show info about card ", card.get_card_name())
+		_current_card = card

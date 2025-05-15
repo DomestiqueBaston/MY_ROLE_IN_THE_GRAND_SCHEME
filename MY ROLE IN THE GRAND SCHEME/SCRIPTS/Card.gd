@@ -8,6 +8,13 @@ func _ready():
 func get_card_name():
 	return $Card_Mask/Card_BG/Card_Text/Card_Name.text
 
+func expand_or_reduce():
+	if _is_expanded:
+		$Card_Animations.play("Reduce_Card")
+	else:
+		$Card_Animations.play("Expand_Card")
+	_is_expanded = not _is_expanded
+
 #
 # Modifies the opacity of both the card and its shadow.
 #
@@ -18,15 +25,16 @@ func set_opacity(opacity: float):
 			"shadow_color", Color(0, 0, 0, opacity * 0.3))
 
 func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
-	if event is InputEventMouse and event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
-		get_viewport().set_input_as_handled()
-		Globals.popup_card_menu.emit(event.global_position, self)
-	elif event.is_action_pressed("Left_Click"):
-		if _is_expanded:
-			$Card_Animations.play("Reduce_Card")
-		else:
-			$Card_Animations.play("Expand_Card")
-		_is_expanded = not _is_expanded
+	if event is InputEventMouseButton:
+		if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
+			get_viewport().set_input_as_handled()
+			Globals.card_right_click.emit(event.global_position, self)
+		elif event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+			get_viewport().set_input_as_handled()
+			if event.double_click:
+				Globals.card_double_click.emit(event.global_position, self)
+			else:
+				Globals.card_left_click.emit(event.global_position, self)
 
 func _on_card_collider_mouse_entered():
 	$Shadow_Animations.play("Shadow_On")
@@ -41,8 +49,10 @@ func _on_card_collider_mouse_entered():
 			if last_child is Card:
 				parent.move_child(last_child, 0)
 			move_to_front()
+	Globals.card_entered.emit(self)
 
 func _on_card_collider_mouse_exited():
 	$Shadow_Animations.play("Shadow_Off")
 	if not Globals.card_entered_sound.playing:
 		Globals.card_exited_sound.play()
+	Globals.card_exited.emit(self)

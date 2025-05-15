@@ -7,13 +7,23 @@ extends Node
 @onready var card_entered_sound: AudioStreamPlayer = $UI_Sounds/Card_Entered
 @onready var card_exited_sound: AudioStreamPlayer = $UI_Sounds/Card_Exited
 
-# signal emitted when the user right clicks on a card
 @warning_ignore("unused_signal")
-signal popup_card_menu(pos: Vector2, card: Card)
+signal card_left_click(pos: Vector2, card: Card)
 
-# signal emitted when the user right clicks on a link
 @warning_ignore("unused_signal")
-signal popup_link_menu(pos: Vector2, link: Link)
+signal card_double_click(pos: Vector2, card: Card)
+
+@warning_ignore("unused_signal")
+signal card_right_click(pos: Vector2, card: Card)
+
+@warning_ignore("unused_signal")
+signal card_entered(card: Card)
+
+@warning_ignore("unused_signal")
+signal card_exited(card: Card)
+
+@warning_ignore("unused_signal")
+signal link_right_click(pos: Vector2, link: Link)
 
 func _ready():
 	# the mouse is drawn on top of menus
