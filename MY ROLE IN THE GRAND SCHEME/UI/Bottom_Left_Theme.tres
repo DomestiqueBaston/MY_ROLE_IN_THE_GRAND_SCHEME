@@ -83,6 +83,7 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("3_3kxf1")
 default_font_size = 8
+HFlowContainer/constants/v_separation = 0
 HSlider/icons/grabber = ExtResource("1_rregs")
 HSlider/icons/grabber_disabled = ExtResource("1_rregs")
 HSlider/icons/grabber_highlight = ExtResource("1_rregs")
@@ -142,7 +143,7 @@ PopupMenu/styles/separator = SubResource("StyleBoxEmpty_aikjv")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 0.752941)
 RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 0.643137)
 RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.423529)
-RichTextLabel/constants/line_separation = 2
+RichTextLabel/constants/line_separation = 1
 RichTextLabel/constants/outline_size = 3
 RichTextLabel/constants/shadow_offset_x = -1
 RichTextLabel/constants/shadow_offset_y = 1

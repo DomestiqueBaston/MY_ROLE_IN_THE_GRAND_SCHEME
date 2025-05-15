@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=71 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_wvc8p"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
@@ -43,7 +43,6 @@
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="29_urjbe"]
 [ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="30_3y6u4"]
 [ext_resource type="Texture2D" uid="uid://bsmnr6a3s5m75" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce_50.png" id="30_d7dts"]
-[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="30_dhl0k"]
 [ext_resource type="Texture2D" uid="uid://dg3arog2xmnlv" path="res://GRAPHICS/LINK_PIN/Plein_Rouge_50.png" id="32_aslwm"]
 [ext_resource type="Texture2D" uid="uid://d0h2u5jichg1" path="res://GRAPHICS/LINK_PIN/Plein_Jaune_50.png" id="33_j2aac"]
 [ext_resource type="Texture2D" uid="uid://dqkayb3mri12f" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair_50.png" id="35_ywl4n"]
@@ -60,6 +59,48 @@ size = Vector2(470, 309)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km17i"]
 size = Vector2(106, 106)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvc8p"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksebp"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsks5"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_871an"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmwof"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xx3ct"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s563f"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lctu2"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqutl"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3hjo"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgqcn"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy7hr"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2b1jy"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dv1h"]
+content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
 
@@ -709,7 +750,8 @@ texture_click_mask = ExtResource("15_folsb")
 
 [node name="Bottom_Left_Info" type="Node2D" parent="."]
 
-[node name="Info_Scroller" type="ScrollContainer" parent="Bottom_Left_Info"]
+[node name="Scroller_Object" type="ScrollContainer" parent="Bottom_Left_Info"]
+visible = false
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
 anchor_right = 1.0
@@ -723,12 +765,12 @@ grow_vertical = 2
 theme = ExtResource("29_urjbe")
 horizontal_scroll_mode = 3
 
-[node name="Info_Object" type="HFlowContainer" parent="Bottom_Left_Info/Info_Scroller"]
+[node name="Info_Object" type="HFlowContainer" parent="Bottom_Left_Info/Scroller_Object"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Name" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Name" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -738,15 +780,17 @@ text = "- THERMAL SENSOR -
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
 bbcode_enabled = true
+text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Description" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -755,53 +799,73 @@ text = "Something used for writing (if you have paper) and that still has ink in
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 5
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Found" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
+text = "Found in:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Found" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Found_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "Found in:
-[color=#cf2317]Library[/color]"
+text = "[color=#cf2317]Library[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 5
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Property" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
+text = "Owned by:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Property" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Property_NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "Owned by:
-[color=#cf2317]Jean-Marie Trancène[/color]
-[color=#cf2317]Sylvie Culture[/color]
-[color=#cf2317]Hortence Hiaenpot[/color]"
+text = "[color=#cf2317]Théo Jasmin[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 5
 bbcode_enabled = true
+text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -810,32 +874,1445 @@ text = "Marked: [color=#cf2317]Evidence[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Info" type="Label" parent="Bottom_Left_Info/Info_Scroller/Info_Object"]
+[node name="Scroller_Location" type="ScrollContainer" parent="Bottom_Left_Info"]
 visible = false
 custom_minimum_size = Vector2(106, 108)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 198.0
+offset_right = 124.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("29_urjbe")
+horizontal_scroll_mode = 3
+
+[node name="Info_Location" type="HFlowContainer" parent="Bottom_Left_Info/Scroller_Location"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.423529)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 0.643137)
-theme_override_constants/shadow_offset_x = -1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("30_dhl0k")
-theme_override_font_sizes/font_size = 8
-text = "- PEN -
 
-Something used for writing (if you have paper) and that still has ink inside...
-
-Found in: Library
-
-Owned by: Jean-Marie Trancène
-
-Not marked as Evidence."
+[node name="Name" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "- PLACE OF WORSHIP -"
+fit_content = true
 horizontal_alignment = 1
-autowrap_mode = 2
+
+[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "A place to sip overpriced coffee and pretend you're doing something important."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Home" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Home of:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Home_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Already met!"
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Jean Trancène"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Home_NPC_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Not met yet."
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Sylvie Culture"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Closed days:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend_day_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]N/A[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend_day_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]None[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend_day_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Saturday[/color] & [color=#cf2317]Sunday[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend_day_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hours" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Open:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]No opening hours[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "in the [color=#cf2317]Morning[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "in the [color=#cf2317]Afternoon[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "in the [color=#cf2317]Evening[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_05" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "at [color=#cf2317]Night[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_06" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "in the [color=#cf2317](W-E) Morning[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_07" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "in the [color=#cf2317](W-E) Afternoon[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_08" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "in the [color=#cf2317](W-E) Evening[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_09" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "at [color=#cf2317](W-E) Night[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_10" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]H24[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_05" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hangout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Hangout of:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hangout_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Not met yet."
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Pierre Poljac"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_06" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hideout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Hideout of:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hideout_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Already met!"
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Michel Drucker"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Scroller_NPC" type="ScrollContainer" parent="Bottom_Left_Info"]
+custom_minimum_size = Vector2(106, 108)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 198.0
+offset_right = 124.0
+offset_bottom = 342.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("29_urjbe")
+horizontal_scroll_mode = 3
+
+[node name="Info_NPC" type="HFlowContainer" parent="Bottom_Left_Info/Scroller_NPC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "- CHARACTER -"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="NPC_Name" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Jean Trancène"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Health" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Last known health:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Health_No_Info" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]No info[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Health_Good" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Good[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Health_Average" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Average[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Health_Low" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Low[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Case Status:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Victim" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Victim[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Culprit" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Culprit[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Accomplice" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Accomplice[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Suspect" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Suspect[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Witness" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Witness[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]None[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Couple" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Lives with:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Couple_NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Robert Smith"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Couple_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Nobody"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Friends" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Friend with:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Friends_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Nina Hagen"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Friends_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_05" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Enemies" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Enemy of:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Enemies_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Jean-Jacques Goldman"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Enemies_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_06" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Acquaintance" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Knows:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Acquaintance_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Marc Ribot"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Acquaintance_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_07" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Affair" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Has an affair with:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Affair_NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Sylvie Vartan"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Affair_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Nobody"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_08" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Debt_Influence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Debt or Influence relationship:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Debt_Influence_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Mylène Farmer"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Debt_Influence_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Nobody"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_09" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Ideology" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Ideological relationship:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Ideology_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "John Lurie"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Ideology_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Nobody"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_10" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Schedule" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Schedule:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Schedule_Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Schedule_Morning" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
+bbcode_enabled = true
+text = "Morning:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Schedule_Afternoon" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
+bbcode_enabled = true
+text = "Afternoon:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Schedule_Evening" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
+bbcode_enabled = true
+text = "Evening:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Schedule_Night" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
+bbcode_enabled = true
+text = "Night:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Schedule_WE_Morning" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
+bbcode_enabled = true
+text = "W-E Morning:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Schedule_WE_Afternoon" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
+bbcode_enabled = true
+text = "W-E Afternoon:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Schedule_WE_Evening" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s563f")
+bbcode_enabled = true
+text = "W-E Evening:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lctu2")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iqutl")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Schedule_WE_Night" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q3hjo")
+bbcode_enabled = true
+text = "W-E Night:"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bgqcn")
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jy7hr")
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Separator_11" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Doesn't work on:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend_Sat_Sun" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Saturday[/color] & [color=#cf2317]Sunday[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend_Mon_Tue" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Weekend_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Unknown[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_12" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Home" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Home:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Home_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Home_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_13" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Work" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Work Place:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Work_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Work_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_14" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hangout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Hangout Place:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hangout_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hangout_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_15" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hideout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Hideout Place:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hideout_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Location"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hideout_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_16" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Properties" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Belongings:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Properties_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Properties_Object_01" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
+alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
+bbcode_enabled = true
+text = "Object"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Opening_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+layout_mode = 2
+bbcode_enabled = true
+text = " -"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0dv1h")
+bbcode_enabled = true
+text = "Evidence"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Closing_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+layout_mode = 2
+bbcode_enabled = true
+text = "-"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Properties_Object_02" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
+alignment = 1
+
+[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
+bbcode_enabled = true
+text = "Object"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Opening_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+text = " -"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0dv1h")
+bbcode_enabled = true
+text = "Evidence"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Closing_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+text = "-"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="A_VIRER" type="Label" parent="Bottom_Left_Info"]
+offset_left = -139.0
+offset_top = 184.0
+offset_right = -5.0
+offset_bottom = 343.0
+theme_override_font_sizes/font_size = 10
+text = "Attention, il y aura (possiblement) des
+tooltips pour les
+NPC, Objets et Lieu.   =>
+J'en ai mis pour
+donner un exemple...
+Si l'idée est annulée,
+il faudra les virer !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Crime_Motive_Selection" type="Node2D" parent="."]
 position = Vector2(147, 11)
