@@ -530,7 +530,7 @@
 	"type": "Object",
 	"info_name": "- ID -",
 	"name": "ID",
-	"description": "Such a document is usually in the possession of its owner".,
+	"description": "Such a document is usually in the possession of its owner.",
 	"found": ["LOCxxxIDxxx"],
 	"property": ["NPCxxx"],
 	"evidence": ["yes", "no"],
