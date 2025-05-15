@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=70 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_wvc8p"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
@@ -16,9 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dgclhxafihydp" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_50.png" id="15_1cl67"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK_PIN/Plein_Gris.png" id="15_c4wun"]
 [ext_resource type="BitMap" uid="uid://d4bv231xa7qfq" path="res://GRAPHICS/LINK_PIN/Link_Mask.png" id="15_folsb"]
-[ext_resource type="Theme" uid="uid://qjm7plxdf41e" path="res://UI/Possible_Clues_Theme.tres" id="16_hg5r6"]
 [ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/LINK_PIN/Plein_Noir.png" id="16_mke16"]
-[ext_resource type="Texture2D" uid="uid://daarosfqpf3li" path="res://GRAPHICS/MAIN/Pince_Haut.png" id="17_4l1ou"]
 [ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/LINK_PIN/Plein_Rose.png" id="17_7cnra"]
 [ext_resource type="Texture2D" uid="uid://8c4ypdvh0a1n" path="res://GRAPHICS/LINK_PIN/Plein_Noir_50.png" id="18_bjn3g"]
 [ext_resource type="Texture2D" uid="uid://6p0p28qbhwkv" path="res://GRAPHICS/LINK_PIN/Plein_Gris_50.png" id="18_el4mc"]
@@ -110,31 +108,6 @@ script = ExtResource("1_wvc8p")
 
 [node name="Main_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_ebllg")
-centered = false
-
-[node name="Possible_Clues_Clamp" type="Node2D" parent="."]
-
-[node name="Possible_Clues" type="Label" parent="Possible_Clues_Clamp"]
-offset_left = 35.0
-offset_top = 21.0
-offset_right = 98.0
-offset_bottom = 29.0
-tooltip_text = "Cards can be taken or returned here."
-mouse_filter = 0
-theme = ExtResource("16_hg5r6")
-theme_override_colors/font_color = Color(0, 0, 0, 0.752941)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.25098)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 0.12549)
-theme_override_constants/shadow_offset_x = -1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
-theme_override_constants/shadow_outline_size = 0
-text = "Possible Clues"
-horizontal_alignment = 1
-
-[node name="Clamp" type="Sprite2D" parent="Possible_Clues_Clamp"]
-position = Vector2(38, 20)
-texture = ExtResource("17_4l1ou")
 centered = false
 
 [node name="TMP_1" type="Node2D" parent="."]
@@ -324,171 +297,171 @@ z_index = 2
 position = Vector2(544, 64)
 
 [node name="Mask_Card_Playground" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("25_47v8w")
 centered = false
 
-[node name="TMP_2" type="Node2D" parent="."]
+[node name="TMP_2" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Possible_Clues_Cards" type="Node2D" parent="TMP_2"]
+[node name="Possible_Clues_Cards" type="Node2D" parent="Mask_Card_Playground/TMP_2"]
 position = Vector2(0, 39)
 script = ExtResource("14_ksebp")
 
-[node name="Card7" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card7" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(16, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Object" parent="TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card8" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card8" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(20, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Object" parent="TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card9" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card9" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(24, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Object" parent="TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
+[node name="Object" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG/Card_Color" index="4"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card10" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card10" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(28, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card10/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card11" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card11" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(32, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card11/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card12" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card12" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(36, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card12/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card13" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card13" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(40, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Npc" parent="TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="6"]
+[node name="Npc" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color" index="6"]
 visible = true
 
-[node name="Low_Health" parent="TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="3"]
+[node name="Low_Health" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG/Card_Color/Npc" index="3"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card14" parent="TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
+[node name="Card14" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(44, 0)
 auto_select = false
 
-[node name="Special" parent="TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Npc" parent="TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color" index="6"]
+[node name="Npc" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color" index="6"]
 visible = true
 
-[node name="Average_Health" parent="TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
+[node name="Average_Health" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG/Card_Color/Npc" index="2"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card_Ghost" parent="TMP_2" instance=ExtResource("3_b4mvu")]
-visible = false
+[node name="Card_Ghost" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(60, 47)
 
-[node name="Special" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
+[node name="Special" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
 
-[node name="Card_Text" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG" index="2"]
+[node name="Card_Text" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
-[node name="Card_Name" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="0"]
+[node name="Card_Name" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="0"]
 text = "Clic the cards..."
 
-[node name="Card_Description" parent="TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="1"]
+[node name="Card_Description" parent="Mask_Card_Playground/TMP_2/Card_Ghost/Card_Mask/Card_BG/Card_Text" index="1"]
 text = "...in order to see the reduce/expand animations!"
 
-[node name="Drag_Drop_Line" parent="." instance=ExtResource("13_ksebp")]
+[node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
 z_index = 2
 
-[node name="Line" parent="Drag_Drop_Line" index="0"]
+[node name="Line" parent="Mask_Card_Playground/TMP_2/Drag_Drop_Line" index="0"]
 points = PackedVector2Array(86, 50, 217, 88)
 
-[node name="Colliders" type="Node2D" parent="."]
+[node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Playground_Collider" type="Area2D" parent="Colliders"]
+[node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 collision_layer = 0
 collision_mask = 0
 
-[node name="Playground" type="CollisionShape2D" parent="Colliders/Playground_Collider"]
+[node name="Playground" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Playground_Collider"]
 position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
 
-[node name="Possible_Clue_Collider" type="Area2D" parent="Colliders"]
+[node name="Possible_Clue_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 0
 
-[node name="Possible_Clue" type="CollisionShape2D" parent="Colliders/Possible_Clue_Collider"]
+[node name="Possible_Clue" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Possible_Clue_Collider"]
 position = Vector2(66, 89)
 shape = SubResource("RectangleShape2D_km17i")
 
-[node name="Card_Locations" type="Node2D" parent="."]
+[node name="Card_Locations" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Possible_Clue_Card_Locations" type="Node2D" parent="Card_Locations"]
+[node name="Possible_Clue_Card_Locations" type="Node2D" parent="Mask_Card_Playground/Card_Locations"]
 
-[node name="First_Card" type="Marker2D" parent="Card_Locations/Possible_Clue_Card_Locations"]
+[node name="First_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Possible_Clue_Card_Locations"]
 position = Vector2(16, 39)
 
-[node name="Last_Card" type="Marker2D" parent="Card_Locations/Possible_Clue_Card_Locations"]
+[node name="Last_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Possible_Clue_Card_Locations"]
 position = Vector2(44, 39)
 
-[node name="Legend" type="Node2D" parent="."]
+[node name="Legend" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Colors" type="Control" parent="Legend"]
+[node name="Colors" type="Control" parent="Mask_Card_Playground/Legend"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 153.0
@@ -498,7 +471,7 @@ offset_bottom = 342.0
 theme = ExtResource("2_2avoe")
 script = ExtResource("14_1r0xb")
 
-[node name="Legend" type="Button" parent="Legend/Colors"]
+[node name="Legend" type="Button" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 8.0
@@ -508,7 +481,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 text = "Legends:"
 
-[node name="Hideout_White" type="TextureButton" parent="Legend/Colors"]
+[node name="Hideout_White" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 1.0
@@ -523,7 +496,7 @@ texture_pressed = ExtResource("15_1cl67")
 texture_hover = ExtResource("15_1cl67")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Debt_Influence_Gray" type="TextureButton" parent="Legend/Colors"]
+[node name="Debt_Influence_Gray" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 1.0
@@ -538,7 +511,7 @@ texture_pressed = ExtResource("18_el4mc")
 texture_hover = ExtResource("18_el4mc")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Legend/Colors"]
+[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 1.0
@@ -553,7 +526,7 @@ texture_pressed = ExtResource("18_bjn3g")
 texture_hover = ExtResource("18_bjn3g")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Intimacy_Pink" type="TextureButton" parent="Legend/Colors"]
+[node name="Intimacy_Pink" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 1.0
@@ -568,7 +541,7 @@ texture_pressed = ExtResource("22_l5fu3")
 texture_hover = ExtResource("22_l5fu3")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Friend_Dark_Green" type="TextureButton" parent="Legend/Colors"]
+[node name="Friend_Dark_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 1.0
@@ -583,7 +556,7 @@ texture_pressed = ExtResource("24_j6pb0")
 texture_hover = ExtResource("24_j6pb0")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Enemy_Orange" type="TextureButton" parent="Legend/Colors"]
+[node name="Enemy_Orange" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 1.0
@@ -599,7 +572,7 @@ texture_pressed = ExtResource("26_njmm0")
 texture_hover = ExtResource("26_njmm0")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Acquaintance_Light_Blue" type="TextureButton" parent="Legend/Colors"]
+[node name="Acquaintance_Light_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 93.0
 offset_top = 1.0
@@ -615,7 +588,7 @@ texture_pressed = ExtResource("28_bepi5")
 texture_hover = ExtResource("28_bepi5")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Ideology_Dark_Blue" type="TextureButton" parent="Legend/Colors"]
+[node name="Ideology_Dark_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 102.0
 offset_top = 1.0
@@ -631,7 +604,7 @@ texture_pressed = ExtResource("30_d7dts")
 texture_hover = ExtResource("30_d7dts")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Contradiction_Red" type="TextureButton" parent="Legend/Colors"]
+[node name="Contradiction_Red" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 111.0
 offset_top = 1.0
@@ -647,7 +620,7 @@ texture_pressed = ExtResource("32_aslwm")
 texture_hover = ExtResource("32_aslwm")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Validation_Yellow" type="TextureButton" parent="Legend/Colors"]
+[node name="Validation_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 1.0
@@ -663,7 +636,7 @@ texture_pressed = ExtResource("33_j2aac")
 texture_hover = ExtResource("33_j2aac")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Property_Light_Green" type="TextureButton" parent="Legend/Colors"]
+[node name="Property_Light_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 129.0
 offset_top = 1.0
@@ -679,7 +652,7 @@ texture_pressed = ExtResource("35_ywl4n")
 texture_hover = ExtResource("35_ywl4n")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Home_Brown" type="TextureButton" parent="Legend/Colors"]
+[node name="Home_Brown" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 138.0
 offset_top = 1.0
@@ -695,7 +668,7 @@ texture_pressed = ExtResource("37_053p6")
 texture_hover = ExtResource("37_053p6")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Work_Turquoise" type="TextureButton" parent="Legend/Colors"]
+[node name="Work_Turquoise" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 1.0
@@ -711,7 +684,7 @@ texture_pressed = ExtResource("39_4lyd8")
 texture_hover = ExtResource("39_4lyd8")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Legend/Colors"]
+[node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 156.0
 offset_top = 1.0
@@ -727,7 +700,7 @@ texture_pressed = ExtResource("41_x0owp")
 texture_hover = ExtResource("41_x0owp")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Found_Light_Purple" type="TextureButton" parent="Legend/Colors"]
+[node name="Found_Light_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 1.0
@@ -743,7 +716,7 @@ texture_pressed = ExtResource("43_oyp1f")
 texture_hover = ExtResource("43_oyp1f")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="New_Dark_Purple" type="TextureButton" parent="Legend/Colors"]
+[node name="New_Dark_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 174.0
 offset_top = 1.0
@@ -758,9 +731,9 @@ texture_pressed = ExtResource("45_yku0u")
 texture_hover = ExtResource("45_yku0u")
 texture_click_mask = ExtResource("15_folsb")
 
-[node name="Bottom_Left_Info" type="Node2D" parent="."]
+[node name="Bottom_Left_Info" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Scroller_Object" type="ScrollContainer" parent="Bottom_Left_Info"]
+[node name="Scroller_Object" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
 visible = false
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
@@ -775,12 +748,12 @@ grow_vertical = 2
 theme = ExtResource("29_urjbe")
 horizontal_scroll_mode = 3
 
-[node name="Info_Object" type="HFlowContainer" parent="Bottom_Left_Info/Scroller_Object"]
+[node name="Info_Object" type="HFlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Name" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Name" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -790,7 +763,7 @@ text = "- THERMAL SENSOR -
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Separator_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -800,7 +773,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Description" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -809,7 +782,7 @@ text = "Something used for writing (if you have paper) and that still has ink in
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Separator_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -819,7 +792,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Found" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Found" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -828,7 +801,7 @@ text = "Found in:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Found_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Found_Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -837,7 +810,7 @@ text = "[color=#cf2317]Library[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Separator_03" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -847,7 +820,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Property" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Property" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -856,7 +829,7 @@ text = "Owned by:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Property_NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Property_NPC" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -865,7 +838,7 @@ text = "[color=#cf2317]Théo Jasmin[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Separator_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -875,7 +848,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Object/Info_Object"]
+[node name="Evidence" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -884,7 +857,7 @@ text = "Marked: [color=#cf2317]Evidence[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Scroller_Location" type="ScrollContainer" parent="Bottom_Left_Info"]
+[node name="Scroller_Location" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
 visible = false
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
@@ -899,12 +872,12 @@ grow_vertical = 2
 theme = ExtResource("29_urjbe")
 horizontal_scroll_mode = 3
 
-[node name="Info_Location" type="HFlowContainer" parent="Bottom_Left_Info/Scroller_Location"]
+[node name="Info_Location" type="HFlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Name" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Name" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -913,7 +886,7 @@ text = "- PLACE OF WORSHIP -"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -923,7 +896,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Description" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -932,7 +905,7 @@ text = "A place to sip overpriced coffee and pretend you're doing something impo
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -942,7 +915,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Home" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Home" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -951,7 +924,7 @@ text = "Home of:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Home_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Home_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -962,7 +935,7 @@ text = "Jean Trancène"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Home_NPC_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Home_NPC_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -973,7 +946,7 @@ text = "Sylvie Culture"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_03" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -983,7 +956,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Weekend" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -992,7 +965,7 @@ text = "Closed days:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend_day_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Weekend_day_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1002,7 +975,7 @@ text = "[color=#cf2317]N/A[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend_day_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Weekend_day_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1012,7 +985,7 @@ text = "[color=#cf2317]None[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend_day_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Weekend_day_03" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1021,7 +994,7 @@ text = "[color=#cf2317]Saturday[/color] & [color=#cf2317]Sunday[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend_day_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Weekend_day_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1032,7 +1005,7 @@ text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1042,7 +1015,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hours" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Hours" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1051,7 +1024,7 @@ text = "Open:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1060,7 +1033,7 @@ text = "[color=#cf2317]No opening hours[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1070,7 +1043,7 @@ text = "in the [color=#cf2317]Morning[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_03" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1080,7 +1053,7 @@ text = "in the [color=#cf2317]Afternoon[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1090,7 +1063,7 @@ text = "in the [color=#cf2317]Evening[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_05" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_05" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1100,7 +1073,7 @@ text = "at [color=#cf2317]Night[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_06" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_06" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1110,7 +1083,7 @@ text = "in the [color=#cf2317](W-E) Morning[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_07" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_07" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1120,7 +1093,7 @@ text = "in the [color=#cf2317](W-E) Afternoon[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_08" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_08" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1130,7 +1103,7 @@ text = "in the [color=#cf2317](W-E) Evening[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_09" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_09" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1140,7 +1113,7 @@ text = "at [color=#cf2317](W-E) Night[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Time_Slot_10" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Time_Slot_10" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1150,7 +1123,7 @@ text = "[color=#cf2317]H24[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_05" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_05" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1160,7 +1133,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hangout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Hangout" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1169,7 +1142,7 @@ text = "Hangout of:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hangout_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Hangout_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1180,7 +1153,7 @@ text = "Pierre Poljac"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_06" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_06" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1190,7 +1163,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hideout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Hideout" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1199,7 +1172,7 @@ text = "Hideout of:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hideout_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Hideout_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1210,7 +1183,7 @@ text = "Michel Drucker"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Scroller_NPC" type="ScrollContainer" parent="Bottom_Left_Info"]
+[node name="Scroller_NPC" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
 anchor_right = 1.0
@@ -1224,12 +1197,12 @@ grow_vertical = 2
 theme = ExtResource("29_urjbe")
 horizontal_scroll_mode = 3
 
-[node name="Info_NPC" type="HFlowContainer" parent="Bottom_Left_Info/Scroller_NPC"]
+[node name="Info_NPC" type="HFlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="NPC" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1238,7 +1211,7 @@ text = "- CHARACTER -"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="NPC_Name" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="NPC_Name" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1248,7 +1221,7 @@ text = "Jean Trancène"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1258,7 +1231,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Health" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Health" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1267,7 +1240,7 @@ text = "Last known health:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Health_No_Info" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Health_No_Info" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1276,7 +1249,7 @@ text = "[color=#cf2317]No info[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Health_Good" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Health_Good" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1286,7 +1259,7 @@ text = "[color=#cf2317]Good[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Health_Average" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Health_Average" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1296,7 +1269,7 @@ text = "[color=#cf2317]Average[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Health_Low" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Health_Low" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1306,7 +1279,7 @@ text = "[color=#cf2317]Low[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_02" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1316,7 +1289,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Status" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1325,7 +1298,7 @@ text = "Case Status:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_Victim" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Status_Victim" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1334,7 +1307,7 @@ text = "[color=#cf2317]Victim[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_Culprit" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Status_Culprit" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1344,7 +1317,7 @@ text = "[color=#cf2317]Culprit[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_Accomplice" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Status_Accomplice" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1354,7 +1327,7 @@ text = "[color=#cf2317]Accomplice[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_Suspect" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Status_Suspect" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1364,7 +1337,7 @@ text = "[color=#cf2317]Suspect[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_Witness" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Status_Witness" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1374,7 +1347,7 @@ text = "[color=#cf2317]Witness[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Status_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1384,7 +1357,7 @@ text = "[color=#cf2317]None[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_03" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_03" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1394,7 +1367,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Couple" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Couple" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1403,7 +1376,7 @@ text = "Lives with:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Couple_NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Couple_NPC" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1413,7 +1386,7 @@ text = "Robert Smith"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Couple_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Couple_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1424,7 +1397,7 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1434,7 +1407,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Friends" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Friends" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1443,7 +1416,7 @@ text = "Friend with:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Friends_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Friends_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1453,7 +1426,7 @@ text = "Nina Hagen"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Friends_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Friends_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1464,7 +1437,7 @@ text = "None"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_05" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_05" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1474,7 +1447,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Enemies" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Enemies" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1483,7 +1456,7 @@ text = "Enemy of:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Enemies_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Enemies_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1493,7 +1466,7 @@ text = "Jean-Jacques Goldman"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Enemies_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Enemies_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1504,7 +1477,7 @@ text = "None"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_06" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_06" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1514,7 +1487,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Acquaintance" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Acquaintance" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1523,7 +1496,7 @@ text = "Knows:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Acquaintance_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Acquaintance_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1533,7 +1506,7 @@ text = "Marc Ribot"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Acquaintance_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Acquaintance_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1544,7 +1517,7 @@ text = "None"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_07" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_07" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1554,7 +1527,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Affair" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Affair" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1563,7 +1536,7 @@ text = "Has an affair with:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Affair_NPC" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Affair_NPC" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1573,7 +1546,7 @@ text = "Sylvie Vartan"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Affair_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Affair_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1584,7 +1557,7 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_08" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_08" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1594,7 +1567,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Debt_Influence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Debt_Influence" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1603,7 +1576,7 @@ text = "Debt or Influence relationship:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Debt_Influence_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Debt_Influence_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1613,7 +1586,7 @@ text = "Mylène Farmer"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Debt_Influence_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Debt_Influence_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1624,7 +1597,7 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_09" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_09" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1634,7 +1607,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Ideology" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Ideology" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1643,7 +1616,7 @@ text = "Ideological relationship:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Ideology_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Ideology_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1653,7 +1626,7 @@ text = "John Lurie"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Ideology_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Ideology_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1664,7 +1637,7 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_10" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_10" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1674,7 +1647,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Schedule" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1683,7 +1656,7 @@ text = "Schedule:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Schedule_Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1694,13 +1667,13 @@ text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Schedule_Morning" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_Morning" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
 bbcode_enabled = true
@@ -1709,7 +1682,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
@@ -1719,7 +1692,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Morning"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1730,13 +1703,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Schedule_Afternoon" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_Afternoon" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
 bbcode_enabled = true
@@ -1745,7 +1718,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
@@ -1755,7 +1728,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1766,13 +1739,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Schedule_Evening" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_Evening" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
 bbcode_enabled = true
@@ -1781,7 +1754,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1792,7 +1765,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Evening"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
@@ -1802,13 +1775,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Schedule_Night" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_Night" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
 bbcode_enabled = true
@@ -1817,7 +1790,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1828,7 +1801,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_Night"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
@@ -1838,13 +1811,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Schedule_WE_Morning" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_WE_Morning" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
 bbcode_enabled = true
@@ -1853,7 +1826,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
@@ -1863,7 +1836,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1874,13 +1847,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Schedule_WE_Afternoon" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_WE_Afternoon" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
 bbcode_enabled = true
@@ -1889,7 +1862,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
@@ -1899,7 +1872,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1910,13 +1883,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Schedule_WE_Evening" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_WE_Evening" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_s563f")
 bbcode_enabled = true
@@ -1925,7 +1898,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lctu2")
@@ -1935,7 +1908,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1946,13 +1919,13 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Schedule_WE_Night" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Schedule_WE_Night" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
+[node name="Time_Slot" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_q3hjo")
 bbcode_enabled = true
@@ -1961,7 +1934,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bgqcn")
@@ -1971,7 +1944,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
+[node name="Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1982,7 +1955,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Separator_11" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_11" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1992,7 +1965,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Weekend" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2001,7 +1974,7 @@ text = "Doesn't work on:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend_Sat_Sun" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Weekend_Sat_Sun" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2010,7 +1983,7 @@ text = "[color=#cf2317]Saturday[/color] & [color=#cf2317]Sunday[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend_Mon_Tue" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Weekend_Mon_Tue" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2020,7 +1993,7 @@ text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Weekend_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Weekend_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2030,7 +2003,7 @@ text = "[color=#cf2317]Unknown[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_12" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_12" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2040,7 +2013,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Home" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Home" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2049,7 +2022,7 @@ text = "Home:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Home_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Home_Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2059,7 +2032,7 @@ text = "Location"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Home_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Home_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2070,7 +2043,7 @@ text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_13" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_13" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2080,7 +2053,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Work" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Work" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2089,7 +2062,7 @@ text = "Work Place:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Work_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Work_Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2099,7 +2072,7 @@ text = "Location"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Work_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Work_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2110,7 +2083,7 @@ text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_14" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_14" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2120,7 +2093,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hangout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Hangout" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2129,7 +2102,7 @@ text = "Hangout Place:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hangout_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Hangout_Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2140,7 +2113,7 @@ text = "Location"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hangout_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Hangout_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2150,7 +2123,7 @@ text = "Location"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_15" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_15" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2160,7 +2133,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hideout" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Hideout" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2169,7 +2142,7 @@ text = "Hideout Place:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hideout_Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Hideout_Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2179,7 +2152,7 @@ text = "Location"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Hideout_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Hideout_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2190,7 +2163,7 @@ text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_16" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Separator_16" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2200,7 +2173,7 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Properties" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Properties" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2209,7 +2182,7 @@ text = "Belongings:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Properties_None" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Properties_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2220,14 +2193,14 @@ text = "None"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Properties_Object_01" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Properties_Object_01" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
 alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
@@ -2237,7 +2210,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Opening_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+[node name="Opening_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 bbcode_enabled = true
 text = " -"
@@ -2245,7 +2218,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+[node name="Evidence" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0dv1h")
@@ -2255,7 +2228,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Closing_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+[node name="Closing_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 bbcode_enabled = true
 text = "-"
@@ -2263,14 +2236,14 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Properties_Object_02" type="FlowContainer" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+[node name="Properties_Object_02" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
 alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
@@ -2280,7 +2253,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Opening_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+[node name="Opening_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
 visible = false
 layout_mode = 2
 bbcode_enabled = true
@@ -2289,7 +2262,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+[node name="Evidence" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -2300,7 +2273,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Closing_Dash" type="RichTextLabel" parent="Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+[node name="Closing_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
 visible = false
 layout_mode = 2
 bbcode_enabled = true
@@ -2309,7 +2282,7 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="A_VIRER" type="Label" parent="Bottom_Left_Info"]
+[node name="A_VIRER" type="Label" parent="Mask_Card_Playground/Bottom_Left_Info"]
 offset_left = -139.0
 offset_top = 184.0
 offset_right = -5.0
@@ -2327,10 +2300,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Crime_Motive_Selection" type="Node2D" parent="."]
+[node name="Crime_Motive_Selection" type="Node2D" parent="Mask_Card_Playground"]
 position = Vector2(147, 11)
 
-[node name="Motive_Selector" type="PanelContainer" parent="Crime_Motive_Selection"]
+[node name="Motive_Selector" type="PanelContainer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
 custom_minimum_size = Vector2(191, 0)
 offset_right = 191.0
 offset_bottom = 134.0
@@ -2339,7 +2312,7 @@ mouse_filter = 2
 theme = ExtResource("30_3y6u4")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
 
-[node name="Motive_List" type="OptionButton" parent="Crime_Motive_Selection/Motive_Selector"]
+[node name="Motive_List" type="OptionButton" parent="Mask_Card_Playground/Crime_Motive_Selection/Motive_Selector"]
 custom_minimum_size = Vector2(100, 16)
 layout_mode = 2
 size_flags_vertical = 0
@@ -2349,11 +2322,11 @@ text_overrun_behavior = 3
 fit_to_longest_item = false
 script = ExtResource("50_wvc8p")
 
-[node name="Top_Bar" parent="." instance=ExtResource("11_f08ro")]
+[node name="Top_Bar" parent="Mask_Card_Playground" instance=ExtResource("11_f08ro")]
 
-[node name="Popup" type="Node2D" parent="."]
+[node name="Popup" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Main_Menu" type="PopupMenu" parent="Popup"]
+[node name="Main_Menu" type="PopupMenu" parent="Mask_Card_Playground/Popup"]
 auto_translate_mode = 1
 size = Vector2i(93, 90)
 min_size = Vector2i(93, 90)
@@ -2362,7 +2335,7 @@ theme = ExtResource("54_ksebp")
 submenu_popup_delay = 0.1
 allow_search = false
 
-[node name="Sub_Menu" type="PopupMenu" parent="Popup/Main_Menu"]
+[node name="Sub_Menu" type="PopupMenu" parent="Mask_Card_Playground/Popup/Main_Menu"]
 auto_translate_mode = 1
 size = Vector2i(93, 135)
 min_size = Vector2i(93, 135)
@@ -2417,57 +2390,57 @@ item_14/text = "Found"
 item_14/icon = ExtResource("24_lp1fx")
 item_14/id = 14
 
-[connection signal="mouse_entered" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Legend/Colors/Legend" to="Legend/Colors" method="_on_legend_pressed"]
-[connection signal="mouse_entered" from="Legend/Colors/Hideout_White" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Hideout_White" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Hideout_White" to="Legend/Colors" method="_on_hideout_white_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Debt_Influence_Gray" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Debt_Influence_Gray" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Debt_Influence_Gray" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Culp_Acco_Evid_Black" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Culp_Acco_Evid_Black" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Culp_Acco_Evid_Black" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Intimacy_Pink" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Intimacy_Pink" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Intimacy_Pink" to="Legend/Colors" method="_on_intimacy_pink_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Friend_Dark_Green" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Friend_Dark_Green" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Friend_Dark_Green" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Enemy_Orange" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Enemy_Orange" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Enemy_Orange" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Acquaintance_Light_Blue" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Acquaintance_Light_Blue" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Acquaintance_Light_Blue" to="Legend/Colors" method="_on_acquaintance_light_blue_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Ideology_Dark_Blue" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Ideology_Dark_Blue" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Ideology_Dark_Blue" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Contradiction_Red" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Contradiction_Red" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Contradiction_Red" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Validation_Yellow" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Validation_Yellow" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Validation_Yellow" to="Legend/Colors" method="_on_validation_yellow_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Property_Light_Green" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Property_Light_Green" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Property_Light_Green" to="Legend/Colors" method="_on_property_light_green_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Home_Brown" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Home_Brown" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Home_Brown" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Work_Turquoise" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Work_Turquoise" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Work_Turquoise" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Hang_out_Darkest_Blue" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Hang_out_Darkest_Blue" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Hang_out_Darkest_Blue" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/Found_Light_Purple" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/Found_Light_Purple" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/Found_Light_Purple" to="Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Legend/Colors/New_Dark_Purple" to="Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Legend/Colors/New_Dark_Purple" to="Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Legend/Colors/New_Dark_Purple" to="Legend/Colors" method="_on_new_dark_purple_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_legend_pressed"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Hideout_White" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Hideout_White" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Hideout_White" to="Mask_Card_Playground/Legend/Colors" method="_on_hideout_white_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legend/Colors" method="_on_intimacy_pink_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Enemy_Orange" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Enemy_Orange" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Enemy_Orange" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_acquaintance_light_blue_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Contradiction_Red" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Contradiction_Red" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Contradiction_Red" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Validation_Yellow" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Validation_Yellow" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Validation_Yellow" to="Mask_Card_Playground/Legend/Colors" method="_on_validation_yellow_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Property_Light_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Property_Light_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Property_Light_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_property_light_green_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Home_Brown" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Home_Brown" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Home_Brown" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Work_Turquoise" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Work_Turquoise" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Work_Turquoise" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_new_dark_purple_toggled"]
 
 [editable path="TMP_1/Main_Playmat/Card1"]
 [editable path="TMP_1/Main_Playmat/Card2"]
@@ -2481,13 +2454,13 @@ item_14/id = 14
 [editable path="TMP_1/Main_Playmat/Links/Link_Plein_Jaune"]
 [editable path="TMP_1/Main_Playmat/Links/Pin_Small3"]
 [editable path="TMP_1/Main_Playmat/Links/TEST_LINK"]
-[editable path="TMP_2/Possible_Clues_Cards/Card7"]
-[editable path="TMP_2/Possible_Clues_Cards/Card8"]
-[editable path="TMP_2/Possible_Clues_Cards/Card9"]
-[editable path="TMP_2/Possible_Clues_Cards/Card10"]
-[editable path="TMP_2/Possible_Clues_Cards/Card11"]
-[editable path="TMP_2/Possible_Clues_Cards/Card12"]
-[editable path="TMP_2/Possible_Clues_Cards/Card13"]
-[editable path="TMP_2/Possible_Clues_Cards/Card14"]
-[editable path="TMP_2/Card_Ghost"]
-[editable path="Drag_Drop_Line"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card7"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card8"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card9"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card10"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card11"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card12"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card13"]
+[editable path="Mask_Card_Playground/TMP_2/Possible_Clues_Cards/Card14"]
+[editable path="Mask_Card_Playground/TMP_2/Card_Ghost"]
+[editable path="Mask_Card_Playground/TMP_2/Drag_Drop_Line"]
