@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=43 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vuxehd33t5yj" path="res://GRAPHICS/CARD/Card_Special.png" id="3_gk6lr"]
 [ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="3_l7psf"]
 [ext_resource type="Texture2D" uid="uid://k8gtuwwg7pxm" path="res://GRAPHICS/CARD/Card_Evidence.png" id="3_uweet"]
+[ext_resource type="Texture2D" uid="uid://sk4ad5y1tyi0" path="res://GRAPHICS/CARD/Card_Drag.png" id="4_02fmt"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card_Mask.gd" id="4_nk8id"]
 [ext_resource type="Texture2D" uid="uid://ddd34x72ghu57" path="res://GRAPHICS/CARD/Card_Run_Away.png" id="4_xhv7k"]
 [ext_resource type="Texture2D" uid="uid://ct7lvffsjl4m6" path="res://GRAPHICS/CARD/Card_Outline_Animation.png" id="5_m7h77"]
@@ -156,7 +157,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_kxf5h"]
 resource_name = "Expand_Card"
-length = 0.33334
+length = 0.266673
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -572,10 +573,46 @@ tracks/18/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0.501961)]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Card_Drag:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Card_Drag:self_modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.501961)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Card_Drag:frame")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_x7g54"]
 resource_name = "Reduce_Card"
-length = 0.33334
+length = 0.266673
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -623,7 +660,7 @@ tracks/3/path = NodePath("Card_Mask/Card_BG/Card_Text/Card_Description:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.333333),
+"times": PackedFloat32Array(0, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, false]
@@ -761,10 +798,178 @@ tracks/14/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_fsb4r"]
+resource_name = "Drag_Expanded_Card_Appearance"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Drag:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Drag:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.431373), Color(1, 1, 1, 0.501961)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card_Drag:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_8pq22"]
+resource_name = "Drag_Expanded_Card_Disappearance"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Drag:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Drag:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.0705882), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card_Drag:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_q0ypl"]
+resource_name = "Drag_Reduced_Card_Appearance"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Drag:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Drag:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.431373), Color(1, 1, 1, 0.501961)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card_Drag:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_hupks"]
+resource_name = "Drag_Reduced_Card_Disappearance"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Drag:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Card_Drag:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.0705882), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Card_Drag:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
 _data = {
 &"Card_Blink": SubResource("Animation_0byv1"),
 &"Delete_Card": SubResource("Animation_s04w5"),
+&"Drag_Expanded_Card_Appearance": SubResource("Animation_fsb4r"),
+&"Drag_Expanded_Card_Disappearance": SubResource("Animation_8pq22"),
+&"Drag_Reduced_Card_Appearance": SubResource("Animation_q0ypl"),
+&"Drag_Reduced_Card_Disappearance": SubResource("Animation_hupks"),
 &"Expand_Card": SubResource("Animation_kxf5h"),
 &"RESET": SubResource("Animation_0x2oy"),
 &"Reduce_Card": SubResource("Animation_x7g54")
@@ -799,7 +1004,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_iuyk4"]
 resource_name = "Shadow_Off"
-length = 0.200007
+length = 0.13334
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -808,10 +1013,10 @@ tracks/0/path = NodePath("Card_Shadow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, true, false, false]
+"values": [true, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -820,15 +1025,15 @@ tracks/1/path = NodePath("Card_Shadow:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [Vector2(0, 0), Vector2(-1, -1), Vector2(-2, -4), Vector2(-2, -4)]
+"values": [Vector2(0, 0), Vector2(-1, -1), Vector2(-2, -4)]
 }
 
 [sub_resource type="Animation" id="Animation_nk8id"]
 resource_name = "Shadow_On"
-length = 0.200007
+length = 0.13334
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -837,7 +1042,7 @@ tracks/0/path = NodePath("Card_Shadow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.2),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, true]
@@ -849,10 +1054,10 @@ tracks/1/path = NodePath("Card_Shadow:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [Vector2(-2, -4), Vector2(-1, -3), Vector2(0, 0), Vector2(0, 0)]
+"values": [Vector2(-2, -4), Vector2(-1, -3), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s04w5"]
@@ -864,6 +1069,9 @@ _data = {
 
 [node name="Card" type="Node2D"]
 script = ExtResource("2_2qjxn")
+npc_status = null
+is_object_evidence = null
+is_location_closed = null
 
 [node name="Pin_Locators" type="Node2D" parent="."]
 position = Vector2(37, 6)
@@ -903,6 +1111,14 @@ position = Vector2(-2, -4)
 texture = ExtResource("1_8pu3o")
 centered = false
 hframes = 5
+
+[node name="Card_Drag" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.501961)
+texture = ExtResource("4_02fmt")
+centered = false
+offset = Vector2(-8, -8)
+hframes = 2
 
 [node name="Card_Mask" type="Sprite2D" parent="."]
 clip_children = 1
