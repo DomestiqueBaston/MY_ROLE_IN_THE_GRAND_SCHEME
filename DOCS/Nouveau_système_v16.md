@@ -41,7 +41,7 @@ Emo	Effets et/ou modificateur de jet de dé
 	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites/échecs critiques n’entraînent pas d’évolution de HEA ni HEAnom.
 Add	Effet et/ou modificateur de jet de dé
--3	Mort si un jet (avec un bonus de 1) contre HEA est raté (sinon -1HEA, ±1Emo → min/max et Add = -2)
+-3	Mort si un jet contre HEA est raté (sinon -1HEA, ±1Emo → min/max et Add = -2)
 -2	Malus de 2
 -1	Malus de 1
 0	/
@@ -238,7 +238,7 @@ Addiction
 	- L’Add évolue au réveil (-1Add). Le joueur a besoin de sa dose (presque) quotidienne qui lui coûte de l’argent. Sans sa dose, -1Add et avec sa dose, +1Add.
 	- Le joueur peut prendre 2 doses maximum par jour. Au delà, ce serait l’overdose !
 	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur. Menu Dailies pour consommer 1 ou 2 doses de drogue…
-	- Prendre de la drogue prend indifféremment 1h. (et uniquement sur Main.tscn !). 
+	- Utiliser une dose drogue prend 1h. (et uniquement sur Main.tscn !). 
 
 Crise liée à l’Addiction
 	- Cas d’Add à -3 ou +3 : voir Add au début des règles.
@@ -246,7 +246,7 @@ Crise liée à l’Addiction
 Paranoïa
 	- La paranoïa se déclenche après :
 		5 tests (réussis) contre la Mort par sur/sous-dose de drogue.
-	ou	5 enquêtes ratées d’affilé.
+	ou	5 enquêtes ratées ou abandonnées d’affilé.
 	ou	Après 10 nuits de 4h (le minimum de durée) au total.
 	ou	7 jours consécutifs à PHY, MEN et HEA ≤ 2.
 	ou	10 combats avec des sbires.
@@ -256,7 +256,7 @@ Paranoïa
 	- Au fur et à mesure que le joueur se rapproche de la crise de Paranoïa, le volume sonore de Paranoia_Voices (dans Ambiance_Sound.tscn) va monter (pour « informer » le joueur de son état) :
 		- le volume sonore sera défini par le niveau le plus proche du déclenchement d’une crise (parmi la précédente liste au dessus). Au départ d’une partie à -80db.
 	- Le joueur va tout d'un coup, quand le cap défini est franchi, devenir paranoïaque (on finira l’éventuelle interaction en cours de type Combat, Dialogue ou Investigation avant malgré tout comme dit au dessus dans Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par).
-	- Tous les bonus/malus suivants du joueur disparaissent (s’il y en avait) : le joueur ne sera plus affecté par un quelconque état émotionnel (Emo=0). Il n’aura plus de besoin vitaux (sommeil, drogue, etc. ce qui impliquera notamment Add = 0) et il aura 15 jours pour résoudre l’enquête ultime puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné.
+	- Tous les bonus/malus suivants du joueur disparaissent (s’il y en avait) : le joueur ne sera plus affecté par un quelconque état émotionnel (Emo=0). Il n’aura plus de besoin vitaux (sommeil, drogue, etc.) et il aura 15 jours pour résoudre l’enquête ultime puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné.
 	- Pas de sommeil, donc pas de récupération en dormant !
 	- Les effets de la Paranoïa seront les suivants (sans jamais dépasser les seuils max/min) :
 		Bonus : +2 en PHY ou MEN ou HEAnom (et HEA, forcément) aléatoirement (sans dépasser le maximum).
@@ -291,16 +291,16 @@ Récupération (PNJs)
 Le temps
 	- La période diurne est de 8h à 20h. La période nocturne, c’est l’autre (de 20h à 8h!)
 	- Toutes les actions nocturnes du joueur (uniquement) ont un malus de 1 aux jets de dé.
-	- Les cabinets médicaux, etc. ouvrent à 9h et ferment à 19h (sauf point de deal, voir au dessous). Fermé le weekend.
+	- Les cabinets médicaux, etc. ouvrent à 8h et ferment à 20h (sauf point de deal, voir au dessous). Fermé le weekend.
 	- On a un système de temps discret (non continu).
 	- Seules certaines actions font avancer le temps en fonction de ce qui est défini pour ces actions :
 		Les déplacements ne prennent pas de temps (enfin si mais ils sont inclus dans ce qui suit dans la liste – sauf cas particuliers).
 		Les interactions (Dialogues/Investigations/Combats) prendront 2h chacune (déplacement inclus).
 		Un rendez-vous chez le médecin prend 1h (déplacement inclus).
-		Aller voir Rowena le Dealer prend 1h (déplacement inclus).
+		Aller voir Rowena la dealeuse prend 1h (déplacement inclus).
 		Aller à l’investigation Center prend 1h (déplacement inclus). 1 seule fois par jour !
-		Retourner au Bureau prend 1h (déplacement inclus).
-		Obtenir une autorisation de fouille prend 1h (déplacement inclus).
+		Retourner au Bureau prend 1h (déplacement inclus). On ne peut pas y être attaqué !
+		Obtenir une autorisation de fouille prend 1h (déplacement inclus). Pas d’achat pendant la Paranoïa.
 		Dormir prend le temps défini pour cette période.
 		…
 	- On aura une horloge à l’écran en permanence avec la date et l’heure (en haut à gauche).
@@ -326,7 +326,7 @@ Passer le temps
 	- Lorsqu’il ne dort pas, le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure sans effet supplémentaire pour lui, accessible par le menu Dailies…
 
 Passer le temps pendant la paranoïa
-	- Chaque « Pass time » donne 1/5 chance d’avoir ±1 de PHY, MEN ou HEA (sans jamais dépasser Min/Max).
+	- Chaque « Pass time » donne 1/5 chance d’avoir ±1 de PHY, MEN ou HEA (pas HEAnom et sans jamais dépasser Min/Max).
 
 Cycle Jour/Nuit
 	- Un système de temps discret (non continu). Seules certaines actions font avancer le temps en fonction de ce qui est défini pour ces actions (voir plus haut).
@@ -351,13 +351,14 @@ Les factures
 	- Chaque facture impayée augmente de 10% par semaine et implique un malus de 1 aux jets de dé.
 	- Pour payer sa facture, à l’écran principal, faire Menu Dailies en haut de l’écran, « Payer les factures » et « cliquer sur la facture que l’on veut payer ».
 	- Les nouvelles factures ont 50% de chance de varier de ±10%.
-	- Le joueur ne peut pas avoir plus de 5 factures impayées. Au delà, il va en prison pour 3 jours et redescend à 4 factures impayées car la plus ancienne sera « automatiquement » réglée.
+	- Le joueur ne peut pas avoir plus de 4 factures impayées. Sinon, quand la 5ème tombe, il va directement 3 jours et redescend à 4 factures impayées car la plus ancienne sera « automatiquement » réglée.
+	- Payer une facture prend 1h.
 
 Les achats/dépenses
-	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois. Ouvert pendant les 3 premières tranches horaires de la journée et hors weekend. Menu désactivé quand c’est fermé.
-	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement pendant la période nocturne. 1 dose coûte 25 Dø.
+	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois. Ouvert pendant les 3 premières tranches horaires de la journée et hors weekend. Menu désactivé quand c’est fermé. Pas pendant la Paranoïa.
+	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement de 20h à 8h. 1 dose coûte 25 Dø.
 	- Pour se rendre « chez » le dealer, dans l’écran de jeu principal, menu Dailies en haut de l’écran. Menu désactivé quand Rowena n’est pas là.
-	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, il disparaît jusqu’au lundi suivant.
+	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, il disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir et qu’elle n’est pas là.
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc éventuellement avant que le joueur n’arrive).
 
 Démarrage d’une partie
@@ -413,8 +414,8 @@ Cartes de Lieu
 	- Elles servent également à savoir si un lieu est ouvert ou fermé le week-end.
 	- Une fois jouées, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Lieu (uniquement).
-	- À moins d’y être en interaction, le joueur doit quitter un Lieu à chaque changement de tranche horaire, c’est la raison de l’existence du menu « Retourner au bureau » !
-	- Ainsi, finir une Interaction dans un Lieu ne le fait pas quitter automatiquement.
+	- Raison de l’existence du menu « Retourner au bureau » : on ne peut pas y être attaqué !
+	- Finir une Interaction dans un Lieu ne le fait pas quitter automatiquement.
 
 Cartes Objet
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
@@ -599,7 +600,7 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
 	- Comme on le voit ci-dessous : pas d’attaque de sbire dans les enquêtes de niveau 0.
 	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale).
-	- Si une attaque doit survenir, elle surviendra toujours avant l’execution de l’action suivante du joueur (y compris aller chez le médecin, etc.).
+	- /!\ Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr où le joueur ne peut pas être attaqué)! /!\ 
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)) sans jamais dépasser sa valeur nominale (HEAnom). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
 	-  Avec une probabilité de 33%, tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un des commanditaire(s) du crime de l’enquête et donc du ou d’un coupable de l’enquête (établissement d’un Lien Violet). Au joueur d’en tirer les conséquences. Être attaqué, malgré la révélation n’est pas une preuve pour l’enquête.
@@ -622,7 +623,7 @@ Investigation
 	- On ne peut pas jouer de carte Objet, Lieu ou PNJ en Investigation !
 	- On ne joue que des cartes Investigation, Investigation Spéciale et Abstraite. Maximum 1 de chaque. 1 carte Investigation minimum.
 	- On ne doit théoriquement investiguer un Lieu qu’avec une autorisation de fouille (mais voir plus loin).
-	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois.
+	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois. Pas pendant la Paranoïa.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place, évidemment), Malus d’action de Nuit, bonus/malus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
 	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par round(marge de réussite de l’investigation÷3). Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes (si applicable).
@@ -660,9 +661,11 @@ Enquête
 		Difficulté = round(clamp(((victimes + coupables + (complices × 0.5) + (liens × 0.5) + evidences - (suspects × 0.5) - (témoins × 0.5)) × 19 ÷ 50 + 1), 1, 5). Cela devrait donner un niveau de difficulté entre 1 et 5.
 	- Les enquêtes de niveau 0 sont particulières (voir plus loin...).
 	- Le joueur ne peut prendre qu’une enquête par jour.
+	- Prendre une enquête la fait passer en enquête en cours.
+	- Changer d’enquête active ne stoppe pas le temps qui passe dans les autres enquêtes en cours !
 	- Une enquête peut-être abandonnée via le bouton Give up! dans le Menu Cases dans Main.tscn.
 	- Le joueur (dé)place et/ou enlève les éléments à sa guise sur l’écran principal (Main.tscn) pour les relier comme bon lui semble.
-	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously).
+	- On ne peut pas obtenir d’autorisation de fouille pendant une Interaction (obviously). Ni pendant la Paranoïa.
 	- Pour Interagir dans un Lieu lié à l’enquête ou avec un personnage, il suffira de cliquer dessus avec le bouton droit pour accéder aux différentes actions possibles.
 	- Le joueur ne pourra jamais aller chez un PNJ s’il ne connaît pas sa localisation ou ne sait pas où il est à cette heure-là.
 	- Plus globalement : le joueur ne pourra pas se rendre dans un Lieu s’il ne le connaît pas (obviously).
@@ -693,6 +696,7 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Pour changer le type, faire clic droit, « changer un lien », « choix de type » puis « plein ou pointillé ».
 	- Les liens se tracent depuis la partie haute d’une carte vers cette même zone sur une autre carte.
 	- En cas d’erreur de manipulation, le Lien reste inchangé (obviously).
+	- Tout changement de lien et ou de carte dans la zone de droite (Main.tscn) peut amener automatiquement à l’invalidation du mobile précédemment choisi ! Il sera alors désélectionné et le joueur sera prévenu.
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens :
@@ -820,7 +824,7 @@ Niveau de difficulté	PNJs inutiles min	PNJs inutiles max
 
 Enquêtes niveau 0 :
  - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
- - Chaque semaine, n’importe quel jour, et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposé 1 mission de niveau 0 par un PNJ quelconque.
+ - Chaque semaine, n’importe quel jour et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposé 1 mission de niveau 0 par un PNJ quelconque.
 	- Pour ces crimes, un mobile ne sera pas nécessaire (le menu Crime Motive sera désactivé).
 	- Les emplacements des preuves sont précisés dans le json !
 	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 200Dø.
