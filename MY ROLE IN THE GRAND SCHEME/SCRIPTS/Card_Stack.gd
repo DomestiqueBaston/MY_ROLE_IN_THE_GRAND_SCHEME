@@ -62,23 +62,23 @@ func _input(event: InputEvent):
 		_tween = null
 
 	if _current_card >= 0:
-		get_child(_current_card).set_current(false)
+		Globals.mouse_exited_card.emit(get_child(_current_card))
 	_current_card = new_card
 	if _current_card >= 0:
-		get_child(_current_card).set_current(true)
+		Globals.mouse_entered_card.emit(get_child(_current_card))
 
 	for idx in get_child_count():
 		var dist = -1 if _current_card < 0 else absi(idx - _current_card)
 		var disp: int = 0
 		match dist:
 			0:
-				disp = - _max_displacement
+				disp = _max_displacement
 			1:
-				disp = - _mid_displacement
+				disp = _mid_displacement
 			2:
-				disp = - _min_displacement
+				disp = _min_displacement
 		if _tween:
 			_tween.tween_property(
-				get_child(idx), "position:y", disp, _tween_duration);
+				get_child(idx), "position:y", -disp, _tween_duration);
 		else:
-			get_child(idx).position.y = disp
+			get_child(idx).position.y = -disp

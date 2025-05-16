@@ -3,6 +3,8 @@ extends Node2D
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup/Main_Menu
 
 var _current_card: Card
+enum DragState { NONE, CLICKED, DRAGGING }
+var _drag_state: DragState = DragState.NONE
 
 func _ready():
 	popup.add_item("Dialogue")
@@ -16,9 +18,23 @@ func _ready():
 	popup.add_separator("  - - - - - - - - - -  ")
 	popup.add_item("Throw card away")
 	
+	Globals.mouse_entered_card.connect(_mouse_entered_card)
+	Globals.mouse_exited_card.connect(_mouse_exited_card)
+	Globals.card_left_click.connect(_click_on_card)
 	Globals.card_right_click.connect(_popup_menu)
-	Globals.set_current_card.connect(_show_card_info)
 	Globals.link_right_click.connect(_popup_menu)
+
+func _input(event: InputEvent):
+	if _drag_state == DragState.DRAGGING:
+		if event is InputEventMouseMotion:
+			print("drag...")
+		elif event is InputEventMouseButton and not event.pressed:
+			_drag_state = DragState.NONE
+	elif _drag_state == DragState.CLICKED:
+		if event is InputEventMouseMotion:
+			_drag_state = DragState.DRAGGING
+		elif event is InputEventMouseButton and not event.pressed:
+			_drag_state = DragState.NONE
 
 func _popup_menu(pos: Vector2, node: Node2D):
 	if node is Card:
@@ -31,7 +47,17 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		print("popup menu for node ", node.get_name())
 	popup.popup(Rect2i(pos, Vector2i()))
 
-func _show_card_info(card: Card):
-	if card != _current_card:
+func _mouse_entered_card(card: Card):
+	if _drag_state == DragState.NONE and card != _current_card:
+		card.set_highlighted(true)
 		print("show info about card ", card.get_card_name())
 		_current_card = card
+
+func _mouse_exited_card(card: Card):
+	if _drag_state == DragState.NONE:
+		card.set_highlighted(false)
+		_current_card = null
+
+func _click_on_card(_pos: Vector2, card: Card):
+	_current_card = card
+	_drag_state = DragState.CLICKED
