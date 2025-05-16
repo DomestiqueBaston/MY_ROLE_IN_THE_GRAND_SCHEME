@@ -19,7 +19,7 @@ var _bbox: Rect2i
 var _current_card: int = -1
 var _tween: Tween
 
-const _tween_duration: float = 0.2
+const _tween_duration: float = 0.1
 const _max_displacement: int = 5
 const _mid_displacement: int = 2
 const _min_displacement: int = 1
@@ -54,20 +54,18 @@ func _input(event: InputEvent):
 	if _current_card == new_card:
 		return
 
-	var do_tween = (_current_card < 0 or new_card < 0)
+	if _tween:
+		_tween.kill()
+	if _current_card < 0 or new_card < 0:
+		_tween = create_tween().set_parallel()
+	else:
+		_tween = null
 
 	if _current_card >= 0:
 		get_child(_current_card).set_current(false)
 	_current_card = new_card
 	if _current_card >= 0:
 		get_child(_current_card).set_current(true)
-
-	if _tween:
-		_tween.kill()
-	if do_tween:
-		_tween = create_tween().set_parallel()
-	else:
-		_tween = null
 
 	for idx in get_child_count():
 		var dist = -1 if _current_card < 0 else absi(idx - _current_card)
@@ -79,7 +77,7 @@ func _input(event: InputEvent):
 				disp = - _mid_displacement
 			2:
 				disp = - _min_displacement
-		if do_tween:
+		if _tween:
 			_tween.tween_property(
 				get_child(idx), "position:y", disp, _tween_duration);
 		else:
