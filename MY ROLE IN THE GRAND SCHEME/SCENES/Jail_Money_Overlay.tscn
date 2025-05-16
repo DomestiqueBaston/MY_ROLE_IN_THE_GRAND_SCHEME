@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://yl6icb273od"]
+[gd_scene load_steps=13 format=3 uid="uid://yl6icb273od"]
 
 [ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/JAIL_MONEY/Cops.png" id="1_knmnc"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="2_4l2mm"]
@@ -7,6 +7,8 @@
 [ext_resource type="ButtonGroup" uid="uid://bna0povlgtisn" path="res://UI/Jail_Money_group.tres" id="3_dxykx"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="5_mk7dn"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="6_7ffip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk7dn"]
 
 [sub_resource type="Animation" id="Animation_6c0my"]
 resource_name = "Appearance"
@@ -131,7 +133,6 @@ _data = {
 }
 
 [node name="Jail_Money" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -139,23 +140,19 @@ offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
 color = Color(0.0946, 0.11, 0.09922, 0.498039)
-metadata/_edit_lock_ = true
 
 [node name="Cops" type="Node2D" parent="."]
 position = Vector2(-640, 0)
-metadata/_edit_lock_ = true
 
 [node name="Cops_BG" type="Sprite2D" parent="Cops"]
 position = Vector2(95, 48)
 texture = ExtResource("1_knmnc")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Info" type="Control" parent="Cops"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("2_s0xyu")
-metadata/_edit_lock_ = true
 
 [node name="Player" type="Control" parent="Cops/Info"]
 layout_mode = 3
@@ -163,7 +160,6 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 theme = ExtResource("2_4l2mm")
-metadata/_edit_lock_ = true
 
 [node name="Situation" type="RichTextLabel" parent="Cops/Info/Player"]
 layout_mode = 0
@@ -172,10 +168,24 @@ offset_top = 148.0
 offset_right = 534.0
 offset_bottom = 267.0
 bbcode_enabled = true
-text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff1c18]200Dø[/color])."
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff8864]   Dø[/color])."
 horizontal_alignment = 1
 vertical_alignment = 2
-metadata/_edit_lock_ = true
+
+[node name="Money" type="RichTextLabel" parent="Cops/Info/Player/Situation"]
+layout_mode = 1
+offset_left = 67.0
+offset_top = 105.0
+offset_right = 87.0
+offset_bottom = 116.0
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mk7dn")
+bbcode_enabled = true
+text = "200"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="Surrender" type="Button" parent="Cops/Info/Player"]
 layout_mode = 0
@@ -188,7 +198,6 @@ toggle_mode = true
 button_group = ExtResource("3_dxykx")
 text = "Don't shoot, I surrender..."
 alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Pay" type="Button" parent="Cops/Info/Player"]
 layout_mode = 0
@@ -200,14 +209,13 @@ tooltip_text = "Pay to leave now."
 theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
 theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_color = Color(0.329493, 0.64, 0.1856, 1)
+theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
 theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
 theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
 toggle_mode = true
 button_group = ExtResource("3_dxykx")
 text = "Easy, easy... I can pay!"
 alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="NPC" type="Control" parent="Cops/Info"]
 visible = false
@@ -216,7 +224,6 @@ anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 theme = ExtResource("2_4l2mm")
-metadata/_edit_lock_ = true
 
 [node name="Situation" type="RichTextLabel" parent="Cops/Info/NPC"]
 layout_mode = 0
@@ -229,7 +236,6 @@ text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[
 "
 horizontal_alignment = 1
 vertical_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="Pay" type="Button" parent="Cops/Info/NPC"]
 layout_mode = 0
@@ -241,16 +247,16 @@ tooltip_text = "Pay to leave now."
 theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
 theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_color = Color(0.329493, 0.64, 0.1856, 1)
+theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
 theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
 theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
 toggle_mode = true
 button_group = ExtResource("3_dxykx")
 text = "Ha! Ha! See you in lockup!"
 alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="A_VIRER" type="Label" parent="Cops/Info"]
+layout_mode = 0
 offset_left = 650.0
 offset_top = 219.0
 offset_right = 945.0
@@ -259,7 +265,6 @@ text = "          Attention ! Il faudra
 <=     changer la somme (200) en
           fonction des options de jeu !"
 autowrap_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=14 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Short_Event_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Overlay_Button.gd" id="3_8qa11"]
-[ext_resource type="Script" uid="uid://d1a6pabpxjiic" path="res://SCRIPTS/Short_Event_Overlay_Outdated_Case.gd" id="4_wm5ht"]
 [ext_resource type="AudioStream" uid="uid://dk6o4toa00crw" path="res://SOUND/MISC/Low_Alarm.ogg" id="7_ugq2e"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_dgbv7"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_is8fw"]
@@ -183,7 +182,6 @@ _data = {
 }
 
 [node name="Short_Event" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -191,17 +189,14 @@ offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
-metadata/_edit_lock_ = true
 
 [node name="Short_Event_Panel" type="Node2D" parent="."]
 position = Vector2(-640, 0)
-metadata/_edit_lock_ = true
 
 [node name="Panel" type="Sprite2D" parent="Short_Event_Panel"]
 texture = ExtResource("1_sivc1")
 centered = false
 offset = Vector2(50, 0)
-metadata/_edit_lock_ = true
 
 [node name="Announce" type="Control" parent="Short_Event_Panel"]
 modulate = Color(1, 1, 1, 0.941176)
@@ -209,7 +204,6 @@ layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_vr7x7")
 script = ExtResource("3_8qa11")
-metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Short_Event_Panel/Announce"]
 layout_mode = 0
@@ -220,12 +214,10 @@ offset_bottom = 314.0
 rotation = 0.0361729
 tooltip_text = "Ok, ok..."
 text = "Whatever..."
-metadata/_edit_lock_ = true
 
 [node name="Run_Away" type="Control" parent="Short_Event_Panel/Announce"]
 visible = false
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="Player_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Run_Away"]
 layout_mode = 0
@@ -267,10 +259,45 @@ In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 con
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
 metadata/_edit_lock_ = true
 
+[node name="Rowena_Absent" type="Control" parent="Short_Event_Panel/Announce"]
+visible = false
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Short_Event_Panel/Announce/Rowena_Absent"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 56.0
+offset_right = 494.0
+offset_bottom = 296.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]Darn!  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Rowena[/color][/pulse]'s  [color=#ff8864][shake rate=7.0 level=5 connected=0]not  here[/shake][/color]...
+and that's  [shake rate=7.0 level=5 connected=0][color=#ff8864]bad[/color][/shake].
+
+I guess  she's  still  busy  tearing herself  apart, fighting  with  her  deep superego  that's  mocking  her.
+
+Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thing[/color][/shake]  is  really going  to [shake rate=7.0 level=5 connected=0][color=#ff1c18]screw  me  over[/color][/shake]!
+
+It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
+
+[node name="Irrelevant_Motive" type="Control" parent="Short_Event_Panel/Announce"]
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Short_Event_Panel/Announce/Irrelevant_Motive"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 129.0
+offset_right = 492.0
+offset_bottom = 221.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
+
+We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
+
 [node name="Break_In" type="Control" parent="Short_Event_Panel/Announce"]
 visible = false
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="Player_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Break_In"]
 layout_mode = 0
@@ -313,7 +340,6 @@ metadata/_edit_lock_ = true
 [node name="Dialogue" type="Control" parent="Short_Event_Panel/Announce"]
 visible = false
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_Success" type="RichTextLabel" parent="Short_Event_Panel/Announce/Dialogue"]
 layout_mode = 0
@@ -355,7 +381,6 @@ metadata/_edit_lock_ = true
 [node name="Combat" type="Control" parent="Short_Event_Panel/Announce"]
 visible = false
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_Attack" type="RichTextLabel" parent="Short_Event_Panel/Announce/Combat"]
 layout_mode = 0
@@ -394,9 +419,8 @@ Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff
 metadata/_edit_lock_ = true
 
 [node name="Outdated_Case" type="Control" parent="Short_Event_Panel/Announce"]
+visible = false
 anchors_preset = 0
-script = ExtResource("4_wm5ht")
-metadata/_edit_lock_ = true
 
 [node name="Annonce" type="RichTextLabel" parent="Short_Event_Panel/Announce/Outdated_Case"]
 layout_mode = 0
@@ -426,13 +450,14 @@ autoplay = "Appearance"
 libraries = {
 &"": SubResource("AnimationLibrary_200re")
 }
+autoplay = "Alarm"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0
 bus = &"UI"
 
 [node name="LowAlarm" type="AudioStreamPlayer" parent="."]
-volume_db = -80.0
+volume_db = -25.0
 bus = &"FX"
 
 [connection signal="mouse_entered" from="Short_Event_Panel/Announce/Quit" to="Short_Event_Panel/Announce" method="_on_quit_mouse_entered"]
