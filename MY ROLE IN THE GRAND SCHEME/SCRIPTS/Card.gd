@@ -1,7 +1,6 @@
 class_name Card extends Node2D
 
 var _is_expanded = true
-var _is_current = false
 
 func _ready():
 	$Card_Animations.play("RESET")
@@ -16,8 +15,9 @@ func get_size():
 
 ##
 ## Returns true if the Card is parented to a CardStack. If that is the case, the
-## CardStack is responsible for setting the current Card. If not, the Card does
-## that itself by tracking the mouse position.
+## CardStack is responsible for deciding which card is highlighted. If not, the
+## Card tracks the mouse position itself and emits signals when the mouse enters
+## and exits the card's bounding box.
 ##
 func is_stacked():
 	return get_parent() is CardStack
@@ -33,22 +33,18 @@ func expand_or_reduce():
 	_is_expanded = not _is_expanded
 
 ##
-## Specifies whether or not the card is "current". Only the current card's
-## shadow is displayed, and it is displayed on top of all others by setting its
-## Z index to 1. Also, sounds are played when the status of cards changes.
+## Specifies whether or not the card is highlighted. When a card is highlighted,
+## its Z index is set to 1 and its shadow is displayed. Sounds are played when a
+## card's highlight state changes.
 ##
-func set_current(current: bool):
-	if _is_current == current:
-		return
-	_is_current = current
-	if current:
+func set_highlighted(highlighted: bool):
+	if highlighted:
 		$Shadow_Animations.play("Shadow_On")
 		if Globals.card_exited_sound.playing:
 			Globals.card_exited_sound.stop()
 		if not Globals.card_entered_sound.playing:
 			Globals.card_entered_sound.play()
 		z_index = 1
-		Globals.set_current_card.emit(self)
 	else:
 		$Shadow_Animations.play("Shadow_Off")
 		if not Globals.card_entered_sound.playing:
@@ -79,8 +75,8 @@ func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shap
 
 func _on_card_collider_mouse_entered():
 	if not is_stacked():
-		set_current(true)
+		Globals.mouse_entered_card.emit(self)
 
 func _on_card_collider_mouse_exited():
 	if not is_stacked():
-		set_current(false)
+		Globals.mouse_exited_card.emit(self)
