@@ -2293,6 +2293,7 @@ visible = true
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
+visible = false
 z_index = 2
 
 [node name="Line" parent="Mask_Card_Playground/TMP_2/Drag_Drop_Line" index="0"]

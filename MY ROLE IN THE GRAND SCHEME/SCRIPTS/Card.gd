@@ -14,17 +14,17 @@ func get_size():
 		$Card_Mask.texture.get_width() / $Card_Mask.hframes,
 		$Card_Mask.texture.get_height() / $Card_Mask.vframes)
 
-#
-# Returns true if the Card is parented to a CardStack. If that is the case, the
-# CardStack is responsible for setting the current Card. If not, the Card does
-# that itself by tracking the mouse position.
-#
+##
+## Returns true if the Card is parented to a CardStack. If that is the case, the
+## CardStack is responsible for setting the current Card. If not, the Card does
+## that itself by tracking the mouse position.
+##
 func is_stacked():
 	return get_parent() is CardStack
 
-#
-# Expands the card if it is reduced, reduces it if it is expanded.
-#
+##
+## Expands the card if it is reduced, reduces it if it is expanded.
+##
 func expand_or_reduce():
 	if _is_expanded:
 		$Card_Animations.play("Reduce_Card")
@@ -32,11 +32,11 @@ func expand_or_reduce():
 		$Card_Animations.play("Expand_Card")
 	_is_expanded = not _is_expanded
 
-#
-# Specifies whether or not the card is "current". Only the current card's
-# shadow is displayed, and it is displayed on top of all others by setting its
-# Z index to 1. Also, sounds are played when the status of cards changes.
-#
+##
+## Specifies whether or not the card is "current". Only the current card's
+## shadow is displayed, and it is displayed on top of all others by setting its
+## Z index to 1. Also, sounds are played when the status of cards changes.
+##
 func set_current(current: bool):
 	if _is_current == current:
 		return
@@ -55,9 +55,9 @@ func set_current(current: bool):
 			Globals.card_exited_sound.play()
 		z_index = 0
 
-#
-# Modifies the opacity of both the card and its shadow.
-#
+##
+## Modifies the opacity of both the card and its shadow.
+##
 func set_opacity(opacity: float):
 	$Card_Mask.modulate = opacity
 	if $Card_Shadow.material:
