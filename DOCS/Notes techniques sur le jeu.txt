@@ -33,7 +33,7 @@ Interaction_Result
 Investigation_Center
 Settings
 
-Liste des scènes qui peuvent s'afficher AVANT le jeu (je mets avec les quelques scènes à overlay avec) :
+Liste des scènes qui peuvent s'afficher AVANT le jeu (je mets avec les quelques scènes à overlay) :
 Character_Generation
 Confirmation_Overlay
 Credits

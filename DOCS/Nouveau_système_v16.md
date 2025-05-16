@@ -115,9 +115,13 @@ Backgrounds
 
 Progression du joueur (pas des PNJs !)
 	- Seules les réussites et échecs critiques (1 ou 10 « naturel » obtenus directement sur le dé, avant l’application de tout modificateur) font varier les caractéristiques principales du joueur par pas de ±1 (réussite critique : +1 et échec critique : -1) et ce uniquement après avoir évalué le résultat de l’action entreprise.
-	- La caractéristique (principale) qui évoluera sera sélectionnée aléatoirement parmi celles utilisées pour le jet de dé.
 	- N’importe quel jet de dé (hors Mort par Add vu au dessus) impliquant PHY, MEN ou HEA peut amener à ces évolutions et la modification sera toujours effective après la résolution de l’action entreprise.
-	- Quand HEA évolue, HEAnom aussi (uniquement en progression, bien entendu).
+	- La caractéristique (principale) qui évoluera après une Interaction sera sélectionnée parmi celles utilisées pour le jet de dé selon :
+		- Dialogue : MEN ou HEAnom aléatoirement
+		- Combat : PHY ou HEAnom aléatoirement
+		- Investigation : PHY ou MEN aléatoirement
+	- Dans les cas hypothétiques ou un jet de dé est lancé sur 1 seule caractéristique, c’est celle-ci qui évolue.
+	- Dans tous les autres cas, la caractéristique qui évoluera sera choisie aléatoirement.
 
 Les PNJs
 
