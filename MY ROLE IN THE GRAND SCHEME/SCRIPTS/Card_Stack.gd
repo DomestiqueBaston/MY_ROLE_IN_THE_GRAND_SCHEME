@@ -17,8 +17,10 @@ class_name CardStack extends Node2D
 
 var _bbox: Rect2i
 var _current_card: int = -1
+var _tween: Tween
 
-const _max_displacement: int = 4
+const _tween_duration: float = 0.15
+const _max_displacement: int = 5
 const _mid_displacement: int = 2
 const _min_displacement: int = 1
 
@@ -58,14 +60,20 @@ func _input(event: InputEvent):
 	if _current_card >= 0:
 		get_child(_current_card).set_current(true)
 
+	if _tween:
+		_tween.kill()
+
+	_tween = create_tween().set_parallel()
+
 	for idx in get_child_count():
 		var dist = -1 if _current_card < 0 else absi(idx - _current_card)
+		var disp: int = 0
 		match dist:
 			0:
-				get_child(idx).position.y = - _max_displacement
+				disp = - _max_displacement
 			1:
-				get_child(idx).position.y = - _mid_displacement
+				disp = - _mid_displacement
 			2:
-				get_child(idx).position.y = - _min_displacement
-			_:
-				get_child(idx).position.y = 0
+				disp = - _min_displacement
+		_tween.tween_property(
+			get_child(idx), "position:y", disp, _tween_duration);
