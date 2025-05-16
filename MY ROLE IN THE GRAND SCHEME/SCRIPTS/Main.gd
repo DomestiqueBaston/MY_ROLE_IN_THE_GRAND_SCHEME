@@ -17,7 +17,6 @@ func _ready():
 	popup.add_item("Throw card away")
 	
 	Globals.card_right_click.connect(_popup_menu)
-	Globals.card_double_click.connect(_expand_or_reduce_card)
 	Globals.set_current_card.connect(_show_card_info)
 	Globals.link_right_click.connect(_popup_menu)
 
@@ -31,9 +30,6 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	else:
 		print("popup menu for node ", node.get_name())
 	popup.popup(Rect2i(pos, Vector2i()))
-
-func _expand_or_reduce_card(_pos: Vector2, card: Card):
-	card.expand_or_reduce()
 
 func _show_card_info(card: Card):
 	if card != _current_card:

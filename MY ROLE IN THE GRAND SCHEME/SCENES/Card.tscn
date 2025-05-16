@@ -1128,3 +1128,5 @@ volume_db = -20.0
 bus = &"UI"
 
 [connection signal="input_event" from="Card_Mask/Card_Collider" to="." method="_on_card_collider_input_event"]
+[connection signal="mouse_entered" from="Card_Mask/Card_Collider" to="." method="_on_card_collider_mouse_entered"]
+[connection signal="mouse_exited" from="Card_Mask/Card_Collider" to="." method="_on_card_collider_mouse_exited"]

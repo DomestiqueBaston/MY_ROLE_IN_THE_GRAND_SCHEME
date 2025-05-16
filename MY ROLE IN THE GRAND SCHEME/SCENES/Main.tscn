@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="13_ksebp"]
 [ext_resource type="Script" uid="uid://twxt7ns0olqm" path="res://SCRIPTS/Main_Buttons.gd" id="14_1r0xb"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="14_d27u2"]
-[ext_resource type="Script" uid="uid://doc87qbqqybin" path="res://SCRIPTS/Horizontal_Card_Stack.gd" id="14_ksebp"]
+[ext_resource type="Script" uid="uid://doc87qbqqybin" path="res://SCRIPTS/Card_Stack.gd" id="14_ksebp"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
 [ext_resource type="Texture2D" uid="uid://dgclhxafihydp" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_50.png" id="15_1cl67"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK_PIN/Plein_Gris.png" id="15_c4wun"]
@@ -2201,7 +2201,6 @@ script = ExtResource("14_ksebp")
 
 [node name="Card7" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(16, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card7/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
@@ -2214,7 +2213,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card8" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(20, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card8/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
@@ -2227,7 +2225,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card9" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(24, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card9/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
@@ -2240,7 +2237,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card10" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(28, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card10/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
@@ -2250,7 +2246,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card11" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(32, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card11/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
@@ -2260,7 +2255,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card12" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(36, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card12/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
@@ -2270,7 +2264,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card13" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(40, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card13/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true
@@ -2286,7 +2279,6 @@ modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card14" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(44, 0)
-auto_select = false
 
 [node name="Special" parent="Mask_Card_Playground/TMP_2/Reserve_Cards/Card14/Card_Mask/Card_BG/Card_Color/Combat" index="0"]
 visible = true

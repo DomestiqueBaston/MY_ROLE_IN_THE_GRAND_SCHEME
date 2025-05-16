@@ -11,9 +11,6 @@ extends Node
 signal card_left_click(pos: Vector2, card: Card)
 
 @warning_ignore("unused_signal")
-signal card_double_click(pos: Vector2, card: Card)
-
-@warning_ignore("unused_signal")
 signal card_right_click(pos: Vector2, card: Card)
 
 @warning_ignore("unused_signal")
