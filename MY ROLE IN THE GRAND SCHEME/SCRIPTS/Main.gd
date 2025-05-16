@@ -49,14 +49,17 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 func _mouse_entered_card(card: Card):
 	if _drag_state == DragState.NONE and card != _current_card:
+		if _current_card:
+			_current_card.set_highlighted(false)
 		card.set_highlighted(true)
 		_current_card = card
 		print("show info about card: ", card.card_name)
 
 func _mouse_exited_card(card: Card):
-	if _drag_state == DragState.NONE and card == _current_card:
+	if _drag_state == DragState.NONE:
 		card.set_highlighted(false)
-		_current_card = null
+		if _current_card == card:
+			_current_card = null
 
 func _click_on_card(_pos: Vector2, card: Card):
 	_mouse_entered_card(card)
