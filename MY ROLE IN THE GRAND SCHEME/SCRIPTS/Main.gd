@@ -27,7 +27,7 @@ func _ready():
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
 		if event is InputEventMouseMotion:
-			print("drag...")
+			print("drag card...")
 		elif event is InputEventMouseButton and not event.pressed:
 			_drag_state = DragState.NONE
 	elif _drag_state == DragState.CLICKED:
@@ -40,24 +40,24 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	if node is Card:
 		if node.find_parent("TMP_2"):
 			return
-		print("popup menu for card ", node.get_card_name())
+		print("popup menu for card: ", node.card_name)
 	elif node is Link:
-		print("popup menu for link ", node.get_name())
+		print("popup menu for link: ", node.get_name())
 	else:
-		print("popup menu for node ", node.get_name())
+		print("popup menu for node: ", node.get_name())
 	popup.popup(Rect2i(pos, Vector2i()))
 
 func _mouse_entered_card(card: Card):
 	if _drag_state == DragState.NONE and card != _current_card:
 		card.set_highlighted(true)
-		print("show info about card ", card.get_card_name())
 		_current_card = card
+		print("show info about card: ", card.card_name)
 
 func _mouse_exited_card(card: Card):
-	if _drag_state == DragState.NONE:
+	if _drag_state == DragState.NONE and card == _current_card:
 		card.set_highlighted(false)
 		_current_card = null
 
 func _click_on_card(_pos: Vector2, card: Card):
-	_current_card = card
+	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED

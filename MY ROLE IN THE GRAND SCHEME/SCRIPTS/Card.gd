@@ -1,12 +1,128 @@
+@tool
 class_name Card extends Node2D
+
+enum CardType {
+	COMBAT,
+	INVESTIGATION,
+	DIALOGUE,
+	ABSTRACT,
+	OBJECT,
+	LOCATION,
+	NPC
+}
+
+enum CombatType {
+	NONE,
+	SPECIAL,
+	RUN_AWAY
+}
+
+enum InvestigationType {
+	NONE,
+	SPECIAL,
+	BREAK_IN
+}
+
+enum NpcHealth {
+	NONE,
+	GOOD,
+	AVERAGE,
+	LOW
+}
+
+enum Status {
+	NONE,
+	JAIL,
+	CLOSED,
+	DEAD,
+	DISAPPEARED
+}
+
+@export var card_name: String = "Card Name":
+	set(value):
+		card_name = value
+		_update()
+
+@export var description: String = "Short card description.":
+	set(value):
+		description = value
+		_update()
+
+@export var card_type: CardType:
+	set(value):
+		card_type = value
+		_update()
+
+@export var combat_type: CombatType:
+	set(value):
+		combat_type = value
+		_update()
+
+@export var investigation_type: InvestigationType:
+	set(value):
+		investigation_type = value
+		_update()
+
+@export var npc_health: NpcHealth:
+	set(value):
+		npc_health = value
+		_update()
+
+@export var status: Status:
+	set(value):
+		status = value
+		_update()
+
+@export var is_evidence: bool:
+	set(value):
+		is_evidence = value
+		_update()
+
+@export var opacity: float = 1:
+	set(value):
+		opacity = value
+		_update_opacity()
 
 var _is_expanded = true
 
 func _ready():
 	$Card_Animations.play("RESET")
+	_update()
+
+func _update():
+	$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
+	$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
+
+	$Card_Mask/Card_BG/Card_Color/Combat.visible = (card_type == CardType.COMBAT)
+	$Card_Mask/Card_BG/Card_Color/Investigation.visible = (card_type == CardType.INVESTIGATION)
+	$Card_Mask/Card_BG/Card_Color/Dialogue.visible = (card_type == CardType.DIALOGUE)
+	$Card_Mask/Card_BG/Card_Color/Abstract.visible = (card_type == CardType.ABSTRACT)
+	$Card_Mask/Card_BG/Card_Color/Object.visible = (card_type == CardType.OBJECT)
+	$Card_Mask/Card_BG/Card_Color/Location.visible = (card_type == CardType.LOCATION)
+	$Card_Mask/Card_BG/Card_Color/Npc.visible = (card_type == CardType.NPC)
+
+	match card_type:
+		CardType.COMBAT:
+			$Card_Mask/Card_BG/Card_Color/Combat/Special.visible = (combat_type == CombatType.SPECIAL)
+			$Card_Mask/Card_BG/Card_Color/Combat/Run_Away.visible = (combat_type == CombatType.RUN_AWAY)
+		CardType.INVESTIGATION:
+			$Card_Mask/Card_BG/Card_Color/Investigation/Special.visible = (investigation_type == InvestigationType.SPECIAL)
+			$Card_Mask/Card_BG/Card_Color/Investigation/Break_In.visible = (investigation_type == InvestigationType.BREAK_IN)
+		CardType.NPC:
+			$Card_Mask/Card_BG/Card_Color/Npc/No_Info.visible = (npc_health == NpcHealth.NONE)
+			$Card_Mask/Card_BG/Card_Color/Npc/Good_Health.visible = (npc_health == NpcHealth.GOOD)
+			$Card_Mask/Card_BG/Card_Color/Npc/Average_Health.visible = (npc_health == NpcHealth.AVERAGE)
+			$Card_Mask/Card_BG/Card_Color/Npc/Low_Health.visible = (npc_health == NpcHealth.LOW)
+
+	$Card_Mask/Card_BG/Jail_Status.visible = (status == Status.JAIL)
+	$Card_Mask/Card_BG/Closed_Status.visible = (status == Status.CLOSED)
+	$Card_Mask/Card_BG/Dead_Status.visible = (status == Status.DEAD)
+	$Card_Mask/Card_BG/Disappeared_Status.visible = (status == Status.DISAPPEARED)
+
+	$Card_Mask/Card_BG/Evidence.visible = is_evidence
 
 func get_card_name():
-	return $Card_Mask/Card_BG/Card_Text/Card_Name.text
+	return card_name
 
 func get_size():
 	return Vector2i(
@@ -51,11 +167,8 @@ func set_highlighted(highlighted: bool):
 			Globals.card_exited_sound.play()
 		z_index = 0
 
-##
-## Modifies the opacity of both the card and its shadow.
-##
-func set_opacity(opacity: float):
-	$Card_Mask.modulate = opacity
+func _update_opacity():
+	$Card_Mask.modulate.a = opacity
 	if $Card_Shadow.material:
 		$Card_Shadow.material.set_shader_parameter(
 			"shadow_color", Color(0, 0, 0, opacity * 0.3))
