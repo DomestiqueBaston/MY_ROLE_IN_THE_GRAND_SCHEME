@@ -30,10 +30,9 @@ enum NpcHealth {
 	LOW
 }
 
-enum Status {
+enum NpcStatus {
 	NONE,
 	JAIL,
-	CLOSED,
 	DEAD,
 	DISAPPEARED
 }
@@ -41,42 +40,47 @@ enum Status {
 @export var card_name: String = "Card Name":
 	set(value):
 		card_name = value
-		_update()
+		_update_card_type()
 
 @export var description: String = "Short card description.":
 	set(value):
 		description = value
-		_update()
+		_update_card_type()
 
 @export var card_type: CardType:
 	set(value):
 		card_type = value
-		_update()
+		_update_card_type()
 
 @export var combat_type: CombatType:
 	set(value):
 		combat_type = value
-		_update()
+		_update_card_type()
 
 @export var investigation_type: InvestigationType:
 	set(value):
 		investigation_type = value
-		_update()
+		_update_card_type()
 
 @export var npc_health: NpcHealth:
 	set(value):
 		npc_health = value
-		_update()
+		_update_card_type()
 
-@export var status: Status:
+@export var npc_status: NpcStatus:
 	set(value):
-		status = value
-		_update()
+		npc_status = value
+		_update_card_type()
 
-@export var is_evidence: bool:
+@export var is_object_evidence: bool:
 	set(value):
-		is_evidence = value
-		_update()
+		is_object_evidence = value
+		_update_card_type()
+
+@export var is_location_closed: bool:
+	set(value):
+		is_location_closed = value
+		_update_card_type()
 
 @export var opacity: float = 1:
 	set(value):
@@ -87,39 +91,114 @@ var _is_expanded = true
 
 func _ready():
 	$Card_Animations.play("RESET")
-	_update()
 
-func _update():
-	$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
-	$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
-
-	$Card_Mask/Card_BG/Card_Color/Combat.visible = (card_type == CardType.COMBAT)
-	$Card_Mask/Card_BG/Card_Color/Investigation.visible = (card_type == CardType.INVESTIGATION)
-	$Card_Mask/Card_BG/Card_Color/Dialogue.visible = (card_type == CardType.DIALOGUE)
-	$Card_Mask/Card_BG/Card_Color/Abstract.visible = (card_type == CardType.ABSTRACT)
-	$Card_Mask/Card_BG/Card_Color/Object.visible = (card_type == CardType.OBJECT)
-	$Card_Mask/Card_BG/Card_Color/Location.visible = (card_type == CardType.LOCATION)
-	$Card_Mask/Card_BG/Card_Color/Npc.visible = (card_type == CardType.NPC)
-
+func _update_card_type():
 	match card_type:
 		CardType.COMBAT:
+			$Card_Mask/Card_BG/Card_Color/Combat.visible = true
+			$Card_Mask/Card_BG/Card_Color/Investigation.visible = false
+			$Card_Mask/Card_BG/Card_Color/Dialogue.visible = false
+			$Card_Mask/Card_BG/Card_Color/Abstract.visible = false
+			$Card_Mask/Card_BG/Card_Color/Object.visible = false
+			$Card_Mask/Card_BG/Card_Color/Location.visible = false
+			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
 			$Card_Mask/Card_BG/Card_Color/Combat/Special.visible = (combat_type == CombatType.SPECIAL)
 			$Card_Mask/Card_BG/Card_Color/Combat/Run_Away.visible = (combat_type == CombatType.RUN_AWAY)
+			$Card_Mask/Card_BG/Evidence.visible = false
+			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Jail_Status.visible = false
+			$Card_Mask/Card_BG/Dead_Status.visible = false
+			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+
 		CardType.INVESTIGATION:
+			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
+			$Card_Mask/Card_BG/Card_Color/Investigation.visible = true
+			$Card_Mask/Card_BG/Card_Color/Dialogue.visible = false
+			$Card_Mask/Card_BG/Card_Color/Abstract.visible = false
+			$Card_Mask/Card_BG/Card_Color/Object.visible = false
+			$Card_Mask/Card_BG/Card_Color/Location.visible = false
+			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
 			$Card_Mask/Card_BG/Card_Color/Investigation/Special.visible = (investigation_type == InvestigationType.SPECIAL)
 			$Card_Mask/Card_BG/Card_Color/Investigation/Break_In.visible = (investigation_type == InvestigationType.BREAK_IN)
+			$Card_Mask/Card_BG/Evidence.visible = false
+			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Jail_Status.visible = false
+			$Card_Mask/Card_BG/Dead_Status.visible = false
+			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+
+		CardType.DIALOGUE:
+			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
+			$Card_Mask/Card_BG/Card_Color/Investigation.visible = false
+			$Card_Mask/Card_BG/Card_Color/Dialogue.visible = true
+			$Card_Mask/Card_BG/Card_Color/Abstract.visible = false
+			$Card_Mask/Card_BG/Card_Color/Object.visible = false
+			$Card_Mask/Card_BG/Card_Color/Location.visible = false
+			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
+			$Card_Mask/Card_BG/Evidence.visible = false
+			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Jail_Status.visible = false
+			$Card_Mask/Card_BG/Dead_Status.visible = false
+			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+
+		CardType.ABSTRACT:
+			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
+			$Card_Mask/Card_BG/Card_Color/Investigation.visible = false
+			$Card_Mask/Card_BG/Card_Color/Dialogue.visible = false
+			$Card_Mask/Card_BG/Card_Color/Abstract.visible = true
+			$Card_Mask/Card_BG/Card_Color/Object.visible = false
+			$Card_Mask/Card_BG/Card_Color/Location.visible = false
+			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
+			$Card_Mask/Card_BG/Evidence.visible = false
+			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Jail_Status.visible = false
+			$Card_Mask/Card_BG/Dead_Status.visible = false
+			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+
+		CardType.OBJECT:
+			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
+			$Card_Mask/Card_BG/Card_Color/Investigation.visible = false
+			$Card_Mask/Card_BG/Card_Color/Dialogue.visible = false
+			$Card_Mask/Card_BG/Card_Color/Abstract.visible = false
+			$Card_Mask/Card_BG/Card_Color/Object.visible = true
+			$Card_Mask/Card_BG/Card_Color/Location.visible = false
+			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
+			$Card_Mask/Card_BG/Evidence.visible = is_object_evidence
+			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Jail_Status.visible = false
+			$Card_Mask/Card_BG/Dead_Status.visible = false
+			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+
+		CardType.LOCATION:
+			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
+			$Card_Mask/Card_BG/Card_Color/Investigation.visible = false
+			$Card_Mask/Card_BG/Card_Color/Dialogue.visible = false
+			$Card_Mask/Card_BG/Card_Color/Abstract.visible = false
+			$Card_Mask/Card_BG/Card_Color/Object.visible = false
+			$Card_Mask/Card_BG/Card_Color/Location.visible = true
+			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
+			$Card_Mask/Card_BG/Evidence.visible = false
+			$Card_Mask/Card_BG/Closed_Status.visible = is_location_closed
+			$Card_Mask/Card_BG/Jail_Status.visible = false
+			$Card_Mask/Card_BG/Dead_Status.visible = false
+			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+
 		CardType.NPC:
+			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
+			$Card_Mask/Card_BG/Card_Color/Investigation.visible = false
+			$Card_Mask/Card_BG/Card_Color/Dialogue.visible = false
+			$Card_Mask/Card_BG/Card_Color/Abstract.visible = false
+			$Card_Mask/Card_BG/Card_Color/Object.visible = false
+			$Card_Mask/Card_BG/Card_Color/Location.visible = false
+			$Card_Mask/Card_BG/Card_Color/Npc.visible = true
 			$Card_Mask/Card_BG/Card_Color/Npc/No_Info.visible = (npc_health == NpcHealth.NONE)
 			$Card_Mask/Card_BG/Card_Color/Npc/Good_Health.visible = (npc_health == NpcHealth.GOOD)
 			$Card_Mask/Card_BG/Card_Color/Npc/Average_Health.visible = (npc_health == NpcHealth.AVERAGE)
 			$Card_Mask/Card_BG/Card_Color/Npc/Low_Health.visible = (npc_health == NpcHealth.LOW)
-
-	$Card_Mask/Card_BG/Jail_Status.visible = (status == Status.JAIL)
-	$Card_Mask/Card_BG/Closed_Status.visible = (status == Status.CLOSED)
-	$Card_Mask/Card_BG/Dead_Status.visible = (status == Status.DEAD)
-	$Card_Mask/Card_BG/Disappeared_Status.visible = (status == Status.DISAPPEARED)
-
-	$Card_Mask/Card_BG/Evidence.visible = is_evidence
+			$Card_Mask/Card_BG/Evidence.visible = false
+			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Jail_Status.visible = (npc_status == NpcStatus.JAIL)
+			$Card_Mask/Card_BG/Dead_Status.visible = (npc_status == NpcStatus.DEAD)
+			$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
 
 func get_card_name():
 	return card_name

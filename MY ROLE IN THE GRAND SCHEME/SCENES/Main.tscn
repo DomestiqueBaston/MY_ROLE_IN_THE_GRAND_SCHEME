@@ -133,7 +133,6 @@ investigation_type = 2
 [node name="Card4" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(165, 213)
 card_type = 2
-is_evidence = true
 
 [node name="Card5" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(294, 38)
