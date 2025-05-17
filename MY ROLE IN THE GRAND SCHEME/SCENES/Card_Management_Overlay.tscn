@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c0ukqcgb1ay3s"]
+[gd_scene load_steps=37 format=3 uid="uid://c0ukqcgb1ay3s"]
 
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/CARD_MANAGEMENT/Frame.png" id="1_f15cm"]
 [ext_resource type="Texture2D" uid="uid://cgclmrs55a25d" path="res://GRAPHICS/CARD_MANAGEMENT/Left_Zone.png" id="2_edhgu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Normal.png" id="9_eg8nv"]
 [ext_resource type="Script" uid="uid://cj4kkd1mdr47l" path="res://SCRIPTS/Card_Management_Overlay_Trash.gd" id="9_t8k7k"]
 [ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/CARD_MANAGEMENT/Trash_Hover.png" id="10_6pms8"]
+[ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="11_d7lmg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="12_1t2xr"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="12_edhgu"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="13_iwurd"]
@@ -45,7 +46,7 @@
 size = Vector2(156, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovxvj"]
-size = Vector2(322, 102)
+size = Vector2(196, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8k7k"]
 size = Vector2(38, 60)
@@ -173,6 +174,7 @@ _data = {
 }
 
 [node name="Card_Management" type="Node2D"]
+metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="BG" type="ColorRect" parent="."]
@@ -181,17 +183,14 @@ offset_right = 640.0
 offset_bottom = 360.0
 size_flags_horizontal = 0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
-metadata/_edit_lock_ = true
 
 [node name="Card_Management_Panel" type="Node2D" parent="."]
 position = Vector2(-640, 0)
-metadata/_edit_lock_ = true
 
 [node name="Painting" type="Sprite2D" parent="Card_Management_Panel"]
 texture = ExtResource("1_f15cm")
 centered = false
 offset = Vector2(20, 20)
-metadata/_edit_lock_ = true
 
 [node name="Left_Zone" type="TextureRect" parent="Card_Management_Panel/Painting"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -202,7 +201,6 @@ offset_bottom = 340.0
 texture = ExtResource("2_edhgu")
 script = ExtResource("3_d7lmg")
 target_collider_path = NodePath("../../Colliders/Card_Pool_Collider/Card_Pool")
-metadata/_edit_lock_ = true
 
 [node name="Right_Zone" type="TextureRect" parent="Card_Management_Panel/Painting"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -213,32 +211,24 @@ offset_bottom = 340.0
 texture = ExtResource("4_uasgl")
 script = ExtResource("3_d7lmg")
 target_collider_path = NodePath("../../Colliders/Mastery_Hand_Collider/Mastery_Hand")
-metadata/_edit_lock_ = true
 
 [node name="Card_Locations" type="Node2D" parent="Card_Management_Panel"]
-metadata/_edit_lock_ = true
 
 [node name="Card_Pool" type="Node2D" parent="Card_Management_Panel/Card_Locations"]
-metadata/_edit_lock_ = true
 
 [node name="First_Card" type="Marker2D" parent="Card_Management_Panel/Card_Locations/Card_Pool"]
-position = Vector2(75, 75)
-metadata/_edit_lock_ = true
+position = Vector2(205, 75)
 
 [node name="Last_Card" type="Marker2D" parent="Card_Management_Panel/Card_Locations/Card_Pool"]
-position = Vector2(155, 75)
-metadata/_edit_lock_ = true
+position = Vector2(285, 75)
 
 [node name="Mastery_Card_Places" type="Node2D" parent="Card_Management_Panel/Card_Locations"]
-metadata/_edit_lock_ = true
 
 [node name="First_Card" type="Marker2D" parent="Card_Management_Panel/Card_Locations/Mastery_Card_Places"]
-position = Vector2(245, 75)
-metadata/_edit_lock_ = true
+position = Vector2(371, 75)
 
 [node name="Last_Card" type="Marker2D" parent="Card_Management_Panel/Card_Locations/Mastery_Card_Places"]
 position = Vector2(491, 75)
-metadata/_edit_lock_ = true
 
 [node name="Buttons" type="Control" parent="Card_Management_Panel"]
 layout_mode = 3
@@ -249,7 +239,6 @@ offset_right = 620.0
 offset_bottom = 340.0
 theme = ExtResource("2_yfns7")
 script = ExtResource("3_edhgu")
-metadata/_edit_lock_ = true
 
 [node name="Ok" type="Button" parent="Card_Management_Panel/Buttons"]
 layout_mode = 0
@@ -305,14 +294,13 @@ text = "Cancel"
 
 [node name="Trash" type="Control" parent="Card_Management_Panel/Buttons"]
 anchors_preset = 0
-offset_left = 234.0
+offset_left = 325.0
 offset_top = 193.0
-offset_right = 275.0
+offset_right = 366.0
 offset_bottom = 257.0
-tooltip_text = "Drop a card  here
+tooltip_text = "Drop a card here
 to discard it"
 script = ExtResource("9_t8k7k")
-metadata/_edit_lock_ = true
 
 [node name="Trash_Normal" type="TextureRect" parent="Card_Management_Panel/Buttons/Trash"]
 layout_mode = 0
@@ -321,7 +309,6 @@ offset_top = -9.0
 offset_right = 50.0
 offset_bottom = 71.0
 texture = ExtResource("9_eg8nv")
-metadata/_edit_lock_ = true
 
 [node name="Trash_Hover" type="TextureRect" parent="Card_Management_Panel/Buttons/Trash"]
 visible = false
@@ -331,46 +318,81 @@ offset_top = -9.0
 offset_right = 50.0
 offset_bottom = 71.0
 texture = ExtResource("10_6pms8")
-metadata/_edit_lock_ = true
 
 [node name="Colliders" type="Node2D" parent="Card_Management_Panel"]
-metadata/_edit_lock_ = true
 
 [node name="Card_Pool_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
-metadata/_edit_lock_ = true
 
 [node name="Card_Pool" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Card_Pool_Collider"]
-position = Vector2(152, 125)
+position = Vector2(282, 125)
 shape = SubResource("RectangleShape2D_r70rf")
-metadata/_edit_lock_ = true
 
 [node name="Mastery_Hand_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
-metadata/_edit_lock_ = true
 
 [node name="Mastery_Hand" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Mastery_Hand_Collider"]
-position = Vector2(405, 125)
+position = Vector2(468, 125)
 shape = SubResource("RectangleShape2D_ovxvj")
-metadata/_edit_lock_ = true
 
 [node name="Trash_Collider" type="Area2D" parent="Card_Management_Panel/Colliders"]
-metadata/_edit_lock_ = true
+position = Vector2(91, 0)
 
 [node name="Trash" type="CollisionShape2D" parent="Card_Management_Panel/Colliders/Trash_Collider"]
 position = Vector2(274, 246)
 shape = SubResource("RectangleShape2D_t8k7k")
-metadata/_edit_lock_ = true
+
+[node name="Bottom_Left_Info_Long" type="Node2D" parent="Card_Management_Panel"]
+position = Vector2(63, -69)
+
+[node name="Scroll_Interaction" type="ScrollContainer" parent="Card_Management_Panel/Bottom_Left_Info_Long"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 166.0
+offset_right = 128.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_d7lmg")
+horizontal_scroll_mode = 3
+
+[node name="Info_Interaction" type="HFlowContainer" parent="Card_Management_Panel/Bottom_Left_Info_Long/Scroll_Interaction"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Description" type="RichTextLabel" parent="Card_Management_Panel/Bottom_Left_Info_Long/Scroll_Interaction/Info_Interaction"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "- PARRY -
+
+A precise and controlled block that redirects an incoming attack, reducing its impact. While it demands physical precision, successfully parrying boosts your confidence and morale. It's a skillful move, but it requires focus and can leave you momentarily off-balance.
+
+''Nice try, but that was my elbow, not my chin, you moron!''"
+fit_content = true
+horizontal_alignment = 1
 
 [node name="TMP" type="Node2D" parent="Card_Management_Panel"]
-metadata/_edit_lock_ = true
 
 [node name="Card" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
-position = Vector2(75, 75)
+position = Vector2(205, 75)
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card2" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
-position = Vector2(245, 75)
+position = Vector2(371, 75)
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card3" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
-position = Vector2(320, 75)
+position = Vector2(446, 75)
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("12_edhgu")]
 visible = false

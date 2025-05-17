@@ -105,6 +105,8 @@ content_margin_left = 1.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wvc8p")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Main_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_ebllg")
@@ -119,32 +121,53 @@ position = Vector2(190, 85)
 card_name = "Click the cards..."
 description = "... to see the reduce/expand animations!"
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card2" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 combat_type = 2
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card3" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 card_type = 1
 investigation_type = 2
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card4" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(165, 213)
 card_type = 2
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card5" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(294, 38)
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card6" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 opacity = 0.78
 
 [node name="Card7" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(558, 275)
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 opacity = 0.78
 
 [node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
@@ -666,7 +689,6 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Scroller_Location" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
-visible = false
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
 anchor_right = 1.0
@@ -736,7 +758,6 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Already met!"
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Jean Trancène"
@@ -747,7 +768,6 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Not met yet."
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Sylvie Culture"
@@ -954,7 +974,6 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Not met yet."
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Pierre Poljac"
@@ -984,7 +1003,6 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Already met!"
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Michel Drucker"
@@ -992,6 +1010,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Scroller_NPC" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
+visible = false
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
 anchor_right = 1.0
@@ -2090,24 +2109,6 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="A_VIRER" type="Label" parent="Mask_Card_Playground/Bottom_Left_Info"]
-offset_left = -139.0
-offset_top = 184.0
-offset_right = -5.0
-offset_bottom = 343.0
-theme_override_font_sizes/font_size = 10
-text = "Attention, il y aura (possiblement) des
-tooltips pour les
-NPC, Objets et Lieu.   =>
-J'en ai mis pour
-donner un exemple
-dans Scroller_Location.
-Si l'idée est annulée,
-il faudra les virer !"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
 [node name="Crime_Motive_Selection" type="Node2D" parent="Mask_Card_Playground"]
 position = Vector2(147, 11)
 
@@ -2139,34 +2140,58 @@ script = ExtResource("14_ksebp")
 [node name="Card7" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(16, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card8" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(20, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card9" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(24, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card10" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(28, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card11" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(32, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card12" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(36, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card13" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(40, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Card14" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(44, 0)
 combat_type = 1
+npc_status = 0
+is_object_evidence = false
+is_location_closed = false
 
 [node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
 visible = false
