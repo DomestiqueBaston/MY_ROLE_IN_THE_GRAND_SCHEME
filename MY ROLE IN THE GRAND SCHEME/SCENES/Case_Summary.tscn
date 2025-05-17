@@ -21,6 +21,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Sheet" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_p31re")
@@ -69,7 +70,6 @@ script = ExtResource("4_h4tws")
 metadata/_edit_lock_ = true
 
 [node name="Right_Page" type="VBoxContainer" parent="Sheet"]
-modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
 offset_left = 347.0
 offset_top = 76.0

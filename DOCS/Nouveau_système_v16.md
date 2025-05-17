@@ -1,5 +1,4 @@
 My Role in the Grand Scheme
-(le jeu vidéo, Tadaaaa !)
 
 Livret de règles (!)
 
@@ -28,6 +27,7 @@ Les caractéristiques secondaires
 État émotionnel (Emo)  
 	- L’état émotionnel du joueur variera entre -3 et 3 et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Emo=0.
 	- Emo à -3 ou +3 représente une excitation ou une déprime trop forte (voir conditions dans Système de santé).
+	- Voir également Par.
 Emo	Effets et/ou modificateur de jet de dé
 -3	Emo = -2 et -1 Add si Add ≤ 0 ou +1 Add si Add > 0 
 -2	Malus de 1
@@ -40,6 +40,7 @@ Emo	Effets et/ou modificateur de jet de dé
 État d’addiction (Add)
 	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites/échecs critiques n’entraînent pas d’évolution de HEA ni HEAnom.
+	- Voir également Par.
 Add	Effet et/ou modificateur de jet de dé
 -3	Mort si un jet contre HEA est raté (sinon -1HEA, ±1Emo → min/max et Add = -2)
 -2	Malus de 2
@@ -75,8 +76,10 @@ Niveau de Wanted	Malus au Dé
 
 Paranoïa (Par)
 	- La paranoïa est un cas extrême qui fait abandonner toutes les quêtes pour poursuivre la méga quête du jeu (uniquement accessible en devenant paranoïaque). Un complot mondial complètement con (voir Le complot et Système de santé/Paranoïa).
-	- Être paranoïaque annule les besoins de Add (drogue) (menu désactivé), les effets d’Emo, les besoins de sommeil (le joueur ne dort plus) et doit continuer la partie avec l’argent qu’il lui reste.
-	- Quand le joueur est paranoïaque, Add, Emo et Sommeil ne sont plus des modificateurs de jets de dé.
+	- Être paranoïaque annule les besoins de Add (drogue) (menu désactivé), les effets d’Emo, les besoins de sommeil (le joueur ne dort plus donc menu désactivé) et doit continuer la partie avec l’argent qu’il lui reste.
+	- Chaque jour qui passe, en fonction du niveau de départ du bonus/malus de sommeil, fait diminuer le bonus/malus lié à la dernière nuit passée jusqu’à atteindre le malus max prévu pour une nuit de 4h : malus de 2 !
+	- La paranoïa fige définitivement les niveaux d’Emo, d’Add à leur niveau actuel au moment du déclenchement de la crise (dans la limite de -2/+2).
+	- Quand le joueur est paranoïaque Factures impayées et actions de Nuit ne sont plus des modificateurs de jets de dé.
 
 Backgrounds
 	- Les antécédents des personnages apportent des Bonus/Malus globaux à certaines caractéristiques à la création du personnage tout en pouvant introduire des bonus/malus spécifiques.
@@ -129,7 +132,7 @@ Les PNJs
 	- Les PNJs sont aussi définis par PHY, MEN, HEA (et HEAnom) pour les caractéristiques principales. Et Wan pour les secondaires (voir plus bas).
 	- Leurs infos ne sont pas automatiquement connues du joueur. Cela dépendra de la fiche d’enquête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
-	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction (ainsi Emo et Add ne peuvent être des bonus/malus pour eux).
+	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction.
 	- Si un PNJ meurt, la carte du PNJ ne sera pas retirée de l’enquête pour autant.
 	- Si le joueur est responsable de la mort d’un PNJ : +1Wan !
 	- Par défaut, n’importe quel PNJ à de 50% à 100% de son HEA (Heanom reste normal).
@@ -235,14 +238,16 @@ Cas de PHY=0 et/ou MEN=0
 	- Seul HEA=0 est mortel.
 
 Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par
-	- Si à l’issue de évaluation d’un jet de dé, le joueur se retrouve à atteindre Emo ±3 et/ou Add ±3 et/ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (affichage de l’overlay PARANOÏA! Voir Système de Santé/Par). S’il y a crise de Paranoïa, on finira donc la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour sa quête ultime (voir Le complot et Système de Santé/Par). Le joueur abandonne toutes donc les enquêtes en cours et va se concentrer sur son enquête ultime (voir Le complot et Système de Santé/Par) et plus rien d’autre ne lui sera accessible de toute manière !
+	- Si à l’issue de évaluation d’un jet de dé, le joueur se retrouve à atteindre Emo ±3 et/ou Add ±3 et/ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (affichage de l’overlay PARANOÏA! Voir Système de Santé/Par). S’il y a crise de Paranoïa, on finira donc la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour sa quête ultime (voir Le complot et Système de Santé/Par). Le joueur abandonne donc toutes les enquêtes en cours et va se concentrer sur son enquête ultime (voir Le complot et Système de Santé/Par) et plus rien d’autre ne lui sera accessible de toute manière !
+	- Rappel : ses niveaux d’Emo et d’Add se figent définitivement à leur niveau actuel (dans la fourchette de -2/+2 pour Emo et Add). Sommeil (fatigue) voit le bonus/malus réduire chaque jour jusqu’à atteindre un malus de 2.
 	- L’overlay Paranoïa ne se déclenchera qu’après la fin de l’interaction (Combat, Dialogue ou Investigation) engagée.
 
 Addiction
 	- L’Add évolue au réveil (-1Add). Le joueur a besoin de sa dose (presque) quotidienne qui lui coûte de l’argent. Sans sa dose, -1Add et avec sa dose, +1Add.
 	- Le joueur peut prendre 2 doses maximum par jour. Au delà, ce serait l’overdose !
 	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur. Menu Dailies pour consommer 1 ou 2 doses de drogue…
-	- Utiliser une dose drogue prend 1h. (et uniquement sur Main.tscn !). 
+	- Utiliser une dose drogue prend 1h. (et uniquement sur Main.tscn !).
+	- Rappel : paranoïa annule le besoin de drogue.
 
 Crise liée à l’Addiction
 	- Cas d’Add à -3 ou +3 : voir Add au début des règles.
@@ -257,10 +262,11 @@ Paranoïa
 	ou	la réception de 15 SMS anonymes.
 	ou	10 factures non réglées le lundi au total.
 
+	- Rappel : Paranoïa fige définitivement Emo et Add (dans la limite de -2/+2). Le joueur ne se drogue plus. Le joueur ne dort plus et son bonus/malus de sommeil réduit chaque jour jusqu’à atteindre un malus de 2 max.
 	- Au fur et à mesure que le joueur se rapproche de la crise de Paranoïa, le volume sonore de Paranoia_Voices (dans Ambiance_Sound.tscn) va monter (pour « informer » le joueur de son état) :
 		- le volume sonore sera défini par le niveau le plus proche du déclenchement d’une crise (parmi la précédente liste au dessus). Au départ d’une partie à -80db.
 	- Le joueur va tout d'un coup, quand le cap défini est franchi, devenir paranoïaque (on finira l’éventuelle interaction en cours de type Combat, Dialogue ou Investigation avant malgré tout comme dit au dessus dans Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par).
-	- Tous les bonus/malus suivants du joueur disparaissent (s’il y en avait) : le joueur ne sera plus affecté par un quelconque état émotionnel (Emo=0). Il n’aura plus de besoin vitaux (sommeil, drogue, etc.) et il aura 15 jours pour résoudre l’enquête ultime puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné.
+	- Le joueur verra ses états de Emo et Add bloqués au niveau qu’ils avaient au moment du déclenchement de la crise de Paranoïa (voir Paranoïa pour les détails). Il n’aura plus de besoin vitaux (sommeil, drogue, etc.), son bonus/malus de sommeil réduira chaque jour jusqu’à atteindre un malus de 2 max et il aura 15 jours pour résoudre l’enquête ultime puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné.
 	- Pas de sommeil, donc pas de récupération en dormant !
 	- Les effets de la Paranoïa seront les suivants (sans jamais dépasser les seuils max/min) :
 		Bonus : +2 en PHY ou MEN ou HEAnom (et HEA, forcément) aléatoirement (sans dépasser le maximum).
@@ -270,7 +276,7 @@ Récupération (joueur)
 	- En aucun cas le joueur ne pourra récupérer plus que HEAnom.
 	- Pour dormir, menu Dailies…
 	- Pas de sommeil pendant une crise de Paranoïa (donc pas de récupération) !
-	- Une nuit de sommeil (voir Veille/Sommeil) :
+	- Une nuit de sommeil (voir Veille/Sommeil et Paranoïa) :
 
 Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonus/Malus aux jets de dé jusqu’au prochain dodo
 4 heures	/	+1 Emo → Min/Max et +1 Add → Min/max	Malus de 2
@@ -341,7 +347,8 @@ Veille/Sommeil
 	- Le joueur décidera de combien de temps il veut dormir (voir Récupération).
 	- On ne peut dormir qu’1 fois par jour (c’est la date et l’heure de déclenchement qui compte et ainsi, se coucher le lundi à 23h et se lever le mardi à 7h permettra encore de dormir le mardi soir.) !
 	- Les Bonus/Malus au jets de dé dus au sommeil ne durent que jusqu’au prochain dodo.
-	- Les Malus au jets de dé dus à la veille ne durent que jusqu’au prochain dodo.
+	- Les Malus au jets de dé dus à la veille/sommeil ne durent que jusqu’au prochain dodo.
+	- SAUF voir Paranoïa pour le sommeil.
 	- Les PNJs ne subissent pas les effets de bonus/malus liés au cycle veille/sommeil.
 
 L’argent
@@ -506,7 +513,7 @@ Dialogue
 	- Le joueur ne peut pas fuir une agression d’avant Dialogue !
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence (voir plus bas), Malus d’action de Nuit, de Veille, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence (voir plus bas), Malus d’action de Nuit, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
 		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de mensonge (voir plus bas).
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
 	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
@@ -564,7 +571,7 @@ Combat
 	- Un Combat durera 2h.
 	- Si d’autres PNJs (connus, les autres « on s’en fout ») sont présents au moment du Combat, ils prennent la fuite automatiquement et ne seront pas accessibles avant le lendemain.
 	- Le jet de dé de base pour un Combat est : round((PHY×2 + MEN + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Facture, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit.
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Facture, Sommeil, de Lieu (uniquement sur place), Malus d’action de Nuit.
 		Pour le PNJ : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
 	- Une réussite critique permet au joueur de ne pas tuer si jamais le PNJ aurait dû mourir. La victime sera à HEA=1. ±1Emo → O pour le joueur.
@@ -617,7 +624,7 @@ Fuir un Combat (Joueur)
 	- /!\ On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 supplémentaire au jet de dé.
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Run Away (il ne peut y avoir qu’une carte Run Away).
 	- Pour fuir un combat (avant qu’il ne commence), le joueur lance un dé contre round((PHY×2 + MEN + HEA)÷4).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Sommeil, Veille, de Lieu (uniquement sur place), Malus d’action de Nuit et (donc) malus de jeu sans aucune carte…
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Sommeil, de Lieu (uniquement sur place), Malus d’action de Nuit et (donc) malus de jeu sans aucune carte…
 	- En cas de réussite, aucun effet, le joueur fuit.
 	- En cas de réussite critique, ±1Emo → 0.
 	- En cas d’échec, le joueur prend +1Emo → Min/Max et reste pour le Combat qui va suivre.
@@ -627,9 +634,9 @@ Investigation
 	- On ne peut pas jouer de carte Objet, Lieu ou PNJ en Investigation !
 	- On ne joue que des cartes Investigation, Investigation Spéciale et Abstraite. Maximum 1 de chaque. 1 carte Investigation minimum.
 	- On ne doit théoriquement investiguer un Lieu qu’avec une autorisation de fouille (mais voir plus loin).
-	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois. Pas pendant la Paranoïa.
+	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois. Et pas pendant la Paranoïa.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, Veille, de Lieu (uniquement sur place, évidemment), Malus d’action de Nuit, bonus/malus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus Emo, Add et Wan, Facture, Sommeil, de Lieu (uniquement sur place, évidemment), Malus d’action de Nuit, bonus/malus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
 	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par round(marge de réussite de l’investigation÷3). Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes (si applicable).
 	- Une réussite critique donne de +50Dø à +100Dø en plus de ce qui est trouvé avec une réussite « normale ».
 	- Un échec donne -1Emo.
@@ -652,7 +659,7 @@ Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à 
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Break in.
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
 	- On peut tenter l’action sans carte du tout avec un malus de 1 supplémentaire.
-	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Difficulté d’enquête, Emo, Add et Wan, Sommeil, Veille, Nuit et de Lieu (uniquement sur place).
+	- Le jet de dé de base se fera sur round((PHY+MEN+HEA)÷3). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Difficulté d’enquête, Emo, Add et Wan, Sommeil, Nuit et de Lieu (uniquement sur place).
 	- En cas de réussite critique, ±1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit.
 	- En cas d’échec, le joueur prendra +1Wan, ±1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
 	- En cas d’échec critique, -1HEA, ±1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain.
@@ -808,6 +815,14 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 	- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenues/connues par des PNJs.
 	- Il faudra découvrir le mobile du crime dans la liste de mobiles dont les mobiles incompatibles avec ce qu’a établi le joueur disparaitront.
+	- Chaque PNJ doit connaître (Acquaintance) au moins 1 autre PNJ (en plus de son éventuel conjoint).
+	- Les PNJs qui se connaissent (Acquaintance ou Friend) doivent partager un Lieu Fréquenté (+ appartement pour les couples).
+
+	- Tous les mobiles ayant un lien « Intimacy » (voir Crime_Motive_Evidence.json) imposent un couple dans l’enquête. Les enquêtes d’adultère nécessitent un/une amant/amante en plus du couple.
+
+	- Dans les enquêtes où la victime est décédée (crime « Murder » uniquement, il me semble), la victime qui ne peut plus être interrogée (!) doit avoir au minimum 1 lien connu au départ de l’enquête avec un PNJ (coupable, complice, témoin, suspect…).
+
+	- Chaque lieu peut contenir de 0 à 3 objets à la con (pas evidence) !
 
  /!\ Tout petit point important :
 	- Le crime ne sera pas connu du joueur dès le départ. Au lancement d’une enquête, je joueur aura donc accès à tous les mobiles possibles (il y en a un petit paquet) et compatibles avec les infos connues au départ de l’enquête. Au fur et à mesure qu’il établira des liens, les mobiles incompatibles disparaîtront de la liste (et/ou éventuellement réapparaîtront en fonctions des changements faits par le joueur dans son enquête)!
@@ -845,6 +860,8 @@ Enquête ultime (Le complot)
 	- Les victimes seront trouvables lors de la première visite de ces lieux.
 	- Lorsque le joueur ira la première fois sur un lieu de crime, il sera informé de la chose par un écran !
 	- Aucune info sur les victimes que leurs noms/prénoms/adresses lors de la découverte des corps.
+	- Case Summary devient également inutile (item du menu désactivé).
+	- Pour rappel, Paranoïa annule les bonus/malus suivants : Factures impayées et Nuit !
 
 Fiche de quête
 Éléments de l'Enquête	Détails
@@ -868,17 +885,6 @@ Relations entre personnages	Voir Final_Crime_Motive_Evidence.json
 	OU
 	- tant que le joueur n’aura pas obtenu 3 infos sur l’affaire, le joueur ira interpeler d’autres PNJs random (mais ça peut être long avec pas mal de malchance) !
 	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) mais la fois suivante, les cadavres auront été débarrassés (police ou autre, on s’en fout) !
-
-NOTE EN COURS DE DÉVELOPPEMENT !
-
-	- Chaque PNJ doit connaître au moins 1 autre PNJ (en plus de son éventuel conjoint).
-	- Les PNJs qui se connaissent doivent partager un Lieu Fréquenté (+ appartement pour les couples).
-
-	- Tous les mobiles ayant un lien « Intimacy » (voir Crime_Motive_Evidence.json) imposent un couple dans l’enquête. Les enquêtes d’adultère nécessitent un/une amant/amante en plus du couple.
-
-	- Dans les enquêtes où la victime est décédée (crime « Murder » uniquement, il me semble), la victime qui ne peut plus être interrogée (!) doit avoir au minimum 1 lien connu au départ de l’enquête avec un PNJ (coupable, complice, témoin, suspect…).
-
-	- Chaque lieu peut contenir de 0 à 3 objets à la con (pas evidence) !
 
 COMMENT REPARTIR LES EVIDENCES ?
 	- Les evidences sont réparties entre les coupables avec un minimum d’1 evidence par coupable.
