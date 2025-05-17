@@ -359,7 +359,15 @@ L’argent
 Les factures
 	- Une partie démarre le lundi matin avec la facture de la semaine réglée.
 	- Les factures se payent toujours le lundi matin pour la semaine passée. En cas d’impayé, les sommes ne s’additionnent pas, ce sont les factures qui s’accumulent. Ainsi, le joueur, s’il a 2 factures mais ne peut en payer qu’une pourra toujours en payer une. Il en a pour 75 Dø par semaine.
-	- Chaque facture impayée augmente de 10% par semaine et implique un malus de 1 aux jets de dé.
+	- Chaque facture impayée augmente de 10% par semaine et implique un malus aux jets de dé suivant ce tableau :
+Factures impayées	Malus
+1	/
+2	1
+3	1 et ±1Emo → min/max
+4	2
+5	Prison 3 jours, plus ancienne facture réglée et retour à 4 impayés
+
+
 	- Pour payer sa facture, à l’écran principal, faire Menu Dailies en haut de l’écran, « Payer les factures » et « cliquer sur la facture que l’on veut payer ».
 	- Les nouvelles factures ont 50% de chance de varier de ±10%.
 	- Le joueur ne peut pas avoir plus de 4 factures impayées. Sinon, quand la 5ème tombe, il va directement 3 jours et redescend à 4 factures impayées car la plus ancienne sera « automatiquement » réglée.
