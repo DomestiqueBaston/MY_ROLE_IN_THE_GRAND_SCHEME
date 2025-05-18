@@ -2,14 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_vqnlt"]
 [ext_resource type="Shader" uid="uid://bd85rbmyb41ao" path="res://SHADERS/Transition.gdshader" id="2_xdsvn"]
-[ext_resource type="Texture2D" uid="uid://p7s0wnrs0r8d" path="res://GRAPHICS/UI/Transition_04.png" id="3_emnbv"]
+[ext_resource type="Texture2D" uid="uid://p7s0wnrs0r8d" path="res://GRAPHICS/UI/Transition.png" id="3_emnbv"]
 [ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="4_36l1k"]
-[ext_resource type="AudioStream" uid="uid://dp0w6weh47mk3" path="res://SOUND/OVERLAYS/Transition.ogg" id="5_sslsy"]
+[ext_resource type="AudioStream" uid="uid://hry1iqn6thvh" path="res://SOUND/MISC/Transition.ogg" id="5_sslsy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlapj"]
 shader = ExtResource("2_xdsvn")
 shader_parameter/dissolve_pattern = ExtResource("3_emnbv")
-shader_parameter/dissolve_state = 0.0
+shader_parameter/dissolve_state = -0.01
+shader_parameter/smoothness = 0.0
+shader_parameter/dist = 0.1
 
 [sub_resource type="Animation" id="Animation_lj2vv"]
 resource_name = "Fade"
@@ -22,10 +24,10 @@ tracks/0/path = NodePath("Title01:material:shader_parameter/dissolve_state")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0.0, 0.0511024, 0.289079, 0.720921, 0.958898, 1.01, 1.01]
+"values": [-0.01, 0.05, 0.2, 0.5, 0.8, 0.95, 1.01, 1.01]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -35,24 +37,36 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
-"end_offset": 0.0260387,
+"end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("5_sslsy")
 }],
-"times": PackedFloat32Array(0.103577)
+"times": PackedFloat32Array(0.0340355)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Transition:volume_db")
+tracks/2/path = NodePath("Title01:material:shader_parameter/smoothness")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.333333, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-5.0, -5.0, -80.0]
+"values": [0.0, 0.05, 0.05, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title01:material:shader_parameter/dist")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 0.1]
 }
 
 [sub_resource type="Animation" id="Animation_7ty8d"]
@@ -67,19 +81,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [-0.01]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Transition:volume_db")
+tracks/1/path = NodePath("Title01:material:shader_parameter/smoothness")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-5.0]
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title01:material:shader_parameter/dist")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0o6y"]
@@ -99,12 +125,12 @@ material = SubResource("ShaderMaterial_jlapj")
 texture = ExtResource("4_36l1k")
 centered = false
 
-[node name="Transition_Sound" type="AnimationPlayer" parent="."]
+[node name="Transition_Animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_o0o6y")
 }
 autoplay = "Fade"
 
 [node name="Transition" type="AudioStreamPlayer" parent="."]
-volume_db = -5.0
+volume_db = -15.0
 bus = &"UI"

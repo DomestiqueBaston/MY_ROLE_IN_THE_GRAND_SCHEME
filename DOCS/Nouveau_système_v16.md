@@ -220,7 +220,8 @@ Système de Dés
 	- Lors des jets de dé, il faut toujours que le jet de dé soit inférieur ou égal au score à effectuer (pour une réussite).
 	- Ainsi, contre intuitivement (pour moi, en tout cas), un bonus est négatif (par ex. : -1) et un malus est positif (par ex. : +1) !
 	- Les actions seront résolues sur des jets d’1 dé à 10 faces(1D10).
-	- En Combat et Dialogue, on compare les scores du joueur avec celui du PNJ. La meilleure marge de réussite gagne si les deux font une réussite. En cas d’égalité, « status quo » : personne n’obtient ni ne perd rien. La marge de réussite/échec est définie par la différence entre le jet à obtenir et le jet obtenu. À la fin de la confrontation, les règles de progression (échec/réussite critique) s’appliquent toujours quel que soit le résultat.
+	- En Dialogue, on compare les scores du joueur avec celui du PNJ. La meilleure marge de réussite gagne si les deux font une réussite. En cas d’égalité, « status quo » : personne n’obtient ni ne perd rien. La marge de réussite/échec est définie par la différence entre le jet à obtenir et le jet obtenu. À la fin de la confrontation, les règles de progression (échec/réussite critique) s’appliquent toujours quel que soit le résultat.
+	- En Combat, le joueur ET le PNJ peuvent subir des dégâts. On comparera les marges de réussites et le gagnant ne subira que la moitié des dégâts prévu par l’adversaire. En cas d’égalité, tout le monde prend plein pot. À la fin de la confrontation, les règles de progression (échec/réussite critique) s’appliquent toujours quel que soit le résultat.
 	- En Investigation, pas de comparaison avec un PNJ, c’est plus simple. À la fin de la confrontation, les règles de progression s’appliquent toujours quel que soit le résultat.
 
 Les différentes piles de cartes du joueur (en interaction)
@@ -505,9 +506,9 @@ Cartes en Interaction
 Jet de dé et évaluation des scores
 	- Le joueur et le PNJ lance 1d10.
 	- Un résultat ≤  au score cible est une réussite.
-	- Si les deux réussissent, c’est la plus grosse marge de réussite qui s’impose.
-	- Si les marges de réussite sont identiques, c’est un échec sans effet négatif !
-	- Si les deux sont une réussite critique (quelque soit la marge de réussite), c’est un échec sans effet négatif mais on applique la règle de progression tout de même.
+	- Si les deux réussissent, c’est la plus grosse marge de réussite qui s’impose. Sauf Combat (voir Combat)
+	- Si les marges de réussite sont identiques, c’est un échec sans effet négatif ! Sauf Combat (voir Combat)
+	- Si les deux sont une réussite critique (quelque soit la marge de réussite), c’est un échec sans effet négatif mais on applique la règle de progression tout de même. Sauf Combat (voir Combat)
 	- Sinon, c’est un échec.
 
 Fin d’interaction
@@ -583,9 +584,12 @@ Combat
 		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Facture, Sommeil, de Lieu (uniquement sur place), Malus d’action de Nuit.
 		Pour le PNJ : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
-	- Une réussite critique permet au joueur de ne pas tuer si jamais le PNJ aurait dû mourir. La victime sera à HEA=1. ±1Emo → O pour le joueur.
-	- La marge de réussite du « vainqueur » représente les dégâts infligés à l’adversaire.
-	- Un échec critique fait que le joueur ou le PNJ se blesse et prend 1HEA de dégâts en plus (et ±1Emo → Min/Max pour le joueur).
+	- Par défaut et en cas de réussite (y compris critique), chacun inflige des dégâts à l’autre définis par la marge de réussite :
+		- Le vainqueur ne subit que 50% des dégâts. Si le vainqueur est le seul à faire une réussite critique, il ne prend aucun dégât.
+		- En cas d’égalité, tout le monde prend 100%.
+		- En cas d’égalité sur réussite critique, tout le monde prend 50%.
+	- Une réussite critique permet aussi au joueur (uniquement) de ne pas tuer si jamais le PNJ aurait dû mourir. La victime sera à HEA=1. ±1Emo → O pour le joueur.
+	- Un échec critique fait aussi que le joueur ou le PNJ se blesse et prend 1HEA de dégâts en plus et ±1Emo → Min/Max (pour le joueur uniquement !).
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances. (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).

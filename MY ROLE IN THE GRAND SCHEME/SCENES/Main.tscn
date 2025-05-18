@@ -121,53 +121,32 @@ position = Vector2(190, 85)
 card_name = "Click the cards..."
 description = "... to see the reduce/expand animations!"
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card2" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 combat_type = 2
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card3" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 card_type = 1
 investigation_type = 2
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card4" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(165, 213)
 card_type = 2
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card5" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(294, 38)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card6" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 opacity = 0.78
 
 [node name="Card7" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(558, 275)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 opacity = 0.78
 
 [node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
@@ -219,15 +198,6 @@ position = Vector2(257, 92)
 
 [node name="Pin_Small3" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(470, 213)
-
-[node name="Pin" parent="TMP_1/Main_Playmat/Links/Pin_Small3" index="0"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="Pin_Animation" parent="TMP_1/Main_Playmat/Links/Pin_Small3" index="2"]
-autoplay = "Blink"
 
 [node name="Pin_Small4" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
 position = Vector2(232, 220)
@@ -2140,58 +2110,34 @@ script = ExtResource("14_ksebp")
 [node name="Card7" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(16, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card8" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(20, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card9" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(24, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card10" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(28, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card11" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(32, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card12" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(36, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card13" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(40, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card14" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(44, 0)
 combat_type = 1
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
 visible = false
@@ -2326,6 +2272,5 @@ item_14/id = 14
 [editable path="TMP_1/Main_Playmat/Links/Link_Violet_Rose"]
 [editable path="TMP_1/Main_Playmat/Links/Link_Pointillé_Blanc"]
 [editable path="TMP_1/Main_Playmat/Links/Link_Plein_Jaune"]
-[editable path="TMP_1/Main_Playmat/Links/Pin_Small3"]
 [editable path="TMP_1/Main_Playmat/Links/TEST_LINK"]
 [editable path="Mask_Card_Playground/TMP_2/Drag_Drop_Line"]
