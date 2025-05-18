@@ -545,6 +545,7 @@ Dialogue
 		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau).
 	- Une information cachée (hideout) est toujours révélée juste.
+	- Un PNJ peut révéler une info cachée concernant un autre PNJ uniquement si ceux-ci ont un lien d’Intimacy, Friend, Enemy, Culprit, Accomplice entre eux.
 	- Une information fausse pour un lien désignera 2 PNJs aléatoires dans un lien de n’importe laquelle des natures suivantes : debt_influence, intimacy, friend, enemy, acquaintance ou ideology.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux.
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec ses liens Violet (à moins qu’elle existe déjà).
@@ -724,7 +725,7 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 Orange : Ennemi (pas exploité dans toutes les enquêtes)
 Bleu clair : Connaissance (pas exploité dans toutes les enquêtes)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
-          Rose : Intime (pas exploité dans toutes les enquêtes)
+          Rose : Intime (adultère uniquement et pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
 Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
 Jaune : Confirmation (Témoin, enregistrement, etc.). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
@@ -757,10 +758,7 @@ Coupable(s)	Voir json des mobiles
 Complice(s)	Voir json des mobiles
 Relations entre les PNJs	Lien(s) plein(s) (confirmé(s)), lien(s) pointillé(s) (probable(s)) / Couleur(s)s du/des lien(s)
 
-Nombre de preuves matérielles (OBJs) nécessaires par niveau de difficulté d’enquête :
-	- Il faut toujours découvrir toutes les preuves de l’enquête pour avoir une chance de la valider avec un plein succès.	
-
-Nombre de PNJs par enquête :
+	- Il faut toujours découvrir toutes les preuves matérielles de l’enquête pour espérer la valider avec un succès total.
 	- Le nombre de preuves disponibles sera bien entendu toujours supérieur ou égal au nombre de preuves minimum à découvrir pour valider l’enquête.
 
 Liens et validation d’enquête :
@@ -812,12 +810,15 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		1 ou plus autre Coupable
 		1 ou plus autre Evidence
 		1 ou plus autre Lien
-	- Les preuves matérielles (evidence) peuvent être :
- Témoin, facture, arme, photo, enregistrement, document écrit et/ou numérique, relevé de compte, empreinte digitale et/ou génétique, etc.
+	- Le nombres de preuves est toujours ≥ au nombre de coupables.
+	- Pondération quand plusieurs choix sont possibles dans une génération d’enquête (link, victims, culprits, accomplices, suspects, witnesses) :
+		- de 1 à 4 composantes possibles : 1=50%, 2=30%, 3=15%, 4=5%
+		- de 1 à 3 composantes possibles : 1=60%, 2=40%, 3=10%
+		- de 1 à 2 composantes possibles : 1=65%, 2=35%
 	 - La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante :
 		- Un Coupable est lié (en Noir) à la victime.
 		- Un Complice est lié (en Noir) au Coupable.
-	- Les témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable.
+	- Les Témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable.
 	- Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
 	- Dans ce qui suit, tout sera au pluriel mais concernera également les enquêtes à élément au « singulier » :
 	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
@@ -828,7 +829,7 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 
 	- Tous les mobiles ayant un lien « Intimacy » (voir Crime_Motive_Evidence.json) imposent un couple dans l’enquête. Les enquêtes d’adultère nécessitent un/une amant/amante en plus du couple.
 
-	- Dans les enquêtes où la victime est décédée (crime « Murder » uniquement, il me semble), la victime qui ne peut plus être interrogée (!) doit avoir au minimum 1 lien connu au départ de l’enquête avec un PNJ (coupable, complice, témoin, suspect…).
+	- Dans les enquêtes où la victime est décédée (crime « Murder » par exemple), la victime qui ne peut plus être interrogée (!) doit avoir au minimum 1 lien connu au départ de l’enquête avec un PNJ (coupable, complice, témoin, suspect…).
 
 	- Chaque lieu peut contenir de 0 à 3 objets à la con (pas evidence) !
 

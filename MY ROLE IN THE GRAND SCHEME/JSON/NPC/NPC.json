@@ -1,97 +1,97 @@
 [
   {
-    "id": "NPCxxx",
-    "first_name": "",
+	"id": "NPCxxx",
+	"first_name": "",
 	"comment_1": "voir Noms_prenoms.json",
 	"name": "",
 	"comment_2": "voir Noms_prenoms.json",
-    "sex": ["m", "f"],
+	"sex": ["m", "f"],
 	"comment_3": "1 des 2",
 	"sexual_orientation": ["f", "m"],
 	"comment_4": "homo. à 10 % chance",
-    "job": "",
+	"job": "",
 	"comment_5": "voir NPC_jobs.json",
 	"useless_npc": ["yes", "no"],
 	"comment_5_5": "cela implique que ce pnj n'est pas nécessaire à l'enquête et ainsi, il a un hideout à 25% de chance",
-    "characteristics": {
-      "PHY": 0,
-      "MEN": 0,
-      "HEA": 0,
-      "HEAnom": 0,
-      "Wan": 0
-    },
-    "health_meter": ["no_info", "good_health", "average_health", "low_health"],
+	"characteristics": {
+	  "PHY": 0,
+	  "MEN": 0,
+	  "HEA": 0,
+	  "HEAnom": 0,
+	  "Wan": 0
+	},
+	"health_meter": ["no_info", "good_health", "average_health", "low_health"],
 	"comment_6": "par défaut no_info",
 	
-    "minion": ["no", "yes"],
+	"minion": ["no", "yes"],
 	"comment_7": "peut être yes,  par défaut no car minion est un status particulier (voir Nouveau_système_vXX.odt)",
-    "rep": 0,
+	"rep": 0,
 	"comment_8": "Réputation du Joueur par défaut. -3 avec un Minion",
-    "status": ["victim", "culprit", "accomplice", "suspect", "witness", "none"],
+	"status": ["victim", "culprit", "accomplice", "suspect", "witness", "none"],
 	"comment_9": "Statut réel du NPC dans l'enquête",
-    "couple": ["NPCxxx", "None"],
+	"couple": ["NPCxxx", "None"],
 	"comment_10": "de 0 à 1 (hors besoin impératif pour le crime/mobile, 50% de chance d'être en couple) (homo. si Couple homo à 10 % chance)",
-    "friend": ["NPCxxx", "None"],
+	"friend": ["NPCxxx", "None"],
 	"comment_11": "de 0 à 2 amis (50% partagent le lieu de travail et 50% un lieu fréquenté)",
-    "enemy": ["NPCxxx", "None"],
+	"enemy": ["NPCxxx", "None"],
 	"comment_12": "de 0 à 2 ennemis (50% partagent le lieu de travail et 50% un lieu fréquenté)",
-    "acquaintance": ["NPCxxx"],
+	"acquaintance": ["NPCxxx"],
 	"comment_13": "de 1 à 3 connaissances (50% partagent le lieu de travail et 50% un lieu fréquenté)",
-    "affair": ["None", "NPCxxx"],
+	"affair": ["None", "NPCxxx"],
 	"comment_14": "de 0 à 1 (homo. si Couple homo). Hors affaire de Adultery/Intimacy et Intimacy, alors none",
-    "debt_influence": ["NPCxxx", "None"],
+	"debt_influence": ["NPCxxx", "None"],
 	"comment_15": "de 0 à X Creditor(s) où X est lié au nombre de coupable(s). Hors affaire de debt_influence, alors none",
-    "ideology": ["NPCxxx", "None"],
+	"ideology": ["NPCxxx", "None"],
 	"comment_16": "de 0 à X où X est lié au nombre de coupable(s)+complice(s) (voir Fiche d'enquête). Hors affaire de ideology, alors none",
 	
-    "schedule": {
-      "morning": "LOCxxxIDxxx",
-      "afternoon": "LOCxxxIDxxx",
-      "evening": "LOCxxxIDxxx",
-      "night": "LOCxxxIDxxx",
-      "we_morning": "LOCxxxIDxxx",
-      "we_afternoon": "LOCxxxIDxxx",
-      "we_evening": "LOCxxxIDxxx",
-      "we_night": "LOCxxxIDxxx"
-    },
-    "work_schedule": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
+	"schedule": {
+	  "morning": "LOCxxxIDxxx",
+	  "afternoon": "LOCxxxIDxxx",
+	  "evening": "LOCxxxIDxxx",
+	  "night": "LOCxxxIDxxx",
+	  "we_morning": "LOCxxxIDxxx",
+	  "we_afternoon": "LOCxxxIDxxx",
+	  "we_evening": "LOCxxxIDxxx",
+	  "we_night": "LOCxxxIDxxx"
+	},
+	"work_schedule": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
 	"comment_17": "2 périodes de 4h consécutives ou night",
-    "week_end": ["saturday", "sunday", "monday", "tuesday"],
+	"week_end": ["saturday", "sunday", "monday", "tuesday"],
 	"comment_18": "si travail le week-end, alors monday et tuesday",
-    "home": ["LOCxxxIDxxx"],
-    "work": ["LOCxxxIDxxx"],
-    "hangout": ["LOCxxxIDxxx"],
+	"home": ["LOCxxxIDxxx"],
+	"work": ["LOCxxxIDxxx"],
+	"hangout": ["LOCxxxIDxxx"],
 	"comment_19": "1 à 2 (voir liste des possibles dans Location.json avec hangout = yes)",
-    "hideout": ["LOCxxxIDxxx"],
+	"hideout": ["LOCxxxIDxxx"],
 	"comment_20": "de 0 à 1 INFO SECRETE (voir liste des possibles dans Location.json avec hangout = secret). Hideout à 25% de chance pour useless_npc = yes",
 	
-    "property": [
-      {
-        "object_id": "OBJxxxIDxxx",
-        "evidence_status": ["yes", "no"]
-      }
-    ],
+	"property": [
+	  {
+		"object_id": "OBJxxxIDxxx",
+		"evidence_status": ["yes", "no"]
+	  }
+	],
 	"comment_21": "il y en aura de 1 à 4 (incluant éventuellement une/les evidence(s) s'il n'y en a pas ailleurs de définies)",
 
-    "information_on_npc": [
-      {
-        "npc_id": "NPCxxx",
-        "info_type": [
-          {
-            "type_of_link": ["acquaintance", "intimacy", "friend", "debt_influence", "ideology", "enemy"],
-            "related_npcs": ["NPCxxx", "NPCxxx"]
-          },
+	"information_on_npc": [
+	  {
+		"npc_id": "NPCxxx",
+		"info_type": [
 		  {
-            "location": ["hangout"],
-            "related_npcs": ["NPCxxx", "LOCxxxIDxxx"]
-          },
+			"type_of_link": ["acquaintance", "intimacy", "friend", "debt_influence", "ideology", "enemy"],
+			"related_npcs": ["NPCxxx", "NPCxxx"]
+		  },
 		  {
-            "object": ["OBJxxxIDxxx"],
-            "related_npcs": ["NPCxxx"]
-          }
-        ]
-      }
-    ],
+			"location": ["hangout"],
+			"related_npcs": ["NPCxxx", "LOCxxxIDxxx"]
+		  },
+		  {
+			"object": ["OBJxxxIDxxx"],
+			"related_npcs": ["NPCxxx"]
+		  }
+		]
+	  }
+	],
 	"comment_22": "2 à 4 Informations déténues sur 1 à 2 NPCs (2 max. si 1 seul NPC)",
 	"reduced_card": false
   }
