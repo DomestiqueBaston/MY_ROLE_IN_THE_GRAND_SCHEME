@@ -42,6 +42,7 @@ class_name Link extends Node2D
 func _update_transform():
 	if not (card1 and card2):
 		return
+
 	var pos1 = card1.get_pin(pin1).global_position
 	var pos2 = card2.get_pin(pin2).global_position
 	pos1.y -= thickness * 0.5
@@ -49,6 +50,8 @@ func _update_transform():
 	$Link_Texture.global_position = pos1
 	$Link_Texture.size = Vector2(pos1.distance_to(pos2), thickness)
 	$Link_Texture.rotation = pos1.angle_to_point(pos2)
+	
+	# TODO: update collider shape
 
 func _on_link_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouse and event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
