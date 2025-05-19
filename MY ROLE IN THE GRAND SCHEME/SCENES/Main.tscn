@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=72 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_wvc8p"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://ccabfvx0eg0bn" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_50.png" id="41_x0owp"]
 [ext_resource type="Texture2D" uid="uid://cysslrwog7ibl" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_50.png" id="43_oyp1f"]
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="45_yku0u"]
+[ext_resource type="Texture2D" uid="uid://cmb6qbm072amw" path="res://GRAPHICS/MAIN/Reserve_Expansion.png" id="49_wvc8p"]
 [ext_resource type="Script" uid="uid://d4lltsouavalw" path="res://SCRIPTS/Main_Motive_List.gd" id="50_wvc8p"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="54_ksebp"]
 
@@ -57,7 +58,7 @@
 size = Vector2(470, 309)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_km17i"]
-size = Vector2(106, 106)
+size = Vector2(106, 100)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvc8p"]
 content_margin_left = 1.0
@@ -103,10 +104,15 @@ content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
+texture = ExtResource("49_wvc8p")
+texture_margin_left = 9.0
+texture_margin_top = 13.0
+texture_margin_right = 9.0
+texture_margin_bottom = 13.0
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wvc8p")
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="Main_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_ebllg")
@@ -241,24 +247,25 @@ collision_mask = 0
 position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
 
-[node name="Possible_Clue_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
+[node name="Reserve_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 0
 
-[node name="Possible_Clue" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Possible_Clue_Collider"]
+[node name="Reserve" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Reserve_Collider"]
 position = Vector2(66, 89)
 shape = SubResource("RectangleShape2D_km17i")
 
 [node name="Card_Locations" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Possible_Clue_Card_Locations" type="Node2D" parent="Mask_Card_Playground/Card_Locations"]
+[node name="Reserve_Locations" type="Node2D" parent="Mask_Card_Playground/Card_Locations"]
+position = Vector2(-1, 0)
 
-[node name="First_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Possible_Clue_Card_Locations"]
-position = Vector2(16, 39)
+[node name="First_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Reserve_Locations"]
+position = Vector2(14, 39)
 
-[node name="Last_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Possible_Clue_Card_Locations"]
-position = Vector2(44, 39)
+[node name="Last_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Reserve_Locations"]
+position = Vector2(47, 39)
 
 [node name="Legend" type="Node2D" parent="Mask_Card_Playground"]
 
@@ -2101,6 +2108,14 @@ text_overrun_behavior = 3
 fit_to_longest_item = false
 script = ExtResource("50_wvc8p")
 
+[node name="Reserve_Expansion" type="Panel" parent="Mask_Card_Playground"]
+custom_minimum_size = Vector2(1, 125)
+offset_left = 118.0
+offset_top = 19.0
+offset_right = 119.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ksebp")
+
 [node name="TMP_2" type="Node2D" parent="Mask_Card_Playground"]
 
 [node name="Reserve_Cards" type="Node2D" parent="Mask_Card_Playground/TMP_2"]
@@ -2108,35 +2123,51 @@ position = Vector2(0, 39)
 script = ExtResource("14_ksebp")
 
 [node name="Card7" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(16, 0)
+position = Vector2(13, 0)
 combat_type = 1
 
 [node name="Card8" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(20, 0)
+position = Vector2(16, 0)
 combat_type = 1
 
 [node name="Card9" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(24, 0)
+position = Vector2(19, 0)
 combat_type = 1
 
 [node name="Card10" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(28, 0)
+position = Vector2(22, 0)
 combat_type = 1
 
 [node name="Card11" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(32, 0)
+position = Vector2(25, 0)
 combat_type = 1
 
 [node name="Card12" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(36, 0)
+position = Vector2(28, 0)
 combat_type = 1
 
 [node name="Card13" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(40, 0)
+position = Vector2(31, 0)
 combat_type = 1
 
 [node name="Card14" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(44, 0)
+position = Vector2(34, 0)
+combat_type = 1
+
+[node name="Card15" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(37, 0)
+combat_type = 1
+
+[node name="Card16" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(40, 0)
+combat_type = 1
+
+[node name="Card17" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(43, 0)
+combat_type = 1
+
+[node name="Card18" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
+position = Vector2(46, 0)
 combat_type = 1
 
 [node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
