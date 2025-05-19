@@ -229,7 +229,6 @@ tooltip_text = "Acquaintance
 New"
 
 [node name="Player_Locator" parent="TMP_1/Main_Playmat" instance=ExtResource("8_kn6w4")]
-z_index = 2
 position = Vector2(544, 64)
 
 [node name="Mask_Card_Playground" type="Sprite2D" parent="."]
