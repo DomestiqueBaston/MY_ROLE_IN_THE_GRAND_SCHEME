@@ -1,11 +1,10 @@
-[gd_scene load_steps=75 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=74 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_wvc8p"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_ebllg"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_b4mvu"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="6_jtpuj"]
-[ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="7_rfefp"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="8_kn6w4"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="11_f08ro"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="13_ksebp"]
@@ -166,28 +165,34 @@ position = Vector2(190, 85)
 card_name = "Click the cards..."
 description = "... to see the reduce/expand animations!"
 combat_type = 1
+visible_pins = Array[int]([4])
 
 [node name="Card2" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 combat_type = 2
+visible_pins = Array[int]([0])
 
 [node name="Card3" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 card_type = 1
 investigation_type = 2
+visible_pins = Array[int]([0])
 
 [node name="Card4" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(165, 213)
 card_type = 2
+visible_pins = Array[int]([4])
 
 [node name="Card5" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 position = Vector2(294, 38)
+visible_pins = Array[int]([4])
 
 [node name="Card6" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
 opacity = 0.78
+visible_pins = Array[int]([0])
 
 [node name="Card7" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
@@ -197,61 +202,23 @@ opacity = 0.78
 [node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
 z_index = 1
 
-[node name="Link_Violet_Rose" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
-
-[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/Link_Violet_Rose" index="0"]
-offset_left = 257.0
-offset_top = 90.0
-offset_right = 503.0
-offset_bottom = 93.0
-rotation = 0.518363
-tooltip_text = "Intimacy
-New"
+[node name="Link_Violet_Rose" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("18_y2x40")]
+card1 = NodePath("../../Card1")
+pin1 = 4
+card2 = NodePath("../../Card2")
 texture = ExtResource("20_gmr4o")
 
-[node name="Link_Animation" parent="TMP_1/Main_Playmat/Links/Link_Violet_Rose" index="1"]
-autoplay = "Blink"
-
-[node name="Link_Pointillé_Blanc" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
-
-[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/Link_Pointillé_Blanc" index="0"]
-offset_left = 361.0
-offset_top = 44.0
-offset_right = 545.0
-offset_bottom = 47.0
-rotation = 0.100997
-tooltip_text = "Hideout"
+[node name="Link_Pointillé_Blanc" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("18_y2x40")]
+card1 = NodePath("../../Card5")
+pin1 = 4
+card2 = NodePath("../../Card6")
 texture = ExtResource("21_u2t8c")
 
-[node name="Link_Plein_Jaune" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("18_y2x40")]
-
-[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/Link_Plein_Jaune" index="0"]
-offset_left = 232.0
-offset_top = 219.0
-offset_right = 523.0
-offset_bottom = 222.0
-rotation = -0.174241
-tooltip_text = "Validation
-Confirmed (!)"
+[node name="Link_Plein_Jaune" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("18_y2x40")]
+card1 = NodePath("../../Card4")
+pin1 = 4
+card2 = NodePath("../../Card3")
 texture = ExtResource("6_jtpuj")
-
-[node name="Pin_Small" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
-position = Vector2(361, 45)
-
-[node name="Pin_Small2" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
-position = Vector2(257, 92)
-
-[node name="Pin_Small3" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
-position = Vector2(470, 213)
-
-[node name="Pin_Small4" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
-position = Vector2(232, 220)
-
-[node name="Pin_Small5" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
-position = Vector2(519, 170)
-
-[node name="Pin_Small6" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("7_rfefp")]
-position = Vector2(544, 64)
 
 [node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("23_pharv")]
 
@@ -276,6 +243,7 @@ texture = ExtResource("25_47v8w")
 centered = false
 
 [node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
+visible = false
 
 [node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 collision_layer = 0
@@ -2344,8 +2312,5 @@ item_14/id = 14
 [connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
 [connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_new_dark_purple_toggled"]
 
-[editable path="TMP_1/Main_Playmat/Links/Link_Violet_Rose"]
-[editable path="TMP_1/Main_Playmat/Links/Link_Pointillé_Blanc"]
-[editable path="TMP_1/Main_Playmat/Links/Link_Plein_Jaune"]
 [editable path="TMP_1/Main_Playmat/Links/TEST_LINK"]
 [editable path="Mask_Card_Playground/TMP_2/Drag_Drop_Line"]

@@ -15,6 +15,8 @@ class_name CardStack extends Node2D
 ## For now, stacks are always horizontal, but later we may implement vertical
 ## stacks.
 
+# TODO: adapt when children are added and removed!
+
 var _bbox: Rect2i
 var _current_card: int = -1
 var _tween: Tween

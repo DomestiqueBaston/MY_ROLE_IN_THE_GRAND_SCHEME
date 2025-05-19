@@ -1,6 +1,18 @@
 @tool
 class_name Card extends Node2D
 
+enum PinLocation {
+	TOP_LEFT,
+	TOP_CENTER_LEFT,
+	TOP_CENTER,
+	TOP_CENTER_RIGHT,
+	TOP_RIGHT,
+	LEFT_CENTER,
+	LEFT_BOTTOM,
+	RIGHT_CENTER,
+	RIGHT_BOTTOM
+}
+
 enum CardType {
 	COMBAT,
 	INVESTIGATION,
@@ -87,10 +99,22 @@ enum NpcStatus {
 		opacity = value
 		_update_opacity()
 
+@export var visible_pins: Array[PinLocation] = []:
+	set(value):
+		visible_pins.assign(value)
+		_update_visible_pins()
+
+signal position_changed
+
 var _is_expanded = true
 
 func _ready():
 	$Card_Animations.play("RESET")
+	set_notify_transform(true)
+
+func _notification(what):
+	if what == NOTIFICATION_TRANSFORM_CHANGED:
+		position_changed.emit()
 
 func _update_card_type():
 	match card_type:
@@ -200,10 +224,13 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = (npc_status == NpcStatus.DEAD)
 			$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
 
-func get_card_name():
-	return card_name
+func _update_visible_pins():
+	var index = 0;
+	for pin in $Pins.get_children():
+		pin.visible = index in visible_pins
+		index += 1
 
-func get_size():
+func get_size() -> Vector2i:
 	return Vector2i(
 		$Card_Mask.texture.get_width() / $Card_Mask.hframes,
 		$Card_Mask.texture.get_height() / $Card_Mask.vframes)
@@ -272,3 +299,20 @@ func _on_card_collider_mouse_entered():
 func _on_card_collider_mouse_exited():
 	if not is_stacked():
 		Globals.mouse_exited_card.emit(self)
+
+func get_pin(which: PinLocation) -> Node2D:
+	return $Pins.get_child(which)
+
+func is_pin_visible(which: PinLocation):
+	return which in visible_pins
+
+func set_pin_visible(which: PinLocation, vis: bool):
+	var idx = visible_pins.find(which)
+	if vis:
+		if idx < 0:
+			visible_pins.append(which)
+			$Pins.get_child(which).visible = true
+	else:
+		if idx >= 0:
+			visible_pins.remove_at(idx)
+			$Pins.get_child(which).visible = false

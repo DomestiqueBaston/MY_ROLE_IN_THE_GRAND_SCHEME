@@ -2231,45 +2231,30 @@ metadata/_edit_lock_ = true
 
 [node name="Card17" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 195)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Fallback/Card17/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card18" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 204)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Fallback/Card18/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card19" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 213)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Fallback/Card19/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card21" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 223)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Fallback/Card21/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card22" parent="TMP/Fallback" instance=ExtResource("6_v0c4c")]
 position = Vector2(522, 232)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Fallback/Card22/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -2279,81 +2264,54 @@ metadata/_edit_lock_ = true
 
 [node name="Card5" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 195)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card5/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card6" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 199)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card6/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card7" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 203)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card7/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card8" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 207)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card8/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card9" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 211)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card9/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card11" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 219)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card11/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card12" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 223)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card12/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card13" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 227)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card13/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card14" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(170, 232)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card14/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -2361,18 +2319,12 @@ modulate = Color(1, 1, 1, 0.882353)
 [node name="Card10_Drag" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(185, 215)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card10_Drag/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card10_Drop" parent="TMP/Mastery" instance=ExtResource("6_v0c4c")]
 position = Vector2(316, 201)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Mastery/Card10_Drop/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -2382,36 +2334,24 @@ metadata/_edit_lock_ = true
 
 [node name="Card23" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(155, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Evidences/Card23/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card24" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(164, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Evidences/Card24/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card25" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(174, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Evidences/Card25/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card26" parent="TMP/Evidences" instance=ExtResource("6_v0c4c")]
 position = Vector2(185, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Evidences/Card26/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -2421,27 +2361,18 @@ metadata/_edit_lock_ = true
 
 [node name="Card1" parent="TMP/NPCs" instance=ExtResource("6_v0c4c")]
 position = Vector2(272, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/NPCs/Card1/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card3" parent="TMP/NPCs" instance=ExtResource("6_v0c4c")]
 position = Vector2(286, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/NPCs/Card3/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card20" parent="TMP/NPCs" instance=ExtResource("6_v0c4c")]
 position = Vector2(302, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/NPCs/Card20/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -2451,18 +2382,12 @@ metadata/_edit_lock_ = true
 
 [node name="Card27" parent="TMP/Objects" instance=ExtResource("6_v0c4c")]
 position = Vector2(390, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Objects/Card27/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card28" parent="TMP/Objects" instance=ExtResource("6_v0c4c")]
 position = Vector2(421, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Objects/Card28/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -2472,18 +2397,12 @@ metadata/_edit_lock_ = true
 
 [node name="Card27" parent="TMP/Locations" instance=ExtResource("6_v0c4c")]
 position = Vector2(507, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Locations/Card27/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
 
 [node name="Card28" parent="TMP/Locations" instance=ExtResource("6_v0c4c")]
 position = Vector2(538, 34)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card_Text" parent="TMP/Locations/Card28/Card_Mask/Card_BG" index="2"]
 modulate = Color(1, 1, 1, 0.882353)
