@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=75 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_wvc8p"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
@@ -103,6 +103,45 @@ content_margin_left = 1.0
 content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
+
+[sub_resource type="Animation" id="Animation_wvc8p"]
+resource_name = "Alert"
+length = 0.600007
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ksebp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nsks5"]
+_data = {
+&"Alert": SubResource("Animation_wvc8p"),
+&"RESET": SubResource("Animation_ksebp")
+}
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
 texture = ExtResource("49_wvc8p")
@@ -2107,7 +2146,13 @@ text_overrun_behavior = 3
 fit_to_longest_item = false
 script = ExtResource("50_wvc8p")
 
+[node name="Motive_Alert_Animation" type="AnimationPlayer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
+libraries = {
+&"": SubResource("AnimationLibrary_nsks5")
+}
+
 [node name="Reserve_Expansion" type="Panel" parent="Mask_Card_Playground"]
+visible = false
 custom_minimum_size = Vector2(1, 125)
 offset_left = 118.0
 offset_top = 19.0

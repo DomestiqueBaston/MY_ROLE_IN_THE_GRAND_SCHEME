@@ -1,28 +1,28 @@
 [
   {
-  "crime": "The Conspiracy",
+  "crime": "Conspiracy",
   "motive": [
-	{
-	  "id": "MOT_ULT_001",
-	  "crime_id": "MOT_ULT_001_ID_xxx",
-	  "name": ["Concealment of the Hideous Truth about Strawberries", "The Moon Landing was Faked, but Venus' Was Real", "Climate Change is by Design", "We Are All Only Code", "The Ultimate Financial Heist", "They Feed AI with Our Minds", "There is Only One Dimension of Reality", "Scientists Have Discovered that Infinity is Actually Finite", "Reincarnation is Real, but We Don't Have Access to It", "Pandemics Are Just Global Experiments", "The Sun Will Explode in Fifty Years"],
+    {
+      "id": "MOT_ULT_001",
+      "crime_id": "MOT_ULT_001_ID_xxx",
+      "name": ["Concealment of the Hideous Truth about Strawberries", "The Moon Landing was Faked, but Venus' Was Real", "Climate Change is by Design", "We Are All Only Code", "The Ultimate Financial Heist", "They Feed AI with Our Minds", "There is Only One Dimension of Reality", "Scientists Have Discovered that Infinity is Actually Finite", "Reincarnation is Real, but We Don't Have Access to It", "Pandemics Are Just Global Experiments", "The Sun Will Explode in Fifty Years"],
 	  "more_explicit_name": "The Conspiracy",
-	  "link": ["Ideology", "Acquaintance"],
+      "link": ["Ideology", "Acquaintance"],
 	  "crime_location_number": [2, 3],
 	  "victims_by_location": [1, 2, 3, 4],
 	  "possible_crime_locations": ["LOC004", "LOC007", "LOC008", "LOC010", "LOC014", "LOC015", "LOC018", "LOC021", "LOC022", "LOC023", "LOC026", "LOC027", "LOC028", "LOC029", "LOC032", "LOC033"], 
 	  "known_crime_location": 0.0,
-	  "victims_professions": [],
-	  "culprits_professions": [],
-	  "victims": [4, 5, 6, 7, 8],
+      "victims_professions": [],
+      "culprits_professions": [],
+      "victims": [4, 5, 6, 7, 8],
 	  "dead_victims": "yes",
-	  "culprits": [3, 4],
-	  "accomplices": [4, 5, 6],
-	  "suspects": [0],
-	  "witnesses": [0],
-	  "evidence_number": [4, 5],
-	  "evidences": ["OBJ250", "OBJ251", "OBJ252", "OBJ253", "OBJ254", "OBJ255", "OBJ256", "OBJ257", "OBJ258", "OBJ259", "OBJ260", "OBJ004", "OBJ013", "OBJ015", "OBJ042", "OBJ045", "OBJ058", "OBJ063"]
-	}
+      "culprits": [3, 4],
+      "accomplices": [4, 5, 6],
+      "suspects": [0],
+      "witnesses": [0],
+      "evidence_number": [4, 5],
+      "evidences": ["OBJ250", "OBJ251", "OBJ252", "OBJ253", "OBJ254", "OBJ255", "OBJ256", "OBJ257", "OBJ258", "OBJ259", "OBJ260", "OBJ004", "OBJ013", "OBJ015", "OBJ042", "OBJ045", "OBJ058", "OBJ063"]
+    }
   ]
 }
 ]
