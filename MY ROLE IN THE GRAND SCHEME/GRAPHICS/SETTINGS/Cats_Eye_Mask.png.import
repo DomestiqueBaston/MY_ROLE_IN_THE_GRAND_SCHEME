@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bqweqhemafcvk"
+path="res://.godot/imported/Cats_Eye_Mask.png-c607da80f554444cfaa0d688eef07ad4.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/Cats_Eye_Mask.png"
+dest_files=["res://.godot/imported/Cats_Eye_Mask.png-c607da80f554444cfaa0d688eef07ad4.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

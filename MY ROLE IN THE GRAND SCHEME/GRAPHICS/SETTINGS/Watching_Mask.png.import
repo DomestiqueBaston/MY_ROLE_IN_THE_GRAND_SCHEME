@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://grjv35ve6cuj"
+path="res://.godot/imported/Watching_Mask.png-59b2858ccc7696d93dcebb874a6fc053.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/Watching_Mask.png"
+dest_files=["res://.godot/imported/Watching_Mask.png-59b2858ccc7696d93dcebb874a6fc053.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

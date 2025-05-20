@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://4u4fr46g4nh5"
+path="res://.godot/imported/Hectic_City_Mask.png-3e3c659235ab8e326f312191c5cba496.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/Hectic_City_Mask.png"
+dest_files=["res://.godot/imported/Hectic_City_Mask.png-3e3c659235ab8e326f312191c5cba496.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

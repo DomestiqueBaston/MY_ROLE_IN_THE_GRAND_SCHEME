@@ -831,69 +831,72 @@ Fiche de enquête
 	- tant que le joueur n’aura pas obtenu 3 infos sur l’affaire, le joueur ira interpeler d’autres PNJs random (mais ça peut être long avec de la malchance) !
 	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) mais la fois suivante, les cadavres auront été débarrassés !
 
-COMMENT REPARTIR LES EVIDENCES ?
+Comment repartir les evidences ?
 	- Les evidences sont réparties entre les coupables avec un minimum d’1 evidence par coupable.
 	- 1 evidence appartenant à la victime doit se trouver dans le hideout d’un coupable ou chez le coupable.
 	et/ou (ou, s’il n’y a qu’une preuve) :
 	- 1 evidence appartenant au coupable doit se trouver chez la victime ou sur le lieu du crime (s’il y a un lieu du crime).
 
 
-COMMENT LIMITER LE NOMBRE DE LIEUX DANS UNE ENQUÊTE ?
-
-1. Lieux nécessaires à l'enquête
+Comment limiter le nombre de lieux dans une enquête ?
+Lieux nécessaires à l'enquête
 Les lieux indispensables à la résolution de l’enquête ne sont soumis à aucune limitation.
 Ils incluent :
-    • Le lieu du crime.
-    • Les lieux où se trouvent les preuves essentielles (objets, documents...).
-    • Les domiciles, lieux de travail, planques et lieux de sortie des PNJs impliqués dans l’enquête (victimes, coupables, complices, témoins).
-    • Les lieux servant de points de passage pour les liens noirs (les liens indispensables à la résolution).
-Ces lieux sont toujours générés en priorité.
-2. PNJs inutiles : règles spécifiques de génération
+	- Le lieu du crime.
+	- Les lieux où se trouvent les preuves essentielles (objets, documents...).
+	- Les domiciles, lieux de travail, planques et lieux de sortie des PNJs impliqués dans l’enquête (victimes, coupables, complices, témoins).
+	- Les lieux servant de points de passage pour les liens noirs (les liens indispensables à la résolution).
+	- Ces lieux sont toujours générés en priorité.
+
+
+PNJs inutiles : règles spécifiques de génération
 Ces personnages doivent enrichir le monde sans surcharger le nombre de lieux.
 Domicile
-    • Chaque PNJ inutile a son propre domicile.
-    • Les domiciles ne sont jamais partagés, sauf pour les couples (déjà géré).
-    • Ces domiciles comptent dans le plafond global des lieux non nécessaires.
+	- Chaque PNJ inutile a son propre domicile.
+	- Les domiciles ne sont jamais partagés, sauf pour les couples (déjà géré).
+	- Ces domiciles comptent dans le plafond global des lieux non nécessaires.
 Lieu de travail
-    • Chaque PNJ a un métier.
-    • Le nombre de lieux de travail distincts est déterminé par la valeur de uniqueness associée au métier :
-        ◦ Si uniqueness = 1 → un seul lieu pour tous les PNJs ayant ce métier.
-        ◦ Si uniqueness > 1 → on répartira aléatoirement les PNJs.
-        ◦ Sinon → chaque PNJ a son propre lieu de travail.
-    • Un lieu de travail partagé compte une seule fois dans le total des lieux.
-    • Pour Unemployed, le lieu de travail (home) ne peut être partagé qu’avec un conjoint s’il y en a un/une.
+	- Chaque PNJ a un métier.
+	- Le nombre de lieux de travail distincts est déterminé par la valeur de uniqueness associée au métier :
+		- Si uniqueness = 1 → un seul lieu pour tous les PNJs ayant ce métier.
+		- Si uniqueness > 1 → on répartira aléatoirement les PNJs.
+		- Sinon → chaque PNJ a son propre lieu de travail.
+	- Un lieu de travail partagé compte une seule fois dans le total des lieux.
+	- Pour Unemployed, le lieu de travail (home) ne peut être partagé qu’avec un conjoint s’il y en a un/une.
 Lieu de sortie (hangout)
-    • Ces lieux doivent être tirés prioritairement parmi les lieux déjà générés pour d’autres hangouts ou pour des liens non cruciaux.
+	- Ces lieux doivent être tirés prioritairement parmi les lieux déjà générés pour d’autres hangouts ou pour des liens non cruciaux.
 Lieu de planque (hideout)
-    • Les PNJs inutiles ont une planque à 20 % de chance.
-3. Réutilisation des lieux existants
-    • Avant de générer un nouveau lieu, on doit toujours tenter de réutiliser un lieu existant compatible (en fonction du type : travail, public, etc.).
-    • Cela concerne :
-        ◦ Lieux de travail (si uniqueness le permet)
-        ◦ Hangouts
-    • Cela ne concerne pas Hideout.
-4. Quand il reste des PNJs inutiles mais plus de lieux
+	- Les PNJs inutiles ont une planque à 20 % de chance.
+Réutilisation des lieux existants
+	- Avant de générer un nouveau lieu, on doit toujours tenter de réutiliser un lieu existant compatible (en fonction du type : travail, public, etc.).
+	- Cela concerne :
+		- Lieux de travail (si uniqueness le permet)
+		- Hangouts
+	- Cela ne concerne pas Hideout.
+Quand il reste des PNJs inutiles mais plus de lieux
 Une fois que tous les lieux générés pour les PNJs liés à l’enquête ont été réutilisés autant que possible pour les PNJs inutiles et qu’il reste encore des PNJs inutiles à générer, tout nouveau lieu généré pour un PNJ inutile restant devient immédiatement disponible pour être réutilisé par les autres PNJs inutiles restants.
 
-COMMENT LIMITER LE NOMBRE DE LIENS DANS UNE ENQUÊTE ?
-1. Liens nécessaires à la résolution
+
+Comment limiter le nombre de liens dans une enquête ?
+Liens nécessaires à la résolution
 Les liens indispensables pour établir le mobile et identifier les coupables ne sont soumis à aucune limitation.
 Ils incluent :
-    • Tous les liens noirs, c’est-à-dire ceux qui relient les preuves, les coupables et le mobile de manière incriminante.
-    • Les liens permettant de valider la logique de l’enquête.
-Ces liens sont générés en priorité et doivent être cohérents et suffisants pour rendre l’enquête solvable.
-2. Liens non incriminants
+	- Tous les liens noirs, c’est-à-dire ceux qui relient les preuves, les coupables et le mobile de manière incriminante.
+	- Les liens permettant de valider la logique de l’enquête.
+	- Ces liens sont générés en priorité et doivent être cohérents et suffisants pour rendre l’enquête solvable.
+Liens non incriminants
 Ces liens servent à densifier l’univers narratif, sans être nécessaires à la résolution.
-    • Peuvent aussi exister entre PNJs impliqués et inutiles.
-    • Peuvent être tirés de manière aléatoire, en favorisant les PNJs ayant déjà une relation dans l’enquête.
-    • D’une manière générale, on établira tous les liens entres tous les PNJs (inutiles ou pas).
-3. Réutilisation des PNJs dans les liens
-    • Avant de créer de nouveaux PNJs pour établir un lien, il faut favoriser les PNJs déjà présents dans l’enquête.
-    • Cela permet de concentrer les relations et d’éviter une prolifération inutile de nouveaux personnages.
-    • Un même PNJ peut être impliqué dans plusieurs liens.
-4. Quand il reste des liens à créer mais peu/plus de PNJs
-    • Si le système doit encore générer des liens non cruciaux alors que la plupart des PNJs sont déjà utilisés :
-        ◦ Il est possible de réutiliser des PNJs inutiles.
+	- Peuvent aussi exister entre PNJs impliqués et inutiles.
+	- Peuvent être tirés de manière aléatoire, en favorisant les PNJs ayant déjà une relation dans l’enquête.
+	- D’une manière générale, on établira tous les liens entres tous les PNJs (inutiles ou pas).
+Réutilisation des PNJs dans les liens
+	- Avant de créer de nouveaux PNJs pour établir un lien, il faut favoriser les PNJs déjà présents dans l’enquête.
+	- Cela permet de concentrer les relations et d’éviter une prolifération inutile de nouveaux personnages.
+	- Un même PNJ peut être impliqué dans plusieurs liens.
+Quand il reste des liens à créer mais peu/plus de PNJs
+	- Si le système doit encore générer des liens non cruciaux alors que la plupart des PNJs sont déjà utilisés :
+		- Il est possible de réutiliser des PNJs inutiles.
+
 
 Difficulté du jeu (écran d’OPTIONS)
 	- 5 niveaux de difficulté :
@@ -913,6 +916,9 @@ Difficulté du jeu (écran d’OPTIONS)
 		Mentirosos : +10 % de chances de mensonge.
 		Hardboiled Minions : +10% HEA (et HEAnom).
 		Over Crowded City : +20% de PNJs inutiles.
+		Hectic City : toutes les actions prennent 15% de temps en plus (l’horloge n’affiche que les heures, pas les minutes mais on les compte sans arrondir) !
+		They are watching : 20% de chance de SMS !
+		Cat’s eye : le malus de jet de dé de nuit est annulé.
 	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on la désactive de la même manière):
-		Quicker time : toutes les actions prennent 33% de temps en plus mais l’horloge n’affiche que les heures entières (pas les minutes) !
-
+		I’m one of them : le Wan du joueur ne peut jamais dépasser 3.
+		
