@@ -356,12 +356,18 @@ Le bureau
 	- C’est également de là qu’il établie ses relations d’enquête (Main.tscn).
 	- Lorsque le joueur s’y trouve, son repère (« vous êtes ici ») sur la carte disparaît.
 
+Système de Dés
+	- Lors des jets de dé, il faut que le jet de dé soit inférieur ou égal au score à effectuer (pour une réussite).
+	- Ainsi un bonus est négatif (par ex. : -1) et un malus est positif (par ex. : +1).
+	- Les actions seront résolues sur des jets d’1 dé à 10 faces(1D10).
+
 Démarrage d’une partie
 	- Le lundi matin à 8h.
 	- 300Dø en poche.
 	- 3 doses de Drogue.
 	- La facture de la semaine passée réglée.
 	 - Pour la main de Maîtrise, le jeu proposera 4 cartes d’interaction au joueur : 1 Dialogue, 1 Combat (hors Spécial et Run Away), 1 Investigation (hors Spécial et Break In) et 1 Abstraite choisies aléatoirement.
+
 
 
 Les cartes
@@ -406,6 +412,7 @@ Cartes de Lieu
 	- Elles servent aussi à se déplacer dans les endroits liés aux enquêtes.
 	- Une fois jouées, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Lieu (uniquement).
+	- Les horaires d’un Lieu sont automatiquement connus du joueur dès lors qu’il a connaissance du Lieu dans son enquête (SAUF Office et Appartment qui sont « spéciaux »).
 
 Cartes Objet
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
@@ -435,10 +442,6 @@ Les différentes piles de cartes du joueur (en interaction)
 	Les piles PNJ, Objet et Lieu contiennent tout ce qui est connu du joueur et qui n’est pas qualifié d’Evidence.
 
 
-Système de Dés
-	- Lors des jets de dé, il faut que le jet de dé soit inférieur ou égal au score à effectuer (pour une réussite).
-	- Ainsi un bonus est négatif (par ex. : -1) et un malus est positif (par ex. : +1).
-	- Les actions seront résolues sur des jets d’1 dé à 10 faces(1D10).
 
 
 Les interactions : Dialogue, Combat et Investigation
@@ -472,7 +475,7 @@ Dialogue
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
 		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence (voir plus bas), Malus d’action de Nuit, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
-		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de mensonge (voir plus bas) et tentative ratée de fuite.
+		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de mensonge (voir plus bas), tentative ratée de fuite et précédente fuite de Dialogue.
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
 	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
 	- On ne rajoute le temps écoulé qu’à la fin du Dialogue.
@@ -525,7 +528,7 @@ Fuir un Dialogue (PNJ)
 	- Pour un PNJ, fuir un Dialogue représente +1Wan.
 	- Un échec représente un malus de 1 au jet de dé de Dialogue à venir.
 	- Un PNJ en prison ne peut pas fuir un Dialogue.
-	- Après avoir fuit, le PNJ ne sera plus accessible avant le lendemain.
+	- Après avoir fuit, le PNJ ne sera plus accessible avant le lendemain et il aura un malus de 1 au prochain Dialogue.
 	- S’il y a fuite, on n’ajoute qu’1 heure au temps écoulé (déplacement du joueur) car l’Interaction n’aura pas eu lieu.
 
 Combat
@@ -636,6 +639,7 @@ Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à 
 	- En cas d’échec, le joueur prendra +1Wan, ±1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
 	- En cas d’échec critique, -1HEA, ±1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain. La règle de progression s’applique.
 	- En cas de réussite normale, pas de bonus ni de malus à l’Investigation qui suit.
+
 
 
 Enquête
@@ -822,7 +826,7 @@ Enquête finale (Le complot)
 	- Case Summary devient également inutile (item du menu désactivé).
 	- Pour rappel, Paranoïa annule les bonus/malus suivants : Factures impayées et Nuit !
 
-Fiche de enquête
+Fiche d’enquête
 	- L’enquête finale se lance automatiquement après la crise de PARANOIA sur absolument aucun indice qui serait donné par le jeu. Il ne s’agit plus ici d’une enquête que le joueur aura prise à l’Investigation Center). Le joueur se lance de lui-même dans ce projet après avoir déclenché sa crise de paranoïa. Il faut donc donner une direction au joueur pour son enquête car sans Lieu/Objet/PNJ/Lien/etc., il ne peut rien faire.
 	- Une fois l’écran de paranoïa fermé, on enchaîne directement sur un écran qui va informer le joueur qu’il va interpeller un PNJ qui passe puis :
 	- Interaction de Dialogue avec le PNJ random que le joueur vient d’interpeler dans la rue.
@@ -837,7 +841,6 @@ Comment repartir les evidences ?
 	et/ou (ou, s’il n’y a qu’une preuve) :
 	- 1 evidence appartenant au coupable doit se trouver chez la victime ou sur le lieu du crime (s’il y a un lieu du crime).
 
-
 Comment limiter le nombre de lieux dans une enquête ?
 Lieux nécessaires à l'enquête
 Les lieux indispensables à la résolution de l’enquête ne sont soumis à aucune limitation.
@@ -848,13 +851,14 @@ Ils incluent :
 	- Les lieux servant de points de passage pour les liens noirs (les liens indispensables à la résolution).
 	- Ces lieux sont toujours générés en priorité.
 
-
 PNJs inutiles : règles spécifiques de génération
 Ces personnages doivent enrichir le monde sans surcharger le nombre de lieux.
+
 Domicile
 	- Chaque PNJ inutile a son propre domicile.
 	- Les domiciles ne sont jamais partagés, sauf pour les couples (déjà géré).
 	- Ces domiciles comptent dans le plafond global des lieux non nécessaires.
+
 Lieu de travail
 	- Chaque PNJ a un métier.
 	- Le nombre de lieux de travail distincts est déterminé par la valeur de uniqueness associée au métier :
@@ -863,10 +867,13 @@ Lieu de travail
 		- Sinon → chaque PNJ a son propre lieu de travail.
 	- Un lieu de travail partagé compte une seule fois dans le total des lieux.
 	- Pour Unemployed, le lieu de travail (home) ne peut être partagé qu’avec un conjoint s’il y en a un/une.
+
 Lieu de sortie (hangout)
 	- Ces lieux doivent être tirés prioritairement parmi les lieux déjà générés pour d’autres hangouts ou pour des liens non cruciaux.
+
 Lieu de planque (hideout)
 	- Les PNJs inutiles ont une planque à 20 % de chance.
+
 Réutilisation des lieux existants
 	- Avant de générer un nouveau lieu, on doit toujours tenter de réutiliser un lieu existant compatible (en fonction du type : travail, public, etc.).
 	- Cela concerne :
@@ -875,7 +882,6 @@ Réutilisation des lieux existants
 	- Cela ne concerne pas Hideout.
 Quand il reste des PNJs inutiles mais plus de lieux
 Une fois que tous les lieux générés pour les PNJs liés à l’enquête ont été réutilisés autant que possible pour les PNJs inutiles et qu’il reste encore des PNJs inutiles à générer, tout nouveau lieu généré pour un PNJ inutile restant devient immédiatement disponible pour être réutilisé par les autres PNJs inutiles restants.
-
 
 Comment limiter le nombre de liens dans une enquête ?
 Liens nécessaires à la résolution
@@ -896,6 +902,7 @@ Réutilisation des PNJs dans les liens
 Quand il reste des liens à créer mais peu/plus de PNJs
 	- Si le système doit encore générer des liens non cruciaux alors que la plupart des PNJs sont déjà utilisés :
 		- Il est possible de réutiliser des PNJs inutiles.
+
 
 
 Difficulté du jeu (écran d’OPTIONS)
@@ -920,5 +927,5 @@ Difficulté du jeu (écran d’OPTIONS)
 		They are watching : 20% de chance de SMS !
 		Cat’s eye : le malus de jet de dé de nuit est annulé.
 	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on la désactive de la même manière):
-		I’m one of them : le Wan du joueur ne peut jamais dépasser 3.
+		I am one of them : le Wan du joueur ne peut jamais dépasser 3.
 		
