@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cjvtdra3n1tqy"]
+[gd_scene load_steps=29 format=3 uid="uid://cjvtdra3n1tqy"]
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
 [ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
@@ -14,12 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://c3nnlrwvwsj8r" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Normal.png" id="12_rwrty"]
 [ext_resource type="Texture2D" uid="uid://csbweenpgy1r0" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Opaque.png" id="13_pb7hu"]
 [ext_resource type="Texture2D" uid="uid://e2o5gr620v4j" path="res://GRAPHICS/CHARACTER_GENERATION/Randomize_Transparent.png" id="14_yalwy"]
-[ext_resource type="Texture2D" uid="uid://dd1imvrd6584q" path="res://GRAPHICS/CHARACTER_GENERATION/Load_Normal.png" id="15_v5br1"]
-[ext_resource type="Texture2D" uid="uid://dpj5isqgaeq6s" path="res://GRAPHICS/CHARACTER_GENERATION/Load_Opaque.png" id="16_rpfp5"]
-[ext_resource type="Texture2D" uid="uid://is837bm3l0xs" path="res://GRAPHICS/CHARACTER_GENERATION/Load_Transparent.png" id="17_528u2"]
-[ext_resource type="Texture2D" uid="uid://maus5jo4knov" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Normal.png" id="18_16xvd"]
-[ext_resource type="Texture2D" uid="uid://c45s2pghkecvu" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Opaque.png" id="19_g16jo"]
-[ext_resource type="Texture2D" uid="uid://chcxqx81qfe27" path="res://GRAPHICS/CHARACTER_GENERATION/Save_Transparent.png" id="20_v1018"]
 [ext_resource type="Texture2D" uid="uid://oi5y2ypfosf8" path="res://GRAPHICS/CHARACTER_GENERATION/Reset_Normal.png" id="21_7d8wo"]
 [ext_resource type="Texture2D" uid="uid://nfvrv00xhkjm" path="res://GRAPHICS/CHARACTER_GENERATION/Reset_Opaque.png" id="22_yyi2n"]
 [ext_resource type="Texture2D" uid="uid://d05ni5qa4gcsb" path="res://GRAPHICS/CHARACTER_GENERATION/Reset_Transparent.png" id="23_7lqc7"]
@@ -225,7 +219,7 @@ script = ExtResource("5_2k6nw")
 metadata/_edit_lock_ = true
 
 [node name="Randomize" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 0.83, 0.83, 0.901961)
+self_modulate = Color(0, 0.35, 1, 0.682353)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 238.0
@@ -239,50 +233,21 @@ texture_pressed = ExtResource("13_pb7hu")
 texture_hover = ExtResource("14_yalwy")
 metadata/_edit_lock_ = true
 
-[node name="Load" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 1, 1, 0.901961)
+[node name="Reset" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(0, 0.308, 0.42, 0.682353)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 251.0
-offset_right = 67.0
-offset_bottom = 259.0
-pivot_offset = Vector2(9, 64)
-tooltip_text = "Load a saved
-Character"
-texture_normal = ExtResource("15_v5br1")
-texture_pressed = ExtResource("16_rpfp5")
-texture_hover = ExtResource("17_528u2")
-metadata/_edit_lock_ = true
-
-[node name="Save" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 1, 1, 0.901961)
-layout_mode = 0
-offset_left = 42.0
-offset_top = 264.0
-offset_right = 67.0
-offset_bottom = 272.0
-pivot_offset = Vector2(9, 64)
-tooltip_text = "Save that Character"
-texture_normal = ExtResource("18_16xvd")
-texture_pressed = ExtResource("19_g16jo")
-texture_hover = ExtResource("20_v1018")
-metadata/_edit_lock_ = true
-
-[node name="Reset" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(1, 0.960333, 0.93, 0.901961)
-layout_mode = 0
-offset_left = 42.0
-offset_top = 277.0
 offset_right = 80.0
-offset_bottom = 285.0
+offset_bottom = 259.0
 pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("21_7d8wo")
 texture_pressed = ExtResource("22_yyi2n")
 texture_hover = ExtResource("23_7lqc7")
 metadata/_edit_lock_ = true
 
-[node name="Cancel_button" type="TextureButton" parent="Creation_Page"]
-self_modulate = Color(0.7365, 1, 0.69, 0.901961)
+[node name="Cancel" type="TextureButton" parent="Creation_Page"]
+self_modulate = Color(0.69, 0.958667, 1, 0.901961)
 layout_mode = 0
 offset_left = 42.0
 offset_top = 302.0
@@ -358,18 +323,12 @@ metadata/_edit_use_anchors_ = true
 [connection signal="mouse_entered" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Creation_Page/Randomize" to="Creation_Page" method="_on_randomize_pressed"]
-[connection signal="mouse_entered" from="Creation_Page/Load" to="Creation_Page" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Creation_Page/Load" to="Creation_Page" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Creation_Page/Load" to="Creation_Page" method="_on_any_button_pressed"]
-[connection signal="mouse_entered" from="Creation_Page/Save" to="Creation_Page" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Creation_Page/Save" to="Creation_Page" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Creation_Page/Save" to="Creation_Page" method="_on_any_button_pressed"]
 [connection signal="mouse_entered" from="Creation_Page/Reset" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Creation_Page/Reset" to="Creation_Page" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Creation_Page/Reset" to="Creation_Page" method="_on_reset_pressed"]
-[connection signal="mouse_entered" from="Creation_Page/Cancel_button" to="Creation_Page" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Creation_Page/Cancel_button" to="Creation_Page" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Creation_Page/Cancel_button" to="Creation_Page" method="_on_cancel_pressed"]
+[connection signal="mouse_entered" from="Creation_Page/Cancel" to="Creation_Page" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Creation_Page/Cancel" to="Creation_Page" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Creation_Page/Cancel" to="Creation_Page" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_pressed"]

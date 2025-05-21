@@ -89,8 +89,8 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
-tooltip_text = "I wouldn't do that
-if I were you!"
+tooltip_text = "Exactly what they
+don't want you to do."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("11_8wg25")
