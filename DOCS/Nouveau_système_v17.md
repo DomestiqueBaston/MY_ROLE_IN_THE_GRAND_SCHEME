@@ -1,7 +1,5 @@
 My Role in the Grand Scheme
 
-Livret de règles (!)
-
 
 Caractéristiques du Joueur
 	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/HEAnom) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) (pour les seuils, voir plus bas).
@@ -254,7 +252,7 @@ Crise de paranoïa
 Récupération (joueur)
 	- Le joueur récupère HEA. En aucun cas il ne pourra récupérer plus que HEAnom.
 	- Pas de sommeil pendant une crise de Paranoïa !
-	- Une nuit de sommeil (voir Veille/Sommeil et Paranoïa) :
+	- Le joueur décide de la durée de sa nuit de sommeil :
 
 Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonus/Malus aux jets de dé jusqu’au prochain dodo
 4 heures	/	+1 Emo → Min/Max et +1 Add → Min/max	Malus de 2
@@ -271,6 +269,10 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 	- 25% de chance de faire un rêve/cauchemar qui aura un effet sur la récupération : rêve = +1 HEA et cauchemar -1 HEA (on peut perdre des HEA en dormant) !
 	- Intervention Thérapeutique (médecin) : +2 HEA, ±1 Emo → 0 et ±1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa (menu désactivé) !
+	- On ne peut dormir qu’1 fois par jour. SAUF voir Paranoïa pour le sommeil.
+	- Sauf pendant une crise de paranoïa, le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 aux jets de dé par tranche de 2 heures. Il ne peut pas faire plus de 24h d’éveil d’affilé sinon « tombe de fatigue » : il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil (donc annule une partie des bénéfices du sommeil) ! Il peut également subir les bonus/malus de rêve/cauchemar.
+	- Rappel : les Bonus/Malus au jets de dé dus au sommeil ne durent que jusqu’au prochain dodo et les Malus au jets de dé dus à la veille/sommeil ne durent que jusqu’au prochain dodo !
+	- Les PNJs ne subissent pas les effets de bonus/malus liés au cycle veille/sommeil.
 
 Récupération (PNJs)
 	- Les PNJs récupèrent +1 HEA/jour sans dépasser HEAnom.
@@ -317,13 +319,6 @@ Passer le temps pendant la paranoïa
 
 Le temps des PNJs
 	- Les PNJs suivent le cycle jour/nuit par leur emploi du temps mais si le joueur les emmène au delà des limites d’une activité par une interaction, ils suivront le joueur puis reprendront leur emploi du temps normal sans effet pour eux en fin d’Interaction.
-
-Sommeil (et veille)
-	- Le joueur décidera de combien de temps il veut dormir (voir Récupération).
-	- On ne peut dormir qu’1 fois par jour. SAUF voir Paranoïa pour le sommeil.
-	- Le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 aux jets de dé par tranche de 2 heures. Il ne peut pas faire plus de 24h d’éveil d’affilé sinon « tombe de fatigue » : il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil (don annule une partie des bénéfices du sommeil) ! Il peut également subir les bonus/malus de rêve/cauchemar.
-	- Rappel : les Bonus/Malus au jets de dé dus au sommeil ne durent que jusqu’au prochain dodo et les Malus au jets de dé dus à la veille/sommeil ne durent que jusqu’au prochain dodo.
-	- Les PNJs ne subissent pas les effets de bonus/malus liés au cycle veille/sommeil.
 
 L’argent
 	- La monnaie du jeu, c’est le « Dough » noté Dø.
@@ -420,7 +415,6 @@ Cartes Objet
 	- Une fois jouées, ces cartes ne sont pas perdues.
 	- Ces cartes se trouvent toujours dans la pile Objet ou Evidence.
 	- On ne joue qu’1 carte Objet par interaction.
-	- Les cartes Objet qui ne sont JAMAIS des preuves (OBJ281 et plus) sont toujours soit chez leur propriétaire, soit sur leur lieu de travail.
 
 Cartes PNJ
 	- Elles affichent en permanence une jauge en haut à droite donnant une idée du dernier état de santé « connu » du PNJ par le joueur après leur dernière interaction. Il y a 4 états (Vert : 8 à 10 HEA, Orange : 4 à 7 HEA, Rouge : 1 à 3 HEA et Sans : info inconnue). Elles affichent les noms et prénoms.
@@ -463,6 +457,7 @@ Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
 	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir en cas de Combat mais ça n’est pas vraiment une annulation et cela intervient juste avant).
+
 
 Dialogue
 	- Un seul Dialogue avec un PNJ par jour.
@@ -531,6 +526,7 @@ Fuir un Dialogue (PNJ)
 	- Après avoir fuit, le PNJ ne sera plus accessible avant le lendemain et il aura un malus de 1 au prochain Dialogue.
 	- S’il y a fuite, on n’ajoute qu’1 heure au temps écoulé (déplacement du joueur) car l’Interaction n’aura pas eu lieu.
 
+
 Combat
 	- Le joueur ne peut pas initier un Combat. Seul les PNJs le peuvent.
 	- Uniquement si le joueur a au moins 1 enquête en cours.
@@ -586,10 +582,10 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- /!\ Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr où le joueur ne peut pas être attaqué)! /!\ 
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
-	-  Avec une probabilité de 33%, tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un des commanditaire(s) du crime de l’enquête et donc du ou d’un coupable de l’enquête (établissement d’un Lien Violet). Être attaqué, malgré la révélation n’est pas une preuve pour l’enquête.
+	-  Avec une probabilité de 25%, tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un des commanditaire(s) du crime de l’enquête et donc du ou d’un coupable de l’enquête (établissement d’un Lien Violet). Être attaqué, malgré la révélation n’est pas une preuve pour l’enquête.
 
 Fuir un Combat (Joueur) – RUN AWAY
-	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir.
+	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir SAUF avant un Dialogue.
 	- On ne peut jouer que 2 cartes maximum pour fuir (la carte Run Away + une carte Abstraite).
 	- La main Fallback proposera 3 cartes Abstraite et/ou Run Away aléatoires.
 	- On peut jouer Run Away seule.
@@ -602,6 +598,7 @@ Fuir un Combat (Joueur) – RUN AWAY
 	- En cas de réussite critique, ±1Emo → 0. La règle de progression s’applique.
 	- En cas d’échec, le joueur prend +1Emo → Min/Max et reste pour le Combat qui va suivre.
 	- En cas d’échec critique, prend -1HEA, +1Emo → Min/max et reste pour le Combat qui va suivre. La règle de progression s’applique.
+
 
 Investigation
 	- Une seule Investigation par Lieu et par jour.
@@ -831,8 +828,7 @@ Fiche d’enquête
 	- Une fois l’écran de paranoïa fermé, on enchaîne directement sur un écran qui va informer le joueur qu’il va interpeller un PNJ qui passe puis :
 	- Interaction de Dialogue avec le PNJ random que le joueur vient d’interpeler dans la rue.
 	- à l’issue de cette (fausse) interaction, le joueur obtiendra 1 info (on considérera que le joueur a fait le score minimum pour ça). C’est un peu forcé et ça se repère à la longue mais pas d’autre solution...
-	OU
-	- tant que le joueur n’aura pas obtenu 3 infos sur l’affaire, le joueur ira interpeler d’autres PNJs random (mais ça peut être long avec de la malchance) !
+	- À l’issue de ce Dialogue, le PNJ s’enfuit (sans aucun recours pour le joueur).
 	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) mais la fois suivante, les cadavres auront été débarrassés !
 
 Comment repartir les evidences ?
@@ -853,7 +849,6 @@ Ils incluent :
 
 PNJs inutiles : règles spécifiques de génération
 Ces personnages doivent enrichir le monde sans surcharger le nombre de lieux.
-
 Domicile
 	- Chaque PNJ inutile a son propre domicile.
 	- Les domiciles ne sont jamais partagés, sauf pour les couples (déjà géré).
@@ -902,10 +897,7 @@ Réutilisation des PNJs dans les liens
 Quand il reste des liens à créer mais peu/plus de PNJs
 	- Si le système doit encore générer des liens non cruciaux alors que la plupart des PNJs sont déjà utilisés :
 		- Il est possible de réutiliser des PNJs inutiles.
-
-
-
-Difficulté du jeu (écran d’OPTIONS)
+Difficulté du jeu
 	- 5 niveaux de difficulté :
 		Hobbie : bonus de 1 supplémentaire à TOUS les jets de dé, +10 % de Dø en fin d’enquête réussie, PNJs: -1 à PHY, MEN et HEA/HEAnom à la génération.
 		Tranquille : +10 % de Dø en fin de enquête réussie, PNJs: -1 à PHY, MEN ou HEA/HEAnom à la génération.
@@ -913,7 +905,7 @@ Difficulté du jeu (écran d’OPTIONS)
 		Stressant : -10 % de Dø en fin de enquête réussie, PNJs: +1 à PHY, MEN ou HEA/HEAnom à la génération.
 		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin d’enquête réussie, PNJs: +1 à PHY, MEN et HEA/HEAnom à la génération.
 
-Éléments additionnels de difficulté (écran d’OPTIONS)
+Éléments additionnels de difficulté
 	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
 		Drug Quality : Prix de la drogue +20%.
 		Plot Depth : Temps imparti pour résoudre une enquête : -20%.
