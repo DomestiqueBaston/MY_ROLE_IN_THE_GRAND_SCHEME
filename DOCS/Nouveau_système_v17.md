@@ -452,7 +452,6 @@ Les interactions : Dialogue, Combat et Investigation
 	- Les jets de dé pour Combat et Dialogue sont basés sur un test de caractéristiques du joueur contre celles du PNJ.
 	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement.
 	- Bonus de 1 aux cartes en Main de Maîtrise.
-	- Bonus de 1 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
 	- On ne peut pas se débarrasser de la carte sur laquelle « Player_Location.tscn » se trouve. Pour cela, il faut quitter le lieu.
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant 24h écoulées sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
@@ -468,8 +467,9 @@ Dialogue
 	- Pour Dialoguer directement avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci :Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
 	- Le joueur ne peut pas fuir une agression d’avant Dialogue ! Voir Déclenchement d’un combat par un PNJ lié à l’enquête à Combat.
 	- À la première rencontre, il n’y a pas de risque d’agression !
+	- Bonus de 1 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence (voir plus bas), Malus d’action de Nuit, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, d’Evidence, de difficulté de l’enquête, bonus/malus de Rep, Emo, Add, Wan, Facture, Sommeil, de Lieu (sur place uniquement), d’Evidence, Malus d’action de Nuit, Bonus dû à la carte Combat Special « Ne pas tuer ! ».
 		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de mensonge (voir plus bas), tentative ratée de fuite et précédente fuite de Dialogue.
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
 	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
