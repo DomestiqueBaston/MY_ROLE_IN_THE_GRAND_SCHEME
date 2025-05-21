@@ -1,287 +1,287 @@
 [
   {
-    "id": "LOC001",
-    "loc_id": "LOC001_IDxxx",
+	"id": "LOC001",
+	"loc_id": "LOC001_IDxxx",
 	"info_name": "- APARTMENT -",
-    "name": "Apartment",
-    "type": "Location",
+	"name": "Apartment",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
 	"uniqueness": [],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "People's favorite place to live, sleep... and have sex.",
-    "home_of": ["", "NPCxxx", "NPCxxx"],
+	"description": "People's favorite place to live, sleep... and have sex.",
+	"home_of": ["", "NPCxxx", "NPCxxx"],
   "comment_2": "1 ou 2 NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": [],
-    "findable_content": [1, 2, 3],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": [],
+	"findable_content": [1, 2, 3],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["n/a"],
+	"open_hours": ["n/a"],
   "comment_5": "Ce lieu est considéré comme tout le temps accessible si un PNJ s'y trouve et inaccessible si personne ne s'y trouve",
-    "hangout": ["no"],
+	"hangout": ["no"],
 	"reduced_card": false,
-    "bonus_malus": []
+	"bonus_malus": []
 },
 {
-    "id": "LOC002",
-    "loc_id": "LOC002_IDxxx",
-    "info_name": "- WORKSHOP -",
-    "name": "Workshop",
-    "type": "Location",
+	"id": "LOC002",
+	"loc_id": "LOC002_IDxxx",
+	"info_name": "- WORKSHOP -",
+	"name": "Workshop",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [2],
+	"uniqueness": [2],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "A place for crafting, repairing, and probably altering things.",
-    "home_of": [],
+	"description": "A place for crafting, repairing, and probably altering things.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": [],
-    "findable_content": [1, 2],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": [],
+	"findable_content": [1, 2],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["morning", "afternoon"],
-    "hangout": ["no"],
+	"open_hours": ["morning", "afternoon"],
+	"hangout": ["no"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"PHY": "-1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"PHY": "-1"}
+	  }
+	]
 },
 {
-    "id": "LOC003",
-    "loc_id": "LOC003_IDxxx",
-    "info_name": "- BAR -",
-    "name": "Bar",
-    "type": "Location",
+	"id": "LOC003",
+	"loc_id": "LOC003_IDxxx",
+	"info_name": "- BAR -",
+	"name": "Bar",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [2],
+	"uniqueness": [2],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "Here, we drink freely, laugh, or make shady deals.",
-    "home_of": [],
+	"description": "Here, we drink freely, laugh, or make shady deals.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": [],
-    "findable_content": [1, 2, 3],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": [],
+	"findable_content": [1, 2, 3],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
-    "hangout": ["yes"],
+	"open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
+	"hangout": ["yes"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"MEN": "-1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"MEN": "-1"}
+	  }
+	]
 },
 {
-    "id": "LOC004",
-    "loc_id": "LOC004_IDxxx",
-    "info_name": "- LIBRARY -",
-    "name": "Library",
-    "type": "Location",
+	"id": "LOC004",
+	"loc_id": "LOC004_IDxxx",
+	"info_name": "- LIBRARY -",
+	"name": "Library",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [1],
+	"uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "Usually, people try to work on who-knows-what pointless theses here.",
-    "home_of": [],
+	"description": "Usually, people try to work on who-knows-what pointless theses here.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": ["Break_in"],
-    "not_needed_actions": [],
-    "findable_content": [1, 2, 3],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": ["Break_in"],
+	"not_needed_actions": [],
+	"findable_content": [1, 2, 3],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
-    "hangout": ["no", "secret"],
+	"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
+	"hangout": ["no", "secret"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"MEN": "+1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"MEN": "+1"}
+	  }
+	]
 },
 {
-    "id": "LOC005",
-    "loc_id": "LOC005_IDxxx",
-    "info_name": "- OFFICE -",
-    "name": "Office",
-    "type": "Location",
+	"id": "LOC005",
+	"loc_id": "LOC005_IDxxx",
+	"info_name": "- OFFICE -",
+	"name": "Office",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [],
+	"uniqueness": [],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "One of those places where a lot of people wish they weren't working.",
-    "home_of": [],
+	"description": "One of those places where a lot of people wish they weren't working.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": [],
-    "findable_content": [1, 2],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": [],
+	"findable_content": [1, 2],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1, 2],
+	"hidden_content": [0, 1, 2],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["n/a"],
+	"open_hours": ["n/a"],
   "comment_5": "exceptionnellement, les open_hours dépendent de l'emploi du temps des PNJs y travaillant",
-    "hangout": ["no"],
+	"hangout": ["no"],
 	"reduced_card": false,
-    "bonus_malus": []
+	"bonus_malus": []
 },
 {
-    "id": "LOC006",
-    "loc_id": "LOC006_IDxxx",
-    "info_name": "- MEDICAL OFFICE -",
-    "name": "Medical Office",
-    "type": "Location",
+	"id": "LOC006",
+	"loc_id": "LOC006_IDxxx",
+	"info_name": "- MEDICAL OFFICE -",
+	"name": "Medical Office",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [1],
+	"uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "As long as it's a general practitioner, there's no real reason to be scared to enter.",
-    "home_of": [],
+	"description": "As long as it's a general practitioner, there's no real reason to be scared to enter.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": [],
-    "findable_content": [0, 1, 2],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": [],
+	"findable_content": [0, 1, 2],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["morning", "afternoon"],
-    "hangout": ["no"],
+	"open_hours": ["morning", "afternoon"],
+	"hangout": ["no"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"MEN": "+1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"MEN": "+1"}
+	  }
+	]
 },
 {
-    "id": "LOC007",
-    "loc_id": "LOC007_IDxxx",
-    "info_name": "- BARRACKS -",
-    "name": "Barracks",
-    "type": "Location",
+	"id": "LOC007",
+	"loc_id": "LOC007_IDxxx",
+	"info_name": "- BARRACKS -",
+	"name": "Barracks",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [1],
+	"uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "Not the best place for talking literature. Everything else is fine enough.",
-    "home_of": [],
+	"description": "Not the best place for talking literature. Everything else is fine enough.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": ["Combat"],
-    "not_needed_actions": ["Break_in"],
-    "findable_content": [1, 2, 3],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": ["Combat"],
+	"not_needed_actions": ["Break_in"],
+	"findable_content": [1, 2, 3],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["h24"],
-    "hangout": ["no"],
+	"open_hours": ["h24"],
+	"hangout": ["no"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"PHY": "+1", "MEN": "-1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"PHY": "+1", "MEN": "-1"}
+	  }
+	]
 },
 {
-    "id": "LOC008",
-    "loc_id": "LOC008_IDxxx",
-    "info_name": "- CEMETERY -",
-    "name": "Cemetery",
-    "type": "Location",
+	"id": "LOC008",
+	"loc_id": "LOC008_IDxxx",
+	"info_name": "- CEMETERY -",
+	"name": "Cemetery",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [1],
+	"uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "Not exactly a lively place for a chat. But hey, it's quiet.",
-    "home_of": [],
+	"description": "Not exactly a lively place for a chat. But hey, it's quiet.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": ["Break_in"],
-    "findable_content": [1, 2, 3, 4],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": ["Break_in"],
+	"findable_content": [1, 2, 3, 4],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["h24"],
-    "hangout": ["no", "secret"],
+	"open_hours": ["h24"],
+	"hangout": ["no", "secret"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"MEN": "+1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"MEN": "+1"}
+	  }
+	]
 },
 {
-    "id": "LOC009",
-    "loc_id": "LOC009_IDxxx",
-    "info_name": "- CINEMA -",
-    "name": "Cinema",
-    "type": "Location",
+	"id": "LOC009",
+	"loc_id": "LOC009_IDxxx",
+	"info_name": "- CINEMA -",
+	"name": "Cinema",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [1],
+	"uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "Places like this are fading out - now it's just crap on the screen.",
-    "home_of": [],
+	"description": "Places like this are fading out - now it's just crap on the screen.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": [],
-    "findable_content": [1, 2],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": [],
+	"findable_content": [1, 2],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
-    "hangout": ["yes"],
+	"open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
+	"hangout": ["yes"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"PHY": "-1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"PHY": "-1"}
+	  }
+	]
 },
 {
-    "id": "LOC010",
-    "loc_id": "LOC010_IDxxx",
-    "info_name": "- NIGHTCLUB -",
-    "name": "Nightclub",
-    "type": "Location",
+	"id": "LOC010",
+	"loc_id": "LOC010_IDxxx",
+	"info_name": "- NIGHTCLUB -",
+	"name": "Nightclub",
+	"type": "Location",
   "useless_content": [0, 1, 2, 3],
   "comment_0": "contient de 0 à 3 objets non liés à l'enquête ni même à personne éventuellement",
-    "uniqueness": [1],
+	"uniqueness": [1],
   "comment_1": "rien (appartment), 1 ou 2",
-    "description": "A place where 'music' is barely recognizable anymore.",
-    "home_of": [],
+	"description": "A place where 'music' is barely recognizable anymore.",
+	"home_of": [],
   "comment_2": "NPCxxx or rien",
-    "possible_combinations": ["Dialogue", "Abstract"],
-    "impossible_actions": [],
-    "not_needed_actions": [],
-    "findable_content": [1, 2, 3],
+	"possible_combinations": ["Dialogue", "Abstract"],
+	"impossible_actions": [],
+	"not_needed_actions": [],
+	"findable_content": [1, 2, 3],
   "comment_3": "pas d'objet Evidence",
-    "hidden_content": [0, 1],
+	"hidden_content": [0, 1],
   "comment_4": "uniquement des objets Evidence",
-    "open_hours": ["night", "we_night"],
-    "hangout": ["yes"],
+	"open_hours": ["night", "we_night"],
+	"hangout": ["yes"],
 	"reduced_card": false,
-    "bonus_malus": [
-      {
-        "effects": {"MEN": "-1"}
-      }
-    ]
+	"bonus_malus": [
+	  {
+		"effects": {"MEN": "-1"}
+	  }
+	]
 },
   {
   "id": "LOC011",
@@ -306,9 +306,9 @@
   "open_hours": ["morning", "afternoon"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "-1"}
-    }
+	{
+	  "effects": {"MEN": "-1"}
+	}
   ]
 },
 {
@@ -334,9 +334,9 @@
   "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "+1"}
-    }
+	{
+	  "effects": {"MEN": "+1"}
+	}
   ]
 },
 {
@@ -362,9 +362,9 @@
   "open_hours": ["morning", "afternoon", "evening"],
   "hangout": ["no", "secret"],
   "bonus_malus": [
-    {
-      "effects": {"HEA": "-1"}
-    }
+	{
+	  "effects": {"HEA": "-1"}
+	}
   ]
 },
 {
@@ -390,9 +390,9 @@
   "open_hours": ["morning", "afternoon", "evening"],
   "hangout": ["no", "secret"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "+1"}
-    }
+	{
+	  "effects": {"PHY": "+1"}
+	}
   ]
 },
 {
@@ -418,9 +418,9 @@
   "open_hours": ["h24"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "-1", "HEA": "+1"}
-    }
+	{
+	  "effects": {"PHY": "-1", "HEA": "+1"}
+	}
   ]
 },
 {
@@ -470,9 +470,9 @@
   "open_hours": ["morning", "afternoon"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "+1"}
-    }
+	{
+	  "effects": {"MEN": "+1"}
+	}
   ]
 },
 {
@@ -498,9 +498,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "-1", "MEN": "-1"}
-    }
+	{
+	  "effects": {"PHY": "-1", "MEN": "-1"}
+	}
   ]
 },
 {
@@ -526,9 +526,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "-1"}
-    }
+	{
+	  "effects": {"MEN": "-1"}
+	}
   ]
 },
 {
@@ -554,9 +554,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "-1"}
-    }
+	{
+	  "effects": {"PHY": "-1"}
+	}
   ]
 },
 {
@@ -606,9 +606,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "-1"}
-    }
+	{
+	  "effects": {"PHY": "-1"}
+	}
   ]
 },
 {
@@ -634,9 +634,9 @@
   "open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "-1"}
-    }
+	{
+	  "effects": {"MEN": "-1"}
+	}
   ]
 },
 {
@@ -662,9 +662,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["no", "secret"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "-1"}
-    }
+	{
+	  "effects": {"MEN": "-1"}
+	}
   ]
 },
 {
@@ -690,9 +690,9 @@
   "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "-1"}
-    }
+	{
+	  "effects": {"MEN": "-1"}
+	}
   ]
 },
 {
@@ -718,9 +718,9 @@
   "open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "-1", "MEN": "+1"}
-    }
+	{
+	  "effects": {"PHY": "-1", "MEN": "+1"}
+	}
   ]
 },
 {
@@ -746,9 +746,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "+1", "MEN": "-1"}
-    }
+	{
+	  "effects": {"PHY": "+1", "MEN": "-1"}
+	}
   ]
 },
 {
@@ -774,9 +774,9 @@
   "open_hours": ["morning", "afternoon", "evening"],
   "hangout": ["yes", "secret"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "+1"}
-    }
+	{
+	  "effects": {"PHY": "+1"}
+	}
   ]
 },
   {
@@ -850,9 +850,9 @@
   "open_hours": ["h24"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "-1"}
-    }
+	{
+	  "effects": {"MEN": "-1"}
+	}
   ]
 },
 {
@@ -878,9 +878,9 @@
   "open_hours": ["h24"],
   "hangout": ["no"],
   "bonus_malus": [
-    {
-      "effects": {"PHY": "+1"}
-    }
+	{
+	  "effects": {"PHY": "+1"}
+	}
   ]
 },
 {
@@ -906,9 +906,9 @@
   "open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
   "hangout": ["yes"],
   "bonus_malus": [
-    {
-      "effects": {"MEN": "+1"}
-    }
+	{
+	  "effects": {"MEN": "+1"}
+	}
   ]
 },
 {
@@ -1128,4 +1128,3 @@
   "bonus_malus": []
 }
 ]
-

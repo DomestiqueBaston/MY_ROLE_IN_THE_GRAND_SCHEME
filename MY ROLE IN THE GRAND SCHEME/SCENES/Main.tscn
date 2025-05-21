@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://cermbgl0xllko"]
+[gd_scene load_steps=81 format=3 uid="uid://cermbgl0xllko"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_wvc8p"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="2_2avoe"]
@@ -51,6 +51,8 @@
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="45_yku0u"]
 [ext_resource type="Texture2D" uid="uid://cmb6qbm072amw" path="res://GRAPHICS/MAIN/Reserve_Expansion.png" id="49_wvc8p"]
 [ext_resource type="Script" uid="uid://d4lltsouavalw" path="res://SCRIPTS/Main_Motive_List.gd" id="50_wvc8p"]
+[ext_resource type="AudioStream" uid="uid://bkjfvpaccisok" path="res://SOUND/MISC/Unfolding.ogg" id="53_wvc8p"]
+[ext_resource type="AudioStream" uid="uid://xwvtufnhi7ro" path="res://SOUND/MISC/Folding.ogg" id="54_871an"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="54_ksebp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
@@ -142,12 +144,212 @@ _data = {
 &"RESET": SubResource("Animation_ksebp")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksebp"]
+bg_color = Color(0.34, 0.23664, 0.1768, 0.392157)
+border_width_left = 2
+border_width_top = 1
+border_color = Color(0, 0, 0, 0)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
 texture = ExtResource("49_wvc8p")
 texture_margin_left = 9.0
 texture_margin_top = 13.0
 texture_margin_right = 9.0
 texture_margin_bottom = 13.0
+
+[sub_resource type="Animation" id="Animation_nsks5"]
+resource_name = "Unfolding"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Folding_Unfolding")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("53_wvc8p")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Reserve/Reserve_Expansion_Shadow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Reserve/Reserve_Expansion:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Reserve/Reserve_Expansion:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.200007),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 125), Vector2(506, 125)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Reserve/Reserve_Expansion_Shadow:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.200007),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(1, 125), Vector2(506, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_871an"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reserve/Reserve_Expansion_Shadow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Reserve/Reserve_Expansion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Reserve/Reserve_Expansion:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 125)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Reserve/Reserve_Expansion_Shadow:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_bmwof"]
+resource_name = "Folding"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Folding_Unfolding")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("54_871an")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Reserve/Reserve_Expansion_Shadow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Reserve/Reserve_Expansion:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Reserve/Reserve_Expansion:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6.66082e-06, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(506, 125), Vector2(1, 125)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Reserve/Reserve_Expansion_Shadow:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6.66082e-06, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(506, 125), Vector2(1, 125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bmwof"]
+_data = {
+&"Folding": SubResource("Animation_bmwof"),
+&"RESET": SubResource("Animation_871an"),
+&"Unfolding": SubResource("Animation_nsks5")
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wvc8p")
@@ -243,7 +445,6 @@ texture = ExtResource("25_47v8w")
 centered = false
 
 [node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
-visible = false
 
 [node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 collision_layer = 0
@@ -2119,13 +2320,26 @@ libraries = {
 &"": SubResource("AnimationLibrary_nsks5")
 }
 
-[node name="Reserve_Expansion" type="Panel" parent="Mask_Card_Playground"]
+[node name="Reserve" type="Node2D" parent="Mask_Card_Playground"]
+
+[node name="Reserve_Expansion_Shadow" type="Panel" parent="Mask_Card_Playground/Reserve"]
 visible = false
 custom_minimum_size = Vector2(1, 125)
 offset_left = 118.0
 offset_top = 19.0
 offset_right = 119.0
 offset_bottom = 144.0
+pivot_offset = Vector2(129, 130)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ksebp")
+
+[node name="Reserve_Expansion" type="Panel" parent="Mask_Card_Playground/Reserve"]
+visible = false
+custom_minimum_size = Vector2(1, 125)
+offset_left = 118.0
+offset_top = 19.0
+offset_right = 119.0
+offset_bottom = 144.0
+pivot_offset = Vector2(129, 130)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ksebp")
 
 [node name="TMP_2" type="Node2D" parent="Mask_Card_Playground"]
@@ -2259,6 +2473,16 @@ item_13/id = 13
 item_14/text = "Found"
 item_14/icon = ExtResource("24_lp1fx")
 item_14/id = 14
+
+[node name="Reserve_Animation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Mask_Card_Playground")
+libraries = {
+&"": SubResource("AnimationLibrary_bmwof")
+}
+
+[node name="Folding_Unfolding" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = &"FX"
 
 [connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
