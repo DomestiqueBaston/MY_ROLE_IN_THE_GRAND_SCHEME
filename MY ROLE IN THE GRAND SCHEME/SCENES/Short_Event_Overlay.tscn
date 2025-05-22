@@ -115,47 +115,6 @@
 [ext_resource type="BitMap" uid="uid://cvtklig2xg1im" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Mask.png" id="111_wf7jc"]
 [ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="112_d5ayf"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na1nk"]
-
-[sub_resource type="Animation" id="Animation_gdsr2"]
-resource_name = "Flashing"
-length = 0.53334
-loop_mode = 1
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Intercom/Interface/Green_Button:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.2, 0.266667, 0.466667, 0.533333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.588235)]
-}
-
-[sub_resource type="Animation" id="Animation_uln12"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Intercom/Interface/Green_Button:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.686275)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mlhxe"]
-_data = {
-&"Flashing": SubResource("Animation_gdsr2"),
-&"RESET": SubResource("Animation_uln12")
-}
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vprm5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llwhl"]
@@ -310,9 +269,50 @@ _data = {
 &"Text_Animation": SubResource("Animation_wqng6")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na1nk"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7igc"]
 content_margin_left = 2.0
 content_margin_bottom = 1.0
+
+[sub_resource type="Animation" id="Animation_gdsr2"]
+resource_name = "Flashing"
+length = 0.53334
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom/Interface/Green_Button:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2, 0.266667, 0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0.588235)]
+}
+
+[sub_resource type="Animation" id="Animation_uln12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom/Interface/Green_Button:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.686275)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mlhxe"]
+_data = {
+&"Flashing": SubResource("Animation_gdsr2"),
+&"RESET": SubResource("Animation_uln12")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1jpv"]
 
@@ -504,544 +504,6 @@ color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 [node name="Panels" type="Node2D" parent="."]
 position = Vector2(-640, 0)
 
-[node name="Short_Event" type="Node2D" parent="Panels"]
-visible = false
-
-[node name="Short_Event_BG" type="Sprite2D" parent="Panels/Short_Event"]
-texture = ExtResource("1_sivc1")
-centered = false
-offset = Vector2(50, 0)
-
-[node name="Announces" type="Control" parent="Panels/Short_Event"]
-modulate = Color(1, 1, 1, 0.882353)
-layout_mode = 3
-anchors_preset = 0
-theme = ExtResource("2_vr7x7")
-script = ExtResource("3_8qa11")
-
-[node name="Quit" type="Button" parent="Panels/Short_Event/Announces"]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 306.0
-offset_right = 479.0
-offset_bottom = 314.0
-rotation = 0.0361729
-tooltip_text = "Ok, ok..."
-text = "Whatever..."
-
-[node name="Run_Away" type="Control" parent="Panels/Short_Event/Announces"]
-anchors_preset = 0
-
-[node name="Player_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Run_Away"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = 44.0
-offset_right = 494.0
-offset_bottom = 296.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] fled  ([color=#ff8864][shake rate=7.0 level=5 connected=0]cowardly[/shake][/color])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
-Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
-Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
-
-Either way, you sure  know  how  to  leave an impression...
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
-
-[node name="Player_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Run_Away"]
-visible = false
-layout_mode = 0
-offset_left = 165.0
-offset_top = 50.0
-offset_right = 489.0
-offset_bottom = 302.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] failed to flee  ([shake rate=7.0 level=5 connected=0][color=#ff8864]pathetic[/color][/shake])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]How  disappointing...[/color][/shake]
-You had one job: [shake rate=7.0 level=5 connected=0][color=#ff8864]escape[/color][/shake].
-But no, you chose to stay  and face it.
-Was it bravery?  Or just  pure
-[shake rate=7.0 level=5 connected=0][color=#ff8864]bad judgment[/color][/shake]?
-In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
-
-[node name="Rowena_Absent" type="Control" parent="Panels/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Message" type="RichTextLabel" parent="Panels/Short_Event/Announces/Rowena_Absent"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = 56.0
-offset_right = 490.0
-offset_bottom = 296.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center]Darn!  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Rowena[/color][/pulse]'s  [color=#ff8864][shake rate=7.0 level=5 connected=0]not  here[/shake][/color]...
-and that's  [shake rate=7.0 level=5 connected=0][color=#ff8864]bad[/color][/shake].
-
-I guess  she's  still  busy  tearing herself  apart, fighting  with  her  deep superego...
-
-Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thing[/color][/shake]  is  really going  to [shake rate=7.0 level=5 connected=0][color=#ff1c18]screw  me  over[/color][/shake]!
-
-It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
-
-[node name="Irrelevant_Motive" type="Control" parent="Panels/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Message" type="RichTextLabel" parent="Panels/Short_Event/Announces/Irrelevant_Motive"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 111.0
-offset_right = 472.0
-offset_bottom = 251.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
-
-We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
-
-[node name="Break_In" type="Control" parent="Panels/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Player_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Break_In"]
-layout_mode = 0
-offset_left = 178.0
-offset_top = 70.0
-offset_right = 474.0
-offset_bottom = 294.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]against  all  odds[/color][/pulse])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Well, color me surprised…[/color][/shake]
-It’s  almost impressive how you managed to  pull that  off.
-Did you really  think  that  would  be  your biggest  challenge  today?
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you’ve  done it...[/color][/shake]
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
-
-[node name="Player_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Break_In"]
-visible = false
-layout_mode = 0
-offset_left = 165.0
-offset_top = 60.0
-offset_right = 489.0
-offset_bottom = 302.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] tried  something  ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]how  ambitious[/color][/pulse])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]That  didn’t go  as  [color=#ff1c18]planned[/color]...[/color][/shake]
-It  seems  like you had  a grand idea, but the execution?
-Let’s just say it wasn’t exactly impressive.
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe next time, try thinking it through[/color][/shake].
-
-You sure know how to make  an entrance...
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  not  the best  one![/color][/shake][/center]"
-
-[node name="Dialogue" type="Control" parent="Panels/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="NPC_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dialogue"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 58.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The coward[/color][/pulse] has fled!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Not exactly  a shocker[/color][/shake]. It  appears that the  mere thought  of  facing  you - or, you know,  any challenge - was simply too  much to  handle.
-
-It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][color=#ff8864]overwhelming  need to  [color=#ff1c18]disappear[/color][/color][/shake].
-
-Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
-
-[node name="NPC_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dialogue"]
-visible = false
-layout_mode = 0
-offset_left = 167.0
-offset_top = 61.0
-offset_right = 486.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The bastard[/color][/pulse] tried to flee!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]You'd think someone would learn by now[/color][/shake].
-But no, despite all the chances, they decided to turn back...
-The  moment  of escape?  [shake rate=7.0 level=5 connected=0][color=#ff8864]Totally  [color=#ff1c18]missed[/color][/color][/shake].
-It’s  almost  as if they were just waiting  for  the  perfect  moment...
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Too bad that  moment  never  came[/color][/shake].
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
-
-[node name="Combat" type="Control" parent="Panels/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="NPC_Attack" type="RichTextLabel" parent="Panels/Short_Event/Announces/Combat"]
-layout_mode = 0
-offset_left = 167.0
-offset_top = 62.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Not what you expected[/color][/shake]. Just  as  you approached, the  person in front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
-
-In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
-
-Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
-
-[node name="Minion_Attack" type="RichTextLabel" parent="Panels/Short_Event/Announces/Combat"]
-visible = false
-layout_mode = 0
-offset_left = 169.0
-offset_top = 61.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an attack!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t think it’d be that easy, did you?
-
-The  assault  comes  fast  (probably  more than you can  handle).
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
-
-Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
-
-[node name="Outdated_Case" type="Control" parent="Panels/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Annonce" type="RichTextLabel" parent="Panels/Short_Event/Announces/Outdated_Case"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 62.0
-offset_right = 483.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Out  of  date[/color] [color=#ff8864]investigation[/color]![/pulse]
-
-Well, [shake rate=7.0 level=5 connected=0][color=#ff8864]congratulations[/color][/shake]!
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Case[/color]  [color=#ff1c18]XXX[/color][/shake]? [color=#ff1c18]Gone[/color]!
-
-Your inability  to  meet  a simple  [shake rate=7.0 level=5 connected=0][color=#ff8864]deadline[/color][/shake]  is  really impressive.  Not  exactly the best for your [shake rate=7.0 level=5 connected=0][color=#ff8864]emotionnal stability[/color][/shake], though...
-
-Nice job,  genius![/center]"
-
-[node name="Dreams" type="Control" parent="Panels/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Dream" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dreams"]
-layout_mode = 0
-offset_left = 167.0
-offset_top = 106.0
-offset_right = 481.0
-offset_bottom = 268.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,  for  once[/color],  [color=#ff8864]a [color=#ff1c18]real[/color]  night  of  rest[/color].[/pulse]
-
-[shake rate=7.0 level=5 connected=0][color=#ff1c18]Don't  get  used  to it[/color][/shake]. just  take  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]scraps  you're  given[/color][/shake], who  knows  what  [shake rate=7.0 level=5 connected=0][color=#ff8864]the  next  one[/color][/shake]  will  be [shake rate=7.0 level=5 connected=0][color=#ff1c18]laughing  about[/color][/shake].[/center]
-"
-
-[node name="Nightmare" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dreams"]
-visible = false
-layout_mode = 0
-offset_left = 168.0
-offset_top = 94.0
-offset_right = 480.0
-offset_bottom = 276.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Again[/color]![/pulse]
-The  [shake rate=7.0 level=5 connected=0][color=#ff8864]kind[/color][/shake]  of  [shake rate=7.0 level=5 connected=0][color=#ff1c18]night[/color][/shake]  that  leaves  you  [shake rate=7.0 level=5 connected=0][color=#ff8864]hollow[/color][/shake].
-
-[shake rate=7.0 level=5 connected=0][color=#ff1c18]No  peace[/color][/shake]. just  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]weight  of  what  waits[/color][/shake], when  even  [shake rate=7.0 level=5 connected=0][color=#ff8864]the silence[/color][/shake]  feels  [shake rate=7.0 level=5 connected=0][color=#ff1c18]louder  than  screams[/color][/shake].[/center]
-"
-
-[node name="Search_Warrant" type="Node2D" parent="Panels"]
-visible = false
-position = Vector2(172, 48)
-
-[node name="Search_Warrant_BG" type="Sprite2D" parent="Panels/Search_Warrant"]
-position = Vector2(40, -19)
-texture = ExtResource("4_0rnfm")
-centered = false
-offset = Vector2(20, 20)
-
-[node name="Text_Buy" type="Control" parent="Panels/Search_Warrant"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -31.0
-offset_top = -18.0
-offset_right = -31.0
-offset_bottom = -18.0
-theme = ExtResource("5_53ag3")
-script = ExtResource("6_200re")
-
-[node name="Buy_It" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Buy"]
-self_modulate = Color(1, 1, 1, 0.921569)
-layout_mode = 0
-offset_left = 108.0
-offset_top = 64.0
-offset_right = 249.0
-offset_bottom = 222.0
-rotation = 0.0165557
-bbcode_enabled = true
-text = "[center]This  Warrant is  worth [color=#992726]        Dø[/color] and  I  have  better things to  do than  drafting  Search  Warrants all day...[/center]"
-
-[node name="Price" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Buy"]
-self_modulate = Color(1, 1, 1, 0.921569)
-layout_mode = 0
-offset_left = 153.0
-offset_top = 86.0
-offset_right = 183.0
-offset_bottom = 107.0
-rotation = 0.0165557
-theme_override_colors/default_color = Color(0.6, 0.152941, 0.14902, 1)
-bbcode_enabled = true
-text = "25"
-horizontal_alignment = 2
-
-[node name="Yes" type="Button" parent="Panels/Search_Warrant/Text_Buy"]
-layout_mode = 0
-offset_left = 180.0
-offset_top = 233.0
-offset_right = 244.0
-offset_bottom = 249.0
-tooltip_text = "Go!"
-theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
-theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
-theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-text = "Yes, please, I
-need this one!"
-alignment = 2
-
-[node name="No" type="Button" parent="Panels/Search_Warrant/Text_Buy"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 233.0
-offset_right = 171.0
-offset_bottom = 249.0
-tooltip_text = "Hm... Maybe not."
-theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
-theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
-theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
-theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
-theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-text = "Well, now that
-you mention it..."
-alignment = 0
-
-[node name="Text_Use" type="Control" parent="Panels/Search_Warrant"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -31.0
-offset_top = -18.0
-offset_right = -31.0
-offset_bottom = -18.0
-theme = ExtResource("5_53ag3")
-script = ExtResource("6_200re")
-
-[node name="Use_It" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Use"]
-self_modulate = Color(1, 1, 1, 0.921569)
-layout_mode = 0
-offset_left = 108.0
-offset_top = 64.0
-offset_right = 249.0
-offset_bottom = 222.0
-rotation = 0.0165557
-bbcode_enabled = true
-text = "[center]Now the
-question is:
-
-Should  I  use  my so expensive
-Search  WarrAnt
-(or is it  racket)?[/center]"
-
-[node name="Yes" type="Button" parent="Panels/Search_Warrant/Text_Use"]
-layout_mode = 0
-offset_left = 180.0
-offset_top = 233.0
-offset_right = 244.0
-offset_bottom = 249.0
-tooltip_text = "Go!"
-theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
-theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
-theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-text = "No other
-choice!"
-alignment = 2
-
-[node name="No" type="Button" parent="Panels/Search_Warrant/Text_Use"]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 233.0
-offset_right = 171.0
-offset_bottom = 249.0
-tooltip_text = "Hm... Maybe not."
-theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
-theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
-theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
-theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
-theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-text = "Hm...
-Maybe not!"
-alignment = 0
-
-[node name="Run_Away_Break_In" type="Node2D" parent="Panels"]
-visible = false
-position = Vector2(172, 48)
-
-[node name="Run_Away_Break_In_BG" type="Sprite2D" parent="Panels/Run_Away_Break_In"]
-position = Vector2(-122, 12)
-texture = ExtResource("7_yccgy")
-centered = false
-offset = Vector2(20, 20)
-
-[node name="Announces" type="Control" parent="Panels/Run_Away_Break_In"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -172.0
-offset_top = -48.0
-offset_right = -172.0
-offset_bottom = -48.0
-script = ExtResource("8_7ujkg")
-
-[node name="Run_Away" type="Control" parent="Panels/Run_Away_Break_In/Announces"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 141.0
-offset_top = 30.0
-offset_right = 141.0
-offset_bottom = 30.0
-theme = ExtResource("9_oetaq")
-
-[node name="Info" type="RichTextLabel" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
-layout_mode = 0
-offset_left = -57.0
-offset_top = 57.0
-offset_right = 50.0
-offset_bottom = 219.0
-rotation = 0.035035
-bbcode_enabled = true
-text = "Hm...
-I guess [color=#ff1c18] now[/color][color=#ff8864] would  be the perfect  time to  [/color][color=#ff1c18][shake rate=7.0 level=5 connected=0]run  away[/shake][/color], right?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Yes" type="Button" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 87.0
-offset_right = 373.0
-offset_bottom = 108.0
-rotation = 0.0310151
-tooltip_text = "Run for your life!"
-theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
-theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
-text = "Yes,  I totally  agree  with that..."
-
-[node name="No" type="Button" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
-layout_mode = 0
-offset_left = 151.0
-offset_top = 171.0
-offset_right = 319.0
-offset_bottom = 192.0
-rotation = 0.0310151
-tooltip_text = "I'll stand the ground!"
-theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
-theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
-theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
-theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
-theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
-text = "No, not in this world!"
-
-[node name="Break_In" type="Control" parent="Panels/Run_Away_Break_In/Announces"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 141.0
-offset_top = 30.0
-offset_right = 141.0
-offset_bottom = 30.0
-theme = ExtResource("9_oetaq")
-
-[node name="Info" type="RichTextLabel" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
-layout_mode = 0
-offset_left = -61.0
-offset_top = 53.0
-offset_right = 55.0
-offset_bottom = 222.0
-rotation = 0.035035
-bbcode_enabled = true
-text = "Alright,
-[color=#ff1c18]nobody's there[/color]. Looks like the[color=#ff8864] perfect time [/color]to  [color=#ff1c18][shake rate=7.0 level=5 connected=0]break in[/shake][/color] [color=#ff8864]inside[/color]!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Yes" type="Button" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 87.0
-offset_right = 354.0
-offset_bottom = 108.0
-rotation = 0.0310151
-tooltip_text = "Let's taste the
-adrenaline rush!"
-theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
-theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
-text = "Yes,  It's  now  or...  It's now!"
-
-[node name="No" type="Button" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 168.0
-offset_right = 356.0
-offset_bottom = 189.0
-rotation = 0.0310151
-tooltip_text = "I have a feeling
-this will end badly."
-theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
-theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
-theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
-theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
-theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
-text = "I'm  afraid  I  won't  do that, Dave."
-
 [node name="Care_Sheet" type="Node2D" parent="Panels"]
 visible = false
 position = Vector2(164, 50)
@@ -1117,380 +579,6 @@ theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1
 text = "On  a second
 thought..."
 script = ExtResource("12_vr4eh")
-
-[node name="Cops" type="Node2D" parent="Panels"]
-visible = false
-
-[node name="Cops_BG" type="Sprite2D" parent="Panels/Cops"]
-position = Vector2(95, 48)
-texture = ExtResource("13_s26gq")
-centered = false
-
-[node name="Info" type="Control" parent="Panels/Cops"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("14_adsmj")
-
-[node name="Player" type="Control" parent="Panels/Cops/Info"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
-theme = ExtResource("15_wqyuw")
-
-[node name="Situation" type="RichTextLabel" parent="Panels/Cops/Info/Player"]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 148.0
-offset_right = 534.0
-offset_bottom = 267.0
-bbcode_enabled = true
-text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff8864]   Dø[/color])."
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Money" type="RichTextLabel" parent="Panels/Cops/Info/Player/Situation"]
-layout_mode = 1
-offset_left = 67.0
-offset_top = 105.0
-offset_right = 87.0
-offset_bottom = 116.0
-theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_na1nk")
-bbcode_enabled = true
-text = "200"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="Surrender" type="Button" parent="Panels/Cops/Info/Player"]
-layout_mode = 0
-offset_left = 415.0
-offset_top = 289.0
-offset_right = 534.0
-offset_bottom = 305.0
-tooltip_text = "Anyway, I needed a break..."
-toggle_mode = true
-button_group = ExtResource("16_dog4u")
-text = "Don't shoot, I surrender..."
-alignment = 2
-
-[node name="Pay" type="Button" parent="Panels/Cops/Info/Player"]
-layout_mode = 0
-offset_left = 430.0
-offset_top = 273.0
-offset_right = 534.0
-offset_bottom = 289.0
-tooltip_text = "Pay to leave now."
-theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
-theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
-theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-toggle_mode = true
-button_group = ExtResource("16_dog4u")
-text = "Easy, easy... I can pay!"
-alignment = 2
-
-[node name="NPC" type="Control" parent="Panels/Cops/Info"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
-theme = ExtResource("15_wqyuw")
-
-[node name="Situation" type="RichTextLabel" parent="Panels/Cops/Info/NPC"]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 191.0
-offset_right = 534.0
-offset_bottom = 283.0
-bbcode_enabled = true
-text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] That [color=#ff8864]idiot[/color] crossed the line, [color=#ff8864]the authorities[/color] have sent people to handle it, and that means spending [color=#ff1c18]several weeks[/color] [color=#ff8864]in jail[/color].
-"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Pay" type="Button" parent="Panels/Cops/Info/NPC"]
-layout_mode = 0
-offset_left = 404.0
-offset_top = 289.0
-offset_right = 534.0
-offset_bottom = 305.0
-tooltip_text = "Pay to leave now."
-theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
-theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
-theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-toggle_mode = true
-button_group = ExtResource("16_dog4u")
-text = "Ha! Ha! See you in lockup!"
-alignment = 2
-
-[node name="Police" type="AudioStreamPlayer" parent="Panels/Cops"]
-stream = ExtResource("17_wp1dn")
-volume_db = -22.5
-bus = &"FX"
-
-[node name="Intercom" type="Node2D" parent="Panels"]
-visible = false
-
-[node name="Intercom_BG" type="Sprite2D" parent="Panels/Intercom"]
-position = Vector2(209, 38)
-texture = ExtResource("18_15dtw")
-centered = false
-offset = Vector2(20, 20)
-
-[node name="Interface" type="Control" parent="Panels/Intercom"]
-layout_mode = 3
-anchors_preset = 0
-theme = ExtResource("19_p0ov3")
-
-[node name="Green_Button" type="Sprite2D" parent="Panels/Intercom/Interface"]
-modulate = Color(1, 1, 1, 0.686275)
-self_modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(208, 36)
-texture = ExtResource("20_nc40d")
-centered = false
-offset = Vector2(20, 20)
-
-[node name="Screens" type="Control" parent="Panels/Intercom/Interface"]
-modulate = Color(1, 1, 1, 0.917647)
-anchors_preset = 0
-
-[node name="Away" type="Label" parent="Panels/Intercom/Interface/Screens"]
-visible = false
-modulate = Color(1, 1, 1, 0.784314)
-layout_mode = 0
-offset_left = 271.0
-offset_top = 101.0
-offset_right = 370.0
-offset_bottom = 142.0
-theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
-theme_override_constants/shadow_offset_x = -3
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 6
-text = "Sorry,
-
-seems to be away..."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="NPC" type="Label" parent="Panels/Intercom/Interface/Screens/Away"]
-layout_mode = 0
-offset_right = 99.0
-offset_bottom = 41.0
-theme_override_colors/font_color = Color(0.99, 0.6402, 0.4653, 1)
-theme_override_constants/shadow_offset_x = -3
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 6
-text = "Jean-Michel Apathie"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Refuse" type="Label" parent="Panels/Intercom/Interface/Screens"]
-modulate = Color(1, 1, 1, 0.784314)
-layout_mode = 0
-offset_left = 271.0
-offset_top = 101.0
-offset_right = 370.0
-offset_bottom = 142.0
-theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
-theme_override_constants/shadow_offset_x = -3
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 6
-text = "Sorry,
-
-doesn't want to talk to you."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="NPC" type="Label" parent="Panels/Intercom/Interface/Screens/Refuse"]
-layout_mode = 0
-offset_right = 99.0
-offset_bottom = 31.0
-theme_override_colors/font_color = Color(0.988235, 0.639216, 0.466667, 1)
-theme_override_constants/shadow_offset_x = -3
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_outline_size = 6
-text = "Anne Sinclair"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Numbers_Etc" type="Control" parent="Panels/Intercom/Interface"]
-modulate = Color(1, 1, 1, 0.882353)
-anchors_preset = 0
-
-[node name="7" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 285.0
-offset_top = 181.0
-offset_right = 290.0
-offset_bottom = 189.0
-text = "7"
-
-[node name="8" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 181.0
-offset_right = 307.0
-offset_bottom = 189.0
-text = "8"
-
-[node name="9" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 181.0
-offset_right = 324.0
-offset_bottom = 189.0
-text = "9"
-
-[node name="4" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 285.0
-offset_top = 199.0
-offset_right = 290.0
-offset_bottom = 207.0
-text = "4"
-
-[node name="5" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 199.0
-offset_right = 307.0
-offset_bottom = 207.0
-text = "5"
-
-[node name="6" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 199.0
-offset_right = 324.0
-offset_bottom = 207.0
-text = "6"
-
-[node name="1" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 217.0
-offset_right = 291.0
-offset_bottom = 225.0
-text = "1"
-
-[node name="2" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 217.0
-offset_right = 307.0
-offset_bottom = 225.0
-text = "2"
-
-[node name="3" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 319.0
-offset_top = 217.0
-offset_right = 324.0
-offset_bottom = 225.0
-text = "3"
-
-[node name="Minus" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 341.0
-offset_top = 181.0
-offset_right = 346.0
-offset_bottom = 189.0
-text = "-"
-
-[node name="Plus" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 341.0
-offset_top = 199.0
-offset_right = 346.0
-offset_bottom = 207.0
-text = "+"
-
-[node name="Point" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 358.0
-offset_top = 179.0
-offset_right = 363.0
-offset_bottom = 187.0
-text = "."
-
-[node name="Smaller" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 341.0
-offset_top = 217.0
-offset_right = 346.0
-offset_bottom = 225.0
-text = "<"
-
-[node name="Greater" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 357.0
-offset_top = 217.0
-offset_right = 362.0
-offset_bottom = 225.0
-text = ">"
-
-[node name="0" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 302.0
-offset_top = 235.0
-offset_right = 307.0
-offset_bottom = 243.0
-text = "0"
-
-[node name="Hash" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 318.0
-offset_top = 235.0
-offset_right = 324.0
-offset_bottom = 243.0
-text = "#"
-
-[node name="Star" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 236.0
-offset_right = 291.0
-offset_bottom = 244.0
-text = "*"
-
-[node name="Quit" type="TextureButton" parent="Panels/Intercom/Interface"]
-layout_mode = 0
-offset_left = 227.0
-offset_top = 56.0
-offset_right = 408.0
-offset_bottom = 306.0
-tooltip_text = "Alright,
-I'll be back!"
-texture_normal = ExtResource("21_8p368")
-texture_pressed = ExtResource("21_8p368")
-texture_hover = ExtResource("22_v0nqa")
-texture_click_mask = ExtResource("23_1nskf")
-script = ExtResource("24_fjtuv")
-
-[node name="Intercom" type="AudioStreamPlayer" parent="Panels/Intercom"]
-stream = ExtResource("25_7hyo2")
-volume_db = -15.0
-bus = &"FX"
-
-[node name="Green_Button" type="AnimationPlayer" parent="Panels/Intercom"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_mlhxe")
-}
-autoplay = "Flashing"
 
 [node name="Case_Management" type="Node2D" parent="Panels"]
 visible = false
@@ -1766,6 +854,125 @@ libraries = {
 }
 autoplay = "Text_Animation"
 
+[node name="Cops" type="Node2D" parent="Panels"]
+visible = false
+
+[node name="Cops_BG" type="Sprite2D" parent="Panels/Cops"]
+position = Vector2(95, 48)
+texture = ExtResource("13_s26gq")
+centered = false
+
+[node name="Info" type="Control" parent="Panels/Cops"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("14_adsmj")
+
+[node name="Player" type="Control" parent="Panels/Cops/Info"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("15_wqyuw")
+
+[node name="Situation" type="RichTextLabel" parent="Panels/Cops/Info/Player"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 148.0
+offset_right = 534.0
+offset_bottom = 267.0
+bbcode_enabled = true
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff8864]   Dø[/color])."
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Money" type="RichTextLabel" parent="Panels/Cops/Info/Player/Situation"]
+layout_mode = 1
+offset_left = 67.0
+offset_top = 105.0
+offset_right = 87.0
+offset_bottom = 116.0
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_na1nk")
+bbcode_enabled = true
+text = "200"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Surrender" type="Button" parent="Panels/Cops/Info/Player"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 289.0
+offset_right = 534.0
+offset_bottom = 305.0
+tooltip_text = "Anyway, I needed a break..."
+toggle_mode = true
+button_group = ExtResource("16_dog4u")
+text = "Don't shoot, I surrender..."
+alignment = 2
+
+[node name="Pay" type="Button" parent="Panels/Cops/Info/Player"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 273.0
+offset_right = 534.0
+offset_bottom = 289.0
+tooltip_text = "Pay to leave now."
+theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
+theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
+theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+toggle_mode = true
+button_group = ExtResource("16_dog4u")
+text = "Easy, easy... I can pay!"
+alignment = 2
+
+[node name="NPC" type="Control" parent="Panels/Cops/Info"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("15_wqyuw")
+
+[node name="Situation" type="RichTextLabel" parent="Panels/Cops/Info/NPC"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 191.0
+offset_right = 534.0
+offset_bottom = 283.0
+bbcode_enabled = true
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] That [color=#ff8864]idiot[/color] crossed the line, [color=#ff8864]the authorities[/color] have sent people to handle it, and that means spending [color=#ff1c18]several weeks[/color] [color=#ff8864]in jail[/color].
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Pay" type="Button" parent="Panels/Cops/Info/NPC"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 289.0
+offset_right = 534.0
+offset_bottom = 305.0
+tooltip_text = "Pay to leave now."
+theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
+theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
+theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+toggle_mode = true
+button_group = ExtResource("16_dog4u")
+text = "Ha! Ha! See you in lockup!"
+alignment = 2
+
+[node name="Police" type="AudioStreamPlayer" parent="Panels/Cops"]
+stream = ExtResource("17_wp1dn")
+volume_db = -22.5
+bus = &"FX"
+
 [node name="Income_Start" type="Node2D" parent="Panels"]
 visible = false
 
@@ -2003,6 +1210,261 @@ position = Vector2(295, 152)
 
 [node name="Card4" parent="Panels/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
+
+[node name="Intercom" type="Node2D" parent="Panels"]
+visible = false
+
+[node name="Intercom_BG" type="Sprite2D" parent="Panels/Intercom"]
+position = Vector2(209, 38)
+texture = ExtResource("18_15dtw")
+centered = false
+offset = Vector2(20, 20)
+
+[node name="Interface" type="Control" parent="Panels/Intercom"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("19_p0ov3")
+
+[node name="Green_Button" type="Sprite2D" parent="Panels/Intercom/Interface"]
+modulate = Color(1, 1, 1, 0.686275)
+self_modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(208, 36)
+texture = ExtResource("20_nc40d")
+centered = false
+offset = Vector2(20, 20)
+
+[node name="Screens" type="Control" parent="Panels/Intercom/Interface"]
+modulate = Color(1, 1, 1, 0.917647)
+anchors_preset = 0
+
+[node name="Away" type="Label" parent="Panels/Intercom/Interface/Screens"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 271.0
+offset_top = 101.0
+offset_right = 370.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 6
+text = "Sorry,
+
+seems to be away..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NPC" type="Label" parent="Panels/Intercom/Interface/Screens/Away"]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.99, 0.6402, 0.4653, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 6
+text = "Jean-Michel Apathie"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Refuse" type="Label" parent="Panels/Intercom/Interface/Screens"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 271.0
+offset_top = 101.0
+offset_right = 370.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 6
+text = "Sorry,
+
+doesn't want to talk to you."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="NPC" type="Label" parent="Panels/Intercom/Interface/Screens/Refuse"]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.988235, 0.639216, 0.466667, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 6
+text = "Anne Sinclair"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Numbers_Etc" type="Control" parent="Panels/Intercom/Interface"]
+modulate = Color(1, 1, 1, 0.882353)
+anchors_preset = 0
+
+[node name="7" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 181.0
+offset_right = 290.0
+offset_bottom = 189.0
+text = "7"
+
+[node name="8" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 181.0
+offset_right = 307.0
+offset_bottom = 189.0
+text = "8"
+
+[node name="9" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 181.0
+offset_right = 324.0
+offset_bottom = 189.0
+text = "9"
+
+[node name="4" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 199.0
+offset_right = 290.0
+offset_bottom = 207.0
+text = "4"
+
+[node name="5" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 199.0
+offset_right = 307.0
+offset_bottom = 207.0
+text = "5"
+
+[node name="6" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 199.0
+offset_right = 324.0
+offset_bottom = 207.0
+text = "6"
+
+[node name="1" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 217.0
+offset_right = 291.0
+offset_bottom = 225.0
+text = "1"
+
+[node name="2" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 217.0
+offset_right = 307.0
+offset_bottom = 225.0
+text = "2"
+
+[node name="3" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 217.0
+offset_right = 324.0
+offset_bottom = 225.0
+text = "3"
+
+[node name="Minus" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 181.0
+offset_right = 346.0
+offset_bottom = 189.0
+text = "-"
+
+[node name="Plus" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 199.0
+offset_right = 346.0
+offset_bottom = 207.0
+text = "+"
+
+[node name="Point" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 179.0
+offset_right = 363.0
+offset_bottom = 187.0
+text = "."
+
+[node name="Smaller" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 217.0
+offset_right = 346.0
+offset_bottom = 225.0
+text = "<"
+
+[node name="Greater" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 217.0
+offset_right = 362.0
+offset_bottom = 225.0
+text = ">"
+
+[node name="0" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 235.0
+offset_right = 307.0
+offset_bottom = 243.0
+text = "0"
+
+[node name="Hash" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 235.0
+offset_right = 324.0
+offset_bottom = 243.0
+text = "#"
+
+[node name="Star" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 236.0
+offset_right = 291.0
+offset_bottom = 244.0
+text = "*"
+
+[node name="Quit" type="TextureButton" parent="Panels/Intercom/Interface"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 56.0
+offset_right = 408.0
+offset_bottom = 306.0
+tooltip_text = "Alright,
+I'll be back!"
+texture_normal = ExtResource("21_8p368")
+texture_pressed = ExtResource("21_8p368")
+texture_hover = ExtResource("22_v0nqa")
+texture_click_mask = ExtResource("23_1nskf")
+script = ExtResource("24_fjtuv")
+
+[node name="Intercom" type="AudioStreamPlayer" parent="Panels/Intercom"]
+stream = ExtResource("25_7hyo2")
+volume_db = -15.0
+bus = &"FX"
+
+[node name="Green_Button" type="AnimationPlayer" parent="Panels/Intercom"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_mlhxe")
+}
+autoplay = "Flashing"
 
 [node name="Load_Save_Delete" type="Node2D" parent="Panels"]
 visible = false
@@ -2444,6 +1906,544 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ev0la")
 text = "Thanks!"
 flat = true
 
+[node name="Run_Away_Break_In" type="Node2D" parent="Panels"]
+visible = false
+position = Vector2(172, 48)
+
+[node name="Run_Away_Break_In_BG" type="Sprite2D" parent="Panels/Run_Away_Break_In"]
+position = Vector2(-122, 12)
+texture = ExtResource("7_yccgy")
+centered = false
+offset = Vector2(20, 20)
+
+[node name="Announces" type="Control" parent="Panels/Run_Away_Break_In"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -172.0
+offset_top = -48.0
+offset_right = -172.0
+offset_bottom = -48.0
+script = ExtResource("8_7ujkg")
+
+[node name="Run_Away" type="Control" parent="Panels/Run_Away_Break_In/Announces"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 141.0
+offset_top = 30.0
+offset_right = 141.0
+offset_bottom = 30.0
+theme = ExtResource("9_oetaq")
+
+[node name="Info" type="RichTextLabel" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 57.0
+offset_right = 50.0
+offset_bottom = 219.0
+rotation = 0.035035
+bbcode_enabled = true
+text = "Hm...
+I guess [color=#ff1c18] now[/color][color=#ff8864] would  be the perfect  time to  [/color][color=#ff1c18][shake rate=7.0 level=5 connected=0]run  away[/shake][/color], right?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 87.0
+offset_right = 373.0
+offset_bottom = 108.0
+rotation = 0.0310151
+tooltip_text = "Run for your life!"
+theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
+text = "Yes,  I totally  agree  with that..."
+
+[node name="No" type="Button" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 171.0
+offset_right = 319.0
+offset_bottom = 192.0
+rotation = 0.0310151
+tooltip_text = "I'll stand the ground!"
+theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
+theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
+text = "No, not in this world!"
+
+[node name="Break_In" type="Control" parent="Panels/Run_Away_Break_In/Announces"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 141.0
+offset_top = 30.0
+offset_right = 141.0
+offset_bottom = 30.0
+theme = ExtResource("9_oetaq")
+
+[node name="Info" type="RichTextLabel" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 53.0
+offset_right = 55.0
+offset_bottom = 222.0
+rotation = 0.035035
+bbcode_enabled = true
+text = "Alright,
+[color=#ff1c18]nobody's there[/color]. Looks like the[color=#ff8864] perfect time [/color]to  [color=#ff1c18][shake rate=7.0 level=5 connected=0]break in[/shake][/color] [color=#ff8864]inside[/color]!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 87.0
+offset_right = 354.0
+offset_bottom = 108.0
+rotation = 0.0310151
+tooltip_text = "Let's taste the
+adrenaline rush!"
+theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
+text = "Yes,  It's  now  or...  It's now!"
+
+[node name="No" type="Button" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 168.0
+offset_right = 356.0
+offset_bottom = 189.0
+rotation = 0.0310151
+tooltip_text = "I have a feeling
+this will end badly."
+theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
+theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
+text = "I'm  afraid  I  won't  do that, Dave."
+
+[node name="Search_Warrant" type="Node2D" parent="Panels"]
+visible = false
+position = Vector2(172, 48)
+
+[node name="Search_Warrant_BG" type="Sprite2D" parent="Panels/Search_Warrant"]
+position = Vector2(40, -19)
+texture = ExtResource("4_0rnfm")
+centered = false
+offset = Vector2(20, 20)
+
+[node name="Text_Buy" type="Control" parent="Panels/Search_Warrant"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -31.0
+offset_top = -18.0
+offset_right = -31.0
+offset_bottom = -18.0
+theme = ExtResource("5_53ag3")
+script = ExtResource("6_200re")
+
+[node name="Buy_It" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Buy"]
+self_modulate = Color(1, 1, 1, 0.921569)
+layout_mode = 0
+offset_left = 108.0
+offset_top = 64.0
+offset_right = 249.0
+offset_bottom = 222.0
+rotation = 0.0165557
+bbcode_enabled = true
+text = "[center]This  Warrant is  worth [color=#992726]        Dø[/color] and  I  have  better things to  do than  drafting  Search  Warrants all day...[/center]"
+
+[node name="Price" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Buy"]
+self_modulate = Color(1, 1, 1, 0.921569)
+layout_mode = 0
+offset_left = 153.0
+offset_top = 86.0
+offset_right = 183.0
+offset_bottom = 107.0
+rotation = 0.0165557
+theme_override_colors/default_color = Color(0.6, 0.152941, 0.14902, 1)
+bbcode_enabled = true
+text = "25"
+horizontal_alignment = 2
+
+[node name="Yes" type="Button" parent="Panels/Search_Warrant/Text_Buy"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 233.0
+offset_right = 244.0
+offset_bottom = 249.0
+tooltip_text = "Go!"
+theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
+theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
+theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+text = "Yes, please, I
+need this one!"
+alignment = 2
+
+[node name="No" type="Button" parent="Panels/Search_Warrant/Text_Buy"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 233.0
+offset_right = 171.0
+offset_bottom = 249.0
+tooltip_text = "Hm... Maybe not."
+theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
+theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
+theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
+text = "Well, now that
+you mention it..."
+alignment = 0
+
+[node name="Text_Use" type="Control" parent="Panels/Search_Warrant"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -31.0
+offset_top = -18.0
+offset_right = -31.0
+offset_bottom = -18.0
+theme = ExtResource("5_53ag3")
+script = ExtResource("6_200re")
+
+[node name="Use_It" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Use"]
+self_modulate = Color(1, 1, 1, 0.921569)
+layout_mode = 0
+offset_left = 108.0
+offset_top = 64.0
+offset_right = 249.0
+offset_bottom = 222.0
+rotation = 0.0165557
+bbcode_enabled = true
+text = "[center]Now the
+question is:
+
+Should  I  use  my so expensive
+Search  WarrAnt
+(or is it  racket)?[/center]"
+
+[node name="Yes" type="Button" parent="Panels/Search_Warrant/Text_Use"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 233.0
+offset_right = 244.0
+offset_bottom = 249.0
+tooltip_text = "Go!"
+theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
+theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
+theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+text = "No other
+choice!"
+alignment = 2
+
+[node name="No" type="Button" parent="Panels/Search_Warrant/Text_Use"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 233.0
+offset_right = 171.0
+offset_bottom = 249.0
+tooltip_text = "Hm... Maybe not."
+theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
+theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
+theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
+text = "Hm...
+Maybe not!"
+alignment = 0
+
+[node name="Short_Event" type="Node2D" parent="Panels"]
+visible = false
+
+[node name="Short_Event_BG" type="Sprite2D" parent="Panels/Short_Event"]
+texture = ExtResource("1_sivc1")
+centered = false
+offset = Vector2(50, 0)
+
+[node name="Announces" type="Control" parent="Panels/Short_Event"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_vr7x7")
+script = ExtResource("3_8qa11")
+
+[node name="Quit" type="Button" parent="Panels/Short_Event/Announces"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 306.0
+offset_right = 479.0
+offset_bottom = 314.0
+rotation = 0.0361729
+tooltip_text = "Ok, ok..."
+text = "Whatever..."
+
+[node name="Run_Away" type="Control" parent="Panels/Short_Event/Announces"]
+anchors_preset = 0
+
+[node name="Player_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Run_Away"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 44.0
+offset_right = 494.0
+offset_bottom = 296.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] fled  ([color=#ff8864][shake rate=7.0 level=5 connected=0]cowardly[/shake][/color])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
+Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
+Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
+
+Either way, you sure  know  how  to  leave an impression...
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
+
+[node name="Player_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Run_Away"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 50.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] failed to flee  ([shake rate=7.0 level=5 connected=0][color=#ff8864]pathetic[/color][/shake])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How  disappointing...[/color][/shake]
+You had one job: [shake rate=7.0 level=5 connected=0][color=#ff8864]escape[/color][/shake].
+But no, you chose to stay  and face it.
+Was it bravery?  Or just  pure
+[shake rate=7.0 level=5 connected=0][color=#ff8864]bad judgment[/color][/shake]?
+In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
+
+[node name="Rowena_Absent" type="Control" parent="Panels/Short_Event/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Panels/Short_Event/Announces/Rowena_Absent"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 56.0
+offset_right = 490.0
+offset_bottom = 296.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]Darn!  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Rowena[/color][/pulse]'s  [color=#ff8864][shake rate=7.0 level=5 connected=0]not  here[/shake][/color]...
+and that's  [shake rate=7.0 level=5 connected=0][color=#ff8864]bad[/color][/shake].
+
+I guess  she's  still  busy  tearing herself  apart, fighting  with  her  deep superego...
+
+Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thing[/color][/shake]  is  really going  to [shake rate=7.0 level=5 connected=0][color=#ff1c18]screw  me  over[/color][/shake]!
+
+It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
+
+[node name="Irrelevant_Motive" type="Control" parent="Panels/Short_Event/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Panels/Short_Event/Announces/Irrelevant_Motive"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 111.0
+offset_right = 472.0
+offset_bottom = 251.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
+
+We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
+
+[node name="Break_In" type="Control" parent="Panels/Short_Event/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Player_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Break_In"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 70.0
+offset_right = 474.0
+offset_bottom = 294.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]against  all  odds[/color][/pulse])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Well, color me surprised…[/color][/shake]
+It’s  almost impressive how you managed to  pull that  off.
+Did you really  think  that  would  be  your biggest  challenge  today?
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you’ve  done it...[/color][/shake]
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
+
+[node name="Player_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Break_In"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 60.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] tried  something  ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]how  ambitious[/color][/pulse])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]That  didn’t go  as  [color=#ff1c18]planned[/color]...[/color][/shake]
+It  seems  like you had  a grand idea, but the execution?
+Let’s just say it wasn’t exactly impressive.
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe next time, try thinking it through[/color][/shake].
+
+You sure know how to make  an entrance...
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  not  the best  one![/color][/shake][/center]"
+
+[node name="Dialogue" type="Control" parent="Panels/Short_Event/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="NPC_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dialogue"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 58.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The coward[/color][/pulse] has fled!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not exactly  a shocker[/color][/shake]. It  appears that the  mere thought  of  facing  you - or, you know,  any challenge - was simply too  much to  handle.
+
+It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][color=#ff8864]overwhelming  need to  [color=#ff1c18]disappear[/color][/color][/shake].
+
+Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
+
+[node name="NPC_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dialogue"]
+visible = false
+layout_mode = 0
+offset_left = 167.0
+offset_top = 61.0
+offset_right = 486.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The bastard[/color][/pulse] tried to flee!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]You'd think someone would learn by now[/color][/shake].
+But no, despite all the chances, they decided to turn back...
+The  moment  of escape?  [shake rate=7.0 level=5 connected=0][color=#ff8864]Totally  [color=#ff1c18]missed[/color][/color][/shake].
+It’s  almost  as if they were just waiting  for  the  perfect  moment...
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Too bad that  moment  never  came[/color][/shake].
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
+
+[node name="Combat" type="Control" parent="Panels/Short_Event/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="NPC_Attack" type="RichTextLabel" parent="Panels/Short_Event/Announces/Combat"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 62.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not what you expected[/color][/shake]. Just  as  you approached, the  person in front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
+
+In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
+
+Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
+
+[node name="Minion_Attack" type="RichTextLabel" parent="Panels/Short_Event/Announces/Combat"]
+visible = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 61.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an attack!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t think it’d be that easy, did you?
+
+The  assault  comes  fast  (probably  more than you can  handle).
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
+
+Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
+
+[node name="Outdated_Case" type="Control" parent="Panels/Short_Event/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Annonce" type="RichTextLabel" parent="Panels/Short_Event/Announces/Outdated_Case"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 62.0
+offset_right = 483.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Out  of  date[/color] [color=#ff8864]investigation[/color]![/pulse]
+
+Well, [shake rate=7.0 level=5 connected=0][color=#ff8864]congratulations[/color][/shake]!
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Case[/color]  [color=#ff1c18]XXX[/color][/shake]? [color=#ff1c18]Gone[/color]!
+
+Your inability  to  meet  a simple  [shake rate=7.0 level=5 connected=0][color=#ff8864]deadline[/color][/shake]  is  really impressive.  Not  exactly the best for your [shake rate=7.0 level=5 connected=0][color=#ff8864]emotionnal stability[/color][/shake], though...
+
+Nice job,  genius![/center]"
+
+[node name="Dreams" type="Control" parent="Panels/Short_Event/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Dream" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dreams"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 106.0
+offset_right = 481.0
+offset_bottom = 268.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,  for  once[/color],  [color=#ff8864]a [color=#ff1c18]real[/color]  night  of  rest[/color].[/pulse]
+
+[shake rate=7.0 level=5 connected=0][color=#ff1c18]Don't  get  used  to it[/color][/shake]. just  take  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]scraps  you're  given[/color][/shake], who  knows  what  [shake rate=7.0 level=5 connected=0][color=#ff8864]the  next  one[/color][/shake]  will  be [shake rate=7.0 level=5 connected=0][color=#ff1c18]laughing  about[/color][/shake].[/center]
+"
+
+[node name="Nightmare" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dreams"]
+visible = false
+layout_mode = 0
+offset_left = 168.0
+offset_top = 94.0
+offset_right = 480.0
+offset_bottom = 276.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Again[/color]![/pulse]
+The  [shake rate=7.0 level=5 connected=0][color=#ff8864]kind[/color][/shake]  of  [shake rate=7.0 level=5 connected=0][color=#ff1c18]night[/color][/shake]  that  leaves  you  [shake rate=7.0 level=5 connected=0][color=#ff8864]hollow[/color][/shake].
+
+[shake rate=7.0 level=5 connected=0][color=#ff1c18]No  peace[/color][/shake]. just  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]weight  of  what  waits[/color][/shake], when  even  [shake rate=7.0 level=5 connected=0][color=#ff8864]the silence[/color][/shake]  feels  [shake rate=7.0 level=5 connected=0][color=#ff1c18]louder  than  screams[/color][/shake].[/center]
+"
+
 [node name="Sleep" type="Node2D" parent="Panels"]
 visible = false
 
@@ -2639,51 +2639,12 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
-[connection signal="mouse_entered" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_no_pressed"]
 [connection signal="mouse_entered" from="Panels/Care_Sheet/Note/Yes" to="Panels/Care_Sheet/Note/Yes" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Panels/Care_Sheet/Note/Yes" to="Panels/Care_Sheet/Note/Yes" method="_on_any_button_exited"]
 [connection signal="pressed" from="Panels/Care_Sheet/Note/Yes" to="Panels/Care_Sheet/Note/Yes" method="_on_yes_pressed"]
 [connection signal="mouse_entered" from="Panels/Care_Sheet/Note/No" to="Panels/Care_Sheet/Note/No" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Panels/Care_Sheet/Note/No" to="Panels/Care_Sheet/Note/No" method="_on_any_button_exited"]
 [connection signal="pressed" from="Panels/Care_Sheet/Note/No" to="Panels/Care_Sheet/Note/No" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_surrender_pressed"]
-[connection signal="mouse_entered" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_pressed"]
 [connection signal="mouse_entered" from="Panels/Case_Management/Buttons/Cancel" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Panels/Case_Management/Buttons/Cancel" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Panels/Case_Management/Buttons/Cancel" to="Panels/Case_Management/Buttons" method="_on_cancel_pressed"]
@@ -2707,12 +2668,24 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Panels/Confirmation/Yes_No/No" to="Panels/Confirmation/Yes_No" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Panels/Confirmation/Yes_No/No" to="Panels/Confirmation/Yes_No" method="_on_any_button_exited"]
 [connection signal="pressed" from="Panels/Confirmation/Yes_No/No" to="Panels/Confirmation/Yes_No" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_surrender_pressed"]
+[connection signal="mouse_entered" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_pay_pressed"]
+[connection signal="mouse_entered" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_pay_pressed"]
 [connection signal="mouse_entered" from="Panels/Income_Start/Income/Quit" to="Panels/Income_Start/Income/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panels/Income_Start/Income/Quit" to="Panels/Income_Start/Income/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Panels/Income_Start/Income/Quit" to="Panels/Income_Start/Income/Quit" method="_on_pressed"]
 [connection signal="mouse_entered" from="Panels/Income_Start/Starting_Hand/Quit" to="Panels/Income_Start/Starting_Hand/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panels/Income_Start/Starting_Hand/Quit" to="Panels/Income_Start/Starting_Hand/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Panels/Income_Start/Starting_Hand/Quit" to="Panels/Income_Start/Starting_Hand/Quit" method="_on_pressed"]
+[connection signal="mouse_entered" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_pressed"]
 [connection signal="item_selected" from="Panels/Load_Save_Delete/List/Saves" to="Panels/Load_Save_Delete" method="_on_item_list_item_selected"]
 [connection signal="mouse_entered" from="Panels/Load_Save_Delete/List/Saves" to="Panels/Load_Save_Delete" method="_on_item_list_mouse_entered"]
 [connection signal="mouse_exited" from="Panels/Load_Save_Delete/List/Saves" to="Panels/Load_Save_Delete" method="_on_item_list_mouse_exited"]
@@ -2740,6 +2713,33 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Panels/Rowena" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Panels/Rowena" method="_on_mouse_exited"]
 [connection signal="pressed" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Panels/Rowena" method="_on_thanks_pressed"]
+[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_exited"]
+[connection signal="pressed" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_09" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_09" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_08" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
