@@ -1,0 +1,303 @@
+[gd_scene load_steps=10 format=3 uid="uid://ety07wkwhk35"]
+
+[ext_resource type="Texture2D" uid="uid://doijy014fekfq" path="res://GRAPHICS/SHORT_EVENT/BG.png" id="1_4c6ij"]
+[ext_resource type="Theme" uid="uid://sscuwot1pitg" path="res://UI/Run_Away_Break_In_Theme.tres" id="2_4fm7x"]
+[ext_resource type="Script" uid="uid://wdxxwss0sbcg" path="res://SCRIPTS/Run_Away_Break_In_Buttons.gd" id="2_cn4vr"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="22_7qgb5"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="23_e3oyk"]
+
+[sub_resource type="Animation" id="Animation_4pq04"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Run_Away_Break_In_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-468, 48), Vector2(-234, 48), Vector2(43.539, 48), Vector2(86.36, 48), Vector2(129.18, 48), Vector2(172, 48)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("22_7qgb5")
+}],
+"times": PackedFloat32Array(0.028334)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_atwki"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Run_Away_Break_In_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(172, 48), Vector2(172, 48), Vector2(162, 48), Vector2(-48.001, 48), Vector2(-258.001, 48), Vector2(-468, 48)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_e3oyk")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vfroo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Run_Away_Break_In_Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-468, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
+_data = {
+&"Appearance": SubResource("Animation_4pq04"),
+&"Disappearance": SubResource("Animation_atwki"),
+&"RESET": SubResource("Animation_vfroo")
+}
+
+[node name="Run_Away_Break_In" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Run_Away_Break_In_Panel" type="Node2D" parent="."]
+position = Vector2(-468, 48)
+metadata/_edit_lock_ = true
+
+[node name="Run_Away_Break_In_BG" type="Sprite2D" parent="Run_Away_Break_In_Panel"]
+position = Vector2(-122, 12)
+texture = ExtResource("1_4c6ij")
+centered = false
+offset = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Tickets" type="Control" parent="Run_Away_Break_In_Panel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -172.0
+offset_top = -48.0
+offset_right = -172.0
+offset_bottom = -48.0
+script = ExtResource("2_cn4vr")
+metadata/_edit_lock_ = true
+
+[node name="Run_Away" type="Control" parent="Run_Away_Break_In_Panel/Tickets"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 141.0
+offset_top = 30.0
+offset_right = 141.0
+offset_bottom = 30.0
+theme = ExtResource("2_4fm7x")
+metadata/_edit_lock_ = true
+
+[node name="Info" type="RichTextLabel" parent="Run_Away_Break_In_Panel/Tickets/Run_Away"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 57.0
+offset_right = 50.0
+offset_bottom = 219.0
+rotation = 0.035035
+bbcode_enabled = true
+text = "Hm...
+I guess [color=#ff1c18] now[/color][color=#ff8864] would  be the perfect  time to  [/color][color=#ff1c18][shake rate=7.0 level=5 connected=0]run  away[/shake][/color], right?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Yes" type="Button" parent="Run_Away_Break_In_Panel/Tickets/Run_Away"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 87.0
+offset_right = 373.0
+offset_bottom = 108.0
+rotation = 0.0310151
+tooltip_text = "Run for your life!"
+theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
+text = "Yes,  I totally  agree  with that..."
+metadata/_edit_lock_ = true
+
+[node name="No" type="Button" parent="Run_Away_Break_In_Panel/Tickets/Run_Away"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 171.0
+offset_right = 319.0
+offset_bottom = 192.0
+rotation = 0.0310151
+tooltip_text = "I'll stand the ground!"
+theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
+theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
+text = "No, not in this world!"
+metadata/_edit_lock_ = true
+
+[node name="Break_In" type="Control" parent="Run_Away_Break_In_Panel/Tickets"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 141.0
+offset_top = 30.0
+offset_right = 141.0
+offset_bottom = 30.0
+theme = ExtResource("2_4fm7x")
+metadata/_edit_lock_ = true
+
+[node name="Info" type="RichTextLabel" parent="Run_Away_Break_In_Panel/Tickets/Break_In"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 53.0
+offset_right = 55.0
+offset_bottom = 222.0
+rotation = 0.035035
+bbcode_enabled = true
+text = "Alright,
+[color=#ff1c18]nobody's there[/color]. Looks like the[color=#ff8864] perfect time [/color]to  [color=#ff1c18][shake rate=7.0 level=5 connected=0]break in[/shake][/color] [color=#ff8864]inside[/color]!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Yes" type="Button" parent="Run_Away_Break_In_Panel/Tickets/Break_In"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 87.0
+offset_right = 354.0
+offset_bottom = 108.0
+rotation = 0.0310151
+tooltip_text = "Let's taste the
+adrenaline rush!"
+theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
+text = "Yes,  It's  now  or...  It's now!"
+metadata/_edit_lock_ = true
+
+[node name="No" type="Button" parent="Run_Away_Break_In_Panel/Tickets/Break_In"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 168.0
+offset_right = 356.0
+offset_bottom = 189.0
+rotation = 0.0310151
+tooltip_text = "I have a feeling
+this will end badly."
+theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
+theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
+theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
+text = "I'm  afraid  I  won't  do that, Dave."
+metadata/_edit_lock_ = true
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m6d4b")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
+
+[connection signal="mouse_entered" from="Run_Away_Break_In_Panel/Tickets/Run_Away/Yes" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Run_Away_Break_In_Panel/Tickets/Run_Away/Yes" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_exited"]
+[connection signal="pressed" from="Run_Away_Break_In_Panel/Tickets/Run_Away/Yes" to="Run_Away_Break_In_Panel/Tickets" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Run_Away_Break_In_Panel/Tickets/Run_Away/No" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Run_Away_Break_In_Panel/Tickets/Run_Away/No" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_exited"]
+[connection signal="pressed" from="Run_Away_Break_In_Panel/Tickets/Run_Away/No" to="Run_Away_Break_In_Panel/Tickets" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Run_Away_Break_In_Panel/Tickets/Break_In/Yes" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Run_Away_Break_In_Panel/Tickets/Break_In/Yes" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_exited"]
+[connection signal="pressed" from="Run_Away_Break_In_Panel/Tickets/Break_In/Yes" to="Run_Away_Break_In_Panel/Tickets" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Run_Away_Break_In_Panel/Tickets/Break_In/No" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Run_Away_Break_In_Panel/Tickets/Break_In/No" to="Run_Away_Break_In_Panel/Tickets" method="_on_mouse_exited"]
+[connection signal="pressed" from="Run_Away_Break_In_Panel/Tickets/Break_In/No" to="Run_Away_Break_In_Panel/Tickets" method="_on_no_pressed"]

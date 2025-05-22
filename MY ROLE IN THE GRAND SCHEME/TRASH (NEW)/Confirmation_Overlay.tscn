@@ -1,0 +1,354 @@
+[gd_scene load_steps=18 format=3 uid="uid://bj832g1qup1fu"]
+
+[ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/SHORT_EVENT/Confirmation.png" id="1_dp8pc"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="2_rc5rx"]
+[ext_resource type="Script" uid="uid://hwofijnch3v5" path="res://SCRIPTS/Confirmation_Overlay_Buttons.gd" id="3_bcly4"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_2aulp"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_g8020"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt1u8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rk6r8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imaw7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5otri"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgedu"]
+
+[sub_resource type="Animation" id="Animation_751i2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Confirmation/Do_You_Confirm_That:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Do you
+confirm that?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation/Yes_No/Yes:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Yes!"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Confirmation/Yes_No/No:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["No..."]
+}
+
+[sub_resource type="Animation" id="Animation_wqng6"]
+resource_name = "Text_Animation"
+length = 0.266673
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Confirmation/Do_You_Confirm_That:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Do yOu
+coNFiRm THat?", "Do yOu
+coNFiRm THat?", "dO YoU
+COnfIrM thAT?", "dO YoU
+COnfIrM thAT?", "Do yOu
+coNFiRm THat?"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation/Yes_No/Yes:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["yES", "Yes", "Yes", "yES", "yES"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Confirmation/Yes_No/No:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["No", "No", "nO", "nO", "No"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lew6r"]
+_data = {
+&"RESET": SubResource("Animation_751i2"),
+&"Text_Animation": SubResource("Animation_wqng6")
+}
+
+[sub_resource type="Animation" id="Animation_o1fk7"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(-128.461, 0), Vector2(-85.6403, 0), Vector2(-42.82, 0), Vector2(0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_2aulp")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_1sxob"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-10.0001, 0), Vector2(-220.001, 0), Vector2(-430.001, 0), Vector2(-640, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_g8020")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_lpv2x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Confirmation:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-640, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0jcg2"]
+_data = {
+&"Appearance": SubResource("Animation_o1fk7"),
+&"Disappearance": SubResource("Animation_1sxob"),
+&"RESET": SubResource("Animation_lpv2x")
+}
+
+[node name="Confirmation" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Confirmation" type="Node2D" parent="."]
+position = Vector2(-640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Confirmation_BG" type="Sprite2D" parent="Confirmation"]
+position = Vector2(320, 180)
+texture = ExtResource("1_dp8pc")
+metadata/_edit_lock_ = true
+
+[node name="Do_You_Confirm_That" type="Label" parent="Confirmation"]
+offset_left = 223.0
+offset_top = 134.0
+offset_right = 409.0
+offset_bottom = 201.0
+rotation = -0.0698132
+theme_override_colors/font_color = Color(0.9, 0.8616, 0.756, 0.541176)
+theme_override_colors/font_shadow_color = Color(0.77, 0.57596, 0.4466, 0.521569)
+theme_override_colors/font_outline_color = Color(0.15, 0.0543, 0.0195, 0.768627)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_rc5rx")
+theme_override_font_sizes/font_size = 32
+text = "Do you
+confirm that?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Yes_No" type="Control" parent="Confirmation"]
+modulate = Color(1, 1, 1, 0.843137)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 322.0
+offset_top = 215.0
+offset_right = 322.0
+offset_bottom = 215.0
+rotation = -0.0698132
+script = ExtResource("3_bcly4")
+metadata/_edit_lock_ = true
+
+[node name="Yes" type="Button" parent="Confirmation/Yes_No"]
+layout_mode = 0
+offset_left = -46.0
+offset_top = -6.0
+offset_right = -20.0
+offset_bottom = 8.0
+theme_override_colors/font_hover_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_hover_color = Color(0.41875, 0.67, 0.1675, 0.843137)
+theme_override_colors/font_outline_color = Color(0.00637, 0.02, 0.0026, 0.843137)
+theme_override_colors/font_color = Color(0.7221, 0.87, 0.5742, 0.843137)
+theme_override_colors/font_focus_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_rc5rx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bt1u8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rk6r8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_imaw7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5otri")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bgedu")
+text = "Yes!"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="No" type="Button" parent="Confirmation/Yes_No"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -6.0
+offset_right = 42.0
+offset_bottom = 8.0
+theme_override_colors/font_hover_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_hover_color = Color(0.75, 0.293125, 0.1125, 0.843137)
+theme_override_colors/font_outline_color = Color(0.11, 0.0479967, 0.0121, 0.886275)
+theme_override_colors/font_color = Color(0.94, 0.6298, 0.517, 0.843137)
+theme_override_colors/font_focus_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_rc5rx")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bt1u8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rk6r8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_imaw7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5otri")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bgedu")
+text = "No..."
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Vibration" type="AnimationPlayer" parent="Confirmation"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_lew6r")
+}
+autoplay = "Text_Animation"
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0jcg2")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
+
+[connection signal="mouse_entered" from="Confirmation/Yes_No/Yes" to="Confirmation/Yes_No" method="_on_any_button_entered"]
+[connection signal="mouse_exited" from="Confirmation/Yes_No/Yes" to="Confirmation/Yes_No" method="_on_any_button_exited"]
+[connection signal="pressed" from="Confirmation/Yes_No/Yes" to="Confirmation/Yes_No" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Confirmation/Yes_No/No" to="Confirmation/Yes_No" method="_on_any_button_entered"]
+[connection signal="mouse_exited" from="Confirmation/Yes_No/No" to="Confirmation/Yes_No" method="_on_any_button_exited"]
+[connection signal="pressed" from="Confirmation/Yes_No/No" to="Confirmation/Yes_No" method="_on_no_pressed"]

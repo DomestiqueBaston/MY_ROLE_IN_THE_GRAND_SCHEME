@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bbm4kosndhq22"
+path="res://.godot/imported/No_Docs_Mask.png-10d51ab8136abcfed8f0b38cc4f9e791.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SETTINGS/No_Docs_Mask.png"
+dest_files=["res://.godot/imported/No_Docs_Mask.png-10d51ab8136abcfed8f0b38cc4f9e791.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

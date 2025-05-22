@@ -4,9 +4,8 @@ extends Control
 func _on_quit_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
-	$"../../Alarm".stop()
-	$"../../On_Off".play("Disappearance")
-	await $"../../On_Off".animation_finished
+	$"../../../On_Off".play("Disappearance")
+	await $"../../../On_Off".animation_finished
 
 func _on_quit_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):

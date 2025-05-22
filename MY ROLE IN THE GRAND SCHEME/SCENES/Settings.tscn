@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=64 format=3 uid="uid://gq7vbe70kt0a"]
 
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_jebf2"]
 [ext_resource type="Theme" uid="uid://bjqtch5setyil" path="res://UI/Settings_Theme.tres" id="2_d824c"]
@@ -59,6 +59,9 @@
 [ext_resource type="Texture2D" uid="uid://ovv6eonpkrrf" path="res://GRAPHICS/SETTINGS/Hectic_City_Pressed.png" id="42_ges0r"]
 [ext_resource type="Texture2D" uid="uid://j2beiyede8fo" path="res://GRAPHICS/SETTINGS/Hectic_City_Hover.png" id="43_1ctmw"]
 [ext_resource type="BitMap" uid="uid://4u4fr46g4nh5" path="res://GRAPHICS/SETTINGS/Hectic_City_Mask.png" id="44_vahfd"]
+[ext_resource type="Texture2D" uid="uid://cgg2o1jboxrkq" path="res://GRAPHICS/SETTINGS/No_Docs_Pressed.png" id="45_ihs63"]
+[ext_resource type="Texture2D" uid="uid://dsipuq8ivh7qq" path="res://GRAPHICS/SETTINGS/No_Docs_Hover.png" id="46_5yx3t"]
+[ext_resource type="BitMap" uid="uid://bbm4kosndhq22" path="res://GRAPHICS/SETTINGS/No_Docs_Mask.png" id="47_jio2x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h80l4"]
 
@@ -279,6 +282,16 @@ texture_pressed = ExtResource("42_ges0r")
 texture_hover = ExtResource("43_1ctmw")
 texture_click_mask = ExtResource("44_vahfd")
 
+[node name="No_Public_Docs" type="TextureButton" parent="Buttons_Sliders/Buttons"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "Liars, more liars!"
+toggle_mode = true
+texture_pressed = ExtResource("45_ihs63")
+texture_hover = ExtResource("46_5yx3t")
+texture_click_mask = ExtResource("47_jio2x")
+
 [node name="Ok_Cancel_Reset_Buttons" type="Control" parent="Buttons_Sliders"]
 layout_mode = 3
 anchors_preset = 0
@@ -383,6 +396,9 @@ texture_click_mask = ExtResource("38_k42nh")
 [connection signal="mouse_entered" from="Buttons_Sliders/Buttons/Hectic_City" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Buttons/Hectic_City" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons_Sliders/Buttons/Hectic_City" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
+[connection signal="mouse_entered" from="Buttons_Sliders/Buttons/No_Public_Docs" to="Buttons_Sliders" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Buttons_Sliders/Buttons/No_Public_Docs" to="Buttons_Sliders" method="_on_mouse_exited"]
+[connection signal="pressed" from="Buttons_Sliders/Buttons/No_Public_Docs" to="Buttons_Sliders" method="_on_any_blue_button_pressed"]
 [connection signal="mouse_entered" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok" to="Buttons_Sliders" method="_on_ok_pressed"]

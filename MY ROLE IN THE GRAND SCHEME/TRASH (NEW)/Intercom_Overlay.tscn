@@ -1,0 +1,496 @@
+[gd_scene load_steps=21 format=3 uid="uid://duod2wunat5ok"]
+
+[ext_resource type="Texture2D" uid="uid://ckrgff87loeg1" path="res://GRAPHICS/SHORT_EVENT/Intercom_BG.png" id="1_qdy3q"]
+[ext_resource type="Theme" uid="uid://q1cw5cyqn10g" path="res://UI/Intercom_Theme.tres" id="2_g5ffr"]
+[ext_resource type="Texture2D" uid="uid://b4glfoes4mdlp" path="res://GRAPHICS/SHORT_EVENT/Green_Button_Normal.png" id="3_dtapb"]
+[ext_resource type="Texture2D" uid="uid://b42ohp0p7jqiq" path="res://GRAPHICS/SHORT_EVENT/Red_Button_Normal.png" id="4_2884x"]
+[ext_resource type="AudioStream" uid="uid://cd8g0rywkt8i3" path="res://SOUND/MISC/Intercom.ogg" id="5_la3rq"]
+[ext_resource type="Texture2D" uid="uid://jdptx3olu22w" path="res://GRAPHICS/SHORT_EVENT/Red_Button_Hover.png" id="6_xspdp"]
+[ext_resource type="Script" uid="uid://rcrpg5ifpj3v" path="res://SCRIPTS/Intercom_Overlay_Button.gd" id="7_8t383"]
+[ext_resource type="BitMap" uid="uid://ds00ff5fyqqv" path="res://GRAPHICS/SHORT_EVENT/Red_Button_Mask.png" id="7_wbo7i"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_cjivl"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_kvqxw"]
+
+[sub_resource type="Animation" id="Animation_8t383"]
+resource_name = "Flash"
+length = 0.800007
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom_Panel/Interface/Screens:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.333333, 0.533333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.917647), Color(1, 1, 1, 0.792157), Color(1, 1, 1, 0.909804), Color(1, 1, 1, 0.811765), Color(1, 1, 1, 0.917647)]
+}
+
+[sub_resource type="Animation" id="Animation_uyo1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom_Panel/Interface/Screens:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bt1qh"]
+_data = {
+&"Flash": SubResource("Animation_8t383"),
+&"RESET": SubResource("Animation_uyo1l")
+}
+
+[sub_resource type="Animation" id="Animation_gdsr2"]
+resource_name = "Flashing"
+length = 0.53334
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom/Interface/Green_Button:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2, 0.266667, 0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.556863), Color(1, 1, 1, 0.721569), Color(1, 1, 1, 0.721569), Color(1, 1, 1, 0.556863)]
+}
+
+[sub_resource type="Animation" id="Animation_uln12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom/Interface/Green_Button:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.686275)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mlhxe"]
+_data = {
+&"Flashing": SubResource("Animation_gdsr2"),
+&"RESET": SubResource("Animation_uln12")
+}
+
+[sub_resource type="Animation" id="Animation_4pq04"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intercom_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-640, 0), Vector2(-406, 0), Vector2(-128.461, 0), Vector2(-85.6403, 0), Vector2(-42.82, 0), Vector2(0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_cjivl")
+}],
+"times": PackedFloat32Array(0.028334)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_atwki"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Intercom_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-10.0001, 0), Vector2(-220.001, 0), Vector2(-430.001, 0), Vector2(-640, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_kvqxw")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vfroo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intercom_Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-640, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BG:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6d4b"]
+_data = {
+&"Appearance": SubResource("Animation_4pq04"),
+&"Disappearance": SubResource("Animation_atwki"),
+&"RESET": SubResource("Animation_vfroo")
+}
+
+[node name="Intercom" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Intercom_Panel" type="Node2D" parent="."]
+position = Vector2(-640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Intercom_BG" type="Sprite2D" parent="Intercom_Panel"]
+position = Vector2(209, 38)
+texture = ExtResource("1_qdy3q")
+centered = false
+offset = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Interface" type="Control" parent="Intercom_Panel"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_g5ffr")
+metadata/_edit_lock_ = true
+
+[node name="Green_Button" type="Sprite2D" parent="Intercom_Panel/Interface"]
+modulate = Color(1, 1, 1, 0.686275)
+self_modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(208, 36)
+texture = ExtResource("3_dtapb")
+centered = false
+offset = Vector2(20, 20)
+metadata/_edit_lock_ = true
+
+[node name="Screens" type="Control" parent="Intercom_Panel/Interface"]
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="Away" type="Label" parent="Intercom_Panel/Interface/Screens"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 271.0
+offset_top = 101.0
+offset_right = 370.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 6
+text = "Sorry, NPC001 seems to be away..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Refuse" type="Label" parent="Intercom_Panel/Interface/Screens"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 271.0
+offset_top = 101.0
+offset_right = 370.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 6
+text = "Sorry, NPC001 doesn't want to talk to you."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Numbers_Etc" type="Control" parent="Intercom_Panel/Interface"]
+modulate = Color(1, 1, 1, 0.882353)
+anchors_preset = 0
+metadata/_edit_lock_ = true
+
+[node name="7" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 181.0
+offset_right = 290.0
+offset_bottom = 189.0
+text = "7"
+metadata/_edit_lock_ = true
+
+[node name="8" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 181.0
+offset_right = 307.0
+offset_bottom = 189.0
+text = "8"
+metadata/_edit_lock_ = true
+
+[node name="9" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 181.0
+offset_right = 324.0
+offset_bottom = 189.0
+text = "9"
+metadata/_edit_lock_ = true
+
+[node name="4" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 199.0
+offset_right = 290.0
+offset_bottom = 207.0
+text = "4"
+metadata/_edit_lock_ = true
+
+[node name="5" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 199.0
+offset_right = 307.0
+offset_bottom = 207.0
+text = "5"
+metadata/_edit_lock_ = true
+
+[node name="6" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 199.0
+offset_right = 324.0
+offset_bottom = 207.0
+text = "6"
+metadata/_edit_lock_ = true
+
+[node name="1" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 217.0
+offset_right = 291.0
+offset_bottom = 225.0
+text = "1"
+metadata/_edit_lock_ = true
+
+[node name="2" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 217.0
+offset_right = 307.0
+offset_bottom = 225.0
+text = "2"
+metadata/_edit_lock_ = true
+
+[node name="3" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 217.0
+offset_right = 324.0
+offset_bottom = 225.0
+text = "3"
+metadata/_edit_lock_ = true
+
+[node name="Minus" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 181.0
+offset_right = 346.0
+offset_bottom = 189.0
+text = "-"
+metadata/_edit_lock_ = true
+
+[node name="Plus" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 199.0
+offset_right = 346.0
+offset_bottom = 207.0
+text = "+"
+metadata/_edit_lock_ = true
+
+[node name="Point" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 179.0
+offset_right = 363.0
+offset_bottom = 187.0
+text = "."
+metadata/_edit_lock_ = true
+
+[node name="Smaller" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 217.0
+offset_right = 346.0
+offset_bottom = 225.0
+text = "<"
+metadata/_edit_lock_ = true
+
+[node name="Greater" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 217.0
+offset_right = 362.0
+offset_bottom = 225.0
+text = ">"
+metadata/_edit_lock_ = true
+
+[node name="0" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 235.0
+offset_right = 307.0
+offset_bottom = 243.0
+text = "0"
+metadata/_edit_lock_ = true
+
+[node name="Hash" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 235.0
+offset_right = 324.0
+offset_bottom = 243.0
+text = "#"
+metadata/_edit_lock_ = true
+
+[node name="Star" type="Label" parent="Intercom_Panel/Interface/Numbers_Etc"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 236.0
+offset_right = 291.0
+offset_bottom = 244.0
+text = "*"
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="TextureButton" parent="Intercom_Panel/Interface"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 56.0
+offset_right = 408.0
+offset_bottom = 306.0
+tooltip_text = "Alright,
+I'll be back!"
+texture_normal = ExtResource("4_2884x")
+texture_pressed = ExtResource("4_2884x")
+texture_hover = ExtResource("6_xspdp")
+texture_click_mask = ExtResource("7_wbo7i")
+script = ExtResource("7_8t383")
+metadata/_edit_lock_ = true
+
+[node name="Message_Anim" type="AnimationPlayer" parent="Intercom_Panel"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_bt1qh")
+}
+autoplay = "Flash"
+
+[node name="Intercom" type="AudioStreamPlayer" parent="Intercom_Panel"]
+stream = ExtResource("5_la3rq")
+volume_db = -15.0
+autoplay = true
+bus = &"FX"
+
+[node name="Green_Button" type="AnimationPlayer" parent="Intercom_Panel"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_mlhxe")
+}
+autoplay = "Flashing"
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m6d4b")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
+
+[connection signal="mouse_entered" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Intercom_Panel/Interface/Quit" to="Intercom_Panel/Interface/Quit" method="_on_pressed"]
+[connection signal="animation_finished" from="On_Off" to="Intercom_Panel/Interface/Quit" method="_on_on_off_animation_finished"]

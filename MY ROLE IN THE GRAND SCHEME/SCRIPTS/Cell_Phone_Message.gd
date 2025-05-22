@@ -32,15 +32,3 @@ func show_random_message():
 
 	# Ajouter la signature au message
 	text = messages[random_message_key] + "\n\n" + random_signature
-
-func _process(_delta):
-	if $".".visible_ratio < 1.0:
-		if not $"../../../Typing".is_playing():
-			# Il y a un délai indésirable avec le son de frappe...
-			if $".".visible_ratio > actual_value:
-				var typing_sound = $"../../../Typing"
-				typing_sound.pitch_scale = pitch_values[randi() % pitch_values.size()]
-				typing_sound.play()
-				actual_value += .001
-			else:
-				actual_value = 0.

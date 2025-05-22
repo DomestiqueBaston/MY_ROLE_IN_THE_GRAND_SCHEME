@@ -1,0 +1,320 @@
+[gd_scene load_steps=17 format=3 uid="uid://bldgrur6y3rhv"]
+
+[ext_resource type="Theme" uid="uid://bjtyhq3g0w8r3" path="res://UI/LSD_Theme.tres" id="1_5ss04"]
+[ext_resource type="Texture2D" uid="uid://do7g2c24mmsbk" path="res://GRAPHICS/SHORT_EVENT/Load_Save_Delete_BG.png" id="1_b07ca"]
+[ext_resource type="Script" uid="uid://cy4nhosp8iivp" path="res://SCRIPTS/Load_Save_Delete.gd" id="2_ugh7v"]
+[ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="3_sl6l7"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="5_vtoms"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="6_gq8qs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7fen"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3e1n3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qddky"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6a1d6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihvqb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qy1b3"]
+
+[sub_resource type="Animation" id="Animation_6c0my"]
+resource_name = "Appearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 2.5, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.321569), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Load_Save_Delete_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 0.25, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-640, 0), Vector2(-240, 0), Vector2(-75.9373, 0), Vector2(-50.6248, 0), Vector2(-25.3123, 0), Vector2(0, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_vtoms")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_6t1tt"]
+resource_name = "Disappearance"
+length = 0.33334
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 2.5),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.572548), Color(1, 1, 1, 0.145098), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Load_Save_Delete_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333),
+"transitions": PackedFloat32Array(1, 3, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(-9.07405, 0), Vector2(-127.037, 0), Vector2(-245, 0), Vector2(-640, 0)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("In_Out")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_gq8qs")
+}],
+"times": PackedFloat32Array(0.0808337)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_nfkjl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Load_Save_Delete_Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-640, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_girfw"]
+_data = {
+&"Appearance": SubResource("Animation_6c0my"),
+&"Disappearance": SubResource("Animation_6t1tt"),
+&"RESET": SubResource("Animation_nfkjl")
+}
+
+[node name="Load_Save_Delete" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 640.0
+offset_bottom = 360.0
+size_flags_horizontal = 0
+color = Color(0.0946, 0.11, 0.09922, 0.498039)
+metadata/_edit_lock_ = true
+
+[node name="Load_Save_Delete_Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("1_5ss04")
+script = ExtResource("2_ugh7v")
+metadata/_edit_lock_ = true
+
+[node name="Load_Save_Delete_BG" type="Sprite2D" parent="Load_Save_Delete_Panel"]
+position = Vector2(316, 176)
+texture = ExtResource("1_b07ca")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="Load_Save_Delete_Panel"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 116.0
+offset_right = 389.0
+offset_bottom = 314.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_t7fen")
+metadata/_edit_lock_ = true
+
+[node name="Item_List" type="ItemList" parent="Load_Save_Delete_Panel/PanelContainer"]
+layout_mode = 2
+item_count = 20
+item_0/text = "Test"
+item_1/text = "Autre test"
+item_2/text = "Encore un autre test"
+item_3/text = "Et un dernier test"
+item_4/text = "Ah ! Non, encore un autre..."
+item_5/text = "Et allez ! un nouveau, tiens !"
+item_6/text = "Un dernier ?"
+item_7/text = "Pour le fun, bien entendu...."
+item_8/text = "Bon... Stop, maintenant !"
+item_9/text = "D'accord ?"
+item_10/text = "Nan, pas d'accord !"
+item_11/text = "On les met tous."
+item_12/text = "Comme ça on saura..."
+item_13/text = "Combien on en a avant de"
+item_14/text = "devoir mettre une scroll bar,"
+item_15/text = "Ce que je voudrais éviter"
+item_16/text = "tant qu'à faire !"
+item_17/text = "Bon, on y est, non ?"
+item_18/text = "Allez, le tout dernier !"
+item_19/text = "Et là, ça déborde !"
+metadata/_edit_lock_ = true
+
+[node name="Load_Save_Delete" type="Label" parent="Load_Save_Delete_Panel"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 93.0
+offset_right = 382.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0.866667, 0.905882, 0.941176, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_sl6l7")
+theme_override_font_sizes/font_size = 32
+text = " -              -"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Yes_No" type="Control" parent="Load_Save_Delete_Panel"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 151.0
+offset_top = -4.0
+offset_right = 151.0
+offset_bottom = -4.0
+metadata/_edit_lock_ = true
+
+[node name="Load" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 97.0
+offset_right = 125.0
+offset_bottom = 118.0
+theme_override_colors/font_hover_pressed_color = Color(0.666667, 0.941176, 0.647059, 0.882353)
+theme_override_colors/font_hover_color = Color(0.40848, 0.74, 0.3848, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
+theme_override_colors/font_color = Color(0.668027, 0.94, 0.6486, 0.882353)
+theme_override_colors/font_focus_color = Color(0.666667, 0.941176, 0.647059, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.666667, 0.941176, 0.647059, 0.882353)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_sl6l7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "LOAD"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Save" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 97.0
+offset_right = 178.0
+offset_bottom = 118.0
+theme_override_colors/font_hover_pressed_color = Color(0.968627, 0.839216, 0.6, 0.882353)
+theme_override_colors/font_hover_color = Color(0.81, 0.56619, 0.1134, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
+theme_override_colors/font_color = Color(0.97, 0.84099, 0.6014, 0.882353)
+theme_override_colors/font_focus_color = Color(0.968627, 0.839216, 0.6, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.968627, 0.839216, 0.6, 0.882353)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_sl6l7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "SAVE"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="Delete" type="Button" parent="Load_Save_Delete_Panel/Yes_No"]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 97.0
+offset_right = 244.0
+offset_bottom = 118.0
+theme_override_colors/font_hover_pressed_color = Color(0.941176, 0.647059, 0.647059, 0.882353)
+theme_override_colors/font_hover_color = Color(0.87, 0.3306, 0.3306, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
+theme_override_colors/font_color = Color(0.94, 0.6486, 0.6486, 0.882353)
+theme_override_colors/font_focus_color = Color(0.941176, 0.647059, 0.647059, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.941176, 0.647059, 0.647059, 0.882353)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_sl6l7")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3e1n3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qddky")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6a1d6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ihvqb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qy1b3")
+text = "DELETE"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="On_Off" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_girfw")
+}
+autoplay = "Appearance"
+
+[node name="In_Out" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+bus = &"UI"
+
+[connection signal="item_selected" from="Load_Save_Delete_Panel/PanelContainer/Item_List" to="Load_Save_Delete_Panel" method="_on_item_list_item_selected"]
+[connection signal="mouse_entered" from="Load_Save_Delete_Panel/PanelContainer/Item_List" to="Load_Save_Delete_Panel" method="_on_item_list_mouse_entered"]
+[connection signal="mouse_exited" from="Load_Save_Delete_Panel/PanelContainer/Item_List" to="Load_Save_Delete_Panel" method="_on_item_list_mouse_exited"]
+[connection signal="mouse_entered" from="Load_Save_Delete_Panel/Yes_No/Load" to="Load_Save_Delete_Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Load_Save_Delete_Panel/Yes_No/Load" to="Load_Save_Delete_Panel" method="_on_mouse_exited"]
+[connection signal="pressed" from="Load_Save_Delete_Panel/Yes_No/Load" to="Load_Save_Delete_Panel" method="_on_load_pressed"]
+[connection signal="mouse_entered" from="Load_Save_Delete_Panel/Yes_No/Save" to="Load_Save_Delete_Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Load_Save_Delete_Panel/Yes_No/Save" to="Load_Save_Delete_Panel" method="_on_mouse_exited"]
+[connection signal="pressed" from="Load_Save_Delete_Panel/Yes_No/Save" to="Load_Save_Delete_Panel" method="_on_save_pressed"]
+[connection signal="mouse_entered" from="Load_Save_Delete_Panel/Yes_No/Delete" to="Load_Save_Delete_Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Load_Save_Delete_Panel/Yes_No/Delete" to="Load_Save_Delete_Panel" method="_on_mouse_exited"]
+[connection signal="pressed" from="Load_Save_Delete_Panel/Yes_No/Delete" to="Load_Save_Delete_Panel" method="_on_delete_pressed"]

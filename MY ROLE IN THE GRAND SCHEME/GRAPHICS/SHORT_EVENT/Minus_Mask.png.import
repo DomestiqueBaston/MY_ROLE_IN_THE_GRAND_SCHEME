@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dctue2soxk2cs"
+path="res://.godot/imported/Minus_Mask.png-274baacb1f2df849f981448d57665cdc.res"
+
+[deps]
+
+source_file="res://GRAPHICS/SHORT_EVENT/Minus_Mask.png"
+dest_files=["res://.godot/imported/Minus_Mask.png-274baacb1f2df849f981448d57665cdc.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

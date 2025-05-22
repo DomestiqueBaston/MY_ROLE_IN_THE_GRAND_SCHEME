@@ -21,15 +21,15 @@ func _on_any_button_mouse_entered():
 func _on_cancel_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
-	$"../../On_Off".play("Disappearance")
-	await $"../../On_Off".animation_finished
+	$"../../../On_Off".play("Disappearance")
+	await $"../../../On_Off".animation_finished
 
 func _on_switch_pressed():
 	if $"01".button_pressed or $"02".button_pressed or $"03".button_pressed or $"04".button_pressed:
 		Globals.valid_sound.play()
 		await Globals.valid_sound.finished
-		$"../../On_Off".play("Disappearance")
-		await $"../../On_Off".animation_finished
+		$"../../../On_Off".play("Disappearance")
+		await $"../../../On_Off".animation_finished
 	else:
 		$Switch.button_pressed = false
 
@@ -38,10 +38,10 @@ func _on_any_button_mouse_exited():
 		Globals.leave_sound.play()
 
 func play_sound():
-	$"../../Drawer".volume_db = 0.0
+	$"../Drawer".volume_db = 0.0
 	if $Cancel.button_pressed or $Switch.button_pressed:
-		$"../../Drawer".volume_db = -5.0
-	var pitches = [0.666, 1.0, 1.5]
+		$"../Drawer".volume_db = -5.0
+	var pitches = [0.75, 1.0, 1.333]
 	var pitch = pitches[randi() % pitches.size()]
-	$"../../Drawer".pitch_scale = pitch
-	$"../../Drawer".play()
+	$"../Drawer".pitch_scale = pitch
+	$"../Drawer".play()

@@ -1,12 +1,16 @@
 extends TextureButton
 
 
+func _ready():
+	if $"../..".visible:
+		$"../../Intercom".play()
+
 func _on_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	$"../../../Intercom".stop()
-	$"../../../On_Off".play("Disappearance")
-	await $"../../../On_Off".animation_finished
+	$"../../Intercom".stop()
+	$"../../../../On_Off".play("Disappearance")
+	await $"../../../../On_Off".animation_finished
 
 func _on_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):

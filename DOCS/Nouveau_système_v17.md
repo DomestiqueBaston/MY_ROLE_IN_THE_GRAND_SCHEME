@@ -343,7 +343,7 @@ Factures impayées	Malus
 Les achats/dépenses
 	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois. Ouvert pendant les 3 premières tranches horaires de la journée et hors weekend. Menu désactivé quand c’est fermé. Jamais pendant la Paranoïa. En acheter prend 1h.
 	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement de 20h à 8h. 1 dose coûte 25 Dø et prend 1h.
-	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand il n’en a plus, elle disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir (elle ne sera pas là).
+	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand elle n’en a plus, elle disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir (elle ne sera pas là).
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc possiblement avant l’arrivée du joueur).
 
 Le bureau
@@ -907,7 +907,7 @@ Difficulté du jeu
 
 Éléments additionnels de difficulté
 	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
-		Drug Quality : Prix de la drogue +20%.
+		Drug Quality : Prix de la dose de drogue à 30Dø (+20%).
 		Plot Depth : Temps imparti pour résoudre une enquête : -20%.
 		Corruption : Autorisation de fouille portée à 50Dø (+20%).
 		Retail Investment :  Les factures augmentent de +20%.
@@ -915,9 +915,11 @@ Difficulté du jeu
 		Mentirosos : +10 % de chances de mensonge.
 		Hardboiled Minions : +10% HEA (et HEAnom).
 		Over Crowded City : +20% de PNJs inutiles.
+		No public docs : 60Dø (+20%) chez le médecin.
 		Hectic City : toutes les actions prennent 15% de temps en plus (l’horloge n’affiche que les heures, pas les minutes mais on les compte sans arrondir) !
 		They are watching : 20% de chance de SMS !
 		Cat’s eye : le malus de jet de dé de nuit est annulé.
 	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on la désactive de la même manière):
 		I am one of them : le Wan du joueur ne peut jamais dépasser 3.
 		
+
