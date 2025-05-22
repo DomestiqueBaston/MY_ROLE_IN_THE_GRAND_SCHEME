@@ -125,6 +125,7 @@ visible_characters_behavior = 1
 metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
+visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 
@@ -980,7 +981,6 @@ text = "[center]And what's more, I can't say it's made me [color=#ff8864]any mor
 metadata/_edit_lock_ = true
 
 [node name="Combat" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
-visible = false
 anchors_preset = 0
 metadata/_edit_lock_ = true
 

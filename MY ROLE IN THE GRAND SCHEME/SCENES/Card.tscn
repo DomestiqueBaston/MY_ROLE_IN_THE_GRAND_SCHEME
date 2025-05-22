@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=46 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
@@ -23,9 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://5fddem5mo8cu" path="res://GRAPHICS/CARD/Card_Disappeared.png" id="16_k4orq"]
 [ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="17_kusna"]
 [ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="20_kusna"]
+[ext_resource type="Texture2D" uid="uid://cyn2ui620e8cx" path="res://GRAPHICS/CARD/Card_Minion.png" id="21_fsb4r"]
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="21_nk8id"]
 [ext_resource type="AudioStream" uid="uid://cbentdu5jvok7" path="res://SOUND/CARD/Drop_Card.ogg" id="21_tg66g"]
 [ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="22_02fmt"]
+[ext_resource type="Texture2D" uid="uid://cpccah5pfbhfm" path="res://GRAPHICS/CARD/Card_Minion_Top.png" id="22_8pq22"]
 [ext_resource type="AudioStream" uid="uid://dnbr6d7wdvn0j" path="res://SOUND/CARD/Take_Card.ogg" id="22_iuyk4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_02fmt"]
@@ -507,6 +509,30 @@ tracks/14/keys = {
 "update": 1,
 "values": [4, 3, 2, 1, 0]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_0x2oy"]
 length = 0.001
@@ -774,6 +800,30 @@ tracks/21/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.882353)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_x7g54"]
 resource_name = "Reduce_Card"
@@ -961,6 +1011,30 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
@@ -1308,6 +1382,18 @@ centered = false
 [node name="Disappeared_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Disappeared_Status"]
 self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("17_kusna")
+centered = false
+
+[node name="Minion_Status" type="Node2D" parent="Card_Mask/Card_BG"]
+
+[node name="Minion" type="Sprite2D" parent="Card_Mask/Card_BG/Minion_Status"]
+self_modulate = Color(1, 1, 1, 0.882353)
+texture = ExtResource("21_fsb4r")
+centered = false
+
+[node name="Minion_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Minion_Status"]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("22_8pq22")
 centered = false
 
 [node name="Card_Collider" type="Area2D" parent="Card_Mask"]

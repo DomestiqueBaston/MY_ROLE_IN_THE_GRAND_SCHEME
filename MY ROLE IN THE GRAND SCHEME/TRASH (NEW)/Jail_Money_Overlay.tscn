@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://yl6icb273od"]
 
-[ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/SHORT_EVENT/Cops_BG.png" id="1_knmnc"]
+[ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/SHORT_EVENT/Wanted_BG.png" id="1_knmnc"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="2_4l2mm"]
 [ext_resource type="AudioStream" uid="uid://bnim7widv0v1h" path="res://SOUND/MISC/Police.ogg" id="2_knmnc"]
 [ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Buttons.gd" id="2_s0xyu"]

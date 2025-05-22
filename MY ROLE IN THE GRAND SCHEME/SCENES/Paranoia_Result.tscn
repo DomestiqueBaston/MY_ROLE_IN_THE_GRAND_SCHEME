@@ -1,19 +1,19 @@
 [gd_scene load_steps=33 format=3 uid="uid://6u8qm8dm4oy4"]
 
-[ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://GRAPHICS/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_ku4pt"]
-[ext_resource type="Theme" uid="uid://bnunycy4luos4" path="res://UI/Paranoia_Communication_Theme.tres" id="2_if43b"]
-[ext_resource type="Texture2D" uid="uid://b8q6qi07sx8gk" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png" id="3_23cf0"]
-[ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="3_mltda"]
-[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_e3ppe"]
-[ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png" id="4_guovx"]
-[ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="5_445rt"]
-[ext_resource type="Texture2D" uid="uid://cqxqqrm018xnr" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Noir.png" id="5_ns335"]
-[ext_resource type="Texture2D" uid="uid://bjbq6sj1lrg5y" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Vert_Clair.png" id="6_c1vkl"]
-[ext_resource type="Shader" uid="uid://b378yoqi4ij68" path="res://SHADERS/Scanlines.gdshader" id="6_e3ppe"]
-[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/AMBIANCE/Hum.ogg" id="6_mltda"]
-[ext_resource type="Texture2D" uid="uid://c3oj1c6jo6ikm" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Turquoise.png" id="7_guovx"]
-[ext_resource type="Texture2D" uid="uid://dmuhwilbaywkx" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Tres_Fonce.png" id="7_w7fl1"]
-[ext_resource type="Texture2D" uid="uid://cnkohi6nkpx16" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Blanc.png" id="8_4udd4"]
+[ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://GRAPHICS/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_fl50a"]
+[ext_resource type="Theme" uid="uid://bnunycy4luos4" path="res://UI/Paranoia_Communication_Theme.tres" id="2_fjgqo"]
+[ext_resource type="Texture2D" uid="uid://b8q6qi07sx8gk" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png" id="3_2cog1"]
+[ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png" id="4_q2jmb"]
+[ext_resource type="Texture2D" uid="uid://cqxqqrm018xnr" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Noir.png" id="5_wov1o"]
+[ext_resource type="Texture2D" uid="uid://bjbq6sj1lrg5y" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Vert_Clair.png" id="6_rlpjj"]
+[ext_resource type="Texture2D" uid="uid://c3oj1c6jo6ikm" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Turquoise.png" id="7_kxiw5"]
+[ext_resource type="Texture2D" uid="uid://dmuhwilbaywkx" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Tres_Fonce.png" id="8_yrw8b"]
+[ext_resource type="Texture2D" uid="uid://cnkohi6nkpx16" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Blanc.png" id="9_xb81k"]
+[ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="10_ymndd"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="11_mhvlv"]
+[ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="12_iqw3g"]
+[ext_resource type="Shader" uid="uid://b378yoqi4ij68" path="res://SHADERS/Scanlines.gdshader" id="13_kd5g3"]
+[ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/AMBIANCE/Hum.ogg" id="14_dc88q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iweqn"]
 bg_color = Color(0.027, 0.15, 0.07005, 0.588235)
@@ -60,7 +60,7 @@ expand_margin_bottom = 1.0
 anti_aliasing = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_445rt"]
-shader = ExtResource("6_e3ppe")
+shader = ExtResource("13_kd5g3")
 shader_parameter/screen_resolution = Vector2(320, 180)
 shader_parameter/scanline_intensity = 0.03
 shader_parameter/color_bleed_weight = 0.37
@@ -143,11 +143,11 @@ _data = {
 &"Shake": SubResource("Animation_mltda")
 }
 
-[node name="Paranoia_Communication" type="Node2D"]
+[node name="Paranoia_Result" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="BG" type="Sprite2D" parent="."]
-texture = ExtResource("1_ku4pt")
+texture = ExtResource("1_fl50a")
 centered = false
 hframes = 14
 vframes = 2
@@ -162,7 +162,7 @@ metadata/_edit_lock_ = true
 [node name="Content" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-theme = ExtResource("2_if43b")
+theme = ExtResource("2_fjgqo")
 metadata/_edit_lock_ = true
 
 [node name="Frame" type="RichTextLabel" parent="Content"]
@@ -443,7 +443,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("3_23cf0")
+texture = ExtResource("3_2cog1")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -510,7 +510,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("4_guovx")
+texture = ExtResource("4_q2jmb")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -559,7 +559,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("5_ns335")
+texture = ExtResource("5_wov1o")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -858,7 +858,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("6_c1vkl")
+texture = ExtResource("6_rlpjj")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -925,7 +925,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("6_c1vkl")
+texture = ExtResource("6_rlpjj")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -1049,7 +1049,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("7_guovx")
+texture = ExtResource("7_kxiw5")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -1507,7 +1507,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("6_c1vkl")
+texture = ExtResource("6_rlpjj")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -1701,7 +1701,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("7_w7fl1")
+texture = ExtResource("8_yrw8b")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -1783,7 +1783,7 @@ custom_minimum_size = Vector2(8, 6)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Link type"
-texture = ExtResource("8_4udd4")
+texture = ExtResource("9_xb81k")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
@@ -2062,12 +2062,13 @@ metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Content"]
 self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
 offset_left = 275.0
 offset_top = 338.0
 offset_right = 365.0
 offset_bottom = 353.0
 tooltip_text = "I'm done here!"
-theme = ExtResource("3_mltda")
+theme = ExtResource("10_ymndd")
 theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 0.882353)
 theme_override_colors/font_hover_color = Color(0.4648, 0.83, 0.531753, 0.643137)
 theme_override_colors/font_outline_color = Color(0.04, 0.03616, 0.0304, 0.784314)
@@ -2075,7 +2076,7 @@ theme_override_colors/font_color = Color(0.9765, 1, 0.97, 0.882353)
 theme_override_colors/font_focus_color = Color(0.681893, 0.91, 0.6188, 0.882353)
 theme_override_colors/font_pressed_color = Color(0.976471, 1, 0.968627, 0.882353)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("4_e3ppe")
+theme_override_fonts/font = ExtResource("11_mhvlv")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/focus = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_spda6")
@@ -2083,7 +2084,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_spda6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_spda6")
 text = "I've seen enough."
-script = ExtResource("5_445rt")
+script = ExtResource("12_iqw3g")
 metadata/_edit_lock_ = true
 
 [node name="Scanlines" type="ColorRect" parent="."]
@@ -2094,7 +2095,7 @@ mouse_filter = 2
 metadata/_edit_lock_ = true
 
 [node name="Hum" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_mltda")
+stream = ExtResource("14_dc88q")
 volume_db = -5.0
 autoplay = true
 bus = &"AMBIANCE"

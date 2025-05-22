@@ -164,7 +164,7 @@ step = 0.0666667
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Folding_Unfolding")
+tracks/0/path = NodePath("Reserve_Expansion/Folding_Unfolding")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -179,7 +179,7 @@ tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Reserve/Reserve_Expansion_Shadow:visible")
+tracks/1/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -191,7 +191,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Reserve/Reserve_Expansion:visible")
+tracks/2/path = NodePath("Reserve_Expansion/Reserve_Expansion:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -203,7 +203,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Reserve/Reserve_Expansion:size")
+tracks/3/path = NodePath("Reserve_Expansion/Reserve_Expansion:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -215,7 +215,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Reserve/Reserve_Expansion_Shadow:size")
+tracks/4/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -254,7 +254,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Reserve/Reserve_Expansion_Shadow:visible")
+tracks/0/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -266,7 +266,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Reserve/Reserve_Expansion:visible")
+tracks/1/path = NodePath("Reserve_Expansion/Reserve_Expansion:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -278,7 +278,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Reserve/Reserve_Expansion:size")
+tracks/2/path = NodePath("Reserve_Expansion/Reserve_Expansion:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -290,7 +290,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Reserve/Reserve_Expansion_Shadow:size")
+tracks/3/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -331,7 +331,7 @@ step = 0.0666667
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Folding_Unfolding")
+tracks/0/path = NodePath("Reserve_Expansion/Folding_Unfolding")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -346,7 +346,7 @@ tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Reserve/Reserve_Expansion_Shadow:visible")
+tracks/1/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -358,7 +358,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Reserve/Reserve_Expansion:visible")
+tracks/2/path = NodePath("Reserve_Expansion/Reserve_Expansion:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -370,7 +370,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Reserve/Reserve_Expansion:size")
+tracks/3/path = NodePath("Reserve_Expansion/Reserve_Expansion:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -382,7 +382,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Reserve/Reserve_Expansion_Shadow:size")
+tracks/4/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -2392,9 +2392,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_nsks5")
 }
 
-[node name="Reserve" type="Node2D" parent="Mask_Card_Playground"]
+[node name="Reserve_Expansion" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Reserve_Expansion_Shadow" type="Panel" parent="Mask_Card_Playground/Reserve"]
+[node name="Reserve_Expansion_Shadow" type="Panel" parent="Mask_Card_Playground/Reserve_Expansion"]
 visible = false
 custom_minimum_size = Vector2(1, 125)
 offset_left = 118.0
@@ -2404,7 +2404,7 @@ offset_bottom = 144.0
 pivot_offset = Vector2(129, 130)
 theme_override_styles/panel = SubResource("StyleBoxFlat_ksebp")
 
-[node name="Reserve_Expansion" type="Panel" parent="Mask_Card_Playground/Reserve"]
+[node name="Reserve_Expansion" type="Panel" parent="Mask_Card_Playground/Reserve_Expansion"]
 visible = false
 custom_minimum_size = Vector2(1, 125)
 offset_left = 118.0
@@ -2413,6 +2413,16 @@ offset_right = 119.0
 offset_bottom = 144.0
 pivot_offset = Vector2(129, 130)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ksebp")
+
+[node name="Reserve_Animation" type="AnimationPlayer" parent="Mask_Card_Playground/Reserve_Expansion"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_bmwof")
+}
+
+[node name="Folding_Unfolding" type="AudioStreamPlayer" parent="Mask_Card_Playground/Reserve_Expansion"]
+volume_db = -10.0
+bus = &"FX"
 
 [node name="TMP_2" type="Node2D" parent="Mask_Card_Playground"]
 
@@ -2545,16 +2555,6 @@ item_13/id = 13
 item_14/text = "Found"
 item_14/icon = ExtResource("24_lp1fx")
 item_14/id = 14
-
-[node name="Reserve_Animation" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Mask_Card_Playground")
-libraries = {
-&"": SubResource("AnimationLibrary_bmwof")
-}
-
-[node name="Folding_Unfolding" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
-bus = &"FX"
 
 [connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]

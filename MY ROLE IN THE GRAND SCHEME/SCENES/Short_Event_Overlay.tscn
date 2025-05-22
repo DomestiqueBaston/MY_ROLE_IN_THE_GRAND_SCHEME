@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_dgbv7"]
 [ext_resource type="Script" uid="uid://5amx8lvvjfx" path="res://SCRIPTS/Care_Sheet_Buttons.gd" id="12_vr4eh"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_is8fw"]
-[ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/SHORT_EVENT/Cops_BG.png" id="13_s26gq"]
+[ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/SHORT_EVENT/Wanted_BG.png" id="13_s26gq"]
 [ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Buttons.gd" id="14_adsmj"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="15_wqyuw"]
 [ext_resource type="ButtonGroup" uid="uid://bna0povlgtisn" path="res://UI/Jail_Money_group.tres" id="16_dog4u"]
@@ -389,7 +389,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Panels:position")
+tracks/1/path = NodePath("Overlays:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -433,7 +433,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Panels:position")
+tracks/1/path = NodePath("Overlays:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -463,7 +463,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panels:position")
+tracks/0/path = NodePath("Overlays:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -501,18 +501,18 @@ offset_bottom = 360.0
 size_flags_horizontal = 0
 color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 
-[node name="Panels" type="Node2D" parent="."]
+[node name="Overlays" type="Node2D" parent="."]
 position = Vector2(-640, 0)
 
-[node name="Care_Sheet" type="Node2D" parent="Panels"]
+[node name="Care_Sheet" type="Node2D" parent="Overlays"]
 visible = false
 position = Vector2(164, 50)
 
-[node name="Care_Sheet_BG" type="Sprite2D" parent="Panels/Care_Sheet"]
+[node name="Care_Sheet_BG" type="Sprite2D" parent="Overlays/Care_Sheet"]
 texture = ExtResource("10_oetaq")
 centered = false
 
-[node name="Note" type="Control" parent="Panels/Care_Sheet"]
+[node name="Note" type="Control" parent="Overlays/Care_Sheet"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -25.0
@@ -521,7 +521,7 @@ offset_right = -25.0
 offset_bottom = -18.0
 theme = ExtResource("11_gpjij")
 
-[node name="Doctor_F" type="RichTextLabel" parent="Panels/Care_Sheet/Note"]
+[node name="Doctor_F" type="RichTextLabel" parent="Overlays/Care_Sheet/Note"]
 modulate = Color(1, 1, 1, 0.745098)
 layout_mode = 0
 offset_left = 36.0
@@ -534,7 +534,7 @@ text = "Are  you  absolutely  certain  you  wish  to incur the expenses  for  th
 
 Mind you,  we  are  talking about [color=#992726]        Dø[/color] here..."
 
-[node name="Price" type="RichTextLabel" parent="Panels/Care_Sheet/Note"]
+[node name="Price" type="RichTextLabel" parent="Overlays/Care_Sheet/Note"]
 modulate = Color(1, 1, 1, 0.745098)
 layout_mode = 0
 offset_left = 93.0
@@ -548,7 +548,7 @@ text = "50"
 fit_content = true
 horizontal_alignment = 2
 
-[node name="Yes" type="Button" parent="Panels/Care_Sheet/Note"]
+[node name="Yes" type="Button" parent="Overlays/Care_Sheet/Note"]
 layout_mode = 0
 offset_left = 227.0
 offset_top = 167.658
@@ -564,7 +564,7 @@ text = "No  other
 choice,  Doc."
 script = ExtResource("12_vr4eh")
 
-[node name="No" type="Button" parent="Panels/Care_Sheet/Note"]
+[node name="No" type="Button" parent="Overlays/Care_Sheet/Note"]
 layout_mode = 0
 offset_left = 233.0
 offset_top = 216.658
@@ -580,17 +580,17 @@ text = "On  a second
 thought..."
 script = ExtResource("12_vr4eh")
 
-[node name="Case_Management" type="Node2D" parent="Panels"]
+[node name="Case_Management" type="Node2D" parent="Overlays"]
 visible = false
 position = Vector2(172, 48)
 
-[node name="Case_Management_BG" type="Sprite2D" parent="Panels/Case_Management"]
+[node name="Case_Management_BG" type="Sprite2D" parent="Overlays/Case_Management"]
 position = Vector2(-31, -18)
 texture = ExtResource("26_akg4w")
 centered = false
 offset = Vector2(20, 20)
 
-[node name="Buttons" type="Control" parent="Panels/Case_Management"]
+[node name="Buttons" type="Control" parent="Overlays/Case_Management"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
@@ -600,7 +600,7 @@ offset_bottom = -18.0
 theme = ExtResource("27_0f70e")
 script = ExtResource("28_lqtnk")
 
-[node name="Cancel" type="TextureButton" parent="Panels/Case_Management/Buttons"]
+[node name="Cancel" type="TextureButton" parent="Overlays/Case_Management/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -614,7 +614,7 @@ texture_pressed = ExtResource("30_twcyk")
 texture_hover = ExtResource("31_gxuo2")
 texture_click_mask = ExtResource("32_pjge4")
 
-[node name="Switch" type="TextureButton" parent="Panels/Case_Management/Buttons"]
+[node name="Switch" type="TextureButton" parent="Overlays/Case_Management/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -628,7 +628,7 @@ texture_pressed = ExtResource("33_cbb3s")
 texture_hover = ExtResource("34_ysja1")
 texture_click_mask = ExtResource("35_8x3ap")
 
-[node name="03" type="TextureButton" parent="Panels/Case_Management/Buttons"]
+[node name="03" type="TextureButton" parent="Overlays/Case_Management/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -642,7 +642,7 @@ texture_pressed = ExtResource("37_sfan1")
 texture_hover = ExtResource("38_s8rvk")
 texture_click_mask = ExtResource("39_ojkpy")
 
-[node name="04" type="TextureButton" parent="Panels/Case_Management/Buttons"]
+[node name="04" type="TextureButton" parent="Overlays/Case_Management/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -656,7 +656,7 @@ texture_pressed = ExtResource("40_vprm5")
 texture_hover = ExtResource("41_llwhl")
 texture_click_mask = ExtResource("42_5iqpn")
 
-[node name="01" type="TextureButton" parent="Panels/Case_Management/Buttons"]
+[node name="01" type="TextureButton" parent="Overlays/Case_Management/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -670,7 +670,7 @@ texture_pressed = ExtResource("43_gjkrj")
 texture_hover = ExtResource("44_t8uoa")
 texture_click_mask = ExtResource("45_k24xe")
 
-[node name="02" type="TextureButton" parent="Panels/Case_Management/Buttons"]
+[node name="02" type="TextureButton" parent="Overlays/Case_Management/Buttons"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -684,31 +684,31 @@ texture_pressed = ExtResource("46_a7igc")
 texture_hover = ExtResource("47_q1jpv")
 texture_click_mask = ExtResource("48_pf81c")
 
-[node name="Drawer" type="AudioStreamPlayer" parent="Panels/Case_Management"]
+[node name="Drawer" type="AudioStreamPlayer" parent="Overlays/Case_Management"]
 stream = ExtResource("49_7vfi6")
 volume_db = -10.0
 bus = &"UI"
 
-[node name="Cellphone" type="Node2D" parent="Panels"]
+[node name="Cellphone" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Cellphone_BG" type="Sprite2D" parent="Panels/Cellphone"]
+[node name="Cellphone_BG" type="Sprite2D" parent="Overlays/Cellphone"]
 position = Vector2(211, 30)
 texture = ExtResource("50_cbb3s")
 centered = false
 offset = Vector2(20, 20)
 
-[node name="Cellphone_Blinking_Button" type="Sprite2D" parent="Panels/Cellphone/Cellphone_BG"]
+[node name="Cellphone_Blinking_Button" type="Sprite2D" parent="Overlays/Cellphone/Cellphone_BG"]
 texture = ExtResource("51_ysja1")
 centered = false
 offset = Vector2(20, 20)
 
-[node name="Message_Window" type="Control" parent="Panels/Cellphone"]
+[node name="Message_Window" type="Control" parent="Overlays/Cellphone"]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("52_8x3ap")
 
-[node name="Message" type="Label" parent="Panels/Cellphone/Message_Window"]
+[node name="Message" type="Label" parent="Overlays/Cellphone/Message_Window"]
 layout_mode = 0
 offset_left = 271.0
 offset_top = 94.0
@@ -720,7 +720,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("53_gfusj")
 
-[node name="Buttons" type="Control" parent="Panels/Cellphone"]
+[node name="Buttons" type="Control" parent="Overlays/Cellphone"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 20.0
@@ -730,7 +730,7 @@ offset_bottom = 340.0
 theme = ExtResource("52_8x3ap")
 script = ExtResource("54_sfan1")
 
-[node name="Ok" type="Button" parent="Panels/Cellphone/Buttons"]
+[node name="Ok" type="Button" parent="Overlays/Cellphone/Buttons"]
 visible = false
 modulate = Color(1, 1, 1, 0.196078)
 layout_mode = 0
@@ -758,21 +758,21 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_t8uoa")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k24xe")
 text = "Ok!"
 
-[node name="Blinking_Button" type="AnimationPlayer" parent="Panels/Cellphone"]
+[node name="Blinking_Button" type="AnimationPlayer" parent="Overlays/Cellphone"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_pfg73")
 }
 autoplay = "Blinking"
 
-[node name="Confirmation" type="Node2D" parent="Panels"]
+[node name="Confirmation" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Confirmation_BG" type="Sprite2D" parent="Panels/Confirmation"]
+[node name="Confirmation_BG" type="Sprite2D" parent="Overlays/Confirmation"]
 position = Vector2(320, 180)
 texture = ExtResource("56_8x3ap")
 
-[node name="Do_You_Confirm_That" type="Label" parent="Panels/Confirmation"]
+[node name="Do_You_Confirm_That" type="Label" parent="Overlays/Confirmation"]
 offset_left = 223.0
 offset_top = 134.0
 offset_right = 409.0
@@ -790,7 +790,7 @@ confirm that?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Yes_No" type="Control" parent="Panels/Confirmation"]
+[node name="Yes_No" type="Control" parent="Overlays/Confirmation"]
 modulate = Color(1, 1, 1, 0.843137)
 layout_mode = 3
 anchors_preset = 0
@@ -801,7 +801,7 @@ offset_bottom = 215.0
 rotation = -0.0698132
 script = ExtResource("58_sfan1")
 
-[node name="Yes" type="Button" parent="Panels/Confirmation/Yes_No"]
+[node name="Yes" type="Button" parent="Overlays/Confirmation/Yes_No"]
 layout_mode = 0
 offset_left = -46.0
 offset_top = -6.0
@@ -824,7 +824,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ojkpy")
 text = "Yes!"
 flat = true
 
-[node name="No" type="Button" parent="Panels/Confirmation/Yes_No"]
+[node name="No" type="Button" parent="Overlays/Confirmation/Yes_No"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = -6.0
@@ -847,34 +847,35 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ojkpy")
 text = "No..."
 flat = true
 
-[node name="Vibration" type="AnimationPlayer" parent="Panels/Confirmation"]
+[node name="Vibration" type="AnimationPlayer" parent="Overlays/Confirmation"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_lew6r")
 }
 autoplay = "Text_Animation"
 
-[node name="Cops" type="Node2D" parent="Panels"]
+[node name="Wanted" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Cops_BG" type="Sprite2D" parent="Panels/Cops"]
+[node name="Wanted_BG" type="Sprite2D" parent="Overlays/Wanted"]
 position = Vector2(95, 48)
 texture = ExtResource("13_s26gq")
 centered = false
 
-[node name="Info" type="Control" parent="Panels/Cops"]
+[node name="Info" type="Control" parent="Overlays/Wanted"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("14_adsmj")
 
-[node name="Player" type="Control" parent="Panels/Cops/Info"]
+[node name="Player" type="Control" parent="Overlays/Wanted/Info"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 theme = ExtResource("15_wqyuw")
 
-[node name="Situation" type="RichTextLabel" parent="Panels/Cops/Info/Player"]
+[node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/Player"]
 layout_mode = 0
 offset_left = 418.0
 offset_top = 148.0
@@ -885,7 +886,7 @@ text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Money" type="RichTextLabel" parent="Panels/Cops/Info/Player/Situation"]
+[node name="Money" type="RichTextLabel" parent="Overlays/Wanted/Info/Player/Situation"]
 layout_mode = 1
 offset_left = 67.0
 offset_top = 105.0
@@ -900,7 +901,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Surrender" type="Button" parent="Panels/Cops/Info/Player"]
+[node name="Surrender" type="Button" parent="Overlays/Wanted/Info/Player"]
 layout_mode = 0
 offset_left = 415.0
 offset_top = 289.0
@@ -912,7 +913,7 @@ button_group = ExtResource("16_dog4u")
 text = "Don't shoot, I surrender..."
 alignment = 2
 
-[node name="Pay" type="Button" parent="Panels/Cops/Info/Player"]
+[node name="Pay" type="Button" parent="Overlays/Wanted/Info/Player"]
 layout_mode = 0
 offset_left = 430.0
 offset_top = 273.0
@@ -930,15 +931,14 @@ button_group = ExtResource("16_dog4u")
 text = "Easy, easy... I can pay!"
 alignment = 2
 
-[node name="NPC" type="Control" parent="Panels/Cops/Info"]
-visible = false
+[node name="NPC" type="Control" parent="Overlays/Wanted/Info"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
 theme = ExtResource("15_wqyuw")
 
-[node name="Situation" type="RichTextLabel" parent="Panels/Cops/Info/NPC"]
+[node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/NPC"]
 layout_mode = 0
 offset_left = 418.0
 offset_top = 191.0
@@ -950,7 +950,7 @@ text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Pay" type="Button" parent="Panels/Cops/Info/NPC"]
+[node name="Pay" type="Button" parent="Overlays/Wanted/Info/NPC"]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 289.0
@@ -968,26 +968,26 @@ button_group = ExtResource("16_dog4u")
 text = "Ha! Ha! See you in lockup!"
 alignment = 2
 
-[node name="Police" type="AudioStreamPlayer" parent="Panels/Cops"]
+[node name="Police" type="AudioStreamPlayer" parent="Overlays/Wanted"]
 stream = ExtResource("17_wp1dn")
 volume_db = -22.5
 bus = &"FX"
 
-[node name="Income_Start" type="Node2D" parent="Panels"]
+[node name="Income_Start" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Income_Start_BG" type="Sprite2D" parent="Panels/Income_Start"]
+[node name="Income_Start_BG" type="Sprite2D" parent="Overlays/Income_Start"]
 position = Vector2(200, 25)
 texture = ExtResource("59_vprm5")
 centered = false
 
-[node name="Income" type="Control" parent="Panels/Income_Start"]
+[node name="Income" type="Control" parent="Overlays/Income_Start"]
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("60_llwhl")
 
-[node name="Quit" type="Button" parent="Panels/Income_Start/Income"]
+[node name="Quit" type="Button" parent="Overlays/Income_Start/Income"]
 modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
 offset_left = 296.0
@@ -998,12 +998,12 @@ tooltip_text = "I'm releaved!"
 text = "Ok, nice..."
 script = ExtResource("61_5iqpn")
 
-[node name="Chalk" type="Sprite2D" parent="Panels/Income_Start/Income"]
+[node name="Chalk" type="Sprite2D" parent="Overlays/Income_Start/Income"]
 clip_children = 1
 position = Vector2(315, 178)
 texture = ExtResource("62_gjkrj")
 
-[node name="Content" type="RichTextLabel" parent="Panels/Income_Start/Income/Chalk"]
+[node name="Content" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk"]
 offset_left = -73.0
 offset_top = -108.0
 offset_right = 82.0
@@ -1034,7 +1034,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
 
  Not that it'll make any change!"
 
-[node name="Money_Cards" type="FlowContainer" parent="Panels/Income_Start/Income/Chalk"]
+[node name="Money_Cards" type="FlowContainer" parent="Overlays/Income_Start/Income/Chalk"]
 offset_left = -73.0
 offset_top = -56.0
 offset_right = 82.0
@@ -1042,7 +1042,7 @@ offset_bottom = -18.0
 theme_override_constants/h_separation = -1
 theme_override_constants/v_separation = 0
 
-[node name="Dash" type="RichTextLabel" parent="Panels/Income_Start/Income/Chalk/Money_Cards"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("60_llwhl")
@@ -1051,7 +1051,7 @@ text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Money" type="RichTextLabel" parent="Panels/Income_Start/Income/Chalk/Money_Cards"]
+[node name="Money" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("60_llwhl")
@@ -1061,7 +1061,7 @@ text = "XXX"
 fit_content = true
 autowrap_mode = 0
 
-[node name="And" type="RichTextLabel" parent="Panels/Income_Start/Income/Chalk/Money_Cards"]
+[node name="And" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("60_llwhl")
@@ -1070,7 +1070,7 @@ text = "[color=#ff8864]Dø[/color] and "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Cards" type="RichTextLabel" parent="Panels/Income_Start/Income/Chalk/Money_Cards"]
+[node name="Cards" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("60_llwhl")
@@ -1080,7 +1080,7 @@ text = "X"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Beginning_Of_End" type="RichTextLabel" parent="Panels/Income_Start/Income/Chalk/Money_Cards"]
+[node name="Beginning_Of_End" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
 layout_mode = 2
 size_flags_vertical = 0
 theme = ExtResource("60_llwhl")
@@ -1089,7 +1089,7 @@ text = " [color=#ff8864]card(s)[/color] to (try "
 fit_content = true
 autowrap_mode = 0
 
-[node name="End_Of_End" type="RichTextLabel" parent="Panels/Income_Start/Income/Chalk/Money_Cards"]
+[node name="End_Of_End" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -1103,35 +1103,35 @@ text = " to) improve yourself...
 fit_content = true
 autowrap_mode = 0
 
-[node name="Card_Places" type="Node2D" parent="Panels/Income_Start/Income"]
+[node name="Card_Places" type="Node2D" parent="Overlays/Income_Start/Income"]
 position = Vector2(0, 12)
 
-[node name="First_Card" type="Marker2D" parent="Panels/Income_Start/Income/Card_Places"]
+[node name="First_Card" type="Marker2D" parent="Overlays/Income_Start/Income/Card_Places"]
 position = Vector2(247, 152)
 
-[node name="Last_Card" type="Marker2D" parent="Panels/Income_Start/Income/Card_Places"]
+[node name="Last_Card" type="Marker2D" parent="Overlays/Income_Start/Income/Card_Places"]
 position = Vector2(319, 152)
 
-[node name="TMP" type="Node2D" parent="Panels/Income_Start/Income"]
+[node name="TMP" type="Node2D" parent="Overlays/Income_Start/Income"]
 position = Vector2(0, 12)
 
-[node name="Card1" parent="Panels/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card1" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(247, 152)
 
-[node name="Card3" parent="Panels/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card3" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(283, 152)
 
-[node name="Card2" parent="Panels/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card2" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
 
-[node name="Starting_Hand" type="Control" parent="Panels/Income_Start"]
+[node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
 visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("60_llwhl")
 
-[node name="Quit" type="Button" parent="Panels/Income_Start/Starting_Hand"]
+[node name="Quit" type="Button" parent="Overlays/Income_Start/Starting_Hand"]
 modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
 offset_left = 296.0
@@ -1143,12 +1143,12 @@ a choice..."
 text = "Well, ok..."
 script = ExtResource("61_5iqpn")
 
-[node name="Chalk" type="Sprite2D" parent="Panels/Income_Start/Starting_Hand"]
+[node name="Chalk" type="Sprite2D" parent="Overlays/Income_Start/Starting_Hand"]
 clip_children = 1
 position = Vector2(315, 178)
 texture = ExtResource("62_gjkrj")
 
-[node name="Content" type="RichTextLabel" parent="Panels/Income_Start/Starting_Hand/Chalk"]
+[node name="Content" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
 offset_left = -72.0
 offset_top = -108.0
 offset_right = 82.0
@@ -1175,7 +1175,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]A fre
 
  Not that it'll make any change!"
 
-[node name="Money" type="RichTextLabel" parent="Panels/Income_Start/Starting_Hand/Chalk"]
+[node name="Money" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
 offset_left = -66.0
 offset_top = -54.0
 offset_right = -42.0
@@ -1187,45 +1187,45 @@ text = "300"
 fit_content = true
 horizontal_alignment = 2
 
-[node name="Card_Places" type="Node2D" parent="Panels/Income_Start/Starting_Hand"]
+[node name="Card_Places" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
 position = Vector2(0, 12)
 
-[node name="First_Card" type="Marker2D" parent="Panels/Income_Start/Starting_Hand/Card_Places"]
+[node name="First_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
 position = Vector2(247, 152)
 
-[node name="Last_Card" type="Marker2D" parent="Panels/Income_Start/Starting_Hand/Card_Places"]
+[node name="Last_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
 position = Vector2(319, 152)
 
-[node name="TMP" type="Node2D" parent="Panels/Income_Start/Starting_Hand"]
+[node name="TMP" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
 position = Vector2(0, 12)
 
-[node name="Card1" parent="Panels/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card1" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(247, 152)
 
-[node name="Card3" parent="Panels/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card3" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(271, 152)
 
-[node name="Card2" parent="Panels/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card2" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(295, 152)
 
-[node name="Card4" parent="Panels/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card4" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
 
-[node name="Intercom" type="Node2D" parent="Panels"]
+[node name="Intercom" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Intercom_BG" type="Sprite2D" parent="Panels/Intercom"]
+[node name="Intercom_BG" type="Sprite2D" parent="Overlays/Intercom"]
 position = Vector2(209, 38)
 texture = ExtResource("18_15dtw")
 centered = false
 offset = Vector2(20, 20)
 
-[node name="Interface" type="Control" parent="Panels/Intercom"]
+[node name="Interface" type="Control" parent="Overlays/Intercom"]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("19_p0ov3")
 
-[node name="Green_Button" type="Sprite2D" parent="Panels/Intercom/Interface"]
+[node name="Green_Button" type="Sprite2D" parent="Overlays/Intercom/Interface"]
 modulate = Color(1, 1, 1, 0.686275)
 self_modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(208, 36)
@@ -1233,11 +1233,11 @@ texture = ExtResource("20_nc40d")
 centered = false
 offset = Vector2(20, 20)
 
-[node name="Screens" type="Control" parent="Panels/Intercom/Interface"]
+[node name="Screens" type="Control" parent="Overlays/Intercom/Interface"]
 modulate = Color(1, 1, 1, 0.917647)
 anchors_preset = 0
 
-[node name="Away" type="Label" parent="Panels/Intercom/Interface/Screens"]
+[node name="Away" type="Label" parent="Overlays/Intercom/Interface/Screens"]
 visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
@@ -1256,7 +1256,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="NPC" type="Label" parent="Panels/Intercom/Interface/Screens/Away"]
+[node name="NPC" type="Label" parent="Overlays/Intercom/Interface/Screens/Away"]
 layout_mode = 0
 offset_right = 99.0
 offset_bottom = 41.0
@@ -1269,7 +1269,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Refuse" type="Label" parent="Panels/Intercom/Interface/Screens"]
+[node name="Refuse" type="Label" parent="Overlays/Intercom/Interface/Screens"]
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
@@ -1287,7 +1287,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="NPC" type="Label" parent="Panels/Intercom/Interface/Screens/Refuse"]
+[node name="NPC" type="Label" parent="Overlays/Intercom/Interface/Screens/Refuse"]
 layout_mode = 0
 offset_right = 99.0
 offset_bottom = 31.0
@@ -1300,11 +1300,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Numbers_Etc" type="Control" parent="Panels/Intercom/Interface"]
+[node name="Numbers_Etc" type="Control" parent="Overlays/Intercom/Interface"]
 modulate = Color(1, 1, 1, 0.882353)
 anchors_preset = 0
 
-[node name="7" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="7" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 285.0
 offset_top = 181.0
@@ -1312,7 +1312,7 @@ offset_right = 290.0
 offset_bottom = 189.0
 text = "7"
 
-[node name="8" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="8" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 302.0
 offset_top = 181.0
@@ -1320,7 +1320,7 @@ offset_right = 307.0
 offset_bottom = 189.0
 text = "8"
 
-[node name="9" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="9" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 319.0
 offset_top = 181.0
@@ -1328,7 +1328,7 @@ offset_right = 324.0
 offset_bottom = 189.0
 text = "9"
 
-[node name="4" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="4" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 285.0
 offset_top = 199.0
@@ -1336,7 +1336,7 @@ offset_right = 290.0
 offset_bottom = 207.0
 text = "4"
 
-[node name="5" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="5" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 302.0
 offset_top = 199.0
@@ -1344,7 +1344,7 @@ offset_right = 307.0
 offset_bottom = 207.0
 text = "5"
 
-[node name="6" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="6" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 319.0
 offset_top = 199.0
@@ -1352,7 +1352,7 @@ offset_right = 324.0
 offset_bottom = 207.0
 text = "6"
 
-[node name="1" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="1" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 286.0
 offset_top = 217.0
@@ -1360,7 +1360,7 @@ offset_right = 291.0
 offset_bottom = 225.0
 text = "1"
 
-[node name="2" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="2" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 302.0
 offset_top = 217.0
@@ -1368,7 +1368,7 @@ offset_right = 307.0
 offset_bottom = 225.0
 text = "2"
 
-[node name="3" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="3" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 319.0
 offset_top = 217.0
@@ -1376,7 +1376,7 @@ offset_right = 324.0
 offset_bottom = 225.0
 text = "3"
 
-[node name="Minus" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="Minus" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 341.0
 offset_top = 181.0
@@ -1384,7 +1384,7 @@ offset_right = 346.0
 offset_bottom = 189.0
 text = "-"
 
-[node name="Plus" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="Plus" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 341.0
 offset_top = 199.0
@@ -1392,7 +1392,7 @@ offset_right = 346.0
 offset_bottom = 207.0
 text = "+"
 
-[node name="Point" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="Point" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 358.0
 offset_top = 179.0
@@ -1400,7 +1400,7 @@ offset_right = 363.0
 offset_bottom = 187.0
 text = "."
 
-[node name="Smaller" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="Smaller" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 341.0
 offset_top = 217.0
@@ -1408,7 +1408,7 @@ offset_right = 346.0
 offset_bottom = 225.0
 text = "<"
 
-[node name="Greater" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="Greater" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 357.0
 offset_top = 217.0
@@ -1416,7 +1416,7 @@ offset_right = 362.0
 offset_bottom = 225.0
 text = ">"
 
-[node name="0" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="0" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 302.0
 offset_top = 235.0
@@ -1424,7 +1424,7 @@ offset_right = 307.0
 offset_bottom = 243.0
 text = "0"
 
-[node name="Hash" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="Hash" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 318.0
 offset_top = 235.0
@@ -1432,7 +1432,7 @@ offset_right = 324.0
 offset_bottom = 243.0
 text = "#"
 
-[node name="Star" type="Label" parent="Panels/Intercom/Interface/Numbers_Etc"]
+[node name="Star" type="Label" parent="Overlays/Intercom/Interface/Numbers_Etc"]
 layout_mode = 0
 offset_left = 286.0
 offset_top = 236.0
@@ -1440,7 +1440,7 @@ offset_right = 291.0
 offset_bottom = 244.0
 text = "*"
 
-[node name="Quit" type="TextureButton" parent="Panels/Intercom/Interface"]
+[node name="Quit" type="TextureButton" parent="Overlays/Intercom/Interface"]
 layout_mode = 0
 offset_left = 227.0
 offset_top = 56.0
@@ -1454,27 +1454,27 @@ texture_hover = ExtResource("22_v0nqa")
 texture_click_mask = ExtResource("23_1nskf")
 script = ExtResource("24_fjtuv")
 
-[node name="Intercom" type="AudioStreamPlayer" parent="Panels/Intercom"]
+[node name="Intercom" type="AudioStreamPlayer" parent="Overlays/Intercom"]
 stream = ExtResource("25_7hyo2")
 volume_db = -15.0
 bus = &"FX"
 
-[node name="Green_Button" type="AnimationPlayer" parent="Panels/Intercom"]
+[node name="Green_Button" type="AnimationPlayer" parent="Overlays/Intercom"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_mlhxe")
 }
 autoplay = "Flashing"
 
-[node name="Load_Save_Delete" type="Node2D" parent="Panels"]
+[node name="Load_Save_Delete" type="Node2D" parent="Overlays"]
 visible = false
 script = ExtResource("64_gjkrj")
 
-[node name="Load_Save_Delete_BG" type="Sprite2D" parent="Panels/Load_Save_Delete"]
+[node name="Load_Save_Delete_BG" type="Sprite2D" parent="Overlays/Load_Save_Delete"]
 position = Vector2(316, 176)
 texture = ExtResource("65_t8uoa")
 
-[node name="List" type="PanelContainer" parent="Panels/Load_Save_Delete"]
+[node name="List" type="PanelContainer" parent="Overlays/Load_Save_Delete"]
 offset_left = 246.0
 offset_top = 116.0
 offset_right = 389.0
@@ -1482,7 +1482,7 @@ offset_bottom = 314.0
 theme = ExtResource("66_k24xe")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_q1jpv")
 
-[node name="Saves" type="ItemList" parent="Panels/Load_Save_Delete/List"]
+[node name="Saves" type="ItemList" parent="Overlays/Load_Save_Delete/List"]
 layout_mode = 2
 item_count = 20
 item_0/text = "Test"
@@ -1506,7 +1506,7 @@ item_17/text = "Bon, on y est, non ?"
 item_18/text = "Allez, le tout dernier !"
 item_19/text = "Et là, ça déborde !"
 
-[node name="Load_Save_Delete" type="Label" parent="Panels/Load_Save_Delete"]
+[node name="Load_Save_Delete" type="Label" parent="Overlays/Load_Save_Delete"]
 offset_left = 239.0
 offset_top = 93.0
 offset_right = 382.0
@@ -1520,7 +1520,7 @@ theme_override_font_sizes/font_size = 32
 text = " -              -"
 horizontal_alignment = 1
 
-[node name="Yes_No" type="Control" parent="Panels/Load_Save_Delete"]
+[node name="Yes_No" type="Control" parent="Overlays/Load_Save_Delete"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 151.0
@@ -1529,7 +1529,7 @@ offset_right = 151.0
 offset_bottom = -4.0
 theme = ExtResource("66_k24xe")
 
-[node name="Load" type="Button" parent="Panels/Load_Save_Delete/Yes_No"]
+[node name="Load" type="Button" parent="Overlays/Load_Save_Delete/Yes_No"]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 97.0
@@ -1552,7 +1552,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_iqlu4")
 text = "LOAD"
 flat = true
 
-[node name="Save" type="Button" parent="Panels/Load_Save_Delete/Yes_No"]
+[node name="Save" type="Button" parent="Overlays/Load_Save_Delete/Yes_No"]
 layout_mode = 0
 offset_left = 143.0
 offset_top = 97.0
@@ -1575,7 +1575,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_iqlu4")
 text = "SAVE"
 flat = true
 
-[node name="Delete" type="Button" parent="Panels/Load_Save_Delete/Yes_No"]
+[node name="Delete" type="Button" parent="Overlays/Load_Save_Delete/Yes_No"]
 layout_mode = 0
 offset_left = 197.0
 offset_top = 97.0
@@ -1598,22 +1598,22 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_iqlu4")
 text = "DELETE"
 flat = true
 
-[node name="Player_Improvement" type="Node2D" parent="Panels"]
+[node name="Player_Improvement" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Player_Improvement_BG" type="Sprite2D" parent="Panels/Player_Improvement"]
+[node name="Player_Improvement_BG" type="Sprite2D" parent="Overlays/Player_Improvement"]
 position = Vector2(171, 5)
 texture = ExtResource("67_a7igc")
 centered = false
 
-[node name="Informations" type="Control" parent="Panels/Player_Improvement"]
+[node name="Informations" type="Control" parent="Overlays/Player_Improvement"]
 layout_mode = 3
 anchors_preset = 0
 tooltip_text = "Ok..."
 theme = ExtResource("68_q1jpv")
 script = ExtResource("69_pf81c")
 
-[node name="Positive_Mental" type="RichTextLabel" parent="Panels/Player_Improvement/Informations"]
+[node name="Positive_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
 offset_left = 219.0
@@ -1628,7 +1628,7 @@ You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/co
 At this  point,  you feel a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  stupid.[/color][/shake][/center]"
 fit_content = true
 
-[node name="Positive_Physic" type="RichTextLabel" parent="Panels/Player_Improvement/Informations"]
+[node name="Positive_Physic" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
 offset_left = 221.0
@@ -1644,7 +1644,7 @@ Anyway.  At  this  point, you feel  a  little  [shake rate=7.0 level=5 connected
 "
 fit_content = true
 
-[node name="Positive_Health" type="RichTextLabel" parent="Panels/Player_Improvement/Informations"]
+[node name="Positive_Health" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
 offset_left = 219.0
@@ -1659,7 +1659,7 @@ You’ve  managed to  push  through  a little [shake rate=7.0 level=5 connected=
 For now,  though,  you feel  a  bit  [shake rate=7.0 level=5 connected=0][color=#ff8864]less fragile[/color][/shake].[/center]"
 fit_content = true
 
-[node name="Negative_Mental" type="RichTextLabel" parent="Panels/Player_Improvement/Informations"]
+[node name="Negative_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
 offset_left = 217.0
@@ -1677,7 +1677,7 @@ That  being  said, you feel [shake rate=7.0 level=5 connected=0][color=#ff8864]d
 "
 fit_content = true
 
-[node name="Negative_Physic" type="RichTextLabel" parent="Panels/Player_Improvement/Informations"]
+[node name="Negative_Physic" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
 offset_left = 217.0
@@ -1692,7 +1692,7 @@ The \"[shake rate=7.0 level=5 connected=0][color=#ff8864]progress[/color][/shake
 Honestly, you seem to be getting  [shake rate=7.0 level=5 connected=0][color=#ff8864]weaker[/color][/shake] by the  minute.[/center]"
 fit_content = true
 
-[node name="Negative_Health" type="RichTextLabel" parent="Panels/Player_Improvement/Informations"]
+[node name="Negative_Health" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
 offset_left = 217.0
@@ -1708,7 +1708,7 @@ Let’s  see  how long it takes  before  you [shake rate=7.0 level=5 connected=0
 For now,  though,  you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]more broken[/color][/shake].[/center]"
 fit_content = true
 
-[node name="Quit" type="Button" parent="Panels/Player_Improvement/Informations"]
+[node name="Quit" type="Button" parent="Overlays/Player_Improvement/Informations"]
 self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 389.0
@@ -1732,15 +1732,15 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
 text = "Hm?"
 
-[node name="Rowena" type="Node2D" parent="Panels"]
+[node name="Rowena" type="Node2D" parent="Overlays"]
 visible = false
 script = ExtResource("71_x6sjh")
 
-[node name="Rowena_BG" type="Sprite2D" parent="Panels/Rowena"]
+[node name="Rowena_BG" type="Sprite2D" parent="Overlays/Rowena"]
 position = Vector2(316, 176)
 texture = ExtResource("72_m5y04")
 
-[node name="Drug_Store" type="Control" parent="Panels/Rowena"]
+[node name="Drug_Store" type="Control" parent="Overlays/Rowena"]
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 3
 anchors_preset = 0
@@ -1749,7 +1749,7 @@ offset_right = 40.0
 offset_bottom = 68.0
 theme = ExtResource("70_0sc5x")
 
-[node name="Stock" type="RichTextLabel" parent="Panels/Rowena/Drug_Store"]
+[node name="Stock" type="RichTextLabel" parent="Overlays/Rowena/Drug_Store"]
 layout_mode = 0
 offset_left = 191.0
 offset_top = 124.0
@@ -1763,7 +1763,7 @@ text = "[center][color=#9c7f5f]I only have
     dose(s)
 left for [color=#e85d68]25[/color] [color=#d41c2b]Dø[/color] each.[/color][/center]"
 
-[node name="Stock_Number" type="Label" parent="Panels/Rowena/Drug_Store/Stock"]
+[node name="Stock_Number" type="Label" parent="Overlays/Rowena/Drug_Store/Stock"]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 20.0
@@ -1774,7 +1774,7 @@ theme_override_constants/outline_size = 6
 text = "5"
 horizontal_alignment = 2
 
-[node name="I_will_take" type="Label" parent="Panels/Rowena/Drug_Store"]
+[node name="I_will_take" type="Label" parent="Overlays/Rowena/Drug_Store"]
 layout_mode = 0
 offset_left = 194.0
 offset_top = 206.0
@@ -1784,7 +1784,7 @@ theme_override_colors/font_color = Color(0.427451, 0.509804, 0.258824, 1)
 theme_override_constants/outline_size = 6
 text = "Ok,  I'lL take"
 
-[node name="Purchase" type="Label" parent="Panels/Rowena/Drug_Store/I_will_take"]
+[node name="Purchase" type="Label" parent="Overlays/Rowena/Drug_Store/I_will_take"]
 layout_mode = 0
 offset_left = 103.0
 offset_right = 138.0
@@ -1793,7 +1793,7 @@ theme_override_colors/font_color = Color(0.4514, 0.66304, 0.74, 1)
 theme_override_constants/outline_size = 6
 text = "0"
 
-[node name="Plus_Minus" type="Control" parent="Panels/Rowena/Drug_Store/I_will_take"]
+[node name="Plus_Minus" type="Control" parent="Overlays/Rowena/Drug_Store/I_will_take"]
 modulate = Color(1, 1, 1, 0.901961)
 anchors_preset = 0
 offset_left = -195.0
@@ -1801,7 +1801,7 @@ offset_top = -204.0
 offset_right = -155.0
 offset_bottom = -164.0
 
-[node name="Minus" type="TextureButton" parent="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus"]
+[node name="Minus" type="TextureButton" parent="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus"]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 205.0
@@ -1814,7 +1814,7 @@ texture_pressed = ExtResource("74_0b7va")
 texture_hover = ExtResource("75_tst27")
 texture_click_mask = ExtResource("76_u6y7r")
 
-[node name="Plus" type="TextureButton" parent="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus"]
+[node name="Plus" type="TextureButton" parent="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus"]
 layout_mode = 0
 offset_left = 341.0
 offset_top = 206.0
@@ -1827,7 +1827,7 @@ texture_pressed = ExtResource("78_bxkh1")
 texture_hover = ExtResource("79_wt5xr")
 texture_click_mask = ExtResource("80_d324j")
 
-[node name="Price" type="Label" parent="Panels/Rowena/Drug_Store/I_will_take"]
+[node name="Price" type="Label" parent="Overlays/Rowena/Drug_Store/I_will_take"]
 layout_mode = 0
 offset_left = 175.0
 offset_top = -1.0
@@ -1838,7 +1838,7 @@ theme_override_constants/outline_size = 6
 text = "0"
 horizontal_alignment = 2
 
-[node name="Do" type="Label" parent="Panels/Rowena/Drug_Store/I_will_take"]
+[node name="Do" type="Label" parent="Overlays/Rowena/Drug_Store/I_will_take"]
 layout_mode = 0
 offset_left = 220.0
 offset_top = -1.0
@@ -1848,7 +1848,7 @@ theme_override_colors/font_color = Color(0.427451, 0.509804, 0.258824, 1)
 theme_override_constants/outline_size = 6
 text = "Dø"
 
-[node name="Thanks_Nope" type="Control" parent="Panels/Rowena"]
+[node name="Thanks_Nope" type="Control" parent="Overlays/Rowena"]
 modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 3
 anchors_preset = 0
@@ -1856,7 +1856,7 @@ offset_left = 159.0
 offset_right = 159.0
 theme = ExtResource("70_0sc5x")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panels/Rowena/Thanks_Nope"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlays/Rowena/Thanks_Nope"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 268.0
@@ -1864,7 +1864,7 @@ offset_right = 263.0
 offset_bottom = 301.0
 alignment = 1
 
-[node name="Nope" type="Button" parent="Panels/Rowena/Thanks_Nope/HBoxContainer"]
+[node name="Nope" type="Button" parent="Overlays/Rowena/Thanks_Nope/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "Well. Next time?"
@@ -1885,7 +1885,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ev0la")
 text = "Nope!"
 flat = true
 
-[node name="Thanks" type="Button" parent="Panels/Rowena/Thanks_Nope/HBoxContainer"]
+[node name="Thanks" type="Button" parent="Overlays/Rowena/Thanks_Nope/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 tooltip_text = "yes, I want that."
@@ -1906,17 +1906,17 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ev0la")
 text = "Thanks!"
 flat = true
 
-[node name="Run_Away_Break_In" type="Node2D" parent="Panels"]
+[node name="Run_Away_Break_In" type="Node2D" parent="Overlays"]
 visible = false
 position = Vector2(172, 48)
 
-[node name="Run_Away_Break_In_BG" type="Sprite2D" parent="Panels/Run_Away_Break_In"]
+[node name="Run_Away_Break_In_BG" type="Sprite2D" parent="Overlays/Run_Away_Break_In"]
 position = Vector2(-122, 12)
 texture = ExtResource("7_yccgy")
 centered = false
 offset = Vector2(20, 20)
 
-[node name="Announces" type="Control" parent="Panels/Run_Away_Break_In"]
+[node name="Announces" type="Control" parent="Overlays/Run_Away_Break_In"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -172.0
@@ -1925,7 +1925,7 @@ offset_right = -172.0
 offset_bottom = -48.0
 script = ExtResource("8_7ujkg")
 
-[node name="Run_Away" type="Control" parent="Panels/Run_Away_Break_In/Announces"]
+[node name="Run_Away" type="Control" parent="Overlays/Run_Away_Break_In/Announces"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -1935,7 +1935,7 @@ offset_right = 141.0
 offset_bottom = 30.0
 theme = ExtResource("9_oetaq")
 
-[node name="Info" type="RichTextLabel" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
+[node name="Info" type="RichTextLabel" parent="Overlays/Run_Away_Break_In/Announces/Run_Away"]
 layout_mode = 0
 offset_left = -57.0
 offset_top = 57.0
@@ -1948,7 +1948,7 @@ I guess [color=#ff1c18] now[/color][color=#ff8864] would  be the perfect  time t
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Yes" type="Button" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
+[node name="Yes" type="Button" parent="Overlays/Run_Away_Break_In/Announces/Run_Away"]
 layout_mode = 0
 offset_left = 108.0
 offset_top = 87.0
@@ -1964,7 +1964,7 @@ theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
 text = "Yes,  I totally  agree  with that..."
 
-[node name="No" type="Button" parent="Panels/Run_Away_Break_In/Announces/Run_Away"]
+[node name="No" type="Button" parent="Overlays/Run_Away_Break_In/Announces/Run_Away"]
 layout_mode = 0
 offset_left = 151.0
 offset_top = 171.0
@@ -1980,7 +1980,7 @@ theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 text = "No, not in this world!"
 
-[node name="Break_In" type="Control" parent="Panels/Run_Away_Break_In/Announces"]
+[node name="Break_In" type="Control" parent="Overlays/Run_Away_Break_In/Announces"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 141.0
@@ -1989,7 +1989,7 @@ offset_right = 141.0
 offset_bottom = 30.0
 theme = ExtResource("9_oetaq")
 
-[node name="Info" type="RichTextLabel" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
+[node name="Info" type="RichTextLabel" parent="Overlays/Run_Away_Break_In/Announces/Break_In"]
 layout_mode = 0
 offset_left = -61.0
 offset_top = 53.0
@@ -2002,7 +2002,7 @@ text = "Alright,
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Yes" type="Button" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
+[node name="Yes" type="Button" parent="Overlays/Run_Away_Break_In/Announces/Break_In"]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 87.0
@@ -2019,7 +2019,7 @@ theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
 text = "Yes,  It's  now  or...  It's now!"
 
-[node name="No" type="Button" parent="Panels/Run_Away_Break_In/Announces/Break_In"]
+[node name="No" type="Button" parent="Overlays/Run_Away_Break_In/Announces/Break_In"]
 layout_mode = 0
 offset_left = 98.0
 offset_top = 168.0
@@ -2036,17 +2036,17 @@ theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 text = "I'm  afraid  I  won't  do that, Dave."
 
-[node name="Search_Warrant" type="Node2D" parent="Panels"]
+[node name="Search_Warrant" type="Node2D" parent="Overlays"]
 visible = false
 position = Vector2(172, 48)
 
-[node name="Search_Warrant_BG" type="Sprite2D" parent="Panels/Search_Warrant"]
+[node name="Search_Warrant_BG" type="Sprite2D" parent="Overlays/Search_Warrant"]
 position = Vector2(40, -19)
 texture = ExtResource("4_0rnfm")
 centered = false
 offset = Vector2(20, 20)
 
-[node name="Text_Buy" type="Control" parent="Panels/Search_Warrant"]
+[node name="Text_Buy" type="Control" parent="Overlays/Search_Warrant"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
@@ -2056,7 +2056,7 @@ offset_bottom = -18.0
 theme = ExtResource("5_53ag3")
 script = ExtResource("6_200re")
 
-[node name="Buy_It" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Buy"]
+[node name="Buy_It" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
 offset_left = 108.0
@@ -2067,7 +2067,7 @@ rotation = 0.0165557
 bbcode_enabled = true
 text = "[center]This  Warrant is  worth [color=#992726]        Dø[/color] and  I  have  better things to  do than  drafting  Search  Warrants all day...[/center]"
 
-[node name="Price" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Buy"]
+[node name="Price" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
 offset_left = 153.0
@@ -2080,7 +2080,7 @@ bbcode_enabled = true
 text = "25"
 horizontal_alignment = 2
 
-[node name="Yes" type="Button" parent="Panels/Search_Warrant/Text_Buy"]
+[node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_Buy"]
 layout_mode = 0
 offset_left = 180.0
 offset_top = 233.0
@@ -2096,7 +2096,7 @@ text = "Yes, please, I
 need this one!"
 alignment = 2
 
-[node name="No" type="Button" parent="Panels/Search_Warrant/Text_Buy"]
+[node name="No" type="Button" parent="Overlays/Search_Warrant/Text_Buy"]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 233.0
@@ -2112,7 +2112,7 @@ text = "Well, now that
 you mention it..."
 alignment = 0
 
-[node name="Text_Use" type="Control" parent="Panels/Search_Warrant"]
+[node name="Text_Use" type="Control" parent="Overlays/Search_Warrant"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -2123,7 +2123,7 @@ offset_bottom = -18.0
 theme = ExtResource("5_53ag3")
 script = ExtResource("6_200re")
 
-[node name="Use_It" type="RichTextLabel" parent="Panels/Search_Warrant/Text_Use"]
+[node name="Use_It" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Use"]
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
 offset_left = 108.0
@@ -2139,7 +2139,7 @@ Should  I  use  my so expensive
 Search  WarrAnt
 (or is it  racket)?[/center]"
 
-[node name="Yes" type="Button" parent="Panels/Search_Warrant/Text_Use"]
+[node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_Use"]
 layout_mode = 0
 offset_left = 180.0
 offset_top = 233.0
@@ -2155,7 +2155,7 @@ text = "No other
 choice!"
 alignment = 2
 
-[node name="No" type="Button" parent="Panels/Search_Warrant/Text_Use"]
+[node name="No" type="Button" parent="Overlays/Search_Warrant/Text_Use"]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 233.0
@@ -2171,22 +2171,22 @@ text = "Hm...
 Maybe not!"
 alignment = 0
 
-[node name="Short_Event" type="Node2D" parent="Panels"]
+[node name="Short_Event" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Short_Event_BG" type="Sprite2D" parent="Panels/Short_Event"]
+[node name="Short_Event_BG" type="Sprite2D" parent="Overlays/Short_Event"]
 texture = ExtResource("1_sivc1")
 centered = false
 offset = Vector2(50, 0)
 
-[node name="Announces" type="Control" parent="Panels/Short_Event"]
+[node name="Announces" type="Control" parent="Overlays/Short_Event"]
 modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_vr7x7")
 script = ExtResource("3_8qa11")
 
-[node name="Quit" type="Button" parent="Panels/Short_Event/Announces"]
+[node name="Quit" type="Button" parent="Overlays/Short_Event/Announces"]
 layout_mode = 0
 offset_left = 432.0
 offset_top = 306.0
@@ -2196,10 +2196,10 @@ rotation = 0.0361729
 tooltip_text = "Ok, ok..."
 text = "Whatever..."
 
-[node name="Run_Away" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Run_Away" type="Control" parent="Overlays/Short_Event/Announces"]
 anchors_preset = 0
 
-[node name="Player_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Run_Away"]
+[node name="Player_Success" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Run_Away"]
 layout_mode = 0
 offset_left = 159.0
 offset_top = 44.0
@@ -2217,7 +2217,7 @@ Either way, you sure  know  how  to  leave an impression...
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
 
-[node name="Player_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Run_Away"]
+[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Run_Away"]
 visible = false
 layout_mode = 0
 offset_left = 165.0
@@ -2237,11 +2237,11 @@ In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 con
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
 
-[node name="Rowena_Absent" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Rowena_Absent" type="Control" parent="Overlays/Short_Event/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="Message" type="RichTextLabel" parent="Panels/Short_Event/Announces/Rowena_Absent"]
+[node name="Message" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Rowena_Absent"]
 layout_mode = 0
 offset_left = 159.0
 offset_top = 56.0
@@ -2258,11 +2258,11 @@ Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thin
 
 It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
 
-[node name="Irrelevant_Motive" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Irrelevant_Motive" type="Control" parent="Overlays/Short_Event/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="Message" type="RichTextLabel" parent="Panels/Short_Event/Announces/Irrelevant_Motive"]
+[node name="Message" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Irrelevant_Motive"]
 layout_mode = 0
 offset_left = 176.0
 offset_top = 111.0
@@ -2274,11 +2274,11 @@ text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes 
 
 We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
 
-[node name="Break_In" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Break_In" type="Control" parent="Overlays/Short_Event/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="Player_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Break_In"]
+[node name="Player_Success" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Break_In"]
 layout_mode = 0
 offset_left = 178.0
 offset_top = 70.0
@@ -2295,7 +2295,7 @@ Did you really  think  that  would  be  your biggest  challenge  today?
 [shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you’ve  done it...[/color][/shake]
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
 
-[node name="Player_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Break_In"]
+[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Break_In"]
 visible = false
 layout_mode = 0
 offset_left = 165.0
@@ -2314,11 +2314,11 @@ Let’s just say it wasn’t exactly impressive.
 You sure know how to make  an entrance...
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  not  the best  one![/color][/shake][/center]"
 
-[node name="Dialogue" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Dialogue" type="Control" parent="Overlays/Short_Event/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="NPC_Success" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dialogue"]
+[node name="NPC_Success" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dialogue"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 58.0
@@ -2334,7 +2334,7 @@ It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][col
 
 Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
 
-[node name="NPC_Failure" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dialogue"]
+[node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dialogue"]
 visible = false
 layout_mode = 0
 offset_left = 167.0
@@ -2353,11 +2353,11 @@ It’s  almost  as if they were just waiting  for  the  perfect  moment...
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
 
-[node name="Combat" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Combat" type="Control" parent="Overlays/Short_Event/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="NPC_Attack" type="RichTextLabel" parent="Panels/Short_Event/Announces/Combat"]
+[node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Combat"]
 layout_mode = 0
 offset_left = 167.0
 offset_top = 62.0
@@ -2373,7 +2373,7 @@ In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  
 
 Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
 
-[node name="Minion_Attack" type="RichTextLabel" parent="Panels/Short_Event/Announces/Combat"]
+[node name="Minion_Attack" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Combat"]
 visible = false
 layout_mode = 0
 offset_left = 169.0
@@ -2391,11 +2391,11 @@ The  assault  comes  fast  (probably  more than you can  handle).
 
 Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
 
-[node name="Outdated_Case" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Outdated_Case" type="Control" parent="Overlays/Short_Event/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="Annonce" type="RichTextLabel" parent="Panels/Short_Event/Announces/Outdated_Case"]
+[node name="Annonce" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Outdated_Case"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 62.0
@@ -2412,11 +2412,11 @@ Your inability  to  meet  a simple  [shake rate=7.0 level=5 connected=0][color=#
 
 Nice job,  genius![/center]"
 
-[node name="Dreams" type="Control" parent="Panels/Short_Event/Announces"]
+[node name="Dreams" type="Control" parent="Overlays/Short_Event/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="Dream" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dreams"]
+[node name="Dream" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dreams"]
 layout_mode = 0
 offset_left = 167.0
 offset_top = 106.0
@@ -2429,7 +2429,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,
 [shake rate=7.0 level=5 connected=0][color=#ff1c18]Don't  get  used  to it[/color][/shake]. just  take  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]scraps  you're  given[/color][/shake], who  knows  what  [shake rate=7.0 level=5 connected=0][color=#ff8864]the  next  one[/color][/shake]  will  be [shake rate=7.0 level=5 connected=0][color=#ff1c18]laughing  about[/color][/shake].[/center]
 "
 
-[node name="Nightmare" type="RichTextLabel" parent="Panels/Short_Event/Announces/Dreams"]
+[node name="Nightmare" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dreams"]
 visible = false
 layout_mode = 0
 offset_left = 168.0
@@ -2444,15 +2444,15 @@ The  [shake rate=7.0 level=5 connected=0][color=#ff8864]kind[/color][/shake]  of
 [shake rate=7.0 level=5 connected=0][color=#ff1c18]No  peace[/color][/shake]. just  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]weight  of  what  waits[/color][/shake], when  even  [shake rate=7.0 level=5 connected=0][color=#ff8864]the silence[/color][/shake]  feels  [shake rate=7.0 level=5 connected=0][color=#ff1c18]louder  than  screams[/color][/shake].[/center]
 "
 
-[node name="Sleep" type="Node2D" parent="Panels"]
+[node name="Sleep" type="Node2D" parent="Overlays"]
 visible = false
 
-[node name="Sleep_BG" type="Sprite2D" parent="Panels/Sleep"]
+[node name="Sleep_BG" type="Sprite2D" parent="Overlays/Sleep"]
 position = Vector2(179, 15)
 texture = ExtResource("81_a4t42")
 centered = false
 
-[node name="Drawer_Names" type="Control" parent="Panels/Sleep"]
+[node name="Drawer_Names" type="Control" parent="Overlays/Sleep"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 179.0
@@ -2463,7 +2463,7 @@ mouse_filter = 2
 theme = ExtResource("82_gq4jn")
 script = ExtResource("83_2lphy")
 
-[node name="Drawer_09" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_09" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2474,7 +2474,7 @@ texture_pressed = ExtResource("85_lidf8")
 texture_hover = ExtResource("86_onppl")
 texture_click_mask = ExtResource("87_5kg0p")
 
-[node name="Drawer_08" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_08" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2485,7 +2485,7 @@ texture_pressed = ExtResource("88_jb3tf")
 texture_hover = ExtResource("89_eu7qk")
 texture_click_mask = ExtResource("90_ot4gf")
 
-[node name="Drawer_07" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_07" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2496,7 +2496,7 @@ texture_pressed = ExtResource("91_lv3q8")
 texture_hover = ExtResource("92_vy32t")
 texture_click_mask = ExtResource("93_n5ncc")
 
-[node name="Drawer_06" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_06" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2507,7 +2507,7 @@ texture_pressed = ExtResource("94_ku2a5")
 texture_hover = ExtResource("95_4721e")
 texture_click_mask = ExtResource("96_dhp6t")
 
-[node name="Drawer_05" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_05" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2519,7 +2519,7 @@ texture_pressed = ExtResource("97_s3phv")
 texture_hover = ExtResource("98_68eaj")
 texture_click_mask = ExtResource("99_h4ggb")
 
-[node name="Drawer_04" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_04" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2530,7 +2530,7 @@ texture_pressed = ExtResource("100_ne7xd")
 texture_hover = ExtResource("101_qe60g")
 texture_click_mask = ExtResource("102_mej1r")
 
-[node name="Drawer_03" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_03" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2541,7 +2541,7 @@ texture_pressed = ExtResource("103_vieyt")
 texture_hover = ExtResource("104_bdr4h")
 texture_click_mask = ExtResource("105_briu0")
 
-[node name="Drawer_02" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_02" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2552,7 +2552,7 @@ texture_pressed = ExtResource("106_wowcu")
 texture_hover = ExtResource("107_lboli")
 texture_click_mask = ExtResource("108_yau06")
 
-[node name="Drawer_01" type="TextureButton" parent="Panels/Sleep/Drawer_Names"]
+[node name="Drawer_01" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
 offset_right = 279.0
 offset_bottom = 330.0
@@ -2563,7 +2563,7 @@ texture_pressed = ExtResource("109_vj0nj")
 texture_hover = ExtResource("110_fowbj")
 texture_click_mask = ExtResource("111_wf7jc")
 
-[node name="Yes_No" type="Control" parent="Panels/Sleep"]
+[node name="Yes_No" type="Control" parent="Overlays/Sleep"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 15.0
@@ -2572,7 +2572,7 @@ offset_right = 15.0
 offset_bottom = 15.0
 theme = ExtResource("82_gq4jn")
 
-[node name="Yes" type="Button" parent="Panels/Sleep/Yes_No"]
+[node name="Yes" type="Button" parent="Overlays/Sleep/Yes_No"]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
 offset_left = 327.0
@@ -2598,7 +2598,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_lkigo")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qmu3t")
 text = "Morpheus, I'm coming!"
 
-[node name="No" type="Button" parent="Panels/Sleep/Yes_No"]
+[node name="No" type="Button" parent="Overlays/Sleep/Yes_No"]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
 offset_left = 325.0
@@ -2624,7 +2624,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_smut4")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hjqqn")
 text = "To sleep is to die a bit!"
 
-[node name="Drawer" type="AudioStreamPlayer" parent="Panels/Sleep"]
+[node name="Drawer" type="AudioStreamPlayer" parent="Overlays/Sleep"]
 stream = ExtResource("112_d5ayf")
 volume_db = -15.0
 bus = &"UI"
@@ -2639,129 +2639,129 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
-[connection signal="mouse_entered" from="Panels/Care_Sheet/Note/Yes" to="Panels/Care_Sheet/Note/Yes" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Panels/Care_Sheet/Note/Yes" to="Panels/Care_Sheet/Note/Yes" method="_on_any_button_exited"]
-[connection signal="pressed" from="Panels/Care_Sheet/Note/Yes" to="Panels/Care_Sheet/Note/Yes" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Care_Sheet/Note/No" to="Panels/Care_Sheet/Note/No" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Panels/Care_Sheet/Note/No" to="Panels/Care_Sheet/Note/No" method="_on_any_button_exited"]
-[connection signal="pressed" from="Panels/Care_Sheet/Note/No" to="Panels/Care_Sheet/Note/No" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Case_Management/Buttons/Cancel" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Case_Management/Buttons/Cancel" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Panels/Case_Management/Buttons/Cancel" to="Panels/Case_Management/Buttons" method="_on_cancel_pressed"]
-[connection signal="mouse_entered" from="Panels/Case_Management/Buttons/Switch" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Case_Management/Buttons/Switch" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Panels/Case_Management/Buttons/Switch" to="Panels/Case_Management/Buttons" method="_on_switch_pressed"]
-[connection signal="mouse_entered" from="Panels/Case_Management/Buttons/03" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Case_Management/Buttons/03" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Case_Management/Buttons/04" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Case_Management/Buttons/04" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Case_Management/Buttons/01" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Case_Management/Buttons/01" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Case_Management/Buttons/02" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Case_Management/Buttons/02" to="Panels/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Cellphone/Buttons/Ok" to="Panels/Cellphone/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Cellphone/Buttons/Ok" to="Panels/Cellphone/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Panels/Cellphone/Buttons/Ok" to="Panels/Cellphone/Buttons" method="_on_switch_pressed"]
-[connection signal="mouse_entered" from="Panels/Confirmation/Yes_No/Yes" to="Panels/Confirmation/Yes_No" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Panels/Confirmation/Yes_No/Yes" to="Panels/Confirmation/Yes_No" method="_on_any_button_exited"]
-[connection signal="pressed" from="Panels/Confirmation/Yes_No/Yes" to="Panels/Confirmation/Yes_No" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Confirmation/Yes_No/No" to="Panels/Confirmation/Yes_No" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Panels/Confirmation/Yes_No/No" to="Panels/Confirmation/Yes_No" method="_on_any_button_exited"]
-[connection signal="pressed" from="Panels/Confirmation/Yes_No/No" to="Panels/Confirmation/Yes_No" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Cops/Info/Player/Surrender" to="Panels/Cops/Info" method="_on_surrender_pressed"]
-[connection signal="mouse_entered" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Cops/Info/Player/Pay" to="Panels/Cops/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Cops/Info/NPC/Pay" to="Panels/Cops/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Panels/Income_Start/Income/Quit" to="Panels/Income_Start/Income/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Income_Start/Income/Quit" to="Panels/Income_Start/Income/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Income_Start/Income/Quit" to="Panels/Income_Start/Income/Quit" method="_on_pressed"]
-[connection signal="mouse_entered" from="Panels/Income_Start/Starting_Hand/Quit" to="Panels/Income_Start/Starting_Hand/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Income_Start/Starting_Hand/Quit" to="Panels/Income_Start/Starting_Hand/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Income_Start/Starting_Hand/Quit" to="Panels/Income_Start/Starting_Hand/Quit" method="_on_pressed"]
-[connection signal="mouse_entered" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Intercom/Interface/Quit" to="Panels/Intercom/Interface/Quit" method="_on_pressed"]
-[connection signal="item_selected" from="Panels/Load_Save_Delete/List/Saves" to="Panels/Load_Save_Delete" method="_on_item_list_item_selected"]
-[connection signal="mouse_entered" from="Panels/Load_Save_Delete/List/Saves" to="Panels/Load_Save_Delete" method="_on_item_list_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Load_Save_Delete/List/Saves" to="Panels/Load_Save_Delete" method="_on_item_list_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Load_Save_Delete/Yes_No/Load" to="Panels/Load_Save_Delete" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Load_Save_Delete/Yes_No/Load" to="Panels/Load_Save_Delete" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Load_Save_Delete/Yes_No/Load" to="Panels/Load_Save_Delete" method="_on_load_pressed"]
-[connection signal="mouse_entered" from="Panels/Load_Save_Delete/Yes_No/Save" to="Panels/Load_Save_Delete" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Load_Save_Delete/Yes_No/Save" to="Panels/Load_Save_Delete" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Load_Save_Delete/Yes_No/Save" to="Panels/Load_Save_Delete" method="_on_save_pressed"]
-[connection signal="mouse_entered" from="Panels/Load_Save_Delete/Yes_No/Delete" to="Panels/Load_Save_Delete" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Load_Save_Delete/Yes_No/Delete" to="Panels/Load_Save_Delete" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Load_Save_Delete/Yes_No/Delete" to="Panels/Load_Save_Delete" method="_on_delete_pressed"]
-[connection signal="mouse_entered" from="Panels/Player_Improvement/Informations/Quit" to="Panels/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Player_Improvement/Informations/Quit" to="Panels/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Panels/Player_Improvement/Informations/Quit" to="Panels/Player_Improvement/Informations" method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Panels/Rowena" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Panels/Rowena" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Panels/Rowena" method="_on_minus_pressed"]
-[connection signal="mouse_entered" from="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus/Plus" to="Panels/Rowena" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus/Plus" to="Panels/Rowena" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Rowena/Drug_Store/I_will_take/Plus_Minus/Plus" to="Panels/Rowena" method="_on_plus_pressed"]
-[connection signal="mouse_entered" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Nope" to="Panels/Rowena" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Nope" to="Panels/Rowena" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Nope" to="Panels/Rowena" method="_on_nope_pressed"]
-[connection signal="mouse_entered" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Panels/Rowena" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Panels/Rowena" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Panels/Rowena" method="_on_thanks_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Run_Away/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Run_Away/No" to="Panels/Run_Away_Break_In/Announces" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Break_In/Yes" to="Panels/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Run_Away_Break_In/Announces/Break_In/No" to="Panels/Run_Away_Break_In/Announces" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Buy/Yes" to="Panels/Search_Warrant/Text_Buy" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Buy/No" to="Panels/Search_Warrant/Text_Buy" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Use/Yes" to="Panels/Search_Warrant/Text_Use" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Search_Warrant/Text_Use/No" to="Panels/Search_Warrant/Text_Use" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Panels/Short_Event/Announces/Quit" to="Panels/Short_Event/Announces" method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_09" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_09" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_08" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_08" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_07" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_07" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_06" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_06" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_05" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_05" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_04" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_04" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_03" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_03" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_02" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_02" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Drawer_Names/Drawer_01" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Drawer_Names/Drawer_01" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Panels/Sleep/Yes_No/Yes" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Yes_No/Yes" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Sleep/Yes_No/Yes" to="Panels/Sleep/Drawer_Names" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Panels/Sleep/Yes_No/No" to="Panels/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Panels/Sleep/Yes_No/No" to="Panels/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Panels/Sleep/Yes_No/No" to="Panels/Sleep/Drawer_Names" method="_on_no_pressed"]
-[connection signal="animation_finished" from="On_Off" to="Panels/Intercom/Interface/Quit" method="_on_on_off_animation_finished"]
+[connection signal="mouse_entered" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_any_button_entered"]
+[connection signal="mouse_exited" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_any_button_exited"]
+[connection signal="pressed" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Overlays/Care_Sheet/Note/No" to="Overlays/Care_Sheet/Note/No" method="_on_any_button_entered"]
+[connection signal="mouse_exited" from="Overlays/Care_Sheet/Note/No" to="Overlays/Care_Sheet/Note/No" method="_on_any_button_exited"]
+[connection signal="pressed" from="Overlays/Care_Sheet/Note/No" to="Overlays/Care_Sheet/Note/No" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_cancel_pressed"]
+[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/Switch" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/Switch" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Overlays/Case_Management/Buttons/Switch" to="Overlays/Case_Management/Buttons" method="_on_switch_pressed"]
+[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/03" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/03" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/04" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/04" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/01" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/01" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/02" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/02" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_switch_pressed"]
+[connection signal="mouse_entered" from="Overlays/Confirmation/Yes_No/Yes" to="Overlays/Confirmation/Yes_No" method="_on_any_button_entered"]
+[connection signal="mouse_exited" from="Overlays/Confirmation/Yes_No/Yes" to="Overlays/Confirmation/Yes_No" method="_on_any_button_exited"]
+[connection signal="pressed" from="Overlays/Confirmation/Yes_No/Yes" to="Overlays/Confirmation/Yes_No" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_any_button_entered"]
+[connection signal="mouse_exited" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_any_button_exited"]
+[connection signal="pressed" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_surrender_pressed"]
+[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
+[connection signal="mouse_entered" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
+[connection signal="mouse_entered" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_pressed"]
+[connection signal="mouse_entered" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_pressed"]
+[connection signal="mouse_entered" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_pressed"]
+[connection signal="item_selected" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_item_selected"]
+[connection signal="mouse_entered" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Load_Save_Delete/Yes_No/Load" to="Overlays/Load_Save_Delete" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Load_Save_Delete/Yes_No/Load" to="Overlays/Load_Save_Delete" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Load_Save_Delete/Yes_No/Load" to="Overlays/Load_Save_Delete" method="_on_load_pressed"]
+[connection signal="mouse_entered" from="Overlays/Load_Save_Delete/Yes_No/Save" to="Overlays/Load_Save_Delete" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Load_Save_Delete/Yes_No/Save" to="Overlays/Load_Save_Delete" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Load_Save_Delete/Yes_No/Save" to="Overlays/Load_Save_Delete" method="_on_save_pressed"]
+[connection signal="mouse_entered" from="Overlays/Load_Save_Delete/Yes_No/Delete" to="Overlays/Load_Save_Delete" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Load_Save_Delete/Yes_No/Delete" to="Overlays/Load_Save_Delete" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Load_Save_Delete/Yes_No/Delete" to="Overlays/Load_Save_Delete" method="_on_delete_pressed"]
+[connection signal="mouse_entered" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_minus_pressed"]
+[connection signal="mouse_entered" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Plus" to="Overlays/Rowena" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Plus" to="Overlays/Rowena" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Plus" to="Overlays/Rowena" method="_on_plus_pressed"]
+[connection signal="mouse_entered" from="Overlays/Rowena/Thanks_Nope/HBoxContainer/Nope" to="Overlays/Rowena" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Rowena/Thanks_Nope/HBoxContainer/Nope" to="Overlays/Rowena" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Rowena/Thanks_Nope/HBoxContainer/Nope" to="Overlays/Rowena" method="_on_nope_pressed"]
+[connection signal="mouse_entered" from="Overlays/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Overlays/Rowena" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Overlays/Rowena" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Rowena/Thanks_Nope/HBoxContainer/Thanks" to="Overlays/Rowena" method="_on_thanks_pressed"]
+[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Run_Away/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Run_Away/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Run_Away/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Break_In/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Break_In/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Break_In/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Buy/Yes" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Buy/Yes" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Search_Warrant/Text_Buy/Yes" to="Overlays/Search_Warrant/Text_Buy" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Buy/No" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Buy/No" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Search_Warrant/Text_Buy/No" to="Overlays/Search_Warrant/Text_Buy" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Use/Yes" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Use/Yes" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Search_Warrant/Text_Use/Yes" to="Overlays/Search_Warrant/Text_Use" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Overlays/Short_Event/Announces/Quit" to="Overlays/Short_Event/Announces" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Short_Event/Announces/Quit" to="Overlays/Short_Event/Announces" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Overlays/Short_Event/Announces/Quit" to="Overlays/Short_Event/Announces" method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_08" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_08" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_07" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_07" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_06" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_06" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_05" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_05" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_04" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_04" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_03" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_03" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_02" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_02" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_01" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_01" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Yes_No/Yes" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Yes_No/Yes" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Sleep/Yes_No/Yes" to="Overlays/Sleep/Drawer_Names" method="_on_yes_pressed"]
+[connection signal="mouse_entered" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_no_pressed"]
+[connection signal="animation_finished" from="On_Off" to="Overlays/Intercom/Interface/Quit" method="_on_on_off_animation_finished"]
