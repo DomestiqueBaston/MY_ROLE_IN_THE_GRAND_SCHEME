@@ -1,10 +1,92 @@
-[gd_scene load_steps=18 format=3 uid="uid://hl8yhfvhjhtn"]
+[gd_scene load_steps=22 format=3 uid="uid://hl8yhfvhjhtn"]
 
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
 [ext_resource type="Script" uid="uid://bt5otmo8wn3gk" path="res://SCRIPTS/Top_Bar_Alert.gd" id="4_0mfvj"]
 [ext_resource type="AudioStream" uid="uid://dmrut6mhf4tp3" path="res://SOUND/MISC/Soft_Alarm.ogg" id="5_0mfvj"]
+
+[sub_resource type="Animation" id="Animation_xsx1a"]
+resource_name = "Alert_No_Sound"
+length = 1.46667
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wan:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_17x0y"]
+resource_name = "Alert_Sound"
+length = 4.40001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wan:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Soft_Alarm:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.46667, 2.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_8d81j"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wan:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("../Soft_Alarm:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nssbx"]
+_data = {
+&"Alert_No_Sound": SubResource("Animation_xsx1a"),
+&"Alert_Sound": SubResource("Animation_17x0y"),
+&"RESET": SubResource("Animation_8d81j")
+}
 
 [sub_resource type="Animation" id="Animation_2yfei"]
 resource_name = "Alert_No_Sound"
@@ -14,7 +96,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Stats/Emo:self_modulate")
+tracks/0/path = NodePath("Character_Stats/Wan:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,7 +113,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Stats/Emo:self_modulate")
+tracks/0/path = NodePath("Character_Stats/Wan:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -274,6 +356,18 @@ bbcode_enabled = true
 text = "[center]Lorsque [color=ff1c18]Add[/color] et/ou [color=ff1c18]Emo[/color] atteignent [color=ff1c18]-2[/color] ou [color=ff1c18]2[/color], on jouera [color=ff1c18]Emo_Alert[/color] et/ou [color=ff1c18]Add_Alert[/color] et on aura [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color]. Pas de modification du Tooltip !
 ||              ||
  V                V[/center]"
+
+[node name="A_VIRER_3" type="RichTextLabel" parent="."]
+offset_left = 520.0
+offset_top = -120.0
+offset_right = 599.0
+offset_bottom = -9.0
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 1
+bbcode_enabled = true
+text = "[center]Lorsque [color=ff1c18]Wan[/color] atteint [color=ff1c18]3[/color], on jouera [color=ff1c18]Wan_Alert[/color] et on aura [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color]. Pas de modification du Tooltip !
+||                
+V                [/center]"
 
 [node name="Date_Time" type="HBoxContainer" parent="."]
 anchors_preset = -1
@@ -564,7 +658,7 @@ offset_bottom = 8.0
 tooltip_text = "Authority trouble"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
-text = "4"
+text = "3"
 horizontal_alignment = 2
 
 [node name="Drug" type="Label" parent="Character_Stats"]
@@ -621,25 +715,33 @@ item_0/id = 0
 item_1/text = "Use 2 doses"
 item_1/id = 1
 
+[node name="Wan_Alert" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Character_Stats")
+libraries = {
+&"": SubResource("AnimationLibrary_nssbx")
+}
+autoplay = "RESET"
+script = ExtResource("4_0mfvj")
+
 [node name="Emo_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_2yfei")
 }
-autoplay = "Alert_Sound"
+autoplay = "RESET"
 script = ExtResource("4_0mfvj")
 
 [node name="Add_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_rc027")
 }
-autoplay = "Alert_Sound"
+autoplay = "RESET"
 script = ExtResource("4_0mfvj")
 
 [node name="Sleep_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_xsx1a")
 }
-autoplay = "Alert_Sound"
+autoplay = "RESET"
 script = ExtResource("4_0mfvj")
 
 [node name="Soft_Alarm" type="AudioStreamPlayer" parent="."]
@@ -659,6 +761,7 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menus/Whatever" to="Menus/Dailies" method="_on_pressed"]
+[connection signal="animation_finished" from="Wan_Alert" to="Wan_Alert" method="_on_animation_finished"]
 [connection signal="animation_finished" from="Emo_Alert" to="Emo_Alert" method="_on_animation_finished"]
 [connection signal="animation_finished" from="Add_Alert" to="Add_Alert" method="_on_animation_finished"]
 [connection signal="animation_finished" from="Sleep_Alert" to="Sleep_Alert" method="_on_animation_finished"]
