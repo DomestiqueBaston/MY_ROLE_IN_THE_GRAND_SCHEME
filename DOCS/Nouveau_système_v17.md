@@ -21,7 +21,7 @@ Les caractéristiques secondaires
 État émotionnel (Emo)  
 	- L’état émotionnel du joueur variera entre -3 et 3 et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Emo=0.
 	- Emo à -3 ou +3 représente une excitation ou une déprime trop forte (voir conditions dans Système de santé) et ont une influence sur Add,
-	- Voir également Par.
+	- Voir également Paranoïa (Par) pour les effets sur Emo.
 Emo	Effets et/ou modificateur de jet de dé
 -3	Emo = -2 et -1 Add si Add ≤ 0 ou +1 Add si Add > 0 
 -2	Malus de 1
@@ -34,11 +34,11 @@ Emo	Effets et/ou modificateur de jet de dé
 État d’addiction (Add)
 	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites critiques n’entraînent pas d’évolution de HEA ni HEAnom.
-	- Les réussites/échecs critiques n’entraînent pas de progression du joueur !
-	- Voir également Par.
+	- Les réussites/échecs critiques n’entraînent pas de progression du joueur (ni n’amplifient les résultats) !
+	- Voir également Paranoïa (Par) pour les effets sur Add.
 
 Add	Effet et/ou modificateur de jet de dé
--3	Mort si un jet contre HEA est raté
+-3	Mort si un jet de dé avec malus de 1 contre HEA est raté
 sinon
 -1HEA, ±1Emo → min/max et Add = -2
 -2	Malus de 2
@@ -46,9 +46,11 @@ sinon
 0	/
 1	Bonus de 1
 2	Bonus de 3
-3	Mort si un jet contre HEA est raté
+3	Mort si un jet de dé avec malus de 1 contre HEA est raté
 sinon
 -1HEA, ±1Emo → min/max et Add = 2
+
+	- Si le joueur réussit 10 jets de dé contre la mort par sous-dose (Add = -3) d’affilé, sans avoir repris de drogue, alors il est sevré ! Il n’a plus besoin de se droguer et son niveau passe à Add = 0 permanent (menu désactivé). Le joueur ne peut pas revendre ses doses restantes pour autant.
 
 Réputation (Rep)
 	- La réputation sera évaluée de -2 à 2. Elle représentera la qualité des relations entre le joueur et le PNJ ainsi qu’un Bonus/Malus d’interaction avec le PNJ aux jets de dé suivant le tableau ci-dessous. Le joueur aura par défaut Rep = 0 avec chaque PNJ (sauf voir Sbires).
@@ -77,7 +79,7 @@ Paranoïa (Par)
 	- La paranoïa est un cas extrême qui fait abandonner toutes les enquêtes pour poursuivre l’enquête finale (uniquement accessible en devenant paranoïaque - voir Enquête finale et Système de santé/Paranoïa).
 	- Être paranoïaque annule les besoins de Add (drogue) → menu désactivé, de sommeil (le joueur ne dort plus → menu désactivé) et le joueur doit continuer la partie avec l’argent qu’il lui reste.
 	- Chaque jour qui passe, en fonction du niveau de départ du bonus/malus de sommeil, fait baisser le bonus/malus lié à la dernière nuit passée jusqu’à atteindre le max prévu pour une nuit de 4h : malus de 2 !
-	- La paranoïa fige définitivement les niveaux d’Emo, d’Add à leur niveau actuel au moment du déclenchement de la crise (dans la limite de -2/+2).
+	- La paranoïa fige définitivement les niveaux d’Emo et d’Add à leur niveau actuel au moment du déclenchement de la crise (dans la limite de -2/+2).
 	- Quand le joueur est paranoïaque Factures impayées et actions de Nuit ne sont plus des modificateurs de jets de dé.
 Backgrounds
 	- Les antécédents du joueur apportent des Bonus/Malus globaux à certaines caractéristiques à la création du personnage tout en pouvant introduire des bonus/malus spécifiques.
@@ -265,7 +267,6 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 11 heures	+2 HEA	+2 Emo → 0	Bonus de 1
 12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
-
 	- 25% de chance de faire un rêve/cauchemar qui aura un effet sur la récupération : rêve = +1 HEA et cauchemar -1 HEA (on peut perdre des HEA en dormant) !
 	- Intervention Thérapeutique (médecin) : +2 HEA, ±1 Emo → 0 et ±1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa (menu désactivé) !
@@ -338,6 +339,7 @@ Factures impayées	Malus
 3	1 et ±1Emo → min/max
 4	2
 5	Prison 3 jours, plus ancienne facture réglée et retour à 4 impayés
+
 - Lorsqu’on en a plusieurs, on paye la facture que l’on veut/peut.
  - Le joueur ne peut pas avoir plus de 4 factures impayées. Sinon, quand la 5ème tombe, il va directement 3 jours et redescend à 4 factures impayées.
 Les achats/dépenses
@@ -710,6 +712,7 @@ Suspect(s) de départ	Voir json des mobiles
 Coupable(s)	Voir json des mobiles
 Complice(s)	Voir json des mobiles
 Relations entre les PNJs	Lien(s) plein(s) (confirmé(s)), lien(s) pointillé(s) (probable(s)) / Couleur(s)s du/des lien(s)
+
 	- Le nombre de preuves disponibles sera bien entendu toujours supérieur ou égal au nombre de preuves minimum à découvrir pour valider l’enquête.
 
 Liens et validation d’enquête :
