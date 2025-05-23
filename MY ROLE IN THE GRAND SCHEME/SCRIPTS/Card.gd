@@ -308,12 +308,21 @@ func _on_card_collider_mouse_exited():
 	if not is_stacked():
 		Globals.mouse_exited_card.emit(self)
 
+##
+## Returns the Node2D corresponding to one of the card's pins.
+##
 func get_pin(which: PinLocation) -> Node2D:
 	return $Pins.get_child(which)
 
+##
+## Returns true if the given pin is visible.
+##
 func is_pin_visible(which: PinLocation):
 	return which in visible_pins
 
+##
+## Shows (true) or hides (false) one of the card's pins.
+##
 func set_pin_visible(which: PinLocation, vis: bool):
 	var idx = visible_pins.find(which)
 	if vis:
@@ -324,3 +333,21 @@ func set_pin_visible(which: PinLocation, vis: bool):
 		if idx >= 0:
 			visible_pins.remove_at(idx)
 			$Pins.get_child(which).visible = false
+
+##
+## Modifies the appearance of the card to show it is being dragged.
+##
+func start_drag():
+	if _is_expanded:
+		$Card_Animations.play("Drag_Expanded_Card_Appearance")
+	else:
+		$Card_Animations.play("Drag_Reduced_Card_Appearance")
+
+##
+## Resets the appearance of the card after a call to start_drag().
+##
+func stop_drag():
+	if _is_expanded:
+		$Card_Animations.play("Drag_Expanded_Card_Disappearance")
+	else:
+		$Card_Animations.play("Drag_Reduced_Card_Disappearance")

@@ -18,12 +18,6 @@ var _drag_index: int
 # current card's position in local coordinates when dragging began
 var _drag_local_init_pos: Vector2
 
-# current card's position in global coordinates when dragging began
-var _drag_global_init_pos: Vector2
-
-# where the user clicked, in global coordinates, to initiate dragging
-var _drag_click_pos: Vector2
-
 func _ready():
 	popup.add_item("Dialogue")
 	popup.add_item("Investigation")
@@ -45,7 +39,7 @@ func _ready():
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
 		if event is InputEventMouseMotion:
-			_drag(event.global_position)
+			_drag(event)
 		elif event is InputEventMouseButton and not event.pressed:
 			_stop_drag()
 			_drag_state = DragState.NONE
@@ -85,27 +79,30 @@ func _mouse_exited_card(card: Card):
 		if _current_card == card:
 			_current_card = null
 
-func _click_on_card(global_pos: Vector2, card: Card):
+func _click_on_card(_global_pos: Vector2, card: Card):
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
-	_drag_click_pos = global_pos
 
 func _start_drag():
+	Globals.dragging = true
 	_drag_parent = _current_card.get_parent()
 	_drag_index = _current_card.get_index()
 	_drag_local_init_pos = _current_card.position
-	_drag_global_init_pos = _current_card.global_position
 	_current_card.reparent($".")
+	_current_card.start_drag()
 
-func _drag(global_pos: Vector2):
-	_current_card.global_position = \
-		_drag_global_init_pos + (global_pos - _drag_click_pos)
+func _drag(event: InputEventMouseMotion):
+	_current_card.global_position += event.relative
 
 func _abort_drag():
+	Globals.dragging = false
 	_current_card.reparent(_drag_parent, false)
 	_drag_parent.move_child(_current_card, _drag_index)
 	_current_card.position = _drag_local_init_pos
+	_current_card.stop_drag()
 
 func _stop_drag():
+	Globals.dragging = false
 	# TODO: TMP_1/Main_Playmat or TMP_2/Reserve_Cards
 	_current_card.reparent(_drag_parent)
+	_current_card.stop_drag()

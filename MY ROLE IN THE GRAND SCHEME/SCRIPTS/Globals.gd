@@ -7,6 +7,9 @@ extends Node
 @onready var card_entered_sound: AudioStreamPlayer = $UI_Sounds/Card_Entered
 @onready var card_exited_sound: AudioStreamPlayer = $UI_Sounds/Card_Exited
 
+## Indicates whether or not the user is in the middle of a drag & drop.
+var dragging = false
+
 @warning_ignore("unused_signal")
 signal card_left_click(pos: Vector2, card: Card)
 
@@ -46,3 +49,18 @@ func _unhandled_input(event: InputEvent):
 	elif event.is_action_pressed("Escape"):
 		get_tree().quit()
 		get_viewport().set_input_as_handled()
+
+##
+## As long as the mouse is "grabbed", mouse motion events will report no
+## movement, meaning that nodes' _input() methods will not detect any movement.
+## The user, however, will not see the difference: see the Mouse_Cursor node.
+## Be sure to call release_mouse() when done.
+##
+func grab_mouse():
+	$MouseLayer/Mouse_Cursor.grab_mouse()
+
+##
+## "Ungrabs" the mouse after a call to grab_mouse().
+##
+func release_mouse():
+	$MouseLayer/Mouse_Cursor.release_mouse()
