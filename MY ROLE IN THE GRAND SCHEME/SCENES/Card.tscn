@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=48 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
@@ -16,7 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Expand_Card.ogg" id="7_ofh61"]
 [ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Card_Closed.png" id="9_e07m4"]
 [ext_resource type="Texture2D" uid="uid://bo3kge1u3ick1" path="res://GRAPHICS/CARD/Card_Jail.png" id="9_xm6x5"]
+[ext_resource type="Texture2D" uid="uid://82mppvepg317" path="res://GRAPHICS/CARD/Male.png" id="10_q0ypl"]
 [ext_resource type="Texture2D" uid="uid://cmh3sf00aio1m" path="res://GRAPHICS/CARD/Card_Jail_Top.png" id="11_0cggu"]
+[ext_resource type="Texture2D" uid="uid://cfy0yrylwqp5r" path="res://GRAPHICS/CARD/Female.png" id="11_hupks"]
 [ext_resource type="Texture2D" uid="uid://b28mg50sibecp" path="res://GRAPHICS/CARD/Card_Dead.png" id="11_v12mt"]
 [ext_resource type="Texture2D" uid="uid://dhdhudphptbpc" path="res://GRAPHICS/CARD/Card_Closed_Top.png" id="13_jl3bi"]
 [ext_resource type="Texture2D" uid="uid://bvx7t0pawe7tq" path="res://GRAPHICS/CARD/Card_Dead_Top.png" id="15_k4orq"]
@@ -1285,6 +1287,24 @@ visible = false
 color = Color(0.53, 0, 0, 0.643137)
 polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 
+[node name="Sex" type="Node2D" parent="Card_Mask/Card_BG"]
+
+[node name="Male" type="Sprite2D" parent="Card_Mask/Card_BG/Sex"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(11, 34)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_q0ypl")
+centered = false
+
+[node name="Female" type="Sprite2D" parent="Card_Mask/Card_BG/Sex"]
+visible = false
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(5, 26)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_hupks")
+centered = false
+
 [node name="Evidence" type="Sprite2D" parent="Card_Mask/Card_BG"]
 visible = false
 self_modulate = Color(1, 1, 1, 0.588235)
@@ -1398,6 +1418,7 @@ texture = ExtResource("22_8pq22")
 centered = false
 
 [node name="Card_Collider" type="Area2D" parent="Card_Mask"]
+visible = false
 
 [node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Collider"]
 position = Vector2(37, 50)

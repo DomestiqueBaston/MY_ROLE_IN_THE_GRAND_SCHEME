@@ -378,21 +378,12 @@ horizontal_alignment = 1
 
 [node name="Card" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
 position = Vector2(205, 75)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card2" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
 position = Vector2(371, 75)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Card3" parent="Card_Management_Panel/TMP" instance=ExtResource("12_1t2xr")]
 position = Vector2(446, 75)
-npc_status = 0
-is_object_evidence = false
-is_location_closed = false
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("12_edhgu")]
 visible = false

@@ -155,10 +155,10 @@ tracks/4/path = NodePath("Inner_Voice/Black_BG/Replacer:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533334, 0.6, 0.666667, 0.733334, 0.8, 0.866667, 0.933334, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733334, 0.8, 0.866667, 0.933334, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, 0), Vector2(-5, -1), Vector2(-16, 0), Vector2(-16, 0), Vector2(-12, -1), Vector2(-19, -1), Vector2(-9, -1), Vector2(-1, -5), Vector2(4, 8), Vector2(3, -3), Vector2(6, -10), Vector2(1, 4), Vector2(4, -6), Vector2(10, 5), Vector2(11, 4), Vector2(10, 12), Vector2(6, 5), Vector2(10, 4), Vector2(15, 3), Vector2(10, 6), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(-5, -1), Vector2(-14, 0), Vector2(-15, 0), Vector2(-12, -1), Vector2(-15, -1), Vector2(-9, -1), Vector2(-1, -5), Vector2(4, 5), Vector2(3, 0), Vector2(6, -5), Vector2(1, 4), Vector2(4, -6), Vector2(10, 5), Vector2(11, 4), Vector2(10, 10), Vector2(6, 5), Vector2(10, 4), Vector2(15, 3), Vector2(10, 6), Vector2(0, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -170,7 +170,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533334, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333, 1, 1.06667, 1.13333, 1.2, 1.26667, 1.33333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0.0, -0.00792696, 0.00415424, 0.0198751, 0.00972699, -0.0142596, -0.0072914, 0.0478783, -0.00673004, 0.0523599, 0.0698132, 0.0280309, 0.0523599, -0.00872665, 0.00872665, -0.0166696, -0.0187518, -0.008533, 0.0167885, -0.0313811, 0.0]
+"values": [0.0, -0.00792696, 0.00415424, 0.0174533, 0.00972699, -0.0142596, -0.0072914, 0.0261799, -0.00673004, 0.0261799, 0.0174533, 0.0261799, 0.0174533, -0.00872665, 0.00872665, -0.0166696, -0.0187518, -0.008533, 0.0167885, -0.0261799, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hqksm"]
@@ -636,7 +636,6 @@ _data = {
 
 [node name="Paranoia_Overlay" type="Node2D"]
 script = ExtResource("1_kx442")
-metadata/_edit_lock_ = true
 
 [node name="Center" type="Control" parent="."]
 layout_mode = 3
@@ -645,7 +644,6 @@ offset_right = 640.0
 offset_bottom = 360.0
 scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(320, 180)
-metadata/_edit_lock_ = true
 
 [node name="Paranoia_Outline" type="Label" parent="Center"]
 layout_mode = 0
@@ -667,7 +665,6 @@ theme_override_font_sizes/font_size = 155
 text = "PARaNOIa!"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Paranoia_Texture" type="Label" parent="Center"]
 material = SubResource("ShaderMaterial_ghmjl")
@@ -683,21 +680,18 @@ theme_override_font_sizes/font_size = 155
 text = "PARaNOIa!"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Violet_Filter" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.54736, 0.1672, 0.88, 0.156863)
-metadata/_edit_lock_ = true
 
 [node name="Inner_Voice" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-metadata/_edit_lock_ = true
 
 [node name="Black_BG" type="ColorRect" parent="Inner_Voice"]
 modulate = Color(1, 1, 1, 0)
@@ -705,7 +699,6 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.068198, 0, 0.0859375, 1)
-metadata/_edit_lock_ = true
 
 [node name="Replacer" type="Control" parent="Inner_Voice/Black_BG"]
 anchors_preset = 0
@@ -714,7 +707,6 @@ offset_top = -10.0
 offset_right = 6.0
 offset_bottom = -10.0
 rotation = 0.0698132
-metadata/_edit_lock_ = true
 
 [node name="Message" type="RichTextLabel" parent="Inner_Voice/Black_BG/Replacer"]
 self_modulate = Color(1, 1, 1, 0.752941)
@@ -727,30 +719,30 @@ theme_override_constants/line_separation = -4
 theme_override_fonts/normal_font = ExtResource("4_654ki")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[shake rate=60 level=11 connected=0][color=#ff1c18]I got it[/color]!
-[color=#ff8864]They[/color] don't want me to [color=#ff8864]find out[/color]. [color=#ff8864]They[/color] don't want me to [color=#ff8864]see[/color] it.
-[color=#ff1c18]I'm on the right track[/color]. [color=#ff8864]Finally[/color]!
-I'll [color=#ff8864]track them down[/color], [color=#ff8864]find them[/color], [color=#ff1c18]show the world[/color].
+text = "[shake rate=30 level=11 connected=0][color=#ff1c18]I got it[/color]!
+[color=#ff8864]They[/color] don't  want  me  to [color=#ff8864]find  out[/color]. [color=#ff8864]They[/color] don't  want  me  to [color=#ff8864]see[/color] it.
+[color=#ff1c18]I'm  on  the  right  track[/color].  [color=#ff8864]Finally[/color]!
+I'll [color=#ff8864]track  them  down[/color], [color=#ff8864]find them[/color], [color=#ff1c18]show  the  world[/color].
 
-[color=#ff8864]Wait.[/color] [color=#ff1c18]What if it's a trap[/color]? [color=#ff8864]They're [color=#ff1c18]capable[/color][/color] of that.
-[color=#ff1c18]What if they [color=#ff8864]planned[/color] it[/color]? [color=#ff1c18]What if they [color=#ff8864]WANTED[/color] me to [color=#ff8864]find[/color] it[/color]?
-No. They know [color=#ff1c18]nothing[/color]. [color=#ff8864]They think I'm too stupid[/color]... [color=#ff1c18]but they're wrong[/color].
+[color=#ff8864]Wait.[/color] [color=#ff1c18]What if it's  a  trap[/color]? [color=#ff8864]They're  [color=#ff1c18]capable[/color][/color]  of  that.
+[color=#ff1c18]What if they [color=#ff8864]planned[/color] it[/color]?  [color=#ff1c18]What if they [color=#ff8864]WANTED[/color] me to [color=#ff8864]find[/color] it[/color]?
+No. They  know [color=#ff1c18]nothing[/color]. [color=#ff8864]They  think  I'm  too stupid[/color]... [color=#ff1c18]but  they're  wrong[/color].
 
-But... What if they're [color=#ff8864]ahead[/color]? Could... [color=#ff1c18]could they[/color]?! They think I'll give up.
-[color=#ff8864]No[/color]. [color=#ff1c18]No[/color]! I won't [color=#ff8864]give in[/color]. [color=#ff1c18]I can't[/color].
-[color=#ff1c18]They'll regret it.[/color] I'll keep pushing. If I stop... [color=#ff8864]I'm a fool[/color]. [color=#ff1c18]And I'm no fool[/color].
+But... What if they're  [color=#ff8864]ahead[/color]? Could...  [color=#ff1c18]could  they[/color]?!  They think  I'll  give up.
+[color=#ff8864]No[/color].  [color=#ff1c18]No[/color]!  I  won't [color=#ff8864]give in[/color].  [color=#ff1c18]I  can't[/color].
+[color=#ff1c18]They'll  regret  it.[/color]  I'll  keep  pushing.  If I stop... [color=#ff8864]I'm  a  fool[/color].
+[color=#ff1c18]And  I'm  no fool[/color].
 
-I [color=#ff8864]don't care anymore[/color]. [color=#ff1c18]I don't care[/color]! [color=#ff1c18]I[/color]... [color=#ff1c18]DON'T[/color]... [color=#ff1c18]CARE[/color] !
-Stop [color=#ff8864]eating[/color], [color=#ff8864]sleeping[/color], [color=#ff1c18]living[/color] - fine. I'll [color=#ff8864]reveal the truth[/color]. [color=#ff1c18]I WILL.[/color]
+I [color=#ff8864]don't  care  anymore[/color].  [color=#ff1c18]I  don't  care[/color]!  [color=#ff1c18]I[/color]... [color=#ff1c18]DON'T[/color]... [color=#ff1c18]CARE[/color]!
+Stop [color=#ff8864]eating[/color],  [color=#ff8864]sleeping[/color],  [color=#ff1c18]living[/color] - fine.  I'll [color=#ff8864]reveal  the  truth[/color]. [color=#ff1c18]I  WILL.[/color]
 
-[color=#ff8864]No turning back[/color]. They won't get away. [color=#ff1c18]I WILL NOT LET THEM.[/color]
+[color=#ff8864]No  turning  back[/color]. They won't  get  away. [color=#ff1c18]I  WILL NOT  LET  THEM.[/color]
 
-Hey! [color=#ff8864]You[/color], there, [color=#ff1c18]WHAT DO YOU KNOW[/color]?![/shake]
+Hey!  [color=#ff8864]You[/color],  there,  [color=#ff1c18]WHAT  DO  YOU  KNOW[/color]?![/shake]
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_re1fv")
-metadata/_edit_lock_ = true
 
 [node name="Grain" type="ColorRect" parent="Inner_Voice"]
 self_modulate = Color(1, 1, 1, 0)
@@ -758,7 +750,6 @@ material = SubResource("ShaderMaterial_re1fv")
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
-metadata/_edit_lock_ = true
 
 [node name="Alert" type="AnimationPlayer" parent="."]
 libraries = {
