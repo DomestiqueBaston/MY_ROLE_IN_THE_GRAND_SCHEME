@@ -342,6 +342,7 @@ func start_drag():
 		$Card_Animations.play("Drag_Expanded_Card_Appearance")
 	else:
 		$Card_Animations.play("Drag_Reduced_Card_Appearance")
+	$Shadow_Animations.play("Shadow_Off")
 
 ##
 ## Resets the appearance of the card after a call to start_drag().
@@ -351,3 +352,4 @@ func stop_drag():
 		$Card_Animations.play("Drag_Expanded_Card_Disappearance")
 	else:
 		$Card_Animations.play("Drag_Reduced_Card_Disappearance")
+	$Shadow_Animations.play("Shadow_On")
