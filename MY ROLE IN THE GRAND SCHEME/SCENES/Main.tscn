@@ -517,6 +517,7 @@ texture = ExtResource("25_47v8w")
 centered = false
 
 [node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
+visible = false
 
 [node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 collision_layer = 0
@@ -2393,6 +2394,7 @@ libraries = {
 }
 
 [node name="Reserve_Expansion" type="Node2D" parent="Mask_Card_Playground"]
+visible = false
 
 [node name="Reserve_Expansion_Shadow" type="Panel" parent="Mask_Card_Playground/Reserve_Expansion"]
 visible = false

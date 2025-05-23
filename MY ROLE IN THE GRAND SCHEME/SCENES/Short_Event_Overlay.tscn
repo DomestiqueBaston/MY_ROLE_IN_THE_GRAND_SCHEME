@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=213 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -114,6 +114,65 @@
 [ext_resource type="Texture2D" uid="uid://bs3a082t7hyfi" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Hover.png" id="110_fowbj"]
 [ext_resource type="BitMap" uid="uid://cvtklig2xg1im" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Mask.png" id="111_wf7jc"]
 [ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="112_d5ayf"]
+[ext_resource type="Texture2D" uid="uid://cydqmld1i1nfl" path="res://GRAPHICS/SHORT_EVENT/BG.png" id="113_ku2a5"]
+[ext_resource type="Texture2D" uid="uid://cftm8jfj7vlfi" path="res://GRAPHICS/SHORT_EVENT/Mastery_Zone.png" id="114_4721e"]
+[ext_resource type="Texture2D" uid="uid://cn2e8ojjmxn8j" path="res://GRAPHICS/SHORT_EVENT/Interaction_Zone.png" id="115_dhp6t"]
+[ext_resource type="Script" uid="uid://c1brsydvfqxha" path="res://SCRIPTS/Run_Away_Break_In_Interaction_Zone.gd" id="116_s3phv"]
+[ext_resource type="Texture2D" uid="uid://bgupvlyk8die6" path="res://GRAPHICS/SHORT_EVENT/Fallback_Zone.png" id="117_68eaj"]
+[ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="118_h4ggb"]
+[ext_resource type="Script" uid="uid://cufnnlb44k16t" path="res://SCRIPTS/Run_Away_Break_In_Interaction_Button.gd" id="119_ne7xd"]
+[ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="120_qe60g"]
+[ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="121_mej1r"]
+[ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="122_vieyt"]
+[ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="123_bdr4h"]
+[ext_resource type="Texture2D" uid="uid://c6b5jldeguvjc" path="res://GRAPHICS/SHORT_EVENT/Break_In.png" id="124_briu0"]
+[ext_resource type="Texture2D" uid="uid://ccpmarqkfa7hg" path="res://GRAPHICS/SHORT_EVENT/Run_Away.png" id="125_wowcu"]
+[ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/SHORT_EVENT/Card_Management_BG.png" id="126_lboli"]
+[ext_resource type="Texture2D" uid="uid://cgclmrs55a25d" path="res://GRAPHICS/SHORT_EVENT/Left_Zone.png" id="127_yau06"]
+[ext_resource type="Script" uid="uid://b4r5r5y6144de" path="res://SCRIPTS/Card_Management_Zones.gd" id="128_vj0nj"]
+[ext_resource type="Texture2D" uid="uid://d2oe083rsfyp0" path="res://GRAPHICS/SHORT_EVENT/Right_Zone.png" id="129_fowbj"]
+[ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="130_wf7jc"]
+[ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="131_d5ayf"]
+[ext_resource type="Script" uid="uid://cj4kkd1mdr47l" path="res://SCRIPTS/Card_Management_Trash.gd" id="132_4enr2"]
+[ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/SHORT_EVENT/Trash_Normal.png" id="133_hb476"]
+[ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/SHORT_EVENT/Trash_Hover.png" id="134_m6kkd"]
+[ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="135_tdxs6"]
+[ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="136_lkigo"]
+[ext_resource type="AudioStream" uid="uid://0xs5pryxxfxj" path="res://SOUND/MISC/Trash_Open.ogg" id="137_qmu3t"]
+[ext_resource type="AudioStream" uid="uid://e7mx8yp2bmn" path="res://SOUND/MISC/Trash_Close.ogg" id="138_th1i4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnyoh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7rvn5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6clx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42ybe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fn3bj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tatxf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w41fr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_370rn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjw5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjwr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66707"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kru6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b85y"]
+size = Vector2(156, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efgx4"]
+size = Vector2(196, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqy00"]
+size = Vector2(38, 60)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vprm5"]
 
@@ -274,6 +333,15 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7igc"]
 content_margin_left = 2.0
 content_margin_bottom = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lboli"]
+size = Vector2(154, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yau06"]
+size = Vector2(76, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj0nj"]
+size = Vector2(76, 139)
 
 [sub_resource type="Animation" id="Animation_gdsr2"]
 resource_name = "Flashing"
@@ -503,6 +571,222 @@ color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 
 [node name="Overlays" type="Node2D" parent="."]
 position = Vector2(-640, 0)
+
+[node name="Card_Management" type="Node2D" parent="Overlays"]
+visible = false
+
+[node name="Card_Management_BG" type="Sprite2D" parent="Overlays/Card_Management"]
+texture = ExtResource("126_lboli")
+centered = false
+offset = Vector2(20, 20)
+
+[node name="Left_Zone" type="TextureRect" parent="Overlays/Card_Management/Card_Management_BG"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 340.0
+texture = ExtResource("127_yau06")
+script = ExtResource("128_vj0nj")
+target_collider_path = NodePath("../../Colliders/Card_Pool_Collider/Card_Pool")
+
+[node name="Right_Zone" type="TextureRect" parent="Overlays/Card_Management/Card_Management_BG"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 340.0
+texture = ExtResource("129_fowbj")
+script = ExtResource("128_vj0nj")
+target_collider_path = NodePath("../../Colliders/Mastery_Hand_Collider/Mastery_Hand")
+
+[node name="Card_Locations" type="Node2D" parent="Overlays/Card_Management"]
+
+[node name="Card_Pool" type="Node2D" parent="Overlays/Card_Management/Card_Locations"]
+
+[node name="First_Card" type="Marker2D" parent="Overlays/Card_Management/Card_Locations/Card_Pool"]
+position = Vector2(205, 75)
+
+[node name="Last_Card" type="Marker2D" parent="Overlays/Card_Management/Card_Locations/Card_Pool"]
+position = Vector2(285, 75)
+
+[node name="Mastery_Card_Places" type="Node2D" parent="Overlays/Card_Management/Card_Locations"]
+
+[node name="First_Card" type="Marker2D" parent="Overlays/Card_Management/Card_Locations/Mastery_Card_Places"]
+position = Vector2(371, 75)
+
+[node name="Last_Card" type="Marker2D" parent="Overlays/Card_Management/Card_Locations/Mastery_Card_Places"]
+position = Vector2(491, 75)
+
+[node name="Buttons" type="Control" parent="Overlays/Card_Management"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 340.0
+theme = ExtResource("130_wf7jc")
+script = ExtResource("131_d5ayf")
+
+[node name="Ok" type="Button" parent="Overlays/Card_Management/Buttons"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 218.0
+offset_right = 538.0
+offset_bottom = 239.0
+tooltip_text = "Validate
+and leave"
+theme_override_colors/font_disabled_color = Color(0.0785, 0.12, 0.0204, 0.756863)
+theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
+theme_override_colors/font_hover_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_color = Color(0.343, 0.49, 0.1372, 0.635294)
+theme_override_colors/font_focus_color = Color(0.76725, 0.93, 0.5394, 0.647059)
+theme_override_colors/font_pressed_color = Color(0.341176, 0.490196, 0.137255, 0.635294)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("57_gfusj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bnyoh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7rvn5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_b6clx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_42ybe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fn3bj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tatxf")
+text = "Ok!"
+
+[node name="Exit" type="Button" parent="Overlays/Card_Management/Buttons"]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 241.0
+offset_right = 539.0
+offset_bottom = 262.0
+tooltip_text = "Cancel
+and leave"
+theme_override_colors/font_disabled_color = Color(0.13, 0.0546867, 0.0273, 0.847059)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.596078, 0.45098, 0.556863)
+theme_override_colors/font_hover_color = Color(1, 0.596078, 0.45098, 0.556863)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
+theme_override_colors/font_color = Color(0.78, 0.32812, 0.1638, 0.631373)
+theme_override_colors/font_focus_color = Color(1, 0.596667, 0.45, 0.556863)
+theme_override_colors/font_pressed_color = Color(0.78, 0.32812, 0.1638, 0.631373)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("57_gfusj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w41fr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_370rn")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rjw5q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tjwr4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_66707")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5kru6")
+text = "Cancel"
+
+[node name="Trash" type="Control" parent="Overlays/Card_Management/Buttons"]
+anchors_preset = 0
+offset_left = 325.0
+offset_top = 193.0
+offset_right = 366.0
+offset_bottom = 257.0
+tooltip_text = "Drop a card here
+to discard it"
+script = ExtResource("132_4enr2")
+
+[node name="Trash_Normal" type="TextureRect" parent="Overlays/Card_Management/Buttons/Trash"]
+layout_mode = 0
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 50.0
+offset_bottom = 71.0
+texture = ExtResource("133_hb476")
+
+[node name="Trash_Hover" type="TextureRect" parent="Overlays/Card_Management/Buttons/Trash"]
+visible = false
+layout_mode = 0
+offset_left = -11.0
+offset_top = -9.0
+offset_right = 50.0
+offset_bottom = 71.0
+texture = ExtResource("134_m6kkd")
+
+[node name="Colliders" type="Node2D" parent="Overlays/Card_Management"]
+
+[node name="Card_Pool_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
+
+[node name="Card_Pool" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Card_Pool_Collider"]
+position = Vector2(282, 125)
+shape = SubResource("RectangleShape2D_0b85y")
+
+[node name="Mastery_Hand_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
+
+[node name="Mastery_Hand" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Mastery_Hand_Collider"]
+position = Vector2(468, 125)
+shape = SubResource("RectangleShape2D_efgx4")
+
+[node name="Trash_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
+position = Vector2(91, 0)
+
+[node name="Trash" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Trash_Collider"]
+position = Vector2(274, 246)
+shape = SubResource("RectangleShape2D_xqy00")
+
+[node name="Bottom_Left_Info_Long" type="Node2D" parent="Overlays/Card_Management"]
+position = Vector2(63, -69)
+
+[node name="Scroll_Interaction" type="ScrollContainer" parent="Overlays/Card_Management/Bottom_Left_Info_Long"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 166.0
+offset_right = 128.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("135_tdxs6")
+horizontal_scroll_mode = 3
+
+[node name="Info_Interaction" type="HFlowContainer" parent="Overlays/Card_Management/Bottom_Left_Info_Long/Scroll_Interaction"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Description" type="RichTextLabel" parent="Overlays/Card_Management/Bottom_Left_Info_Long/Scroll_Interaction/Info_Interaction"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "- PARRY -
+
+A precise and controlled block that redirects an incoming attack, reducing its impact. While it demands physical precision, successfully parrying boosts your confidence and morale. It's a skillful move, but it requires focus and can leave you momentarily off-balance.
+
+''Nice try, but that was my elbow, not my chin, you moron!''"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TMP" type="Node2D" parent="Overlays/Card_Management"]
+
+[node name="Card" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
+position = Vector2(205, 75)
+
+[node name="Card2" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
+position = Vector2(371, 75)
+
+[node name="Card3" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
+position = Vector2(446, 75)
+
+[node name="Drag_Drop_Line" parent="Overlays/Card_Management" instance=ExtResource("136_lkigo")]
+visible = false
+position = Vector2(640, 0)
+
+[node name="Trash_Open" type="AudioStreamPlayer" parent="Overlays/Card_Management"]
+stream = ExtResource("137_qmu3t")
+volume_db = -10.0
+autoplay = true
+bus = &"UI"
+
+[node name="Trash_Close" type="AudioStreamPlayer" parent="Overlays/Card_Management"]
+stream = ExtResource("138_th1i4")
+volume_db = -27.5
+bus = &"UI"
 
 [node name="Care_Sheet" type="Node2D" parent="Overlays"]
 visible = false
@@ -1211,6 +1495,122 @@ position = Vector2(295, 152)
 [node name="Card4" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
 
+[node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays"]
+visible = false
+position = Vector2(172, 48)
+
+[node name="Interaction_BG" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In"]
+position = Vector2(-83, -33)
+texture = ExtResource("113_ku2a5")
+centered = false
+offset = Vector2(20, 20)
+
+[node name="Mastery_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 435.0
+offset_bottom = 307.0
+texture = ExtResource("114_4721e")
+
+[node name="Interaction_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("115_dhp6t")
+script = ExtResource("116_s3phv")
+
+[node name="Fallback_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("117_68eaj")
+
+[node name="Button" type="Control" parent="Overlays/Interaction_Run_Away_Break_In"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -172.0
+offset_top = -48.0
+offset_right = 468.0
+offset_bottom = 312.0
+mouse_filter = 2
+theme = ExtResource("118_h4ggb")
+script = ExtResource("119_ne7xd")
+
+[node name="Bring_It_On" type="TextureButton" parent="Overlays/Interaction_Run_Away_Break_In/Button"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -46.0
+offset_right = 574.0
+offset_bottom = 314.0
+tooltip_text = "Let's go!"
+texture_normal = ExtResource("120_qe60g")
+texture_pressed = ExtResource("121_mej1r")
+texture_hover = ExtResource("122_vieyt")
+texture_click_mask = ExtResource("123_bdr4h")
+
+[node name="Title" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
+position = Vector2(-63, -13)
+
+[node name="Break_In" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In/Title"]
+visible = false
+texture = ExtResource("124_briu0")
+centered = false
+
+[node name="Run_Away" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In/Title"]
+texture = ExtResource("125_wowcu")
+centered = false
+
+[node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
+position = Vector2(-172, -48)
+
+[node name="Interaction_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Interaction" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Interaction_Area"]
+position = Vector2(316, 186)
+shape = SubResource("RectangleShape2D_lboli")
+
+[node name="Mastery_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
+
+[node name="Mastery" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Mastery_Area"]
+position = Vector2(174, 220.5)
+shape = SubResource("RectangleShape2D_yau06")
+
+[node name="Fallback_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
+
+[node name="Fallback" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Fallback_Area"]
+position = Vector2(459, 221.5)
+shape = SubResource("RectangleShape2D_vj0nj")
+
+[node name="Card_Places" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
+
+[node name="Interaction_Card_Places" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places"]
+
+[node name="Card_1" type="Marker2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places/Interaction_Card_Places"]
+position = Vector2(69, 88)
+
+[node name="Card_2" type="Marker2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places/Interaction_Card_Places"]
+position = Vector2(145, 88)
+
+[node name="Mastery_Card_Places" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places"]
+
+[node name="First_Card" type="Marker2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places/Mastery_Card_Places"]
+position = Vector2(-35, 104)
+
+[node name="Last_Card" type="Marker2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places/Mastery_Card_Places"]
+position = Vector2(-35, 141)
+
+[node name="Fallback_Card_Places" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places"]
+
+[node name="First_Card" type="Marker2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places/Fallback_Card_Places"]
+position = Vector2(250, 105)
+
+[node name="Last_Card" type="Marker2D" parent="Overlays/Interaction_Run_Away_Break_In/Card_Places/Fallback_Card_Places"]
+position = Vector2(250, 142)
+
 [node name="Intercom" type="Node2D" parent="Overlays"]
 visible = false
 
@@ -1597,6 +1997,322 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_na828")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iqlu4")
 text = "DELETE"
 flat = true
+
+[node name="Misc" type="Node2D" parent="Overlays"]
+visible = false
+
+[node name="Misc_BG" type="Sprite2D" parent="Overlays/Misc"]
+texture = ExtResource("1_sivc1")
+centered = false
+offset = Vector2(50, 0)
+
+[node name="Announces" type="Control" parent="Overlays/Misc"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("2_vr7x7")
+script = ExtResource("3_8qa11")
+
+[node name="Quit" type="Button" parent="Overlays/Misc/Announces"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 306.0
+offset_right = 479.0
+offset_bottom = 314.0
+rotation = 0.0361729
+tooltip_text = "Ok, ok..."
+text = "Whatever..."
+
+[node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Bill"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 48.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Financial[/color]  [color=#ff8864]mastermind[/color]![/pulse]
+
+Wow. [shake rate=7.0 level=5 connected=0][color=#ff8864]Four  unpaid  bills[/color][/shake]?  
+That's a really impressive  dedication to [shake rate=7.0 level=5 connected=0][color=#ff1c18]self-sabotage[/color][/shake].
+
+Apparently, [shake rate=7.0 level=5 connected=0][color=#ff8864]ignoring[/color][/shake]  debt  collectors doesn’t  make them  [shake rate=7.0 level=5 connected=0][color=#ff8864]disappear[/color][/shake].  
+So  now  you get to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meditate[/color][/shake]  on your life  choices...
+...in a [shake rate=7.0 level=5 connected=0][color=#ff1c18]cell[/color][/shake], [shake rate=7.0 level=5 connected=0][color=#ff8864]for the  next[/color] [color=#ff1c18]3 days[/color][/shake].[/center]
+"
+
+[node name="Break_In" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 70.0
+offset_right = 474.0
+offset_bottom = 294.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]against  all  odds[/color][/pulse])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Well, color me surprised…[/color][/shake]
+It’s  almost impressive how you managed to  pull that  off.
+Did you really  think  that  would  be  your biggest  challenge  today?
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you’ve  done it...[/color][/shake]
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
+
+[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 60.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] tried  something  ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]how  ambitious[/color][/pulse])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]That  didn’t go  as  [color=#ff1c18]planned[/color]...[/color][/shake]
+It  seems  like you had  a grand idea, but the execution?
+Let’s just say it wasn’t exactly impressive.
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe next time, try thinking it through[/color][/shake].
+
+You sure know how to make  an entrance...
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  not  the best  one![/color][/shake][/center]"
+
+[node name="Combat" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 62.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not what you expected[/color][/shake]. Just  as  you approached, the  person in front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
+
+In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
+
+Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
+
+[node name="Minion_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
+visible = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 61.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an attack!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t think it’d be that easy, did you?
+
+The  assault  comes  fast  (probably  more than you can  handle).
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
+
+Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
+
+[node name="Dialogue" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="NPC_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 58.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The coward[/color][/pulse] has fled!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not exactly  a shocker[/color][/shake]. It  appears that the  mere thought  of  facing  you - or, you know,  any challenge - was simply too  much to  handle.
+
+It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][color=#ff8864]overwhelming  need to  [color=#ff1c18]disappear[/color][/color][/shake].
+
+Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
+
+[node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
+visible = false
+layout_mode = 0
+offset_left = 167.0
+offset_top = 61.0
+offset_right = 486.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The bastard[/color][/pulse] tried to flee!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]You'd think someone would learn by now[/color][/shake].
+But no, despite all the chances, they decided to turn back...
+The  moment  of escape?  [shake rate=7.0 level=5 connected=0][color=#ff8864]Totally  [color=#ff1c18]missed[/color][/color][/shake].
+It’s  almost  as if they were just waiting  for  the  perfect  moment...
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Too bad that  moment  never  came[/color][/shake].
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
+
+[node name="Dreams" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Dream" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 106.0
+offset_right = 481.0
+offset_bottom = 268.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,  for  once[/color],  [color=#ff8864]a [color=#ff1c18]real[/color]  night  of  rest[/color].[/pulse]
+
+[shake rate=7.0 level=5 connected=0][color=#ff1c18]Don't  get  used  to it[/color][/shake]. just  take  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]scraps  you're  given[/color][/shake], who  knows  what  [shake rate=7.0 level=5 connected=0][color=#ff8864]the  next  one[/color][/shake]  will  be [shake rate=7.0 level=5 connected=0][color=#ff1c18]laughing  about[/color][/shake].[/center]
+"
+
+[node name="Nightmare" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
+visible = false
+layout_mode = 0
+offset_left = 168.0
+offset_top = 94.0
+offset_right = 480.0
+offset_bottom = 276.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Again[/color]![/pulse]
+The  [shake rate=7.0 level=5 connected=0][color=#ff8864]kind[/color][/shake]  of  [shake rate=7.0 level=5 connected=0][color=#ff1c18]night[/color][/shake]  that  leaves  you  [shake rate=7.0 level=5 connected=0][color=#ff8864]hollow[/color][/shake].
+
+[shake rate=7.0 level=5 connected=0][color=#ff1c18]No  peace[/color][/shake]. just  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]weight  of  what  waits[/color][/shake], when  even  [shake rate=7.0 level=5 connected=0][color=#ff8864]the silence[/color][/shake]  feels  [shake rate=7.0 level=5 connected=0][color=#ff1c18]louder  than  screams[/color][/shake].[/center]
+"
+
+[node name="Irrelevant_Motive" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Irrelevant_Motive"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 111.0
+offset_right = 472.0
+offset_bottom = 251.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
+
+We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
+
+[node name="Lie" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Lie"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 74.0
+offset_right = 483.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]One[/color] of  [color=#ff1c18]them[/color]'s [color=#ff8864]lying[/color]![/pulse]
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Funny[/color][/shake] how  all their stories  line  up [shake rate=7.0 level=5 connected=0][color=#ff8864]until you  actually [color=#ff1c18]compare[/color] them[/color][/shake]. Someone’s  clearly [shake rate=7.0 level=5 connected=0][color=#ff8864]making  stuff  up[/color][/shake], and it’s  not even subtle.
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Swell[/color][/shake]!
+Guess  I'll have to  [color=#ff1c18]dive[/color] [color=#ff8864]deeper[/color]...[/center]"
+
+[node name="Outdated_Case" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Outdated_Case"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 62.0
+offset_right = 483.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Out of date[/color] [color=#ff8864]investigation[/color]![/pulse]
+
+Well, [shake rate=7.0 level=5 connected=0][color=#ff8864]congratulations[/color][/shake]!  
+Whatever you were working on? [shake rate=7.0 level=5 connected=0][color=#ff1c18]Gone[/color][/shake]!just like that.
+
+Your [shake rate=7.0 level=5 connected=0][color=#ff1c18]inaility[/color][/shake] to  meet  a [shake rate=7.0 level=5 connected=0][color=#ff8864]simple [color=#ff1c18]deadline[/color][/color][/shake] is impressive.  [shake rate=7.0 level=5 connected=0][color=#ff1c18]Not great[/color][/shake] for your [shake rate=7.0 level=5 connected=0][color=#ff8864]emotional stability[/color][/shake], though...
+
+Nice job, [shake rate=7.0 level=5 connected=0][color=#ff8864]genius[/color][/shake]![/center]
+"
+
+[node name="Rowena_Absent" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Rowena_Absent"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 56.0
+offset_right = 490.0
+offset_bottom = 296.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]Darn!  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Rowena[/color][/pulse]'s  [color=#ff8864][shake rate=7.0 level=5 connected=0]not  here[/shake][/color]...
+and that's  [shake rate=7.0 level=5 connected=0][color=#ff8864]bad[/color][/shake].
+
+I guess  she's  still  busy  tearing herself  apart, fighting  with  her  deep superego...
+
+Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thing[/color][/shake]  is  really going  to [shake rate=7.0 level=5 connected=0][color=#ff1c18]screw  me  over[/color][/shake]!
+
+It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
+
+[node name="Run_Away" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 44.0
+offset_right = 494.0
+offset_bottom = 296.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] fled  ([color=#ff8864][shake rate=7.0 level=5 connected=0]cowardly[/shake][/color])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
+Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
+Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
+
+Either way, you sure  know  how  to  leave an impression...
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
+
+[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 50.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] failed to flee  ([shake rate=7.0 level=5 connected=0][color=#ff8864]pathetic[/color][/shake])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How  disappointing...[/color][/shake]
+You had one job: [shake rate=7.0 level=5 connected=0][color=#ff8864]escape[/color][/shake].
+But no, you chose to stay  and face it.
+Was it bravery?  Or just  pure
+[shake rate=7.0 level=5 connected=0][color=#ff8864]bad judgment[/color][/shake]?
+In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
 
 [node name="Player_Improvement" type="Node2D" parent="Overlays"]
 visible = false
@@ -2171,321 +2887,6 @@ text = "Hm...
 Maybe not!"
 alignment = 0
 
-[node name="Misc" type="Node2D" parent="Overlays"]
-
-[node name="Misc_BG" type="Sprite2D" parent="Overlays/Misc"]
-texture = ExtResource("1_sivc1")
-centered = false
-offset = Vector2(50, 0)
-
-[node name="Announces" type="Control" parent="Overlays/Misc"]
-modulate = Color(1, 1, 1, 0.882353)
-layout_mode = 3
-anchors_preset = 0
-theme = ExtResource("2_vr7x7")
-script = ExtResource("3_8qa11")
-
-[node name="Quit" type="Button" parent="Overlays/Misc/Announces"]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 306.0
-offset_right = 479.0
-offset_bottom = 314.0
-rotation = 0.0361729
-tooltip_text = "Ok, ok..."
-text = "Whatever..."
-
-[node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Bill"]
-layout_mode = 0
-offset_left = 170.0
-offset_top = 48.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Financial[/color]  [color=#ff8864]mastermind[/color]![/pulse]
-
-Wow. [shake rate=7.0 level=5 connected=0][color=#ff8864]Four  unpaid  bills[/color][/shake]?  
-That's a really impressive  dedication to [shake rate=7.0 level=5 connected=0][color=#ff1c18]self-sabotage[/color][/shake].
-
-Apparently, [shake rate=7.0 level=5 connected=0][color=#ff8864]ignoring[/color][/shake]  debt  collectors doesn’t  make them  [shake rate=7.0 level=5 connected=0][color=#ff8864]disappear[/color][/shake].  
-So  now  you get to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meditate[/color][/shake]  on your life  choices...
-...in a [shake rate=7.0 level=5 connected=0][color=#ff1c18]cell[/color][/shake], [shake rate=7.0 level=5 connected=0][color=#ff8864]for the  next[/color] [color=#ff1c18]3 days[/color][/shake].[/center]
-"
-
-[node name="Break_In" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
-layout_mode = 0
-offset_left = 178.0
-offset_top = 70.0
-offset_right = 474.0
-offset_bottom = 294.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]against  all  odds[/color][/pulse])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Well, color me surprised…[/color][/shake]
-It’s  almost impressive how you managed to  pull that  off.
-Did you really  think  that  would  be  your biggest  challenge  today?
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you’ve  done it...[/color][/shake]
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
-
-[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
-visible = false
-layout_mode = 0
-offset_left = 165.0
-offset_top = 60.0
-offset_right = 489.0
-offset_bottom = 302.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] tried  something  ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]how  ambitious[/color][/pulse])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]That  didn’t go  as  [color=#ff1c18]planned[/color]...[/color][/shake]
-It  seems  like you had  a grand idea, but the execution?
-Let’s just say it wasn’t exactly impressive.
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe next time, try thinking it through[/color][/shake].
-
-You sure know how to make  an entrance...
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  not  the best  one![/color][/shake][/center]"
-
-[node name="Combat" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
-layout_mode = 0
-offset_left = 167.0
-offset_top = 62.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Not what you expected[/color][/shake]. Just  as  you approached, the  person in front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
-
-In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
-
-Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
-
-[node name="Minion_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
-visible = false
-layout_mode = 0
-offset_left = 169.0
-offset_top = 61.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an attack!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t think it’d be that easy, did you?
-
-The  assault  comes  fast  (probably  more than you can  handle).
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
-
-Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
-
-[node name="Dialogue" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="NPC_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 58.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The coward[/color][/pulse] has fled!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Not exactly  a shocker[/color][/shake]. It  appears that the  mere thought  of  facing  you - or, you know,  any challenge - was simply too  much to  handle.
-
-It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][color=#ff8864]overwhelming  need to  [color=#ff1c18]disappear[/color][/color][/shake].
-
-Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
-
-[node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
-visible = false
-layout_mode = 0
-offset_left = 167.0
-offset_top = 61.0
-offset_right = 486.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The bastard[/color][/pulse] tried to flee!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]You'd think someone would learn by now[/color][/shake].
-But no, despite all the chances, they decided to turn back...
-The  moment  of escape?  [shake rate=7.0 level=5 connected=0][color=#ff8864]Totally  [color=#ff1c18]missed[/color][/color][/shake].
-It’s  almost  as if they were just waiting  for  the  perfect  moment...
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Too bad that  moment  never  came[/color][/shake].
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
-
-[node name="Dreams" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Dream" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
-layout_mode = 0
-offset_left = 167.0
-offset_top = 106.0
-offset_right = 481.0
-offset_bottom = 268.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,  for  once[/color],  [color=#ff8864]a [color=#ff1c18]real[/color]  night  of  rest[/color].[/pulse]
-
-[shake rate=7.0 level=5 connected=0][color=#ff1c18]Don't  get  used  to it[/color][/shake]. just  take  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]scraps  you're  given[/color][/shake], who  knows  what  [shake rate=7.0 level=5 connected=0][color=#ff8864]the  next  one[/color][/shake]  will  be [shake rate=7.0 level=5 connected=0][color=#ff1c18]laughing  about[/color][/shake].[/center]
-"
-
-[node name="Nightmare" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
-visible = false
-layout_mode = 0
-offset_left = 168.0
-offset_top = 94.0
-offset_right = 480.0
-offset_bottom = 276.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Again[/color]![/pulse]
-The  [shake rate=7.0 level=5 connected=0][color=#ff8864]kind[/color][/shake]  of  [shake rate=7.0 level=5 connected=0][color=#ff1c18]night[/color][/shake]  that  leaves  you  [shake rate=7.0 level=5 connected=0][color=#ff8864]hollow[/color][/shake].
-
-[shake rate=7.0 level=5 connected=0][color=#ff1c18]No  peace[/color][/shake]. just  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]weight  of  what  waits[/color][/shake], when  even  [shake rate=7.0 level=5 connected=0][color=#ff8864]the silence[/color][/shake]  feels  [shake rate=7.0 level=5 connected=0][color=#ff1c18]louder  than  screams[/color][/shake].[/center]
-"
-
-[node name="Irrelevant_Motive" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Irrelevant_Motive"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 111.0
-offset_right = 472.0
-offset_bottom = 251.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
-
-We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
-
-[node name="Lie" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Lie"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 74.0
-offset_right = 483.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]One[/color] of  [color=#ff1c18]them[/color]'s [color=#ff8864]lying[/color]![/pulse]
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Funny[/color][/shake] how  all their stories  line  up [shake rate=7.0 level=5 connected=0][color=#ff8864]until you  actually [color=#ff1c18]compare[/color] them[/color][/shake]. Someone’s  clearly [shake rate=7.0 level=5 connected=0][color=#ff8864]making  stuff  up[/color][/shake], and it’s  not even subtle.
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Swell[/color][/shake]!
-Guess  I'll have to  [color=#ff1c18]dive[/color] [color=#ff8864]deeper[/color]...[/center]"
-
-[node name="Outdated_Case" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Outdated_Case"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 62.0
-offset_right = 483.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Out of date[/color] [color=#ff8864]investigation[/color]![/pulse]
-
-Well, [shake rate=7.0 level=5 connected=0][color=#ff8864]congratulations[/color][/shake]!  
-Whatever you were working on? [shake rate=7.0 level=5 connected=0][color=#ff1c18]Gone[/color][/shake]!just like that.
-
-Your [shake rate=7.0 level=5 connected=0][color=#ff1c18]inaility[/color][/shake] to  meet  a [shake rate=7.0 level=5 connected=0][color=#ff8864]simple [color=#ff1c18]deadline[/color][/color][/shake] is impressive.  [shake rate=7.0 level=5 connected=0][color=#ff1c18]Not great[/color][/shake] for your [shake rate=7.0 level=5 connected=0][color=#ff8864]emotional stability[/color][/shake], though...
-
-Nice job, [shake rate=7.0 level=5 connected=0][color=#ff8864]genius[/color][/shake]![/center]
-"
-
-[node name="Rowena_Absent" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Rowena_Absent"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = 56.0
-offset_right = 490.0
-offset_bottom = 296.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center]Darn!  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Rowena[/color][/pulse]'s  [color=#ff8864][shake rate=7.0 level=5 connected=0]not  here[/shake][/color]...
-and that's  [shake rate=7.0 level=5 connected=0][color=#ff8864]bad[/color][/shake].
-
-I guess  she's  still  busy  tearing herself  apart, fighting  with  her  deep superego...
-
-Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thing[/color][/shake]  is  really going  to [shake rate=7.0 level=5 connected=0][color=#ff1c18]screw  me  over[/color][/shake]!
-
-It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
-
-[node name="Run_Away" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = 44.0
-offset_right = 494.0
-offset_bottom = 296.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] fled  ([color=#ff8864][shake rate=7.0 level=5 connected=0]cowardly[/shake][/color])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
-Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
-Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
-
-Either way, you sure  know  how  to  leave an impression...
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
-
-[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
-visible = false
-layout_mode = 0
-offset_left = 165.0
-offset_top = 50.0
-offset_right = 489.0
-offset_bottom = 302.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] failed to flee  ([shake rate=7.0 level=5 connected=0][color=#ff8864]pathetic[/color][/shake])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]How  disappointing...[/color][/shake]
-You had one job: [shake rate=7.0 level=5 connected=0][color=#ff8864]escape[/color][/shake].
-But no, you chose to stay  and face it.
-Was it bravery?  Or just  pure
-[shake rate=7.0 level=5 connected=0][color=#ff8864]bad judgment[/color][/shake]?
-In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
-
 [node name="Sleep" type="Node2D" parent="Overlays"]
 visible = false
 
@@ -2681,6 +3082,12 @@ autoplay = "Appearance"
 volume_db = -25.0
 bus = &"UI"
 
+[connection signal="mouse_entered" from="Overlays/Card_Management/Buttons/Ok" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Card_Management/Buttons/Ok" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Overlays/Card_Management/Buttons/Ok" to="Overlays/Card_Management/Buttons" method="_on_switch_pressed"]
+[connection signal="mouse_entered" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_any_button_exited"]
 [connection signal="pressed" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_yes_pressed"]
@@ -2725,6 +3132,9 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_pressed"]
+[connection signal="mouse_entered" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_pressed"]
 [connection signal="mouse_entered" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_pressed"]
@@ -2740,6 +3150,9 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Load_Save_Delete/Yes_No/Delete" to="Overlays/Load_Save_Delete" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Load_Save_Delete/Yes_No/Delete" to="Overlays/Load_Save_Delete" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Load_Save_Delete/Yes_No/Delete" to="Overlays/Load_Save_Delete" method="_on_delete_pressed"]
+[connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_pressed"]
@@ -2779,9 +3192,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_08" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]

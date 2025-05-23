@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6b5jldeguvjc"
-path="res://.godot/imported/Break_In.png-51e936463e7920a4c69a3ba1fad5470b.ctex"
+uid="uid://d2oe083rsfyp0"
+path="res://.godot/imported/Right_Zone.png-1d4774c875b49bd704f7d999905df565.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/Break_In.png"
-dest_files=["res://.godot/imported/Break_In.png-51e936463e7920a4c69a3ba1fad5470b.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Right_Zone.png"
+dest_files=["res://.godot/imported/Right_Zone.png-1d4774c875b49bd704f7d999905df565.ctex"]
 
 [params]
 

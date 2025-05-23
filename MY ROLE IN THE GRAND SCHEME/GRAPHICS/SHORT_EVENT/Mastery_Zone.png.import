@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmuycjafxmxj"
-path="res://.godot/imported/Frame.png-ef0fc12e8922db77ed39d319b5090cf3.ctex"
+uid="uid://cftm8jfj7vlfi"
+path="res://.godot/imported/Mastery_Zone.png-0e15f291684e207759a687f88a836949.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD_MANAGEMENT/Frame.png"
-dest_files=["res://.godot/imported/Frame.png-ef0fc12e8922db77ed39d319b5090cf3.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Mastery_Zone.png"
+dest_files=["res://.godot/imported/Mastery_Zone.png-0e15f291684e207759a687f88a836949.ctex"]
 
 [params]
 

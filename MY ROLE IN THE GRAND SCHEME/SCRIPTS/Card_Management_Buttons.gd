@@ -12,11 +12,11 @@ func _on_any_button_mouse_exited():
 func _on_cancel_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
-	$"../../On_Off".play("Disappearance")
-	await $"../../On_Off".animation_finished
+	$"../../../On_Off".play("Disappearance")
+	await $"../../../On_Off".animation_finished
 
 func _on_switch_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	$"../../On_Off".play("Disappearance")
-	await $"../../On_Off".animation_finished
+	$"../../../On_Off".play("Disappearance")
+	await $"../../../On_Off".animation_finished

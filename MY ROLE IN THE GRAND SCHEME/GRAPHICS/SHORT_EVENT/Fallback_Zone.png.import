@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn2e8ojjmxn8j"
-path="res://.godot/imported/Interaction_Zone.png-02f4389b0584b27d4046176db172ec12.ctex"
+uid="uid://bgupvlyk8die6"
+path="res://.godot/imported/Fallback_Zone.png-15b465c516357bc5b40316d20c6890ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/Interaction_Zone.png"
-dest_files=["res://.godot/imported/Interaction_Zone.png-02f4389b0584b27d4046176db172ec12.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Fallback_Zone.png"
+dest_files=["res://.godot/imported/Fallback_Zone.png-15b465c516357bc5b40316d20c6890ea.ctex"]
 
 [params]
 

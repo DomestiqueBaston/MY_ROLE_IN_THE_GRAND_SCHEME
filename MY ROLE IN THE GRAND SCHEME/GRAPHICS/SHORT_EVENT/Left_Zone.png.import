@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gifoi2s6fg7k"
-path="res://.godot/imported/Trash_Hover.png-e88d44c45f39d07278ac2b3361ef8216.ctex"
+uid="uid://cgclmrs55a25d"
+path="res://.godot/imported/Left_Zone.png-0ccbd11923ce1fdc560025c2b8e3e9c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD_MANAGEMENT/Trash_Hover.png"
-dest_files=["res://.godot/imported/Trash_Hover.png-e88d44c45f39d07278ac2b3361ef8216.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Left_Zone.png"
+dest_files=["res://.godot/imported/Left_Zone.png-0ccbd11923ce1fdc560025c2b8e3e9c8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgclmrs55a25d"
-path="res://.godot/imported/Left_Zone.png-6adae905393506732fdec087b7d21221.ctex"
+uid="uid://dmuycjafxmxj"
+path="res://.godot/imported/Card_Management_BG.png-bd0c661350cf7d298acd2a76c83becc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD_MANAGEMENT/Left_Zone.png"
-dest_files=["res://.godot/imported/Left_Zone.png-6adae905393506732fdec087b7d21221.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Card_Management_BG.png"
+dest_files=["res://.godot/imported/Card_Management_BG.png-bd0c661350cf7d298acd2a76c83becc1.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2oe083rsfyp0"
-path="res://.godot/imported/Right_Zone.png-41df806db971aaa33489f26663345705.ctex"
+uid="uid://cn2e8ojjmxn8j"
+path="res://.godot/imported/Interaction_Zone.png-47b62d102008dfc4a75ec1f9f58ee394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/CARD_MANAGEMENT/Right_Zone.png"
-dest_files=["res://.godot/imported/Right_Zone.png-41df806db971aaa33489f26663345705.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Interaction_Zone.png"
+dest_files=["res://.godot/imported/Interaction_Zone.png-47b62d102008dfc4a75ec1f9f58ee394.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cydqmld1i1nfl"
-path="res://.godot/imported/BG.png-5a47cd60c180b54c744e54e32d31a790.ctex"
+uid="uid://gifoi2s6fg7k"
+path="res://.godot/imported/Trash_Hover.png-c099e0f7ffd4bbd6bd9ced068152cb90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/RUN_AWAY_BREAK_IN_INTERACTION/BG.png"
-dest_files=["res://.godot/imported/BG.png-5a47cd60c180b54c744e54e32d31a790.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Trash_Hover.png"
+dest_files=["res://.godot/imported/Trash_Hover.png-c099e0f7ffd4bbd6bd9ced068152cb90.ctex"]
 
 [params]
 

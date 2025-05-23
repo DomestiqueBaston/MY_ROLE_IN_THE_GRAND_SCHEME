@@ -1418,7 +1418,6 @@ texture = ExtResource("22_8pq22")
 centered = false
 
 [node name="Card_Collider" type="Area2D" parent="Card_Mask"]
-visible = false
 
 [node name="Card" type="CollisionShape2D" parent="Card_Mask/Card_Collider"]
 position = Vector2(37, 50)
