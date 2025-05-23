@@ -95,15 +95,21 @@ enum NpcStatus {
 		is_location_closed = value
 		_update_card_type()
 
-@export var opacity: float = 1:
-	set(value):
-		opacity = value
-		_update_opacity()
+## true if the card is in the reserve, false if it is in play. If the card is
+## the reserve, it cannot be reduced, and the reserve decides which card to
+## highlight as the mouse moves, not the card itself.
+@export var is_stacked: bool = false
 
+## Which of the card's pins are visible.
 @export var visible_pins: Array[PinLocation] = []:
 	set(value):
 		visible_pins.assign(value)
 		_update_visible_pins()
+
+@export var opacity: float = 1:
+	set(value):
+		opacity = value
+		_update_opacity()
 
 signal position_changed
 
@@ -244,23 +250,21 @@ func get_size() -> Vector2i:
 		$Card_Mask.texture.get_height() / $Card_Mask.vframes)
 
 ##
-## Returns true if the Card is parented to a CardStack. If that is the case, the
-## CardStack is responsible for deciding which card is highlighted. If not, the
-## Card tracks the mouse position itself and emits signals when the mouse enters
-## and exits the card's bounding box.
+## Expands (true) or reduces (false) the card.
 ##
-func is_stacked():
-	return get_parent() is CardStack
+func set_expanded(expanded: bool):
+	if _is_expanded != expanded:
+		if expanded:
+			$Card_Animations.play("Expand_Card")
+		else:
+			$Card_Animations.play("Reduce_Card")
+		_is_expanded = expanded
 
 ##
 ## Expands the card if it is reduced, reduces it if it is expanded.
 ##
 func expand_or_reduce():
-	if _is_expanded:
-		$Card_Animations.play("Reduce_Card")
-	else:
-		$Card_Animations.play("Expand_Card")
-	_is_expanded = not _is_expanded
+	set_expanded(not _is_expanded)
 
 ##
 ## Specifies whether or not the card is highlighted. When a card is highlighted,
@@ -296,16 +300,16 @@ func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shap
 			if not event.double_click:
 				get_viewport().set_input_as_handled()
 				Globals.card_left_click.emit(event.global_position, self)
-			elif not is_stacked():
+			elif not is_stacked:
 				get_viewport().set_input_as_handled()
 				expand_or_reduce()
 
 func _on_card_collider_mouse_entered():
-	if not is_stacked():
+	if not is_stacked:
 		Globals.mouse_entered_card.emit(self)
 
 func _on_card_collider_mouse_exited():
-	if not is_stacked():
+	if not is_stacked:
 		Globals.mouse_exited_card.emit(self)
 
 ##
@@ -328,11 +332,19 @@ func set_pin_visible(which: PinLocation, vis: bool):
 	if vis:
 		if idx < 0:
 			visible_pins.append(which)
-			$Pins.get_child(which).visible = true
+			$Pins.get_child(which).show()
 	else:
 		if idx >= 0:
 			visible_pins.remove_at(idx)
-			$Pins.get_child(which).visible = false
+			$Pins.get_child(which).hide()
+
+##
+## Hides all of the card's pins.
+##
+func hide_all_pins():
+	for which in visible_pins:
+		$Pins.get_child(which).hide()
+	visible_pins.clear()
 
 ##
 ## Modifies the appearance of the card to show it is being dragged.

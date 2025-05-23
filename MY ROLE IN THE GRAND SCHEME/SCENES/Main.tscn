@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="13_ksebp"]
 [ext_resource type="Script" uid="uid://twxt7ns0olqm" path="res://SCRIPTS/Main_Buttons.gd" id="14_1r0xb"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="14_d27u2"]
-[ext_resource type="Script" uid="uid://doc87qbqqybin" path="res://SCRIPTS/Card_Stack.gd" id="14_ksebp"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="15_0qkya"]
 [ext_resource type="Texture2D" uid="uid://dgclhxafihydp" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_50.png" id="15_1cl67"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK_PIN/Plein_Gris.png" id="15_c4wun"]
@@ -51,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="45_yku0u"]
 [ext_resource type="Texture2D" uid="uid://cmb6qbm072amw" path="res://GRAPHICS/MAIN/Reserve_Expansion.png" id="49_wvc8p"]
 [ext_resource type="Script" uid="uid://d4lltsouavalw" path="res://SCRIPTS/Main_Motive_List.gd" id="50_wvc8p"]
+[ext_resource type="Script" uid="uid://mhjop2gadmxm" path="res://SCRIPTS/Reserve.gd" id="51_ksebp"]
 [ext_resource type="AudioStream" uid="uid://bkjfvpaccisok" path="res://SOUND/MISC/Unfolding.ogg" id="53_wvc8p"]
 [ext_resource type="AudioStream" uid="uid://xwvtufnhi7ro" path="res://SOUND/MISC/Folding.ogg" id="54_871an"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="54_ksebp"]
@@ -434,41 +434,43 @@ centered = false
 
 [node name="Main_Playmat" type="Node2D" parent="TMP_1"]
 
-[node name="Card1" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
+[node name="Cards" type="Node2D" parent="TMP_1/Main_Playmat"]
+
+[node name="Card1" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(190, 85)
 card_name = "Click the cards..."
 description = "... to see the reduce/expand animations!"
 combat_type = 1
 visible_pins = Array[int]([4])
 
-[node name="Card2" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
+[node name="Card2" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 combat_type = 2
 visible_pins = Array[int]([0])
 
-[node name="Card3" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
+[node name="Card3" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 card_type = 1
 investigation_type = 2
 visible_pins = Array[int]([0])
 
-[node name="Card4" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
+[node name="Card4" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(165, 213)
 card_type = 2
 visible_pins = Array[int]([4])
 
-[node name="Card5" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
+[node name="Card5" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(294, 38)
 visible_pins = Array[int]([4])
 
-[node name="Card6" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
+[node name="Card6" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
-opacity = 0.78
 visible_pins = Array[int]([0])
+opacity = 0.78
 
-[node name="Card7" parent="TMP_1/Main_Playmat" instance=ExtResource("3_b4mvu")]
+[node name="Card7" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(558, 275)
 opacity = 0.78
@@ -477,21 +479,21 @@ opacity = 0.78
 z_index = 1
 
 [node name="Link_Violet_Rose" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("18_y2x40")]
-card1 = NodePath("../../Card1")
+card1 = NodePath("../../Cards/Card1")
 pin1 = 4
-card2 = NodePath("../../Card2")
+card2 = NodePath("../../Cards/Card2")
 texture = ExtResource("20_gmr4o")
 
 [node name="Link_Pointillé_Blanc" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("18_y2x40")]
-card1 = NodePath("../../Card5")
+card1 = NodePath("../../Cards/Card5")
 pin1 = 4
-card2 = NodePath("../../Card6")
+card2 = NodePath("../../Cards/Card6")
 texture = ExtResource("21_u2t8c")
 
 [node name="Link_Plein_Jaune" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("18_y2x40")]
-card1 = NodePath("../../Card4")
+card1 = NodePath("../../Cards/Card4")
 pin1 = 4
-card2 = NodePath("../../Card3")
+card2 = NodePath("../../Cards/Card3")
 texture = ExtResource("6_jtpuj")
 
 [node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("23_pharv")]
@@ -517,7 +519,6 @@ texture = ExtResource("25_47v8w")
 centered = false
 
 [node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
-visible = false
 
 [node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 collision_layer = 0
@@ -529,8 +530,6 @@ shape = SubResource("RectangleShape2D_gfrfy")
 
 [node name="Reserve_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
 position = Vector2(1, 0)
-collision_layer = 0
-collision_mask = 0
 
 [node name="Reserve" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Reserve_Collider"]
 position = Vector2(66, 89)
@@ -2429,56 +2428,67 @@ bus = &"FX"
 [node name="TMP_2" type="Node2D" parent="Mask_Card_Playground"]
 
 [node name="Reserve_Cards" type="Node2D" parent="Mask_Card_Playground/TMP_2"]
-position = Vector2(0, 39)
-script = ExtResource("14_ksebp")
+position = Vector2(13, 39)
+script = ExtResource("51_ksebp")
 
 [node name="Card7" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(13, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card8" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(16, 0)
+position = Vector2(3, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card9" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(19, 0)
+position = Vector2(6, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card10" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(22, 0)
+position = Vector2(9, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card11" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(25, 0)
+position = Vector2(12, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card12" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(28, 0)
+position = Vector2(15, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card13" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(31, 0)
+position = Vector2(18, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card14" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(34, 0)
+position = Vector2(21, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card15" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(37, 0)
+position = Vector2(24, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card16" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(40, 0)
+position = Vector2(27, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card17" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(43, 0)
+position = Vector2(30, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Card18" parent="Mask_Card_Playground/TMP_2/Reserve_Cards" instance=ExtResource("3_b4mvu")]
-position = Vector2(46, 0)
+position = Vector2(33, 0)
 combat_type = 1
+is_stacked = true
 
 [node name="Drag_Drop_Line" parent="Mask_Card_Playground/TMP_2" instance=ExtResource("13_ksebp")]
 visible = false

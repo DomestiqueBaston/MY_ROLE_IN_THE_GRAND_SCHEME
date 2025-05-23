@@ -1,6 +1,11 @@
 extends Node2D
 
+@onready var cards: Node2D = $TMP_1/Main_Playmat/Cards
+@onready var links: Node2D = $TMP_1/Main_Playmat/Links
+@onready var reserve: Node2D = $Mask_Card_Playground/TMP_2/Reserve_Cards
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup/Main_Menu
+@onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
+@onready var reserve_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Reserve_Collider/Reserve
 
 # highlighted card
 var _current_card: Card
@@ -47,7 +52,7 @@ func _input(event: InputEvent):
 		if event is InputEventMouseMotion:
 			_drag(event.global_position)
 		elif event is InputEventMouseButton and not event.pressed:
-			_stop_drag()
+			_stop_drag(event.global_position)
 			_drag_state = DragState.NONE
 		elif event.is_action_pressed("Escape"):
 			get_viewport().set_input_as_handled()
@@ -105,13 +110,47 @@ func _drag(global_pos: Vector2):
 
 func _abort_drag():
 	Globals.dragging = false
+	_current_card.stop_drag()
 	_current_card.reparent(_drag_parent, false)
 	_drag_parent.move_child(_current_card, _drag_index)
 	_current_card.position = _drag_local_init_pos
+
+func _is_in_playground(global_pos: Vector2):
+	var local_rect = playground_shape.shape.get_rect()
+	var global_rect = playground_shape.get_global_transform() * local_rect
+	return global_rect.has_point(global_pos)
+
+func _is_in_reserve(global_pos: Vector2):
+	var local_rect = reserve_shape.shape.get_rect()
+	var global_rect = reserve_shape.get_global_transform() * local_rect
+	return global_rect.has_point(global_pos)
+
+func _stop_drag(global_pos: Vector2):
+	var in_reserve: bool
+	if _is_in_reserve(global_pos):
+		in_reserve = true
+	elif _is_in_playground(global_pos):
+		in_reserve = false
+	else:
+		_abort_drag()
+		return
+
+	Globals.dragging = false
 	_current_card.stop_drag()
 
-func _stop_drag():
-	Globals.dragging = false
-	# TODO: TMP_1/Main_Playmat or TMP_2/Reserve_Cards
-	_current_card.reparent(_drag_parent)
-	_current_card.stop_drag()
+	if in_reserve:
+		_current_card.is_stacked = true
+		_current_card.set_expanded(true)
+		_current_card.hide_all_pins()
+		for link in links.get_children():
+			if link is Link:
+				if link.card1 == _current_card:
+					link.card2.set_pin_visible(link.pin2, false)
+					link.free()
+				elif link.card2 == _current_card:
+					link.card1.set_pin_visible(link.pin1, false)
+					link.free()
+		_current_card.reparent(reserve, false)
+	else:
+		_current_card.is_stacked = false
+		_current_card.reparent(cards)
