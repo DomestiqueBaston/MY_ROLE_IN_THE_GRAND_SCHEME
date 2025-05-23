@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doijy014fekfq"
-path="res://.godot/imported/BG.png-b666faa5ed194e8820f6837387a16bf4.ctex"
+path="res://.godot/imported/Run_Away_Break_In_BG.png-15f2ad86a761375bf5b88662e65f3f6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/SHORT_EVENT/BG.png"
-dest_files=["res://.godot/imported/BG.png-b666faa5ed194e8820f6837387a16bf4.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Run_Away_Break_In_BG.png"
+dest_files=["res://.godot/imported/Run_Away_Break_In_BG.png-15f2ad86a761375bf5b88662e65f3f6e.ctex"]
 
 [params]
 

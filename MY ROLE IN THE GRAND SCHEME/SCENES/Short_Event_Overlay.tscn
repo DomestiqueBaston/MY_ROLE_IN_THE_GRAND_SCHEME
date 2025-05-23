@@ -1,12 +1,12 @@
 [gd_scene load_steps=169 format=3 uid="uid://b2dn121b3l0e2"]
 
-[ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Short_Event_BG.png" id="1_sivc1"]
+[ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Button.gd" id="3_8qa11"]
 [ext_resource type="Texture2D" uid="uid://vduyten8dj5h" path="res://GRAPHICS/SHORT_EVENT/Search_Warrant_BG.png" id="4_0rnfm"]
 [ext_resource type="Theme" uid="uid://q40hqc75ju80" path="res://UI/Search_Warrant_Use_Theme.tres" id="5_53ag3"]
 [ext_resource type="Script" uid="uid://cn3ukiwadh7rv" path="res://SCRIPTS/Search_Warrant_Use_Buttons.gd" id="6_200re"]
-[ext_resource type="Texture2D" uid="uid://doijy014fekfq" path="res://GRAPHICS/SHORT_EVENT/BG.png" id="7_yccgy"]
+[ext_resource type="Texture2D" uid="uid://doijy014fekfq" path="res://GRAPHICS/SHORT_EVENT/Run_Away_Break_In_BG.png" id="7_yccgy"]
 [ext_resource type="Script" uid="uid://wdxxwss0sbcg" path="res://SCRIPTS/Run_Away_Break_In_Buttons.gd" id="8_7ujkg"]
 [ext_resource type="Theme" uid="uid://sscuwot1pitg" path="res://UI/Run_Away_Break_In_Theme.tres" id="9_oetaq"]
 [ext_resource type="Texture2D" uid="uid://cq57wrp3dfi0j" path="res://GRAPHICS/SHORT_EVENT/Care_Sheet_BG.png" id="10_oetaq"]
@@ -2171,22 +2171,21 @@ text = "Hm...
 Maybe not!"
 alignment = 0
 
-[node name="Short_Event" type="Node2D" parent="Overlays"]
-visible = false
+[node name="Misc" type="Node2D" parent="Overlays"]
 
-[node name="Short_Event_BG" type="Sprite2D" parent="Overlays/Short_Event"]
+[node name="Misc_BG" type="Sprite2D" parent="Overlays/Misc"]
 texture = ExtResource("1_sivc1")
 centered = false
 offset = Vector2(50, 0)
 
-[node name="Announces" type="Control" parent="Overlays/Short_Event"]
+[node name="Announces" type="Control" parent="Overlays/Misc"]
 modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_vr7x7")
 script = ExtResource("3_8qa11")
 
-[node name="Quit" type="Button" parent="Overlays/Short_Event/Announces"]
+[node name="Quit" type="Button" parent="Overlays/Misc/Announces"]
 layout_mode = 0
 offset_left = 432.0
 offset_top = 306.0
@@ -2196,89 +2195,33 @@ rotation = 0.0361729
 tooltip_text = "Ok, ok..."
 text = "Whatever..."
 
-[node name="Run_Away" type="Control" parent="Overlays/Short_Event/Announces"]
+[node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
 anchors_preset = 0
 
-[node name="Player_Success" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Run_Away"]
+[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Bill"]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 44.0
-offset_right = 494.0
-offset_bottom = 296.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] fled  ([color=#ff8864][shake rate=7.0 level=5 connected=0]cowardly[/shake][/color])!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
-Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
-Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
-
-Either way, you sure  know  how  to  leave an impression...
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
-
-[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Run_Away"]
-visible = false
-layout_mode = 0
-offset_left = 165.0
-offset_top = 50.0
-offset_right = 489.0
-offset_bottom = 302.0
+offset_left = 170.0
+offset_top = 48.0
+offset_right = 484.0
+offset_bottom = 299.0
 rotation = 0.0356184
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] failed to flee  ([shake rate=7.0 level=5 connected=0][color=#ff8864]pathetic[/color][/shake])!
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Financial[/color]  [color=#ff8864]mastermind[/color]![/pulse]
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]How  disappointing...[/color][/shake]
-You had one job: [shake rate=7.0 level=5 connected=0][color=#ff8864]escape[/color][/shake].
-But no, you chose to stay  and face it.
-Was it bravery?  Or just  pure
-[shake rate=7.0 level=5 connected=0][color=#ff8864]bad judgment[/color][/shake]?
-In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
+Wow. [shake rate=7.0 level=5 connected=0][color=#ff8864]Four  unpaid  bills[/color][/shake]?  
+That's a really impressive  dedication to [shake rate=7.0 level=5 connected=0][color=#ff1c18]self-sabotage[/color][/shake].
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
+Apparently, [shake rate=7.0 level=5 connected=0][color=#ff8864]ignoring[/color][/shake]  debt  collectors doesn’t  make them  [shake rate=7.0 level=5 connected=0][color=#ff8864]disappear[/color][/shake].  
+So  now  you get to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meditate[/color][/shake]  on your life  choices...
+...in a [shake rate=7.0 level=5 connected=0][color=#ff1c18]cell[/color][/shake], [shake rate=7.0 level=5 connected=0][color=#ff8864]for the  next[/color] [color=#ff1c18]3 days[/color][/shake].[/center]
+"
 
-[node name="Rowena_Absent" type="Control" parent="Overlays/Short_Event/Announces"]
+[node name="Break_In" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="Message" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Rowena_Absent"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = 56.0
-offset_right = 490.0
-offset_bottom = 296.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center]Darn!  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Rowena[/color][/pulse]'s  [color=#ff8864][shake rate=7.0 level=5 connected=0]not  here[/shake][/color]...
-and that's  [shake rate=7.0 level=5 connected=0][color=#ff8864]bad[/color][/shake].
-
-I guess  she's  still  busy  tearing herself  apart, fighting  with  her  deep superego...
-
-Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thing[/color][/shake]  is  really going  to [shake rate=7.0 level=5 connected=0][color=#ff1c18]screw  me  over[/color][/shake]!
-
-It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
-
-[node name="Irrelevant_Motive" type="Control" parent="Overlays/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Message" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Irrelevant_Motive"]
-layout_mode = 0
-offset_left = 176.0
-offset_top = 111.0
-offset_right = 472.0
-offset_bottom = 251.0
-rotation = 0.0284044
-bbcode_enabled = true
-text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
-
-We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
-
-[node name="Break_In" type="Control" parent="Overlays/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Player_Success" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Break_In"]
+[node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
 layout_mode = 0
 offset_left = 178.0
 offset_top = 70.0
@@ -2295,7 +2238,7 @@ Did you really  think  that  would  be  your biggest  challenge  today?
 [shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you’ve  done it...[/color][/shake]
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
 
-[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Break_In"]
+[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
 visible = false
 layout_mode = 0
 offset_left = 165.0
@@ -2314,11 +2257,49 @@ Let’s just say it wasn’t exactly impressive.
 You sure know how to make  an entrance...
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  not  the best  one![/color][/shake][/center]"
 
-[node name="Dialogue" type="Control" parent="Overlays/Short_Event/Announces"]
+[node name="Combat" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="NPC_Success" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dialogue"]
+[node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 62.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not what you expected[/color][/shake]. Just  as  you approached, the  person in front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
+
+In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
+
+Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
+
+[node name="Minion_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
+visible = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 61.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an attack!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t think it’d be that easy, did you?
+
+The  assault  comes  fast  (probably  more than you can  handle).
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
+
+Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
+
+[node name="Dialogue" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="NPC_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
 layout_mode = 0
 offset_left = 169.0
 offset_top = 58.0
@@ -2334,7 +2315,7 @@ It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][col
 
 Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
 
-[node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dialogue"]
+[node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
 visible = false
 layout_mode = 0
 offset_left = 167.0
@@ -2353,70 +2334,11 @@ It’s  almost  as if they were just waiting  for  the  perfect  moment...
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
 
-[node name="Combat" type="Control" parent="Overlays/Short_Event/Announces"]
+[node name="Dreams" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
 anchors_preset = 0
 
-[node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Combat"]
-layout_mode = 0
-offset_left = 167.0
-offset_top = 62.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Not what you expected[/color][/shake]. Just  as  you approached, the  person in front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
-
-In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
-
-Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
-
-[node name="Minion_Attack" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Combat"]
-visible = false
-layout_mode = 0
-offset_left = 169.0
-offset_top = 61.0
-offset_right = 484.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an attack!
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t think it’d be that easy, did you?
-
-The  assault  comes  fast  (probably  more than you can  handle).
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
-
-Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
-
-[node name="Outdated_Case" type="Control" parent="Overlays/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Annonce" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Outdated_Case"]
-layout_mode = 0
-offset_left = 169.0
-offset_top = 62.0
-offset_right = 483.0
-offset_bottom = 299.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Out  of  date[/color] [color=#ff8864]investigation[/color]![/pulse]
-
-Well, [shake rate=7.0 level=5 connected=0][color=#ff8864]congratulations[/color][/shake]!
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Case[/color]  [color=#ff1c18]XXX[/color][/shake]? [color=#ff1c18]Gone[/color]!
-
-Your inability  to  meet  a simple  [shake rate=7.0 level=5 connected=0][color=#ff8864]deadline[/color][/shake]  is  really impressive.  Not  exactly the best for your [shake rate=7.0 level=5 connected=0][color=#ff8864]emotionnal stability[/color][/shake], though...
-
-Nice job,  genius![/center]"
-
-[node name="Dreams" type="Control" parent="Overlays/Short_Event/Announces"]
-visible = false
-anchors_preset = 0
-
-[node name="Dream" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dreams"]
+[node name="Dream" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
 layout_mode = 0
 offset_left = 167.0
 offset_top = 106.0
@@ -2429,7 +2351,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,
 [shake rate=7.0 level=5 connected=0][color=#ff1c18]Don't  get  used  to it[/color][/shake]. just  take  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]scraps  you're  given[/color][/shake], who  knows  what  [shake rate=7.0 level=5 connected=0][color=#ff8864]the  next  one[/color][/shake]  will  be [shake rate=7.0 level=5 connected=0][color=#ff1c18]laughing  about[/color][/shake].[/center]
 "
 
-[node name="Nightmare" type="RichTextLabel" parent="Overlays/Short_Event/Announces/Dreams"]
+[node name="Nightmare" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
 visible = false
 layout_mode = 0
 offset_left = 168.0
@@ -2443,6 +2365,126 @@ The  [shake rate=7.0 level=5 connected=0][color=#ff8864]kind[/color][/shake]  of
 
 [shake rate=7.0 level=5 connected=0][color=#ff1c18]No  peace[/color][/shake]. just  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]weight  of  what  waits[/color][/shake], when  even  [shake rate=7.0 level=5 connected=0][color=#ff8864]the silence[/color][/shake]  feels  [shake rate=7.0 level=5 connected=0][color=#ff1c18]louder  than  screams[/color][/shake].[/center]
 "
+
+[node name="Irrelevant_Motive" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Irrelevant_Motive"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 111.0
+offset_right = 472.0
+offset_bottom = 251.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
+
+We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
+
+[node name="Lie" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Lie"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 74.0
+offset_right = 483.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]One[/color] of  [color=#ff1c18]them[/color]'s [color=#ff8864]lying[/color]![/pulse]
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Funny[/color][/shake] how  all their stories  line  up [shake rate=7.0 level=5 connected=0][color=#ff8864]until you  actually [color=#ff1c18]compare[/color] them[/color][/shake]. Someone’s  clearly [shake rate=7.0 level=5 connected=0][color=#ff8864]making  stuff  up[/color][/shake], and it’s  not even subtle.
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Swell[/color][/shake]!
+Guess  I'll have to  [color=#ff1c18]dive[/color] [color=#ff8864]deeper[/color]...[/center]"
+
+[node name="Outdated_Case" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Outdated_Case"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 62.0
+offset_right = 483.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Out of date[/color] [color=#ff8864]investigation[/color]![/pulse]
+
+Well, [shake rate=7.0 level=5 connected=0][color=#ff8864]congratulations[/color][/shake]!  
+Whatever you were working on? [shake rate=7.0 level=5 connected=0][color=#ff1c18]Gone[/color][/shake]!just like that.
+
+Your [shake rate=7.0 level=5 connected=0][color=#ff1c18]inaility[/color][/shake] to  meet  a [shake rate=7.0 level=5 connected=0][color=#ff8864]simple [color=#ff1c18]deadline[/color][/color][/shake] is impressive.  [shake rate=7.0 level=5 connected=0][color=#ff1c18]Not great[/color][/shake] for your [shake rate=7.0 level=5 connected=0][color=#ff8864]emotional stability[/color][/shake], though...
+
+Nice job, [shake rate=7.0 level=5 connected=0][color=#ff8864]genius[/color][/shake]![/center]
+"
+
+[node name="Rowena_Absent" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Rowena_Absent"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 56.0
+offset_right = 490.0
+offset_bottom = 296.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center]Darn!  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Rowena[/color][/pulse]'s  [color=#ff8864][shake rate=7.0 level=5 connected=0]not  here[/shake][/color]...
+and that's  [shake rate=7.0 level=5 connected=0][color=#ff8864]bad[/color][/shake].
+
+I guess  she's  still  busy  tearing herself  apart, fighting  with  her  deep superego...
+
+Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thing[/color][/shake]  is  really going  to [shake rate=7.0 level=5 connected=0][color=#ff1c18]screw  me  over[/color][/shake]!
+
+It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
+
+[node name="Run_Away" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 44.0
+offset_right = 494.0
+offset_bottom = 296.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] fled  ([color=#ff8864][shake rate=7.0 level=5 connected=0]cowardly[/shake][/color])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
+Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
+Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
+
+Either way, you sure  know  how  to  leave an impression...
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
+
+[node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 50.0
+offset_right = 489.0
+offset_bottom = 302.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] failed to flee  ([shake rate=7.0 level=5 connected=0][color=#ff8864]pathetic[/color][/shake])!
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]How  disappointing...[/color][/shake]
+You had one job: [shake rate=7.0 level=5 connected=0][color=#ff8864]escape[/color][/shake].
+But no, you chose to stay  and face it.
+Was it bravery?  Or just  pure
+[shake rate=7.0 level=5 connected=0][color=#ff8864]bad judgment[/color][/shake]?
+In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
 
 [node name="Sleep" type="Node2D" parent="Overlays"]
 visible = false
@@ -2737,9 +2779,9 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Short_Event/Announces/Quit" to="Overlays/Short_Event/Announces" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Short_Event/Announces/Quit" to="Overlays/Short_Event/Announces" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Overlays/Short_Event/Announces/Quit" to="Overlays/Short_Event/Announces" method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_08" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]

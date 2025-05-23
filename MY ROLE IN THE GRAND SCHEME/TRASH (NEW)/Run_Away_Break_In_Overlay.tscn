@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ety07wkwhk35"]
 
-[ext_resource type="Texture2D" uid="uid://doijy014fekfq" path="res://GRAPHICS/SHORT_EVENT/BG.png" id="1_4c6ij"]
+[ext_resource type="Texture2D" uid="uid://doijy014fekfq" path="res://GRAPHICS/SHORT_EVENT/Run_Away_Break_In_BG.png" id="1_4c6ij"]
 [ext_resource type="Theme" uid="uid://sscuwot1pitg" path="res://UI/Run_Away_Break_In_Theme.tres" id="2_4fm7x"]
 [ext_resource type="Script" uid="uid://wdxxwss0sbcg" path="res://SCRIPTS/Run_Away_Break_In_Buttons.gd" id="2_cn4vr"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="22_7qgb5"]
