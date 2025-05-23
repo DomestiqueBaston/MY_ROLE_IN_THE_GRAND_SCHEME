@@ -46,7 +46,8 @@ enum NpcStatus {
 	NONE,
 	JAIL,
 	DEAD,
-	DISAPPEARED
+	DISAPPEARED,
+	MINION
 }
 
 @export var card_name: String = "Card Name":
@@ -133,6 +134,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+			$Card_Mask/Card_BG/Minion_Status.visible = false
 
 		CardType.INVESTIGATION:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -149,6 +151,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+			$Card_Mask/Card_BG/Minion_Status.visible = false
 
 		CardType.DIALOGUE:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -163,6 +166,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+			$Card_Mask/Card_BG/Minion_Status.visible = false
 
 		CardType.ABSTRACT:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -177,6 +181,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+			$Card_Mask/Card_BG/Minion_Status.visible = false
 
 		CardType.OBJECT:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -191,6 +196,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+			$Card_Mask/Card_BG/Minion_Status.visible = false
 
 		CardType.LOCATION:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -205,6 +211,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
+			$Card_Mask/Card_BG/Minion_Status.visible = false
 
 		CardType.NPC:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -223,6 +230,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Jail_Status.visible = (npc_status == NpcStatus.JAIL)
 			$Card_Mask/Card_BG/Dead_Status.visible = (npc_status == NpcStatus.DEAD)
 			$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
+			$Card_Mask/Card_BG/Minion_Status.visible = (npc_status == NpcStatus.MINION)
 
 func _update_visible_pins():
 	var index = 0;
