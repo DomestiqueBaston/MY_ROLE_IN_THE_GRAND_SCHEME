@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=31 format=3 uid="uid://dlmptat7076r"]
+[gd_resource type="Theme" load_steps=32 format=3 uid="uid://dlmptat7076r"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_qnqed"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_35qa7"]
@@ -47,15 +47,18 @@ bg_color = Color(1, 1, 1, 0.501961)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_he5hg"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gbgo"]
+content_margin_left = 2.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pnod"]
-bg_color = Color(0.1332, 0.18, 0.141, 0.25098)
+bg_color = Color(0.18, 0.13944, 0.1332, 0.25098)
 border_width_left = 4
 border_width_right = 3
 border_width_bottom = 1
-border_color = Color(0.1332, 0.18, 0.141, 0.643137)
+border_color = Color(0.18, 0.141, 0.1332, 0.643137)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3nae"]
 bg_color = Color(0.99, 0.993167, 1, 0.784314)
@@ -156,6 +159,7 @@ RichTextLabel/constants/outline_size = 5
 RichTextLabel/font_sizes/normal_font_size = 8
 RichTextLabel/fonts/normal_font = ExtResource("2_35qa7")
 RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_he5hg")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_7gbgo")
 TooltipLabel/colors/font_color = Color(0.94, 0.874513, 0.7614, 0.882353)
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")

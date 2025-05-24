@@ -119,24 +119,20 @@ _data = {
 }
 
 [node name="Tutorial" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="Tuto_Bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_yb185")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Node2D" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Chalk_Mask" type="Sprite2D" parent="Node2D"]
 clip_children = 1
 texture = ExtResource("2_m6hlk")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Tutorial_Text" type="RichTextLabel" parent="Node2D/Chalk_Mask"]
-offset_left = 10.0
+offset_left = 8.0
 offset_top = 13.0
 offset_right = 630.0
 offset_bottom = 353.0
@@ -144,7 +140,6 @@ theme = ExtResource("3_5nlpe")
 bbcode_enabled = true
 visible_characters_behavior = 1
 script = ExtResource("4_b7xnw")
-metadata/_edit_lock_ = true
 
 [node name="Next_Button" type="Button" parent="Node2D/Chalk_Mask"]
 anchors_preset = 7
@@ -175,7 +170,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_31ymd")
 text = "Next..."
-metadata/_edit_lock_ = true
 
 [node name="Typing_Animation" type="AnimationPlayer" parent="."]
 libraries = {
