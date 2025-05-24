@@ -60,7 +60,7 @@ bus = &"UI"
 
 [node name="Cancel" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("7_xi55q")
-volume_db = -2.5
+volume_db = -4.0
 bus = &"UI"
 
 [node name="Leave" type="AudioStreamPlayer" parent="UI_Sounds"]
@@ -75,10 +75,10 @@ bus = &"UI"
 
 [node name="Card_Entered" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("10_xi55q")
-volume_db = -5.0
+volume_db = -10.0
 bus = &"UI"
 
 [node name="Card_Exited" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("11_8eio1")
-volume_db = -5.0
+volume_db = -10.0
 bus = &"UI"
