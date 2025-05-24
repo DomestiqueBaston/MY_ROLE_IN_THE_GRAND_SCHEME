@@ -77,7 +77,7 @@ func _layout():
 
 	var margin = min_card_margin
 	if vis_card_count > 1:
-		margin = (size.x - card_size.x) / (vis_card_count - 1)
+		margin = int((size.x - card_size.x) / (vis_card_count - 1))
 
 	var x = 0
 	for card_index in card_count:
