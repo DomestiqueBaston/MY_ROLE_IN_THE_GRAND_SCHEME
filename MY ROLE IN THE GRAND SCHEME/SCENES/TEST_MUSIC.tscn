@@ -76,7 +76,6 @@ bus = &"MUSIC"
 bus = &"MUSIC"
 
 [node name="HIGH" type="AudioStreamPlayer" parent="."]
-volume_db = -80.0
 bus = &"MUSIC"
 
 [node name="Music_Mixer" type="AnimationPlayer" parent="."]

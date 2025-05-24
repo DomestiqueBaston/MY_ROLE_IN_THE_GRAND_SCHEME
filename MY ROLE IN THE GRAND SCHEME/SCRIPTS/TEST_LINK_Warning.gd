@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 @export var link_texture_path: NodePath  # Texture servant de référence pour définir la position du Warning
 @export var offset_y := -10

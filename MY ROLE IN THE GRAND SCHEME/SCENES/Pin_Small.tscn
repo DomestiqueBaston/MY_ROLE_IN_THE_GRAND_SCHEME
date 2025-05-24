@@ -81,6 +81,13 @@ _data = {
 [node name="Pin_Small" type="Node2D"]
 texture_filter = 1
 
+[node name="Collider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Pin" type="CollisionShape2D" parent="Collider"]
+shape = SubResource("CircleShape2D_bfoqd")
+
 [node name="Pin" type="TextureRect" parent="."]
 offset_left = -4.0
 offset_top = -4.0
@@ -88,13 +95,6 @@ offset_right = 4.0
 offset_bottom = 4.0
 theme = ExtResource("1_eovho")
 texture = ExtResource("2_121c2")
-
-[node name="Collider" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
-
-[node name="Pin" type="CollisionShape2D" parent="Collider"]
-shape = SubResource("CircleShape2D_bfoqd")
 
 [node name="Pin_Animation" type="AnimationPlayer" parent="."]
 libraries = {

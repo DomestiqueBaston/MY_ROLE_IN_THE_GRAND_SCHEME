@@ -86,6 +86,7 @@ metadata/_edit_lock_ = true
 
 [node name="Warning" parent="Link_1" instance=ExtResource("6_v1yxb")]
 position = Vector2(-8, -8)
+link_texture_path = NodePath("../Papa_Link/Link_Texture")
 
 [node name="Link_2" type="Node2D" parent="."]
 texture_filter = 1

@@ -86,7 +86,13 @@ _data = {
 
 [node name="Player_Locator" type="Node2D"]
 texture_filter = 1
-metadata/_edit_lock_ = true
+
+[node name="Collider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Pin" type="CollisionShape2D" parent="Collider"]
+shape = SubResource("CircleShape2D_bfoqd")
 
 [node name="Pin" type="TextureRect" parent="."]
 self_modulate = Color(0.584314, 0.643137, 0.909804, 1)
@@ -103,7 +109,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2ifjr")
 texture = ExtResource("2_fvhge")
-metadata/_edit_lock_ = true
 
 [node name="Ring" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -122,16 +127,6 @@ pivot_offset = Vector2(40, 40)
 tooltip_text = "You are here!"
 theme = ExtResource("1_2ifjr")
 texture = ExtResource("2_cf184")
-metadata/_edit_lock_ = true
-
-[node name="Collider" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
-metadata/_edit_lock_ = true
-
-[node name="Pin" type="CollisionShape2D" parent="Collider"]
-shape = SubResource("CircleShape2D_bfoqd")
-metadata/_edit_lock_ = true
 
 [node name="Ring_Animation" type="AnimationPlayer" parent="."]
 libraries = {
