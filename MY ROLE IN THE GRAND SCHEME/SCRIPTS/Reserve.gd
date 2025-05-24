@@ -2,10 +2,9 @@ extends Node2D
 
 @export var size: Vector2 = Vector2(107, 100)
 @export var card_size: Vector2 = Vector2(74, 100)
-@export var card_margin: int = 3
+@export var min_card_margin: int = 3
 
 var _max_card_count: int
-var _first_card_index: int
 var _current_card: int = -1
 var _tween: Tween
 
@@ -27,10 +26,12 @@ func _input(event: InputEvent):
 	var new_card = -1
 	var local_pos = to_local(event.global_position)
 	var bbox = Rect2(Vector2(0, 0), size)
+	var card_count = get_child_count()
 
 	if bbox.has_point(local_pos):
-		var pos = _max_card_count * local_pos.x / size.x
-		var card_index = _first_card_index + pos
+		var vis_card_count = mini(card_count, _max_card_count)
+		var first_card_index = card_count - vis_card_count
+		var card_index = first_card_index + int(vis_card_count * local_pos.x / size.x)
 		if card_index < get_child_count():
 			new_card = card_index
 
@@ -50,7 +51,7 @@ func _input(event: InputEvent):
 	if _current_card >= 0:
 		Globals.mouse_entered_card.emit(get_child(_current_card))
 
-	for idx in get_child_count():
+	for idx in card_count:
 		var dist = -1 if _current_card < 0 else absi(idx - _current_card)
 		var disp: int = 0
 		match dist:
@@ -68,22 +69,24 @@ func _input(event: InputEvent):
 
 func _layout():
 	_current_card = -1
-	_max_card_count = 1 + int((size.x - card_size.x) / card_margin)
+	_max_card_count = 1 + int((size.x - card_size.x) / min_card_margin)
 
 	var card_count = get_child_count()
-	if card_count > _max_card_count:
-		_first_card_index = _max_card_count - card_count
-	else:
-		_first_card_index = 0
+	var vis_card_count = mini(card_count, _max_card_count)
+	var first_card_index = card_count - vis_card_count
+
+	var margin = min_card_margin
+	if vis_card_count > 1:
+		margin = (size.x - card_size.x) / (vis_card_count - 1)
 
 	var x = 0
 	for card_index in card_count:
 		var card: Card = get_child(card_index)
 		card.is_stacked = true
-		if card_index < _first_card_index:
+		if card_index < first_card_index:
 			card.hide()
 		else:
 			card.position = Vector2(x, 0)
 			card.show()
-			x += card_margin
+			x += margin
 		card_index += 1
