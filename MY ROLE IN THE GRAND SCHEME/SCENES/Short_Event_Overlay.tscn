@@ -573,7 +573,6 @@ color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 position = Vector2(-640, 0)
 
 [node name="Card_Management" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Colliders" type="Node2D" parent="Overlays/Card_Management"]
 
@@ -741,17 +740,17 @@ horizontal_alignment = 1
 
 [node name="TMP" type="Node2D" parent="Overlays/Card_Management"]
 
-[node name="Card" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card1" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(205, 75)
-location_status = 0
 
 [node name="Card2" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
-position = Vector2(371, 75)
-location_status = 0
+position = Vector2(285, 75)
 
 [node name="Card3" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
-position = Vector2(446, 75)
-location_status = 0
+position = Vector2(371, 75)
+
+[node name="Card4" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
+position = Vector2(491, 75)
 
 [node name="Drag_Drop_Line" parent="Overlays/Card_Management" instance=ExtResource("136_lkigo")]
 position = Vector2(640, 0)
@@ -1371,15 +1370,12 @@ position = Vector2(0, 12)
 
 [node name="Card1" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(247, 152)
-location_status = 0
 
 [node name="Card3" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(283, 152)
-location_status = 0
 
 [node name="Card2" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
-location_status = 0
 
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
 visible = false
@@ -1458,19 +1454,15 @@ position = Vector2(0, 12)
 
 [node name="Card1" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(247, 152)
-location_status = 0
 
 [node name="Card3" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(271, 152)
-location_status = 0
 
 [node name="Card2" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(295, 152)
-location_status = 0
 
 [node name="Card4" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
-location_status = 0
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays"]
 visible = false

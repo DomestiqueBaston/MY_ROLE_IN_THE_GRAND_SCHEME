@@ -98,7 +98,6 @@ _data = {
 }
 
 [node name="Drag_Drop_Line" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="Line" type="Line2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -109,7 +108,6 @@ gradient = SubResource("Gradient_7eyd2")
 end_cap_mode = 2
 round_precision = 16
 antialiased = true
-metadata/_edit_lock_ = true
 
 [node name="Drag_Drop_Line_Animation" type="AnimationPlayer" parent="."]
 libraries = {
