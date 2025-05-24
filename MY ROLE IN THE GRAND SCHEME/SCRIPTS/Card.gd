@@ -35,6 +35,12 @@ enum InvestigationType {
 	BREAK_IN
 }
 
+enum LocationStatus {
+	NONE,
+	CLOSED,
+	CRIME_SCENE
+}
+
 enum NpcHealth {
 	NONE,
 	GOOD,
@@ -75,6 +81,11 @@ enum NpcStatus {
 		investigation_type = value
 		_update_card_type()
 
+@export var location_status: LocationStatus:
+	set(value):
+		location_status = value
+		_update_card_type()
+
 @export var npc_health: NpcHealth:
 	set(value):
 		npc_health = value
@@ -88,11 +99,6 @@ enum NpcStatus {
 @export var is_object_evidence: bool:
 	set(value):
 		is_object_evidence = value
-		_update_card_type()
-
-@export var is_location_closed: bool:
-	set(value):
-		is_location_closed = value
 		_update_card_type()
 
 ## true if the card is in the reserve, false if it is in play. If the card is
@@ -137,6 +143,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Card_Color/Combat/Run_Away.visible = (combat_type == CombatType.RUN_AWAY)
 			$Card_Mask/Card_BG/Evidence.visible = false
 			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Crime_Scene_Status.visible = false
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
@@ -154,6 +161,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Card_Color/Investigation/Break_In.visible = (investigation_type == InvestigationType.BREAK_IN)
 			$Card_Mask/Card_BG/Evidence.visible = false
 			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Crime_Scene_Status.visible = false
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
@@ -169,6 +177,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
 			$Card_Mask/Card_BG/Evidence.visible = false
 			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Crime_Scene_Status.visible = false
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
@@ -184,6 +193,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
 			$Card_Mask/Card_BG/Evidence.visible = false
 			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Crime_Scene_Status.visible = false
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
@@ -199,6 +209,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
 			$Card_Mask/Card_BG/Evidence.visible = is_object_evidence
 			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Crime_Scene_Status.visible = false
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
@@ -213,7 +224,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Card_Color/Location.visible = true
 			$Card_Mask/Card_BG/Card_Color/Npc.visible = false
 			$Card_Mask/Card_BG/Evidence.visible = false
-			$Card_Mask/Card_BG/Closed_Status.visible = is_location_closed
+			$Card_Mask/Card_BG/Closed_Status.visible = (location_status == LocationStatus.CLOSED)
+			$Card_Mask/Card_BG/Crime_Scene_Status.visible = (location_status == LocationStatus.CRIME_SCENE)
 			$Card_Mask/Card_BG/Jail_Status.visible = false
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
@@ -233,6 +245,7 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Card_Color/Npc/Low_Health.visible = (npc_health == NpcHealth.LOW)
 			$Card_Mask/Card_BG/Evidence.visible = false
 			$Card_Mask/Card_BG/Closed_Status.visible = false
+			$Card_Mask/Card_BG/Crime_Scene_Status.visible = false
 			$Card_Mask/Card_BG/Jail_Status.visible = (npc_status == NpcStatus.JAIL)
 			$Card_Mask/Card_BG/Dead_Status.visible = (npc_status == NpcStatus.DEAD)
 			$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
