@@ -536,17 +536,6 @@ position = Vector2(1, 0)
 position = Vector2(66, 89)
 shape = SubResource("RectangleShape2D_km17i")
 
-[node name="Card_Locations" type="Node2D" parent="Mask_Card_Playground"]
-
-[node name="Reserve_Locations" type="Node2D" parent="Mask_Card_Playground/Card_Locations"]
-position = Vector2(-1, 0)
-
-[node name="First_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Reserve_Locations"]
-position = Vector2(14, 39)
-
-[node name="Last_Card" type="Marker2D" parent="Mask_Card_Playground/Card_Locations/Reserve_Locations"]
-position = Vector2(47, 39)
-
 [node name="Legend" type="Node2D" parent="Mask_Card_Playground"]
 
 [node name="Colors" type="Control" parent="Mask_Card_Playground/Legend"]
