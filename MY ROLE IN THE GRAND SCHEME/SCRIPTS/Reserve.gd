@@ -4,7 +4,8 @@ extends Node2D
 @export var card_size: Vector2 = Vector2(74, 100)
 @export var card_margin: int = 3
 
-var _first_card_index: int = 0
+var _max_card_count: int
+var _first_card_index: int
 var _current_card: int = -1
 var _tween: Tween
 
@@ -23,15 +24,15 @@ func _input(event: InputEvent):
 
 	# TODO: if reserve is full, expand while mouse is over it
 
-	var new_card = _current_card
+	var new_card = -1
 	var local_pos = to_local(event.global_position)
 	var bbox = Rect2(Vector2(0, 0), size)
+
 	if bbox.has_point(local_pos):
-		var vis_child_count = get_child_count() - _first_card_index
-		var pos = vis_child_count * local_pos.x / size.x
-		new_card = clampi(_first_card_index + (pos), 0, vis_child_count - 1)
-	else:
-		new_card = -1
+		var pos = _max_card_count * local_pos.x / size.x
+		var card_index = _first_card_index + pos
+		if card_index < get_child_count():
+			new_card = card_index
 
 	if _current_card == new_card:
 		return
@@ -67,11 +68,11 @@ func _input(event: InputEvent):
 
 func _layout():
 	_current_card = -1
+	_max_card_count = 1 + int((size.x - card_size.x) / card_margin)
 
-	var max_card_count = 1 + int((size.x - card_size.x) / card_margin)
 	var card_count = get_child_count()
-	if card_count > max_card_count:
-		_first_card_index = max_card_count - card_count
+	if card_count > _max_card_count:
+		_first_card_index = _max_card_count - card_count
 	else:
 		_first_card_index = 0
 
