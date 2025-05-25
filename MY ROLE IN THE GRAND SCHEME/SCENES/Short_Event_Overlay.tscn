@@ -573,6 +573,7 @@ color = Color(0.0941176, 0.109804, 0.0980392, 0.498039)
 position = Vector2(-640, 0)
 
 [node name="Card_Management" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Colliders" type="Node2D" parent="Overlays/Card_Management"]
 

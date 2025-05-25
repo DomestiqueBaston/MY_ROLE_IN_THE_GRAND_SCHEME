@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqhearrxagi71"]
+[gd_scene load_steps=25 format=3 uid="uid://dqhearrxagi71"]
 
 [ext_resource type="Texture2D" uid="uid://ddyok5fbos80x" path="res://GRAPHICS/INTERACTION_RESULT/Interaction_Result_BG.png" id="1_k2rcs"]
 [ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
@@ -26,34 +26,46 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqg13"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8585a"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h0p2l"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v86ur"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eugly"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xr4a5"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ajpu7"]
+content_margin_left = 1.0
+
 [node name="Interaction_Result" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="Interaction_Result_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_k2rcs")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Chalkboard_Content" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="Chalk_Mask" type="Sprite2D" parent="Chalkboard_Content"]
 clip_children = 1
 texture = ExtResource("2_0koxd")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Content" type="Control" parent="Chalkboard_Content/Chalk_Mask"]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("3_c5hnn")
-metadata/_edit_lock_ = true
 
 [node name="Title" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content"]
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Title"]
 visible = false
@@ -65,7 +77,6 @@ offset_bottom = 46.0
 bbcode_enabled = true
 text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Interrogation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
 autowrap_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Combat" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Title"]
 visible = false
@@ -77,7 +88,6 @@ offset_bottom = 48.0
 bbcode_enabled = true
 text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Combat Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
 autowrap_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Investigation" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Title"]
 layout_mode = 0
@@ -88,7 +98,6 @@ offset_bottom = 48.0
 bbcode_enabled = true
 text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Investigation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
 autowrap_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Report" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content"]
 modulate = Color(1, 1, 1, 0.752941)
@@ -122,19 +131,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 visible_characters_behavior = 1
-metadata/_edit_lock_ = true
 
 [node name="Dialogue" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
 visible = false
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
 offset_bottom = 286.0
-metadata/_edit_lock_ = true
 
 [node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(107, 40)
@@ -146,7 +152,6 @@ text = "[center]Well, that was intense, but I'm glad we had the conversation.
 It's a lot to take in, but I know I'm capable of handling it.
 Here's hoping things move in the right direction from here.
 And who knows - maybe this will all turn out better than expected.[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Sleeping_PNJ" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(107, 14)
@@ -155,7 +160,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Critical_Success_Emo" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(547, 20)
@@ -164,12 +168,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]But good news is, I can feel I'm [color=#ff1c18]emotionally[/color] regaining some [color=#ff8864]confidence[/color] after that little chat session.[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Report_Content_Including_Critical" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report"]
 layout_mode = 2
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_Relation" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
 custom_minimum_size = Vector2(111, 124)
@@ -178,7 +180,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center][color=#ff8864]Link relation[/color]:[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Links_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation"]
 layout_mode = 1
@@ -188,25 +189,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_01"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_01"]
 layout_mode = 2
@@ -216,14 +213,12 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Jean-Claude Tergal"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="And" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_01"]
 layout_mode = 2
 text = " & "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_02" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_01"]
 layout_mode = 2
@@ -233,20 +228,17 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Yoko Tsuno"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_01"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_01"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_01/Link_Color_Container"]
 custom_minimum_size = Vector2(8, 6)
@@ -255,25 +247,21 @@ size_flags_vertical = 0
 tooltip_text = "Link type"
 texture = ExtResource("4_k30ls")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_02"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_02"]
 layout_mode = 2
@@ -283,14 +271,12 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Nicolas Hulot"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="And" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_02"]
 layout_mode = 2
 text = " & "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_02" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_02"]
 layout_mode = 2
@@ -300,20 +286,17 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Jean-Vincent Placé"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_02"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_02"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_02/Link_Color_Container"]
 custom_minimum_size = Vector2(8, 6)
@@ -322,24 +305,20 @@ size_flags_vertical = 0
 tooltip_text = "Link type"
 texture = ExtResource("5_wphtr")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
-metadata/_edit_lock_ = true
 
 [node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_03"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_03"]
 layout_mode = 2
@@ -349,20 +328,17 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Pablo Picasso"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_03"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_03"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_03/Link_Color_Container"]
 custom_minimum_size = Vector2(8, 6)
@@ -371,31 +347,26 @@ size_flags_vertical = 0
 tooltip_text = "Link type"
 texture = ExtResource("6_8585a")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Separator_03" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
-metadata/_edit_lock_ = true
 
 [node name="Link_04" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_04"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Link_Relation/Links_Container/Link_04"]
 layout_mode = 2
 text = "... "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
 custom_minimum_size = Vector2(130, 124)
@@ -404,7 +375,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center][color=#ff8864]Personal information[/color]:[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Links_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information"]
 layout_mode = 1
@@ -414,25 +384,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -442,14 +408,12 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Bernard Arnault"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Schedule" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -457,14 +421,12 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = "Schedule"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Comma_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = ", "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Address" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -472,14 +434,12 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = "Adress"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Comma_02" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = ", "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Etc" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -487,25 +447,21 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = "Etc."
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -515,14 +471,12 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Vincent Boloré"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Property" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -530,14 +484,12 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = "Property"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Comma_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = ", "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Hangout" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -545,14 +497,12 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = "Hang out"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Comma_02" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = ", "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Etc" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -560,31 +510,26 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = "Etc."
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
-metadata/_edit_lock_ = true
 
 [node name="Link_04" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = "... "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Object_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
 custom_minimum_size = Vector2(101, 124)
@@ -593,7 +538,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center][color=#ff8864]Information[/color] about:[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Links_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information"]
 layout_mode = 1
@@ -603,25 +547,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="OBJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -631,21 +571,18 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Suppository"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Property" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = "Property of "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="PNJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -655,25 +592,21 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Michel Platini"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="OBJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -683,21 +616,18 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Wig"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Property" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = "Property of "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="PNJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -707,31 +637,26 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Donald Trump"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
-metadata/_edit_lock_ = true
 
 [node name="Link_04" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Object_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = "... "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Location_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical"]
 custom_minimum_size = Vector2(107, 124)
@@ -740,7 +665,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[color=#ff8864]Information[/color] related to:"
-metadata/_edit_lock_ = true
 
 [node name="Links_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information"]
 layout_mode = 1
@@ -750,25 +674,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="LOC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -778,21 +698,18 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Public Restroom"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Where2" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = "is where "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="PNJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -802,27 +719,23 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Pascal Obispo"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Space" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = " "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Work" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = "works:"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_01/Link_Color_Container"]
 custom_minimum_size = Vector2(8, 6)
@@ -831,32 +744,27 @@ size_flags_vertical = 0
 tooltip_text = "Link type"
 texture = ExtResource("7_wphtr")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Heard" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = "You've heard of "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="LOC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -866,31 +774,26 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Eiffel Tower"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
-metadata/_edit_lock_ = true
 
 [node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_03"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/Location_Information/Links_Container/Link_03"]
 layout_mode = 2
 text = "... "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Negative_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
 visible = false
@@ -898,7 +801,6 @@ layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
 offset_bottom = 268.0
-metadata/_edit_lock_ = true
 
 [node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(107, 30)
@@ -909,7 +811,6 @@ bbcode_enabled = true
 text = "[center]Great, just great. That conversation left me feeling like I'm in over my head. Typical.
 Let's hope this doesn't turn into an even bigger disaster.
 But knowing my luck, it probably will.[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Sleeping_PNJ" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(107, 14)
@@ -918,13 +819,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Rep_Critical_Failure_Container" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_wphtr")
-metadata/_edit_lock_ = true
 
 [node name="Rep_Critical_Failure" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container"]
 custom_minimum_size = Vector2(0, 10)
@@ -932,7 +831,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 0
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Beginning" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
@@ -944,7 +842,6 @@ text = "Anyway. It seems like "
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 2
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
@@ -958,7 +855,6 @@ text = "Manuel Valls"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="End" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report/Rep_Critical_Failure_Container/Rep_Critical_Failure"]
 custom_minimum_size = Vector2(10, 10)
@@ -969,7 +865,6 @@ bbcode_enabled = true
 text = " is a bit [color=#ff8864]less fond[/color] of me now."
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Emo_Critical_Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(107, 10)
@@ -978,18 +873,15 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]And what's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color].[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Combat" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat"]
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
 offset_bottom = 268.0
-metadata/_edit_lock_ = true
 
 [node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 custom_minimum_size = Vector2(107, 22)
@@ -999,13 +891,11 @@ size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]I hate when it comes to this. violence never feels like a win, even when you're the one left standing.
 Let's just hope this is the end of it. But who am I kidding with that?[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Normal_Success_Dead" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 visible = false
-custom_minimum_size = Vector2(0, 76)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
 custom_minimum_size = Vector2(107, 25)
@@ -1017,7 +907,6 @@ size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]By Zeus! The [color=#ff8864]bastard[/color] is [color=#ff1c18]dead[/color]. I went [color=#ff8864]too hard[/color]. Damn, this is just my luck!
 Should I [color=#ff1c18]search[/color] the [color=#ff8864]mofo[/color]?[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Yes_No" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
 custom_minimum_size = Vector2(0, 11)
@@ -1026,7 +915,6 @@ offset_top = 27.0
 offset_right = 547.0
 offset_bottom = 38.0
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Yes" type="Button" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Yes_No"]
 layout_mode = 2
@@ -1044,7 +932,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uqg13")
 text = "Yes!"
-metadata/_edit_lock_ = true
 
 [node name="No" type="Button" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Yes_No"]
 layout_mode = 2
@@ -1062,56 +949,122 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uqg13")
 text = "No..."
-metadata/_edit_lock_ = true
 
-[node name="If_Yes_Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
-custom_minimum_size = Vector2(547, 10)
-layout_mode = 2
+[node name="Search_Result" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
+custom_minimum_size = Vector2(547, 11)
+layout_mode = 0
 offset_top = 41.0
 offset_right = 547.0
 offset_bottom = 51.0
-bbcode_enabled = true
-text = "[center]Ok, I found [color=#ff1c18]XXdø[/color] in a pocket (and I'll keep that as a refund).[/center]"
-metadata/_edit_lock_ = true
+alignment = 1
 
-[node name="If_Yes_No_Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
+[node name="If_Yes_Search_Money" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Beginning" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Yes_Search_Money"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8585a")
+bbcode_enabled = true
+text = "Ok, I found "
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Yes_Search_Money"]
+custom_minimum_size = Vector2(4, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h0p2l")
+bbcode_enabled = true
+text = "50"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="End" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Yes_Search_Money"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v86ur")
+bbcode_enabled = true
+text = "[color=#ff1c18]dø[/color] in a pocket (and I'll keep that as a refund)."
+fit_content = true
+autowrap_mode = 0
+
+[node name="If_Yes_Search_No_Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
 visible = false
 custom_minimum_size = Vector2(547, 10)
 layout_mode = 2
-offset_top = 41.0
-offset_right = 547.0
-offset_bottom = 51.0
 bbcode_enabled = true
-text = "[center]Swell! I found [color=#ff1c18]nothing[/color]...[/center]"
-metadata/_edit_lock_ = true
+text = "[center]Swell! I found [color=#ff1c18]nothing[/color]![/center]"
 
-[node name="And_If_Yes_Wan" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
-custom_minimum_size = Vector2(547, 26)
+[node name="If_Search_And_Minion" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
-offset_top = 56.0
-offset_right = 547.0
-offset_bottom = 82.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Beginning" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Search_And_Minion"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eugly")
+bbcode_enabled = true
+text = "Anyway, At least I know now that"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="NPC" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Search_And_Minion"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xr4a5")
+bbcode_enabled = true
+text = "Michel Polnareff"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="End" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Search_And_Minion"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ajpu7")
+bbcode_enabled = true
+text = "sent you."
+fit_content = true
+autowrap_mode = 0
+
+[node name="And_If_Yes_Search_Wan_Triggered" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(547, 20)
+layout_mode = 2
 bbcode_enabled = true
 text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff8864]already know that[/color]. Crap!
 I must have been watched...[/center]"
-metadata/_edit_lock_ = true
 
-[node name="If_No" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead"]
+[node name="If_No_Search" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
 visible = false
 custom_minimum_size = Vector2(547, 10)
 layout_mode = 2
-offset_top = 41.0
-offset_right = 547.0
-offset_bottom = 51.0
 bbcode_enabled = true
 text = "[center]Well, I dont want to find myself in any more trouble...[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Normal_Success_Alive" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 visible = false
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Normal_Success_Alive"]
 custom_minimum_size = Vector2(107, 26)
@@ -1124,18 +1077,175 @@ theme_override_constants/line_separation = 4
 bbcode_enabled = true
 text = "[center]Ok! [color=#ff8864]We're both [color=#ff1c18]alive[/color][/color]. At least, [color=#ff1c18]I am[/color].
 See you next time, moron', don't even think I'll forget about you for a second![/center]"
-metadata/_edit_lock_ = true
 
-[node name="Critical_Success" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
+[node name="Critical_Success" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 visible = false
-custom_minimum_size = Vector2(107, 25)
+custom_minimum_size = Vector2(0, 52)
 layout_mode = 2
+
+[node name="Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success"]
+custom_minimum_size = Vector2(107, 36)
+layout_mode = 2
+offset_right = 547.0
+offset_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]It seems like that [color=#ff8864]trouble maker[/color] is [color=#ff1c18]out[/color] now. And I'm [color=#ff1c18]emotionally[/color] relieved [color=#ff8864]I didn't kill[/color] the mofo.
-Even though I'm pretty sure that we [color=#ff1c18]won't [color=#ff8864]be[/color] best friends[/color] [color=#ff8864]anymore[/color]...[/center]"
-metadata/_edit_lock_ = true
+Even though I'm pretty sure that we [color=#ff1c18]won't [color=#ff8864]be[/color] best friends[/color] [color=#ff8864]anymore[/color]...
+Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/color] while it doesn't move?[/center]"
+
+[node name="Yes_No" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success"]
+custom_minimum_size = Vector2(0, 11)
+offset_top = 38.0
+offset_right = 547.0
+offset_bottom = 49.0
+alignment = 1
+
+[node name="Yes" type="Button" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Yes_No"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 0.532333, 0.39, 0.752941)
+theme_override_colors/font_hover_color = Color(0.627333, 1, 0.57, 0.752941)
+theme_override_colors/font_color = Color(1, 0.959333, 0.39, 0.752941)
+theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
+theme_override_colors/font_pressed_color = Color(0.285013, 0.64, 0.2304, 0.752941)
+theme_override_constants/outline_size = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cxvq7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uqg13")
+text = "Yes!"
+
+[node name="No" type="Button" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Yes_No"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.388235, 0.752941)
+theme_override_colors/font_hover_color = Color(1, 0.388235, 0.388235, 0.752941)
+theme_override_colors/font_color = Color(1, 0.51, 0.51, 0.905882)
+theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
+theme_override_colors/font_pressed_color = Color(0.45, 0.047325, 0.0405, 0.752941)
+theme_override_constants/outline_size = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cxvq7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uqg13")
+text = "No..."
+
+[node name="Search_Result" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success"]
+custom_minimum_size = Vector2(547, 11)
+offset_top = 53.0
+offset_right = 547.0
+offset_bottom = 64.0
+alignment = 1
+
+[node name="If_Yes_Search_Money" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Beginning" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result/If_Yes_Search_Money"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8585a")
+bbcode_enabled = true
+text = "Ok, I found "
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result/If_Yes_Search_Money"]
+custom_minimum_size = Vector2(4, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h0p2l")
+bbcode_enabled = true
+text = "50"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="End" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result/If_Yes_Search_Money"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v86ur")
+bbcode_enabled = true
+text = "[color=#ff1c18]dø[/color] in a pocket (and I'll keep that as a refund)."
+fit_content = true
+autowrap_mode = 0
+
+[node name="If_Yes_Search_No_Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(547, 10)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Swell! I found [color=#ff1c18]nothing[/color]![/center]"
+
+[node name="If_Search_And_Minion" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Beginning" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result/If_Search_And_Minion"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eugly")
+bbcode_enabled = true
+text = "Anyway, At least I know now that"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="NPC" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result/If_Search_And_Minion"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xr4a5")
+bbcode_enabled = true
+text = "Michel Polnareff"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="End" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result/If_Search_And_Minion"]
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ajpu7")
+bbcode_enabled = true
+text = "sent you."
+fit_content = true
+autowrap_mode = 0
+
+[node name="And_If_Yes_Search_Wan_Triggered" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(547, 20)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff8864]already know that[/color]. Crap!
+I must have been watched...[/center]"
+
+[node name="If_No_Search" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Critical_Success/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(547, 10)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Well, I dont want to find myself in any more trouble...[/center]"
 
 [node name="Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 visible = false
@@ -1147,7 +1257,6 @@ theme_override_constants/line_separation = 3
 bbcode_enabled = true
 text = "[center]Ouch! [color=#ff1c18]I'm hurt[/color].
 I don't like that and I'm pretty sure I [color=#ff1c18]lost [color=#ff8864]my[/color] best buddy[/color] now.[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Critical_Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report"]
 visible = false
@@ -1157,21 +1266,18 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/line_separation = 3
 bbcode_enabled = true
-text = "[center]Great! Just great!, I [color=#ff1c18]hurt myself[/color] badly... It makes me [color=#ff1c18]nervous[/color]...
+text = "[center][color=#ff8864]Great[/color]! Just great! I [color=#ff1c18]hurt myself[/color] [color=#ff8864]badly[/color]... It makes me [color=#ff1c18]nervous[/color]...
 It won't help me focus, and that makes me even [color=#ff8864]more nervous[/color].[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Investigation" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
 visible = false
 anchors_preset = 0
-metadata/_edit_lock_ = true
 
 [node name="Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation"]
 layout_mode = 0
 offset_top = 56.0
 offset_right = 547.0
 offset_bottom = 268.0
-metadata/_edit_lock_ = true
 
 [node name="Generic_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 custom_minimum_size = Vector2(107, 31)
@@ -1183,7 +1289,6 @@ bbcode_enabled = true
 text = "[center]Searching through every corner, every hidden space,hoping to find something that will bring clarity.
 Each discovery is a piece of the puzzle, slowly revealing the bigger picture.
 But the journey is never easy, and the truth often remains elusive until the very end.[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Critical_Success_Money" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 custom_minimum_size = Vector2(107, 11)
@@ -1192,19 +1297,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center][color=#ff8864]Lucky me[/color]! I found [color=#ff1c18]XXDø[/color]. Sorry guys, I'll keep that...[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 4
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Normal_And_Critical_Success" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 custom_minimum_size = Vector2(0, 149)
 layout_mode = 2
 alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Object_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(101, 141)
@@ -1213,7 +1315,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center][color=#ff8864]Stuff[/color] I found here:[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Links_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information"]
 layout_mode = 1
@@ -1223,25 +1324,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="OBJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -1251,14 +1348,12 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Bluetooth dildo"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Property" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = " belongs to "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="PNJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -1268,20 +1363,17 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Vladimir Putin"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_01"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_01/Link_Color_Container"]
 custom_minimum_size = Vector2(8, 6)
@@ -1290,25 +1382,21 @@ size_flags_vertical = 0
 tooltip_text = "Link type"
 texture = ExtResource("7_h0p2l")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 3
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="OBJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -1318,38 +1406,32 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Old brush"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Unknown" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = "?"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 3
-metadata/_edit_lock_ = true
 
 [node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_03"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="OBJ_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_03"]
 layout_mode = 2
@@ -1359,45 +1441,38 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Sewing machine"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_03"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Unknown" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_03"]
 layout_mode = 2
 text = "?"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Separator_03" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 3
-metadata/_edit_lock_ = true
 
 [node name="Link_04" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Object_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = "... "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success"]
 custom_minimum_size = Vector2(111, 141)
@@ -1406,7 +1481,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
 text = "[center]Uncovered [color=#ff8864]link relation[/color]:[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Links_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information"]
 layout_mode = 1
@@ -1416,25 +1490,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-metadata/_edit_lock_ = true
 
 [node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -1444,7 +1514,6 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Geoff Levner"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Hangout" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -1452,7 +1521,6 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = " hangs out "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="LOC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_01"]
 layout_mode = 2
@@ -1462,20 +1530,17 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "here"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_01"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_01"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_01/Link_Color_Container"]
 custom_minimum_size = Vector2(8, 6)
@@ -1484,25 +1549,21 @@ size_flags_vertical = 0
 tooltip_text = "Link type"
 texture = ExtResource("8_v86ur")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 3
 horizontal_alignment = 1
-metadata/_edit_lock_ = true
 
 [node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -1512,14 +1573,12 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Ferdinand Boutard"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Hideout_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = " comes "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="LOC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -1529,14 +1588,12 @@ theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "here"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Hideout_02" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = " to "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Hideout_03" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 layout_mode = 2
@@ -1544,20 +1601,17 @@ theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 text = "hide"
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = ": "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 0
-metadata/_edit_lock_ = true
 
 [node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_02/Link_Color_Container"]
 custom_minimum_size = Vector2(8, 6)
@@ -1566,31 +1620,26 @@ size_flags_vertical = 0
 tooltip_text = "Link type"
 texture = ExtResource("9_eugly")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Separator_02" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 3
-metadata/_edit_lock_ = true
 
 [node name="Link_04" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
-metadata/_edit_lock_ = true
 
 [node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_04"]
 layout_mode = 2
 text = "... "
 fit_content = true
 autowrap_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 visible = false
@@ -1602,7 +1651,6 @@ theme_override_constants/line_separation = 3
 bbcode_enabled = true
 text = "[center]what? [color=#ff1c18]Nothing here[/color]?
 Hm... [color=#ff8864]This isn't good[/color] at all. I was pretty sure I'd find something... [color=#ff1c18]I'm doomed[/color]![/center]"
-metadata/_edit_lock_ = true
 
 [node name="Critical_Failure" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report"]
 visible = false
@@ -1613,7 +1661,6 @@ size_flags_vertical = 0
 theme_override_constants/line_separation = 3
 bbcode_enabled = true
 text = "[center]Swell! I [color=#ff1c18]hurt myself[/color]... Is there something else?[/center]"
-metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Chalkboard_Content"]
 modulate = Color(1, 1, 1, 0.941176)
@@ -1626,7 +1673,6 @@ tooltip_text = "Close that window!"
 theme = ExtResource("3_c5hnn")
 text = "Oh well!"
 script = ExtResource("5_vxlp8")
-metadata/_edit_lock_ = true
 
 [connection signal="mouse_entered" from="Chalkboard_Content/Quit" to="Chalkboard_Content/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Chalkboard_Content/Quit" to="Chalkboard_Content/Quit" method="_on_mouse_exited"]

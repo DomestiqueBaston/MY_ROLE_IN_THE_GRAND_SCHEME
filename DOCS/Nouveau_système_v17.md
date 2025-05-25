@@ -35,8 +35,6 @@ Emo	Effets et/ou modificateur de jet de dé
 	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
 	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites critiques n’entraînent pas d’évolution de HEA ni HEAnom.
 	- Les réussites/échecs critiques n’entraînent pas de progression du joueur (ni n’amplifient les résultats) !
-	- Voir également Paranoïa (Par) pour les effets sur Add.
-
 Add	Effet et/ou modificateur de jet de dé
 -3	Mort si un jet de dé avec malus de 1 contre HEA est raté
 sinon
@@ -50,7 +48,8 @@ sinon
 sinon
 -1HEA, ±1Emo → min/max et Add = 2
 
-	- Si le joueur réussit 10 jets de dé contre la mort par sous-dose (Add = -3) d’affilé, sans avoir repris de drogue, alors il est sevré ! Il n’a plus besoin de se droguer et son niveau passe à Add = 0 permanent (menu désactivé). Le joueur ne peut pas revendre ses doses restantes pour autant.
+	- Voir également Paranoïa (Par) pour les effets sur Add.
+	- Voir aussi Système de santé/L’addiction pour le sevrage (et la replonge).
 
 Réputation (Rep)
 	- La réputation sera évaluée de -2 à 2. Elle représentera la qualité des relations entre le joueur et le PNJ ainsi qu’un Bonus/Malus d’interaction avec le PNJ aux jets de dé suivant le tableau ci-dessous. Le joueur aura par défaut Rep = 0 avec chaque PNJ (sauf voir Sbires).
@@ -222,14 +221,13 @@ Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, A
 
 L’addiction
 	- L’Add évolue au réveil (-1Add). Le joueur a besoin de sa dose (presque) quotidienne qui lui coûte de l’argent.
-	- Avec 1 dose : +1Add.
+	- Avec 1 dose de drogue : +1Add.
 	- Le joueur peut prendre 2 doses maximum par jour. Au delà, ce serait l’overdose !
 	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur.
-	- Utiliser 1 dose drogue prend 1h. (et uniquement sur Main.tscn !).
+	- Utiliser 1 ou 2 doses de drogue d’un coup prend 1h.
 	- Paranoïa empêche la prise de drogue.
-
-Crise liée à l’Addiction
-	- Cas d’Add à -3 ou +3 : voir État d’addiction (Add) au début des règles.
+	- Si le joueur réussit 5 jets de dé contre la mort par sous-dose (Add = -3) d’affilé, sans avoir repris de drogue entre-temps, alors il est sevré ! Il n’a plus besoin de se droguer et son niveau passe à Add = 0 permanent (menu désactivé). Le joueur ne peut pas revendre ses doses restantes pour autant.
+		- Dans ce cas, si les finances du joueur passent sous la barre de -250Dø, alors il replonge !
 
 Crise de paranoïa
 	- La paranoïa se déclenche après :
@@ -237,7 +235,7 @@ Crise de paranoïa
 	ou	5 enquêtes ratées ou abandonnées d’affilé.
 	ou	Après 10 nuits de 4h (le minimum de durée) au total.
 	ou	5 jours consécutifs à PHY, MEN et HEA ≤ 2.
-	ou	10 combats avec des sbires.
+	ou	15 combats avec des sbires.
 	ou	la réception de 15 SMS anonymes.
 	ou	10 factures non réglées le lundi au total.
 
@@ -584,7 +582,7 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- /!\ Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr où le joueur ne peut pas être attaqué)! /!\ 
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
-	-  Avec une probabilité de 25%, tuer un sbire envoyé pour attaquer le joueur permettra de révéler le nom du/d’un des commanditaire(s) du crime de l’enquête et donc du ou d’un coupable de l’enquête (établissement d’un Lien Violet). Être attaqué, malgré la révélation n’est pas une preuve pour l’enquête.
+	- Si le joueur fouille le sbire mort, avec une probabilité de 25%, le joueur se verra révéler le nom du/d’un des coupable(s) du crime de l’enquête (aléatoirement s’il y en a plusieurs) (établissement d’un Lien Violet) et comme pour un « non sbire », on peut aussi trouver de l’argent avec les même probabilités (voir plus haut à Combat). Être attaqué, malgré la révélation n’est pas une preuve pour l’enquête.
 
 Fuir un Combat (Joueur) – RUN AWAY
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir SAUF avant un Dialogue.
@@ -779,7 +777,8 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 	 - La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante :
 		- Un Coupable est lié (en Noir) à la victime.
 		- Un Complice est lié (en Noir) au Coupable.
-	- Les Témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable.
+	- Les Témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable. /!\  Faire en sorte qu’au départ de l’enquête cette condition soit remplie ! /!\ 
+	- On caractérise un Objet en evidence en le liant en noir plein à un Coupable ou un Complice.
 	- Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
 	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 	- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenus/connus par des PNJs.
