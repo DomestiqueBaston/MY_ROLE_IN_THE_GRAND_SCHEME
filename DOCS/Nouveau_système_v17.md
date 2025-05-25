@@ -537,14 +537,17 @@ Combat
 		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Facture, Sommeil, de Lieu (uniquement sur place), Malus d’action de Nuit.
 		Pour le PNJ : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
+	- Un échec signifie que le protagoniste rate son coup.
 	- Par défaut et en cas de réussite (y compris critique), chacun inflige des dégâts à l’autre définis par la marge de réussite :
-		- Un échec signifie que le protagoniste rate son coup.
-		- Si tous ratent : il ne se passera rien !
-		- En cas de 2 réussites, le vainqueur ne subit que 50% des dégâts s’il doit en recevoir. Si le vainqueur est le seul à faire une réussite critique, il ne prend aucun dégât.
-		- En cas d’égalité, tout le monde prend 100%.
-		- En cas d’égalité sur réussite critique, tout le monde prend 50%.
-		- Une réussite critique fait +1HEA de dégât à l’attaque et permet aussi au joueur (uniquement) de ne pas tuer si jamais le PNJ aurait dû mourir. La victime sera à HEA=1. ±1Emo → O pour le joueur. La règle de progression s’applique.
-		- Un échec critique fait aussi que le joueur ou le PNJ se blesse et prend 1HEA de dégâts en plus et ±1Emo → Min/Max (pour le joueur uniquement !). La règle de progression s’applique.
+		- 1 réussite critique (joueur) :
+			100% de dégâts  et +1HEA dégât (si mort -> pas mort -> KO) et ±1Emo -> 0. La règle de progression s’applique.
+		- 1 réussite critique (PNJ) :
+			100% de dégâts  et +1HEA dégât et ±1Emo -> min/max. La règle de progression s’applique.
+		- 1 échec critique (joueur) :
+			+1HEA de dégât et ±1Emo -> min/max. La règle de progression s’applique.
+		- 1 échec critique (PNJ) :
+			+1HEA de dégât. La règle de progression s’applique.
+		- Réussite critique d'un côté et échec critique de l'autre peuvent se cumuler.
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances. (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).

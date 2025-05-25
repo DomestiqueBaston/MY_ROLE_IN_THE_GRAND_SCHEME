@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://6u8qm8dm4oy4"]
+[gd_scene load_steps=39 format=3 uid="uid://6u8qm8dm4oy4"]
 
 [ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://GRAPHICS/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_fl50a"]
 [ext_resource type="Theme" uid="uid://bnunycy4luos4" path="res://UI/Paranoia_Communication_Theme.tres" id="2_fjgqo"]
@@ -31,64 +31,34 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guovx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wk6x6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbb0o"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3eav"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhlv7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cl5n"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cp5b"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fl50a"]
-content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjgqo"]
-content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cog1"]
-content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2jmb"]
-content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wov1o"]
-content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlpjj"]
-content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxiw5"]
+content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yrw8b"]
+content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xb81k"]
+content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymndd"]
+content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhvlv"]
+content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqw3g"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kd5g3"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc88q"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tm4rt"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gudfm"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nkary"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6nnc"]
 content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if43b"]
@@ -1136,31 +1106,99 @@ bbcode_enabled = true
 text = "[center]I hate when it comes to this. violence never feels like a win, even when you're the one left standing.
 Let's just hope this is the end of it. But who am I kidding with that?[/center]"
 
-[node name="Normal_Success_Dead" type="Control" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
+[node name="Result" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
+custom_minimum_size = Vector2(539, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Player_Success_Or_Fail" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]Ok! [color=#ff8864]I am [color=#ff1c18]alive[/color][/color]. That's a [color=#ff1c18]good[/color] [color=#ff8864]thing[/color]...[/center]"
+
+[node name="But_Player_Hit" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]...considering [color=#ff8864]I also [color=#ff1c18]got hit[/color] by that [color=#ff1c18]freak[/color][/color]![/center]"
+
+[node name="But_Player_Critically_Hit" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]...considering [color=#ff8864]I also [color=#ff1c18]got seriously hit[/color] by that [color=#ff1c18]freak[/color][/color]! Hell! I [color=#ff1c18]didn't[/color] [color=#ff8864]need that[/color].[/center]"
+
+[node name="Player_Critical_Hit_Or_No_Kill" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
 visible = false
-custom_minimum_size = Vector2(0, 76)
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]But somehow, I [color=#ff8864]managed[/color] to [color=#ff1c18]spare[/color] my [color=#ff1c18]opponent[/color]'s [color=#ff1c18]life[/color] and that's a [color=#ff1c18]KO[/color] [color=#ff8864]for the count[/color].[/center]"
+
+[node name="End_NPC_Alive" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center][color=#ff8864]See you[/color] [color=#ff1c18]next time[/color], but don't even think I'll forget about you for a second![/center]"
+
+[node name="End_NPC_Dead" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
+visible = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]That was a [color=#ff8864]hell of a fight[/color] but you [color=#ff8864]pushed[/color] your [color=#ff1c18]luck too far[/color], my friend![/center]"
+
+[node name="Separator" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = " "
+
+[node name="Search_Body" type="Control" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result"]
 layout_mode = 2
 
-[node name="Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead"]
-custom_minimum_size = Vector2(107, 25)
+[node name="Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body"]
+custom_minimum_size = Vector2(107, 11)
 layout_mode = 2
 offset_right = 547.0
-offset_bottom = 22.0
+offset_bottom = 11.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]By Zeus! The [color=#ff8864]bastard[/color] is [color=#ff1c18]dead[/color]. I went [color=#ff8864]too hard[/color]. Damn, this is just my luck!
-Should I [color=#ff1c18]search[/color] the [color=#ff8864]mofo[/color]?[/center]"
+text = "[center]Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/color]?[/center]"
 
-[node name="Yes_No" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead"]
+[node name="Yes_No" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body"]
 custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
-offset_top = 27.0
-offset_right = 539.0
-offset_bottom = 38.0
+offset_top = 11.0
+offset_right = 547.0
+offset_bottom = 22.0
 alignment = 1
 
-[node name="Yes" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Yes_No"]
+[node name="Yes" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Yes_No"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 0.532333, 0.39, 0.752941)
@@ -1169,204 +1207,15 @@ theme_override_colors/font_color = Color(1, 0.959333, 0.39, 0.752941)
 theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
 theme_override_colors/font_pressed_color = Color(0.285013, 0.64, 0.2304, 0.752941)
 theme_override_constants/outline_size = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wk6x6")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jbb0o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_c3eav")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bhlv7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8cl5n")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8cp5b")
-text = "Yes!"
-
-[node name="Space" type="Label" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Yes_No"]
-layout_mode = 2
-text = "  "
-
-[node name="No" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Yes_No"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.388235, 0.752941)
-theme_override_colors/font_hover_color = Color(1, 0.388235, 0.388235, 0.752941)
-theme_override_colors/font_color = Color(1, 0.51, 0.51, 0.905882)
-theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
-theme_override_colors/font_pressed_color = Color(0.45, 0.047325, 0.0405, 0.752941)
-theme_override_constants/outline_size = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wk6x6")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jbb0o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_c3eav")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bhlv7")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8cl5n")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_8cp5b")
-text = "No..."
-
-[node name="Search_Result" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead"]
-custom_minimum_size = Vector2(539, 11)
-offset_top = 41.0
-offset_right = 539.0
-offset_bottom = 52.0
-alignment = 1
-
-[node name="If_Yes_Search_Money" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
-visible = false
-custom_minimum_size = Vector2(0, 11)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = -1
-alignment = 1
-
-[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Yes_Search_Money"]
-custom_minimum_size = Vector2(11, 11)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_fl50a")
-bbcode_enabled = true
-text = "Ok, I found "
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 2
-
-[node name="Money" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Yes_Search_Money"]
-custom_minimum_size = Vector2(4, 11)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_fjgqo")
-bbcode_enabled = true
-text = "50"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Yes_Search_Money"]
-custom_minimum_size = Vector2(11, 11)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2cog1")
-bbcode_enabled = true
-text = "[color=#ff1c18]dø[/color] in a pocket (and I'll keep that as a refund)."
-fit_content = true
-autowrap_mode = 0
-
-[node name="If_Yes_Search_No_Money" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
-visible = false
-custom_minimum_size = Vector2(547, 10)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center]Swell! I found [color=#ff1c18]nothing[/color]![/center]"
-
-[node name="If_Search_And_Minion" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
-visible = false
-custom_minimum_size = Vector2(0, 11)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 4
-alignment = 1
-
-[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Search_And_Minion"]
-custom_minimum_size = Vector2(11, 11)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_q2jmb")
-bbcode_enabled = true
-text = "Anyway, At least I know now that"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 2
-
-[node name="NPC" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Search_And_Minion"]
-custom_minimum_size = Vector2(11, 11)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wov1o")
-bbcode_enabled = true
-text = "Michel Polnareff"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result/If_Search_And_Minion"]
-custom_minimum_size = Vector2(11, 11)
-layout_mode = 2
-size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fl50a")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fjgqo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2cog1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q2jmb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wov1o")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rlpjj")
-bbcode_enabled = true
-text = "sent you."
-fit_content = true
-autowrap_mode = 0
-
-[node name="And_If_Yes_Search_Wan_Triggered" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
-visible = false
-custom_minimum_size = Vector2(539, 20)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff8864]already know that[/color]. Crap!
-I must have been watched...[/center]"
-
-[node name="If_No_Search" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Dead/Search_Result"]
-visible = false
-custom_minimum_size = Vector2(539, 10)
-layout_mode = 2
-bbcode_enabled = true
-text = "[center]Well, I dont want to find myself in any more trouble...[/center]"
-
-[node name="Normal_Success_Alive" type="Control" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
-visible = false
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-
-[node name="Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Normal_Success_Alive"]
-custom_minimum_size = Vector2(107, 26)
-layout_mode = 2
-offset_right = 547.0
-offset_bottom = 22.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_constants/line_separation = 4
-bbcode_enabled = true
-text = "[center]Ok! [color=#ff8864]We're both [color=#ff1c18]alive[/color][/color]. At least, [color=#ff1c18]I am[/color].
-See you next time, moron', don't even think I'll forget about you for a second![/center]"
-
-[node name="Critical_Success" type="Control" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
-custom_minimum_size = Vector2(0, 52)
-layout_mode = 2
-
-[node name="Information" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success"]
-custom_minimum_size = Vector2(107, 36)
-layout_mode = 2
-offset_right = 547.0
-offset_bottom = 25.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
-bbcode_enabled = true
-text = "[center]It seems like that [color=#ff8864]trouble maker[/color] is [color=#ff1c18]out[/color] now. And I'm [color=#ff1c18]emotionally[/color] relieved [color=#ff8864]I didn't kill[/color] the mofo.
-Even though I'm pretty sure that we [color=#ff1c18]won't [color=#ff8864]be[/color] best friends[/color] [color=#ff8864]anymore[/color]...
-Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/color] while it doesn't move?[/center]"
-
-[node name="Yes_No" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success"]
-custom_minimum_size = Vector2(0, 11)
-offset_top = 38.0
-offset_right = 547.0
-offset_bottom = 49.0
-alignment = 1
-
-[node name="Yes" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Yes_No"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 0.532333, 0.39, 0.752941)
-theme_override_colors/font_hover_color = Color(0.627333, 1, 0.57, 0.752941)
-theme_override_colors/font_color = Color(1, 0.959333, 0.39, 0.752941)
-theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
-theme_override_colors/font_pressed_color = Color(0.285013, 0.64, 0.2304, 0.752941)
-theme_override_constants/outline_size = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_kxiw5")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_yrw8b")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xb81k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ymndd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mhvlv")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iqw3g")
 text = "Yes!"
 
-[node name="No" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Yes_No"]
+[node name="No" type="Button" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Yes_No"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.388235, 0.752941)
@@ -1375,146 +1224,125 @@ theme_override_colors/font_color = Color(1, 0.51, 0.51, 0.905882)
 theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
 theme_override_colors/font_pressed_color = Color(0.45, 0.047325, 0.0405, 0.752941)
 theme_override_constants/outline_size = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_kxiw5")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_yrw8b")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xb81k")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ymndd")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mhvlv")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iqw3g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fl50a")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fjgqo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2cog1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_q2jmb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wov1o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rlpjj")
 text = "No..."
 
-[node name="Search_Result" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success"]
+[node name="Search_Result" type="VBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body"]
 custom_minimum_size = Vector2(547, 11)
-offset_top = 53.0
+layout_mode = 0
+offset_top = 25.0
 offset_right = 547.0
-offset_bottom = 64.0
+offset_bottom = 46.0
+theme_override_constants/separation = 0
 alignment = 1
 
-[node name="If_Yes_Search_Money" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result"]
-visible = false
+[node name="If_Yes_Search_Money" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result"]
 custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = -1
 alignment = 1
 
-[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result/If_Yes_Search_Money"]
+[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result/If_Yes_Search_Money"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_kd5g3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kxiw5")
 bbcode_enabled = true
 text = "Ok, I found "
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 2
 
-[node name="Money" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result/If_Yes_Search_Money"]
+[node name="Money" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result/If_Yes_Search_Money"]
 custom_minimum_size = Vector2(4, 11)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_dc88q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yrw8b")
 bbcode_enabled = true
 text = "50"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result/If_Yes_Search_Money"]
+[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result/If_Yes_Search_Money"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tm4rt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xb81k")
 bbcode_enabled = true
 text = "[color=#ff1c18]dø[/color] in a pocket (and I'll keep that as a refund)."
 fit_content = true
 autowrap_mode = 0
 
-[node name="If_Yes_Search_No_Money" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result"]
+[node name="If_Yes_Search_No_Money" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result"]
 visible = false
 custom_minimum_size = Vector2(547, 10)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Swell! I found [color=#ff1c18]nothing[/color]![/center]"
 
-[node name="If_Search_And_Minion" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result"]
-visible = false
+[node name="If_Search_And_Minion" type="HBoxContainer" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result"]
 custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result/If_Search_And_Minion"]
+[node name="Beginning" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result/If_Search_And_Minion"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gudfm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ymndd")
 bbcode_enabled = true
-text = "Anyway, At least I know now that"
+text = "Anyway, I know now that"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 2
 
-[node name="NPC" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result/If_Search_And_Minion"]
+[node name="NPC" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result/If_Search_And_Minion"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "We have a
+guilty party."
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nkary")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mhvlv")
 bbcode_enabled = true
 text = "Michel Polnareff"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result/If_Search_And_Minion"]
+[node name="End" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result/If_Search_And_Minion"]
 custom_minimum_size = Vector2(11, 11)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxEmpty_c6nnc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iqw3g")
 bbcode_enabled = true
 text = "sent you."
 fit_content = true
 autowrap_mode = 0
 
-[node name="And_If_Yes_Search_Wan_Triggered" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result"]
-visible = false
+[node name="And_If_Yes_Search_Wan_Triggered" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result"]
 custom_minimum_size = Vector2(547, 20)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]But somehow the [color=#ff1c18]cops[/color] seem to [color=#ff8864]already know that[/color]. Crap!
 I must have been watched...[/center]"
 
-[node name="If_No_Search" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Critical_Success/Search_Result"]
+[node name="If_No_Search" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report/Result/Search_Body/Search_Result"]
 visible = false
 custom_minimum_size = Vector2(547, 10)
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Well, I dont want to find myself in any more trouble...[/center]"
-
-[node name="Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
-visible = false
-custom_minimum_size = Vector2(107, 22)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_constants/line_separation = 3
-bbcode_enabled = true
-text = "[center]Ouch! [color=#ff1c18]I'm hurt[/color].
-I don't like that and I'm pretty sure I [color=#ff1c18]lost [color=#ff8864]my[/color] best buddy[/color] now.[/center]"
-
-[node name="Critical_Failure" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Combat/Report"]
-visible = false
-custom_minimum_size = Vector2(107, 25)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-theme_override_constants/line_separation = 3
-bbcode_enabled = true
-text = "[center]Great! Just great!, I [color=#ff1c18]hurt myself[/color] badly... It makes me [color=#ff1c18]nervous[/color]...
-It won't help me focus, and that makes me even [color=#ff8864]more nervous[/color].[/center]"
 
 [node name="Investigation" type="Control" parent="Content/Frame_Content/Report_Margin/Report"]
 visible = false
