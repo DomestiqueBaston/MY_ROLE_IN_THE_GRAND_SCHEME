@@ -306,15 +306,15 @@ func _update_opacity():
 
 func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton:
-		if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
-			get_viewport().set_input_as_handled()
+		get_viewport().set_input_as_handled()
+		if $Card_Animations.is_playing():
+			pass
+		elif event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
 			Globals.card_right_click.emit(event.global_position, self)
 		elif event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			if not event.double_click:
-				get_viewport().set_input_as_handled()
 				Globals.card_left_click.emit(event.global_position, self)
 			elif not is_stacked:
-				get_viewport().set_input_as_handled()
 				expand_or_reduce()
 
 func _on_card_collider_mouse_entered():
