@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://dp0w6weh47mk3"
+uid="uid://dy0dmruiaheen"
 path="res://.godot/imported/Transition.ogg-1a3d7200aeb34616eb52aaf42bf0b613.oggvorbisstr"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Transition.ogg-1a3d7200aeb34616eb52aaf42bf0b6
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

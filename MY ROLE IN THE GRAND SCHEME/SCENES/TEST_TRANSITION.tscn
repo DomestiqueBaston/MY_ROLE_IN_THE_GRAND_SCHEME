@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://bd85rbmyb41ao" path="res://SHADERS/Transition.gdshader" id="2_xdsvn"]
 [ext_resource type="Texture2D" uid="uid://p7s0wnrs0r8d" path="res://GRAPHICS/UI/Transition.png" id="3_emnbv"]
 [ext_resource type="Texture2D" uid="uid://cnhkjrpfymc3y" path="res://GRAPHICS/TITLE/Title_01.png" id="4_36l1k"]
-[ext_resource type="AudioStream" uid="uid://hry1iqn6thvh" path="res://SOUND/MISC/Transition.ogg" id="5_sslsy"]
+[ext_resource type="AudioStream" uid="uid://dy0dmruiaheen" path="res://SOUND/OVERLAYS/Transition.ogg" id="5_sslsy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlapj"]
 shader = ExtResource("2_xdsvn")
@@ -41,7 +41,7 @@ tracks/1/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("5_sslsy")
 }],
-"times": PackedFloat32Array(0.0340355)
+"times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
 tracks/2/type = "value"
@@ -132,5 +132,5 @@ libraries = {
 autoplay = "Fade"
 
 [node name="Transition" type="AudioStreamPlayer" parent="."]
-volume_db = -15.0
+volume_db = -12.5
 bus = &"UI"
