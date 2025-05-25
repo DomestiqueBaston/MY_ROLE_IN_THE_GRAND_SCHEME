@@ -111,9 +111,10 @@ func _drag(global_pos: Vector2):
 func _abort_drag():
 	Globals.dragging = false
 	_current_card.stop_drag()
-	_current_card.reparent(_drag_parent, false)
+	_current_card.reparent(_drag_parent)
 	_drag_parent.move_child(_current_card, _drag_index)
-	_current_card.position = _drag_local_init_pos
+	create_tween().tween_property(
+		_current_card, "position", _drag_local_init_pos, 0.15)
 
 func _is_in_playground(global_pos: Vector2):
 	var local_rect = playground_shape.shape.get_rect()
