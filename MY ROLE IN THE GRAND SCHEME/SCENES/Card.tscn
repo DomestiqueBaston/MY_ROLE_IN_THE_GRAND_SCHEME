@@ -1294,6 +1294,7 @@ _data = {
 script = ExtResource("2_2qjxn")
 
 [node name="Card_Collider" type="Area2D" parent="."]
+monitorable = false
 
 [node name="Card" type="CollisionShape2D" parent="Card_Collider"]
 position = Vector2(37, 50)

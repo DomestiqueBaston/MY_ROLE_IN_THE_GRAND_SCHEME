@@ -119,6 +119,7 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="Link_Collider" type="Area2D" parent="Link_Texture"]
+monitorable = false
 
 [node name="Collider" type="CollisionShape2D" parent="Link_Texture/Link_Collider"]
 position = Vector2(4, 1.5)
