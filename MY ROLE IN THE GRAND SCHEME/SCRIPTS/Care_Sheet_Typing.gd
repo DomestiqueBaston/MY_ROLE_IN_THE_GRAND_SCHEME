@@ -4,7 +4,6 @@ var actual_value = 0.0
 var pitch_values = [1.2, 0.8, 1.0]
 
 func _process(_delta):
-
 	if $".".visible_ratio < 1.0:
 		if not $"../../Typing".is_playing():
 			# There is an unwanted delay with the typing sound...

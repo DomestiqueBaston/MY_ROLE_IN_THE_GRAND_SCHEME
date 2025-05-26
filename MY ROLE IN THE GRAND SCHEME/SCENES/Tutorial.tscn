@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_yb185"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="2_m6hlk"]
 [ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="3_5nlpe"]
-[ext_resource type="Script" uid="uid://dyualyplyafd2" path="res://SCRIPTS/Typing.gd" id="4_b7xnw"]
+[ext_resource type="Script" uid="uid://dyualyplyafd2" path="res://SCRIPTS/Tutorial_Typing.gd" id="4_b7xnw"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_dc34s"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_gwqe6"]
 
