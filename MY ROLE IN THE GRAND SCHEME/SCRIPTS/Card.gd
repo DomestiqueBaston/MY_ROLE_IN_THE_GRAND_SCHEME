@@ -281,7 +281,7 @@ func expand_or_reduce():
 
 ##
 ## Specifies whether or not the card is highlighted. When a card is highlighted,
-## its Z index is set to 1 and its shadow is displayed. Sounds are played when a
+## its Z index is set to 2 and its shadow is displayed. Sounds are played when a
 ## card's highlight state changes.
 ##
 func set_highlighted(highlighted: bool):
@@ -291,7 +291,7 @@ func set_highlighted(highlighted: bool):
 			Globals.card_exited_sound.stop()
 		if not Globals.card_entered_sound.playing:
 			Globals.card_entered_sound.play()
-		z_index = 1
+		z_index = 2
 	else:
 		$Shadow_Animations.play("Shadow_Off")
 		if not Globals.card_entered_sound.playing:

@@ -14,12 +14,6 @@ var _current_card: Card
 enum DragState { NONE, CLICKED, DRAGGING }
 var _drag_state: DragState = DragState.NONE
 
-# current card's parent node when dragging began
-var _drag_parent: Node
-
-# current card's index in its parent when dragging began
-var _drag_index: int
-
 # current card's position in local coordinates when dragging began
 var _drag_local_init_pos: Vector2
 
@@ -97,11 +91,8 @@ func _click_on_card(global_pos: Vector2, card: Card):
 
 func _start_drag():
 	Globals.dragging = true
-	_drag_parent = _current_card.get_parent()
-	_drag_index = _current_card.get_index()
 	_drag_local_init_pos = _current_card.position
 	_drag_global_init_pos = _current_card.global_position
-	_current_card.reparent($".")
 	_current_card.start_drag()
 
 func _drag(global_pos: Vector2):
@@ -109,12 +100,11 @@ func _drag(global_pos: Vector2):
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
 
 func _abort_drag():
+	var tween = create_tween()
+	tween.tween_property(_current_card, "position", _drag_local_init_pos, 0.15)
+	await tween.finished
 	Globals.dragging = false
 	_current_card.stop_drag()
-	_current_card.reparent(_drag_parent)
-	_drag_parent.move_child(_current_card, _drag_index)
-	create_tween().tween_property(
-		_current_card, "position", _drag_local_init_pos, 0.15)
 
 func _is_in_playground(global_pos: Vector2):
 	var local_rect = playground_shape.shape.get_rect()
