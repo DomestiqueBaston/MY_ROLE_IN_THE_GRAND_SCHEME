@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfmit6at3wmw6"]
+[gd_scene load_steps=7 format=3 uid="uid://dfmit6at3wmw6"]
+
+[ext_resource type="Script" uid="uid://c6djtaf0dia6m" path="res://SCRIPTS/Drag_Drop_Line.gd" id="1_dyppl"]
 
 [sub_resource type="Gradient" id="Gradient_7eyd2"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.870588)
@@ -98,6 +100,7 @@ _data = {
 }
 
 [node name="Drag_Drop_Line" type="Node2D"]
+script = ExtResource("1_dyppl")
 
 [node name="Line" type="Line2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)

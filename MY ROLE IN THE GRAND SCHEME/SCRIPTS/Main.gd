@@ -94,27 +94,26 @@ func _start_drag():
 	_drag_local_init_pos = _current_card.position
 	_drag_global_init_pos = _current_card.global_position
 	_current_card.start_drag()
+	if _current_card.is_stacked:
+		var line = $TMP_2/Drag_Drop_Line
+		line.point1 = _drag_click_pos
+		line.point2 = _drag_click_pos
+		line.show_line()
 
 func _drag(global_pos: Vector2):
 	_current_card.global_position = \
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
+	if _current_card.is_stacked:
+		$TMP_2/Drag_Drop_Line.point2 = global_pos
 
 func _abort_drag():
 	_current_card.stop_drag()
+	if _current_card.is_stacked:
+		$TMP_2/Drag_Drop_Line.hide_line()
 	var tween = create_tween()
 	tween.tween_property(_current_card, "position", _drag_local_init_pos, 0.15)
 	await tween.finished
 	Globals.dragging = false
-
-func _is_in_playground(global_pos: Vector2):
-	var local_rect = playground_shape.shape.get_rect()
-	var global_rect = playground_shape.get_global_transform() * local_rect
-	return global_rect.has_point(global_pos)
-
-func _is_in_reserve(global_pos: Vector2):
-	var local_rect = reserve_shape.shape.get_rect()
-	var global_rect = reserve_shape.get_global_transform() * local_rect
-	return global_rect.has_point(global_pos)
 
 func _stop_drag(global_pos: Vector2):
 	var in_reserve: bool
@@ -126,8 +125,10 @@ func _stop_drag(global_pos: Vector2):
 		_abort_drag()
 		return
 
-	Globals.dragging = false
 	_current_card.stop_drag()
+	if _current_card.is_stacked:
+		$TMP_2/Drag_Drop_Line.hide_line()
+	Globals.dragging = false
 
 	if in_reserve:
 		_current_card.is_stacked = true
@@ -141,3 +142,13 @@ func _stop_drag(global_pos: Vector2):
 		pos.x = max(pos.x, corner.x)
 		_current_card.global_position = pos.round()
 		_current_card.reparent(cards)
+
+func _is_in_playground(global_pos: Vector2):
+	var local_rect = playground_shape.shape.get_rect()
+	var global_rect = playground_shape.get_global_transform() * local_rect
+	return global_rect.has_point(global_pos)
+
+func _is_in_reserve(global_pos: Vector2):
+	var local_rect = reserve_shape.shape.get_rect()
+	var global_rect = reserve_shape.get_global_transform() * local_rect
+	return global_rect.has_point(global_pos)

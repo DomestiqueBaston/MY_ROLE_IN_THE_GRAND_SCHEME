@@ -104,6 +104,7 @@ _data = {
 }
 
 [node name="Link" type="Node2D"]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 script = ExtResource("1_vn4vw")
