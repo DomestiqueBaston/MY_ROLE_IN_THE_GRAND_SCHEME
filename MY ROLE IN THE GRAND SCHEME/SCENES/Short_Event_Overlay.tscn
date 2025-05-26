@@ -1,4 +1,4 @@
-[gd_scene load_steps=223 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=230 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -48,10 +48,15 @@
 [ext_resource type="Texture2D" uid="uid://d2paq6riqt4f2" path="res://GRAPHICS/SHORT_EVENT/Case_1_Pressed.png" id="43_gjkrj"]
 [ext_resource type="Texture2D" uid="uid://dn6iqo8hcrag5" path="res://GRAPHICS/SHORT_EVENT/Case_1_Hover.png" id="44_t8uoa"]
 [ext_resource type="BitMap" uid="uid://1muvlh7ldcm0" path="res://GRAPHICS/SHORT_EVENT/Case_1_Mask.png" id="45_k24xe"]
+[ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/SHORT_EVENT/Case_BG.png" id="45_m6kkd"]
 [ext_resource type="Texture2D" uid="uid://tn484qetw520" path="res://GRAPHICS/SHORT_EVENT/Case_2_Pressed.png" id="46_a7igc"]
+[ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="46_tdxs6"]
+[ext_resource type="Script" uid="uid://b51y22y7k7qvt" path="res://SCRIPTS/Case_Serial_Number_Generator.gd" id="47_lkigo"]
 [ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/SHORT_EVENT/Case_2_Hover.png" id="47_q1jpv"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/SHORT_EVENT/Case_2_Mask.png" id="48_pf81c"]
+[ext_resource type="Script" uid="uid://ed1yo6ny1onq" path="res://SCRIPTS/Case_Introduction_Generator.gd" id="48_qmu3t"]
 [ext_resource type="AudioStream" uid="uid://gaoc58dislyn" path="res://SOUND/MISC/Wooden_Drawer.ogg" id="49_7vfi6"]
+[ext_resource type="Script" uid="uid://dehax7ahs4pb1" path="res://SCRIPTS/Case_Sheet_Button.gd" id="49_th1i4"]
 [ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/SHORT_EVENT/CellPhone_BG.png" id="50_cbb3s"]
 [ext_resource type="Texture2D" uid="uid://5gxa8b1vcj0n" path="res://GRAPHICS/SHORT_EVENT/CellPhone_Blinking_Button.png" id="51_ysja1"]
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/CellPhone_Theme.tres" id="52_8x3ap"]
@@ -177,6 +182,57 @@ size = Vector2(38, 60)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kru6"]
 
+[sub_resource type="Animation" id="Animation_hb476"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Note/Doctor_F:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Note/Yes:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Note/No:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Note/Price:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_4enr2"]
 resource_name = "Writing"
 length = 2.13334
@@ -230,62 +286,17 @@ tracks/3/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_hb476"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Note/Doctor_F:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Note/Yes:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Note/No:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Note/Price:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6kkd"]
 _data = {
 &"RESET": SubResource("Animation_hb476"),
 &"Writing": SubResource("Animation_4enr2")
 }
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsifl"]
+content_margin_left = 15.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kptx7"]
+content_margin_left = 15.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vprm5"]
 
@@ -1170,7 +1181,6 @@ bus = &"FX"
 libraries = {
 &"": SubResource("AnimationLibrary_m6kkd")
 }
-autoplay = "Writing"
 
 [node name="Case_Management" type="Node2D" parent="Overlays"]
 visible = false
@@ -1280,6 +1290,372 @@ texture_click_mask = ExtResource("48_pf81c")
 stream = ExtResource("49_7vfi6")
 volume_db = -10.0
 bus = &"UI"
+
+[node name="Case_Summary" type="Node2D" parent="Overlays"]
+visible = false
+
+[node name="Case_BG" type="Sprite2D" parent="Overlays/Case_Summary"]
+texture = ExtResource("45_m6kkd")
+centered = false
+
+[node name="Sheet" type="Control" parent="Overlays/Case_Summary"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("46_tdxs6")
+
+[node name="Left_Page" type="Control" parent="Overlays/Case_Summary/Sheet"]
+anchors_preset = 0
+offset_left = 180.0
+offset_top = 68.0
+offset_right = 329.0
+offset_bottom = 289.0
+
+[node name="Case" type="Label" parent="Overlays/Case_Summary/Sheet/Left_Page"]
+layout_mode = 2
+offset_right = 149.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0.98, 0.975427, 0.9604, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+text = "- Case Serial -"
+horizontal_alignment = 1
+script = ExtResource("47_lkigo")
+
+[node name="Introduction_Scroll_Container" type="ScrollContainer" parent="Overlays/Case_Summary/Sheet/Left_Page"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 146.0
+offset_bottom = 217.0
+horizontal_scroll_mode = 0
+
+[node name="Introduction" type="Label" parent="Overlays/Case_Summary/Sheet/Left_Page/Introduction_Scroll_Container"]
+modulate = Color(1, 1, 1, 0.882353)
+custom_minimum_size = Vector2(145, 0)
+layout_mode = 2
+text = "Introduction"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("48_qmu3t")
+
+[node name="Right_Page" type="VBoxContainer" parent="Overlays/Case_Summary/Sheet"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 76.0
+offset_right = 479.0
+offset_bottom = 281.0
+
+[node name="Summary" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.976471, 0.960784, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "- What's known -
+"
+horizontal_alignment = 1
+
+[node name="Victims_Container" type="VBoxContainer" parent="Overlays/Case_Summary/Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Victims" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+text = "Victim(s):"
+
+[node name="Victim_1" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Dead/Alive
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.88, 0.1936, 0.21648, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsifl")
+text = "Amanda Lear"
+
+[node name="Victim_2" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Dead/Alive
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.88, 0.1936, 0.21648, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsifl")
+text = "Sean Connery"
+
+[node name="Victim_3" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Victims_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Dead/Alive
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.88, 0.1936, 0.21648, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsifl")
+text = "John Cena"
+
+[node name="Suspect_Container" type="VBoxContainer" parent="Overlays/Case_Summary/Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Suspects" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+text = "Suspect(s):"
+
+[node name="Suspect_1" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.79, 0.474, 0.158, 1)
+theme_override_colors/font_shadow_color = Color(0.02, 0.012, 0.004, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Donald Trunk"
+
+[node name="Suspect_2" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.788235, 0.47451, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "R.E. Cede"
+
+[node name="Suspect_3" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Suspect_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.788235, 0.47451, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Manu Micron"
+
+[node name="None" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Suspect_Container"]
+visible = false
+layout_mode = 2
+tooltip_text = "Available Information:
+- None"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.788235, 0.47451, 0.156863, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "None"
+
+[node name="Witness_Container" type="VBoxContainer" parent="Overlays/Case_Summary/Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Witnesses" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+text = "Witness(es):"
+
+[node name="Witness_1" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation
+- Info"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.3969, 0.50706, 0.81, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Geoff Levner"
+
+[node name="Witness_2" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation
+- Info"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.396078, 0.505882, 0.811765, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Ferdi Boutard"
+
+[node name="Witness_3" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Witness_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Job
+- Schedule
+- Acquaintances
+- Relation
+- Info"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.396078, 0.505882, 0.811765, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Flavien Algans"
+
+[node name="None" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Witness_Container"]
+visible = false
+layout_mode = 2
+tooltip_text = "Available Information:
+- None"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.396078, 0.505882, 0.811765, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "None"
+
+[node name="Crime_Location_Container" type="VBoxContainer" parent="Overlays/Case_Summary/Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Crime_Location" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Crime_Location_Container"]
+layout_mode = 2
+text = "Crime Location:"
+
+[node name="Location" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Crime_Location_Container"]
+layout_mode = 2
+tooltip_text = "Available Information:
+- Address
+- Opening days
+- Opening hours"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.65, 0.65, 0.13, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Library"
+
+[node name="Unkown_Or_Missing" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Crime_Location_Container"]
+visible = false
+layout_mode = 2
+tooltip_text = "Available Information:
+- None"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.65, 0.65, 0.13, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "Unknown or missing"
+
+[node name="Separator" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page"]
+layout_mode = 2
+text = "
+...
+"
+horizontal_alignment = 1
+
+[node name="Time_Limit_Container" type="VBoxContainer" parent="Overlays/Case_Summary/Sheet/Right_Page"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Time_Limit" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Time_Limit_Container"]
+layout_mode = 2
+text = "Time limit:"
+
+[node name="Days" type="Label" parent="Overlays/Case_Summary/Sheet/Right_Page/Time_Limit_Container"]
+layout_mode = 2
+tooltip_text = "Days left to
+solve the case"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.6511, 0.391, 0.85, 1)
+theme_override_colors/font_shadow_color = Color(0.0196078, 0.0117647, 0.00392157, 0.12549)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_kptx7")
+text = "15 days left"
+
+[node name="Button" type="Control" parent="Overlays/Case_Summary"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+theme = ExtResource("46_tdxs6")
+script = ExtResource("49_th1i4")
+
+[node name="Close" type="Button" parent="Overlays/Case_Summary/Button"]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 261.0
+offset_right = 482.0
+offset_bottom = 293.0
+rotation = 0.0139626
+tooltip_text = "That was a
+good reminder!"
+text = "Allright!
+Back
+to
+business..."
 
 [node name="Cellphone" type="Node2D" parent="Overlays"]
 visible = false
@@ -3402,6 +3778,9 @@ bus = &"UI"
 [connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/01" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/02" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/02" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
+[connection signal="mouse_entered" from="Overlays/Case_Summary/Button/Close" to="Overlays/Case_Summary/Button" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Case_Summary/Button/Close" to="Overlays/Case_Summary/Button" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Overlays/Case_Summary/Button/Close" to="Overlays/Case_Summary/Button" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_switch_pressed"]
