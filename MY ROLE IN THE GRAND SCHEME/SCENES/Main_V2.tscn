@@ -164,7 +164,7 @@ step = 0.0666667
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Reserve_Expansion/Folding_Unfolding")
+tracks/0/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Folding_Unfolding")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -179,7 +179,7 @@ tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:visible")
+tracks/1/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion_Shadow:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -191,7 +191,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Reserve_Expansion/Reserve_Expansion:visible")
+tracks/2/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -203,7 +203,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Reserve_Expansion/Reserve_Expansion:size")
+tracks/3/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -215,7 +215,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:size")
+tracks/4/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion_Shadow:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -227,7 +227,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Colliders/Reserve_Collider/Reserve:scale")
+tracks/5/path = NodePath("../Mask_Card_Playground2/Colliders/Reserve_Collider/Reserve:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -239,7 +239,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Colliders/Reserve_Collider/Reserve:position")
+tracks/6/path = NodePath("../Mask_Card_Playground2/Colliders/Reserve_Collider/Reserve:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -254,7 +254,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:visible")
+tracks/0/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion_Shadow:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -266,7 +266,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Reserve_Expansion/Reserve_Expansion:visible")
+tracks/1/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -278,7 +278,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Reserve_Expansion/Reserve_Expansion:size")
+tracks/2/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -290,7 +290,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:size")
+tracks/3/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion_Shadow:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -302,7 +302,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Colliders/Reserve_Collider/Reserve:scale")
+tracks/4/path = NodePath("../Mask_Card_Playground2/Colliders/Reserve_Collider/Reserve:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -314,7 +314,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Colliders/Reserve_Collider/Reserve:position")
+tracks/5/path = NodePath("../Mask_Card_Playground2/Colliders/Reserve_Collider/Reserve:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -331,7 +331,7 @@ step = 0.0666667
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Reserve_Expansion/Folding_Unfolding")
+tracks/0/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Folding_Unfolding")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -346,7 +346,7 @@ tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:visible")
+tracks/1/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion_Shadow:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -358,7 +358,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Reserve_Expansion/Reserve_Expansion:visible")
+tracks/2/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -370,7 +370,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Reserve_Expansion/Reserve_Expansion:size")
+tracks/3/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -382,7 +382,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Reserve_Expansion/Reserve_Expansion_Shadow:size")
+tracks/4/path = NodePath("../Mask_Card_Playground2/Reserve_Expansion/Reserve_Expansion_Shadow:size")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -394,7 +394,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Colliders/Reserve_Collider/Reserve:position")
+tracks/5/path = NodePath("../Mask_Card_Playground2/Colliders/Reserve_Collider/Reserve:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -406,7 +406,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Colliders/Reserve_Collider/Reserve:scale")
+tracks/6/path = NodePath("../Mask_Card_Playground2/Colliders/Reserve_Collider/Reserve:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -430,9 +430,166 @@ script = ExtResource("1_anbsy")
 texture = ExtResource("2_lp1db")
 centered = false
 
-[node name="Mask_Card_Playground" type="Node2D" parent="."]
+[node name="TMP_1" type="Node2D" parent="."]
+
+[node name="Main_Playmat" type="Node2D" parent="TMP_1"]
+
+[node name="Cards" type="Node2D" parent="TMP_1/Main_Playmat"]
+
+[node name="Card1" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(190, 85)
+card_name = "Click the cards..."
+description = "... to see the reduce/expand animations!"
+combat_type = 1
+
+[node name="Card2" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(463, 206)
+combat_type = 2
+
+[node name="Card3" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(512, 163)
+card_type = 1
+investigation_type = 2
+
+[node name="Card4" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(165, 213)
+card_type = 2
+
+[node name="Card5" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(294, 38)
+
+[node name="Card6" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(537, 57)
+opacity = 0.78
+
+[node name="Card7" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(584, 278)
+opacity = 0.78
+
+[node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
+
+[node name="Link_Violet_Rose" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+visible = true
+card1 = NodePath("../../Cards/Card1")
+pin1 = 4
+card2 = NodePath("../../Cards/Card2")
+texture = ExtResource("5_mjrlc")
+
+[node name="Link_Pointillé_Blanc" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+visible = true
+card1 = NodePath("../../Cards/Card5")
+pin1 = 4
+card2 = NodePath("../../Cards/Card6")
+texture = ExtResource("6_ffvqa")
+
+[node name="Link_Plein_Jaune" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+visible = true
+card1 = NodePath("../../Cards/Card4")
+pin1 = 4
+card2 = NodePath("../../Cards/Card3")
+texture = ExtResource("7_dmqsm")
+
+[node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("8_ddveh")]
+
+[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_1/Papa_Link" index="0"]
+offset_top = 0.0
+offset_bottom = 3.0
+tooltip_text = "Property
+New"
+
+[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_2/Papa_Link" index="0"]
+offset_top = 0.0
+offset_bottom = 3.0
+tooltip_text = "Acquaintance
+New"
+
+[node name="Player_Locator" parent="TMP_1/Main_Playmat" instance=ExtResource("9_twje4")]
+position = Vector2(544, 64)
+
+[node name="TMP_2" type="Node2D" parent="."]
+
+[node name="Reserve_Cards" type="Node2D" parent="TMP_2"]
+position = Vector2(13, 39)
+script = ExtResource("51_6gmax")
+
+[node name="Card7" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+combat_type = 1
+is_stacked = true
+
+[node name="Card8" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(3, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card9" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(6, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card10" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(9, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card11" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(12, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card12" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(15, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card13" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(18, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card14" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(21, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card15" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(24, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card16" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(27, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card17" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(30, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Card18" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+position = Vector2(33, 0)
+combat_type = 1
+is_stacked = true
+
+[node name="Drag_Drop_Line" parent="TMP_2" instance=ExtResource("52_2uhvq")]
+visible = false
+z_index = 2
+
+[node name="Line" parent="TMP_2/Drag_Drop_Line" index="0"]
+points = PackedVector2Array(218, 89, 322, 42)
+
+[node name="Drag_Drop_Line_Animation" parent="TMP_2/Drag_Drop_Line" index="1"]
+autoplay = "Appearance"
+
+[node name="Mask_Card_Playground" type="Sprite2D" parent="."]
+texture = ExtResource("54_anbsy")
+centered = false
 
 [node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
+visible = false
 position = Vector2(0, 1)
 
 [node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
@@ -444,7 +601,6 @@ position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
 
 [node name="Playground_Card_Position_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
-visible = false
 collision_layer = 0
 collision_mask = 0
 
@@ -2329,7 +2485,7 @@ pivot_offset = Vector2(129, 130)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ksebp")
 
 [node name="Reserve_Animation" type="AnimationPlayer" parent="Mask_Card_Playground/Reserve_Expansion"]
-root_node = NodePath("../..")
+root_node = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_bmwof")
 }
@@ -2405,168 +2561,6 @@ item_13/id = 13
 item_14/text = "Found"
 item_14/icon = ExtResource("41_kmk2g")
 item_14/id = 14
-
-[node name="TMP_1" type="Node2D" parent="."]
-
-[node name="Main_Playmat" type="Node2D" parent="TMP_1"]
-
-[node name="Cards" type="Node2D" parent="TMP_1/Main_Playmat"]
-
-[node name="Card1" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(190, 85)
-card_name = "Click the cards..."
-description = "... to see the reduce/expand animations!"
-combat_type = 1
-visible_pins = Array[int]([4])
-
-[node name="Card2" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(463, 206)
-combat_type = 2
-visible_pins = Array[int]([0])
-
-[node name="Card3" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(512, 163)
-card_type = 1
-investigation_type = 2
-visible_pins = Array[int]([0])
-
-[node name="Card4" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(165, 213)
-card_type = 2
-visible_pins = Array[int]([4])
-
-[node name="Card5" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(294, 38)
-visible_pins = Array[int]([4])
-
-[node name="Card6" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(537, 57)
-visible_pins = Array[int]([0])
-opacity = 0.78
-
-[node name="Card7" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
-modulate = Color(1, 1, 1, 0.784314)
-position = Vector2(584, 278)
-opacity = 0.78
-
-[node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
-z_index = 1
-
-[node name="Link_Violet_Rose" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
-card1 = NodePath("../../Cards/Card1")
-pin1 = 4
-card2 = NodePath("../../Cards/Card2")
-texture = ExtResource("5_mjrlc")
-
-[node name="Link_Pointillé_Blanc" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
-card1 = NodePath("../../Cards/Card5")
-pin1 = 4
-card2 = NodePath("../../Cards/Card6")
-texture = ExtResource("6_ffvqa")
-
-[node name="Link_Plein_Jaune" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
-card1 = NodePath("../../Cards/Card4")
-pin1 = 4
-card2 = NodePath("../../Cards/Card3")
-texture = ExtResource("7_dmqsm")
-
-[node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("8_ddveh")]
-
-[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_1/Papa_Link" index="0"]
-offset_top = 0.0
-offset_bottom = 3.0
-tooltip_text = "Property
-New"
-
-[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_2/Papa_Link" index="0"]
-offset_top = 0.0
-offset_bottom = 3.0
-tooltip_text = "Acquaintance
-New"
-
-[node name="Player_Locator" parent="TMP_1/Main_Playmat" instance=ExtResource("9_twje4")]
-position = Vector2(544, 64)
-
-[node name="TMP_2" type="Node2D" parent="."]
-
-[node name="Reserve_Cards" type="Node2D" parent="TMP_2"]
-position = Vector2(13, 39)
-script = ExtResource("51_6gmax")
-
-[node name="Card7" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-combat_type = 1
-is_stacked = true
-
-[node name="Card8" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(3, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card9" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(6, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card10" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(9, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card11" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(12, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card12" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(15, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card13" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(18, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card14" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(21, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card15" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(24, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card16" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(27, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card17" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(30, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Card18" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
-position = Vector2(33, 0)
-combat_type = 1
-is_stacked = true
-
-[node name="Drag_Drop_Line" parent="TMP_2" instance=ExtResource("52_2uhvq")]
-visible = false
-z_index = 2
-
-[node name="Line" parent="TMP_2/Drag_Drop_Line" index="0"]
-points = PackedVector2Array(218, 89, 322, 42)
-
-[node name="Drag_Drop_Line_Animation" parent="TMP_2/Drag_Drop_Line" index="1"]
-autoplay = "Appearance"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("54_anbsy")
-centered = false
 
 [connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]

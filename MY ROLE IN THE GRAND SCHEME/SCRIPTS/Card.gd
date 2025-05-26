@@ -104,20 +104,22 @@ enum NpcStatus {
 ## true if the card is in the reserve, false if it is in play. If the card is
 ## the reserve, it cannot be reduced, and the reserve decides which card to
 ## highlight as the mouse moves, not the card itself.
-@export var is_stacked: bool = false
-
-## Which of the card's pins are visible.
-@export var visible_pins: Array[PinLocation] = []:
+@export var is_stacked: bool:
 	set(value):
-		visible_pins.assign(value)
-		_update_visible_pins()
+		if is_stacked != value:
+			is_stacked = value
+			stacked_changed.emit()
 
 @export var opacity: float = 1:
 	set(value):
 		opacity = value
 		_update_opacity()
 
+## Signal emitted when the Card's position may have changed.
 signal position_changed
+
+## Signal emitted when the Card's is_stacked property has changed.
+signal stacked_changed()
 
 var _is_expanded = true
 
@@ -251,12 +253,6 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
 			$Card_Mask/Card_BG/Minion_Status.visible = (npc_status == NpcStatus.MINION)
 
-func _update_visible_pins():
-	var index = 0;
-	for pin in $Pins.get_children():
-		pin.visible = index in visible_pins
-		index += 1
-
 func get_size() -> Vector2i:
 	return Vector2i(
 		$Card_Mask.texture.get_width() / $Card_Mask.hframes,
@@ -291,7 +287,8 @@ func set_highlighted(highlighted: bool):
 			Globals.card_exited_sound.stop()
 		if not Globals.card_entered_sound.playing:
 			Globals.card_entered_sound.play()
-		z_index = 2
+		if is_stacked:
+			z_index = 1
 	else:
 		$Shadow_Animations.play("Shadow_Off")
 		if not Globals.card_entered_sound.playing:
@@ -332,34 +329,6 @@ func get_pin(which: PinLocation) -> Node2D:
 	return $Pins.get_child(which)
 
 ##
-## Returns true if the given pin is visible.
-##
-func is_pin_visible(which: PinLocation):
-	return which in visible_pins
-
-##
-## Shows (true) or hides (false) one of the card's pins.
-##
-func set_pin_visible(which: PinLocation, vis: bool):
-	var idx = visible_pins.find(which)
-	if vis:
-		if idx < 0:
-			visible_pins.append(which)
-			$Pins.get_child(which).show()
-	else:
-		if idx >= 0:
-			visible_pins.remove_at(idx)
-			$Pins.get_child(which).hide()
-
-##
-## Hides all of the card's pins.
-##
-func hide_all_pins():
-	for which in visible_pins:
-		$Pins.get_child(which).hide()
-	visible_pins.clear()
-
-##
 ## Modifies the appearance of the card to show it is being dragged.
 ##
 func start_drag():
@@ -368,6 +337,7 @@ func start_drag():
 	else:
 		$Card_Animations.play("Drag_Reduced_Card_Appearance")
 	$Shadow_Animations.play("Shadow_Off")
+	z_index += 1
 
 ##
 ## Resets the appearance of the card after a call to start_drag().
@@ -378,3 +348,4 @@ func stop_drag():
 	else:
 		$Card_Animations.play("Drag_Reduced_Card_Disappearance")
 	$Shadow_Animations.play("Shadow_On")
+	z_index -= 1

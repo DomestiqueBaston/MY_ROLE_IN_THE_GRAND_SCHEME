@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var cards: Node2D = $TMP_1/Main_Playmat/Cards
 @onready var links: Node2D = $TMP_1/Main_Playmat/Links
-@onready var reserve: Node2D = $Mask_Card_Playground/TMP_2/Reserve_Cards
+@onready var reserve: Node2D = $TMP_2/Reserve_Cards
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup/Main_Menu
 @onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
 @onready var reserve_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Reserve_Collider/Reserve
@@ -132,15 +132,6 @@ func _stop_drag(global_pos: Vector2):
 	if in_reserve:
 		_current_card.is_stacked = true
 		_current_card.set_expanded(true)
-		_current_card.hide_all_pins()
-		for link in links.get_children():
-			if link is Link:
-				if link.card1 == _current_card:
-					link.card2.set_pin_visible(link.pin2, false)
-					link.free()
-				elif link.card2 == _current_card:
-					link.card1.set_pin_visible(link.pin1, false)
-					link.free()
 		_current_card.reparent(reserve, false)
 	else:
 		_current_card.is_stacked = false

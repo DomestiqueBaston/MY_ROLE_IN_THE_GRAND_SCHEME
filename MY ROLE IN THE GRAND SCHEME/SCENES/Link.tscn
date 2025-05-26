@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dew0fg5j62sga"]
+[gd_scene load_steps=10 format=3 uid="uid://dew0fg5j62sga"]
 
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="1_3ne57"]
 [ext_resource type="Script" uid="uid://bvn3rvbg4w7dg" path="res://SCRIPTS/Link.gd" id="1_vn4vw"]
-[ext_resource type="Script" uid="uid://ldx5rugxss32" path="res://SCRIPTS/Link_Collider.gd" id="3_bbe4p"]
 [ext_resource type="AudioStream" uid="uid://bockrexv0ah1j" path="res://SOUND/LINK/Bip_Link.ogg" id="4_au33t"]
 [ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="5_iohy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yi81"]
+resource_local_to_scene = true
 size = Vector2(8, 3)
 
 [sub_resource type="Animation" id="Animation_4x26u"]
@@ -124,7 +124,6 @@ monitorable = false
 [node name="Collider" type="CollisionShape2D" parent="Link_Texture/Link_Collider"]
 position = Vector2(4, 1.5)
 shape = SubResource("RectangleShape2D_8yi81")
-script = ExtResource("3_bbe4p")
 
 [node name="Link_Animation" type="AnimationPlayer" parent="."]
 libraries = {

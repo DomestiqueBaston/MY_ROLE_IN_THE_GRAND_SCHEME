@@ -441,33 +441,27 @@ position = Vector2(190, 85)
 card_name = "Click the cards..."
 description = "... to see the reduce/expand animations!"
 combat_type = 1
-visible_pins = Array[int]([4])
 
 [node name="Card2" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(463, 206)
 combat_type = 2
-visible_pins = Array[int]([0])
 
 [node name="Card3" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 card_type = 1
 investigation_type = 2
-visible_pins = Array[int]([0])
 
 [node name="Card4" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(165, 213)
 card_type = 2
-visible_pins = Array[int]([4])
 
 [node name="Card5" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 position = Vector2(294, 38)
-visible_pins = Array[int]([4])
 
 [node name="Card6" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
-visible_pins = Array[int]([0])
 opacity = 0.78
 
 [node name="Card7" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_b4mvu")]
