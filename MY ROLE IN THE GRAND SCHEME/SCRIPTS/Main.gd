@@ -100,11 +100,11 @@ func _drag(global_pos: Vector2):
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
 
 func _abort_drag():
+	_current_card.stop_drag()
 	var tween = create_tween()
 	tween.tween_property(_current_card, "position", _drag_local_init_pos, 0.15)
 	await tween.finished
 	Globals.dragging = false
-	_current_card.stop_drag()
 
 func _is_in_playground(global_pos: Vector2):
 	var local_rect = playground_shape.shape.get_rect()
@@ -135,4 +135,9 @@ func _stop_drag(global_pos: Vector2):
 		_current_card.reparent(reserve, false)
 	else:
 		_current_card.is_stacked = false
+		var corner = (playground_shape.get_global_transform() *
+					  playground_shape.shape.get_rect().position)
+		var pos = _current_card.global_position
+		pos.x = max(pos.x, corner.x)
+		_current_card.global_position = pos.round()
 		_current_card.reparent(cards)
