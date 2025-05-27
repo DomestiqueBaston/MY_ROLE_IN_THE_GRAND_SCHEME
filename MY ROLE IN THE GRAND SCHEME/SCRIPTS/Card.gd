@@ -59,12 +59,14 @@ enum NpcStatus {
 @export var card_name: String = "Card Name":
 	set(value):
 		card_name = value
-		_update_card_type()
+		if $Card_Mask/Card_BG/Card_Text/Card_Name:
+			$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
 
 @export var description: String = "Short card description.":
 	set(value):
 		description = value
-		_update_card_type()
+		if $Card_Mask/Card_BG/Card_Text/Card_Name:
+			$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
 
 @export var card_type: CardType:
 	set(value):
@@ -107,6 +109,9 @@ enum NpcStatus {
 @export var is_stacked: bool:
 	set(value):
 		if is_stacked != value:
+			# because a stacked card's Z index is incremented when highlighted
+			if not is_stacked and _is_highlighted:
+				z_index += 1
 			is_stacked = value
 			stacked_changed.emit()
 
@@ -291,6 +296,8 @@ func set_highlighted(highlighted: bool):
 			Globals.card_entered_sound.play()
 		if is_stacked:
 			z_index += 1
+		else:
+			move_to_front()
 	else:
 		$Shadow_Animations.play("Shadow_Off")
 		if not Globals.card_entered_sound.playing:
