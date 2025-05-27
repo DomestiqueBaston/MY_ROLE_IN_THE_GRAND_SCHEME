@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=80 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_anbsy"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -144,12 +144,6 @@ _data = {
 &"RESET": SubResource("Animation_ksebp")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksebp"]
-bg_color = Color(0.34, 0.23664, 0.1768, 0.392157)
-border_width_left = 2
-border_width_top = 1
-border_color = Color(0, 0, 0, 0)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
 texture = ExtResource("48_sqsjm")
 texture_margin_left = 9.0
@@ -209,37 +203,13 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(506, 125), Vector2(1, 125)]
 }
-tracks/4/type = "value"
+tracks/4/type = "audio"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Reserve_Expansion_Shadow:visible")
+tracks/4/path = NodePath("Folding_Unfolding")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Reserve_Expansion_Shadow:size")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(506, 125), Vector2(1, 125)]
-}
-tracks/6/type = "audio"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Folding_Unfolding")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -247,7 +217,7 @@ tracks/6/keys = {
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/6/use_blend = true
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_871an"]
 length = 0.001
@@ -294,30 +264,6 @@ tracks/3/path = NodePath("Reserve_Expansion:size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 125)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Reserve_Expansion_Shadow:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Reserve_Expansion_Shadow:size")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -376,37 +322,13 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1, 125), Vector2(506, 125)]
 }
-tracks/4/type = "value"
+tracks/4/type = "audio"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Reserve_Expansion_Shadow:visible")
+tracks/4/path = NodePath("Folding_Unfolding")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Reserve_Expansion_Shadow:size")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector2(1, 125), Vector2(506, 125)]
-}
-tracks/6/type = "audio"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Folding_Unfolding")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -414,7 +336,7 @@ tracks/6/keys = {
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/6/use_blend = true
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bmwof"]
 _data = {
@@ -514,7 +436,6 @@ position = Vector2(544, 64)
 [node name="Reserve_Cards" type="Node2D" parent="TMP_2"]
 position = Vector2(13, 39)
 script = ExtResource("51_6gmax")
-min_card_margin = 6
 
 [node name="Card7" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
 combat_type = 1
@@ -2461,16 +2382,6 @@ libraries = {
 }
 
 [node name="Reserve_Expansion" type="Node2D" parent="Mask_Card_Playground"]
-
-[node name="Reserve_Expansion_Shadow" type="Panel" parent="Mask_Card_Playground/Reserve_Expansion"]
-visible = false
-custom_minimum_size = Vector2(1, 125)
-offset_left = 118.0
-offset_top = 19.0
-offset_right = 119.0
-offset_bottom = 144.0
-pivot_offset = Vector2(129, 130)
-theme_override_styles/panel = SubResource("StyleBoxFlat_ksebp")
 
 [node name="Reserve_Expansion" type="Panel" parent="Mask_Card_Playground/Reserve_Expansion"]
 visible = false
