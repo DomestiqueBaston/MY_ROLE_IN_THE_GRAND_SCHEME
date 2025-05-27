@@ -23,6 +23,9 @@ var _drag_global_init_pos: Vector2
 # where the user clicked, in global coordinates, to initiate dragging
 var _drag_click_pos: Vector2
 
+# links connected to the card being dragged
+var _drag_links: Array[Link]
+
 func _ready():
 	popup.add_item("Dialogue")
 	popup.add_item("Investigation")
@@ -94,26 +97,42 @@ func _start_drag():
 	_drag_local_init_pos = _current_card.position
 	_drag_global_init_pos = _current_card.global_position
 	_current_card.start_drag()
-	if _current_card.is_stacked:
-		var line = $TMP_2/Drag_Drop_Line
-		line.point1 = _drag_click_pos
-		line.point2 = _drag_click_pos
-		line.show_line()
+
+	# turn on the drag & drop line that connects the initial and current
+	# mouse positions
+
+	var line = $TMP_2/Drag_Drop_Line
+	line.point1 = _drag_click_pos
+	line.point2 = _drag_click_pos
+	line.show_line()
+
+	# increase the Z index of any links connected to the card being dragged, so
+	# that they, too, are drawn on top of everything else (Card.start_drag()
+	# does that for the card itself)
+
+	for link in links.get_children():
+		if link is Link and (link.card1 == _current_card or link.card2 == _current_card):
+			link.z_index += 1
+			_drag_links.append(link)
 
 func _drag(global_pos: Vector2):
 	_current_card.global_position = \
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
-	if _current_card.is_stacked:
-		$TMP_2/Drag_Drop_Line.point2 = global_pos
+	$TMP_2/Drag_Drop_Line.point2 = global_pos
+
+func _stuff_to_do_when_drag_ends():
+	for link in _drag_links:
+		link.z_index -= 1
+	_drag_links.clear()
+	_current_card.stop_drag()
+	Globals.dragging = false
 
 func _abort_drag():
-	_current_card.stop_drag()
-	if _current_card.is_stacked:
-		$TMP_2/Drag_Drop_Line.hide_line()
+	$TMP_2/Drag_Drop_Line.hide_line()
 	var tween = create_tween()
 	tween.tween_property(_current_card, "position", _drag_local_init_pos, 0.15)
 	await tween.finished
-	Globals.dragging = false
+	_stuff_to_do_when_drag_ends()
 
 func _stop_drag(global_pos: Vector2):
 	var in_reserve: bool
@@ -125,10 +144,8 @@ func _stop_drag(global_pos: Vector2):
 		_abort_drag()
 		return
 
-	_current_card.stop_drag()
-	if _current_card.is_stacked:
-		$TMP_2/Drag_Drop_Line.hide_line()
-	Globals.dragging = false
+	$TMP_2/Drag_Drop_Line.hide_line()
+	_stuff_to_do_when_drag_ends()
 
 	if in_reserve:
 		_current_card.is_stacked = true
@@ -136,10 +153,11 @@ func _stop_drag(global_pos: Vector2):
 		_current_card.reparent(reserve, false)
 	else:
 		_current_card.is_stacked = false
+		# card is allowed to overshoot the left edge by more 10 pixels at most
 		var corner = (playground_shape.get_global_transform() *
 					  playground_shape.shape.get_rect().position)
 		var pos = _current_card.global_position
-		pos.x = max(pos.x, corner.x)
+		pos.x = max(pos.x, corner.x - 10)
 		_current_card.global_position = pos.round()
 		_current_card.reparent(cards)
 
