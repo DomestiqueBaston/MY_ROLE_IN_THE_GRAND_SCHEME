@@ -514,6 +514,7 @@ position = Vector2(544, 64)
 [node name="Reserve_Cards" type="Node2D" parent="TMP_2"]
 position = Vector2(13, 39)
 script = ExtResource("51_6gmax")
+min_card_margin = 6
 
 [node name="Card7" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
 combat_type = 1
