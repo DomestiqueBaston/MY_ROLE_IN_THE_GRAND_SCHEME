@@ -1,14 +1,19 @@
 extends Node2D
 
+# The endpoints are offset by half the maximum line width, because the line is
+# actually extended that much.
+
+const _half_width = Vector2(10, 10)
+
 @export var point1: Vector2:
 	set(value):
 		if $Line:
-			$Line.points[0] = value
+			$Line.points[0] = value - _half_width
 
 @export var point2: Vector2:
 	set(value):
 		if $Line:
-			$Line.points[1] = value
+			$Line.points[1] = value - _half_width
 
 func show_line():
 	show()
