@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=81 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_anbsy"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -380,6 +380,15 @@ _data = {
 &"Alert": SubResource("Animation_wvc8p"),
 &"RESET": SubResource("Animation_ksebp")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anbsy"]
+bg_color = Color(0, 0, 0, 0.686275)
+border_width_left = 1
+border_width_top = 1
+border_color = Color(0, 0, 0, 0.686275)
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_anbsy")
@@ -2412,8 +2421,9 @@ horizontal_alignment = 1
 position = Vector2(147, 11)
 
 [node name="Motive_Selector" type="PanelContainer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
-custom_minimum_size = Vector2(191, 0)
-offset_right = 191.0
+custom_minimum_size = Vector2(184, 0)
+offset_left = 5.0
+offset_right = 189.0
 offset_bottom = 134.0
 size_flags_vertical = 0
 mouse_filter = 2
@@ -2450,10 +2460,11 @@ allow_search = false
 
 [node name="Sub_Menu" type="PopupMenu" parent="Mask_Card_Playground/Popup/Main_Menu"]
 auto_translate_mode = 1
-size = Vector2i(93, 135)
-min_size = Vector2i(93, 135)
-max_size = Vector2i(93, 135)
+size = Vector2i(93, 136)
+min_size = Vector2i(93, 136)
+max_size = Vector2i(93, 136)
 theme = ExtResource("54_x4cyf")
+theme_override_styles/panel = SubResource("StyleBoxFlat_anbsy")
 submenu_popup_delay = 0.1
 allow_search = false
 item_count = 15

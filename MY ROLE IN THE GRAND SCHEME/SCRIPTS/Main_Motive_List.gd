@@ -1,11 +1,11 @@
 extends OptionButton
 
 var description_array = []
-var max_text_length = 37
+var max_text_length = 35
 
 func _ready():
 	get_popup().max_size.y = 134
-	get_popup().min_size.x = 191
+	get_popup().min_size.x = 184
 	
 	var file = FileAccess.open("res://JSON/CASE/Crime_Motive_Evidence.json", FileAccess.READ)
 	var json_data = file.get_as_text()
@@ -40,7 +40,7 @@ func _ready():
 
 func truncate_text(original_text: String) -> String:
 	if original_text.length() > max_text_length:
-		return original_text.substr(0, max_text_length - 3) + "..."
+		return original_text.substr(0, max_text_length - 2) + "..."
 	return original_text
 
 
