@@ -121,10 +121,10 @@ signal position_changed
 ## Signal emitted when the Card's is_stacked property has changed.
 signal stacked_changed()
 
-var _is_expanded = true
+var _is_highlighted: bool = false
+var _is_expanded: bool = true
 
 func _ready():
-	$Card_Animations.play("RESET")
 	set_notify_transform(true)
 
 func _notification(what):
@@ -277,10 +277,12 @@ func expand_or_reduce():
 
 ##
 ## Specifies whether or not the card is highlighted. When a card is highlighted,
-## its Z index is set to 2 and its shadow is displayed. Sounds are played when a
-## card's highlight state changes.
+## its Z index is increased and its shadow is displayed. Sounds are played when
+## a card's highlight state changes.
 ##
 func set_highlighted(highlighted: bool):
+	if _is_highlighted == highlighted:
+		return
 	if highlighted:
 		$Shadow_Animations.play("Shadow_On")
 		if Globals.card_exited_sound.playing:
@@ -288,12 +290,14 @@ func set_highlighted(highlighted: bool):
 		if not Globals.card_entered_sound.playing:
 			Globals.card_entered_sound.play()
 		if is_stacked:
-			z_index = 1
+			z_index += 1
 	else:
 		$Shadow_Animations.play("Shadow_Off")
 		if not Globals.card_entered_sound.playing:
 			Globals.card_exited_sound.play()
-		z_index = 0
+		if is_stacked:
+			z_index -= 1
+	_is_highlighted = highlighted
 
 func _update_opacity():
 	$Card_Mask.modulate.a = opacity
