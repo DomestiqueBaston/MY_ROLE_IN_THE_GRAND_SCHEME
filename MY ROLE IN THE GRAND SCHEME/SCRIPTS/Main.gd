@@ -120,19 +120,20 @@ func _drag(global_pos: Vector2):
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
 	$TMP_2/Drag_Drop_Line.point2 = global_pos
 
-func _stuff_to_do_when_drag_ends():
+func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	for link in _drag_links:
 		link.z_index -= 1
 	_drag_links.clear()
-	_current_card.stop_drag()
+	dragged_card.stop_drag()
 	Globals.dragging = false
 
 func _abort_drag():
 	$TMP_2/Drag_Drop_Line.hide_line()
+	var card = _current_card
 	var tween = create_tween()
-	tween.tween_property(_current_card, "position", _drag_local_init_pos, 0.15)
+	tween.tween_property(card, "position", _drag_local_init_pos, 0.15)
 	await tween.finished
-	_stuff_to_do_when_drag_ends()
+	_stuff_to_do_when_drag_ends(card)
 
 func _stop_drag(global_pos: Vector2):
 	var in_reserve: bool
@@ -145,7 +146,7 @@ func _stop_drag(global_pos: Vector2):
 		return
 
 	$TMP_2/Drag_Drop_Line.hide_line()
-	_stuff_to_do_when_drag_ends()
+	_stuff_to_do_when_drag_ends(_current_card)
 
 	if in_reserve:
 		_current_card.is_stacked = true
