@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cb8ie0y4shgtb"]
 
-[ext_resource type="Texture2D" uid="uid://cno0b6h8jyy04" path="res://GRAPHICS/INVESTIGATION_CENTER/Investigation_Center_BG.png" id="1_njt05"]
-[ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png" id="2_6ndse"]
+[ext_resource type="Texture2D" uid="uid://cno0b6h8jyy04" path="res://GRAPHICS/SHORT_EVENT/Investigation_Center_BG.png" id="1_njt05"]
+[ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/SHORT_EVENT/Chalk_Mask.png" id="2_6ndse"]
 [ext_resource type="Theme" uid="uid://5eedmsqjoxtm" path="res://UI/Investigation_Center_Theme.tres" id="4_b1ixs"]
 [ext_resource type="Script" uid="uid://d0qlesy3dsiqa" path="res://SCRIPTS/Investigation_Center_Case_List.gd" id="4_iw720"]
 [ext_resource type="Script" uid="uid://fw3knsksudbs" path="res://SCRIPTS/Investigation_Center_Buttons.gd" id="4_lj007"]
@@ -24,89 +24,19 @@ clip_children = 1
 texture = ExtResource("2_6ndse")
 centered = false
 
-[node name="White_Frame_01" type="Node2D" parent="Chalkboard_Content/Chalk_Mask"]
-modulate = Color(1, 1, 1, 0.588235)
-metadata/_edit_lock_ = true
-
-[node name="Line_01" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
-position = Vector2(0, -20)
-points = PackedVector2Array(30, 47, 606, 47)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_02" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
-position = Vector2(0, -2)
-points = PackedVector2Array(30, 47, 606, 47)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_03" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
-points = PackedVector2Array(30, 27, 30, 45)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_04" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_01"]
-position = Vector2(576, 0)
-points = PackedVector2Array(30, 27, 30, 45)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="White_Frame_02" type="Node2D" parent="Chalkboard_Content/Chalk_Mask"]
-modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(0, 69)
-metadata/_edit_lock_ = true
-
-[node name="Line_01" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(-2.98713, -45)
-scale = Vector2(1.103, 1)
-points = PackedVector2Array(30, 47, 494, 47)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_02" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(0, 217)
-points = PackedVector2Array(30, 47, 606, 47)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_03" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-points = PackedVector2Array(30, 2, 30, 264)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_04" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(576, 0)
-points = PackedVector2Array(30, 43, 30, 264)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_05" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(589.325, 5)
-scale = Vector2(0.570175, 1)
-points = PackedVector2Array(30, 38, -82, 38)
-width = 1.0
-metadata/_edit_lock_ = true
-
-[node name="Line_06" type="Line2D" parent="Chalkboard_Content/Chalk_Mask/White_Frame_02"]
-position = Vector2(679, 0)
-points = PackedVector2Array(-137, 2, -137, 43)
-width = 1.0
-metadata/_edit_lock_ = true
-
 [node name="Case_Report" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
-offset_left = 30.0
-offset_top = 57.0
-offset_right = 87.0
-offset_bottom = 65.0
+offset_left = 136.0
+offset_top = 84.0
+offset_right = 193.0
+offset_bottom = 92.0
 theme = ExtResource("4_b1ixs")
 text = "Case Report:"
 
 [node name="Case" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 16.0
-offset_right = 508.0
-offset_bottom = 56.0
+offset_top = 12.0
+offset_right = 365.0
+offset_bottom = 52.0
 bbcode_enabled = true
 text = "Case ID:
 Status:
@@ -117,7 +47,7 @@ autowrap_mode = 2
 [node name="ID" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/Case"]
 layout_mode = 0
 offset_left = 40.0
-offset_right = 500.0
+offset_right = 365.0
 offset_bottom = 10.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
@@ -129,7 +59,7 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 36.0
 offset_top = 10.0
-offset_right = 496.0
+offset_right = 365.0
 offset_bottom = 20.0
 theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
@@ -141,7 +71,7 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 41.0
 offset_top = 20.0
-offset_right = 501.0
+offset_right = 365.0
 offset_bottom = 30.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
@@ -149,15 +79,20 @@ bbcode_enabled = true
 text = "(see case.json or the rules)"
 autowrap_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report"]
 layout_mode = 0
-offset_top = 60.0
-offset_right = 574.0
-offset_bottom = 273.0
+offset_left = -4.0
+offset_top = 42.0
+offset_right = 368.0
+offset_bottom = 207.0
 pivot_offset = Vector2(102, 219)
 
+[node name="Separator_01" type="Control" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+
 [node name="Report_Description" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
-custom_minimum_size = Vector2(50, 40)
+custom_minimum_size = Vector2(151, 40)
 layout_mode = 2
 bbcode_enabled = true
 text = "At this stage, [color=#ff8864]the information available[/color] regarding these [color=#ff1c18]cases[/color] is [color=#ff8864]extremely limited[/color].
@@ -165,30 +100,39 @@ text = "At this stage, [color=#ff8864]the information available[/color] regardin
 [color=#ff8864]The files[/color] remain in a [color=#ff1c18]preliminary state[/color], pending [color=#ff8864]manual review[/color] or [color=#ff8864]assignment[/color].
 "
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Victim_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+[node name="Separator_02" type="Control" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+
+[node name="Info_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Victim_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Victim" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+[node name="Victim" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 bbcode_enabled = true
 text = "[color=#ff8864]Victims[/color]:"
 horizontal_alignment = 1
 
-[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_01"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_01"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_01"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_01"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -197,18 +141,18 @@ text = "Jessica Rémencone"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_02"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_02"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_02"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_02"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -217,18 +161,18 @@ text = "Jean Trancène"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container"]
+[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_03"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_03"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Victim_Container/Link_03"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_03"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -237,29 +181,29 @@ text = "Simon Cussonez"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Witness_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+[node name="Witness_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Witness" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+[node name="Witness" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 bbcode_enabled = true
 text = "[color=#ff8864]Witnesses[/color]:"
 horizontal_alignment = 1
 
-[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_01"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_01"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_01"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_01"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -268,18 +212,18 @@ text = "None"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_02"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_02"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_02"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_02"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -288,18 +232,18 @@ text = "José Paldir"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container"]
+[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_03"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_03"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Witness_Container/Link_03"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_03"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -308,29 +252,29 @@ text = "Sarah Croche"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Suspect_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+[node name="Suspect_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="Suspect" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+[node name="Suspect" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 bbcode_enabled = true
 text = "[color=#ff8864]Suspects[/color]:"
 horizontal_alignment = 1
 
-[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_01"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_01"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_01"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_01"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -339,18 +283,18 @@ text = "Aude Toilète"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_02"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_02"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_02"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_02"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -359,18 +303,18 @@ text = "Armelle Couvair"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container"]
+[node name="Link_03" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_03"]
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_03"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Suspect_Container/Link_03"]
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_03"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -379,21 +323,68 @@ text = "Garcin Lasare"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Black_BG" type="ColorRect" parent="Chalkboard_Content/Chalk_Mask"]
-self_modulate = Color(1, 0.992667, 0.98, 0.282353)
-offset_left = 203.0
-offset_top = 28.0
-offset_right = 439.0
-offset_bottom = 45.0
-pivot_offset = Vector2(110, 68)
-color = Color(0, 0, 0, 1)
+[node name="Crime_Scene_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Crime_Scene" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=#ff8864]Crime Scene[/color]:"
+horizontal_alignment = 1
+
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_01"]
+layout_mode = 2
+text = " - "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Location_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_01"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "None"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
+visible = false
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+alignment = 1
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_02"]
+layout_mode = 2
+text = " - "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Location_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_02"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Library"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Separator_03" type="Control" parent="Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+custom_minimum_size = Vector2(38, 0)
+layout_mode = 2
 
 [node name="Case" type="Label" parent="Chalkboard_Content/Chalk_Mask"]
 modulate = Color(1, 1, 1, 0.752941)
-offset_left = 208.0
-offset_top = 31.0
-offset_right = 230.0
-offset_bottom = 39.0
+offset_left = 136.0
+offset_top = 65.0
+offset_right = 158.0
+offset_bottom = 73.0
 pivot_offset = Vector2(107, 65)
 theme = ExtResource("4_b1ixs")
 theme_override_constants/outline_size = 6
@@ -402,14 +393,14 @@ text = "Case:"
 [node name="Case_Selector" type="PanelContainer" parent="Chalkboard_Content/Chalk_Mask/Case"]
 layout_mode = 0
 offset_left = 24.0
-offset_top = -6.0
+offset_top = -3.0
 offset_right = 228.0
-offset_bottom = 14.0
+offset_bottom = 11.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_fd502")
 
 [node name="Case_List" type="OptionButton" parent="Chalkboard_Content/Chalk_Mask/Case/Case_Selector"]
 clip_contents = true
-custom_minimum_size = Vector2(35, 20)
+custom_minimum_size = Vector2(35, 15)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "I won't say what
@@ -439,11 +430,10 @@ popup/item_5/separator = true
 script = ExtResource("4_iw720")
 
 [node name="Cancel" type="Button" parent="Chalkboard_Content/Chalk_Mask"]
-offset_left = 552.0
-offset_top = 85.0
-offset_right = 601.0
-offset_bottom = 106.0
-rotation = -0.102811
+offset_left = 471.0
+offset_top = 282.0
+offset_right = 499.0
+offset_bottom = 290.0
 theme = ExtResource("4_b1ixs")
 theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
@@ -455,11 +445,10 @@ text = "Cancel"
 script = ExtResource("4_lj007")
 
 [node name="Ok" type="Button" parent="Chalkboard_Content/Chalk_Mask"]
-offset_left = 551.0
-offset_top = 56.0
-offset_right = 600.0
-offset_bottom = 77.0
-rotation = -0.174533
+offset_left = 472.0
+offset_top = 269.0
+offset_right = 498.0
+offset_bottom = 277.0
 theme = ExtResource("4_b1ixs")
 theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
 theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2j2wqng2h5r"
-path="res://.godot/imported/Chalk_Mask.png-18209f22cadd080ac387ede45b59b57a.ctex"
+uid="uid://c3kx8sceudfn5"
+path="res://.godot/imported/Arrow_Down.png-a6e0ae4c6ae087e7a6f75888574a1058.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INVESTIGATION_CENTER/Chalk_Mask.png"
-dest_files=["res://.godot/imported/Chalk_Mask.png-18209f22cadd080ac387ede45b59b57a.ctex"]
+source_file="res://GRAPHICS/SHORT_EVENT/Arrow_Down.png"
+dest_files=["res://.godot/imported/Arrow_Down.png-a6e0ae4c6ae087e7a6f75888574a1058.ctex"]
 
 [params]
 
