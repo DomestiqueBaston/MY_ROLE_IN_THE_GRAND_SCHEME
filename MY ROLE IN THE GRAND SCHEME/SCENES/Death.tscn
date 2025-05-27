@@ -5,20 +5,18 @@
 [ext_resource type="Script" uid="uid://ctw3muakni8fe" path="res://SCRIPTS/Death_Quit_Button.gd" id="3_t38sc"]
 
 [node name="Death" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="Death_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_7kl8g")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Death_Note" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_rdigb")
-metadata/_edit_lock_ = true
 
 [node name="Necrology" type="Label" parent="Death_Note"]
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 233.0
 offset_top = 30.0
@@ -32,9 +30,9 @@ Condolences to the family, if applicable."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-metadata/_edit_lock_ = true
 
 [node name="Quit" type="Button" parent="Death_Note"]
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 231.0
 offset_top = 292.0
@@ -43,7 +41,6 @@ offset_bottom = 300.0
 tooltip_text = "End of the road, Dude!"
 text = "Case closed"
 script = ExtResource("3_t38sc")
-metadata/_edit_lock_ = true
 
 [connection signal="mouse_entered" from="Death_Note/Quit" to="Death_Note/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Death_Note/Quit" to="Death_Note/Quit" method="_on_mouse_exited"]
