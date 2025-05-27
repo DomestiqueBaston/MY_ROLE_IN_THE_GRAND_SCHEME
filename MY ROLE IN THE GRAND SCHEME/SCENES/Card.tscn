@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=51 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
@@ -1185,10 +1185,28 @@ tracks/18/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
 }
 
+[sub_resource type="Animation" id="Animation_1sbcw"]
+resource_name = "Disparition"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Mask:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.196078), Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tcnxd"]
 _data = {
 &"Card_Blink": SubResource("Animation_0byv1"),
 &"Delete_Card": SubResource("Animation_s04w5"),
+&"Disparition": SubResource("Animation_1sbcw"),
 &"Drag_Expanded_Card_Appearance": SubResource("Animation_fsb4r"),
 &"Drag_Expanded_Card_Disappearance": SubResource("Animation_8pq22"),
 &"Drag_Reduced_Card_Appearance": SubResource("Animation_q0ypl"),
