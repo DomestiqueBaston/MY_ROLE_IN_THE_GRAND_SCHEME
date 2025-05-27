@@ -491,7 +491,7 @@ libraries = {
 }
 
 [node name="Folding_Unfolding" type="AudioStreamPlayer" parent="Reserve_Expansion"]
-volume_db = -10.0
+volume_db = -25.0
 bus = &"FX"
 
 [node name="Reserve_Cards" type="Node2D" parent="."]
