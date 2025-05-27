@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="24_35y2t"]
 [ext_resource type="Texture2D" uid="uid://ckvownclb2bny" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Fonce_50.png" id="24_j6pb0"]
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="24_lp1fx"]
-[ext_resource type="Texture2D" uid="uid://djaa1uffmc675" path="res://GRAPHICS/MAIN/Card_Playground_Mask.png" id="25_47v8w"]
+[ext_resource type="Texture2D" uid="uid://djaa1uffmc675" path="res://TRASH (NEW)/Card_Playground_Mask.png" id="25_47v8w"]
 [ext_resource type="Texture2D" uid="uid://s6171shdoa65" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png" id="26_63nlu"]
 [ext_resource type="Texture2D" uid="uid://s65dwg1f2osu" path="res://GRAPHICS/LINK_PIN/Plein_Orange_50.png" id="26_njmm0"]
 [ext_resource type="Texture2D" uid="uid://o3t8donwh7gm" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair_50.png" id="28_bepi5"]

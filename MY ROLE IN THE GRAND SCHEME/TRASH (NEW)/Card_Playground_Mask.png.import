@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djaa1uffmc675"
-path="res://.godot/imported/Card_Playground_Mask.png-53e19d558aa2c08dc923297f288dec30.ctex"
+path="res://.godot/imported/Card_Playground_Mask.png-5a18d9dd81d677ec53584bd62e074902.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/MAIN/Card_Playground_Mask.png"
-dest_files=["res://.godot/imported/Card_Playground_Mask.png-53e19d558aa2c08dc923297f288dec30.ctex"]
+source_file="res://TRASH (NEW)/Card_Playground_Mask.png"
+dest_files=["res://.godot/imported/Card_Playground_Mask.png-5a18d9dd81d677ec53584bd62e074902.ctex"]
 
 [params]
 
