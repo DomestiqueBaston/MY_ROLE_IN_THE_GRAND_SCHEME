@@ -352,151 +352,145 @@ script = ExtResource("1_anbsy")
 texture = ExtResource("2_lp1db")
 centered = false
 
-[node name="TMP_1" type="Node2D" parent="."]
+[node name="Cards" type="Node2D" parent="."]
 
-[node name="Main_Playmat" type="Node2D" parent="TMP_1"]
-
-[node name="Cards" type="Node2D" parent="TMP_1/Main_Playmat"]
-
-[node name="Card1" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card1" parent="Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(190, 85)
 card_name = "Click the cards..."
 description = "... to see the reduce/expand animations!"
 combat_type = 1
 
-[node name="Card2" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card2" parent="Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(463, 206)
 combat_type = 2
 
-[node name="Card3" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card3" parent="Cards" instance=ExtResource("3_d3ak4")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 card_type = 1
 investigation_type = 2
 
-[node name="Card4" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card4" parent="Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(165, 213)
 card_type = 2
 
-[node name="Card5" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card5" parent="Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(294, 38)
 
-[node name="Card6" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card6" parent="Cards" instance=ExtResource("3_d3ak4")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
 opacity = 0.78
 
-[node name="Card7" parent="TMP_1/Main_Playmat/Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card7" parent="Cards" instance=ExtResource("3_d3ak4")]
 modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(584, 278)
 opacity = 0.78
 
-[node name="Links" type="Node2D" parent="TMP_1/Main_Playmat"]
+[node name="Links" type="Node2D" parent="."]
 
-[node name="Link_Violet_Rose" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+[node name="Link_Violet_Rose" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
 visible = true
 card1 = NodePath("../../Cards/Card1")
 pin1 = 4
 card2 = NodePath("../../Cards/Card2")
 texture = ExtResource("5_mjrlc")
 
-[node name="Link_Pointillé_Blanc" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+[node name="Link_Pointillé_Blanc" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
 visible = true
 card1 = NodePath("../../Cards/Card5")
 pin1 = 4
 card2 = NodePath("../../Cards/Card6")
 texture = ExtResource("6_ffvqa")
 
-[node name="Link_Plein_Jaune" parent="TMP_1/Main_Playmat/Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+[node name="Link_Plein_Jaune" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
 visible = true
 card1 = NodePath("../../Cards/Card4")
 pin1 = 4
 card2 = NodePath("../../Cards/Card3")
 texture = ExtResource("7_dmqsm")
 
-[node name="TEST_LINK" parent="TMP_1/Main_Playmat/Links" instance=ExtResource("8_ddveh")]
+[node name="TEST_LINK" parent="Links" instance=ExtResource("8_ddveh")]
 
-[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_1/Papa_Link" index="0"]
+[node name="Link_Texture" parent="Links/TEST_LINK/Link_1/Papa_Link" index="0"]
 offset_top = 0.0
 offset_bottom = 3.0
 tooltip_text = "Property
 New"
 
-[node name="Link_Texture" parent="TMP_1/Main_Playmat/Links/TEST_LINK/Link_2/Papa_Link" index="0"]
+[node name="Link_Texture" parent="Links/TEST_LINK/Link_2/Papa_Link" index="0"]
 offset_top = 0.0
 offset_bottom = 3.0
 tooltip_text = "Acquaintance
 New"
 
-[node name="Player_Locator" parent="TMP_1/Main_Playmat" instance=ExtResource("9_twje4")]
+[node name="Player_Locator" parent="." instance=ExtResource("9_twje4")]
 position = Vector2(544, 64)
 
-[node name="TMP_2" type="Node2D" parent="."]
-
-[node name="Reserve_Cards" type="Node2D" parent="TMP_2"]
+[node name="Reserve_Cards" type="Node2D" parent="."]
 position = Vector2(13, 39)
 script = ExtResource("51_6gmax")
 
-[node name="Card7" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card7" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 combat_type = 1
 is_stacked = true
 
-[node name="Card8" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card8" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(3, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card9" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card9" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(6, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card10" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card10" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(9, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card11" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card11" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(12, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card12" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card12" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(15, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card13" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card13" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(18, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card14" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card14" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(21, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card15" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card15" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(24, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card16" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card16" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(27, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card17" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card17" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(30, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Card18" parent="TMP_2/Reserve_Cards" instance=ExtResource("3_d3ak4")]
+[node name="Card18" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(33, 0)
 combat_type = 1
 is_stacked = true
 
-[node name="Drag_Drop_Line" parent="TMP_2" instance=ExtResource("52_2uhvq")]
+[node name="Drag_Drop_Line" parent="." instance=ExtResource("52_2uhvq")]
 visible = false
 z_index = 2
 
@@ -2522,4 +2516,4 @@ item_14/id = 14
 [connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
 [connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_new_dark_purple_toggled"]
 
-[editable path="TMP_1/Main_Playmat/Links/TEST_LINK"]
+[editable path="Links/TEST_LINK"]

@@ -1,8 +1,9 @@
 extends Node2D
 
-@onready var cards: Node2D = $TMP_1/Main_Playmat/Cards
-@onready var links: Node2D = $TMP_1/Main_Playmat/Links
-@onready var reserve: Node2D = $TMP_2/Reserve_Cards
+@onready var cards: Node2D = $Cards
+@onready var links: Node2D = $Links
+@onready var reserve: Node2D = $Reserve_Cards
+@onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup/Main_Menu
 @onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
 @onready var reserve_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Reserve_Collider/Reserve
@@ -101,10 +102,9 @@ func _start_drag():
 	# turn on the drag & drop line that connects the initial and current
 	# mouse positions
 
-	var line = $TMP_2/Drag_Drop_Line
-	line.point1 = _drag_click_pos
-	line.point2 = _drag_click_pos
-	line.show_line()
+	drag_drop_line.point1 = _drag_click_pos
+	drag_drop_line.point2 = _drag_click_pos
+	drag_drop_line.show_line()
 
 	# increase the Z index of any links connected to the card being dragged, so
 	# that they, too, are drawn on top of everything else (Card.start_drag()
@@ -118,7 +118,7 @@ func _start_drag():
 func _drag(global_pos: Vector2):
 	_current_card.global_position = \
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
-	$TMP_2/Drag_Drop_Line.point2 = global_pos
+	drag_drop_line.point2 = global_pos
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	for link in _drag_links:
@@ -128,7 +128,7 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	Globals.dragging = false
 
 func _abort_drag():
-	$TMP_2/Drag_Drop_Line.hide_line()
+	drag_drop_line.hide_line()
 	var card = _current_card
 	var tween = create_tween()
 	tween.tween_property(card, "position", _drag_local_init_pos, 0.15)
@@ -145,7 +145,7 @@ func _stop_drag(global_pos: Vector2):
 		_abort_drag()
 		return
 
-	$TMP_2/Drag_Drop_Line.hide_line()
+	drag_drop_line.hide_line()
 	_stuff_to_do_when_drag_ends(_current_card)
 
 	if in_reserve:
