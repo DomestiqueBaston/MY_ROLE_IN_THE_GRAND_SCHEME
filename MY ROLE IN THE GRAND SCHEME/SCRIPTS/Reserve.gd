@@ -9,6 +9,7 @@ extends Node2D
 @export var unfolding_card_count: int = 6
 
 @onready var animation: AnimationPlayer = $"../Reserve_Expansion/Reserve_Animation"
+@onready var expansion_panel: Panel = $"../Reserve_Expansion/Reserve_Expansion"
 
 var _max_card_count: int
 var _current_card: int = -1
@@ -73,7 +74,7 @@ func _input(event: InputEvent):
 	if _tween:
 		_tween.kill()
 	if (_current_card < 0 or new_card < 0):
-		_tween = create_tween()
+		_tween = create_tween().set_parallel()
 	else:
 		_tween = null
 
@@ -94,21 +95,27 @@ func _input(event: InputEvent):
 			2:
 				disp = _min_displacement
 		if _tween:
-			_tween.set_parallel().tween_property(
+			_tween.tween_property(
 				get_child(idx), "position:y", -disp, _tween_duration);
 		else:
 			get_child(idx).position.y = -disp
 
 func _fold():
-	animation.play("Folding")
-	await animation.animation_finished
-	z_index = 0
+	var tween = create_tween().set_parallel()
+	tween.tween_property(self, "size:x", 107, 0.2)
+	tween.tween_property(self, "z_index", 0, 0.2)
+	tween.tween_property(expansion_panel, "size:x", 1, 0.2)
+	tween.tween_property(expansion_panel, "visible", false, 0.1333)
+	$"../Reserve_Expansion/Folding".play()
 	_is_folded = true
 
 func _unfold():
 	z_index = 1
-	animation.play("Unfolding")
-	await animation.animation_finished
+	expansion_panel.show()
+	var tween = create_tween().set_parallel()
+	tween.tween_property(self, "size:x", 612, 0.2)
+	tween.tween_property(expansion_panel, "size:x", 506, 0.2)
+	$"../Reserve_Expansion/Unfolding".play()
 	_is_folded = false
 
 func _layout():

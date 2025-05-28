@@ -494,6 +494,16 @@ libraries = {
 volume_db = -25.0
 bus = &"FX"
 
+[node name="Folding" type="AudioStreamPlayer" parent="Reserve_Expansion"]
+stream = ExtResource("49_u5els")
+volume_db = -25.0
+bus = &"FX"
+
+[node name="Unfolding" type="AudioStreamPlayer" parent="Reserve_Expansion"]
+stream = ExtResource("50_vlxab")
+volume_db = -25.0
+bus = &"FX"
+
 [node name="Reserve_Cards" type="Node2D" parent="."]
 position = Vector2(13, 39)
 script = ExtResource("51_6gmax")
