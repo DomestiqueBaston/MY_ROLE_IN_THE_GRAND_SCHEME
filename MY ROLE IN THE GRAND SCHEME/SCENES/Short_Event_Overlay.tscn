@@ -2526,7 +2526,6 @@ libraries = {
 autoplay = "Flashing"
 
 [node name="Investigation_Center" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Investigation_Center_BG" type="Sprite2D" parent="Overlays/Investigation_Center"]
 texture = ExtResource("88_psfuj")
@@ -2540,6 +2539,7 @@ texture = ExtResource("89_jo5q1")
 centered = false
 
 [node name="Case_Report" type="Label" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask"]
+modulate = Color(1, 1, 1, 0.784314)
 offset_left = 136.0
 offset_top = 84.0
 offset_right = 193.0

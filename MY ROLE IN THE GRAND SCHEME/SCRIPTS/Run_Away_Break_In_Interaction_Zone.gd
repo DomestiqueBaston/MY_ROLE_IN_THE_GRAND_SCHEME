@@ -18,6 +18,10 @@ func _ready():
 func _process(_delta):
 	var mouse_position = get_viewport().get_mouse_position()
 	var hovering = false
+	
+	# Ignore les détections si le noeud parent est invisible
+	if not get_node("../..").visible:
+		return
 
 	if _is_mouse_over(interaction_collider, mouse_position):
 		hovering = true

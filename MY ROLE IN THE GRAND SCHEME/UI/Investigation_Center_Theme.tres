@@ -61,7 +61,7 @@ content_margin_left = 3.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvckk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84jwc"]
-bg_color = Color(0, 0, 0, 0.282353)
+bg_color = Color(0, 0, 0, 0.501961)
 border_width_left = 1
 border_width_right = 1
 border_width_bottom = 1
