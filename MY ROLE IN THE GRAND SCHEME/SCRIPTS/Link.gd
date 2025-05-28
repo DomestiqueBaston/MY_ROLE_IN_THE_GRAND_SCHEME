@@ -38,7 +38,7 @@ class_name Link extends Node2D
 		texture = value
 		$Link_Texture.texture = value
 
-const _thickness: float = 4
+@onready var _thickness: float = $Link_Texture.size.y
 
 func _ready():
 	_show_or_hide()
