@@ -1093,7 +1093,6 @@ position = Vector2(640, 0)
 [node name="Trash_Open" type="AudioStreamPlayer" parent="Overlays/Card_Management"]
 stream = ExtResource("137_qmu3t")
 volume_db = -10.0
-autoplay = true
 bus = &"UI"
 
 [node name="Trash_Close" type="AudioStreamPlayer" parent="Overlays/Card_Management"]
@@ -3871,7 +3870,6 @@ centered = false
 offset = Vector2(20, 20)
 
 [node name="Text_Buy" type="Control" parent="Overlays/Search_Warrant"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
