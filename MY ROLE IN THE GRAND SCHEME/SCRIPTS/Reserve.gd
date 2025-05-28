@@ -4,9 +4,12 @@ extends Node2D
 	set(value):
 		size = value
 		_layout()
-@export var card_size: Vector2 = Vector2(74, 100)
+
+@export var folded_width: int = 107
+@export var unfolded_width: int = 607
+@export var card_width: int = 74
 @export var min_card_margin: int = 3
-@export var unfolding_card_count: int = 6
+@export var ideal_card_margin: int = 12
 
 @onready var expansion_panel: Panel = $"../Reserve_Expansion/Reserve_Expansion"
 
@@ -52,8 +55,9 @@ func _input(event: InputEvent):
 
 	if _is_mouse_inside != mouse_inside:
 		_is_mouse_inside = mouse_inside
-		if mouse_inside and _is_folded and card_count > unfolding_card_count:
-			_unfold()
+		var ideal_width: int = card_width + ideal_card_margin * (card_count - 1)
+		if mouse_inside and _is_folded and ideal_width - size.x >= 50:
+			_unfold(mini(ideal_width, unfolded_width))
 			return
 
 	# otherwise, see which card is under the mouse now
@@ -103,26 +107,29 @@ func _input(event: InputEvent):
 			get_child(idx).position.y = -disp
 
 func _fold():
-	_fold_tween = create_tween().set_parallel().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUART)
-	_fold_tween.tween_property(self, "size:x", 107, 0.2)
+	_fold_tween = create_tween().set_parallel()
+	_fold_tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUART)
+	_fold_tween.tween_property(self, "size:x", folded_width, 0.2)
 	_fold_tween.tween_property(self, "z_index", 0, 0.2)
 	_fold_tween.tween_property(expansion_panel, "size:x", 1, 0.2)
 	_fold_tween.tween_property(expansion_panel, "visible", false, 0.1333)
 	$"../Reserve_Expansion/Folding".play()
 	_is_folded = true
 
-func _unfold():
+func _unfold(width: int):
 	z_index = 1
 	expansion_panel.show()
-	_fold_tween = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
-	_fold_tween.tween_property(self, "size:x", 612, 0.2)
-	_fold_tween.tween_property(expansion_panel, "size:x", 506, 0.2)
+	_fold_tween = create_tween().set_parallel()
+	_fold_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
+	_fold_tween.tween_property(self, "size:x", width, 0.2)
+	_fold_tween.tween_property(
+		expansion_panel, "size:x", width - folded_width + 5, 0.2)
 	$"../Reserve_Expansion/Unfolding".play()
 	_is_folded = false
 
 func _layout():
 	_current_card = -1
-	_max_card_count = 1 + int((size.x - card_size.x) / min_card_margin)
+	_max_card_count = 1 + int((size.x - card_width) / min_card_margin)
 
 	var card_count = get_child_count()
 	var vis_card_count = mini(card_count, _max_card_count)
@@ -130,7 +137,7 @@ func _layout():
 
 	var margin = min_card_margin
 	if vis_card_count > 1:
-		margin = int((size.x - card_size.x) / (vis_card_count - 1))
+		margin = int((size.x - card_width) / (vis_card_count - 1))
 
 	var x = 0
 	for card_index in card_count:
