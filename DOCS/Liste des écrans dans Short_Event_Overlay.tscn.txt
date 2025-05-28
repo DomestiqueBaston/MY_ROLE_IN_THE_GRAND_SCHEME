@@ -1,0 +1,95 @@
+Il est possibles qu'une ou plusieurs des ces "sous-scènes" ne soient jamais utilisées.
+
+
+
+Card_Management :
+	pour gérer les cartes du joueur
+
+Care_Sheet :
+	pour savoir si le joueur veut dépenser ses thunes chez le médecin
+
+Case_Management :
+	pour passer d'une enquête à une autre parmi les 4 enquêtes maximum qu'a le joueur
+
+Case Summary :
+	feuille d'enquête de départ
+
+Cellphone :
+	pour les messages anonymes
+
+Confirmation :
+	pour confirmer des trucs
+
+Income_Start :
+	pour donner les gains du joueur
+	pour annoncer ce que le joueur a en main au départ d'une partie
+
+Interaction_Run_Away_Break_In :
+	pour les interactions Run-Away
+	pour les interaction Break-In
+
+Intercom :
+	lorsqu'un PNJ n'est pas là
+	Lorsqu'un PNJ refuse de voir le joueur
+
+Investigation_Center :
+	Pour que le joueur aille choisir des enquêtes à mener
+
+Load_Save_Delete :
+	pour charger/sauver/effacer des sauvegardes de parties
+
+Misc :
+	lorsque le joueur à trop d'impayés et va en prison 3 jours
+	pour les résultats des Break-ins
+		réussite
+		échec
+	pour le déclenchement d'un combat
+		avec un NPC avant un Dialogue
+		avec un Minion
+	pour la fuite d'un PNJ avant un Dialogue
+		réussite
+		échec
+	pour les rêves/cauchemars
+		rêve
+		cauchemar
+	pour prévenir que le mobile de crime précédemment sélectionné n'est plus valide
+	pour prévenir lorsqu'une contradiction est apparue entre de nouvelles infos et de précédentes infos
+	pour prévenir que le joueur a laissé passer le délai de résolution d'une de ses enquêtes
+	pour dire au joueur que Rowena n'est pas là
+	pour annoncer le résultat d'une tentative de fuite du joueur
+		réussite
+		échec
+
+Player_Improvement :
+	Lorsque le joueur progresse en MEN positivement
+	Lorsque le joueur progresse en PHY positivement
+	Lorsque le joueur progresse en HEAnom positivement
+	Lorsque le joueur progresse en MEN négativement
+	Lorsque le joueur progresse en PHY négativement
+	Lorsque le joueur progresse en HEAnom négativement
+
+Rowena :
+	pour acheter de la drogue à Rowena
+
+Run_Away_Break_In :
+	pour proposer au joueur de fuir
+	pour proposer au joueur d'entrer par effraction
+
+Search_Warrant :
+	pour acheter une autorisation de fouille
+	pour utiliser une autorisation de fouille
+	/!\ Manquant : pour proposer au joueur d'utiliser une autorisation de fouille /!\
+
+Sleep :
+	pour choisir combien de temps le joueur va dormir
+
+Wanted :
+	pour proposer au joueur soit d'aller directement en prison après avoir dépassé le seuil de Wan, soit de payer une caution
+	pour prévenir qu'un PNJ vient de passer le seuil de Wan et qu'il ne sera désormais plus visitable qu'en prison
+
+
+
+
+
+
+

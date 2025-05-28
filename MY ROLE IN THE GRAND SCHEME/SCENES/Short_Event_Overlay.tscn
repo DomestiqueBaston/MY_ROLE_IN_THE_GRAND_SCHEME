@@ -50,7 +50,7 @@
 [ext_resource type="BitMap" uid="uid://1muvlh7ldcm0" path="res://GRAPHICS/SHORT_EVENT/Case_1_Mask.png" id="45_k24xe"]
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/SHORT_EVENT/Case_BG.png" id="45_m6kkd"]
 [ext_resource type="Texture2D" uid="uid://tn484qetw520" path="res://GRAPHICS/SHORT_EVENT/Case_2_Pressed.png" id="46_a7igc"]
-[ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Sheet_Theme.tres" id="46_tdxs6"]
+[ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Summary_Theme.tres" id="46_tdxs6"]
 [ext_resource type="Script" uid="uid://b51y22y7k7qvt" path="res://SCRIPTS/Case_Serial_Number_Generator.gd" id="47_lkigo"]
 [ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/SHORT_EVENT/Case_2_Hover.png" id="47_q1jpv"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/SHORT_EVENT/Case_2_Mask.png" id="48_pf81c"]
@@ -457,8 +457,6 @@ _data = {
 &"Text_Animation": SubResource("Animation_wqng6")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na1nk"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7igc"]
 content_margin_left = 2.0
 content_margin_bottom = 1.0
@@ -771,6 +769,8 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smut4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjqqn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na1nk"]
 
 [sub_resource type="Animation" id="Animation_4pq04"]
 resource_name = "Appearance"
@@ -1831,125 +1831,6 @@ libraries = {
 }
 autoplay = "Text_Animation"
 
-[node name="Wanted" type="Node2D" parent="Overlays"]
-visible = false
-
-[node name="Wanted_BG" type="Sprite2D" parent="Overlays/Wanted"]
-position = Vector2(95, 48)
-texture = ExtResource("13_s26gq")
-centered = false
-
-[node name="Info" type="Control" parent="Overlays/Wanted"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("14_adsmj")
-
-[node name="Player" type="Control" parent="Overlays/Wanted/Info"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
-theme = ExtResource("15_wqyuw")
-
-[node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/Player"]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 148.0
-offset_right = 534.0
-offset_bottom = 267.0
-bbcode_enabled = true
-text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff8864]   Dø[/color])."
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Money" type="RichTextLabel" parent="Overlays/Wanted/Info/Player/Situation"]
-layout_mode = 1
-offset_left = 67.0
-offset_top = 105.0
-offset_right = 87.0
-offset_bottom = 116.0
-theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_na1nk")
-bbcode_enabled = true
-text = "200"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="Surrender" type="Button" parent="Overlays/Wanted/Info/Player"]
-layout_mode = 0
-offset_left = 415.0
-offset_top = 289.0
-offset_right = 534.0
-offset_bottom = 305.0
-tooltip_text = "Anyway, I needed a break..."
-toggle_mode = true
-button_group = ExtResource("16_dog4u")
-text = "Don't shoot, I surrender..."
-alignment = 2
-
-[node name="Pay" type="Button" parent="Overlays/Wanted/Info/Player"]
-layout_mode = 0
-offset_left = 430.0
-offset_top = 273.0
-offset_right = 534.0
-offset_bottom = 289.0
-tooltip_text = "Pay to leave now."
-theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
-theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
-theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-toggle_mode = true
-button_group = ExtResource("16_dog4u")
-text = "Easy, easy... I can pay!"
-alignment = 2
-
-[node name="NPC" type="Control" parent="Overlays/Wanted/Info"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
-theme = ExtResource("15_wqyuw")
-
-[node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/NPC"]
-layout_mode = 0
-offset_left = 418.0
-offset_top = 191.0
-offset_right = 534.0
-offset_bottom = 283.0
-bbcode_enabled = true
-text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] That [color=#ff8864]idiot[/color] crossed the line, [color=#ff8864]the authorities[/color] have sent people to handle it, and that means spending [color=#ff1c18]several weeks[/color] [color=#ff8864]in jail[/color].
-"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Pay" type="Button" parent="Overlays/Wanted/Info/NPC"]
-layout_mode = 0
-offset_left = 404.0
-offset_top = 289.0
-offset_right = 534.0
-offset_bottom = 305.0
-tooltip_text = "Pay to leave now."
-theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
-theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
-theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-toggle_mode = true
-button_group = ExtResource("16_dog4u")
-text = "Ha! Ha! See you in lockup!"
-alignment = 2
-
-[node name="Police" type="AudioStreamPlayer" parent="Overlays/Wanted"]
-stream = ExtResource("17_wp1dn")
-volume_db = -22.5
-bus = &"FX"
-
 [node name="Income_Start" type="Node2D" parent="Overlays"]
 visible = false
 
@@ -2296,7 +2177,6 @@ modulate = Color(1, 1, 1, 0.917647)
 anchors_preset = 0
 
 [node name="Away" type="Label" parent="Overlays/Intercom/Interface/Screens"]
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
@@ -2328,6 +2208,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Refuse" type="Label" parent="Overlays/Intercom/Interface/Screens"]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
@@ -2525,6 +2406,7 @@ libraries = {
 autoplay = "Flashing"
 
 [node name="Investigation_Center" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Investigation_Center_BG" type="Sprite2D" parent="Overlays/Investigation_Center"]
 texture = ExtResource("88_psfuj")
@@ -2894,7 +2776,7 @@ custom_minimum_size = Vector2(38, 0)
 layout_mode = 2
 
 [node name="Case" type="Label" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask"]
-modulate = Color(1, 1, 1, 0.752941)
+modulate = Color(1, 1, 1, 0.784314)
 offset_left = 136.0
 offset_top = 65.0
 offset_right = 158.0
@@ -2943,22 +2825,8 @@ popup/item_5/disabled = true
 popup/item_5/separator = true
 script = ExtResource("91_smut4")
 
-[node name="Cancel" type="Button" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask"]
-offset_left = 471.0
-offset_top = 282.0
-offset_right = 499.0
-offset_bottom = 290.0
-theme = ExtResource("90_5oqru")
-theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
-theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
-theme_override_colors/font_color = Color(0.71, 0.34648, 0.2556, 0.823529)
-theme_override_colors/font_focus_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
-theme_override_colors/font_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
-text = "Cancel"
-script = ExtResource("92_hjqqn")
-
 [node name="Ok" type="Button" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask"]
+self_modulate = Color(1, 1, 1, 0.784314)
 offset_left = 472.0
 offset_top = 269.0
 offset_right = 498.0
@@ -2971,6 +2839,22 @@ theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 text = "I'm in!"
+script = ExtResource("92_hjqqn")
+
+[node name="Cancel" type="Button" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 471.0
+offset_top = 282.0
+offset_right = 499.0
+offset_bottom = 290.0
+theme = ExtResource("90_5oqru")
+theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
+theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
+theme_override_colors/font_color = Color(0.71, 0.34648, 0.2556, 0.823529)
+theme_override_colors/font_focus_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
+theme_override_colors/font_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
+text = "Cancel"
 script = ExtResource("92_hjqqn")
 
 [node name="Load_Save_Delete" type="Node2D" parent="Overlays"]
@@ -3199,14 +3083,14 @@ anchors_preset = 0
 [node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
 layout_mode = 0
 offset_left = 167.0
-offset_top = 62.0
+offset_top = 59.0
 offset_right = 484.0
-offset_bottom = 299.0
+offset_bottom = 294.0
 rotation = 0.0356184
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Not what you expected[/color][/shake]. Just  as  you approached, the  person in front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not  what  you expected[/color][/shake]. Just  as  you approached, the  person in  front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
 
 In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
 
@@ -3221,20 +3105,21 @@ offset_right = 484.0
 offset_bottom = 299.0
 rotation = 0.0356184
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an attack!
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an  attack!
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t think it’d be that easy, did you?
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t  think it’d  be  that easy,  did you?
 
-The  assault  comes  fast  (probably  more than you can  handle).
+The  assault  comes  fast  (probably  more  than  you can  handle).
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
 
-Maybe you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
+Maybe  you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
 
 [node name="Dialogue" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
 anchors_preset = 0
 
 [node name="NPC_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
+visible = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 58.0
@@ -3251,7 +3136,6 @@ It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][col
 Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
 
 [node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
-visible = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 61.0
@@ -3380,7 +3264,6 @@ Either way, this  [shake rate=7.0 level=5 connected=0][color=#ff8864]whole  thin
 It's  going  to  be  a [shake rate=7.0 level=5 connected=0][color=#ff1c18]tight  game[/color] [color=#ff8864]from  here[/color][/shake]![/center]"
 
 [node name="Run_Away" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
 anchors_preset = 0
 
 [node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
@@ -3870,6 +3753,7 @@ centered = false
 offset = Vector2(20, 20)
 
 [node name="Text_Buy" type="Control" parent="Overlays/Search_Warrant"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
@@ -3942,7 +3826,6 @@ you mention it..."
 alignment = 0
 
 [node name="Text_Use" type="Control" parent="Overlays/Search_Warrant"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
@@ -4199,6 +4082,125 @@ stream = ExtResource("112_d5ayf")
 volume_db = -15.0
 bus = &"UI"
 
+[node name="Wanted" type="Node2D" parent="Overlays"]
+visible = false
+
+[node name="Wanted_BG" type="Sprite2D" parent="Overlays/Wanted"]
+position = Vector2(95, 48)
+texture = ExtResource("13_s26gq")
+centered = false
+
+[node name="Info" type="Control" parent="Overlays/Wanted"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("14_adsmj")
+
+[node name="Player" type="Control" parent="Overlays/Wanted/Info"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("15_wqyuw")
+
+[node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/Player"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 148.0
+offset_right = 534.0
+offset_bottom = 267.0
+bbcode_enabled = true
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff8864]   Dø[/color])."
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Money" type="RichTextLabel" parent="Overlays/Wanted/Info/Player/Situation"]
+layout_mode = 1
+offset_left = 67.0
+offset_top = 105.0
+offset_right = 87.0
+offset_bottom = 116.0
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_na1nk")
+bbcode_enabled = true
+text = "200"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Surrender" type="Button" parent="Overlays/Wanted/Info/Player"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 289.0
+offset_right = 534.0
+offset_bottom = 305.0
+tooltip_text = "Anyway, I needed a break..."
+toggle_mode = true
+button_group = ExtResource("16_dog4u")
+text = "Don't shoot, I surrender..."
+alignment = 2
+
+[node name="Pay" type="Button" parent="Overlays/Wanted/Info/Player"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 273.0
+offset_right = 534.0
+offset_bottom = 289.0
+tooltip_text = "Pay to leave now."
+theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
+theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
+theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+toggle_mode = true
+button_group = ExtResource("16_dog4u")
+text = "Easy, easy... I can pay!"
+alignment = 2
+
+[node name="NPC" type="Control" parent="Overlays/Wanted/Info"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("15_wqyuw")
+
+[node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/NPC"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 191.0
+offset_right = 534.0
+offset_bottom = 283.0
+bbcode_enabled = true
+text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] That [color=#ff8864]idiot[/color] crossed the line, [color=#ff8864]the authorities[/color] have sent people to handle it, and that means spending [color=#ff1c18]several weeks[/color] [color=#ff8864]in jail[/color].
+"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Pay" type="Button" parent="Overlays/Wanted/Info/NPC"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 289.0
+offset_right = 534.0
+offset_bottom = 305.0
+tooltip_text = "Pay to leave now."
+theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
+theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
+theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+toggle_mode = true
+button_group = ExtResource("16_dog4u")
+text = "Ha! Ha! See you in lockup!"
+alignment = 2
+
+[node name="Police" type="AudioStreamPlayer" parent="Overlays/Wanted"]
+stream = ExtResource("17_wp1dn")
+volume_db = -22.5
+bus = &"FX"
+
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_m6d4b")
@@ -4247,15 +4249,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_any_button_entered"]
 [connection signal="mouse_exited" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_any_button_exited"]
 [connection signal="pressed" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_surrender_pressed"]
-[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
 [connection signal="mouse_entered" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_pressed"]
@@ -4271,12 +4264,12 @@ bus = &"UI"
 [connection signal="button_down" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_down"]
 [connection signal="button_up" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_up"]
 [connection signal="item_selected" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_item_selected"]
-[connection signal="mouse_entered" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" method="_on_ok_pressed"]
+[connection signal="mouse_entered" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_cancel_pressed"]
 [connection signal="item_selected" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_item_selected"]
 [connection signal="mouse_entered" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_mouse_exited"]
@@ -4355,4 +4348,13 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_no_pressed"]
+[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_surrender_pressed"]
+[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
+[connection signal="mouse_entered" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
 [connection signal="animation_finished" from="On_Off" to="Overlays/Intercom/Interface/Quit" method="_on_on_off_animation_finished"]

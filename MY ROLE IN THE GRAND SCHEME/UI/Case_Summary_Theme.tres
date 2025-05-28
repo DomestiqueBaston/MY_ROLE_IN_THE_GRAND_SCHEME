@@ -95,7 +95,7 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_s6o60")
 default_font_size = 8
-Button/colors/font_color = Color(0.381333, 0.65, 0.247, 0.85098)
+Button/colors/font_color = Color(0.459333, 0.65, 0.364, 0.85098)
 Button/colors/font_disabled_color = Color(0.380392, 0.65098, 0.247059, 0.85098)
 Button/colors/font_focus_color = Color(0.380392, 0.65098, 0.247059, 0.85098)
 Button/colors/font_hover_color = Color(0.606, 0.9, 0.459, 0.85098)
