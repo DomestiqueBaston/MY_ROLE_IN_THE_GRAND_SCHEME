@@ -1,14 +1,20 @@
 extends Node2D
 
+## Actual size of the reserve area.
 @export var size: Vector2 = Vector2(107, 100):
 	set(value):
 		size = value
 		_layout()
 
+## Width of the reserve before unfolding.
 @export var folded_width: int = 107
+## Maximum width of the reserve when it is unfolded.
 @export var unfolded_width: int = 607
+## Width of a single card.
 @export var card_width: int = 74
+## Minimum allowed space between cards (leftmost cards are hidden if necessary).
 @export var min_card_margin: int = 3
+## Desired spacing between cards that unfolding aims to obtain.
 @export var ideal_card_margin: int = 12
 
 @onready var expansion_panel: Panel = $"../Reserve_Expansion/Reserve_Expansion"
