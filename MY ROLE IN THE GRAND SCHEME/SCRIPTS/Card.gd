@@ -110,8 +110,11 @@ enum NpcStatus {
 	set(value):
 		if is_stacked != value:
 			# because a stacked card's Z index is incremented when highlighted
-			if not is_stacked and _is_highlighted:
-				z_index += 1
+			if _is_highlighted:
+				if is_stacked:
+					z_index -= 1
+				else:
+					z_index += 1
 			is_stacked = value
 			stacked_changed.emit()
 

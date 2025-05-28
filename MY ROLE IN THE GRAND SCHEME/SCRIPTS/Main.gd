@@ -6,7 +6,6 @@ extends Node2D
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup/Main_Menu
 @onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
-@onready var reserve_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Reserve_Collider/Reserve
 
 # highlighted card
 var _current_card: Card
@@ -168,6 +167,5 @@ func _is_in_playground(global_pos: Vector2):
 	return global_rect.has_point(global_pos)
 
 func _is_in_reserve(global_pos: Vector2):
-	var local_rect = reserve_shape.shape.get_rect()
-	var global_rect = reserve_shape.get_global_transform() * local_rect
-	return global_rect.has_point(global_pos)
+	var rect = Rect2(reserve.global_position, reserve.size)
+	return rect.has_point(global_pos)

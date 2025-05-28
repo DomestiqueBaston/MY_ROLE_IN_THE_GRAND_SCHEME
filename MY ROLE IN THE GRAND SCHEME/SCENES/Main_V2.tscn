@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=76 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_anbsy"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -64,9 +64,6 @@ texture_margin_bottom = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
 size = Vector2(470, 309)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_km17i"]
-size = Vector2(612, 100)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvc8p"]
 content_margin_left = 1.0
@@ -359,15 +356,6 @@ monitorable = false
 [node name="Playground_Card_Position" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Playground_Card_Position_Collider"]
 position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
-
-[node name="Reserve_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
-position = Vector2(1, 0)
-monitoring = false
-monitorable = false
-
-[node name="Reserve" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Reserve_Collider"]
-position = Vector2(316, 89)
-shape = SubResource("RectangleShape2D_km17i")
 
 [node name="Legend" type="Node2D" parent="Mask_Card_Playground"]
 
