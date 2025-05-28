@@ -16,8 +16,6 @@ var _tween: Tween
 
 var _is_mouse_inside: bool = false
 var _is_folded: bool = true
-var _wait_before_folding: bool = false
-var _wait_before_unfolding: bool = false
 
 const _tween_duration: float = 0.1
 const _max_displacement: int = 5
@@ -29,7 +27,7 @@ func _ready():
 	child_order_changed.connect(_layout)
 		
 func _input(event: InputEvent):
-	if event is not InputEventMouseMotion or animation.is_playing():
+	if event is not InputEventMouseMotion or animation.is_playing() or Globals.dragging:
 		return
 
 	# is the mouse inside or outside the bounding box?
@@ -38,39 +36,26 @@ func _input(event: InputEvent):
 	var bbox = Rect2(Vector2(0, 0), size)
 	var mouse_inside = bbox.has_point(local_pos)
 
-	# if it outside and we have been waiting for dragging to finish before
-	# refolding, do it now
+	# if the mouse is outside the bounding box, refold if necessary
 
-	if _wait_before_folding and not mouse_inside and not Globals.dragging:
-		_wait_before_folding = false
-		if not _is_folded:
-			_fold()
-			return
+	if not mouse_inside and not _is_folded:
+		_is_mouse_inside = mouse_inside
+		_fold()
+		return
+
+	# if the mouse has just entered the bounding box, maybe unfold
 
 	var card_count = get_child_count()
 
-	# if the mouse has entered or exited the bounding box, maybe unfold or
-	# refold the reserve now
-
 	if _is_mouse_inside != mouse_inside:
 		_is_mouse_inside = mouse_inside
-		if Globals.dragging:
-			if not mouse_inside:
-				_wait_before_folding = true
-			return
-		if _wait_before_unfolding and not mouse_inside:
-			_wait_before_unfolding = false
 		if mouse_inside and _is_folded and card_count > unfolding_card_count:
 			_unfold()
 			return
-		if not mouse_inside and not _is_folded:
-			_fold()
-			return
 
-	# otherwise, if no card is being dragged, see which card is now under the
-	# mouse
+	# otherwise, see which card is under the mouse now
 
-	if Globals.dragging or get_child_count() == 0:
+	if get_child_count() == 0:
 		return
 
 	var new_card = -1
@@ -150,5 +135,7 @@ func _layout():
 			x += margin
 		card_index += 1
 
-	if _is_mouse_inside:
-		_wait_before_unfolding = true
+	# this prevents _input() from unfolding the reserve right after a card has
+	# been dropped into it; the user has to exit the bounding box first
+
+	_is_mouse_inside = true
