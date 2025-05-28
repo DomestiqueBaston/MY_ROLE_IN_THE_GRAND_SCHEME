@@ -114,10 +114,10 @@ func _input(event: InputEvent):
 
 func _fold():
 	_fold_tween = create_tween().set_parallel()
-	_fold_tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUART)
-	_fold_tween.tween_property(self, "size:x", folded_width, 0.2)
-	_fold_tween.tween_property(self, "z_index", 0, 0.2)
-	_fold_tween.tween_property(expansion_panel, "size:x", 1, 0.2)
+	_fold_tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	_fold_tween.tween_property(self, "size:x", folded_width, 0.1)
+	_fold_tween.tween_property(self, "z_index", 0, 0.1)
+	_fold_tween.tween_property(expansion_panel, "size:x", 1, 0.1)
 	_fold_tween.tween_property(expansion_panel, "visible", false, 0.1333)
 	$"../Reserve_Expansion/Folding".play()
 	_is_folded = true
@@ -126,10 +126,10 @@ func _unfold(width: int):
 	z_index = 1
 	expansion_panel.show()
 	_fold_tween = create_tween().set_parallel()
-	_fold_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUART)
-	_fold_tween.tween_property(self, "size:x", width, 0.2)
+	_fold_tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	_fold_tween.tween_property(self, "size:x", width, 0.1)
 	_fold_tween.tween_property(
-		expansion_panel, "size:x", width - folded_width + 5, 0.2)
+		expansion_panel, "size:x", width - folded_width + 5, 0.1)
 	$"../Reserve_Expansion/Unfolding".play()
 	_is_folded = false
 

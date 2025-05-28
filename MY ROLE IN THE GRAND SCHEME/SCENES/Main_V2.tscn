@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=77 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_anbsy"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -51,6 +51,7 @@
 [ext_resource type="AudioStream" uid="uid://bkjfvpaccisok" path="res://SOUND/MISC/Unfolding.ogg" id="50_vlxab"]
 [ext_resource type="Script" uid="uid://mhjop2gadmxm" path="res://SCRIPTS/Reserve.gd" id="51_6gmax"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="52_2uhvq"]
+[ext_resource type="Texture2D" uid="uid://cp7big13j1qg1" path="res://GRAPHICS/UI/Arrow_Down_Yellow.png" id="52_lp1db"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="53_vyyi7"]
 [ext_resource type="Texture2D" uid="uid://kh2r3htrojer" path="res://GRAPHICS/MAIN/Main_Border.png" id="54_anbsy"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="54_x4cyf"]
@@ -2194,6 +2195,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
 custom_minimum_size = Vector2(100, 16)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_icons/arrow = ExtResource("52_lp1db")
 toggle_mode = false
 flat = true
 text_overrun_behavior = 3

@@ -77,8 +77,7 @@ Run_Away_Break_In :
 
 Search_Warrant :
 	pour acheter une autorisation de fouille
-	pour utiliser une autorisation de fouille
-	/!\ Manquant : pour proposer au joueur d'utiliser une autorisation de fouille /!\
+	pour proposer au joueur d'utiliser une autorisation de fouille
 
 Sleep :
 	pour choisir combien de temps le joueur va dormir
