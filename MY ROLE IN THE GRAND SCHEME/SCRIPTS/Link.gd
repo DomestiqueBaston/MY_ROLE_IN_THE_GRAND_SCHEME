@@ -38,10 +38,7 @@ class_name Link extends Node2D
 		texture = value
 		$Link_Texture.texture = value
 
-@export var thickness: float = 3:
-	set(value):
-		thickness = value
-		_update_transform()
+const _thickness: float = 4
 
 func _ready():
 	_show_or_hide()
@@ -54,10 +51,10 @@ func _update_transform():
 
 	var pos1 = card1.get_pin(pin1).global_position
 	var pos2 = card2.get_pin(pin2).global_position
-	pos1.y -= thickness * 0.5
-	pos2.y -= thickness * 0.5
+	pos1.y -= _thickness * 0.5
+	pos2.y -= _thickness * 0.5
 	$Link_Texture.global_position = pos1
-	$Link_Texture.size = Vector2(pos1.distance_to(pos2), thickness)
+	$Link_Texture.size = Vector2(pos1.distance_to(pos2), _thickness)
 	$Link_Texture.rotation = pos1.angle_to_point(pos2)
 	
 	# update collider shape
