@@ -118,7 +118,7 @@ func _fold():
 	_fold_tween.tween_property(self, "size:x", folded_width, 0.1)
 	_fold_tween.tween_property(self, "z_index", 0, 0.1)
 	_fold_tween.tween_property(expansion_panel, "size:x", 1, 0.1)
-	_fold_tween.tween_property(expansion_panel, "visible", false, 0.1333)
+	_fold_tween.tween_property(expansion_panel, "visible", false, 0.0666)
 	$"../Reserve_Expansion/Folding".play()
 	_is_folded = true
 
