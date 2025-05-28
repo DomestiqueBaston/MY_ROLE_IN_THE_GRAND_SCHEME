@@ -73,7 +73,7 @@ func _input(event: InputEvent):
 	if _tween:
 		_tween.kill()
 	if (_current_card < 0 or new_card < 0):
-		_tween = create_tween().set_parallel()
+		_tween = create_tween()
 	else:
 		_tween = null
 
@@ -94,7 +94,7 @@ func _input(event: InputEvent):
 			2:
 				disp = _min_displacement
 		if _tween:
-			_tween.tween_property(
+			_tween.set_parallel().tween_property(
 				get_child(idx), "position:y", -disp, _tween_duration);
 		else:
 			get_child(idx).position.y = -disp
