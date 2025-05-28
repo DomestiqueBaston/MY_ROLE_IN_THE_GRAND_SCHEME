@@ -292,21 +292,26 @@ func set_highlighted(highlighted: bool):
 	if _is_highlighted == highlighted:
 		return
 	if highlighted:
-		$Shadow_Animations.play("Shadow_On")
+		if is_stacked:
+			$Card_Shadow.position = Vector2(0, 0)
+			$Card_Shadow.show()
+			z_index += 1
+		else:
+			$Shadow_Animations.play("Shadow_On")
+			move_to_front()
 		if Globals.card_exited_sound.playing:
 			Globals.card_exited_sound.stop()
 		if not Globals.card_entered_sound.playing:
 			Globals.card_entered_sound.play()
-		if is_stacked:
-			z_index += 1
-		else:
-			move_to_front()
 	else:
-		$Shadow_Animations.play("Shadow_Off")
+		if is_stacked:
+			$Card_Shadow.hide()
+			$Card_Shadow.position = Vector2(-2, -4)
+			z_index -= 1
+		else:
+			$Shadow_Animations.play("Shadow_Off")
 		if not Globals.card_entered_sound.playing:
 			Globals.card_exited_sound.play()
-		if is_stacked:
-			z_index -= 1
 	_is_highlighted = highlighted
 
 func _update_opacity():
