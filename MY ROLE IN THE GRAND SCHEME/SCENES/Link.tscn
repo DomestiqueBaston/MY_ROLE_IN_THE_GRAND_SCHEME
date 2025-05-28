@@ -7,7 +7,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yi81"]
 resource_local_to_scene = true
-size = Vector2(8, 3)
+size = Vector2(8, 4)
 
 [sub_resource type="Animation" id="Animation_4x26u"]
 resource_name = "Blink"
@@ -111,9 +111,15 @@ script = ExtResource("1_vn4vw")
 
 [node name="Link_Texture" type="TextureRect" parent="."]
 texture_filter = 2
-custom_minimum_size = Vector2(8, 3)
+custom_minimum_size = Vector2(8, 4)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -2.0
 offset_right = 8.0
-offset_bottom = 3.0
+offset_bottom = 2.0
+grow_vertical = 2
+pivot_offset = Vector2(0, 2)
 tooltip_text = "Nature of the link here."
 theme = ExtResource("1_3ne57")
 expand_mode = 1
@@ -123,7 +129,7 @@ stretch_mode = 1
 monitorable = false
 
 [node name="Collider" type="CollisionShape2D" parent="Link_Texture/Link_Collider"]
-position = Vector2(4, 1.5)
+position = Vector2(4, 2)
 shape = SubResource("RectangleShape2D_8yi81")
 
 [node name="Link_Animation" type="AnimationPlayer" parent="."]
