@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://hl8yhfvhjhtn"]
+[gd_scene load_steps=31 format=3 uid="uid://hl8yhfvhjhtn"]
 
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
-[ext_resource type="Script" uid="uid://bt5otmo8wn3gk" path="res://SCRIPTS/Top_Bar_Alert.gd" id="4_0mfvj"]
 [ext_resource type="AudioStream" uid="uid://dmrut6mhf4tp3" path="res://SOUND/MISC/Soft_Alarm.ogg" id="5_0mfvj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mfvj"]
@@ -21,8 +20,8 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [sub_resource type="Animation" id="Animation_xsx1a"]
-resource_name = "Alert_No_Sound"
-length = 1.46667
+resource_name = "Alert"
+length = 0.666674
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -32,39 +31,10 @@ tracks/0/path = NodePath("Wan:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_17x0y"]
-resource_name = "Alert_Sound"
-length = 4.40001
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Wan:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.46667, 2.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_8d81j"]
@@ -82,29 +52,16 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("../Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nssbx"]
 _data = {
-&"Alert_No_Sound": SubResource("Animation_xsx1a"),
-&"Alert_Sound": SubResource("Animation_17x0y"),
+&"Alert": SubResource("Animation_xsx1a"),
 &"RESET": SubResource("Animation_8d81j")
 }
 
 [sub_resource type="Animation" id="Animation_2yfei"]
-resource_name = "Alert_No_Sound"
-length = 1.46667
+resource_name = "Alert"
+length = 0.666674
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -114,39 +71,10 @@ tracks/0/path = NodePath("Character_Stats/Wan:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_0mfvj"]
-resource_name = "Alert_Sound"
-length = 4.40001
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Stats/Wan:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.46667, 2.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_nvp8u"]
@@ -163,29 +91,16 @@ tracks/0/keys = {
 "update": 1,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2yfei"]
 _data = {
-&"Alert_No_Sound": SubResource("Animation_2yfei"),
-&"Alert_Sound": SubResource("Animation_0mfvj"),
+&"Alert": SubResource("Animation_2yfei"),
 &"RESET": SubResource("Animation_nvp8u")
 }
 
 [sub_resource type="Animation" id="Animation_xloq7"]
-resource_name = "Alert_No_Sound"
-length = 1.46667
+resource_name = "Alert"
+length = 0.666674
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -195,39 +110,10 @@ tracks/0/path = NodePath("Character_Stats/Add:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7xf6s"]
-resource_name = "Alert_Sound"
-length = 4.40001
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character_Stats/Add:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.46667, 2.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_16p5s"]
@@ -244,29 +130,16 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rc027"]
 _data = {
-&"Alert_No_Sound": SubResource("Animation_xloq7"),
-&"Alert_Sound": SubResource("Animation_7xf6s"),
+&"Alert": SubResource("Animation_xloq7"),
 &"RESET": SubResource("Animation_16p5s")
 }
 
 [sub_resource type="Animation" id="Animation_rc027"]
-resource_name = "Alert_No_Sound"
-length = 1.46667
+resource_name = "Alert"
+length = 0.666674
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -276,39 +149,10 @@ tracks/0/path = NodePath("Date_Time/Time:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7kwh6"]
-resource_name = "Alert_Sound"
-length = 4.40001
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Date_Time/Time:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.46667, 2.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_tbfsl"]
@@ -325,29 +169,16 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xsx1a"]
 _data = {
-&"Alert_No_Sound": SubResource("Animation_rc027"),
-&"Alert_Sound": SubResource("Animation_7kwh6"),
+&"Alert": SubResource("Animation_rc027"),
 &"RESET": SubResource("Animation_tbfsl")
 }
 
 [sub_resource type="Animation" id="Animation_nssbx"]
-resource_name = "Alert_No_Sound"
-length = 1.46667
+resource_name = "Alert"
+length = 0.666674
 loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
@@ -357,39 +188,10 @@ tracks/0/path = NodePath("Date_Time/Day:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667),
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gfo54"]
-resource_name = "Alert_Sound"
-length = 4.40001
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Date_Time/Day:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1.4, 1.46667, 1.8, 2.86667, 2.93333, 3.26667, 4.33333, 4.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.46667, 2.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_rgur7"]
@@ -407,75 +209,196 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/path = NodePath("Soft_Alarm:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pq470"]
 _data = {
-&"Alert_No_Sound": SubResource("Animation_nssbx"),
-&"Alert_Sound": SubResource("Animation_gfo54"),
+&"Alert": SubResource("Animation_nssbx"),
 &"RESET": SubResource("Animation_rgur7")
+}
+
+[sub_resource type="Animation" id="Animation_0becn"]
+resource_name = "Alert"
+length = 0.666673
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Stats/PHY:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0mfvj"]
+resource_name = "RESET"
+length = 0.001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Stats/PHY:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0mfvj"]
+_data = {
+&"Alert": SubResource("Animation_0becn"),
+&"RESET": SubResource("Animation_0mfvj")
+}
+
+[sub_resource type="Animation" id="Animation_7xf6s"]
+resource_name = "Alert"
+length = 0.666673
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Stats/MEN:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7kwh6"]
+resource_name = "RESET"
+length = 0.001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character_Stats/MEN:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17x0y"]
+_data = {
+&"Alert": SubResource("Animation_7xf6s"),
+&"RESET": SubResource("Animation_7kwh6")
+}
+
+[sub_resource type="Animation" id="Animation_gfo54"]
+resource_name = "Alert"
+length = 0.666673
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Character_Stats/HEA:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.4), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pq470"]
+resource_name = "RESET"
+length = 0.001
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Character_Stats/HEA:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6ys3"]
+_data = {
+&"Alert": SubResource("Animation_gfo54"),
+&"RESET": SubResource("Animation_pq470")
 }
 
 [node name="Top_Bar" type="Node2D"]
 
 [node name="A_VIRER_1" type="RichTextLabel" parent="."]
 offset_left = 12.0
-offset_top = -182.0
+offset_top = -151.0
 offset_right = 84.0
 offset_bottom = -2.0
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 1
 bbcode_enabled = true
-text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h, je le rappelle), on aura l'animation [color=ff1c18]Sleep_Alert[/color] jouée, [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color] et le Tooltip affichera \"[color=ff1c18]You need to sleep![/color]\" à la place de \"Tick-Tock...\"
+text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h, je le rappelle), on aura l'animation [color=ff1c18]Sleep_Alert[/color] et le Tooltip affichera \"[color=ff1c18]You need to sleep![/color]\" à la place de \"Tick-Tock...\"
 ||
 V[/center]"
 
 [node name="A_VIRER_2" type="RichTextLabel" parent="."]
 offset_left = 437.0
-offset_top = -145.0
+offset_top = -116.0
 offset_right = 516.0
-offset_bottom = -11.0
+offset_bottom = -4.0
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 1
 bbcode_enabled = true
-text = "[center]Lorsque [color=ff1c18]Add[/color] et/ou [color=ff1c18]Emo[/color] atteignent [color=ff1c18]-2[/color] ou [color=ff1c18]2[/color], on jouera [color=ff1c18]Emo_Alert[/color] et/ou [color=ff1c18]Add_Alert[/color] et on aura [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color]. Pas de modification du Tooltip !
+text = "[center]Lorsque [color=ff1c18]Add[/color] et/ou [color=ff1c18]Emo[/color] atteignent [color=ff1c18]-2[/color] ou [color=ff1c18]2[/color], on jouera [color=ff1c18]Emo_Alert[/color] et/ou [color=ff1c18]Add_Alert[/color]. Pas de modification du Tooltip !
 ||              ||
  V                V[/center]"
 
 [node name="A_VIRER_3" type="RichTextLabel" parent="."]
 offset_left = 520.0
-offset_top = -120.0
+offset_top = -92.0
 offset_right = 599.0
-offset_bottom = -9.0
+offset_bottom = -5.0
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 1
 bbcode_enabled = true
-text = "[center]Lorsque [color=ff1c18]Wan[/color] atteint [color=ff1c18]3[/color], on jouera [color=ff1c18]Wan_Alert[/color] et on aura [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color]. Pas de modification du Tooltip !
+text = "[center]Lorsque [color=ff1c18]Wan[/color] atteint [color=ff1c18]3[/color], on jouera [color=ff1c18]Wan_Alert[/color]. Pas de modification du Tooltip !
 ||                
 V                [/center]"
 
 [node name="A_VIRER_4" type="RichTextLabel" parent="."]
 offset_left = -73.0
-offset_top = -151.0
+offset_top = -128.0
 offset_right = 9.0
 offset_bottom = -5.0
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 1
 bbcode_enabled = true
-text = "[center]Lorsque le joueur aura [color=ff1c18]4 factures impayées[/color], on jouera [color=ff1c18]Bill_Alert[/color] et on aura [color=ff1c18]3 sonneries[/color] de [color=ff1c18]Soft_Alarm[/color]. Le Tooltip affichera \"[color=ff1c18]You need to pay your bills![/color]\" à la place de rien du tout.
+text = "[center]Lorsque le joueur aura [color=ff1c18]4 factures impayées[/color], on jouera [color=ff1c18]Bill_Alert[/color]. Le Tooltip affichera \"[color=ff1c18]You need to pay your bills![/color]\" à la place de rien du tout.
                                 ||
                                 V[/center]"
+
+[node name="A_VIRER_5" type="RichTextLabel" parent="."]
+offset_left = 327.0
+offset_top = -92.0
+offset_right = 440.0
+offset_bottom = -3.0
+theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/bold_font_size = 1
+bbcode_enabled = true
+text = "[center]Lorsque le joueur aura [color=ff1c18]PHY=1[/color] ou [color=ff1c18]MEN=1[/color] ou [color=ff1c18]HEA=1[/color] on jouera [color=ff1c18]PHY_Alert[/color] ou [color=ff1c18]MEN_Alert[/color] ou [color=ff1c18]HEA_Alert[/color]. Pas de modification de Tooltip.
+||                ||             ||
+ V                  V               V[/center]"
 
 [node name="Date_Time" type="HBoxContainer" parent="."]
 anchors_preset = -1
@@ -829,36 +752,42 @@ root_node = NodePath("../Character_Stats")
 libraries = {
 &"": SubResource("AnimationLibrary_nssbx")
 }
-autoplay = "RESET"
-script = ExtResource("4_0mfvj")
 
 [node name="Emo_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_2yfei")
 }
-autoplay = "RESET"
-script = ExtResource("4_0mfvj")
 
 [node name="Add_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_rc027")
 }
-autoplay = "RESET"
-script = ExtResource("4_0mfvj")
 
 [node name="Sleep_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_xsx1a")
 }
-autoplay = "RESET"
-script = ExtResource("4_0mfvj")
 
 [node name="Bill_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_pq470")
 }
-autoplay = "RESET"
-script = ExtResource("4_0mfvj")
+
+[node name="PHY_Alert" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0mfvj")
+}
+
+[node name="MEN_Alert" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_17x0y")
+}
+
+[node name="HEA_Alert" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MEN_Alert")
+libraries = {
+&"": SubResource("AnimationLibrary_g6ys3")
+}
 
 [node name="Soft_Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0mfvj")
@@ -877,8 +806,3 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menus/Whatever" to="Menus/Dailies" method="_on_pressed"]
-[connection signal="animation_finished" from="Wan_Alert" to="Wan_Alert" method="_on_animation_finished"]
-[connection signal="animation_finished" from="Emo_Alert" to="Emo_Alert" method="_on_animation_finished"]
-[connection signal="animation_finished" from="Add_Alert" to="Add_Alert" method="_on_animation_finished"]
-[connection signal="animation_finished" from="Sleep_Alert" to="Sleep_Alert" method="_on_animation_finished"]
-[connection signal="animation_finished" from="Bill_Alert" to="Bill_Alert" method="_on_animation_finished"]

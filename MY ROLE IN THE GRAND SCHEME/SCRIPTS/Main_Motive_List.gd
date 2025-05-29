@@ -4,7 +4,7 @@ var description_array = []
 var max_text_length = 35
 
 func _ready():
-	get_popup().max_size.y = 134
+	get_popup().max_size.y = 307
 	get_popup().min_size.x = 184
 	
 	var file = FileAccess.open("res://JSON/CASE/Crime_Motive_Evidence.json", FileAccess.READ)
