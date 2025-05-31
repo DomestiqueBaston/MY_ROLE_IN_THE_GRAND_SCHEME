@@ -2,6 +2,7 @@
 class_name Card extends Node2D
 
 enum PinLocation {
+	NONE = -1,
 	TOP_LEFT,
 	TOP_CENTER_LEFT,
 	TOP_CENTER,
@@ -123,9 +124,6 @@ enum NpcStatus {
 		opacity = value
 		_update_opacity()
 
-## Signal emitted when the Card's position may have changed.
-signal position_changed
-
 ## Signal emitted when the Card's is_stacked property has changed.
 signal stacked_changed()
 
@@ -133,11 +131,13 @@ var _is_highlighted: bool = false
 var _is_expanded: bool = true
 
 func _ready():
-	set_notify_transform(true)
-
-func _notification(what):
-	if what == NOTIFICATION_TRANSFORM_CHANGED:
-		position_changed.emit()
+	if not Engine.is_editor_hint():
+		var location: int = 0
+		for pin in $Pins.get_children():
+			pin.get_collider().input_event.connect(_on_pin_collider_input_event.bind(location))
+			pin.get_collider().mouse_entered.connect(_on_pin_collider_mouse_entered.bind(location))
+			pin.get_collider().mouse_exited.connect(_on_pin_collider_mouse_exited.bind(location))
+			location += 1
 
 func _update_card_type():
 	match card_type:
@@ -341,11 +341,28 @@ func _on_card_collider_mouse_exited():
 	if not is_stacked:
 		Globals.mouse_exited_card.emit(self)
 
+func _on_pin_collider_input_event(
+	_viewport: Viewport, event: InputEvent, _shape_idx: int, location: PinLocation):
+	if event is InputEventMouseButton:
+		get_viewport().set_input_as_handled()
+		if (not $Card_Animations.is_playing()
+			and event.button_mask == MOUSE_BUTTON_MASK_LEFT
+			and not event.double_click):
+			Globals.pin_left_click.emit(event.global_position, self, location)
+
+func _on_pin_collider_mouse_entered(location: PinLocation):
+	if not is_stacked:
+		Globals.mouse_entered_pin.emit(self, location)
+
+func _on_pin_collider_mouse_exited(location: PinLocation):
+	if not is_stacked:
+		Globals.mouse_exited_pin.emit(self, location)
+
 ##
-## Returns the Node2D corresponding to one of the card's pins.
+## Returns one of the card's pins.
 ##
-func get_pin(which: PinLocation) -> Node2D:
-	return $Pins.get_child(which)
+func get_pin(which: PinLocation) -> Pin_Small:
+	return null if which == PinLocation.NONE else $Pins.get_child(which)
 
 ##
 ## Modifies the appearance of the card to show it is being dragged.
@@ -368,3 +385,18 @@ func stop_drag():
 		$Card_Animations.play("Drag_Reduced_Card_Disappearance")
 	$Shadow_Animations.play("Shadow_On")
 	z_index -= 1
+
+##
+## Finds the hidden pin closest to the given point and returns its location.
+## Returns PinLocation.NONE if none of the card's pins is hidden.
+##
+func find_closest_hidden_pin(global_pos: Vector2) -> PinLocation:
+	var min_dist2 = -1
+	var min_pin = -1
+	for pin in $Pins.get_children():
+		if not pin.visible:
+			var dist2 = global_pos.distance_squared_to(pin.global_position)
+			if min_dist2 < 0 or min_dist2 > dist2:
+				min_dist2 = dist2
+				min_pin = pin.get_index()
+	return min_pin as PinLocation

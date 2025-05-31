@@ -23,6 +23,15 @@ signal mouse_entered_card(card: Card)
 signal mouse_exited_card(card: Card)
 
 @warning_ignore("unused_signal")
+signal pin_left_click(pos: Vector2, card: Card, pin: Card.PinLocation)
+
+@warning_ignore("unused_signal")
+signal mouse_entered_pin(card: Card, pin: Card.PinLocation)
+
+@warning_ignore("unused_signal")
+signal mouse_exited_pin(card: Card, pin: Card.PinLocation)
+
+@warning_ignore("unused_signal")
 signal link_right_click(pos: Vector2, link: Link)
 
 func _ready():

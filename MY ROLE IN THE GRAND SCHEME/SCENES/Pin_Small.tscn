@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjtpcqbs5puux"]
+[gd_scene load_steps=10 format=3 uid="uid://cjtpcqbs5puux"]
 
 [ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_eovho"]
+[ext_resource type="Script" uid="uid://diswarmn1x4wa" path="res://SCRIPTS/Pin_Small.gd" id="1_tdxok"]
 [ext_resource type="Texture2D" uid="uid://bttgel1ek480w" path="res://GRAPHICS/LINK_PIN/Pin_Small.png" id="2_121c2"]
 [ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="3_i8ubj"]
 
@@ -80,10 +81,10 @@ _data = {
 
 [node name="Pin_Small" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_tdxok")
 
 [node name="Collider" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
+monitorable = false
 
 [node name="Pin" type="CollisionShape2D" parent="Collider"]
 shape = SubResource("CircleShape2D_bfoqd")
