@@ -216,11 +216,10 @@ func _stop_drag_card(global_pos: Vector2):
 		_current_card.reparent(reserve, false)
 	else:
 		_current_card.is_stacked = false
-		# card is allowed to overshoot the left edge by 10 pixels at most
+		# card is allowed to overshoot left and top edges by 10 pixels at most
 		var corner = (playground_shape.get_global_transform() *
 					  playground_shape.shape.get_rect().position)
-		var pos = _current_card.global_position
-		pos.x = max(pos.x, corner.x - 10)
+		var pos = _current_card.global_position.max(corner - Vector2(10, 10))
 		_current_card.global_position = pos.round()
 		_current_card.reparent(cards)
 
