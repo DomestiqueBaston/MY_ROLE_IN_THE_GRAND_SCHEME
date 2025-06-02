@@ -1,11 +1,9 @@
-[gd_scene load_steps=77 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=75 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_anbsy"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_d3ak4"]
 [ext_resource type="PackedScene" uid="uid://dew0fg5j62sga" path="res://SCENES/Link.tscn" id="4_w12wv"]
-[ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png" id="5_mjrlc"]
-[ext_resource type="Texture2D" uid="uid://ctwsfadud3vbk" path="res://GRAPHICS/LINK_PIN/Pointille_Blanc.png" id="6_ffvqa"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="7_dmqsm"]
 [ext_resource type="PackedScene" uid="uid://c70knjwv7pvfv" path="res://SCENES/TEST_LINK.tscn" id="8_ddveh"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="9_twje4"]
@@ -202,26 +200,29 @@ opacity = 0.78
 
 [node name="Links" type="Node2D" parent="."]
 
-[node name="Link_Violet_Rose" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+[node name="Link_Violet" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
 visible = true
 card1 = NodePath("../../Cards/Card1")
 pin1 = 4
 card2 = NodePath("../../Cards/Card2")
-texture = ExtResource("5_mjrlc")
+type = 14
+is_confirmed = false
 
 [node name="Link_Pointillé_Blanc" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
 visible = true
 card1 = NodePath("../../Cards/Card5")
 pin1 = 4
 card2 = NodePath("../../Cards/Card6")
-texture = ExtResource("6_ffvqa")
+type = 0
+is_confirmed = false
 
 [node name="Link_Plein_Jaune" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
 visible = true
 card1 = NodePath("../../Cards/Card4")
 pin1 = 4
 card2 = NodePath("../../Cards/Card3")
-texture = ExtResource("7_dmqsm")
+type = 9
+is_confirmed = true
 
 [node name="TEST_LINK" parent="Links" instance=ExtResource("8_ddveh")]
 
@@ -2209,9 +2210,7 @@ libraries = {
 
 [node name="Top_Bar" parent="Mask_Card_Playground" instance=ExtResource("53_vyyi7")]
 
-[node name="Popup" type="Node2D" parent="Mask_Card_Playground"]
-
-[node name="Main_Menu" type="PopupMenu" parent="Mask_Card_Playground/Popup"]
+[node name="Popup_Menu" type="PopupMenu" parent="Mask_Card_Playground"]
 auto_translate_mode = 1
 size = Vector2i(93, 90)
 min_size = Vector2i(93, 90)
@@ -2220,7 +2219,7 @@ theme = ExtResource("54_x4cyf")
 submenu_popup_delay = 0.1
 allow_search = false
 
-[node name="Sub_Menu" type="PopupMenu" parent="Mask_Card_Playground/Popup/Main_Menu"]
+[node name="Sub_Menu" type="PopupMenu" parent="Mask_Card_Playground/Popup_Menu"]
 auto_translate_mode = 1
 size = Vector2i(93, 136)
 min_size = Vector2i(93, 136)

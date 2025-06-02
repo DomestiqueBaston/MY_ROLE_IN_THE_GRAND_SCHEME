@@ -4,8 +4,16 @@ extends Node2D
 @onready var links: Node2D = $Links
 @onready var reserve: Node2D = $Reserve_Cards
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
-@onready var popup: PopupMenu = $Mask_Card_Playground/Popup/Main_Menu
+@onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
 @onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
+
+enum MenuItem {
+	DIALOGUE,
+	INVESTIGATION,
+	SWITCH_LINK,
+	DELETE_LINK,
+	REMOVE_WARNING
+}
 
 # highlighted card
 var _current_card: Card
@@ -32,17 +40,31 @@ var _drag_click_pos: Vector2
 # links connected to the card or pin being dragged
 var _drag_links: Array[Link]
 
+# card or link whose popup menu is displayed
+var _popup_node: Node2D
+
 func _ready():
-	popup.add_item("Dialogue")
-	popup.add_item("Investigation")
+	var submenu1 = popup.get_child(0)
+	var submenu2 = submenu1.duplicate()
+	var submenu3 = submenu1.duplicate()
+	popup.add_child(submenu2)
+	popup.add_child(submenu3)
+	
+	popup.add_item("Dialogue", MenuItem.DIALOGUE)
+	popup.add_item("Investigation", MenuItem.INVESTIGATION)
 	popup.add_separator("  - - - - - - - - - -  ")
-	popup.add_submenu_node_item("Create conf. link", $Mask_Card_Playground/Popup/Main_Menu/Sub_Menu)
-	popup.add_submenu_node_item("Create prob. link", $Mask_Card_Playground/Popup/Main_Menu/Sub_Menu)
-	popup.add_submenu_node_item("Change link color", $Mask_Card_Playground/Popup/Main_Menu/Sub_Menu)
-	popup.add_item("Switch conf./prob.")
-	popup.add_item("Delete link")
+	popup.add_submenu_node_item("Create conf. link", submenu1)
+	popup.add_submenu_node_item("Create prob. link", submenu2)
+	popup.add_submenu_node_item("Change link color", submenu3)
+	popup.add_item("Switch conf./prob.", MenuItem.SWITCH_LINK)
+	popup.add_item("Delete link", MenuItem.DELETE_LINK)
 	popup.add_separator("  - - - - - - - - - -  ")
-	popup.add_item("Throw card away")
+	popup.add_item("Remove warning", MenuItem.REMOVE_WARNING)
+	
+	popup.id_pressed.connect(_handle_popup)
+	submenu1.id_pressed.connect(_handle_submenu.bind(0))
+	submenu2.id_pressed.connect(_handle_submenu.bind(1))
+	submenu3.id_pressed.connect(_handle_submenu.bind(2))
 	
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
@@ -71,17 +93,6 @@ func _input(event: InputEvent):
 		elif event is InputEventMouseButton and not event.pressed:
 			_drag_state = DragState.NONE
 			_clicked_pin = null
-
-func _popup_menu(pos: Vector2, node: Node2D):
-	if node is Card:
-		if node.is_stacked:
-			return
-		print("popup menu for card: ", node.card_name)
-	elif node is Link:
-		print("popup menu for link: ", node.get_name())
-	else:
-		print("popup menu for node: ", node.get_name())
-	popup.popup(Rect2i(pos, Vector2i()))
 
 func _mouse_entered_card(card: Card):
 	if _drag_state == DragState.NONE and card != _current_card:
@@ -278,3 +289,43 @@ func _is_in_playground(global_pos: Vector2):
 func _is_in_reserve(global_pos: Vector2):
 	var rect = Rect2(reserve.global_position, reserve.size)
 	return rect.has_point(global_pos)
+
+func _popup_menu(pos: Vector2, node: Node2D):
+	if node is Card:
+		if node.is_stacked:
+			return
+		print("popup menu for card: ", node.card_name)
+	elif node is Link:
+		print("popup menu for link: ", node.get_name())
+	else:
+		print("popup menu for node: ", node.get_name())
+	_popup_node = node
+	popup.popup(Rect2i(pos, Vector2i()))
+
+func _handle_popup(id: int):
+	match id:
+		MenuItem.DIALOGUE:
+			print("start dialogue")
+		MenuItem.INVESTIGATION:
+			print("start investigation")
+		MenuItem.SWITCH_LINK:
+			if _popup_node is Link:
+				_popup_node.is_confirmed = not _popup_node.is_confirmed
+		MenuItem.DELETE_LINK:
+			if _popup_node is Link:
+				_popup_node.queue_free()
+				_popup_node = null
+		MenuItem.REMOVE_WARNING:
+			print("remove warning")
+
+func _handle_submenu(id: int, submenu: int):
+	match submenu:
+		0:
+			if _popup_node is Card:
+				print("create confirmed link")
+		1:
+			if _popup_node is Card:
+				print("create probable link")
+		2:
+			if _popup_node is Link:
+				_popup_node.type = id

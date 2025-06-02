@@ -33,16 +33,81 @@ class_name Link extends Node2D
 			_connect_pin2()
 			_update_transform()
 
-@export var texture: Texture2D:
+@export var type: Type = Type.HIDEOUT:
 	set(value):
-		texture = value
-		$Link_Texture.texture = value
+		type = value
+		_update_texture()
 
-@onready var _thickness: float = $Link_Texture.size.y
+@export var is_confirmed: bool = true:
+	set(value):
+		is_confirmed = value
+		_update_texture()
+
+enum Type {
+	HIDEOUT,
+	DEBT,
+	GUILT,
+	INTIMACY,
+	FRIEND,
+	ENEMY,
+	ACQUAINTANCE,
+	IDEOLOGY,
+	CONTRADICTION,
+	CONFIRMATION,
+	PROPERTY,
+	HOME,
+	WORK,
+	HANGOUT,
+	FOUND,
+	TYPE_COUNT # must be last
+}
+
+var _solid_textures: Array[CompressedTexture2D] = [
+	preload("res://GRAPHICS/LINK_PIN/Plein_Blanc.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Gris.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Noir.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Rose.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Vert_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Orange.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Rouge.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Jaune.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Vert_Clair.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Marron.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Turquoise.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png")
+]
+
+var _dotted_textures: Array[CompressedTexture2D] = [
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Blanc.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Gris.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Noir.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Rose.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Vert_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Orange.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Bleu_Clair.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Bleu_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Rouge.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Jaune.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Vert_Clair.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Marron.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Turquoise.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Bleu_Tres_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Clair.png")
+]
 
 func _ready():
 	_update_transform()
+	_update_texture()
 	_show_or_hide()
+
+func _update_texture():
+	if is_confirmed:
+		$Link_Texture.texture = _solid_textures[type]
+	else:
+		$Link_Texture.texture = _dotted_textures[type]
 
 ##
 ## Returns true if both of the link's endpoints have been fully specified (card
@@ -105,9 +170,10 @@ func _update_transform():
 	var pos1 = card1.get_pin(pin1).global_position
 	var pos2 = card2.get_pin(pin2).global_position
 	var rot = pos1.angle_to_point(pos2)
+	var thickness = $Link_Texture.size.y
 	$Link_Texture.size.x = pos1.distance_to(pos2)
 	$Link_Texture.rotation = rot
-	$Link_Texture.global_position = pos1 - Vector2(0, _thickness/2).rotated(rot)
+	$Link_Texture.global_position = pos1 - Vector2(0, thickness/2).rotated(rot)
 	
 	# update collider shape
 
