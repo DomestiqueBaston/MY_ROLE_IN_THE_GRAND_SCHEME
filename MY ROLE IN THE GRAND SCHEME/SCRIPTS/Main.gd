@@ -136,7 +136,7 @@ func _start_drag_card():
 
 	for link in links.get_children():
 		if link is Link and (link.card1 == _current_card or link.card2 == _current_card):
-			link.z_index += 1
+			_raise_link(link)
 			_drag_links.append(link)
 
 func _start_drag_pin():
@@ -154,7 +154,7 @@ func _start_drag_pin():
 
 	for link in links.get_children():
 		if link is Link and link.is_connected_to_pin(_clicked_pin):
-			link.z_index += 1
+			_raise_link(link)
 			_drag_links.append(link)
 
 func _drag(global_pos: Vector2):
@@ -251,7 +251,7 @@ func _stop_drag_pin(global_pos: Vector2):
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	for link in _drag_links:
-		link.z_index -= 1
+		_lower_link(link)
 	_drag_links.clear()
 	if dragged_card:
 		dragged_card.stop_drag()
@@ -259,6 +259,16 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 		_clicked_pin.z_index -= 1
 		_clicked_pin.get_collider().input_pickable = true
 	Globals.dragging = false
+
+func _raise_link(link: Link):
+	link.z_index += 1
+	link.card1.get_pin(link.pin1).z_index += 1
+	link.card2.get_pin(link.pin2).z_index += 1
+
+func _lower_link(link: Link):
+	link.z_index -= 1
+	link.card1.get_pin(link.pin1).z_index -= 1
+	link.card2.get_pin(link.pin2).z_index -= 1
 
 func _is_in_playground(global_pos: Vector2):
 	var local_rect = playground_shape.shape.get_rect()

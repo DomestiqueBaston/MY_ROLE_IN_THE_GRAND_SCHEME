@@ -1602,6 +1602,7 @@ centered = false
 hframes = 5
 
 [node name="Pins" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(37, 6)
 
 [node name="Pin1" parent="Pins" instance=ExtResource("21_nk8id")]
