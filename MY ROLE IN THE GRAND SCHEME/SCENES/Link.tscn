@@ -119,7 +119,6 @@ offset_top = -2.0
 offset_right = 8.0
 offset_bottom = 2.0
 grow_vertical = 2
-pivot_offset = Vector2(0, 2)
 tooltip_text = "Nature of the link here."
 theme = ExtResource("1_3ne57")
 expand_mode = 1

@@ -104,11 +104,10 @@ func _update_transform():
 
 	var pos1 = card1.get_pin(pin1).global_position
 	var pos2 = card2.get_pin(pin2).global_position
-	pos1.y -= _thickness * 0.5
-	pos2.y -= _thickness * 0.5
-	$Link_Texture.global_position = pos1
+	var rot = pos1.angle_to_point(pos2)
 	$Link_Texture.size.x = pos1.distance_to(pos2)
-	$Link_Texture.rotation = pos1.angle_to_point(pos2)
+	$Link_Texture.rotation = rot
+	$Link_Texture.global_position = pos1 - Vector2(0, _thickness/2).rotated(rot)
 	
 	# update collider shape
 
