@@ -115,7 +115,7 @@ func _update_transform():
 	var rectangle_shape = collider.shape
 	if rectangle_shape is RectangleShape2D:
 		rectangle_shape.size = $Link_Texture.size
-		collider.position.x = $Link_Texture.size.x / 2
+		collider.position = $Link_Texture.size / 2
 
 func _show_or_hide():
 	visible = has_both_endpoints() and not (card1.is_stacked or card2.is_stacked)
