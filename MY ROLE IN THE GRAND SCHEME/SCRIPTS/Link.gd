@@ -58,8 +58,7 @@ enum Type {
 	HOME,
 	WORK,
 	HANGOUT,
-	FOUND,
-	TYPE_COUNT # must be last
+	FOUND
 }
 
 var _solid_textures: Array[CompressedTexture2D] = [

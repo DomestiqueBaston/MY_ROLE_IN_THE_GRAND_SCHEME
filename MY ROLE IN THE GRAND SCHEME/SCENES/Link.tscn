@@ -109,8 +109,6 @@ visible = false
 texture_filter = 1
 texture_repeat = 2
 script = ExtResource("1_vn4vw")
-type = null
-is_confirmed = null
 
 [node name="Link_Texture" type="TextureRect" parent="."]
 texture_filter = 2
