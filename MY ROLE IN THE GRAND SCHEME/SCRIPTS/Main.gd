@@ -262,8 +262,8 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 
 func _is_in_playground(global_pos: Vector2):
 	var local_rect = playground_shape.shape.get_rect()
-	var global_rect = playground_shape.get_global_transform() * local_rect
-	return global_rect.has_point(global_pos)
+	var local_pos = playground_shape.to_local(global_pos)
+	return local_rect.has_point(local_pos)
 
 func _is_in_reserve(global_pos: Vector2):
 	var rect = Rect2(reserve.global_position, reserve.size)
