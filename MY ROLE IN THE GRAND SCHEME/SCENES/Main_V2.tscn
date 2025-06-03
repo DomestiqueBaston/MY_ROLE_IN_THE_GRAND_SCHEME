@@ -213,7 +213,6 @@ visible = true
 card1 = NodePath("../../Cards/Card5")
 pin1 = 4
 card2 = NodePath("../../Cards/Card6")
-type = 0
 is_confirmed = false
 
 [node name="Link_Plein_Jaune" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
@@ -222,7 +221,6 @@ card1 = NodePath("../../Cards/Card4")
 pin1 = 4
 card2 = NodePath("../../Cards/Card3")
 type = 9
-is_confirmed = true
 
 [node name="TEST_LINK" parent="Links" instance=ExtResource("8_ddveh")]
 
@@ -360,9 +358,9 @@ monitorable = false
 position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
 
-[node name="Legend" type="Node2D" parent="Mask_Card_Playground"]
+[node name="Legends" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Colors" type="Control" parent="Mask_Card_Playground/Legend"]
+[node name="Colors" type="Control" parent="Mask_Card_Playground/Legends"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 153.0
@@ -372,7 +370,7 @@ offset_bottom = 342.0
 theme = ExtResource("11_fx1n6")
 script = ExtResource("12_6wly0")
 
-[node name="Legend" type="Button" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Legends" type="Button" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 8.0
@@ -382,7 +380,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 text = "Legends:"
 
-[node name="Hideout_White" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Hideout_White" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 1.0
@@ -397,7 +395,7 @@ texture_pressed = ExtResource("14_svm3j")
 texture_hover = ExtResource("14_svm3j")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Debt_Influence_Gray" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Debt_Influence_Gray" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 1.0
@@ -412,7 +410,7 @@ texture_pressed = ExtResource("17_23ylq")
 texture_hover = ExtResource("17_23ylq")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 1.0
@@ -427,7 +425,7 @@ texture_pressed = ExtResource("19_8lk47")
 texture_hover = ExtResource("19_8lk47")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Intimacy_Pink" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Intimacy_Pink" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 1.0
@@ -442,7 +440,7 @@ texture_pressed = ExtResource("21_npi2l")
 texture_hover = ExtResource("21_npi2l")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Friend_Dark_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Friend_Dark_Green" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 1.0
@@ -457,7 +455,7 @@ texture_pressed = ExtResource("23_lygj3")
 texture_hover = ExtResource("23_lygj3")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Enemy_Orange" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Enemy_Orange" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 1.0
@@ -473,7 +471,7 @@ texture_pressed = ExtResource("25_5h1um")
 texture_hover = ExtResource("25_5h1um")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Acquaintance_Light_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Acquaintance_Light_Blue" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 93.0
 offset_top = 1.0
@@ -489,7 +487,7 @@ texture_pressed = ExtResource("27_7n148")
 texture_hover = ExtResource("27_7n148")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Ideology_Dark_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Ideology_Dark_Blue" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 102.0
 offset_top = 1.0
@@ -505,7 +503,7 @@ texture_pressed = ExtResource("29_aw4n3")
 texture_hover = ExtResource("29_aw4n3")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Contradiction_Red" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Contradiction_Red" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 111.0
 offset_top = 1.0
@@ -521,7 +519,7 @@ texture_pressed = ExtResource("31_rix1k")
 texture_hover = ExtResource("31_rix1k")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Validation_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Validation_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 1.0
@@ -537,7 +535,7 @@ texture_pressed = ExtResource("32_ap25g")
 texture_hover = ExtResource("32_ap25g")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Property_Light_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Property_Light_Green" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 129.0
 offset_top = 1.0
@@ -553,7 +551,7 @@ texture_pressed = ExtResource("34_j8kpb")
 texture_hover = ExtResource("34_j8kpb")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Home_Brown" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Home_Brown" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 138.0
 offset_top = 1.0
@@ -569,7 +567,7 @@ texture_pressed = ExtResource("36_kj55d")
 texture_hover = ExtResource("36_kj55d")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Work_Turquoise" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Work_Turquoise" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 1.0
@@ -585,7 +583,7 @@ texture_pressed = ExtResource("38_mtj1t")
 texture_hover = ExtResource("38_mtj1t")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 156.0
 offset_top = 1.0
@@ -601,7 +599,7 @@ texture_pressed = ExtResource("40_o5lu0")
 texture_hover = ExtResource("40_o5lu0")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Found_Light_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Found_Light_Purple" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 1.0
@@ -617,7 +615,7 @@ texture_pressed = ExtResource("42_16d12")
 texture_hover = ExtResource("42_16d12")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="New_Dark_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="New_Dark_Purple" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
 layout_mode = 0
 offset_left = 174.0
 offset_top = 1.0
@@ -2275,56 +2273,56 @@ item_14/text = "Found"
 item_14/icon = ExtResource("41_kmk2g")
 item_14/id = 14
 
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Mask_Card_Playground/Legend/Colors/Legend" to="Mask_Card_Playground/Legend/Colors" method="_on_legend_pressed"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Hideout_White" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Hideout_White" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Hideout_White" to="Mask_Card_Playground/Legend/Colors" method="_on_hideout_white_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legend/Colors" method="_on_intimacy_pink_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Enemy_Orange" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Enemy_Orange" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Enemy_Orange" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_acquaintance_light_blue_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Contradiction_Red" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Contradiction_Red" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Contradiction_Red" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Validation_Yellow" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Validation_Yellow" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Validation_Yellow" to="Mask_Card_Playground/Legend/Colors" method="_on_validation_yellow_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Property_Light_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Property_Light_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Property_Light_Green" to="Mask_Card_Playground/Legend/Colors" method="_on_property_light_green_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Home_Brown" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Home_Brown" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Home_Brown" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Work_Turquoise" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Work_Turquoise" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Work_Turquoise" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legend/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legend/Colors" method="_on_new_dark_purple_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Legends" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Legends" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="pressed" from="Mask_Card_Playground/Legends/Colors/Legends" to="Mask_Card_Playground/Legends/Colors" method="_on_legend_pressed"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Hideout_White" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Hideout_White" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Hideout_White" to="Mask_Card_Playground/Legends/Colors" method="_on_hideout_white_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legends/Colors" method="_on_intimacy_pink_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Enemy_Orange" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Enemy_Orange" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Enemy_Orange" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_acquaintance_light_blue_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Contradiction_Red" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Contradiction_Red" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Contradiction_Red" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Validation_Yellow" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Validation_Yellow" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Validation_Yellow" to="Mask_Card_Playground/Legends/Colors" method="_on_validation_yellow_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Property_Light_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Property_Light_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Property_Light_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_property_light_green_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Home_Brown" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Home_Brown" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Home_Brown" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Work_Turquoise" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Work_Turquoise" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Work_Turquoise" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
+[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
+[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
+[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_new_dark_purple_toggled"]
 
 [editable path="Links/TEST_LINK"]
