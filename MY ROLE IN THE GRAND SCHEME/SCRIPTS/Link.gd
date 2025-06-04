@@ -96,6 +96,12 @@ func _ready():
 	_update_texture()
 	_show_or_hide()
 
+func pause_collisions():
+	$Link_Texture/Link_Collider.input_pickable = false
+
+func resume_collisions():
+	$Link_Texture/Link_Collider.input_pickable = true
+
 func _exit_tree():
 	if not Engine.is_editor_hint():
 		var old_pin1 = pin1

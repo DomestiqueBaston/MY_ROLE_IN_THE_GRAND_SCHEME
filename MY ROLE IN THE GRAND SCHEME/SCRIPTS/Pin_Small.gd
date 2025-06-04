@@ -44,8 +44,11 @@ func _notification(what):
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
 		moved.emit()
 
-func get_collider() -> Area2D:
-	return $Collider
+func pause_collisions():
+	$Collider.input_pickable = false
+
+func resume_collisions():
+	$Collider.input_pickable = true
 
 func move_to(to_card: Card, to_location: Location):
 	card = null

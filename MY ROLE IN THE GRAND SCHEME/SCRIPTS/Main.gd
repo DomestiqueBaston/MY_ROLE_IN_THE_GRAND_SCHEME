@@ -27,8 +27,13 @@ var _clicked_pin: Pin
 # the card the mouse is over, while a pin is being dragged
 var _target_card: Card
 
-# has a card or pin been clicked, and is possibly being dragged?
-enum DragState { NONE, CLICKED, DRAGGING, LINKING }
+# has something been clicked on, or is something being dragged?
+enum DragState {
+	NONE,		# nothing is going on
+	CLICKED,	# a card or a pin has been clicked but is not being dragged yet
+	DRAGGING,	# a card or a pin is being dragged
+	LINKING		# the free end of a new link is being dragged
+}
 var _drag_state: DragState = DragState.NONE
 
 # card or pin position in local coordinates when dragging began
@@ -45,6 +50,11 @@ var _drag_links: Array[Link]
 
 # card or link whose popup menu is displayed
 var _popup_node: Node2D
+
+# for creating a new link: source and destination pins and the link itself
+var _src_pin: Pin
+var _dst_pin: Pin
+var _new_link: Link
 
 func _ready():
 	var submenu1 = popup.get_child(0)
@@ -165,6 +175,7 @@ func _start_drag_card():
 		if (link is Link and
 			(link.pin1.card == _current_card or
 			 link.pin2.card == _current_card)):
+			link.pause_collisions()
 			_raise_link(link)
 			_drag_links.append(link)
 
@@ -174,16 +185,18 @@ func _start_drag_pin():
 	_drag_global_init_pos = _clicked_pin.global_position
 	_clicked_pin.z_index += 1
 
-	# temporarily disable the pin's collider, otherwise it will block card
-	# enter/exit events, because it is always under the mouse while dragged
+	# temporarily disable the pin and link's colliders, otherwise they will
+	# block card enter/exit events, because they are always under the mouse
+	# while dragging
 
-	_clicked_pin.get_collider().input_pickable = false
+	_clicked_pin.pause_collisions()
 
 	# increase the Z index of the link connected to the pin being dragged
 
 	for link in links.get_children():
 		if link is Link and \
 			(link.pin1 == _clicked_pin or link.pin2 == _clicked_pin):
+			link.pause_collisions()
 			_raise_link(link)
 			_drag_links.append(link)
 
@@ -275,13 +288,14 @@ func _stop_drag_pin(global_pos: Vector2):
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	for link in _drag_links:
+		link.resume_collisions()
 		_lower_link(link)
 	_drag_links.clear()
 	if dragged_card:
 		dragged_card.stop_drag()
 	if _clicked_pin:
 		_clicked_pin.z_index -= 1
-		_clicked_pin.get_collider().input_pickable = true
+		_clicked_pin.resume_collisions()
 	Globals.dragging = false
 
 func _raise_link(link: Link):
@@ -303,10 +317,6 @@ func _is_in_reserve(global_pos: Vector2):
 	var rect = Rect2(reserve.global_position, reserve.size)
 	return rect.has_point(global_pos)
 
-var _src_pin: Pin
-var _dst_pin: Pin
-var _new_link: Link
-
 func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
 	var src_loc = card.find_closest_unused_pin(popup.position)
 	if src_loc < 0:
@@ -320,7 +330,7 @@ func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
 	_dst_pin = pin_scene.instantiate()
 	_dst_pin.global_position = get_global_mouse_position()
 	# if the pin is pickable, it hides cards' mouse enter/exit events
-	_dst_pin.get_collider().input_pickable = false
+	_dst_pin.pause_collisions()
 	pins.add_child(_dst_pin)
 
 	_new_link = link_scene.instantiate()
@@ -328,6 +338,8 @@ func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
 	_new_link.is_confirmed = is_confirmed
 	_new_link.pin1 = _src_pin
 	_new_link.pin2 = _dst_pin
+	# if the link is pickable, it hides cards' mouse enter/exit events
+	_new_link.pause_collisions()
 	links.add_child(_new_link)
 	_raise_link(_new_link)
 
@@ -350,8 +362,10 @@ func _confirm_linking(global_pos: Vector2):
 		_abort_linking()
 		return
 
+	_dst_pin.resume_collisions()
 	_dst_pin.location = dst_loc as Pin.Location
 	_dst_pin.card = _target_card
+	_new_link.resume_collisions()
 	_lower_link(_new_link)
 
 	_drag_state = DragState.NONE
