@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=75 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dew0fg5j62sga" path="res://SCENES/Link.tscn" id="4_w12wv"]
 [ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="5_8fxqf"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="7_dmqsm"]
-[ext_resource type="PackedScene" uid="uid://c70knjwv7pvfv" path="res://SCENES/TEST_LINK.tscn" id="8_ddveh"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="9_twje4"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="11_fx1n6"]
 [ext_resource type="Script" uid="uid://twxt7ns0olqm" path="res://SCRIPTS/Main_Buttons.gd" id="12_6wly0"]
@@ -220,19 +219,11 @@ pin1 = NodePath("../../Pins/Pin_Small5")
 pin2 = NodePath("../../Pins/Pin_Small6")
 type = 9
 
-[node name="TEST_LINK" parent="Links" instance=ExtResource("8_ddveh")]
-
-[node name="Link_Texture" parent="Links/TEST_LINK/Link_1/Papa_Link" index="0"]
-offset_top = 0.0
-offset_bottom = 3.0
-tooltip_text = "Property
-New"
-
-[node name="Link_Texture" parent="Links/TEST_LINK/Link_2/Papa_Link" index="0"]
-offset_top = 0.0
-offset_bottom = 3.0
-tooltip_text = "Acquaintance
-New"
+[node name="Link_Link" parent="Links" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
+visible = true
+pin1 = NodePath("../../Pins/Pin_Small7")
+pin2 = NodePath("../../Pins/Pin_Small8")
+type = 1
 
 [node name="Pins" type="Node2D" parent="."]
 
@@ -262,6 +253,16 @@ location = 4
 [node name="Pin_Small6" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(519, 170)
 card = NodePath("../../Cards/Card3")
+
+[node name="Pin_Small7" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
+position = Vector2(232, 233)
+card = NodePath("../../Cards/Card4")
+location = 8
+
+[node name="Pin_Small8" parent="Pins" node_paths=PackedStringArray("link") instance=ExtResource("5_8fxqf")]
+position = Vector2(363.5, 152.5)
+type = 1
+link = NodePath("../../Links/Link_Violet")
 
 [node name="Player_Locator" parent="." instance=ExtResource("9_twje4")]
 position = Vector2(544, 64)
@@ -2351,5 +2352,3 @@ item_14/id = 14
 [connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
 [connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_new_dark_purple_toggled"]
-
-[editable path="Links/TEST_LINK"]
