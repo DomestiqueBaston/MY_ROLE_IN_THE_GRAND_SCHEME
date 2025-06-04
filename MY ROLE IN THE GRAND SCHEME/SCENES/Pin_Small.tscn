@@ -105,3 +105,5 @@ libraries = {
 [node name="UI" type="AudioStreamPlayer" parent="."]
 volume_db = -20.0
 bus = &"UI"
+
+[connection signal="input_event" from="Collider" to="." method="_on_collider_input_event"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=75 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=76 format=3 uid="uid://0rfg1gax0rcj"]
 
-[ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_anbsy"]
+[ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="3_d3ak4"]
 [ext_resource type="PackedScene" uid="uid://dew0fg5j62sga" path="res://SCENES/Link.tscn" id="4_w12wv"]
+[ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="5_8fxqf"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="7_dmqsm"]
 [ext_resource type="PackedScene" uid="uid://c70knjwv7pvfv" path="res://SCENES/TEST_LINK.tscn" id="8_ddveh"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="9_twje4"]
@@ -157,7 +158,7 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_anbsy")
+script = ExtResource("1_oybpi")
 
 [node name="Main_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_lp1db")
@@ -200,26 +201,23 @@ opacity = 0.78
 
 [node name="Links" type="Node2D" parent="."]
 
-[node name="Link_Violet" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+[node name="Link_Violet" parent="Links" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
 visible = true
-card1 = NodePath("../../Cards/Card1")
-pin1 = 4
-card2 = NodePath("../../Cards/Card2")
+pin1 = NodePath("../../Pins/Pin_Small")
+pin2 = NodePath("../../Pins/Pin_Small2")
 type = 14
 is_confirmed = false
 
-[node name="Link_Pointillé_Blanc" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+[node name="Link_Pointillé_Blanc" parent="Links" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
 visible = true
-card1 = NodePath("../../Cards/Card5")
-pin1 = 4
-card2 = NodePath("../../Cards/Card6")
+pin1 = NodePath("../../Pins/Pin_Small3")
+pin2 = NodePath("../../Pins/Pin_Small4")
 is_confirmed = false
 
-[node name="Link_Plein_Jaune" parent="Links" node_paths=PackedStringArray("card1", "card2") instance=ExtResource("4_w12wv")]
+[node name="Link_Plein_Jaune" parent="Links" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
 visible = true
-card1 = NodePath("../../Cards/Card4")
-pin1 = 4
-card2 = NodePath("../../Cards/Card3")
+pin1 = NodePath("../../Pins/Pin_Small5")
+pin2 = NodePath("../../Pins/Pin_Small6")
 type = 9
 
 [node name="TEST_LINK" parent="Links" instance=ExtResource("8_ddveh")]
@@ -235,6 +233,35 @@ offset_top = 0.0
 offset_bottom = 3.0
 tooltip_text = "Acquaintance
 New"
+
+[node name="Pins" type="Node2D" parent="."]
+
+[node name="Pin_Small" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
+position = Vector2(257, 92)
+card = NodePath("../../Cards/Card1")
+location = 4
+
+[node name="Pin_Small2" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
+position = Vector2(470, 213)
+card = NodePath("../../Cards/Card2")
+
+[node name="Pin_Small3" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
+position = Vector2(361, 45)
+card = NodePath("../../Cards/Card5")
+location = 4
+
+[node name="Pin_Small4" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
+position = Vector2(544, 64)
+card = NodePath("../../Cards/Card6")
+
+[node name="Pin_Small5" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
+position = Vector2(232, 220)
+card = NodePath("../../Cards/Card4")
+location = 4
+
+[node name="Pin_Small6" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
+position = Vector2(519, 170)
+card = NodePath("../../Cards/Card3")
 
 [node name="Player_Locator" parent="." instance=ExtResource("9_twje4")]
 position = Vector2(544, 64)

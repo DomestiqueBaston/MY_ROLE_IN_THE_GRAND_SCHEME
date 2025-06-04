@@ -1,19 +1,6 @@
 @tool
 class_name Card extends Node2D
 
-enum PinLocation {
-	NONE = -1,
-	TOP_LEFT,
-	TOP_CENTER_LEFT,
-	TOP_CENTER,
-	TOP_CENTER_RIGHT,
-	TOP_RIGHT,
-	LEFT_CENTER,
-	LEFT_BOTTOM,
-	RIGHT_CENTER,
-	RIGHT_BOTTOM
-}
-
 enum CardType {
 	COMBAT,
 	INVESTIGATION,
@@ -104,9 +91,11 @@ enum NpcStatus {
 		is_object_evidence = value
 		_update_card_type()
 
+##
 ## true if the card is in the reserve, false if it is in play. If the card is
 ## the reserve, it cannot be reduced, and the reserve decides which card to
 ## highlight as the mouse moves, not the card itself.
+##
 @export var is_stacked: bool:
 	set(value):
 		if is_stacked != value:
@@ -117,27 +106,25 @@ enum NpcStatus {
 				else:
 					z_index += 1
 			is_stacked = value
-			stacked_changed.emit()
+			for location in _pins:
+				_pins[location].visible = not is_stacked
 
 @export var opacity: float = 1:
 	set(value):
 		opacity = value
 		_update_opacity()
 
-## Signal emitted when the Card's is_stacked property has changed.
-signal stacked_changed()
-
 var _is_highlighted: bool = false
 var _is_expanded: bool = true
+var _pins = {}
 
 func _ready():
-	if not Engine.is_editor_hint():
-		var location: int = 0
-		for pin in $Pins.get_children():
-			pin.get_collider().input_event.connect(_on_pin_collider_input_event.bind(location))
-			pin.get_collider().mouse_entered.connect(_on_pin_collider_mouse_entered.bind(location))
-			pin.get_collider().mouse_exited.connect(_on_pin_collider_mouse_exited.bind(location))
-			location += 1
+	set_notify_transform(true)
+
+func _notification(what):
+	if what == NOTIFICATION_TRANSFORM_CHANGED:
+		for location in _pins:
+			_pins[location].global_position = get_pin_position(location)
 
 func _update_card_type():
 	match card_type:
@@ -266,6 +253,9 @@ func get_size() -> Vector2i:
 		$Card_Mask.texture.get_width() / $Card_Mask.hframes,
 		$Card_Mask.texture.get_height() / $Card_Mask.vframes)
 
+func get_pin_position(which: int) -> Vector2:
+	return $Pin_Locators.get_child(which).global_position
+
 ##
 ## Expands (true) or reduces (false) the card.
 ##
@@ -291,6 +281,7 @@ func expand_or_reduce():
 func set_highlighted(highlighted: bool):
 	if _is_highlighted == highlighted:
 		return
+
 	if highlighted:
 		if is_stacked:
 			$Card_Shadow.position = Vector2(0, 0)
@@ -312,6 +303,7 @@ func set_highlighted(highlighted: bool):
 			$Shadow_Animations.play("Shadow_Off")
 		if not Globals.card_entered_sound.playing:
 			Globals.card_exited_sound.play()
+
 	_is_highlighted = highlighted
 
 func _update_opacity():
@@ -341,29 +333,6 @@ func _on_card_collider_mouse_exited():
 	if not is_stacked:
 		Globals.mouse_exited_card.emit(self)
 
-func _on_pin_collider_input_event(
-	_viewport: Viewport, event: InputEvent, _shape_idx: int, location: PinLocation):
-	if event is InputEventMouseButton:
-		get_viewport().set_input_as_handled()
-		if (not $Card_Animations.is_playing()
-			and event.button_mask == MOUSE_BUTTON_MASK_LEFT
-			and not event.double_click):
-			Globals.pin_left_click.emit(event.global_position, self, location)
-
-func _on_pin_collider_mouse_entered(location: PinLocation):
-	if not is_stacked:
-		Globals.mouse_entered_pin.emit(self, location)
-
-func _on_pin_collider_mouse_exited(location: PinLocation):
-	if not is_stacked:
-		Globals.mouse_exited_pin.emit(self, location)
-
-##
-## Returns one of the card's pins.
-##
-func get_pin(which: PinLocation) -> Pin_Small:
-	return null if which == PinLocation.NONE else $Pins.get_child(which)
-
 ##
 ## Modifies the appearance of the card to show it is being dragged.
 ##
@@ -386,17 +355,29 @@ func stop_drag():
 	$Shadow_Animations.play("Shadow_On")
 	z_index -= 1
 
-##
-## Finds the hidden pin closest to the given point and returns its location.
-## Returns PinLocation.NONE if none of the card's pins is hidden.
-##
-func find_closest_hidden_pin(global_pos: Vector2) -> PinLocation:
+func add_pin(pin: Pin, location: Pin.Location):
+	_pins[location] = pin
+	pin.global_position = get_pin_position(location)
+
+func remove_pin(location: Pin.Location):
+	_pins.erase(location)
+
+func move_pin(from: Pin.Location, to: Pin.Location):
+	var pin = _pins[from]
+	_pins.erase(from)
+	_pins[to] = pin
+	pin.global_position = get_pin_position(to)
+
+func find_closest_unused_pin(global_pos: Vector2) -> int:
 	var min_dist2 = -1
 	var min_pin = -1
-	for pin in $Pins.get_children():
-		if not pin.visible:
-			var dist2 = global_pos.distance_squared_to(pin.global_position)
+
+	for i in $Pin_Locators.get_child_count():
+		if i not in _pins:
+			var locator = $Pin_Locators.get_child(i)
+			var dist2 = global_pos.distance_squared_to(locator.global_position)
 			if min_dist2 < 0 or min_dist2 > dist2:
 				min_dist2 = dist2
-				min_pin = pin.get_index()
-	return min_pin as PinLocation
+				min_pin = i
+
+	return min_pin

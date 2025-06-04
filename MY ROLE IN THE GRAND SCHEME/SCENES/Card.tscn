@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=50 format=3 uid="uid://bpp2q1gpqxlx1"]
 
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="17_kusna"]
 [ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="20_kusna"]
 [ext_resource type="Texture2D" uid="uid://cyn2ui620e8cx" path="res://GRAPHICS/CARD/Card_Minion.png" id="21_fsb4r"]
-[ext_resource type="PackedScene" uid="uid://cjtpcqbs5puux" path="res://SCENES/Pin_Small.tscn" id="21_nk8id"]
 [ext_resource type="AudioStream" uid="uid://cbentdu5jvok7" path="res://SOUND/CARD/Drop_Card.ogg" id="21_tg66g"]
 [ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="22_02fmt"]
 [ext_resource type="Texture2D" uid="uid://cpccah5pfbhfm" path="res://GRAPHICS/CARD/Card_Minion_Top.png" id="22_8pq22"]
@@ -1319,7 +1318,6 @@ position = Vector2(37, 50)
 shape = SubResource("RectangleShape2D_hp5bo")
 
 [node name="Pin_Locators" type="Node2D" parent="."]
-visible = false
 position = Vector2(37, 6)
 
 [node name="Top_Left_Pin_Position" type="Marker2D" parent="Pin_Locators"]
@@ -1600,46 +1598,6 @@ autowrap_mode = 3
 texture = ExtResource("5_m7h77")
 centered = false
 hframes = 5
-
-[node name="Pins" type="Node2D" parent="."]
-z_index = 1
-position = Vector2(37, 6)
-
-[node name="Pin1" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(-30, 1)
-
-[node name="Pin2" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(-15, 1)
-
-[node name="Pin3" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(0, 1)
-
-[node name="Pin4" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(15, 1)
-
-[node name="Pin5" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(30, 1)
-
-[node name="Pin6" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(-30, 8)
-
-[node name="Pin7" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(-30, 14)
-
-[node name="Pin8" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(30, 8)
-
-[node name="Pin9" parent="Pins" instance=ExtResource("21_nk8id")]
-visible = false
-position = Vector2(30, 14)
 
 [node name="Card_Animations" type="AnimationPlayer" parent="."]
 libraries = {
