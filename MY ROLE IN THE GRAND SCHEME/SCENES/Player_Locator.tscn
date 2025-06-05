@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://euyms52mpy48"]
+[gd_scene load_steps=10 format=3 uid="uid://euyms52mpy48"]
 
 [ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_2ifjr"]
 [ext_resource type="Texture2D" uid="uid://xjwjfkatpljx" path="res://GRAPHICS/LINK_PIN/Player_Place.png" id="2_cf184"]
 [ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/LINK_PIN/Pin_Large.png" id="2_fvhge"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
 
 [sub_resource type="Animation" id="Animation_4gwmr"]
 length = 0.001
@@ -86,13 +84,6 @@ _data = {
 
 [node name="Player_Locator" type="Node2D"]
 texture_filter = 1
-
-[node name="Collider" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 0
-
-[node name="Pin" type="CollisionShape2D" parent="Collider"]
-shape = SubResource("CircleShape2D_bfoqd")
 
 [node name="Pin" type="TextureRect" parent="."]
 self_modulate = Color(0.584314, 0.643137, 0.909804, 1)
