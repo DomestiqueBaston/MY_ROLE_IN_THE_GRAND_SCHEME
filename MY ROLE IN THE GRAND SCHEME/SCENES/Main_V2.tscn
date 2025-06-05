@@ -223,7 +223,7 @@ type = 9
 visible = true
 pin1 = NodePath("../../Pins/Pin_Small7")
 pin2 = NodePath("../../Pins/Pin_Small8")
-type = 1
+type = 7
 
 [node name="Pins" type="Node2D" parent="."]
 

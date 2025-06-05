@@ -22,9 +22,11 @@ enum Location {
 @export var type: PinType = PinType.CARD:
 	set(value):
 		if type != value:
+			if type == PinType.CARD:
+				card = null
+			else:
+				link = null
 			type = value
-			if type == PinType.LINK and link:
-				_link_moved()
 
 ## Which card is the pin attached to (if type is CARD).
 @export var card: Card:
@@ -50,13 +52,10 @@ enum Location {
 	set(value):
 		if type == PinType.LINK and link != value:
 			if link:
-				link.pin1.moved.disconnect(_link_moved)
-				link.pin2.moved.disconnect(_link_moved)
+				link.remove_follower_pin(self)
 			link = value
-			_link_moved()
 			if link:
-				link.pin1.moved.connect(_link_moved)
-				link.pin2.moved.connect(_link_moved)
+				link.add_follower_pin(self)
 
 ## Signal emitted when the pin's position may have changed.
 signal moved
@@ -65,8 +64,9 @@ func _ready():
 	set_notify_transform(true)
 
 func _exit_tree():
-	if not Engine.is_editor_hint() and card:
-		card.remove_pin(location)
+	if not Engine.is_editor_hint():
+		card = null
+		link = null
 
 func _notification(what):
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
@@ -78,17 +78,18 @@ func pause_collisions():
 func resume_collisions():
 	$Collider.input_pickable = true
 
-func move_to(to_card: Card, to_location: Location):
+func move_to_card(to_card: Card, to_location: Location):
+	type = PinType.CARD
 	card = null
 	location = to_location
 	card = to_card
+
+func move_to_link(to_link: Link):
+	type = PinType.LINK
+	link = to_link
 
 func _on_collider_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton:
 		get_viewport().set_input_as_handled()
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT and not event.double_click:
 			Globals.pin_left_click.emit(event.global_position, self)
-
-func _link_moved():
-	global_position = \
-		(link.pin1.global_position + link.pin2.global_position) * 0.5

@@ -5,12 +5,10 @@ class_name Link extends Node2D
 	set(value):
 		if pin1 != value:
 			if pin1:
-				pin1.moved.disconnect(_pin_moved)
-				pin1.visibility_changed.disconnect(_pin_visibility_changed)
+				_disconnect_pin(pin1)
 			pin1 = value
 			if pin1:
-				pin1.moved.connect(_pin_moved)
-				pin1.visibility_changed.connect(_pin_visibility_changed)
+				_connect_pin(pin1)
 			_update_transform()
 			_show_or_hide()
 
@@ -18,12 +16,10 @@ class_name Link extends Node2D
 	set(value):
 		if pin2 != value:
 			if pin2:
-				pin2.moved.disconnect(_pin_moved)
-				pin2.visibility_changed.disconnect(_pin_visibility_changed)
+				_disconnect_pin(pin2)
 			pin2 = value
 			if pin2:
-				pin2.moved.connect(_pin_moved)
-				pin2.visibility_changed.connect(_pin_visibility_changed)
+				_connect_pin(pin2)
 			_update_transform()
 			_show_or_hide()
 
@@ -91,6 +87,9 @@ var _dotted_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Clair.png")
 ]
 
+# Pins that are linked to the middle of this link (at most one, for now).
+var _follower_pins: Array[Pin]
+
 func _ready():
 	_update_transform()
 	_update_texture()
@@ -112,12 +111,16 @@ func _exit_tree():
 			old_pin1.queue_free()
 		if old_pin2:
 			old_pin2.queue_free()
+		for pin in _follower_pins:
+			pin.queue_free()
 
-func _pin_moved():
-	_update_transform()
+func _connect_pin(pin: Pin):
+	pin.moved.connect(_update_transform)
+	pin.visibility_changed.connect(_show_or_hide)
 
-func _pin_visibility_changed():
-	_show_or_hide()
+func _disconnect_pin(pin: Pin):
+	pin.moved.disconnect(_update_transform)
+	pin.visibility_changed.disconnect(_show_or_hide)
 
 func _update_transform():
 	if not (pin1 and pin2):
@@ -141,6 +144,9 @@ func _update_transform():
 		rectangle_shape.size = $Link_Texture.size
 		collider.position = $Link_Texture.size / 2
 
+	for pin in _follower_pins:
+		pin.global_position = (pos1 + pos2) * 0.5
+
 func _update_texture():
 	if is_confirmed:
 		$Link_Texture.texture = _solid_textures[type]
@@ -149,8 +155,48 @@ func _update_texture():
 
 func _show_or_hide():
 	visible = pin1 and pin2 and pin1.visible and pin2.visible
+	for pin in _follower_pins:
+		pin.visible = visible
 
 func _on_link_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouse and event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
 		get_viewport().set_input_as_handled()
 		Globals.link_right_click.emit(event.global_position, self)
+
+func _on_link_collider_mouse_entered():
+	Globals.mouse_entered_link.emit(self)
+
+func _on_link_collider_mouse_exited():
+	Globals.mouse_exited_link.emit(self)
+
+func add_follower_pin(pin: Pin):
+	_follower_pins.append(pin)
+	pin.global_position = (pin1.global_position + pin2.global_position) * 0.5
+
+func remove_follower_pin(pin: Pin):
+	_follower_pins.erase(pin)
+
+func has_follower_pins():
+	return not _follower_pins.is_empty()
+
+##
+## Temporarily increase the Z index of the link itself, the pins at its
+## endpoints, and the pin of the other link connected to this link, if there is
+## one.
+##
+func raise():
+	z_index += 1
+	pin1.z_index += 1
+	pin2.z_index += 1
+	for pin in _follower_pins:
+		pin.z_index += 1
+
+##
+## Restore Z indexes after a call to raise().
+##
+func lower():
+	z_index -= 1
+	pin1.z_index -= 1
+	pin2.z_index -= 1
+	for pin in _follower_pins:
+		pin.z_index -= 1

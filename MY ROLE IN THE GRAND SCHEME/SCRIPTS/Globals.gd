@@ -28,6 +28,12 @@ signal pin_left_click(pos: Vector2, pin: Pin)
 @warning_ignore("unused_signal")
 signal link_right_click(pos: Vector2, link: Link)
 
+@warning_ignore("unused_signal")
+signal mouse_entered_link(link: Link)
+
+@warning_ignore("unused_signal")
+signal mouse_exited_link(link: Link)
+
 func _ready():
 	# the mouse is drawn on top of menus
 	$MouseLayer.set_layer(1025)
