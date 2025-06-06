@@ -34,18 +34,18 @@ enum Location {
 		if type != PinType.CARD or card == value:
 			return
 		if card:
-			card.remove_pin(location)
+			card.remove_pin(card_location)
 		card = value
 		if card:
-			card.add_pin(self, location)
+			card.add_pin(self, card_location)
 
 ## Where on the card is the pin attached (if type is CARD)?
-@export var location: Location:
+@export var card_location: Location:
 	set(value):
-		if type == PinType.CARD and location != value:
-			if card:
-				card.move_pin(location, value)
-			location = value
+		if card_location != value:
+			if type == PinType.CARD and card:
+				card.move_pin(card_location, value)
+			card_location = value
 
 ## Which link is the pin attached to (if type is LINK)?
 @export var link: Link:
@@ -57,8 +57,19 @@ enum Location {
 			if link:
 				link.add_follower_pin(self)
 
+## Where on the link is the pin attached, between 0 and 1 (if type is LINK)?
+@export_range(0.01, 0.99, 0.01) var link_location: float = 0.5:
+	set(value):
+		if link_location != value:
+			link_location = value
+			if type == PinType.LINK and link:
+				link_location_changed.emit()
+
 ## Signal emitted when the pin's position may have changed.
 signal moved
+
+## Signal emitted when the pin's link_location has changed.
+signal link_location_changed
 
 func _ready():
 	set_notify_transform(true)
@@ -78,15 +89,33 @@ func pause_collisions():
 func resume_collisions():
 	$Collider.input_pickable = true
 
+##
+## Attaches the pin to a card at one of the card's predefined pin locations.
+##
 func move_to_card(to_card: Card, to_location: Location):
 	type = PinType.CARD
 	card = null
-	location = to_location
+	card_location = to_location
 	card = to_card
 
-func move_to_link(to_link: Link):
+##
+## Attaches the pin to an existing link, somewhere between the link's first (0)
+## and second (1) pin.
+##
+func move_to_link(to_link: Link, to_location: float = 0.5):
 	type = PinType.LINK
+	link = null
+	link_location = clampf(to_location, 0.01, 0.99)
 	link = to_link
+
+##
+## Attaches the pin to an existing link, positioning it initially at the point
+## on the link nearest to the given position.
+##
+func move_to_link_at(to_link: Link, pos: Vector2):
+	var vec = to_link.pin2.global_position - to_link.pin1.global_position
+	var dist = to_link.pin1.global_position.distance_to(pos)
+	move_to_link(to_link, dist / vec.length())
 
 func _on_collider_input_event(_viewport: Node, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton:

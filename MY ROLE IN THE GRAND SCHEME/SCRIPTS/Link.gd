@@ -144,8 +144,10 @@ func _update_transform():
 		rectangle_shape.size = $Link_Texture.size
 		collider.position = $Link_Texture.size / 2
 
+	# update positions of follower pins
+
 	for pin in _follower_pins:
-		pin.global_position = (pos1 + pos2) * 0.5
+		_update_follower_pin(pin)
 
 func _update_texture():
 	if is_confirmed:
@@ -158,7 +160,8 @@ func _show_or_hide():
 	for pin in _follower_pins:
 		pin.visible = visible
 
-func _on_link_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
+func _on_link_collider_input_event(
+		_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouse and event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
 		get_viewport().set_input_as_handled()
 		Globals.link_right_click.emit(event.global_position, self)
@@ -171,13 +174,16 @@ func _on_link_collider_mouse_exited():
 
 func add_follower_pin(pin: Pin):
 	_follower_pins.append(pin)
-	pin.global_position = (pin1.global_position + pin2.global_position) * 0.5
+	_update_follower_pin(pin)
+	pin.link_location_changed.connect(_update_follower_pin.bind(pin))
 
 func remove_follower_pin(pin: Pin):
+	pin.link_location_changed.disconnect(_update_follower_pin.bind(pin))
 	_follower_pins.erase(pin)
 
-func has_follower_pins():
-	return not _follower_pins.is_empty()
+func _update_follower_pin(pin: Pin):
+	pin.global_position = \
+		lerp(pin1.global_position, pin2.global_position, pin.link_location)
 
 ##
 ## Temporarily increase the Z index of the link itself, the pins at its

@@ -230,7 +230,7 @@ type = 7
 [node name="Pin_Small" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(257, 92)
 card = NodePath("../../Cards/Card1")
-location = 4
+card_location = 4
 
 [node name="Pin_Small2" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(470, 213)
@@ -239,7 +239,7 @@ card = NodePath("../../Cards/Card2")
 [node name="Pin_Small3" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(361, 45)
 card = NodePath("../../Cards/Card5")
-location = 4
+card_location = 4
 
 [node name="Pin_Small4" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(544, 64)
@@ -248,7 +248,7 @@ card = NodePath("../../Cards/Card6")
 [node name="Pin_Small5" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(232, 220)
 card = NodePath("../../Cards/Card4")
-location = 4
+card_location = 4
 
 [node name="Pin_Small6" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(519, 170)
@@ -257,7 +257,7 @@ card = NodePath("../../Cards/Card3")
 [node name="Pin_Small7" parent="Pins" node_paths=PackedStringArray("card") instance=ExtResource("5_8fxqf")]
 position = Vector2(232, 233)
 card = NodePath("../../Cards/Card4")
-location = 8
+card_location = 8
 
 [node name="Pin_Small8" parent="Pins" node_paths=PackedStringArray("link") instance=ExtResource("5_8fxqf")]
 position = Vector2(363.5, 152.5)

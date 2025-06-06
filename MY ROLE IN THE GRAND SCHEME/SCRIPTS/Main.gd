@@ -337,13 +337,6 @@ func _stop_drag_pin(global_pos: Vector2):
 
 	else:
 
-		# abort if the link already has a pin in the middle (for now we only
-		# allow one, because it is always displayed at the midpoint)
-
-		if _drop_target.has_follower_pins():
-			_abort_drag_pin()
-			return
-
 		# abort if the pin's other endpoint is also a link (links must have a
 		# card for at least one endpoint)
 
@@ -358,7 +351,7 @@ func _stop_drag_pin(global_pos: Vector2):
 			return
 
 		_stuff_to_do_when_drag_ends(null)
-		_clicked_pin.move_to_link(_drop_target)
+		_clicked_pin.move_to_link_at(_drop_target, global_pos)
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	for link in _drag_links:
@@ -387,7 +380,7 @@ func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
 		return
 
 	_src_pin = pin_scene.instantiate()
-	_src_pin.location = src_loc as Pin.Location
+	_src_pin.card_location = src_loc as Pin.Location
 	_src_pin.card = card
 	pins.add_child(_src_pin)
 
@@ -445,13 +438,6 @@ func _stop_linking(global_pos: Vector2):
 
 	else:
 
-		# abort if the link already has a pin in the middle (for now we only
-		# allow one, because it is always displayed at the midpoint)
-
-		if _drop_target.has_follower_pins():
-			_abort_linking()
-			return
-
 		# abort if the pin's other endpoint is also a link (links must have a
 		# card for at least one endpoint)
 
@@ -459,7 +445,7 @@ func _stop_linking(global_pos: Vector2):
 			_abort_linking()
 			return
 
-		_dst_pin.move_to_link(_drop_target)
+		_dst_pin.move_to_link_at(_drop_target, global_pos)
 
 	_dst_pin.resume_collisions()
 	_new_link.resume_collisions()
