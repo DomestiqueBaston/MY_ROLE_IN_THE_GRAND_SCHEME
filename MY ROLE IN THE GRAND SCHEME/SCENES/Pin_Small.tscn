@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="3_i8ubj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bfoqd"]
-radius = 4.0
+radius = 5.0
 
 [sub_resource type="Animation" id="Animation_w454u"]
 resource_name = "Blink"
