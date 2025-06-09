@@ -289,7 +289,7 @@ func set_highlighted(highlighted: bool):
 			z_index += 1
 		else:
 			$Shadow_Animations.play("Shadow_On")
-			move_to_front()
+			_raise()
 		if Globals.card_exited_sound.playing:
 			Globals.card_exited_sound.stop()
 		if not Globals.card_entered_sound.playing:
@@ -305,6 +305,23 @@ func set_highlighted(highlighted: bool):
 			Globals.card_exited_sound.play()
 
 	_is_highlighted = highlighted
+
+#
+# Raises the card above its siblings, then any links to the card, and finally
+# the pins at the endpoints of those links. This should not be done for a
+# stacked card, which is raised by modifying its Z index and does not display
+# any pins or links. For other cards, though, cards, pins and links are all
+# parented to the same node, and this ensures that, for the highlighted card,
+# at least, links are displayed above the card and pins are displayed above the
+# links.
+#
+func _raise():
+	move_to_front()
+	for location in _pins:
+		var link = _pins[location].get_link_reference()
+		link.move_to_front()
+		link.pin1.move_to_front()
+		link.pin2.move_to_front()
 
 func _update_opacity():
 	$Card_Mask.modulate.a = opacity
@@ -355,19 +372,45 @@ func stop_drag():
 	$Shadow_Animations.play("Shadow_On")
 	z_index -= 1
 
+##
+## Adds a pin reference to the card: whenever the card moves, the pin's
+## position will be updated automatically.
+##
 func add_pin(pin: Pin, location: Pin.Location):
 	_pins[location] = pin
 	pin.global_position = get_pin_position(location)
 
+##
+## Removes a pin reference after a call to add_pin().
+##
 func remove_pin(location: Pin.Location):
 	_pins.erase(location)
 
+##
+## Moves a pin that was previously added by add_pin() to a different location
+## on the card.
+##
 func move_pin(from: Pin.Location, to: Pin.Location):
 	var pin = _pins[from]
 	_pins.erase(from)
 	_pins[to] = pin
 	pin.global_position = get_pin_position(to)
 
+##
+## Returns an array containing the pins that have been added to this card: see
+## add_pin().
+##
+func get_pins() -> Array[Pin]:
+	var pins: Array[Pin]
+	for location in _pins:
+		pins.append(_pins[location])
+	return pins
+
+##
+## Given a position in global coordinates, returns the closest location on the
+## card (a Pin.Location enum) where no pin has yet been registered: see
+## add_pin(). Returns -1 if all the card's pin locations are already in use.
+##
 func find_closest_unused_pin(global_pos: Vector2) -> int:
 	var min_dist2 = -1
 	var min_pin = -1

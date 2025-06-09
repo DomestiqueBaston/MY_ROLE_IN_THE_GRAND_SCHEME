@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var cards: Node2D = $Cards
-@onready var pins: Node2D = $Pins
-@onready var links: Node2D = $Links
+@onready var pins: Node2D = cards
+@onready var links: Node2D = cards
 @onready var reserve: Node2D = $Reserve_Cards
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
@@ -222,9 +222,13 @@ func _start_drag_pin() -> bool:
 
 func _find_links_to_card(card: Card) -> Array[Link]:
 	var ret: Array[Link]
-	for link in links.get_children():
-		if (link is Link and (link.pin1.card == card or link.pin2.card == card)):
-			ret.append(link)
+	for pin in card.get_pins():
+		ret.append(pin.get_link_reference())
+	#for link in links.get_children():
+		#if link is Link and \
+			#((link.pin1.type == Pin.PinType.CARD and link.pin1.card == card) or
+			 #(link.pin2.type == Pin.PinType.CARD and link.pin2.card == card)):
+			#ret.append(link)
 	return ret
 
 func _find_link_to_pin(pin: Pin) -> Link:
