@@ -71,6 +71,9 @@ signal moved
 ## Signal emitted when the pin's link_location has changed.
 signal link_location_changed
 
+# The link for which this pin is one of the two endpoints.
+var _link_ref: Link
+
 func _ready():
 	set_notify_transform(true)
 
@@ -107,6 +110,18 @@ func move_to_link(to_link: Link, to_location: float = 0.5):
 	link = null
 	link_location = clampf(to_location, 0.01, 0.99)
 	link = to_link
+
+##
+## Specifies for which link this pin is one of the two endpoints.
+##
+func set_link_reference(link_ref: Link):
+	_link_ref = link_ref
+
+##
+## Returns the link for which this pin is one of the two endpoints.
+##
+func get_link_reference() -> Link:
+	return _link_ref
 
 ##
 ## Attaches the pin to an existing link, positioning it initially at the point

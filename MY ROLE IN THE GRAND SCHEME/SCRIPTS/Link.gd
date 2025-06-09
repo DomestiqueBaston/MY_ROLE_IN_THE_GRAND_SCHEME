@@ -117,10 +117,12 @@ func _exit_tree():
 func _connect_pin(pin: Pin):
 	pin.moved.connect(_update_transform)
 	pin.visibility_changed.connect(_show_or_hide)
+	pin.set_link_reference(self)
 
 func _disconnect_pin(pin: Pin):
 	pin.moved.disconnect(_update_transform)
 	pin.visibility_changed.disconnect(_show_or_hide)
+	pin.set_link_reference(null)
 
 func _update_transform():
 	if not (pin1 and pin2):

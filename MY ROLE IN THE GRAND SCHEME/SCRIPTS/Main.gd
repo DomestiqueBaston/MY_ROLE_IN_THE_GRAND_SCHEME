@@ -196,8 +196,12 @@ func _start_drag_pin() -> bool:
 	var link = _find_link_to_pin(_clicked_pin)
 	if not (link and link.visible):
 		return false
-	
-	_drop_target = _clicked_pin.card
+
+	if _clicked_pin.type == Pin.PinType.CARD:
+		_drop_target = _clicked_pin.card
+	else:
+		_drop_target = _clicked_pin.link
+
 	_drag_local_init_pos = _clicked_pin.position
 	_drag_global_init_pos = _clicked_pin.global_position
 	_clicked_pin.z_index += 1
@@ -224,10 +228,11 @@ func _find_links_to_card(card: Card) -> Array[Link]:
 	return ret
 
 func _find_link_to_pin(pin: Pin) -> Link:
-	for link in links.get_children():
-		if link is Link and (link.pin1 == pin or link.pin2 == pin):
-			return link
-	return null
+	return pin.get_link_reference()
+	#for link in links.get_children():
+		#if link is Link and (link.pin1 == pin or link.pin2 == pin):
+			#return link
+	#return null
 
 func _drag(global_pos: Vector2):
 	if _clicked_pin:
@@ -262,8 +267,6 @@ func _abort_drag_pin():
 	if _clicked_pin:
 		var tween = create_tween()
 		tween.tween_property(_clicked_pin, "position", _drag_local_init_pos, 0.15)
-	else:
-		print("_clicked_pin is null??")
 	_stuff_to_do_when_drag_ends(null)
 
 func _stop_drag(global_pos: Vector2):
