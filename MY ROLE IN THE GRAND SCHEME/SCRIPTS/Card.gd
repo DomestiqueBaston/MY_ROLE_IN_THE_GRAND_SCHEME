@@ -307,18 +307,45 @@ func set_highlighted(highlighted: bool):
 	_is_highlighted = highlighted
 
 #
-# Raises the card above its siblings, then any links to the card, and finally
-# the pins on those links. This should not be done for a stacked card, which is
-# raised by modifying its Z index and does not display any pins or links. For
-# other cards, though, cards, pins and links are all parented to the same node,
-# and this ensures that, for the highlighted card, at least, links are
-# displayed above the card and pins are displayed above the links.
+# Moves the card in front of its siblings, then does the same for any links to
+# the card, and finally for the pins on those links. This should not be done for
+# a stacked card, which is raised by modifying its Z index and does not display
+# any pins or links. For other cards, though, cards, pins and links are all
+# parented to the same node, and this ensures that, for the highlighted card, at
+# least, links are displayed above the card and pins are displayed above the
+# links.
 #
-func _raise():
+# If raise_neighbors is true, any cards connected to this one are raised first.
+#
+func _raise(raise_neighbors: bool = true):
+
+	# first, recursively raise any other cards that are connected to this one
+	# (along with their pins and links)
+
+	if raise_neighbors:
+		for location in _pins:
+			var pin = _pins[location]
+			var link = pin.get_link_reference()
+			var other_pin
+			if link.pin1 == pin:
+				other_pin = link.pin2
+			else:
+				other_pin = link.pin1
+			if other_pin.type == Pin.PinType.CARD:
+				other_pin.card._raise(false)
+
+	# now move the card itself in front
+
 	move_to_front()
+
+	# finally, raise any links connected to this card, and the pins connected to
+	# those links
+
 	for location in _pins:
 		var link = _pins[location].get_link_reference()
 		link.move_to_front()
+		for pin in link.get_follower_pins():
+			pin.link.move_to_front()
 		link.pin1.move_to_front()
 		link.pin2.move_to_front()
 		for pin in link.get_follower_pins():
