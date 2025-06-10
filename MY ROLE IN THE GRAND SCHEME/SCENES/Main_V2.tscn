@@ -410,8 +410,7 @@ script = ExtResource("14_8fxqf")
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 8.0
-tooltip_text = "Click to
-reset filter"
+tooltip_text = "Toggle all"
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 text = "Legend:"
@@ -423,7 +422,7 @@ offset_top = 1.0
 offset_right = 47.0
 offset_bottom = 9.0
 tooltip_text = "Hideout
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("13_7jg70")
@@ -438,7 +437,7 @@ offset_top = 1.0
 offset_right = 56.0
 offset_bottom = 9.0
 tooltip_text = "Debt/Influence
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("16_k86l4")
@@ -453,7 +452,7 @@ offset_top = 1.0
 offset_right = 65.0
 offset_bottom = 9.0
 tooltip_text = "Culprit/Accomplice/Evidence
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("18_ruuol")
@@ -468,7 +467,7 @@ offset_top = 1.0
 offset_right = 74.0
 offset_bottom = 9.0
 tooltip_text = "Intimacy
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("20_1bp6m")
@@ -483,7 +482,7 @@ offset_top = 1.0
 offset_right = 83.0
 offset_bottom = 9.0
 tooltip_text = "Friend
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("22_spbrc")
@@ -499,7 +498,7 @@ offset_right = 92.0
 offset_bottom = 9.0
 pivot_offset = Vector2(30, 20)
 tooltip_text = "Enemy
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("24_wqedo")
@@ -515,7 +514,7 @@ offset_right = 101.0
 offset_bottom = 9.0
 pivot_offset = Vector2(30, 20)
 tooltip_text = "Acquaintance
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("26_50s3b")
@@ -531,7 +530,7 @@ offset_right = 110.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
 tooltip_text = "Ideology
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("28_fifqw")
@@ -547,7 +546,7 @@ offset_right = 119.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
 tooltip_text = "Contradiction
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("30_rkm6l")
@@ -563,7 +562,7 @@ offset_right = 128.0
 offset_bottom = 9.0
 pivot_offset = Vector2(4, 20)
 tooltip_text = "Validation
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("7_dmqsm")
@@ -579,7 +578,7 @@ offset_right = 137.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-9, 20)
 tooltip_text = "Property
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("33_t2m5c")
@@ -595,7 +594,7 @@ offset_right = 146.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "Home
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("35_q323g")
@@ -611,7 +610,7 @@ offset_right = 155.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Work
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("37_qpjgg")
@@ -627,7 +626,7 @@ offset_right = 164.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "Hang out
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("39_raids")
@@ -643,7 +642,7 @@ offset_right = 173.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Found
-- Dashed: Probable
+- Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("41_kmk2g")
