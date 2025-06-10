@@ -308,12 +308,11 @@ func set_highlighted(highlighted: bool):
 
 #
 # Raises the card above its siblings, then any links to the card, and finally
-# the pins at the endpoints of those links. This should not be done for a
-# stacked card, which is raised by modifying its Z index and does not display
-# any pins or links. For other cards, though, cards, pins and links are all
-# parented to the same node, and this ensures that, for the highlighted card,
-# at least, links are displayed above the card and pins are displayed above the
-# links.
+# the pins on those links. This should not be done for a stacked card, which is
+# raised by modifying its Z index and does not display any pins or links. For
+# other cards, though, cards, pins and links are all parented to the same node,
+# and this ensures that, for the highlighted card, at least, links are
+# displayed above the card and pins are displayed above the links.
 #
 func _raise():
 	move_to_front()
@@ -322,6 +321,8 @@ func _raise():
 		link.move_to_front()
 		link.pin1.move_to_front()
 		link.pin2.move_to_front()
+		for pin in link.get_follower_pins():
+			pin.move_to_front()
 
 func _update_opacity():
 	$Card_Mask.modulate.a = opacity

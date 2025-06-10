@@ -174,14 +174,29 @@ func _on_link_collider_mouse_entered():
 func _on_link_collider_mouse_exited():
 	Globals.mouse_exited_link.emit(self)
 
+##
+## Registers a pin that is connected somewhere in the middle of this link.
+## Registering follower pins allows the link to reposition them when it moves,
+## and to show or hide them when its visibility changes.
+##
 func add_follower_pin(pin: Pin):
 	_follower_pins.append(pin)
 	_update_follower_pin(pin)
 	pin.link_location_changed.connect(_update_follower_pin.bind(pin))
 
+##
+## Unregisters a follower pin registered previously by add_follower_pin().
+##
 func remove_follower_pin(pin: Pin):
 	pin.link_location_changed.disconnect(_update_follower_pin.bind(pin))
 	_follower_pins.erase(pin)
+
+##
+## Returns an array of follower pins that have been registered by calls to
+## add_follower_pin().
+##
+func get_follower_pins() -> Array[Pin]:
+	return _follower_pins
 
 func _update_follower_pin(pin: Pin):
 	pin.global_position = \
