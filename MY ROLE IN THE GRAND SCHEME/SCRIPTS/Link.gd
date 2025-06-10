@@ -174,7 +174,7 @@ func _update_transparency():
 
 func _show_or_hide():
 	visible = pin1 and pin2 and pin1.visible and pin2.visible \
-		and (not Engine.is_editor_hint() or Globals.get_link_mask(type))
+		and (not Engine.is_editor_hint() or Globals.is_link_visible(self))
 	for pin in _follower_pins:
 		pin.visible = visible
 
