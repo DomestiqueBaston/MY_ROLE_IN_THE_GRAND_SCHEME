@@ -39,9 +39,21 @@ func _on_mouse_exit():
 
 func _reset():
 	Globals.cancel_sound.play()
+
+	var no_buttons_pressed = true
 	for button in _color_buttons:
-		button.button_pressed = false
-	Globals.reset_link_mask()
+		if button.button_pressed:
+			no_buttons_pressed = false
+			break
+
+	if no_buttons_pressed:
+		for button in _color_buttons:
+			button.set_pressed_no_signal(true)
+		Globals.hide_all_links()
+	else:
+		for button in _color_buttons:
+			button.set_pressed_no_signal(false)
+		Globals.show_all_links()
 
 func _on_toggle(toggled_on: bool, link_type: int):
 	if toggled_on:

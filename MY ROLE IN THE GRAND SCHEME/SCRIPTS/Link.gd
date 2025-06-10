@@ -101,7 +101,7 @@ func _ready():
 	_show_or_hide()
 	_update_transparency()
 	if not Engine.is_editor_hint():
-		Globals.link_mask_changed.connect(_update_transparency)
+		Globals.link_visibility_changed.connect(_update_transparency)
 
 func pause_collisions():
 	$Link_Texture/Link_Collider.input_pickable = false

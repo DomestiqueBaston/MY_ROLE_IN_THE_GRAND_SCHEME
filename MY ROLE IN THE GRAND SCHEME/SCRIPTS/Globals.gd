@@ -38,7 +38,7 @@ signal mouse_entered_link(link: Link)
 signal mouse_exited_link(link: Link)
 
 @warning_ignore("unused_signal")
-signal link_mask_changed
+signal link_visibility_changed
 
 func _ready():
 	# the mouse is drawn on top of menus
@@ -89,7 +89,7 @@ func set_link_mask(link_type: Link.Type, visible: bool):
 		_link_mask |= 1 << link_type
 	else:
 		_link_mask &= ~(1 << link_type)
-	link_mask_changed.emit()
+	link_visibility_changed.emit()
 
 ##
 ## Specifies whether unconfirmed/probable links are visible or not. By default,
@@ -97,10 +97,11 @@ func set_link_mask(link_type: Link.Type, visible: bool):
 ##
 func set_dotted_links_visible(visible: bool):
 	_show_dotted_links = visible
-	link_mask_changed.emit()
+	link_visibility_changed.emit()
 
 ##
-## Returns true if the given link should be visible.
+## Returns true if the given link should be visible, given the current state of
+## the link mask and dotted link flag.
 ##
 func is_link_visible(link: Link) -> bool:
 	if not link.is_confirmed and not _show_dotted_links:
@@ -110,6 +111,15 @@ func is_link_visible(link: Link) -> bool:
 ##
 ## Resets the link mask and dotted link flag so that all links are visible.
 ##
-func reset_link_mask():
+func show_all_links():
 	_link_mask = -1
 	_show_dotted_links = true
+	link_visibility_changed.emit()
+
+##
+## Sets the link mask and dotted link flag so that all links are hidden.
+##
+func hide_all_links():
+	_link_mask = 0
+	_show_dotted_links = false
+	link_visibility_changed.emit()
