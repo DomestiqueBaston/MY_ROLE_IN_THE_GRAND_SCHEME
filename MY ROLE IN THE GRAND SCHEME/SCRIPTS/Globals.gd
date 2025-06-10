@@ -8,7 +8,10 @@ extends Node
 @onready var card_exited_sound: AudioStreamPlayer = $UI_Sounds/Card_Exited
 
 ## Indicates whether or not the user is in the middle of a drag & drop.
-var dragging = false
+var dragging: bool = false
+
+var _link_mask: int = -1
+var _show_dotted_links: bool = true
 
 @warning_ignore("unused_signal")
 signal card_left_click(pos: Vector2, card: Card)
@@ -33,6 +36,9 @@ signal mouse_entered_link(link: Link)
 
 @warning_ignore("unused_signal")
 signal mouse_exited_link(link: Link)
+
+@warning_ignore("unused_signal")
+signal link_mask_changed
 
 func _ready():
 	# the mouse is drawn on top of menus
@@ -73,3 +79,37 @@ func grab_mouse():
 ##
 func release_mouse():
 	$MouseLayer/Mouse_Cursor.release_mouse()
+
+##
+## Specifies whether links of the given type are visible or not. By default,
+## all link types are visible.
+##
+func set_link_mask(link_type: Link.Type, visible: bool):
+	if visible:
+		_link_mask |= 1 << link_type
+	else:
+		_link_mask &= ~(1 << link_type)
+	link_mask_changed.emit()
+
+##
+## Specifies whether unconfirmed/probable links are visible or not. By default,
+## they are.
+##
+func set_dotted_links_visible(visible: bool):
+	_show_dotted_links = visible
+	link_mask_changed.emit()
+
+##
+## Returns true if the given link should be visible.
+##
+func is_link_visible(link: Link) -> bool:
+	if not link.is_confirmed and not _show_dotted_links:
+		return false
+	return _link_mask & (1 << link.type) != 0
+
+##
+## Resets the link mask and dotted link flag so that all links are visible.
+##
+func reset_link_mask():
+	_link_mask = -1
+	_show_dotted_links = true

@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="7_dmqsm"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="9_twje4"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="11_fx1n6"]
-[ext_resource type="Script" uid="uid://twxt7ns0olqm" path="res://SCRIPTS/Main_Buttons.gd" id="12_6wly0"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="13_7jg70"]
+[ext_resource type="Script" uid="uid://b28ykehvc2dfs" path="res://SCRIPTS/Legend.gd" id="14_8fxqf"]
 [ext_resource type="Texture2D" uid="uid://dgclhxafihydp" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_50.png" id="14_svm3j"]
 [ext_resource type="BitMap" uid="uid://d4bv231xa7qfq" path="res://GRAPHICS/LINK_PIN/Link_Mask.png" id="15_yimpa"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK_PIN/Plein_Gris.png" id="16_k86l4"]
@@ -199,26 +199,22 @@ position = Vector2(584, 278)
 opacity = 0.78
 
 [node name="Link_Violet" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
-visible = true
 pin1 = NodePath("../Pin_Small")
 pin2 = NodePath("../Pin_Small2")
 type = 14
 is_confirmed = false
 
 [node name="Link_Pointillé_Blanc" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
-visible = true
 pin1 = NodePath("../Pin_Small3")
 pin2 = NodePath("../Pin_Small4")
 is_confirmed = false
 
 [node name="Link_Plein_Jaune" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
-visible = true
 pin1 = NodePath("../Pin_Small5")
 pin2 = NodePath("../Pin_Small6")
 type = 9
 
 [node name="Link_Link" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
-visible = true
 pin1 = NodePath("../Pin_Small7")
 pin2 = NodePath("../Pin_Small8")
 type = 7
@@ -382,9 +378,9 @@ monitorable = false
 position = Vector2(383, 183.5)
 shape = SubResource("RectangleShape2D_gfrfy")
 
-[node name="Legends" type="Node2D" parent="Mask_Card_Playground"]
+[node name="Legend" type="Node2D" parent="Mask_Card_Playground"]
 
-[node name="Colors" type="Control" parent="Mask_Card_Playground/Legends"]
+[node name="Colors" type="Control" parent="Mask_Card_Playground/Legend"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 153.0
@@ -392,9 +388,9 @@ offset_top = 342.0
 offset_right = 153.0
 offset_bottom = 342.0
 theme = ExtResource("11_fx1n6")
-script = ExtResource("12_6wly0")
+script = ExtResource("14_8fxqf")
 
-[node name="Legends" type="Button" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Reset" type="Button" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 8.0
@@ -402,9 +398,9 @@ tooltip_text = "Click to
 reset filter"
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-text = "Legends:"
+text = "Legend:"
 
-[node name="Hideout_White" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Hideout_White" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 1.0
@@ -419,7 +415,7 @@ texture_pressed = ExtResource("14_svm3j")
 texture_hover = ExtResource("14_svm3j")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Debt_Influence_Gray" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Debt_Influence_Gray" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 48.0
 offset_top = 1.0
@@ -434,7 +430,7 @@ texture_pressed = ExtResource("17_23ylq")
 texture_hover = ExtResource("17_23ylq")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 1.0
@@ -449,7 +445,7 @@ texture_pressed = ExtResource("19_8lk47")
 texture_hover = ExtResource("19_8lk47")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Intimacy_Pink" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Intimacy_Pink" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 1.0
@@ -464,7 +460,7 @@ texture_pressed = ExtResource("21_npi2l")
 texture_hover = ExtResource("21_npi2l")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Friend_Dark_Green" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Friend_Dark_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 1.0
@@ -479,7 +475,7 @@ texture_pressed = ExtResource("23_lygj3")
 texture_hover = ExtResource("23_lygj3")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Enemy_Orange" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Enemy_Orange" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 1.0
@@ -495,7 +491,7 @@ texture_pressed = ExtResource("25_5h1um")
 texture_hover = ExtResource("25_5h1um")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Acquaintance_Light_Blue" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Acquaintance_Light_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 93.0
 offset_top = 1.0
@@ -511,7 +507,7 @@ texture_pressed = ExtResource("27_7n148")
 texture_hover = ExtResource("27_7n148")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Ideology_Dark_Blue" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Ideology_Dark_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 102.0
 offset_top = 1.0
@@ -527,7 +523,7 @@ texture_pressed = ExtResource("29_aw4n3")
 texture_hover = ExtResource("29_aw4n3")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Contradiction_Red" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Contradiction_Red" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 111.0
 offset_top = 1.0
@@ -543,7 +539,7 @@ texture_pressed = ExtResource("31_rix1k")
 texture_hover = ExtResource("31_rix1k")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Validation_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Validation_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 1.0
@@ -559,7 +555,7 @@ texture_pressed = ExtResource("32_ap25g")
 texture_hover = ExtResource("32_ap25g")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Property_Light_Green" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Property_Light_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 129.0
 offset_top = 1.0
@@ -575,7 +571,7 @@ texture_pressed = ExtResource("34_j8kpb")
 texture_hover = ExtResource("34_j8kpb")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Home_Brown" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Home_Brown" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 138.0
 offset_top = 1.0
@@ -591,7 +587,7 @@ texture_pressed = ExtResource("36_kj55d")
 texture_hover = ExtResource("36_kj55d")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Work_Turquoise" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Work_Turquoise" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 1.0
@@ -607,7 +603,7 @@ texture_pressed = ExtResource("38_mtj1t")
 texture_hover = ExtResource("38_mtj1t")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Hang_out_Darkest_Blue" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Hangout_Darkest_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 156.0
 offset_top = 1.0
@@ -623,7 +619,7 @@ texture_pressed = ExtResource("40_o5lu0")
 texture_hover = ExtResource("40_o5lu0")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Found_Light_Purple" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="Found_Light_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 165.0
 offset_top = 1.0
@@ -639,7 +635,7 @@ texture_pressed = ExtResource("42_16d12")
 texture_hover = ExtResource("42_16d12")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="New_Dark_Purple" type="TextureButton" parent="Mask_Card_Playground/Legends/Colors"]
+[node name="New_Dark_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 174.0
 offset_top = 1.0
@@ -2296,55 +2292,3 @@ item_13/id = 13
 item_14/text = "Found"
 item_14/icon = ExtResource("41_kmk2g")
 item_14/id = 14
-
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Legends" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Legends" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Mask_Card_Playground/Legends/Colors/Legends" to="Mask_Card_Playground/Legends/Colors" method="_on_legend_pressed"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Hideout_White" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Hideout_White" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Hideout_White" to="Mask_Card_Playground/Legends/Colors" method="_on_hideout_white_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Debt_Influence_Gray" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Culp_Acco_Evid_Black" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Intimacy_Pink" to="Mask_Card_Playground/Legends/Colors" method="_on_intimacy_pink_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Friend_Dark_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Enemy_Orange" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Enemy_Orange" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Enemy_Orange" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Acquaintance_Light_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_acquaintance_light_blue_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Ideology_Dark_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Contradiction_Red" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Contradiction_Red" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Contradiction_Red" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Validation_Yellow" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Validation_Yellow" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Validation_Yellow" to="Mask_Card_Playground/Legends/Colors" method="_on_validation_yellow_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Property_Light_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Property_Light_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Property_Light_Green" to="Mask_Card_Playground/Legends/Colors" method="_on_property_light_green_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Home_Brown" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Home_Brown" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Home_Brown" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Work_Turquoise" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Work_Turquoise" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Work_Turquoise" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Hang_out_Darkest_Blue" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/Found_Light_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_toggled"]
-[connection signal="mouse_entered" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_any_button_mouse_exited"]
-[connection signal="toggled" from="Mask_Card_Playground/Legends/Colors/New_Dark_Purple" to="Mask_Card_Playground/Legends/Colors" method="_on_new_dark_purple_toggled"]

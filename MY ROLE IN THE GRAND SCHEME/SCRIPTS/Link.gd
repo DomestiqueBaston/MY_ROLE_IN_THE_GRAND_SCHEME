@@ -27,12 +27,17 @@ class_name Link extends Node2D
 	set(value):
 		type = value
 		_update_texture()
+		_update_transparency()
 
 @export var is_confirmed: bool = true:
 	set(value):
 		is_confirmed = value
 		_update_texture()
+		_update_transparency()
 
+#
+# Note that link types are assumed to begin at 0: see Globals.set_link_mask().
+#
 enum Type {
 	HIDEOUT,
 	DEBT,
@@ -94,6 +99,9 @@ func _ready():
 	_update_transform()
 	_update_texture()
 	_show_or_hide()
+	_update_transparency()
+	if not Engine.is_editor_hint():
+		Globals.link_mask_changed.connect(_update_transparency)
 
 func pause_collisions():
 	$Link_Texture/Link_Collider.input_pickable = false
@@ -157,8 +165,16 @@ func _update_texture():
 	else:
 		$Link_Texture.texture = _dotted_textures[type]
 
+func _update_transparency():
+	if not Engine.is_editor_hint():
+		if Globals.is_link_visible(self):
+			modulate.a = 1
+		else:
+			modulate.a = 0.25
+
 func _show_or_hide():
-	visible = pin1 and pin2 and pin1.visible and pin2.visible
+	visible = pin1 and pin2 and pin1.visible and pin2.visible \
+		and (not Engine.is_editor_hint() or Globals.get_link_mask(type))
 	for pin in _follower_pins:
 		pin.visible = visible
 
