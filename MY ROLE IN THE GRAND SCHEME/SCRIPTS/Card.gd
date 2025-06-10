@@ -317,7 +317,7 @@ func set_highlighted(highlighted: bool):
 #
 # If raise_neighbors is true, any cards connected to this one are raised first.
 #
-func _raise(raise_neighbors: bool = true):
+func _raise(raise_neighbors: bool = false):
 
 	# first, recursively raise any other cards that are connected to this one
 	# (along with their pins and links)
