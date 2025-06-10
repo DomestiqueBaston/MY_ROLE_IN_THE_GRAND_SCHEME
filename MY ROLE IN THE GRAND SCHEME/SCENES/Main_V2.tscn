@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=91 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -14,45 +14,61 @@
 [ext_resource type="BitMap" uid="uid://d4bv231xa7qfq" path="res://GRAPHICS/LINK_PIN/Link_Mask.png" id="15_yimpa"]
 [ext_resource type="Texture2D" uid="uid://bt32a7k74mwpn" path="res://GRAPHICS/LINK_PIN/Plein_Gris.png" id="16_k86l4"]
 [ext_resource type="Texture2D" uid="uid://6p0p28qbhwkv" path="res://GRAPHICS/LINK_PIN/Plein_Gris_50.png" id="17_23ylq"]
+[ext_resource type="Texture2D" uid="uid://dsqi7ecpsovaa" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_25.png" id="17_anbsy"]
 [ext_resource type="Texture2D" uid="uid://buox5lki2uybo" path="res://GRAPHICS/LINK_PIN/Plein_Noir.png" id="18_ruuol"]
 [ext_resource type="Texture2D" uid="uid://8c4ypdvh0a1n" path="res://GRAPHICS/LINK_PIN/Plein_Noir_50.png" id="19_8lk47"]
 [ext_resource type="Texture2D" uid="uid://bfqtj21few3xb" path="res://GRAPHICS/LINK_PIN/Plein_Rose.png" id="20_1bp6m"]
+[ext_resource type="Texture2D" uid="uid://cd487m1pgtubc" path="res://GRAPHICS/LINK_PIN/Plein_Gris_25.png" id="20_k86l4"]
 [ext_resource type="Texture2D" uid="uid://bpjj5wybp5le0" path="res://GRAPHICS/LINK_PIN/Plein_Rose_50.png" id="21_npi2l"]
 [ext_resource type="Texture2D" uid="uid://cji7s8nrl1i6s" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Fonce.png" id="22_spbrc"]
+[ext_resource type="Texture2D" uid="uid://c7aa7v7imuda6" path="res://GRAPHICS/LINK_PIN/Plein_Noir_25.png" id="23_23ylq"]
 [ext_resource type="Texture2D" uid="uid://ckvownclb2bny" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Fonce_50.png" id="23_lygj3"]
 [ext_resource type="Texture2D" uid="uid://c716sreoj5k5a" path="res://GRAPHICS/LINK_PIN/Plein_Orange.png" id="24_wqedo"]
 [ext_resource type="Texture2D" uid="uid://s65dwg1f2osu" path="res://GRAPHICS/LINK_PIN/Plein_Orange_50.png" id="25_5h1um"]
 [ext_resource type="Texture2D" uid="uid://d2pvuy7yuhk6q" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair.png" id="26_50s3b"]
+[ext_resource type="Texture2D" uid="uid://k274u85i1rn5" path="res://GRAPHICS/LINK_PIN/Plein_Rose_25.png" id="26_ruuol"]
 [ext_resource type="Texture2D" uid="uid://o3t8donwh7gm" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair_50.png" id="27_7n148"]
 [ext_resource type="Texture2D" uid="uid://ftnm7fwabifk" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce.png" id="28_fifqw"]
+[ext_resource type="Texture2D" uid="uid://f6q8p4hhsk2r" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Fonce_25.png" id="29_8lk47"]
 [ext_resource type="Texture2D" uid="uid://bsmnr6a3s5m75" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce_50.png" id="29_aw4n3"]
 [ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/LINK_PIN/Plein_Rouge.png" id="30_rkm6l"]
 [ext_resource type="Texture2D" uid="uid://dg3arog2xmnlv" path="res://GRAPHICS/LINK_PIN/Plein_Rouge_50.png" id="31_rix1k"]
+[ext_resource type="Texture2D" uid="uid://bnl21w02fxkuk" path="res://GRAPHICS/LINK_PIN/Plein_Orange_25.png" id="32_1bp6m"]
 [ext_resource type="Texture2D" uid="uid://d0h2u5jichg1" path="res://GRAPHICS/LINK_PIN/Plein_Jaune_50.png" id="32_ap25g"]
 [ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair.png" id="33_t2m5c"]
 [ext_resource type="Texture2D" uid="uid://dqkayb3mri12f" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair_50.png" id="34_j8kpb"]
+[ext_resource type="Texture2D" uid="uid://i4863qe8ipob" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair_25.png" id="35_npi2l"]
 [ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="35_q323g"]
 [ext_resource type="Texture2D" uid="uid://blskqwv4kqlo5" path="res://GRAPHICS/LINK_PIN/Plein_Marron_50.png" id="36_kj55d"]
 [ext_resource type="Texture2D" uid="uid://chw0hrxhbsjf" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise.png" id="37_qpjgg"]
 [ext_resource type="Texture2D" uid="uid://csdkvkbgwc73b" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise_50.png" id="38_mtj1t"]
+[ext_resource type="Texture2D" uid="uid://c4qjt4ysk8ja" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce_25.png" id="38_spbrc"]
 [ext_resource type="Texture2D" uid="uid://s6171shdoa65" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png" id="39_raids"]
 [ext_resource type="Texture2D" uid="uid://ccabfvx0eg0bn" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_50.png" id="40_o5lu0"]
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="41_kmk2g"]
+[ext_resource type="Texture2D" uid="uid://b1l1q0sktsgdl" path="res://GRAPHICS/LINK_PIN/Plein_Rouge_25.png" id="41_lygj3"]
 [ext_resource type="Texture2D" uid="uid://cysslrwog7ibl" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_50.png" id="42_16d12"]
 [ext_resource type="Texture2D" uid="uid://cuuspuigkvok" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce.png" id="43_edmny"]
 [ext_resource type="Texture2D" uid="uid://bfb6l7rwfh8rb" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_50.png" id="44_u8ybj"]
+[ext_resource type="Texture2D" uid="uid://bypshw05600m0" path="res://GRAPHICS/LINK_PIN/Plein_Jaune_25.png" id="44_wqedo"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="45_14ncw"]
 [ext_resource type="Theme" uid="uid://dl27ehg3u0o37" path="res://UI/Motive_Selector_Theme.tres" id="46_xcxgf"]
+[ext_resource type="Texture2D" uid="uid://dn78vo5x75puu" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair_25.png" id="47_5h1um"]
 [ext_resource type="Script" uid="uid://d4lltsouavalw" path="res://SCRIPTS/Main_Motive_List.gd" id="47_wt7ed"]
 [ext_resource type="Texture2D" uid="uid://cmb6qbm072amw" path="res://GRAPHICS/MAIN/Reserve_Expansion.png" id="48_sqsjm"]
 [ext_resource type="AudioStream" uid="uid://xwvtufnhi7ro" path="res://SOUND/MISC/Folding.ogg" id="49_u5els"]
+[ext_resource type="Texture2D" uid="uid://b6sr18mqno2qc" path="res://GRAPHICS/LINK_PIN/Plein_Marron_25.png" id="50_50s3b"]
 [ext_resource type="AudioStream" uid="uid://bkjfvpaccisok" path="res://SOUND/MISC/Unfolding.ogg" id="50_vlxab"]
 [ext_resource type="Script" uid="uid://mhjop2gadmxm" path="res://SCRIPTS/Reserve.gd" id="51_6gmax"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="52_2uhvq"]
 [ext_resource type="Texture2D" uid="uid://cp7big13j1qg1" path="res://GRAPHICS/UI/Arrow_Down_Yellow.png" id="52_lp1db"]
+[ext_resource type="Texture2D" uid="uid://c06beumbghko7" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise_25.png" id="53_7n148"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="53_vyyi7"]
 [ext_resource type="Texture2D" uid="uid://kh2r3htrojer" path="res://GRAPHICS/MAIN/Main_Border.png" id="54_anbsy"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="54_x4cyf"]
+[ext_resource type="Texture2D" uid="uid://cbnfvewpmrros" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_25.png" id="56_fifqw"]
+[ext_resource type="Texture2D" uid="uid://diwly2xc6qh4k" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_25.png" id="59_aw4n3"]
+[ext_resource type="Texture2D" uid="uid://loados8ho24v" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_25.png" id="62_rkm6l"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
 texture = ExtResource("48_sqsjm")
@@ -411,7 +427,7 @@ tooltip_text = "Hideout
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("13_7jg70")
-texture_pressed = ExtResource("14_svm3j")
+texture_pressed = ExtResource("17_anbsy")
 texture_hover = ExtResource("14_svm3j")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -426,7 +442,7 @@ tooltip_text = "Debt/Influence
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("16_k86l4")
-texture_pressed = ExtResource("17_23ylq")
+texture_pressed = ExtResource("20_k86l4")
 texture_hover = ExtResource("17_23ylq")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -441,7 +457,7 @@ tooltip_text = "Culprit/Accomplice/Evidence
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("18_ruuol")
-texture_pressed = ExtResource("19_8lk47")
+texture_pressed = ExtResource("23_23ylq")
 texture_hover = ExtResource("19_8lk47")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -456,7 +472,7 @@ tooltip_text = "Intimacy
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("20_1bp6m")
-texture_pressed = ExtResource("21_npi2l")
+texture_pressed = ExtResource("26_ruuol")
 texture_hover = ExtResource("21_npi2l")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -471,7 +487,7 @@ tooltip_text = "Friend
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("22_spbrc")
-texture_pressed = ExtResource("23_lygj3")
+texture_pressed = ExtResource("29_8lk47")
 texture_hover = ExtResource("23_lygj3")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -487,7 +503,7 @@ tooltip_text = "Enemy
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("24_wqedo")
-texture_pressed = ExtResource("25_5h1um")
+texture_pressed = ExtResource("32_1bp6m")
 texture_hover = ExtResource("25_5h1um")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -503,7 +519,7 @@ tooltip_text = "Acquaintance
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("26_50s3b")
-texture_pressed = ExtResource("27_7n148")
+texture_pressed = ExtResource("35_npi2l")
 texture_hover = ExtResource("27_7n148")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -519,7 +535,7 @@ tooltip_text = "Ideology
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("28_fifqw")
-texture_pressed = ExtResource("29_aw4n3")
+texture_pressed = ExtResource("38_spbrc")
 texture_hover = ExtResource("29_aw4n3")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -535,7 +551,7 @@ tooltip_text = "Contradiction
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("30_rkm6l")
-texture_pressed = ExtResource("31_rix1k")
+texture_pressed = ExtResource("41_lygj3")
 texture_hover = ExtResource("31_rix1k")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -551,7 +567,7 @@ tooltip_text = "Validation
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("7_dmqsm")
-texture_pressed = ExtResource("32_ap25g")
+texture_pressed = ExtResource("44_wqedo")
 texture_hover = ExtResource("32_ap25g")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -567,7 +583,7 @@ tooltip_text = "Property
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("33_t2m5c")
-texture_pressed = ExtResource("34_j8kpb")
+texture_pressed = ExtResource("47_5h1um")
 texture_hover = ExtResource("34_j8kpb")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -583,7 +599,7 @@ tooltip_text = "Home
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("35_q323g")
-texture_pressed = ExtResource("36_kj55d")
+texture_pressed = ExtResource("50_50s3b")
 texture_hover = ExtResource("36_kj55d")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -599,7 +615,7 @@ tooltip_text = "Work
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("37_qpjgg")
-texture_pressed = ExtResource("38_mtj1t")
+texture_pressed = ExtResource("53_7n148")
 texture_hover = ExtResource("38_mtj1t")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -615,7 +631,7 @@ tooltip_text = "Hang out
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("39_raids")
-texture_pressed = ExtResource("40_o5lu0")
+texture_pressed = ExtResource("56_fifqw")
 texture_hover = ExtResource("40_o5lu0")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -631,7 +647,7 @@ tooltip_text = "Found
 - Solid: Confirmed"
 toggle_mode = true
 texture_normal = ExtResource("41_kmk2g")
-texture_pressed = ExtResource("42_16d12")
+texture_pressed = ExtResource("59_aw4n3")
 texture_hover = ExtResource("42_16d12")
 texture_click_mask = ExtResource("15_yimpa")
 
@@ -646,7 +662,7 @@ tooltip_text = "New
 - Modif. only"
 toggle_mode = true
 texture_normal = ExtResource("43_edmny")
-texture_pressed = ExtResource("44_u8ybj")
+texture_pressed = ExtResource("62_rkm6l")
 texture_hover = ExtResource("44_u8ybj")
 texture_click_mask = ExtResource("15_yimpa")
 
