@@ -569,9 +569,9 @@ Rep	Pourcentage en plus
 	- Les types de liens dans la Fiche d'Enquête modifient aussi ces chances (les % s’appliquent quel que soit le nombre de lien de chaque type) hors liens ne servant pas à incriminer :
 Type de lien (Incriminants)	Pourcentage en plus
 Aucun	0 %
-uniquement Pointillé	+1 %
-Pointillé et plein	+3 %
-uniquement Plein	+5 %
+Uniquement Pointillé	+1 %
+Plus de Pointillé que de Plein	+3 %
+Moins de Pointillé que de Plein	+5 %
 
 	- Le niveau de difficulté de l’enquête s’applique en multiplicateur.
 	- Résumé en équation : Pourcentage de risque d’attaque = ((Impact de la Rep+Impact des Liens)×Niveau de Difficulté de l’enquête) %. (moins de 0 % → Aucune attaque).
