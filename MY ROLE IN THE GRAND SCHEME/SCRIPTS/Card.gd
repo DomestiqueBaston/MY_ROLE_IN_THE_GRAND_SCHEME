@@ -333,13 +333,14 @@ func _raise(raise_neighbors: bool = false):
 		for location in _pins:
 			var pin = _pins[location]
 			var link = pin.get_link_reference()
-			var other_pin
-			if link.pin1 == pin:
-				other_pin = link.pin2
-			else:
-				other_pin = link.pin1
-			if other_pin.type == Pin.PinType.CARD:
-				other_pin.card._raise(false)
+			if link:
+				var other_pin
+				if link.pin1 == pin:
+					other_pin = link.pin2
+				else:
+					other_pin = link.pin1
+				if other_pin.type == Pin.PinType.CARD:
+					other_pin.card._raise(false)
 
 	# now move the card itself in front
 
@@ -349,13 +350,17 @@ func _raise(raise_neighbors: bool = false):
 	# those links
 
 	for location in _pins:
-		var link = _pins[location].get_link_reference()
-		link.move_to_front()
-		for pin in link.get_follower_pins():
-			pin.link.move_to_front()
-		link.pin1.move_to_front()
-		link.pin2.move_to_front()
-		for pin in link.get_follower_pins():
+		var pin = _pins[location]
+		var link = pin.get_link_reference()
+		if link:
+			link.move_to_front()
+			for p in link.get_follower_pins():
+				p.link.move_to_front()
+			link.pin1.move_to_front()
+			link.pin2.move_to_front()
+			for p in link.get_follower_pins():
+				p.move_to_front()
+		else:
 			pin.move_to_front()
 
 func _update_opacity():

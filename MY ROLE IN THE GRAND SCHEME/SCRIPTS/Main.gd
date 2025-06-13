@@ -223,7 +223,9 @@ func _start_drag_pin() -> bool:
 func _find_links_to_card(card: Card) -> Array[Link]:
 	var ret: Array[Link]
 	for pin in card.get_pins():
-		ret.append(pin.get_link_reference())
+		var link = pin.get_link_reference()
+		if link:
+			ret.append(link)
 	#for link in links.get_children():
 		#if link is Link and \
 			#((link.pin1.type == Pin.PinType.CARD and link.pin1.card == card) or
