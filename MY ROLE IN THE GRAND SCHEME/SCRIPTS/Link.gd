@@ -25,18 +25,20 @@ class_name Link extends Node2D
 
 @export var type: Type = Type.HIDEOUT:
 	set(value):
-		type = value
-		_update_texture()
-		_update_transparency()
+		if type != value:
+			type = value
+			_update_texture()
+			_update_transparency()
 
 ##
 ## Confirmed links appear as solid lines; unconfirmed links are dotted lines.
 ##
 @export var is_confirmed: bool = true:
 	set(value):
-		is_confirmed = value
-		_update_texture()
-		_update_transparency()
+		if is_confirmed != value:
+			is_confirmed = value
+			_update_texture()
+			_update_transparency()
 
 ##
 ## A "new" link appears as a dotted line, alternating violet and its actual
@@ -44,9 +46,10 @@ class_name Link extends Node2D
 ##
 @export var is_new: bool = false:
 	set(value):
-		is_new = value
-		_update_texture()
-		_update_transparency()
+		if is_new != value:
+			is_new = value
+			_update_texture()
+			_update_transparency()
 
 #
 # Note that link types are assumed to begin at 0: see Globals.set_link_mask().
