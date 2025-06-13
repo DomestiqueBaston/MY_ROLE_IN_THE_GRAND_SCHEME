@@ -22,7 +22,7 @@ func _ready():
 	popup.add_submenu_node_item("Get your fix", submenu2)
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_item("Go to sleep...")
-	popup.add_item("Pass time")
+	popup.add_item("Pass time!")
 
 	for button: MenuButton in [$Dailies, $Cases, $Cards, $Whatever]:
 		button.mouse_entered.connect(_on_mouse_entered)
