@@ -215,22 +215,26 @@ position = Vector2(584, 278)
 opacity = 0.78
 
 [node name="Link_Violet" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
+visible = true
 pin1 = NodePath("../Pin_Small")
 pin2 = NodePath("../Pin_Small2")
 type = 14
 is_confirmed = false
 
 [node name="Link_Pointillé_Blanc" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
+visible = true
 pin1 = NodePath("../Pin_Small3")
 pin2 = NodePath("../Pin_Small4")
 is_confirmed = false
 
 [node name="Link_Plein_Jaune" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
+visible = true
 pin1 = NodePath("../Pin_Small5")
 pin2 = NodePath("../Pin_Small6")
 type = 9
 
 [node name="Link_Link" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
+visible = true
 pin1 = NodePath("../Pin_Small7")
 pin2 = NodePath("../Pin_Small8")
 type = 7
