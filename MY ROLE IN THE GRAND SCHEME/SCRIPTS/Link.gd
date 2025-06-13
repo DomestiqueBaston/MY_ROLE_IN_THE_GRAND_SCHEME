@@ -30,24 +30,10 @@ class_name Link extends Node2D
 			_update_texture()
 			_update_transparency()
 
-##
-## Confirmed links appear as solid lines; unconfirmed links are dotted lines.
-##
-@export var is_confirmed: bool = true:
+@export var status: Status = Status.CONFIRMED:
 	set(value):
-		if is_confirmed != value:
-			is_confirmed = value
-			_update_texture()
-			_update_transparency()
-
-##
-## A "new" link appears as a dotted line, alternating violet and its actual
-## color.
-##
-@export var is_new: bool = false:
-	set(value):
-		if is_new != value:
-			is_new = value
+		if status != value:
+			status = value
 			_update_texture()
 			_update_transparency()
 
@@ -70,6 +56,16 @@ enum Type {
 	WORK,
 	HANGOUT,
 	FOUND
+}
+
+enum Status {
+	## A confirmed link appears as a solid line.
+	CONFIRMED,
+	## A probable link appears as a dotted line.
+	PROBABLE,
+	## A new link appears as a dotted line, alternating violet with its actual
+	## color.
+	NEW
 }
 
 var _solid_textures: Array[CompressedTexture2D] = [
@@ -194,12 +190,13 @@ func _update_transform():
 		_update_follower_pin(pin)
 
 func _update_texture():
-	if is_new:
-		$Link_Texture.texture = _new_textures[type]
-	elif is_confirmed:
-		$Link_Texture.texture = _solid_textures[type]
-	else:
-		$Link_Texture.texture = _dotted_textures[type]
+	match status:
+		Status.CONFIRMED:
+			$Link_Texture.texture = _solid_textures[type]
+		Status.PROBABLE:
+			$Link_Texture.texture = _dotted_textures[type]
+		Status.NEW:
+			$Link_Texture.texture = _new_textures[type]
 
 func _update_transparency():
 	if not Engine.is_editor_hint():

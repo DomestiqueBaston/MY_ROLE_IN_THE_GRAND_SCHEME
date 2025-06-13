@@ -219,13 +219,13 @@ visible = true
 pin1 = NodePath("../Pin_Small")
 pin2 = NodePath("../Pin_Small2")
 type = 14
-is_confirmed = false
+status = 1
 
 [node name="Link_Pointillé_Blanc" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
 visible = true
 pin1 = NodePath("../Pin_Small3")
 pin2 = NodePath("../Pin_Small4")
-is_confirmed = false
+status = 1
 
 [node name="Link_Plein_Jaune" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
 visible = true

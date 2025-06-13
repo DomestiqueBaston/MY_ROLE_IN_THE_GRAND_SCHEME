@@ -481,11 +481,10 @@ func _handle_popup(id: int):
 			print("start investigation")
 		MenuItem.SWITCH_LINK:
 			if _popup_node is Link:
-				if not _popup_node.is_confirmed or _popup_node.is_new:
-					_popup_node.is_confirmed = true
-					_popup_node.is_new = false
+				if _popup_node.status == Link.Status.CONFIRMED:
+					_popup_node.status = Link.Status.PROBABLE
 				else:
-					_popup_node.is_confirmed = false
+					_popup_node.status = Link.Status.CONFIRMED
 		MenuItem.DELETE_LINK:
 			if _popup_node is Link:
 				_popup_node.queue_free()
