@@ -1,23 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://hl8yhfvhjhtn"]
+[gd_scene load_steps=29 format=3 uid="uid://hl8yhfvhjhtn"]
 
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
+[ext_resource type="Script" uid="uid://iftyf0kl5wx7" path="res://SCRIPTS/Menus.gd" id="2_0mfvj"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
-[ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://SCRIPTS/Menu_Button.gd" id="3_wxjko"]
 [ext_resource type="AudioStream" uid="uid://dmrut6mhf4tp3" path="res://SOUND/MISC/Soft_Alarm.ogg" id="5_0mfvj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mfvj"]
-bg_color = Color(0, 0, 0, 0.686275)
-border_color = Color(0, 0, 0, 0.686275)
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvp8u"]
-bg_color = Color(0, 0, 0, 0.686275)
-border_color = Color(0, 0, 0, 0.686275)
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
 
 [sub_resource type="Animation" id="Animation_xsx1a"]
 resource_name = "Alert"
@@ -431,6 +417,7 @@ text = "12am"
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_2tgjx")
+script = ExtResource("2_0mfvj")
 
 [node name="Double_Bar_1" type="Label" parent="Menus"]
 layout_mode = 2
@@ -452,32 +439,6 @@ theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Dailies"
 switch_on_hover = true
-item_count = 11
-popup/item_0/text = "Buy a search warrant..."
-popup/item_0/id = 0
-popup/item_1/text = "Visit Doctor F..."
-popup/item_1/id = 1
-popup/item_2/text = "Visit Rowena the dealer..."
-popup/item_2/id = 2
-popup/item_3/text = "Go to the Investig. Center..."
-popup/item_3/id = 3
-popup/item_4/text = "Back to the Office!"
-popup/item_4/id = 4
-popup/item_5/text = " - - - - - - - - - - - - - "
-popup/item_5/id = 5
-popup/item_5/separator = true
-popup/item_6/text = "Pay the bill..."
-popup/item_6/id = 6
-popup/item_7/text = "Get your fix..."
-popup/item_7/id = 7
-popup/item_8/text = " - - - - - - - - - - - - - "
-popup/item_8/id = 8
-popup/item_8/separator = true
-popup/item_9/text = "Go to sleep..."
-popup/item_9/id = 9
-popup/item_10/text = "Pass time"
-popup/item_10/id = 10
-script = ExtResource("3_wxjko")
 
 [node name="Single_Bar_1" type="Label" parent="Menus"]
 layout_mode = 2
@@ -511,7 +472,6 @@ popup/item_3/text = "Validate case!"
 popup/item_3/id = 3
 popup/item_4/text = "Give up case..."
 popup/item_4/id = 4
-script = ExtResource("3_wxjko")
 
 [node name="Single_Bar_2" type="Label" parent="Menus"]
 layout_mode = 2
@@ -537,7 +497,6 @@ switch_on_hover = true
 item_count = 1
 popup/item_0/text = "Card management"
 popup/item_0/id = 0
-script = ExtResource("3_wxjko")
 
 [node name="Single_Bar_3" type="Label" parent="Menus"]
 layout_mode = 2
@@ -566,7 +525,6 @@ popup/item_1/text = "Options"
 popup/item_1/id = 1
 popup/item_2/text = "Quit"
 popup/item_2/id = 2
-script = ExtResource("3_wxjko")
 
 [node name="Double_Bar_2" type="Label" parent="Menus"]
 layout_mode = 2
@@ -712,40 +670,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 text = "-666"
 horizontal_alignment = 2
-
-[node name="Bill_PopupMenu" type="PopupMenu" parent="."]
-auto_translate_mode = 1
-size = Vector2i(100, 44)
-min_size = Vector2i(100, 44)
-max_size = Vector2i(100, 44)
-theme = ExtResource("1_2tgjx")
-theme_override_styles/panel = SubResource("StyleBoxFlat_0mfvj")
-submenu_popup_delay = 0.01
-allow_search = false
-item_count = 4
-item_0/text = "This week (XXXDø)"
-item_0/id = 0
-item_1/text = "2 weeks ago (XXXDø)"
-item_1/id = 1
-item_2/text = "3 weeks ago (XXXDø)"
-item_2/id = 2
-item_3/text = "4 weeks ago (XXXDø)"
-item_3/id = 3
-
-[node name="Drug_Fix_PopupMenu" type="PopupMenu" parent="."]
-auto_translate_mode = 1
-size = Vector2i(62, 22)
-min_size = Vector2i(62, 22)
-max_size = Vector2i(50, 22)
-theme = ExtResource("1_2tgjx")
-theme_override_styles/panel = SubResource("StyleBoxFlat_nvp8u")
-submenu_popup_delay = 0.01
-allow_search = false
-item_count = 2
-item_0/text = "Use 1 dose"
-item_0/id = 0
-item_1/text = "Use 2 doses"
-item_1/id = 1
 
 [node name="Wan_Alert" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Character_Stats")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_5xdnl"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_gv50h"]
-[ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://SCRIPTS/Menu_Button.gd" id="3_2jcxq"]
+[ext_resource type="Script" uid="uid://dvntb7h0hsd8i" path="res://TRASH (NEW)/Menu_Button.gd" id="3_2jcxq"]
 [ext_resource type="Script" uid="uid://bt5otmo8wn3gk" path="res://TRASH (NEW)/Top_Bar_Alert.gd" id="4_ufyr0"]
 [ext_resource type="AudioStream" uid="uid://dmrut6mhf4tp3" path="res://SOUND/MISC/Soft_Alarm.ogg" id="5_aq66m"]
 
