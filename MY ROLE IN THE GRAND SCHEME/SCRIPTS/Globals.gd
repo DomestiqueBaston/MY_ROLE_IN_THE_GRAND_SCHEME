@@ -104,7 +104,7 @@ func set_dotted_links_visible(visible: bool):
 ## the link mask and dotted link flag.
 ##
 func is_link_visible(link: Link) -> bool:
-	if not link.is_confirmed and not _show_dotted_links:
+	if not _show_dotted_links and (not link.is_confirmed or link.is_new):
 		return false
 	return _link_mask & (1 << link.type) != 0
 

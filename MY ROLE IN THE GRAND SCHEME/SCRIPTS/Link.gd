@@ -35,6 +35,11 @@ class_name Link extends Node2D
 		_update_texture()
 		_update_transparency()
 
+@export var is_new: bool = false:
+	set(value):
+		is_new = value
+		_update_texture()
+
 #
 # Note that link types are assumed to begin at 0: see Globals.set_link_mask().
 #
@@ -90,6 +95,24 @@ var _dotted_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Turquoise.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Bleu_Tres_Fonce.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Clair.png")
+]
+
+var _new_textures: Array[CompressedTexture2D] = [
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Blanc.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Gris.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Noir.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Vert_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Orange.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rouge.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Jaune.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Vert_Clair.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Marron.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Turquoise.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Tres_Fonce.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Violet_Clair.png")
 ]
 
 # Pins that are linked to the middle of this link (at most one, for now).
@@ -160,7 +183,9 @@ func _update_transform():
 		_update_follower_pin(pin)
 
 func _update_texture():
-	if is_confirmed:
+	if is_new:
+		$Link_Texture.texture = _new_textures[type]
+	elif is_confirmed:
 		$Link_Texture.texture = _solid_textures[type]
 	else:
 		$Link_Texture.texture = _dotted_textures[type]
