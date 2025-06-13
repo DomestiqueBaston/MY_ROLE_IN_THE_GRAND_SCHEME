@@ -192,10 +192,10 @@ position = Vector2(463, 206)
 combat_type = 2
 
 [node name="Card3" parent="Cards" instance=ExtResource("3_d3ak4")]
-modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(512, 163)
 card_type = 1
 investigation_type = 2
+opacity = 0.784314
 
 [node name="Card4" parent="Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(165, 213)
@@ -205,14 +205,12 @@ card_type = 2
 position = Vector2(294, 38)
 
 [node name="Card6" parent="Cards" instance=ExtResource("3_d3ak4")]
-modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(537, 57)
-opacity = 0.78
+opacity = 0.784314
 
 [node name="Card7" parent="Cards" instance=ExtResource("3_d3ak4")]
-modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(584, 278)
-opacity = 0.78
+opacity = 0.784314
 
 [node name="Link_Violet" parent="Cards" node_paths=PackedStringArray("pin1", "pin2") instance=ExtResource("4_w12wv")]
 visible = true

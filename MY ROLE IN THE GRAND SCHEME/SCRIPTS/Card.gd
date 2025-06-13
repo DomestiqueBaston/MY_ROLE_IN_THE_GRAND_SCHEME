@@ -115,6 +115,7 @@ enum NpcStatus {
 		_update_opacity()
 
 var _is_highlighted: bool = false
+var _opacity_before_highlighting: float
 var _is_expanded: bool = true
 var _pins = {}
 
@@ -290,6 +291,9 @@ func set_highlighted(highlighted: bool):
 		else:
 			$Shadow_Animations.play("Shadow_On")
 			_raise()
+		_opacity_before_highlighting = opacity
+		if opacity < 1:
+			create_tween().tween_property(self, "opacity", 1, 0.1333)
 		if Globals.card_exited_sound.playing:
 			Globals.card_exited_sound.stop()
 		if not Globals.card_entered_sound.playing:
@@ -301,6 +305,9 @@ func set_highlighted(highlighted: bool):
 			z_index -= 1
 		else:
 			$Shadow_Animations.play("Shadow_Off")
+		if _opacity_before_highlighting < 1:
+			create_tween().tween_property(
+				self, "opacity", _opacity_before_highlighting, 0.1333)
 		if not Globals.card_entered_sound.playing:
 			Globals.card_exited_sound.play()
 
