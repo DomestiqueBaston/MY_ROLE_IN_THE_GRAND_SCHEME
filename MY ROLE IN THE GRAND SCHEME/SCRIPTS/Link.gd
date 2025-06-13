@@ -150,7 +150,7 @@ func _exit_tree():
 		if old_pin2:
 			old_pin2.queue_free()
 		for pin in _follower_pins:
-			pin.queue_free()
+			pin.get_link_reference().queue_free()
 
 func _connect_pin(pin: Pin):
 	pin.moved.connect(_update_transform)

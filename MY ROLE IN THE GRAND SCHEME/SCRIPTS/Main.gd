@@ -399,7 +399,7 @@ func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
 
 	_new_link = link_scene.instantiate()
 	_new_link.type = type
-	_new_link.is_confirmed = is_confirmed
+	_new_link.status = Link.Status.CONFIRMED if is_confirmed else Link.Status.PROBABLE
 	_new_link.pin1 = _src_pin
 	_new_link.pin2 = _dst_pin
 	# if the link is pickable, it hides cards' mouse enter/exit events
