@@ -1,9 +1,6 @@
 extends Control
 
 func _ready():
-	var dailies: MenuButton = $Dailies
-	var popup: PopupMenu = dailies.get_popup()
-
 	var submenu1: PopupMenu = PopupMenu.new()
 	submenu1.add_item("This week (XXXDø)")
 	submenu1.add_item("2 weeks ago (XXXDø)")
@@ -14,6 +11,7 @@ func _ready():
 	submenu2.add_item("Use 1 dose")
 	submenu2.add_item("Use 2 doses")
 
+	var popup: PopupMenu = $Dailies.get_popup()
 	popup.add_item("Buy a search warrant...")
 	popup.add_item("Visit Doctor F...")
 	popup.add_item("Visit Rowena the dealer...")
