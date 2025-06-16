@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=68 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -17,7 +17,6 @@
 [ext_resource type="Shader" uid="uid://cly635k6fk2te" path="res://SHADERS/Mini_Screen.gdshader" id="10_n4tdx"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
-[ext_resource type="VideoStream" uid="uid://bdb8kb1t3m6ew" path="res://GRAPHICS/INTERACTION/MFSC.ogv" id="12_v84v6"]
 [ext_resource type="Texture2D" uid="uid://br15hgwsu8gpi" path="res://GRAPHICS/INTERACTION/Card_Playground_Mask.png" id="12_xjgkp"]
 [ext_resource type="Script" uid="uid://cslcuvmg0o82w" path="res://SCRIPTS/Random_Interaction.gd" id="14_1c880"]
 [ext_resource type="Texture2D" uid="uid://43qya3ji5i5" path="res://GRAPHICS/INTERACTION/Dialogue_TV.png" id="14_k1rto"]
@@ -429,22 +428,6 @@ offset_left = 8.0
 offset_top = 15.0
 offset_right = 99.0
 offset_bottom = 91.0
-
-[node name="MFSC" type="VideoStreamPlayer" parent="Top_Left_Screen/Movies"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.470588)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 87.0
-offset_bottom = 70.0
-scale = Vector2(1.035, 1.08)
-stream = ExtResource("12_v84v6")
-volume_db = -30.0
-autoplay = true
-paused = true
-loop = true
-bus = &"VIDEO"
 
 [node name="DB" type="VideoStreamPlayer" parent="Top_Left_Screen/Movies"]
 visible = false

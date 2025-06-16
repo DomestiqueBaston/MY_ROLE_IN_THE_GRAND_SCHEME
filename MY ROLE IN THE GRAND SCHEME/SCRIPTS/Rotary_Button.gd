@@ -23,9 +23,7 @@ func _ready():
 
 func _process(_delta):
 	if top_button.button_position != last_top_button_position or bottom_button.button_position != last_bottom_button_position:
-		if not $"../../Movies/MFSC".paused:
-			stop_movie_MFSC()
-		elif not $"../../Movies/DB".paused:
+		if not $"../../Movies/DB".paused:
 			stop_movie_DB()
 		elif not $"../../Movies/KM".paused:
 			stop_movie_KM()
@@ -50,15 +48,7 @@ func _process(_delta):
 			$"../../Turn_Button".play()
 			update_texture()
 
-	if top_button.button_position == 2 and bottom_button.button_position == 5:
-		if is_condition_met:
-			time_elapsed += _delta
-			if time_elapsed >= 0.666:
-				go_movie_MFSC()
-		else:
-			is_condition_met = true
-			time_elapsed = 0.0
-	elif top_button.button_position == 3 and bottom_button.button_position == 6:
+	if top_button.button_position == 3 and bottom_button.button_position == 6:
 		if is_condition_met:
 			time_elapsed += _delta
 			if time_elapsed >= 0.666:
@@ -96,29 +86,6 @@ func is_mouse_over_button() -> bool:
 func update_texture():
 	if button_position >= 1 and button_position <= 6:
 		texture_normal = load(textures[button_position - 1])
-
-func go_movie_MFSC():
-	if $"../../Tv_On_Off".button_pressed == false:
-		$"../../Line_Animation".visible = false
-		$"../../Interaction".visible = false
-		$"../../Movies/MFSC".visible = true
-		$"../../Movies/MFSC".paused = false
-	else:
-		stop_movie_MFSC()
-
-func stop_movie_MFSC():
-	if $"../../Tv_On_Off".button_pressed == false:
-		$"../../Movies/MFSC".paused = true
-		$"../../Movies/MFSC".visible = false
-		$"../../Line_Animation".visible = not $"../../Line_Animation".visible
-		$"../../Interaction".visible = not $"../../Interaction".visible
-		$"../../Screen".visible = true
-	else:
-		$"../../Movies/MFSC".paused = true
-		$"../../Movies/MFSC".visible = false
-		$"../../Line_Animation".visible = false
-		$"../../Interaction".visible = false
-		$"../../Screen".visible = false
 
 func go_movie_DB():
 	if $"../../Tv_On_Off".button_pressed == false:
