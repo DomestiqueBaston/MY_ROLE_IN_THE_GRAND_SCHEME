@@ -330,6 +330,7 @@ anchors_preset = 0
 script = ExtResource("1_0mfvj")
 
 [node name="A_VIRER_1" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 12.0
 offset_top = -151.0
 offset_right = 84.0
@@ -342,6 +343,7 @@ text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h
 V[/center]"
 
 [node name="A_VIRER_2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 437.0
 offset_top = -116.0
 offset_right = 516.0
@@ -354,6 +356,7 @@ text = "[center]Lorsque [color=ff1c18]Add[/color] et/ou [color=ff1c18]Emo[/color
  V                V[/center]"
 
 [node name="A_VIRER_3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 520.0
 offset_top = -92.0
 offset_right = 599.0
@@ -366,6 +369,7 @@ text = "[center]Lorsque [color=ff1c18]Wan[/color] atteint [color=ff1c18]3[/color
 V                [/center]"
 
 [node name="A_VIRER_4" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = -73.0
 offset_top = -128.0
 offset_right = 9.0
@@ -378,6 +382,7 @@ text = "[center]Lorsque le joueur aura [color=ff1c18]4 factures impayées[/color
                                 V[/center]"
 
 [node name="A_VIRER_5" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 327.0
 offset_top = -92.0
 offset_right = 440.0
