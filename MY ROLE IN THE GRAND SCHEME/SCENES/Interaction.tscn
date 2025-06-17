@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=67 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
@@ -299,8 +299,6 @@ content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxcf0"]
 content_margin_left = 1.0
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_jv51o"]
 
 [node name="Interaction" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -2255,21 +2253,7 @@ z_index = 1
 autoplay = "Appearance"
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
-
-[node name="Dailies" parent="Top_Bar/Menus" index="1"]
-disabled = true
-button_group = SubResource("ButtonGroup_jv51o")
-
-[node name="Cases" parent="Top_Bar/Menus" index="3"]
-disabled = true
-button_group = SubResource("ButtonGroup_jv51o")
-
-[node name="Cards" parent="Top_Bar/Menus" index="5"]
-disabled = true
-button_group = SubResource("ButtonGroup_jv51o")
-
-[node name="Whatever" parent="Top_Bar/Menus" index="7"]
-button_group = SubResource("ButtonGroup_jv51o")
+limited_menus = true
 
 [connection signal="mouse_entered" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_exited"]
@@ -2304,4 +2288,3 @@ button_group = SubResource("ButtonGroup_jv51o")
 [editable path="TMP/Locations/Card27"]
 [editable path="TMP/Locations/Card28"]
 [editable path="TMP/Drag_Drop_Line"]
-[editable path="Top_Bar"]

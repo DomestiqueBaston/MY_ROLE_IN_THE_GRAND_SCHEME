@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://hl8yhfvhjhtn"]
 
+[ext_resource type="Script" uid="uid://dstxsghnh0lns" path="res://SCRIPTS/Top_Bar.gd" id="1_0mfvj"]
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
-[ext_resource type="Script" uid="uid://iftyf0kl5wx7" path="res://SCRIPTS/Menus.gd" id="2_0mfvj"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="AudioStream" uid="uid://dmrut6mhf4tp3" path="res://SOUND/MISC/Soft_Alarm.ogg" id="5_0mfvj"]
 
@@ -324,7 +324,10 @@ _data = {
 &"RESET": SubResource("Animation_pq470")
 }
 
-[node name="Top_Bar" type="Node2D"]
+[node name="Top_Bar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0mfvj")
 
 [node name="A_VIRER_1" type="RichTextLabel" parent="."]
 offset_left = 12.0
@@ -387,6 +390,7 @@ text = "[center]Lorsque le joueur aura [color=ff1c18]PHY=1[/color] ou [color=ff1
  V                  V               V[/center]"
 
 [node name="Date_Time" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.005
 anchor_right = 0.005
@@ -417,7 +421,6 @@ text = "12am"
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_2tgjx")
-script = ExtResource("2_0mfvj")
 
 [node name="Double_Bar_1" type="Label" parent="Menus"]
 layout_mode = 2
@@ -538,6 +541,7 @@ text = " ||"
 [node name="Character_Stats" type="RichTextLabel" parent="."]
 clip_contents = false
 custom_minimum_size = Vector2(364, 8)
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
