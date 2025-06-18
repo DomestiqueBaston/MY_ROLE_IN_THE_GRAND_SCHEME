@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var interaction_cards: Node2D = $Cards/Interaction
+@onready var the_button: BaseButton = $Button/Bring_It_On
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 
 # highlighted card
@@ -41,6 +43,7 @@ func _ready():
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)
+	the_button.disabled = true
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -123,7 +126,7 @@ func _stop_drag(global_pos: Vector2):
 
 	if _current_card in _cards_played:
 		var old_parent = _cards_played[_current_card]
-		if new_parent != $Cards/Interaction and new_parent != old_parent:
+		if new_parent != interaction_cards and new_parent != old_parent:
 			_abort_drag()
 			return
 		if new_parent == old_parent:
@@ -133,13 +136,14 @@ func _stop_drag(global_pos: Vector2):
 	# if the card is in a pile, it can only be dropped in the interaction area
 
 	else:
-		if new_parent != $Cards/Interaction:
+		if new_parent != interaction_cards or _cards_played.size() == 3:
 			_abort_drag()
 			return
 		_cards_played[_current_card] = _current_card.get_parent()
-		_current_card.reparent($Cards/Interaction)
+		_current_card.reparent(interaction_cards)
 
 	_stuff_to_do_when_drag_ends(_current_card)
+	the_button.disabled = _cards_played.is_empty()
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	drag_drop_line.hide_line()
