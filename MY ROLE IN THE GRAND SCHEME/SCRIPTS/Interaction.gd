@@ -24,8 +24,11 @@ var _drag_global_init_pos: Vector2
 # where the user clicked, in global coordinates, to initiate dragging
 var _drag_click_pos: Vector2
 
-# card areas and the collider shapes used to detect when the mouse is in them
-@onready var _collider_shapes = {
+# overlay highlighting the card pile concerned by drag & drop
+var _highlighted_overlay: Sprite2D
+
+# collider shapes used to detect when the mouse is in card areas
+@onready var _area_shapes = {
 	$Cards/Fallback:	$Colliders/Fallback_Area/Fallback,
 	$Cards/Mastery:		$Colliders/Mastery_Area/Mastery,
 	$Cards/Evidence:	$Colliders/Evidence_Area/Evidence,
@@ -33,6 +36,16 @@ var _drag_click_pos: Vector2
 	$Cards/Objects:		$Colliders/Object_Area/Object,
 	$Cards/Locations:	$Colliders/Place_Area/Place,
 	$Cards/Interaction:	$Colliders/Interaction_Area/Interaction_Collider
+}
+
+# overlay to highlight the name of each card pile
+@onready var _area_overlays = {
+	$Cards/Fallback:	$Interaction_BG/Fallback_Pile,
+	$Cards/Mastery:		$Interaction_BG/Mastery_Pile,
+	$Cards/Evidence:	$Interaction_BG/Evidence_Pile,
+	$Cards/NPCs:		$Interaction_BG/Characters_Pile,
+	$Cards/Objects:		$Interaction_BG/Objects_Pile,
+	$Cards/Locations:	$Interaction_BG/Locations_Pile
 }
 
 # cards that have been dragged to the interaction zone, and which piles they
@@ -96,6 +109,12 @@ func _start_drag() -> bool:
 	drag_drop_line.point1 = _drag_click_pos
 	drag_drop_line.point2 = _drag_click_pos
 	drag_drop_line.show_line()
+
+	# highlight the name of the pile the card belongs to
+
+	var pile = _cards_played.get(_current_card, _current_card.get_parent())
+	_highlighted_overlay = _area_overlays[pile]
+	_highlighted_overlay.show()
 
 	return true
 
@@ -167,10 +186,11 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 		dragged_card.stop_drag()
 	Globals.dragging = false
 	$Hover_Interaction_Zone.hide()
+	_highlighted_overlay.hide()
 
 func _get_card_area_at(global_pos: Vector2) -> Node2D:
-	for area in _collider_shapes:
-		if _is_in_collision_shape(_collider_shapes[area], global_pos):
+	for area in _area_shapes:
+		if _is_in_collision_shape(_area_shapes[area], global_pos):
 			return area
 	return null
 
