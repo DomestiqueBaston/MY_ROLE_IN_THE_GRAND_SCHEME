@@ -83,6 +83,7 @@ func _ready():
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)
 	Globals.card_right_click.connect(_popup_menu)
+	Globals.card_double_click.connect(_double_click_on_card)
 	Globals.mouse_entered_link.connect(_mouse_entered_link)
 	Globals.mouse_exited_link.connect(_mouse_exited_link)
 	Globals.link_right_click.connect(_popup_menu)
@@ -129,7 +130,7 @@ func _mouse_entered_card(card: Card):
 		card.set_highlighted(true)
 		_current_card = card
 		print("show info about card: ", card.card_name)
-	elif _drag_state == DragState.DRAGGING and _clicked_pin and not card.is_stacked:
+	elif _drag_state == DragState.DRAGGING and _clicked_pin and not card.is_stacked():
 		_drop_target = card
 	elif _drag_state == DragState.LINKING:
 		_drop_target = card
@@ -148,6 +149,10 @@ func _click_on_card(global_pos: Vector2, card: Card):
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
+
+func _double_click_on_card(card: Card):
+	if not card.is_stacked():
+		card.expand_or_reduce()
 
 func _click_on_pin(global_pos: Vector2, pin: Pin):
 	_clicked_pin = pin
@@ -295,11 +300,9 @@ func _stop_drag_card(global_pos: Vector2):
 	_stuff_to_do_when_drag_ends(_current_card)
 
 	if in_reserve:
-		_current_card.is_stacked = true
 		_current_card.set_expanded(true)
 		_current_card.reparent(reserve, false)
 	else:
-		_current_card.is_stacked = false
 		# card is allowed to overshoot left and top edges by 10 pixels at most
 		var corner = (playground_shape.get_global_transform() *
 					  playground_shape.shape.get_rect().position)
@@ -465,7 +468,7 @@ func _stop_linking(global_pos: Vector2):
 
 func _popup_menu(pos: Vector2, node: Node2D):
 	if node is Card:
-		if node.is_stacked:
+		if node.is_stacked():
 			return
 		print("popup menu for card: ", node.card_name)
 	elif node is Link:

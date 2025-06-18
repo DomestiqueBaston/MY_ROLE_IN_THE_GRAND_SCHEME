@@ -144,7 +144,6 @@ func _layout():
 	var x = 0
 	for card_index in card_count:
 		var card: Card = get_child(card_index)
-		card.is_stacked = true
 		if card_index < first_card_index:
 			card.hide()
 		else:

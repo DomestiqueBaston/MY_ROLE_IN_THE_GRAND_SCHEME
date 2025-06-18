@@ -20,6 +20,9 @@ signal card_left_click(pos: Vector2, card: Card)
 signal card_right_click(pos: Vector2, card: Card)
 
 @warning_ignore("unused_signal")
+signal card_double_click(card: Card)
+
+@warning_ignore("unused_signal")
 signal mouse_entered_card(card: Card)
 
 @warning_ignore("unused_signal")

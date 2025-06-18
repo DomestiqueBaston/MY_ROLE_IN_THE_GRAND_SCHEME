@@ -307,62 +307,50 @@ min_card_margin = 6
 
 [node name="Card7" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 combat_type = 1
-is_stacked = true
 
 [node name="Card8" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(3, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card9" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(6, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card10" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(9, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card11" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(12, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card12" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(15, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card13" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(18, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card14" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(21, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card15" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(24, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card16" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(27, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card17" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(30, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Card18" parent="Reserve_Cards" instance=ExtResource("3_d3ak4")]
 position = Vector2(33, 0)
 combat_type = 1
-is_stacked = true
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("52_2uhvq")]
 visible = false

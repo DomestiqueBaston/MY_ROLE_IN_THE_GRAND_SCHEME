@@ -91,24 +91,6 @@ enum NpcStatus {
 		is_object_evidence = value
 		_update_card_type()
 
-##
-## true if the card is in the reserve, false if it is in play. If the card is
-## the reserve, it cannot be reduced, and the reserve decides which card to
-## highlight as the mouse moves, not the card itself.
-##
-@export var is_stacked: bool:
-	set(value):
-		if is_stacked != value:
-			# because a stacked card's Z index is incremented when highlighted
-			if _is_highlighted:
-				if is_stacked:
-					z_index -= 1
-				else:
-					z_index += 1
-			is_stacked = value
-			for location in _pins:
-				_pins[location].visible = not is_stacked
-
 @export var opacity: float = 1:
 	set(value):
 		opacity = value
@@ -129,6 +111,39 @@ func _notification(what):
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
 		for location in _pins:
 			_pins[location].global_position = get_pin_position(location)
+
+##
+## Returns true if the card is in a stack, that is, if its parent node is a
+## CardStack. Note that when a card is in a stack, its parent node decides which
+## card to highlight, not the card itself. That is, a stacked card emits no
+## Globals.mouse_entered_card() and Globals.mouse_exited_card() signals; its
+## CardStack parent emits them.
+##
+func is_stacked() -> bool:
+	var parent = get_parent()
+	return parent and parent is CardStack
+
+##
+## When the card is parented to a CardStack, hide its pins.
+##
+func _enter_tree():
+	if is_stacked():
+		# because a stacked card's Z index is incremented when highlighted
+		if _is_highlighted:
+			z_index += 1
+		for location in _pins:
+			_pins[location].hide()
+
+##
+## When the card is removed from its CardStack parent, show its pins.
+##
+func _exit_tree():
+	if is_stacked():
+		# because a stacked card's Z index is incremented when highlighted
+		if _is_highlighted:
+			z_index -= 1
+		for location in _pins:
+			_pins[location].show()
 
 func _update_card_type():
 	match card_type:
@@ -287,7 +302,7 @@ func set_highlighted(highlighted: bool):
 		return
 
 	if highlighted:
-		if is_stacked:
+		if is_stacked():
 			$Card_Shadow.position = Vector2(0, 0)
 			$Card_Shadow.show()
 			z_index += 1
@@ -302,7 +317,7 @@ func set_highlighted(highlighted: bool):
 		if not Globals.card_entered_sound.playing:
 			Globals.card_entered_sound.play()
 	else:
-		if is_stacked:
+		if is_stacked():
 			$Card_Shadow.hide()
 			$Card_Shadow.position = Vector2(-2, -4)
 			z_index -= 1
@@ -380,17 +395,17 @@ func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shap
 		elif event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
 			Globals.card_right_click.emit(event.global_position, self)
 		elif event.button_mask == MOUSE_BUTTON_MASK_LEFT:
-			if not event.double_click:
+			if event.double_click:
+				Globals.card_double_click.emit(self)
+			else:
 				Globals.card_left_click.emit(event.global_position, self)
-			elif not is_stacked:
-				expand_or_reduce()
 
 func _on_card_collider_mouse_entered():
-	if not is_stacked:
+	if not is_stacked():
 		Globals.mouse_entered_card.emit(self)
 
 func _on_card_collider_mouse_exited():
-	if not is_stacked:
+	if not is_stacked():
 		Globals.mouse_exited_card.emit(self)
 
 ##
