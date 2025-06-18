@@ -1,11 +1,10 @@
-[gd_scene load_steps=75 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=74 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="1_1c880"]
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
 [ext_resource type="Texture2D" uid="uid://dd8m2sj75mfst" path="res://GRAPHICS/INTERACTION/Interaction_BG.png" id="2_y864e"]
 [ext_resource type="Texture2D" uid="uid://c0c1572gpljxx" path="res://GRAPHICS/INTERACTION/Interaction_Hover.png" id="3_6vqkd"]
 [ext_resource type="Texture2D" uid="uid://b2qt1a51psvus" path="res://GRAPHICS/INTERACTION/Evidence_Pile.png" id="3_okarn"]
-[ext_resource type="Script" uid="uid://csdep0b8nfi6b" path="res://SCRIPTS/Show_Hide_Interaction_Zone.gd" id="3_wtwpt"]
 [ext_resource type="Texture2D" uid="uid://dsf5xy7bblh6p" path="res://GRAPHICS/INTERACTION/Characters_Pile.png" id="4_0pa5p"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="4_som80"]
 [ext_resource type="Texture2D" uid="uid://clrrwev7t78nd" path="res://GRAPHICS/INTERACTION/Objects_Pile.png" id="5_4xtvj"]
@@ -346,13 +345,13 @@ texture = ExtResource("8_hpnnp")
 centered = false
 
 [node name="Hover_Interaction_Zone" type="TextureRect" parent="."]
+visible = false
 offset_right = 640.0
 offset_bottom = 360.0
 tooltip_text = "Drop the cards you
 want to play here"
 theme = ExtResource("2_v84v6")
 texture = ExtResource("3_6vqkd")
-script = ExtResource("3_wtwpt")
 
 [node name="Button" type="Control" parent="."]
 layout_mode = 3

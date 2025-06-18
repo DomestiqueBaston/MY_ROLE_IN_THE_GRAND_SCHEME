@@ -100,9 +100,25 @@ func _start_drag() -> bool:
 	return true
 
 func _drag(global_pos: Vector2):
+
+	# move the card and the endpoint of the drag & drop line
+
 	_current_card.global_position = \
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
 	drag_drop_line.point2 = global_pos
+
+	# highlight the interaction zone when the mouse enters it, with a sound
+	# effect
+
+	var in_interaction_zone = _is_in_collision_shape(
+		$Colliders/Interaction_Area/Interaction_Collider, global_pos)
+	if $Hover_Interaction_Zone.visible != in_interaction_zone:
+		$Hover_Interaction_Zone.visible = in_interaction_zone
+		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+			if in_interaction_zone:
+				Globals.hover_sound.play()
+			else:
+				Globals.leave_sound.play()
 
 func _abort_drag():
 	drag_drop_line.hide_line()
@@ -150,12 +166,15 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	if dragged_card:
 		dragged_card.stop_drag()
 	Globals.dragging = false
+	$Hover_Interaction_Zone.hide()
 
 func _get_card_area_at(global_pos: Vector2) -> Node2D:
-	for area: Node2D in _collider_shapes:
-		var shape = _collider_shapes[area]
-		var local_rect = shape.shape.get_rect()
-		var local_pos = shape.to_local(global_pos)
-		if local_rect.has_point(local_pos):
+	for area in _collider_shapes:
+		if _is_in_collision_shape(_collider_shapes[area], global_pos):
 			return area
 	return null
+
+func _is_in_collision_shape(shape: CollisionShape2D, global_pos: Vector2):
+	var local_rect = shape.shape.get_rect()
+	var local_pos = shape.to_local(global_pos)
+	return local_rect.has_point(local_pos)
