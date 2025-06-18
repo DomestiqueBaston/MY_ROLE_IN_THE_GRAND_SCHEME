@@ -1,29 +1,19 @@
 extends TextureRect
 
-
-@onready var interaction_collider = $"../Colliders/Interaction_Area/Interaction_Collider"
-
-var is_hovering = false
+@onready var collider = $"../Colliders/Interaction_Area/Interaction_Collider"
 
 func _ready():
 	visible = false
 
-func _process(_delta):
-	var mouse_position = get_viewport().get_mouse_position()
-	var collider_global_position = interaction_collider.global_position
-	var shape = interaction_collider.shape
-
-
-	var rect = Rect2(collider_global_position - shape.extents, shape.extents * 2)
-	if rect.has_point(mouse_position):
-		if not is_hovering:
-			if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-				Globals.hover_sound.play()
-			is_hovering = true
-			visible = true
-	else:
-		if is_hovering:
+func _input(event: InputEvent):
+	if event is InputEventMouseMotion:
+		var local_rect = collider.shape.get_rect()
+		var local_pos = collider.to_local(event.global_position)
+		var inside = local_rect.has_point(local_pos)
+		if visible != inside:
+			visible = inside
 			if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-				Globals.leave_sound.play()
-			is_hovering = false
-			visible = false
+				if inside:
+					Globals.hover_sound.play()
+				else:
+					Globals.leave_sound.play()

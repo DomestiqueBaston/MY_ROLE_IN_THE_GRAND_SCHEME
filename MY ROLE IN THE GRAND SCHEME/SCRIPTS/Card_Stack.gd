@@ -26,9 +26,6 @@ enum {
 		size = value
 		_layout()
 
-## Size of a single card.
-@export var card_size: Vector2i = Vector2i(74, 100)
-
 ## Minimum allowed space between cards (first cards are hidden if necessary).
 @export var min_card_margin: int = 3
 
@@ -131,7 +128,7 @@ func _input(event: InputEvent):
 ##
 func _layout():
 	var component = 0 if orientation == HORIZONTAL else 1
-	var avail_space = size[component] - card_size[component]
+	var avail_space = size[component] - Card.size[component]
 
 	_current_card = -1
 	_max_card_count = 1 + int(avail_space / min_card_margin)

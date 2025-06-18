@@ -114,6 +114,9 @@ enum NpcStatus {
 		opacity = value
 		_update_opacity()
 
+## Size of a card in pixels.
+const size := Vector2i(74, 100)
+
 var _is_highlighted: bool = false
 var _opacity_before_highlighting: float
 var _is_expanded: bool = true
@@ -249,10 +252,10 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
 			$Card_Mask/Card_BG/Minion_Status.visible = (npc_status == NpcStatus.MINION)
 
-func get_size() -> Vector2i:
-	return Vector2i(
-		$Card_Mask.texture.get_width() / $Card_Mask.hframes,
-		$Card_Mask.texture.get_height() / $Card_Mask.vframes)
+#func get_size() -> Vector2i:
+	#return Vector2i(
+		#$Card_Mask.texture.get_width() / $Card_Mask.hframes,
+		#$Card_Mask.texture.get_height() / $Card_Mask.vframes)
 
 func get_pin_position(which: int) -> Vector2:
 	return $Pin_Locators.get_child(which).global_position

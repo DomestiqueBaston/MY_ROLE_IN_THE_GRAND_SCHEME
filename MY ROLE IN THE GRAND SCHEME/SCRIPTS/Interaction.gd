@@ -22,6 +22,21 @@ var _drag_global_init_pos: Vector2
 # where the user clicked, in global coordinates, to initiate dragging
 var _drag_click_pos: Vector2
 
+# card areas and the collider shapes used to detect when the mouse is in them
+@onready var _collider_shapes = {
+	$Cards/Fallback:	$Colliders/Fallback_Area/Fallback,
+	$Cards/Mastery:		$Colliders/Mastery_Area/Mastery,
+	$Cards/Evidence:	$Colliders/Evidence_Area/Evidence,
+	$Cards/NPCs:		$Colliders/NPC_Area/NPC,
+	$Cards/Objects:		$Colliders/Object_Area/Object,
+	$Cards/Locations:	$Colliders/Place_Area/Place,
+	$Cards/Interaction:	$Colliders/Interaction_Area/Interaction_Collider
+}
+
+# cards that have been dragged to the interaction zone, and which piles they
+# came from
+var _cards_played: Dictionary
+
 func _ready():
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
@@ -94,11 +109,49 @@ func _abort_drag():
 	await tween.finished
 	_stuff_to_do_when_drag_ends(card)
 
-func _stop_drag(_global_pos: Vector2):
-	# TODO
-	_abort_drag()
+func _stop_drag(global_pos: Vector2):
+
+	# what card area did the user drop the card over?
+
+	var new_parent = _get_card_area_at(global_pos)
+	if not new_parent:
+		_abort_drag()
+		return
+
+	# if the card is in the interaction area, it can only be dropped back on its
+	# original pile or somewhere else in the interaction area
+
+	if _current_card in _cards_played:
+		var old_parent = _cards_played[_current_card]
+		if new_parent != $Cards/Interaction and new_parent != old_parent:
+			_abort_drag()
+			return
+		if new_parent == old_parent:
+			_cards_played.erase(_current_card)
+			_current_card.reparent(new_parent, false)
+
+	# if the card is in a pile, it can only be dropped in the interaction area
+
+	else:
+		if new_parent != $Cards/Interaction:
+			_abort_drag()
+			return
+		_cards_played[_current_card] = _current_card.get_parent()
+		_current_card.reparent($Cards/Interaction)
+
+	_stuff_to_do_when_drag_ends(_current_card)
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
+	drag_drop_line.hide_line()
 	if dragged_card:
 		dragged_card.stop_drag()
 	Globals.dragging = false
+
+func _get_card_area_at(global_pos: Vector2) -> Node2D:
+	for area: Node2D in _collider_shapes:
+		var shape = _collider_shapes[area]
+		var local_rect = shape.shape.get_rect()
+		var local_pos = shape.to_local(global_pos)
+		if local_rect.has_point(local_pos):
+			return area
+	return null

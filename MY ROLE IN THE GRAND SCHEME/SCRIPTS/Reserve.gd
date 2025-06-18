@@ -37,7 +37,7 @@ func _input(event: InputEvent):
 
 	if _is_mouse_inside != mouse_inside:
 		_is_mouse_inside = mouse_inside
-		var ideal_width: int = card_size.x + ideal_card_margin * (card_count - 1)
+		var ideal_width: int = Card.size.x + ideal_card_margin * (card_count - 1)
 		if mouse_inside and _is_folded and ideal_width - size.x >= 50:
 			_unfold(mini(ideal_width, unfolded_width))
 			return
