@@ -139,15 +139,15 @@ func _layout():
 
 	var margin = min_card_margin
 	if vis_card_count > 1:
-		margin = int(avail_space / (vis_card_count - 1))
+		margin = avail_space / (vis_card_count - 1)
 
-	var x = 0
+	var rank = 0
 	for card_index in card_count:
 		var card: Card = get_child(card_index)
 		if card_index < first_card_index:
 			card.hide()
 		else:
+			var x = floorf(margin * rank)
 			card.position = Vector2(x, 0) if orientation == HORIZONTAL else Vector2(0, x)
 			card.show()
-			x += margin
-		card_index += 1
+			rank += 1
