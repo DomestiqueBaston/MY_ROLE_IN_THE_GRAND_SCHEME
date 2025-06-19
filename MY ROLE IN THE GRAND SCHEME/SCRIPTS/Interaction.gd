@@ -226,4 +226,4 @@ func _layout_played_cards():
 	for card: Card in _cards_played:
 		if card.position != pos:
 			tween.tween_property(card, "position", pos, 0.1)
-		pos.x += Card.size.x + 2
+		pos.x += Card.size.x + margin
