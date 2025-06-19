@@ -2195,7 +2195,7 @@ position = Vector2(0, 18)
 position = Vector2(0, 36)
 
 [node name="Interaction" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
-position = Vector2(240, 135)
+position = Vector2(240, 136)
 
 [node name="Drag_Drop_Line" parent="Overlays/Interaction_Run_Away_Break_In" instance=ExtResource("136_lkigo")]
 visible = false
