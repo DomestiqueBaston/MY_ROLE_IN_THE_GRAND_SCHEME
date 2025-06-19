@@ -16,7 +16,8 @@ extends Node2D
 ## The maximum number of cards that the interaction zone can hold.
 @export var max_card_count: int = 3
 
-## The minimum number of cards in the interaction before the button is enabled.
+## The minimum number of cards in the interaction zone required before the
+## button is enabled.
 @export var min_card_count: int = 1
 
 ## The button that can be pressed when cards are ready.
