@@ -1,4 +1,4 @@
-[gd_scene load_steps=238 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -84,6 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://bnccay48pluv" path="res://GRAPHICS/SHORT_EVENT/Minus_Normal.png" id="73_xv6ix"]
 [ext_resource type="Texture2D" uid="uid://dsksdoxu1xfhi" path="res://GRAPHICS/SHORT_EVENT/Minus_Pressed.png" id="74_0b7va"]
 [ext_resource type="Texture2D" uid="uid://c4tdk55kjldtf" path="res://GRAPHICS/SHORT_EVENT/Minus_Hover.png" id="75_tst27"]
+[ext_resource type="Script" uid="uid://bfic46uloqv5p" path="res://SCRIPTS/Card_Stack.gd" id="76_5oqru"]
 [ext_resource type="BitMap" uid="uid://dctue2soxk2cs" path="res://GRAPHICS/SHORT_EVENT/Minus_Mask.png" id="76_u6y7r"]
 [ext_resource type="Texture2D" uid="uid://s5x8jgyl5u0p" path="res://GRAPHICS/SHORT_EVENT/Plus_Normal.png" id="77_kf4o3"]
 [ext_resource type="Texture2D" uid="uid://dkbajl6j7ktg5" path="res://GRAPHICS/SHORT_EVENT/Plus_Pressed.png" id="78_bxkh1"]
@@ -2052,23 +2053,28 @@ position = Vector2(319, 152)
 position = Vector2(172, 48)
 
 [node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
+visible = false
 position = Vector2(-172, -48)
 
 [node name="Interaction_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
-collision_layer = 0
-collision_mask = 0
+monitoring = false
+monitorable = false
 
 [node name="Interaction" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Interaction_Area"]
 position = Vector2(316, 186)
 shape = SubResource("RectangleShape2D_lboli")
 
 [node name="Mastery_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
+monitoring = false
+monitorable = false
 
 [node name="Mastery" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Mastery_Area"]
 position = Vector2(174, 220.5)
 shape = SubResource("RectangleShape2D_yau06")
 
 [node name="Fallback_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
+monitoring = false
+monitorable = false
 
 [node name="Fallback" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Fallback_Area"]
 position = Vector2(459, 221.5)
@@ -2081,6 +2087,7 @@ centered = false
 offset = Vector2(20, 20)
 
 [node name="Mastery_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
+visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 435.0
@@ -2088,6 +2095,7 @@ offset_bottom = 307.0
 texture = ExtResource("114_4721e")
 
 [node name="Interaction_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
+visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 20.0
@@ -2096,6 +2104,7 @@ texture = ExtResource("115_dhp6t")
 script = ExtResource("116_s3phv")
 
 [node name="Fallback_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
+visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 20.0
@@ -2136,6 +2145,29 @@ centered = false
 [node name="Run_Away" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In/Title"]
 texture = ExtResource("125_wowcu")
 centered = false
+
+[node name="Cards" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
+position = Vector2(-172, -48)
+
+[node name="Mastery" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
+position = Vector2(137, 152)
+script = ExtResource("76_5oqru")
+orientation = 1
+size = Vector2(74, 137)
+metadata/_custom_type_script = "uid://bfic46uloqv5p"
+
+[node name="Fallback" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
+position = Vector2(422, 152)
+script = ExtResource("76_5oqru")
+orientation = 1
+size = Vector2(74, 137)
+metadata/_custom_type_script = "uid://bfic46uloqv5p"
+
+[node name="Interaction" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
+position = Vector2(240, 135)
+
+[node name="Drag_Drop_Line" parent="Overlays/Interaction_Run_Away_Break_In" instance=ExtResource("136_lkigo")]
+visible = false
 
 [node name="Intercom" type="Node2D" parent="Overlays"]
 visible = false
