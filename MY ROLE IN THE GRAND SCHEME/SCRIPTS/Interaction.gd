@@ -161,18 +161,17 @@ func _stop_drag(global_pos: Vector2):
 		return
 
 	# if the card is in the interaction area, it can only be dropped back on its
-	# original pile or somewhere else in the interaction area
+	# original pile
 
 	if _current_card in _cards_played:
-		var old_parent = _cards_played[_current_card]
-		if new_parent != interaction_cards and new_parent != old_parent:
+		if new_parent != _cards_played[_current_card]:
 			_abort_drag()
 			return
-		if new_parent == old_parent:
-			_cards_played.erase(_current_card)
-			_current_card.reparent(new_parent, false)
+		_cards_played.erase(_current_card)
+		_current_card.reparent(new_parent, false)
 
-	# if the card is in a pile, it can only be dropped in the interaction area
+	# if the card is in a pile, it can only be dropped in the interaction area,
+	# and only until it is full
 
 	else:
 		if new_parent != interaction_cards or _cards_played.size() == kMaxCardCount:
@@ -183,6 +182,7 @@ func _stop_drag(global_pos: Vector2):
 
 	_stuff_to_do_when_drag_ends(_current_card)
 	the_button.disabled = _cards_played.is_empty()
+	_layout_played_cards()
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	drag_drop_line.hide_line()
@@ -202,3 +202,28 @@ func _is_in_collision_shape(shape: CollisionShape2D, global_pos: Vector2):
 	var local_rect = shape.shape.get_rect()
 	var local_pos = shape.to_local(global_pos)
 	return local_rect.has_point(local_pos)
+
+func _layout_played_cards():
+	var card_count = _cards_played.size()
+	if card_count == 0:
+		return
+
+	const margin = 2
+	var tween = create_tween().set_parallel()
+	var global_center = $Colliders/Interaction_Area/Interaction_Collider.global_position
+	var local_center = interaction_cards.to_local(global_center)
+	var pos
+
+	if card_count & 1:
+		pos = Vector2(local_center.x - Card.size.x * 0.5, 0)
+	else:
+		pos = Vector2(local_center.x + margin * 0.5, 0)
+
+	if card_count > 1:
+		@warning_ignore("integer_division")
+		pos.x -= (card_count / 2) * (Card.size.x + margin)
+
+	for card: Card in _cards_played:
+		if card.position != pos:
+			tween.tween_property(card, "position", pos, 0.1)
+		pos.x += Card.size.x + 2

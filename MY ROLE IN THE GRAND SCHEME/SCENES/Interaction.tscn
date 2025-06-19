@@ -374,7 +374,6 @@ texture_disabled = ExtResource("11_di8r4")
 texture_click_mask = ExtResource("7_tawrq")
 
 [node name="Colliders" type="Node2D" parent="."]
-visible = false
 
 [node name="Interaction_Area" type="Area2D" parent="Colliders"]
 monitoring = false
@@ -2301,6 +2300,7 @@ metadata/_custom_type_script = "uid://bfic46uloqv5p"
 position = Vector2(31, 0)
 
 [node name="Interaction" type="Node2D" parent="Cards"]
+position = Vector2(270, 196)
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("4_som80")]
 visible = false
