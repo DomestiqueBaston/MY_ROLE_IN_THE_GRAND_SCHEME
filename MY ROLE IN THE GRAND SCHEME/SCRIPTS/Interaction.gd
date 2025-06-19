@@ -27,6 +27,9 @@ var _drag_click_pos: Vector2
 # overlay highlighting the card pile concerned by drag & drop
 var _highlighted_overlay: Sprite2D
 
+# number of cards that the interactoin zone can hold
+const kMaxCardCount = 3
+
 # collider shapes used to detect when the mouse is in card areas
 @onready var _area_shapes = {
 	$Cards/Fallback:	$Colliders/Fallback_Area/Fallback,
@@ -129,15 +132,16 @@ func _drag(global_pos: Vector2):
 	# highlight the interaction zone when the mouse enters it, with a sound
 	# effect
 
-	var in_interaction_zone = _is_in_collision_shape(
-		$Colliders/Interaction_Area/Interaction_Collider, global_pos)
-	if $Hover_Interaction_Zone.visible != in_interaction_zone:
-		$Hover_Interaction_Zone.visible = in_interaction_zone
-		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-			if in_interaction_zone:
-				Globals.hover_sound.play()
-			else:
-				Globals.leave_sound.play()
+	if _cards_played.size() < kMaxCardCount:
+		var in_interaction_zone = _is_in_collision_shape(
+			$Colliders/Interaction_Area/Interaction_Collider, global_pos)
+		if $Hover_Interaction_Zone.visible != in_interaction_zone:
+			$Hover_Interaction_Zone.visible = in_interaction_zone
+			if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+				if in_interaction_zone:
+					Globals.hover_sound.play()
+				else:
+					Globals.leave_sound.play()
 
 func _abort_drag():
 	drag_drop_line.hide_line()
@@ -171,7 +175,7 @@ func _stop_drag(global_pos: Vector2):
 	# if the card is in a pile, it can only be dropped in the interaction area
 
 	else:
-		if new_parent != interaction_cards or _cards_played.size() == 3:
+		if new_parent != interaction_cards or _cards_played.size() == kMaxCardCount:
 			_abort_drag()
 			return
 		_cards_played[_current_card] = _current_card.get_parent()
