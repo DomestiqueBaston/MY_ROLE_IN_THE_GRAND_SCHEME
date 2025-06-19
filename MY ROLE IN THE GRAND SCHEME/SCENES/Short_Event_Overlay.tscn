@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=238 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -79,6 +79,7 @@
 [ext_resource type="Script" uid="uid://bt5qe37nll5h5" path="res://SCRIPTS/Player_improvement_Button.gd" id="69_pf81c"]
 [ext_resource type="Theme" uid="uid://bwhe2wx8ls2rq" path="res://UI/Rowena_Theme.tres" id="70_0sc5x"]
 [ext_resource type="Script" uid="uid://d3u0wr723p4si" path="res://SCRIPTS/Rowena_Buttons.gd" id="71_x6sjh"]
+[ext_resource type="Texture2D" uid="uid://raefutvrke80" path="res://GRAPHICS/INTERACTION/Bring_It_On_Disabled.png" id="72_jo5q1"]
 [ext_resource type="Texture2D" uid="uid://dbmjuo4ovocyv" path="res://GRAPHICS/SHORT_EVENT/Rowena_BG.png" id="72_m5y04"]
 [ext_resource type="Texture2D" uid="uid://bnccay48pluv" path="res://GRAPHICS/SHORT_EVENT/Minus_Normal.png" id="73_xv6ix"]
 [ext_resource type="Texture2D" uid="uid://dsksdoxu1xfhi" path="res://GRAPHICS/SHORT_EVENT/Minus_Pressed.png" id="74_0b7va"]
@@ -971,8 +972,6 @@ offset_left = 512.0
 offset_top = 218.0
 offset_right = 538.0
 offset_bottom = 239.0
-tooltip_text = "Validate
-and leave"
 theme_override_colors/font_disabled_color = Color(0.0785, 0.12, 0.0204, 0.756863)
 theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
 theme_override_colors/font_hover_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
@@ -997,8 +996,6 @@ offset_left = 490.0
 offset_top = 241.0
 offset_right = 539.0
 offset_bottom = 262.0
-tooltip_text = "Cancel
-and leave"
 theme_override_colors/font_disabled_color = Color(0.13, 0.0546867, 0.0273, 0.847059)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.596078, 0.45098, 0.556863)
 theme_override_colors/font_hover_color = Color(1, 0.596078, 0.45098, 0.556863)
@@ -1217,8 +1214,6 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "I'd rather focus on
-my current case..."
 toggle_mode = true
 button_group = ExtResource("29_7in4k")
 texture_pressed = ExtResource("30_twcyk")
@@ -1231,8 +1226,6 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Ok. Let's focus
-on that case!"
 toggle_mode = true
 button_group = ExtResource("29_7in4k")
 texture_pressed = ExtResource("33_cbb3s")
@@ -1659,8 +1652,6 @@ offset_top = 261.0
 offset_right = 482.0
 offset_bottom = 293.0
 rotation = 0.0139626
-tooltip_text = "That was a
-good reminder!"
 text = "Allright!
 Back
 to
@@ -1715,8 +1706,6 @@ offset_left = 294.0
 offset_top = 210.0
 offset_right = 306.0
 offset_bottom = 218.0
-tooltip_text = "That was a real
-eye-opener..."
 theme_override_colors/font_disabled_color = Color(0.55, 0.309467, 0.099, 0.635294)
 theme_override_colors/font_hover_pressed_color = Color(0.8, 0.612267, 0.448, 0.635294)
 theme_override_colors/font_hover_color = Color(0.93, 0.82088, 0.7254, 0.87451)
@@ -1852,7 +1841,6 @@ offset_left = 296.0
 offset_top = 303.0
 offset_right = 343.0
 offset_bottom = 313.0
-tooltip_text = "I'm releaved!"
 text = "Ok, nice..."
 script = ExtResource("61_5iqpn")
 
@@ -2132,10 +2120,10 @@ offset_left = -66.0
 offset_top = -46.0
 offset_right = 574.0
 offset_bottom = 314.0
-tooltip_text = "Let's go!"
 texture_normal = ExtResource("120_qe60g")
 texture_pressed = ExtResource("121_mej1r")
 texture_hover = ExtResource("122_vieyt")
+texture_disabled = ExtResource("72_jo5q1")
 texture_click_mask = ExtResource("123_bdr4h")
 
 [node name="Title" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
@@ -2385,8 +2373,6 @@ offset_left = 227.0
 offset_top = 56.0
 offset_right = 408.0
 offset_bottom = 306.0
-tooltip_text = "Alright,
-I'll be back!"
 texture_normal = ExtResource("21_8p368")
 texture_pressed = ExtResource("21_8p368")
 texture_hover = ExtResource("22_v0nqa")
@@ -3011,7 +2997,6 @@ offset_top = 306.0
 offset_right = 479.0
 offset_bottom = 314.0
 rotation = 0.0361729
-tooltip_text = "Ok, ok..."
 text = "Whatever..."
 
 [node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
@@ -3320,7 +3305,6 @@ theme = ExtResource("68_q1jpv")
 script = ExtResource("69_pf81c")
 
 [node name="Positive_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
-visible = false
 layout_mode = 0
 offset_left = 219.0
 offset_top = 52.0
@@ -3422,7 +3406,6 @@ offset_top = 289.0
 offset_right = 418.0
 offset_bottom = 310.0
 rotation = -0.12645
-tooltip_text = "Close that window!"
 theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
 theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
 theme_override_colors/font_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
@@ -3436,7 +3419,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
-text = "Hm?"
+text = "Ok."
 
 [node name="Rowena" type="Node2D" parent="Overlays"]
 visible = false
@@ -3573,7 +3556,6 @@ alignment = 1
 [node name="Nope" type="Button" parent="Overlays/Rowena/Thanks_Nope/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Well. Next time?"
 theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
 theme_override_colors/font_hover_color = Color(0.9, 0.5544, 0.468, 0.843137)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
@@ -3588,13 +3570,12 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_unam2")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_y5p83")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_equxq")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ev0la")
-text = "Nope!"
+text = "Well..."
 flat = true
 
 [node name="Thanks" type="Button" parent="Overlays/Rowena/Thanks_Nope/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "yes, I want that."
 theme_override_colors/font_hover_pressed_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
 theme_override_colors/font_hover_color = Color(0.641333, 0.74, 0.444, 0.843137)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
@@ -3632,7 +3613,6 @@ offset_bottom = -48.0
 script = ExtResource("8_7ujkg")
 
 [node name="Run_Away" type="Control" parent="Overlays/Run_Away_Break_In/Announces"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 141.0
@@ -3661,7 +3641,6 @@ offset_top = 87.0
 offset_right = 373.0
 offset_bottom = 108.0
 rotation = 0.0310151
-tooltip_text = "Run for your life!"
 theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
@@ -3677,7 +3656,6 @@ offset_top = 171.0
 offset_right = 319.0
 offset_bottom = 192.0
 rotation = 0.0310151
-tooltip_text = "I'll stand the ground!"
 theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
 theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
@@ -3687,6 +3665,7 @@ theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 text = "No, not in this world!"
 
 [node name="Break_In" type="Control" parent="Overlays/Run_Away_Break_In/Announces"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 141.0
@@ -3715,8 +3694,6 @@ offset_top = 87.0
 offset_right = 354.0
 offset_bottom = 108.0
 rotation = 0.0310151
-tooltip_text = "Let's taste the
-adrenaline rush!"
 theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
@@ -3732,8 +3709,6 @@ offset_top = 168.0
 offset_right = 356.0
 offset_bottom = 189.0
 rotation = 0.0310151
-tooltip_text = "I have a feeling
-this will end badly."
 theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
 theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
@@ -3798,7 +3773,6 @@ offset_left = 180.0
 offset_top = 233.0
 offset_right = 244.0
 offset_bottom = 249.0
-tooltip_text = "Go!"
 theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
@@ -3815,7 +3789,6 @@ offset_left = 106.0
 offset_top = 233.0
 offset_right = 171.0
 offset_bottom = 249.0
-tooltip_text = "Hm... Maybe not."
 theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
@@ -3861,7 +3834,6 @@ offset_left = 180.0
 offset_top = 233.0
 offset_right = 244.0
 offset_bottom = 249.0
-tooltip_text = "Go!"
 theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
@@ -3878,7 +3850,6 @@ offset_left = 106.0
 offset_top = 233.0
 offset_right = 171.0
 offset_bottom = 249.0
-tooltip_text = "Hm... Maybe not."
 theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
@@ -4033,7 +4004,6 @@ offset_top = 313.0
 offset_right = 422.0
 offset_bottom = 321.0
 rotation = -0.0122173
-tooltip_text = "I need that rest!"
 theme_override_colors/font_disabled_color = Color(0.52052, 0.77, 0.2156, 0.827451)
 theme_override_colors/font_hover_pressed_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
 theme_override_colors/font_hover_color = Color(0.892, 1, 0.76, 1)
@@ -4059,7 +4029,6 @@ offset_top = 10.0
 offset_right = 435.0
 offset_bottom = 18.0
 rotation = -0.0126771
-tooltip_text = "I'd rather not..."
 theme_override_colors/font_disabled_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
 theme_override_colors/font_hover_pressed_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
 theme_override_colors/font_hover_color = Color(1, 0.75, 0.7, 1)
@@ -4135,7 +4104,6 @@ offset_left = 415.0
 offset_top = 289.0
 offset_right = 534.0
 offset_bottom = 305.0
-tooltip_text = "Anyway, I needed a break..."
 toggle_mode = true
 button_group = ExtResource("16_dog4u")
 text = "Don't shoot, I surrender..."
@@ -4147,7 +4115,6 @@ offset_left = 430.0
 offset_top = 273.0
 offset_right = 534.0
 offset_bottom = 289.0
-tooltip_text = "Pay to leave now."
 theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
 theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
@@ -4178,13 +4145,12 @@ text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Pay" type="Button" parent="Overlays/Wanted/Info/NPC"]
+[node name="Ok" type="Button" parent="Overlays/Wanted/Info/NPC"]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 289.0
 offset_right = 534.0
 offset_bottom = 305.0
-tooltip_text = "Pay to leave now."
 theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
 theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
@@ -4354,7 +4320,7 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Wanted/Info/NPC/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
+[connection signal="mouse_entered" from="Overlays/Wanted/Info/NPC/Ok" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Wanted/Info/NPC/Ok" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Wanted/Info/NPC/Ok" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
 [connection signal="animation_finished" from="On_Off" to="Overlays/Intercom/Interface/Quit" method="_on_on_off_animation_finished"]

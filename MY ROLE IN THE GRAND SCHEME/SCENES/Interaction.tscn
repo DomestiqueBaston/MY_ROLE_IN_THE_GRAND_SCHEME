@@ -366,7 +366,6 @@ script = ExtResource("7_xjgkp")
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
-tooltip_text = "Let's go!"
 texture_normal = ExtResource("5_46aa5")
 texture_pressed = ExtResource("7_qrm58")
 texture_hover = ExtResource("6_dhbug")
@@ -577,6 +576,7 @@ texture = ExtResource("12_rq7o5")
 [node name="Rotary_Buttons" type="Control" parent="Top_Left_Screen"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("2_v84v6")
 
 [node name="Top_Rotary_Button" type="TextureButton" parent="Top_Left_Screen/Rotary_Buttons"]
 layout_mode = 0
@@ -584,6 +584,7 @@ offset_left = 107.0
 offset_top = 16.0
 offset_right = 123.0
 offset_bottom = 32.0
+tooltip_text = "That's a button!"
 toggle_mode = true
 texture_normal = ExtResource("20_rrbp0")
 texture_click_mask = ExtResource("21_y0drc")
@@ -595,6 +596,7 @@ offset_left = 107.0
 offset_top = 41.0
 offset_right = 123.0
 offset_bottom = 57.0
+tooltip_text = "That's a button!"
 toggle_mode = true
 texture_normal = ExtResource("20_rrbp0")
 texture_click_mask = ExtResource("21_y0drc")
@@ -606,8 +608,7 @@ offset_left = 110.0
 offset_top = 87.0
 offset_right = 120.0
 offset_bottom = 97.0
-tooltip_text = "Turns TV
-On/Off..."
+tooltip_text = "Turns TV on/off..."
 theme = ExtResource("2_v84v6")
 toggle_mode = true
 texture_pressed = ExtResource("21_rrbp0")
