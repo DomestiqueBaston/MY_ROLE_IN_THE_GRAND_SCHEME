@@ -2064,6 +2064,7 @@ NodePath("Cards/Interaction"): NodePath("Interaction_BG/Interaction_Zone")
 }
 interaction_cards = NodePath("Cards/Interaction")
 max_card_count = 2
+min_card_count = 0
 the_button = NodePath("Button/Bring_It_On")
 drag_drop_line = NodePath("Drag_Drop_Line")
 

@@ -16,6 +16,9 @@ extends Node2D
 ## The maximum number of cards that the interaction zone can hold.
 @export var max_card_count: int = 3
 
+## The minimum number of cards in the interaction before the button is enabled.
+@export var min_card_count: int = 1
+
 ## The button that can be pressed when cards are ready.
 @export var the_button: BaseButton
 
@@ -64,7 +67,7 @@ func _ready():
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)
-	the_button.disabled = true
+	the_button.disabled = (min_card_count > 0)
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -187,7 +190,7 @@ func _stop_drag(global_pos: Vector2):
 		_current_card.reparent(interaction_cards)
 
 	_stuff_to_do_when_drag_ends(_current_card)
-	the_button.disabled = _cards_played.is_empty()
+	the_button.disabled = _cards_played.size() < min_card_count
 	_layout_played_cards()
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
