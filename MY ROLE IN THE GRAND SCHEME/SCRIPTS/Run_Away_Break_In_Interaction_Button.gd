@@ -1,16 +1,18 @@
 extends Control
 
+@onready var the_button = $Bring_It_On
+@onready var on_off = $"../../../On_Off"
 
 func _on_bring_it_on_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	$"../../../On_Off".play("Disappearance")
-	await $"../../../On_Off".animation_finished
+	on_off.play("Disappearance")
+	await on_off.animation_finished
 
 func _on_bring_it_on_mouse_entered():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
+	if not (the_button.disabled or Globals.hover_sound.playing or Globals.leave_sound.playing):
 		Globals.hover_sound.play()
 
 func _on_bring_it_on_mouse_exited():
-	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
+	if not (the_button.disabled or Globals.hover_sound.playing or Globals.leave_sound.playing):
 		Globals.leave_sound.play()

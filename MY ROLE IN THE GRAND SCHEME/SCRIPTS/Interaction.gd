@@ -1,8 +1,27 @@
 extends Node2D
 
-@onready var interaction_cards: Node2D = $Cards/Interaction
-@onready var the_button: BaseButton = $Button/Bring_It_On
-@onready var drag_drop_line: Node2D = $Drag_Drop_Line
+## Collider shapes used to detect when the mouse is in a card area. Keys and
+## values in the Dictionary are all NodePaths: each key is a Node2D containing
+## cards, and its value is the corresponding CollisionShape2D.
+@export var card_area_shapes: Dictionary
+
+## Overlays used to highlight each care area. Keys and values in the Dictionary
+## are all NodePaths: each key is a Node2D containing cards, and its value is
+## the corresponding overlay to be shown or hidden.
+@export var card_area_overlays: Dictionary
+
+## The Node2D containing cards dropped in the interaction zone.
+@export var interaction_cards: Node2D
+
+## The maximum number of cards that the interaction zone can hold.
+@export var max_card_count: int = 3
+
+## The button that can be pressed when cards are ready.
+@export var the_button: BaseButton
+
+## The line used to illustrate drag & drop operations (an instance of
+## Drag_Drop_Line.tscn).
+@export var drag_drop_line: Node2D
 
 # highlighted card
 var _current_card: Card
@@ -25,37 +44,23 @@ var _drag_global_init_pos: Vector2
 var _drag_click_pos: Vector2
 
 # overlay highlighting the card pile concerned by drag & drop
-var _highlighted_overlay: Sprite2D
-
-# number of cards that the interactoin zone can hold
-const kMaxCardCount = 3
+var _highlighted_overlay: CanvasItem
 
 # collider shapes used to detect when the mouse is in card areas
-@onready var _area_shapes = {
-	$Cards/Fallback:	$Colliders/Fallback_Area/Fallback,
-	$Cards/Mastery:		$Colliders/Mastery_Area/Mastery,
-	$Cards/Evidence:	$Colliders/Evidence_Area/Evidence,
-	$Cards/NPCs:		$Colliders/NPC_Area/NPC,
-	$Cards/Objects:		$Colliders/Object_Area/Object,
-	$Cards/Locations:	$Colliders/Place_Area/Place,
-	$Cards/Interaction:	$Colliders/Interaction_Area/Interaction_Collider
-}
+var _area_shapes = {}
 
 # overlay to highlight the name of each card pile
-@onready var _area_overlays = {
-	$Cards/Fallback:	$Interaction_BG/Fallback_Pile,
-	$Cards/Mastery:		$Interaction_BG/Mastery_Pile,
-	$Cards/Evidence:	$Interaction_BG/Evidence_Pile,
-	$Cards/NPCs:		$Interaction_BG/Characters_Pile,
-	$Cards/Objects:		$Interaction_BG/Objects_Pile,
-	$Cards/Locations:	$Interaction_BG/Locations_Pile
-}
+var _area_overlays = {}
 
 # cards that have been dragged to the interaction zone, and which piles they
 # came from
 var _cards_played: Dictionary
 
 func _ready():
+	for area in card_area_shapes:
+		_area_shapes[get_node(area)] = get_node(card_area_shapes[area])
+	for area in card_area_overlays:
+		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)
@@ -132,11 +137,12 @@ func _drag(global_pos: Vector2):
 	# highlight the interaction zone when the mouse enters it, with a sound
 	# effect
 
-	if _cards_played.size() < kMaxCardCount:
-		var in_interaction_zone = _is_in_collision_shape(
-			$Colliders/Interaction_Area/Interaction_Collider, global_pos)
-		if $Hover_Interaction_Zone.visible != in_interaction_zone:
-			$Hover_Interaction_Zone.visible = in_interaction_zone
+	if _cards_played.size() < max_card_count:
+		var shape = _area_shapes[interaction_cards]
+		var overlay = _area_overlays[interaction_cards]
+		var in_interaction_zone = _is_in_collision_shape(shape, global_pos)
+		if overlay.visible != in_interaction_zone:
+			overlay.visible = in_interaction_zone
 			if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
 				if in_interaction_zone:
 					Globals.hover_sound.play()
@@ -174,7 +180,7 @@ func _stop_drag(global_pos: Vector2):
 	# and only until it is full
 
 	else:
-		if new_parent != interaction_cards or _cards_played.size() == kMaxCardCount:
+		if new_parent != interaction_cards or _cards_played.size() == max_card_count:
 			_abort_drag()
 			return
 		_cards_played[_current_card] = _current_card.get_parent()
@@ -189,7 +195,7 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	if dragged_card:
 		dragged_card.stop_drag()
 	Globals.dragging = false
-	$Hover_Interaction_Zone.hide()
+	_area_overlays[interaction_cards].hide()
 	_highlighted_overlay.hide()
 
 func _get_card_area_at(global_pos: Vector2) -> Node2D:
@@ -210,7 +216,7 @@ func _layout_played_cards():
 
 	const margin = 2
 	var tween = create_tween().set_parallel()
-	var global_center = $Colliders/Interaction_Area/Interaction_Collider.global_position
+	var global_center = _area_shapes[interaction_cards].global_position
 	var local_center = interaction_cards.to_local(global_center)
 	var pos
 

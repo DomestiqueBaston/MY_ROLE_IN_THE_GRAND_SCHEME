@@ -8,12 +8,12 @@ const _half_width = Vector2(10, 10)
 @export var point1: Vector2:
 	set(value):
 		if $Line:
-			$Line.points[0] = value - _half_width
+			$Line.points[0] = to_local(value - _half_width)
 
 @export var point2: Vector2:
 	set(value):
 		if $Line:
-			$Line.points[1] = value - _half_width
+			$Line.points[1] = to_local(value - _half_width)
 
 func show_line():
 	show()

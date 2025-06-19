@@ -307,8 +307,29 @@ content_margin_left = 1.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxcf0"]
 content_margin_left = 1.0
 
-[node name="Interaction" type="Node2D"]
+[node name="Interaction" type="Node2D" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
 script = ExtResource("1_1c880")
+card_area_shapes = {
+NodePath("Cards/Fallback"): NodePath("Colliders/Fallback_Area/Fallback"),
+NodePath("Cards/Mastery"): NodePath("Colliders/Mastery_Area/Mastery"),
+NodePath("Cards/Evidence"): NodePath("Colliders/Evidence_Area/Evidence"),
+NodePath("Cards/NPCs"): NodePath("Colliders/NPC_Area/NPC"),
+NodePath("Cards/Objects"): NodePath("Colliders/Object_Area/Object"),
+NodePath("Cards/Locations"): NodePath("Colliders/Place_Area/Place"),
+NodePath("Cards/Interaction"): NodePath("Colliders/Interaction_Area/Interaction_Collider")
+}
+card_area_overlays = {
+NodePath("Cards/Fallback"): NodePath("Interaction_BG/Fallback_Pile"),
+NodePath("Cards/Mastery"): NodePath("Interaction_BG/Mastery_Pile"),
+NodePath("Cards/Evidence"): NodePath("Interaction_BG/Evidence_Pile"),
+NodePath("Cards/NPCs"): NodePath("Interaction_BG/Characters_Pile"),
+NodePath("Cards/Objects"): NodePath("Interaction_BG/Objects_Pile"),
+NodePath("Cards/Locations"): NodePath("Interaction_BG/Locations_Pile"),
+NodePath("Cards/Interaction"): NodePath("Hover_Interaction_Zone")
+}
+interaction_cards = NodePath("Cards/Interaction")
+the_button = NodePath("Button/Bring_It_On")
+drag_drop_line = NodePath("Drag_Drop_Line")
 
 [node name="Interaction_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_y864e")

@@ -70,6 +70,7 @@
 [ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="60_llwhl"]
 [ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="61_5iqpn"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="62_gjkrj"]
+[ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="62_smut4"]
 [ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="63_t8uoa"]
 [ext_resource type="Script" uid="uid://cy4nhosp8iivp" path="res://SCRIPTS/Load_Save_Delete.gd" id="64_gjkrj"]
 [ext_resource type="Texture2D" uid="uid://do7g2c24mmsbk" path="res://GRAPHICS/SHORT_EVENT/Load_Save_Delete_BG.png" id="65_t8uoa"]
@@ -132,7 +133,6 @@
 [ext_resource type="Texture2D" uid="uid://cydqmld1i1nfl" path="res://GRAPHICS/SHORT_EVENT/BG.png" id="113_ku2a5"]
 [ext_resource type="Texture2D" uid="uid://cftm8jfj7vlfi" path="res://GRAPHICS/SHORT_EVENT/Mastery_Zone.png" id="114_4721e"]
 [ext_resource type="Texture2D" uid="uid://cn2e8ojjmxn8j" path="res://GRAPHICS/SHORT_EVENT/Interaction_Zone.png" id="115_dhp6t"]
-[ext_resource type="Script" uid="uid://c1brsydvfqxha" path="res://SCRIPTS/Run_Away_Break_In_Interaction_Zone.gd" id="116_s3phv"]
 [ext_resource type="Texture2D" uid="uid://bgupvlyk8die6" path="res://GRAPHICS/SHORT_EVENT/Fallback_Zone.png" id="117_68eaj"]
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="118_h4ggb"]
 [ext_resource type="Script" uid="uid://cufnnlb44k16t" path="res://SCRIPTS/Run_Away_Break_In_Interaction_Button.gd" id="119_ne7xd"]
@@ -2049,8 +2049,23 @@ position = Vector2(295, 152)
 [node name="Card4" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
 
-[node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays"]
+[node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
 position = Vector2(172, 48)
+script = ExtResource("62_smut4")
+card_area_shapes = {
+NodePath("Cards/Mastery"): NodePath("Colliders/Mastery_Area/Mastery"),
+NodePath("Cards/Fallback"): NodePath("Colliders/Fallback_Area/Fallback"),
+NodePath("Cards/Interaction"): NodePath("Colliders/Interaction_Area/Interaction")
+}
+card_area_overlays = {
+NodePath("Cards/Mastery"): NodePath("Interaction_BG/Mastery_Zone"),
+NodePath("Cards/Fallback"): NodePath("Interaction_BG/Fallback_Zone"),
+NodePath("Cards/Interaction"): NodePath("Interaction_BG/Interaction_Zone")
+}
+interaction_cards = NodePath("Cards/Interaction")
+max_card_count = 2
+the_button = NodePath("Button/Bring_It_On")
+drag_drop_line = NodePath("Drag_Drop_Line")
 
 [node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
 visible = false
@@ -2094,15 +2109,6 @@ offset_right = 435.0
 offset_bottom = 307.0
 texture = ExtResource("114_4721e")
 
-[node name="Interaction_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
-visible = false
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 20.0
-texture = ExtResource("115_dhp6t")
-script = ExtResource("116_s3phv")
-
 [node name="Fallback_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
 visible = false
 offset_left = 20.0
@@ -2110,6 +2116,14 @@ offset_top = 20.0
 offset_right = 20.0
 offset_bottom = 20.0
 texture = ExtResource("117_68eaj")
+
+[node name="Interaction_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
+visible = false
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 435.0
+offset_bottom = 307.0
+texture = ExtResource("115_dhp6t")
 
 [node name="Button" type="Control" parent="Overlays/Interaction_Run_Away_Break_In"]
 layout_mode = 3
@@ -2156,6 +2170,14 @@ orientation = 1
 size = Vector2(74, 137)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
+[node name="Card" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Mastery" instance=ExtResource("63_t8uoa")]
+
+[node name="Card2" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Mastery" instance=ExtResource("63_t8uoa")]
+position = Vector2(0, 18)
+
+[node name="Card3" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Mastery" instance=ExtResource("63_t8uoa")]
+position = Vector2(0, 36)
+
 [node name="Fallback" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
 position = Vector2(422, 152)
 script = ExtResource("76_5oqru")
@@ -2163,11 +2185,20 @@ orientation = 1
 size = Vector2(74, 137)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
+[node name="Card" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Fallback" instance=ExtResource("63_t8uoa")]
+
+[node name="Card2" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Fallback" instance=ExtResource("63_t8uoa")]
+position = Vector2(0, 18)
+
+[node name="Card3" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Fallback" instance=ExtResource("63_t8uoa")]
+position = Vector2(0, 36)
+
 [node name="Interaction" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
 position = Vector2(240, 135)
 
 [node name="Drag_Drop_Line" parent="Overlays/Interaction_Run_Away_Break_In" instance=ExtResource("136_lkigo")]
 visible = false
+z_index = 2
 
 [node name="Intercom" type="Node2D" parent="Overlays"]
 visible = false
