@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cftm8jfj7vlfi" path="res://GRAPHICS/SHORT_EVENT/Mastery_Zone.png" id="2_ucujk"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="3_ccox1"]
 [ext_resource type="Texture2D" uid="uid://ccpmarqkfa7hg" path="res://GRAPHICS/SHORT_EVENT/Run_Away.png" id="3_t1hno"]
-[ext_resource type="Script" uid="uid://c1brsydvfqxha" path="res://SCRIPTS/Run_Away_Break_In_Interaction_Zone.gd" id="3_w2xc6"]
+[ext_resource type="Script" uid="uid://c1brsydvfqxha" path="res://TRASH (NEW)/Run_Away_Break_In_Interaction_Zone.gd" id="3_w2xc6"]
 [ext_resource type="Texture2D" uid="uid://cn2e8ojjmxn8j" path="res://GRAPHICS/SHORT_EVENT/Interaction_Zone.png" id="4_w2xc6"]
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="5_lbetn"]
 [ext_resource type="Texture2D" uid="uid://bgupvlyk8die6" path="res://GRAPHICS/SHORT_EVENT/Fallback_Zone.png" id="5_v2y1h"]

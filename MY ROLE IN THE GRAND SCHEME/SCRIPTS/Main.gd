@@ -182,6 +182,7 @@ func _start_drag_card() -> bool:
 	drag_drop_line.point1 = _drag_click_pos
 	drag_drop_line.point2 = _drag_click_pos
 	drag_drop_line.show_line()
+	Globals.push_mouse_cursor(Globals.MouseCursor.CIRCLE)
 
 	# increase the Z index of any links connected to the card being dragged, so
 	# that they, too, are drawn on top of everything else (Card.start_drag()
@@ -267,6 +268,7 @@ func _abort_drag():
 		_abort_drag_card()
 
 func _abort_drag_card():
+	Globals.pop_mouse_cursor()
 	drag_drop_line.hide_line()
 	var card = _current_card
 	var tween = create_tween()
@@ -296,6 +298,7 @@ func _stop_drag_card(global_pos: Vector2):
 		_abort_drag_card()
 		return
 
+	Globals.pop_mouse_cursor()
 	drag_drop_line.hide_line()
 	_stuff_to_do_when_drag_ends(_current_card)
 

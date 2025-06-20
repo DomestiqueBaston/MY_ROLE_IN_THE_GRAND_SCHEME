@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 
 var _is_macos = (OS.get_name() == "macOS")
 
@@ -37,3 +37,17 @@ func release_mouse():
 
 	# put the mouse back where we want it
 	Input.warp_mouse(get_viewport().get_screen_transform() * global_position)
+
+func set_cursor(cursor: Globals.MouseCursor):
+	if cursor == Globals.MouseCursor.CIRCLE:
+		$Arrow_Cursor.hide()
+		$Circle_Cursor.show()
+	else:
+		$Arrow_Cursor.show()
+		$Circle_Cursor.hide()
+
+func get_cursor() -> Globals.MouseCursor:
+	if $Circle_Cursor.visible:
+		return Globals.MouseCursor.CIRCLE
+	else:
+		return Globals.MouseCursor.ARROW

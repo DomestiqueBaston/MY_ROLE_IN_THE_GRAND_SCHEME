@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7yxbbm1q32sw"]
+[gd_scene load_steps=15 format=3 uid="uid://c7yxbbm1q32sw"]
 
 [ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCRIPTS/Globals.gd" id="1_p5kqw"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
 [ext_resource type="Script" uid="uid://cb08qaoq6sqr5" path="res://SCRIPTS/Mouse_Cursor.gd" id="3_hi0n3"]
+[ext_resource type="Texture2D" uid="uid://umd5dl16bi7t" path="res://GRAPHICS/UI/Mouse_Circle.png" id="4_8eio1"]
 [ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="4_f2dh2"]
 [ext_resource type="Shader" uid="uid://dkp5ymdefrmn2" path="res://SHADERS/Video.gdshader" id="5_kpwuy"]
 [ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="6_baqg5"]
@@ -28,11 +29,16 @@ script = ExtResource("1_p5kqw")
 
 [node name="MouseLayer" type="CanvasLayer" parent="."]
 
-[node name="Mouse_Cursor" type="Sprite2D" parent="MouseLayer"]
-position = Vector2(-10, -10)
+[node name="Mouse" type="Node2D" parent="MouseLayer"]
+script = ExtResource("3_hi0n3")
+
+[node name="Arrow_Cursor" type="Sprite2D" parent="MouseLayer/Mouse"]
 texture = ExtResource("2_j2txx")
 centered = false
-script = ExtResource("3_hi0n3")
+
+[node name="Circle_Cursor" type="Sprite2D" parent="MouseLayer/Mouse"]
+visible = false
+texture = ExtResource("4_8eio1")
 
 [node name="ShaderOverlayLayer" type="CanvasLayer" parent="."]
 visible = false

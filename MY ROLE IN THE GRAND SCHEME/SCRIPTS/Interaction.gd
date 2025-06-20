@@ -112,6 +112,7 @@ func _start_drag() -> bool:
 	drag_drop_line.point1 = _drag_click_pos
 	drag_drop_line.point2 = _drag_click_pos
 	drag_drop_line.show_line()
+	Globals.push_mouse_cursor(Globals.MouseCursor.CIRCLE)
 
 	# highlight the name of the pile the card belongs to
 
@@ -144,6 +145,7 @@ func _drag(global_pos: Vector2):
 					Globals.leave_sound.play()
 
 func _abort_drag():
+	Globals.pop_mouse_cursor()
 	drag_drop_line.hide_line()
 	var card = _current_card
 	var tween = create_tween()
@@ -185,6 +187,7 @@ func _stop_drag(global_pos: Vector2):
 	_layout_played_cards()
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
+	Globals.pop_mouse_cursor()
 	drag_drop_line.hide_line()
 	if dragged_card:
 		dragged_card.stop_drag()

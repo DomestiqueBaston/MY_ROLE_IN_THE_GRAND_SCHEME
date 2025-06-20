@@ -10,8 +10,17 @@ extends Node
 ## Indicates whether or not the user is in the middle of a drag & drop.
 var dragging: bool = false
 
+## Available mouse cursor types.
+enum MouseCursor {
+	ARROW,
+	CIRCLE
+}
+
+@onready var _mouse: Node2D = $MouseLayer/Mouse
+
 var _link_mask: int = -1
 var _show_dotted_links: bool = true
+var _mouse_cursor_stack: Array[MouseCursor]
 
 @warning_ignore("unused_signal")
 signal card_left_click(pos: Vector2, card: Card)
@@ -71,17 +80,44 @@ func _unhandled_input(event: InputEvent):
 ##
 ## As long as the mouse is "grabbed", mouse motion events will report no
 ## movement, meaning that nodes' _input() methods will not detect any movement.
-## The user, however, will not see the difference: see the Mouse_Cursor node.
-## Be sure to call release_mouse() when done.
+## The user, however, will not see the difference: see the Mouse node. Be sure
+## to call release_mouse() when done.
 ##
 func grab_mouse():
-	$MouseLayer/Mouse_Cursor.grab_mouse()
+	_mouse.grab_mouse()
 
 ##
 ## "Ungrabs" the mouse after a call to grab_mouse().
 ##
 func release_mouse():
-	$MouseLayer/Mouse_Cursor.release_mouse()
+	_mouse.release_mouse()
+
+##
+## Returns the mouse cursor currently displayed.
+##
+func get_mouse_cursor() -> MouseCursor:
+	return _mouse.get_cursor()
+
+##
+## Specifies the mouse cursor to display.
+##
+func set_mouse_cursor(cursor: MouseCursor):
+	_mouse.set_cursor(cursor)
+
+##
+## Saves the mouse cursor currently displayed and activates the given cursor
+## instead.
+##
+func push_mouse_cursor(cursor: MouseCursor):
+	_mouse_cursor_stack.push_back(_mouse.get_cursor())
+	_mouse.set_cursor(cursor)
+
+##
+## Restores the mouse cursor that was displayed before the previous call to
+## push_mouse_cursor().
+##
+func pop_mouse_cursor():
+	_mouse.set_cursor(_mouse_cursor_stack.pop_back())
 
 ##
 ## Specifies whether links of the given type are visible or not. By default,
