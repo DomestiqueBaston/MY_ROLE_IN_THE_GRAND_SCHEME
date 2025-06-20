@@ -1,3 +1,4 @@
+@tool
 extends CardStack
 
 ## Width of the reserve before unfolding.
@@ -17,6 +18,10 @@ func _init():
 	orientation = HORIZONTAL
 
 func _input(event: InputEvent):
+	if Engine.is_editor_hint():
+		super(event)
+		return
+
 	if (event is not InputEventMouseMotion or
 		(_fold_tween and _fold_tween.is_running()) or
 		Globals.dragging):
@@ -71,4 +76,5 @@ func _layout():
 	# this prevents _input() from unfolding the reserve right after a card has
 	# been dropped into it; the user has to exit the bounding box first
 
-	_is_mouse_inside = true
+	if not Engine.is_editor_hint():
+		_is_mouse_inside = true

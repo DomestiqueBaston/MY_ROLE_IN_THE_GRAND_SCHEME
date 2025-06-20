@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=75 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="1_1c880"]
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
@@ -42,6 +42,7 @@
 [ext_resource type="AudioStream" uid="uid://dtdh8de6r8ymv" path="res://SOUND/MISC/White_noise.ogg" id="25_iwlie"]
 [ext_resource type="AudioStream" uid="uid://dy0gaffd2m7hp" path="res://SOUND/MISC/Turn_Button.ogg" id="25_lds6i"]
 [ext_resource type="Script" uid="uid://bfic46uloqv5p" path="res://SCRIPTS/Card_Stack.gd" id="34_jv51o"]
+[ext_resource type="Script" uid="uid://re2c6g3rw3r1" path="res://SCRIPTS/Sized_Node2D.gd" id="41_okarn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5dcb"]
 size = Vector2(230, 104)
@@ -2231,7 +2232,7 @@ position = Vector2(0, 18)
 position = Vector2(0, 27)
 
 [node name="Card22" parent="Cards/Fallback" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 36)
+position = Vector2(0, 37)
 
 [node name="Mastery" type="Node2D" parent="Cards"]
 position = Vector2(170, 195)
@@ -2267,7 +2268,7 @@ position = Vector2(0, 28)
 position = Vector2(0, 32)
 
 [node name="Card14" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 36)
+position = Vector2(0, 37)
 
 [node name="Evidence" type="Node2D" parent="Cards"]
 position = Vector2(155, 34)
@@ -2309,7 +2310,7 @@ metadata/_custom_type_script = "uid://bfic46uloqv5p"
 [node name="Card27" parent="Cards/Objects" instance=ExtResource("6_v0c4c")]
 
 [node name="Card28" parent="Cards/Objects" instance=ExtResource("6_v0c4c")]
-position = Vector2(31, 0)
+position = Vector2(30, 0)
 
 [node name="Locations" type="Node2D" parent="Cards"]
 position = Vector2(507, 34)
@@ -2320,10 +2321,12 @@ metadata/_custom_type_script = "uid://bfic46uloqv5p"
 [node name="Card27" parent="Cards/Locations" instance=ExtResource("6_v0c4c")]
 
 [node name="Card28" parent="Cards/Locations" instance=ExtResource("6_v0c4c")]
-position = Vector2(31, 0)
+position = Vector2(30, 0)
 
 [node name="Interaction" type="Node2D" parent="Cards"]
 position = Vector2(270, 196)
+script = ExtResource("41_okarn")
+size = Vector2(226, 100)
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("4_som80")]
 visible = false

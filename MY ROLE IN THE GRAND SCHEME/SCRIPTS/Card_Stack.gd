@@ -1,4 +1,5 @@
-class_name CardStack extends Node2D
+@tool
+class_name CardStack extends SizedNode2D
 
 ## A CardStack is a stack of cards where each card is offset by a few pixels
 ## from its neighbors, and only a single card is "current". When the current
@@ -18,16 +19,18 @@ enum {
 }
 
 ## Orientation of the stack.
-@export_enum("Horizontal", "Vertical") var orientation: int = HORIZONTAL
-
-## Size of the stack area (regardless of how many cards it contains).
-@export var size: Vector2 = Vector2(107, 100):
+@export_enum("Horizontal", "Vertical") var orientation: int = HORIZONTAL:
 	set(value):
-		size = value
-		_layout()
+		if orientation != value:
+			orientation = value
+			_layout()
 
 ## Minimum allowed space between cards (first cards are hidden if necessary).
-@export var min_card_margin: int = 3
+@export var min_card_margin: int = 3:
+	set(value):
+		if min_card_margin != value:
+			min_card_margin = value
+			_layout()
 
 var _max_card_count: int
 var _current_card: int = -1
@@ -37,6 +40,15 @@ const _tween_duration: float = 0.1
 const _max_displacement: int = 5
 const _mid_displacement: int = 2
 const _min_displacement: int = 1
+
+##
+## Overrides the method from SizedNode2D to force a new layout when the size
+## changes.
+##
+func set_size(new_size: Vector2):
+	if size != new_size:
+		super(new_size)
+		_layout()
 
 ##
 ## Returns true if the given point is inside the CardStack's bounding box.
@@ -50,6 +62,10 @@ func _ready():
 	_layout()
 	child_order_changed.connect(_layout)
 
+func _draw():
+	if show_bounding_box and Engine.is_editor_hint():
+		draw_rect(Rect2(Vector2(0, 0), size), Color.GREEN, false, 1)
+
 ##
 ## The CardStack's _input() method is responsible for determining which card, if
 ## any, is under the mouse, and for emitting signals when the mouse leaves the
@@ -58,8 +74,8 @@ func _ready():
 ## over them.
 ##
 func _input(event: InputEvent):
-	if (event is not InputEventMouseMotion or Globals.dragging
-		or get_child_count() == 0):
+	if (Engine.is_editor_hint() or event is not InputEventMouseMotion
+		or Globals.dragging or get_child_count() == 0):
 		return
 
 	var mouse_inside = contains_point(event.global_position)

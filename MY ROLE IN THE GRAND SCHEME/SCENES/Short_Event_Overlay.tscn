@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=240 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -88,6 +88,7 @@
 [ext_resource type="Script" uid="uid://bfic46uloqv5p" path="res://SCRIPTS/Card_Stack.gd" id="76_5oqru"]
 [ext_resource type="BitMap" uid="uid://dctue2soxk2cs" path="res://GRAPHICS/SHORT_EVENT/Minus_Mask.png" id="76_u6y7r"]
 [ext_resource type="Texture2D" uid="uid://s5x8jgyl5u0p" path="res://GRAPHICS/SHORT_EVENT/Plus_Normal.png" id="77_kf4o3"]
+[ext_resource type="Script" uid="uid://re2c6g3rw3r1" path="res://SCRIPTS/Sized_Node2D.gd" id="77_smut4"]
 [ext_resource type="Texture2D" uid="uid://dkbajl6j7ktg5" path="res://GRAPHICS/SHORT_EVENT/Plus_Pressed.png" id="78_bxkh1"]
 [ext_resource type="Texture2D" uid="uid://bbs7ssu3nub6u" path="res://GRAPHICS/SHORT_EVENT/Plus_Hover.png" id="79_wt5xr"]
 [ext_resource type="BitMap" uid="uid://dohqyo1qij7qr" path="res://GRAPHICS/SHORT_EVENT/Plus_Mask.png" id="80_d324j"]
@@ -2177,7 +2178,7 @@ metadata/_custom_type_script = "uid://bfic46uloqv5p"
 position = Vector2(0, 18)
 
 [node name="Card3" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Mastery" instance=ExtResource("63_t8uoa")]
-position = Vector2(0, 36)
+position = Vector2(0, 37)
 
 [node name="Fallback" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
 position = Vector2(422, 152)
@@ -2192,10 +2193,12 @@ metadata/_custom_type_script = "uid://bfic46uloqv5p"
 position = Vector2(0, 18)
 
 [node name="Card3" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Fallback" instance=ExtResource("63_t8uoa")]
-position = Vector2(0, 36)
+position = Vector2(0, 37)
 
 [node name="Interaction" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
 position = Vector2(240, 136)
+script = ExtResource("77_smut4")
+size = Vector2(152, 100)
 
 [node name="Drag_Drop_Line" parent="Overlays/Interaction_Run_Away_Break_In" instance=ExtResource("136_lkigo")]
 visible = false
