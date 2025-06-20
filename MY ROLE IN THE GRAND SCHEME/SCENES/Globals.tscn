@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCRIPTS/Globals.gd" id="1_p5kqw"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
-[ext_resource type="Script" uid="uid://cb08qaoq6sqr5" path="res://SCRIPTS/Mouse_Cursor.gd" id="3_hi0n3"]
+[ext_resource type="Script" uid="uid://cb08qaoq6sqr5" path="res://SCRIPTS/Mouse.gd" id="3_hi0n3"]
 [ext_resource type="Texture2D" uid="uid://umd5dl16bi7t" path="res://GRAPHICS/UI/Mouse_Circle.png" id="4_8eio1"]
 [ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="4_f2dh2"]
 [ext_resource type="Shader" uid="uid://dkp5ymdefrmn2" path="res://SHADERS/Video.gdshader" id="5_kpwuy"]
