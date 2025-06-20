@@ -1823,7 +1823,6 @@ libraries = {
 autoplay = "Text_Animation"
 
 [node name="Income_Start" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Income_Start_BG" type="Sprite2D" parent="Overlays/Income_Start"]
 position = Vector2(200, 25)
@@ -1831,6 +1830,7 @@ texture = ExtResource("59_vprm5")
 centered = false
 
 [node name="Income" type="Control" parent="Overlays/Income_Start"]
+visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
@@ -1964,7 +1964,6 @@ position = Vector2(283, 152)
 position = Vector2(319, 152)
 
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
-visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
@@ -1977,8 +1976,6 @@ offset_left = 296.0
 offset_top = 303.0
 offset_right = 343.0
 offset_bottom = 313.0
-tooltip_text = "Not much of
-a choice..."
 text = "Well, ok..."
 script = ExtResource("61_5iqpn")
 
@@ -2051,6 +2048,7 @@ position = Vector2(295, 152)
 position = Vector2(319, 152)
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
+visible = false
 position = Vector2(172, 48)
 script = ExtResource("62_smut4")
 card_area_overlays = {
