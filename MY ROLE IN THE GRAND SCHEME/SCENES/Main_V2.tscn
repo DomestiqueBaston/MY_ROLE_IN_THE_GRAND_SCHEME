@@ -360,7 +360,6 @@ combat_type = 1
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("52_2uhvq")]
 visible = false
-z_index = 2
 
 [node name="Mask_Card_Playground" type="Sprite2D" parent="."]
 texture = ExtResource("54_anbsy")

@@ -2197,7 +2197,6 @@ size = Vector2(152, 100)
 
 [node name="Drag_Drop_Line" parent="Overlays/Interaction_Run_Away_Break_In" instance=ExtResource("136_lkigo")]
 visible = false
-z_index = 2
 
 [node name="Intercom" type="Node2D" parent="Overlays"]
 visible = false

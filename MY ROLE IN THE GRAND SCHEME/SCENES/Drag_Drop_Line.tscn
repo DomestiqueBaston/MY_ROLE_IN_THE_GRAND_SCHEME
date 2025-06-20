@@ -100,6 +100,7 @@ _data = {
 }
 
 [node name="Drag_Drop_Line" type="Node2D"]
+z_index = 3
 script = ExtResource("1_dyppl")
 
 [node name="Line" type="Line2D" parent="."]

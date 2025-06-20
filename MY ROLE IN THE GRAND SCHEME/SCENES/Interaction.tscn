@@ -2321,7 +2321,6 @@ size = Vector2(226, 100)
 
 [node name="Drag_Drop_Line" parent="." instance=ExtResource("4_som80")]
 visible = false
-z_index = 2
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 limited_menus = true
