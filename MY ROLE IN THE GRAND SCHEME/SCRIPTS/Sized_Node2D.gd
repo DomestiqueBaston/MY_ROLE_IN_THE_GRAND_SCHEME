@@ -5,7 +5,7 @@ class_name SizedNode2D extends Node2D
 ## option allowing you to display its bounding box in the Godot editor.
 
 @export var size: Vector2:
-	set = set_size
+	set = set_size, get = get_size
 
 @export var show_bounding_box: bool = false:
 	set(value):
@@ -16,6 +16,9 @@ func set_size(new_size: Vector2):
 	if size != new_size:
 		size = new_size
 		queue_redraw()
+
+func get_size() -> Vector2:
+	return size
 
 func _draw():
 	if show_bounding_box and Engine.is_editor_hint():

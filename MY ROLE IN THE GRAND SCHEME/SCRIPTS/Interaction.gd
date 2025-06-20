@@ -1,17 +1,13 @@
 extends Node2D
 
-## Collider shapes used to detect when the mouse is in a card area. Keys and
-## values in the Dictionary are all NodePaths: each key is a Node2D containing
-## cards, and its value is the corresponding CollisionShape2D.
-@export var card_area_shapes: Dictionary
-
-## Overlays used to highlight each care area. Keys and values in the Dictionary
-## are all NodePaths: each key is a Node2D containing cards, and its value is
-## the corresponding overlay to be shown or hidden.
+## Areas containing cards (piles and the interaction zone), and the overlays
+## used to highlight each area. Keys and values in the Dictionary are all
+## NodePaths: each key is a SizedNode2D containing cards, and its value is the
+## corresponding overlay to be shown or hidden as needed.
 @export var card_area_overlays: Dictionary
 
-## The Node2D containing cards dropped in the interaction zone.
-@export var interaction_cards: Node2D
+## The node containing cards dropped in the interaction zone.
+@export var interaction_cards: SizedNode2D
 
 ## The maximum number of cards that the interaction zone can hold.
 @export var max_card_count: int = 3
@@ -50,9 +46,6 @@ var _drag_click_pos: Vector2
 # overlay highlighting the card pile concerned by drag & drop
 var _highlighted_overlay: CanvasItem
 
-# collider shapes used to detect when the mouse is in card areas
-var _area_shapes = {}
-
 # overlay to highlight the name of each card pile
 var _area_overlays = {}
 
@@ -61,8 +54,6 @@ var _area_overlays = {}
 var _cards_played: Dictionary
 
 func _ready():
-	for area in card_area_shapes:
-		_area_shapes[get_node(area)] = get_node(card_area_shapes[area])
 	for area in card_area_overlays:
 		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
@@ -142,9 +133,8 @@ func _drag(global_pos: Vector2):
 	# effect
 
 	if _cards_played.size() < max_card_count:
-		var shape = _area_shapes[interaction_cards]
 		var overlay = _area_overlays[interaction_cards]
-		var in_interaction_zone = _is_in_collision_shape(shape, global_pos)
+		var in_interaction_zone = _is_in_sized_node2d(interaction_cards, global_pos)
 		if overlay.visible != in_interaction_zone:
 			overlay.visible = in_interaction_zone
 			if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
@@ -203,14 +193,14 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	_highlighted_overlay.hide()
 
 func _get_card_area_at(global_pos: Vector2) -> Node2D:
-	for area in _area_shapes:
-		if _is_in_collision_shape(_area_shapes[area], global_pos):
+	for area in _area_overlays:
+		if _is_in_sized_node2d(area, global_pos):
 			return area
 	return null
 
-func _is_in_collision_shape(shape: CollisionShape2D, global_pos: Vector2):
-	var local_rect = shape.shape.get_rect()
-	var local_pos = shape.to_local(global_pos)
+func _is_in_sized_node2d(node: SizedNode2D, global_pos: Vector2):
+	var local_rect = Rect2(Vector2(0, 0), node.size)
+	var local_pos = node.to_local(global_pos)
 	return local_rect.has_point(local_pos)
 
 func _layout_played_cards():
@@ -220,14 +210,13 @@ func _layout_played_cards():
 
 	const margin = 2
 	var tween = create_tween().set_parallel()
-	var global_center = _area_shapes[interaction_cards].global_position
-	var local_center = interaction_cards.to_local(global_center)
+	var center = interaction_cards.size * 0.5
 	var pos
 
 	if card_count & 1:
-		pos = Vector2(local_center.x - Card.size.x * 0.5, 0)
+		pos = Vector2(center.x - Card.size.x * 0.5, 0)
 	else:
-		pos = Vector2(local_center.x + margin * 0.5, 0)
+		pos = Vector2(center.x + margin * 0.5, 0)
 
 	if card_count > 1:
 		@warning_ignore("integer_division")
