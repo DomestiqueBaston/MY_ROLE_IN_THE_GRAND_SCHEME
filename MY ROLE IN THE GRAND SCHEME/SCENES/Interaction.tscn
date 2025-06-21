@@ -542,36 +542,91 @@ theme = ExtResource("18_k1rto")
 
 [node name="Dialogue" type="Label" parent="Top_Left_Screen/Interaction"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.843137)
+modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 0
-offset_top = 59.0
+offset_top = 1.0
 offset_right = 82.0
-offset_bottom = 67.0
+offset_bottom = 9.0
 theme_override_colors/font_color = Color(0.32, 0.501333, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.882353)
+theme_override_constants/outline_size = 6
 text = "Dialogue"
 horizontal_alignment = 1
 
+[node name="NPC" type="Label" parent="Top_Left_Screen/Interaction/Dialogue"]
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 0
+offset_left = -2.0
+offset_top = 55.0
+offset_right = 84.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.882353)
+theme_override_constants/line_spacing = -1
+theme_override_constants/outline_size = 3
+text = "Jean-Marc Papageorgiou"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
 [node name="Combat" type="Label" parent="Top_Left_Screen/Interaction"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.843137)
+modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 0
-offset_top = 59.0
+offset_top = 1.0
 offset_right = 82.0
-offset_bottom = 67.0
+offset_bottom = 9.0
 theme_override_colors/font_color = Color(1, 0.35, 0.35, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.882353)
+theme_override_constants/outline_size = 6
 text = "Combat"
 horizontal_alignment = 1
 
+[node name="NPC" type="Label" parent="Top_Left_Screen/Interaction/Combat"]
+modulate = Color(1, 1, 1, 0.941176)
+offset_left = -2.0
+offset_top = 55.0
+offset_right = 84.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.882353)
+theme_override_constants/line_spacing = -1
+theme_override_constants/outline_size = 3
+text = "Jean-Marc Papageorgiou"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
 [node name="Investigation" type="Label" parent="Top_Left_Screen/Interaction"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.843137)
+modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 0
-offset_top = 59.0
+offset_top = 1.0
 offset_right = 82.0
-offset_bottom = 67.0
+offset_bottom = 9.0
 theme_override_colors/font_color = Color(0.50049, 0.67, 0.3618, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.882353)
+theme_override_constants/outline_size = 6
 text = "Investigation"
 horizontal_alignment = 1
+
+[node name="Location" type="Label" parent="Top_Left_Screen/Interaction/Investigation"]
+modulate = Color(1, 1, 1, 0.941176)
+offset_left = -2.0
+offset_top = 55.0
+offset_right = 84.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.882353)
+theme_override_constants/line_spacing = -1
+theme_override_constants/outline_size = 3
+text = "Barracks"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
 
 [node name="Screen" type="Sprite2D" parent="Top_Left_Screen"]
 material = SubResource("ShaderMaterial_sho7k")
