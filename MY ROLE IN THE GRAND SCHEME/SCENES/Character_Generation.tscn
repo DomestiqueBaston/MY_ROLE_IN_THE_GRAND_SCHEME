@@ -31,12 +31,26 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
 
 [node name="Character_Generation" type="Node2D"]
-metadata/_edit_lock_ = true
+
+[node name="A VIRER" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 367.0
+offset_right = 124.0
+offset_bottom = 504.0
+theme = ExtResource("3_2pyp5")
+text = "^
+||
+CONFIRM sera désactivé tant qu'il restera des points à attribuer, qu'un nom ne sera pas renseigné et qu'un background n'aura pas été sélectionné !
+
+Randomize sélectionnera également un Background.
+
+Reset remettra tout à zéro."
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Character_Generation_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_fahl1")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Creation_Page" type="Control" parent="."]
 layout_mode = 3
@@ -46,13 +60,12 @@ offset_bottom = 360.0
 theme = ExtResource("3_2pyp5")
 script = ExtResource("3_e7ryn")
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="Character_Name" type="LineEdit" parent="Creation_Page"]
 layout_mode = 0
 offset_left = 136.0
 offset_top = 61.0
-offset_right = 218.0
+offset_right = 208.0
 offset_bottom = 77.0
 theme_override_colors/selection_color = Color(0.1998, 0.27, 0.21969, 0.341176)
 theme_override_colors/caret_color = Color(0.1998, 0.27, 0.21969, 0.662745)
@@ -61,7 +74,7 @@ theme_override_colors/font_selected_color = Color(0.1998, 0.27, 0.21969, 0.66274
 theme_override_colors/font_color = Color(0.1998, 0.27, 0.21969, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-placeholder_text = "Name must fit."
+placeholder_text = "Name must fit"
 max_length = 13
 context_menu_enabled = false
 virtual_keyboard_enabled = false
@@ -72,7 +85,6 @@ flat = true
 draw_control_chars = true
 caret_blink = true
 caret_blink_interval = 0.5
-metadata/_edit_lock_ = true
 
 [node name="PHY" type="Label" parent="Creation_Page"]
 layout_mode = 0
@@ -86,7 +98,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-metadata/_edit_lock_ = true
 
 [node name="PHY_Moins" type="TextureButton" parent="Creation_Page/PHY"]
 layout_mode = 0
@@ -97,7 +108,6 @@ offset_bottom = 5.0
 texture_normal = ExtResource("6_f1shx")
 texture_pressed = ExtResource("8_se4yg")
 texture_hover = ExtResource("7_0vp85")
-metadata/_edit_lock_ = true
 
 [node name="PHY_Plus" type="TextureButton" parent="Creation_Page/PHY"]
 layout_mode = 0
@@ -107,7 +117,6 @@ offset_bottom = 7.0
 texture_normal = ExtResource("7_0ruwj")
 texture_pressed = ExtResource("8_q8msu")
 texture_hover = ExtResource("9_v40rh")
-metadata/_edit_lock_ = true
 
 [node name="MEN" type="Label" parent="Creation_Page"]
 layout_mode = 0
@@ -121,7 +130,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-metadata/_edit_lock_ = true
 
 [node name="MEN_Moins" type="TextureButton" parent="Creation_Page/MEN"]
 layout_mode = 0
@@ -133,7 +141,6 @@ pivot_offset = Vector2(22, 62)
 texture_normal = ExtResource("6_f1shx")
 texture_pressed = ExtResource("8_se4yg")
 texture_hover = ExtResource("7_0vp85")
-metadata/_edit_lock_ = true
 
 [node name="MEN_Plus" type="TextureButton" parent="Creation_Page/MEN"]
 layout_mode = 0
@@ -144,7 +151,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("7_0ruwj")
 texture_pressed = ExtResource("8_q8msu")
 texture_hover = ExtResource("9_v40rh")
-metadata/_edit_lock_ = true
 
 [node name="HEA" type="Label" parent="Creation_Page"]
 layout_mode = 0
@@ -158,7 +164,6 @@ mouse_filter = 0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-metadata/_edit_lock_ = true
 
 [node name="HEA_Moins" type="TextureButton" parent="Creation_Page/HEA"]
 layout_mode = 0
@@ -170,7 +175,6 @@ pivot_offset = Vector2(22, 62)
 texture_normal = ExtResource("6_f1shx")
 texture_pressed = ExtResource("8_se4yg")
 texture_hover = ExtResource("7_0vp85")
-metadata/_edit_lock_ = true
 
 [node name="HEA_Plus" type="TextureButton" parent="Creation_Page/HEA"]
 layout_mode = 0
@@ -181,7 +185,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("7_0ruwj")
 texture_pressed = ExtResource("8_q8msu")
 texture_hover = ExtResource("9_v40rh")
-metadata/_edit_lock_ = true
 
 [node name="Remaining_Points" type="Label" parent="Creation_Page"]
 layout_mode = 0
@@ -192,7 +195,6 @@ offset_bottom = 198.0
 theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
-metadata/_edit_lock_ = true
 
 [node name="Background_Selector" type="PanelContainer" parent="Creation_Page"]
 layout_mode = 0
@@ -201,7 +203,6 @@ offset_top = 211.0
 offset_right = 269.0
 offset_bottom = 328.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h5l0o")
-metadata/_edit_lock_ = true
 
 [node name="Background_List" type="OptionButton" parent="Creation_Page/Background_Selector"]
 custom_minimum_size = Vector2(153, 16)
@@ -214,7 +215,6 @@ flat = true
 item_count = 1
 popup/item_0/id = 0
 script = ExtResource("5_2k6nw")
-metadata/_edit_lock_ = true
 
 [node name="Randomize" type="TextureButton" parent="Creation_Page"]
 self_modulate = Color(0, 0.35, 1, 0.682353)
@@ -229,7 +229,6 @@ and HEA points"
 texture_normal = ExtResource("12_rwrty")
 texture_pressed = ExtResource("13_pb7hu")
 texture_hover = ExtResource("14_yalwy")
-metadata/_edit_lock_ = true
 
 [node name="Reset" type="TextureButton" parent="Creation_Page"]
 self_modulate = Color(0, 0.308, 0.42, 0.682353)
@@ -242,7 +241,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("21_7d8wo")
 texture_pressed = ExtResource("22_yyi2n")
 texture_hover = ExtResource("23_7lqc7")
-metadata/_edit_lock_ = true
 
 [node name="Cancel" type="TextureButton" parent="Creation_Page"]
 self_modulate = Color(0.69, 0.958667, 1, 0.901961)
@@ -255,7 +253,6 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("24_13g83")
 texture_pressed = ExtResource("25_e0ckp")
 texture_hover = ExtResource("26_dkphj")
-metadata/_edit_lock_ = true
 
 [node name="Confirm" type="TextureButton" parent="Creation_Page"]
 self_modulate = Color(0.87, 0.7134, 0.7134, 0.901961)
@@ -268,7 +265,7 @@ pivot_offset = Vector2(9, 64)
 texture_normal = ExtResource("27_kk3x8")
 texture_pressed = ExtResource("28_6l626")
 texture_hover = ExtResource("29_ivich")
-metadata/_edit_lock_ = true
+texture_disabled = ExtResource("29_ivich")
 
 [node name="Typing" type="AudioStreamPlayer" parent="Creation_Page"]
 stream = ExtResource("30_7d8wo")
@@ -293,13 +290,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 text_overrun_behavior = 3
-metadata/_edit_lock_ = true
 
 [node name="SliderBg" type="Sprite2D" parent="."]
 position = Vector2(61, 156)
 texture = ExtResource("29_t6v1g")
 offset = Vector2(0, -0.5)
-metadata/_edit_lock_ = true
 
 [node name="HSlider" type="HSlider" parent="SliderBg"]
 offset_left = -13.0
