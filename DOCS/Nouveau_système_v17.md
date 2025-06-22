@@ -2,20 +2,20 @@ My Role in the Grand Scheme
 
 
 Caractéristiques du Joueur
-	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/HEAnom) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) (pour les seuils, voir plus bas).
+	- Le système de jeu repose sur 3 caractéristiques principales (PHY, MEN et HEA/maxHEA) allant de 0 à 10 et sur 5 caractéristiques secondaires (Emo, Add, Rep, Wan et Par) (pour les seuils, voir plus bas).
 	- À noter qu’à la création du personnage, pour le sexe, on peut mettre M, F ou n’importe quelle valeur entre les deux, ça ne change rien au jeu !
 Les caractéristiques principales
-	- À la création du personnage, 15 points à répartir entre PHY, MEN et HEAnom avec un minimum de 3 et un maximum de 7.
-	- À la création, HEA=HEAnom.
+	- À la création du personnage, 15 points à répartir entre PHY, MEN et maxHEA avec un minimum de 3 et un maximum de 7.
+	- À la création, HEA=maxHEA.
 	- PHY=0 et/ou MEN=0 → incapacité d‘Interagir (voir Système de Santé et Pcrise de Paranoïa).
 	- HEA=0 → mort du joueur.
 Physique (PHY)  
 	- Mesure l’habileté et les aptitudes physiques.
 Mental (MEN)
 	- Mesure les aptitudes intellectuelles et psychologiques. 
-Santé (HEA/HEAnom) 
-	- HEAnom représente la santé maximale.
-	- HEA représente la santé actuelle (ne peut jamais dépasser HEAnom). C’est HEA qui est affiché en jeu.
+Santé (HEA/maxHEA) 
+	- maxHEA représente la santé maximale.
+	- HEA représente la santé actuelle (ne peut jamais dépasser maxHEA). C’est HEA qui est affiché en jeu.
 Les caractéristiques secondaires
 
 État émotionnel (Emo)  
@@ -33,7 +33,7 @@ Emo	Effets et/ou modificateur de jet de dé
 
 État d’addiction (Add)
 	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
-	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites critiques n’entraînent pas d’évolution de HEA ni HEAnom.
+	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites critiques n’entraînent pas d’évolution de HEA ni maxHEA.
 	- Les réussites/échecs critiques n’entraînent pas de progression du joueur (ni n’amplifient les résultats) !
 Add	Effet et/ou modificateur de jet de dé
 -3	Mort si un jet de dé contre HEA est raté
@@ -84,33 +84,33 @@ Backgrounds
 	- Les antécédents du joueur apportent des Bonus/Malus globaux à certaines caractéristiques à la création du personnage tout en pouvant introduire des bonus/malus spécifiques.
 	- Les bonus/malus de background ne sont pas connus du joueur.
 	- Backgrounds possibles :
-		- Agriculteur bio : +1PHY, -1MEN, +1HEA et HEAnom
-		- Bourrelier : +1PHY, -1HEA et HEAnom
+		- Agriculteur bio : +1PHY, -1MEN, +1HEA et maxHEA
+		- Bourrelier : +1PHY, -1HEA et maxHEA
 		- Catcheur : +1PHY, -1MEN
 		- Champion de fléchettes : -1PHY, +1MEN
-		- Chercheur en physique quantique : -1PHY, +2MEN, -1HEA et HEAnom
+		- Chercheur en physique quantique : -1PHY, +2MEN, -1HEA et maxHEA
 		- Chômeur : /
 		- Choriste : +1PHY
-		- Concierge (background « cheaté ») : +1PHY, +1MEN, +1HEA et HEAnom
-		- Cuisinier végan : +2HEA et HEAnom
-		- Curé : -1PHY, +1HEA et HEAnom
-		- Danseur : +1PHY, -1MEN, +1HEA et HEAnom
-		- Écrivain : -1PHY, +1MEN, -1HEA et HEAnom
+		- Concierge (background « cheaté ») : +1PHY, +1MEN, +1HEA et maxHEA
+		- Cuisinier végan : +2HEA et maxHEA
+		- Curé : -1PHY, +1HEA et maxHEA
+		- Danseur : +1PHY, -1MEN, +1HEA et maxHEA
+		- Écrivain : -1PHY, +1MEN, -1HEA et maxHEA
 		- Flic : 1/3 chance de ne pas aller en prison ou devoir de caution à Wan = 4
-		- Gardien de musée : -1PHY, +1MEN, +1HEA et HEAnom
+		- Gardien de musée : -1PHY, +1MEN, +1HEA et maxHEA
 		- Éboueur : +1PHY
-		- Guide touristique : +1PHY, +1MEN, -1HEA et HEAnom
-		- Infographiste (background maudit) : -1PHY, -1MEN, -1HEA et HEAnom
-		- Instituteur : +1MEN, -1HEA et HEAnom
+		- Guide touristique : +1PHY, +1MEN, -1HEA et maxHEA
+		- Infographiste (background maudit) : -1PHY, -1MEN, -1HEA et maxHEA
+		- Instituteur : +1MEN, -1HEA et maxHEA
 		- Marchand de tapis : +1MEN
-		- Ouvrier du bâtiment : +1PHY, -1MEN, -1HEA et HEAnom
-		- Pervenche : -1MEN, +1HEA et HEAnom
+		- Ouvrier du bâtiment : +1PHY, -1MEN, -1HEA et maxHEA
+		- Pervenche : -1MEN, +1HEA et maxHEA
 		- Philosophe : +1MEN
-		- Prof. de yoga : +1HEA et HEAnom
-		- Retraité : -1PHY, +1MEN, -1HEA et HEAnom
+		- Prof. de yoga : +1HEA et maxHEA
+		- Retraité : -1PHY, +1MEN, -1HEA et maxHEA
 		- Super héro à temps partiel : +2PHY, -2MEN
-		- Taxidermiste : -1MEN, +1HEA et HEAnom
-		- Toxicomane : -1MEN, -1HEA et HEAnom,  -50 % sur le prix de la drogue, bonus de 1 jets de dé de sous/surdose
+		- Taxidermiste : -1MEN, +1HEA et maxHEA
+		- Toxicomane : -1MEN, -1HEA et maxHEA,  -50 % sur le prix de la drogue, bonus de 1 jets de dé de sous/surdose
 		- Vendeur de glaces : +300Dø au démarrage de la partie
 		- Vétérinaire : -50 % sur les interventions thérapeutiques (médecin)
 
@@ -118,8 +118,8 @@ Progression du joueur (pas des PNJs !)
 	- Seules les réussites et échecs critiques (1 ou 10 « naturel » obtenus directement sur le dé, avant l’application de tout modificateur) font varier les caractéristiques principales du joueur (réussite critique : +1 et échec critique : -1) et uniquement après avoir évalué le résultat de l’action entreprise.
 	- N’importe quel jet de dé (hors jet de dé contre Mort par Add vu au dessus) impliquant PHY, MEN ou HEA peut amener à ces évolutions et la modification sera toujours effective après la résolution de l’action entreprise.
 	- La caractéristique qui évoluera sera sélectionnée parmi celles utilisées pour le jet de dé selon :
-		- Dialogue : MEN ou HEAnom aléatoirement (si HEAnom < HEA → HEA = HEAnom)
-		- Combat : PHY ou HEAnom aléatoirement (si HEAnom < HEA → HEA = HEAnom)
+		- Dialogue : MEN ou maxHEA aléatoirement (si maxHEA < HEA → HEA = maxHEA)
+		- Combat : PHY ou maxHEA aléatoirement (si maxHEA < HEA → HEA = maxHEA)
 		- Investigation : PHY ou MEN aléatoirement
 	- Dans les cas hypothétiques ou un jet de dé est lancé sur 1 seule caractéristique, c’est celle-ci qui évolue.
 	- Dans tous les autres cas, la caractéristique qui évoluera sera choisie aléatoirement parmi celles testées.
@@ -127,7 +127,7 @@ Progression du joueur (pas des PNJs !)
 
 
 Les PNJs
-	- Les PNJs sont définis par PHY, MEN, HEA (et HEAnom) et Wan.
+	- Les PNJs sont définis par PHY, MEN, HEA (et maxHEA) et Wan.
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
 	- Leurs infos ne sont pas automatiquement connues du joueur. Cela dépendra de la fiche d’enquête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
 	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction.
@@ -151,57 +151,57 @@ Niveau de Wanted	Malus au Dé
 4	Prison
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
-	- Real Estate Agent : +1 MEN, -1 HEAnom
+	- Real Estate Agent : +1 MEN, -1 maxHEA
 	- Cleaner : +1 PHY (travail de nuit possible)
 	- Security Guard : +1 PHY, -1 MEN (travail de nuit possible)
-	- Social Worker : -1 PHY, +1 MEN, +1 HEAnom
-	- Librarian : +1 MEN, -1 HEAnom
+	- Social Worker : -1 PHY, +1 MEN, +1 maxHEA
+	- Librarian : +1 MEN, -1 maxHEA
 	- Forklift Operator : +1 PHY (travail de nuit possible)
-	- Unemployed : +1 PHY ou +1 MEN ou +1 HEAnom, -1 aux deux autres (travail de nuit possible)
-	- Hairdresser : +1 MEN, -1 HEAnom
+	- Unemployed : +1 PHY ou +1 MEN ou +1 maxHEA, -1 aux deux autres (travail de nuit possible)
+	- Hairdresser : +1 MEN, -1 maxHEA
 	- Merchant (alimentaire, vêtements, marché aux puces, etc.) : /
 	- Curator : +1 MEN
 	- Game dev’ : -1 PHY, +1 MEN
 	- Designer : -1 PHY, +1 MEN
-	- Writer : -1 PHY, +1 MEN, -1 HEAnom(travail de nuit possible)
-	- Private sector Employee (commerce, etc.) : -1 HEAnom
+	- Writer : -1 PHY, +1 MEN, -1 maxHEA(travail de nuit possible)
+	- Private sector Employee (commerce, etc.) : -1 maxHEA
 	- Public Servant (bibliothèque, piscine, cimetière, etc.) : /
 	- Teacher : +1 MEN
 	- Restaurant Manager : -1 MEN
 	- Park Keeper : +1 PHY, -1 MEN
 	- Hotel Manager : +1 HEA (travail de nuit possible)
-	- Historian : +1 MEN, -1 HEAnom
+	- Historian : +1 MEN, -1 maxHEA
 	- Host (de jeu, concert, cinéma, hôtel, théâtre, bar, café, cybercafé) : -1 PHY, +1 MEN (travail de nuit possible)
-	- Nightclub server : -1 MEN, -1 HEAnom(travail de nuit obligatoire)
-	- Engineer : +1 MEN, -1 HEAnom
+	- Nightclub server : -1 MEN, -1 maxHEA(travail de nuit obligatoire)
+	- Engineer : +1 MEN, -1 maxHEA
 	- Influencer : +1 PHY, -1 MEN
-	- Journalist : +1 MEN, -1 HEAnom
+	- Journalist : +1 MEN, -1 maxHEA
 	- Bookseller : -2 PHY, +2 MEN
 	- Mechanic : +1 PHY, -1 MEN
-	- Doctor : -1 PHY, +1 MEN, +1 HEAnom
+	- Doctor : -1 PHY, +1 MEN, +1 maxHEA
 	- Military : +1 PHY, -1 MEN (travail de nuit possible)
-	- Musician : -1 PHY, +1 HEAnom
-	- Firefighter : +1 PHY, -1 HEAnom (travail de nuit possible)
+	- Musician : -1 PHY, +1 maxHEA
+	- Firefighter : +1 PHY, -1 maxHEA (travail de nuit possible)
 	- Police Officer : +1 PHY, -1 MEN (travail de nuit possible)
-	- Physical Education Teacher : +1 PHY, +1 HEAnom
-	- Psychologist : -1 PHY, +1 MEN, +1 HEAnom
+	- Physical Education Teacher : +1 PHY, +1 maxHEA
+	- Psychologist : -1 PHY, +1 MEN, +1 maxHEA
 	- Scientist : -1 PHY, +2 MEN
-	- Athlete : +1 PHY, -1 MEN, +1 HEAnom
+	- Athlete : +1 PHY, -1 MEN, +1 maxHEA
 	- Veterinarian : -1 PHY, +1 MEN
-	- Politician : -1 PHY, +2MEN, -1 HEAnom
-	- CEO : /, -1 HEAnom
+	- Politician : -1 PHY, +2MEN, -1 maxHEA
+	- CEO : /, -1 maxHEA
 
 	- Les bonus/malus sont appliqués dès la création du PNJ.
-	- Si HEAnom < Hea → HEA = HEAnom.
+	- Si maxHEA < Hea → HEA = maxHEA.
 
 Génération des caractéristiques des PNJs
-	- À la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et HEAnom suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (de 0 à 6) toujours à répartir aléatoirement. Aucune caractéristique ne pourra dépasser 10.
+	- À la génération, les PNJs ont 15 points à répartir aléatoirement entre PHY, MEN et maxHEA suivant les mêmes règles que le personnage du joueur (voir Les caractéristiques principales). On ajoutera à ces 15 points un nombre de points égal au niveau de difficulté de l’enquête (de 0 à 6) toujours à répartir aléatoirement. Aucune caractéristique ne pourra dépasser 10.
 	- On ajoutera ensuite les bonus/malus liés à la profession.
-	- Au départ, n’importe quel PNJ à de 50% à 100% de son HEA (Heanom reste normal).
+	- Au départ, n’importe quel PNJ à de 50% à 100% de son HEA (maxHEA reste normal).
 
 Progression des PNJs (pas du joueur)
 	- Les PNJs peuvent également progresser (de la même manière que le joueur) par les interactions avec le joueur.
-	- Chaque jour, si les PNJs n’ont pas interagi avec le joueur, ils auront 10% de chance qu’au hasard, 1 de leurs caractéristiques PHY, MEN ou HEAnom évoluent de ±1. Si HEAnom < Hea → HEA = HEAnom.
+	- Chaque jour, si les PNJs n’ont pas interagi avec le joueur, ils auront 10% de chance qu’au hasard, 1 de leurs caractéristiques PHY, MEN ou maxHEA évoluent de ±1. Si maxHEA < Hea → HEA = maxHEA.
 
 La réputation du joueur auprès d’un PNJ
 	- Après (niveau de difficulté de l’enquête) jours sans interaction : +1 Rep. Pour niveau 0, on compte comme niveau 1.
@@ -245,12 +245,12 @@ Crise de paranoïa
 	- Le joueur va tout d'un coup, quand le cap défini est franchi, devenir paranoïaque (on finira l’éventuelle interaction en cours avant comme dit dans Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par).
 	- Le joueur aura 15 jours pour résoudre l’enquête finale puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné).
 	- Les effets de la Paranoïa sont également les suivants (sans jamais dépasser les seuils max/min) :
-		Bonus : +2 en PHY ou MEN ou HEAnom (et HEA) aléatoirement (sans passer le maximum).
+		Bonus : +2 en PHY ou MEN ou maxHEA (et HEA) aléatoirement (sans passer le maximum).
 		Malus : -1 dans les autres caractéristiques principales (sans passer le seuil minimum).
 	- Pas de sommeil, donc pas de récupération en dormant ! Si PHY=0 et/ou MEN=0 → Mort du joueur !
 
 Récupération (joueur)
-	- Le joueur récupère HEA. En aucun cas il ne pourra récupérer plus que HEAnom.
+	- Le joueur récupère HEA. En aucun cas il ne pourra récupérer plus que maxHEA.
 	- Pas de sommeil pendant une crise de Paranoïa !
 	- Le joueur décide de la durée de sa nuit de sommeil :
 
@@ -274,7 +274,7 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 	- Les PNJs ne subissent pas les effets de bonus/malus liés au cycle veille/sommeil.
 
 Récupération (PNJs)
-	- Les PNJs récupèrent +1HEA/jour sans dépasser HEAnom.
+	- Les PNJs récupèrent +1HEA/jour sans dépasser maxHEA.
 
 
 Le temps
@@ -315,7 +315,7 @@ Passer le temps
 	- Lorsqu’il ne dort pas, le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure.
 
 Passer le temps pendant la paranoïa
-	- Chaque « Pass time » donne 1/10 chance d’avoir ±1 de PHY, MEN ou HEA (pas HEAnom et sans jamais dépasser Min/Max).
+	- Chaque « Pass time » donne 1/10 chance d’avoir ±1 de PHY, MEN ou HEA (pas maxHEA et sans jamais dépasser Min/Max).
 
 Le temps des PNJs
 	- Les PNJs suivent le cycle jour/nuit par leur emploi du temps mais si le joueur les emmène au delà des limites par une interaction, ils suivront le joueur puis reprendront leur emploi du temps normal sans effet pour eux en fin d’Interaction.
@@ -916,11 +916,11 @@ Quand il reste des liens à créer mais peu/plus de PNJs
 		- Il est possible de réutiliser des PNJs inutiles.
 Difficulté du jeu
 	- 5 niveaux de difficulté :
-		Hobbie : bonus de 1 supplémentaire à TOUS les jets de dé, +10 % de Dø en fin d’enquête réussie, PNJs: -1 à PHY, MEN et HEA/HEAnom à la génération.
-		Tranquille : +10 % de Dø en fin de enquête réussie, PNJs: -1 à PHY, MEN ou HEA/HEAnom à la génération.
+		Hobbie : bonus de 1 supplémentaire à TOUS les jets de dé, +10 % de Dø en fin d’enquête réussie, PNJs: -1 à PHY, MEN et HEA/maxHEA à la génération.
+		Tranquille : +10 % de Dø en fin de enquête réussie, PNJs: -1 à PHY, MEN ou HEA/maxHEA à la génération.
 		Routine : /
-		Stressant : -10 % de Dø en fin de enquête réussie, PNJs: +1 à PHY, MEN ou HEA/HEAnom à la génération.
-		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin d’enquête réussie, PNJs: +1 à PHY, MEN et HEA/HEAnom à la génération.
+		Stressant : -10 % de Dø en fin de enquête réussie, PNJs: +1 à PHY, MEN ou HEA/maxHEA à la génération.
+		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin d’enquête réussie, PNJs: +1 à PHY, MEN et HEA/maxHEA à la génération.
 
 Éléments additionnels de difficulté
 	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
@@ -930,7 +930,7 @@ Difficulté du jeu
 		Retail Investment :  Les factures augmentent de +20%.
 		Vice : Caution (prison) portée à 125Dø (+25%).
 		Mentirosos : +10 % de chances de mensonge.
-		Hardboiled Minions : +10% HEA (et HEAnom).
+		Hardboiled Minions : +10% HEA (et maxHEA).
 		Over Crowded City : +20% de PNJs inutiles.
 		No public docs : 60Dø (+20%) chez le médecin.
 		Hectic City : toutes les actions prennent 15% de temps en plus (l’horloge n’affiche que les heures, pas les minutes mais on les compte sans arrondir) !
