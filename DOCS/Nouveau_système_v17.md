@@ -456,7 +456,8 @@ Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant le lendemain sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
 	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir en cas de Combat mais ça n’est pas vraiment une annulation et cela intervient juste avant).
-
+	- À la fin d’une interaction réussie, l’écran de résolution d’interaction s’affiche et proposera au joueur de récupérer les cartes jouées afin de modifier sa main de cartes (Mastery). Cet écran apparaît à la fin de l’interaction initiée par le joueur et intégrera AUSSI les cartes jouées avant en Break In.
+	- Après un Run Away réussi, on aura AUSSI l’écran de récupération de cartes cité juste au dessus.
 
 Dialogue
 	- Un seul Dialogue avec un PNJ par jour.
