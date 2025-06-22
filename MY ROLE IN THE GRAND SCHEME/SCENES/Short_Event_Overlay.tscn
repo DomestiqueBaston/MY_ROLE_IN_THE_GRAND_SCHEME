@@ -974,13 +974,13 @@ offset_left = 512.0
 offset_top = 218.0
 offset_right = 538.0
 offset_bottom = 239.0
-theme_override_colors/font_disabled_color = Color(0.0785, 0.12, 0.0204, 0.756863)
+theme_override_colors/font_disabled_color = Color(0.163542, 0.25, 0.0425, 0.756863)
 theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
 theme_override_colors/font_hover_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
-theme_override_colors/font_color = Color(0.343, 0.49, 0.1372, 0.635294)
+theme_override_colors/font_color = Color(0.35, 0.5, 0.14, 0.635294)
 theme_override_colors/font_focus_color = Color(0.76725, 0.93, 0.5394, 0.647059)
-theme_override_colors/font_pressed_color = Color(0.341176, 0.490196, 0.137255, 0.635294)
+theme_override_colors/font_pressed_color = Color(0.35, 0.5, 0.14, 0.635294)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
@@ -998,7 +998,7 @@ offset_left = 490.0
 offset_top = 241.0
 offset_right = 539.0
 offset_bottom = 262.0
-theme_override_colors/font_disabled_color = Color(0.13, 0.0546867, 0.0273, 0.847059)
+theme_override_colors/font_disabled_color = Color(0.3, 0.1262, 0.063, 0.847059)
 theme_override_colors/font_hover_pressed_color = Color(1, 0.596078, 0.45098, 0.556863)
 theme_override_colors/font_hover_color = Color(1, 0.596078, 0.45098, 0.556863)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
@@ -1823,6 +1823,7 @@ libraries = {
 autoplay = "Text_Animation"
 
 [node name="Income_Start" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Income_Start_BG" type="Sprite2D" parent="Overlays/Income_Start"]
 position = Vector2(200, 25)
@@ -1830,7 +1831,6 @@ texture = ExtResource("59_vprm5")
 centered = false
 
 [node name="Income" type="Control" parent="Overlays/Income_Start"]
-visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
@@ -1964,6 +1964,7 @@ position = Vector2(283, 152)
 position = Vector2(319, 152)
 
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
+visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
