@@ -59,7 +59,7 @@ theme_override_colors/font_color = Color(0.1998, 0.27, 0.21969, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
 placeholder_text = "Name must fit"
-max_length = 13
+max_length = 12
 context_menu_enabled = false
 virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
@@ -262,6 +262,7 @@ parameters/looping = true
 
 [node name="Story" type="Label" parent="Creation_Page"]
 self_modulate = Color(1, 1, 1, 0.752941)
+layout_mode = 0
 offset_left = 375.0
 offset_top = 32.0
 offset_right = 608.0
