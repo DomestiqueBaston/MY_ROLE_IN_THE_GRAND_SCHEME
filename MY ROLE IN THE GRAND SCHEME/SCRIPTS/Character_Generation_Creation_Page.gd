@@ -106,7 +106,7 @@ func _on_reset_pressed():
 
 func _on_background_list_item_selected():
 	Globals.valid_sound.play()
-	$"../Story".text = $Background_Selector/Background_List.get_background_story()
+	$Story.text = $Background_Selector/Background_List.get_background_story()
 	_enable_disable_ok_button()
 
 func _enable_disable_ok_button():
@@ -120,7 +120,7 @@ func _on_confirm_pressed():
 	await Globals.valid_sound.finished
 	Player.reset()
 	Player.player_name = $Character_Name.text.strip_edges()
-	Player.sex = $"../SliderBg/HSlider".value / 100.0
+	Player.sex = $SliderBg/HSlider.value / 100.0
 	Player.background = $Background_Selector/Background_List.get_background()
 	Player.physical = _phy
 	Player.mental = _men
