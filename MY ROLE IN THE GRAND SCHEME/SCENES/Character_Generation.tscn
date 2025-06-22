@@ -32,22 +32,6 @@
 
 [node name="Character_Generation" type="Node2D"]
 
-[node name="A VIRER" type="Label" parent="."]
-offset_left = 2.0
-offset_top = 367.0
-offset_right = 124.0
-offset_bottom = 504.0
-theme = ExtResource("3_2pyp5")
-text = "^
-||
-CONFIRM sera désactivé tant qu'il restera des points à attribuer, qu'un nom ne sera pas renseigné et qu'un background n'aura pas été sélectionné !
-
-Randomize sélectionnera également un Background.
-
-Reset remettra tout à zéro."
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="Character_Generation_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_fahl1")
 centered = false
@@ -212,8 +196,6 @@ tooltip_text = "You need
 a past..."
 toggle_mode = false
 flat = true
-item_count = 1
-popup/item_0/id = 0
 script = ExtResource("5_2k6nw")
 
 [node name="Randomize" type="TextureButton" parent="Creation_Page"]
@@ -304,12 +286,14 @@ offset_bottom = 4.0
 theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="text_changed" from="Creation_Page/Character_Name" to="Creation_Page" method="_enable_disable_ok_button" unbinds=1]
 [connection signal="pressed" from="Creation_Page/PHY/PHY_Moins" to="Creation_Page" method="_on_phy_moins_pressed"]
 [connection signal="pressed" from="Creation_Page/PHY/PHY_Plus" to="Creation_Page" method="_on_phy_plus_pressed"]
 [connection signal="pressed" from="Creation_Page/MEN/MEN_Moins" to="Creation_Page" method="_on_men_moins_pressed"]
 [connection signal="pressed" from="Creation_Page/MEN/MEN_Plus" to="Creation_Page" method="_on_men_plus_pressed"]
 [connection signal="pressed" from="Creation_Page/HEA/HEA_Moins" to="Creation_Page" method="_on_hea_moins_pressed"]
 [connection signal="pressed" from="Creation_Page/HEA/HEA_Plus" to="Creation_Page" method="_on_hea_plus_pressed"]
+[connection signal="background_selected" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page" method="_on_background_list_item_selected"]
 [connection signal="button_down" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_down"]
 [connection signal="button_up" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_up"]
 [connection signal="item_selected" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_item_selected"]
@@ -324,5 +308,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Creation_Page/Cancel" to="Creation_Page" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Creation_Page/Confirm" to="Creation_Page" method="_on_any_button_pressed"]
+[connection signal="pressed" from="Creation_Page/Confirm" to="Creation_Page" method="_on_confirm_pressed"]
 [connection signal="value_changed" from="SliderBg/HSlider" to="Creation_Page" method="_on_h_slider_value_changed"]
