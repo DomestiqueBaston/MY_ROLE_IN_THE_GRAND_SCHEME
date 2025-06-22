@@ -939,3 +939,25 @@ Difficulté du jeu
 	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on la désactive de la même manière):
 		I am one of them : le Wan du joueur ne peut jamais dépasser 3.
 		
+
+Futures idées…
+	- La possibilité de filature.
+	- Recyclage de PNJs d’une enquête à l’autre.
+	- Le joueur initie les Combats (pourquoi?).
+	- Pouvoir vendre/acheter (objets, drogue…) pour se faire de l’argent.
+	- Événements aléatoires :
+		Grève, blackout, canicule…
+	- Plus de backgrounds, professions, lieux, objets, etc.
+	- Plus de cartes d’Interaction/Abstraites…
+	- Système de blessures (traumatismes, handicaps, empoisonnements, etc.) pouvant durer « un certain temps » ou être permanents.
+	- (Cartes) « Rumeurs » (vraies/fausses).
+	- Zones/quartiers à risque influençant Wan, Emo, Add, Rep ou augmentant le risque d’attaque (même de n’importe qui) ou au contraire, zones/quartiers sûrs…
+	- Mini-objectifs non obligatoires cachés qui donnent des avantages :
+		Ne jamais être en dessous de 200Dø pendant 10 jours.
+		Parler à un PNJ 5 fois sans qu’il fuit.
+		Résoudre 2 enquêtes sans se battre une seule fois.
+		…
+	- Traits du personnage joueur ou PNJ:
+		Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
+	- Indic’ : Un PNJ offre une info (vraie ou fausse) en échange d’une contrepartie.
+
