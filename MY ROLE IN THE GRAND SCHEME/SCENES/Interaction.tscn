@@ -541,6 +541,7 @@ offset_bottom = 19.0
 theme = ExtResource("18_k1rto")
 
 [node name="Dialogue" type="Label" parent="Top_Left_Screen/Interaction"]
+visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 0
 offset_top = 1.0
