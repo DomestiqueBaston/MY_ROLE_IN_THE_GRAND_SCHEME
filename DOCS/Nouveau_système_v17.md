@@ -943,6 +943,7 @@ Difficulté du jeu
 Futures idées…
 	- La possibilité de filature.
 	- Recyclage de PNJs d’une enquête à l’autre.
+	- Méta-réseau : des PNJs récurrents forment un réseau à « démasquer ».
 	- Le joueur initie les Combats (pourquoi?).
 	- Pouvoir vendre/acheter (objets, drogue…) pour se faire de l’argent.
 	- Événements aléatoires :
@@ -960,4 +961,13 @@ Futures idées…
 	- Traits du personnage joueur ou PNJ:
 		Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
 	- Indic’ : Un PNJ offre une info (vraie ou fausse) en échange d’une contrepartie.
-
+	- Au fur et à mesure que le joueur vire Paranoïaque, l’affichage de ses stats (Top_Bar.tscn) commence à « merder ».
+	- Un système de double-vie pour des PNJs ?
+	- Le joueur devient Détective privé « à temps partiel ». Cela lui permet de gagner de l’argent mais il perd du temps dans ses enquêtes. Pour cela il faudrait aller à l’agence d’intérim’ pour voir s’il y aurait du boulot pour lui. Bien entendu, il pourrait lui arriver des choses (bonnes ou mauvaises) dans ce boulot.
+	- Le Joueur est mytho’ et s’invente des suspects, victimes, coupables, etc.
+	- Fabrication de « fausse preuve ».
+	- Après la mort, le joueur a la possibilité de « revenir en arrière » et reprendre la partie depuis un moment aléatoire (ou pas).
+	- Chaque partie laisse des traces chez le (nouveau) joueur de la partie suivante (comme si la fille ou le fils reprenait la suite du père ou de la mère) : ce « mode » aurait surtout de l’intérêt si on intégrait quelques idées de cette liste.
+	- Add et Emo influent sur Rep.
+	- Rajouter des hobbies au joueur et PNJs pour d’autres bonus/malus.
+	- Des fois, le joueur « plane » et perd du temps à la redescente.
