@@ -7,6 +7,6 @@ func _ready():
 
 func _go_to_option_menu():
 	$Active_Scene/Title_Screen.fade_sound()
-	$Transition.start_transition()
+	await $Transition.start_transition()
 	$Active_Scene.add_child(_option_menu.instantiate())
 	$Active_Scene/Title_Screen.queue_free()

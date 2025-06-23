@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://mnqpfr0mjern"]
+[gd_scene load_steps=32 format=3 uid="uid://mnqpfr0mjern"]
 
 [ext_resource type="Script" uid="uid://dmc2lq0g1vdpj" path="res://SCRIPTS/Title.gd" id="1_h84ee"]
 [ext_resource type="Shader" uid="uid://bnirln5qw7a02" path="res://SHADERS/Glow.gdshader" id="2_f1yrr"]
@@ -24,18 +24,6 @@ shader_parameter/bloomRadius = 0.89
 shader_parameter/bloomThreshold = -0.75
 shader_parameter/bloomIntensity = 1.59
 shader_parameter/transparency = 0.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1srmu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60wq4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m18jf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mqiub"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ksti"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql7ww"]
 
 [sub_resource type="Animation" id="Animation_m073f"]
 resource_name = "Intro_In"
@@ -203,18 +191,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [0.776852, 0.7557, 0.734549, 0.713397, 0.692245, 0.671094, 0.649942, 0.62879, 0.607638, 0.586487, 0.565335, 0.544183, 0.523031, 0.50188, 0.480728, 0.459576, 0.438424, 0.417273, 0.396121, 0.374969, 0.353817, 0.332666, 0.311514, 0.290362, 0.26921, 0.248059, 0.226907, 0.205755, 0.184604, 0.163452, 0.142301, 0.12115, 0.1, 0.146344, 0.192686, 0.239029, 0.285371, 0.331713, 0.378055, 0.424397, 0.470739, 0.517081, 0.563423, 0.609766, 0.656108, 0.70245, 0.748792, 0.795134, 0.841476, 0.887818, 0.93416, 0.980502, 1.02684, 1.07319, 1.11953, 1.16587, 1.21221, 1.25855, 1.30489, 1.35124, 1.39758, 1.44392, 1.49026, 1.5366, 1.58294, 1.62928, 1.67562, 1.72196, 1.76831, 1.81465, 1.86099, 1.90732, 1.95366, 2.0, 1.9656, 1.9312, 1.8968, 1.86239, 1.82799, 1.79359, 1.75919, 1.72479, 1.69039, 1.65598, 1.62158, 1.58718, 1.55278, 1.51838, 1.48398, 1.44958, 1.41518, 1.38077, 1.34637, 1.31197, 1.27757, 1.24317, 1.20878, 1.17438, 1.14, 1.14815, 1.1563, 1.16445, 1.1726, 1.18075, 1.1889, 1.19704, 1.20519, 1.21334, 1.22149, 1.22964, 1.23779, 1.24593, 1.25408, 1.26223, 1.27038, 1.27853, 1.28668, 1.29482, 1.30297, 1.31112, 1.31927, 1.32742, 1.33556, 1.34371, 1.35186, 1.36, 1.62571, 1.89128, 2.15685, 2.42242, 2.68799, 2.95355, 3.21912, 3.48468, 3.75024, 4.0158, 4.28136, 4.54692, 4.81247, 5.07802, 5.34357, 5.60911, 5.87464, 6.14, 5.99707, 5.8542, 5.71134, 5.56848, 5.42562, 5.28276, 5.13989, 4.99703, 4.85417, 4.71131, 4.56845, 4.42559, 4.28273, 4.13987, 3.99701, 3.85415, 3.71129, 3.56844, 3.42558, 3.28273, 3.13987, 2.99702, 2.85416, 2.71131, 2.56846, 2.42561, 2.28276, 2.13991, 1.99706, 1.85422, 1.71138, 1.56854, 1.4257, 1.28288, 1.14, 1.14489, 1.14978, 1.15467, 1.15955, 1.16444, 1.16933, 1.17422, 1.17911, 1.184, 1.18889, 1.19378, 1.19867, 1.20356, 1.20845, 1.21334, 1.21823, 1.22311, 1.228, 1.23289, 1.23778, 1.24267, 1.24756, 1.25245, 1.25734, 1.26223, 1.26712, 1.27201, 1.27689, 1.28178, 1.28667, 1.29156, 1.29645, 1.30134, 1.30623, 1.31112, 1.316, 1.32089, 1.32578, 1.33067, 1.33556, 1.34045, 1.34534, 1.35022, 1.35511, 1.36, 1.62545, 1.89104, 2.15662, 2.4222, 2.68778, 2.95335, 3.21893, 3.4845, 3.75007, 4.01563, 4.28119, 4.54675, 4.8123, 5.07784, 5.34338, 5.60891, 5.87442, 6.14, 5.98854, 5.83701, 5.68548, 5.53395, 5.38242, 5.23088, 5.07936, 4.92782, 4.7763, 4.62477, 4.47324, 4.32171, 4.17019, 4.01866, 3.86714, 3.71562, 3.56409, 3.41257, 3.26105, 3.10954, 2.95802, 2.80651, 2.65499, 2.50348, 2.35197, 2.20046, 2.04896, 1.89746, 1.74596, 1.59447, 1.44299, 1.29151, 1.14, 1.14468, 1.14936, 1.15404, 1.15872, 1.16341, 1.16809, 1.17277, 1.17745, 1.18213, 1.18681, 1.19149, 1.19618, 1.20086, 1.20554, 1.21022, 1.2149, 1.21958, 1.22426, 1.22894, 1.23363, 1.23831, 1.24299, 1.24767, 1.25235, 1.25703, 1.26171, 1.26639, 1.27107, 1.27576, 1.28044, 1.28512, 1.2898, 1.29448, 1.29916, 1.30384, 1.30852, 1.3132, 1.31788, 1.32256, 1.32724, 1.33192, 1.3366, 1.34128, 1.34596, 1.35064, 1.35532, 1.36, 1.7584, 2.15679, 2.55518, 2.95355, 3.35193, 3.75028, 4.14864, 4.54697, 4.9453, 5.3436, 5.74186, 6.14, 6.00485, 5.86969, 5.73454, 5.59938, 5.46423, 5.32908, 5.19392, 5.05877, 4.92362, 4.78847, 4.65332, 4.51817, 4.38302, 4.24788, 4.11273, 3.97759, 3.84244, 3.7073, 3.57216, 3.43702, 3.30188, 3.16675, 3.03161, 2.89648, 2.76134, 2.62621, 2.49108, 2.35596, 2.22083, 2.08571, 1.9506, 1.81549, 1.68038, 1.54528, 1.41018, 1.2751, 1.14, 1.15047, 1.16095, 1.17143, 1.18191, 1.19238, 1.20286, 1.21334, 1.22382, 1.23429, 1.24477, 1.25525, 1.26572, 1.2762, 1.28668, 1.29715, 1.30763, 1.3181, 1.32858, 1.33905, 1.34953, 1.36, 1.34466, 1.32931, 1.31396, 1.29861, 1.28326, 1.26791, 1.25257, 1.23722, 1.22187, 1.20652, 1.19117, 1.17582, 1.16047, 1.14513, 1.12978, 1.11443, 1.09908, 1.08374, 1.06839, 1.05304, 1.03769, 1.02235, 1.007, 0.991655, 0.976308, 0.960962, 0.945616, 0.930271, 0.914926, 0.899581, 0.884237, 0.868893, 0.85355, 0.838207, 0.822865, 0.807524, 0.792185, 0.776852]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Next:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_nr3dl"]
 length = 0.001
@@ -289,18 +265,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.59]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Next:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ip08k"]
@@ -604,18 +568,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mqiub"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Next:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ksti"]
 _data = {
@@ -667,30 +619,8 @@ theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("8_1srmu")
 theme_override_font_sizes/font_size = 8
-text = "Click anytime..."
+text = "Click any time..."
 horizontal_alignment = 1
-
-[node name="Next" type="Button" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.941176)
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 288.0
-offset_top = 349.0
-offset_right = 352.0
-offset_bottom = 358.0
-theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("8_1srmu")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_1srmu")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_60wq4")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_m18jf")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_mqiub")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ksti")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ql7ww")
-text = "Click anytime..."
 
 [node name="Glow" type="AnimationPlayer" parent="."]
 libraries = {
@@ -738,5 +668,4 @@ volume_db = -5.0
 autoplay = true
 bus = &"AMBIANCE"
 
-[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="animation_finished" from="Glow" to="." method="_on_animation_player_animation_finished"]
