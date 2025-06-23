@@ -48,9 +48,9 @@ func start_game():
 	addiction = 0
 	wanted = 0
 	paranoia = 0
-	money = 300
+	money = 300 + bonus_malus.get("money", 0)
 	debts.clear()
-	drugs = 3
+	drugs = 3 + bonus_malus.get("drugs", 0)
 	cards.clear()
 
 	for card_list in [
@@ -68,5 +68,7 @@ func start_game():
 	print("PHY: ", physical)
 	print("MEN: ", mental)
 	print("HEA: ", health)
+	print("dough: %d Dø" % money)
+	print("drugs: %d doses" % drugs)
 	for card in cards:
 		print("%s card: %s (%s)" % [card.type, card.name, card.id])
