@@ -1,6 +1,7 @@
 extends Node2D
 
-var _option_menu = preload("res://SCENES/Option_Menu.tscn")
+## Signal emitted when the user clicks on the Next button.
+signal next
 
 func _on_animation_player_animation_finished(_anim_name):
 	$Glow.play("Intro_Loop")
@@ -8,4 +9,4 @@ func _on_animation_player_animation_finished(_anim_name):
 	$Map_Anim.play("Intro_Loop")
 
 func _on_next_pressed():
-	$Transition.start_transition_to(_option_menu)
+	next.emit()

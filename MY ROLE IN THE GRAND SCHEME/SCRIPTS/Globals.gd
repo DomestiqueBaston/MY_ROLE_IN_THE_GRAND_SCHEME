@@ -78,6 +78,18 @@ func _unhandled_input(event: InputEvent):
 		get_viewport().set_input_as_handled()
 
 ##
+## Hides the shader overlay layer (temporarily).
+##
+func hide_shader_overlay():
+	$ShaderOverlayLayer.hide()
+
+##
+## Makes the shader overlay layer visible after a call to hide_shader_overlay().
+##
+func show_shader_overlay():
+	$ShaderOverlayLayer.show()
+
+##
 ## As long as the mouse is "grabbed", mouse motion events will report no
 ## movement, meaning that nodes' _input() methods will not detect any movement.
 ## The user, however, will not see the difference: see the Mouse node. Be sure
