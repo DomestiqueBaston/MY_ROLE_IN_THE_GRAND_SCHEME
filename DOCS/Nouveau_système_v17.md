@@ -674,17 +674,19 @@ Enquête
 
 Lieu du crime et Lieu caché
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
-	- Le domicile du/des coupable(s) peut/peuvent aussi contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
+	- Le/les domicile(s) du/des coupable(s) peut/peuvent aussi contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
 	- Le lieu du crime est connu dès le départ en suivant : 0, 0.25, 0.5, 0.75 ou 1 chance sur 1 (dans Crime_Motive_Evidence.json à « known_crime_location »).
 
 Evolution du statut des cartes de « normal » en Preuves/Pièces à conviction et inversement
-	- Le statue d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé).
+	- Le statut d’Evidence est donné à une carte par l’établissement d’un lien Plein. Défaire tous les liens pleins d’une carte lui fait perdre ce statut (et son bonus potentiel aux jets de dé s’il est bon dans l’enquête).
 	- Seul le joueur peut donner le statut d’Evidence à une carte.
-	- Toute nouvelle carte découverte est placée en jeu (Main.tscn) avec un Lien Violet la liant au Lieu de découverte, à un ou des PNJs ou autres en fonction de la découverte et des liens qu’elle révèle.
+	- Toute nouvelle carte découverte est placée en jeu (Main.tscn) avec un Lien Violet et de la couleur la liant au Lieu de découverte, à un ou des PNJs ou autres en fonction de la découverte et des liens qu’elle révèle.
 		Carte PNJ : Toutes les couleurs de liens sont possibles depuis ou vers ces cartes.
 		Carte Objet : Noir, Vert, Rouge/Jaune, Violet Clair et Violet sont possibles.
 		Carte Lieu : Blanc, Noir, Vert Clair, Marron, Turquoise, Bleu Très Foncé, Rouge/Jaune, Violet Clair et Violet sont possibles.
-		Il faut au minimum 1 Coupable, 1 Evidence (avec leurs liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête sinon le menu « Validate Case » ne sera pas activé.
+		Pour tous les types de cartes, dans l’absolu Rouge/Jaune sont possibles, oui mais pas dans le cas de la révélation d’une carte : le jeu n’établit pas ces liens.
+
+		Il faut au minimum 1 Coupable, 1 Evidence (avec liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête sinon le menu « Validate Case » ne sera pas activé.
 	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Reserve » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn).
 
 Liens entre les éléments dans l’enquête (Main.tscn)
