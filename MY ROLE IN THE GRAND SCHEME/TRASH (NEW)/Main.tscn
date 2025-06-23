@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bbribvre0wfms" path="res://GRAPHICS/LINK_PIN/Plein_Rouge.png" id="22_eja4x"]
 [ext_resource type="Texture2D" uid="uid://bpjj5wybp5le0" path="res://GRAPHICS/LINK_PIN/Plein_Rose_50.png" id="22_l5fu3"]
 [ext_resource type="Texture2D" uid="uid://dw62n1rh1qgpm" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Clair.png" id="23_1cqhn"]
-[ext_resource type="PackedScene" uid="uid://c70knjwv7pvfv" path="res://SCENES/TEST_LINK.tscn" id="23_pharv"]
+[ext_resource type="PackedScene" uid="uid://c70knjwv7pvfv" path="res://TRASH (NEW)/TEST_LINK.tscn" id="23_pharv"]
 [ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="24_35y2t"]
 [ext_resource type="Texture2D" uid="uid://ckvownclb2bny" path="res://GRAPHICS/LINK_PIN/Plein_Vert_Fonce_50.png" id="24_j6pb0"]
 [ext_resource type="Texture2D" uid="uid://b7b4rwklswg48" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png" id="24_lp1fx"]
