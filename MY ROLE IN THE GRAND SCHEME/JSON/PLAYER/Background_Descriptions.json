@@ -166,7 +166,7 @@
 	{
 		"id": "JOB024",
 		"profession": "Unemployed",
-		"bonus_malus": {},
+		"bonus_malus": {"cards": 1},
 		"special": "+1 carte",
 		"comment_1": "+1 carte aléatoire au départ de la partie",
 		"description": "No alarm clock, no schedules, no paychecks. At first, it felt like freedom. Then it started to feel like falling. Days blurred into nights, job applications turned into rejection letters, and the city moved on without me. It's strange how you frantically start needing to find a place in society as no one seems to care about you.\n\nDesperation has a way of sharpening the senses. I started seeing things, little inconsistencies, small details others ignored. The neighbor who left every morning with a briefcase but never seemed to work. The same black car parked outside my building three nights in a row. A missing person poster that disappeared too quickly.\n\nOne day, I followed a hunch. A simple curiosity about a man who didn't seem to belong. I trailed him through the streets, past shops and stations, until he slipped into an unmarked door. What I saw inside changed everything.\n\nI didn't have a job, but I had a purpose. No office, no boss, just instincts and a growing list of questions. I had fallen, but I had landed on something real. It was time to stop searching for work and start searching for the truth."

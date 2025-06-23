@@ -53,14 +53,28 @@ func start_game():
 	drugs = 3 + bonus_malus.get("drugs", 0)
 	cards.clear()
 
-	for card_list in [
+	var card_lists = [
 		_dialogue_cards.get("dialogue", []),
 		_combat_cards.get("combat", []),
 		_investigation_cards.get("investigation", []),
 		_abstract_cards.get("abstract", [])
-	]:
+	]
+
+	# all players start with one card from each category
+
+	for card_list in card_lists:
 		if not card_list.is_empty():
 			cards.append(card_list[randi_range(0, card_list.size() - 1)])
+
+	# some players get bonus cards
+
+	var init_card_count = cards.size() + bonus_malus.get("cards", 0)
+	while cards.size() < init_card_count:
+		var card_list = card_lists[randi_range(0, card_lists.size() - 1)]
+		if not card_list.is_empty():
+			var card = card_list[randi_range(0, card_list.size() - 1)]
+			if not card in cards:
+				cards.append(card)
 
 	print("player: ", player_name)
 	print("sex: ", sex)
