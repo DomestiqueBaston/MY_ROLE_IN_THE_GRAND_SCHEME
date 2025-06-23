@@ -1823,7 +1823,6 @@ libraries = {
 autoplay = "Text_Animation"
 
 [node name="Income_Start" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Income_Start_BG" type="Sprite2D" parent="Overlays/Income_Start"]
 position = Vector2(200, 25)
@@ -1831,6 +1830,7 @@ texture = ExtResource("59_vprm5")
 centered = false
 
 [node name="Income" type="Control" parent="Overlays/Income_Start"]
+visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
@@ -1880,7 +1880,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
 
 
 
- Not that it'll make any change!"
+[center]Not that it'll make any change![/center]"
 
 [node name="Money_Cards" type="FlowContainer" parent="Overlays/Income_Start/Income/Chalk"]
 offset_left = -73.0
@@ -1964,7 +1964,6 @@ position = Vector2(283, 152)
 position = Vector2(319, 152)
 
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
-visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
@@ -1996,7 +1995,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]A fre
 
  - [color=#ff8864]Alright[/color]. Now that the '[color=#ff1c18]agen-cy[/color]' is [color=#ff8864]running[/color], you[color=#ff8864] don't have much [color=#ff1c18]left[/color] in your[/color] [color=#ff1c18]pocket[/color]:
 
- - [color=#ff1c18]   [/color][color=#ff8864]Dø[/color] in hand and [color=#ff1c18]3[/color] [color=#ff8864]drug doses[/color].
+ - [color=#ff1c18]   [/color][color=#ff8864]Dø[/color] in hand and [color=#ff1c18] [/color] [color=#ff8864]drug doses[/color].
  - The [color=#ff8864]books[/color] you read made [color=#ff1c18]you learn this[/color]:
 
 
@@ -2010,10 +2009,10 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]A fre
 
 
 
- Not that it'll make any change!"
+[center]Already seeing the 5m belly flop![/center]"
 
 [node name="Money" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
-offset_left = -66.0
+offset_left = -59.0
 offset_top = -54.0
 offset_right = -42.0
 offset_bottom = -45.0
@@ -2021,6 +2020,18 @@ theme = ExtResource("60_llwhl")
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 bbcode_enabled = true
 text = "300"
+fit_content = true
+horizontal_alignment = 2
+
+[node name="Drug" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
+offset_left = 27.0
+offset_top = -54.0
+offset_right = 36.0
+offset_bottom = -45.0
+theme = ExtResource("60_llwhl")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "3"
 fit_content = true
 horizontal_alignment = 2
 
