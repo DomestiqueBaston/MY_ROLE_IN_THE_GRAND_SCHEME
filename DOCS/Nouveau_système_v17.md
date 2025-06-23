@@ -110,7 +110,7 @@ Backgrounds
 		- Retraité : -1PHY, +1MEN, -1HEA et maxHEA
 		- Super héro à temps partiel : +2PHY, -2MEN
 		- Taxidermiste : -1MEN, +1HEA et maxHEA
-		- Toxicomane : -1MEN, -1HEA et maxHEA,  -50 % sur le prix de la drogue, bonus de 1 jets de dé de sous/surdose
+		- Toxicomane : -1MEN, -1HEA et maxHEA,  -50 % sur le prix de la drogue, bonus de 1 jets de dé de sous/surdose, +1 dose de drogue au démarrage de la partie
 		- Vendeur de glaces : +300Dø au démarrage de la partie
 		- Vétérinaire : -50 % sur les interventions thérapeutiques (médecin)
 
@@ -211,7 +211,7 @@ La réputation du joueur auprès d’un PNJ
 
 Système de santé
 Cas de PHY=0 et/ou MEN=0
-	- Si au moins une des deux caractéristiques atteint 0, le joueur restera chez lui (lieu sûr). Il aura alors besoin d’une journée complète (24h) de repos pour récupérer et remettre sa ou ses caractéristiques (PHY et MEN) à 1. Par la même occasion, il récupèrera comme une nuit de 12h (mais qui aura duré 24h). (voir Récupération)
+	- Si au moins une des deux caractéristiques atteint 0, le joueur restera chez lui (lieu sûr avec la prison !). Il aura alors besoin d’une journée complète (24h) de repos pour récupérer et remettre sa ou ses caractéristiques (PHY et MEN) à 1. Par la même occasion, il récupèrera comme une nuit de 12h (mais qui aura duré 24h). (voir Récupération)
 	- Pendant la Paranoïa, cela signifie la mort car le joueur ne dort plus !
 
 Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par
@@ -348,9 +348,12 @@ Les achats/dépenses
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc possiblement avant l’arrivée du joueur).
 
 Le bureau
-	- C’est le seul endroit où le joueur ne peut pas être agressé.
+	- C’est le seul des 2 endroits où le joueur ne peut pas être agressé.
 	- C’est également de là qu’il établie ses relations d’enquête (Main.tscn).
 	- Lorsque le joueur s’y trouve, son repère (« vous êtes ici ») sur la carte disparaît.
+
+La prison
+	- C’est l’autre endroit où le joueur ne peut pas être agressé.
 
 Système de Dés
 	- Lors des jets de dé, il faut que le jet de dé soit inférieur ou égal au score à effectuer (pour une réussite).
@@ -594,7 +597,7 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
 	- Pas d’attaque de sbire dans les enquêtes de niveau 0.
 	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale).
-	- /!\ Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr où le joueur ne peut pas être attaqué)! /!\ 
+	- /!\ Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr avec la prison où le joueur ne peut pas être attaqué)! /!\ 
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
 	- Si le joueur fouille le sbire mort, avec une probabilité de 10%, le joueur se verra révéler le nom du/d’un des coupable(s) du crime de l’enquête (aléatoirement s’il y en a plusieurs) (établissement d’un Lien Violet) et comme pour un « non sbire », on peut aussi trouver de l’argent avec les même probabilités (voir plus haut à Combat). Être attaqué n’est pas une preuve pour l’enquête.
@@ -719,7 +722,7 @@ Lieu du crime	Lieu (possiblement inconnu au départ et automatiquement connu lor
 Nombre de PNJs inutiles	Voir Nombre de PNJs en plus de ceux liés à l’enquêtes (PNJs « inutiles »)
 Indices/témoins	PNJ(s) (témoin : erreur (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)). 1 seule info (lien uniquement et concernant d’autres NPCs que lui mais pas PNJ inutile). Voir règles pour info fausse ! (niveau 6 : 0)
 Evidence(s)	Objet(s), PNJ(s), Liens
-Victime(s)	Voir json des mobiles (niveau 6 : les victimes ne sont pas trouvées au départ : il faut les rechercher !)
+Victime(s)	Voir json des mobiles (niveau 6 : les victimes ne sont pas trouvées au départ : il faut les retrouver !)
 Témoin(s)	Voir json des mobiles
 Suspect(s) de départ	Voir json des mobiles
 Coupable(s)	Voir json des mobiles
