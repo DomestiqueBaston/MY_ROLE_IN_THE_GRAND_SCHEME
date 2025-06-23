@@ -116,7 +116,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Next:visible")
+tracks/6/path = NodePath("Go_Next:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -592,14 +592,14 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Next:self_modulate")
+tracks/0/path = NodePath("Go_Next:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.333333, 0.4, 0.534875),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_mqiub"]
@@ -657,6 +657,19 @@ texture = ExtResource("6_1srmu")
 centered = false
 metadata/_edit_lock_ = true
 
+[node name="Go_Next" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.588235)
+offset_left = 288.0
+offset_top = 345.0
+offset_right = 352.0
+offset_bottom = 353.0
+theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("8_1srmu")
+theme_override_font_sizes/font_size = 8
+text = "Click anytime..."
+horizontal_alignment = 1
+
 [node name="Next" type="Button" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.941176)
@@ -677,7 +690,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_m18jf")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_mqiub")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ksti")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ql7ww")
-text = "Click any time..."
+text = "Click anytime..."
 
 [node name="Glow" type="AnimationPlayer" parent="."]
 libraries = {
