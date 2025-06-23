@@ -81,6 +81,7 @@ func _unhandled_input(event: InputEvent):
 ## Hides the shader overlay layer and mouse cursor (temporarily).
 ##
 func hide_ui_layers():
+	$MouseLayer.hide()
 	$ShaderOverlayLayer.hide()
 
 ##
@@ -88,6 +89,7 @@ func hide_ui_layers():
 ## hide_ui_layers().
 ##
 func show_ui_layers():
+	$MouseLayer.show()
 	$ShaderOverlayLayer.show()
 
 ##
