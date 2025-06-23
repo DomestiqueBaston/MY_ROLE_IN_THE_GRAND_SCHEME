@@ -89,7 +89,7 @@ Backgrounds
 		- Catcheur : +1PHY, -1MEN
 		- Champion de fléchettes : -1PHY, +1MEN
 		- Chercheur en physique quantique : -1PHY, +2MEN, -1HEA et maxHEA
-		- Chômeur : /
+		- Chômeur : +1 carte aléatoire au départ
 		- Choriste : +1PHY
 		- Concierge (background « cheaté ») : +1PHY, +1MEN, +1HEA et maxHEA
 		- Cuisinier végan : +2HEA et maxHEA

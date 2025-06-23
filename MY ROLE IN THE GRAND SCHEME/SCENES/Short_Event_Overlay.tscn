@@ -1951,16 +1951,16 @@ text = " to) improve yourself...
 fit_content = true
 autowrap_mode = 0
 
-[node name="TMP" type="Node2D" parent="Overlays/Income_Start/Income"]
+[node name="TMP_1_à_6_cartes" type="Node2D" parent="Overlays/Income_Start/Income"]
 position = Vector2(0, 12)
 
-[node name="Card1" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card1" parent="Overlays/Income_Start/Income/TMP_1_à_6_cartes" instance=ExtResource("63_t8uoa")]
 position = Vector2(247, 152)
 
-[node name="Card3" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card3" parent="Overlays/Income_Start/Income/TMP_1_à_6_cartes" instance=ExtResource("63_t8uoa")]
 position = Vector2(283, 152)
 
-[node name="Card2" parent="Overlays/Income_Start/Income/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card2" parent="Overlays/Income_Start/Income/TMP_1_à_6_cartes" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
 
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
@@ -2044,19 +2044,19 @@ position = Vector2(247, 152)
 [node name="Last_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
 position = Vector2(319, 152)
 
-[node name="TMP" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
+[node name="TMP_4_à_5_cartes" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
 position = Vector2(0, 12)
 
-[node name="Card1" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card1" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
 position = Vector2(247, 152)
 
-[node name="Card3" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card3" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
 position = Vector2(271, 152)
 
-[node name="Card2" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card2" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
 position = Vector2(295, 152)
 
-[node name="Card4" parent="Overlays/Income_Start/Starting_Hand/TMP" instance=ExtResource("63_t8uoa")]
+[node name="Card4" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
 position = Vector2(319, 152)
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]

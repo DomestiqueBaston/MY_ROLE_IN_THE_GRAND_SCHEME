@@ -45,7 +45,7 @@
 		"id": "JOB007",
 		"profession": "Drug Addict",
 		"bonus_malus": {"MEN": -1, "HEAnom": -1, "HEA": -1},
-		"special": {"discount": "-50%", "bonus": "bonus 1"},
+		"special": {"discount": "-50%", "bonus": "bonus 1", "drug_dose": 1},
 		"comment_1": "-50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose, +1 dose de drogue",
 		"description": "I've been to places most people wouldn't dare imagine, lost in a world where the boundaries of right and wrong blurred into nothing. The drugs, the chaos, the grime (it was all I knew for a time). I found myself in the depths, but eventually, something snapped. I pulled myself out (don't ask me how; I barely remember), but the scars, the remnants of that life, never truly disappeared.\n\nI thought I left it all behind. I found a new path, a new purpose. As a private detective now, I try to help others who are lost, guiding them out of their darkness. But the truth is, I've never fully escaped. Every case I take, every shadow I chase, pulls me back into that world I swore I'd left. The streets, the lies, the filth, it all comes rushing back. And to get over it, believe me, it takes strength I don't always have.\n\nI clean up the mess of others, but I can't help but feel I'm still wading through my own. Every mystery I solve reminds me that the grime I once lived in never really left. I still carry that burden. It's just a different kind of dirt I'm digging through now."
 	},
@@ -167,7 +167,8 @@
 		"id": "JOB024",
 		"profession": "Unemployed",
 		"bonus_malus": {},
-		"special": "",
+		"special": "+1 carte",
+		"comment_1": "+1 carte aléatoire au départ de la partie",
 		"description": "No alarm clock, no schedules, no paychecks. At first, it felt like freedom. Then it started to feel like falling. Days blurred into nights, job applications turned into rejection letters, and the city moved on without me. It's strange how you frantically start needing to find a place in society as no one seems to care about you.\n\nDesperation has a way of sharpening the senses. I started seeing things, little inconsistencies, small details others ignored. The neighbor who left every morning with a briefcase but never seemed to work. The same black car parked outside my building three nights in a row. A missing person poster that disappeared too quickly.\n\nOne day, I followed a hunch. A simple curiosity about a man who didn't seem to belong. I trailed him through the streets, past shops and stations, until he slipped into an unmarked door. What I saw inside changed everything.\n\nI didn't have a job, but I had a purpose. No office, no boss, just instincts and a growing list of questions. I had fallen, but I had landed on something real. It was time to stop searching for work and start searching for the truth."
 	},
 	{
