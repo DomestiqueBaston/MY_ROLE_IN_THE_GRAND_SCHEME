@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=246 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -518,6 +518,18 @@ _data = {
 content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0b85y"]
+content_margin_top = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efgx4"]
+content_margin_top = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqy00"]
+content_margin_top = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cde65"]
+content_margin_top = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q1jpv"]
 
@@ -2970,12 +2982,12 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 37.0
 offset_right = 188.0
-offset_bottom = 25.0
+offset_bottom = 26.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
-theme_override_constants/line_separation = -2
+theme_override_constants/line_separation = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
 bbcode_enabled = true
-text = "(see \"more_explicit_name_2\" in Zero_Level_Crime_Motive...json)"
+text = "(see \"more_explicit_name_2\" in Zero_Level_Crime_Motive...json)."
 autowrap_mode = 2
 
 [node name="Separator" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
@@ -2993,7 +3005,7 @@ horizontal_alignment = 1
 [node name="VBoxContainer" type="HBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
 layout_mode = 0
 offset_left = 91.0
-offset_top = 77.0
+offset_top = 76.0
 offset_right = 280.0
 offset_bottom = 160.0
 pivot_offset = Vector2(102, 219)
@@ -3007,7 +3019,6 @@ text = "Happens all the time:
 [color=#ff8864]Someone[/color] just mentioned [color=#ff8864]something[/color]. [color=#ff1c18]Probably nothing[/color], but [color=#ff8864]I could use some [/color][color=#ff1c18]cash[/color].
 "
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Info_Container" type="VBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer"]
 custom_minimum_size = Vector2(116, 0)
@@ -3042,6 +3053,7 @@ layout_mode = 2
 tooltip_text = "Info related to
 NPC"
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0b85y")
 text = "Jean-Marc Papageorgiou"
 fit_content = true
 autowrap_mode = 0
@@ -3073,6 +3085,7 @@ layout_mode = 2
 tooltip_text = "Info related to
 NPC"
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_efgx4")
 text = "Jessica Rémenconne"
 fit_content = true
 autowrap_mode = 0
@@ -3104,6 +3117,7 @@ layout_mode = 2
 tooltip_text = "Info related to
 NPC"
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xqy00")
 text = "Aude Toilète"
 fit_content = true
 autowrap_mode = 0
@@ -3135,6 +3149,7 @@ layout_mode = 2
 tooltip_text = "Info related to
 NPC"
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
 text = "Library"
 fit_content = true
 autowrap_mode = 0
@@ -3157,9 +3172,9 @@ script = ExtResource("92_bnyoh")
 
 [node name="Cancel" type="Button" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content"]
 self_modulate = Color(1, 1, 1, 0.784314)
-offset_left = 366.0
+offset_left = 341.0
 offset_top = 248.0
-offset_right = 394.0
+offset_right = 392.0
 offset_bottom = 256.0
 theme = ExtResource("88_hjqqn")
 theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
@@ -3168,7 +3183,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.71, 0.34648, 0.2556, 0.823529)
 theme_override_colors/font_focus_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
-text = "Cancel"
+text = "No thanks..."
 script = ExtResource("92_bnyoh")
 
 [node name="Load_Save_Delete" type="Node2D" parent="Overlays"]
