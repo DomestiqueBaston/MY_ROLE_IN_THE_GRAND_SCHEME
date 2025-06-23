@@ -12,3 +12,4 @@ func start_transition():
 
 func _on_animation_finished(_anim_name):
 	transition_finished.emit()
+	hide()
