@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MY ROLE IN THE GRAND SCHEME"
-run/main_scene="uid://mnqpfr0mjern"
+run/main_scene="uid://bhyt5c2nh7ug2"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -37,6 +37,10 @@ window/vsync/vsync_mode=0
 window/layer_1="Mouse"
 window/layer_2="Card_Top"
 window/layer_3="Pin"
+
+[editor]
+
+movie_writer/main_scene="uid://mnqpfr0mjern"
 
 [file_customization]
 

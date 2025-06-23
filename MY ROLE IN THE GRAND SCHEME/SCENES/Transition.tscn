@@ -138,7 +138,7 @@ libraries = {
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_6sqla")
-volume_db = -12.5
-bus = &"UI"
+volume_db = -15.0
+bus = &"AMBIANCE"
 
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

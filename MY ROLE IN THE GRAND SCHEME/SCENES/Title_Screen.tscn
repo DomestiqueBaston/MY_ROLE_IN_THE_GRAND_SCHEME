@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://mnqpfr0mjern"]
+[gd_scene load_steps=38 format=3 uid="uid://mnqpfr0mjern"]
 
 [ext_resource type="Script" uid="uid://dmc2lq0g1vdpj" path="res://SCRIPTS/Title.gd" id="1_h84ee"]
 [ext_resource type="Shader" uid="uid://bnirln5qw7a02" path="res://SHADERS/Glow.gdshader" id="2_f1yrr"]
@@ -411,6 +411,68 @@ _data = {
 &"RESET": SubResource("Animation_fhnfq")
 }
 
+[sub_resource type="Animation" id="Animation_1srmu"]
+resource_name = "Fade_Out"
+length = 0.466673
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hum:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [-10.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("City_Noise:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(3, 1),
+"update": 0,
+"values": [-5.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_1ksti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hum:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-10.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("City_Noise:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-5.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q73in"]
+_data = {
+&"Fade_Out": SubResource("Animation_1srmu"),
+&"RESET": SubResource("Animation_1ksti")
+}
+
 [sub_resource type="Animation" id="Animation_60wq4"]
 resource_name = "Intro_Loop"
 length = 12.0
@@ -635,6 +697,11 @@ libraries = {
 }
 autoplay = "Hum"
 
+[node name="Sound_Fade_Out" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q73in")
+}
+
 [node name="Map_Anim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_m18jf")
@@ -648,13 +715,13 @@ autoplay = "Blink"
 
 [node name="Hum" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_6wwaa")
-volume_db = -30.0
+volume_db = -10.0
 autoplay = true
 bus = &"AMBIANCE"
 
 [node name="City_Noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ov33t")
-volume_db = -25.0
+volume_db = -5.0
 autoplay = true
 bus = &"AMBIANCE"
 
