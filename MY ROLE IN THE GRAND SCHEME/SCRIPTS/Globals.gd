@@ -78,15 +78,16 @@ func _unhandled_input(event: InputEvent):
 		get_viewport().set_input_as_handled()
 
 ##
-## Hides the shader overlay layer (temporarily).
+## Hides the shader overlay layer and mouse cursor (temporarily).
 ##
-func hide_shader_overlay():
+func hide_ui_layers():
 	$ShaderOverlayLayer.hide()
 
 ##
-## Makes the shader overlay layer visible after a call to hide_shader_overlay().
+## Makes the shader overlay layer and mouse cursor visible after a call to
+## hide_ui_layers().
 ##
-func show_shader_overlay():
+func show_ui_layers():
 	$ShaderOverlayLayer.show()
 
 ##
