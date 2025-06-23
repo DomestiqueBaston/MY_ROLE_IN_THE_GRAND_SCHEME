@@ -125,11 +125,4 @@ func _on_confirm_pressed():
 	Player.physical = _phy
 	Player.mental = _men
 	Player.max_health = _hea
-	Player.health = _hea
-	print("name: ", Player.player_name)
-	print("sex: ", Player.sex)
-	if "profession" in Player.background:
-		print("profession: ", Player.background["profession"])
-	print("PHY: ", Player.physical)
-	print("MEN: ", Player.mental)
-	print("HEA: ", Player.health)
+	Player.start_game()

@@ -1,6 +1,6 @@
 extends OptionButton
 
-var _backgrounds
+var _backgrounds = preload("res://JSON/PLAYER/Background_Descriptions.json").data
 
 signal background_selected
 
@@ -8,9 +8,6 @@ func _ready():
 	var popup = get_popup()
 	popup.transparent = true
 	popup.max_size = Vector2(162, 101)
-
-	var json: JSON = ResourceLoader.load("res://JSON/PLAYER/Background_Descriptions.json")
-	_backgrounds = json.data["background"]
 
 	if _backgrounds is Array and _backgrounds.size() > 0:
 		for item in _backgrounds:
