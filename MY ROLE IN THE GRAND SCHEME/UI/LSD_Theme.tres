@@ -1,9 +1,21 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://bjtyhq3g0w8r3"]
+[gd_resource type="Theme" load_steps=36 format=3 uid="uid://bjtyhq3g0w8r3"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_17jby"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_wr31g"]
 [ext_resource type="Texture2D" uid="uid://c7c30oooo7t20" path="res://GRAPHICS/CHARACTER_GENERATION/Arrow_Down.png" id="3_lotah"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_qvmg3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8tu04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bt6in"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ielfx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qud2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxjkx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvpjf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
 
@@ -84,6 +96,18 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [resource]
 default_font = ExtResource("2_wr31g")
 default_font_size = 8
+Button/colors/font_color = Color(0.94, 0.67492, 0.4982, 0.882353)
+Button/colors/font_focus_color = Color(0.941176, 0.67451, 0.498039, 0.882353)
+Button/colors/font_hover_color = Color(0.98, 0.88004, 0.8134, 0.882353)
+Button/colors/font_hover_pressed_color = Color(0.941176, 0.67451, 0.498039, 0.882353)
+Button/colors/font_pressed_color = Color(0.941176, 0.67451, 0.498039, 0.882353)
+Button/constants/outline_size = 3
+Button/styles/disabled = SubResource("StyleBoxEmpty_8tu04")
+Button/styles/focus = SubResource("StyleBoxEmpty_bt6in")
+Button/styles/hover = SubResource("StyleBoxEmpty_ielfx")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_qud2b")
+Button/styles/normal = SubResource("StyleBoxEmpty_kxjkx")
+Button/styles/pressed = SubResource("StyleBoxEmpty_lvpjf")
 HSlider/icons/grabber = ExtResource("1_17jby")
 HSlider/icons/grabber_disabled = ExtResource("1_17jby")
 HSlider/icons/grabber_highlight = ExtResource("1_17jby")

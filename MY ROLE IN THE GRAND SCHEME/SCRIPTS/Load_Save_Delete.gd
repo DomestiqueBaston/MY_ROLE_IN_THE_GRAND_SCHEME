@@ -20,6 +20,12 @@ func _on_delete_pressed():
 	await Globals.cancel_sound.finished
 	$"../../On_Off".play("Disappearance")
 	await $"../../On_Off".animation_finished
+	
+func _on_quit_pressed():
+	Globals.cancel_sound.play()
+	await Globals.cancel_sound.finished
+	$"../../On_Off".play("Disappearance")
+	await $"../../On_Off".animation_finished
 
 
 func _on_mouse_entered():
