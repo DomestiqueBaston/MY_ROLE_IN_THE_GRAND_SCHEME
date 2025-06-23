@@ -1,10 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://cjvtdra3n1tqy"]
+[gd_scene load_steps=29 format=3 uid="uid://cjvtdra3n1tqy"]
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
 [ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
 [ext_resource type="Script" uid="uid://c2csir6vwy570" path="res://SCRIPTS/Character_Generation_Creation_Page.gd" id="3_e7ryn"]
 [ext_resource type="Script" uid="uid://bmxi3h6w8e6tp" path="res://SCRIPTS/Character_Generation_Option_Button.gd" id="5_2k6nw"]
-[ext_resource type="Script" uid="uid://d4abcp002xbr0" path="res://SCRIPTS/Character_Name.gd" id="5_nmg6f"]
 [ext_resource type="Texture2D" uid="uid://buhsc5yt68kjy" path="res://GRAPHICS/CHARACTER_GENERATION/Moins_Normal.png" id="6_f1shx"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="6_ntsua"]
 [ext_resource type="Texture2D" uid="uid://bsmeu2oywfdoq" path="res://GRAPHICS/CHARACTER_GENERATION/Plus_Normal.png" id="7_0ruwj"]
@@ -50,7 +49,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_left = 136.0
 offset_top = 61.0
-offset_right = 216.0
+offset_right = 208.0
 offset_bottom = 77.0
 theme_override_colors/selection_color = Color(0.1998, 0.27, 0.21969, 0.341176)
 theme_override_colors/caret_color = Color(0.1998, 0.27, 0.21969, 0.662745)
@@ -60,6 +59,7 @@ theme_override_colors/font_color = Color(0.1998, 0.27, 0.21969, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
 placeholder_text = "Name must fit"
+max_length = 12
 context_menu_enabled = false
 virtual_keyboard_enabled = false
 shortcut_keys_enabled = false
@@ -69,7 +69,6 @@ flat = true
 draw_control_chars = true
 caret_blink = true
 caret_blink_interval = 0.5
-script = ExtResource("5_nmg6f")
 
 [node name="PHY" type="Label" parent="Creation_Page"]
 layout_mode = 0
@@ -288,7 +287,7 @@ offset_bottom = 4.0
 theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="text_changed" from="Creation_Page/Character_Name" to="Creation_Page/Character_Name" method="_on_text_changed"]
+[connection signal="text_changed" from="Creation_Page/Character_Name" to="Creation_Page" method="_enable_disable_ok_button" unbinds=1]
 [connection signal="pressed" from="Creation_Page/PHY/PHY_Moins" to="Creation_Page" method="_on_phy_moins_pressed"]
 [connection signal="pressed" from="Creation_Page/PHY/PHY_Plus" to="Creation_Page" method="_on_phy_plus_pressed"]
 [connection signal="pressed" from="Creation_Page/MEN/MEN_Moins" to="Creation_Page" method="_on_men_moins_pressed"]
