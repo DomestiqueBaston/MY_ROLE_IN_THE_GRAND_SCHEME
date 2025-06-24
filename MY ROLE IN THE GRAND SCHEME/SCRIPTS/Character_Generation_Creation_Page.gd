@@ -95,8 +95,8 @@ func _on_hea_plus_pressed():
 func _on_randomize_pressed():
 	Globals.valid_sound.play()
 	$Background_Selector/Background_List.randomize()
-	_phy = randi_range(3, _total_points - 6)
-	_men = randi_range(3, _total_points - _phy - 3)
+	_phy = randi_range(3, 7)
+	_men = randi_range(3, mini(7, _total_points - _phy - 3))
 	_hea = _total_points - _phy - _men
 	_update_count_controls()
 
