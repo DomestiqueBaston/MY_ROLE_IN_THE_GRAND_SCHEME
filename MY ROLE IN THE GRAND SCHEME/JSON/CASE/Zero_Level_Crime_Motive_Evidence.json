@@ -7,7 +7,7 @@
 				"crime_id": "MOT_MUN_001_ID_001",
 				"name": "ATM Dispute",
 				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Someone claims they didn’t receive their cash at the ATM.",
+				"more_explicit_name_2": "Someone claims they didn't receive their cash at the ATM.",
 				"link": [],
 				"crime_location": [
 					"LOC031"
@@ -304,7 +304,7 @@
 				"crime_id": "MOT_MUN_008_ID_001",
 				"name": "Fake Technician",
 				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A fake technician visited an elderly person’s home but nothing appears stolen.",
+				"more_explicit_name_2": "A fake technician visited an elderly person's home but nothing appears stolen.",
 				"link": [],
 				"crime_location": [
 					"LOC001"

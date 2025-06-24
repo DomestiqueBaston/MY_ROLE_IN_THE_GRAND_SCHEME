@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=245 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -518,6 +518,14 @@ _data = {
 content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnyoh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cde65"]
 content_margin_left = 1.0
@@ -2925,7 +2933,6 @@ text = "Cancel"
 script = ExtResource("92_hjqqn")
 
 [node name="Zero_Level_Case_Proposal" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Zero_Level_Case_Proposal_BG" type="Sprite2D" parent="Overlays/Zero_Level_Case_Proposal"]
 texture = ExtResource("91_bnyoh")
@@ -2965,34 +2972,49 @@ bbcode_enabled = true
 text = "(see case.json or the rules)"
 autowrap_mode = 2
 
-[node name="Case_Matter" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
+[node name="Case_Name" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
 layout_mode = 0
 offset_left = 92.0
-offset_top = 43.0
+offset_top = 42.0
 offset_right = 280.0
-offset_bottom = 69.0
+offset_bottom = 52.0
 bbcode_enabled = true
 text = "Matter:"
 autowrap_mode = 2
 
-[node name="Matter" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/Case_Matter"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/Case_Name"]
 layout_mode = 0
 offset_left = 37.0
 offset_right = 188.0
-offset_bottom = 26.0
+offset_bottom = 10.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 theme_override_constants/line_separation = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
 bbcode_enabled = true
-text = "(see \"more_explicit_name_2\" in Zero_Level_Crime_Motive...json)."
+text = "(see \"name\" in Zero_Level...json)"
 autowrap_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 52.0
+offset_right = 280.0
+offset_bottom = 76.0
+theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/line_separation = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_bnyoh")
+bbcode_enabled = true
+text = "(see \"more_explicit_name_2\" in Zero_Level...json)"
+autowrap_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
 layout_mode = 0
 offset_left = 91.0
-offset_top = 67.0
+offset_top = 76.0
 offset_right = 280.0
-offset_bottom = 77.0
+offset_bottom = 86.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
 bbcode_enabled = true
 text = "-----------------------------------------------"
@@ -3002,20 +3024,20 @@ horizontal_alignment = 1
 [node name="VBoxContainer" type="HBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
 layout_mode = 0
 offset_left = 91.0
-offset_top = 76.0
+offset_top = 84.0
 offset_right = 280.0
 offset_bottom = 160.0
 pivot_offset = Vector2(102, 219)
 
 [node name="Report_Introduction" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer"]
-custom_minimum_size = Vector2(66, 40)
+custom_minimum_size = Vector2(60, 40)
 layout_mode = 2
 theme_override_constants/line_separation = 1
 bbcode_enabled = true
-text = "Happens all the time:
-[color=#ff8864]Someone[/color] just mentioned [color=#ff8864]a situation[/color]. [color=#ff1c18]Probably nothing[/color], but [color=#ff8864]I could use some [/color][color=#ff1c18]cash[/color].
+text = "[color=#ff8864]Someone[/color] mentioned [color=#ff8864]a situation[/color]. [color=#ff1c18]Probably nothing[/color], but [color=#ff8864]I could use some [/color][color=#ff1c18]cash[/color].
 "
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Info_Container" type="VBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer"]
 custom_minimum_size = Vector2(116, 0)
@@ -3025,7 +3047,7 @@ theme_override_constants/separation = 0
 
 [node name="Victim_Container" type="VBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = -2
 
 [node name="Victim" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 10)
@@ -3042,7 +3064,7 @@ alignment = 1
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_01"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
-text = "- "
+text = "-"
 fit_content = true
 autowrap_mode = 0
 
@@ -3058,7 +3080,7 @@ autowrap_mode = 0
 
 [node name="Witness_Container" type="VBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = -2
 
 [node name="Witness" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 10)
@@ -3075,7 +3097,7 @@ alignment = 1
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_01"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
-text = "- "
+text = "-"
 fit_content = true
 autowrap_mode = 0
 
@@ -3091,7 +3113,7 @@ autowrap_mode = 0
 
 [node name="Suspect_Container" type="VBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = -2
 
 [node name="Suspect" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 10)
@@ -3108,7 +3130,7 @@ alignment = 1
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_01"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
-text = " - "
+text = " -"
 fit_content = true
 autowrap_mode = 0
 
@@ -3124,7 +3146,7 @@ autowrap_mode = 0
 
 [node name="Crime_Scene_Container" type="VBoxContainer" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container"]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = -2
 
 [node name="Crime_Scene" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
 custom_minimum_size = Vector2(0, 10)
@@ -3141,7 +3163,7 @@ alignment = 1
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_02"]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
-text = " - "
+text = " -"
 fit_content = true
 autowrap_mode = 0
 

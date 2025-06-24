@@ -944,17 +944,23 @@ Difficulté du jeu
 	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on la désactive de la même manière):
 		I am one of them : le Wan du joueur ne peut jamais dépasser 3.
 		
-
+Éléments additionnels « tout court »
+	- On ne peut sauver que depuis Main_V2.tscn !
+	- Dans Interaction.tscn, seul le menu Whatever est accessible.
+	- Dans aucune autre scène on ne pourra avoir accès à Top_Bar.tscn.
 Futures idées…
 	- La possibilité de filature.
 	- Recyclage de PNJs d’une enquête à l’autre.
 	- Méta-réseau : des PNJs récurrents forment un réseau à « démasquer ».
-	- Le joueur initie les Combats (pourquoi?).
-	- Pouvoir vendre/acheter (objets, drogue…) pour se faire de l’argent.
+	- Le joueur initie les Combats (des fois qu’il croise un sbire, par exemple).
+	- La possibilité d’interagir avec plusieurs PNJs en même temps (pas sûr de mon coup, là).
+	- La possibilité de savoir quels autres PNJs sont éventuellement présents là où est le joueur et pouvoir interagir avec eux.
+	- Pouvoir vendre/acheter (objets, drogue…) pour se faire de l’argent sur un « marché noir ».
+	- Pouvoir s’entraîner pour améliorer ses caractéristiques et/ou sa main de cartes.
 	- Événements aléatoires :
-		Grève, blackout, canicule…
+		Grève, black-out, canicule…
 	- Plus de backgrounds, professions, lieux, objets, etc.
-	- Plus de cartes d’Interaction/Abstraites…
+	- Plus de cartes d’Interaction/Abstraites/Objets/Locations/etc…
 	- Système de blessures (traumatismes, handicaps, empoisonnements, etc.) pouvant durer « un certain temps » ou être permanents.
 	- (Cartes) « Rumeurs » (vraies/fausses).
 	- Zones/quartiers à risque influençant Wan, Emo, Add, Rep ou augmentant le risque d’attaque (même de n’importe qui) ou au contraire, zones/quartiers sûrs…
@@ -966,13 +972,13 @@ Futures idées…
 	- Traits du personnage joueur ou PNJ:
 		Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
 	- Indic’ : Un PNJ offre une info (vraie ou fausse) en échange d’une contrepartie.
-	- Au fur et à mesure que le joueur vire Paranoïaque, l’affichage de ses stats (Top_Bar.tscn) commence à « merder ».
+	- Au fur et à mesure que le joueur vire Paranoïaque, l’affichage de ses stats (Top_Bar.tscn) commence à « merder ». (Mouaif…)
 	- Un système de double-vie pour des PNJs ?
 	- Le joueur devient Détective privé « à temps partiel ». Cela lui permet de gagner de l’argent mais il perd du temps dans ses enquêtes. Pour cela il faudrait aller à l’agence d’intérim’ pour voir s’il y aurait du boulot pour lui. Bien entendu, il pourrait lui arriver des choses (bonnes ou mauvaises) dans ce boulot.
 	- Le Joueur est mytho’ et s’invente des suspects, victimes, coupables, etc.
 	- Fabrication de « fausse preuve ».
-	- Après la mort, le joueur a la possibilité de « revenir en arrière » et reprendre la partie depuis un moment aléatoire (ou pas).
-	- Chaque partie laisse des traces chez le (nouveau) joueur de la partie suivante (comme si la fille ou le fils reprenait la suite du père ou de la mère) : ce « mode » aurait surtout de l’intérêt si on intégrait quelques idées de cette liste.
+	- Chaque partie laisse des traces chez le (nouveau) joueur de la partie suivante (comme si la fille ou le fils reprenait la suite du père ou de la mère).
 	- Add et Emo influent sur Rep.
 	- Rajouter des hobbies au joueur et PNJs pour d’autres bonus/malus.
 	- Des fois, le joueur « plane » et perd du temps à la redescente.
+	- Faire dépendre plus des choses des caractéristiques du joueur plutôt que du hasard (si possible).
