@@ -824,7 +824,7 @@ Niveau de difficulté	PNJs inutiles min	PNJs inutiles max
 Enquêtes niveau 0 :
  - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
  - Chaque semaine, n’importe quel jour et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposé 1 enquête de niveau 0 par un PNJ quelconque.
-	- Pour ces crimes, un mobile ne sera pas nécessaire (le menu Crime Motive sera désactivé).
+	- Pour ces crimes, un mobile ne sera pas « nécessaire » (le menu Crime Motive sera prérempli avec le seul mobile accessible).
 	- Les emplacements des preuves sont précisés dans le json !
 	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 200Dø.
 	- Le joueur à un bonus de 4 à ses jets de dé dans ces enquêtes.
@@ -919,6 +919,34 @@ Réutilisation des PNJs dans les liens
 Quand il reste des liens à créer mais peu/plus de PNJs
 	- Si le système doit encore générer des liens non cruciaux alors que la plupart des PNJs sont déjà utilisés :
 		- Il est possible de réutiliser des PNJs inutiles.
+
+
+Conditions nécessaires pour qu’un DIALOGUE puisse être engagé (uniquement depuis Main_V2.tscn) :
+	- Le PNJ est présent à l’endroit prévu.
+	- Le joueur n’a pas déjà dialogué avec ce PNJ le même jour.
+	- Le PNJ n’est pas mort !
+	- Le PNJ n’a pas fui le joueur précédemment dans la journée.
+	- Le PNJ n’a pas déjà été combattu par le joueur le même jour (sauf si carte spéciale « Ne pas tuer ! » a été utilisée).
+	- Le joueur a PHY>0 ou MEN>0.
+	- Le PNJ n’est pas en prison hors horaires de visite (le matin).
+	- Le joueur n’est pas agressé par le PNJ (si agression : combat, pas dialogue et éventuellement voir carte Spéciale « Ne pas tuer ! »).
+	- Le PNJ n’a pas changé son emploi du temps aléatoirement vers un hideout ou Hangout inaccessible ou inconnu.
+	- Le joueur n’est pas en prison.
+Conditions nécessaires pour qu’un COMBAT puisse être engagé (uniquement par un PNJ et depuis Main_V2.tscn) :
+	- Le joueur n’est pas dans un lieu sûr (le Bureau ou la prison).
+	- Le joueur a au moins une enquête en cours (de niveau 1 à 6 car à 0, il n’y a pas d’agression sauf éventuellement avant Dialogue).
+	- Le joueur n’est pas déjà en interaction.
+	- Le PNJ n’est pas en prison.
+	- Ce n’est pas la première rencontre entre le joueur et le PNJ.
+	- Le PNJ déclenche une attaque suivant les règles de ce comportement.
+	- Les sbires déclenchent possiblement leurs attaques avant que ne soit exécuté une action du joueur (sauf à être chez lui ou en prison).
+Conditions nécessaires pour qu’une INVESTIGATION puisse être engagée (uniquement depuis Main_V2.tscn) :
+	- Le joueur est en vie et capable d’agir : PHY > 0 et MEN > 0.
+	- Le joueur n’a pas déjà mené d’Investigation dans le lieu ce jour.
+	- Le lieu est accessible (horaires).
+	- Le joueur dispose d’une Autorisation de fouille OU il opte pour un Break In (dans ce cas, c’est une scène de « forçage » distincte, pas une Investigation « normale » qui intervient avant).
+	- S’il y a un PNJ sur place, l’Investigation « normale » n’est possible qu’avec cette Autorisation. Sans autorisation et PNJ présent, le menu est désactivé.
+	- Le joueur n’est pas en prison.
 Difficulté du jeu
 	- 5 niveaux de difficulté :
 		Hobbie : bonus de 1 supplémentaire à TOUS les jets de dé, +10 % de Dø en fin d’enquête réussie, PNJs: -1 à PHY, MEN et HEA/maxHEA à la génération.
@@ -961,6 +989,7 @@ Futures idées…
 		Grève, black-out, canicule…
 	- Plus de backgrounds, professions, lieux, objets, etc.
 	- Plus de cartes d’Interaction/Abstraites/Objets/Locations/etc…
+	- Plus de crimes…
 	- Système de blessures (traumatismes, handicaps, empoisonnements, etc.) pouvant durer « un certain temps » ou être permanents.
 	- (Cartes) « Rumeurs » (vraies/fausses).
 	- Zones/quartiers à risque influençant Wan, Emo, Add, Rep ou augmentant le risque d’attaque (même de n’importe qui) ou au contraire, zones/quartiers sûrs…
@@ -982,3 +1011,4 @@ Futures idées…
 	- Rajouter des hobbies au joueur et PNJs pour d’autres bonus/malus.
 	- Des fois, le joueur « plane » et perd du temps à la redescente.
 	- Faire dépendre plus des choses des caractéristiques du joueur plutôt que du hasard (si possible).
+	- Attaques du joueur en prison !

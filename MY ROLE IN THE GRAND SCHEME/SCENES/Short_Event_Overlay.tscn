@@ -1,4 +1,4 @@
-[gd_scene load_steps=245 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=247 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
@@ -99,6 +99,7 @@
 [ext_resource type="Texture2D" uid="uid://dcgkg7bcbp0fq" path="res://GRAPHICS/SHORT_EVENT/Drawer_09_Open.png" id="85_lidf8"]
 [ext_resource type="Texture2D" uid="uid://cp61wiywacud8" path="res://GRAPHICS/SHORT_EVENT/Drawer_09_Hover.png" id="86_onppl"]
 [ext_resource type="BitMap" uid="uid://u355gnsahhe" path="res://GRAPHICS/SHORT_EVENT/Drawer_09_Mask.png" id="87_5kg0p"]
+[ext_resource type="Theme" uid="uid://bmd3b4tgv561b" path="res://UI/Health_Issue_Theme.tres" id="88_7rvn5"]
 [ext_resource type="Theme" uid="uid://dpac8okkf8582" path="res://UI/Zero_Level_Case_Proposal_Theme.tres" id="88_hjqqn"]
 [ext_resource type="Texture2D" uid="uid://icsmti0hocf5" path="res://GRAPHICS/SHORT_EVENT/Drawer_08_Open.png" id="88_jb3tf"]
 [ext_resource type="Texture2D" uid="uid://cno0b6h8jyy04" path="res://GRAPHICS/SHORT_EVENT/Investigation_Center_BG.png" id="88_psfuj"]
@@ -111,6 +112,7 @@
 [ext_resource type="Script" uid="uid://cxsocuna2rgk1" path="res://SCRIPTS/Zero_Level_Case_Proposal_Buttons.gd" id="92_bnyoh"]
 [ext_resource type="Script" uid="uid://fw3knsksudbs" path="res://SCRIPTS/Investigation_Center_Buttons.gd" id="92_hjqqn"]
 [ext_resource type="Texture2D" uid="uid://ct8dnr468euog" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Hover.png" id="92_vy32t"]
+[ext_resource type="Texture2D" uid="uid://bh7ocmtx1xi8m" path="res://GRAPHICS/SHORT_EVENT/Health_Issue_BG.png" id="93_b6clx"]
 [ext_resource type="BitMap" uid="uid://bsf6mhdh14ked" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Mask.png" id="93_n5ncc"]
 [ext_resource type="Texture2D" uid="uid://rfgygfo7x74i" path="res://GRAPHICS/SHORT_EVENT/Drawer_06_Open.png" id="94_ku2a5"]
 [ext_resource type="Texture2D" uid="uid://ciqjhh4duttdq" path="res://GRAPHICS/SHORT_EVENT/Drawer_06_Hover.png" id="95_4721e"]
@@ -2500,7 +2502,7 @@ offset_left = 136.0
 offset_top = 84.0
 offset_right = 193.0
 offset_bottom = 92.0
-theme = ExtResource("88_hjqqn")
+theme = ExtResource("88_7rvn5")
 text = "Case Report:"
 
 [node name="Case" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report"]
@@ -2857,7 +2859,7 @@ offset_top = 65.0
 offset_right = 158.0
 offset_bottom = 73.0
 pivot_offset = Vector2(107, 65)
-theme = ExtResource("88_hjqqn")
+theme = ExtResource("88_7rvn5")
 theme_override_constants/outline_size = 6
 text = "Case:"
 
@@ -2876,7 +2878,7 @@ layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "I won't say what
 this menu is for..."
-theme = ExtResource("88_hjqqn")
+theme = ExtResource("88_7rvn5")
 theme_override_constants/arrow_margin = 2
 toggle_mode = false
 flat = true
@@ -2906,7 +2908,7 @@ offset_left = 472.0
 offset_top = 269.0
 offset_right = 498.0
 offset_bottom = 277.0
-theme = ExtResource("88_hjqqn")
+theme = ExtResource("88_7rvn5")
 theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
 theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
@@ -2922,7 +2924,7 @@ offset_left = 471.0
 offset_top = 282.0
 offset_right = 499.0
 offset_bottom = 290.0
-theme = ExtResource("88_hjqqn")
+theme = ExtResource("88_7rvn5")
 theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
@@ -2933,6 +2935,7 @@ text = "Cancel"
 script = ExtResource("92_hjqqn")
 
 [node name="Zero_Level_Case_Proposal" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Zero_Level_Case_Proposal_BG" type="Sprite2D" parent="Overlays/Zero_Level_Case_Proposal"]
 texture = ExtResource("91_bnyoh")
@@ -3207,6 +3210,55 @@ theme_override_colors/font_color = Color(0.71, 0.34648, 0.2556, 0.823529)
 theme_override_colors/font_focus_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 text = "No thanks..."
+script = ExtResource("92_bnyoh")
+
+[node name="Health_Issue" type="Node2D" parent="Overlays"]
+
+[node name="Health_Issue_BG" type="Sprite2D" parent="Overlays/Health_Issue"]
+texture = ExtResource("93_b6clx")
+centered = false
+offset = Vector2(195, 89)
+
+[node name="Health_Report" type="Control" parent="Overlays/Health_Issue"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 136.0
+offset_top = 84.0
+offset_right = 136.0
+offset_bottom = 84.0
+theme = ExtResource("88_7rvn5")
+
+[node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Health_Report"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+offset_left = 91.0
+offset_top = 33.0
+offset_right = 280.0
+offset_bottom = 160.0
+bbcode_enabled = true
+text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Health Report[/color][/pulse] -
+Given your [color=#ff8864]current[/color] [color=#ff1c18]state of health[/color], going out to [color=#ff1c18]investigate[/color] would be [color=#ff8864]more[/color] [color=#ff1c18]reckless[/color] than [color=#ff1c18]professional[/color]. Unless [color=#ff8864]stumbling[/color], [color=#ff8864]babbling[/color], and [color=#ff8864]passing out[/color] in the middle of the street are [color=#ff1c18]part of your method[/color], you’ll have to [color=#ff1c18]accept[/color] a... [color=#ff8864]simple truth[/color]: for everyone’s sake, [color=#ff1c18]you need to rest[/color] to [color=#ff8864]avoid confusing suspects with lampposts[/color]!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Node2D" parent="Overlays/Health_Issue"]
+
+[node name="Ok" type="Button" parent="Overlays/Health_Issue/Buttons"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 320.0
+offset_top = 248.0
+offset_right = 424.0
+offset_bottom = 256.0
+theme = ExtResource("88_7rvn5")
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
+theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+text = "Not much of a choice."
+alignment = 2
 script = ExtResource("92_bnyoh")
 
 [node name="Load_Save_Delete" type="Node2D" parent="Overlays"]
@@ -4617,6 +4669,9 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_cancel_pressed"]
+[connection signal="mouse_entered" from="Overlays/Health_Issue/Buttons/Ok" to="Overlays/Health_Issue/Buttons/Ok" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Health_Issue/Buttons/Ok" to="Overlays/Health_Issue/Buttons/Ok" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Health_Issue/Buttons/Ok" to="Overlays/Health_Issue/Buttons/Ok" method="_on_ok_pressed"]
 [connection signal="item_selected" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_item_selected"]
 [connection signal="mouse_entered" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Load_Save_Delete/List/Saves" to="Overlays/Load_Save_Delete" method="_on_item_list_mouse_exited"]
