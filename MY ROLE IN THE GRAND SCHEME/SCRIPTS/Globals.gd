@@ -78,19 +78,18 @@ func _unhandled_input(event: InputEvent):
 		get_viewport().set_input_as_handled()
 
 ##
-## Hides the shader overlay layer and mouse cursor (temporarily).
+## Hides the mouse cursor (temporarily).
 ##
 func hide_ui_layers():
 	$MouseLayer.hide()
-	$ShaderOverlayLayer.hide()
+	#$ShaderOverlayLayer.hide()
 
 ##
-## Makes the shader overlay layer and mouse cursor visible after a call to
-## hide_ui_layers().
+## Makes the mouse cursor visible after a call to hide_ui_layers().
 ##
 func show_ui_layers():
 	$MouseLayer.show()
-	$ShaderOverlayLayer.show()
+	#$ShaderOverlayLayer.show()
 
 ##
 ## As long as the mouse is "grabbed", mouse motion events will report no
