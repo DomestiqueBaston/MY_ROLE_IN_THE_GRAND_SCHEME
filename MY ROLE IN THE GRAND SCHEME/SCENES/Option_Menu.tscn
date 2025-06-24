@@ -1,8 +1,8 @@
 [gd_scene load_steps=34 format=3 uid="uid://dxsbbamjqxk1s"]
 
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/OPTIONS/Settings_BG.png" id="1_7b261"]
+[ext_resource type="Script" uid="uid://g5avjy64tpdx" path="res://SCRIPTS/Option_Menu.gd" id="1_asrw6"]
 [ext_resource type="Texture2D" uid="uid://dpny7h4hu3sgy" path="res://GRAPHICS/OPTIONS/Secrets_Button_Pressed_Hover.png" id="2_12lbf"]
-[ext_resource type="Script" uid="uid://43uwyes6nwlp" path="res://SCRIPTS/Option_Menu_Buttons.gd" id="2_itek0"]
 [ext_resource type="Theme" uid="uid://c0htwuiuqc8ik" path="res://UI/Option_Menu_Theme.tres" id="2_wcpfb"]
 [ext_resource type="BitMap" uid="uid://d3y1at3b2ac08" path="res://GRAPHICS/OPTIONS/Secrets_Button_Mask.png" id="3_v4876"]
 [ext_resource type="ButtonGroup" uid="uid://s2v30wdlf28n" path="res://UI/Character_Generation_Button_Group.tres" id="4_t0v3g"]
@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://ege78tbsp417" path="res://SOUND/MISC/Minions_Off.ogg" id="33_6fk48"]
 
 [node name="Settings_Menu" type="Node2D"]
+script = ExtResource("1_asrw6")
 metadata/_edit_lock_ = true
 
 [node name="Settings_Menu_BG" type="Sprite2D" parent="."]
@@ -42,14 +43,13 @@ texture = ExtResource("1_7b261")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="Drawer_Names" type="Control" parent="."]
+[node name="Drawers" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_wcpfb")
-script = ExtResource("2_itek0")
 metadata/_edit_lock_ = true
 
-[node name="Secrets" type="TextureButton" parent="Drawer_Names"]
+[node name="Secrets" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -59,7 +59,7 @@ texture_hover = ExtResource("2_12lbf")
 texture_click_mask = ExtResource("3_v4876")
 metadata/_edit_lock_ = true
 
-[node name="Credits" type="TextureButton" parent="Drawer_Names"]
+[node name="Credits" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 78.0
 offset_bottom = 52.0
@@ -72,7 +72,7 @@ texture_hover = ExtResource("6_0mhdf")
 texture_click_mask = ExtResource("7_3tyoq")
 metadata/_edit_lock_ = true
 
-[node name="Language" type="TextureButton" parent="Drawer_Names"]
+[node name="Language" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -85,7 +85,7 @@ texture_hover = ExtResource("9_oahwa")
 texture_click_mask = ExtResource("10_280hd")
 metadata/_edit_lock_ = true
 
-[node name="Continue" type="TextureButton" parent="Drawer_Names"]
+[node name="Continue" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -98,7 +98,7 @@ texture_hover = ExtResource("12_do5rk")
 texture_click_mask = ExtResource("13_lkx3v")
 metadata/_edit_lock_ = true
 
-[node name="Quit" type="TextureButton" parent="Drawer_Names"]
+[node name="Quit" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -111,7 +111,7 @@ texture_hover = ExtResource("15_k6mmp")
 texture_click_mask = ExtResource("16_oy2sw")
 metadata/_edit_lock_ = true
 
-[node name="Settings" type="TextureButton" parent="Drawer_Names"]
+[node name="Settings" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -124,7 +124,7 @@ texture_hover = ExtResource("18_5gml8")
 texture_click_mask = ExtResource("19_5mr4n")
 metadata/_edit_lock_ = true
 
-[node name="New_Game" type="TextureButton" parent="Drawer_Names"]
+[node name="New_Game" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -137,7 +137,7 @@ texture_hover = ExtResource("21_v6bhl")
 texture_click_mask = ExtResource("22_bf3ky")
 metadata/_edit_lock_ = true
 
-[node name="LSD" type="TextureButton" parent="Drawer_Names"]
+[node name="LSD" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -150,7 +150,7 @@ texture_hover = ExtResource("24_srw0v")
 texture_click_mask = ExtResource("25_qftad")
 metadata/_edit_lock_ = true
 
-[node name="Tutorial" type="TextureButton" parent="Drawer_Names"]
+[node name="Tutorial" type="TextureButton" parent="Drawers"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -177,31 +177,3 @@ bus = &"UI"
 stream = ExtResource("33_6fk48")
 volume_db = -11.5
 bus = &"UI"
-
-[connection signal="mouse_entered" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/Secrets" to="Drawer_Names" method="_on_Cancel_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/Credits" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/Credits" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/Credits" to="Drawer_Names" method="_on_Valid_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/Language" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/Language" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/Language" to="Drawer_Names" method="_on_Valid_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/Continue" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/Continue" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/Continue" to="Drawer_Names" method="_on_Valid_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/Quit" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/Quit" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/Quit" to="Drawer_Names" method="_on_Cancel_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/Settings" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/Settings" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/Settings" to="Drawer_Names" method="_on_Valid_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/New_Game" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/New_Game" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/New_Game" to="Drawer_Names" method="_on_Valid_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/LSD" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/LSD" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/LSD" to="Drawer_Names" method="_on_Valid_pressed"]
-[connection signal="mouse_entered" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Drawer_Names/Tutorial" to="Drawer_Names" method="_on_Valid_pressed"]

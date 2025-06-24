@@ -1,7 +1,13 @@
 extends Node2D
 
+## Signal emitted when the transition has finished.
 signal transition_finished
 
+##
+## Takes a screenshot, displays it, then starts an animation to fade it out.
+## This is a coroutine; await it to pause until it finishes, in particular
+## before making changes to the scene which might affect the screenshot.
+##
 func start_transition():
 	Globals.hide_ui_layers()
 	await RenderingServer.frame_post_draw

@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://cjvtdra3n1tqy"]
+[gd_scene load_steps=30 format=3 uid="uid://cjvtdra3n1tqy"]
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
+[ext_resource type="Script" uid="uid://dr420si05lccy" path="res://SCRIPTS/Character_Generation.gd" id="1_nmg6f"]
 [ext_resource type="Theme" uid="uid://dmuacptivl4jb" path="res://UI/Character_Generation_Theme.tres" id="3_2pyp5"]
 [ext_resource type="Script" uid="uid://c2csir6vwy570" path="res://SCRIPTS/Character_Generation_Creation_Page.gd" id="3_e7ryn"]
 [ext_resource type="Script" uid="uid://bmxi3h6w8e6tp" path="res://SCRIPTS/Character_Generation_Option_Button.gd" id="5_2k6nw"]
@@ -31,6 +32,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
 
 [node name="Character_Generation" type="Node2D"]
+script = ExtResource("1_nmg6f")
 
 [node name="Character_Generation_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_fahl1")

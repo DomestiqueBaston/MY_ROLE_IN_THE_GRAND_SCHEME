@@ -1,5 +1,8 @@
 extends Control
 
+signal confirm_pressed
+signal cancel_pressed
+
 const _total_points = 15
 var _phy = 3
 var _men = 3
@@ -42,6 +45,7 @@ func _update_remaining():
 func _on_cancel_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
+	cancel_pressed.emit()
 
 func _on_any_button_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
@@ -126,3 +130,4 @@ func _on_confirm_pressed():
 	Player.mental = _men
 	Player.max_health = _hea
 	Player.start_game()
+	confirm_pressed.emit()
