@@ -39,6 +39,7 @@ func _go_to_new_game():
 	new_game.cancel_pressed.connect(_on_new_game_cancel_pressed)
 
 func _on_new_game_confirm_pressed():
+	GameState.start_game()
 	_replace_scene(_main_scene)
 
 func _on_new_game_cancel_pressed():

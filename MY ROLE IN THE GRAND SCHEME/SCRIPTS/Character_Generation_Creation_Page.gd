@@ -124,12 +124,12 @@ func _enable_disable_ok_button():
 func _on_confirm_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	Player.reset()
-	Player.player_name = $Character_Name.text.strip_edges()
-	Player.sex = $SliderBg/HSlider.value / 100.0
-	Player.background = $Background_Selector/Background_List.get_background()
-	Player.physical = _phy
-	Player.mental = _men
-	Player.max_health = _hea
-	Player.start_game()
+	var player = GameState.player
+	player.reset()
+	player.player_name = $Character_Name.text.strip_edges()
+	player.sex = $SliderBg/HSlider.value / 100.0
+	player.background = $Background_Selector/Background_List.get_background()
+	player.physical = _phy
+	player.mental = _men
+	player.max_health = _hea
 	confirm_pressed.emit()

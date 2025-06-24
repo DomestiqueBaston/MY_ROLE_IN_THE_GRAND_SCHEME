@@ -3,6 +3,8 @@ extends Control
 ## If true, all menus except Whatever are disabled.
 @export var limited_menus: bool = false
 
+signal pass_time
+
 # Define player attributes, where they are displayed, their acceptable ranges,
 # and the animations that show alerts when the attributes go outside their
 # ranges.
@@ -35,14 +37,20 @@ class PlayerAttr:
 	PlayerAttr.new("drugs", $Character_Stats/Drug)
 ]
 
+enum DailiesMenuItem {
+	PASS_TIME = 1000
+}
+
 func _ready():
-	$Character_Stats/Player_Name.text = Player.player_name
+	var player = GameState.player
+	$Character_Stats/Player_Name.text = player.player_name
 
 	for attr in _attrs:
-		attr.ui_label.text = str(Player[attr.attr_name])
-		Player.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
+		attr.ui_label.text = str(player[attr.attr_name])
+		player.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
 
-	Player.debts_changed.connect(_on_debts_changed)
+	player.debts_changed.connect(_on_debts_changed)
+	GameState.time_changed.connect(_on_time_changed)
 
 	# menu buttons and whether or not they are always enabled
 	var buttons = {
@@ -84,7 +92,13 @@ func _ready():
 	popup.add_submenu_node_item("Get your fix", submenu2)
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_item("Go to sleep...")
-	popup.add_item("Pass time!")
+	popup.add_item("Pass time!", DailiesMenuItem.PASS_TIME)
+	popup.id_pressed.connect(_on_dailies_press)
+
+func _on_dailies_press(id: int):
+	match id:
+		DailiesMenuItem.PASS_TIME:
+			pass_time.emit()
 
 func _on_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
@@ -98,7 +112,7 @@ func _on_button_pressed():
 	Globals.valid_sound.play()
 
 func _on_attr_changed(attr: PlayerAttr):
-	var value = Player[attr.attr_name]
+	var value = GameState.player[attr.attr_name]
 	attr.ui_label.text = str(value)
 	if attr.alert_player:
 		if value < attr.min_value or value < attr.max_value:
@@ -109,7 +123,7 @@ func _on_attr_changed(attr: PlayerAttr):
 				attr.alert_player.play("Reset")
 
 func _on_debts_changed():
-	if Player.debts.size() >= 4:
+	if GameState.player.debts.size() >= 4:
 		$Date_Time/Day.tooltip_text = "You need to pay your bills!"
 		if $Bill_Alert.current_animation != "Alert":
 			$Bill_Alert.play("Alert")
@@ -117,3 +131,21 @@ func _on_debts_changed():
 		$Date_Time/Day.tooltip_text = ""
 		if $Bill_Alert.current_animation == "Alert":
 			$Bill_Alert.play("RESET")
+
+var _day_names = [
+	"Mon.",
+	"Tue.",
+	"Wed.",
+	"Thu.",
+	"Fri.",
+	"Sat.",
+	"Sun."
+]
+
+func _on_time_changed():
+	$Date_Time/Day.text = _day_names[GameState.get_day() % 7]
+	var hour = GameState.get_hour()
+	if hour < 12:
+		$Date_Time/Time.text = "%dam" % (12 if hour == 0 else hour)
+	else:
+		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)

@@ -23,7 +23,7 @@ run/vsync/vsync_mode=1
 [autoload]
 
 Globals="*res://SCENES/Globals.tscn"
-Player="*res://SCENES/Player.tscn"
+GameState="*res://SCENES/Game_State.tscn"
 
 [display]
 

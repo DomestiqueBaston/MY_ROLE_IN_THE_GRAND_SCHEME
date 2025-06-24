@@ -79,6 +79,9 @@ func _ready():
 	submenu2.id_pressed.connect(_handle_submenu.bind(1))
 	submenu3.id_pressed.connect(_handle_submenu.bind(2))
 	
+	$Mask_Card_Playground/Top_Bar.pass_time.connect(
+		func(): GameState.pass_one_hour())
+	
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)

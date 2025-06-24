@@ -1,4 +1,4 @@
-extends Node
+class_name Player extends Node
 
 var player_name: String
 var background: Dictionary
@@ -32,9 +32,11 @@ signal drugs_changed
 @onready var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
 
 var _signal_pause: int = 0
+var _sleep_bonus_malus: int = 0
 
 func reset():
 	_signal_pause += 1
+	_sleep_bonus_malus = 0
 	player_name = ""
 	background = {}
 	sex = 0
@@ -54,6 +56,7 @@ func reset():
 
 func start_game():
 	_signal_pause += 1
+	_sleep_bonus_malus = 0
 
 	var bonus_malus = background.get("bonus_malus", {})
 	physical += bonus_malus.get("PHY", 0)
@@ -124,6 +127,7 @@ func get_mental() -> int:
 	return mental
 
 func set_health(hea: int):
+	hea = mini(hea, max_health)
 	if health != hea:
 		health = hea
 		if _signal_pause == 0:
@@ -133,6 +137,7 @@ func get_health() -> int:
 	return health
 
 func set_emotion(emo: int):
+	emo = clampi(emo, -3, 3)
 	if emotion != emo:
 		emotion = emo
 		if _signal_pause == 0:
@@ -142,6 +147,7 @@ func get_emotion() -> int:
 	return emotion
 
 func set_addiction(add: int):
+	add = clampi(add, -3, 3)
 	if addiction != add:
 		addiction = add
 		if _signal_pause == 0:
@@ -151,6 +157,7 @@ func get_addiction() -> int:
 	return addiction
 
 func set_wanted(wan: int):
+	wan = clampi(wan, 0, 4)
 	if wanted != wan:
 		wanted = wan
 		if _signal_pause == 0:
@@ -191,3 +198,68 @@ func set_drugs(doses: int):
 
 func get_drugs() -> int:
 	return drugs
+
+func pass_one_hour():
+	if randi() % 10 == 0:
+		match randi() % 3:
+			0:
+				physical += 1
+			1:
+				mental += 1
+			2:
+				health += 1
+
+func _exacerbate(start_value: int, how_much: int) -> int:
+	if start_value < 0:
+		return start_value - how_much
+	elif start_value > 0:
+		return start_value + how_much
+	elif randi() & 1:
+		return how_much
+	else:
+		return -how_much
+
+func _calm(start_value: int, how_much: int) -> int:
+	if start_value == 0:
+		return start_value
+	elif start_value < 0:
+		return mini(0, start_value + how_much)
+	else:
+		return maxi(0, start_value - how_much)
+
+func sleep(hours: int):
+	if hours < 4:
+		return
+	match hours:
+		4:
+			emotion = _exacerbate(emotion, 1)
+			addiction = _exacerbate(addiction, 1)
+			_sleep_bonus_malus = -2
+		5:
+			emotion = _exacerbate(emotion, 1)
+			_sleep_bonus_malus = -1
+		6:
+			_sleep_bonus_malus = -1
+		7:
+			health += 1
+			_sleep_bonus_malus = 0
+		8:
+			health += 1
+			emotion = _calm(emotion, 1)
+			_sleep_bonus_malus = 0
+		9:
+			health += 1
+			emotion = _calm(emotion, 2)
+			_sleep_bonus_malus = 0
+		10:
+			health += 2
+			emotion = _calm(emotion, 1)
+			_sleep_bonus_malus = 1
+		11:
+			health += 2
+			emotion = _calm(emotion, 2)
+			_sleep_bonus_malus = 1
+		_:
+			health += 3
+			emotion = _calm(emotion, 1)
+			_sleep_bonus_malus = 2

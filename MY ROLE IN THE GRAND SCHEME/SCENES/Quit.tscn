@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bbivh5bbqtkng"]
+[gd_scene load_steps=0 format=3 uid="uid://bbivh5bbqtkng"]
 
 [node name="Quit" type="Control"]
 layout_mode = 3
