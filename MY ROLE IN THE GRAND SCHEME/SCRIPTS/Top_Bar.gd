@@ -4,6 +4,32 @@ extends Control
 @export var limited_menus: bool = false
 
 func _ready():
+	$Character_Stats/Player_Name.text = Player.player_name
+	$Character_Stats/PHY.text = str(Player.physical)
+	$Character_Stats/MEN.text = str(Player.mental)
+	$Character_Stats/HEA.text = str(Player.health)
+	$Character_Stats/Emo.text = str(Player.emotion)
+	$Character_Stats/Add.text = str(Player.addiction)
+	$Character_Stats/Wan.text = str(Player.wanted)
+	$Character_Stats/Drug.text = str(Player.drugs)
+	$Character_Stats/Dough.text = str(Player.money)
+
+	Player.physical_changed.connect(
+		func(): $Character_Stats/PHY.text = str(Player.physical))
+	Player.mental_changed.connect(
+		func(): $Character_Stats/MEN.text = str(Player.mental))
+	Player.health_changed.connect(
+		func(): $Character_Stats/HEA.text = str(Player.health))
+	Player.emotion_changed.connect(
+		func(): $Character_Stats/Emo.text = str(Player.emotion))
+	Player.addiction_changed.connect(
+		func(): $Character_Stats/Add.text = str(Player.addiction))
+	Player.wanted_changed.connect(
+		func(): $Character_Stats/Wan.text = str(Player.wanted))
+	Player.money_changed.connect(
+		func(): $Character_Stats/Dough.text = str(Player.money))
+	Player.drugs_changed.connect(
+		func(): $Character_Stats/Drug.text = str(Player.drugs))
 
 	# menu buttons and whether or not they are always enabled
 	var buttons = {
