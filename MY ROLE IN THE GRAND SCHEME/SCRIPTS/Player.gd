@@ -1,26 +1,20 @@
 extends Node
 
-@export var player_name: String
-@export var background: Dictionary
-@export_range(0.0, 1.0) var sex: float
-@export var physical: int:
-	set = set_physical, get = get_physical
-@export var mental: int:
-	set = set_mental, get = get_mental
-@export var health: int:
-	set = set_health, get = get_health
-@export var max_health: int
-@export_range(-3, 3) var emotion: int:
-	set = set_emotion, get = get_emotion
-@export_range(-3, 3) var addiction: int
-@export_range(0, 4) var wanted: int
-@export var paranoia: int
-@export var money: int:
-	set = set_money, get = get_money
-@export var debts: Array[int]
-@export var drugs: int:
-	set = set_drugs, get = get_drugs
-@export var cards: Array[Dictionary]
+var player_name: String
+var background: Dictionary
+var sex: float
+var physical: int: set = set_physical, get = get_physical
+var mental: int: set = set_mental, get = get_mental
+var health: int: set = set_health, get = get_health
+var max_health: int
+var emotion: int: set = set_emotion, get = get_emotion
+var addiction: int: set = set_addiction, get = get_addiction
+var wanted: int: set = set_wanted, get = get_wanted
+var paranoia: int
+var money: int: set = set_money, get = get_money
+var debts: Array[int]: set = set_debts, get = get_debts
+var drugs: int: set = set_drugs, get = get_drugs
+var cards: Array[Dictionary]
 
 signal physical_changed
 signal mental_changed
@@ -29,6 +23,7 @@ signal emotion_changed
 signal addiction_changed
 signal wanted_changed
 signal money_changed
+signal debts_changed
 signal drugs_changed
 
 @onready var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
@@ -172,6 +167,21 @@ func set_money(dough: int):
 
 func get_money() -> int:
 	return money
+
+func set_debts(new_debts: Array[int]):
+	debts = new_debts.duplicate()
+	debts_changed.emit()
+
+func add_debt(debt: int):
+	debts.append(debt)
+	debts_changed.emit()
+
+func get_debts() -> Array[int]:
+	return debts
+
+func remove_debt(index: int):
+	debts.remove_at(index)
+	debts_changed.emit()
 
 func set_drugs(doses: int):
 	if drugs != doses:

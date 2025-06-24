@@ -3,33 +3,46 @@ extends Control
 ## If true, all menus except Whatever are disabled.
 @export var limited_menus: bool = false
 
+# Define player attributes, where they are displayed, their acceptable ranges,
+# and the animations that show alerts when the attributes go outside their
+# ranges.
+
+class PlayerAttr:
+	var attr_name: String
+	var ui_label: Label
+	var min_value: int
+	var max_value: int
+	var alert_player: AnimationPlayer
+
+	@warning_ignore("shadowed_global_identifier")
+	func _init(
+		name: String, label: Label, min: int = 0, max: int = 0,
+		alert: AnimationPlayer = null):
+		attr_name = name
+		ui_label = label
+		min_value = min
+		max_value = max
+		alert_player = alert
+
+@onready var _attrs: Array[PlayerAttr] = [
+	PlayerAttr.new("physical", $Character_Stats/PHY, 1, 1000, $PHY_Alert),
+	PlayerAttr.new("mental", $Character_Stats/MEN, 1, 1000, $MEN_Alert),
+	PlayerAttr.new("health", $Character_Stats/HEA, 1, 1000, $HEA_Alert),
+	PlayerAttr.new("emotion", $Character_Stats/Emo, -2, 2, $Emo_Alert),
+	PlayerAttr.new("addiction", $Character_Stats/Add, -2, 2, $Add_Alert),
+	PlayerAttr.new("wanted", $Character_Stats/Wan, 0, 3, $Wan_Alert),
+	PlayerAttr.new("money", $Character_Stats/Dough),
+	PlayerAttr.new("drugs", $Character_Stats/Drug)
+]
+
 func _ready():
 	$Character_Stats/Player_Name.text = Player.player_name
-	$Character_Stats/PHY.text = str(Player.physical)
-	$Character_Stats/MEN.text = str(Player.mental)
-	$Character_Stats/HEA.text = str(Player.health)
-	$Character_Stats/Emo.text = str(Player.emotion)
-	$Character_Stats/Add.text = str(Player.addiction)
-	$Character_Stats/Wan.text = str(Player.wanted)
-	$Character_Stats/Drug.text = str(Player.drugs)
-	$Character_Stats/Dough.text = str(Player.money)
 
-	Player.physical_changed.connect(
-		func(): $Character_Stats/PHY.text = str(Player.physical))
-	Player.mental_changed.connect(
-		func(): $Character_Stats/MEN.text = str(Player.mental))
-	Player.health_changed.connect(
-		func(): $Character_Stats/HEA.text = str(Player.health))
-	Player.emotion_changed.connect(
-		func(): $Character_Stats/Emo.text = str(Player.emotion))
-	Player.addiction_changed.connect(
-		func(): $Character_Stats/Add.text = str(Player.addiction))
-	Player.wanted_changed.connect(
-		func(): $Character_Stats/Wan.text = str(Player.wanted))
-	Player.money_changed.connect(
-		func(): $Character_Stats/Dough.text = str(Player.money))
-	Player.drugs_changed.connect(
-		func(): $Character_Stats/Drug.text = str(Player.drugs))
+	for attr in _attrs:
+		attr.ui_label.text = str(Player[attr.attr_name])
+		Player.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
+
+	Player.debts_changed.connect(_on_debts_changed)
 
 	# menu buttons and whether or not they are always enabled
 	var buttons = {
@@ -45,7 +58,7 @@ func _ready():
 		if enabled:
 			button.mouse_entered.connect(_on_mouse_entered)
 			button.mouse_exited.connect(_on_mouse_exited)
-			button.pressed.connect(_on_pressed)
+			button.pressed.connect(_on_button_pressed)
 
 	if $Menus/Dailies.disabled:
 		return
@@ -81,5 +94,26 @@ func _on_mouse_exited():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
 		Globals.leave_sound.play()
 
-func _on_pressed():
+func _on_button_pressed():
 	Globals.valid_sound.play()
+
+func _on_attr_changed(attr: PlayerAttr):
+	var value = Player[attr.attr_name]
+	attr.ui_label.text = str(value)
+	if attr.alert_player:
+		if value < attr.min_value or value < attr.max_value:
+			if attr.alert_player.current_animation != "Alert":
+				attr.alert_player.play("Alert")
+		else:
+			if attr.alert_player.current_animation == "Alert":
+				attr.alert_player.play("Reset")
+
+func _on_debts_changed():
+	if Player.debts.size() >= 4:
+		$Date_Time/Day.tooltip_text = "You need to pay your bills!"
+		if $Bill_Alert.current_animation != "Alert":
+			$Bill_Alert.play("Alert")
+	else:
+		$Date_Time/Day.tooltip_text = ""
+		if $Bill_Alert.current_animation == "Alert":
+			$Bill_Alert.play("RESET")
