@@ -342,58 +342,6 @@ text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h
 ||
 V[/center]"
 
-[node name="A_VIRER_2" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 447.0
-offset_top = -116.0
-offset_right = 526.0
-offset_bottom = -4.0
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 1
-bbcode_enabled = true
-text = "[center]Lorsque [color=ff1c18]Add[/color] et/ou [color=ff1c18]Emo[/color] atteignent [color=ff1c18]-2[/color] ou [color=ff1c18]2[/color], on jouera [color=ff1c18]Emo_Alert[/color] et/ou [color=ff1c18]Add_Alert[/color]. Pas de modification du Tooltip !
-||              ||
- V                V[/center]"
-
-[node name="A_VIRER_3" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 525.0
-offset_top = -92.0
-offset_right = 604.0
-offset_bottom = -5.0
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 1
-bbcode_enabled = true
-text = "[center]Lorsque [color=ff1c18]Wan[/color] atteint [color=ff1c18]3[/color], on jouera [color=ff1c18]Wan_Alert[/color]. Pas de modification du Tooltip !
-||                    
-V                    [/center]"
-
-[node name="A_VIRER_4" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = -73.0
-offset_top = -128.0
-offset_right = 9.0
-offset_bottom = -5.0
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 1
-bbcode_enabled = true
-text = "[center]Lorsque le joueur aura [color=ff1c18]4 factures impayées[/color], on jouera [color=ff1c18]Bill_Alert[/color]. Le Tooltip affichera \"[color=ff1c18]You need to pay your bills![/color]\" à la place de rien du tout.
-                                ||
-                                V[/center]"
-
-[node name="A_VIRER_5" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 329.0
-offset_top = -92.0
-offset_right = 442.0
-offset_bottom = -3.0
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 1
-bbcode_enabled = true
-text = "[center]Lorsque le joueur aura [color=ff1c18]PHY=1[/color] ou [color=ff1c18]MEN=1[/color] ou [color=ff1c18]HEA=1[/color] on jouera [color=ff1c18]PHY_Alert[/color] ou [color=ff1c18]MEN_Alert[/color] ou [color=ff1c18]HEA_Alert[/color]. Pas de modification de Tooltip.
-||                ||             ||
- V                  V               V[/center]"
-
 [node name="Date_Time" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -417,7 +365,7 @@ text = "-"
 
 [node name="Time" type="Label" parent="Date_Time"]
 layout_mode = 2
-tooltip_text = "You need to sleep!"
+tooltip_text = "Tick tock..."
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "12am"

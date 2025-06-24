@@ -110,8 +110,10 @@ func _on_attr_changed(attr: PlayerAttr):
 
 func _on_debts_changed():
 	if Player.debts.size() >= 4:
+		$Date_Time/Day.tooltip_text = "You need to pay your bills!"
 		if $Bill_Alert.current_animation != "Alert":
 			$Bill_Alert.play("Alert")
 	else:
+		$Date_Time/Day.tooltip_text = ""
 		if $Bill_Alert.current_animation == "Alert":
 			$Bill_Alert.play("RESET")
