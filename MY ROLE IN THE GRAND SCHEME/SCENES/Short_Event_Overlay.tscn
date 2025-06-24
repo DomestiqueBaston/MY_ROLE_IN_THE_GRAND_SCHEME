@@ -3238,7 +3238,7 @@ offset_right = 280.0
 offset_bottom = 160.0
 bbcode_enabled = true
 text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Health Report[/color][/pulse] -
-Given your [color=#ff8864]current[/color] [color=#ff1c18]state of health[/color], going out to [color=#ff1c18]investigate[/color] would be [color=#ff8864]more[/color] [color=#ff1c18]reckless[/color] than [color=#ff1c18]professional[/color]. Unless [color=#ff8864]stumbling[/color], [color=#ff8864]babbling[/color], and [color=#ff8864]passing out[/color] in the middle of the street are [color=#ff1c18]part of your method[/color], you’ll have to [color=#ff1c18]accept[/color] a... [color=#ff8864]simple truth[/color]: for everyone’s sake, [color=#ff1c18]you need to rest[/color] to [color=#ff8864]avoid confusing suspects with lampposts[/color]!"
+Given your [color=#ff8864]current[/color] [color=#ff1c18]state of health[/color], going out to [color=#ff1c18]investigate[/color] would be [color=#ff8864]more[/color] [color=#ff1c18]reckless[/color] than [color=#ff1c18]professional[/color]. Unless [color=#ff8864]stumbling[/color], [color=#ff8864]babbling[/color], and [color=#ff8864]passing out[/color] in the middle of the street are part of [color=#ff1c18]your method[/color], you’ll have to [color=#ff1c18]accept[/color] a... [color=#ff8864]simple truth[/color]: for everyone’s sake, [color=#ff1c18]you need to rest[/color] to [color=#ff8864]avoid confusing suspects with lampposts[/color]!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
