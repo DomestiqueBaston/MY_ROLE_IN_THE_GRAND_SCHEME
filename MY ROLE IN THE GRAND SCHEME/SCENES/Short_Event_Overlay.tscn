@@ -3188,6 +3188,7 @@ text = "No thanks..."
 script = ExtResource("92_bnyoh")
 
 [node name="Load_Save_Delete" type="Node2D" parent="Overlays"]
+visible = false
 script = ExtResource("64_gjkrj")
 
 [node name="Load_Save_Delete_BG" type="Sprite2D" parent="Overlays/Load_Save_Delete"]

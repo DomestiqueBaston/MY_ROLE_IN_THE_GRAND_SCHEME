@@ -46,7 +46,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Texts/Chrys:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -59,7 +59,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_k0p28"]
 resource_name = "Text_appearance"
-length = 16.6667
+length = 11.0
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -99,7 +99,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Texts/Chrys:visible_ratio")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -117,18 +117,15 @@ _data = {
 }
 
 [node name="Credits" type="Node2D"]
-metadata/_edit_lock_ = true
 
 [node name="Credits_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_1n7ja")
 centered = false
-metadata/_edit_lock_ = true
 
 [node name="Texts" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_u3pji")
-metadata/_edit_lock_ = true
 
 [node name="Credits" type="RichTextLabel" parent="Texts"]
 layout_mode = 0
@@ -139,15 +136,14 @@ offset_bottom = 74.0
 rotation = -0.191986
 bbcode_enabled = true
 text = "[color=#ff1c18][pulse freq=3.3 color=#ffffff15 ease=-100.0] Credits[/pulse][/color]"
-metadata/_edit_lock_ = true
 
 [node name="Flavien" type="RichTextLabel" parent="Texts"]
 layout_mode = 0
-offset_left = 311.0
-offset_top = 73.0
-offset_right = 571.0
-offset_bottom = 163.0
-rotation = -0.0872665
+offset_left = 196.0
+offset_top = 79.0
+offset_right = 456.0
+offset_bottom = 169.0
+rotation = -0.0570499
 bbcode_enabled = true
 text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Flavien[/shake][/color]:    [shake rate=10.0 level=5 connected=0][color=#ff8864]Composer[/color][/shake]/ [shake rate=10.0 level=5 connected=0][color=#ff8864]Musician[/color][/shake].
 [color=#ffffff]-[/color] Spends  too  much  time  [color=#ff8864][shake rate=10.0 level=5 connected=0]banging
@@ -155,28 +151,26 @@ text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Flavien[/shake]
 [color=#ffffff]-[/color] Last  seen  [color=#ff8864][shake rate=10.0 level=5 connected=0]on  stage[/shake][/color]."
 scroll_active = false
 script = ExtResource("7_xwskb")
-metadata/_edit_lock_ = true
 
 [node name="Geoff" type="RichTextLabel" parent="Texts"]
 layout_mode = 0
-offset_left = 86.0
-offset_top = 77.0
-offset_right = 307.0
-offset_bottom = 185.0
-rotation = 0.0349066
+offset_left = 95.0
+offset_top = 196.0
+offset_right = 316.0
+offset_bottom = 304.0
+rotation = -0.0949085
 bbcode_enabled = true
 text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Geoff[/shake][/color]:    [color=#ff8864][shake rate=10.0 level=5 connected=0]Developer[/shake][/color].
 [color=#ffffff]-[/color] Sometimes   blows  into   a  [color=#ff8864][shake rate=10.0 level=5 connected=0]tuba[/shake][/color].
 [color=#ffffff]-[/color] For  sure  [color=#ff8864][shake rate=10.0 level=5 connected=0]somewhere  on  Earth[/shake][/color]!"
 scroll_active = false
 script = ExtResource("7_xwskb")
-metadata/_edit_lock_ = true
 
 [node name="Ferdi" type="RichTextLabel" parent="Texts"]
 layout_mode = 0
-offset_left = 382.0
+offset_left = 362.0
 offset_top = 165.0
-offset_right = 577.0
+offset_right = 557.0
 offset_bottom = 299.0
 rotation = 0.0872665
 bbcode_enabled = true
@@ -187,9 +181,9 @@ text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Ferdi[/shake][/
  [color=#ff8864][shake rate=10.0 level=5 connected=0]Britanny[/shake][/color]  for  good  (but  no  one  really  knows)."
 scroll_active = false
 script = ExtResource("7_xwskb")
-metadata/_edit_lock_ = true
 
 [node name="Chrys" type="RichTextLabel" parent="Texts"]
+visible = false
 layout_mode = 0
 offset_left = 80.0
 offset_top = 207.0
@@ -200,8 +194,9 @@ bbcode_enabled = true
 text = "     [color=#ff1c18][shake rate=10.0 level=5 connected=0]Chrys[/shake][/color]:    [color=#ff8864][shake rate=10.0 level=5 connected=0]Game introduction[/shake][/color].
 [color=#ffffff]-[/color]  [color=#ff8864][shake rate=10.0 level=5 connected=0]Chinese[/shake][/color] holds  no  secrets for her.
 [color=#ffffff]-[/color]  [color=#ff8864][shake rate=10.0 level=5 connected=0]Paris[/shake][/color] also  holds  no secrets for  her."
+visible_characters = 0
+visible_ratio = 0.0
 script = ExtResource("7_xwskb")
-metadata/_edit_lock_ = true
 
 [node name="Button" type="Control" parent="."]
 visible = false
@@ -209,7 +204,6 @@ layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_u3pji")
 script = ExtResource("4_smm6m")
-metadata/_edit_lock_ = true
 
 [node name="Ok" type="Button" parent="Button"]
 layout_mode = 0
@@ -219,7 +213,6 @@ offset_right = 342.0
 offset_bottom = 307.0
 tooltip_text = "Nice to know!"
 text = "Got it!"
-metadata/_edit_lock_ = true
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_vnu4b")
