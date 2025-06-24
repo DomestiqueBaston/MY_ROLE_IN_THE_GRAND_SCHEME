@@ -3570,6 +3570,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Dream" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
+visible = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 106.0
@@ -3583,7 +3584,6 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,
 "
 
 [node name="Nightmare" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
-visible = false
 layout_mode = 0
 offset_left = 168.0
 offset_top = 94.0
