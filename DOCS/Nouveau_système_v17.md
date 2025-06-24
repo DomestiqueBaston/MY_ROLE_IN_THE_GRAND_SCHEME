@@ -38,7 +38,7 @@ Emo	Effets et/ou modificateur de jet de dé
 Add	Effet et/ou modificateur de jet de dé
 -3	Mort si un jet de dé contre HEA est raté
 sinon
--1HEA, ±1Emo → min/max et Add = -2
+-1HEA, +1Emo → min/max et Add = -2
 -2	Malus de 2
 -1	Malus de 1
 0	/
@@ -46,7 +46,7 @@ sinon
 2	Bonus de 3
 3	Mort si un jet de dé contre HEA est raté
 sinon
--1HEA, ±1Emo → min/max et Add = 2
+-1HEA, +1Emo → min/max et Add = 2
 
 	- Voir également Paranoïa (Par) pour les effets sur Add.
 	- Voir aussi Système de santé/L’addiction pour le sevrage (et la replonge).
@@ -259,14 +259,14 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 5 heures	/	+1 Emo → Min/Max	Malus de 1
 6 heures	/	/	Malus de 1
 7 heures	+1 HEA	/	/
-8 heures (normal)	+1 HEA	±1 Emo → 0	/
+8 heures (normal)	+1 HEA	+1 Emo → 0	/
 9 heures	+1 HEA	+2 Emo → 0	/
 10 heures	+2 HEA	+1 Emo → 0	Bonus de 1
 11 heures	+2 HEA	+2 Emo → 0	Bonus de 1
 12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
 	- 25% de chance de faire un rêve/cauchemar qui aura un effet sur la récupération : rêve = +1 HEA et cauchemar -1 HEA (on peut donc perdre des HEA en dormant) !
-	- Intervention Thérapeutique (médecin) : +2 HEA, ±1 Emo → 0 et ±1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
+	- Intervention Thérapeutique (médecin) : +2 HEA, +1 Emo → 0 et +1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa (menu désactivé) !
 	- On ne peut dormir qu’1 fois par jour. SAUF voir Paranoïa pour le sommeil.
 	- Sauf pendant une crise de paranoïa, le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 aux jets de dé par tranche de 2 heures. Il ne peut pas faire plus de 24h d’éveil d’affilé sinon « tombe de fatigue » : il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil (donc annule une partie des bénéfices du sommeil) ! Il peut également subir les bonus/malus de rêve/cauchemar.
@@ -335,7 +335,7 @@ Les factures
 Factures impayées	Malus
 1	/
 2	1
-3	1 et ±1Emo → min/max
+3	1 et +1Emo → min/max
 4	2
 5	Prison 3 jours, plus ancienne facture réglée et retour à 4 impayés
 
@@ -485,8 +485,8 @@ Dialogue
 		- On fait marge de réussite du Joueur – marge de réussite du PNJ.
 	- En cas de réussite normale, et en fonction de la marge de réussite, il obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). Jamais plus qu’un PNJ ne peut en délivrer.
 	- En cas d’échec normal (marge d’échec > 0) : rien.
-	- Et en plus pour le joueur, en cas d’échec critique (1 naturel au jet de dé), le joueur prend ±1Emo → Min/Max ainsi que -1Rep avec le PNJ. Et règle de progression s’applique.
-	- Et en plus pour le joueur, en cas de réussite critique (10 naturel au jet de dé), le joueur prend ±1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante) en plus de réussite normale. Et règle de progression s’applique.
+	- Et en plus pour le joueur, en cas d’échec critique (1 naturel au jet de dé), le joueur prend +1Emo → Min/Max ainsi que -1Rep avec le PNJ. Et règle de progression s’applique.
+	- Et en plus pour le joueur, en cas de réussite critique (10 naturel au jet de dé), le joueur prend +1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante) en plus de réussite normale. Et règle de progression s’applique.
 	- Et en plus pour le PNJ en cas de réussite critique (10 naturel au jet de dé) : -1 info et -1Rep. Et règle de progression s’applique.
 	- Si le PNJ seul fait une réussite critique, cela implique un échec pour le joueur (même si ce dernier aurait pu gagner de par sa marge de réussite).
 	- Et en plus pour le PNJ, en cas d’échec critique (1 naturel au jet de dé) : +1 info et +1Rep. Et règle de progression s’applique.
@@ -554,11 +554,11 @@ Combat
 	- Un échec signifie que le protagoniste rate son coup.
 	- Par défaut et en cas de réussite (y compris critique), chacun inflige des dégâts à l’autre définis par la marge de réussite :
 		- 1 réussite critique (joueur) :
-			au PNJ : 100% de dégâts et +1HEA dégât (si mort → pas mort → KO) et ±1Emo → 0. La règle de progression s’applique.
+			au PNJ : 100% de dégâts et +1HEA dégât (si mort → pas mort → KO) et +1Emo → 0. La règle de progression s’applique.
 		- 1 réussite critique (PNJ) :
-			au joueur : 100% de dégâts et +1HEA dégât et ±1Emo → min/max. La règle de progression s’applique.
+			au joueur : 100% de dégâts et +1HEA dégât et +1Emo → min/max. La règle de progression s’applique.
 		- 1 échec critique (joueur) :
-			au joueur : +1HEA de dégât et ±1Emo -> min/max. La règle de progression s’applique.
+			au joueur : +1HEA de dégât et +1Emo -> min/max. La règle de progression s’applique.
 		- 1 échec critique (PNJ) :
 			au PNJ : +1HEA de dégât. La règle de progression s’applique.
 		- Réussite critique d'un côté et échec critique de l'autre peuvent se cumuler.
@@ -613,7 +613,7 @@ Fuir un Combat (Joueur) – RUN AWAY
 	- Pour fuir un combat (avant qu’il ne commence), le joueur lance un dé contre round((PHY×2 + MEN + HEA)÷4).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Sommeil, de Lieu, Malus d’action de Nuit, de jeu sans aucune carte.
 	- En cas de réussite, aucun effet, le joueur fuit.
-	- En cas de réussite critique, ±1Emo → 0. La règle de progression s’applique.
+	- En cas de réussite critique, +1Emo → 0. La règle de progression s’applique.
 	- En cas d’échec, le joueur prend +1Emo → Min/Max et reste pour le Combat qui va suivre.
 	- En cas d’échec critique, prend -1HEA, +1Emo → Min/max et reste pour le Combat qui va suivre. La règle de progression s’applique.
 	- →+1h au lieu de +2h car l’Interaction prévue n’a pas eu lieu !
@@ -650,9 +650,9 @@ Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à 
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
 	- On peut tenter l’action sans carte du tout avec un malus de 1.
 	- Le jet de dé de base se fera sur round((PHY+MEN × 2+HEA)÷4). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Difficulté d’enquête, d’Emo, d’Add, de Wan, de Sommeil, de Veille, de Nuit, de Lieu (uniquement sur place) et de jeu sans carte.
-	- En cas de réussite critique, ±1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit. La règle de progression s’applique.
-	- En cas d’échec, le joueur prendra +1Wan, ±1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
-	- En cas d’échec critique, -1HEA, ±1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain. Il peut atteindre le seuil pour aller en prison et les règles à ce sujet s’appliquent. La règle de progression s’applique.
+	- En cas de réussite critique, +1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit. La règle de progression s’applique.
+	- En cas d’échec, le joueur prendra +1Wan, +1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
+	- En cas d’échec critique, -1HEA, +1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain. Il peut atteindre le seuil pour aller en prison et les règles à ce sujet s’appliquent. La règle de progression s’applique.
 	- En cas de réussite normale, pas de bonus ni de malus à l’Investigation qui suit.
 
 
@@ -761,9 +761,9 @@ Résolution des enquêtes, gains et implications
 		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites parmi lesquelles le joueur choisira celles qu’il garde pour sa main de maîtrise sans dépasser les limites de main de Maîtrise.
 		- Emo = 0, Add = 0, Wan = 0
  	- Si le joueur valide une enquête et qu’il s’est trompé, l’enquête est terminée pour lui et implique :
-		- Emo ±1 → Min/Max ou Emo -1 si Emo = 0.
+		- Emo +1 → Min/Max ou Emo -1 si Emo = 0.
 	- Renoncer à une enquête n’implique pas de malus ni de bonus.
-	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo ±1 → Emo Min/Max ou Emo -1 si Emo = 0. L’annonce se fera avec Short_Event_Overlay.
+	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo +1 → Emo Min/Max ou Emo -1 si Emo = 0. L’annonce se fera avec Short_Event_Overlay.
 	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours. Pour les enquêtes de niveau 0, on compte comme niveau 1.
 	- Le joueur peut mener jusqu’à 4 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
 	- Une enquête ne peut pas être rejetée à plus de (niveau de difficulté de l’enquête) jour(s) de sa limite de validité.  Pour les enquêtes de niveau 0, voir à la fin !
