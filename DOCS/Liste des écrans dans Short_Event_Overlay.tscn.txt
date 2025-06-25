@@ -3,88 +3,93 @@ Il est possibles qu'une ou plusieurs des ces "sous-scènes" ne soient jamais uti
 
 
 Card_Management :
-	pour gérer les cartes du joueur
+	- pour gérer les cartes du joueur
 
 Care_Sheet :
-	pour savoir si le joueur veut dépenser ses thunes chez le médecin
+	- pour savoir si le joueur veut dépenser ses thunes chez le médecin
 
 Case_Management :
-	pour passer d'une enquête à une autre parmi les 4 enquêtes maximum qu'a le joueur
+	- pour passer d'une enquête à une autre parmi les 4 enquêtes maximum qu'a le joueur
 
 Case Summary :
-	feuille d'enquête de départ
+	- feuille d'enquête de départ
 
 Cellphone :
-	pour les messages anonymes
+	- pour les messages anonymes
 
 Confirmation :
-	pour confirmer des trucs
+	- pour confirmer des trucs
 
 Income_Start :
-	pour donner les gains du joueur
-	pour annoncer ce que le joueur a en main au départ d'une partie
+	- Income : pour donner les gains du joueur
+	- Starting_Hand : pour annoncer ce que le joueur a en main au départ d'une partie
 
 Interaction_Run_Away_Break_In :
-	pour les interactions Run-Away
-	pour les interaction Break-In
+	- pour les interactions Run-Away et pour les interaction Break-In : on ne change que Title
 
 Intercom :
-	lorsqu'un PNJ n'est pas là
-	Lorsqu'un PNJ refuse de voir le joueur
+	- Interface/Screens/Away : lorsqu'un PNJ n'est pas là
+	- Interface/Screens/Refuse : Lorsqu'un PNJ refuse de voir le joueur
 
 Investigation_Center :
-	Pour que le joueur aille choisir des enquêtes à mener
+	- Pour que le joueur aille choisir des enquêtes à mener
+
+Zero_Level_Case_Proposal :
+	- Pour les propositions d'enquête (niveau 0) de gens dans la rue.
+
+Health_Issues :
+	- Quand le joueur est à PHY=0 et/ou MEN=0 et doit rester au lit.
 
 Load_Save_Delete :
-	pour charger/sauver/effacer des sauvegardes de parties
+	- pour charger/sauver/effacer des sauvegardes de parties
 
 Misc :
-	lorsque le joueur à trop d'impayés et va en prison 3 jours
-	pour les résultats des Break-ins
-		réussite
-		échec
-	pour le déclenchement d'un combat
-		avec un NPC avant un Dialogue
-		avec un Minion
-	pour la fuite d'un PNJ avant un Dialogue
-		réussite
-		échec
-	pour les rêves/cauchemars
-		rêve
-		cauchemar
-	pour prévenir que le mobile de crime précédemment sélectionné n'est plus valide
-	pour prévenir lorsqu'une contradiction est apparue entre de nouvelles infos et de précédentes infos
-	pour prévenir que le joueur a laissé passer le délai de résolution d'une de ses enquêtes
-	pour dire au joueur que Rowena n'est pas là
-	pour annoncer le résultat d'une tentative de fuite du joueur
-		réussite
-		échec
+	- Bill : lorsque le joueur à trop d'impayés et va en prison 3 jours
+	- pour les résultats des Break-ins
+		- Break_In/Player_Success : réussite
+		- Break_In/Player_Failure : échec
+	- pour le déclenchement d'un combat
+		- Combat/NPC_Attack : avec un NPC avant un Dialogue
+		- Combat/Minion_Attack : avec un Minion
+	- pour la fuite d'un PNJ avant un Dialogue
+		- Dialogue/NPC_Success : réussite
+		- Dialogue/NPC_Failure : échec
+	- pour les rêves/cauchemars
+		- Dreams/Dream : rêve
+		- Dreams/Nightmare : cauchemar
+	- pour prévenir que le mobile de crime précédemment sélectionné n'est plus valide
+	- pour prévenir lorsqu'une contradiction est apparue entre de nouvelles infos et de précédentes infos
+	- pour prévenir que le joueur a laissé passer le délai de résolution d'une de ses enquêtes
+	- pour dire au joueur que Rowena n'est pas là
+	- pour annoncer le résultat d'une tentative de fuite du joueur
+		- Run_Away_Success : réussite
+		- Run_Away_Failure : échec
 
 Player_Improvement :
-	Lorsque le joueur progresse en MEN positivement
-	Lorsque le joueur progresse en PHY positivement
-	Lorsque le joueur progresse en HEAnom positivement
-	Lorsque le joueur progresse en MEN négativement
-	Lorsque le joueur progresse en PHY négativement
-	Lorsque le joueur progresse en HEAnom négativement
+	- Informations/Positive_Mental : Lorsque le joueur progresse en MEN positivement
+	- Informations/Positive_Physic : Lorsque le joueur progresse en PHY positivement
+	- Informations/Positive_Health : Lorsque le joueur progresse en maxHEA positivement
+	- Informations/Negative_Mental : Lorsque le joueur progresse en MEN négativement
+	- Informations/Negative_Physic : Lorsque le joueur progresse en PHY négativement
+	- Informations/Negative_Health : Lorsque le joueur progresse en maxHEA négativement
 
 Rowena :
-	pour acheter de la drogue à Rowena
+	- pour acheter de la drogue à Rowena
 
 Run_Away_Break_In :
-	pour proposer au joueur de fuir
-	pour proposer au joueur d'entrer par effraction
+	- Announces/Run_Away : pour proposer au joueur de fuir
+	- Announces/Break_In : pour proposer au joueur d'entrer par effraction
 
 Search_Warrant :
-	pour acheter une autorisation de fouille
-	pour proposer au joueur d'utiliser une autorisation de fouille
+	- Text_Buy : pour acheter une autorisation de fouille
+	- Text_Use : pour proposer au joueur d'utiliser une autorisation de fouille
 
 Sleep :
-	pour choisir combien de temps le joueur va dormir
+	- pour choisir combien de temps le joueur va dormir
 
 Wanted :
-	pour proposer au joueur soit d'aller directement en prison après avoir dépassé le seuil de Wan, soit de payer une caution
-	pour prévenir qu'un PNJ vient de passer le seuil de Wan et qu'il ne sera désormais plus visitable qu'en prison
+	- Info/Player : pour proposer au joueur soit d'aller directement en prison après avoir dépassé le seuil de Wan, soit de payer une caution
+	- Info/NPC : pour prévenir qu'un PNJ vient de passer le seuil de Wan et qu'il ne sera désormais plus visitable qu'en prison
 
 
 
