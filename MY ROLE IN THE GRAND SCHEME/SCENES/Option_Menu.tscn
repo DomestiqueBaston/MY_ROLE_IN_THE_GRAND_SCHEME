@@ -34,11 +34,11 @@
 [ext_resource type="AudioStream" uid="uid://b47jc8y3wwi28" path="res://SOUND/MISC/Minions_On.ogg" id="32_asrw6"]
 [ext_resource type="AudioStream" uid="uid://ege78tbsp417" path="res://SOUND/MISC/Minions_Off.ogg" id="33_6fk48"]
 
-[node name="Settings_Menu" type="Node2D"]
+[node name="Option_Menu" type="Node2D"]
 script = ExtResource("1_asrw6")
 metadata/_edit_lock_ = true
 
-[node name="Settings_Menu_BG" type="Sprite2D" parent="."]
+[node name="Option_Menu_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_7b261")
 centered = false
 metadata/_edit_lock_ = true
