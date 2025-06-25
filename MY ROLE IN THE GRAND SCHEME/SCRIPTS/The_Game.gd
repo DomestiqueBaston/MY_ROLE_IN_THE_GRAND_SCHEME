@@ -1,11 +1,10 @@
 extends Node2D
 
+@onready var _title_screen: Node
 @onready var _option_menu_scene = preload("res://SCENES/Option_Menu.tscn")
 @onready var _new_game_scene = preload("res://SCENES/Character_Generation.tscn")
 @onready var _main_scene = preload("res://SCENES/Main_V2.tscn")
 @onready var _quit_scene = preload("res://SCENES/Quit.tscn")
-
-@onready var _title_screen: Node
 
 func _ready():
 	_title_screen = $Active_Scene/Title_Screen

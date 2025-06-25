@@ -6,6 +6,8 @@ extends Node2D
 @onready var reserve: Node2D = $Reserve_Cards
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
+@onready var top_bar: Control = $Mask_Card_Playground/Top_Bar
+@onready var dialog: Node2D = $Short_Event_Overlay
 @onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
@@ -59,6 +61,9 @@ var _src_pin: Pin
 var _dst_pin: Pin
 var _new_link: Link
 
+# if true, all input handling is paused
+var _input_paused: bool = false
+
 func _ready():
 	var submenu1 = popup.get_child(0)
 	var submenu2 = submenu1.duplicate()
@@ -82,11 +87,9 @@ func _ready():
 	submenu2.id_pressed.connect(_handle_submenu.bind(1))
 	submenu3.id_pressed.connect(_handle_submenu.bind(2))
 	
-	$Mask_Card_Playground/Top_Bar.pass_time.connect(
-		func(): GameState.pass_one_hour())
-	$Mask_Card_Playground/Top_Bar.quit.connect(
-		func(): quit.emit()
-	)
+	top_bar.sleep.connect(_on_sleep)
+	top_bar.pass_time.connect(func(): GameState.pass_one_hour())
+	top_bar.quit.connect(func(): quit.emit())
 	
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
@@ -97,6 +100,8 @@ func _ready():
 	Globals.mouse_exited_link.connect(_mouse_exited_link)
 	Globals.link_right_click.connect(_popup_menu)
 	Globals.pin_left_click.connect(_click_on_pin)
+	
+	GameState.player.debts_changed.connect(_on_debt_change)
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -133,6 +138,8 @@ func _input(event: InputEvent):
 			_stop_linking(event.global_position)
 
 func _mouse_entered_card(card: Card):
+	if _input_paused:
+		return
 	if _drag_state == DragState.NONE and card != _current_card:
 		if _current_card:
 			_current_card.set_highlighted(false)
@@ -145,6 +152,8 @@ func _mouse_entered_card(card: Card):
 		_drop_target = card
 
 func _mouse_exited_card(card: Card):
+	if _input_paused:
+		return
 	if _drag_state == DragState.NONE:
 		card.set_highlighted(false)
 		if _current_card == card:
@@ -155,23 +164,33 @@ func _mouse_exited_card(card: Card):
 		_drop_target = null
 
 func _click_on_card(global_pos: Vector2, card: Card):
+	if _input_paused:
+		return
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
 
 func _double_click_on_card(card: Card):
+	if _input_paused:
+		return
 	if not card.is_stacked():
 		card.expand_or_reduce()
 
 func _click_on_pin(global_pos: Vector2, pin: Pin):
+	if _input_paused:
+		return
 	_clicked_pin = pin
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
 
 func _mouse_entered_link(link: Link):
+	if _input_paused:
+		return
 	_drop_target = link
 
 func _mouse_exited_link(_link: Link):
+	if _input_paused:
+		return
 	_drop_target = null
 
 func _start_drag() -> bool:
@@ -479,6 +498,8 @@ func _stop_linking(global_pos: Vector2):
 	Globals.dragging = false
 
 func _popup_menu(pos: Vector2, node: Node2D):
+	if _input_paused:
+		return
 	if node is Card:
 		if node.is_stacked():
 			return
@@ -520,3 +541,27 @@ func _handle_submenu(id: int, submenu: int):
 		2:
 			if _popup_node is Link:
 				_popup_node.type = id
+
+func _show_dialog():
+	_input_paused = true
+	set_process_input(false)
+	reserve.set_process_input(false)
+	dialog.appear()
+
+func _hide_dialog():
+	_input_paused = false
+	set_process_input(true)
+	reserve.set_process_input(true)
+
+func _on_sleep():
+	_show_dialog()
+	var hours = await dialog.choose_sleep_time()
+	await _hide_dialog()
+	if hours > 0:
+		GameState.sleep(hours)
+
+func _on_debt_change():
+	if GameState.player.get_debt_count() >= 4:
+		_show_dialog()
+		await dialog.show_bill_announcement()
+		await _hide_dialog()

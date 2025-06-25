@@ -308,7 +308,7 @@ content_margin_left = 1.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxcf0"]
 content_margin_left = 1.0
 
-[node name="Interaction" type="Node2D" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
+[node name="Interaction" type="Node2D" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line", "top_bar")]
 script = ExtResource("1_1c880")
 card_area_overlays = {
 NodePath("Cards/Fallback"): NodePath("Interaction_BG/Fallback_Pile"),
@@ -322,6 +322,7 @@ NodePath("Cards/Interaction"): NodePath("Hover_Interaction_Zone")
 interaction_cards = NodePath("Cards/Interaction")
 the_button = NodePath("Button/Bring_It_On")
 drag_drop_line = NodePath("Drag_Drop_Line")
+top_bar = NodePath("Top_Bar")
 
 [node name="Interaction_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_y864e")

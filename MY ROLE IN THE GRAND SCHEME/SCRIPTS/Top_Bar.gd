@@ -3,7 +3,13 @@ extends Control
 ## If true, all menus except Whatever are disabled.
 @export var limited_menus: bool = false
 
+## Signal emitted when the player selects Sleep from the menu.
+signal sleep
+
+## Signal emitted when the player selects Pass Time from the menu.
 signal pass_time
+
+## Signal emitted when the player select Quit from the menu.
 signal quit
 
 # Define player attributes, where they are displayed, their acceptable ranges,
@@ -39,7 +45,8 @@ class PlayerAttr:
 ]
 
 enum DailiesMenuItem {
-	PASS_TIME = 1000
+	PASS_TIME = 1000,
+	SLEEP
 }
 
 enum WhateverMenuItem {
@@ -73,7 +80,7 @@ func _ready():
 		$Menus/Dailies:		false,
 		$Menus/Cases:		false,
 		$Menus/Cards:		false,
-		$Menus/Whatever:		true
+		$Menus/Whatever:	true
 	}
 
 	for button: MenuButton in buttons:
@@ -109,7 +116,7 @@ func _ready():
 	popup.add_submenu_node_item("Pay the bill", submenu1)
 	popup.add_submenu_node_item("Get your fix", submenu2)
 	popup.add_separator(" - - - - - - - - - - - - - ")
-	popup.add_item("Go to sleep...")
+	popup.add_item("Go to sleep...", DailiesMenuItem.SLEEP)
 	popup.add_item("Pass time!", DailiesMenuItem.PASS_TIME)
 	popup.id_pressed.connect(_on_dailies_press)
 
@@ -117,6 +124,8 @@ func _on_dailies_press(id: int):
 	match id:
 		DailiesMenuItem.PASS_TIME:
 			pass_time.emit()
+		DailiesMenuItem.SLEEP:
+			sleep.emit()
 
 func _on_whatever_press(id: int):
 	match id:
@@ -146,7 +155,7 @@ func _on_attr_changed(attr: PlayerAttr):
 				attr.alert_player.play("Reset")
 
 func _on_debts_changed():
-	if GameState.player.debts.size() >= 4:
+	if GameState.player.get_debt_count() >= 4:
 		$Date_Time/Day.tooltip_text = "You need to pay your bills!"
 		if $Bill_Alert.current_animation != "Alert":
 			$Bill_Alert.play("Alert")

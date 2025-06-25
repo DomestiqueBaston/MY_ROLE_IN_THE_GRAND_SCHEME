@@ -1,5 +1,6 @@
-[gd_scene load_steps=247 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=248 format=3 uid="uid://b2dn121b3l0e2"]
 
+[ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Button.gd" id="3_8qa11"]
@@ -918,6 +919,7 @@ _data = {
 }
 
 [node name="Short_Event_Overlay" type="Node2D"]
+script = ExtResource("1_42ybe")
 
 [node name="BG" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -2094,6 +2096,7 @@ max_card_count = 2
 min_card_count = 0
 the_button = NodePath("Button/Bring_It_On")
 drag_drop_line = NodePath("Drag_Drop_Line")
+enabled = false
 
 [node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
 visible = false
@@ -4599,7 +4602,6 @@ bus = &"FX"
 libraries = {
 &"": SubResource("AnimationLibrary_m6d4b")
 }
-autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
 volume_db = -25.0

@@ -23,6 +23,20 @@ extends Node2D
 ## Drag_Drop_Line.tscn).
 @export var drag_drop_line: Node2D
 
+## Optional Top_Bar scene containing the menu bar and player stats.
+@export var top_bar: Node
+
+## If false, the scene does not process input events.
+@export var enabled: bool = true:
+	set(value):
+		if enabled != value:
+			enabled = value
+			if is_node_ready():
+				if enabled:
+					_enable()
+				else:
+					_disable()
+
 ## Signal emitted when the user selects Quit in the menu.
 signal quit
 
@@ -60,13 +74,30 @@ func _ready():
 	for area in card_area_overlays:
 		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
 
+	if top_bar:
+		top_bar.quit.connect(func(): quit.emit())
+
+	if enabled:
+		_enable()
+	else:
+		_disable()
+
+func _enable():
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)
-
-	$Top_Bar.quit.connect(func(): quit.emit())
-
 	the_button.disabled = (min_card_count > 0)
+	set_process_input(true)
+
+func _disable():
+	if Globals.mouse_entered_card.is_connected(_mouse_entered_card):
+		Globals.mouse_entered_card.disconnect(_mouse_entered_card)
+	if Globals.mouse_exited_card.is_connected(_mouse_exited_card):
+		Globals.mouse_exited_card.disconnect(_mouse_exited_card)
+	if Globals.card_left_click.is_connected(_click_on_card):
+		Globals.card_left_click.disconnect(_click_on_card)
+	the_button.disabled = true
+	set_process_input(false)
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:

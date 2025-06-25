@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=92 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -69,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://cbnfvewpmrros" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_25.png" id="56_fifqw"]
 [ext_resource type="Texture2D" uid="uid://diwly2xc6qh4k" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_25.png" id="59_aw4n3"]
 [ext_resource type="Texture2D" uid="uid://loados8ho24v" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_25.png" id="62_rkm6l"]
+[ext_resource type="PackedScene" uid="uid://b2dn121b3l0e2" path="res://SCENES/Short_Event_Overlay.tscn" id="70_23ylq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
 texture = ExtResource("48_sqsjm")
@@ -2302,3 +2303,6 @@ item_13/id = 13
 item_14/text = "Found"
 item_14/icon = ExtResource("41_kmk2g")
 item_14/id = 14
+
+[node name="Short_Event_Overlay" parent="." instance=ExtResource("70_23ylq")]
+visible = false
