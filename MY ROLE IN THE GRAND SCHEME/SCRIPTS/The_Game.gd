@@ -31,21 +31,23 @@ func _on_option_button_pressed(button: StringName):
 	match button:
 		&"New_Game":
 			_go_to_new_game()
+		&"Continue":
+			_continue_game()
 		&"Quit":
 			_quit()
 
 func _go_to_new_game():
 	var new_game = await _replace_scene(_new_game_scene)
-	new_game.confirm_pressed.connect(_on_new_game_confirm_pressed)
-	new_game.cancel_pressed.connect(_on_new_game_cancel_pressed)
+	new_game.confirm_pressed.connect(_start_game)
+	new_game.cancel_pressed.connect(_go_to_option_menu)
 
-func _on_new_game_confirm_pressed():
+func _start_game():
 	GameState.start_game()
-	var main = await _replace_scene(_main_scene)
-	main.quit.connect(_quit)
+	_continue_game()
 
-func _on_new_game_cancel_pressed():
-	_go_to_option_menu()
+func _continue_game():
+	var main = await _replace_scene(_main_scene)
+	main.quit.connect(_go_to_option_menu)
 
 func _quit():
 	await _replace_scene(_quit_scene)

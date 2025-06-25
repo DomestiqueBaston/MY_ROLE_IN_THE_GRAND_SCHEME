@@ -48,14 +48,23 @@ enum WhateverMenuItem {
 	QUIT
 }
 
-func _ready():
+func _update_controls():
 	var player = GameState.player
 	$Character_Stats/Player_Name.text = player.player_name
-
 	for attr in _attrs:
 		attr.ui_label.text = str(player[attr.attr_name])
-		player.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
+	_on_time_changed()
 
+func _enter_tree():
+	if is_node_ready():
+		_update_controls()
+
+func _ready():
+	_update_controls()
+
+	var player = GameState.player
+	for attr in _attrs:
+		player.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
 	player.debts_changed.connect(_on_debts_changed)
 	GameState.time_changed.connect(_on_time_changed)
 
