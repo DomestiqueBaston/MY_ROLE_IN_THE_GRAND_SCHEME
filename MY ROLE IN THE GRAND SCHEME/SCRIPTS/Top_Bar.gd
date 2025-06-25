@@ -4,6 +4,7 @@ extends Control
 @export var limited_menus: bool = false
 
 signal pass_time
+signal quit
 
 # Define player attributes, where they are displayed, their acceptable ranges,
 # and the animations that show alerts when the attributes go outside their
@@ -41,6 +42,12 @@ enum DailiesMenuItem {
 	PASS_TIME = 1000
 }
 
+enum WhateverMenuItem {
+	LSD,
+	OPTIONS,
+	QUIT
+}
+
 func _ready():
 	var player = GameState.player
 	$Character_Stats/Player_Name.text = player.player_name
@@ -57,7 +64,7 @@ func _ready():
 		$Menus/Dailies:		false,
 		$Menus/Cases:		false,
 		$Menus/Cards:		false,
-		$Menus/Whatever:	true
+		$Menus/Whatever:		true
 	}
 
 	for button: MenuButton in buttons:
@@ -67,6 +74,8 @@ func _ready():
 			button.mouse_entered.connect(_on_mouse_entered)
 			button.mouse_exited.connect(_on_mouse_exited)
 			button.pressed.connect(_on_button_pressed)
+
+	$Menus/Whatever.get_popup().id_pressed.connect(_on_whatever_press)
 
 	if $Menus/Dailies.disabled:
 		return
@@ -99,6 +108,11 @@ func _on_dailies_press(id: int):
 	match id:
 		DailiesMenuItem.PASS_TIME:
 			pass_time.emit()
+
+func _on_whatever_press(id: int):
+	match id:
+		WhateverMenuItem.QUIT:
+			quit.emit()
 
 func _on_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):

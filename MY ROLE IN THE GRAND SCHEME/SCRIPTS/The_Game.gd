@@ -3,6 +3,7 @@ extends Node2D
 @onready var _option_menu_scene = preload("res://SCENES/Option_Menu.tscn")
 @onready var _new_game_scene = preload("res://SCENES/Character_Generation.tscn")
 @onready var _main_scene = preload("res://SCENES/Main_V2.tscn")
+@onready var _quit_scene = preload("res://SCENES/Quit.tscn")
 
 @onready var _title_screen: Node
 
@@ -31,7 +32,7 @@ func _on_option_button_pressed(button: StringName):
 		&"New_Game":
 			_go_to_new_game()
 		&"Quit":
-			get_tree().quit()
+			_quit()
 
 func _go_to_new_game():
 	var new_game = await _replace_scene(_new_game_scene)
@@ -40,7 +41,13 @@ func _go_to_new_game():
 
 func _on_new_game_confirm_pressed():
 	GameState.start_game()
-	_replace_scene(_main_scene)
+	var main = await _replace_scene(_main_scene)
+	main.quit.connect(_quit)
 
 func _on_new_game_cancel_pressed():
 	_go_to_option_menu()
+
+func _quit():
+	await _replace_scene(_quit_scene)
+	await $Transition.transition_finished
+	get_tree().quit()

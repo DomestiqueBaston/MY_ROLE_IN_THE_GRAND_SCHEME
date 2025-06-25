@@ -675,16 +675,3 @@ libraries = {
 stream = ExtResource("5_0mfvj")
 volume_db = -10.0
 bus = &"UI"
-
-[connection signal="mouse_entered" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Menus/Dailies" to="Menus/Dailies" method="_on_mouse_exited"]
-[connection signal="pressed" from="Menus/Dailies" to="Menus/Dailies" method="_on_pressed"]
-[connection signal="mouse_entered" from="Menus/Cases" to="Menus/Dailies" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Menus/Cases" to="Menus/Dailies" method="_on_mouse_exited"]
-[connection signal="pressed" from="Menus/Cases" to="Menus/Dailies" method="_on_pressed"]
-[connection signal="mouse_entered" from="Menus/Cards" to="Menus/Dailies" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Menus/Cards" to="Menus/Dailies" method="_on_mouse_exited"]
-[connection signal="pressed" from="Menus/Cards" to="Menus/Dailies" method="_on_pressed"]
-[connection signal="mouse_entered" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Menus/Whatever" to="Menus/Dailies" method="_on_mouse_exited"]
-[connection signal="pressed" from="Menus/Whatever" to="Menus/Dailies" method="_on_pressed"]
