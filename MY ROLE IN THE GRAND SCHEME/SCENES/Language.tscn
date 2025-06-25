@@ -19,10 +19,10 @@ tracks/0/path = NodePath("Language_Bg/Quit_Blink:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.500001), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_gvwtn"]
@@ -55,15 +55,13 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Quit_Blink" type="Sprite2D" parent="Language_Bg"]
-texture = ExtResource("3_qv763")
+texture = ExtResource("2_hxgus")
 centered = false
 metadata/_edit_lock_ = true
 
 [node name="Quit_Button" type="Control" parent="Language_Bg"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 theme = ExtResource("2_ayvp8")
 script = ExtResource("4_0r7xq")
 metadata/_edit_lock_ = true
@@ -72,8 +70,6 @@ metadata/_edit_lock_ = true
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Quit, cancel,
-whatever..."
 texture_pressed = ExtResource("2_hxgus")
 texture_hover = ExtResource("3_qv763")
 texture_click_mask = ExtResource("4_pb8m6")

@@ -1935,7 +1935,6 @@ offset_left = 275.0
 offset_top = 338.0
 offset_right = 365.0
 offset_bottom = 353.0
-tooltip_text = "I'm done here!"
 theme = ExtResource("10_ymndd")
 theme_override_colors/font_hover_pressed_color = Color(0.913833, 1, 0.89, 0.882353)
 theme_override_colors/font_hover_color = Color(0.4648, 0.83, 0.531753, 0.643137)

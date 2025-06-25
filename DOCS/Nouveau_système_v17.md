@@ -738,7 +738,7 @@ Relations entre les PNJs	Lien(s) plein(s) (confirmé(s)), lien(s) pointillé(s) 
 Liens et validation d’enquête :
 	- En rapport avec Crime_Mobile_Evidence.json (établissement des liens AVANT début de l’enquête):
 		- « debt_influence », « intimacy » et « ideology » peuvent tout à fait se cumuler. Choix aléatoire et chacun a une chance sur deux d’être présent.
-		- lorsqu’on a « friend » ou/et « enemy » ou/et acquaintance, l’enquête choisira l’un des trois. Choix aléatoire et chacun a une chance sur deux d’être présent donc on peut n’en avoir aucun.
+		- lorsqu’on a « friend » ou/et « enemy » ou/et acquaintance, l’enquête choisira l’un des trois ou rien. Chacun a une chance sur deux d’être présent donc on peut n’en avoir aucun.
 		- Lorsque « none » et d’autres choix sont possibles, si « none » est choisi, aucun autre lien ne sera ajouté (« none » est toujours seul).
 		- Lorsqu’un choix « none » est possible, c’est le premier à être testé (une chance sur deux) !
 
@@ -959,19 +959,19 @@ Difficulté du jeu
 
 Éléments additionnels de difficulté
 	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
-		Drug Quality : Prix de la dose de drogue à 30Dø (+20%).
+		Drug Quality : Prix de la dose de drogue +20%.
 		Plot Depth : Temps imparti pour résoudre une enquête : -20%.
-		Corruption : Autorisation de fouille portée à 50Dø (+20%).
+		Corruption : Prix d’une autorisation de fouille +20%.
 		Retail Investment :  Les factures augmentent de +20%.
-		Vice : Caution (prison) portée à 125Dø (+25%).
+		Vice : Prix de la caution (prison) +25%.
 		Mentirosos : +10 % de chances de mensonge.
-		Hardboiled Minions : +10% HEA (et maxHEA).
+		Hardboiled Minions : +10% HEA (et maxHEA) sans dépasser 10.
 		Over Crowded City : +20% de PNJs inutiles.
-		No public docs : 60Dø (+20%) chez le médecin.
+		No public docs : Prix de l’intervention thérapeutique +20%.
 		Hectic City : toutes les actions prennent 15% de temps en plus (l’horloge n’affiche que les heures, pas les minutes mais on les compte sans arrondir) !
-		They are watching : 20% de chance de SMS !
-		Cat’s eye : le malus de jet de dé de nuit est annulé.
-	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on la désactive de la même manière):
+		They are watching : +10% de chance de SMS !
+		Cat’s eye : le malus de jet de dé de nuit est annulé et passe de jour !
+	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on désactive de la même manière) :
 		I am one of them : le Wan du joueur ne peut jamais dépasser 3.
 		
 Éléments additionnels « tout court »

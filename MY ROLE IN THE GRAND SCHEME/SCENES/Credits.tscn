@@ -211,7 +211,6 @@ offset_left = 281.0
 offset_top = 286.0
 offset_right = 342.0
 offset_bottom = 307.0
-tooltip_text = "Nice to know!"
 text = "Got it!"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
