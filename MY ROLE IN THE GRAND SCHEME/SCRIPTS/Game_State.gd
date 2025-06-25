@@ -32,6 +32,5 @@ func pass_one_hour():
 	_increment_time(1)
 
 func sleep(hours: int):
-	if hours >= 4:
-		player.sleep(hours)
-		_increment_time(hours)
+	player.sleep(hours)
+	_increment_time(hours)
