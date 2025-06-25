@@ -327,6 +327,7 @@ _data = {
 [node name="Top_Bar" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_2tgjx")
 script = ExtResource("1_0mfvj")
 
 [node name="A_VIRER_1" type="RichTextLabel" parent="."]
@@ -338,7 +339,7 @@ offset_bottom = -2.0
 theme_override_font_sizes/normal_font_size = 8
 theme_override_font_sizes/bold_font_size = 1
 bbcode_enabled = true
-text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h, je le rappelle), on aura l'animation [color=ff1c18]Sleep_Alert[/color] et le Tooltip affichera \"[color=ff1c18]You need to sleep![/color]\" à la place de \"Tick-Tock...\"
+text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h, je le rappelle), on aura l'animation [color=ff1c18]Sleep_Alert[/color] et le Tooltip affichera \"[color=ff1c18]You need to sleep![/color]\" à la place de \"[color=ff1c18]Tick-Tock...[/color]\"
 ||
 V[/center]"
 
@@ -351,7 +352,6 @@ offset_left = 3.0
 offset_top = 1.0
 offset_right = 57.0
 offset_bottom = 9.0
-theme = ExtResource("1_2tgjx")
 
 [node name="Day" type="Label" parent="Date_Time"]
 layout_mode = 2
@@ -373,7 +373,6 @@ text = "12am"
 [node name="Menus" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-theme = ExtResource("1_2tgjx")
 
 [node name="Double_Bar_1" type="Label" parent="Menus"]
 layout_mode = 2
@@ -390,7 +389,6 @@ offset_left = 58.0
 offset_top = -1.0
 offset_right = 104.0
 offset_bottom = 11.0
-tooltip_text = "Your daily actions"
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Dailies"
@@ -411,7 +409,6 @@ offset_left = 96.0
 offset_top = -1.0
 offset_right = 142.0
 offset_bottom = 11.0
-tooltip_text = "All your cases"
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Cases"
@@ -444,7 +441,6 @@ offset_left = 133.0
 offset_top = -1.0
 offset_right = 179.0
 offset_bottom = 11.0
-tooltip_text = "Manage your deck"
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Cards
@@ -469,7 +465,6 @@ offset_left = 176.0
 offset_top = -1.0
 offset_right = 225.0
 offset_bottom = 11.0
-tooltip_text = "Game options"
 theme = ExtResource("1_2tgjx")
 button_group = ExtResource("2_mdfj4")
 text = "Whatever"
@@ -506,7 +501,6 @@ grow_horizontal = 0
 pivot_offset = Vector2(325, 10)
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme = ExtResource("1_2tgjx")
 bbcode_enabled = true
 text = "[color=#ff1c18]PHY[/color]: [color=#ff8864] [/color] | [color=#ff1c18]MEN[/color]: [color=#ff8864] [/color] | [color=#ff1c18]HEA[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Emo[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Add[/color]: [color=#ff8864] [/color] | [color=#ff1c18]Wan[/color]: [color=#00000000]|8[/color]| [color=#ff1c18]Drug[/color]: [color=#ff8864] [/color][color=#00000000]|[/color] | [color=#ff8864][/color][color=#ff1c18]Dø[/color]: [color=#ff8864][color=#00000000]|8811[/color]"
 scroll_active = false
