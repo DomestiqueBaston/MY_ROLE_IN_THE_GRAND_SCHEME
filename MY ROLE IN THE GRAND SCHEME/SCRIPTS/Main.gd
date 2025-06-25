@@ -10,6 +10,9 @@ extends Node2D
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
 
+## Signal emitted when the user selects Quit in the menu.
+signal quit
+
 enum MenuItem {
 	DIALOGUE,
 	INVESTIGATION,
@@ -81,6 +84,9 @@ func _ready():
 	
 	$Mask_Card_Playground/Top_Bar.pass_time.connect(
 		func(): GameState.pass_one_hour())
+	$Mask_Card_Playground/Top_Bar.quit.connect(
+		func(): quit.emit()
+	)
 	
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)

@@ -12,9 +12,7 @@ var addiction: int: set = set_addiction, get = get_addiction
 var wanted: int: set = set_wanted, get = get_wanted
 var paranoia: int
 var money: int: set = set_money, get = get_money
-var debts: Array[int]: set = set_debts, get = get_debts
 var drugs: int: set = set_drugs, get = get_drugs
-var cards: Array[Dictionary]
 
 signal physical_changed
 signal mental_changed
@@ -23,20 +21,21 @@ signal emotion_changed
 signal addiction_changed
 signal wanted_changed
 signal money_changed
-signal debts_changed
 signal drugs_changed
+signal debts_changed
 
 @onready var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
 @onready var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
 @onready var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
 @onready var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
 
+var _debts: Array[int]
+var _cards: Array[Dictionary]
 var _signal_pause: int = 0
 var _sleep_bonus_malus: int = 0
 
 func reset():
 	_signal_pause += 1
-	_sleep_bonus_malus = 0
 	player_name = ""
 	background = {}
 	sex = 0
@@ -49,14 +48,14 @@ func reset():
 	wanted = 0
 	paranoia = 0
 	money = 0
-	debts.clear()
 	drugs = 0
-	cards.clear()
+	_debts.clear()
+	_cards.clear()
+	_sleep_bonus_malus = 0
 	_signal_pause -= 1
 
 func start_game():
 	_signal_pause += 1
-	_sleep_bonus_malus = 0
 
 	var bonus_malus = background.get("bonus_malus", {})
 	physical += bonus_malus.get("PHY", 0)
@@ -68,9 +67,10 @@ func start_game():
 	wanted = 0
 	paranoia = 0
 	money = 300 + bonus_malus.get("money", 0)
-	debts.clear()
 	drugs = 3 + bonus_malus.get("drugs", 0)
-	cards.clear()
+	_debts.clear()
+	_cards.clear()
+	_sleep_bonus_malus = 0
 
 	var card_lists = [
 		_dialogue_cards.get("dialogue", []),
@@ -83,17 +83,17 @@ func start_game():
 
 	for card_list in card_lists:
 		if not card_list.is_empty():
-			cards.append(card_list[randi_range(0, card_list.size() - 1)])
+			_cards.append(card_list[randi_range(0, card_list.size() - 1)])
 
 	# some players get bonus cards
 
-	var init_card_count = cards.size() + bonus_malus.get("cards", 0)
-	while cards.size() < init_card_count:
+	var init_card_count = _cards.size() + bonus_malus.get("cards", 0)
+	while _cards.size() < init_card_count:
 		var card_list = card_lists[randi_range(0, card_lists.size() - 1)]
 		if not card_list.is_empty():
 			var card = card_list[randi_range(0, card_list.size() - 1)]
-			if not card in cards:
-				cards.append(card)
+			if not card in _cards:
+				_cards.append(card)
 
 	print("player: ", player_name)
 	print("sex: ", sex)
@@ -103,7 +103,7 @@ func start_game():
 	print("HEA: ", health)
 	print("dough: %d Dø" % money)
 	print("drugs: %d doses" % drugs)
-	for card in cards:
+	for card in _cards:
 		print("%s card: %s (%s)" % [card.type, card.name, card.id])
 
 	_signal_pause -= 1
@@ -175,21 +175,6 @@ func set_money(dough: int):
 func get_money() -> int:
 	return money
 
-func set_debts(new_debts: Array[int]):
-	debts = new_debts.duplicate()
-	debts_changed.emit()
-
-func add_debt(debt: int):
-	debts.append(debt)
-	debts_changed.emit()
-
-func get_debts() -> Array[int]:
-	return debts
-
-func remove_debt(index: int):
-	debts.remove_at(index)
-	debts_changed.emit()
-
 func set_drugs(doses: int):
 	if drugs != doses:
 		drugs = doses
@@ -198,6 +183,26 @@ func set_drugs(doses: int):
 
 func get_drugs() -> int:
 	return drugs
+
+func add_debt(debt: int):
+	_debts.append(debt)
+	debts_changed.emit()
+
+func get_debt_count() -> int:
+	return _debts.size()
+
+func get_debt(index: int) -> int:
+	return _debts[index]
+
+func remove_debt(index: int):
+	_debts.remove_at(index)
+	debts_changed.emit()
+
+func get_debt_total() -> int:
+	var total = 0
+	for debt in _debts:
+		total += debt
+	return total
 
 func pass_one_hour():
 	if randi() % 10 == 0:
@@ -228,8 +233,6 @@ func _calm(start_value: int, how_much: int) -> int:
 		return maxi(0, start_value - how_much)
 
 func sleep(hours: int):
-	if hours < 4:
-		return
 	match hours:
 		4:
 			emotion = _exacerbate(emotion, 1)
@@ -259,7 +262,7 @@ func sleep(hours: int):
 			health += 2
 			emotion = _calm(emotion, 2)
 			_sleep_bonus_malus = 1
-		_:
+		12:
 			health += 3
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 2

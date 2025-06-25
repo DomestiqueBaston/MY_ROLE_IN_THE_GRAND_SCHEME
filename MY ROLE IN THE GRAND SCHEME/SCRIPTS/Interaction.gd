@@ -23,6 +23,9 @@ extends Node2D
 ## Drag_Drop_Line.tscn).
 @export var drag_drop_line: Node2D
 
+## Signal emitted when the user selects Quit in the menu.
+signal quit
+
 # highlighted card
 var _current_card: Card
 
@@ -56,9 +59,13 @@ var _cards_played: Dictionary
 func _ready():
 	for area in card_area_overlays:
 		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
+
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)
+
+	$Top_Bar.quit.connect(func(): quit.emit())
+
 	the_button.disabled = (min_card_count > 0)
 
 func _input(event: InputEvent):
