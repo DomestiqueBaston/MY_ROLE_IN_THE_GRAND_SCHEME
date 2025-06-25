@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7yxbbm1q32sw"]
+[gd_scene load_steps=16 format=3 uid="uid://c7yxbbm1q32sw"]
 
 [ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCRIPTS/Globals.gd" id="1_p5kqw"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://umd5dl16bi7t" path="res://GRAPHICS/UI/Mouse_Circle.png" id="4_8eio1"]
 [ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="4_f2dh2"]
 [ext_resource type="Shader" uid="uid://dkp5ymdefrmn2" path="res://SHADERS/Video.gdshader" id="5_kpwuy"]
+[ext_resource type="Texture2D" uid="uid://baudxdsufh5l1" path="res://GRAPHICS/UI/Mouse_Cross.png" id="5_wgutn"]
 [ext_resource type="AudioStream" uid="uid://b568q033et7yi" path="res://SOUND/MISC/Valid.ogg" id="6_baqg5"]
 [ext_resource type="AudioStream" uid="uid://4dfb07ojptrw" path="res://SOUND/MISC/Cancel.ogg" id="7_xi55q"]
 [ext_resource type="AudioStream" uid="uid://hydd28qd6uak" path="res://SOUND/MISC/Leave.ogg" id="8_8eio1"]
@@ -39,6 +40,10 @@ centered = false
 [node name="Circle_Cursor" type="Sprite2D" parent="MouseLayer/Mouse"]
 visible = false
 texture = ExtResource("4_8eio1")
+
+[node name="Cross_Cursor" type="Sprite2D" parent="MouseLayer/Mouse"]
+visible = false
+texture = ExtResource("5_wgutn")
 
 [node name="ShaderOverlayLayer" type="CanvasLayer" parent="."]
 visible = false
