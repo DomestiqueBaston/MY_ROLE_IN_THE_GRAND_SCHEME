@@ -11,6 +11,8 @@ func _ready():
 		button.mouse_entered.connect(_on_mouse_entered)
 		button.mouse_exited.connect(_on_mouse_exited)
 
+	$Drawers/Continue.disabled = (GameState.player.health == 0)
+
 func _on_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
 		Globals.hover_sound.play()

@@ -36,6 +36,10 @@ func _on_option_button_pressed(button: StringName):
 			_quit()
 
 func _go_to_new_game():
+	if GameState.player.health > 0:
+		var ok = await $Short_Event_Overlay.ask_for_confirmation()
+		if not ok:
+			return
 	var new_game = await _replace_scene(_new_game_scene)
 	new_game.confirm_pressed.connect(_start_game)
 	new_game.cancel_pressed.connect(_go_to_option_menu)

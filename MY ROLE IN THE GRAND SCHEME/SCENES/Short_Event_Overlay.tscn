@@ -1757,6 +1757,7 @@ autoplay = "Blinking"
 
 [node name="Confirmation" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("58_sfan1")
 
 [node name="Confirmation_BG" type="Sprite2D" parent="Overlays/Confirmation"]
 position = Vector2(320, 180)
@@ -1789,7 +1790,6 @@ offset_top = 215.0
 offset_right = 322.0
 offset_bottom = 215.0
 rotation = -0.0698132
-script = ExtResource("58_sfan1")
 
 [node name="Yes" type="Button" parent="Overlays/Confirmation/Yes_No"]
 layout_mode = 0
@@ -4638,12 +4638,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_switch_pressed"]
-[connection signal="mouse_entered" from="Overlays/Confirmation/Yes_No/Yes" to="Overlays/Confirmation/Yes_No" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Overlays/Confirmation/Yes_No/Yes" to="Overlays/Confirmation/Yes_No" method="_on_any_button_exited"]
-[connection signal="pressed" from="Overlays/Confirmation/Yes_No/Yes" to="Overlays/Confirmation/Yes_No" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_any_button_exited"]
-[connection signal="pressed" from="Overlays/Confirmation/Yes_No/No" to="Overlays/Confirmation/Yes_No" method="_on_no_pressed"]
 [connection signal="mouse_entered" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_pressed"]
