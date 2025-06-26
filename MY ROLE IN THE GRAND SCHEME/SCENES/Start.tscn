@@ -13,12 +13,12 @@ shader_parameter/smoothness = 0.0
 shader_parameter/dist = 0.1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bewxp"]
-bg_color = Color(0.51, 0.1479, 0.1479, 0.270588)
+bg_color = Color(0.1276, 0.398347, 0.44, 0.270588)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.66, 0.35134, 0.2574, 1)
+border_color = Color(0.1716, 0.404213, 0.44, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -30,8 +30,64 @@ expand_margin_bottom = 1.0
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27j4c"]
-bg_color = Color(0.33, 0.0957, 0.0957, 0.623529)
+bg_color = Color(0.1848, 0.31064, 0.33, 0.623529)
 anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_lj2vv"]
+resource_name = "Fade_In"
+length = 0.466674
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("White_BG:material:shader_parameter/dissolve_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666664, 0.133333, 0.2, 0.266666, 0.333333, 0.4, 0.466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1.01, 1.01, 0.95, 0.8, 0.5, 0.2, 0.05, -0.01]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_bewxp")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("White_BG:material:shader_parameter/smoothness")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666664, 0.133333, 0.4, 0.466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.05, 0.05, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("White_BG:material:shader_parameter/dist")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 0.1]
+}
 
 [sub_resource type="Animation" id="Animation_auroy"]
 resource_name = "Progress_Bar_In"
@@ -101,62 +157,6 @@ tracks/3/keys = {
 "values": [Color(1, 1, 1, 0.686275)]
 }
 
-[sub_resource type="Animation" id="Animation_lj2vv"]
-resource_name = "Fade_In"
-length = 0.466674
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("White_BG:material:shader_parameter/dissolve_state")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666664, 0.133333, 0.2, 0.266666, 0.333333, 0.4, 0.466666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1.01, 1.01, 0.95, 0.8, 0.5, 0.2, 0.05, -0.01]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Transition")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_bewxp")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/1/use_blend = true
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("White_BG:material:shader_parameter/smoothness")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0666664, 0.133333, 0.4, 0.466666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.05, 0.05, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("White_BG:material:shader_parameter/dist")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.466666),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.1, 0.1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o0o6y"]
 _data = {
 &"Fade_In": SubResource("Animation_lj2vv"),
@@ -188,7 +188,7 @@ offset_top = 304.0
 offset_right = 480.0
 offset_bottom = 314.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 0.533333, 0.388235, 0.686275)
+theme_override_colors/font_outline_color = Color(0.56, 0.941333, 1, 0.686275)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_auroy")
 theme_override_font_sizes/font_size = 8
