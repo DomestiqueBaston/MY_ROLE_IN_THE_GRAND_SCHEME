@@ -1,6 +1,14 @@
 extends Node2D
 
+## Signal emitted before a (modal) dialog is displayed. It is expected that the
+## current scene will turn off input handling until the dialog finishes.
+signal pre_dialog
+
+## Signal emitted when a (modal) dialog finishes and has been hidden.
+signal post_dialog
+
 func _appear():
+	pre_dialog.emit()
 	show()
 	$On_Off.play("Appearance")
 	await $On_Off.animation_finished
@@ -12,6 +20,7 @@ func _disappear(skip_animation: bool = false):
 		$On_Off.play("Disappearance")
 		await $On_Off.animation_finished
 	hide()
+	post_dialog.emit()
 
 ##
 ## Display a dialog prompting the player to choose how many hours he wants to

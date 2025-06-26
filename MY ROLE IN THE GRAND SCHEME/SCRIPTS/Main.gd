@@ -99,7 +99,10 @@ func _ready():
 	Globals.mouse_exited_link.connect(_mouse_exited_link)
 	Globals.link_right_click.connect(_popup_menu)
 	Globals.pin_left_click.connect(_click_on_pin)
-	
+
+	Globals.dialog_overlay.pre_dialog.connect(_pause_input_handling)
+	Globals.dialog_overlay.post_dialog.connect(_resume_input_handling)
+
 	GameState.player.debts_changed.connect(_on_debt_change)
 
 func _input(event: InputEvent):
@@ -541,25 +544,28 @@ func _handle_submenu(id: int, submenu: int):
 			if _popup_node is Link:
 				_popup_node.type = id
 
+#
+# Called before a (modal) dialog is displayed: all input handling is paused
+# until it is done.
+#
 func _pause_input_handling():
 	_input_paused = true
 	set_process_input(false)
 	reserve.set_process_input(false)
 
+#
+# Called when a (modal) dialog is hidden to resume input handling.
+#
 func _resume_input_handling():
 	_input_paused = false
 	set_process_input(true)
 	reserve.set_process_input(true)
 
 func _on_sleep():
-	_pause_input_handling()
 	var hours = await Globals.dialog_overlay.choose_sleep_time()
-	_resume_input_handling()
 	if hours > 0:
 		GameState.sleep(hours)
 
 func _on_debt_change():
 	if GameState.player.get_debt_count() >= 4:
-		_pause_input_handling()
 		await Globals.dialog_overlay.show_bill_announcement()
-		_resume_input_handling()
