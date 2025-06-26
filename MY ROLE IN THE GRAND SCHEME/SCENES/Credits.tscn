@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://ddckvg37ygsor"]
 
 [ext_resource type="Texture2D" uid="uid://hd0s0r4fdcia" path="res://GRAPHICS/CREDITS/Credits_BG.png" id="1_1n7ja"]
+[ext_resource type="Script" uid="uid://b4octnvwdy78s" path="res://SCRIPTS/Credits.gd" id="1_5162v"]
 [ext_resource type="Theme" uid="uid://tks2glp547ui" path="res://UI/Credits_Theme.tres" id="2_u3pji"]
-[ext_resource type="Script" uid="uid://5dpcp7u12bvi" path="res://SCRIPTS/Credits_Button.gd" id="4_smm6m"]
 [ext_resource type="Script" uid="uid://lgtv2sptyo1d" path="res://SCRIPTS/Credits_Typing.gd" id="7_xwskb"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="9_vnu4b"]
 
@@ -117,6 +117,7 @@ _data = {
 }
 
 [node name="Credits" type="Node2D"]
+script = ExtResource("1_5162v")
 
 [node name="Credits_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_1n7ja")
@@ -203,7 +204,6 @@ visible = false
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_u3pji")
-script = ExtResource("4_smm6m")
 
 [node name="Ok" type="Button" parent="Button"]
 layout_mode = 0
@@ -223,7 +223,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_t6vjt")
 }
 autoplay = "Text_appearance"
-
-[connection signal="mouse_entered" from="Button/Ok" to="Button" method="_on_ok_mouse_entered"]
-[connection signal="mouse_exited" from="Button/Ok" to="Button" method="_on_ok_mouse_exited"]
-[connection signal="pressed" from="Button/Ok" to="Button" method="_on_ok_pressed"]
