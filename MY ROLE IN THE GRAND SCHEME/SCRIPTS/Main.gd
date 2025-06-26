@@ -542,26 +542,25 @@ func _handle_submenu(id: int, submenu: int):
 			if _popup_node is Link:
 				_popup_node.type = id
 
-func _show_dialog():
+func _pause_input_handling():
 	_input_paused = true
 	set_process_input(false)
 	reserve.set_process_input(false)
-	dialog.appear()
 
-func _hide_dialog():
+func _resume_input_handling():
 	_input_paused = false
 	set_process_input(true)
 	reserve.set_process_input(true)
 
 func _on_sleep():
-	_show_dialog()
+	_pause_input_handling()
 	var hours = await dialog.choose_sleep_time()
-	await _hide_dialog()
+	_resume_input_handling()
 	if hours > 0:
 		GameState.sleep(hours)
 
 func _on_debt_change():
 	if GameState.player.get_debt_count() >= 4:
-		_show_dialog()
+		_pause_input_handling()
 		await dialog.show_bill_announcement()
-		await _hide_dialog()
+		_resume_input_handling()

@@ -4300,6 +4300,8 @@ stream = ExtResource("108_fowbj")
 bus = &"FX"
 
 [node name="Sleep" type="Node2D" parent="Overlays"]
+visible = false
+script = ExtResource("83_2lphy")
 
 [node name="Sleep_BG" type="Sprite2D" parent="Overlays/Sleep"]
 position = Vector2(179, 15)
@@ -4315,7 +4317,6 @@ offset_right = 458.0
 offset_bottom = 345.0
 mouse_filter = 2
 theme = ExtResource("82_gq4jn")
-script = ExtResource("83_2lphy")
 
 [node name="Drawer_09" type="TextureButton" parent="Overlays/Sleep/Drawer_Names"]
 layout_mode = 0
@@ -4730,30 +4731,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_09" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_08" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_08" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_07" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_07" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_06" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_06" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_05" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_05" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_04" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_04" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_03" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_03" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_02" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_02" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Drawer_Names/Drawer_01" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Drawer_Names/Drawer_01" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Yes_No/Yes" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Yes_No/Yes" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Sleep/Yes_No/Yes" to="Overlays/Sleep/Drawer_Names" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Sleep/Yes_No/No" to="Overlays/Sleep/Drawer_Names" method="_on_no_pressed"]
 [connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_surrender_pressed"]
