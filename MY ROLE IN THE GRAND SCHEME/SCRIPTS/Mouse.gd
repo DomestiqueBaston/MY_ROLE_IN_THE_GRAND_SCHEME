@@ -39,15 +39,14 @@ func release_mouse():
 	Input.warp_mouse(get_viewport().get_screen_transform() * global_position)
 
 func set_cursor(cursor: Globals.MouseCursor):
-	if cursor == Globals.MouseCursor.CIRCLE:
-		$Arrow_Cursor.hide()
-		$Circle_Cursor.show()
-	else:
-		$Arrow_Cursor.show()
-		$Circle_Cursor.hide()
+	$Arrow_Cursor.visible = (cursor == Globals.MouseCursor.ARROW)
+	$Circle_Cursor.visible = (cursor == Globals.MouseCursor.CIRCLE)
+	$Cross_Cursor.visible = (cursor == Globals.MouseCursor.CROSS)
 
 func get_cursor() -> Globals.MouseCursor:
-	if $Circle_Cursor.visible:
+	if $Arrow_Cursor.visible:
+		return Globals.MouseCursor.ARROW
+	elif $Circle_Cursor.visible:
 		return Globals.MouseCursor.CIRCLE
 	else:
-		return Globals.MouseCursor.ARROW
+		return Globals.MouseCursor.CROSS

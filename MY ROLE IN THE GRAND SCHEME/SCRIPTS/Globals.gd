@@ -13,7 +13,8 @@ var dragging: bool = false
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
-	CIRCLE
+	CIRCLE,
+	CROSS
 }
 
 @onready var _mouse: Node2D = $MouseLayer/Mouse
