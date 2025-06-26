@@ -1,0 +1,206 @@
+[gd_scene load_steps=12 format=3 uid="uid://c23xeqas5p2qy"]
+
+[ext_resource type="Shader" uid="uid://bd85rbmyb41ao" path="res://SHADERS/Transition.gdshader" id="1_6xho7"]
+[ext_resource type="Texture2D" uid="uid://p7s0wnrs0r8d" path="res://GRAPHICS/UI/Transition.png" id="2_auroy"]
+[ext_resource type="AudioStream" uid="uid://dy0dmruiaheen" path="res://SOUND/OVERLAYS/Transition.ogg" id="3_bewxp"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_auroy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6xho7"]
+shader = ExtResource("1_6xho7")
+shader_parameter/dissolve_pattern = ExtResource("2_auroy")
+shader_parameter/dissolve_state = -0.01
+shader_parameter/smoothness = 0.0
+shader_parameter/dist = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bewxp"]
+bg_color = Color(0.51, 0.1479, 0.1479, 0.270588)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.66, 0.35134, 0.2574, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27j4c"]
+bg_color = Color(0.33, 0.0957, 0.0957, 0.623529)
+anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_auroy"]
+resource_name = "Progress_Bar_In"
+length = 0.200007
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Loading_Progress_Bar:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.228758), Color(1, 1, 1, 0.457516), Color(1, 1, 1, 0.686275)]
+}
+
+[sub_resource type="Animation" id="Animation_7ty8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("White_BG:material:shader_parameter/dissolve_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.01]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("White_BG:material:shader_parameter/smoothness")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("White_BG:material:shader_parameter/dist")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Loading_Progress_Bar:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.686275)]
+}
+
+[sub_resource type="Animation" id="Animation_lj2vv"]
+resource_name = "Fade_In"
+length = 0.466674
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("White_BG:material:shader_parameter/dissolve_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666664, 0.133333, 0.2, 0.266666, 0.333333, 0.4, 0.466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1.01, 1.01, 0.95, 0.8, 0.5, 0.2, 0.05, -0.01]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transition")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_bewxp")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("White_BG:material:shader_parameter/smoothness")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666664, 0.133333, 0.4, 0.466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.05, 0.05, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("White_BG:material:shader_parameter/dist")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 0.1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o0o6y"]
+_data = {
+&"Fade_In": SubResource("Animation_lj2vv"),
+&"Progress_Bar_In": SubResource("Animation_auroy"),
+&"RESET": SubResource("Animation_7ty8d")
+}
+
+[node name="Start" type="Node2D"]
+
+[node name="Black_BG" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="White_BG" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6xho7")
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Loading_Progress_Bar" type="ProgressBar" parent="."]
+self_modulate = Color(1, 1, 1, 0.686275)
+offset_left = 160.0
+offset_top = 304.0
+offset_right = 480.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.533333, 0.388235, 0.686275)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_auroy")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_bewxp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_27j4c")
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o0o6y")
+}
+autoplay = "Progress_Bar_In"
+
+[node name="Transition" type="AudioStreamPlayer" parent="."]
+volume_db = -17.5
+bus = &"AMBIANCE"

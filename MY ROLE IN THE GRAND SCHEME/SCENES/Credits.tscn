@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddckvg37ygsor"]
+[gd_scene load_steps=12 format=3 uid="uid://ddckvg37ygsor"]
 
 [ext_resource type="Texture2D" uid="uid://hd0s0r4fdcia" path="res://GRAPHICS/CREDITS/Credits_BG.png" id="1_1n7ja"]
 [ext_resource type="Script" uid="uid://b4octnvwdy78s" path="res://SCRIPTS/Credits.gd" id="1_5162v"]
@@ -116,6 +116,68 @@ _data = {
 &"Text_appearance": SubResource("Animation_k0p28")
 }
 
+[sub_resource type="Animation" id="Animation_5162v"]
+resource_name = "Shaking"
+length = 0.533337
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button/Ok:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(281, 286), Vector2(280, 287), Vector2(282, 288), Vector2(281, 287), Vector2(280, 287), Vector2(279, 288), Vector2(280, 289), Vector2(280, 287), Vector2(281, 286)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button/Ok:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -0.0174533, 0.0174533, 0.0349066, 0.0174533, -0.0174533, 0.0, 0.0174533, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qy37s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button/Ok:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(281, 286)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Button/Ok:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ecte7"]
+_data = {
+&"RESET": SubResource("Animation_qy37s"),
+&"Shaking": SubResource("Animation_5162v")
+}
+
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_5162v")
 
@@ -200,7 +262,6 @@ visible_ratio = 0.0
 script = ExtResource("7_xwskb")
 
 [node name="Button" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("2_u3pji")
@@ -223,3 +284,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_t6vjt")
 }
 autoplay = "Text_appearance"
+
+[node name="Button_Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ecte7")
+}
+autoplay = "Shaking"

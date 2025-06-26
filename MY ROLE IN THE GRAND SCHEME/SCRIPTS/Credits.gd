@@ -3,6 +3,7 @@ extends Node2D
 signal done
 
 func _ready():
+	$Button.hide()
 	$Texts/Ferdi.done.connect(_on_ferdi_done)
 	$Button/Ok.pressed.connect(_on_ok_pressed)
 	$Button/Ok.mouse_entered.connect(_on_ok_mouse_entered)
