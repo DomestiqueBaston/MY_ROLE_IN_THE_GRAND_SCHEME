@@ -4,6 +4,7 @@ extends Node2D
 @onready var _option_menu_scene = preload("res://SCENES/Option_Menu.tscn")
 @onready var _credits_scene = preload("res://SCENES/Credits.tscn")
 @onready var _language_scene = preload("res://SCENES/Language.tscn")
+@onready var _tutorial_scene = preload("res://SCENES/Tutorial.tscn")
 @onready var _new_game_scene = preload("res://SCENES/Character_Generation.tscn")
 @onready var _main_scene = preload("res://SCENES/Main_V2.tscn")
 @onready var _quit_scene = preload("res://SCENES/Quit.tscn")
@@ -36,6 +37,8 @@ func _on_option_button_pressed(button: StringName):
 			_go_to_credits()
 		&"Language":
 			_go_to_language_scene()
+		&"Tutorial":
+			_go_to_tutorial()
 		&"Continue":
 			_continue_game()
 		&"Quit":
@@ -61,6 +64,11 @@ func _go_to_credits():
 
 func _go_to_language_scene():
 	var node = await _replace_scene(_language_scene)
+	await node.done
+	_go_to_option_menu()
+
+func _go_to_tutorial():
+	var node = await _replace_scene(_tutorial_scene)
 	await node.done
 	_go_to_option_menu()
 
