@@ -7,7 +7,6 @@ extends Node2D
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
 @onready var top_bar: Control = $Mask_Card_Playground/Top_Bar
-@onready var dialog: Node2D = $Short_Event_Overlay
 @onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
@@ -554,7 +553,7 @@ func _resume_input_handling():
 
 func _on_sleep():
 	_pause_input_handling()
-	var hours = await dialog.choose_sleep_time()
+	var hours = await Globals.dialog_overlay.choose_sleep_time()
 	_resume_input_handling()
 	if hours > 0:
 		GameState.sleep(hours)
@@ -562,5 +561,5 @@ func _on_sleep():
 func _on_debt_change():
 	if GameState.player.get_debt_count() >= 4:
 		_pause_input_handling()
-		await dialog.show_bill_announcement()
+		await Globals.dialog_overlay.show_bill_announcement()
 		_resume_input_handling()

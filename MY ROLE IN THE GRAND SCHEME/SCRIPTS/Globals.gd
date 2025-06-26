@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @onready var valid_sound: AudioStreamPlayer = $UI_Sounds/Valid
 @onready var cancel_sound: AudioStreamPlayer = $UI_Sounds/Cancel
@@ -6,6 +6,9 @@ extends Node
 @onready var hover_sound: AudioStreamPlayer = $UI_Sounds/Hover
 @onready var card_entered_sound: AudioStreamPlayer = $UI_Sounds/Card_Entered
 @onready var card_exited_sound: AudioStreamPlayer = $UI_Sounds/Card_Exited
+
+## Overlay used to block the UI while asking the player a question.
+@onready var dialog_overlay: Node2D = $DialogLayer/Short_Event_Overlay
 
 ## Indicates whether or not the user is in the middle of a drag & drop.
 var dragging: bool = false
@@ -138,8 +141,8 @@ func pop_mouse_cursor():
 ## Specifies whether links of the given type are visible or not. By default,
 ## all link types are visible.
 ##
-func set_link_mask(link_type: Link.Type, visible: bool):
-	if visible:
+func set_link_mask(link_type: Link.Type, vis: bool):
+	if vis:
 		_link_mask |= 1 << link_type
 	else:
 		_link_mask &= ~(1 << link_type)
@@ -149,8 +152,8 @@ func set_link_mask(link_type: Link.Type, visible: bool):
 ## Specifies whether unconfirmed/probable links are visible or not. By default,
 ## they are.
 ##
-func set_dotted_links_visible(visible: bool):
-	_show_dotted_links = visible
+func set_dotted_links_visible(vis: bool):
+	_show_dotted_links = vis
 	link_visibility_changed.emit()
 
 ##
