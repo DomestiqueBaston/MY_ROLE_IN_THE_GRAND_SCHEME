@@ -233,36 +233,49 @@ func _calm(start_value: int, how_much: int) -> int:
 		return maxi(0, start_value - how_much)
 
 func sleep(hours: int):
+	var dream_health_bonus = 0
+	var dream = randf()
+
+	if dream < 0.125:
+		dream_health_bonus = 1
+		Globals.dialog_overlay.show_dream_message(false)
+	elif dream < 0.25:
+		dream_health_bonus = -1
+		Globals.dialog_overlay.show_dream_message(true)
+
 	match hours:
 		4:
+			health += dream_health_bonus
 			emotion = _exacerbate(emotion, 1)
 			addiction = _exacerbate(addiction, 1)
 			_sleep_bonus_malus = -2
 		5:
+			health += dream_health_bonus
 			emotion = _exacerbate(emotion, 1)
 			_sleep_bonus_malus = -1
 		6:
+			health += dream_health_bonus
 			_sleep_bonus_malus = -1
 		7:
-			health += 1
+			health += 1 + dream_health_bonus
 			_sleep_bonus_malus = 0
 		8:
-			health += 1
+			health += 1 + dream_health_bonus
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 0
 		9:
-			health += 1
+			health += 1 + dream_health_bonus
 			emotion = _calm(emotion, 2)
 			_sleep_bonus_malus = 0
 		10:
-			health += 2
+			health += 2 + dream_health_bonus
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 1
 		11:
-			health += 2
+			health += 2 + dream_health_bonus
 			emotion = _calm(emotion, 2)
 			_sleep_bonus_malus = 1
 		12:
-			health += 3
+			health += 3 + dream_health_bonus
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 2

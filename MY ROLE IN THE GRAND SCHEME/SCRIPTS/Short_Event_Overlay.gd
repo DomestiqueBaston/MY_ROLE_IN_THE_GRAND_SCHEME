@@ -28,7 +28,7 @@ func choose_sleep_time() -> int:
 	return result
 
 ##
-## Display a dialog telling the player he has a lot of outstanding debts.
+## Display a message telling the player he has a lot of outstanding debts.
 ##
 func show_bill_announcement():
 	$Overlays/Misc/Announces/Bill.show()
@@ -38,6 +38,20 @@ func show_bill_announcement():
 	await _disappear()
 	$Overlays/Misc.hide()
 	$Overlays/Misc/Announces/Bill.hide()
+
+##
+## Display a message telling the player he has had a nice dream or a nightmare.
+##
+func show_dream_message(nightmare: bool):
+	$Overlays/Misc/Announces/Dreams/Nightmare.visible = nightmare
+	$Overlays/Misc/Announces/Dreams/Dream.visible = not nightmare
+	$Overlays/Misc/Announces/Dreams.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Dreams.hide()
 
 ##
 ## Display a dialog asking the player for a yes or no and return the answer.

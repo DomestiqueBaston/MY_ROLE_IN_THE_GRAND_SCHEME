@@ -44,19 +44,6 @@ func _on_option_button_pressed(button: StringName):
 		&"Quit":
 			_quit()
 
-func _go_to_new_game():
-	if GameState.player.health > 0:
-		var ok = await Globals.dialog_overlay.ask_for_confirmation(true)
-		if not ok:
-			return
-	var new_game = await _replace_scene(_new_game_scene)
-	new_game.confirm_pressed.connect(_start_game)
-	new_game.cancel_pressed.connect(_go_to_option_menu)
-
-func _start_game():
-	GameState.start_game()
-	_continue_game()
-
 func _go_to_credits():
 	var node = await _replace_scene(_credits_scene)
 	await node.done
@@ -71,6 +58,19 @@ func _go_to_tutorial():
 	var node = await _replace_scene(_tutorial_scene)
 	await node.done
 	_go_to_option_menu()
+
+func _go_to_new_game():
+	if GameState.player.health > 0:
+		var ok = await Globals.dialog_overlay.ask_for_confirmation(true)
+		if not ok:
+			return
+	var new_game = await _replace_scene(_new_game_scene)
+	new_game.confirm_pressed.connect(_start_game)
+	new_game.cancel_pressed.connect(_go_to_option_menu)
+
+func _start_game():
+	GameState.start_game()
+	_continue_game()
 
 func _continue_game():
 	var main = await _replace_scene(_main_scene)
