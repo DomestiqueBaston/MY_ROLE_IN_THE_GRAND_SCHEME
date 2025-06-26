@@ -5,9 +5,12 @@ func _appear():
 	$On_Off.play("Appearance")
 	await $On_Off.animation_finished
 
-func _disappear():
-	$On_Off.play("Disappearance")
-	await $On_Off.animation_finished
+func _disappear(skip_animation: bool = false):
+	if skip_animation:
+		$On_Off.play("RESET")
+	else:
+		$On_Off.play("Disappearance")
+		await $On_Off.animation_finished
 	hide()
 
 ##
@@ -39,11 +42,11 @@ func show_bill_announcement():
 ##
 ## Display a dialog asking the player for a yes or no and return the answer.
 ##
-func ask_for_confirmation() -> bool:
+func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
 	$Overlays/Confirmation.show()
 	await _appear()
 	await $Overlays/Confirmation.done
 	var result = $Overlays/Confirmation.get_answer()
-	await _disappear()
+	await _disappear(result and skip_anim_if_yes)
 	$Overlays/Confirmation.hide()
 	return result

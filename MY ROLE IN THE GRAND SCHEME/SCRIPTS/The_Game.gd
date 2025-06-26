@@ -37,7 +37,7 @@ func _on_option_button_pressed(button: StringName):
 
 func _go_to_new_game():
 	if GameState.player.health > 0:
-		var ok = await Globals.dialog_overlay.ask_for_confirmation()
+		var ok = await Globals.dialog_overlay.ask_for_confirmation(true)
 		if not ok:
 			return
 	var new_game = await _replace_scene(_new_game_scene)
