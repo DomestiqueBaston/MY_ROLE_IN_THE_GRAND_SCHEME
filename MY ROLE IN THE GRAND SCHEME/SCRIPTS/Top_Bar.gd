@@ -38,9 +38,14 @@ class PlayerAttr:
 	PlayerAttr.new("drugs", $Character_Stats/Drug)
 ]
 
+@onready var _dailies_button: MenuButton = $Menus/Dailies
+@onready var _normal_arrow = preload("res://GRAPHICS/UI/Arrow_Normal_Right.png")
+@onready var _transp_arrow = preload("res://GRAPHICS/UI/Arrow_Transparent_Right.png")
+
 enum DailiesMenuItem {
 	PASS_TIME = 1000,
-	SLEEP
+	SLEEP,
+	DEBT_SUBMENU
 }
 
 enum WhateverMenuItem {
@@ -99,25 +104,26 @@ func _ready():
 
 	$Menus/Whatever.get_popup().id_pressed.connect(_on_whatever_press)
 
-	if $Menus/Dailies.disabled:
+	if _dailies_button.disabled:
 		return
 
 	_debt_popup = PopupMenu.new()
-	_debt_popup.about_to_popup.connect(_on_debt_menu_popup)
 	_debt_popup.index_pressed.connect(_on_debt_menu_pressed)
 
 	var submenu2: PopupMenu = PopupMenu.new()
 	submenu2.add_item("Use 1 dose")
 	submenu2.add_item("Use 2 doses")
 
-	var popup: PopupMenu = $Menus/Dailies.get_popup()
+	var popup: PopupMenu = _dailies_button.get_popup()
+	popup.about_to_popup.connect(_on_dailies_menu_popup)
 	popup.add_item("Buy a search warrant...")
 	popup.add_item("Visit Doctor F...")
 	popup.add_item("Visit Rowena the dealer...")
 	popup.add_item("Go to the Investig. Center...")
 	popup.add_item("Back to the office!")
 	popup.add_separator(" - - - - - - - - - - - - - ")
-	popup.add_submenu_node_item("Pay the bill", _debt_popup)
+	popup.add_submenu_node_item(
+		"Pay the bill", _debt_popup, DailiesMenuItem.DEBT_SUBMENU)
 	popup.add_submenu_node_item("Get your fix", submenu2)
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_item("Go to sleep...", DailiesMenuItem.SLEEP)
@@ -179,9 +185,13 @@ func _on_time_changed():
 	else:
 		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)
 
-func _on_debt_menu_popup():
-	var player = GameState.player
+func _on_dailies_menu_popup():
+
+	# populate the debts submenu with an item for each debt
+
 	_debt_popup.clear()
+
+	var player = GameState.player
 	for i in player.get_debt_count():
 		var debt = player.get_debt(i)
 		var label
@@ -191,6 +201,18 @@ func _on_debt_menu_popup():
 			label = "%d weeks ago (%d Dø)" % [i+1, debt]
 		_debt_popup.add_item(label)
 		_debt_popup.set_item_disabled(i, player.money < debt)
+
+	# if the player has no debts, disable the submenu and get rid of the little
+	# arrow icon, because it annoys Ferdi
+
+	var dailies: PopupMenu = _dailies_button.get_popup()
+	var index = dailies.get_item_index(DailiesMenuItem.DEBT_SUBMENU)
+	if player.get_debt_count() == 0:
+		dailies.set_item_disabled(index, true)
+		theme.set_icon("submenu", "PopupMenu", _transp_arrow)
+	else:
+		dailies.set_item_disabled(index, false)
+		theme.set_icon("submenu", "PopupMenu", _normal_arrow)
 
 func _on_debt_menu_pressed(index: int):
 	GameState.player.pay_debt(index)
