@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=66 format=3 uid="uid://gq7vbe70kt0a"]
 
 [ext_resource type="Script" uid="uid://cc8igd36aqma2" path="res://SCRIPTS/Settings.gd" id="1_5yx3t"]
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_jebf2"]
@@ -63,6 +63,7 @@
 [ext_resource type="Texture2D" uid="uid://cgg2o1jboxrkq" path="res://GRAPHICS/SETTINGS/No_Docs_Pressed.png" id="45_ihs63"]
 [ext_resource type="Texture2D" uid="uid://dsipuq8ivh7qq" path="res://GRAPHICS/SETTINGS/No_Docs_Hover.png" id="46_5yx3t"]
 [ext_resource type="BitMap" uid="uid://bbm4kosndhq22" path="res://GRAPHICS/SETTINGS/No_Docs_Mask.png" id="47_jio2x"]
+[ext_resource type="AudioStream" uid="uid://dmfvvrcbiswxm" path="res://SOUND/MISC/Sound_Test.ogg" id="64_jio2x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h80l4"]
 
@@ -84,6 +85,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Master" type="VSlider" parent="Buttons_Sliders/Sliders"]
+self_modulate = Color(1, 1, 0.764706, 1)
 layout_mode = 0
 offset_left = 288.0
 offset_top = 246.0
@@ -97,6 +99,7 @@ max_value = 200.0
 value = 50.0
 
 [node name="Music" type="VSlider" parent="Buttons_Sliders/Sliders"]
+self_modulate = Color(1, 1, 0.764706, 1)
 layout_mode = 0
 offset_left = 321.0
 offset_top = 245.0
@@ -110,6 +113,7 @@ max_value = 200.0
 value = 50.0
 
 [node name="FX" type="VSlider" parent="Buttons_Sliders/Sliders"]
+self_modulate = Color(1, 1, 0.764706, 1)
 layout_mode = 0
 offset_left = 354.0
 offset_top = 245.0
@@ -123,6 +127,7 @@ max_value = 200.0
 value = 50.0
 
 [node name="UI" type="VSlider" parent="Buttons_Sliders/Sliders"]
+self_modulate = Color(1, 1, 0.764706, 1)
 layout_mode = 0
 offset_left = 386.0
 offset_top = 245.0
@@ -136,6 +141,7 @@ max_value = 200.0
 value = 50.0
 
 [node name="Ambiance" type="VSlider" parent="Buttons_Sliders/Sliders"]
+self_modulate = Color(1, 1, 0.764706, 1)
 layout_mode = 0
 offset_left = 417.0
 offset_top = 245.0
@@ -150,6 +156,7 @@ max_value = 200.0
 value = 50.0
 
 [node name="Video" type="VSlider" parent="Buttons_Sliders/Sliders"]
+self_modulate = Color(1, 1, 0.764706, 1)
 layout_mode = 0
 offset_left = 451.0
 offset_top = 246.0
@@ -163,6 +170,7 @@ max_value = 200.0
 value = 50.0
 
 [node name="Difficulty" type="VSlider" parent="Buttons_Sliders/Sliders"]
+modulate = Color(0.866667, 1, 0.752941, 1)
 layout_mode = 0
 offset_left = 563.0
 offset_top = 256.0
@@ -360,6 +368,10 @@ button_pressed = true
 texture_pressed = ExtResource("36_665vc")
 texture_hover = ExtResource("37_fl83n")
 texture_click_mask = ExtResource("38_k42nh")
+
+[node name="Sound_Test" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("64_jio2x")
+volume_db = -25.0
 
 [connection signal="mouse_entered" from="Buttons_Sliders/Sliders/Master" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Master" to="Buttons_Sliders" method="_on_mouse_exited"]

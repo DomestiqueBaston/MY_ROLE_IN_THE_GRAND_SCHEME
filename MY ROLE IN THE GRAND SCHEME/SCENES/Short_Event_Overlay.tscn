@@ -3407,6 +3407,7 @@ offset_bottom = 336.0
 text = "Quit"
 
 [node name="Misc" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Misc_BG" type="Sprite2D" parent="Overlays/Misc"]
 texture = ExtResource("1_sivc1")

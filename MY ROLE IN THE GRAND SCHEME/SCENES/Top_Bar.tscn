@@ -672,5 +672,5 @@ bus = &"UI"
 
 [node name="Menu_Bip" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nvp8u")
-volume_db = -15.0
+volume_db = -10.0
 bus = &"UI"
