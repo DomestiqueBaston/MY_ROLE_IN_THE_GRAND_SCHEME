@@ -4300,7 +4300,6 @@ volume_db = -20.0
 bus = &"FX"
 
 [node name="Sleep" type="Node2D" parent="Overlays"]
-visible = false
 script = ExtResource("83_2lphy")
 
 [node name="Sleep_BG" type="Sprite2D" parent="Overlays/Sleep"]
@@ -4427,6 +4426,7 @@ offset_bottom = 15.0
 theme = ExtResource("82_gq4jn")
 
 [node name="Yes" type="Button" parent="Overlays/Sleep/Yes_No"]
+visible = false
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
 offset_left = 327.0
