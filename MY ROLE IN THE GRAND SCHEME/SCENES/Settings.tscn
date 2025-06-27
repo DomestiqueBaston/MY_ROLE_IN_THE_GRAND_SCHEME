@@ -1,5 +1,6 @@
-[gd_scene load_steps=64 format=3 uid="uid://gq7vbe70kt0a"]
+[gd_scene load_steps=65 format=3 uid="uid://gq7vbe70kt0a"]
 
+[ext_resource type="Script" uid="uid://cc8igd36aqma2" path="res://SCRIPTS/Settings.gd" id="1_5yx3t"]
 [ext_resource type="Texture2D" uid="uid://cakg0cxbvq0yx" path="res://GRAPHICS/SETTINGS/Settings_BG.png" id="1_jebf2"]
 [ext_resource type="Theme" uid="uid://bjqtch5setyil" path="res://UI/Settings_Theme.tres" id="2_d824c"]
 [ext_resource type="Script" uid="uid://b2yl18dnp35lw" path="res://SCRIPTS/Settings_Buttons_Sliders.gd" id="3_louds"]
@@ -66,6 +67,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h80l4"]
 
 [node name="Settings" type="Node2D"]
+script = ExtResource("1_5yx3t")
 
 [node name="Settings_BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_jebf2")
@@ -409,7 +411,7 @@ texture_click_mask = ExtResource("38_k42nh")
 [connection signal="pressed" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Cancel" to="Buttons_Sliders" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Reset" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Reset" to="Buttons_Sliders" method="_on_mouse_exited"]
-[connection signal="pressed" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Reset" to="Buttons_Sliders" method="_on_cancel_pressed"]
+[connection signal="pressed" from="Buttons_Sliders/Ok_Cancel_Reset_Buttons/Reset" to="Buttons_Sliders" method="_on_reset_pressed"]
 [connection signal="mouse_entered" from="Buttons_Sliders/Cosmetic_Buttons/Video_Shader" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Cosmetic_Buttons/Video_Shader" to="Buttons_Sliders" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons_Sliders/Cosmetic_Buttons/Video_Shader" to="Buttons_Sliders" method="_on_VS_MC_pressed"]

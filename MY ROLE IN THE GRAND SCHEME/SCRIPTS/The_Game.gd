@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var _title_screen: Node
 @onready var _option_menu_scene = preload("res://SCENES/Option_Menu.tscn")
+@onready var _settings_scene = preload("res://SCENES/Settings.tscn")
 @onready var _credits_scene = preload("res://SCENES/Credits.tscn")
 @onready var _language_scene = preload("res://SCENES/Language.tscn")
 @onready var _tutorial_scene = preload("res://SCENES/Tutorial.tscn")
@@ -31,18 +32,26 @@ func _go_to_option_menu():
 
 func _on_option_button_pressed(button: StringName):
 	match button:
-		&"New_Game":
-			_go_to_new_game()
+		&"Settings":
+			_go_to_settings()
 		&"Credits":
 			_go_to_credits()
 		&"Language":
 			_go_to_language_scene()
 		&"Tutorial":
 			_go_to_tutorial()
+		&"New_Game":
+			_go_to_new_game()
 		&"Continue":
 			_continue_game()
 		&"Quit":
 			_quit()
+
+func _go_to_settings():
+	var node = await _replace_scene(_settings_scene)
+	await node.done
+	Globals.save_settings()
+	_go_to_option_menu()
 
 func _go_to_credits():
 	var node = await _replace_scene(_credits_scene)

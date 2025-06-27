@@ -20,12 +20,6 @@ enum MouseCursor {
 	CROSS
 }
 
-@onready var _mouse: Node2D = $MouseLayer/Mouse
-
-var _link_mask: int = -1
-var _show_dotted_links: bool = true
-var _mouse_cursor_stack: Array[MouseCursor]
-
 @warning_ignore("unused_signal")
 signal card_left_click(pos: Vector2, card: Card)
 
@@ -56,6 +50,15 @@ signal mouse_exited_link(link: Link)
 @warning_ignore("unused_signal")
 signal link_visibility_changed
 
+@onready var _mouse: Node2D = $MouseLayer/Mouse
+
+var _link_mask: int = -1
+var _show_dotted_links: bool = true
+var _mouse_cursor_stack: Array[MouseCursor]
+
+const _settings_path = "user://settings.cfg"
+var _volume: Array[float]
+
 func _ready():
 	# the mouse is drawn on top of menus
 	$MouseLayer.set_layer(1025)
@@ -69,6 +72,11 @@ func _ready():
 	viewport.physics_object_picking = true
 	viewport.physics_object_picking_sort = true
 	viewport.physics_object_picking_first_only = true
+	
+	for bus in AudioServer.bus_count:
+		_volume.append(AudioServer.get_bus_volume_linear(bus))
+	
+	load_settings()
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("Full_Screen"):
@@ -180,3 +188,36 @@ func hide_all_links():
 	_link_mask = 0
 	_show_dotted_links = false
 	link_visibility_changed.emit()
+
+##
+## (Re)loads previously saved settings (e.g. sound levels). This is done
+## automatically at startup.
+##
+func load_settings():
+	var config = ConfigFile.new()
+	if config.load(_settings_path) == OK:
+		for bus in AudioServer.bus_count:
+			var bus_name = AudioServer.get_bus_name(bus)
+			var volume = config.get_value("volume", bus_name, -1)
+			if volume >= 0:
+				AudioServer.set_bus_volume_linear(bus, volume)
+
+##
+## Saves current settings (e.g. sound levels) to disk.
+##
+func save_settings():
+	var config = ConfigFile.new()
+	for bus in AudioServer.bus_count:
+		var bus_name = AudioServer.get_bus_name(bus)
+		var volume = AudioServer.get_bus_volume_linear(bus)
+		config.set_value("volume", bus_name, volume)
+	config.save(_settings_path)
+
+func get_volume(bus_name: StringName) -> float:
+	var bus = AudioServer.get_bus_index(bus_name)
+	var volume = AudioServer.get_bus_volume_linear(bus)
+	return volume
+
+func set_volume(bus_name: StringName, volume: float):
+	var bus = AudioServer.get_bus_index(bus_name)
+	AudioServer.set_bus_volume_linear(bus, volume)

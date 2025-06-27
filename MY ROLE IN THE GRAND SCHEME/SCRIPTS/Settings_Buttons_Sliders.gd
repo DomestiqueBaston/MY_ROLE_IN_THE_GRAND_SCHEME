@@ -19,10 +19,11 @@ func _on_cancel_pressed():
 func _on_ok_pressed():
 	Globals.valid_sound.play()
 
+func _on_reset_pressed():
+	Globals.cancel_sound.play()
+
 func _on_any_blue_button_pressed():
 	Globals.valid_sound.play()
 
-
 func _on_VS_MC_pressed():
 	Globals.valid_sound.play()
-	
