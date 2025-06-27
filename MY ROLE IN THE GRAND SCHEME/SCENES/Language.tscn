@@ -66,6 +66,7 @@ theme = ExtResource("2_ayvp8")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+tooltip_text = "Sorry... English only!"
 texture_pressed = ExtResource("2_hxgus")
 texture_hover = ExtResource("3_qv763")
 texture_click_mask = ExtResource("4_pb8m6")

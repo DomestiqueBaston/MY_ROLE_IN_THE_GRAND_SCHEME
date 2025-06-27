@@ -253,7 +253,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 tooltip_text = "Tougher morons"
-disabled = true
 toggle_mode = true
 texture_pressed = ExtResource("29_mg7qw")
 texture_hover = ExtResource("30_xxbya")
