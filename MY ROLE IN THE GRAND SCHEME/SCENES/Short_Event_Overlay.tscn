@@ -4427,6 +4427,7 @@ offset_bottom = 15.0
 theme = ExtResource("82_gq4jn")
 
 [node name="Yes" type="Button" parent="Overlays/Sleep/Yes_No"]
+visible = false
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
 offset_left = 327.0

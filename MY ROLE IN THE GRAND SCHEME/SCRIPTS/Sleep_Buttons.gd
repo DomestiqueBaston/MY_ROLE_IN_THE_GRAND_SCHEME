@@ -1,6 +1,6 @@
 extends Node2D
 
-## Signal emitted when the user has clicked on Yes or No. Call
+## Signal emitted when the user has made a choice or cancelled. Call
 ## get_hours_chosen() to find out what he selected.
 signal done
 
@@ -20,11 +20,9 @@ signal done
 var _button_chosen: BaseButton
 
 ##
-## Call this to reset the dialog to its initial state (no drawer selected, Yes
-## button disabled).
+## Call this to reset the dialog to its initial state (no drawer selected).
 ##
 func reset():
-	$Yes_No/Yes.disabled = true
 	if _button_chosen:
 		_button_chosen.set_pressed_no_signal(false)
 		_button_chosen = null
@@ -44,10 +42,6 @@ func _ready():
 		button.mouse_entered.connect(_on_mouse_entered)
 		button.mouse_exited.connect(_on_mouse_exited)
 
-	$Yes_No/Yes.pressed.connect(_on_yes_pressed)
-	$Yes_No/Yes.mouse_entered.connect(_on_mouse_entered)
-	$Yes_No/Yes.mouse_exited.connect(_on_mouse_exited)
-
 	$Yes_No/No.pressed.connect(_on_no_pressed)
 	$Yes_No/No.mouse_entered.connect(_on_mouse_entered)
 	$Yes_No/No.mouse_exited.connect(_on_mouse_exited)
@@ -60,11 +54,6 @@ func _on_mouse_exited():
 	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
 		Globals.leave_sound.play()
 
-func _on_yes_pressed():
-	Globals.valid_sound.play()
-	await Globals.valid_sound.finished
-	done.emit()
-
 func _on_no_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
@@ -76,5 +65,6 @@ func _on_drawer_pressed(button: BaseButton):
 	var pitch = pitches[randi() % pitches.size()]
 	$Drawer.pitch_scale = pitch
 	$Drawer.play()
-	$Yes_No/Yes.disabled = false
+	await $Drawer.finished
 	_button_chosen = button
+	done.emit()
