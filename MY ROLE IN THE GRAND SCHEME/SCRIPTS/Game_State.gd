@@ -47,7 +47,6 @@ func _increment_time(hours: int):
 func pass_one_hour():
 	player.pass_one_hour()
 	_increment_time(1)
-	_send_new_bill()
 
 func sleep(hours: int):
 	player.sleep(hours)
