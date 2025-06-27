@@ -327,7 +327,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3.33333),
 "transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [-80.0, -10.0]
+"values": [-80.0, -25.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -339,7 +339,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 3.33333),
 "transitions": PackedFloat32Array(0.666, 1),
 "update": 0,
-"values": [-80.0, -5.0]
+"values": [-80.0, -25.0]
 }
 
 [sub_resource type="Animation" id="Animation_fhnfq"]
@@ -354,7 +354,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-30.0]
+"values": [-80.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -366,7 +366,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-25.0]
+"values": [-80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ns74n"]
@@ -389,7 +389,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.466667),
 "transitions": PackedFloat32Array(4, 1),
 "update": 0,
-"values": [-10.0, -80.0]
+"values": [-25.0, -80.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -401,7 +401,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.466667),
 "transitions": PackedFloat32Array(4, 1),
 "update": 0,
-"values": [-5.0, -80.0]
+"values": [-25.0, -80.0]
 }
 
 [sub_resource type="Animation" id="Animation_1ksti"]
@@ -416,7 +416,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-10.0]
+"values": [-80.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -428,7 +428,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-5.0]
+"values": [-80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q73in"]
@@ -610,6 +610,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Go_Next" type="Label" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.588235)
 offset_left = 288.0
 offset_top = 345.0
@@ -658,13 +659,13 @@ autoplay = "Blink"
 
 [node name="Hum" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_6wwaa")
-volume_db = -10.0
+volume_db = -80.0
 autoplay = true
 bus = &"AMBIANCE"
 
 [node name="City_Noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ov33t")
-volume_db = -5.0
+volume_db = -80.0
 autoplay = true
 bus = &"AMBIANCE"
 

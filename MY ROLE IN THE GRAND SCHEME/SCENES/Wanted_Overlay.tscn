@@ -325,11 +325,11 @@ libraries = {
 autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
-volume_db = -25.0
+volume_db = -35.0
 bus = &"UI"
 
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_mrkhl")
-volume_db = -40.0
+volume_db = -60.0
 autoplay = true
 bus = &"FX"

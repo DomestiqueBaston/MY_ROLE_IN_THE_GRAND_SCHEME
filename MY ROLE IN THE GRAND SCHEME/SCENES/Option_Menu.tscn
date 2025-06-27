@@ -154,15 +154,15 @@ texture_click_mask = ExtResource("28_qcawn")
 
 [node name="Drawer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_wcpfb")
-volume_db = -15.0
+volume_db = -35.0
 bus = &"UI"
 
 [node name="Minions_On" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("32_asrw6")
-volume_db = -10.0
+volume_db = -27.5
 bus = &"UI"
 
 [node name="Minions_Off" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_6fk48")
-volume_db = -11.5
+volume_db = -30.0
 bus = &"UI"

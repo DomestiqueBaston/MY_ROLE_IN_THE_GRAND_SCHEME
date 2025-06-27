@@ -1611,16 +1611,16 @@ libraries = {
 
 [node name="Drop_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("21_tg66g")
-volume_db = -23.5
+volume_db = -40.0
 bus = &"UI"
 
 [node name="Take_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("22_iuyk4")
-volume_db = -20.0
+volume_db = -37.5
 bus = &"UI"
 
 [node name="UI" type="AudioStreamPlayer" parent="UI_Sounds"]
-volume_db = -20.0
+volume_db = -37.5
 bus = &"UI"
 
 [connection signal="input_event" from="Card_Collider" to="." method="_on_card_collider_input_event"]

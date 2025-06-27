@@ -185,5 +185,5 @@ autoplay = "Flashing"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_gwqe6")
-volume_db = -5.0
+volume_db = -20.0
 bus = &"FX"

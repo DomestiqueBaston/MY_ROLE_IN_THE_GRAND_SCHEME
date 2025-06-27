@@ -80,7 +80,6 @@ script = ExtResource("2_k103k")
 
 [node name="Warning" type="CollisionShape2D" parent="Collider"]
 position = Vector2(0, 2)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_a04wm")
 
 [node name="Warning" type="Sprite2D" parent="."]
@@ -106,6 +105,6 @@ libraries = {
 autoplay = "Blink"
 
 [node name="Bip" type="AudioStreamPlayer" parent="."]
-volume_db = -30.0
+volume_db = -45.0
 pitch_scale = 0.75
 bus = &"UI"

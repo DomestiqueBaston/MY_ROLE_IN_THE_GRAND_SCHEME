@@ -56,7 +56,7 @@ func _on_any_button_mouse_exited():
 		Globals.leave_sound.play()
 
 func _on_h_slider_value_changed(value: float):
-	var pitch = lerp(0.5, 0.504, value)
+	var pitch = lerp(0.5, 0.505, value)
 	$Sex_Choice.pitch_scale = pitch
 	if not $Sex_Choice.playing:
 		$Sex_Choice.play()

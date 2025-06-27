@@ -202,5 +202,5 @@ libraries = {
 autoplay = "Progress_Bar_In"
 
 [node name="Transition" type="AudioStreamPlayer" parent="."]
-volume_db = -17.5
+volume_db = -35.0
 bus = &"AMBIANCE"
