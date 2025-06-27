@@ -185,7 +185,7 @@ func get_drugs() -> int:
 	return drugs
 
 func add_debt(debt: int):
-	_debts.append(debt)
+	_debts.insert(0, debt)
 	debts_changed.emit()
 
 func get_debt_count() -> int:
@@ -194,7 +194,11 @@ func get_debt_count() -> int:
 func get_debt(index: int) -> int:
 	return _debts[index]
 
-func remove_debt(index: int):
+func set_debt(index: int, new_debt: int):
+	_debts[index] = new_debt
+
+func pay_debt(index: int):
+	money -= _debts[index]
 	_debts.remove_at(index)
 	debts_changed.emit()
 

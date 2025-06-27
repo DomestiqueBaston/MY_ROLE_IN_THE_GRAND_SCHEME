@@ -55,6 +55,18 @@ enum WhateverMenuItem {
 	QUIT
 }
 
+var _day_names = [
+	"Mon.",
+	"Tue.",
+	"Wed.",
+	"Thu.",
+	"Fri.",
+	"Sat.",
+	"Sun."
+]
+
+var _debt_popup: PopupMenu
+
 func _update_controls():
 	var player = GameState.player
 	$Character_Stats/Player_Name.text = player.player_name
@@ -96,11 +108,9 @@ func _ready():
 	if $Menus/Dailies.disabled:
 		return
 
-	var submenu1: PopupMenu = PopupMenu.new()
-	submenu1.add_item("This week (XXXDø)")
-	submenu1.add_item("2 weeks ago (XXXDø)")
-	submenu1.add_item("3 weeks ago (XXXDø)")
-	submenu1.add_item("4 weeks ago (XXXDø)")
+	_debt_popup = PopupMenu.new()
+	_debt_popup.about_to_popup.connect(_on_debt_menu_popup)
+	_debt_popup.index_pressed.connect(_on_debt_menu_pressed)
 
 	var submenu2: PopupMenu = PopupMenu.new()
 	submenu2.add_item("Use 1 dose")
@@ -113,7 +123,7 @@ func _ready():
 	popup.add_item("Go to the Investig. Center...")
 	popup.add_item("Back to the office!")
 	popup.add_separator(" - - - - - - - - - - - - - ")
-	popup.add_submenu_node_item("Pay the bill", submenu1)
+	popup.add_submenu_node_item("Pay the bill", _debt_popup)
 	popup.add_submenu_node_item("Get your fix", submenu2)
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_item("Go to sleep...", DailiesMenuItem.SLEEP)
@@ -164,16 +174,6 @@ func _on_debts_changed():
 		if $Bill_Alert.current_animation == "Alert":
 			$Bill_Alert.play("RESET")
 
-var _day_names = [
-	"Mon.",
-	"Tue.",
-	"Wed.",
-	"Thu.",
-	"Fri.",
-	"Sat.",
-	"Sun."
-]
-
 func _on_time_changed():
 	$Date_Time/Day.text = _day_names[GameState.get_day() % 7]
 	var hour = GameState.get_hour()
@@ -181,3 +181,19 @@ func _on_time_changed():
 		$Date_Time/Time.text = "%dam" % (12 if hour == 0 else hour)
 	else:
 		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)
+
+func _on_debt_menu_popup():
+	var player = GameState.player
+	_debt_popup.clear()
+	for i in player.get_debt_count():
+		var debt = player.get_debt(i)
+		var label
+		if i == 0:
+			label = "This week (%d Dø)" % debt
+		else:
+			label = "%d weeks ago (%d Dø)" % [i+1, debt]
+		_debt_popup.add_item(label)
+		_debt_popup.set_item_disabled(i, player.money < debt)
+
+func _on_debt_menu_pressed(index: int):
+	GameState.player.pay_debt(index)
