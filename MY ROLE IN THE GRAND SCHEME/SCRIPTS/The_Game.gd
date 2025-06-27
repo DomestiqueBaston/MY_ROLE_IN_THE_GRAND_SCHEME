@@ -48,24 +48,25 @@ func _on_option_button_pressed(button: StringName):
 			_quit()
 
 func _go_to_settings():
-	var node = await _replace_scene(_settings_scene)
-	await node.done
-	Globals.save_settings()
+	var settings = await _replace_scene(_settings_scene)
+	await settings.done
+	if settings.is_confirmed():
+		Globals.save_settings()
 	_go_to_option_menu()
 
 func _go_to_credits():
-	var node = await _replace_scene(_credits_scene)
-	await node.done
+	var credits = await _replace_scene(_credits_scene)
+	await credits.done
 	_go_to_option_menu()
 
 func _go_to_language_scene():
-	var node = await _replace_scene(_language_scene)
-	await node.done
+	var language = await _replace_scene(_language_scene)
+	await language.done
 	_go_to_option_menu()
 
 func _go_to_tutorial():
-	var node = await _replace_scene(_tutorial_scene)
-	await node.done
+	var tutorial = await _replace_scene(_tutorial_scene)
+	await tutorial.done
 	_go_to_option_menu()
 
 func _go_to_new_game():

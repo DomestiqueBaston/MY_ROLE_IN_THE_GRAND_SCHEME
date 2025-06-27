@@ -93,6 +93,7 @@ tooltip_text = "Overall volume"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+max_value = 200.0
 value = 50.0
 
 [node name="Music" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -105,6 +106,7 @@ tooltip_text = "Music volume"
 theme_override_icons/grabber = ExtResource("4_5sjnd")
 theme_override_icons/grabber_highlight = ExtResource("7_n2fpq")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+max_value = 200.0
 value = 50.0
 
 [node name="FX" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -117,6 +119,7 @@ tooltip_text = "FX volume"
 theme_override_icons/grabber = ExtResource("5_fcheo")
 theme_override_icons/grabber_highlight = ExtResource("9_wkevm")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+max_value = 200.0
 value = 50.0
 
 [node name="UI" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -129,6 +132,7 @@ tooltip_text = "UI volume"
 theme_override_icons/grabber = ExtResource("6_dp0m8")
 theme_override_icons/grabber_highlight = ExtResource("11_wkevm")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+max_value = 200.0
 value = 50.0
 
 [node name="Ambiance" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -142,6 +146,7 @@ theme_override_icons/grabber = ExtResource("7_yumua")
 theme_override_icons/grabber_highlight = ExtResource("11_d1nio")
 theme_override_icons/grabber_disabled = ExtResource("7_yumua")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+max_value = 200.0
 value = 50.0
 
 [node name="Video" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -154,6 +159,7 @@ tooltip_text = "Who remembers this?"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
+max_value = 200.0
 value = 50.0
 
 [node name="Difficulty" type="VSlider" parent="Buttons_Sliders/Sliders"]
