@@ -86,8 +86,6 @@ func _ready():
 	submenu2.id_pressed.connect(_handle_submenu.bind(1))
 	submenu3.id_pressed.connect(_handle_submenu.bind(2))
 	
-	top_bar.sleep.connect(_on_sleep)
-	top_bar.pass_time.connect(func(): GameState.pass_one_hour())
 	top_bar.quit.connect(func(): quit.emit())
 	
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
@@ -102,8 +100,6 @@ func _ready():
 
 	Globals.dialog_overlay.pre_dialog.connect(_pause_input_handling)
 	Globals.dialog_overlay.post_dialog.connect(_resume_input_handling)
-
-	GameState.player.debts_changed.connect(_on_debt_change)
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -560,11 +556,6 @@ func _resume_input_handling():
 	_input_paused = false
 	set_process_input(true)
 	reserve.set_process_input(true)
-
-func _on_sleep():
-	var hours = await Globals.dialog_overlay.choose_sleep_time()
-	if hours > 0:
-		GameState.sleep(hours)
 
 func _on_debt_change():
 	if GameState.player.get_debt_count() >= 4:

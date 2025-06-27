@@ -3,12 +3,6 @@ extends Control
 ## If true, all menus except Whatever are disabled.
 @export var limited_menus: bool = false
 
-## Signal emitted when the player selects Sleep from the menu.
-signal sleep
-
-## Signal emitted when the player selects Pass Time from the menu.
-signal pass_time
-
 ## Signal emitted when the player select Quit from the menu.
 signal quit
 
@@ -133,9 +127,11 @@ func _ready():
 func _on_dailies_press(id: int):
 	match id:
 		DailiesMenuItem.PASS_TIME:
-			pass_time.emit()
+			GameState.pass_one_hour()
 		DailiesMenuItem.SLEEP:
-			sleep.emit()
+			var hours = await Globals.dialog_overlay.choose_sleep_time()
+			if hours > 0:
+				GameState.sleep(hours)
 
 func _on_whatever_press(id: int):
 	match id:
@@ -197,3 +193,4 @@ func _on_debt_menu_popup():
 
 func _on_debt_menu_pressed(index: int):
 	GameState.player.pay_debt(index)
+	GameState.pass_one_hour()
