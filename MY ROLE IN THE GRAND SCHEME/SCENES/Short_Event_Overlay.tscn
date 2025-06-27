@@ -1,4 +1,4 @@
-[gd_scene load_steps=248 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=242 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -769,18 +769,6 @@ _data = {
 &"Writing_Buy": SubResource("Animation_d5ayf"),
 &"Writing_Use": SubResource("Animation_fowbj")
 }
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4enr2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hb476"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m6kkd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tdxs6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lkigo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmu3t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th1i4"]
 
@@ -3423,14 +3411,15 @@ script = ExtResource("3_8qa11")
 
 [node name="Quit" type="Button" parent="Overlays/Misc/Announces"]
 layout_mode = 0
-offset_left = 386.0
-offset_top = 297.0
-offset_right = 479.0
-offset_bottom = 318.0
+offset_left = 409.0
+offset_top = 296.0
+offset_right = 481.0
+offset_bottom = 317.0
 rotation = 0.0265987
-text = "Whatever..."
+text = "Whatever"
 
 [node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
 anchors_preset = 0
 
 [node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Bill"]
@@ -3588,6 +3577,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,
 "
 
 [node name="Nightmare" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
+visible = false
 layout_mode = 0
 offset_left = 168.0
 offset_top = 94.0
@@ -4426,32 +4416,6 @@ offset_right = 15.0
 offset_bottom = 15.0
 theme = ExtResource("82_gq4jn")
 
-[node name="Yes" type="Button" parent="Overlays/Sleep/Yes_No"]
-visible = false
-modulate = Color(1, 1, 1, 0.498039)
-layout_mode = 0
-offset_left = 327.0
-offset_top = 313.0
-offset_right = 422.0
-offset_bottom = 321.0
-rotation = -0.0122173
-theme_override_colors/font_disabled_color = Color(0.52052, 0.77, 0.2156, 0.827451)
-theme_override_colors/font_hover_pressed_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
-theme_override_colors/font_hover_color = Color(0.892, 1, 0.76, 1)
-theme_override_colors/font_color = Color(0.52052, 0.77, 0.2156, 0.960784)
-theme_override_colors/font_focus_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
-theme_override_colors/font_pressed_color = Color(0.521569, 0.768627, 0.215686, 0.827451)
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("55_s8rvk")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4enr2")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_hb476")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_m6kkd")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tdxs6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lkigo")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qmu3t")
-text = "Morpheus, I'm coming!"
-
 [node name="No" type="Button" parent="Overlays/Sleep/Yes_No"]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
@@ -4460,12 +4424,12 @@ offset_top = 10.0
 offset_right = 435.0
 offset_bottom = 18.0
 rotation = -0.0126771
-theme_override_colors/font_disabled_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
-theme_override_colors/font_hover_pressed_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
-theme_override_colors/font_hover_color = Color(1, 0.75, 0.7, 1)
-theme_override_colors/font_color = Color(0.98, 0.4655, 0.3626, 0.980392)
-theme_override_colors/font_focus_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
-theme_override_colors/font_pressed_color = Color(0.980392, 0.466667, 0.360784, 0.823529)
+theme_override_colors/font_disabled_color = Color(1, 0.4, 0.25, 0.823529)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.4, 0.25, 0.823529)
+theme_override_colors/font_hover_color = Color(1, 0.725, 0.67, 1)
+theme_override_colors/font_color = Color(1, 0.4, 0.25, 1)
+theme_override_colors/font_focus_color = Color(1, 0.4, 0.25098, 0.823529)
+theme_override_colors/font_pressed_color = Color(1, 0.4, 0.25098, 0.823529)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("55_s8rvk")
 theme_override_font_sizes/font_size = 8
