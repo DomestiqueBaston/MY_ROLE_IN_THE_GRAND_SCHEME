@@ -39,8 +39,8 @@ class PlayerAttr:
 ]
 
 @onready var _dailies_button: MenuButton = $Menus/Dailies
-@onready var _normal_arrow = preload("res://GRAPHICS/UI/Arrow_Normal_Right.png")
-@onready var _transp_arrow = preload("res://GRAPHICS/UI/Arrow_Transparent_Right.png")
+#@onready var _normal_arrow = preload("res://GRAPHICS/UI/Arrow_Normal_Right.png")
+#@onready var _transp_arrow = preload("res://GRAPHICS/UI/Arrow_Transparent_Right.png")
 
 enum DailiesMenuItem {
 	PASS_TIME = 1000,
@@ -210,10 +210,10 @@ func _on_dailies_menu_popup():
 	var index = dailies.get_item_index(DailiesMenuItem.DEBT_SUBMENU)
 	if player.get_debt_count() == 0:
 		dailies.set_item_disabled(index, true)
-		theme.set_icon("submenu", "PopupMenu", _transp_arrow)
+		#theme.set_icon("submenu", "PopupMenu", _transp_arrow)
 	else:
 		dailies.set_item_disabled(index, false)
-		theme.set_icon("submenu", "PopupMenu", _normal_arrow)
+		#theme.set_icon("submenu", "PopupMenu", _normal_arrow)
 
 func _on_debt_menu_pressed(index: int):
 	GameState.player.pay_debt(index)
