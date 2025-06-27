@@ -165,6 +165,7 @@ func _on_debts_changed():
 		$Date_Time/Day.tooltip_text = "You need to pay your bills!"
 		if $Bill_Alert.current_animation != "Alert":
 			$Bill_Alert.play("Alert")
+			Globals.dialog_overlay.show_bill_announcement()
 	else:
 		$Date_Time/Day.tooltip_text = ""
 		if $Bill_Alert.current_animation == "Alert":

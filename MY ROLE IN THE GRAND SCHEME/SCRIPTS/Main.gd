@@ -556,7 +556,3 @@ func _resume_input_handling():
 	_input_paused = false
 	set_process_input(true)
 	reserve.set_process_input(true)
-
-func _on_debt_change():
-	if GameState.player.get_debt_count() >= 4:
-		await Globals.dialog_overlay.show_bill_announcement()
