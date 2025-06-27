@@ -3407,7 +3407,6 @@ offset_bottom = 336.0
 text = "Quit"
 
 [node name="Misc" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Misc_BG" type="Sprite2D" parent="Overlays/Misc"]
 texture = ExtResource("1_sivc1")
@@ -3423,15 +3422,14 @@ script = ExtResource("3_8qa11")
 
 [node name="Quit" type="Button" parent="Overlays/Misc/Announces"]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 306.0
+offset_left = 386.0
+offset_top = 297.0
 offset_right = 479.0
-offset_bottom = 314.0
-rotation = 0.0361729
+offset_bottom = 318.0
+rotation = 0.0265987
 text = "Whatever..."
 
 [node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
-visible = false
 anchors_preset = 0
 
 [node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Bill"]
@@ -3457,6 +3455,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
+visible = false
 layout_mode = 0
 offset_left = 178.0
 offset_top = 70.0
@@ -3474,10 +3473,9 @@ Did you really  think  that  would  be  your biggest  challenge  today?
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
 
 [node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
-visible = false
 layout_mode = 0
 offset_left = 165.0
-offset_top = 60.0
+offset_top = 55.0
 offset_right = 489.0
 offset_bottom = 302.0
 rotation = 0.0356184
@@ -3497,9 +3495,10 @@ visible = false
 anchors_preset = 0
 
 [node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
+visible = false
 layout_mode = 0
 offset_left = 167.0
-offset_top = 59.0
+offset_top = 56.0
 offset_right = 484.0
 offset_bottom = 294.0
 rotation = 0.0356184
@@ -3516,7 +3515,7 @@ Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  a
 visible = false
 layout_mode = 0
 offset_left = 169.0
-offset_top = 61.0
+offset_top = 59.0
 offset_right = 484.0
 offset_bottom = 299.0
 rotation = 0.0356184
@@ -3535,10 +3534,9 @@ visible = false
 anchors_preset = 0
 
 [node name="NPC_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
-visible = false
 layout_mode = 0
 offset_left = 169.0
-offset_top = 58.0
+offset_top = 55.0
 offset_right = 484.0
 offset_bottom = 299.0
 rotation = 0.0356184
@@ -3552,9 +3550,10 @@ It's  almost  as if one  had  a sudden, [shake rate=7.0 level=5 connected=0][col
 Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [color=#ff1c18]you[/color][/color][/shake]?[/center]"
 
 [node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
+visible = false
 layout_mode = 0
 offset_left = 167.0
-offset_top = 61.0
+offset_top = 55.0
 offset_right = 486.0
 offset_bottom = 299.0
 rotation = 0.0356184
@@ -3654,8 +3653,7 @@ Well, [shake rate=7.0 level=5 connected=0][color=#ff8864]congratulations[/color]
 Whatever you were working on? [shake rate=7.0 level=5 connected=0][color=#ff1c18]Gone[/color][/shake]!just like that.
 
 Your [shake rate=7.0 level=5 connected=0][color=#ff1c18]inaility[/color][/shake] to  meet  a [shake rate=7.0 level=5 connected=0][color=#ff8864]simple [color=#ff1c18]deadline[/color][/color][/shake] is impressive.  [shake rate=7.0 level=5 connected=0][color=#ff1c18]Not great[/color][/shake] for your [shake rate=7.0 level=5 connected=0][color=#ff8864]emotional stability[/color][/shake], though...
-
-Nice job, [shake rate=7.0 level=5 connected=0][color=#ff8864]genius[/color][/shake]![/center]
+Nice job, [shake rate=7.0 level=5 connected=0][color=#ff1c18]genius[/color][/shake]![/center]
 "
 
 [node name="Rowena_Absent" type="Control" parent="Overlays/Misc/Announces"]
@@ -3684,6 +3682,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
+visible = false
 layout_mode = 0
 offset_left = 159.0
 offset_top = 44.0
@@ -3696,13 +3695,11 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/
 [shake rate=7.0 level=5 connected=0][color=#ff8864]How  unexpected...[/color][/shake]
 Seems like the thought  of  actually facing  what  was in front  of you  was  a bit too  much  to  handle.
 Was it the challenge  or  ([color=#ff8864][shake rate=7.0 level=5 connected=0]maybe[/shake][/color]) the [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]?
-
-Either way, you sure  know  how  to  leave an impression...
+Either way, you sure  know  how  to  [color=#ff8864]leave an impression[/color]...
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
 
 [node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
-visible = false
 layout_mode = 0
 offset_left = 165.0
 offset_top = 50.0

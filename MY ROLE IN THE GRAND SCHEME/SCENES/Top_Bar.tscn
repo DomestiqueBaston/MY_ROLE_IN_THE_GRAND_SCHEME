@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://hl8yhfvhjhtn"]
+[gd_scene load_steps=30 format=3 uid="uid://hl8yhfvhjhtn"]
 
 [ext_resource type="Script" uid="uid://dstxsghnh0lns" path="res://SCRIPTS/Top_Bar.gd" id="1_0mfvj"]
 [ext_resource type="Theme" uid="uid://de714pwpjqlk2" path="res://UI/Menu_Bar_Theme.tres" id="1_2tgjx"]
 [ext_resource type="ButtonGroup" uid="uid://5k1f7ct3psah" path="res://UI/Cal_Que_Car_Set_Button_Group.tres" id="2_mdfj4"]
 [ext_resource type="AudioStream" uid="uid://dmrut6mhf4tp3" path="res://SOUND/MISC/Soft_Alarm.ogg" id="5_0mfvj"]
+[ext_resource type="AudioStream" uid="uid://ukcjyppb2k0y" path="res://SOUND/MISC/Soft_Beep.ogg" id="5_nvp8u"]
 
 [sub_resource type="Animation" id="Animation_xsx1a"]
 resource_name = "Alert"
@@ -667,4 +668,9 @@ libraries = {
 [node name="Soft_Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0mfvj")
 volume_db = -25.0
+bus = &"UI"
+
+[node name="Menu_Bip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nvp8u")
+volume_db = -15.0
 bus = &"UI"

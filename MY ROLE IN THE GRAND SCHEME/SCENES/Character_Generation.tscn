@@ -258,7 +258,7 @@ bus = &"FX"
 
 [node name="Sex_Choice" type="AudioStreamPlayer" parent="Creation_Page"]
 stream = ExtResource("35_7d8wo")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"UI"
 parameters/looping = true
 
