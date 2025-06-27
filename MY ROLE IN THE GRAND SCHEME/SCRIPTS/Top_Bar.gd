@@ -134,6 +134,7 @@ func _on_dailies_press(id: int):
 	match id:
 		DailiesMenuItem.PASS_TIME:
 			GameState.pass_one_hour()
+			$Menu_Bip.play()
 		DailiesMenuItem.SLEEP:
 			var hours = await Globals.dialog_overlay.choose_sleep_time()
 			if hours > 0:
@@ -217,3 +218,4 @@ func _on_dailies_menu_popup():
 func _on_debt_menu_pressed(index: int):
 	GameState.player.pay_debt(index)
 	GameState.pass_one_hour()
+	$Menu_Bip.play()
