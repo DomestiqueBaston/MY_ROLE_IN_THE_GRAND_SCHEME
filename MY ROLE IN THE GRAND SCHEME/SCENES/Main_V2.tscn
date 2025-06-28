@@ -549,14 +549,14 @@ texture_pressed = ExtResource("41_lygj3")
 texture_hover = ExtResource("31_rix1k")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Validation_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Witness_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 1.0
 offset_right = 128.0
 offset_bottom = 9.0
 pivot_offset = Vector2(4, 20)
-tooltip_text = "Validation
+tooltip_text = "Witness
 - Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
