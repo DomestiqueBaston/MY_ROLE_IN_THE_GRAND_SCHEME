@@ -300,7 +300,7 @@
 			"id": "LIN009",
 			"link_id": "LIN009_IDxxx",
 			"color": "red",
-			"title": "contradiction",
+			"title": "inconsistency",
 			"starts_at_card": "",
 			"starting_pin": [
 				"Top_Left_Pin_Position",
@@ -315,9 +315,19 @@
 			],
 			"ends_at_card": "none",
 			"ending_pin": [
-				"none"
+				"none",
+				"Top_Left_Pin_Position",
+				"Top_Center_Left_Position",
+				"Top_Center_Position",
+				"Top_Center_Right_Position",
+				"Top_Right_Pin_Position",
+				"Left_Center_Pin_Position",
+				"Left_Bottom_Pin_Position",
+				"Right_Center_Pin_Position",
+				"Right_Bottom_Pin_Position"
 			],
 			"ends_at_link": [
+				"none",
 				"link_id"
 			],
 			"status": [

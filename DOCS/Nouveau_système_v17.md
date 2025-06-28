@@ -703,7 +703,7 @@ Bleu clair : Connaissance (pas exploité dans toutes les enquêtes)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Rose : Intime (adultère uniquement et pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
-Rouge : Contradiction (ex. : un témoin (ou un billet de train, etc.) dit que untel n'était pas là où il a dit être au moment du crime). Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
+Rouge : Incohérence Il faudrait pouvoir AUSSI attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
 Jaune : Témoin Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
           Vert clair : Propriété NE SERT PAS À VALIDER UNE ENQUÊTE.
           Marron : Domicile NE SERT PAS À VALIDER UNE ENQUÊTE.

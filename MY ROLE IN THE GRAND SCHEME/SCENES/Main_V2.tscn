@@ -533,14 +533,14 @@ texture_pressed = ExtResource("38_spbrc")
 texture_hover = ExtResource("29_aw4n3")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Contradiction_Red" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Inconsistency_Red" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 111.0
 offset_top = 1.0
 offset_right = 119.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
-tooltip_text = "Contradiction
+tooltip_text = "Inconsistency
 - Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
