@@ -8,14 +8,14 @@ extends Control
 	$Friend_Dark_Green:			Link.Type.FRIEND,
 	$Enemy_Orange:				Link.Type.ENEMY,
 	$Acquaintance_Light_Blue:	Link.Type.ACQUAINTANCE,
-	$Ideology_Dark_Blue:		Link.Type.IDEOLOGY,
-	$Contradiction_Red:			Link.Type.CONTRADICTION,
-	$Validation_Yellow:			Link.Type.CONFIRMATION,
+	$Ideology_Dark_Blue:			Link.Type.IDEOLOGY,
+	$Inconsistency_Red:			Link.Type.INCONSISTENCY,
+	$Witness_Yellow:				Link.Type.WITNESS,
 	$Property_Light_Green:		Link.Type.PROPERTY,
-	$Home_Brown:				Link.Type.HOME,
-	$Work_Turquoise:			Link.Type.WORK,
+	$Home_Brown:					Link.Type.HOME,
+	$Work_Turquoise:				Link.Type.WORK,
 	$Hangout_Darkest_Blue:		Link.Type.HANGOUT,
-	$Found_Light_Purple:		Link.Type.FOUND,
+	$Found_Light_Purple:			Link.Type.FOUND,
 	$New_Dark_Purple:			-1
 }
 
