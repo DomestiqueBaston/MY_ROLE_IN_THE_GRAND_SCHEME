@@ -41,7 +41,12 @@ enum NpcStatus {
 	JAIL,
 	DEAD,
 	DISAPPEARED,
-	MINION
+	MINION,
+	VICTIM,
+	SUSPECT,
+	WITNESS,
+	CULPRIT,
+	ACCOMPLICE
 }
 
 @export var card_name: String = "Card Name":
@@ -164,6 +169,11 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
 			$Card_Mask/Card_BG/Minion_Status.visible = false
+			$Card_Mask/Card_BG/Victim_Status.visible = false
+			$Card_Mask/Card_BG/Suspect_Status.visible = false
+			$Card_Mask/Card_BG/Witness_Status.visible = false
+			$Card_Mask/Card_BG/Culprit_Status.visible = false
+			$Card_Mask/Card_BG/Accomplice_Status.visible = false
 
 		CardType.INVESTIGATION:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -182,6 +192,11 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
 			$Card_Mask/Card_BG/Minion_Status.visible = false
+			$Card_Mask/Card_BG/Victim_Status.visible = false
+			$Card_Mask/Card_BG/Suspect_Status.visible = false
+			$Card_Mask/Card_BG/Witness_Status.visible = false
+			$Card_Mask/Card_BG/Culprit_Status.visible = false
+			$Card_Mask/Card_BG/Accomplice_Status.visible = false
 
 		CardType.DIALOGUE:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -198,6 +213,11 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
 			$Card_Mask/Card_BG/Minion_Status.visible = false
+			$Card_Mask/Card_BG/Victim_Status.visible = false
+			$Card_Mask/Card_BG/Suspect_Status.visible = false
+			$Card_Mask/Card_BG/Witness_Status.visible = false
+			$Card_Mask/Card_BG/Culprit_Status.visible = false
+			$Card_Mask/Card_BG/Accomplice_Status.visible = false
 
 		CardType.ABSTRACT:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -214,6 +234,11 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
 			$Card_Mask/Card_BG/Minion_Status.visible = false
+			$Card_Mask/Card_BG/Victim_Status.visible = false
+			$Card_Mask/Card_BG/Suspect_Status.visible = false
+			$Card_Mask/Card_BG/Witness_Status.visible = false
+			$Card_Mask/Card_BG/Culprit_Status.visible = false
+			$Card_Mask/Card_BG/Accomplice_Status.visible = false
 
 		CardType.OBJECT:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -230,6 +255,11 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
 			$Card_Mask/Card_BG/Minion_Status.visible = false
+			$Card_Mask/Card_BG/Victim_Status.visible = false
+			$Card_Mask/Card_BG/Suspect_Status.visible = false
+			$Card_Mask/Card_BG/Witness_Status.visible = false
+			$Card_Mask/Card_BG/Culprit_Status.visible = false
+			$Card_Mask/Card_BG/Accomplice_Status.visible = false
 
 		CardType.LOCATION:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -246,6 +276,11 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = false
 			$Card_Mask/Card_BG/Disappeared_Status.visible = false
 			$Card_Mask/Card_BG/Minion_Status.visible = false
+			$Card_Mask/Card_BG/Victim_Status.visible = false
+			$Card_Mask/Card_BG/Suspect_Status.visible = false
+			$Card_Mask/Card_BG/Witness_Status.visible = false
+			$Card_Mask/Card_BG/Culprit_Status.visible = false
+			$Card_Mask/Card_BG/Accomplice_Status.visible = false
 
 		CardType.NPC:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -266,6 +301,11 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Dead_Status.visible = (npc_status == NpcStatus.DEAD)
 			$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
 			$Card_Mask/Card_BG/Minion_Status.visible = (npc_status == NpcStatus.MINION)
+			$Card_Mask/Card_BG/Victim_Status.visible = (npc_status == NpcStatus.VICTIM)
+			$Card_Mask/Card_BG/Suspect_Status.visible = (npc_status == NpcStatus.SUSPECT)
+			$Card_Mask/Card_BG/Witness_Status.visible = (npc_status == NpcStatus.WITNESS)
+			$Card_Mask/Card_BG/Culprit_Status.visible = (npc_status == NpcStatus.CULPRIT)
+			$Card_Mask/Card_BG/Accomplice_Status.visible = (npc_status == NpcStatus.ACCOMPLICE)
 
 #func get_size() -> Vector2i:
 	#return Vector2i(
