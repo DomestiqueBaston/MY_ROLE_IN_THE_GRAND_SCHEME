@@ -886,6 +886,7 @@ Lieu de travail
 		- Sinon → chaque PNJ a son propre lieu de travail.
 	- Un lieu de travail partagé compte une seule fois dans le total des lieux.
 	- Pour Unemployed, le lieu de travail (home) ne peut être partagé qu’avec un conjoint s’il y en a un/une.
+	- Les PNJs partageant un lieu de travail on 33% de chance d’avoir un lien Acquaintance entre eux. Et ce lien a 50% de chance d’être remplacé par un lien Friend.
 
 Lieu de sortie (hangout)
 	- Ces lieux doivent être tirés prioritairement parmi les lieux déjà générés pour d’autres hangouts ou pour des liens non cruciaux.
@@ -996,12 +997,12 @@ Futures idées…
 	- (Cartes) « Rumeurs » (vraies/fausses).
 	- Zones/quartiers à risque influençant Wan, Emo, Add, Rep ou augmentant le risque d’attaque (même de n’importe qui) ou au contraire, zones/quartiers sûrs…
 	- Mini-objectifs non obligatoires cachés qui donnent des avantages :
-		Ne jamais être en dessous de 200Dø pendant 10 jours.
-		Parler à un PNJ 5 fois sans qu’il fuit.
-		Résoudre 2 enquêtes sans se battre une seule fois.
-		…
+		- Ne jamais être en dessous de 200Dø pendant 10 jours.
+		- Parler à un PNJ 5 fois sans qu’il fuit.
+		- Résoudre 2 enquêtes sans se battre une seule fois.
+		- …
 	- Traits du personnage joueur ou PNJ:
-		Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
+		- Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
 	- Indic’ : Un PNJ offre une info (vraie ou fausse) en échange d’une contrepartie.
 	- Au fur et à mesure que le joueur vire Paranoïaque, l’affichage de ses stats (Top_Bar.tscn) commence à « merder ». (Mouaif…)
 	- Un système de double-vie pour des PNJs ?
