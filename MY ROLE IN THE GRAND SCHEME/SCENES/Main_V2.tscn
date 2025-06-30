@@ -2245,9 +2245,9 @@ allow_search = false
 
 [node name="Sub_Menu" type="PopupMenu" parent="Mask_Card_Playground/Popup_Menu"]
 auto_translate_mode = 1
-size = Vector2i(93, 136)
+size = Vector2i(102, 136)
 min_size = Vector2i(93, 136)
-max_size = Vector2i(93, 136)
+max_size = Vector2i(102, 136)
 theme = ExtResource("54_x4cyf")
 theme_override_styles/panel = SubResource("StyleBoxFlat_anbsy")
 submenu_popup_delay = 0.1
@@ -2274,10 +2274,10 @@ item_5/id = 5
 item_6/text = "Acquaintance"
 item_6/icon = ExtResource("26_50s3b")
 item_6/id = 6
-item_7/text = "Ideologic Affinity"
+item_7/text = "Ideological Affinity"
 item_7/icon = ExtResource("28_fifqw")
 item_7/id = 7
-item_8/text = "Contradiction"
+item_8/text = "Inconsistency"
 item_8/icon = ExtResource("30_rkm6l")
 item_8/id = 8
 item_9/text = "Witness"
