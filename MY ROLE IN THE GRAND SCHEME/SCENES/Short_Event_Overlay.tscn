@@ -2475,7 +2475,6 @@ libraries = {
 autoplay = "Flashing"
 
 [node name="Investigation_Center" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Investigation_Center_BG" type="Sprite2D" parent="Overlays/Investigation_Center"]
 texture = ExtResource("88_psfuj")
@@ -2502,6 +2501,7 @@ layout_mode = 0
 offset_top = 12.0
 offset_right = 365.0
 offset_bottom = 52.0
+theme_override_constants/line_separation = 2
 bbcode_enabled = true
 text = "Case ID:
 Status:
@@ -2515,6 +2515,7 @@ offset_left = 40.0
 offset_right = 365.0
 offset_bottom = 10.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_constants/line_separation = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
 bbcode_enabled = true
 text = "(see Case_Serial_Number_Generator.gd)"
@@ -2527,6 +2528,7 @@ offset_top = 10.0
 offset_right = 365.0
 offset_bottom = 20.0
 theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/line_separation = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
 bbcode_enabled = true
 text = "Unassigned"
@@ -2539,6 +2541,7 @@ offset_top = 20.0
 offset_right = 365.0
 offset_bottom = 30.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_constants/line_separation = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
 bbcode_enabled = true
 text = "(see case.json or the rules)"
