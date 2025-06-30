@@ -1,15 +1,21 @@
 extends Node
 
+@onready var player: Player = $Player
+
+@warning_ignore("unused_signal")
+signal time_changed
+
 # hours passed since the first Monday at midnight
 var _hour: int
 
 # play starts at 8am Monday
 const _start_time = 8
 
-@onready var player: Player = $Player
+# where game state is saved/reloaded
+const _save_path = "user://game.sav"
 
-@warning_ignore("unused_signal")
-signal time_changed
+func _ready():
+	load_game()
 
 func start_game():
 	_hour = _start_time
@@ -44,6 +50,8 @@ func _increment_time(hours: int):
 	for i in bill_count_after - bill_count_before:
 		_send_new_bill()
 
+	save_game()
+
 func pass_one_hour():
 	player.pass_one_hour()
 	_increment_time(1)
@@ -63,3 +71,21 @@ func _send_new_bill():
 		#new_debt = roundi(new_debt * randf_range(0.9, 1.1))
 		new_debt = roundi(new_debt * (1 + (0.1 / 0.25) * (x - 0.25)))
 	player.add_debt(new_debt)
+
+func save_game():
+	var file = FileAccess.open(_save_path, FileAccess.WRITE)
+	if file:
+		var dict = {
+			"_hour": _hour
+		}
+		dict.set("player", player.save())
+		var json = JSON.stringify(dict, "\t")
+		file.store_line(json)
+
+func load_game():
+	var json = FileAccess.get_file_as_string(_save_path)
+	if json:
+		var data = JSON.parse_string(json)
+		if data and data is Dictionary:
+			_hour = data["_hour"]
+			player.load(data["player"])
