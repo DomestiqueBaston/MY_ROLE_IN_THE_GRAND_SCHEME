@@ -1,11 +1,12 @@
 extends OptionButton
 
 var description_array = []
-var max_text_length = 35
+var max_text_length = 51
 
 func _ready():
 	get_popup().max_size.y = 307
 	get_popup().min_size.x = 184
+	get_popup().max_size.x = 249
 	
 	var file = FileAccess.open("res://JSON/CASE/Crime_Motive_Evidence.json", FileAccess.READ)
 	var json_data = file.get_as_text()

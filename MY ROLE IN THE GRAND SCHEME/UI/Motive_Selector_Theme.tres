@@ -48,8 +48,9 @@ border_color = Color(0, 0, 0, 0.686275)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvitc"]
 bg_color = Color(0, 0, 0, 0.752941)
 border_color = Color(0, 0, 0, 0.752941)
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdbuh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

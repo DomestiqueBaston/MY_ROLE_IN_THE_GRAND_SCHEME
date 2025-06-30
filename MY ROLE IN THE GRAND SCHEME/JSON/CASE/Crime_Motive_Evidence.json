@@ -1953,7 +1953,7 @@
 			{
 				"id": "MOT_DEF_002",
 				"crime_id": "MOT_DEF_002_ID_xxx",
-				"name": "Unveiling a Hidden Society to Distract from Greater Truths",
+				"name": "Unveiling a Para-society to Divert Greater Truths",
 				"more_explicit_name": "Masking the Cosmic Conspiracy by Revealing the Dream Society",
 				"link": [
 					"ideology"
@@ -4890,7 +4890,7 @@
 			{
 				"id": "MOT_HAC_003",
 				"crime_id": "MOT_HAC_003_ID_xxx",
-				"name": "Revealing the Dark Secrets of a Hidden Organization",
+				"name": "Revealing the Dark Secrets of a Hidden Society",
 				"more_explicit_name": "Proving the Malice of Quercus Castoreum",
 				"link": [
 					"ideology",
@@ -6260,7 +6260,7 @@
 			{
 				"id": "MOT_TRA_001",
 				"crime_id": "MOT_TRA_001_ID_xxx",
-				"name": "Unlocking Immortality Through Unconventional Means",
+				"name": "Unlocking Immortality by Unusual Means",
 				"more_explicit_name": "Creating a Clown Clone for Infinite Immortality",
 				"link": [
 					"none"
