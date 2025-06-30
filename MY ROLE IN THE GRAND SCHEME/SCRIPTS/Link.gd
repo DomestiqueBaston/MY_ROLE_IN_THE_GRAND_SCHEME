@@ -29,6 +29,7 @@ class_name Link extends Node2D
 			type = value
 			_update_texture()
 			_update_transparency()
+			_update_tooltip()
 
 @export var status: Status = Status.CONFIRMED:
 	set(value):
@@ -36,6 +37,7 @@ class_name Link extends Node2D
 			status = value
 			_update_texture()
 			_update_transparency()
+			_update_tooltip()
 
 #
 # Note that link types are assumed to begin at 0: see Globals.set_link_mask().
@@ -130,6 +132,7 @@ func _ready():
 	_update_texture()
 	_show_or_hide()
 	_update_transparency()
+	_update_tooltip()
 	if not Engine.is_editor_hint():
 		Globals.link_visibility_changed.connect(_update_transparency)
 
@@ -204,6 +207,13 @@ func _update_transparency():
 			modulate.a = 1
 		else:
 			modulate.a = 0.25
+
+func _update_tooltip():
+	if not Engine.is_editor_hint():
+		var tooltip = Type.keys()[type].capitalize()
+		if status == Status.NEW:
+			tooltip = "New " + tooltip
+		$Link_Texture.tooltip_text = tooltip
 
 func _show_or_hide():
 	visible = pin1 and pin2 and pin1.visible and pin2.visible \

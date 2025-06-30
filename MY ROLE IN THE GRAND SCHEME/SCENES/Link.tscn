@@ -105,7 +105,6 @@ _data = {
 }
 
 [node name="Link" type="Node2D"]
-visible = false
 texture_filter = 1
 texture_repeat = 2
 script = ExtResource("1_vn4vw")
@@ -120,7 +119,6 @@ offset_top = -2.0
 offset_right = 8.0
 offset_bottom = 2.0
 grow_vertical = 2
-tooltip_text = "Nature of the link here."
 theme = ExtResource("1_3ne57")
 texture = ExtResource("3_iohy2")
 expand_mode = 1
