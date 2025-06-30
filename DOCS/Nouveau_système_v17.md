@@ -684,15 +684,14 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 	- Seul le joueur peut donner le statut d’Evidence à une carte.
 	- Toute nouvelle carte découverte est placée en jeu (Main.tscn) avec un Lien Violet et de la couleur la liant au Lieu de découverte, à un ou des PNJs ou autres en fonction de la découverte et des liens qu’elle révèle.
 		Carte PNJ : Toutes les couleurs de liens sont possibles depuis ou vers ces cartes.
-		Carte Objet : Noir, Vert, Rouge/Jaune, Violet Clair et Violet sont possibles.
-		Carte Lieu : Blanc, Noir, Vert Clair, Marron, Turquoise, Bleu Très Foncé, Rouge/Jaune, Violet Clair et Violet sont possibles.
-		Pour tous les types de cartes, dans l’absolu Rouge/Jaune sont possibles, oui mais pas dans le cas de la révélation d’une carte : le jeu n’établit pas ces liens.
+		Carte Objet : Noir, Vert, Rouge, Violet Clair et Violet sont possibles.
+		Carte Lieu : Blanc, Noir, Vert Clair, Marron, Turquoise, Bleu Très Foncé, Rouge, Violet Clair et Violet sont possibles.
 
-		Il faut au minimum 1 Coupable, 1 Evidence (avec liens pleins, évidemment) et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête sinon le menu « Validate Case » ne sera pas activé.
+		Il faut au minimum 1 Coupable, 1 Evidence et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête sinon le menu « Validate Case » ne sera pas activé.
 	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Reserve » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn).
 
 Liens entre les éléments dans l’enquête (Main.tscn)
-	- Tout changement de lien et ou de carte dans la zone de droite (Main.tscn) peut amener automatiquement à l’invalidation du mobile précédemment choisi ! Il sera alors désélectionné, le menu affichera de nouveau « Select a crime motive... » et clignotera.
+	- Tout changement de lien et ou de carte dans la zone de droite (Main.tscn) peut amener automatiquement à l’invalidation du mobile précédemment choisi ! Il sera alors désélectionné, le menu affichera de nouveau « Select a crime motive... » et clignotera (il y a une boucle d’animation pour ça et elle sera à jouer jusqu’à ce que le joueur change le mobile).
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Couleurs des liens :
@@ -755,7 +754,7 @@ Enquête finale (6)	WTF!(malus de 2)
 
 	- Le niveau de difficulté impliquera un bonus/malus à tous les jets de dé du joueur dans cette enquête (voir tableau au dessus).
 	- Dès le départ, le joueur a accès à n’importe quelle enquête de n’importe quel niveau de 1 à 5 (la valeur du niveau de difficulté ne lui sera pas communiquée). À lui d’estimer sa capacité à la gérer avec les informations connues au départ de l’enquête.
-	- Un type d’enquête (crime) mené ne réapparaît que toutes 5 enquêtes différentes choisies ensuite (résolues ou non, afin de « forcer » la variété). Par ex., une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas pris 5 d’un autre type.
+	- Un type d’enquête (crime) mené ne réapparaît que toutes les 5 enquêtes différentes choisies ensuite (résolues ou non, afin de « forcer » la variété). Par ex., une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas pris 5 d’un autre type.
 
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
@@ -773,8 +772,8 @@ Résolution des enquêtes, gains et implications
 	- À la suite d’une enquête réussie, l’écran Income_Overlay.tscn s’affiche avec les gains. Ensuite, on enchaîne directement sur l’écran Card_Management_Overlay.tscn pour modifier le deck (si besoin).
 
 Autres :
-	- 1 fois par jour, le joueur aura 10% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) !
-	- Dans l’enquête finale, à chaque fois que le joueur entrera dans un lieu dans lequel il va découvrir des victimes, il recevra un SMS anonyme.
+	- 1 fois par jour, le joueur aura 10% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) qui ne sert à rien sinon faire monter le niveau de Paranoïa (voir déclencher la Paranoïa) !
+	- Dans l’enquête finale, à chaque fois que le joueur entrera dans un lieu dans lequel il va découvrir des victimes, il recevra un SMS anonyme. Pas d’influence sur la Paranoïa vu qu’il est déjà paranoïaque.
 
 	- Dans les json (je pense à NPC, OBJ, CASE…) on n’aura que des infos vraies. Les fausses sont générées aléatoirement en jeu.
 
@@ -825,7 +824,7 @@ Niveau de difficulté	PNJs inutiles min	PNJs inutiles max
 
 Enquêtes niveau 0 :
  - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
- - Chaque semaine, n’importe quel jour et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposé 1 enquête de niveau 0 par un PNJ quelconque.
+ - Chaque semaine, n’importe quel jour et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposer 1 enquête de niveau 0 par un PNJ quelconque.
 	- Pour ces crimes, un mobile ne sera pas « nécessaire » (le menu Crime Motive sera prérempli avec le seul mobile accessible).
 	- Les emplacements des preuves sont précisés dans le json !
 	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 200Dø.
@@ -842,7 +841,7 @@ Enquête finale (Le complot)
 	- 15 ±1 jours de délai.
 	- Les lieux du crime sont choisis aléatoirement dans la liste de lieux.
 	- Les victimes seront trouvables lors de la première visite de ces lieux.
-	- Lorsque le joueur ira la première fois sur un lieu de crime, il sera informé de la chose par un écran !
+	- Lorsque le joueur ira la première fois sur un lieu d'un crime, il sera informé de la chose par un écran !
 	- Aucune info sur les victimes que leurs noms/prénoms/adresses lors de la découverte des corps.
 	- Case Summary devient également inutile (item du menu désactivé).
 	- Pour rappel, Paranoïa annule les bonus/malus suivants : Factures impayées et Nuit !
@@ -857,9 +856,9 @@ Fiche d’enquête
 
 Comment repartir les evidences ?
 	- Les evidences sont réparties entre les coupables avec un minimum d’1 evidence par coupable.
-	- 1 evidence appartenant à la victime doit se trouver dans le hideout d’un coupable ou chez le coupable.
+	- 1 evidence appartenant à la victime doit se trouver dans le hideout d’un coupable ou chez un coupable.
 	et/ou (ou, s’il n’y a qu’une preuve) :
-	- 1 evidence appartenant au coupable doit se trouver chez la victime ou sur le lieu du crime (s’il y a un lieu du crime).
+	- 1 evidence appartenant au coupable doit se trouver chez une victime ou sur le lieu du crime (s’il y a un lieu du crime).
 
 Comment limiter le nombre de lieux dans une enquête ?
 Lieux nécessaires à l'enquête
@@ -886,7 +885,6 @@ Lieu de travail
 		- Sinon → chaque PNJ a son propre lieu de travail.
 	- Un lieu de travail partagé compte une seule fois dans le total des lieux.
 	- Pour Unemployed, le lieu de travail (home) ne peut être partagé qu’avec un conjoint s’il y en a un/une.
-	- Les PNJs partageant un lieu de travail on 33% de chance d’avoir un lien Acquaintance entre eux. Et ce lien a 50% de chance d’être remplacé par un lien Friend.
 
 Lieu de sortie (hangout)
 	- Ces lieux doivent être tirés prioritairement parmi les lieux déjà générés pour d’autres hangouts ou pour des liens non cruciaux.
@@ -997,12 +995,12 @@ Futures idées…
 	- (Cartes) « Rumeurs » (vraies/fausses).
 	- Zones/quartiers à risque influençant Wan, Emo, Add, Rep ou augmentant le risque d’attaque (même de n’importe qui) ou au contraire, zones/quartiers sûrs…
 	- Mini-objectifs non obligatoires cachés qui donnent des avantages :
-		- Ne jamais être en dessous de 200Dø pendant 10 jours.
-		- Parler à un PNJ 5 fois sans qu’il fuit.
-		- Résoudre 2 enquêtes sans se battre une seule fois.
-		- …
+		Ne jamais être en dessous de 200Dø pendant 10 jours.
+		Parler à un PNJ 5 fois sans qu’il fuit.
+		Résoudre 2 enquêtes sans se battre une seule fois.
+		…
 	- Traits du personnage joueur ou PNJ:
-		- Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
+		Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
 	- Indic’ : Un PNJ offre une info (vraie ou fausse) en échange d’une contrepartie.
 	- Au fur et à mesure que le joueur vire Paranoïaque, l’affichage de ses stats (Top_Bar.tscn) commence à « merder ». (Mouaif…)
 	- Un système de double-vie pour des PNJs ?
