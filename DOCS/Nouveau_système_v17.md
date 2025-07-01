@@ -841,7 +841,7 @@ Enquête finale (Le complot)
 	- 15 ±1 jours de délai.
 	- Les lieux du crime sont choisis aléatoirement dans la liste de lieux.
 	- Les victimes seront trouvables lors de la première visite de ces lieux.
-	- Lorsque le joueur ira la première fois sur un lieu d'un crime, il sera informé de la chose par un écran !
+	- Lorsque le joueur ira la première fois sur un lieu de crime, il sera informé de la chose par un écran !
 	- Aucune info sur les victimes que leurs noms/prénoms/adresses lors de la découverte des corps.
 	- Case Summary devient également inutile (item du menu désactivé).
 	- Pour rappel, Paranoïa annule les bonus/malus suivants : Factures impayées et Nuit !
@@ -980,6 +980,7 @@ Difficulté du jeu
 Futures idées…
 	- La possibilité de filature.
 	- Recyclage de PNJs d’une enquête à l’autre.
+	- Aider un peu plus à ce que les PNJs qui travaillent au même endroit aient des liens Acquaintance (50%) et que ces liens soient transformés en Friend (20%).
 	- Méta-réseau : des PNJs récurrents forment un réseau à « démasquer ».
 	- Le joueur initie les Combats (des fois qu’il croise un sbire, par exemple).
 	- La possibilité d’interagir avec plusieurs PNJs en même temps (pas sûr de mon coup, là).
