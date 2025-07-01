@@ -101,6 +101,13 @@ enum NpcStatus {
 		opacity = value
 		_update_opacity()
 
+var location_info: Dictionary
+
+var npc: NPC:
+	set(value):
+		npc = value
+		_update_card_type()
+
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)
 
@@ -174,6 +181,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Witness_Status.visible = false
 			$Card_Mask/Card_BG/Culprit_Status.visible = false
 			$Card_Mask/Card_BG/Accomplice_Status.visible = false
+			$Card_Mask/Card_BG/Sex/Male.visible = false
+			$Card_Mask/Card_BG/Sex/Female.visible = false
 
 		CardType.INVESTIGATION:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -197,6 +206,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Witness_Status.visible = false
 			$Card_Mask/Card_BG/Culprit_Status.visible = false
 			$Card_Mask/Card_BG/Accomplice_Status.visible = false
+			$Card_Mask/Card_BG/Sex/Male.visible = false
+			$Card_Mask/Card_BG/Sex/Female.visible = false
 
 		CardType.DIALOGUE:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -218,6 +229,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Witness_Status.visible = false
 			$Card_Mask/Card_BG/Culprit_Status.visible = false
 			$Card_Mask/Card_BG/Accomplice_Status.visible = false
+			$Card_Mask/Card_BG/Sex/Male.visible = false
+			$Card_Mask/Card_BG/Sex/Female.visible = false
 
 		CardType.ABSTRACT:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -239,6 +252,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Witness_Status.visible = false
 			$Card_Mask/Card_BG/Culprit_Status.visible = false
 			$Card_Mask/Card_BG/Accomplice_Status.visible = false
+			$Card_Mask/Card_BG/Sex/Male.visible = false
+			$Card_Mask/Card_BG/Sex/Female.visible = false
 
 		CardType.OBJECT:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -260,6 +275,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Witness_Status.visible = false
 			$Card_Mask/Card_BG/Culprit_Status.visible = false
 			$Card_Mask/Card_BG/Accomplice_Status.visible = false
+			$Card_Mask/Card_BG/Sex/Male.visible = false
+			$Card_Mask/Card_BG/Sex/Female.visible = false
 
 		CardType.LOCATION:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -281,6 +298,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Witness_Status.visible = false
 			$Card_Mask/Card_BG/Culprit_Status.visible = false
 			$Card_Mask/Card_BG/Accomplice_Status.visible = false
+			$Card_Mask/Card_BG/Sex/Male.visible = false
+			$Card_Mask/Card_BG/Sex/Female.visible = false
 
 		CardType.NPC:
 			$Card_Mask/Card_BG/Card_Color/Combat.visible = false
@@ -306,6 +325,8 @@ func _update_card_type():
 			$Card_Mask/Card_BG/Witness_Status.visible = (npc_status == NpcStatus.WITNESS)
 			$Card_Mask/Card_BG/Culprit_Status.visible = (npc_status == NpcStatus.CULPRIT)
 			$Card_Mask/Card_BG/Accomplice_Status.visible = (npc_status == NpcStatus.ACCOMPLICE)
+			$Card_Mask/Card_BG/Sex/Male.visible = (npc and npc.sex == NPC.Sex.MALE)
+			$Card_Mask/Card_BG/Sex/Female.visible = (npc and npc.sex == NPC.Sex.FEMALE)
 
 #func get_size() -> Vector2i:
 	#return Vector2i(

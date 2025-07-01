@@ -1,0 +1,148 @@
+class_name Case extends Node
+
+var crime: String
+var motive: Dictionary
+var location: Dictionary
+var duration: int
+var difficulty: int
+var paused: bool = false
+
+var culprits: Array[Card]
+var victims: Array[Card]
+var witnesses: Array[Card]
+var accomplices: Array[Card]
+var suspects: Array[Card]
+var other_npcs: Array[Card]
+
+var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
+var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
+var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
+var _card_scene = preload("res://SCENES/Card.tscn")
+
+static var _last_crimes: Array[String]
+
+static func generate() -> Case:
+	var case = Case.new()
+	case._randomize()
+	return case
+
+func _randomize():
+	var crime_count = _crime_data.size()
+	var crime_index
+
+	# crime (reject any that are in the last 5 crimes used)
+
+	while not crime:
+		crime_index = randi() % crime_count
+		var crime_name = _crime_data[crime_index]["crime"]
+		if not crime_name in _last_crimes:
+			crime = crime_name
+
+	if _last_crimes.size() == 5:
+		_last_crimes.pop_front()
+	_last_crimes.push_back(crime)
+
+	# motive (and lots of other information about the case)
+
+	var motive_list = _crime_data[crime_index]["motive"]
+	var motive_index = randi() % motive_list.size()
+	motive = motive_list[motive_index]
+
+	# NPCs: culprits
+
+	culprits = _generate_npcs(
+		motive.get("culprits", 0), Card.NpcStatus.CULPRIT,
+		motive.get("culprits_professions", []))
+
+	# NPCs: victims
+
+	victims = _generate_npcs(
+		motive.get("victims", 0), Card.NpcStatus.VICTIM,
+		motive.get("victims_professions", []))
+
+	if victims:
+		var dead = motive["dead_victims"]
+		for card in victims:
+			if dead == "yes":
+				card.npc_status = Card.NpcStatus.DEAD
+			elif dead == "disappeared":
+				card.npc_status = Card.NpcStatus.DISAPPEARED
+			elif dead == "random":
+				if randi() & 1:
+					card.npc_status = Card.NpcStatus.DEAD
+
+	# NPCs: witnesses, accomplices, suspects
+
+	witnesses = _generate_npcs(motive.get("witnesses", 0), Card.NpcStatus.WITNESS)
+	accomplices = _generate_npcs(motive.get("accomplices", 0), Card.NpcStatus.ACCOMPLICE)
+	suspects = _generate_npcs(motive.get("suspects", 0), Card.NpcStatus.SUSPECT)
+
+	# TODO: difficulty += number of links * 0.5 + number of pieces of evidence
+
+	var diff = 1.0 + culprits.size() + victims.size() \
+		+ accomplices.size() * 0.5 \
+		- suspects.size() * 0.5 - witnesses.size() * 0.5 \
+		* 19.0/50.0
+	difficulty = clampi(roundi(diff), 1, 5)
+
+	var useless_count
+	match difficulty:
+		0:
+			useless_count = randi_range(2, 3)
+		1:
+			useless_count = randi_range(3, 5)
+		2:
+			useless_count = randi_range(5, 9)
+		3:
+			useless_count = randi_range(8, 13)
+		4:
+			useless_count = randi_range(11, 16)
+		5:
+			useless_count = randi_range(13, 19)
+		6:
+			useless_count = randi_range(15, 22)
+	other_npcs = _generate_npcs(useless_count)
+
+	# TODO: crime location
+
+	var location_name = motive["crime_location"]
+	if location_name is Array:
+		location_name = location_name[randi() % location_name.size()]
+	if location_name:
+		# TODO: any, none, home, work, culprit_work, etc.
+		# TODO: known_crime_location
+		pass
+
+	# TODO: links, evidence...
+
+func _generate_npcs(count, status = Card.NpcStatus.NONE, job_list = []) -> Array[Card]:
+	var cards: Array[Card]
+	if count is Array:
+		count = count[randi() % count.size()]
+	if count > 0:
+		var job_id = _get_npc_job(job_list)
+		var card: Card = _card_scene.instantiate()
+		card.card_type = Card.CardType.NPC
+		card.npc_status = status
+		card.npc = NPC.generate(0, _job_data[job_id])
+		card.card_name = card.npc.first_name + " " + card.npc.last_name
+		cards.append(card)
+	return cards
+
+func _get_npc_job(job_list: Array):
+	if job_list.is_empty():
+		return _job_data.keys()[randi() % _job_data.size()]
+	else:
+		return job_list[randi() % job_list.size()]
+
+# TODO: add crime scene, ...?
+func get_cards() -> Array[Card]:
+	var all_cards: Array[Card]
+	for npcs in [culprits, victims, witnesses, accomplices, suspects, other_npcs]:
+		all_cards.append_array(npcs)
+		for npc in npcs:
+			all_cards.append(npc.npc.home)
+			all_cards.append(npc.npc.work)
+	return all_cards
+
+# TODO: function to return links

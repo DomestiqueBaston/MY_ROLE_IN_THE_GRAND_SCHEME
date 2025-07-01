@@ -20,6 +20,8 @@ func _ready():
 func start_game():
 	_hour = _start_time
 	player.start_game()
+	for i in 5:
+		$Cases.add_child(Case.generate())
 
 ##
 ## Returns the number of full days that have passed since play began. Play
@@ -89,3 +91,9 @@ func load_game():
 		if data and data is Dictionary:
 			_hour = data["_hour"]
 			player.load(data["player"])
+
+func get_cases() -> Array[Case]:
+	var ret: Array[Case]
+	for child in $Cases.get_children():
+		ret.append(child)
+	return ret

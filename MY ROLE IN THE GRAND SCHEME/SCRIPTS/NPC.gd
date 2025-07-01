@@ -22,16 +22,21 @@ var max_health: int
 var wanted: int
 var is_minion: bool
 var player_reputation: int
+var home: Card
+var work: Card
 
 var _names = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 var _jobs = preload("res://JSON/NPC/NPC_Job.json").data
+var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
+var _card_scene = preload("res://SCENES/Card.tscn")
 
-static func generate(extra_points: int = 0, minion: bool = false) -> NPC:
+static func generate(
+	extra_points: int = 0, profession = {}, minion: bool = false) -> NPC:
 	var npc = NPC.new()
-	npc._randomize(extra_points, minion)
+	npc._randomize(extra_points, profession, minion)
 	return npc
 
-func _randomize(extra_points: int, minion: bool):
+func _randomize(extra_points: int, profession: Dictionary, minion: bool):
 
 	# sex and orientation
 
@@ -71,7 +76,7 @@ func _randomize(extra_points: int, minion: bool):
 
 	# job and corresponding bonus/malus to principal characteristics
 
-	job = _jobs[randi() % _jobs.size()]
+	job = profession if profession else _jobs[randi() % _jobs.size()]
 
 	var bonus_malus = job.get("bonus_malus")
 	if bonus_malus is Array:
@@ -87,3 +92,17 @@ func _randomize(extra_points: int, minion: bool):
 	wanted = randi_range(0, 2)
 	is_minion = minion
 	player_reputation = -2 if is_minion else 0
+
+	# home and work locations
+
+	home = _card_scene.instantiate()
+	home.card_type = Card.CardType.LOCATION
+	home.location_info = _location_data["LOC001"]
+	home.card_name = "%s's Apartment" % first_name
+
+	var work_place_list = job["work_place"]
+	var work_index = randi() % work_place_list.size()
+	work = _card_scene.instantiate()
+	work.card_type = Card.CardType.LOCATION
+	work.location_info = _location_data[work_place_list[work_index]]
+	work.card_name = "%s's Workplace" % first_name

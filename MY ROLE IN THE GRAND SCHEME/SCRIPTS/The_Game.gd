@@ -84,6 +84,11 @@ func _start_game():
 
 func _continue_game():
 	var main = await _replace_scene(_main_scene)
+	#var cards: Array[Card]
+	#for case in GameState.get_cases():
+		#cards.append_array(case.get_cards())
+	#main.populate(cards)
+	main.reset()
 	main.quit.connect(_go_to_option_menu)
 
 func _quit():
