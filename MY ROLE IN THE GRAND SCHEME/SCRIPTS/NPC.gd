@@ -97,12 +97,14 @@ func _randomize(extra_points: int, profession: Dictionary, minion: bool):
 
 	home = _card_scene.instantiate()
 	home.card_type = Card.CardType.LOCATION
-	home.other_info = _location_data["LOC001"]
-	home.card_name = "%s's Apartment" % first_name
+	var home_info = _location_data["LOC001"]
+	home.card_name = home_info["name"]
+	home.description = home_info["description"]
 
 	var work_place_list = job["work_place"]
 	var work_index = randi() % work_place_list.size()
 	work = _card_scene.instantiate()
 	work.card_type = Card.CardType.LOCATION
-	work.other_info = _location_data[work_place_list[work_index]]
-	work.card_name = "%s's Workplace" % first_name
+	var work_info = _location_data[work_place_list[work_index]]
+	work.card_name = work_info["name"]
+	work.description = work_info["description"]

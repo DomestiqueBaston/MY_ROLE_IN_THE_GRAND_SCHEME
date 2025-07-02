@@ -54,7 +54,7 @@ func _randomize():
 	# NPCs: culprits
 
 	culprits = _generate_npcs(
-		motive.get("culprits", 0), Card.NpcStatus.CULPRIT,
+		motive.get("culprits", 0), Card.NpcStatus.NONE,
 		motive.get("culprits_professions", []))
 
 	# NPCs: victims
@@ -77,7 +77,7 @@ func _randomize():
 	# NPCs: witnesses, accomplices, suspects
 
 	witnesses = _generate_npcs(motive.get("witnesses", 0), Card.NpcStatus.WITNESS)
-	accomplices = _generate_npcs(motive.get("accomplices", 0), Card.NpcStatus.ACCOMPLICE)
+	accomplices = _generate_npcs(motive.get("accomplices", 0))
 	suspects = _generate_npcs(motive.get("suspects", 0), Card.NpcStatus.SUSPECT)
 
 	# evidence
@@ -94,10 +94,11 @@ func _randomize():
 		for i in evidence_count:
 			var card = _card_scene.instantiate()
 			card.card_type = Card.CardType.OBJECT
-			card.is_object_evidence = true
+			#card.is_object_evidence = true
 			var which = randi() % candidates.size()
-			card.other_info = _object_data[candidates[which]]
-			card.card_name = card.other_info["name"]
+			var obj_info = _object_data[candidates[which]]
+			card.card_name = obj_info["name"]
+			card.description = obj_info["description"]
 			candidates.remove_at(which)
 			evidence.append(card)
 

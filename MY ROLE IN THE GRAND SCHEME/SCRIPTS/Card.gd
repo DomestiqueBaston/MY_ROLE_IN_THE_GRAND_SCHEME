@@ -107,9 +107,6 @@ var npc: NPC:
 		npc = value
 		_update_card_type()
 
-## Other information about the location or object referred to, for example.
-var other_info: Dictionary
-
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)
 
