@@ -22,32 +22,20 @@ var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 var _card_scene = preload("res://SCENES/Card.tscn")
 
-static var _last_crimes: Array[String]
-
 static func generate() -> Case:
 	var case = Case.new()
 	case._randomize()
 	return case
 
 func _randomize():
-	var crime_count = _crime_data.size()
-	var crime_index
 
-	# crime (reject any that are in the last 5 crimes used)
+	# crime
 
-	while not crime:
-		crime_index = randi() % crime_count
-		var crime_name = _crime_data[crime_index]["crime"]
-		if not crime_name in _last_crimes:
-			crime = crime_name
-
-	if _last_crimes.size() == 5:
-		_last_crimes.pop_front()
-	_last_crimes.push_back(crime)
+	crime = GameState.get_new_crime()
 
 	# motive (and lots of other information about the case)
 
-	var motive_list = _crime_data[crime_index]["motive"]
+	var motive_list = _crime_data[crime]
 	var motive_index = randi() % motive_list.size()
 	motive = motive_list[motive_index]
 
@@ -162,13 +150,13 @@ func _randomize():
 	if actual_location == "none":
 		location_card = null
 	elif actual_location == "home":
-		location_card = victims[0].npc.home
+		location_card = victims[0].extra_data.home
 	elif actual_location == "work":
-		location_card = victims[0].npc.work
+		location_card = victims[0].extra_data.work
 	elif actual_location == "culprit_home":
-		location_card = culprits[0].npc.home
+		location_card = culprits[0].extra_data.home
 	elif actual_location == "culprit_work":
-		location_card = culprits[0].npc.work
+		location_card = culprits[0].extra_data.work
 	else:
 		crime_location = _card_scene.instantiate()
 		crime_location.card_type = Card.CardType.LOCATION
@@ -195,10 +183,12 @@ func _generate_npcs(count, status = Card.NpcStatus.NONE, job_list = []) -> Array
 	if count > 0:
 		var job_id = _get_npc_job(job_list)
 		var card: Card = _card_scene.instantiate()
+		var extra: NPC = NPC.generate(0, _job_data[job_id])
 		card.card_type = Card.CardType.NPC
 		card.npc_status = status
-		card.npc = NPC.generate(0, _job_data[job_id])
-		card.card_name = card.npc.first_name + " " + card.npc.last_name
+		card.npc_sex = extra.sex
+		card.extra_data = extra
+		card.card_name = extra.first_name + " " + extra.last_name
 		cards.append(card)
 	return cards
 
@@ -213,8 +203,8 @@ func get_cards() -> Array[Card]:
 	for npcs in [culprits, victims, witnesses, accomplices, suspects, other_npcs]:
 		all_cards.append_array(npcs)
 		for npc in npcs:
-			all_cards.append(npc.npc.home)
-			all_cards.append(npc.npc.work)
+			all_cards.append(npc.extra_data.home)
+			all_cards.append(npc.extra_data.work)
 	all_cards.append_array(evidence)
 	if crime_location:
 		all_cards.append(crime_location)

@@ -1,4 +1,4 @@
-class_name Player extends Node
+class_name Player extends RefCounted
 
 var player_name: String
 var background: Dictionary
@@ -24,10 +24,10 @@ signal money_changed
 signal drugs_changed
 signal debts_changed
 
-@onready var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
-@onready var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
-@onready var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
-@onready var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
+var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
+var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
+var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
+var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
 
 var _debts: Array[int]
 var _cards: Array[Dictionary]

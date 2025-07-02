@@ -1,4 +1,4 @@
-class_name NPC extends Node
+class_name NPC extends ExtraCardData
 
 enum Sex {
 	FEMALE,

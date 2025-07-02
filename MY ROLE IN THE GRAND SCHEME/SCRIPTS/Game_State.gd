@@ -1,9 +1,12 @@
 extends Node
 
-@onready var player: Player = $Player
+var player: Player = Player.new()
+var cases: Array[Case]
 
 @warning_ignore("unused_signal")
 signal time_changed
+
+var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
 # hours passed since the first Monday at midnight
 var _hour: int
@@ -14,6 +17,9 @@ const _start_time = 8
 # where game state is saved/reloaded
 const _save_path = "user://game.sav"
 
+# the crimes of the last several cases generated, to avoid repetition
+var _last_crimes: Array[String]
+
 func _ready():
 	load_game()
 
@@ -21,7 +27,7 @@ func start_game():
 	_hour = _start_time
 	player.start_game()
 	for i in 5:
-		$Cases.add_child(Case.generate())
+		cases.append(Case.generate())
 
 ##
 ## Returns the number of full days that have passed since play began. Play
@@ -92,8 +98,19 @@ func load_game():
 			_hour = data["_hour"]
 			player.load(data["player"])
 
-func get_cases() -> Array[Case]:
-	var ret: Array[Case]
-	for child in $Cases.get_children():
-		ret.append(child)
-	return ret
+##
+## Returns a category of crime taken from the JSON crime definitions. It is
+## guaranteed that any 5 sequential calls will return 5 unique crimes.
+##
+func get_new_crime() -> String:
+	var crime: String
+	var crime_count = _crime_data.size()
+
+	while crime.is_empty() or crime in _last_crimes:
+		crime = _crime_data.keys()[randi() % crime_count]
+
+	if _last_crimes.size() == 5:
+		_last_crimes.pop_front()
+	_last_crimes.push_back(crime)
+
+	return crime
