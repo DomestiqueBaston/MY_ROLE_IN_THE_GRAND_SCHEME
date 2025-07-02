@@ -15,13 +15,26 @@ func _ready():
 	_title_screen.next.connect(_go_to_option_menu)
 
 func _replace_scene(new_scene: PackedScene) -> Node:
+
+	# take a screenshot that will fade to reveal the new scene
+
 	await $Transition.start_transition()
+
+	# delete the current scene
+
 	for child in $Active_Scene.get_children():
 		if child == _title_screen:
+			# the title screen fades out before deleting itself
 			child.fade_out()
 			_title_screen = null
 		else:
+			# detach cards and links from main scene so they won't be deleted
+			if child.scene_file_path == _main_scene.resource_path:
+				child.detach_cards()
 			child.queue_free()
+
+	# instantiate the new scene
+
 	var node = new_scene.instantiate()
 	$Active_Scene.add_child(node)
 	return node
@@ -84,11 +97,11 @@ func _start_game():
 
 func _continue_game():
 	var main = await _replace_scene(_main_scene)
-	#var cards: Array[Card]
-	#for case in GameState.get_cases():
-		#cards.append_array(case.get_cards())
-	#main.populate(cards)
-	main.reset()
+	# TODO: just the current case?
+	var cards: Array[Card]
+	for case in GameState.get_cases():
+		cards.append_array(case.get_cards())
+	main.populate_cards(cards)
 	main.quit.connect(_go_to_option_menu)
 
 func _quit():

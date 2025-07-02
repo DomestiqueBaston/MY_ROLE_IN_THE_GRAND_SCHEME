@@ -25,8 +25,8 @@ var player_reputation: int
 var home: Card
 var work: Card
 
-var _names = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
-var _jobs = preload("res://JSON/NPC/NPC_Job.json").data
+var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
+var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _card_scene = preload("res://SCENES/Card.tscn")
 
@@ -49,8 +49,8 @@ func _randomize(extra_points: int, profession: Dictionary, minion: bool):
 	# name
 
 	var _first_names = \
-		_names["male_first_name" if sex == Sex.MALE else "female_first_name"]
-	var _last_names = _names["last_name"]
+		_name_data["male_first_name" if sex == Sex.MALE else "female_first_name"]
+	var _last_names = _name_data["last_name"]
 	first_name = _first_names[randi() % _first_names.size()]
 	last_name = _last_names[randi() % _last_names.size()]
 
@@ -74,9 +74,9 @@ func _randomize(extra_points: int, profession: Dictionary, minion: bool):
 			if get(attr_name) == 10:
 				candidates.remove_at(attr_index)
 
-	# job and corresponding bonus/malus to principal characteristics
+	# job and corresponding bonus/malus for principal characteristics
 
-	job = profession if profession else _jobs[randi() % _jobs.size()]
+	job = profession if profession else _job_data[randi() % _job_data.size()]
 
 	var bonus_malus = job.get("bonus_malus")
 	if bonus_malus is Array:
@@ -97,12 +97,12 @@ func _randomize(extra_points: int, profession: Dictionary, minion: bool):
 
 	home = _card_scene.instantiate()
 	home.card_type = Card.CardType.LOCATION
-	home.location_info = _location_data["LOC001"]
+	home.other_info = _location_data["LOC001"]
 	home.card_name = "%s's Apartment" % first_name
 
 	var work_place_list = job["work_place"]
 	var work_index = randi() % work_place_list.size()
 	work = _card_scene.instantiate()
 	work.card_type = Card.CardType.LOCATION
-	work.location_info = _location_data[work_place_list[work_index]]
+	work.other_info = _location_data[work_place_list[work_index]]
 	work.card_name = "%s's Workplace" % first_name

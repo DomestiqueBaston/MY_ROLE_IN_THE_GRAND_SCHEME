@@ -69,7 +69,7 @@
 	},
 	"JOB009": {
 		"name": "Merchant",
-		"work_place": ["LOC005", "LOC020", "LOC035", "LOC036", "LOC041", "LOC042"],
+		"work_place": ["LOC005", "LOC035", "LOC036", "LOC041", "LOC042"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.5,

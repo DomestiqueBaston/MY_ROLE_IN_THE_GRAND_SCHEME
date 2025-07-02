@@ -49,13 +49,13 @@ enum NpcStatus {
 	ACCOMPLICE
 }
 
-@export var card_name: String = "Card Name":
+@export var card_name: String:
 	set(value):
 		card_name = value
 		if $Card_Mask/Card_BG/Card_Text/Card_Name:
 			$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
 
-@export var description: String = "Short card description.":
+@export var description: String:
 	set(value):
 		description = value
 		if $Card_Mask/Card_BG/Card_Text/Card_Name:
@@ -101,12 +101,14 @@ enum NpcStatus {
 		opacity = value
 		_update_opacity()
 
-var location_info: Dictionary
-
+## The NPC referred to, if card_type is CardType.NPC.
 var npc: NPC:
 	set(value):
 		npc = value
 		_update_card_type()
+
+## Other information about the location or object referred to, for example.
+var other_info: Dictionary
 
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)

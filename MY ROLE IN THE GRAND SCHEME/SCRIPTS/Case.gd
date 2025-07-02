@@ -13,10 +13,13 @@ var witnesses: Array[Card]
 var accomplices: Array[Card]
 var suspects: Array[Card]
 var other_npcs: Array[Card]
+var evidence: Array[Card]
+var crime_location: Card
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
+var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 var _card_scene = preload("res://SCENES/Card.tscn")
 
 static var _last_crimes: Array[String]
@@ -77,13 +80,39 @@ func _randomize():
 	accomplices = _generate_npcs(motive.get("accomplices", 0), Card.NpcStatus.ACCOMPLICE)
 	suspects = _generate_npcs(motive.get("suspects", 0), Card.NpcStatus.SUSPECT)
 
-	# TODO: difficulty += number of links * 0.5 + number of pieces of evidence
+	# evidence
 
-	var diff = 1.0 + culprits.size() + victims.size() \
-		+ accomplices.size() * 0.5 \
-		- suspects.size() * 0.5 - witnesses.size() * 0.5 \
-		* 19.0/50.0
+	var evidence_count = motive.get("evidence_number", 0)
+	if evidence_count is Array and not evidence_count.is_empty():
+		evidence_count = evidence_count[randi() % evidence_count.size()]
+	evidence_count = maxi(evidence_count, culprits.size())
+	evidence.clear()
+
+	if evidence_count > 0:
+		var candidates = motive.get("evidences", []).duplicate()
+		evidence_count = mini(evidence_count, candidates.size() - 1)
+		for i in evidence_count:
+			var card = _card_scene.instantiate()
+			card.card_type = Card.CardType.OBJECT
+			card.is_object_evidence = true
+			var which = randi() % candidates.size()
+			card.other_info = _object_data[candidates[which]]
+			card.card_name = card.other_info["name"]
+			candidates.remove_at(which)
+			evidence.append(card)
+
+	# TODO: links
+
+	# TODO: difficulty += number of links * 0.5
+
+	var diff = 19.0/50.0 * (1.0
+		+ culprits.size() + victims.size()
+		+ accomplices.size() * 0.5
+		- suspects.size() * 0.5 - witnesses.size() * 0.5
+		+ evidence.size())
 	difficulty = clampi(roundi(diff), 1, 5)
+
+	# NPCs unrelated to the case
 
 	var useless_count
 	match difficulty:
@@ -103,21 +132,63 @@ func _randomize():
 			useless_count = randi_range(15, 22)
 	other_npcs = _generate_npcs(useless_count)
 
-	# TODO: crime location
+	# crime location
 
 	var location_name = motive["crime_location"]
-	if location_name is Array:
+	if location_name is Array and not location_name.is_empty():
 		location_name = location_name[randi() % location_name.size()]
-	if location_name:
-		# TODO: any, none, home, work, culprit_work, etc.
-		# TODO: known_crime_location
-		pass
 
-	# TODO: links, evidence...
+	var actual_location
+	if location_name.begins_with("any"):
+		var is_any_culprit
+		if location_name == "any_culprit":
+			is_any_culprit = true
+		elif location_name == "any_victim":
+			is_any_culprit = false
+		else:
+			is_any_culprit = ((randi() & 1) == 1)
+		if is_any_culprit:
+			if randi() & 1:
+				actual_location = "culprit_home"
+			else:
+				actual_location = "culprit_work"
+		else:
+			if randi() & 1:
+				actual_location = "home"
+			else:
+				actual_location = "work"
+	else:
+		actual_location = location_name
+
+	if actual_location == "none":
+		pass
+	elif actual_location == "home":
+		victims[0].npc.home.location_status = Card.LocationStatus.CRIME_SCENE
+	elif actual_location == "work":
+		victims[0].npc.work.location_status = Card.LocationStatus.CRIME_SCENE
+	elif actual_location == "culprit_home":
+		culprits[0].npc.home.location_status = Card.LocationStatus.CRIME_SCENE
+	elif actual_location == "culprit_work":
+		culprits[0].npc.work.location_status = Card.LocationStatus.CRIME_SCENE
+	else:
+		crime_location = _card_scene.instantiate()
+		crime_location.card_type = Card.CardType.LOCATION
+		crime_location.other_info = _location_data[actual_location]
+		crime_location.card_name = crime_location.other_info["name"]
+		var known_factor = motive.get("known_crime_location", 1)
+		var is_known
+		if known_factor <= 0:
+			is_known = false
+		elif known_factor >= 1:
+			is_known = true
+		else:
+			is_known = (randf() < known_factor)
+		if is_known:
+			crime_location.location_status = Card.LocationStatus.CRIME_SCENE
 
 func _generate_npcs(count, status = Card.NpcStatus.NONE, job_list = []) -> Array[Card]:
 	var cards: Array[Card]
-	if count is Array:
+	if count is Array and not count.is_empty():
 		count = count[randi() % count.size()]
 	if count > 0:
 		var job_id = _get_npc_job(job_list)
@@ -135,7 +206,6 @@ func _get_npc_job(job_list: Array):
 	else:
 		return job_list[randi() % job_list.size()]
 
-# TODO: add crime scene, ...?
 func get_cards() -> Array[Card]:
 	var all_cards: Array[Card]
 	for npcs in [culprits, victims, witnesses, accomplices, suspects, other_npcs]:
@@ -143,6 +213,9 @@ func get_cards() -> Array[Card]:
 		for npc in npcs:
 			all_cards.append(npc.npc.home)
 			all_cards.append(npc.npc.work)
+	all_cards.append_array(evidence)
+	if crime_location:
+		all_cards.append(crime_location)
 	return all_cards
 
 # TODO: function to return links

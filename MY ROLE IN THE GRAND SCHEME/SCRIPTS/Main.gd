@@ -101,8 +101,7 @@ func _ready():
 	Globals.dialog_overlay.pre_dialog.connect(_pause_input_handling)
 	Globals.dialog_overlay.post_dialog.connect(_resume_input_handling)
 
-	# temporary!
-	add_child(Case.generate())
+	reset_cards()
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -560,13 +559,18 @@ func _resume_input_handling():
 	set_process_input(true)
 	reserve.set_process_input(true)
 
-func populate(new_cards):
-	reset()
+func populate_cards(new_cards):
 	for card in new_cards:
 		reserve.add_child(card)
 
-func reset():
+func reset_cards():
 	for i in cards.get_child_count():
 		cards.get_child(i).queue_free()
 	for i in reserve.get_child_count():
 		reserve.get_child(i).queue_free()
+
+func detach_cards():
+	for child in cards.get_children():
+		cards.remove_child(child)
+	for child in reserve.get_children():
+		reserve.remove_child(child)

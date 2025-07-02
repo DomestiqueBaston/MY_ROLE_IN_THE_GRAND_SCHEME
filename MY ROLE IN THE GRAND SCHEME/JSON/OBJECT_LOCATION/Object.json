@@ -1,6 +1,5 @@
-[
-	{
-		"id": "OBJ001",
+{
+	"OBJ001": {
 		"obj_id": "OBJ001_IDxxx",
 		"type": "Object",
 		"info_name": "- DEBT AKNOWLEDGMENT -",
@@ -20,8 +19,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ002",
+	"OBJ002": {
 		"obj_id": "OBJ002_IDxxx",
 		"type": "Object",
 		"info_name": "- DNA SAMPLE -",
@@ -39,8 +37,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ003",
+	"OBJ003": {
 		"obj_id": "OBJ003_IDxxx",
 		"type": "Object",
 		"info_name": "- UNKNOWN DNA -\n- SAMPLE -",
@@ -58,8 +55,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ004",
+	"OBJ004": {
 		"obj_id": "OBJ004_IDxxx",
 		"type": "Object",
 		"info_name": "- FINGERPRINTS -",
@@ -77,8 +73,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ005",
+	"OBJ005": {
 		"obj_id": "OBJ005_IDxxx",
 		"type": "Object",
 		"info_name": "- KEY -",
@@ -97,8 +92,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ006",
+	"OBJ006": {
 		"obj_id": "OBJ006_IDxxx",
 		"type": "Object",
 		"info_name": "- RECORDING -",
@@ -119,8 +113,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ007",
+	"OBJ007": {
 		"obj_id": "OBJ007_IDxxx",
 		"type": "Object",
 		"info_name": "- JEWELER'S BILL -",
@@ -138,8 +131,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ008",
+	"OBJ008": {
 		"obj_id": "OBJ008_IDxxx",
 		"type": "Object",
 		"info_name": "- LARGE SUM OF CASH -",
@@ -157,8 +149,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ009",
+	"OBJ009": {
 		"obj_id": "OBJ009_IDxxx",
 		"type": "Object",
 		"info_name": "- BANK RECEIPT -",
@@ -176,8 +167,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ010",
+	"OBJ010": {
 		"obj_id": "OBJ010_IDxxx",
 		"type": "Object",
 		"info_name": "- LINGERIE -",
@@ -195,8 +185,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ011",
+	"OBJ011": {
 		"obj_id": "OBJ011_IDxxx",
 		"type": "Object",
 		"info_name": "- BOOK -",
@@ -214,8 +203,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ012",
+	"OBJ012": {
 		"obj_id": "OBJ012_IDxxx",
 		"type": "Object",
 		"info_name": "- MESSAGE -",
@@ -235,8 +223,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ013",
+	"OBJ013": {
 		"obj_id": "OBJ013_IDxxx",
 		"type": "Object",
 		"info_name": "- PHOTOGRAPH -",
@@ -257,8 +244,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ014",
+	"OBJ014": {
 		"obj_id": "OBJ014_IDxxx",
 		"type": "Object",
 		"info_name": "- CONDOM -",
@@ -278,8 +264,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ015",
+	"OBJ015": {
 		"obj_id": "OBJ015_IDxxx",
 		"type": "Object",
 		"info_name": "- WEAPON -",
@@ -297,8 +282,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ016",
+	"OBJ016": {
 		"obj_id": "OBJ016_IDxxx",
 		"type": "Object",
 		"info_name": "- EXPLOSIVE -",
@@ -316,8 +300,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ017",
+	"OBJ017": {
 		"obj_id": "OBJ017_IDxxx",
 		"type": "Object",
 		"info_name": "- BOOK -",
@@ -335,8 +318,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ018",
+	"OBJ018": {
 		"obj_id": "OBJ018_IDxxx",
 		"type": "Object",
 		"info_name": "- BLUEPRINT -",
@@ -354,8 +336,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ019",
+	"OBJ019": {
 		"obj_id": "OBJ019_IDxxx",
 		"type": "Object",
 		"info_name": "- BLOODSTAINED CLOTH -",
@@ -373,8 +354,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ020",
+	"OBJ020": {
 		"obj_id": "OBJ020_IDxxx",
 		"type": "Object",
 		"info_name": "- BOOK -",
@@ -392,8 +372,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ021",
+	"OBJ021": {
 		"obj_id": "OBJ021_IDxxx",
 		"type": "Object",
 		"info_name": "- LOCK PICK -",
@@ -411,8 +390,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ022",
+	"OBJ022": {
 		"obj_id": "OBJ022_IDxxx",
 		"type": "Object",
 		"info_name": "- ARTWORK -",
@@ -430,8 +408,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ023",
+	"OBJ023": {
 		"obj_id": "OBJ023_IDxxx",
 		"type": "Object",
 		"info_name": "- GERMANIUM DIODES -",
@@ -449,8 +426,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ024",
+	"OBJ024": {
 		"obj_id": "OBJ024_IDxxx",
 		"type": "Object",
 		"info_name": "- COUNTERFEIT MONEY -",
@@ -468,8 +444,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ025",
+	"OBJ025": {
 		"obj_id": "OBJ025_IDxxx",
 		"type": "Object",
 		"info_name": "- COUNTERFEIT GOODS -",
@@ -487,8 +462,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ026",
+	"OBJ026": {
 		"obj_id": "OBJ026_IDxxx",
 		"type": "Object",
 		"info_name": "- COUNTERFEIT -\n- DOCUMENTS -",
@@ -506,8 +480,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ027",
+	"OBJ027": {
 		"obj_id": "OBJ027_IDxxx",
 		"type": "Object",
 		"info_name": "- COUNTERFEIT LOGOS -",
@@ -525,8 +498,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ028",
+	"OBJ028": {
 		"obj_id": "OBJ028_IDxxx",
 		"type": "Object",
 		"info_name": "- VIAL OF -\n- FLUO LIQUID -",
@@ -544,8 +516,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ029",
+	"OBJ029": {
 		"obj_id": "OBJ029_IDxxx",
 		"type": "Object",
 		"info_name": "- COPY MACHINE -",
@@ -563,8 +534,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ030",
+	"OBJ030": {
 		"obj_id": "OBJ030_IDxxx",
 		"type": "Object",
 		"info_name": "- MANUEL -",
@@ -582,8 +552,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ031",
+	"OBJ031": {
 		"obj_id": "OBJ031_IDxxx",
 		"type": "Object",
 		"info_name": "- INSPECTION REPORT -",
@@ -601,8 +570,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ032",
+	"OBJ032": {
 		"obj_id": "OBJ032_IDxxx",
 		"type": "Object",
 		"info_name": "- DOCUMENTARY -",
@@ -620,8 +588,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ033",
+	"OBJ033": {
 		"obj_id": "OBJ033_IDxxx",
 		"type": "Object",
 		"info_name": "- NOTEBOOK -",
@@ -639,8 +606,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ034",
+	"OBJ034": {
 		"obj_id": "OBJ034_IDxxx",
 		"type": "Object",
 		"info_name": "- PHOTOGRAPHS -",
@@ -658,8 +624,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ035",
+	"OBJ035": {
 		"obj_id": "OBJ035_IDxxx",
 		"type": "Object",
 		"info_name": "- COURT SUMMONS -",
@@ -677,8 +642,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ036",
+	"OBJ036": {
 		"obj_id": "OBJ036_IDxxx",
 		"type": "Object",
 		"info_name": "- WEB ARCHIVE -",
@@ -696,8 +660,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ037",
+	"OBJ037": {
 		"obj_id": "OBJ037_IDxxx",
 		"type": "Object",
 		"info_name": "- BOOK -",
@@ -715,8 +678,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ038",
+	"OBJ038": {
 		"obj_id": "OBJ038_IDxxx",
 		"type": "Object",
 		"info_name": "- PET -",
@@ -734,8 +696,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ039",
+	"OBJ039": {
 		"obj_id": "OBJ039_IDxxx",
 		"type": "Object",
 		"info_name": "- PHOTOGRAPHS -",
@@ -753,8 +714,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ040",
+	"OBJ040": {
 		"obj_id": "OBJ040_IDxxx",
 		"type": "Object",
 		"info_name": "- DRAFT RANSOM NOTE -",
@@ -772,8 +732,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ041",
+	"OBJ041": {
 		"obj_id": "OBJ041_IDxxx",
 		"type": "Object",
 		"info_name": "- ID -",
@@ -791,8 +750,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ042",
+	"OBJ042": {
 		"obj_id": "OBJ042_IDxxx",
 		"type": "Object",
 		"info_name": "- FAKE ID -",
@@ -810,8 +768,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ043",
+	"OBJ043": {
 		"obj_id": "OBJ043_IDxxx",
 		"type": "Object",
 		"info_name": "- BOTTLE -",
@@ -829,8 +786,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ044",
+	"OBJ044": {
 		"obj_id": "OBJ044_IDxxx",
 		"type": "Object",
 		"info_name": "- MICRO CAMERA -",
@@ -848,8 +804,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ045",
+	"OBJ045": {
 		"obj_id": "OBJ045_IDxxx",
 		"type": "Object",
 		"info_name": "- CLASSIFIED -\n- DOCUMENT -",
@@ -867,8 +822,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ046",
+	"OBJ046": {
 		"obj_id": "OBJ046_IDxxx",
 		"type": "Object",
 		"info_name": "- COMPUTER VIRUS -",
@@ -886,8 +840,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ047",
+	"OBJ047": {
 		"obj_id": "OBJ047_IDxxx",
 		"type": "Object",
 		"info_name": "- INDUSTRIAL -\n- PROJECT PLAN -",
@@ -905,8 +858,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ048",
+	"OBJ048": {
 		"obj_id": "OBJ048_IDxxx",
 		"type": "Object",
 		"info_name": "- PURCHASE ORDER -",
@@ -924,8 +876,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ049",
+	"OBJ049": {
 		"obj_id": "OBJ049_IDxxx",
 		"type": "Object",
 		"info_name": "- DOCUMENT -",
@@ -943,8 +894,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ081",
+	"OBJ081": {
 		"obj_id": "OBJ081_IDxxx",
 		"type": "Object",
 		"info_name": "- HANDBOOK -",
@@ -962,8 +912,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ050",
+	"OBJ050": {
 		"obj_id": "OBJ050_IDxxx",
 		"type": "Object",
 		"info_name": "- TALISMAN -",
@@ -981,8 +930,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ051",
+	"OBJ051": {
 		"obj_id": "OBJ051_IDxxx",
 		"type": "Object",
 		"info_name": "- CUSTOMIZED LIGHTER -",
@@ -1000,8 +948,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ052",
+	"OBJ052": {
 		"obj_id": "OBJ052_IDxxx",
 		"type": "Object",
 		"info_name": "- PURCHASE ORDER -",
@@ -1019,8 +966,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ053",
+	"OBJ053": {
 		"obj_id": "OBJ053_IDxxx",
 		"type": "Object",
 		"info_name": "- FLAMMABLE PRODUCT -",
@@ -1038,8 +984,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ054",
+	"OBJ054": {
 		"obj_id": "OBJ054_IDxxx",
 		"type": "Object",
 		"info_name": "- BOOK -",
@@ -1057,8 +1002,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ055",
+	"OBJ055": {
 		"obj_id": "OBJ055_IDxxx",
 		"type": "Object",
 		"info_name": "- MANUAL -",
@@ -1076,8 +1020,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ056",
+	"OBJ056": {
 		"obj_id": "OBJ056_IDxxx",
 		"type": "Object",
 		"info_name": "- ANTIDEPRESSANT -",
@@ -1095,8 +1038,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ057",
+	"OBJ057": {
 		"obj_id": "OBJ057_IDxxx",
 		"type": "Object",
 		"info_name": "- FILE -",
@@ -1114,8 +1056,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ058",
+	"OBJ058": {
 		"obj_id": "OBJ058_IDxxx",
 		"type": "Object",
 		"info_name": "- DIGITAL FOOTPRINTS -",
@@ -1133,8 +1074,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ059",
+	"OBJ059": {
 		"obj_id": "OBJ059_IDxxx",
 		"type": "Object",
 		"info_name": "- STOLEN DATA -",
@@ -1153,8 +1093,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ060",
+	"OBJ060": {
 		"obj_id": "OBJ060_IDxxx",
 		"type": "Object",
 		"info_name": "- STOLEN GOODS -",
@@ -1172,8 +1111,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ061",
+	"OBJ061": {
 		"obj_id": "OBJ061_IDxxx",
 		"type": "Object",
 		"info_name": "- USB KEY -",
@@ -1191,8 +1129,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ062",
+	"OBJ062": {
 		"obj_id": "OBJ062_IDxxx",
 		"type": "Object",
 		"info_name": "- SEX TOY -",
@@ -1210,8 +1147,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ063",
+	"OBJ063": {
 		"obj_id": "OBJ063_IDxxx",
 		"type": "Object",
 		"info_name": "- ILLICIT SUBSTANCE -",
@@ -1229,8 +1165,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ064",
+	"OBJ064": {
 		"obj_id": "OBJ064_IDxxx",
 		"type": "Object",
 		"info_name": "- SAMPLES -",
@@ -1248,8 +1183,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ065",
+	"OBJ065": {
 		"obj_id": "OBJ065_IDxxx",
 		"type": "Object",
 		"info_name": "- HARD DRIVE -",
@@ -1267,8 +1201,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ066",
+	"OBJ066": {
 		"obj_id": "OBJ066_IDxxx",
 		"type": "Object",
 		"info_name": "- CARDBOARD BOX -",
@@ -1286,8 +1219,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ067",
+	"OBJ067": {
 		"obj_id": "OBJ067_IDxxx",
 		"type": "Object",
 		"info_name": "- DAMAGED EQUIPMENT -",
@@ -1305,8 +1237,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ068",
+	"OBJ068": {
 		"obj_id": "OBJ068_IDxxx",
 		"type": "Object",
 		"info_name": "- HAND TOOLS -",
@@ -1324,8 +1255,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ069",
+	"OBJ069": {
 		"obj_id": "OBJ069_IDxxx",
 		"type": "Object",
 		"info_name": "- SCULPTURE -",
@@ -1343,8 +1273,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ070",
+	"OBJ070": {
 		"obj_id": "OBJ070_IDxxx",
 		"type": "Object",
 		"info_name": "- TOY -",
@@ -1362,8 +1291,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ071",
+	"OBJ071": {
 		"obj_id": "OBJ071_IDxxx",
 		"type": "Object",
 		"info_name": "- LINGERIE -",
@@ -1381,8 +1309,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ072",
+	"OBJ072": {
 		"obj_id": "OBJ072_IDxxx",
 		"type": "Object",
 		"info_name": "- DOCUMENTARY -",
@@ -1400,8 +1327,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ073",
+	"OBJ073": {
 		"obj_id": "OBJ073_IDxxx",
 		"type": "Object",
 		"info_name": "- HEADSET -",
@@ -1419,8 +1345,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ074",
+	"OBJ074": {
 		"obj_id": "OBJ074_IDxxx",
 		"type": "Object",
 		"info_name": "- SPRAY PAINT -",
@@ -1438,8 +1363,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ075",
+	"OBJ075": {
 		"obj_id": "OBJ075_IDxxx",
 		"type": "Object",
 		"info_name": "- STENCILS -",
@@ -1457,8 +1381,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ076",
+	"OBJ076": {
 		"obj_id": "OBJ076_IDxxx",
 		"type": "Object",
 		"info_name": "- BOOK -",
@@ -1476,8 +1399,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ077",
+	"OBJ077": {
 		"obj_id": "OBJ077_IDxxx",
 		"type": "Object",
 		"info_name": "- TOOLS -",
@@ -1495,8 +1417,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ078",
+	"OBJ078": {
 		"obj_id": "OBJ078_IDxxx",
 		"type": "Object",
 		"info_name": "- USB KEY -",
@@ -1514,8 +1435,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ079",
+	"OBJ079": {
 		"obj_id": "OBJ079_IDxxx",
 		"type": "Object",
 		"info_name": "- BUSINESS CARD -",
@@ -1533,8 +1453,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ080",
+	"OBJ080": {
 		"obj_id": "OBJ080_IDxxx",
 		"type": "Object",
 		"info_name": "- CREDIT CARD -",
@@ -1553,8 +1472,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ250",
+	"OBJ250": {
 		"obj_id": "OBJ250_IDxxx",
 		"type": "Object",
 		"info_name": "- ENCRYPTED -\n- VOICEMAIL -",
@@ -1572,8 +1490,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ251",
+	"OBJ251": {
 		"obj_id": "OBJ251_IDxxx",
 		"type": "Object",
 		"info_name": "- TIME-STAMPED -\n- POLAROID -",
@@ -1591,8 +1508,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ252",
+	"OBJ252": {
 		"obj_id": "OBJ252_IDxxx",
 		"type": "Object",
 		"info_name": "- ORGANIC MICROCHIP -",
@@ -1610,8 +1526,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ253",
+	"OBJ253": {
 		"obj_id": "OBJ253_IDxxx",
 		"type": "Object",
 		"info_name": "- SYNTHETIC EYELID -",
@@ -1629,8 +1544,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ254",
+	"OBJ254": {
 		"obj_id": "OBJ254_IDxxx",
 		"type": "Object",
 		"info_name": "- BLACK CUBE -",
@@ -1648,8 +1562,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ255",
+	"OBJ255": {
 		"obj_id": "OBJ255_IDxxx",
 		"type": "Object",
 		"info_name": "- EGG-LIKE DEVICE -",
@@ -1667,8 +1580,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ256",
+	"OBJ256": {
 		"obj_id": "OBJ256_IDxxx",
 		"type": "Object",
 		"info_name": "- KNIGSHANE -\n- NEUROPATCH -",
@@ -1686,8 +1598,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ257",
+	"OBJ257": {
 		"obj_id": "OBJ257_IDxxx",
 		"type": "Object",
 		"info_name": "- VOICE TRANSLATOR -\n- V3.016b -",
@@ -1705,8 +1616,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ258",
+	"OBJ258": {
 		"obj_id": "OBJ258_IDxxx",
 		"type": "Object",
 		"info_name": "- TACTICAL SPOON -",
@@ -1724,8 +1634,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ259",
+	"OBJ259": {
 		"obj_id": "OBJ259_IDxxx",
 		"type": "Object",
 		"info_name": "- BIODEGRADABLE -\n- BULLET -",
@@ -1743,8 +1652,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ260",
+	"OBJ260": {
 		"obj_id": "OBJ260_IDxxx",
 		"type": "Object",
 		"info_name": "- WIFI SABER -",
@@ -1762,8 +1670,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ281",
+	"OBJ281": {
 		"obj_id": "OBJ281_IDxxx",
 		"type": "Object",
 		"info_name": "- CLEAN LATEX GLOVES -",
@@ -1781,8 +1688,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ282",
+	"OBJ282": {
 		"obj_id": "OBJ282_IDxxx",
 		"type": "Object",
 		"info_name": "- CELLPHONE BATTERY -",
@@ -1801,8 +1707,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ283",
+	"OBJ283": {
 		"obj_id": "OBJ283_IDxxx",
 		"type": "Object",
 		"info_name": "- MUDDY SHOES -",
@@ -1821,8 +1726,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ284",
+	"OBJ284": {
 		"obj_id": "OBJ284_IDxxx",
 		"type": "Object",
 		"info_name": "- USED TICKET -",
@@ -1841,8 +1745,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ285",
+	"OBJ285": {
 		"obj_id": "OBJ285_IDxxx",
 		"type": "Object",
 		"info_name": "- FOREIGN CURRENCY -",
@@ -1861,8 +1764,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ286",
+	"OBJ286": {
 		"obj_id": "OBJ286_IDxxx",
 		"type": "Object",
 		"info_name": "- DIARY -",
@@ -1881,8 +1783,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ287",
+	"OBJ287": {
 		"obj_id": "OBJ287_IDxxx",
 		"type": "Object",
 		"info_name": "- DISASSEMBLED -\n- DEVICE -",
@@ -1901,8 +1802,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ288",
+	"OBJ288": {
 		"obj_id": "OBJ288_IDxxx",
 		"type": "Object",
 		"info_name": "- EMPTY SD-CARD -",
@@ -1921,8 +1821,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ289",
+	"OBJ289": {
 		"obj_id": "OBJ289_IDxxx",
 		"type": "Object",
 		"info_name": "- PREPAID SIM-CARD -",
@@ -1941,8 +1840,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ290",
+	"OBJ290": {
 		"obj_id": "OBJ290_IDxxx",
 		"type": "Object",
 		"info_name": "- EXPIRED MEDICATION -",
@@ -1961,8 +1859,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ291",
+	"OBJ291": {
 		"obj_id": "OBJ291_IDxxx",
 		"type": "Object",
 		"info_name": "- CUT-UP NEWSPAPER -",
@@ -1981,8 +1878,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ292",
+	"OBJ292": {
 		"obj_id": "OBJ292_IDxxx",
 		"type": "Object",
 		"info_name": "- BINOCULARS -",
@@ -2001,8 +1897,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ293",
+	"OBJ293": {
 		"obj_id": "OBJ293_IDxxx",
 		"type": "Object",
 		"info_name": "- CROWBAR -",
@@ -2021,8 +1916,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ294",
+	"OBJ294": {
 		"obj_id": "OBJ294_IDxxx",
 		"type": "Object",
 		"info_name": "- BAG OF FLOUR -",
@@ -2041,8 +1935,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ295",
+	"OBJ295": {
 		"obj_id": "OBJ295_IDxxx",
 		"type": "Object",
 		"info_name": "- FLYING DRONE -",
@@ -2061,8 +1954,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ296",
+	"OBJ296": {
 		"obj_id": "OBJ296_IDxxx",
 		"type": "Object",
 		"info_name": "- GPS TRACKER -",
@@ -2081,8 +1973,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ297",
+	"OBJ297": {
 		"obj_id": "OBJ297_IDxxx",
 		"type": "Object",
 		"info_name": "- BROKEN LAPTOP -",
@@ -2101,8 +1992,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ298",
+	"OBJ298": {
 		"obj_id": "OBJ298_IDxxx",
 		"type": "Object",
 		"info_name": "- CAMBODIAN -\n- CIGARETTES -",
@@ -2121,8 +2011,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ299",
+	"OBJ299": {
 		"obj_id": "OBJ299_IDxxx",
 		"type": "Object",
 		"info_name": "- HANDS-FREE KIT -",
@@ -2141,8 +2030,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ300",
+	"OBJ300": {
 		"obj_id": "OBJ300_IDxxx",
 		"type": "Object",
 		"info_name": "- FIRST AID KIT -",
@@ -2161,8 +2049,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ301",
+	"OBJ301": {
 		"obj_id": "OBJ301_IDxxx",
 		"type": "Object",
 		"info_name": "- POWERFUL -\n- FLASHLIGHT -",
@@ -2181,8 +2068,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ302",
+	"OBJ302": {
 		"obj_id": "OBJ302_IDxxx",
 		"type": "Object",
 		"info_name": "- PADLOCK -",
@@ -2201,8 +2087,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ303",
+	"OBJ303": {
 		"obj_id": "OBJ303_IDxxx",
 		"type": "Object",
 		"info_name": "- EMPTY MATCHBOX -",
@@ -2221,8 +2106,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ304",
+	"OBJ304": {
 		"obj_id": "OBJ304_IDxxx",
 		"type": "Object",
 		"info_name": "- BALL BEARING -",
@@ -2241,8 +2125,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ305",
+	"OBJ305": {
 		"obj_id": "OBJ305_IDxxx",
 		"type": "Object",
 		"info_name": "- ROLL OF -\n- PLASTIC WRAP -",
@@ -2261,8 +2144,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ306",
+	"OBJ306": {
 		"obj_id": "OBJ306_IDxxx",
 		"type": "Object",
 		"info_name": "- WIG -",
@@ -2281,8 +2163,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ307",
+	"OBJ307": {
 		"obj_id": "OBJ307_IDxxx",
 		"type": "Object",
 		"info_name": "- EMPTY WALLET -",
@@ -2301,8 +2182,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ308",
+	"OBJ308": {
 		"obj_id": "OBJ308_IDxxx",
 		"type": "Object",
 		"info_name": "- BLACKLIGHT -\n- FLASHLIGHT -",
@@ -2321,8 +2201,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ309",
+	"OBJ309": {
 		"obj_id": "OBJ309_IDxxx",
 		"type": "Object",
 		"info_name": "- HANDCUFFS -",
@@ -2341,8 +2220,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ310",
+	"OBJ310": {
 		"obj_id": "OBJ310_IDxxx",
 		"type": "Object",
 		"info_name": "- UNMARKED KEY -",
@@ -2361,8 +2239,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ311",
+	"OBJ311": {
 		"obj_id": "OBJ311_IDxxx",
 		"type": "Object",
 		"info_name": "- LOYALTY CARD -",
@@ -2380,8 +2257,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ312",
+	"OBJ312": {
 		"obj_id": "OBJ312_IDxxx",
 		"type": "Object",
 		"info_name": "- EXPIRED PARKING -\n- PERMIT -",
@@ -2399,8 +2275,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ313",
+	"OBJ313": {
 		"obj_id": "OBJ313_IDxxx",
 		"type": "Object",
 		"info_name": "- USB ADAPTER -",
@@ -2418,8 +2293,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ314",
+	"OBJ314": {
 		"obj_id": "OBJ314_IDxxx",
 		"type": "Object",
 		"info_name": "- FOLDED MAP -",
@@ -2437,8 +2311,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ315",
+	"OBJ315": {
 		"obj_id": "OBJ315_IDxxx",
 		"type": "Object",
 		"info_name": "- TORN NOTEBOOK PAGE -",
@@ -2456,8 +2329,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ316",
+	"OBJ316": {
 		"obj_id": "OBJ316_IDxxx",
 		"type": "Object",
 		"info_name": "- REPLACEMENT FUSE -",
@@ -2475,8 +2347,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ317",
+	"OBJ317": {
 		"obj_id": "OBJ317_IDxxx",
 		"type": "Object",
 		"info_name": "- USB FAN -",
@@ -2494,8 +2365,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ318",
+	"OBJ318": {
 		"obj_id": "OBJ318_IDxxx",
 		"type": "Object",
 		"info_name": "- SAFE MANUAL -",
@@ -2513,8 +2383,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ319",
+	"OBJ319": {
 		"obj_id": "OBJ319_IDxxx",
 		"type": "Object",
 		"info_name": "- CONTACT LENS CASE -",
@@ -2532,8 +2401,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ320",
+	"OBJ320": {
 		"obj_id": "OBJ320_IDxxx",
 		"type": "Object",
 		"info_name": "- MIXED SCREWS -",
@@ -2551,8 +2419,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ321",
+	"OBJ321": {
 		"obj_id": "OBJ321_IDxxx",
 		"type": "Object",
 		"info_name": "- WIRELESS MOUSE -",
@@ -2570,8 +2437,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ322",
+	"OBJ322": {
 		"obj_id": "OBJ322_IDxxx",
 		"type": "Object",
 		"info_name": "- LAMINATED NOTE -",
@@ -2589,8 +2455,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ323",
+	"OBJ323": {
 		"obj_id": "OBJ323_IDxxx",
 		"type": "Object",
 		"info_name": "- REMOTE CONTROL -",
@@ -2608,8 +2473,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ324",
+	"OBJ324": {
 		"obj_id": "OBJ324_IDxxx",
 		"type": "Object",
 		"info_name": "- FIBER OPTIC CABLE -",
@@ -2627,8 +2491,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ325",
+	"OBJ325": {
 		"obj_id": "OBJ325_IDxxx",
 		"type": "Object",
 		"info_name": "- COORDINATES NOTE -",
@@ -2646,8 +2509,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ326",
+	"OBJ326": {
 		"obj_id": "OBJ326_IDxxx",
 		"type": "Object",
 		"info_name": "- PLASTIC CASING -\n- FRAGMENT -",
@@ -2665,8 +2527,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ327",
+	"OBJ327": {
 		"obj_id": "OBJ327_IDxxx",
 		"type": "Object",
 		"info_name": "- WALL CALENDAR -",
@@ -2684,8 +2545,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ328",
+	"OBJ328": {
 		"obj_id": "OBJ328_IDxxx",
 		"type": "Object",
 		"info_name": "- MAGNETIC CARD -",
@@ -2703,8 +2563,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ329",
+	"OBJ329": {
 		"obj_id": "OBJ329_IDxxx",
 		"type": "Object",
 		"info_name": "- BROKEN STYLUS -",
@@ -2722,8 +2581,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ330",
+	"OBJ330": {
 		"obj_id": "OBJ330_IDxxx",
 		"type": "Object",
 		"info_name": "- POWER SUPPLY -",
@@ -2741,8 +2599,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ331",
+	"OBJ331": {
 		"obj_id": "OBJ331_IDxxx",
 		"type": "Object",
 		"info_name": "- CONTACT LIST -",
@@ -2760,8 +2617,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ332",
+	"OBJ332": {
 		"obj_id": "OBJ332_IDxxx",
 		"type": "Object",
 		"info_name": "- SERVER PANEL -",
@@ -2779,8 +2635,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ333",
+	"OBJ333": {
 		"obj_id": "OBJ333_IDxxx",
 		"type": "Object",
 		"info_name": "- METAL BRACKET -",
@@ -2798,8 +2653,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ334",
+	"OBJ334": {
 		"obj_id": "OBJ334_IDxxx",
 		"type": "Object",
 		"info_name": "- MISSING PAGE -\n- MANUAL -",
@@ -2817,8 +2671,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ335",
+	"OBJ335": {
 		"obj_id": "OBJ335_IDxxx",
 		"type": "Object",
 		"info_name": "- BLANK RFID BADGE -",
@@ -2836,8 +2689,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ336",
+	"OBJ336": {
 		"obj_id": "OBJ336_IDxxx",
 		"type": "Object",
 		"info_name": "- ANTENNA FRAGMENT -",
@@ -2855,8 +2707,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ337",
+	"OBJ337": {
 		"obj_id": "OBJ337_IDxxx",
 		"type": "Object",
 		"info_name": "- CLIPBOARD -",
@@ -2874,8 +2725,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ338",
+	"OBJ338": {
 		"obj_id": "OBJ338_IDxxx",
 		"type": "Object",
 		"info_name": "- SECURITY SEAL -",
@@ -2893,8 +2743,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ339",
+	"OBJ339": {
 		"obj_id": "OBJ339_IDxxx",
 		"type": "Object",
 		"info_name": "- NOISE DETECTOR -",
@@ -2912,8 +2761,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ340",
+	"OBJ340": {
 		"obj_id": "OBJ340_IDxxx",
 		"type": "Object",
 		"info_name": "- CUT CABLE TIES -",
@@ -2931,8 +2779,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ341",
+	"OBJ341": {
 		"obj_id": "OBJ341_IDxxx",
 		"type": "Object",
 		"info_name": "- INFRARED TRIGGER -",
@@ -2950,8 +2797,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ342",
+	"OBJ342": {
 		"obj_id": "OBJ342_IDxxx",
 		"type": "Object",
 		"info_name": "- FAKE INSPECTION -\n- CARD -",
@@ -2969,8 +2815,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ343",
+	"OBJ343": {
 		"obj_id": "OBJ343_IDxxx",
 		"type": "Object",
 		"info_name": "- EMPTY WATCH CASING -",
@@ -2988,8 +2833,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ344",
+	"OBJ344": {
 		"obj_id": "OBJ344_IDxxx",
 		"type": "Object",
 		"info_name": "- HEADPHONE JACK -\n- ADAPTER -",
@@ -3007,8 +2851,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ345",
+	"OBJ345": {
 		"obj_id": "OBJ345_IDxxx",
 		"type": "Object",
 		"info_name": "- CIRCUIT BOARD -\n- FRAGMENT -",
@@ -3026,8 +2869,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ346",
+	"OBJ346": {
 		"obj_id": "OBJ346_IDxxx",
 		"type": "Object",
 		"info_name": "- ESCAPE PLAN -",
@@ -3045,8 +2887,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ347",
+	"OBJ347": {
 		"obj_id": "OBJ347_IDxxx",
 		"type": "Object",
 		"info_name": "- SERIAL LABEL -",
@@ -3064,8 +2905,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ348",
+	"OBJ348": {
 		"obj_id": "OBJ348_IDxxx",
 		"type": "Object",
 		"info_name": "- LOCKED POUCH -",
@@ -3083,8 +2923,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ349",
+	"OBJ349": {
 		"obj_id": "OBJ349_IDxxx",
 		"type": "Object",
 		"info_name": "- THERMAL SENSOR -\n- UNIT -",
@@ -3102,8 +2941,7 @@
 		],
 		"reduced_card": false
 	},
-	{
-		"id": "OBJ350",
+	"OBJ350": {
 		"obj_id": "OBJ350_IDxxx",
 		"type": "Object",
 		"info_name": "- MAINTENANCE TAG -",
@@ -3121,4 +2959,4 @@
 		],
 		"reduced_card": false
 	}
-]
+}
