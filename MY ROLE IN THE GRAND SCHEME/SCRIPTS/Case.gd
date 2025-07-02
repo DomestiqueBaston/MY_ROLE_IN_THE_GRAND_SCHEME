@@ -102,13 +102,14 @@ func _randomize():
 			evidence.append(card)
 
 	# TODO: links
-
 	# TODO: difficulty += number of links * 0.5
 
 	var diff = 19.0/50.0 * (1.0
-		+ culprits.size() + victims.size()
+		+ culprits.size()
+		+ victims.size()
 		+ accomplices.size() * 0.5
-		- suspects.size() * 0.5 - witnesses.size() * 0.5
+		- suspects.size() * 0.5
+		- witnesses.size() * 0.5
 		+ evidence.size())
 	difficulty = clampi(roundi(diff), 1, 5)
 
@@ -139,6 +140,7 @@ func _randomize():
 		location_name = location_name[randi() % location_name.size()]
 
 	var actual_location
+
 	if location_name.begins_with("any"):
 		var is_any_culprit
 		if location_name == "any_culprit":
@@ -147,34 +149,33 @@ func _randomize():
 			is_any_culprit = false
 		else:
 			is_any_culprit = ((randi() & 1) == 1)
+		actual_location = "home" if randi() & 1 else "work"
 		if is_any_culprit:
-			if randi() & 1:
-				actual_location = "culprit_home"
-			else:
-				actual_location = "culprit_work"
-		else:
-			if randi() & 1:
-				actual_location = "home"
-			else:
-				actual_location = "work"
+			actual_location = "culprit_" + actual_location
 	else:
 		actual_location = location_name
 
+	crime_location = null
+	var location_card: Card
+
 	if actual_location == "none":
-		pass
+		location_card = null
 	elif actual_location == "home":
-		victims[0].npc.home.location_status = Card.LocationStatus.CRIME_SCENE
+		location_card = victims[0].npc.home
 	elif actual_location == "work":
-		victims[0].npc.work.location_status = Card.LocationStatus.CRIME_SCENE
+		location_card = victims[0].npc.work
 	elif actual_location == "culprit_home":
-		culprits[0].npc.home.location_status = Card.LocationStatus.CRIME_SCENE
+		location_card = culprits[0].npc.home
 	elif actual_location == "culprit_work":
-		culprits[0].npc.work.location_status = Card.LocationStatus.CRIME_SCENE
+		location_card = culprits[0].npc.work
 	else:
 		crime_location = _card_scene.instantiate()
 		crime_location.card_type = Card.CardType.LOCATION
 		crime_location.other_info = _location_data[actual_location]
 		crime_location.card_name = crime_location.other_info["name"]
+		location_card = crime_location
+
+	if location_card:
 		var known_factor = motive.get("known_crime_location", 1)
 		var is_known
 		if known_factor <= 0:
@@ -184,7 +185,7 @@ func _randomize():
 		else:
 			is_known = (randf() < known_factor)
 		if is_known:
-			crime_location.location_status = Card.LocationStatus.CRIME_SCENE
+			location_card.location_status = Card.LocationStatus.CRIME_SCENE
 
 func _generate_npcs(count, status = Card.NpcStatus.NONE, job_list = []) -> Array[Card]:
 	var cards: Array[Card]
