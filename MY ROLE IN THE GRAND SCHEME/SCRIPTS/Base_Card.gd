@@ -39,10 +39,11 @@ var _is_expanded: bool = true
 var _pins = {}
 
 func _ready():
-	$Card_Collider.input_event.connect(_on_card_collider_input_event)
-	$Card_Collider.mouse_entered.connect(_on_card_collider_mouse_entered)
-	$Card_Collider.mouse_exited.connect(_on_card_collider_mouse_exited)
-	set_notify_transform(true)
+	if not Engine.is_editor_hint():
+		$Card_Collider.input_event.connect(_on_card_collider_input_event)
+		$Card_Collider.mouse_entered.connect(_on_card_collider_mouse_entered)
+		$Card_Collider.mouse_exited.connect(_on_card_collider_mouse_exited)
+		set_notify_transform(true)
 
 func _notification(what):
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
@@ -198,7 +199,6 @@ func _update_opacity():
 			"shadow_color", Color(0, 0, 0, opacity * 0.3))
 
 func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
-	print("_on_card_collider_input_event")
 	if event is InputEventMouseButton:
 		get_viewport().set_input_as_handled()
 		if $Card_Animations.is_playing():
