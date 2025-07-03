@@ -97,6 +97,7 @@
 [ext_resource type="Script" uid="uid://cyjp6v2sykuxq" path="res://SCRIPTS/Sleep_Buttons.gd" id="83_2lphy"]
 [ext_resource type="ButtonGroup" uid="uid://snsroxg0p6rs" path="res://UI/Sleep_Button_Group.tres" id="84_bbmvh"]
 [ext_resource type="Texture2D" uid="uid://dcgkg7bcbp0fq" path="res://GRAPHICS/SHORT_EVENT/Drawer_09_Open.png" id="85_lidf8"]
+[ext_resource type="Script" uid="uid://dddmuotrg5xa2" path="res://SCRIPTS/Investigation_Center.gd" id="86_42ybe"]
 [ext_resource type="Texture2D" uid="uid://cp61wiywacud8" path="res://GRAPHICS/SHORT_EVENT/Drawer_09_Hover.png" id="86_onppl"]
 [ext_resource type="BitMap" uid="uid://u355gnsahhe" path="res://GRAPHICS/SHORT_EVENT/Drawer_09_Mask.png" id="87_5kg0p"]
 [ext_resource type="Theme" uid="uid://bmd3b4tgv561b" path="res://UI/Health_Issue_Theme.tres" id="88_7rvn5"]
@@ -110,7 +111,6 @@
 [ext_resource type="Texture2D" uid="uid://bf63i4vh474y6" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Open.png" id="91_lv3q8"]
 [ext_resource type="Script" uid="uid://d0qlesy3dsiqa" path="res://SCRIPTS/Investigation_Center_Case_List.gd" id="91_smut4"]
 [ext_resource type="Script" uid="uid://cxsocuna2rgk1" path="res://SCRIPTS/Zero_Level_Case_Proposal_Buttons.gd" id="92_bnyoh"]
-[ext_resource type="Script" uid="uid://fw3knsksudbs" path="res://SCRIPTS/Investigation_Center_Buttons.gd" id="92_hjqqn"]
 [ext_resource type="Texture2D" uid="uid://ct8dnr468euog" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Hover.png" id="92_vy32t"]
 [ext_resource type="Texture2D" uid="uid://bh7ocmtx1xi8m" path="res://GRAPHICS/SHORT_EVENT/Health_Issue_BG.png" id="93_b6clx"]
 [ext_resource type="BitMap" uid="uid://bsf6mhdh14ked" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Mask.png" id="93_n5ncc"]
@@ -2426,6 +2426,7 @@ autoplay = "Flashing"
 
 [node name="Investigation_Center" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("86_42ybe")
 
 [node name="Investigation_Center_BG" type="Sprite2D" parent="Overlays/Investigation_Center"]
 texture = ExtResource("88_psfuj")
@@ -2456,7 +2457,7 @@ theme_override_constants/line_separation = 2
 bbcode_enabled = true
 text = "Case ID:
 Status:
-Delivery:
+Deadline:
 -----------------------"
 autowrap_mode = 2
 
@@ -2540,18 +2541,18 @@ bbcode_enabled = true
 text = "[color=#ff8864]Victims[/color]:"
 horizontal_alignment = 1
 
-[node name="Link_01" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
+[node name="NPC1" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_01"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC1"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_01"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC1"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2560,18 +2561,18 @@ text = "Jean-Marc Papageorgiou"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_02" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
+[node name="NPC2" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_02"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC2"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_02"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC2"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2580,18 +2581,18 @@ text = "Jean Trancène"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_03" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
+[node name="NPC3" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_03"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC3"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_03"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC3"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2611,18 +2612,18 @@ bbcode_enabled = true
 text = "[color=#ff8864]Witnesses[/color]:"
 horizontal_alignment = 1
 
-[node name="Link_01" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
+[node name="NPC1" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_01"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC1"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_01"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC1"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2631,18 +2632,18 @@ text = "None"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_02" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
+[node name="NPC2" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_02"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC2"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_02"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC2"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2651,18 +2652,18 @@ text = "José Paldir"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_03" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
+[node name="NPC3" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_03"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC3"]
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_03"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC3"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2682,18 +2683,18 @@ bbcode_enabled = true
 text = "[color=#ff8864]Suspects[/color]:"
 horizontal_alignment = 1
 
-[node name="Link_01" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
+[node name="NPC1" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_01"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC1"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_01"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC1"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2702,18 +2703,18 @@ text = "Aude Toilète"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_02" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
+[node name="NPC2" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_02"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC2"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_02"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC2"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2722,18 +2723,18 @@ text = "Armelle Couvair"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_03" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
+[node name="NPC3" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_03"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC3"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="NPC_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_03"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC3"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2753,18 +2754,18 @@ bbcode_enabled = true
 text = "[color=#ff8864]Crime Scene[/color]:"
 horizontal_alignment = 1
 
-[node name="Link_01" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
+[node name="Location1" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_01"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location1"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Location_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_01"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location1"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2773,19 +2774,19 @@ text = "None"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Link_02" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
+[node name="Location2" type="HFlowContainer" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
 visible = false
 custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 alignment = 1
 
-[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_02"]
+[node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location2"]
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Location_01" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_02"]
+[node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location2"]
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -2862,7 +2863,6 @@ theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 text = "I'm in!"
-script = ExtResource("92_hjqqn")
 
 [node name="Cancel" type="Button" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -2878,7 +2878,6 @@ theme_override_colors/font_color = Color(0.71, 0.34648, 0.2556, 0.823529)
 theme_override_colors/font_focus_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 text = "Cancel"
-script = ExtResource("92_hjqqn")
 
 [node name="Zero_Level_Case_Proposal" type="Node2D" parent="Overlays"]
 visible = false
@@ -4572,12 +4571,6 @@ bus = &"UI"
 [connection signal="button_down" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_down"]
 [connection signal="button_up" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_up"]
 [connection signal="item_selected" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_item_selected"]
-[connection signal="mouse_entered" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Ok" method="_on_ok_pressed"]
-[connection signal="mouse_entered" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Cancel" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" method="_on_ok_pressed"]

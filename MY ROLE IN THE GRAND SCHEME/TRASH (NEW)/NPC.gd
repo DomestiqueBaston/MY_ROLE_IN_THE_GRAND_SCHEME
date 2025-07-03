@@ -28,7 +28,7 @@ var _work: WeakRef
 
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
-static var _card_scene = preload("res://SCENES/Old_Card.tscn")
+static var _card_scene = preload("res://TRASH (NEW)/Old_Card.tscn")
 
 static func generate(
 	extra_points: int = 0, job_info = {}, minion: bool = false) -> NPC:

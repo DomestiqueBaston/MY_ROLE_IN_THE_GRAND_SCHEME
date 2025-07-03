@@ -1,11 +1,18 @@
 class_name Case extends Node
 
+enum Status {
+	UNASSIGNED,
+	ACTIVE,
+	PAUSED,
+	DONE
+}
+
+var case_name: String
 var crime: String
 var motive: Dictionary
-var location: Dictionary
-var duration: int
 var difficulty: int
-var paused: bool = false
+var duration: int
+var status: Status = Status.UNASSIGNED
 
 var culprits: Array[NpcCard]
 var victims: Array[NpcCard]
@@ -25,15 +32,11 @@ static func generate() -> Case:
 
 func _randomize():
 
-	# crime
+	# crime, motive and lots of other information about the case
 
 	crime = GameState.get_new_crime()
-
-	# motive (and lots of other information about the case)
-
-	var motive_list = _crime_data[crime]
-	var motive_index = randi() % motive_list.size()
-	motive = motive_list[motive_index]
+	motive = _crime_data[crime].pick_random()
+	case_name = motive["name"]
 
 	# NPCs: culprits
 
@@ -84,6 +87,7 @@ func _randomize():
 
 	# TODO: links
 	# TODO: difficulty += number of links * 0.5
+	# TODO: useless objects
 
 	var diff = 19.0/50.0 * (1.0
 		+ culprits.size()
@@ -93,6 +97,11 @@ func _randomize():
 		- witnesses.size() * 0.5
 		+ evidence.size())
 	difficulty = clampi(roundi(diff), 1, 5)
+
+	if difficulty == 6:
+		duration = 15 + randi_range(-2, 2)
+	else:
+		duration = roundi((difficulty * 4 + 10) * randf_range(0.9, 1.1))
 
 	# NPCs unrelated to the case
 
@@ -165,7 +174,8 @@ func _randomize():
 		if is_known:
 			location_card.location_status = LocationCard.LocationStatus.CRIME_SCENE
 
-func _generate_npcs(count, status = NpcCard.NpcStatus.NONE, job_list = []) -> Array[NpcCard]:
+func _generate_npcs(
+		count, npc_status = NpcCard.NpcStatus.NONE, job_list = []) -> Array[NpcCard]:
 	var cards: Array[NpcCard]
 	if count is Array and not count.is_empty():
 		count = count.pick_random()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://by2j2wqng2h5r" path="res://GRAPHICS/SHORT_EVENT/Chalk_Mask.png" id="2_6ndse"]
 [ext_resource type="Theme" uid="uid://5eedmsqjoxtm" path="res://UI/Investigation_Center_Theme.tres" id="4_b1ixs"]
 [ext_resource type="Script" uid="uid://d0qlesy3dsiqa" path="res://SCRIPTS/Investigation_Center_Case_List.gd" id="4_iw720"]
-[ext_resource type="Script" uid="uid://fw3knsksudbs" path="res://SCRIPTS/Investigation_Center_Buttons.gd" id="4_lj007"]
+[ext_resource type="Script" uid="uid://fw3knsksudbs" path="res://TRASH (NEW)/Investigation_Center_Buttons.gd" id="4_lj007"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lj007"]
 content_margin_left = 1.0

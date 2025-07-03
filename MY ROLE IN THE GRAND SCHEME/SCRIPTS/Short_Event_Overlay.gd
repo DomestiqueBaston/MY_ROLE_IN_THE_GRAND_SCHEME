@@ -73,3 +73,11 @@ func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
 	await _disappear(result and skip_anim_if_yes)
 	$Overlays/Confirmation.hide()
 	return result
+
+func open_investigation_center():
+	$Overlays/Investigation_Center.populate()
+	$Overlays/Investigation_Center.show()
+	await _appear()
+	await $Overlays/Investigation_Center.done
+	await _disappear()
+	$Overlays/Investigation_Center.hide()

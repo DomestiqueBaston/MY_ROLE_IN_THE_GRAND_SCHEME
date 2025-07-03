@@ -3,7 +3,7 @@ class_name ObjectData extends ExtraCardData
 var object_id: String
 
 static var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
-static var _card_scene = preload("res://SCENES/Old_Card.tscn")
+static var _card_scene = preload("res://TRASH (NEW)/Old_Card.tscn")
 
 var _owner: WeakRef
 var _location: WeakRef
