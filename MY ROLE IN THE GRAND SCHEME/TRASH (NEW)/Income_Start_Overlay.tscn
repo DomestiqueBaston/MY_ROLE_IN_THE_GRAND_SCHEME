@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="2_bpc38"]
 [ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="3_j610g"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="4_ayho6"]
-[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Old_Card.tscn" id="5_ccohw"]
+[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://TRASH (NEW)/Old_Card.tscn" id="5_ccohw"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="6_5kkag"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="7_w0mcj"]
 
