@@ -23,7 +23,7 @@ enum MenuItem {
 }
 
 # highlighted card
-var _current_card: Card
+var _current_card: BaseCard
 
 # the visible pin which has been clicked and not yet released
 var _clicked_pin: Pin
@@ -137,7 +137,7 @@ func _input(event: InputEvent):
 			get_viewport().set_input_as_handled()
 			_stop_linking(event.global_position)
 
-func _mouse_entered_card(card: Card):
+func _mouse_entered_card(card: BaseCard):
 	if _input_paused:
 		return
 	if _drag_state == DragState.NONE and card != _current_card:
@@ -151,7 +151,7 @@ func _mouse_entered_card(card: Card):
 	elif _drag_state == DragState.LINKING:
 		_drop_target = card
 
-func _mouse_exited_card(card: Card):
+func _mouse_exited_card(card: BaseCard):
 	if _input_paused:
 		return
 	if _drag_state == DragState.NONE:
@@ -163,14 +163,14 @@ func _mouse_exited_card(card: Card):
 	elif _drag_state == DragState.LINKING:
 		_drop_target = null
 
-func _click_on_card(global_pos: Vector2, card: Card):
+func _click_on_card(global_pos: Vector2, card: BaseCard):
 	if _input_paused:
 		return
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
 
-func _double_click_on_card(card: Card):
+func _double_click_on_card(card: BaseCard):
 	if _input_paused:
 		return
 	if not card.is_stacked():
@@ -213,7 +213,7 @@ func _start_drag_card() -> bool:
 	Globals.push_mouse_cursor(Globals.MouseCursor.CIRCLE)
 
 	# increase the Z index of any links connected to the card being dragged, so
-	# that they, too, are drawn on top of everything else (Card.start_drag()
+	# that they, too, are drawn on top of everything else (BaseCard.start_drag()
 	# does that for the card itself)
 
 	for link in _find_links_to_card(_current_card):
@@ -254,7 +254,7 @@ func _start_drag_pin() -> bool:
 
 	return true
 
-func _find_links_to_card(card: Card) -> Array[Link]:
+func _find_links_to_card(card: BaseCard) -> Array[Link]:
 	var ret: Array[Link]
 	for pin in card.get_pins():
 		var link = pin.get_link_reference()
@@ -352,7 +352,7 @@ func _stop_drag_pin(global_pos: Vector2):
 
 	# user dropped the pin on a card
 
-	if _drop_target is Card:
+	if _drop_target is BaseCard:
 
 		# abort if the card has no unused pins
 
@@ -396,7 +396,7 @@ func _stop_drag_pin(global_pos: Vector2):
 		_stuff_to_do_when_drag_ends(null)
 		_clicked_pin.move_to_link_at(_drop_target, global_pos)
 
-func _stuff_to_do_when_drag_ends(dragged_card: Card):
+func _stuff_to_do_when_drag_ends(dragged_card: BaseCard):
 	for link in _drag_links:
 		link.resume_collisions()
 		link.lower()
@@ -417,7 +417,7 @@ func _is_in_reserve(global_pos: Vector2):
 	var rect = Rect2(reserve.global_position, reserve.size)
 	return rect.has_point(global_pos)
 
-func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
+func _start_linking(card: BaseCard, type: Link.Type, is_confirmed: bool):
 	var src_loc = card.find_closest_unused_pin(popup.position)
 	if src_loc < 0:
 		return
@@ -460,7 +460,7 @@ func _stop_linking(global_pos: Vector2):
 
 	# user dropped the pin on a card
 
-	if _drop_target is Card:
+	if _drop_target is BaseCard:
 
 		# abort if the card has no unused pins
 
@@ -500,7 +500,7 @@ func _stop_linking(global_pos: Vector2):
 func _popup_menu(pos: Vector2, node: Node2D):
 	if _input_paused:
 		return
-	if node is Card:
+	if node is BaseCard:
 		if node.is_stacked():
 			return
 		print("popup menu for card: ", node.card_name)
@@ -533,10 +533,10 @@ func _handle_popup(id: int):
 func _handle_submenu(id: int, submenu: int):
 	match submenu:
 		0:
-			if _popup_node is Card:
+			if _popup_node is BaseCard:
 				_start_linking(_popup_node, id as Link.Type, true)
 		1:
-			if _popup_node is Card:
+			if _popup_node is BaseCard:
 				_start_linking(_popup_node, id as Link.Type, false)
 		2:
 			if _popup_node is Link:

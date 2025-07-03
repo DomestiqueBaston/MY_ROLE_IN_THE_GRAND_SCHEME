@@ -1,5 +1,5 @@
 @tool
-class_name Card extends Node2D
+class_name OldCard extends Node2D
 
 enum CardType {
 	COMBAT,

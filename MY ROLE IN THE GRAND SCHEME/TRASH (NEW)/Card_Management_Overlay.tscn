@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://cj4kkd1mdr47l" path="res://SCRIPTS/Card_Management_Trash.gd" id="9_t8k7k"]
 [ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/SHORT_EVENT/Trash_Hover.png" id="10_6pms8"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="11_d7lmg"]
-[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="12_1t2xr"]
+[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Old_Card.tscn" id="12_1t2xr"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="12_edhgu"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="13_iwurd"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="14_ukbs4"]

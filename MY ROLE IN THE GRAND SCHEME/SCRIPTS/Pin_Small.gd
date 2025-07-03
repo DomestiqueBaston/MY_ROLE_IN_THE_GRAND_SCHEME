@@ -29,7 +29,7 @@ enum Location {
 			type = value
 
 ## Which card is the pin attached to (if type is CARD).
-@export var card: Card:
+@export var card: BaseCard:
 	set(value):
 		if type != PinType.CARD or card == value:
 			return
@@ -95,7 +95,7 @@ func resume_collisions():
 ##
 ## Attaches the pin to a card at one of the card's predefined pin locations.
 ##
-func move_to_card(to_card: Card, to_location: Location):
+func move_to_card(to_card: BaseCard, to_location: Location):
 	type = PinType.CARD
 	card = null
 	card_location = to_location

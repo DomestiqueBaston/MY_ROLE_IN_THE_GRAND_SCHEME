@@ -98,7 +98,7 @@ func _start_game():
 func _continue_game():
 	var main = await _replace_scene(_main_scene)
 	# TODO: just the current case?
-	var cards: Array[Card]
+	var cards: Array[BaseCard]
 	for case in GameState.cases:
 		cards.append_array(case.get_cards())
 	main.populate_cards(cards)

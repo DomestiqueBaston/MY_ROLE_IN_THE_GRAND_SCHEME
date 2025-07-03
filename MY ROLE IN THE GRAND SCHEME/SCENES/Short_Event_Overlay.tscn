@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=241 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -72,7 +72,6 @@
 [ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="61_5iqpn"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="62_gjkrj"]
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="62_smut4"]
-[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="63_t8uoa"]
 [ext_resource type="Script" uid="uid://cy4nhosp8iivp" path="res://SCRIPTS/Load_Save_Delete.gd" id="64_gjkrj"]
 [ext_resource type="Texture2D" uid="uid://do7g2c24mmsbk" path="res://GRAPHICS/SHORT_EVENT/Load_Save_Delete_BG.png" id="65_t8uoa"]
 [ext_resource type="Theme" uid="uid://bjtyhq3g0w8r3" path="res://UI/LSD_Theme.tres" id="66_k24xe"]
@@ -1084,18 +1083,6 @@ horizontal_alignment = 1
 
 [node name="TMP" type="Node2D" parent="Overlays/Card_Management"]
 
-[node name="Card1" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
-position = Vector2(205, 75)
-
-[node name="Card2" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
-position = Vector2(285, 75)
-
-[node name="Card3" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
-position = Vector2(371, 75)
-
-[node name="Card4" parent="Overlays/Card_Management/TMP" instance=ExtResource("63_t8uoa")]
-position = Vector2(491, 75)
-
 [node name="Drag_Drop_Line" parent="Overlays/Card_Management" instance=ExtResource("136_lkigo")]
 position = Vector2(640, 0)
 
@@ -1966,15 +1953,6 @@ autowrap_mode = 0
 [node name="TMP_1_à_6_cartes" type="Node2D" parent="Overlays/Income_Start/Income"]
 position = Vector2(0, 12)
 
-[node name="Card1" parent="Overlays/Income_Start/Income/TMP_1_à_6_cartes" instance=ExtResource("63_t8uoa")]
-position = Vector2(247, 152)
-
-[node name="Card3" parent="Overlays/Income_Start/Income/TMP_1_à_6_cartes" instance=ExtResource("63_t8uoa")]
-position = Vector2(283, 152)
-
-[node name="Card2" parent="Overlays/Income_Start/Income/TMP_1_à_6_cartes" instance=ExtResource("63_t8uoa")]
-position = Vector2(319, 152)
-
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
@@ -2058,18 +2036,6 @@ position = Vector2(319, 152)
 
 [node name="TMP_4_à_5_cartes" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
 position = Vector2(0, 12)
-
-[node name="Card1" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
-position = Vector2(247, 152)
-
-[node name="Card3" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
-position = Vector2(271, 152)
-
-[node name="Card2" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
-position = Vector2(295, 152)
-
-[node name="Card4" parent="Overlays/Income_Start/Starting_Hand/TMP_4_à_5_cartes" instance=ExtResource("63_t8uoa")]
-position = Vector2(319, 152)
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
 visible = false
@@ -2190,28 +2156,12 @@ orientation = 1
 size = Vector2(74, 137)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
-[node name="Card" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Mastery" instance=ExtResource("63_t8uoa")]
-
-[node name="Card2" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Mastery" instance=ExtResource("63_t8uoa")]
-position = Vector2(0, 18)
-
-[node name="Card3" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Mastery" instance=ExtResource("63_t8uoa")]
-position = Vector2(0, 37)
-
 [node name="Fallback" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
 position = Vector2(422, 152)
 script = ExtResource("76_5oqru")
 orientation = 1
 size = Vector2(74, 137)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
-
-[node name="Card" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Fallback" instance=ExtResource("63_t8uoa")]
-
-[node name="Card2" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Fallback" instance=ExtResource("63_t8uoa")]
-position = Vector2(0, 18)
-
-[node name="Card3" parent="Overlays/Interaction_Run_Away_Break_In/Cards/Fallback" instance=ExtResource("63_t8uoa")]
-position = Vector2(0, 37)
 
 [node name="Interaction" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
 position = Vector2(240, 136)

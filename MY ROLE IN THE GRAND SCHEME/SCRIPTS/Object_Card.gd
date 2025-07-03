@@ -1,0 +1,44 @@
+@tool
+class_name ObjectCard extends BaseCard
+
+@export var is_object_evidence: bool:
+	set(value):
+		is_object_evidence = value
+		_update_background()
+
+var object_id: String
+var _owner: WeakRef
+var _location: WeakRef
+
+static var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
+static var _card_scene = preload("res://SCENES/Object_Card.tscn")
+
+func _init():
+	card_type = CardType.OBJECT
+
+func _ready():
+	super()
+	_update_background()
+
+func _update_background():
+	$Card_Mask/Card_BG/Evidence.visible = is_object_evidence
+
+func get_object_owner() -> NpcCard:
+	return _owner.get_ref()
+
+func set_object_owner(object_owner: NpcCard):
+	_owner = weakref(object_owner)
+
+func get_location() -> LocationCard:
+	return _location.get_ref()
+
+func set_location(location: LocationCard):
+	_location = weakref(location)
+
+static func create_card(id: String) -> ObjectCard:
+	var card = _card_scene.instantiate()
+	var object_info = _object_data[id]
+	card.card_name = object_info["name"]
+	card.description = object_info["description"]
+	card.object_id = id
+	return card
