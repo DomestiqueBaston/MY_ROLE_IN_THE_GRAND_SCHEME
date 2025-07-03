@@ -6,7 +6,9 @@ class_name ObjectCard extends BaseCard
 		is_object_evidence = value
 		_update_background()
 
-var object_id: String
+## ID of corresponding entry in object database.
+var database_id: String
+
 var _owner: WeakRef
 var _location: WeakRef
 
@@ -40,5 +42,5 @@ static func create_card(id: String) -> ObjectCard:
 	var object_info = _object_data[id]
 	card.card_name = object_info["name"]
 	card.description = object_info["description"]
-	card.object_id = id
+	card.database_id = id
 	return card

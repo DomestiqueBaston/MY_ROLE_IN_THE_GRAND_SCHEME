@@ -12,7 +12,8 @@ enum CombatType {
 		combat_type = value
 		_update_background()
 
-var combat_id: String
+## ID of corresponding entry in combat database.
+var database_id: String
 
 static var _combat_data = preload("res://JSON/INTERACTION/Combat.json").data
 static var _card_scene = preload("res://SCENES/Combat_Card.tscn")
@@ -33,5 +34,5 @@ static func create_card(id: String) -> CombatCard:
 	var combat_info = _combat_data[id]
 	card.card_name = combat_info["name"]
 	card.description = combat_info["description"]
-	card.combat_id = id
+	card.database_id = id
 	return card

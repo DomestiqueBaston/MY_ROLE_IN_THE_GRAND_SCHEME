@@ -1,280 +1,260 @@
 {
-	"dialogue": [
-		{
-			"id": "DIA001",
-			"name": "Logical Argument",
-			"type": "Dialogue",
-			"description": "A structured, logical argument to convince",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- LOGICAL ARGUMENT -\n\nA clear, logical argument can sharpen your mind and help you think more critically. Let's hope it'll get to the point with your interlocutor.\n\n''Listen, let me make this clear: no matter how hard you try, you'll never be able to rise above if you don't understand the basics. Do you get what I'm saying?''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1}
-				}
-			]
-		},
-		{
-			"id": "DIA002",
-			"name": "Warning Statement",
-			"type": "Dialogue",
-			"description": "A preemptive warning to avoid consequences.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- WARNING STATEMENT -\n\nYou can make your interlocutor think twice and avoid unwanted consequences. A warning delivered with care can lower their guard and shift the situation in your favor.\n\n''Please, listen closely. I'm giving you a chance to reconsider before things go too far 'cause you might regret it.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"PHY": -1, "MEN": 1}
-				}
-			]
-		},
-		{
-			"id": "DIA003",
-			"name": "Reassuring Conversation",
-			"type": "Dialogue",
-			"description": "A calming and reassuring conversation.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- REASSURING -\n- CONVERSATION -\n\nA calm and reassuring conversation can help ease tension and build trust. Doing so, you can turn a difficult situation into an opportunity.\n\n''Don't worry, everything will be alright. Just take a deep breath and trust me, we'll get through this together.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"Rep": 1}
-				}
-			]
-		},
-		{
-			"id": "DIA004",
-			"name": "Informal Discussion",
-			"type": "Dialogue",
-			"description": "Casual discussion with potential consequences.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- INFORMAL DISCUSSION -\n\nA casual discussion can seem harmless, but be aware that even light conversation can have unexpected consequences.\n\n''Hey, just one more thing... Nothing serious but you know, sometimes these little talks can end up going in unexpected directions. Just a thought.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1, "Info": -1},
-					"comment_1": "Something to see, here"
-				}
-			]
-		},
-		{
-			"id": "DIA005",
-			"name": "Physical Intimidation",
-			"type": "Dialogue",
-			"description": "Using physical intimidation to extract information.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- PHYSICAL -\n- INTIMIDATION -\n\nUsing physical intimidation may force your interlocutor to reveal what you need, but be aware that it can damage feelings toward you. Sometimes, strength is necessary, but it comes with a cost.\n\n''You'd better start talking, or I'll make sure you wish you had. Don't test me on this.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"PHY": 1, "Rep": -1}
-				}
-			]
-		},
-		{
-			"id": "DIA006",
-			"name": "Loud Interrogation",
-			"type": "Dialogue",
-			"description": "A loud and aggressive interrogation.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- LOUD INTERROGATION -\n\nA loud and aggressive interrogation can pressure your interlocutor into revealing information, but it might push them further away. Be careful not to overdo it.\n\n''Listen up! You'd better speak now, or things are going to get much worse for you. I'm not going to ask you again.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1, "Rep": -1}
-				}
-			]
-		},
-		{
-			"id": "DIA007",
-			"name": "Merciless Interrogation",
-			"type": "Dialogue",
-			"description": "A brutal interrogation with no empathy.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- MERCILESS -\n- INTERROGATION -\n\nA brutal interrogation with no empathy can force your interlocutor to reveal information, but it will severely damage their trust. Approach with caution, as it can have lasting consequences.\n\n''You will talk, whether you want to or not. There's no point in resisting, this will only get worse.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"PHY": 2, "MEN": 1, "Rep": -2}
-				}
-			]
-		},
-		{
-			"id": "DIA008",
-			"name": "Subtle Interrogation",
-			"type": "Dialogue",
-			"description": "An interrogation with a more delicate approach.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- SUBTLE -\n- INTERROGATION -\n\nA delicate approach to interrogation can extract information without aggression. By carefully guiding the conversation, you could gain valuable insights.\n\n''You know, I'm not here to make you uncomfortable, but just a few words can reveal what's really going on. We're just talking, right?''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1, "info": 1},
-					"comment_2": "Something to see, here"
-				}
-			]
-		},
-		{
-			"id": "DIA009",
-			"name": "Violent Interrogation",
-			"type": "Dialogue",
-			"description": "Aggressive and violent interrogation.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- VIOLENT -\n- INTERROGATION -\n\nAn aggressive interrogation forces your interlocutor to reveal information, but it will leave deep scars on their trust. Use with extreme caution, as it can lead to irreversible consequences.\n\n''You think this will end well for you? You're wrong. SLAP! Start talking now!''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"PHY": 2, "Rep": -2}
-				}
-			]
-		},
-		{
-			"id": "DIA010",
-			"name": "Veiled Threat",
-			"type": "Dialogue",
-			"description": "A subtle threat that may intimidate.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- VEILED THREAT -\n\nA subtle threat can create unease without being overtly aggressive. It suggests consequences without stating them directly. Proceed with care, just implying danger is enough.\n\n''I think you understand the consequences of pushing this too far. It would be wise to think carefully about your next words.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"PHY": 1, "Rep": -1}
-				}
-			]
-		},
-		{
-			"id": "DIA011",
-			"name": "Convincing Lie",
-			"type": "Dialogue",
-			"description": "Lying convincingly to avoid consequences.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- CONVINCING LIE -\n\nA convincing lie could help you avoid hours of investigation, but be careful: it might come back to haunt you if discovered.\n\n''I know everything. Don't lie to me, because if you do, you're heading for serious trouble. Consider this your warning. So, you'd better tell me the truth now.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1},
-					"comment_3": "Something to see, here"
-				},
-				{
-					"condition": {"result": "failure"},
-					"effects": {"Rep": -1},
-					"comment_4": "Something to see, here"
-				}
-			]
-		},
-		{
-			"id": "DIA012",
-			"name": "Warning",
-			"type": "Dialogue",
-			"description": "A clear warning about potential consequences.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- WARNING -\n\nA clear warning about potential consequences can make your interlocutor reconsider their actions, but it might also make them wary of you.\n\n''You need to listen carefully. If you keep going down this path, things won't end well for you. This is your last chance to make the right decision.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1, "Rep": -1}
-				}
-			]
-		},
-		{
-			"id": "DIA013",
-			"name": "Protection Offer",
-			"type": "Dialogue",
-			"description": "Offering protection in exchange for loyalty.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- PROTECTION OFFER -\n\nOffering protection in exchange for loyalty can create a bond of trust and help you progress in your investigation.\n\n''I can offer you protection, but you need to stay loyal. Stick with me, and I'll make sure no one harms you. But if you cross me, I won't hesitate to drop you.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"PHY": 1, "Rep": 1}
-				}
-			]
-		},
-		{
-			"id": "DIA014",
-			"name": "Bribery",
-			"type": "Dialogue",
-			"description": "Offering money in exchange for information.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- BRIBERY -\n\nOffering money in exchange for information can persuade others to reveal things, but it may come at the cost of trust.\n\n''I'm willing to pay for what you know. The price is right, but you'd better take the offer before it's too late. Information doesn't come free, after all.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"info": 1, "Dø": "-10 × Difficulty", "Rep": 1},
-					"comment_5": "Something to see, here"
-				},
-				{
-					"condition": {"result": "failure"},
-					"effects": {"Rep": -1}
-				}
-			]
-		},
-		{
-			"id": "DIA015",
-			"name": "Generous Bribe",
-			"type": "Dialogue",
-			"description": "A more generous bribe for more valuable information.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- GENEROUS BRIBE -\n\nA generous bribe can motivate your interlocutor to share valuable information. However, this larger payout might leave a lasting impression, so proceed with caution.\n\n''I'm offering a serious deal here. Tell me what I need to know, and you won't regret it. But if you try to play me, this offer disappears like tears in the rain.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1, "Dø": "-20 × Difficulty", "info": 1, "Rep": 1},
-					"comment_6": "Something to see, here"
-				},
-				{
-					"condition": {"result": "failure"},
-					"effects": {"Rep": -2}
-				}
-			]
-		},
-		{
-			"id": "DIA016",
-			"name": "Psychological Pressure",
-			"type": "Dialogue",
-			"description": "Applying psychological pressure to force someone to speak.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- PSYCHOLOGICAL -\n- PRESSURE -\n\nApplying psychological pressure can break down resistance and force someone to speak, but be mindful, it can seriously damage any trust that may exist.\n\n''You don't want to keep this up. The more you resist, the worse it'll get for you. I can make this easy or hard. Your choice.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 2, "Rep": -2}
-				}
-			]
-		},
-		{
-			"id": "DIA017",
-			"name": "Intrusive Question",
-			"type": "Dialogue",
-			"description": "Asking a personal question that may yield sensitive information.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- INTRUSIVE QUESTION -\n\nAsking a personal question can push boundaries and yield sensitive information, but it may also raise suspicions so don't overstep.\n\n''You don't mind if I ask, do you? I'd rather you not take it personally, but I'm just curious, and it could be important, you know.''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1, "info": 1, "Rep": -1},
-					"comment_7": "Something to see, here"
-				}
-			]
-		},
-		{
-			"id": "DIA018",
-			"name": "Trap Question",
-			"type": "Dialogue",
-			"description": "A question that traps the person into revealing hidden information.",
-			"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
-			"info": "- TRAP QUESTION -\n\nA well-crafted question can subtly trap someone into revealing hidden information. But be careful, this tactic could severely backfire if your interlocutor catches on.\n\n''Tell me, it seems like you've forgotten a small detail; are you sure about your answer? I wonder how long exactly you've remembered that?''",
-			"bonus_malus": [
-				{
-					"condition": {"result": "success"},
-					"effects": {"MEN": 1, "hidden_info": 1},
-					"comment_8": "Something to see, here"
-				},
-				{
-					"condition": {"result": "failure"},
-					"effects": {"Rep": -2}
-				}
-			]
-		}
-	]
+	"DIA001": {
+		"name": "Logical Argument",
+		"type": "Dialogue",
+		"description": "A structured, logical argument to convince",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- LOGICAL ARGUMENT -\n\nA clear, logical argument can sharpen your mind and help you think more critically. Let's hope it'll get to the point with your interlocutor.\n\n''Listen, let me make this clear: no matter how hard you try, you'll never be able to rise above if you don't understand the basics. Do you get what I'm saying?''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1}
+			}
+		]
+	},
+	"DIA002": {
+		"name": "Warning Statement",
+		"type": "Dialogue",
+		"description": "A preemptive warning to avoid consequences.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- WARNING STATEMENT -\n\nYou can make your interlocutor think twice and avoid unwanted consequences. A warning delivered with care can lower their guard and shift the situation in your favor.\n\n''Please, listen closely. I'm giving you a chance to reconsider before things go too far 'cause you might regret it.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"PHY": -1, "MEN": 1}
+			}
+		]
+	},
+	"DIA003": {
+		"name": "Reassuring Conversation",
+		"type": "Dialogue",
+		"description": "A calming and reassuring conversation.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- REASSURING -\n- CONVERSATION -\n\nA calm and reassuring conversation can help ease tension and build trust. Doing so, you can turn a difficult situation into an opportunity.\n\n''Don't worry, everything will be alright. Just take a deep breath and trust me, we'll get through this together.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"Rep": 1}
+			}
+		]
+	},
+	"DIA004": {
+		"name": "Informal Discussion",
+		"type": "Dialogue",
+		"description": "Casual discussion with potential consequences.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- INFORMAL DISCUSSION -\n\nA casual discussion can seem harmless, but be aware that even light conversation can have unexpected consequences.\n\n''Hey, just one more thing... Nothing serious but you know, sometimes these little talks can end up going in unexpected directions. Just a thought.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1, "Info": -1},
+				"comment_1": "Something to see, here"
+			}
+		]
+	},
+	"DIA005": {
+		"name": "Physical Intimidation",
+		"type": "Dialogue",
+		"description": "Using physical intimidation to extract information.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- PHYSICAL -\n- INTIMIDATION -\n\nUsing physical intimidation may force your interlocutor to reveal what you need, but be aware that it can damage feelings toward you. Sometimes, strength is necessary, but it comes with a cost.\n\n''You'd better start talking, or I'll make sure you wish you had. Don't test me on this.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"PHY": 1, "Rep": -1}
+			}
+		]
+	},
+	"DIA006": {
+		"name": "Loud Interrogation",
+		"type": "Dialogue",
+		"description": "A loud and aggressive interrogation.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- LOUD INTERROGATION -\n\nA loud and aggressive interrogation can pressure your interlocutor into revealing information, but it might push them further away. Be careful not to overdo it.\n\n''Listen up! You'd better speak now, or things are going to get much worse for you. I'm not going to ask you again.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1, "Rep": -1}
+			}
+		]
+	},
+	"DIA007": {
+		"name": "Merciless Interrogation",
+		"type": "Dialogue",
+		"description": "A brutal interrogation with no empathy.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- MERCILESS -\n- INTERROGATION -\n\nA brutal interrogation with no empathy can force your interlocutor to reveal information, but it will severely damage their trust. Approach with caution, as it can have lasting consequences.\n\n''You will talk, whether you want to or not. There's no point in resisting, this will only get worse.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"PHY": 2, "MEN": 1, "Rep": -2}
+			}
+		]
+	},
+	"DIA008": {
+		"name": "Subtle Interrogation",
+		"type": "Dialogue",
+		"description": "An interrogation with a more delicate approach.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- SUBTLE -\n- INTERROGATION -\n\nA delicate approach to interrogation can extract information without aggression. By carefully guiding the conversation, you could gain valuable insights.\n\n''You know, I'm not here to make you uncomfortable, but just a few words can reveal what's really going on. We're just talking, right?''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1, "info": 1},
+				"comment_2": "Something to see, here"
+			}
+		]
+	},
+	"DIA009": {
+		"name": "Violent Interrogation",
+		"type": "Dialogue",
+		"description": "Aggressive and violent interrogation.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- VIOLENT -\n- INTERROGATION -\n\nAn aggressive interrogation forces your interlocutor to reveal information, but it will leave deep scars on their trust. Use with extreme caution, as it can lead to irreversible consequences.\n\n''You think this will end well for you? You're wrong. SLAP! Start talking now!''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"PHY": 2, "Rep": -2}
+			}
+		]
+	},
+	"DIA010": {
+		"name": "Veiled Threat",
+		"type": "Dialogue",
+		"description": "A subtle threat that may intimidate.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- VEILED THREAT -\n\nA subtle threat can create unease without being overtly aggressive. It suggests consequences without stating them directly. Proceed with care, just implying danger is enough.\n\n''I think you understand the consequences of pushing this too far. It would be wise to think carefully about your next words.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"PHY": 1, "Rep": -1}
+			}
+		]
+	},
+	"DIA011": {
+		"name": "Convincing Lie",
+		"type": "Dialogue",
+		"description": "Lying convincingly to avoid consequences.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- CONVINCING LIE -\n\nA convincing lie could help you avoid hours of investigation, but be careful: it might come back to haunt you if discovered.\n\n''I know everything. Don't lie to me, because if you do, you're heading for serious trouble. Consider this your warning. So, you'd better tell me the truth now.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1},
+				"comment_3": "Something to see, here"
+			},
+			{
+				"condition": {"result": "failure"},
+				"effects": {"Rep": -1},
+				"comment_4": "Something to see, here"
+			}
+		]
+	},
+	"DIA012": {
+		"name": "Warning",
+		"type": "Dialogue",
+		"description": "A clear warning about potential consequences.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- WARNING -\n\nA clear warning about potential consequences can make your interlocutor reconsider their actions, but it might also make them wary of you.\n\n''You need to listen carefully. If you keep going down this path, things won't end well for you. This is your last chance to make the right decision.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1, "Rep": -1}
+			}
+		]
+	},
+	"DIA013": {
+		"name": "Protection Offer",
+		"type": "Dialogue",
+		"description": "Offering protection in exchange for loyalty.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- PROTECTION OFFER -\n\nOffering protection in exchange for loyalty can create a bond of trust and help you progress in your investigation.\n\n''I can offer you protection, but you need to stay loyal. Stick with me, and I'll make sure no one harms you. But if you cross me, I won't hesitate to drop you.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"PHY": 1, "Rep": 1}
+			}
+		]
+	},
+	"DIA014": {
+		"name": "Bribery",
+		"type": "Dialogue",
+		"description": "Offering money in exchange for information.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- BRIBERY -\n\nOffering money in exchange for information can persuade others to reveal things, but it may come at the cost of trust.\n\n''I'm willing to pay for what you know. The price is right, but you'd better take the offer before it's too late. Information doesn't come free, after all.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"info": 1, "Dø": "-10 × Difficulty", "Rep": 1},
+				"comment_5": "Something to see, here"
+			},
+			{
+				"condition": {"result": "failure"},
+				"effects": {"Rep": -1}
+			}
+		]
+	},
+	"DIA015": {
+		"name": "Generous Bribe",
+		"type": "Dialogue",
+		"description": "A more generous bribe for more valuable information.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- GENEROUS BRIBE -\n\nA generous bribe can motivate your interlocutor to share valuable information. However, this larger payout might leave a lasting impression, so proceed with caution.\n\n''I'm offering a serious deal here. Tell me what I need to know, and you won't regret it. But if you try to play me, this offer disappears like tears in the rain.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1, "Dø": "-20 × Difficulty", "info": 1, "Rep": 1},
+				"comment_6": "Something to see, here"
+			},
+			{
+				"condition": {"result": "failure"},
+				"effects": {"Rep": -2}
+			}
+		]
+	},
+	"DIA016": {
+		"name": "Psychological Pressure",
+		"type": "Dialogue",
+		"description": "Applying psychological pressure to force someone to speak.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- PSYCHOLOGICAL -\n- PRESSURE -\n\nApplying psychological pressure can break down resistance and force someone to speak, but be mindful, it can seriously damage any trust that may exist.\n\n''You don't want to keep this up. The more you resist, the worse it'll get for you. I can make this easy or hard. Your choice.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 2, "Rep": -2}
+			}
+		]
+	},
+	"DIA017": {
+		"name": "Intrusive Question",
+		"type": "Dialogue",
+		"description": "Asking a personal question that may yield sensitive information.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- INTRUSIVE QUESTION -\n\nAsking a personal question can push boundaries and yield sensitive information, but it may also raise suspicions so don't overstep.\n\n''You don't mind if I ask, do you? I'd rather you not take it personally, but I'm just curious, and it could be important, you know.''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1, "info": 1, "Rep": -1},
+				"comment_7": "Something to see, here"
+			}
+		]
+	},
+	"DIA018": {
+		"name": "Trap Question",
+		"type": "Dialogue",
+		"description": "A question that traps the person into revealing hidden information.",
+		"possible_combinations": ["Abstract", "Location", "Object", "NPC"],
+		"info": "- TRAP QUESTION -\n\nA well-crafted question can subtly trap someone into revealing hidden information. But be careful, this tactic could severely backfire if your interlocutor catches on.\n\n''Tell me, it seems like you've forgotten a small detail; are you sure about your answer? I wonder how long exactly you've remembered that?''",
+		"bonus_malus": [
+			{
+				"condition": {"result": "success"},
+				"effects": {"MEN": 1, "hidden_info": 1},
+				"comment_8": "Something to see, here"
+			},
+			{
+				"condition": {"result": "failure"},
+				"effects": {"Rep": -2}
+			}
+		]
+	}
 }

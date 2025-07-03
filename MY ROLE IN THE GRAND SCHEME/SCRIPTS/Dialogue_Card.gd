@@ -1,7 +1,8 @@
 @tool
 class_name DialogueCard extends BaseCard
 
-var dialogue_id: String
+## ID of corresponding entry in dialogue database.
+var database_id: String
 
 static var _dialogue_data = preload("res://JSON/INTERACTION/Dialogue.json").data
 static var _card_scene = preload("res://SCENES/Dialogue_Card.tscn")
@@ -17,5 +18,5 @@ static func create_card(id: String) -> DialogueCard:
 	var dialogue_info = _dialogue_data[id]
 	card.card_name = dialogue_info["name"]
 	card.description = dialogue_info["description"]
-	card.dialogue_id = id
+	card.database_id = id
 	return card

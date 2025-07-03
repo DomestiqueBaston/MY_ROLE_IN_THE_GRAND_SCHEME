@@ -12,7 +12,8 @@ enum InvestigationType {
 		investigation_type = value
 		_update_background()
 
-var investigation_id: String
+## ID of corresponding entry in investigation database.
+var database_id: String
 
 static var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
 static var _card_scene = preload("res://SCENES/Investigation_Card.tscn")
@@ -33,5 +34,5 @@ static func create_card(id: String) -> InvestigationCard:
 	var investigation_info = _investigation_data[id]
 	card.card_name = investigation_info["name"]
 	card.description = investigation_info["description"]
-	card.investigation_id = id
+	card.database_id = id
 	return card

@@ -293,3 +293,20 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 				min_pin = i
 
 	return min_pin
+
+static func create_typed_card(type: CardType, id: String) -> BaseCard:
+	match type:
+		CardType.COMBAT:
+			return CombatCard.create_card(id)
+		CardType.INVESTIGATION:
+			return InvestigationCard.create_card(id)
+		CardType.DIALOGUE:
+			return DialogueCard.create_card(id)
+		CardType.ABSTRACT:
+			return AbstractCard.create_card(id)
+		CardType.OBJECT:
+			return ObjectCard.create_card(id)
+		CardType.LOCATION:
+			return LocationCard.create_card(id)
+		_:
+			return null

@@ -30,7 +30,7 @@ var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
 var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
 
 var _debts: Array[int]
-var _cards: Array[Dictionary]
+var _cards: Array[BaseCard]
 var _signal_pause: int = 0
 var _sleep_bonus_malus: int = 0
 
@@ -91,28 +91,35 @@ func start_game():
 	_cards.clear()
 	_sleep_bonus_malus = 0
 
-	var card_lists = [
-		_dialogue_cards.get("dialogue", []),
-		_combat_cards.get("combat", []),
-		_investigation_cards.get("investigation", []),
-		_abstract_cards.get("abstract", [])
-	]
-
 	# all players start with one card from each category
 
-	for card_list in card_lists:
-		if not card_list.is_empty():
-			_cards.append(card_list[randi_range(0, card_list.size() - 1)])
+	var id
+	id = _pick_random_combat_card()
+	_cards.append(CombatCard.create_card(id))
+	id = _pick_random_investigation_card()
+	_cards.append(InvestigationCard.create_card(id))
+	id = _pick_random_dialogue_card()
+	_cards.append(DialogueCard.create_card(id))
+	id = _pick_random_abstract_card()
+	_cards.append(AbstractCard.create_card(id))
 
 	# some players get bonus cards
 
 	var init_card_count = _cards.size() + bonus_malus.get("cards", 0)
 	while _cards.size() < init_card_count:
-		var card_list = card_lists[randi_range(0, card_lists.size() - 1)]
-		if not card_list.is_empty():
-			var card = card_list[randi_range(0, card_list.size() - 1)]
-			if not card in _cards:
-				_cards.append(card)
+		match randi() % 4:
+			0:
+				id = _pick_random_combat_card()
+				_cards.append(CombatCard.create_card(id))
+			1:
+				id = _pick_random_investigation_card()
+				_cards.append(InvestigationCard.create_card(id))
+			2:
+				id = _pick_random_dialogue_card()
+				_cards.append(DialogueCard.create_card(id))
+			3:
+				id = _pick_random_abstract_card()
+				_cards.append(AbstractCard.create_card(id))
 
 	print("player: ", player_name)
 	print("sex: ", sex)
@@ -123,9 +130,41 @@ func start_game():
 	print("dough: %d Dø" % money)
 	print("drugs: %d doses" % drugs)
 	for card in _cards:
-		print("%s card: %s (%s)" % [card.type, card.name, card.id])
+		print("card: %s (%s)" % [card.card_name, card.database_id])
 
 	_signal_pause -= 1
+
+func _pick_random_abstract_card() -> String:
+	var id = _abstract_cards.keys().pick_random()
+	while _have_card_already(BaseCard.CardType.ABSTRACT, id):
+		id = _abstract_cards.keys().pick_random()
+	return id
+
+func _pick_random_dialogue_card() -> String:
+	var id = _dialogue_cards.keys().pick_random()
+	while _have_card_already(BaseCard.CardType.DIALOGUE, id):
+		id = _dialogue_cards.keys().pick_random()
+	return id
+
+func _pick_random_combat_card() -> String:
+	var id = _combat_cards.keys().pick_random()
+	while (_combat_cards[id]["type"] != "Combat"
+		   or _have_card_already(BaseCard.CardType.COMBAT, id)):
+		id = _combat_cards.keys().pick_random()
+	return id
+
+func _pick_random_investigation_card() -> String:
+	var id = _investigation_cards.keys().pick_random()
+	while (_investigation_cards[id]["type"] != "Investigation"
+		   or _have_card_already(BaseCard.CardType.INVESTIGATION, id)):
+		id = _investigation_cards.keys().pick_random()
+	return id
+
+func _have_card_already(type: BaseCard.CardType, id: String):
+	for card in _cards:
+		if card.card_type == type and card.database_id == id:
+			return true
+	return false
 
 func set_physical(phy: int):
 	if physical != phy:

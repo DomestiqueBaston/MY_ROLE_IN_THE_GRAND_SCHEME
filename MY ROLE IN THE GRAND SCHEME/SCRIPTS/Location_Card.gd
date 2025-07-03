@@ -12,7 +12,9 @@ enum LocationStatus {
 		location_status = value
 		_update_background()
 
-var location_id: String
+## ID of corresponding entry in location database.
+var database_id: String
+
 var _inhabitants: Array[WeakRef]
 
 static var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
@@ -49,5 +51,5 @@ static func create_card(id: String) -> LocationCard:
 	var location_info = _location_data[id]
 	card.card_name = location_info["name"]
 	card.description = location_info["description"]
-	card.location_id = id
+	card.database_id = id
 	return card

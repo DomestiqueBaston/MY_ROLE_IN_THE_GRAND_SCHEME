@@ -1511,7 +1511,6 @@ texture = ExtResource("10_laxfo")
 centered = false
 
 [node name="Female" type="Sprite2D" parent="Card_Mask/Card_BG/Sex"]
-visible = false
 self_modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(5, 26)
 scale = Vector2(0.25, 0.25)
