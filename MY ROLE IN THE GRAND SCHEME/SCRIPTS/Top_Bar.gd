@@ -135,9 +135,7 @@ func _ready():
 func _on_dailies_press(id: int):
 	match id:
 		DailiesMenuItem.INVESTIGATION_CENTER:
-			# TODO: only one visit/day
-			await GameState.pass_one_hour()
-			await Globals.dialog_overlay.open_investigation_center()
+			GameState.visit_investigation_center()
 		DailiesMenuItem.PASS_TIME:
 			GameState.pass_one_hour()
 			$Menu_Bip.play()
@@ -193,6 +191,12 @@ func _on_time_changed():
 		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)
 
 func _on_dailies_menu_popup():
+
+	# can the player visit the investigation center?
+
+	var popup: PopupMenu = _dailies_button.get_popup()
+	var hub_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
+	popup.set_item_disabled(hub_index, not GameState.can_visit_investigation_center())
 
 	# populate the debts submenu with an item for each debt
 

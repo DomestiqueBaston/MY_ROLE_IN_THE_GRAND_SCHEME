@@ -10,11 +10,14 @@ signal case_changed
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
+# play starts at 8am Monday
+const _start_time = 8
+
 # hours passed since the first Monday at midnight
 var _hour: int
 
-# play starts at 8am Monday
-const _start_time = 8
+# the day the player last visited the investigation center
+var _last_hub_visit_day: int = -1
 
 # where game state is saved/reloaded
 const _save_path = "user://game.sav"
@@ -30,9 +33,15 @@ func _ready():
 
 func start_game():
 	_hour = _start_time
-	player.start_game()
+	_last_hub_visit_day = -1
+	_last_crimes.clear()
+	_current_case_index = -1
+
+	cases.clear()
 	for i in 5:
 		cases.append(Case.generate())
+
+	player.start_game()
 
 ##
 ## Returns the number of full days that have passed since play began. Play
@@ -119,6 +128,15 @@ func get_new_crime() -> String:
 	_last_crimes.push_back(crime)
 
 	return crime
+
+func can_visit_investigation_center() -> bool:
+	return _last_hub_visit_day < 0 or _last_hub_visit_day < get_day()
+
+func visit_investigation_center():
+	if can_visit_investigation_center():
+		_last_hub_visit_day = get_day()
+		await pass_one_hour()
+		await Globals.dialog_overlay.open_investigation_center()
 
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
