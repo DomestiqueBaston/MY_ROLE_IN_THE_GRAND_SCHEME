@@ -37,3 +37,14 @@ static func create_card(id: String) -> InvestigationCard:
 	card.description = investigation_info["description"]
 	card.database_id = id
 	return card
+
+func save():
+	var dict = super()
+	dict["investigation_type"] = investigation_type
+	dict["database_id"] = database_id
+	return dict
+
+func load(dict):
+	super(dict)
+	investigation_type = dict["investigation_type"]
+	database_id = dict["database_id"]

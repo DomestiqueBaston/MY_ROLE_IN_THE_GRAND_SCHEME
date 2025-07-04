@@ -45,3 +45,16 @@ static func create_card(id: String) -> ObjectCard:
 	card.description = object_info["description"]
 	card.database_id = id
 	return card
+
+func save():
+	var dict = super()
+	dict["is_object_evidence"] = is_object_evidence
+	dict["database_id"] = database_id
+	# TODO: _owner and _location
+	return dict
+
+func load(dict):
+	super(dict)
+	is_object_evidence = dict["is_object_evidence"]
+	database_id = dict["database_id"]
+	# TODO: _owner and _location

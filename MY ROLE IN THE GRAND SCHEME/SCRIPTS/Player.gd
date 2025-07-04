@@ -1,7 +1,9 @@
 class_name Player extends RefCounted
 
 var player_name: String
-var background: Dictionary
+var job_id: String
+var job_name: String
+var job_bonus_malus: Dictionary
 var sex: float
 var physical: int: set = set_physical, get = get_physical
 var mental: int: set = set_mental, get = get_mental
@@ -35,28 +37,32 @@ var _signal_pause: int = 0
 var _sleep_bonus_malus: int = 0
 
 var _save_props: Array[StringName] = [
-	"player_name",
-	"background",
-	"sex",
-	"physical",
-	"mental",
-	"health",
-	"max_health",
-	"emotion",
-	"addiction",
-	"wanted",
-	"paranoia",
-	"money",
-	"drugs",
-	"_debts",
-	"_cards",
-	"_sleep_bonus_malus"
+	&"player_name",
+	&"job_id",
+	&"job_name",
+	&"job_bonus_malus",
+	&"sex",
+	&"physical",
+	&"mental",
+	&"health",
+	&"max_health",
+	&"emotion",
+	&"addiction",
+	&"wanted",
+	&"paranoia",
+	&"money",
+	&"drugs",
+	&"_debts",
+	#&"_cards",
+	&"_sleep_bonus_malus"
 ]
 
 func reset():
 	_signal_pause += 1
 	player_name = ""
-	background = {}
+	job_id = ""
+	job_name = ""
+	job_bonus_malus = {}
 	sex = 0
 	physical = 0
 	mental = 0
@@ -76,17 +82,16 @@ func reset():
 func start_game():
 	_signal_pause += 1
 
-	var bonus_malus = background.get("bonus_malus", {})
-	physical += bonus_malus.get("PHY", 0)
-	mental += bonus_malus.get("MEN", 0)
-	max_health += bonus_malus.get("HEA", 0)
+	physical += job_bonus_malus.get("PHY", 0)
+	mental += job_bonus_malus.get("MEN", 0)
+	max_health += job_bonus_malus.get("HEA", 0)
 	health = max_health
 	emotion = 0
 	addiction = 0
 	wanted = 0
 	paranoia = 0
-	money = 300 + bonus_malus.get("money", 0)
-	drugs = 3 + bonus_malus.get("drugs", 0)
+	money = 300 + job_bonus_malus.get("money", 0)
+	drugs = 3 + job_bonus_malus.get("drugs", 0)
 	_debts.clear()
 	_cards.clear()
 	_sleep_bonus_malus = 0
@@ -105,7 +110,7 @@ func start_game():
 
 	# some players get bonus cards
 
-	var init_card_count = _cards.size() + bonus_malus.get("cards", 0)
+	var init_card_count = _cards.size() + job_bonus_malus.get("cards", 0)
 	while _cards.size() < init_card_count:
 		match randi() % 4:
 			0:
@@ -123,7 +128,7 @@ func start_game():
 
 	print("player: ", player_name)
 	print("sex: ", sex)
-	print("profession: ", background.get("profession"))
+	print("job: ", job_name)
 	print("PHY: ", physical)
 	print("MEN: ", mental)
 	print("HEA: ", health)
@@ -346,6 +351,10 @@ func save():
 	var dict = {}
 	for prop in _save_props:
 		dict.set(prop, get(prop))
+	var card_array: Array[Dictionary]
+	for card in _cards:
+		card_array.append(card.save())
+	dict["_cards"] = card_array
 	return dict
 
 func load(dict):

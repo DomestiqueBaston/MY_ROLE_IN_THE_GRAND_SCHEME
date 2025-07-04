@@ -38,6 +38,13 @@ var _is_expanded: bool = true
 var _was_stacked: bool = true
 var _pins = {}
 
+var _save_props: Array[StringName] = [
+	&"card_name",
+	&"description",
+	&"opacity",
+	&"_was_stacked"
+]
+
 func _ready():
 	if not Engine.is_editor_hint():
 		$Card_Collider.input_event.connect(_on_card_collider_input_event)
@@ -308,19 +315,14 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 
 	return min_pin
 
-static func create_typed_card(type: CardType, id: String) -> BaseCard:
-	match type:
-		CardType.COMBAT:
-			return CombatCard.create_card(id)
-		CardType.INVESTIGATION:
-			return InvestigationCard.create_card(id)
-		CardType.DIALOGUE:
-			return DialogueCard.create_card(id)
-		CardType.ABSTRACT:
-			return AbstractCard.create_card(id)
-		CardType.OBJECT:
-			return ObjectCard.create_card(id)
-		CardType.LOCATION:
-			return LocationCard.create_card(id)
-		_:
-			return null
+func save():
+	var dict = {}
+	for prop in _save_props:
+		dict.set(prop, get(prop))
+	# TODO: _pins
+	return dict
+
+func load(dict):
+	for prop in _save_props:
+		set(prop, dict.get(prop))
+	# TODO: _pins

@@ -20,3 +20,12 @@ static func create_card(id: String) -> AbstractCard:
 	card.description = abstract_info["description"]
 	card.database_id = id
 	return card
+
+func save():
+	var dict = super()
+	dict["database_id"] = database_id
+	return dict
+
+func load(dict):
+	super(dict)
+	database_id = dict["database_id"]

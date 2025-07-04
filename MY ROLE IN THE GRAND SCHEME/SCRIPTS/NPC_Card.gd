@@ -65,6 +65,21 @@ var player_reputation: int
 var _home: WeakRef
 var _work: WeakRef
 
+var _npc_save_props: Array[StringName] = [
+	&"first_name",
+	&"last_name",
+	&"job",
+	&"sex",
+	&"orientation",
+	&"physical",
+	&"mental",
+	&"health",
+	&"max_health",
+	&"wanted",
+	&"is_minion",
+	&"player_reputation"
+]
+
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 static var _card_scene = preload("res://SCENES/NPC_Card.tscn")
@@ -178,3 +193,16 @@ static func generate_card(
 		job_id = possible_jobs.pick_random()
 	card._randomize(extra_points, job_id, minion)
 	return card
+
+func save():
+	var dict = super()
+	for prop in _npc_save_props:
+		dict.set(prop, get(prop))
+	# TODO: _home and _work
+	return dict
+
+func load(dict):
+	super(dict)
+	for prop in _npc_save_props:
+		set(prop, dict.get(prop))
+	# TODO: _home and _work

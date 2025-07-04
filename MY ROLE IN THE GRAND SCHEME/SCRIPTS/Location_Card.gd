@@ -54,3 +54,16 @@ static func create_card(id: String) -> LocationCard:
 	card.description = location_info["description"]
 	card.database_id = id
 	return card
+
+func save():
+	var dict = super()
+	dict["location_status"] = location_status
+	dict["database_id"] = database_id
+	# TODO: _inhabitants
+	return dict
+
+func load(dict):
+	super(dict)
+	location_status = dict["location_status"]
+	database_id = dict["database_id"]
+	# TODO: _inhabitants
