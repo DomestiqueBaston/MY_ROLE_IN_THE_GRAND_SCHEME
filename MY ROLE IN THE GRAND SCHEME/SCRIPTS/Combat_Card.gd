@@ -10,7 +10,8 @@ enum CombatType {
 @export var combat_type: CombatType:
 	set(value):
 		combat_type = value
-		_update_background()
+		if is_node_ready():
+			_update_background()
 
 ## ID of corresponding entry in combat database.
 var database_id: String

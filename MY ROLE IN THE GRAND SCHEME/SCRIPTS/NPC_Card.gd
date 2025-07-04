@@ -34,17 +34,20 @@ enum SexualOrientation {
 @export var npc_health: NpcHealth:
 	set(value):
 		npc_health = value
-		_update_background()
+		if is_node_ready():
+			_update_background()
 
 @export var npc_status: NpcStatus:
 	set(value):
 		npc_status = value
-		_update_background()
+		if is_node_ready():
+			_update_background()
 
 @export var npc_sex: Sex:
 	set(value):
 		npc_sex = value
-		_update_background()
+		if is_node_ready():
+			_update_background()
 
 var first_name: String
 var last_name: String

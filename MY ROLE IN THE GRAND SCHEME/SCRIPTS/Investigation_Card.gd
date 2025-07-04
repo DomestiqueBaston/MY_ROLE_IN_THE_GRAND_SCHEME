@@ -10,7 +10,8 @@ enum InvestigationType {
 @export var investigation_type: InvestigationType:
 	set(value):
 		investigation_type = value
-		_update_background()
+		if is_node_ready():
+			_update_background()
 
 ## ID of corresponding entry in investigation database.
 var database_id: String

@@ -14,19 +14,20 @@ enum CardType {
 @export var card_name: String:
 	set(value):
 		card_name = value
-		if $Card_Mask/Card_BG/Card_Text/Card_Name:
+		if is_node_ready():
 			$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
 
 @export var description: String:
 	set(value):
 		description = value
-		if $Card_Mask/Card_BG/Card_Text/Card_Name:
+		if is_node_ready():
 			$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
 
 @export var opacity: float = 1:
 	set(value):
 		opacity = value
-		_update_opacity()
+		if is_node_ready():
+			_update_opacity()
 
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)

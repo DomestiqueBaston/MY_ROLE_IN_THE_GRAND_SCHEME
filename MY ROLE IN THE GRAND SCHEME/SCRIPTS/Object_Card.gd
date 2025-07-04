@@ -4,7 +4,8 @@ class_name ObjectCard extends BaseCard
 @export var is_object_evidence: bool:
 	set(value):
 		is_object_evidence = value
-		_update_background()
+		if is_node_ready():
+			_update_background()
 
 ## ID of corresponding entry in object database.
 var database_id: String

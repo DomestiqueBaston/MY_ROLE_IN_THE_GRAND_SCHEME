@@ -10,7 +10,8 @@ enum LocationStatus {
 @export var location_status: LocationStatus:
 	set(value):
 		location_status = value
-		_update_background()
+		if is_node_ready():
+			_update_background()
 
 ## ID of corresponding entry in location database.
 var database_id: String
