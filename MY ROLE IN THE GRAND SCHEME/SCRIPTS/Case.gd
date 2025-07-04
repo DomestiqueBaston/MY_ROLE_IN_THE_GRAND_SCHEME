@@ -1,4 +1,4 @@
-class_name Case extends Node
+class_name Case extends RefCounted
 
 enum Status {
 	UNASSIGNED,
@@ -24,6 +24,20 @@ var evidence: Array[ObjectCard]
 var crime_location: LocationCard
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
+
+func _notification(what: int):
+	# Cards are Nodes, not RefCounted, so they must be deleted explicitly
+	if what == NOTIFICATION_PREDELETE:
+		for card_list in [
+			culprits, victims, witnesses, accomplices, suspects, other_npcs,
+			evidence
+		]:
+			for card in card_list:
+				card.queue_free()
+			card_list.clear()
+		if crime_location:
+			crime_location.queue_free()
+			crime_location = null
 
 static func generate() -> Case:
 	var case = Case.new()
