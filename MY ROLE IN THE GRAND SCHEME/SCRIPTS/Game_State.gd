@@ -3,11 +3,9 @@ extends Node
 var player: Player = Player.new()
 var cases: Array[Case]
 
-## Signal emitted when the time has changed: see get_day() and get_hour().
 @warning_ignore("unused_signal")
 signal time_changed
 
-## Signal emitted when the current case has changed: see get_current_case().
 signal case_changed
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
