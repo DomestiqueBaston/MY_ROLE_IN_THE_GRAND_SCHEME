@@ -162,7 +162,7 @@ func _pick_random_investigation_card() -> String:
 
 func _have_card_already(type: BaseCard.CardType, id: String):
 	for card in _cards:
-		if card.card_type == type and card.database_id == id:
+		if card.get_card_type() == type and card.database_id == id:
 			return true
 	return false
 

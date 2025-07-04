@@ -28,14 +28,13 @@ enum CardType {
 		opacity = value
 		_update_opacity()
 
-var card_type: CardType
-
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)
 
 var _is_highlighted: bool = false
 var _opacity_before_highlighting: float
 var _is_expanded: bool = true
+var _was_stacked: bool = true
 var _pins = {}
 
 func _ready():
@@ -51,6 +50,12 @@ func _notification(what):
 			_pins[location].global_position = get_pin_position(location)
 
 ##
+## Returns the type of the card (to be overridden by each subclass).
+##
+func get_card_type() -> CardType:
+	return 0 as CardType
+
+##
 ## Returns true if the card is in a stack, that is, if its parent node is a
 ## CardStack. Note that when a card is in a stack, its parent node decides which
 ## card to highlight, not the card itself. That is, a stacked card emits no
@@ -60,6 +65,13 @@ func _notification(what):
 func is_stacked() -> bool:
 	var parent = get_parent()
 	return parent and parent is CardStack
+
+##
+## Returns true if the card WAS in a stack before it was last removed from the
+## tree.
+##
+func was_stacked() -> bool:
+	return _was_stacked
 
 ##
 ## When the card is parented to a CardStack, hide its pins.
@@ -76,7 +88,8 @@ func _enter_tree():
 ## When the card is removed from its CardStack parent, show its pins.
 ##
 func _exit_tree():
-	if is_stacked():
+	_was_stacked = is_stacked()
+	if _was_stacked:
 		# because a stacked card's Z index is incremented when highlighted
 		if _is_highlighted:
 			z_index -= 1

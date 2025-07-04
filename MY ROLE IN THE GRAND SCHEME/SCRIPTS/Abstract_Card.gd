@@ -7,8 +7,8 @@ var database_id: String
 static var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
 static var _card_scene = preload("res://SCENES/Abstract_Card.tscn")
 
-func _init():
-	card_type = CardType.ABSTRACT
+func get_card_type():
+	return CardType.ABSTRACT
 
 func _ready():
 	super()

@@ -28,9 +28,6 @@ func _replace_scene(new_scene: PackedScene) -> Node:
 			child.fade_out()
 			_title_screen = null
 		else:
-			# detach cards and links from main scene so they won't be deleted
-			if child.scene_file_path == _main_scene.resource_path:
-				child.detach_cards()
 			child.queue_free()
 
 	# instantiate the new scene

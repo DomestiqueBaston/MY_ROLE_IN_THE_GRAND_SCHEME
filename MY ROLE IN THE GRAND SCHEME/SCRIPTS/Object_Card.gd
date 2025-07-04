@@ -15,8 +15,8 @@ var _location: WeakRef
 static var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 static var _card_scene = preload("res://SCENES/Object_Card.tscn")
 
-func _init():
-	card_type = CardType.OBJECT
+func get_card_type():
+	return CardType.OBJECT
 
 func _ready():
 	super()

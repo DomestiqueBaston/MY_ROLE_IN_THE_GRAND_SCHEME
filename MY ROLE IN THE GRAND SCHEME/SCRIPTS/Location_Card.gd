@@ -20,8 +20,8 @@ var _inhabitants: Array[WeakRef]
 static var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 static var _card_scene = preload("res://SCENES/Location_Card.tscn")
 
-func _init():
-	card_type = CardType.LOCATION
+func get_card_type():
+	return CardType.LOCATION
 
 func _ready():
 	super()

@@ -66,8 +66,8 @@ static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Nam
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 static var _card_scene = preload("res://SCENES/NPC_Card.tscn")
 
-func _init():
-	card_type = CardType.NPC
+func get_card_type():
+	return CardType.NPC
 
 func _ready():
 	super()

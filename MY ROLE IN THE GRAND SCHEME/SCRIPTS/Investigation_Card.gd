@@ -18,8 +18,8 @@ var database_id: String
 static var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
 static var _card_scene = preload("res://SCENES/Investigation_Card.tscn")
 
-func _init():
-	card_type = CardType.INVESTIGATION
+func get_card_type():
+	return CardType.INVESTIGATION
 
 func _ready():
 	super()

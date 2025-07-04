@@ -101,6 +101,7 @@ func _ready():
 	Globals.dialog_overlay.pre_dialog.connect(_pause_input_handling)
 	Globals.dialog_overlay.post_dialog.connect(_resume_input_handling)
 
+	tree_exiting.connect(_detach_cards)
 	GameState.case_changed.connect(_on_case_changed)
 
 func _input(event: InputEvent):
@@ -560,23 +561,23 @@ func _resume_input_handling():
 	reserve.set_process_input(true)
 
 func _on_case_changed():
-	detach_cards()
+	_detach_cards()
 	var case = GameState.get_current_case()
 	if case:
 		populate_cards(case.get_cards())
 
 func populate_cards(new_cards):
 	for card in new_cards:
-		reserve.add_child(card)
+		if card.was_stacked():
+			reserve.add_child(card)
+		else:
+			cards.add_child(card)
 
-func reset_cards():
-	for i in cards.get_child_count():
-		cards.get_child(i).queue_free()
-	for i in reserve.get_child_count():
-		reserve.get_child(i).queue_free()
-
-func detach_cards():
-	# TODO: remember whether each card was in the reserve or out
+#
+# Removes cards and links from the scene without deleting them, because
+# GameState holds references to them.
+#
+func _detach_cards():
 	for child in cards.get_children():
 		cards.remove_child(child)
 	for child in reserve.get_children():

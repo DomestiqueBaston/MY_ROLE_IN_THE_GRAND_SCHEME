@@ -18,8 +18,8 @@ var database_id: String
 static var _combat_data = preload("res://JSON/INTERACTION/Combat.json").data
 static var _card_scene = preload("res://SCENES/Combat_Card.tscn")
 
-func _init():
-	card_type = CardType.COMBAT
+func get_card_type():
+	return CardType.COMBAT
 
 func _ready():
 	super()
