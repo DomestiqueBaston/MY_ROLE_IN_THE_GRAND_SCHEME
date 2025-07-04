@@ -3,12 +3,17 @@ extends Node
 var player: Player = Player.new()
 var cases: Array[Case]
 
+## Signal emitted when the time has changed: see get_day() and get_hour().
 @warning_ignore("unused_signal")
 signal time_changed
 
+## Signal emitted when the current case has changed: see get_current_case().
 signal case_changed
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
+
+# where game state is saved/reloaded
+const _save_path = "user://game.sav"
 
 # play starts at 8am Monday
 const _start_time = 8
@@ -17,16 +22,13 @@ const _start_time = 8
 var _hour: int
 
 # the day the player last visited the investigation center
-var _last_hub_visit_day: int = -1
-
-# where game state is saved/reloaded
-const _save_path = "user://game.sav"
+var _last_hub_visit_day: int
 
 # the crimes of the last several cases generated, to avoid repetition
 var _last_crimes: Array[String]
 
 # which case is current
-var _current_case_index: int = -1
+var _current_case_index: int
 
 func _ready():
 	load_game()
