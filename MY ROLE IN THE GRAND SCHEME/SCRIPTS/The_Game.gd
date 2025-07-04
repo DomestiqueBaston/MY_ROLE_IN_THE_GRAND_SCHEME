@@ -96,7 +96,7 @@ func _continue_game():
 	var main = await _replace_scene(_main_scene)
 	var case = GameState.get_current_case()
 	if case:
-		main.populate_cards(case.get_cards())
+		main.populate(case.get_cards(), case.get_links())
 	main.quit.connect(_go_to_option_menu)
 
 func _quit():

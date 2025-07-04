@@ -142,8 +142,11 @@ func pause_collisions():
 func resume_collisions():
 	$Link_Texture/Link_Collider.input_pickable = true
 
-func _exit_tree():
-	if not Engine.is_editor_hint():
+#
+# When a Link is deleted, delete the pins at its endpoints, too.
+#
+func _notification(what: int):
+	if what == NOTIFICATION_PREDELETE and not Engine.is_editor_hint():
 		var old_pin1 = pin1
 		var old_pin2 = pin2
 		pin1 = null

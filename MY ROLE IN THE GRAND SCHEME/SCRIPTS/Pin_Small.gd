@@ -77,14 +77,10 @@ var _link_ref: Link
 func _ready():
 	set_notify_transform(true)
 
-func _exit_tree():
+func _notification(what: int):
 	if not Engine.is_editor_hint():
-		card = null
-		link = null
-
-func _notification(what):
-	if what == NOTIFICATION_TRANSFORM_CHANGED:
-		moved.emit()
+		if what == NOTIFICATION_TRANSFORM_CHANGED:
+			moved.emit()
 
 func pause_collisions():
 	$Collider.input_pickable = false

@@ -1,8 +1,6 @@
 extends Node2D
 
 @onready var cards: Node2D = $Cards
-@onready var pins: Node2D = cards
-@onready var links: Node2D = cards
 @onready var reserve: Node2D = $Reserve_Cards
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
@@ -426,13 +424,13 @@ func _start_linking(card: BaseCard, type: Link.Type, is_confirmed: bool):
 	_src_pin = pin_scene.instantiate()
 	_src_pin.card_location = src_loc as Pin.Location
 	_src_pin.card = card
-	pins.add_child(_src_pin)
+	cards.add_child(_src_pin)
 
 	_dst_pin = pin_scene.instantiate()
 	_dst_pin.global_position = get_global_mouse_position()
 	# if the pin is pickable, it hides cards' mouse enter/exit events
 	_dst_pin.pause_collisions()
-	pins.add_child(_dst_pin)
+	cards.add_child(_dst_pin)
 
 	_new_link = link_scene.instantiate()
 	_new_link.type = type
@@ -441,7 +439,7 @@ func _start_linking(card: BaseCard, type: Link.Type, is_confirmed: bool):
 	_new_link.pin2 = _dst_pin
 	# if the link is pickable, it hides cards' mouse enter/exit events
 	_new_link.pause_collisions()
-	links.add_child(_new_link)
+	cards.add_child(_new_link)
 	_new_link.raise()
 
 	_drag_state = DragState.LINKING
@@ -495,6 +493,10 @@ func _stop_linking(global_pos: Vector2):
 	_new_link.resume_collisions()
 	_new_link.lower()
 
+	var case = GameState.get_current_case()
+	if case:
+		case.add_link(_new_link)
+
 	_drag_state = DragState.NONE
 	Globals.dragging = false
 
@@ -526,6 +528,9 @@ func _handle_popup(id: int):
 					_popup_node.status = Link.Status.CONFIRMED
 		MenuItem.DELETE_LINK:
 			if _popup_node is Link:
+				var case = GameState.get_current_case()
+				if case:
+					case.remove_link(_popup_node)
 				_popup_node.queue_free()
 				_popup_node = null
 		MenuItem.REMOVE_WARNING:
@@ -564,14 +569,22 @@ func _on_case_changed():
 	_detach_cards()
 	var case = GameState.get_current_case()
 	if case:
-		populate_cards(case.get_cards())
+		populate(case.get_cards(), case.get_links())
 
-func populate_cards(new_cards):
+##
+## Populates the scene with the given cards and links.
+##
+func populate(new_cards: Array[BaseCard], new_links: Array[Link]):
 	for card in new_cards:
 		if card.was_stacked():
 			reserve.add_child(card)
 		else:
 			cards.add_child(card)
+
+	for link in new_links:
+		cards.add_child(link)
+		cards.add_child(link.pin1)
+		cards.add_child(link.pin2)
 
 #
 # Removes cards and links from the scene without deleting them, because

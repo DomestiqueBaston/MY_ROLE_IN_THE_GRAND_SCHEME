@@ -27,7 +27,7 @@ func _ready():
 func populate():
 	_option_button.clear()
 	for case: Case in GameState.cases:
-		_option_button.add_item(case.case_name)
+		_option_button.add_item(case.get_case_name())
 	_option_button.add_separator("Ready for a mess? Pick one and dive in...")
 	_option_button.selected = _option_button.item_count - 1
 	_ok_button.disabled = true
@@ -36,7 +36,7 @@ func populate():
 func _on_item_selected(index: int):
 	var case: Case = GameState.cases[index]
 
-	match case.status:
+	match case.get_status():
 		Case.Status.UNASSIGNED:
 			_status.text = "Unassigned"
 		Case.Status.ACTIVE:
@@ -46,7 +46,7 @@ func _on_item_selected(index: int):
 		Case.Status.DONE:
 			_status.text = "Done"
 
-	_deadline.text = "%d days" % case.duration
+	_deadline.text = "%d days" % case.get_duration()
 
 	_populate_npc_names(case.victims, _victims)
 	_populate_npc_names(case.witnesses, _witnesses)
