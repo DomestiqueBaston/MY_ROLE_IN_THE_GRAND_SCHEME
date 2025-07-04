@@ -101,7 +101,7 @@ func _ready():
 	Globals.dialog_overlay.pre_dialog.connect(_pause_input_handling)
 	Globals.dialog_overlay.post_dialog.connect(_resume_input_handling)
 
-	reset_cards()
+	GameState.case_changed.connect(_on_case_changed)
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -559,6 +559,12 @@ func _resume_input_handling():
 	set_process_input(true)
 	reserve.set_process_input(true)
 
+func _on_case_changed():
+	detach_cards()
+	var case = GameState.get_current_case()
+	if case:
+		populate_cards(case.get_cards())
+
 func populate_cards(new_cards):
 	for card in new_cards:
 		reserve.add_child(card)
@@ -570,6 +576,7 @@ func reset_cards():
 		reserve.get_child(i).queue_free()
 
 func detach_cards():
+	# TODO: remember whether each card was in the reserve or out
 	for child in cards.get_children():
 		cards.remove_child(child)
 	for child in reserve.get_children():

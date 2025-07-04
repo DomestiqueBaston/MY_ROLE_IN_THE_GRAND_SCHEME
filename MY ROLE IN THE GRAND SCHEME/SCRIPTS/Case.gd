@@ -198,3 +198,9 @@ func get_cards() -> Array[BaseCard]:
 	return all_cards
 
 # TODO: function to return links
+
+func start():
+	status = Status.ACTIVE
+
+func pause():
+	status = Status.PAUSED

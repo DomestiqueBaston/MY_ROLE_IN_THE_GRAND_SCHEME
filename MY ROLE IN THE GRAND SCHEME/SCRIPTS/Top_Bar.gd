@@ -135,6 +135,8 @@ func _ready():
 func _on_dailies_press(id: int):
 	match id:
 		DailiesMenuItem.INVESTIGATION_CENTER:
+			# TODO: only one visit/day
+			await GameState.pass_one_hour()
 			await Globals.dialog_overlay.open_investigation_center()
 		DailiesMenuItem.PASS_TIME:
 			GameState.pass_one_hour()

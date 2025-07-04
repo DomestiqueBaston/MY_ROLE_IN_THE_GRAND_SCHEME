@@ -3,8 +3,12 @@ extends Node
 var player: Player = Player.new()
 var cases: Array[Case]
 
+## Signal emitted when the time has changed: see get_day() and get_hour().
 @warning_ignore("unused_signal")
 signal time_changed
+
+## Signal emitted when the current case has changed: see get_current_case().
+signal case_changed
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
@@ -19,6 +23,9 @@ const _save_path = "user://game.sav"
 
 # the crimes of the last several cases generated, to avoid repetition
 var _last_crimes: Array[String]
+
+# which case is current
+var _current_case_index: int = -1
 
 func _ready():
 	load_game()
@@ -58,7 +65,7 @@ func _increment_time(hours: int):
 	for i in bill_count_after - bill_count_before:
 		_send_new_bill()
 
-	save_game()
+	#save_game()
 
 func pass_one_hour():
 	player.pass_one_hour()
@@ -114,3 +121,18 @@ func get_new_crime() -> String:
 	_last_crimes.push_back(crime)
 
 	return crime
+
+func get_current_case() -> Case:
+	if _current_case_index >= 0:
+		return cases[_current_case_index]
+	else:
+		return null
+
+func set_current_case(index: int):
+	if _current_case_index != index:
+		if _current_case_index >= 0:
+			cases[_current_case_index].pause()
+		_current_case_index = index
+		if _current_case_index >= 0:
+			cases[_current_case_index].start()
+		case_changed.emit()
