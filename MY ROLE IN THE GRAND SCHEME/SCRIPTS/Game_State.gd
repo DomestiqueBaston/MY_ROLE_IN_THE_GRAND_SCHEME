@@ -131,6 +131,10 @@ func get_new_crime() -> String:
 
 	return crime
 
+##
+## Returns false if the player has already visited the Investigation Center
+## today.
+##
 func can_visit_investigation_center() -> bool:
 	return _last_hub_visit_day < 0 or _last_hub_visit_day < get_day()
 
