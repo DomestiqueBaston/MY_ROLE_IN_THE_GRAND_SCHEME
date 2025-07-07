@@ -46,6 +46,10 @@ var _save_props: Array[StringName] = [
 ]
 
 func _ready():
+	$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
+	$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
+	_update_opacity()
+
 	if not Engine.is_editor_hint():
 		$Card_Collider.input_event.connect(_on_card_collider_input_event)
 		$Card_Collider.mouse_entered.connect(_on_card_collider_mouse_entered)
