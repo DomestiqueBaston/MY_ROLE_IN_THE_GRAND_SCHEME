@@ -31,7 +31,8 @@ var _last_crimes: Array[String]
 var _current_case_index: int
 
 func _ready():
-	load_game()
+	#load_game()
+	pass
 
 func start_game():
 	_hour = _start_time
