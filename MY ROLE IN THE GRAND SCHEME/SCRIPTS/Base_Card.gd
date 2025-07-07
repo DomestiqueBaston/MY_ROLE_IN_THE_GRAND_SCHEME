@@ -38,13 +38,6 @@ var _is_expanded: bool = true
 var _was_stacked: bool = true
 var _pins = {}
 
-var _save_props: Array[StringName] = [
-	&"card_name",
-	&"description",
-	&"opacity",
-	&"_was_stacked"
-]
-
 func _ready():
 	$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
 	$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
@@ -319,14 +312,35 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 
 	return min_pin
 
-func save():
-	var dict = {}
-	for prop in _save_props:
-		dict.set(prop, get(prop))
-	# TODO: _pins
+
+func get_referenced_objects():
+	return _pins.values()
+
+func get_json_dict():
+	var dict = {
+		"card_name": card_name,
+		"description": description,
+		"opacity": opacity,
+		"was_stacked": is_stacked() if is_inside_tree() else _was_stacked,
+		"x": position.x,
+		"y": position.y
+	}
+	if _pins:
+		var pin_refs = {}
+		for pin in _pins:
+			pin_refs[pin] = SaveLoadTools.get_object_id(_pins[pin])
+		dict["pins"] = pin_refs
 	return dict
 
-func load(dict):
-	for prop in _save_props:
-		set(prop, dict.get(prop))
-	# TODO: _pins
+func _restore_from_json_dict(dict):
+	card_name = dict.card_name
+	description = dict.description
+	opacity = dict.opacity
+	_was_stacked = dict.was_stacked
+	position = Vector2(dict.x, dict.y)
+
+func set_referenced_objects(dict, catalog):
+	if "pins" in dict:
+		var pin_refs = dict.pins
+		for pin in pin_refs:
+			_pins[pin as Pin.Location] = catalog[pin_refs[pin]]

@@ -100,11 +100,7 @@ func _send_new_bill():
 func save_game():
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
 	if file:
-		var dict = {
-			"_hour": _hour
-		}
-		dict.set("player", player.save())
-		var json = JSON.stringify(dict, "\t")
+		var json = JSON.stringify(SaveLoadTools.save_to_json_dict(self), "\t")
 		file.store_line(json)
 
 func load_game():
@@ -112,8 +108,15 @@ func load_game():
 	if json:
 		var data = JSON.parse_string(json)
 		if data and data is Dictionary:
-			_hour = data["_hour"]
-			player.load(data["player"])
+			var obj = SaveLoadTools.restore_from_json_dict(data)
+			if obj:
+				# TODO: there must be a better way...
+				player = obj.player
+				_hour = obj._hour
+				_last_hub_visit_day = obj._last_hub_visit_day
+				_last_crimes = obj._last_crimes
+				_current_case_index = obj._current_case_index
+				cases = obj.cases
 
 ##
 ## Returns a category of crime taken from the JSON crime definitions. It is
@@ -159,3 +162,43 @@ func set_current_case(index: int):
 		if _current_case_index >= 0:
 			cases[_current_case_index].start()
 		case_changed.emit()
+
+
+func get_custom_class():
+	return SaveLoadTools.Class.GAME_STATE
+
+func get_referenced_objects():
+	var refs = [player]
+	for case in cases:
+		refs.append(case)
+	return refs
+
+func get_json_dict():
+	var dict = {
+		"player": SaveLoadTools.get_object_id(player),
+		"hour": _hour,
+		"last_hub_visit_day": _last_hub_visit_day,
+		"last_crimes": _last_crimes,
+		"current_case_index": _current_case_index
+	}
+	var case_refs = []
+	for case in cases:
+		case_refs.append(SaveLoadTools.get_object_id(case))
+	dict["cases"] = case_refs
+	return dict
+
+func _restore_from_json_dict(dict):
+	_hour = dict.hour
+	_last_hub_visit_day = dict.last_hub_visit_day
+	_last_crimes.assign(dict.last_crimes)
+	_current_case_index = dict.current_case_index
+
+func set_referenced_objects(dict, catalog):
+	player = catalog[dict.player]
+	for case_ref in dict.cases:
+		cases.append(catalog[case_ref])
+
+func restore(dict) -> Object:
+	var state = load("res://SCRIPTS/Game_State.gd").new()
+	state._restore_from_json_dict(dict)
+	return state

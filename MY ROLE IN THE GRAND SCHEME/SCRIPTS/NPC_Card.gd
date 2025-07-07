@@ -65,21 +65,6 @@ var player_reputation: int
 var _home: WeakRef
 var _work: WeakRef
 
-var _npc_save_props: Array[StringName] = [
-	&"first_name",
-	&"last_name",
-	&"job",
-	&"sex",
-	&"orientation",
-	&"physical",
-	&"mental",
-	&"health",
-	&"max_health",
-	&"wanted",
-	&"is_minion",
-	&"player_reputation"
-]
-
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 static var _card_scene = preload("res://SCENES/NPC_Card.tscn")
@@ -194,15 +179,61 @@ static func generate_card(
 	card._randomize(extra_points, job_id, minion)
 	return card
 
-func save():
+
+func get_custom_class():
+	return SaveLoadTools.Class.NPC_CARD
+
+func get_referenced_objects():
+	var refs = super()
+	if _home:
+		refs.append(_home.get_ref())
+	if _work:
+		refs.append(_work.get_ref())
+	return refs
+
+func get_json_dict():
 	var dict = super()
-	for prop in _npc_save_props:
-		dict.set(prop, get(prop))
-	# TODO: _home and _work
+	dict["first_name"] = first_name
+	dict["last_name"] = last_name
+	dict["job"] = job
+	dict["sex"] = sex
+	dict["orientation"] = orientation
+	dict["physical"] = physical
+	dict["mental"] = mental
+	dict["health"] = health
+	dict["max_health"] = max_health
+	dict["wanted"] = wanted
+	dict["is_minion"] = is_minion
+	dict["player_reputation"] = player_reputation
+	if _home:
+		dict["home"] = SaveLoadTools.get_object_id(_home.get_ref())
+	if _work:
+		dict["work"] = SaveLoadTools.get_object_id(_work.get_ref())
 	return dict
 
-func load(dict):
+func _restore_from_json_dict(dict):
 	super(dict)
-	for prop in _npc_save_props:
-		set(prop, dict.get(prop))
-	# TODO: _home and _work
+	first_name = dict.first_name
+	last_name = dict.last_name
+	job = dict.job
+	sex = dict.sex
+	orientation = dict.orientation
+	physical = dict.physical
+	mental = dict.mental
+	max_health = dict.max_health
+	health = dict.health
+	wanted = dict.wanted
+	is_minion = dict.is_minion
+	player_reputation = dict.player_reputation
+
+func set_referenced_objects(dict, catalog):
+	super(dict, catalog)
+	if "home" in dict:
+		_home = weakref(catalog[dict.home])
+	if "work" in dict:
+		_work = weakref(catalog[dict.work])
+
+static func restore(dict) -> Object:
+	var card = _card_scene.instantiate()
+	card._restore_from_json_dict(dict)
+	return card

@@ -36,27 +36,6 @@ var _cards: Array[BaseCard]
 var _signal_pause: int = 0
 var _sleep_bonus_malus: int = 0
 
-var _save_props: Array[StringName] = [
-	&"player_name",
-	&"job_id",
-	&"job_name",
-	&"job_bonus_malus",
-	&"sex",
-	&"physical",
-	&"mental",
-	&"health",
-	&"max_health",
-	&"emotion",
-	&"addiction",
-	&"wanted",
-	&"paranoia",
-	&"money",
-	&"drugs",
-	&"_debts",
-	#&"_cards",
-	&"_sleep_bonus_malus"
-]
-
 func reset():
 	_signal_pause += 1
 	player_name = ""
@@ -347,20 +326,63 @@ func sleep(hours: int):
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 2
 
-func save():
-	var dict = {}
-	for prop in _save_props:
-		dict.set(prop, get(prop))
-	var card_array: Array[Dictionary]
+
+func get_custom_class():
+	return SaveLoadTools.Class.PLAYER
+
+func get_referenced_objects():
+	return _cards
+
+func get_json_dict():
+	var dict = {
+		"player_name": player_name,
+		"job_id": job_id,
+		"job_name": job_name,
+		"job_bonus_malus": job_bonus_malus,
+		"sex": sex,
+		"physical": physical,
+		"mental": mental,
+		"health": health,
+		"max_health": max_health,
+		"emotion": emotion,
+		"addiction": addiction,
+		"wanted": wanted,
+		"paranoia": paranoia,
+		"money": money,
+		"drugs": drugs,
+		"debts": _debts,
+		"sleep_bonus_malus": _sleep_bonus_malus
+	}
+	var card_refs = []
 	for card in _cards:
-		card_array.append(card.save())
-	dict["_cards"] = card_array
+		card_refs.append(SaveLoadTools.get_object_id(card))
+	dict["cards"] = card_refs
 	return dict
 
-func load(dict):
-	# because health is clamped to max_health, but comes before max_health in
-	# the dictionary
-	max_health = dict["max_health"]
+func _restore_from_json_dict(dict):
+	player_name = dict.player_name
+	job_id = dict.job_id
+	job_name = dict.job_name
+	job_bonus_malus = dict.job_bonus_malus
+	sex = dict.sex
+	physical = dict.physical
+	mental = dict.mental
+	max_health = dict.max_health
+	health = dict.health
+	emotion = dict.emotion
+	addiction = dict.addiction
+	wanted = dict.wanted
+	paranoia = dict.paranoia
+	money = dict.money
+	drugs = dict.drugs
+	_debts.assign(dict.debts)
+	_sleep_bonus_malus = dict.sleep_bonus_malus
 
-	for prop in dict:
-		set(prop, dict.get(prop))
+func set_referenced_objects(dict, catalog):
+	for card_ref in dict.cards:
+		_cards.append(catalog[card_ref])
+
+static func restore(dict) -> Object:
+	var player = Player.new()
+	player._restore_from_json_dict(dict)
+	return player

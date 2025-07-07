@@ -55,15 +55,28 @@ static func create_card(id: String) -> LocationCard:
 	card.database_id = id
 	return card
 
-func save():
+
+func get_custom_class():
+	return SaveLoadTools.Class.LOCATION_CARD
+
+func get_json_dict():
 	var dict = super()
 	dict["location_status"] = location_status
 	dict["database_id"] = database_id
 	# TODO: _inhabitants
 	return dict
 
-func load(dict):
+func _restore_from_json_dict(dict):
 	super(dict)
 	location_status = dict["location_status"]
 	database_id = dict["database_id"]
 	# TODO: _inhabitants
+
+func set_referenced_objects(dict, catalog):
+	super(dict, catalog)
+	# TODO: _inhabitants
+
+static func restore(dict) -> Object:
+	var card = _card_scene.instantiate()
+	card._restore_from_json_dict(dict)
+	return card

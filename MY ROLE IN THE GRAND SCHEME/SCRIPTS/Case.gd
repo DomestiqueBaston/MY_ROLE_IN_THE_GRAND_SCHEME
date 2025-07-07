@@ -252,3 +252,111 @@ func start():
 
 func pause():
 	_status = Status.PAUSED
+
+
+func get_custom_class():
+	return SaveLoadTools.Class.CASE
+
+func get_referenced_objects():
+	var refs = []
+	refs.append_array(culprits)
+	refs.append_array(victims)
+	refs.append_array(witnesses)
+	refs.append_array(accomplices)
+	refs.append_array(suspects)
+	refs.append_array(other_npcs)
+	refs.append_array(evidence)
+	if crime_location:
+		refs.append(crime_location)
+	refs.append_array(_links)
+	return refs
+
+func get_json_dict():
+	var dict = {
+		"case_name": _case_name,
+		"crime": _crime,
+		"motive": _motive,
+		"difficulty": _difficulty,
+		"duration": _duration,
+		"status": _status
+	}
+
+	var culprit_refs = []
+	for card in culprits:
+		culprit_refs.append(SaveLoadTools.get_object_id(card))
+	dict["culprits"] = culprit_refs
+
+	var victim_refs = []
+	for card in victims:
+		victim_refs.append(SaveLoadTools.get_object_id(card))
+	dict["victims"] = victim_refs
+
+	var witness_refs = []
+	for card in witnesses:
+		witness_refs.append(SaveLoadTools.get_object_id(card))
+	dict["witnesses"] = witness_refs
+
+	var accomplice_refs = []
+	for card in accomplices:
+		accomplice_refs.append(SaveLoadTools.get_object_id(card))
+	dict["accomplices"] = accomplice_refs
+
+	var suspect_refs = []
+	for card in suspects:
+		suspect_refs.append(SaveLoadTools.get_object_id(card))
+	dict["suspects"] = suspect_refs
+
+	var other_npc_refs = []
+	for card in other_npcs:
+		other_npc_refs.append(SaveLoadTools.get_object_id(card))
+	dict["other_npcs"] = other_npc_refs
+
+	var evidence_refs = []
+	for card in evidence:
+		evidence_refs.append(SaveLoadTools.get_object_id(card))
+	dict["evidence"] = evidence_refs
+
+	if crime_location:
+		dict["crime_location"] = SaveLoadTools.get_object_id(crime_location)
+
+	if _links:
+		var link_refs = []
+		for link in _links:
+			link_refs.append(SaveLoadTools.get_object_id(link))
+		dict["links"] = link_refs
+
+	return dict
+
+func _restore_from_json_dict(dict):
+	_case_name = dict.case_name
+	_crime = dict.crime
+	_motive = dict.motive
+	_difficulty = dict.difficulty
+	_duration = dict.duration
+	_status = dict.status
+
+func set_referenced_objects(dict, catalog):
+	for ref in dict.culprits:
+		culprits.append(catalog[ref])
+	for ref in dict.victims:
+		victims.append(catalog[ref])
+	for ref in dict.witnesses:
+		witnesses.append(catalog[ref])
+	for ref in dict.accomplices:
+		accomplices.append(catalog[ref])
+	for ref in dict.suspects:
+		suspects.append(catalog[ref])
+	for ref in dict.other_npcs:
+		other_npcs.append(catalog[ref])
+	for ref in dict.evidence:
+		evidence.append(catalog[ref])
+	if "crime_location" in dict:
+		crime_location = catalog[dict.crime_location]
+	if "links" in dict:
+		for ref in dict.links:
+			_links.append(catalog[ref])
+
+static func restore(dict) -> Object:
+	var case = Case.new()
+	case._restore_from_json_dict(dict)
+	return case

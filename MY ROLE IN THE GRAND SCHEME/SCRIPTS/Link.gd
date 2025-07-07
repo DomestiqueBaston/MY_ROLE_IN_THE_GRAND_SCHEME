@@ -70,6 +70,8 @@ enum Status {
 	NEW
 }
 
+static var _link_scene = preload("res://SCENES/Link.tscn")
+
 var _solid_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Plein_Blanc.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Gris.png"),
@@ -124,7 +126,7 @@ var _new_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Violet_Clair.png")
 ]
 
-# Pins that are linked to the middle of this link (at most one, for now).
+# Pins that are linked to the middle of this link.
 var _follower_pins: Array[Pin]
 
 func _ready():
@@ -285,3 +287,49 @@ func lower():
 	pin2.z_index -= 1
 	for pin in _follower_pins:
 		pin.z_index -= 1
+
+
+func get_custom_class():
+	return SaveLoadTools.Class.LINK
+
+func get_referenced_objects():
+	var refs = []
+	if pin1:
+		refs.append(pin1)
+	if pin2:
+		refs.append(pin2)
+	for pin in _follower_pins:
+		refs.append(pin)
+	return refs
+
+func get_json_dict():
+	var dict = {
+		"type": type,
+		"status": status
+	}
+	if pin1:
+		dict["pin1"] = SaveLoadTools.get_object_id(pin1)
+	if pin2:
+		dict["pin2"] = SaveLoadTools.get_object_id(pin2)
+	var pin_refs = []
+	for pin in _follower_pins:
+		pin_refs.append(SaveLoadTools.get_object_id(pin))
+	dict["follower_pins"] = pin_refs
+	return dict
+
+func _restore_from_json_dict(dict):
+	type = dict.type
+	status = dict.status
+
+func set_referenced_objects(dict, catalog):
+	if "pin1" in dict:
+		pin1 = catalog[dict.pin1]
+	if "pin2" in dict:
+		pin2 = catalog[dict.pin2]
+	for ref in dict.follower_pins:
+		_follower_pins.append(catalog[ref])
+
+static func restore(dict) -> Object:
+	var link = _link_scene.instantiate()
+	link._restore_from_json_dict(dict)
+	return link

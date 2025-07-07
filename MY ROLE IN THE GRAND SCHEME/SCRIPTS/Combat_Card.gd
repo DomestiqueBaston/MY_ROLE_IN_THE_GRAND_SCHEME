@@ -38,13 +38,22 @@ static func create_card(id: String) -> CombatCard:
 	card.database_id = id
 	return card
 
-func save():
+
+func get_custom_class():
+	return SaveLoadTools.Class.COMBAT_CARD
+
+func get_json_dict():
 	var dict = super()
 	dict["combat_type"] = combat_type
 	dict["database_id"] = database_id
 	return dict
 
-func load(dict):
+func _restore_from_json_dict(dict):
 	super(dict)
 	combat_type = dict["combat_type"]
 	database_id = dict["database_id"]
+
+static func restore(dict) -> Object:
+	var card = _card_scene.instantiate()
+	card._restore_from_json_dict(dict)
+	return card
