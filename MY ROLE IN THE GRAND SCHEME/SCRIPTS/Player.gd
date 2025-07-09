@@ -58,6 +58,28 @@ func reset():
 	_sleep_bonus_malus = 0
 	_signal_pause -= 1
 
+func assign(other):
+	_signal_pause += 1
+	player_name = other.player_name
+	job_id = other.job_id
+	job_name = other.job_name
+	job_bonus_malus = other.job_bonus_malus
+	sex = other.sex
+	physical = other.physical
+	mental = other.mental
+	max_health = other.max_health
+	health = other.health
+	emotion = other.emotion
+	addiction = other.addiction
+	wanted = other.wanted
+	paranoia = other.paranoia
+	money = other.money
+	drugs = other.drugs
+	_debts = other._debts
+	_cards = other._cards
+	_sleep_bonus_malus = other._sleep_bonus_malus
+	_signal_pause -= 1
+
 func start_game():
 	_signal_pause += 1
 
@@ -326,7 +348,6 @@ func sleep(hours: int):
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 2
 
-
 func get_custom_class():
 	return SaveLoadTools.Class.PLAYER
 
@@ -359,7 +380,7 @@ func get_json_dict():
 	dict["cards"] = card_refs
 	return dict
 
-func _restore_from_json_dict(dict):
+func restore(dict, catalog):
 	player_name = dict.player_name
 	job_id = dict.job_id
 	job_name = dict.job_name
@@ -377,12 +398,8 @@ func _restore_from_json_dict(dict):
 	drugs = dict.drugs
 	_debts.assign(dict.debts)
 	_sleep_bonus_malus = dict.sleep_bonus_malus
-
-func set_referenced_objects(dict, catalog):
 	for card_ref in dict.cards:
 		_cards.append(catalog[card_ref])
 
-static func restore(dict) -> Object:
-	var player = Player.new()
-	player._restore_from_json_dict(dict)
-	return player
+static func allocate() -> Object:
+	return Player.new()

@@ -288,7 +288,6 @@ func lower():
 	for pin in _follower_pins:
 		pin.z_index -= 1
 
-
 func get_custom_class():
 	return SaveLoadTools.Class.LINK
 
@@ -317,11 +316,9 @@ func get_json_dict():
 	dict["follower_pins"] = pin_refs
 	return dict
 
-func _restore_from_json_dict(dict):
+func restore(dict, catalog):
 	type = dict.type
 	status = dict.status
-
-func set_referenced_objects(dict, catalog):
 	if "pin1" in dict:
 		pin1 = catalog[dict.pin1]
 	if "pin2" in dict:
@@ -329,7 +326,5 @@ func set_referenced_objects(dict, catalog):
 	for ref in dict.follower_pins:
 		_follower_pins.append(catalog[ref])
 
-static func restore(dict) -> Object:
-	var link = _link_scene.instantiate()
-	link._restore_from_json_dict(dict)
-	return link
+static func allocate() -> Object:
+	return _link_scene.instantiate()

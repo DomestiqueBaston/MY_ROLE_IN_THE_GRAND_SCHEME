@@ -31,7 +31,7 @@ var _last_crimes: Array[String]
 var _current_case_index: int
 
 func _ready():
-	#load_game()
+	load_game()
 	pass
 
 func start_game():
@@ -75,7 +75,7 @@ func _increment_time(hours: int):
 	for i in bill_count_after - bill_count_before:
 		_send_new_bill()
 
-	#save_game()
+	save_game()
 
 func pass_one_hour():
 	player.pass_one_hour()
@@ -110,13 +110,15 @@ func load_game():
 		if data and data is Dictionary:
 			var obj = SaveLoadTools.restore_from_json_dict(data)
 			if obj:
-				# TODO: there must be a better way...
-				player = obj.player
-				_hour = obj._hour
-				_last_hub_visit_day = obj._last_hub_visit_day
-				_last_crimes = obj._last_crimes
-				_current_case_index = obj._current_case_index
-				cases = obj.cases
+				assign(obj)
+
+func assign(other):
+	player.assign(other.player)
+	_hour = other._hour
+	_last_hub_visit_day = other._last_hub_visit_day
+	_last_crimes = other._last_crimes
+	_current_case_index = other._current_case_index
+	cases = other.cases
 
 ##
 ## Returns a category of crime taken from the JSON crime definitions. It is
@@ -163,7 +165,6 @@ func set_current_case(index: int):
 			cases[_current_case_index].start()
 		case_changed.emit()
 
-
 func get_custom_class():
 	return SaveLoadTools.Class.GAME_STATE
 
@@ -181,24 +182,21 @@ func get_json_dict():
 		"last_crimes": _last_crimes,
 		"current_case_index": _current_case_index
 	}
-	var case_refs = []
-	for case in cases:
-		case_refs.append(SaveLoadTools.get_object_id(case))
-	dict["cases"] = case_refs
+	if cases:
+		var case_refs = []
+		for case in cases:
+			case_refs.append(SaveLoadTools.get_object_id(case))
+		dict["cases"] = case_refs
 	return dict
 
-func _restore_from_json_dict(dict):
+func restore(dict, catalog):
 	_hour = dict.hour
 	_last_hub_visit_day = dict.last_hub_visit_day
 	_last_crimes.assign(dict.last_crimes)
 	_current_case_index = dict.current_case_index
-
-func set_referenced_objects(dict, catalog):
 	player = catalog[dict.player]
-	for case_ref in dict.cases:
+	for case_ref in dict.get("cases", []):
 		cases.append(catalog[case_ref])
 
-func restore(dict) -> Object:
-	var state = load("res://SCRIPTS/Game_State.gd").new()
-	state._restore_from_json_dict(dict)
-	return state
+func allocate() -> Object:
+	return load("res://SCRIPTS/Game_State.gd").new()

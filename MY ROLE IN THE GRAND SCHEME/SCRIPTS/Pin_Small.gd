@@ -136,7 +136,6 @@ func _on_collider_input_event(_viewport: Node, event: InputEvent, _shape_idx: in
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT and not event.double_click:
 			Globals.pin_left_click.emit(event.global_position, self)
 
-
 func get_custom_class():
 	return SaveLoadTools.Class.PIN
 
@@ -166,13 +165,11 @@ func get_json_dict():
 		dict["link_ref"] = SaveLoadTools.get_object_id(_link_ref)
 	return dict
 
-func _restore_from_json_dict(dict):
+func restore(dict, catalog):
 	type = dict.type
 	card_location = dict.card_location
 	link_location = dict.link_location
 	position = Vector2(dict.x, dict.y)
-
-func set_referenced_objects(dict, catalog):
 	if "card" in dict:
 		card = catalog[dict.card]
 	if "link" in dict:
@@ -180,7 +177,5 @@ func set_referenced_objects(dict, catalog):
 	if "link_ref" in dict:
 		_link_ref = catalog[dict.link_ref]
 
-static func restore(dict) -> Object:
-	var pin = _pin_scene.instantiate()
-	pin._restore_from_json_dict(dict)
-	return pin
+static func allocate() -> Object:
+	return _pin_scene.instantiate()

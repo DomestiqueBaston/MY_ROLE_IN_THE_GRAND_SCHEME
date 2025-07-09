@@ -179,7 +179,6 @@ static func generate_card(
 	card._randomize(extra_points, job_id, minion)
 	return card
 
-
 func get_custom_class():
 	return SaveLoadTools.Class.NPC_CARD
 
@@ -211,8 +210,8 @@ func get_json_dict():
 		dict["work"] = SaveLoadTools.get_object_id(_work.get_ref())
 	return dict
 
-func _restore_from_json_dict(dict):
-	super(dict)
+func restore(dict, catalog):
+	super(dict, catalog)
 	first_name = dict.first_name
 	last_name = dict.last_name
 	job = dict.job
@@ -225,15 +224,10 @@ func _restore_from_json_dict(dict):
 	wanted = dict.wanted
 	is_minion = dict.is_minion
 	player_reputation = dict.player_reputation
-
-func set_referenced_objects(dict, catalog):
-	super(dict, catalog)
 	if "home" in dict:
 		_home = weakref(catalog[dict.home])
 	if "work" in dict:
 		_work = weakref(catalog[dict.work])
 
-static func restore(dict) -> Object:
-	var card = _card_scene.instantiate()
-	card._restore_from_json_dict(dict)
-	return card
+static func allocate() -> Object:
+	return _card_scene.instantiate()

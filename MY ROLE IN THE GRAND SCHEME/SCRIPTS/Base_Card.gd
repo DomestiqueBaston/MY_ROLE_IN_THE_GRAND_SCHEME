@@ -312,7 +312,6 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 
 	return min_pin
 
-
 func get_referenced_objects():
 	return _pins.values()
 
@@ -332,14 +331,12 @@ func get_json_dict():
 		dict["pins"] = pin_refs
 	return dict
 
-func _restore_from_json_dict(dict):
+func restore(dict, catalog):
 	card_name = dict.card_name
 	description = dict.description
 	opacity = dict.opacity
 	_was_stacked = dict.was_stacked
 	position = Vector2(dict.x, dict.y)
-
-func set_referenced_objects(dict, catalog):
 	if "pins" in dict:
 		var pin_refs = dict.pins
 		for pin in pin_refs:
