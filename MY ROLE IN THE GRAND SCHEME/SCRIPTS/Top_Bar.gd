@@ -43,7 +43,8 @@ class PlayerAttr:
 #@onready var _transp_arrow = preload("res://GRAPHICS/UI/Arrow_Transparent_Right.png")
 
 enum DailiesMenuItem {
-	PASS_TIME = 1000,
+	INVESTIGATION_CENTER = 1000,
+	PASS_TIME,
 	SLEEP,
 	DEBT_SUBMENU
 }
@@ -119,7 +120,8 @@ func _ready():
 	popup.add_item("Buy a search warrant...")
 	popup.add_item("Visit Doctor F...")
 	popup.add_item("Visit Rowena the dealer...")
-	popup.add_item("Go to the Investig. Center...")
+	popup.add_item(
+		"Go to the Investig. Center...", DailiesMenuItem.INVESTIGATION_CENTER)
 	popup.add_item("Back to the office!")
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_submenu_node_item(
@@ -132,6 +134,8 @@ func _ready():
 
 func _on_dailies_press(id: int):
 	match id:
+		DailiesMenuItem.INVESTIGATION_CENTER:
+			GameState.visit_investigation_center()
 		DailiesMenuItem.PASS_TIME:
 			GameState.pass_one_hour()
 			$Menu_Bip.play()
@@ -187,6 +191,12 @@ func _on_time_changed():
 		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)
 
 func _on_dailies_menu_popup():
+
+	# can the player visit the investigation center?
+
+	var popup: PopupMenu = _dailies_button.get_popup()
+	var hub_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
+	popup.set_item_disabled(hub_index, not GameState.can_visit_investigation_center())
 
 	# populate the debts submenu with an item for each debt
 

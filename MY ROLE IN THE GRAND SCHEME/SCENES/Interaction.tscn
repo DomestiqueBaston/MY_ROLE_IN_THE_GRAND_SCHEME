@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=74 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="1_1c880"]
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="5_46aa5"]
 [ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="6_dhbug"]
 [ext_resource type="Texture2D" uid="uid://n4b35j0leoyx" path="res://GRAPHICS/INTERACTION/Locations_Pile.png" id="6_eabel"]
-[ext_resource type="PackedScene" uid="uid://bpp2q1gpqxlx1" path="res://SCENES/Card.tscn" id="6_v0c4c"]
 [ext_resource type="Texture2D" uid="uid://bpmjj7ppn0krj" path="res://GRAPHICS/INTERACTION/Mastery_Pile.png" id="7_5qxsw"]
 [ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="7_qrm58"]
 [ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="7_tawrq"]
@@ -2267,20 +2266,6 @@ orientation = 1
 size = Vector2(74, 137)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
-[node name="Card17" parent="Cards/Fallback" instance=ExtResource("6_v0c4c")]
-
-[node name="Card18" parent="Cards/Fallback" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 9)
-
-[node name="Card19" parent="Cards/Fallback" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 18)
-
-[node name="Card21" parent="Cards/Fallback" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 27)
-
-[node name="Card22" parent="Cards/Fallback" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 37)
-
 [node name="Mastery" type="Node2D" parent="Cards"]
 position = Vector2(170, 195)
 script = ExtResource("34_jv51o")
@@ -2288,51 +2273,11 @@ orientation = 1
 size = Vector2(74, 137)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
-[node name="Card5" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-
-[node name="Card6" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 4)
-
-[node name="Card7" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 8)
-
-[node name="Card8" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 12)
-
-[node name="Card9" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 16)
-
-[node name="Card10" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 20)
-
-[node name="Card11" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 24)
-
-[node name="Card12" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 28)
-
-[node name="Card13" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 32)
-
-[node name="Card14" parent="Cards/Mastery" instance=ExtResource("6_v0c4c")]
-position = Vector2(0, 37)
-
 [node name="Evidence" type="Node2D" parent="Cards"]
 position = Vector2(155, 34)
 script = ExtResource("34_jv51o")
 size = Vector2(104, 100)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
-
-[node name="Card23" parent="Cards/Evidence" instance=ExtResource("6_v0c4c")]
-
-[node name="Card24" parent="Cards/Evidence" instance=ExtResource("6_v0c4c")]
-position = Vector2(10, 0)
-
-[node name="Card25" parent="Cards/Evidence" instance=ExtResource("6_v0c4c")]
-position = Vector2(20, 0)
-
-[node name="Card26" parent="Cards/Evidence" instance=ExtResource("6_v0c4c")]
-position = Vector2(30, 0)
 
 [node name="NPCs" type="Node2D" parent="Cards"]
 position = Vector2(272, 34)
@@ -2340,35 +2285,17 @@ script = ExtResource("34_jv51o")
 size = Vector2(104, 100)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
-[node name="Card1" parent="Cards/NPCs" instance=ExtResource("6_v0c4c")]
-
-[node name="Card3" parent="Cards/NPCs" instance=ExtResource("6_v0c4c")]
-position = Vector2(15, 0)
-
-[node name="Card20" parent="Cards/NPCs" instance=ExtResource("6_v0c4c")]
-position = Vector2(30, 0)
-
 [node name="Objects" type="Node2D" parent="Cards"]
 position = Vector2(390, 34)
 script = ExtResource("34_jv51o")
 size = Vector2(104, 100)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
-[node name="Card27" parent="Cards/Objects" instance=ExtResource("6_v0c4c")]
-
-[node name="Card28" parent="Cards/Objects" instance=ExtResource("6_v0c4c")]
-position = Vector2(30, 0)
-
 [node name="Locations" type="Node2D" parent="Cards"]
 position = Vector2(507, 34)
 script = ExtResource("34_jv51o")
 size = Vector2(104, 100)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
-
-[node name="Card27" parent="Cards/Locations" instance=ExtResource("6_v0c4c")]
-
-[node name="Card28" parent="Cards/Locations" instance=ExtResource("6_v0c4c")]
-position = Vector2(30, 0)
 
 [node name="Interaction" type="Node2D" parent="Cards"]
 position = Vector2(270, 196)

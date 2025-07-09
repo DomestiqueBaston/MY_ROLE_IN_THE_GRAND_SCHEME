@@ -70,6 +70,8 @@ enum Status {
 	NEW
 }
 
+static var _link_scene = preload("res://SCENES/Link.tscn")
+
 var _solid_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Plein_Blanc.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Gris.png"),
@@ -124,7 +126,7 @@ var _new_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Violet_Clair.png")
 ]
 
-# Pins that are linked to the middle of this link (at most one, for now).
+# Pins that are linked to the middle of this link.
 var _follower_pins: Array[Pin]
 
 func _ready():
@@ -142,8 +144,11 @@ func pause_collisions():
 func resume_collisions():
 	$Link_Texture/Link_Collider.input_pickable = true
 
-func _exit_tree():
-	if not Engine.is_editor_hint():
+#
+# When a Link is deleted, delete the pins at its endpoints, too.
+#
+func _notification(what: int):
+	if what == NOTIFICATION_PREDELETE and not Engine.is_editor_hint():
 		var old_pin1 = pin1
 		var old_pin2 = pin2
 		pin1 = null
@@ -282,3 +287,44 @@ func lower():
 	pin2.z_index -= 1
 	for pin in _follower_pins:
 		pin.z_index -= 1
+
+func get_custom_class():
+	return SaveLoadTools.Class.LINK
+
+func get_referenced_objects():
+	var refs = []
+	if pin1:
+		refs.append(pin1)
+	if pin2:
+		refs.append(pin2)
+	for pin in _follower_pins:
+		refs.append(pin)
+	return refs
+
+func get_json_dict():
+	var dict = {
+		"type": type,
+		"status": status
+	}
+	if pin1:
+		dict["pin1"] = SaveLoadTools.get_object_id(pin1)
+	if pin2:
+		dict["pin2"] = SaveLoadTools.get_object_id(pin2)
+	var pin_refs = []
+	for pin in _follower_pins:
+		pin_refs.append(SaveLoadTools.get_object_id(pin))
+	dict["follower_pins"] = pin_refs
+	return dict
+
+func restore(dict, catalog):
+	type = dict.type
+	status = dict.status
+	if "pin1" in dict:
+		pin1 = catalog[dict.pin1]
+	if "pin2" in dict:
+		pin2 = catalog[dict.pin2]
+	for ref in dict.follower_pins:
+		_follower_pins.append(catalog[ref])
+
+static func allocate() -> Object:
+	return _link_scene.instantiate()

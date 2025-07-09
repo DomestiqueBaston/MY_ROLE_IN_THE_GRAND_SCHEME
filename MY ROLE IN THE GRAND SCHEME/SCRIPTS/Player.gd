@@ -1,7 +1,9 @@
-class_name Player extends Node
+class_name Player extends RefCounted
 
 var player_name: String
-var background: Dictionary
+var job_id: String
+var job_name: String
+var job_bonus_malus: Dictionary
 var sex: float
 var physical: int: set = set_physical, get = get_physical
 var mental: int: set = set_mental, get = get_mental
@@ -24,39 +26,22 @@ signal money_changed
 signal drugs_changed
 signal debts_changed
 
-@onready var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
-@onready var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
-@onready var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
-@onready var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
+var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
+var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
+var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
+var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
 
 var _debts: Array[int]
-var _cards: Array[Dictionary]
+var _cards: Array[BaseCard]
 var _signal_pause: int = 0
 var _sleep_bonus_malus: int = 0
-
-var _save_props: Array[StringName] = [
-	"player_name",
-	"background",
-	"sex",
-	"physical",
-	"mental",
-	"health",
-	"max_health",
-	"emotion",
-	"addiction",
-	"wanted",
-	"paranoia",
-	"money",
-	"drugs",
-	"_debts",
-	"_cards",
-	"_sleep_bonus_malus"
-]
 
 func reset():
 	_signal_pause += 1
 	player_name = ""
-	background = {}
+	job_id = ""
+	job_name = ""
+	job_bonus_malus = {}
 	sex = 0
 	physical = 0
 	mental = 0
@@ -73,59 +58,119 @@ func reset():
 	_sleep_bonus_malus = 0
 	_signal_pause -= 1
 
+func assign(other):
+	_signal_pause += 1
+	player_name = other.player_name
+	job_id = other.job_id
+	job_name = other.job_name
+	job_bonus_malus = other.job_bonus_malus
+	sex = other.sex
+	physical = other.physical
+	mental = other.mental
+	max_health = other.max_health
+	health = other.health
+	emotion = other.emotion
+	addiction = other.addiction
+	wanted = other.wanted
+	paranoia = other.paranoia
+	money = other.money
+	drugs = other.drugs
+	_debts = other._debts
+	_cards = other._cards
+	_sleep_bonus_malus = other._sleep_bonus_malus
+	_signal_pause -= 1
+
 func start_game():
 	_signal_pause += 1
 
-	var bonus_malus = background.get("bonus_malus", {})
-	physical += bonus_malus.get("PHY", 0)
-	mental += bonus_malus.get("MEN", 0)
-	max_health += bonus_malus.get("HEA", 0)
+	physical += job_bonus_malus.get("PHY", 0)
+	mental += job_bonus_malus.get("MEN", 0)
+	max_health += job_bonus_malus.get("HEA", 0)
 	health = max_health
 	emotion = 0
 	addiction = 0
 	wanted = 0
 	paranoia = 0
-	money = 300 + bonus_malus.get("money", 0)
-	drugs = 3 + bonus_malus.get("drugs", 0)
+	money = 300 + job_bonus_malus.get("money", 0)
+	drugs = 3 + job_bonus_malus.get("drugs", 0)
 	_debts.clear()
 	_cards.clear()
 	_sleep_bonus_malus = 0
 
-	var card_lists = [
-		_dialogue_cards.get("dialogue", []),
-		_combat_cards.get("combat", []),
-		_investigation_cards.get("investigation", []),
-		_abstract_cards.get("abstract", [])
-	]
-
 	# all players start with one card from each category
 
-	for card_list in card_lists:
-		if not card_list.is_empty():
-			_cards.append(card_list[randi_range(0, card_list.size() - 1)])
+	var id
+	id = _pick_random_combat_card()
+	_cards.append(CombatCard.create_card(id))
+	id = _pick_random_investigation_card()
+	_cards.append(InvestigationCard.create_card(id))
+	id = _pick_random_dialogue_card()
+	_cards.append(DialogueCard.create_card(id))
+	id = _pick_random_abstract_card()
+	_cards.append(AbstractCard.create_card(id))
 
 	# some players get bonus cards
 
-	var init_card_count = _cards.size() + bonus_malus.get("cards", 0)
+	var init_card_count = _cards.size() + job_bonus_malus.get("cards", 0)
 	while _cards.size() < init_card_count:
-		var card_list = card_lists[randi_range(0, card_lists.size() - 1)]
-		if not card_list.is_empty():
-			var card = card_list[randi_range(0, card_list.size() - 1)]
-			if not card in _cards:
-				_cards.append(card)
+		match randi() % 4:
+			0:
+				id = _pick_random_combat_card()
+				_cards.append(CombatCard.create_card(id))
+			1:
+				id = _pick_random_investigation_card()
+				_cards.append(InvestigationCard.create_card(id))
+			2:
+				id = _pick_random_dialogue_card()
+				_cards.append(DialogueCard.create_card(id))
+			3:
+				id = _pick_random_abstract_card()
+				_cards.append(AbstractCard.create_card(id))
 
 	print("player: ", player_name)
 	print("sex: ", sex)
-	print("profession: ", background.get("profession"))
+	print("job: ", job_name)
 	print("PHY: ", physical)
 	print("MEN: ", mental)
 	print("HEA: ", health)
 	print("dough: %d Dø" % money)
 	print("drugs: %d doses" % drugs)
 	for card in _cards:
-		print("%s card: %s (%s)" % [card.type, card.name, card.id])
+		print("card: %s (%s)" % [card.card_name, card.database_id])
 
 	_signal_pause -= 1
+
+func _pick_random_abstract_card() -> String:
+	var id = _abstract_cards.keys().pick_random()
+	while _have_card_already(BaseCard.CardType.ABSTRACT, id):
+		id = _abstract_cards.keys().pick_random()
+	return id
+
+func _pick_random_dialogue_card() -> String:
+	var id = _dialogue_cards.keys().pick_random()
+	while _have_card_already(BaseCard.CardType.DIALOGUE, id):
+		id = _dialogue_cards.keys().pick_random()
+	return id
+
+func _pick_random_combat_card() -> String:
+	var id = _combat_cards.keys().pick_random()
+	while (_combat_cards[id]["type"] != "Combat"
+		   or _have_card_already(BaseCard.CardType.COMBAT, id)):
+		id = _combat_cards.keys().pick_random()
+	return id
+
+func _pick_random_investigation_card() -> String:
+	var id = _investigation_cards.keys().pick_random()
+	while (_investigation_cards[id]["type"] != "Investigation"
+		   or _have_card_already(BaseCard.CardType.INVESTIGATION, id)):
+		id = _investigation_cards.keys().pick_random()
+	return id
+
+func _have_card_already(type: BaseCard.CardType, id: String):
+	for card in _cards:
+		if card.get_card_type() == type and card.database_id == id:
+			return true
+	return false
 
 func set_physical(phy: int):
 	if physical != phy:
@@ -303,16 +348,58 @@ func sleep(hours: int):
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 2
 
-func save():
-	var dict = {}
-	for prop in _save_props:
-		dict.set(prop, get(prop))
+func get_custom_class():
+	return SaveLoadTools.Class.PLAYER
+
+func get_referenced_objects():
+	return _cards
+
+func get_json_dict():
+	var dict = {
+		"player_name": player_name,
+		"job_id": job_id,
+		"job_name": job_name,
+		"job_bonus_malus": job_bonus_malus,
+		"sex": sex,
+		"physical": physical,
+		"mental": mental,
+		"health": health,
+		"max_health": max_health,
+		"emotion": emotion,
+		"addiction": addiction,
+		"wanted": wanted,
+		"paranoia": paranoia,
+		"money": money,
+		"drugs": drugs,
+		"debts": _debts,
+		"sleep_bonus_malus": _sleep_bonus_malus
+	}
+	var card_refs = []
+	for card in _cards:
+		card_refs.append(SaveLoadTools.get_object_id(card))
+	dict["cards"] = card_refs
 	return dict
 
-func load(dict):
-	# because health is clamped to max_health, but comes before max_health in
-	# the dictionary
-	max_health = dict["max_health"]
+func restore(dict, catalog):
+	player_name = dict.player_name
+	job_id = dict.job_id
+	job_name = dict.job_name
+	job_bonus_malus = dict.job_bonus_malus
+	sex = dict.sex
+	physical = dict.physical
+	mental = dict.mental
+	max_health = dict.max_health
+	health = dict.health
+	emotion = dict.emotion
+	addiction = dict.addiction
+	wanted = dict.wanted
+	paranoia = dict.paranoia
+	money = dict.money
+	drugs = dict.drugs
+	_debts.assign(dict.debts)
+	_sleep_bonus_malus = dict.sleep_bonus_malus
+	for card_ref in dict.cards:
+		_cards.append(catalog[card_ref])
 
-	for prop in dict:
-		set(prop, dict.get(prop))
+static func allocate() -> Object:
+	return Player.new()

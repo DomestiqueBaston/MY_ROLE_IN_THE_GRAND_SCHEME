@@ -1,62 +1,55 @@
-[
-	{
-		"id": "JOB001",
+{
+	"JOB001": {
 		"name": "Real Estate Agent",
-		"work_place": ["LOC005_IDxxx"],
+		"work_place": ["LOC005"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "MEN": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB002",
+	"JOB002": {
 		"name": "Cleaner",
-		"work_place": ["LOC005_IDxxx", "LOC009_IDxxx", "LOC010_IDxxx", "LOC011_IDxxx", "LOC012_IDxxx", "LOC015_IDxxx", "LOC016_IDxxx", "LOC017_IDxxx", "LOC019_IDxxx", "LOC021_IDxxx", "LOC023_IDxxx", "LOC024_IDxxx", "LOC026_IDxxx", "LOC027_IDxxx", "LOC028_IDxxx", "LOC029_IDxxx", "LOC031_IDxxx", "LOC037_IDxxx", "LOC038_IDxxx", "LOC040_IDxxx"],
+		"work_place": ["LOC005", "LOC009", "LOC010", "LOC011", "LOC012", "LOC015", "LOC016", "LOC017", "LOC019", "LOC021", "LOC023", "LOC024", "LOC026", "LOC027", "LOC028", "LOC029", "LOC031", "LOC037", "LOC038", "LOC040"],
 		"work_hours": ["morning", "afternoon", "evening", "night"],
 		"night_shift_chance": 0.75,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": 1 }
 	},
-	{
-		"id": "JOB003",
+	"JOB003": {
 		"name": "Security Guard",
-		"work_place": ["LOC005_IDxxx", "LOC014_IDxxx", "LOC017_IDxxx", "LOC021_IDxxx", "LOC029_IDxxx", "LOC031_IDxxx", "LOC038_IDxxx"],
+		"work_place": ["LOC005", "LOC014", "LOC017", "LOC021", "LOC029", "LOC031", "LOC038"],
 		"work_hours": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
 		"night_shift_chance": 0.5,
 		"weekend_shift_chance": 0.5,
 		"bonus_malus": { "PHY": 1, "MEN": -1 }
 	},
-	{
-		"id": "JOB004",
+	"JOB004": {
 		"name": "Social Worker",
-		"work_place": ["LOC005_IDxxx", "LOC006_IDxxx", "LOC015_IDxxx", "LOC038_IDxxx"],
+		"work_place": ["LOC005", "LOC006", "LOC015", "LOC038"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 1, "HEA": 1 }
 	},
-	{
-		"id": "JOB005",
+	"JOB005": {
 		"name": "Librarian",
-		"work_place": ["LOC004_IDxxx", "LOC011_IDxxx", "LOC017_IDxxx", "LOC021_IDxxx"],
+		"work_place": ["LOC004", "LOC011", "LOC017", "LOC021"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "MEN": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB006",
+	"JOB006": {
 		"name": "Forklift Operator",
-		"work_place": ["LOC014_IDxxx", "LOC019_IDxxx", "LOC037_IDxxx", "LOC040_IDxxx"],
+		"work_place": ["LOC014", "LOC019", "LOC037", "LOC040"],
 		"work_hours": ["morning", "afternoon", "evening", "night"],
 		"night_shift_chance": 0.25,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": 1 }
 	},
-	{
-		"id": "JOB007",
+	"JOB007": {
 		"name": "Unemployed",
-		"work_place": ["LOC001_IDxxx", "LOC003_IDxxx", "LOC004_IDxxx", "LOC022_IDxxx", "LOC034_IDxxx"],
+		"work_place": ["LOC001", "LOC003", "LOC004", "LOC022", "LOC034"],
 		"work_hours": ["morning", "afternoon", "evening", "night"],
 		"night_shift_chance": 0.25,
 		"weekend_shift_chance": 0.0,
@@ -66,292 +59,268 @@
 			{ "PHY": -1, "MEN": -1, "HEA": 1 }
 		]
 	},
-	{
-		"id": "JOB008",
+	"JOB008": {
 		"name": "Hairdresser",
-		"work_place": ["LOC039_IDxxx"],
+		"work_place": ["LOC039"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.75,
 		"bonus_malus": { "MEN": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB009",
+	"JOB009": {
 		"name": "Merchant",
-		"work_place": ["LOC005_IDxxx", "LOC020_IDxxx", "LOC035_IDxxx", "LOC036_IDxxx", "LOC041_IDxxx", "LOC042_IDxxx"],
+		"work_place": ["LOC005", "LOC035", "LOC036", "LOC041", "LOC042"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.5,
 		"bonus_malus": {}
 	},
-	{
-		"id": "JOB010",
+	"JOB010": {
 		"name": "Curator",
-		"work_place": ["LOC012_IDxxx", "LOC021_IDxxx"],
+		"work_place": ["LOC012", "LOC021"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.25,
 		"bonus_malus": { "MEN": 1 }
 	},
-	{
-		"id": "JOB011",
+	"JOB011": {
 		"name": "Game Developer",
-		"work_place": ["LOC001_IDxxx", "LOC005_IDxxx"],
+		"work_place": ["LOC001", "LOC005"],
 		"work_hours": ["morning", "afternoon", "evening", "night"],
 		"night_shift_chance": 0.25,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 1 }
 	},
-	{
-		"id": "JOB012",
+	"JOB012": {
 		"name": "Designer",
-		"work_place": ["LOC002_IDxxx", "LOC005_IDxxx"],
+		"work_place": ["LOC002", "LOC005"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 1 }
 	},
-	{
-		"id": "JOB013",
+	"JOB013": {
 		"name": "Writer",
-		"work_place": ["LOC001_IDxxx", "LOC003_IDxxx", "LOC004_IDxxx", "LOC005_IDxxx", "LOC034_IDxxx"],
+		"work_place": ["LOC001", "LOC003", "LOC004", "LOC005", "LOC034"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB014",
+	"JOB014": {
 		"name": "Private Sector Employee",
-		"work_place": ["LOC005_IDxxx", "LOC009_IDxxx", "LOC013_IDxxx", "LOC017_IDxxx", "LOC019_IDxxx", "LOC026_IDxxx", "LOC028_IDxxx", "LOC030_IDxxx", "LOC031_IDxxx", "LOC037_IDxxx", "LOC040_IDxxx", "LOC043_IDxxx"],
+		"work_place": ["LOC005", "LOC009", "LOC013", "LOC017", "LOC019", "LOC026", "LOC028", "LOC030", "LOC031", "LOC037", "LOC040", "LOC043"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "HEA": -1 }
 	},
-	{
-		"id": "JOB015",
+	"JOB015": {
 		"name": "Public Servant",
-		"work_place": ["LOC004_IDxxx", "LOC011_IDxxx", "LOC015_IDxxx", "LOC017_IDxxx", "LOC021_IDxxx", "LOC023_IDxxx", "LOC024_IDxxx", "LOC027_IDxxx", "LOC029_IDxxx", "LOC032_IDxxx", "LOC033_IDxxx", "LOC038_IDxxx"],
+		"work_place": ["LOC004", "LOC011", "LOC015", "LOC017", "LOC021", "LOC023", "LOC024", "LOC027", "LOC029", "LOC032", "LOC033", "LOC038"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": {}
 	},
-	{
-		"id": "JOB016",
+	"JOB016": {
 		"name": "Teacher",
-		"work_place": ["LOC011_IDxxx"],
+		"work_place": ["LOC011"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "MEN": 1 }
 	},
-	{
-		"id": "JOB017",
+	"JOB017": {
 		"name": "Restaurant Manager",
-		"work_place": ["LOC025_IDxxx"],
+		"work_place": ["LOC025"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.66,
 		"bonus_malus": { "MEN": -1 }
 	},
-	{
-		"id": "JOB018",
+	"JOB018": {
 		"name": "Hotel Manager",
-		"work_place": ["LOC016_IDxxx"],
+		"work_place": ["LOC016"],
 		"work_hours": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
 		"night_shift_chance": 0.25,
 		"weekend_shift_chance": 0.5,
 		"bonus_malus": { "HEA": 1 }
 	},
-	{
-		"id": "JOB019",
+	"JOB019": {
 		"name": "Police Officer",
-		"work_place": ["LOC032_IDxxx"],
+		"work_place": ["LOC032"],
 		"work_hours": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
 		"night_shift_chance": 0.33,
 		"weekend_shift_chance": 0.33,
 		"bonus_malus": { "PHY": 1, "MEN": -1 }
 	},
-	{
-		"id": "JOB020",
+	"JOB020": {
 		"name": "Doctor",
-		"work_place": ["LOC006_IDxxx", "LOC011_IDxxx", "LOC015_IDxxx"],
+		"work_place": ["LOC006", "LOC011", "LOC015"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 1, "HEA": 1 }
 	},
-	{
-		"id": "JOB021",
+	"JOB021": {
 		"name": "Firefighter",
-		"work_place": ["LOC033_IDxxx"],
+		"work_place": ["LOC033"],
 		"work_hours": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
 		"night_shift_chance": 0.5,
 		"weekend_shift_chance": 0.5,
 		"bonus_malus": { "PHY": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB022",
+	"JOB022": {
 		"name": "Psychologist",
-		"work_place": ["LOC006_IDxxx", "LOC015_IDxxx"],
+		"work_place": ["LOC006", "LOC015"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 1, "HEA": 1 }
 	},
-	{
-		"id": "JOB023",
+	"JOB023": {
 		"name": "CEO",
-		"work_place": ["LOC005_IDxxx"],
+		"work_place": ["LOC005"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "HEA": -1 }
 	},
-	{
-		"id": "JOB024",
+	"JOB024": {
 		"name": "Park Keeper",
-		"work_place": ["LOC022_IDxxx"],
+		"work_place": ["LOC022"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": 1, "MEN": -1 }
 	},
-	{
-		"id": "JOB025",
+	"JOB025": {
 		"name": "Historian",
-		"work_place": ["LOC004_IDxxx", "LOC011_IDxxx", "LOC021_IDxxx"],
+		"work_place": ["LOC004", "LOC011", "LOC021"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "MEN": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB026",
+	"JOB026": {
 		"name": "Host",
-		"work_place": ["LOC003_IDxxx", "LOC034_IDxxx"],
+		"work_place": ["LOC003", "LOC034"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.25,
 		"bonus_malus": { "PHY": -1, "MEN": 1 }
 	},
-	{
-		"id": "JOB027",
-		"name": "Nightclub Serveur",
-		"work_place": ["LOC010_IDxxx"],
+	"JOB027": {
+		"name": "Nightclub Server",
+		"work_place": ["LOC010"],
 		"work_hours": ["night", "we_night"],
 		"night_shift_chance": 1,
 		"weekend_shift_chance": 0.66,
 		"bonus_malus": { "MEN": -1, "HEA": -1 }
 	},
-	{
-		"id": "JOB028",
+	"JOB028": {
 		"name": "Engineer",
-		"work_place": ["LOC005_IDxxx"],
+		"work_place": ["LOC005"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "MEN": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB029",
+	"JOB029": {
 		"name": "Influencer",
-		"work_place": ["LOC001_IDxxx"],
+		"work_place": ["LOC001"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": 1, "MEN": -1 }
 	},
-	{
-		"id": "JOB030",
+	"JOB030": {
 		"name": "Journalist",
-		"work_place": ["LOC001_IDxxx", "LOC005_IDxxx"],
+		"work_place": ["LOC001", "LOC005"],
 		"work_hours": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
 		"night_shift_chance": 0.25,
 		"weekend_shift_chance": 0.25,
 		"bonus_malus": { "MEN": 1, "HEA": -1 }
 	},
-	{
-		"id": "JOB031",
+	"JOB031": {
 		"name": "Bookseller",
-		"work_place": ["LOC019_IDxxx", "LOC021_IDxxx"],
+		"work_place": ["LOC019", "LOC021"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.25,
 		"bonus_malus": { "PHY": -2, "MEN": 2 }
 	},
-	{
-		"id": "JOB032",
+	"JOB032": {
 		"name": "Mechanic",
-		"work_place": ["LOC013_IDxxx"],
+		"work_place": ["LOC013"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": 1, "MEN": -1 }
 	},
-	{
-		"id": "JOB033",
+	"JOB033": {
 		"name": "Military",
-		"work_place": ["LOC007_IDxxx"],
+		"work_place": ["LOC007"],
 		"work_hours": ["morning", "afternoon", "evening", "night", "we_morning", "we_afternoon", "we_evening", "we_night"],
 		"night_shift_chance": 0.25,
 		"weekend_shift_chance": 0.25,
 		"bonus_malus": { "PHY": 1, "MEN": -1 }
 	},
-	{
-		"id": "JOB034",
+	"JOB034": {
 		"name": "Musician",
-		"work_place": ["LOC001_IDxxx"],
+		"work_place": ["LOC001"],
 		"work_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.33,
 		"bonus_malus": { "PHY": 1, "MEN": -1 }
 	},
-	{
-		"id": "JOB035",
+	"JOB035": {
 		"name": "Physical Education Teacher",
-		"work_place": ["LOC011_IDxxx", "LOC022_IDxxx", "LOC028_IDxxx"],
+		"work_place": ["LOC011", "LOC022", "LOC028"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": 1, "HEA": 1 }
 	},
-	{
-		"id": "JOB036",
+	"JOB036": {
 		"name": "Scientist",
-		"work_place": ["LOC017_IDxxx"],
+		"work_place": ["LOC017"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 2 }
 	},
-	{
-		"id": "JOB037",
+	"JOB037": {
 		"name": "Athlete",
-		"work_place": ["LOC023_IDxxx", "LOC028_IDxxx", "LOC029_IDxxx"],
+		"work_place": ["LOC023", "LOC028", "LOC029"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": 1, "MEN": -1, "HEA": 1 }
 	},
-	{
-		"id": "JOB038",
+	"JOB038": {
 		"name": "Veterinarian",
-		"work_place": ["LOC006_IDxxx"],
+		"work_place": ["LOC006"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 1 }
 	},
-	{
-		"id": "JOB039",
+	"JOB039": {
 		"name": "Politician",
-		"work_place": ["LOC001_IDxxx", "LOC005_IDxxx", "LOC038_IDxxx"],
+		"work_place": ["LOC001", "LOC005", "LOC038"],
 		"work_hours": ["morning", "afternoon", "evening"],
 		"night_shift_chance": 0.0,
 		"weekend_shift_chance": 0.0,
 		"bonus_malus": { "PHY": -1, "MEN": 2, "HEA": -1 }
+	},
+	"JOB040": {
+		"name": "Artist",
+		"work_place": ["LOC001", "LOC012"],
+		"work_hours": ["morning", "afternoon", "evening"],
+		"night_shift_chance": 0.0,
+		"weekend_shift_chance": 0.0,
+		"bonus_malus": {}
 	}
-]
+}

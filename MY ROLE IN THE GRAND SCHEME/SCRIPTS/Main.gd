@@ -1,8 +1,6 @@
 extends Node2D
 
 @onready var cards: Node2D = $Cards
-@onready var pins: Node2D = cards
-@onready var links: Node2D = cards
 @onready var reserve: Node2D = $Reserve_Cards
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
@@ -23,7 +21,7 @@ enum MenuItem {
 }
 
 # highlighted card
-var _current_card: Card
+var _current_card: BaseCard
 
 # the visible pin which has been clicked and not yet released
 var _clicked_pin: Pin
@@ -101,6 +99,9 @@ func _ready():
 	Globals.dialog_overlay.pre_dialog.connect(_pause_input_handling)
 	Globals.dialog_overlay.post_dialog.connect(_resume_input_handling)
 
+	tree_exiting.connect(_detach_cards)
+	GameState.case_changed.connect(_on_case_changed)
+
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
 		if event is InputEventMouseMotion:
@@ -135,7 +136,7 @@ func _input(event: InputEvent):
 			get_viewport().set_input_as_handled()
 			_stop_linking(event.global_position)
 
-func _mouse_entered_card(card: Card):
+func _mouse_entered_card(card: BaseCard):
 	if _input_paused:
 		return
 	if _drag_state == DragState.NONE and card != _current_card:
@@ -149,7 +150,7 @@ func _mouse_entered_card(card: Card):
 	elif _drag_state == DragState.LINKING:
 		_drop_target = card
 
-func _mouse_exited_card(card: Card):
+func _mouse_exited_card(card: BaseCard):
 	if _input_paused:
 		return
 	if _drag_state == DragState.NONE:
@@ -161,14 +162,14 @@ func _mouse_exited_card(card: Card):
 	elif _drag_state == DragState.LINKING:
 		_drop_target = null
 
-func _click_on_card(global_pos: Vector2, card: Card):
+func _click_on_card(global_pos: Vector2, card: BaseCard):
 	if _input_paused:
 		return
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
 
-func _double_click_on_card(card: Card):
+func _double_click_on_card(card: BaseCard):
 	if _input_paused:
 		return
 	if not card.is_stacked():
@@ -211,7 +212,7 @@ func _start_drag_card() -> bool:
 	Globals.push_mouse_cursor(Globals.MouseCursor.CIRCLE)
 
 	# increase the Z index of any links connected to the card being dragged, so
-	# that they, too, are drawn on top of everything else (Card.start_drag()
+	# that they, too, are drawn on top of everything else (BaseCard.start_drag()
 	# does that for the card itself)
 
 	for link in _find_links_to_card(_current_card):
@@ -252,7 +253,7 @@ func _start_drag_pin() -> bool:
 
 	return true
 
-func _find_links_to_card(card: Card) -> Array[Link]:
+func _find_links_to_card(card: BaseCard) -> Array[Link]:
 	var ret: Array[Link]
 	for pin in card.get_pins():
 		var link = pin.get_link_reference()
@@ -350,7 +351,7 @@ func _stop_drag_pin(global_pos: Vector2):
 
 	# user dropped the pin on a card
 
-	if _drop_target is Card:
+	if _drop_target is BaseCard:
 
 		# abort if the card has no unused pins
 
@@ -394,7 +395,7 @@ func _stop_drag_pin(global_pos: Vector2):
 		_stuff_to_do_when_drag_ends(null)
 		_clicked_pin.move_to_link_at(_drop_target, global_pos)
 
-func _stuff_to_do_when_drag_ends(dragged_card: Card):
+func _stuff_to_do_when_drag_ends(dragged_card: BaseCard):
 	for link in _drag_links:
 		link.resume_collisions()
 		link.lower()
@@ -415,7 +416,7 @@ func _is_in_reserve(global_pos: Vector2):
 	var rect = Rect2(reserve.global_position, reserve.size)
 	return rect.has_point(global_pos)
 
-func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
+func _start_linking(card: BaseCard, type: Link.Type, is_confirmed: bool):
 	var src_loc = card.find_closest_unused_pin(popup.position)
 	if src_loc < 0:
 		return
@@ -423,13 +424,13 @@ func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
 	_src_pin = pin_scene.instantiate()
 	_src_pin.card_location = src_loc as Pin.Location
 	_src_pin.card = card
-	pins.add_child(_src_pin)
+	cards.add_child(_src_pin)
 
 	_dst_pin = pin_scene.instantiate()
 	_dst_pin.global_position = get_global_mouse_position()
 	# if the pin is pickable, it hides cards' mouse enter/exit events
 	_dst_pin.pause_collisions()
-	pins.add_child(_dst_pin)
+	cards.add_child(_dst_pin)
 
 	_new_link = link_scene.instantiate()
 	_new_link.type = type
@@ -438,7 +439,7 @@ func _start_linking(card: Card, type: Link.Type, is_confirmed: bool):
 	_new_link.pin2 = _dst_pin
 	# if the link is pickable, it hides cards' mouse enter/exit events
 	_new_link.pause_collisions()
-	links.add_child(_new_link)
+	cards.add_child(_new_link)
 	_new_link.raise()
 
 	_drag_state = DragState.LINKING
@@ -458,7 +459,7 @@ func _stop_linking(global_pos: Vector2):
 
 	# user dropped the pin on a card
 
-	if _drop_target is Card:
+	if _drop_target is BaseCard:
 
 		# abort if the card has no unused pins
 
@@ -492,13 +493,17 @@ func _stop_linking(global_pos: Vector2):
 	_new_link.resume_collisions()
 	_new_link.lower()
 
+	var case = GameState.get_current_case()
+	if case:
+		case.add_link(_new_link)
+
 	_drag_state = DragState.NONE
 	Globals.dragging = false
 
 func _popup_menu(pos: Vector2, node: Node2D):
 	if _input_paused:
 		return
-	if node is Card:
+	if node is BaseCard:
 		if node.is_stacked():
 			return
 		print("popup menu for card: ", node.card_name)
@@ -523,6 +528,9 @@ func _handle_popup(id: int):
 					_popup_node.status = Link.Status.CONFIRMED
 		MenuItem.DELETE_LINK:
 			if _popup_node is Link:
+				var case = GameState.get_current_case()
+				if case:
+					case.remove_link(_popup_node)
 				_popup_node.queue_free()
 				_popup_node = null
 		MenuItem.REMOVE_WARNING:
@@ -531,10 +539,10 @@ func _handle_popup(id: int):
 func _handle_submenu(id: int, submenu: int):
 	match submenu:
 		0:
-			if _popup_node is Card:
+			if _popup_node is BaseCard:
 				_start_linking(_popup_node, id as Link.Type, true)
 		1:
-			if _popup_node is Card:
+			if _popup_node is BaseCard:
 				_start_linking(_popup_node, id as Link.Type, false)
 		2:
 			if _popup_node is Link:
@@ -556,3 +564,34 @@ func _resume_input_handling():
 	_input_paused = false
 	set_process_input(true)
 	reserve.set_process_input(true)
+
+func _on_case_changed():
+	_detach_cards()
+	var case = GameState.get_current_case()
+	if case:
+		populate(case.get_cards(), case.get_links())
+
+##
+## Populates the scene with the given cards and links.
+##
+func populate(new_cards: Array[BaseCard], new_links: Array[Link]):
+	for card in new_cards:
+		if card.was_stacked():
+			reserve.add_child(card)
+		else:
+			cards.add_child(card)
+
+	for link in new_links:
+		cards.add_child(link)
+		cards.add_child(link.pin1)
+		cards.add_child(link.pin2)
+
+#
+# Removes cards and links from the scene without deleting them, because
+# GameState holds references to them.
+#
+func _detach_cards():
+	for child in cards.get_children():
+		cards.remove_child(child)
+	for child in reserve.get_children():
+		reserve.remove_child(child)

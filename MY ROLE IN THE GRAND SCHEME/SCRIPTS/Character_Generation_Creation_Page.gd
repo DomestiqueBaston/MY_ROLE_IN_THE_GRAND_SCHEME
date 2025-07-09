@@ -125,10 +125,13 @@ func _on_confirm_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
 	var player = GameState.player
+	var bg = $Background_Selector/Background_List.get_background()
 	player.reset()
 	player.player_name = $Character_Name.text.strip_edges()
 	player.sex = $SliderBg/HSlider.value / 100.0
-	player.background = $Background_Selector/Background_List.get_background()
+	player.job_id = bg.id
+	player.job_name = bg.profession
+	player.job_bonus_malus = bg.bonus_malus
 	player.physical = _phy
 	player.mental = _men
 	player.max_health = _hea

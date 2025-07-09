@@ -41,7 +41,7 @@ extends Node2D
 signal quit
 
 # highlighted card
-var _current_card: Card
+var _current_card: BaseCard
 
 # has a card been clicked on, or is it being dragged?
 enum DragState {
@@ -120,7 +120,7 @@ func _input(event: InputEvent):
 		elif event is InputEventMouseButton and not event.pressed:
 			_drag_state = DragState.NONE
 
-func _mouse_entered_card(card: Card):
+func _mouse_entered_card(card: BaseCard):
 	if _drag_state == DragState.NONE and card != _current_card:
 		if _current_card:
 			_current_card.set_highlighted(false)
@@ -128,13 +128,13 @@ func _mouse_entered_card(card: Card):
 		_current_card = card
 		print("show info about card: ", card.card_name)
 
-func _mouse_exited_card(card: Card):
+func _mouse_exited_card(card: BaseCard):
 	if _drag_state == DragState.NONE:
 		card.set_highlighted(false)
 		if _current_card == card:
 			_current_card = null
 
-func _click_on_card(global_pos: Vector2, card: Card):
+func _click_on_card(global_pos: Vector2, card: BaseCard):
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
@@ -224,7 +224,7 @@ func _stop_drag(global_pos: Vector2):
 	the_button.disabled = _cards_played.size() < min_card_count
 	_layout_played_cards()
 
-func _stuff_to_do_when_drag_ends(dragged_card: Card):
+func _stuff_to_do_when_drag_ends(dragged_card: BaseCard):
 	Globals.pop_mouse_cursor()
 	drag_drop_line.hide_line()
 	if dragged_card:
@@ -255,15 +255,15 @@ func _layout_played_cards():
 	var pos
 
 	if card_count & 1:
-		pos = Vector2(center.x - Card.size.x * 0.5, 0)
+		pos = Vector2(center.x - BaseCard.size.x * 0.5, 0)
 	else:
 		pos = Vector2(center.x + margin * 0.5, 0)
 
 	if card_count > 1:
 		@warning_ignore("integer_division")
-		pos.x -= (card_count / 2) * (Card.size.x + margin)
+		pos.x -= (card_count / 2) * (BaseCard.size.x + margin)
 
-	for card: Card in _cards_played:
+	for card: BaseCard in _cards_played:
 		if card.position != pos:
 			tween.tween_property(card, "position", pos, 0.1)
-		pos.x += Card.size.x + margin
+		pos.x += BaseCard.size.x + margin

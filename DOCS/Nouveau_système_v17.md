@@ -698,10 +698,10 @@ Liens entre les éléments dans l’enquête (Main.tscn)
           Noir : Coupable/Complice/Preuve Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
           Vert foncé : Ami (pas exploité dans toutes les enquêtes)
 Orange : Ennemi (pas exploité dans toutes les enquêtes)
-Bleu clair : Connaissance (pas exploité dans toutes les enquêtes)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Rose : Intime (adultère uniquement et pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
+          Bleu clair : Connaissance NE SERT PAS À VALIDER UNE ENQUÊTE.
 Rouge : Incohérence Il faudrait pouvoir AUSSI attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
 Jaune : Témoin Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
           Vert clair : Propriété NE SERT PAS À VALIDER UNE ENQUÊTE.
@@ -980,7 +980,7 @@ Difficulté du jeu
 Futures idées…
 	- La possibilité de filature.
 	- Recyclage de PNJs d’une enquête à l’autre.
-	- Aider un peu plus à ce que les PNJs qui travaillent au même endroit aient des liens Acquaintance (50%) et que ces liens soient transformés en Friend (20%).
+	- Aider un peu plus à ce que les PNJs qui travaillent au même endroit aient des liens Acquaintance (50%) et que ces liens soient transformés en Friend (20%). 
 	- Méta-réseau : des PNJs récurrents forment un réseau à « démasquer ».
 	- Le joueur initie les Combats (des fois qu’il croise un sbire, par exemple).
 	- La possibilité d’interagir avec plusieurs PNJs en même temps (pas sûr de mon coup, là).

@@ -29,7 +29,7 @@ enum Location {
 			type = value
 
 ## Which card is the pin attached to (if type is CARD).
-@export var card: Card:
+@export var card: BaseCard:
 	set(value):
 		if type != PinType.CARD or card == value:
 			return
@@ -71,20 +71,18 @@ signal moved
 ## Signal emitted when the pin's link_location has changed.
 signal link_location_changed
 
+static var _pin_scene = preload("res://SCENES/Pin_Small.tscn")
+
 # The link for which this pin is one of the two endpoints.
 var _link_ref: Link
 
 func _ready():
 	set_notify_transform(true)
 
-func _exit_tree():
+func _notification(what: int):
 	if not Engine.is_editor_hint():
-		card = null
-		link = null
-
-func _notification(what):
-	if what == NOTIFICATION_TRANSFORM_CHANGED:
-		moved.emit()
+		if what == NOTIFICATION_TRANSFORM_CHANGED:
+			moved.emit()
 
 func pause_collisions():
 	$Collider.input_pickable = false
@@ -95,7 +93,7 @@ func resume_collisions():
 ##
 ## Attaches the pin to a card at one of the card's predefined pin locations.
 ##
-func move_to_card(to_card: Card, to_location: Location):
+func move_to_card(to_card: BaseCard, to_location: Location):
 	type = PinType.CARD
 	card = null
 	card_location = to_location
@@ -137,3 +135,47 @@ func _on_collider_input_event(_viewport: Node, event: InputEvent, _shape_idx: in
 		get_viewport().set_input_as_handled()
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT and not event.double_click:
 			Globals.pin_left_click.emit(event.global_position, self)
+
+func get_custom_class():
+	return SaveLoadTools.Class.PIN
+
+func get_referenced_objects():
+	var refs = []
+	if card:
+		refs.append(card)
+	if link:
+		refs.append(link)
+	if _link_ref:
+		refs.append(_link_ref)
+	return refs
+
+func get_json_dict():
+	var dict = {
+		"type": type,
+		"card_location": card_location,
+		"link_location": link_location,
+		"x": position.x,
+		"y": position.y
+	}
+	if card:
+		dict["card"] = SaveLoadTools.get_object_id(card)
+	if link:
+		dict["link"] = SaveLoadTools.get_object_id(link)
+	if _link_ref:
+		dict["link_ref"] = SaveLoadTools.get_object_id(_link_ref)
+	return dict
+
+func restore(dict, catalog):
+	type = dict.type
+	card_location = dict.card_location
+	link_location = dict.link_location
+	position = Vector2(dict.x, dict.y)
+	if "card" in dict:
+		card = catalog[dict.card]
+	if "link" in dict:
+		link = catalog[dict.link]
+	if "link_ref" in dict:
+		_link_ref = catalog[dict.link_ref]
+
+static func allocate() -> Object:
+	return _pin_scene.instantiate()

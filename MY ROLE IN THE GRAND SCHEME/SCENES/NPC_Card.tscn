@@ -1,53 +1,45 @@
-[gd_scene load_steps=60 format=3 uid="uid://bpp2q1gpqxlx1"]
+[gd_scene load_steps=52 format=3 uid="uid://bbkii5glov4tg"]
 
-[ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="1_8pu3o"]
-[ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="1_iuyk4"]
-[ext_resource type="Script" uid="uid://xn4r8cips1ck" path="res://SCRIPTS/Card.gd" id="2_2qjxn"]
-[ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="2_y3cdu"]
-[ext_resource type="Texture2D" uid="uid://vuxehd33t5yj" path="res://GRAPHICS/CARD/Card_Special.png" id="3_gk6lr"]
-[ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="3_l7psf"]
-[ext_resource type="Texture2D" uid="uid://k8gtuwwg7pxm" path="res://GRAPHICS/CARD/Card_Evidence.png" id="3_uweet"]
-[ext_resource type="Texture2D" uid="uid://sk4ad5y1tyi0" path="res://GRAPHICS/CARD/Card_Drag.png" id="4_02fmt"]
-[ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card_Mask.gd" id="4_nk8id"]
-[ext_resource type="Texture2D" uid="uid://ddd34x72ghu57" path="res://GRAPHICS/CARD/Card_Run_Away.png" id="4_xhv7k"]
-[ext_resource type="Texture2D" uid="uid://ct7lvffsjl4m6" path="res://GRAPHICS/CARD/Card_Outline_Animation.png" id="5_m7h77"]
-[ext_resource type="Texture2D" uid="uid://dnyd4rhlcnw8v" path="res://GRAPHICS/CARD/Card_Break_In.png" id="5_rh7h4"]
-[ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Reduce_Card.ogg" id="6_1yy8m"]
-[ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Expand_Card.ogg" id="7_ofh61"]
-[ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Card_Closed.png" id="9_e07m4"]
-[ext_resource type="Texture2D" uid="uid://bo3kge1u3ick1" path="res://GRAPHICS/CARD/Card_Jail.png" id="9_xm6x5"]
-[ext_resource type="Texture2D" uid="uid://82mppvepg317" path="res://GRAPHICS/CARD/Male.png" id="10_q0ypl"]
-[ext_resource type="Texture2D" uid="uid://cmh3sf00aio1m" path="res://GRAPHICS/CARD/Card_Jail_Top.png" id="11_0cggu"]
-[ext_resource type="Texture2D" uid="uid://cfy0yrylwqp5r" path="res://GRAPHICS/CARD/Female.png" id="11_hupks"]
-[ext_resource type="Texture2D" uid="uid://b28mg50sibecp" path="res://GRAPHICS/CARD/Card_Dead.png" id="11_v12mt"]
-[ext_resource type="Texture2D" uid="uid://dhdhudphptbpc" path="res://GRAPHICS/CARD/Card_Closed_Top.png" id="13_jl3bi"]
-[ext_resource type="Texture2D" uid="uid://bvx7t0pawe7tq" path="res://GRAPHICS/CARD/Card_Dead_Top.png" id="15_k4orq"]
-[ext_resource type="Texture2D" uid="uid://5fddem5mo8cu" path="res://GRAPHICS/CARD/Card_Disappeared.png" id="16_k4orq"]
-[ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="17_kusna"]
-[ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="20_kusna"]
-[ext_resource type="Texture2D" uid="uid://cyn2ui620e8cx" path="res://GRAPHICS/CARD/Card_Minion.png" id="21_fsb4r"]
-[ext_resource type="AudioStream" uid="uid://cbentdu5jvok7" path="res://SOUND/CARD/Drop_Card.ogg" id="21_tg66g"]
-[ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="22_02fmt"]
-[ext_resource type="Texture2D" uid="uid://cpccah5pfbhfm" path="res://GRAPHICS/CARD/Card_Minion_Top.png" id="22_8pq22"]
-[ext_resource type="AudioStream" uid="uid://dnbr6d7wdvn0j" path="res://SOUND/CARD/Take_Card.ogg" id="22_iuyk4"]
-[ext_resource type="Texture2D" uid="uid://df3prwlrjmanx" path="res://GRAPHICS/CARD/Card_Crime_Scene.png" id="23_1sbcw"]
-[ext_resource type="Texture2D" uid="uid://dr2lm3ifo3rcx" path="res://GRAPHICS/CARD/Victim.png" id="23_v5821"]
-[ext_resource type="Texture2D" uid="uid://bplpeyp666usm" path="res://GRAPHICS/CARD/Card_Crime_Scene_Top.png" id="24_b31qf"]
-[ext_resource type="Texture2D" uid="uid://cvvd2ym5fqs6b" path="res://GRAPHICS/CARD/Victim_Top.png" id="24_youfm"]
-[ext_resource type="Texture2D" uid="uid://vw0fspcnhkis" path="res://GRAPHICS/CARD/Suspect.png" id="25_iq415"]
-[ext_resource type="Texture2D" uid="uid://dpaq3c3ymkhr6" path="res://GRAPHICS/CARD/Suspect_Top.png" id="26_vv0s7"]
-[ext_resource type="Texture2D" uid="uid://clb88q3c4r3dx" path="res://GRAPHICS/CARD/Witness.png" id="27_kybnu"]
-[ext_resource type="Texture2D" uid="uid://b6nirqjonm26v" path="res://GRAPHICS/CARD/Witness_Top.png" id="28_e1j17"]
-[ext_resource type="Texture2D" uid="uid://3hsh1xr6mi53" path="res://GRAPHICS/CARD/Culprit.png" id="29_kybnu"]
-[ext_resource type="Texture2D" uid="uid://d2qvmsxhym3ul" path="res://GRAPHICS/CARD/Culprit_Top.png" id="30_e1j17"]
-[ext_resource type="Texture2D" uid="uid://bpvajbqlif3qy" path="res://GRAPHICS/CARD/Accomplice.png" id="31_nvjxq"]
-[ext_resource type="Texture2D" uid="uid://cgoe7mb4iviab" path="res://GRAPHICS/CARD/Accomplice_Top.png" id="32_78urt"]
+[ext_resource type="Script" uid="uid://bdvdrmvbal1i1" path="res://SCRIPTS/NPC_Card.gd" id="1_5dxhs"]
+[ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="2_25ogq"]
+[ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="3_4rd0l"]
+[ext_resource type="Texture2D" uid="uid://sk4ad5y1tyi0" path="res://GRAPHICS/CARD/Card_Drag.png" id="4_iglwj"]
+[ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card_Mask.gd" id="5_da5cd"]
+[ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="6_a2n3s"]
+[ext_resource type="Texture2D" uid="uid://82mppvepg317" path="res://GRAPHICS/CARD/Male.png" id="10_laxfo"]
+[ext_resource type="Texture2D" uid="uid://cfy0yrylwqp5r" path="res://GRAPHICS/CARD/Female.png" id="11_0kggl"]
+[ext_resource type="Texture2D" uid="uid://bo3kge1u3ick1" path="res://GRAPHICS/CARD/Card_Jail.png" id="13_c6sa1"]
+[ext_resource type="Texture2D" uid="uid://cmh3sf00aio1m" path="res://GRAPHICS/CARD/Card_Jail_Top.png" id="14_scc3p"]
+[ext_resource type="Texture2D" uid="uid://b28mg50sibecp" path="res://GRAPHICS/CARD/Card_Dead.png" id="17_cqr6o"]
+[ext_resource type="Texture2D" uid="uid://bvx7t0pawe7tq" path="res://GRAPHICS/CARD/Card_Dead_Top.png" id="18_ydvwu"]
+[ext_resource type="Texture2D" uid="uid://5fddem5mo8cu" path="res://GRAPHICS/CARD/Card_Disappeared.png" id="19_s4pvt"]
+[ext_resource type="Texture2D" uid="uid://b47fthe2min0f" path="res://GRAPHICS/CARD/Card_Disappeared_Top.png" id="20_psfcr"]
+[ext_resource type="Texture2D" uid="uid://cyn2ui620e8cx" path="res://GRAPHICS/CARD/Card_Minion.png" id="21_5htwe"]
+[ext_resource type="Texture2D" uid="uid://cpccah5pfbhfm" path="res://GRAPHICS/CARD/Card_Minion_Top.png" id="22_h7606"]
+[ext_resource type="Texture2D" uid="uid://dr2lm3ifo3rcx" path="res://GRAPHICS/CARD/Victim.png" id="23_r386i"]
+[ext_resource type="Texture2D" uid="uid://cvvd2ym5fqs6b" path="res://GRAPHICS/CARD/Victim_Top.png" id="24_drxcl"]
+[ext_resource type="Texture2D" uid="uid://vw0fspcnhkis" path="res://GRAPHICS/CARD/Suspect.png" id="25_ky4ad"]
+[ext_resource type="Texture2D" uid="uid://dpaq3c3ymkhr6" path="res://GRAPHICS/CARD/Suspect_Top.png" id="26_rpp7k"]
+[ext_resource type="Texture2D" uid="uid://clb88q3c4r3dx" path="res://GRAPHICS/CARD/Witness.png" id="27_1alno"]
+[ext_resource type="Texture2D" uid="uid://b6nirqjonm26v" path="res://GRAPHICS/CARD/Witness_Top.png" id="28_q88d4"]
+[ext_resource type="Texture2D" uid="uid://3hsh1xr6mi53" path="res://GRAPHICS/CARD/Culprit.png" id="29_fhpy3"]
+[ext_resource type="Texture2D" uid="uid://d2qvmsxhym3ul" path="res://GRAPHICS/CARD/Culprit_Top.png" id="30_cg20g"]
+[ext_resource type="Texture2D" uid="uid://bpvajbqlif3qy" path="res://GRAPHICS/CARD/Accomplice.png" id="31_b4ngl"]
+[ext_resource type="Texture2D" uid="uid://cgoe7mb4iviab" path="res://GRAPHICS/CARD/Accomplice_Top.png" id="32_vm5eu"]
+[ext_resource type="Theme" uid="uid://7p0h0yu77gpv" path="res://UI/Card_Theme.tres" id="35_sa2kq"]
+[ext_resource type="Texture2D" uid="uid://ct7lvffsjl4m6" path="res://GRAPHICS/CARD/Card_Outline_Animation.png" id="36_w1mpb"]
+[ext_resource type="AudioStream" uid="uid://5fdc5tjiidn5" path="res://SOUND/CARD/Bip_Card.ogg" id="37_ntr1s"]
+[ext_resource type="AudioStream" uid="uid://bd88p2n3oljch" path="res://SOUND/CARD/Delete.ogg" id="38_y0oji"]
+[ext_resource type="AudioStream" uid="uid://cfgmrbinm35sd" path="res://SOUND/CARD/Expand_Card.ogg" id="39_ibite"]
+[ext_resource type="AudioStream" uid="uid://cb8rx85n16svn" path="res://SOUND/CARD/Reduce_Card.ogg" id="40_8wkdr"]
+[ext_resource type="AudioStream" uid="uid://cbentdu5jvok7" path="res://SOUND/CARD/Drop_Card.ogg" id="41_rbouq"]
+[ext_resource type="AudioStream" uid="uid://dnbr6d7wdvn0j" path="res://SOUND/CARD/Take_Card.ogg" id="42_n04oh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp5bo"]
 size = Vector2(70, 96)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_02fmt"]
-shader = ExtResource("1_iuyk4")
+shader = ExtResource("2_25ogq")
 shader_parameter/shadow_offset = Vector2(2, 4)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
@@ -77,15 +69,15 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("20_kusna")
+"stream": ExtResource("37_ntr1s")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("20_kusna")
+"stream": ExtResource("37_ntr1s")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("20_kusna")
+"stream": ExtResource("37_ntr1s")
 }],
 "times": PackedFloat32Array(0.133333, 0.466667, 0.8)
 }
@@ -141,7 +133,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("22_02fmt")
+"stream": ExtResource("38_y0oji")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -438,7 +430,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("7_ofh61")
+"stream": ExtResource("39_ibite")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -506,7 +498,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Card_Mask/Card_BG/Closed_Status/Closed:self_modulate")
+tracks/8/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -518,7 +510,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Card_Mask/Card_BG/Closed_Status/Closed_Top:self_modulate")
+tracks/9/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail_Top:self_modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -530,7 +522,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail:self_modulate")
+tracks/10/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -542,7 +534,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail_Top:self_modulate")
+tracks/11/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -554,43 +546,43 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
+tracks/12/path = NodePath("Card_Shadow:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
+"values": [4, 3, 2, 1, 0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
+tracks/13/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Card_Shadow:frame")
+tracks/14/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 3, 2, 1, 0]
+"update": 0,
+"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
+tracks/15/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim:self_modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -602,7 +594,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
+tracks/16/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim_Top:self_modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -614,7 +606,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Card_Mask/Card_BG/Crime_Scene_Status/Crime_Scene:self_modulate")
+tracks/17/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect:self_modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -626,7 +618,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Card_Mask/Card_BG/Crime_Scene_Status/Crime_ Scene_Top:self_modulate")
+tracks/18/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect_Top:self_modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -638,7 +630,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim:self_modulate")
+tracks/19/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness:self_modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -650,7 +642,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim_Top:self_modulate")
+tracks/20/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness_Top:self_modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -662,7 +654,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect:self_modulate")
+tracks/21/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit:self_modulate")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -674,7 +666,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect_Top:self_modulate")
+tracks/22/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit_Top:self_modulate")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -686,7 +678,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness:self_modulate")
+tracks/23/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice:self_modulate")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -698,58 +690,10 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness_Top:self_modulate")
+tracks/24/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice_Top:self_modulate")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit:self_modulate")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit_Top:self_modulate")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice:self_modulate")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
-}
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice_Top:self_modulate")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
@@ -845,7 +789,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Card_Mask/Card_BG/Closed_Status/Closed:self_modulate")
+tracks/7/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -857,7 +801,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Card_Mask/Card_BG/Closed_Status/Closed_Top:self_modulate")
+tracks/8/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail_Top:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -869,7 +813,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail:self_modulate")
+tracks/9/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -881,7 +825,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail_Top:self_modulate")
+tracks/10/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -893,79 +837,79 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
+tracks/11/path = NodePath("Card_Mask:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.882353)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
+tracks/12/path = NodePath("Card_Shadow:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [0]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Card_Mask:modulate")
+tracks/13/path = NodePath("Card_Shadow:material:shader_parameter/shadow_color")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0.3)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Card_Shadow:frame")
+tracks/14/path = NodePath("Card_Shadow:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(-2, -4)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Card_Shadow:material:shader_parameter/shadow_color")
+tracks/15/path = NodePath("Card_Shadow:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.3)]
+"update": 1,
+"values": [false]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Card_Shadow:position")
+tracks/16/path = NodePath("Card_Shadow:modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-2, -4)]
+"values": [Color(1, 1, 1, 0.501961)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Card_Shadow:visible")
+tracks/17/path = NodePath("Card_Drag:visible")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -977,7 +921,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Card_Shadow:modulate")
+tracks/18/path = NodePath("Card_Drag:self_modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -989,106 +933,58 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Card_Drag:visible")
+tracks/19/path = NodePath("Card_Drag:frame")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [0]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Card_Drag:self_modulate")
+tracks/20/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.501961)]
+"values": [Color(1, 1, 1, 0.882353)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Card_Drag:frame")
+tracks/21/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
+tracks/22/enabled = false
+tracks/22/path = NodePath("UI_Sounds/Take_Card:playing")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.882353)]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("Card_Mask/Card_BG/Crime_Scene_Status/Crime_Scene:self_modulate")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.882353)]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("Card_Mask/Card_BG/Crime_Scene_Status/Crime_ Scene_Top:self_modulate")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = false
-tracks/26/path = NodePath("UI_Sounds/Take_Card:playing")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = false
-tracks/27/path = NodePath("UI_Sounds/Drop_Card:playing")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = false
+tracks/23/path = NodePath("UI_Sounds/Drop_Card:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1133,7 +1029,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("6_1yy8m")
+"stream": ExtResource("40_8wkdr")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -1201,7 +1097,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Card_Mask/Card_BG/Closed_Status/Closed_Top:self_modulate")
+tracks/8/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail_Top:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1213,7 +1109,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Card_Mask/Card_BG/Closed_Status/Closed:self_modulate")
+tracks/9/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail:self_modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -1225,67 +1121,67 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail_Top:self_modulate")
+tracks/10/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
+"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Card_Mask/Card_BG/Jail_Status/Jail:self_modulate")
+tracks/11/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared:self_modulate")
+tracks/12/path = NodePath("Card_Shadow:frame")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"values": [0, 1, 2, 3, 4]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Card_Mask/Card_BG/Disappeared_Status/Disappeared_Top:self_modulate")
+tracks/13/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
+"update": 0,
+"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Card_Shadow:frame")
+tracks/14/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion:self_modulate")
+tracks/15/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim:self_modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -1297,7 +1193,7 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Card_Mask/Card_BG/Minion_Status/Minion_Top:self_modulate")
+tracks/16/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim_Top:self_modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
@@ -1309,7 +1205,7 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Card_Mask/Card_BG/Crime_Scene_Status/Crime_Scene:self_modulate")
+tracks/17/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect:self_modulate")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -1321,7 +1217,7 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Card_Mask/Card_BG/Crime_Scene_Status/Crime_ Scene_Top:self_modulate")
+tracks/18/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect_Top:self_modulate")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
@@ -1333,7 +1229,7 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim:self_modulate")
+tracks/19/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness:self_modulate")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -1345,7 +1241,7 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Card_Mask/Card_BG/Victim_Status/Victim_Top:self_modulate")
+tracks/20/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness_Top:self_modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
@@ -1357,7 +1253,7 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect:self_modulate")
+tracks/21/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit:self_modulate")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
@@ -1369,7 +1265,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Card_Mask/Card_BG/Suspect_Status/Suspect_Top:self_modulate")
+tracks/22/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit_Top:self_modulate")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -1381,7 +1277,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness:self_modulate")
+tracks/23/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice:self_modulate")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -1393,58 +1289,10 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Card_Mask/Card_BG/Witness_Status/Witness_Top:self_modulate")
+tracks/24/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice_Top:self_modulate")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit:self_modulate")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("Card_Mask/Card_BG/Culprit_Status/Culprit_Top:self_modulate")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.588235), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353)]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice:self_modulate")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.882353), Color(1, 1, 1, 0.294118), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
-}
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("Card_Mask/Card_BG/Accomplice_Status/Accomplice_Top:self_modulate")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
@@ -1558,7 +1406,7 @@ _data = {
 }
 
 [node name="Card" type="Node2D"]
-script = ExtResource("2_2qjxn")
+script = ExtResource("1_5dxhs")
 
 [node name="Card_Collider" type="Area2D" parent="."]
 monitorable = false
@@ -1602,88 +1450,34 @@ visible = false
 modulate = Color(1, 1, 1, 0.501961)
 material = SubResource("ShaderMaterial_02fmt")
 position = Vector2(-2, -4)
-texture = ExtResource("1_8pu3o")
+texture = ExtResource("3_4rd0l")
 centered = false
 hframes = 5
 
 [node name="Card_Drag" type="Sprite2D" parent="."]
 visible = false
 self_modulate = Color(1, 1, 1, 0.501961)
-texture = ExtResource("4_02fmt")
+texture = ExtResource("4_iglwj")
 centered = false
 offset = Vector2(-8, -8)
 hframes = 2
 
 [node name="Card_Mask" type="Sprite2D" parent="."]
 clip_children = 1
-texture = ExtResource("1_8pu3o")
+texture = ExtResource("3_4rd0l")
 centered = false
 hframes = 5
-script = ExtResource("4_nk8id")
+script = ExtResource("5_da5cd")
 
 [node name="Card_BG" type="Sprite2D" parent="Card_Mask"]
 editor_description = "Card_BG Offset must be between x=0 / y = 0 and x=-120 / y=-30"
-texture = ExtResource("2_y3cdu")
+texture = ExtResource("6_a2n3s")
 centered = false
 offset = Vector2(-120, -30)
 
 [node name="Card_Color" type="Node2D" parent="Card_Mask/Card_BG"]
 
-[node name="Combat" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-color = Color(0.31, 0, 0.0464999, 0.643137)
-polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-
-[node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.490196)
-texture = ExtResource("3_gk6lr")
-centered = false
-
-[node name="Run_Away" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Combat"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.490196)
-texture = ExtResource("4_xhv7k")
-centered = false
-
-[node name="Investigation" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-visible = false
-color = Color(0.051, 0.18, 0, 0.643137)
-polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-
-[node name="Special" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.490196)
-texture = ExtResource("3_gk6lr")
-centered = false
-
-[node name="Break_In" type="Sprite2D" parent="Card_Mask/Card_BG/Card_Color/Investigation"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.490196)
-texture = ExtResource("5_rh7h4")
-centered = false
-
-[node name="Dialogue" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-visible = false
-color = Color(0, 0.0941176, 0.329412, 0.643137)
-polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-
-[node name="Abstract" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-visible = false
-color = Color(0.57, 0.2622, 0.53409, 0.643137)
-polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-
-[node name="Object" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-visible = false
-color = Color(0.59, 0.531, 0, 0.643137)
-polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-
-[node name="Location" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-visible = false
-color = Color(0.1261, 0.018, 0.3, 0.643137)
-polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 68, 1, 71, 3, 73, 6, 73, 26)
-
 [node name="Npc" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
-visible = false
 color = Color(0.1248, 0.4208, 0.48, 0.643137)
 polygon = PackedVector2Array(1, 26, 1, 6, 3, 3, 6, 1, 63, 1, 63, 26)
 
@@ -1713,21 +1507,14 @@ visible = false
 self_modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(11, 34)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("10_q0ypl")
+texture = ExtResource("10_laxfo")
 centered = false
 
 [node name="Female" type="Sprite2D" parent="Card_Mask/Card_BG/Sex"]
-visible = false
 self_modulate = Color(1, 1, 1, 0.196078)
 position = Vector2(5, 26)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("11_hupks")
-centered = false
-
-[node name="Evidence" type="Sprite2D" parent="Card_Mask/Card_BG"]
-visible = false
-self_modulate = Color(1, 1, 1, 0.490196)
-texture = ExtResource("3_uweet")
+texture = ExtResource("11_0kggl")
 centered = false
 
 [node name="Jail_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1735,25 +1522,12 @@ visible = false
 
 [node name="Jail" type="Sprite2D" parent="Card_Mask/Card_BG/Jail_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("9_xm6x5")
+texture = ExtResource("13_c6sa1")
 centered = false
 
 [node name="Jail_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Jail_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("11_0cggu")
-centered = false
-
-[node name="Closed_Status" type="Node2D" parent="Card_Mask/Card_BG"]
-visible = false
-
-[node name="Closed" type="Sprite2D" parent="Card_Mask/Card_BG/Closed_Status"]
-self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("9_e07m4")
-centered = false
-
-[node name="Closed_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Closed_Status"]
-self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("13_jl3bi")
+texture = ExtResource("14_scc3p")
 centered = false
 
 [node name="Dead_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1761,12 +1535,12 @@ visible = false
 
 [node name="Dead" type="Sprite2D" parent="Card_Mask/Card_BG/Dead_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("11_v12mt")
+texture = ExtResource("17_cqr6o")
 centered = false
 
 [node name="Dead_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Dead_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("15_k4orq")
+texture = ExtResource("18_ydvwu")
 centered = false
 
 [node name="Disappeared_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1774,12 +1548,12 @@ visible = false
 
 [node name="Disappeared" type="Sprite2D" parent="Card_Mask/Card_BG/Disappeared_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("16_k4orq")
+texture = ExtResource("19_s4pvt")
 centered = false
 
 [node name="Disappeared_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Disappeared_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("17_kusna")
+texture = ExtResource("20_psfcr")
 centered = false
 
 [node name="Minion_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1787,12 +1561,12 @@ visible = false
 
 [node name="Minion" type="Sprite2D" parent="Card_Mask/Card_BG/Minion_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("21_fsb4r")
+texture = ExtResource("21_5htwe")
 centered = false
 
 [node name="Minion_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Minion_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("22_8pq22")
+texture = ExtResource("22_h7606")
 centered = false
 
 [node name="Victim_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1800,12 +1574,12 @@ visible = false
 
 [node name="Victim" type="Sprite2D" parent="Card_Mask/Card_BG/Victim_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("23_v5821")
+texture = ExtResource("23_r386i")
 centered = false
 
 [node name="Victim_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Victim_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("24_youfm")
+texture = ExtResource("24_drxcl")
 centered = false
 
 [node name="Suspect_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1813,12 +1587,12 @@ visible = false
 
 [node name="Suspect" type="Sprite2D" parent="Card_Mask/Card_BG/Suspect_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("25_iq415")
+texture = ExtResource("25_ky4ad")
 centered = false
 
 [node name="Suspect_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Suspect_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("26_vv0s7")
+texture = ExtResource("26_rpp7k")
 centered = false
 
 [node name="Witness_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1826,12 +1600,12 @@ visible = false
 
 [node name="Witness" type="Sprite2D" parent="Card_Mask/Card_BG/Witness_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("27_kybnu")
+texture = ExtResource("27_1alno")
 centered = false
 
 [node name="Witness_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Witness_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("28_e1j17")
+texture = ExtResource("28_q88d4")
 centered = false
 
 [node name="Culprit_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1839,12 +1613,12 @@ visible = false
 
 [node name="Culprit" type="Sprite2D" parent="Card_Mask/Card_BG/Culprit_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("29_kybnu")
+texture = ExtResource("29_fhpy3")
 centered = false
 
 [node name="Culprit_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Culprit_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("30_e1j17")
+texture = ExtResource("30_cg20g")
 centered = false
 
 [node name="Accomplice_Status" type="Node2D" parent="Card_Mask/Card_BG"]
@@ -1852,25 +1626,12 @@ visible = false
 
 [node name="Accomplice" type="Sprite2D" parent="Card_Mask/Card_BG/Accomplice_Status"]
 self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("31_nvjxq")
+texture = ExtResource("31_b4ngl")
 centered = false
 
 [node name="Accomplice_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Accomplice_Status"]
 self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("32_78urt")
-centered = false
-
-[node name="Crime_Scene_Status" type="Node2D" parent="Card_Mask/Card_BG"]
-visible = false
-
-[node name="Crime_Scene" type="Sprite2D" parent="Card_Mask/Card_BG/Crime_Scene_Status"]
-self_modulate = Color(1, 1, 1, 0.882353)
-texture = ExtResource("23_1sbcw")
-centered = false
-
-[node name="Crime_ Scene_Top" type="Sprite2D" parent="Card_Mask/Card_BG/Crime_Scene_Status"]
-self_modulate = Color(1, 1, 1, 0)
-texture = ExtResource("24_b31qf")
+texture = ExtResource("32_vm5eu")
 centered = false
 
 [node name="Card_Text" type="Control" parent="Card_Mask/Card_BG"]
@@ -1882,7 +1643,7 @@ offset_top = 2.0
 offset_right = 72.0
 offset_bottom = 98.0
 mouse_filter = 1
-theme = ExtResource("3_l7psf")
+theme = ExtResource("35_sa2kq")
 
 [node name="Card_Name" type="Label" parent="Card_Mask/Card_BG/Card_Text"]
 layout_mode = 1
@@ -1890,7 +1651,6 @@ offset_left = 8.0
 offset_right = 64.0
 offset_bottom = 23.0
 mouse_filter = 1
-text = "Card Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -1902,13 +1662,12 @@ offset_top = 25.0
 offset_right = 70.0
 offset_bottom = 96.0
 mouse_filter = 1
-text = "Short card description."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Card_Outlines" type="Sprite2D" parent="Card_Mask/Card_BG"]
-texture = ExtResource("5_m7h77")
+texture = ExtResource("36_w1mpb")
 centered = false
 hframes = 5
 
@@ -1925,19 +1684,15 @@ libraries = {
 [node name="UI_Sounds" type="Node" parent="."]
 
 [node name="Drop_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
-stream = ExtResource("21_tg66g")
+stream = ExtResource("41_rbouq")
 volume_db = -40.0
 bus = &"UI"
 
 [node name="Take_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
-stream = ExtResource("22_iuyk4")
+stream = ExtResource("42_n04oh")
 volume_db = -37.5
 bus = &"UI"
 
 [node name="UI" type="AudioStreamPlayer" parent="UI_Sounds"]
 volume_db = -37.5
 bus = &"UI"
-
-[connection signal="input_event" from="Card_Collider" to="." method="_on_card_collider_input_event"]
-[connection signal="mouse_entered" from="Card_Collider" to="." method="_on_card_collider_mouse_entered"]
-[connection signal="mouse_exited" from="Card_Collider" to="." method="_on_card_collider_mouse_exited"]
