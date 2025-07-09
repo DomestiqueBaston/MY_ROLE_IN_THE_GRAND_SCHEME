@@ -49,7 +49,7 @@
 	},
 	"JOB007": {
 		"name": "Unemployed",
-		"work_place": ["LOC001", "LOC003", "LOC004", "LOC022", "LOC034"],
+		"work_place": ["LOC001", "LOC003"],
 		"work_hours": ["morning", "afternoon", "evening", "night"],
 		"night_shift_chance": 0.25,
 		"weekend_shift_chance": 0.0,
