@@ -99,7 +99,7 @@ func get_home() -> LocationCard:
 func get_work() -> LocationCard:
 	return _work.get_ref()
 
-func _randomize(extra_points: int, job_id: String, minion: bool):
+func _randomize(case: Case, job_id: String, minion: bool):
 
 	# sex and orientation
 
@@ -129,6 +129,7 @@ func _randomize(extra_points: int, job_id: String, minion: bool):
 
 	# add extra points to principal characteristics at random, limiting to 10
 
+	var extra_points = case.get_difficulty()
 	if extra_points > 0:
 		var candidates = [&"physical", &"mental", &"max_health"]
 		for i in extra_points:
@@ -161,22 +162,25 @@ func _randomize(extra_points: int, job_id: String, minion: bool):
 
 	# home and work locations
 
-	var home = LocationCard.create_card("LOC001")
+	var home = case.create_location("LOC001")
 	home.add_inhabitant(self)
 	_home = weakref(home)
 
-	var work_place_list = job_info["work_place"]
-	var work_index = randi() % work_place_list.size()
-	var work = LocationCard.create_card(work_place_list[work_index])
+	var work_place = job_info["work_place"].pick_random()
+	var work
+	if work_place == "LOC001":
+		work = case.create_location("LOC001")
+	else:
+		work = case.find_or_create_location(work_place)
 	_work = weakref(work)
 
 static func generate_card(
-		extra_points: int = 0, possible_jobs = [], minion: bool = false) -> NpcCard:
+		case: Case, possible_jobs = [], minion: bool = false) -> NpcCard:
 	var card = _card_scene.instantiate()
 	var job_id: String
 	if possible_jobs:
 		job_id = possible_jobs.pick_random()
-	card._randomize(extra_points, job_id, minion)
+	card._randomize(case, job_id, minion)
 	return card
 
 func get_custom_class():

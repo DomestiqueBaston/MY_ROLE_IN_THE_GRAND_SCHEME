@@ -14,6 +14,7 @@ var accomplices: Array[NpcCard]
 var suspects: Array[NpcCard]
 var other_npcs: Array[NpcCard]
 var evidence: Array[ObjectCard]
+var locations: Array[LocationCard]
 var crime_location: LocationCard
 
 var _case_id: String
@@ -35,16 +36,14 @@ func _notification(what: int):
 
 	if what == NOTIFICATION_PREDELETE:
 		for card_list in [
-			culprits, victims, witnesses, accomplices, suspects, other_npcs,
-			evidence
+				culprits, victims, witnesses, accomplices, suspects, other_npcs,
+				evidence, locations
 		]:
 			for card in card_list:
 				card.queue_free()
 			card_list.clear()
 
-		if crime_location:
-			crime_location.queue_free()
-			crime_location = null
+		crime_location = null
 
 		for link in _links:
 			link.queue_free()
@@ -55,6 +54,10 @@ static func generate() -> Case:
 	case._randomize()
 	return case
 
+#
+# Note that it is assumed, for now, that the Case is brand new. Otherwise we
+# would need to clear everything first.
+#
 func _randomize():
 	_case_id = _generate_case_id()
 
@@ -64,68 +67,28 @@ func _randomize():
 	_motive = _crime_data[_crime].pick_random()
 	_case_name = _motive["name"]
 
-	# NPCs: culprits
+	var culprit_count = _get_count_from_array(_motive.get("culprits", 0))
+	var victim_count = _get_count_from_array(_motive.get("victims", 0))
+	var witness_count = _get_count_from_array(_motive.get("witnesses", 0))
+	var accomplice_count = _get_count_from_array(_motive.get("accomplices", 0))
+	var suspect_count = _get_count_from_array(_motive.get("suspects", 0))
+	var evidence_count = maxi(
+		_get_count_from_array(_motive.get("evidence_number", 0)),
+		culprit_count)
 
-	culprits = _generate_npcs(
-		_motive.get("culprits", 0), NpcCard.NpcStatus.NONE,
-		_motive.get("culprits_professions", []))
+	# the difficulty must be determined BEFORE generating the NPCs, because it
+	# determine the number of points added to their main characteristics
 
-	# NPCs: victims
-
-	victims = _generate_npcs(
-		_motive.get("victims", 0), NpcCard.NpcStatus.VICTIM,
-		_motive.get("victims_professions", []))
-
-	if victims:
-		var dead = _motive["dead_victims"]
-		for card in victims:
-			if dead == "yes":
-				card.npc_status = NpcCard.NpcStatus.DEAD
-			elif dead == "disappeared":
-				card.npc_status = NpcCard.NpcStatus.DISAPPEARED
-			elif dead == "random":
-				if randi() & 1:
-					card.npc_status = NpcCard.NpcStatus.DEAD
-
-	# NPCs: witnesses, accomplices, suspects
-
-	witnesses = _generate_npcs(
-		_motive.get("witnesses", 0), NpcCard.NpcStatus.WITNESS)
-	accomplices = _generate_npcs(
-		_motive.get("accomplices", 0))
-	suspects = _generate_npcs(
-		_motive.get("suspects", 0), NpcCard.NpcStatus.SUSPECT)
-
-	# evidence
-
-	var evidence_count = _motive.get("evidence_number", 0)
-	if evidence_count is Array and not evidence_count.is_empty():
-		evidence_count = evidence_count.pick_random()
-	evidence_count = maxi(evidence_count, culprits.size())
-	evidence.clear()
-
-	if evidence_count > 0:
-		var candidates = _motive.get("evidences", []).duplicate()
-		evidence_count = mini(evidence_count, candidates.size() - 1)
-		for i in evidence_count:
-			var which = randi() % candidates.size()
-			var card = ObjectCard.create_card(candidates[which])
-			# TODO: set location and owner?
-			candidates.remove_at(which)
-			evidence.append(card)
-
-	# TODO: friends/enemies/couples??
-	# TODO: links
 	# TODO: difficulty += number of links * 0.5
-	# TODO: useless objects
 
 	var diff = 19.0/50.0 * (1.0
-		+ culprits.size()
-		+ victims.size()
-		+ accomplices.size() * 0.5
-		- suspects.size() * 0.5
-		- witnesses.size() * 0.5
-		+ evidence.size())
+		+ culprit_count
+		+ victim_count
+		+ accomplice_count * 0.5
+		- suspect_count * 0.5
+		- witness_count * 0.5
+		+ evidence_count)
+
 	_difficulty = clampi(roundi(diff), 1, 5)
 
 	if _difficulty == 6:
@@ -133,9 +96,49 @@ func _randomize():
 	else:
 		_duration = roundi((_difficulty * 4 + 10) * randf_range(0.9, 1.1))
 
+	# NPCs: culprits
+
+	if culprit_count > 0:
+		var culprit_jobs = _motive.get("culprits_professions", [])
+		for i in culprit_count:
+			culprits.append(NpcCard.generate_card(self, culprit_jobs))
+
+	# NPCs: victims
+
+	if victim_count > 0:
+		var victim_jobs = _motive.get("victims_professions", [])
+		var dead = _motive["dead_victims"]
+		for i in victim_count:
+			var card = NpcCard.generate_card(self, victim_jobs)
+			card.npc_status = NpcCard.NpcStatus.VICTIM
+			if dead == "yes":
+				card.npc_status = NpcCard.NpcStatus.DEAD
+			elif dead == "disappeared":
+				card.npc_status = NpcCard.NpcStatus.DISAPPEARED
+			elif dead == "random":
+				if randi() & 1:
+					card.npc_status = NpcCard.NpcStatus.DEAD
+			victims.append(card)
+
+	# NPCs: witnesses, accomplices, suspects
+
+	for i in witness_count:
+		var card = NpcCard.generate_card(self)
+		card.npc_status = NpcCard.NpcStatus.WITNESS
+		witnesses.append(card)
+
+	for i in accomplice_count:
+		accomplices.append(NpcCard.generate_card(self))
+
+	for i in suspect_count:
+		var card = NpcCard.generate_card(self)
+		card.npc_status = NpcCard.NpcStatus.SUSPECT
+		suspects.append(card)
+
 	# NPCs unrelated to the case
 
-	var useless_count
+	var useless_count = 0
+
 	match _difficulty:
 		0:
 			useless_count = randi_range(2, 3)
@@ -151,7 +154,22 @@ func _randomize():
 			useless_count = randi_range(13, 19)
 		6:
 			useless_count = randi_range(15, 22)
-	other_npcs = _generate_npcs(useless_count)
+
+	for i in useless_count:
+		other_npcs.append(NpcCard.generate_card(self))
+
+	# evidence
+
+	if evidence_count > 0:
+		var candidates = _motive.get("evidences", []).duplicate()
+		# this should never be necessary
+		evidence_count = mini(evidence_count, candidates.size() - 1)
+		for i in evidence_count:
+			var which = randi() % candidates.size()
+			var card = ObjectCard.create_card(candidates[which])
+			# TODO: set location and owner?
+			candidates.remove_at(which)
+			evidence.append(card)
 
 	# crime location
 
@@ -175,7 +193,8 @@ func _randomize():
 	else:
 		actual_location = location_name
 
-	crime_location = null
+	# TODO: use and update locations array...
+
 	var location_card: LocationCard
 
 	if actual_location == "none":
@@ -189,7 +208,7 @@ func _randomize():
 	elif actual_location == "culprit_work":
 		location_card = culprits[0].get_work()
 	else:
-		crime_location = LocationCard.create_card(actual_location)
+		crime_location = find_or_create_location(actual_location)
 		location_card = crime_location
 
 	if location_card:
@@ -204,16 +223,15 @@ func _randomize():
 		if is_known:
 			location_card.location_status = LocationCard.LocationStatus.CRIME_SCENE
 
-func _generate_npcs(
-		count, npc_status = NpcCard.NpcStatus.NONE, job_list = []) -> Array[NpcCard]:
-	var cards: Array[NpcCard]
+	# TODO: friends/enemies/couples??
+	# TODO: links
+	# TODO: useless objects
+
+func _get_count_from_array(count) -> int:
 	if count is Array and not count.is_empty():
-		count = count.pick_random()
-	for i in count:
-		var card = NpcCard.generate_card(0, job_list)
-		card.npc_status = npc_status
-		cards.append(card)
-	return cards
+		return count.pick_random()
+	else:
+		return count
 
 func _generate_case_id():
 	# [A-Z][a-z]
@@ -248,16 +266,11 @@ func get_duration() -> int:
 
 func get_cards() -> Array[BaseCard]:
 	var all_cards: Array[BaseCard]
-	for npcs in [
-		culprits, victims, witnesses, accomplices, suspects, other_npcs
+	for card_list in [
+		culprits, victims, witnesses, accomplices, suspects, other_npcs,
+		evidence, locations
 	]:
-		all_cards.append_array(npcs)
-		for npc in npcs:
-			all_cards.append(npc.get_home())
-			all_cards.append(npc.get_work())
-	all_cards.append_array(evidence)
-	if crime_location:
-		all_cards.append(crime_location)
+		all_cards.append_array(card_list)
 	return all_cards
 
 func add_link(link: Link):
@@ -268,6 +281,17 @@ func remove_link(link: Link):
 
 func get_links() -> Array[Link]:
 	return _links
+
+func find_or_create_location(location_id: String) -> LocationCard:
+	for card in locations:
+		if card.database_id == location_id:
+			return card
+	return create_location(location_id)
+
+func create_location(location_id: String) -> LocationCard:
+	var card = LocationCard.create_card(location_id)
+	locations.append(card)
+	return card
 
 func start():
 	_status = Status.ACTIVE
