@@ -63,6 +63,9 @@ func restore(dict, catalog):
 	super(dict, catalog)
 	is_object_evidence = dict["is_object_evidence"]
 	database_id = dict["database_id"]
+	var object_info = _object_data[database_id]
+	card_name = object_info["name"]
+	description = object_info["description"]
 	if "owner" in dict:
 		_owner = weakref(catalog[dict.owner])
 	if "location" in dict:

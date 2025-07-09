@@ -51,6 +51,9 @@ func restore(dict, catalog):
 	super(dict, catalog)
 	investigation_type = dict["investigation_type"]
 	database_id = dict["database_id"]
+	var investigation_info = _investigation_data[database_id]
+	card_name = investigation_info["name"]
+	description = investigation_info["description"]
 
 static func allocate() -> Object:
 	return _card_scene.instantiate()

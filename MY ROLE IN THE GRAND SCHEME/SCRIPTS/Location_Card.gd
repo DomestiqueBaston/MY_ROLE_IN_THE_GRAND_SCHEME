@@ -79,6 +79,9 @@ func restore(dict, catalog):
 	super(dict, catalog)
 	location_status = dict["location_status"]
 	database_id = dict["database_id"]
+	var location_info = _location_data[database_id]
+	card_name = location_info["name"]
+	description = location_info["description"]
 	if "inhabitants" in dict:
 		for card in dict.inhabitants:
 			_inhabitants.append(weakref(catalog[card]))

@@ -32,6 +32,9 @@ func get_json_dict():
 func restore(dict, catalog):
 	super(dict, catalog)
 	database_id = dict["database_id"]
+	var abstract_info = _abstract_data[database_id]
+	card_name = abstract_info["name"]
+	description = abstract_info["description"]
 
 static func allocate() -> Object:
 	return _card_scene.instantiate()

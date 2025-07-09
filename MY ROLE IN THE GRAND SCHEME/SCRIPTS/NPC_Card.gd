@@ -224,6 +224,7 @@ func restore(dict, catalog):
 	wanted = dict.wanted
 	is_minion = dict.is_minion
 	player_reputation = dict.player_reputation
+	card_name = first_name + " " + last_name
 	if "home" in dict:
 		_home = weakref(catalog[dict.home])
 	if "work" in dict:

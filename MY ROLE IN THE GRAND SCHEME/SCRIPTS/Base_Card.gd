@@ -317,8 +317,6 @@ func get_referenced_objects():
 
 func get_json_dict():
 	var dict = {
-		"card_name": card_name,
-		"description": description,
 		"opacity": opacity,
 		"was_stacked": is_stacked() if is_inside_tree() else _was_stacked,
 		"x": position.x,
@@ -332,8 +330,6 @@ func get_json_dict():
 	return dict
 
 func restore(dict, catalog):
-	card_name = dict.card_name
-	description = dict.description
 	opacity = dict.opacity
 	_was_stacked = dict.was_stacked
 	position = Vector2(dict.x, dict.y)
