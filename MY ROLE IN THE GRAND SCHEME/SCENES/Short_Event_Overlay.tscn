@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=240 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -52,7 +52,6 @@
 [ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/SHORT_EVENT/Case_BG.png" id="45_m6kkd"]
 [ext_resource type="Texture2D" uid="uid://tn484qetw520" path="res://GRAPHICS/SHORT_EVENT/Case_2_Pressed.png" id="46_a7igc"]
 [ext_resource type="Theme" uid="uid://dmgq3hlca7cr8" path="res://UI/Case_Summary_Theme.tres" id="46_tdxs6"]
-[ext_resource type="Script" uid="uid://b51y22y7k7qvt" path="res://SCRIPTS/Case_Serial_Number_Generator.gd" id="47_lkigo"]
 [ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/SHORT_EVENT/Case_2_Hover.png" id="47_q1jpv"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/SHORT_EVENT/Case_2_Mask.png" id="48_pf81c"]
 [ext_resource type="Script" uid="uid://ed1yo6ny1onq" path="res://SCRIPTS/Case_Introduction_Generator.gd" id="48_qmu3t"]
@@ -1324,7 +1323,6 @@ theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_offset_y = 2
 text = "- Case Serial -"
 horizontal_alignment = 1
-script = ExtResource("47_lkigo")
 
 [node name="Introduction_Scroll_Container" type="ScrollContainer" parent="Overlays/Case_Summary/Sheet/Left_Page"]
 layout_mode = 0

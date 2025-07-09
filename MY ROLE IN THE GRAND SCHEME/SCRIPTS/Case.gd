@@ -16,6 +16,7 @@ var other_npcs: Array[NpcCard]
 var evidence: Array[ObjectCard]
 var crime_location: LocationCard
 
+var _case_id: String
 var _case_name: String
 var _crime: String
 var _motive: Dictionary
@@ -55,6 +56,7 @@ static func generate() -> Case:
 	return case
 
 func _randomize():
+	_case_id = _generate_case_id()
 
 	# crime, motive and lots of other information about the case
 
@@ -212,6 +214,25 @@ func _generate_npcs(
 		cards.append(card)
 	return cards
 
+func _generate_case_id():
+	# [A-Z][a-z]
+	var part1 = char(randi_range(65, 90)) + char(randi_range(97, 122))
+
+	# 01-99
+	var part2 = "%02d" % randi_range(1, 99)
+
+	# [A-Z][a-z][1-9]
+	var part3 = char(randi_range(65, 90)) + char(randi_range(97, 122)) \
+			  + str(randi_range(1, 9))
+
+	# 1-9
+	var part4 = str(randi_range(1, 9))
+
+	return "%s#%s-%s.%s" % [part1, part2, part3, part4]
+
+func get_case_id() -> String:
+	return _case_id
+
 func get_case_name() -> String:
 	return _case_name
 
@@ -272,6 +293,7 @@ func get_referenced_objects():
 
 func get_json_dict():
 	var dict = {
+		"case_id": _case_id,
 		"case_name": _case_name,
 		"crime": _crime,
 		"motive": _motive,
@@ -334,6 +356,7 @@ func get_json_dict():
 	return dict
 
 func restore(dict, catalog):
+	_case_id = dict.get("case_id", "")
 	_case_name = dict.case_name
 	_crime = dict.crime
 	_motive = dict.motive

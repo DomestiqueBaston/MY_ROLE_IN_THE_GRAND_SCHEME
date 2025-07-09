@@ -3,6 +3,7 @@ extends Node2D
 signal done
 
 @onready var _option_button = $Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List
+@onready var _id = $Chalkboard_Content/Chalk_Mask/Case_Report/Case/ID
 @onready var _status = $Chalkboard_Content/Chalk_Mask/Case_Report/Case/Status
 @onready var _deadline = $Chalkboard_Content/Chalk_Mask/Case_Report/Case/Delay
 @onready var _info = $Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container
@@ -35,6 +36,8 @@ func populate():
 
 func _on_item_selected(index: int):
 	var case: Case = GameState.cases[index]
+
+	_id.text = case.get_case_id()
 
 	match case.get_status():
 		Case.Status.UNASSIGNED:
