@@ -319,7 +319,7 @@ func get_json_dict():
 	var dict = {}
 	var stacked = is_stacked() if is_inside_tree() else _was_stacked
 	if not stacked:
-		dict["was_stacked"] = was_stacked
+		dict["was_stacked"] = stacked
 	if opacity != 1.0:
 		dict["opacity"] = opacity
 	if position.x != 0.0:

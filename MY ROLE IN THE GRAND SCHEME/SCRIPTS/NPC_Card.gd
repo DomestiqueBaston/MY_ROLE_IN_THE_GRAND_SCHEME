@@ -204,7 +204,8 @@ func get_json_dict():
 	dict["wanted"] = wanted
 	if is_minion:
 		dict["is_minion"] = is_minion
-	dict["player_reputation"] = player_reputation
+	if player_reputation != 0:
+		dict["player_reputation"] = player_reputation
 	if _home:
 		dict["home"] = SaveLoadTools.get_object_id(_home.get_ref())
 	if _work:
@@ -224,7 +225,7 @@ func restore(dict, catalog):
 	health = dict.health
 	wanted = dict.wanted
 	is_minion = dict.get("is_minion", false)
-	player_reputation = dict.player_reputation
+	player_reputation = dict.get("player_reputation", 0)
 	card_name = first_name + " " + last_name
 	if "home" in dict:
 		_home = weakref(catalog[dict.home])
