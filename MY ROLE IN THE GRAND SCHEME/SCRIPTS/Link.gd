@@ -310,10 +310,11 @@ func get_json_dict():
 		dict["pin1"] = SaveLoadTools.get_object_id(pin1)
 	if pin2:
 		dict["pin2"] = SaveLoadTools.get_object_id(pin2)
-	var pin_refs = []
-	for pin in _follower_pins:
-		pin_refs.append(SaveLoadTools.get_object_id(pin))
-	dict["follower_pins"] = pin_refs
+	if _follower_pins:
+		var pin_refs = []
+		for pin in _follower_pins:
+			pin_refs.append(SaveLoadTools.get_object_id(pin))
+		dict["follower_pins"] = pin_refs
 	return dict
 
 func restore(dict, catalog):
@@ -323,7 +324,7 @@ func restore(dict, catalog):
 		pin1 = catalog[dict.pin1]
 	if "pin2" in dict:
 		pin2 = catalog[dict.pin2]
-	for ref in dict.follower_pins:
+	for ref in dict.get("follower_pins", []):
 		_follower_pins.append(catalog[ref])
 
 static func allocate() -> Object:

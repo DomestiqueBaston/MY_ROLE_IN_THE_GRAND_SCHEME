@@ -58,18 +58,30 @@ static func create_card(id: String) -> LocationCard:
 func get_custom_class():
 	return SaveLoadTools.Class.LOCATION_CARD
 
+func get_referenced_objects():
+	var refs = []
+	for card in _inhabitants:
+		refs.append(card.get_ref())
+	return refs
+
 func get_json_dict():
 	var dict = super()
 	dict["location_status"] = location_status
 	dict["database_id"] = database_id
-	# TODO: _inhabitants
+	if _inhabitants:
+		var refs = []
+		for card in _inhabitants:
+			refs.append(SaveLoadTools.get_object_id(card))
+		dict["inhabitants"] = refs
 	return dict
 
 func restore(dict, catalog):
 	super(dict, catalog)
 	location_status = dict["location_status"]
 	database_id = dict["database_id"]
-	# TODO: _inhabitants
+	if "inhabitants" in dict:
+		for card in dict.inhabitants:
+			_inhabitants.append(weakref(card))
 
 static func allocate() -> Object:
 	return _card_scene.instantiate()

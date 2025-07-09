@@ -53,14 +53,20 @@ func get_json_dict():
 	var dict = super()
 	dict["is_object_evidence"] = is_object_evidence
 	dict["database_id"] = database_id
-	# TODO: _owner and _location
+	if _owner:
+		dict["owner"] = SaveLoadTools.get_object_id(_owner.get_ref())
+	if _location:
+		dict["location"] = SaveLoadTools.get_object_id(_location.get_ref())
 	return dict
 
 func restore(dict, catalog):
 	super(dict, catalog)
 	is_object_evidence = dict["is_object_evidence"]
 	database_id = dict["database_id"]
-	# TODO: _owner and _location
+	if "owner" in dict:
+		_owner = weakref(catalog[dict.owner])
+	if "location" in dict:
+		_location = weakref(catalog[dict.location])
 
 static func allocate() -> Object:
 	return _card_scene.instantiate()
