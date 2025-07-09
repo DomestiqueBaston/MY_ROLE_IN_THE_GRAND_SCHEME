@@ -114,6 +114,7 @@ func _randomize():
 			candidates.remove_at(which)
 			evidence.append(card)
 
+	# TODO: friends/enemies/couples??
 	# TODO: links
 	# TODO: difficulty += number of links * 0.5
 	# TODO: useless objects

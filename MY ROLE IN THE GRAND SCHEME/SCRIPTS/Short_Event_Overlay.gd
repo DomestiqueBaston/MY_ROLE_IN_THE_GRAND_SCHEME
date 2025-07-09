@@ -74,6 +74,10 @@ func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
 	$Overlays/Confirmation.hide()
 	return result
 
+##
+## Displays the investigation center, where the user can select the current
+## case, and waits for him to confirm or cancel.
+##
 func open_investigation_center():
 	$Overlays/Investigation_Center.populate()
 	$Overlays/Investigation_Center.show()
