@@ -51,7 +51,8 @@ func get_custom_class():
 
 func get_json_dict():
 	var dict = super()
-	dict["is_object_evidence"] = is_object_evidence
+	if is_object_evidence:
+		dict["is_object_evidence"] = is_object_evidence
 	dict["database_id"] = database_id
 	if _owner:
 		dict["owner"] = SaveLoadTools.get_object_id(_owner.get_ref())
@@ -61,7 +62,7 @@ func get_json_dict():
 
 func restore(dict, catalog):
 	super(dict, catalog)
-	is_object_evidence = dict["is_object_evidence"]
+	is_object_evidence = dict.get("is_object_evidence", false)
 	database_id = dict["database_id"]
 	var object_info = _object_data[database_id]
 	card_name = object_info["name"]

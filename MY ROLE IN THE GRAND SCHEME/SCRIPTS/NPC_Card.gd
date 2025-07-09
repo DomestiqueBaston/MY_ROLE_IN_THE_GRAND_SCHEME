@@ -202,7 +202,8 @@ func get_json_dict():
 	dict["health"] = health
 	dict["max_health"] = max_health
 	dict["wanted"] = wanted
-	dict["is_minion"] = is_minion
+	if is_minion:
+		dict["is_minion"] = is_minion
 	dict["player_reputation"] = player_reputation
 	if _home:
 		dict["home"] = SaveLoadTools.get_object_id(_home.get_ref())
@@ -222,7 +223,7 @@ func restore(dict, catalog):
 	max_health = dict.max_health
 	health = dict.health
 	wanted = dict.wanted
-	is_minion = dict.is_minion
+	is_minion = dict.get("is_minion", false)
 	player_reputation = dict.player_reputation
 	card_name = first_name + " " + last_name
 	if "home" in dict:

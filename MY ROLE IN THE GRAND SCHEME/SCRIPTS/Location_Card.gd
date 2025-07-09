@@ -66,7 +66,8 @@ func get_referenced_objects():
 
 func get_json_dict():
 	var dict = super()
-	dict["location_status"] = location_status
+	if location_status != LocationStatus.NONE:
+		dict["location_status"] = location_status
 	dict["database_id"] = database_id
 	if _inhabitants:
 		var refs = []
@@ -77,7 +78,7 @@ func get_json_dict():
 
 func restore(dict, catalog):
 	super(dict, catalog)
-	location_status = dict["location_status"]
+	location_status = dict.get("location_status", LocationStatus.NONE)
 	database_id = dict["database_id"]
 	var location_info = _location_data[database_id]
 	card_name = location_info["name"]

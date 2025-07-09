@@ -316,12 +316,16 @@ func get_referenced_objects():
 	return _pins.values()
 
 func get_json_dict():
-	var dict = {
-		"opacity": opacity,
-		"was_stacked": is_stacked() if is_inside_tree() else _was_stacked,
-		"x": position.x,
-		"y": position.y
-	}
+	var dict = {}
+	var stacked = is_stacked() if is_inside_tree() else _was_stacked
+	if not stacked:
+		dict["was_stacked"] = was_stacked
+	if opacity != 1.0:
+		dict["opacity"] = opacity
+	if position.x != 0.0:
+		dict["x"] = position.x
+	if position.y != 0.0:
+		dict["y"] = position.y
 	if _pins:
 		var pin_refs = {}
 		for pin in _pins:
@@ -330,9 +334,9 @@ func get_json_dict():
 	return dict
 
 func restore(dict, catalog):
-	opacity = dict.opacity
-	_was_stacked = dict.was_stacked
-	position = Vector2(dict.x, dict.y)
+	opacity = dict.get("opacity", 1.0)
+	_was_stacked = dict.get("was_stacked", true)
+	position = Vector2(dict.get("x", 0.0), dict.get("y", 0.0))
 	if "pins" in dict:
 		var pin_refs = dict.pins
 		for pin in pin_refs:
