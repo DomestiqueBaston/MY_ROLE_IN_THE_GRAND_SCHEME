@@ -71,7 +71,7 @@ func get_json_dict():
 	if _inhabitants:
 		var refs = []
 		for card in _inhabitants:
-			refs.append(SaveLoadTools.get_object_id(card))
+			refs.append(SaveLoadTools.get_object_id(card.get_ref()))
 		dict["inhabitants"] = refs
 	return dict
 
@@ -81,7 +81,7 @@ func restore(dict, catalog):
 	database_id = dict["database_id"]
 	if "inhabitants" in dict:
 		for card in dict.inhabitants:
-			_inhabitants.append(weakref(card))
+			_inhabitants.append(weakref(catalog[card]))
 
 static func allocate() -> Object:
 	return _card_scene.instantiate()
