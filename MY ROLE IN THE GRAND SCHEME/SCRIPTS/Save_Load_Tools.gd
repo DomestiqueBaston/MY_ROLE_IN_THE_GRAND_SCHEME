@@ -1,9 +1,13 @@
 class_name SaveLoadTools
 
 ## This class implements saving and loading of objects to and from a JSON file.
-## A class that needs save/load support must have an entry in the class Enum,
+## A class that needs save/load support must have an entry in the Class Enum,
 ## provide a function for allocating a new instance in _allocate_object(), and
 ## implement the following methods:
+##
+## get_custom_class()
+##
+## Returns the type of object implemented by the class: see the Class Enum.
 ##
 ## get_referenced_objects()
 ##
