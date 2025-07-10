@@ -150,13 +150,16 @@ func get_referenced_objects():
 	return refs
 
 func get_json_dict():
-	var dict = {
-		"type": type,
-		"card_location": card_location,
-		"link_location": link_location,
-		"x": position.x,
-		"y": position.y
-	}
+	var dict = {}
+	if type == PinType.CARD:
+		dict["card_location"] = card_location
+	else:
+		dict["type"] = type
+		dict["link_location"] = link_location
+	if position.x != 0.0:
+		dict["x"] = position.x
+	if position.y != 0.0:
+		dict["y"] = position.y
 	if card:
 		dict["card"] = SaveLoadTools.get_object_id(card)
 	if link:
@@ -166,10 +169,10 @@ func get_json_dict():
 	return dict
 
 func restore(dict, catalog):
-	type = dict.type
-	card_location = dict.card_location
-	link_location = dict.link_location
-	position = Vector2(dict.x, dict.y)
+	type = dict.get("type", PinType.CARD)
+	card_location = dict.get("card_location", Location.TOP_LEFT)
+	link_location = dict.get("link_location", 0.5)
+	position = Vector2(dict.get("x", 0.0), dict.get("y", 0.0))
 	if "card" in dict:
 		card = catalog[dict.card]
 	if "link" in dict:
