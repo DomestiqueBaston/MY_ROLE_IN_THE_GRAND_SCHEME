@@ -180,7 +180,6 @@ func _randomize(case: Case, cat: Category, job_id: String):
 	# home and work locations
 
 	var home = case.create_location("LOC001", self)
-	home.add_inhabitant(self)
 	_home = weakref(home)
 
 	var work_place = job_info["work_place"].pick_random()

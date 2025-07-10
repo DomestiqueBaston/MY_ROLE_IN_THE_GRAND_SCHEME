@@ -230,6 +230,32 @@ func _randomize():
 		if is_known:
 			location_card.location_status = LocationCard.LocationStatus.CRIME_SCENE
 
+	# populate all locations with useless objects
+
+	for card: LocationCard in locations:
+		var obj_count = randi_range(0, 3)
+		while obj_count > 0:
+			var obj_id = _object_data.keys().pick_random()
+			var owners = _object_data[obj_id].get("owners", {})
+			var npc_owners = owners.get("npc", [0])
+			var npc_owner_count = npc_owners.pick_random() as int
+			var location_owners = owners.get("location", [0])
+			var location_owner_count = location_owners.pick_random() as int
+			if npc_owner_count <= card.get_npc_count():
+				var obj: ObjectCard = ObjectCard.create_card(obj_id)
+				if npc_owner_count > 1:
+					var candidates = card.get_npcs().duplicate()
+					for i in npc_owner_count:
+						var index = randi() % candidates.size()
+						obj.add_object_owner(candidates[index])
+						candidates.remove_at(index)
+				elif npc_owner_count == 1:
+					obj.add_object_owner(card.get_npcs().pick_random())
+				if location_owner_count > 0:
+					obj.add_object_owner(card)
+				other_objects.append(obj)
+				obj_count -= 1
+
 	# TODO: friends/enemies/acquaintances/couples??
 	# TODO: links
 
@@ -305,43 +331,45 @@ func get_links() -> Array[Link]:
 
 ##
 ## Looks for an existing location with the given ID, or creates a new one if
-## none is found, in which case npc is passed to create_location().
+## none is found. In either case, the given NPC is associated with the location.
 ##
 func find_or_create_location(location_id: String, npc: NpcCard) -> LocationCard:
 	for card in locations:
 		if card.database_id == location_id:
+			card.add_npc(npc)
 			return card
 	return create_location(location_id, npc)
 
 ##
-## Creates a new location card from the given ID in the location database. Some
-## number of useless objects are also created in the new location, with the
-## given NPC as owner.
+## Creates a new location card from the given ID in the location database. The
+## given NPC is associated with the location.
 ##
 func create_location(location_id: String, npc: NpcCard) -> LocationCard:
 	var card = LocationCard.create_card(location_id)
+	if npc:
+		card.add_npc(npc)
 	locations.append(card)
 
 	# populate the new location with some number of useless objects
 
-	var obj_count = randi_range(0, 3)
-	print("creating %d useless objects for %s" % [obj_count, card.card_name])
-	while obj_count > 0:
-		var obj_id = _object_data.keys().pick_random()
-		var owners = _object_data[obj_id].get("owners", {})
-		var npc_owners = owners.get("npc", [0])
-		var location_owners = owners.get("location", [0])
-		if 1.0 in npc_owners and 0 in location_owners:
-			var obj = ObjectCard.create_card(obj_id)
-			obj.add_object_owner(npc)
-			other_objects.append(obj)
-			obj_count -= 1
+	#var obj_count = randi_range(0, 3)
+	#while obj_count > 0:
+		#var obj_id = _object_data.keys().pick_random()
+		#var owners = _object_data[obj_id].get("owners", {})
+		#var npc_owners = owners.get("npc", [0])
+		#var location_owners = owners.get("location", [0])
+		#if (1 in npc_owners or 1.0 in npc_owners) and \
+			#(0 in location_owners or 0.0 in location_owners):
+			#var obj = ObjectCard.create_card(obj_id)
+			#obj.add_object_owner(npc)
+			#other_objects.append(obj)
+			#obj_count -= 1
 
 	return card
 
 ##
-## Finds or creates a random hangout location. If a new location is created,
-## the useless objects created there belong to the given NPC.
+## Finds or creates a random hangout location and associates the given NPC with
+## it.
 ##
 func find_hangout(npc: NpcCard) -> LocationCard:
 	var hangouts = []
@@ -351,8 +379,7 @@ func find_hangout(npc: NpcCard) -> LocationCard:
 	return find_or_create_location(hangouts.pick_random(), npc)
 
 ##
-## Creates a random hideout location. The useless objects created there belong
-## to the given NPC.
+## Creates a random hideout location and associates the given NPC with it.
 ##
 func create_hideout(npc: NpcCard) -> LocationCard:
 	var hideouts = []

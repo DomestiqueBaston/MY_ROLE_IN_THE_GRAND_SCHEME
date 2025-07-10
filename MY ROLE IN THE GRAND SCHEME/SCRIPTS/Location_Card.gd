@@ -16,7 +16,9 @@ enum LocationStatus {
 ## ID of corresponding entry in location database.
 var database_id: String
 
-var _inhabitants: Array[WeakRef]
+## NPCs that are connected to the location: it's their home, their place of
+## work, their hangout or their hideout.
+var _npcs: Array[WeakRef]
 
 static var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 static var _card_scene = preload("res://SCENES/Location_Card.tscn")
@@ -32,18 +34,21 @@ func _update_background():
 	$Card_Mask/Card_BG/Closed_Status.visible = (location_status == LocationStatus.CLOSED)
 	$Card_Mask/Card_BG/Crime_Scene_Status.visible = (location_status == LocationStatus.CRIME_SCENE)
 
-func add_inhabitant(inhabitant: NpcCard):
-	_inhabitants.append(weakref(inhabitant))
+func add_npc(npc: NpcCard):
+	for card in _npcs:
+		if card.get_ref() == npc:
+			return
+	_npcs.append(weakref(npc))
 
-func get_inhabitant_count() -> int:
-	return _inhabitants.size()
+func get_npc_count() -> int:
+	return _npcs.size()
 
-func get_inhabitant(index: int) -> NpcCard:
-	return _inhabitants[index].get_ref()
+func get_npc(index: int) -> NpcCard:
+	return _npcs[index].get_ref()
 
-func get_inhabitants() -> Array[NpcCard]:
+func get_npcs() -> Array[NpcCard]:
 	var ret: Array[NpcCard]
-	for ref in _inhabitants:
+	for ref in _npcs:
 		ret.append(ref.get_ref())
 	return ret
 
@@ -55,27 +60,39 @@ static func create_card(id: String) -> LocationCard:
 	card.database_id = id
 	return card
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.LOCATION_CARD
 
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = []
-	for card in _inhabitants:
+	for card in _npcs:
 		refs.append(card.get_ref())
 	return refs
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = super()
 	if location_status != LocationStatus.NONE:
 		dict["location_status"] = location_status
 	dict["database_id"] = database_id
-	if _inhabitants:
+	if _npcs:
 		var refs = []
-		for card in _inhabitants:
+		for card in _npcs:
 			refs.append(SaveLoadTools.get_object_id(card.get_ref()))
-		dict["inhabitants"] = refs
+		dict["npcs"] = refs
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	super(dict, catalog)
 	location_status = dict.get("location_status", LocationStatus.NONE)
@@ -83,9 +100,12 @@ func restore(dict, catalog):
 	var location_info = _location_data[database_id]
 	card_name = location_info["name"]
 	description = location_info["description"]
-	if "inhabitants" in dict:
-		for card in dict.inhabitants:
-			_inhabitants.append(weakref(catalog[card]))
+	if "npcs" in dict:
+		for card in dict.npcs:
+			_npcs.append(weakref(catalog[card]))
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return _card_scene.instantiate()
