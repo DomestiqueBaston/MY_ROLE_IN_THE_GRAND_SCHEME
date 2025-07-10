@@ -21,6 +21,12 @@ enum NpcStatus {
 	ACCOMPLICE
 }
 
+enum Category {
+	NORMAL,
+	USELESS,
+	MINION
+}
+
 enum Sex {
 	FEMALE,
 	MALE
@@ -59,11 +65,13 @@ var mental: int
 var health: int
 var max_health: int
 var wanted: int
-var is_minion: bool
+var category: Category
 var player_reputation: int
 
 var _home: WeakRef
 var _work: WeakRef
+var _hangout: WeakRef
+var _hideout: WeakRef
 
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
@@ -99,7 +107,7 @@ func get_home() -> LocationCard:
 func get_work() -> LocationCard:
 	return _work.get_ref()
 
-func _randomize(case: Case, job_id: String, minion: bool):
+func _randomize(case: Case, cat: Category, job_id: String):
 
 	# sex and orientation
 
@@ -157,8 +165,8 @@ func _randomize(case: Case, job_id: String, minion: bool):
 
 	health = roundi(max_health * randf_range(0.5, 1.0))
 	wanted = randi_range(0, 2)
-	is_minion = minion
-	player_reputation = -2 if is_minion else 0
+	category = cat
+	player_reputation = -2 if category == Category.MINION else 0
 
 	# home and work locations
 
@@ -174,21 +182,43 @@ func _randomize(case: Case, job_id: String, minion: bool):
 		work = case.find_or_create_location(work_place)
 	_work = weakref(work)
 
+	# everyone has a hangout location
+
+	_hangout = weakref(case.find_hangout())
+
+	# only 20% of useless NPCs have a hideout location
+
+	if category != Category.USELESS or randf() < 0.2:
+		_hideout = weakref(case.find_hideout())
+	else:
+		_hideout = null
+
 ##
 ## Call this at the start of each new day: the NPC's health is incremented
-## until it reaches max_health.
+## until it reaches max_health. (Perhaps this should be done at different times
+## depending on NPCs' work schedules?)
 ##
 func new_day():
 	if health < max_health:
 		health += 1
 
+##
+## Generates and returns a random non-playing character for a case.
+##
+## The case is necessary because we need to know its difficulty, and because any
+## locations generated are registered with the case.
+##
+## If possible_jobs is given, it is an array of job IDs, one of which is chosen
+## at random for the NPC's profession. If it is not given or is empty, the NPC
+## may be given any job.
+##
 static func generate_card(
-		case: Case, possible_jobs = [], minion: bool = false) -> NpcCard:
+	case: Case, cat: Category = Category.NORMAL, possible_jobs = []) -> NpcCard:
 	var card = _card_scene.instantiate()
 	var job_id: String
 	if possible_jobs:
 		job_id = possible_jobs.pick_random()
-	card._randomize(case, job_id, minion)
+	card._randomize(case, cat, job_id)
 	return card
 
 #
@@ -206,6 +236,10 @@ func get_referenced_objects():
 		refs.append(_home.get_ref())
 	if _work:
 		refs.append(_work.get_ref())
+	if _hangout:
+		refs.append(_hangout.get_ref())
+	if _hideout:
+		refs.append(_hideout.get_ref())
 	return refs
 
 #
@@ -223,14 +257,18 @@ func get_json_dict():
 	dict["health"] = health
 	dict["max_health"] = max_health
 	dict["wanted"] = wanted
-	if is_minion:
-		dict["is_minion"] = is_minion
+	if category != Category.NORMAL:
+		dict["category"] = category
 	if player_reputation != 0:
 		dict["player_reputation"] = player_reputation
 	if _home:
 		dict["home"] = SaveLoadTools.get_object_id(_home.get_ref())
 	if _work:
 		dict["work"] = SaveLoadTools.get_object_id(_work.get_ref())
+	if _hangout:
+		dict["hangout"] = SaveLoadTools.get_object_id(_hangout.get_ref())
+	if _hideout:
+		dict["hideout"] = SaveLoadTools.get_object_id(_hideout.get_ref())
 	return dict
 
 #
@@ -248,13 +286,17 @@ func restore(dict, catalog):
 	max_health = dict.max_health
 	health = dict.health
 	wanted = dict.wanted
-	is_minion = dict.get("is_minion", false)
+	category = dict.get("category", Category.NORMAL)
 	player_reputation = dict.get("player_reputation", 0)
 	card_name = first_name + " " + last_name
 	if "home" in dict:
 		_home = weakref(catalog[dict.home])
 	if "work" in dict:
 		_work = weakref(catalog[dict.work])
+	if "hangout" in dict:
+		_hangout = weakref(catalog[dict.hangout])
+	if "hideout" in dict:
+		_hideout = weakref(catalog[dict.hideout])
 
 #
 # For save/load.

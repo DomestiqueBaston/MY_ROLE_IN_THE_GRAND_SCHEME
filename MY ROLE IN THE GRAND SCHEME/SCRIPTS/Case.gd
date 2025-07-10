@@ -27,6 +27,7 @@ var _status: Status = Status.UNASSIGNED
 var _links: Array[Link]
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
+var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 
 func _notification(what: int):
 
@@ -101,7 +102,9 @@ func _randomize():
 	if culprit_count > 0:
 		var culprit_jobs = _motive.get("culprits_professions", [])
 		for i in culprit_count:
-			culprits.append(NpcCard.generate_card(self, culprit_jobs))
+			culprits.append(
+				NpcCard.generate_card(
+					self, NpcCard.Category.NORMAL, culprit_jobs))
 
 	# NPCs: victims
 
@@ -109,7 +112,8 @@ func _randomize():
 		var victim_jobs = _motive.get("victims_professions", [])
 		var dead = _motive["dead_victims"]
 		for i in victim_count:
-			var card = NpcCard.generate_card(self, victim_jobs)
+			var card = NpcCard.generate_card(
+				self, NpcCard.Category.NORMAL, victim_jobs)
 			card.npc_status = NpcCard.NpcStatus.VICTIM
 			if dead == "yes":
 				card.npc_status = NpcCard.NpcStatus.DEAD
@@ -156,7 +160,7 @@ func _randomize():
 			useless_count = randi_range(15, 22)
 
 	for i in useless_count:
-		other_npcs.append(NpcCard.generate_card(self))
+		other_npcs.append(NpcCard.generate_card(self, NpcCard.Category.USELESS))
 
 	# evidence
 
@@ -307,6 +311,20 @@ func create_location(location_id: String) -> LocationCard:
 	var card = LocationCard.create_card(location_id)
 	locations.append(card)
 	return card
+
+func find_hangout() -> LocationCard:
+	var hangouts = []
+	for loc in _location_data:
+		if "yes" in _location_data[loc].get("hangout", []):
+			hangouts.append(loc)
+	return find_or_create_location(hangouts.pick_random())
+
+func find_hideout() -> LocationCard:
+	var hideouts = []
+	for loc in _location_data:
+		if "secret" in _location_data[loc].get("hangout", []):
+			hideouts.append(loc)
+	return create_location(hideouts.pick_random())
 
 func start():
 	_status = Status.ACTIVE
