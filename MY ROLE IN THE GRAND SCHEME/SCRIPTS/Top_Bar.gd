@@ -195,8 +195,14 @@ func _on_dailies_menu_popup():
 	# can the player visit the investigation center?
 
 	var popup: PopupMenu = _dailies_button.get_popup()
-	var hub_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
-	popup.set_item_disabled(hub_index, not GameState.can_visit_investigation_center())
+	var item_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
+	popup.set_item_disabled(
+		item_index, not GameState.can_visit_investigation_center())
+
+	# can the player sleep?
+
+	item_index = popup.get_item_index(DailiesMenuItem.SLEEP)
+	popup.set_item_disabled(item_index, not GameState.can_sleep())
 
 	# populate the debts submenu with an item for each debt
 

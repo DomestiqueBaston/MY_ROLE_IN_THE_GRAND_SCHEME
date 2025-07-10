@@ -174,6 +174,14 @@ func _randomize(case: Case, job_id: String, minion: bool):
 		work = case.find_or_create_location(work_place)
 	_work = weakref(work)
 
+##
+## Call this at the start of each new day: the NPC's health is incremented
+## until it reaches max_health.
+##
+func new_day():
+	if health < max_health:
+		health += 1
+
 static func generate_card(
 		case: Case, possible_jobs = [], minion: bool = false) -> NpcCard:
 	var card = _card_scene.instantiate()
@@ -183,9 +191,15 @@ static func generate_card(
 	card._randomize(case, job_id, minion)
 	return card
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.NPC_CARD
 
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = super()
 	if _home:
@@ -194,6 +208,9 @@ func get_referenced_objects():
 		refs.append(_work.get_ref())
 	return refs
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = super()
 	dict["first_name"] = first_name
@@ -216,6 +233,9 @@ func get_json_dict():
 		dict["work"] = SaveLoadTools.get_object_id(_work.get_ref())
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	super(dict, catalog)
 	first_name = dict.first_name
@@ -236,5 +256,8 @@ func restore(dict, catalog):
 	if "work" in dict:
 		_work = weakref(catalog[dict.work])
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return _card_scene.instantiate()

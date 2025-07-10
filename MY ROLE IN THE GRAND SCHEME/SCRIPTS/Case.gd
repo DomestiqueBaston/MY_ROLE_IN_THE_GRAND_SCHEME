@@ -264,6 +264,10 @@ func get_difficulty() -> int:
 func get_duration() -> int:
 	return _duration
 
+##
+## Returns all the cards created for the case, including NPCs, objects and
+## locations.
+##
 func get_cards() -> Array[BaseCard]:
 	var all_cards: Array[BaseCard]
 	for card_list in [
@@ -272,6 +276,17 @@ func get_cards() -> Array[BaseCard]:
 	]:
 		all_cards.append_array(card_list)
 	return all_cards
+
+##
+## Returns the cards for all the NPCs created for the case.
+##
+func get_npcs() -> Array[NpcCard]:
+	var all_npcs: Array[NpcCard]
+	for card_list in [
+		culprits, victims, witnesses, accomplices, suspects, other_npcs
+	]:
+		all_npcs.append_array(card_list)
+	return all_npcs
 
 func add_link(link: Link):
 	_links.append(link)
