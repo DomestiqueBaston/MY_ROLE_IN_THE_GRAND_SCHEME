@@ -38,9 +38,9 @@
 	"acquaintance": ["NPCxxx"],
 	"comment_13": "de 1 à 3 connaissances (50% partagent le lieu de travail et 50% un lieu fréquenté)",
 	"affair": ["None", "NPCxxx"],
-	"comment_14": "de 0 à 1 (homo. si Couple homo). Hors affaire de Adultery/Intimacy et Intimacy, alors none",
+	"comment_14": "de 0 à 1 (on suit sexual_orientation). Impératif en cas d'enquête avec lien Intimacy incriminant",
 	"debt_influence": ["NPCxxx", "None"],
-	"comment_15": "de 0 à X Creditor(s) où X est lié au nombre de coupable(s). Hors affaire de debt_influence, alors none",
+	"comment_15": "de 0 à X Creditor(s) où X est lié au nombre de coupable(s).",
 	"ideology": ["NPCxxx", "None"],
 	"comment_16": "de 0 à X où X est lié au nombre de coupable(s)+complice(s) (voir Fiche d'enquête). Hors affaire de ideology, alors none",
 	
@@ -71,7 +71,7 @@
 		"evidence_status": ["yes", "no"]
 	  }
 	],
-	"comment_21": "il y en aura de 1 à 4 (incluant éventuellement une/les evidence(s) s'il n'y en a pas ailleurs de définies)",
+	"comment_21": "il y en aura de 1 à 4 (incluant éventuellement une/les evidence(s) s'il n'y en a pas ailleurs de définies mais on va peut-être ne pas limiter ou ne limiter que les non-evidence)",
 
 	"information_on_npc": [
 	  {
