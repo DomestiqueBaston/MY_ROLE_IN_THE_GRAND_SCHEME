@@ -179,21 +179,21 @@ func _randomize(case: Case, cat: Category, job_id: String):
 
 	# home and work locations
 
-	var home = case.create_location("LOC001")
+	var home = case.create_location("LOC001", self)
 	home.add_inhabitant(self)
 	_home = weakref(home)
 
 	var work_place = job_info["work_place"].pick_random()
 	var work
 	if work_place == "LOC001":
-		work = case.create_location("LOC001")
+		work = case.create_location("LOC001", self)
 	else:
-		work = case.find_or_create_location(work_place)
+		work = case.find_or_create_location(work_place, self)
 	_work = weakref(work)
 
 	# everyone has a hangout location
 
-	_hangout = weakref(case.find_hangout())
+	_hangout = weakref(case.find_hangout(self))
 
 	# not all NPCs have a hideout location
 
@@ -206,7 +206,7 @@ func _randomize(case: Case, cat: Category, job_id: String):
 		_:
 			hideout_probability = 0.5
 	if randf() < hideout_probability:
-		_hideout = weakref(case.create_hideout())
+		_hideout = weakref(case.create_hideout(self))
 	else:
 		_hideout = null
 

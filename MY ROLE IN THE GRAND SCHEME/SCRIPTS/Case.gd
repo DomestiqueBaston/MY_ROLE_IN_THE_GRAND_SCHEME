@@ -14,6 +14,7 @@ var accomplices: Array[NpcCard]
 var suspects: Array[NpcCard]
 var other_npcs: Array[NpcCard]
 var evidence: Array[ObjectCard]
+var other_objects: Array[ObjectCard]
 var locations: Array[LocationCard]
 var crime_location: LocationCard  # reference to a locations item
 
@@ -28,6 +29,7 @@ var _links: Array[Link]
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
+var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 
 func _notification(what: int):
 
@@ -38,7 +40,7 @@ func _notification(what: int):
 	if what == NOTIFICATION_PREDELETE:
 		for card_list in [
 				culprits, victims, witnesses, accomplices, suspects, other_npcs,
-				evidence, locations
+				evidence, other_objects, locations
 		]:
 			for card in card_list:
 				card.queue_free()
@@ -182,7 +184,7 @@ func _randomize():
 	if location_name is Array and not location_name.is_empty():
 		location_name = location_name.pick_random()
 
-	var actual_location
+	var actual_location: String
 
 	if location_name.begins_with("any"):
 		var is_any_culprit
@@ -198,23 +200,23 @@ func _randomize():
 	else:
 		actual_location = location_name
 
-	# TODO: use and update locations array...
-
 	var location_card: LocationCard
 
-	if actual_location == "none":
-		location_card = null
-	elif actual_location == "home":
-		location_card = victims[0].get_home()
-	elif actual_location == "work":
-		location_card = victims[0].get_work()
-	elif actual_location == "culprit_home":
-		location_card = culprits[0].get_home()
-	elif actual_location == "culprit_work":
-		location_card = culprits[0].get_work()
-	else:
-		crime_location = find_or_create_location(actual_location)
-		location_card = crime_location
+	match actual_location:
+		"none":
+			location_card = null
+		"home":
+			location_card = victims[0].get_home()
+		"work":
+			location_card = victims[0].get_work()
+		"culprit_home":
+			location_card = culprits[0].get_home()
+		"culprit_work":
+			location_card = culprits[0].get_work()
+		_:
+			crime_location = find_or_create_location(
+				actual_location, get_npcs().pick_random())
+			location_card = crime_location
 
 	if location_card:
 		var known_factor = _motive.get("known_crime_location", 1)
@@ -228,9 +230,8 @@ func _randomize():
 		if is_known:
 			location_card.location_status = LocationCard.LocationStatus.CRIME_SCENE
 
-	# TODO: friends/enemies/couples??
+	# TODO: friends/enemies/acquaintances/couples??
 	# TODO: links
-	# TODO: useless objects
 
 func _get_count_from_array(count) -> int:
 	if count is Array and not count.is_empty():
@@ -277,7 +278,7 @@ func get_cards() -> Array[BaseCard]:
 	var all_cards: Array[BaseCard]
 	for card_list in [
 		culprits, victims, witnesses, accomplices, suspects, other_npcs,
-		evidence, locations
+		evidence, other_objects, locations
 	]:
 		all_cards.append_array(card_list)
 	return all_cards
@@ -302,30 +303,63 @@ func remove_link(link: Link):
 func get_links() -> Array[Link]:
 	return _links
 
-func find_or_create_location(location_id: String) -> LocationCard:
+##
+## Looks for an existing location with the given ID, or creates a new one if
+## none is found, in which case npc is passed to create_location().
+##
+func find_or_create_location(location_id: String, npc: NpcCard) -> LocationCard:
 	for card in locations:
 		if card.database_id == location_id:
 			return card
-	return create_location(location_id)
+	return create_location(location_id, npc)
 
-func create_location(location_id: String) -> LocationCard:
+##
+## Creates a new location card from the given ID in the location database. Some
+## number of useless objects are also created in the new location, with the
+## given NPC as owner.
+##
+func create_location(location_id: String, npc: NpcCard) -> LocationCard:
 	var card = LocationCard.create_card(location_id)
 	locations.append(card)
+
+	# populate the new location with some number of useless objects
+
+	var obj_count = randi_range(0, 3)
+	print("creating %d useless objects for %s" % [obj_count, card.card_name])
+	while obj_count > 0:
+		var obj_id = _object_data.keys().pick_random()
+		var owners = _object_data[obj_id].get("owners", {})
+		var npc_owners = owners.get("npc", [0])
+		var location_owners = owners.get("location", [0])
+		if 1.0 in npc_owners and 0 in location_owners:
+			var obj = ObjectCard.create_card(obj_id)
+			obj.add_object_owner(npc)
+			other_objects.append(obj)
+			obj_count -= 1
+
 	return card
 
-func find_hangout() -> LocationCard:
+##
+## Finds or creates a random hangout location. If a new location is created,
+## the useless objects created there belong to the given NPC.
+##
+func find_hangout(npc: NpcCard) -> LocationCard:
 	var hangouts = []
 	for loc in _location_data:
 		if "yes" in _location_data[loc].get("hangout", []):
 			hangouts.append(loc)
-	return find_or_create_location(hangouts.pick_random())
+	return find_or_create_location(hangouts.pick_random(), npc)
 
-func create_hideout() -> LocationCard:
+##
+## Creates a random hideout location. The useless objects created there belong
+## to the given NPC.
+##
+func create_hideout(npc: NpcCard) -> LocationCard:
 	var hideouts = []
 	for loc in _location_data:
 		if "secret" in _location_data[loc].get("hangout", []):
 			hideouts.append(loc)
-	return create_location(hideouts.pick_random())
+	return create_location(hideouts.pick_random(), npc)
 
 func start():
 	_status = Status.ACTIVE
@@ -345,6 +379,7 @@ func get_referenced_objects():
 	refs.append_array(suspects)
 	refs.append_array(other_npcs)
 	refs.append_array(evidence)
+	refs.append_array(other_objects)
 	refs.append_array(locations)
 	refs.append_array(_links)
 	return refs
@@ -402,6 +437,12 @@ func get_json_dict():
 			evidence_refs.append(SaveLoadTools.get_object_id(card))
 		dict["evidence"] = evidence_refs
 
+	if other_objects:
+		var object_refs = []
+		for card in other_objects:
+			object_refs.append(SaveLoadTools.get_object_id(card))
+		dict["other_objects"] = object_refs
+
 	if locations:
 		var location_refs = []
 		for card in locations:
@@ -441,6 +482,8 @@ func restore(dict, catalog):
 		other_npcs.append(catalog[ref])
 	for ref in dict.get("evidence", []):
 		evidence.append(catalog[ref])
+	for ref in dict.get("other_objects", []):
+		other_objects.append(catalog[ref])
 	for ref in dict.get("locations", []):
 		locations.append(catalog[ref])
 	if "crime_location" in dict:

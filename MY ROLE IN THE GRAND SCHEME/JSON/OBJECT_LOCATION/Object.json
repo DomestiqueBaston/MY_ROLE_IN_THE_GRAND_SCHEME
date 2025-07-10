@@ -1,2962 +1,1330 @@
 {
 	"OBJ001": {
-		"obj_id": "OBJ001_IDxxx",
-		"type": "Object",
-		"info_name": "- DEBT AKNOWLEDGMENT -",
-		"name": "Debt aknowledgment",
+		"info_name": "- DEBT ACKNOWLEDGMENT -",
+		"name": "Debt acknowledgment",
 		"description": "Potentially useful in resolving financial disputes.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx",
-			"NPCxxx"
-		],
-		"comment_1": "Il FAUT 2 propriétaires",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+        "owners": {
+            "npc": [2]
+        }
 	},
 	"OBJ002": {
-		"obj_id": "OBJ002_IDxxx",
-		"type": "Object",
 		"info_name": "- DNA SAMPLE -",
 		"name": "DNA sample",
 		"description": "Rarely leaves any doubt as to its origin.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ003": {
-		"obj_id": "OBJ003_IDxxx",
-		"type": "Object",
 		"info_name": "- UNKNOWN DNA -\n- SAMPLE -",
 		"name": "Unknown DNA sample",
 		"description": "Even of unknown origin, DNA can talk.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ004": {
-		"obj_id": "OBJ004_IDxxx",
-		"type": "Object",
 		"info_name": "- FINGERPRINTS -",
 		"name": "Fingerprints",
 		"description": "Old-school style. It works just as well to find someone.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ005": {
-		"obj_id": "OBJ005_IDxxx",
-		"type": "Object",
 		"info_name": "- KEY -",
 		"name": "Key",
 		"description": "It could link someone to a crime scene.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx",
-			"LOCxxxIDxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1],
+			"location": [1]
+		}
 	},
 	"OBJ006": {
-		"obj_id": "OBJ006_IDxxx",
-		"type": "Object",
 		"info_name": "- RECORDING -",
 		"name": "Recording",
 		"description": "May contain relevant compromising material.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx",
-			"NPCxxx",
-			"NPCxxx"
-		],
-		"comment_1": "il peut y avoir jusqu'à 3 propriétaires qui sont les personnes enregistrées",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1, 2, 3]
+		}
 	},
 	"OBJ007": {
-		"obj_id": "OBJ007_IDxxx",
-		"type": "Object",
 		"info_name": "- JEWELER'S BILL -",
 		"name": "Jeweler's bill",
 		"description": "This could reveal something that shouldn't have happened.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ008": {
-		"obj_id": "OBJ008_IDxxx",
-		"type": "Object",
 		"info_name": "- LARGE SUM OF CASH -",
 		"name": "Large sum of cash",
 		"description": "That much money could mean an illegal transaction.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ009": {
-		"obj_id": "OBJ009_IDxxx",
-		"type": "Object",
 		"info_name": "- BANK RECEIPT -",
 		"name": "Bank receipt",
 		"description": "A document proving a bank transaction.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ010": {
-		"obj_id": "OBJ010_IDxxx",
-		"type": "Object",
 		"info_name": "- LINGERIE -",
 		"name": "Lingerie",
 		"description": "Women's undergarments that shouldn't have been found there.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ011": {
-		"obj_id": "OBJ011_IDxxx",
-		"type": "Object",
 		"info_name": "- BOOK -",
 		"name": "Book",
 		"description": "The Manual of Transcendental Spirituality.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ012": {
-		"obj_id": "OBJ012_IDxxx",
-		"type": "Object",
 		"info_name": "- MESSAGE -",
 		"name": "Message",
 		"description": "A communication that could serve as evidence.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx",
-			"NPCxxx"
-		],
-		"comment_1": "Il FAUT 2 propriétaires",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+        "owners": {
+            "npc": [2]
+        }
 	},
 	"OBJ013": {
-		"obj_id": "OBJ013_IDxxx",
-		"type": "Object",
 		"info_name": "- PHOTOGRAPH -",
 		"name": "Photograph",
 		"description": "A rather explicit scene in context.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx",
-			"NPCxxx",
-			"NPCxxx"
-		],
-		"comment_1": "il peut y avoir jusqu'à 3 propriétaires qui sont les personnes photographiées",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1, 2, 3]
+		}
 	},
 	"OBJ014": {
-		"obj_id": "OBJ014_IDxxx",
-		"type": "Object",
 		"info_name": "- CONDOM -",
 		"name": "Condom",
 		"description": "Even empty, it's still a valid clue. And full...",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx",
-			"NPCxxx"
-		],
-		"comment_1": "il FAUT 2 propriétaires",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+        "owners": {
+            "npc": [2]
+        }
 	},
 	"OBJ015": {
-		"obj_id": "OBJ015_IDxxx",
-		"type": "Object",
 		"info_name": "- WEAPON -",
 		"name": "Weapon",
 		"description": "They're rarely used just to make mashed potatoes.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+        "owners": {
+            "npc": [1]
+        }
 	},
 	"OBJ016": {
-		"obj_id": "OBJ016_IDxxx",
-		"type": "Object",
 		"info_name": "- EXPLOSIVE -",
 		"name": "Explosive",
 		"description": "There's more than enough to make one hell of a firework.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+        "owners": {
+            "npc": [1]
+        }
 	},
 	"OBJ017": {
-		"obj_id": "OBJ017_IDxxx",
-		"type": "Object",
 		"info_name": "- BOOK -",
 		"name": "Book",
 		"description": "The Book of the Galactic Prophecy.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+        "owners": {
+            "npc": [1]
+        }
 	},
 	"OBJ018": {
-		"obj_id": "OBJ018_IDxxx",
-		"type": "Object",
 		"info_name": "- BLUEPRINT -",
 		"name": "Blueprint",
 		"description": "Blueprint of a stach in the sewers;",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ019": {
-		"obj_id": "OBJ019_IDxxx",
-		"type": "Object",
 		"info_name": "- BLOODSTAINED CLOTH -",
 		"name": "Bloodstained cloth",
 		"description": "Those stains were not caused by menstrual blood;",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ020": {
-		"obj_id": "OBJ020_IDxxx",
-		"type": "Object",
 		"info_name": "- BOOK -",
 		"name": "Book",
 		"description": "A recent edition of The Bio Revelation.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ021": {
-		"obj_id": "OBJ021_IDxxx",
-		"type": "Object",
 		"info_name": "- LOCK PICK -",
 		"name": "Lock pick",
 		"description": "Not a toothpick, right? Not for the average Joe.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ022": {
-		"obj_id": "OBJ022_IDxxx",
-		"type": "Object",
 		"info_name": "- ARTWORK -",
 		"name": "Artwork",
 		"description": "Not Boutard's best, but at least it's not upside down.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ023": {
-		"obj_id": "OBJ023_IDxxx",
-		"type": "Object",
 		"info_name": "- GERMANIUM DIODES -",
 		"name": "Germanium diodes",
 		"description": "Barely useless semiconductors for audio circuits.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ024": {
-		"obj_id": "OBJ024_IDxxx",
-		"type": "Object",
 		"info_name": "- COUNTERFEIT MONEY -",
 		"name": "Counterfeit money",
 		"description": "It couldn't serve more as an evidence.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ025": {
-		"obj_id": "OBJ025_IDxxx",
-		"type": "Object",
 		"info_name": "- COUNTERFEIT GOODS -",
 		"name": "Counterfeit goods",
 		"description": "I’m not qualified to judge the forger's skills.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ026": {
-		"obj_id": "OBJ026_IDxxx",
-		"type": "Object",
 		"info_name": "- COUNTERFEIT -\n- DOCUMENTS -",
 		"name": "Counterfeit documents",
 		"description": "Photostore and a good printer can do wonders these days.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ027": {
-		"obj_id": "OBJ027_IDxxx",
-		"type": "Object",
 		"info_name": "- COUNTERFEIT LOGOS -",
 		"name": "Counterfeit logos",
 		"description": "There's enough to fill Amazonia's shelves with fake low-quality products.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ028": {
-		"obj_id": "OBJ028_IDxxx",
-		"type": "Object",
 		"info_name": "- VIAL OF -\n- FLUO LIQUID -",
 		"name": "Vial of Fluo liquid",
 		"description": "This is no medicine. At all.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ029": {
-		"obj_id": "OBJ029_IDxxx",
-		"type": "Object",
 		"info_name": "- COPY MACHINE -",
 		"name": "Copy machine",
 		"description": "This machine has undergone many changes.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ030": {
-		"obj_id": "OBJ030_IDxxx",
-		"type": "Object",
 		"info_name": "- MANUEL -",
 		"name": "Manual",
 		"description": "The Manual of Static Wave Theory.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ031": {
-		"obj_id": "OBJ031_IDxxx",
-		"type": "Object",
 		"info_name": "- INSPECTION REPORT -",
 		"name": "Inspection report",
 		"description": "The kind of document that's damning in criminal court.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ032": {
-		"obj_id": "OBJ032_IDxxx",
-		"type": "Object",
 		"info_name": "- DOCUMENTARY -",
 		"name": "Documentary",
 		"description": "The Proof of the Trihedral Earth.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ033": {
-		"obj_id": "OBJ033_IDxxx",
-		"type": "Object",
 		"info_name": "- NOTEBOOK -",
 		"name": "Notebook",
 		"description": "Notes on animal AI.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ034": {
-		"obj_id": "OBJ034_IDxxx",
-		"type": "Object",
 		"info_name": "- PHOTOGRAPHS -",
 		"name": "Photographs",
 		"description": "Blurry photographs of pigeons.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ035": {
-		"obj_id": "OBJ035_IDxxx",
-		"type": "Object",
 		"info_name": "- COURT SUMMONS -",
 		"name": "Court summons",
 		"description": "Such a document would easily serve as proof.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ036": {
-		"obj_id": "OBJ036_IDxxx",
-		"type": "Object",
 		"info_name": "- WEB ARCHIVE -",
 		"name": "Web archive",
 		"description": "All your past declarations are here, safe and sound.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ037": {
-		"obj_id": "OBJ037_IDxxx",
-		"type": "Object",
 		"info_name": "- BOOK -",
 		"name": "Book",
 		"description": "A Book on Freud and the Mental Cosmology.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ038": {
-		"obj_id": "OBJ038_IDxxx",
-		"type": "Object",
 		"info_name": "- PET -",
 		"name": "Pet",
 		"description": "This animal will (probably) tell us more than we think.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ039": {
-		"obj_id": "OBJ039_IDxxx",
-		"type": "Object",
 		"info_name": "- PHOTOGRAPHS -",
 		"name": "Photographs",
 		"description": "A Collection of twin photos.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ040": {
-		"obj_id": "OBJ040_IDxxx",
-		"type": "Object",
 		"info_name": "- DRAFT RANSOM NOTE -",
 		"name": "Draft ransom note",
 		"description": "Denial is going to become complicated.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ041": {
-		"obj_id": "OBJ041_IDxxx",
-		"type": "Object",
 		"info_name": "- ID -",
 		"name": "ID",
 		"description": "Such a document is usually in the possession of its owner.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ042": {
-		"obj_id": "OBJ042_IDxxx",
-		"type": "Object",
 		"info_name": "- FAKE ID -",
 		"name": "Fake ID",
 		"description": "A beautifully crafted fake, but a fake nonetheless.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ043": {
-		"obj_id": "OBJ043_IDxxx",
-		"type": "Object",
 		"info_name": "- BOTTLE -",
 		"name": "Bottle",
 		"description": "An hypolipidic oil bottle.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ044": {
-		"obj_id": "OBJ044_IDxxx",
-		"type": "Object",
 		"info_name": "- MICRO CAMERA -",
 		"name": "Micro camera",
 		"description": "A device not easily found on the market.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ045": {
-		"obj_id": "OBJ045_IDxxx",
-		"type": "Object",
 		"info_name": "- CLASSIFIED -\n- DOCUMENT -",
 		"name": "Classified document",
 		"description": "This document does not belong here.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ046": {
-		"obj_id": "OBJ046_IDxxx",
-		"type": "Object",
 		"info_name": "- COMPUTER VIRUS -",
 		"name": "Computer virus",
 		"description": "Its code will probably tell us a lot.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ047": {
-		"obj_id": "OBJ047_IDxxx",
-		"type": "Object",
 		"info_name": "- INDUSTRIAL -\n- PROJECT PLAN -",
 		"name": "Industrial project plan",
 		"description": "Major investments were planned, but have also been slightly delayed in recent days.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ048": {
-		"obj_id": "OBJ048_IDxxx",
-		"type": "Object",
 		"info_name": "- PURCHASE ORDER -",
 		"name": "Purchase order",
 		"description": "A Purchase order for 500 electro-ejaculators.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ049": {
-		"obj_id": "OBJ049_IDxxx",
-		"type": "Object",
 		"info_name": "- DOCUMENT -",
 		"name": "Document",
 		"description": "Document written with the left hand (by a right-handed person).",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ081": {
-		"obj_id": "OBJ081_IDxxx",
-		"type": "Object",
 		"info_name": "- HANDBOOK -",
 		"name": "Handbook",
 		"description": "How to Draw Stars (Vol.7).",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ050": {
-		"obj_id": "OBJ050_IDxxx",
-		"type": "Object",
 		"info_name": "- TALISMAN -",
 		"name": "Talisman",
 		"description": "A Pentagram-shaped plastic talisman.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ051": {
-		"obj_id": "OBJ051_IDxxx",
-		"type": "Object",
 		"info_name": "- CUSTOMIZED LIGHTER -",
 		"name": "Customized Lighter",
 		"description": "In any other case, this lighter would be insignificant.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ052": {
-		"obj_id": "OBJ052_IDxxx",
-		"type": "Object",
 		"info_name": "- PURCHASE ORDER -",
 		"name": "Purchase order",
 		"description": "A Purchase order for 50kg of silver iodide.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ053": {
-		"obj_id": "OBJ053_IDxxx",
-		"type": "Object",
 		"info_name": "- FLAMMABLE PRODUCT -",
 		"name": "Flammable product",
 		"description": "There's enough to burn down a building.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ054": {
-		"obj_id": "OBJ054_IDxxx",
-		"type": "Object",
 		"info_name": "- BOOK -",
 		"name": "Book",
 		"description": "H.P. Lovecraft tells Aleister Crowley.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ055": {
-		"obj_id": "OBJ055_IDxxx",
-		"type": "Object",
 		"info_name": "- MANUAL -",
 		"name": "Manual",
 		"description": "The Dam Maintenance Manual.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ056": {
-		"obj_id": "OBJ056_IDxxx",
-		"type": "Object",
 		"info_name": "- ANTIDEPRESSANT -",
 		"name": "Antidepressant",
 		"description": "A treatment for people in poor psychological shape.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ057": {
-		"obj_id": "OBJ057_IDxxx",
-		"type": "Object",
 		"info_name": "- FILE -",
 		"name": "File",
 		"description": "A Study on the Digestion of Human Flesh by Polar Bears.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ058": {
-		"obj_id": "OBJ058_IDxxx",
-		"type": "Object",
 		"info_name": "- DIGITAL FOOTPRINTS -",
 		"name": "Digital footprints",
 		"description": "It will help identify individuals involved.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ059": {
-		"obj_id": "OBJ059_IDxxx",
-		"type": "Object",
 		"info_name": "- STOLEN DATA -",
 		"name": "Stolen data",
 		"description": "Data that should not be here.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "property définit le propriétaire de données copiées",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ060": {
-		"obj_id": "OBJ060_IDxxx",
-		"type": "Object",
 		"info_name": "- STOLEN GOODS -",
 		"name": "Stolen goods",
 		"description": "These goods have no business being here.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ061": {
-		"obj_id": "OBJ061_IDxxx",
-		"type": "Object",
 		"info_name": "- USB KEY -",
 		"name": "USB key",
 		"description": "A beaver tail-shaped USB key.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ062": {
-		"obj_id": "OBJ062_IDxxx",
-		"type": "Object",
 		"info_name": "- SEX TOY -",
 		"name": "Sex toy",
 		"description": "A rocket-shaped sex toy.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ063": {
-		"obj_id": "OBJ063_IDxxx",
-		"type": "Object",
 		"info_name": "- ILLICIT SUBSTANCE -",
 		"name": "Illicit substance",
 		"description": "Only people who feel badly about themselves or society use them.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ064": {
-		"obj_id": "OBJ064_IDxxx",
-		"type": "Object",
 		"info_name": "- SAMPLES -",
 		"name": "Samples",
 		"description": "43 samples of see salt.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ065": {
-		"obj_id": "OBJ065_IDxxx",
-		"type": "Object",
 		"info_name": "- HARD DRIVE -",
 		"name": "Hard drive",
 		"description": "A hard drive full of requiems.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ066": {
-		"obj_id": "OBJ066_IDxxx",
-		"type": "Object",
 		"info_name": "- CARDBOARD BOX -",
 		"name": "Cardboard box",
 		"description": "A Cardboard box full of FFP2 masks.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ067": {
-		"obj_id": "OBJ067_IDxxx",
-		"type": "Object",
 		"info_name": "- DAMAGED EQUIPMENT -",
 		"name": "Damaged equipment",
 		"description": "Here's what could well be a solid piece of evidence.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ068": {
-		"obj_id": "OBJ068_IDxxx",
-		"type": "Object",
 		"info_name": "- HAND TOOLS -",
 		"name": "Hand tools",
 		"description": "In any other case, these tools would be harmless.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ069": {
-		"obj_id": "OBJ069_IDxxx",
-		"type": "Object",
 		"info_name": "- SCULPTURE -",
 		"name": "Sculpture",
 		"description": "A plaster head of Marduk.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ070": {
-		"obj_id": "OBJ070_IDxxx",
-		"type": "Object",
 		"info_name": "- TOY -",
 		"name": "Toy",
 		"description": "Indestructible whoopee cushion.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ071": {
-		"obj_id": "OBJ071_IDxxx",
-		"type": "Object",
 		"info_name": "- LINGERIE -",
 		"name": "Lingerie",
 		"description": "A leopard-print side thong.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ072": {
-		"obj_id": "OBJ072_IDxxx",
-		"type": "Object",
 		"info_name": "- DOCUMENTARY -",
 		"name": "Documentary",
 		"description": "An AI-generated documentary about secret Greenland invasion project.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ073": {
-		"obj_id": "OBJ073_IDxxx",
-		"type": "Object",
 		"info_name": "- HEADSET -",
 		"name": "Headset",
 		"description": "An SCSI noise-cancelling headset.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ074": {
-		"obj_id": "OBJ074_IDxxx",
-		"type": "Object",
 		"info_name": "- SPRAY PAINT -",
 		"name": "Spray paint",
 		"description": "A can of 'glow-in-the-dark' spray paint.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ075": {
-		"obj_id": "OBJ075_IDxxx",
-		"type": "Object",
 		"info_name": "- STENCILS -",
 		"name": "Stencils",
 		"description": "Circle and cross stencils.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ076": {
-		"obj_id": "OBJ076_IDxxx",
-		"type": "Object",
 		"info_name": "- BOOK -",
 		"name": "Book",
 		"description": "A Pamphlet of Malevolent Benevolence.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ077": {
-		"obj_id": "OBJ077_IDxxx",
-		"type": "Object",
 		"info_name": "- TOOLS -",
 		"name": "Tools",
 		"description": "Surgical instruments for performing a tracheotomy.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ078": {
-		"obj_id": "OBJ078_IDxxx",
-		"type": "Object",
 		"info_name": "- USB KEY -",
 		"name": "USB key",
 		"description": "A genuine USB lightsaber.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ079": {
-		"obj_id": "OBJ079_IDxxx",
-		"type": "Object",
 		"info_name": "- BUSINESS CARD -",
 		"name": "Business card",
 		"description": "A good way to establish links in an investigation.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ080": {
-		"obj_id": "OBJ080_IDxxx",
-		"type": "Object",
 		"info_name": "- CREDIT CARD -",
 		"name": "Credit card",
 		"description": "It's enough to make you suspicious if it doesn't belong to you.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ250": {
-		"obj_id": "OBJ250_IDxxx",
-		"type": "Object",
 		"info_name": "- ENCRYPTED -\n- VOICEMAIL -",
 		"name": "Encrypted voicemail",
 		"description": "The playback starts mid-sentence: ''...the pigeons know everything...''",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ251": {
-		"obj_id": "OBJ251_IDxxx",
-		"type": "Object",
 		"info_name": "- TIME-STAMPED -\n- POLAROID -",
 		"name": "Dated photography",
 		"description": "It shows tomorrow’s newspaper headline. No sign of editing.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ252": {
-		"obj_id": "OBJ252_IDxxx",
-		"type": "Object",
 		"info_name": "- ORGANIC MICROCHIP -",
 		"name": "Organic microchip",
 		"description": "Still warm. It blinks when held near teeth.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ253": {
-		"obj_id": "OBJ253_IDxxx",
-		"type": "Object",
 		"info_name": "- SYNTHETIC EYELID -",
 		"name": "Synthetic eyelid",
 		"description": "Still twitching. Implants registered to an unknown biometric profile.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ254": {
-		"obj_id": "OBJ254_IDxxx",
-		"type": "Object",
 		"info_name": "- BLACK CUBE -",
 		"name": "Black cube",
 		"description": "Absorbs light. It emits low-frequency hum only audible when eyes are closed.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ255": {
-		"obj_id": "OBJ255_IDxxx",
-		"type": "Object",
 		"info_name": "- EGG-LIKE DEVICE -",
 		"name": "Pulsing egg",
 		"description": "It vibrates every 666 seconds. Screams faintly when submerged in salt water.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ256": {
-		"obj_id": "OBJ256_IDxxx",
-		"type": "Object",
 		"info_name": "- KINGSHANE -\n- NEUROPATCH -",
 		"name": "KingShane neuroPatch",
 		"description": "It sticks only to the neck. Vibrates when lying. Broken English ad on the back.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ257": {
-		"obj_id": "OBJ257_IDxxx",
-		"type": "Object",
 		"info_name": "- VOICE TRANSLATOR -\n- V3.016b -",
 		"name": "Voice translator v3.016b",
 		"description": "It mistranslates everything... except whispers.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ258": {
-		"obj_id": "OBJ258_IDxxx",
-		"type": "Object",
 		"info_name": "- TACTICAL SPOON -",
 		"name": "Tactical spoon",
 		"description": "Military-grade cutlery. Leaves no fingerprints. Cuts glass somehow.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ259": {
-		"obj_id": "OBJ259_IDxxx",
-		"type": "Object",
 		"info_name": "- BIODEGRADABLE -\n- BULLET -",
 		"name": "Biodegradable bullet",
 		"description": "Melts mid-air. Deeply disappoints gun nuts.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ260": {
-		"obj_id": "OBJ260_IDxxx",
-		"type": "Object",
 		"info_name": "- WIFI SABER -",
 		"name": "WiFi saber",
 		"description": "A blade made of unstable internet connection. Cuts only during lag spikes.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ281": {
-		"obj_id": "OBJ281_IDxxx",
-		"type": "Object",
 		"info_name": "- CLEAN LATEX GLOVES -",
 		"name": "Clean latex gloves",
 		"description": "That would leave no trace for sure.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ282": {
-		"obj_id": "OBJ282_IDxxx",
-		"type": "Object",
 		"info_name": "- CELLPHONE BATTERY -",
 		"name": "Cellphone battery",
 		"description": "It could be useful in case of long absence.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ283": {
-		"obj_id": "OBJ283_IDxxx",
-		"type": "Object",
 		"info_name": "- MUDDY SHOES -",
 		"name": "Muddy shoes",
 		"description": "Mud? In the city? Perhaps...",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ284": {
-		"obj_id": "OBJ284_IDxxx",
-		"type": "Object",
 		"info_name": "- USED TICKET -",
 		"name": "Used ticket",
 		"description": "Of course, we all have the right to use the subway.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ285": {
-		"obj_id": "OBJ285_IDxxx",
-		"type": "Object",
 		"info_name": "- FOREIGN CURRENCY -",
 		"name": "Foreign currency",
 		"description": "These days, few people can travel so far.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ286": {
-		"obj_id": "OBJ286_IDxxx",
-		"type": "Object",
 		"info_name": "- DIARY -",
 		"name": "Diary",
 		"description": "Does it really record important information?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ287": {
-		"obj_id": "OBJ287_IDxxx",
-		"type": "Object",
 		"info_name": "- DISASSEMBLED -\n- DEVICE -",
 		"name": "Disassembled device",
 		"description": "Why would anyone want to take this thing apart?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ288": {
-		"obj_id": "OBJ288_IDxxx",
-		"type": "Object",
 		"info_name": "- EMPTY SD-CARD -",
 		"name": "Empty SD-card",
 		"description": "Is it empty or has it been emptied?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ289": {
-		"obj_id": "OBJ289_IDxxx",
-		"type": "Object",
 		"info_name": "- PREPAID SIM-CARD -",
 		"name": "Prepaid SIM-card",
 		"description": "The kind of purchase you make to be (and remain) anonymous.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ290": {
-		"obj_id": "OBJ290_IDxxx",
-		"type": "Object",
 		"info_name": "- EXPIRED MEDICATION -",
 		"name": "Expired medication",
 		"description": "It would probably make a good poison.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ291": {
-		"obj_id": "OBJ291_IDxxx",
-		"type": "Object",
 		"info_name": "- CUT-UP NEWSPAPER -",
 		"name": "Cut-up newspaper",
 		"description": "We used to do anonymous letters like that.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ292": {
-		"obj_id": "OBJ292_IDxxx",
-		"type": "Object",
 		"info_name": "- BINOCULARS -",
 		"name": "Binoculars",
 		"description": "Eyes that see far.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ293": {
-		"obj_id": "OBJ293_IDxxx",
-		"type": "Object",
 		"info_name": "- CROWBAR -",
 		"name": "Crowbar",
 		"description": "In French, it means 'sketch'... No relation.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ294": {
-		"obj_id": "OBJ294_IDxxx",
-		"type": "Object",
 		"info_name": "- BAG OF FLOUR -",
 		"name": "Bag of flour",
 		"description": "...Or is it (fake) cocaine?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ295": {
-		"obj_id": "OBJ295_IDxxx",
-		"type": "Object",
 		"info_name": "- FLYING DRONE -",
 		"name": "Flying drone",
 		"description": "Not only used to look at a naked neighbor.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ296": {
-		"obj_id": "OBJ296_IDxxx",
-		"type": "Object",
 		"info_name": "- GPS TRACKER -",
 		"name": "GPS tracker",
 		"description": "A good alternative to a cellphone tracker.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ297": {
-		"obj_id": "OBJ297_IDxxx",
-		"type": "Object",
 		"info_name": "- BROKEN LAPTOP -",
 		"name": "Broken laptop",
 		"description": "What could have happened to it?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ298": {
-		"obj_id": "OBJ298_IDxxx",
-		"type": "Object",
 		"info_name": "- CAMBODIAN -\n- CIGARETTES -",
 		"name": "Cambodian cigarettes",
 		"description": "From Cambodia? Could it be contraband?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ299": {
-		"obj_id": "OBJ299_IDxxx",
-		"type": "Object",
 		"info_name": "- HANDS-FREE KIT -",
 		"name": "Hands-free kit",
 		"description": "Handy for doing two things at once.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ300": {
-		"obj_id": "OBJ300_IDxxx",
-		"type": "Object",
 		"info_name": "- FIRST AID KIT -",
 		"name": "First aid kit",
 		"description": "You must have some pretty strange activities to need that around here.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ301": {
-		"obj_id": "OBJ301_IDxxx",
-		"type": "Object",
 		"info_name": "- POWERFUL -\n- FLASHLIGHT -",
 		"name": "Powerful flashlight",
 		"description": "Not the kind of thing you really need in this town.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ302": {
-		"obj_id": "OBJ302_IDxxx",
-		"type": "Object",
 		"info_name": "- PADLOCK -",
 		"name": "Padlock",
 		"description": "Useful! if you have the key...",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ303": {
-		"obj_id": "OBJ303_IDxxx",
-		"type": "Object",
 		"info_name": "- EMPTY MATCHBOX -",
 		"name": "Empty matchbox",
 		"description": "We've seen fires start with less equipment.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ304": {
-		"obj_id": "OBJ304_IDxxx",
-		"type": "Object",
 		"info_name": "- BALL BEARING -",
 		"name": "Ball bearing",
 		"description": "Harmless at first glance, but could jam a mechanism or cause an accident.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ305": {
-		"obj_id": "OBJ305_IDxxx",
-		"type": "Object",
 		"info_name": "- ROLL OF -\n- PLASTIC WRAP -",
 		"name": "Roll of plastic wrap",
 		"description": "There's enough to pack more than a dead cow.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ306": {
-		"obj_id": "OBJ306_IDxxx",
-		"type": "Object",
 		"info_name": "- WIG -",
 		"name": "Wig",
 		"description": "I'm guilty of using this myself... For work. Only... Of course.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ307": {
-		"obj_id": "OBJ307_IDxxx",
-		"type": "Object",
 		"info_name": "- EMPTY WALLET -",
 		"name": "Empty wallet",
 		"description": "Has it been emptied or has it never been full?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ308": {
-		"obj_id": "OBJ308_IDxxx",
-		"type": "Object",
 		"info_name": "- BLACKLIGHT -\n- FLASHLIGHT -",
 		"name": "Blacklight flashlight",
 		"description": "We do lots of things with black light, not just funny.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ309": {
-		"obj_id": "OBJ309_IDxxx",
-		"type": "Object",
 		"info_name": "- HANDCUFFS -",
 		"name": "handcuffs",
 		"description": "Engraved plastic handcuffs with 'Freedom from the Plastic Prison'.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ310": {
-		"obj_id": "OBJ310_IDxxx",
-		"type": "Object",
 		"info_name": "- UNMARKED KEY -",
 		"name": "Unmarked key",
 		"description": "Oh! Could this possibly be the one I lost two years ago?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"comment_1": "il est question ici d'un PNJ et de son domicile",
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		},
+		"comment_1": "il est question ici d'un PNJ et de son domicile"
 	},
 	"OBJ311": {
-		"obj_id": "OBJ311_IDxxx",
-		"type": "Object",
 		"info_name": "- LOYALTY CARD -",
 		"name": "Loyalty card",
 		"description": "One more stamp and the reward is yours. Whatever it is.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ312": {
-		"obj_id": "OBJ312_IDxxx",
-		"type": "Object",
 		"info_name": "- EXPIRED PARKING -\n- PERMIT -",
 		"name": "Expired parking permit",
 		"description": "Was valid during a major crime event. Coincidence?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ313": {
-		"obj_id": "OBJ313_IDxxx",
-		"type": "Object",
 		"info_name": "- USB ADAPTER -",
 		"name": "USB adapter",
 		"description": "Nobody uses this standard anymore. Or do they?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ314": {
-		"obj_id": "OBJ314_IDxxx",
-		"type": "Object",
 		"info_name": "- FOLDED MAP -",
 		"name": "Folded city map",
 		"description": "Three locations are circled. Three no longer exist.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ315": {
-		"obj_id": "OBJ315_IDxxx",
-		"type": "Object",
 		"info_name": "- TORN NOTEBOOK PAGE -",
 		"name": "Notebook page",
 		"description": "Page 42 is missing. Why only the one with THE answer?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ316": {
-		"obj_id": "OBJ316_IDxxx",
-		"type": "Object",
 		"info_name": "- REPLACEMENT FUSE -",
 		"name": "Replacement fuse",
 		"description": "Still in packaging. But who cares?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ317": {
-		"obj_id": "OBJ317_IDxxx",
-		"type": "Object",
 		"info_name": "- USB FAN -",
 		"name": "USB fan",
 		"description": "It works. Makes a weird noise, though.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ318": {
-		"obj_id": "OBJ318_IDxxx",
-		"type": "Object",
 		"info_name": "- SAFE MANUAL -",
 		"name": "Small safe instruction manual",
 		"description": "Model number doesn't match any known safe.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ319": {
-		"obj_id": "OBJ319_IDxxx",
-		"type": "Object",
 		"info_name": "- CONTACT LENS CASE -",
 		"name": "Contact lens case",
 		"description": "Labels are rubbed off. L and R?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ320": {
-		"obj_id": "OBJ320_IDxxx",
-		"type": "Object",
 		"info_name": "- MIXED SCREWS -",
 		"name": "Bag of mixed screws",
 		"description": "None of them match any visible object.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ321": {
-		"obj_id": "OBJ321_IDxxx",
-		"type": "Object",
 		"info_name": "- WIRELESS MOUSE -",
 		"name": "Wireless mouse",
 		"description": "Useless, unless someone has the receiver.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ322": {
-		"obj_id": "OBJ322_IDxxx",
-		"type": "Object",
 		"info_name": "- LAMINATED NOTE -",
 		"name": "Laminated note",
 		"description": "No indication of what to not forget.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ323": {
-		"obj_id": "OBJ323_IDxxx",
-		"type": "Object",
 		"info_name": "- REMOTE CONTROL -",
 		"name": "Obsolete remote control",
 		"description": "The buttons are labeled A–J. No clue what it controls.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ324": {
-		"obj_id": "OBJ324_IDxxx",
-		"type": "Object",
 		"info_name": "- FIBER OPTIC CABLE -",
 		"name": "Fiber optic cable",
 		"description": "Professionally cut. Was it reused or intercepted?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ325": {
-		"obj_id": "OBJ325_IDxxx",
-		"type": "Object",
 		"info_name": "- COORDINATES NOTE -",
 		"name": "Folded paper with coordinates",
 		"description": "No names, no titles. Just latitude and longitude.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ326": {
-		"obj_id": "OBJ326_IDxxx",
-		"type": "Object",
 		"info_name": "- PLASTIC CASING -\n- FRAGMENT -",
 		"name": "Piece of plastic casing",
 		"description": "Clearly broken off something. Just not from here.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ327": {
-		"obj_id": "OBJ327_IDxxx",
-		"type": "Object",
 		"info_name": "- WALL CALENDAR -",
 		"name": "Wall calendar",
 		"description": "All weekends are crossed out with red ink.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ328": {
-		"obj_id": "OBJ328_IDxxx",
-		"type": "Object",
 		"info_name": "- MAGNETIC CARD -",
 		"name": "Magnetic card",
 		"description": "Strip is damaged. Writing is faded. Junk?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ329": {
-		"obj_id": "OBJ329_IDxxx",
-		"type": "Object",
 		"info_name": "- BROKEN STYLUS -",
 		"name": "Broken stylus",
 		"description": "Looks recent. But no devices in sight.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ330": {
-		"obj_id": "OBJ330_IDxxx",
-		"type": "Object",
 		"info_name": "- POWER SUPPLY -",
 		"name": "Power supply",
 		"description": "Would fry most electronics. Who needed it?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ331": {
-		"obj_id": "OBJ331_IDxxx",
-		"type": "Object",
 		"info_name": "- CONTACT LIST -",
 		"name": "Contact list printout",
 		"description": "Names, numbers... and one name is underlined twice: Furax!",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ332": {
-		"obj_id": "OBJ332_IDxxx",
-		"type": "Object",
 		"info_name": "- SERVER PANEL -",
 		"name": "Dusty server rack panel",
 		"description": "Part of a larger system, clearly disconnected.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ333": {
-		"obj_id": "OBJ333_IDxxx",
-		"type": "Object",
 		"info_name": "- METAL BRACKET -",
 		"name": "Metal bracket with barcode",
 		"description": "The barcode doesn’t match any known inventory. So far...",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ334": {
-		"obj_id": "OBJ334_IDxxx",
-		"type": "Object",
 		"info_name": "- MISSING PAGE -\n- MANUAL -",
 		"name": "User manual",
 		"description": "No brand, no context. Just steps 2 to 9.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ335": {
-		"obj_id": "OBJ335_IDxxx",
-		"type": "Object",
 		"info_name": "- BLANK RFID BADGE -",
 		"name": "Blank RFID access badge",
 		"description": "Not programmed. Or wiped. Interesting.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ336": {
-		"obj_id": "OBJ336_IDxxx",
-		"type": "Object",
 		"info_name": "- ANTENNA FRAGMENT -",
 		"name": "Fragment of a broken antenna",
 		"description": "It looks like it came from an old transceiver.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ337": {
-		"obj_id": "OBJ337_IDxxx",
-		"type": "Object",
 		"info_name": "- CLIPBOARD -",
 		"name": "Clipboard with pencil marks only",
 		"description": "Someone erased everything. Intentionally.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ338": {
-		"obj_id": "OBJ338_IDxxx",
-		"type": "Object",
 		"info_name": "- SECURITY SEAL -",
 		"name": "Security seal",
 		"description": "A security seal with a serial number half-scratched.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ339": {
-		"obj_id": "OBJ339_IDxxx",
-		"type": "Object",
 		"info_name": "- NOISE DETECTOR -",
 		"name": "Noise detector",
 		"description": "Battery removed. Why install it, then disable it?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ340": {
-		"obj_id": "OBJ340_IDxxx",
-		"type": "Object",
 		"info_name": "- CUT CABLE TIES -",
 		"name": "Cable tie bundle",
 		"description": "It looks like something was forcibly uninstalled.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ341": {
-		"obj_id": "OBJ341_IDxxx",
-		"type": "Object",
 		"info_name": "- INFRARED TRIGGER -",
 		"name": "Infrared remote trigger",
 		"description": "It's designed to activate something. No markings.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ342": {
-		"obj_id": "OBJ342_IDxxx",
-		"type": "Object",
 		"info_name": "- FAKE INSPECTION -\n- CARD -",
 		"name": "Elevator inspection card",
 		"description": "Details look right until you read the signature...",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ343": {
-		"obj_id": "OBJ343_IDxxx",
-		"type": "Object",
 		"info_name": "- EMPTY WATCH CASING -",
 		"name": "Watch casing",
 		"description": "No mechanism inside. Just the shell.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ344": {
-		"obj_id": "OBJ344_IDxxx",
-		"type": "Object",
 		"info_name": "- HEADPHONE JACK -\n- ADAPTER -",
 		"name": "Headphone jack adapter",
 		"description": "It's used by no modern device. Kept for a reason?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ345": {
-		"obj_id": "OBJ345_IDxxx",
-		"type": "Object",
 		"info_name": "- CIRCUIT BOARD -\n- FRAGMENT -",
 		"name": "Circuit board fragment",
 		"description": "Too complex for a household device.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ346": {
-		"obj_id": "OBJ346_IDxxx",
-		"type": "Object",
 		"info_name": "- ESCAPE PLAN -",
 		"name": "Emergency escape diagram",
 		"description": "Floor plan doesn't match any known building.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ347": {
-		"obj_id": "OBJ347_IDxxx",
-		"type": "Object",
 		"info_name": "- SERIAL LABEL -",
 		"name": "Paper label with serial code",
 		"description": "The code is not linked to anything identifiable. Swell!",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ348": {
-		"obj_id": "OBJ348_IDxxx",
-		"type": "Object",
 		"info_name": "- LOCKED POUCH -",
 		"name": "Locked pouch",
 		"description": "No opening visible. Soft and silent.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ349": {
-		"obj_id": "OBJ349_IDxxx",
-		"type": "Object",
 		"info_name": "- THERMAL SENSOR -\n- UNIT -",
 		"name": "Thermal sensor unit",
 		"description": "It seems to have been monitoring someone.",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ350": {
-		"obj_id": "OBJ350_IDxxx",
-		"type": "Object",
 		"info_name": "- MAINTENANCE TAG -",
 		"name": "Maintenance tag",
 		"description": "It's stamped 'VOID' in red. But on which machine?",
-		"found": [
-			"LOCxxxIDxxx"
-		],
-		"property": [
-			"NPCxxx"
-		],
-		"evidence": [
-			"yes",
-			"no"
-		],
-		"reduced_card": false
+		"owners": {
+			"npc": [1]
+		}
 	}
 }
