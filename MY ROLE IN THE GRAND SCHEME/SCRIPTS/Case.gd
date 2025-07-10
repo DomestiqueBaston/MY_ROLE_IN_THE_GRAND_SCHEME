@@ -104,7 +104,7 @@ func _randomize():
 		for i in culprit_count:
 			culprits.append(
 				NpcCard.generate_card(
-					self, NpcCard.Category.NORMAL, culprit_jobs))
+					self, NpcCard.Category.CULPRIT, culprit_jobs))
 
 	# NPCs: victims
 
@@ -113,7 +113,7 @@ func _randomize():
 		var dead = _motive["dead_victims"]
 		for i in victim_count:
 			var card = NpcCard.generate_card(
-				self, NpcCard.Category.NORMAL, victim_jobs)
+				self, NpcCard.Category.VICTIM, victim_jobs)
 			card.npc_status = NpcCard.NpcStatus.VICTIM
 			if dead == "yes":
 				card.npc_status = NpcCard.NpcStatus.DEAD
@@ -127,15 +127,16 @@ func _randomize():
 	# NPCs: witnesses, accomplices, suspects
 
 	for i in witness_count:
-		var card = NpcCard.generate_card(self)
+		var card = NpcCard.generate_card(self, NpcCard.Category.WITNESS)
 		card.npc_status = NpcCard.NpcStatus.WITNESS
 		witnesses.append(card)
 
 	for i in accomplice_count:
-		accomplices.append(NpcCard.generate_card(self))
+		accomplices.append(
+			NpcCard.generate_card(self, NpcCard.Category.ACCOMPLICE))
 
 	for i in suspect_count:
-		var card = NpcCard.generate_card(self)
+		var card = NpcCard.generate_card(self, NpcCard.Category.SUSPECT)
 		card.npc_status = NpcCard.NpcStatus.SUSPECT
 		suspects.append(card)
 
@@ -319,7 +320,7 @@ func find_hangout() -> LocationCard:
 			hangouts.append(loc)
 	return find_or_create_location(hangouts.pick_random())
 
-func find_hideout() -> LocationCard:
+func create_hideout() -> LocationCard:
 	var hideouts = []
 	for loc in _location_data:
 		if "secret" in _location_data[loc].get("hangout", []):
@@ -344,8 +345,7 @@ func get_referenced_objects():
 	refs.append_array(suspects)
 	refs.append_array(other_npcs)
 	refs.append_array(evidence)
-	if crime_location:
-		refs.append(crime_location)
+	refs.append_array(locations)
 	refs.append_array(_links)
 	return refs
 
@@ -402,6 +402,12 @@ func get_json_dict():
 			evidence_refs.append(SaveLoadTools.get_object_id(card))
 		dict["evidence"] = evidence_refs
 
+	if locations:
+		var location_refs = []
+		for card in locations:
+			location_refs.append(SaveLoadTools.get_object_id(card))
+		dict["locations"] = location_refs
+
 	if crime_location:
 		dict["crime_location"] = SaveLoadTools.get_object_id(crime_location)
 
@@ -435,6 +441,8 @@ func restore(dict, catalog):
 		other_npcs.append(catalog[ref])
 	for ref in dict.get("evidence", []):
 		evidence.append(catalog[ref])
+	for ref in dict.get("locations", []):
+		locations.append(catalog[ref])
 	if "crime_location" in dict:
 		crime_location = catalog[dict.crime_location]
 	for ref in dict.get("links", []):

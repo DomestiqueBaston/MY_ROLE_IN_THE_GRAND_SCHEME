@@ -8,6 +8,9 @@ enum NpcHealth {
 	LOW
 }
 
+##
+## The NPC's status, which is visible to the player.
+##
 enum NpcStatus {
 	NONE,
 	JAIL,
@@ -21,9 +24,16 @@ enum NpcStatus {
 	ACCOMPLICE
 }
 
+##
+## The NPC's underlying category, which may NOT be visible to the player.
+##
 enum Category {
-	NORMAL,
 	USELESS,
+	VICTIM,
+	SUSPECT,
+	WITNESS,
+	CULPRIT,
+	ACCOMPLICE,
 	MINION
 }
 
@@ -57,15 +67,14 @@ enum SexualOrientation {
 
 var first_name: String
 var last_name: String
+var category: Category
 var job: String
-var sex: Sex
 var orientation: SexualOrientation
 var physical: int
 var mental: int
 var health: int
 var max_health: int
 var wanted: int
-var category: Category
 var player_reputation: int
 
 var _home: WeakRef
@@ -111,7 +120,7 @@ func _randomize(case: Case, cat: Category, job_id: String):
 
 	# sex and orientation
 
-	sex = (randi() & 1) as Sex
+	npc_sex = (randi() & 1) as Sex
 	if randf() < 0.1:
 		orientation = SexualOrientation.HOMO
 	else:
@@ -120,7 +129,7 @@ func _randomize(case: Case, cat: Category, job_id: String):
 	# name
 
 	var _first_names = \
-		_name_data["male_first_name" if sex == Sex.MALE else "female_first_name"]
+		_name_data["male_first_name" if npc_sex == Sex.MALE else "female_first_name"]
 	var _last_names = _name_data["last_name"]
 	first_name = _first_names[randi() % _first_names.size()]
 	last_name = _last_names[randi() % _last_names.size()]
@@ -186,10 +195,18 @@ func _randomize(case: Case, cat: Category, job_id: String):
 
 	_hangout = weakref(case.find_hangout())
 
-	# only 20% of useless NPCs have a hideout location
+	# not all NPCs have a hideout location
 
-	if category != Category.USELESS or randf() < 0.2:
-		_hideout = weakref(case.find_hideout())
+	var hideout_probability
+	match category:
+		Category.USELESS:
+			hideout_probability = 0.2
+		Category.CULPRIT, Category.ACCOMPLICE:
+			hideout_probability = 0.8
+		_:
+			hideout_probability = 0.5
+	if randf() < hideout_probability:
+		_hideout = weakref(case.create_hideout())
 	else:
 		_hideout = null
 
@@ -213,7 +230,7 @@ func new_day():
 ## may be given any job.
 ##
 static func generate_card(
-	case: Case, cat: Category = Category.NORMAL, possible_jobs = []) -> NpcCard:
+	case: Case, cat: Category, possible_jobs = []) -> NpcCard:
 	var card = _card_scene.instantiate()
 	var job_id: String
 	if possible_jobs:
@@ -247,18 +264,19 @@ func get_referenced_objects():
 #
 func get_json_dict():
 	var dict = super()
+	dict["npc_health"] = npc_health
+	dict["status"] = npc_status
+	dict["sex"] = npc_sex
 	dict["first_name"] = first_name
 	dict["last_name"] = last_name
+	dict["category"] = category
 	dict["job"] = job
-	dict["sex"] = sex
 	dict["orientation"] = orientation
 	dict["physical"] = physical
 	dict["mental"] = mental
 	dict["health"] = health
 	dict["max_health"] = max_health
 	dict["wanted"] = wanted
-	if category != Category.NORMAL:
-		dict["category"] = category
 	if player_reputation != 0:
 		dict["player_reputation"] = player_reputation
 	if _home:
@@ -276,17 +294,20 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	super(dict, catalog)
+	npc_health = dict.get("npc_health", NpcHealth.NONE)
+	npc_status = dict.get("status", NpcStatus.NONE)
+	npc_sex = dict.sex
 	first_name = dict.first_name
 	last_name = dict.last_name
+	category = dict.get("category", Category.USELESS)
 	job = dict.job
-	sex = dict.sex
+	npc_sex = dict.sex
 	orientation = dict.orientation
 	physical = dict.physical
 	mental = dict.mental
 	max_health = dict.max_health
 	health = dict.health
 	wanted = dict.wanted
-	category = dict.get("category", Category.NORMAL)
 	player_reputation = dict.get("player_reputation", 0)
 	card_name = first_name + " " + last_name
 	if "home" in dict:
