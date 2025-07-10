@@ -15,7 +15,7 @@ var suspects: Array[NpcCard]
 var other_npcs: Array[NpcCard]
 var evidence: Array[ObjectCard]
 var locations: Array[LocationCard]
-var crime_location: LocationCard
+var crime_location: LocationCard  # reference to a locations item
 
 var _case_id: String
 var _case_name: String

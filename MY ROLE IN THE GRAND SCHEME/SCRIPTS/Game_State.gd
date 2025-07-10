@@ -165,15 +165,24 @@ func set_current_case(index: int):
 			cases[_current_case_index].start()
 		case_changed.emit()
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.GAME_STATE
 
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = [player]
 	for case in cases:
 		refs.append(case)
 	return refs
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = {
 		"player": SaveLoadTools.get_object_id(player),
@@ -189,6 +198,9 @@ func get_json_dict():
 		dict["cases"] = case_refs
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	_hour = dict.hour
 	_last_hub_visit_day = dict.last_hub_visit_day
@@ -198,5 +210,8 @@ func restore(dict, catalog):
 	for case_ref in dict.get("cases", []):
 		cases.append(catalog[case_ref])
 
+#
+# For save/load.
+#
 func allocate() -> Object:
 	return load("res://SCRIPTS/Game_State.gd").new()
