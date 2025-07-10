@@ -63,7 +63,7 @@
 	"hangout": ["LOCxxxIDxxx"],
 	"comment_19": "1 à 2 (voir liste des possibles dans Location.json avec hangout = yes)",
 	"hideout": ["LOCxxxIDxxx"],
-	"comment_20": "de 0 à 1 INFO SECRETE (voir liste des possibles dans Location.json avec hangout = secret). Hideout à 25% de chance pour useless_npc = yes",
+	"comment_20": "de 0 à 1 INFO SECRETE (voir liste des possibles dans Location.json avec hangout = secret). Hideout à 20% de chance pour useless_npc = yes",
 	
 	"property": [
 	  {
