@@ -569,22 +569,48 @@ func _on_case_changed():
 	_detach_cards()
 	var case = GameState.get_current_case()
 	if case:
-		populate(case.get_cards(), case.get_links())
+		populate(case)
 
 ##
 ## Populates the scene with the given cards and links.
 ##
-func populate(new_cards: Array[BaseCard], new_links: Array[Link]):
-	for card in new_cards:
+func populate(case: Case):
+	for card in case.get_revealed_cards():
 		if card.was_stacked():
 			reserve.add_child(card)
 		else:
 			cards.add_child(card)
 
-	for link in new_links:
+	if case.is_layout_needed:
+		_layout_cards()
+		case.is_layout_needed = false
+
+	for link in case.get_links():
 		cards.add_child(link)
 		cards.add_child(link.pin1)
 		cards.add_child(link.pin2)
+
+func _layout_cards():
+	var size = playground_shape.shape.get_rect().size
+	var center = playground_shape.get_global_position()
+	var top_left = (center - size * 0.5).round()
+	var bottom_right = top_left + size
+	var npc_pos = top_left
+	var other_pos = top_left + Vector2(round(size.x * 0.35), 0)
+	var shift = Vector2(20, 40)
+
+	for child in cards.get_children():
+		if child is NpcCard:
+			child.global_position = npc_pos
+			npc_pos += shift
+			if npc_pos.y > bottom_right.y - BaseCard.size.y:
+				npc_pos.y = top_left.y
+		elif child is BaseCard:
+			child.global_position = other_pos
+			other_pos += shift
+			if other_pos.y > bottom_right.y - BaseCard.size.y:
+				other_pos.y = top_left.y
+			
 
 #
 # Removes cards and links from the scene without deleting them, because

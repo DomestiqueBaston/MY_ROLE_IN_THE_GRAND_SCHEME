@@ -1,16 +1,17 @@
 @tool
 class_name NpcCard extends BaseCard
 
-enum NpcHealth {
+enum NpcCategory {
 	NONE,
-	GOOD,
-	AVERAGE,
-	LOW
+	USELESS,
+	VICTIM,
+	SUSPECT,
+	WITNESS,
+	CULPRIT,
+	ACCOMPLICE,
+	MINION
 }
 
-##
-## The NPC's status, which is visible to the player.
-##
 enum NpcStatus {
 	NONE,
 	JAIL,
@@ -24,17 +25,11 @@ enum NpcStatus {
 	ACCOMPLICE
 }
 
-##
-## The NPC's underlying category, which may NOT be visible to the player.
-##
-enum Category {
-	USELESS,
-	VICTIM,
-	SUSPECT,
-	WITNESS,
-	CULPRIT,
-	ACCOMPLICE,
-	MINION
+enum NpcHealth {
+	NONE,
+	GOOD,
+	AVERAGE,
+	LOW
 }
 
 enum Sex {
@@ -47,18 +42,32 @@ enum SexualOrientation {
 	HETERO
 }
 
-@export var npc_health: NpcHealth:
-	set(value):
-		npc_health = value
-		if is_node_ready():
-			_update_background()
+##
+## The NPC's underlying category, which is NOT visible to the player.
+##
+@export var category: NpcCategory
 
+##
+## The NPC's status, which IS visible to the player.
+##
 @export var npc_status: NpcStatus:
 	set(value):
 		npc_status = value
 		if is_node_ready():
 			_update_background()
 
+##
+## The NPC's apparent health, which is visible to the player.
+##
+@export var npc_health: NpcHealth:
+	set(value):
+		npc_health = value
+		if is_node_ready():
+			_update_background()
+
+##
+## NPCs are male or female.
+##
 @export var npc_sex: Sex:
 	set(value):
 		npc_sex = value
@@ -67,7 +76,6 @@ enum SexualOrientation {
 
 var first_name: String
 var last_name: String
-var category: Category
 var job: String
 var orientation: SexualOrientation
 var physical: int
@@ -116,7 +124,8 @@ func get_home() -> LocationCard:
 func get_work() -> LocationCard:
 	return _work.get_ref()
 
-func _randomize(case: Case, cat: Category, job_id: String):
+func _randomize(case: Case, cat: NpcCategory, job_id: String):
+	category = cat
 
 	# sex and orientation
 
@@ -174,8 +183,7 @@ func _randomize(case: Case, cat: Category, job_id: String):
 
 	health = roundi(max_health * randf_range(0.5, 1.0))
 	wanted = randi_range(0, 2)
-	category = cat
-	player_reputation = -2 if category == Category.MINION else 0
+	player_reputation = -2 if category == NpcCategory.MINION else 0
 
 	# home and work locations
 
@@ -198,9 +206,9 @@ func _randomize(case: Case, cat: Category, job_id: String):
 
 	var hideout_probability
 	match category:
-		Category.USELESS:
+		NpcCategory.USELESS:
 			hideout_probability = 0.2
-		Category.CULPRIT, Category.ACCOMPLICE:
+		NpcCategory.CULPRIT, NpcCategory.ACCOMPLICE:
 			hideout_probability = 0.8
 		_:
 			hideout_probability = 0.5
@@ -229,7 +237,7 @@ func new_day():
 ## may be given any job.
 ##
 static func generate_card(
-	case: Case, cat: Category, possible_jobs = []) -> NpcCard:
+	case: Case, cat: NpcCategory, possible_jobs = []) -> NpcCard:
 	var card = _card_scene.instantiate()
 	var job_id: String
 	if possible_jobs:
@@ -263,12 +271,12 @@ func get_referenced_objects():
 #
 func get_json_dict():
 	var dict = super()
-	dict["npc_health"] = npc_health
+	dict["category"] = category
 	dict["status"] = npc_status
+	dict["npc_health"] = npc_health
 	dict["sex"] = npc_sex
 	dict["first_name"] = first_name
 	dict["last_name"] = last_name
-	dict["category"] = category
 	dict["job"] = job
 	dict["orientation"] = orientation
 	dict["physical"] = physical
@@ -293,12 +301,12 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	super(dict, catalog)
-	npc_health = dict.get("npc_health", NpcHealth.NONE)
+	category = dict.get("category", NpcCategory.NONE)
 	npc_status = dict.get("status", NpcStatus.NONE)
+	npc_health = dict.get("npc_health", NpcHealth.NONE)
 	npc_sex = dict.sex
 	first_name = dict.first_name
 	last_name = dict.last_name
-	category = dict.get("category", Category.USELESS)
 	job = dict.job
 	npc_sex = dict.sex
 	orientation = dict.orientation

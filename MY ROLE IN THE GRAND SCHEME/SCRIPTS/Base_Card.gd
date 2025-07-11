@@ -29,13 +29,16 @@ enum CardType {
 		if is_node_ready():
 			_update_opacity()
 
+## Has the card been revealed to the player?
+var is_revealed: bool = false
+
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)
 
 var _is_highlighted: bool = false
 var _opacity_before_highlighting: float
 var _is_expanded: bool = true
-var _was_stacked: bool = true
+var _was_stacked: bool = false
 var _pins = {}
 
 func _ready():
@@ -312,13 +315,19 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 
 	return min_pin
 
+#
+# For save/load.
+#
 func get_referenced_objects():
 	return _pins.values()
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = {}
 	var stacked = is_stacked() if is_inside_tree() else _was_stacked
-	if not stacked:
+	if stacked:
 		dict["was_stacked"] = stacked
 	if opacity != 1.0:
 		dict["opacity"] = opacity
@@ -326,6 +335,8 @@ func get_json_dict():
 		dict["x"] = position.x
 	if position.y != 0.0:
 		dict["y"] = position.y
+	if is_revealed:
+		dict["is_revealed"] = is_revealed
 	if _pins:
 		var pin_refs = {}
 		for pin in _pins:
@@ -333,10 +344,14 @@ func get_json_dict():
 		dict["pins"] = pin_refs
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	opacity = dict.get("opacity", 1.0)
-	_was_stacked = dict.get("was_stacked", true)
+	_was_stacked = dict.get("was_stacked", false)
 	position = Vector2(dict.get("x", 0.0), dict.get("y", 0.0))
+	is_revealed = dict.get("is_revealed", false)
 	if "pins" in dict:
 		var pin_refs = dict.pins
 		for pin in pin_refs:

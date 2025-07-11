@@ -7,6 +7,8 @@ enum Status {
 	DONE
 }
 
+var is_layout_needed: bool = true
+
 var culprits: Array[NpcCard]
 var victims: Array[NpcCard]
 var witnesses: Array[NpcCard]
@@ -16,7 +18,8 @@ var other_npcs: Array[NpcCard]
 var evidence: Array[ObjectCard]
 var other_objects: Array[ObjectCard]
 var locations: Array[LocationCard]
-var crime_location: LocationCard  # reference to a locations item
+
+var _crime_location: LocationCard  # reference to an item in locations
 
 var _case_id: String
 var _case_name: String
@@ -46,7 +49,7 @@ func _notification(what: int):
 				card.queue_free()
 			card_list.clear()
 
-		crime_location = null
+		_crime_location = null
 
 		for link in _links:
 			link.queue_free()
@@ -106,7 +109,7 @@ func _randomize():
 		for i in culprit_count:
 			culprits.append(
 				NpcCard.generate_card(
-					self, NpcCard.Category.CULPRIT, culprit_jobs))
+					self, NpcCard.NpcCategory.CULPRIT, culprit_jobs))
 
 	# NPCs: victims
 
@@ -115,7 +118,7 @@ func _randomize():
 		var dead = _motive["dead_victims"]
 		for i in victim_count:
 			var card = NpcCard.generate_card(
-				self, NpcCard.Category.VICTIM, victim_jobs)
+				self, NpcCard.NpcCategory.VICTIM, victim_jobs)
 			card.npc_status = NpcCard.NpcStatus.VICTIM
 			if dead == "yes":
 				card.npc_status = NpcCard.NpcStatus.DEAD
@@ -129,16 +132,16 @@ func _randomize():
 	# NPCs: witnesses, accomplices, suspects
 
 	for i in witness_count:
-		var card = NpcCard.generate_card(self, NpcCard.Category.WITNESS)
+		var card = NpcCard.generate_card(self, NpcCard.NpcCategory.WITNESS)
 		card.npc_status = NpcCard.NpcStatus.WITNESS
 		witnesses.append(card)
 
 	for i in accomplice_count:
 		accomplices.append(
-			NpcCard.generate_card(self, NpcCard.Category.ACCOMPLICE))
+			NpcCard.generate_card(self, NpcCard.NpcCategory.ACCOMPLICE))
 
 	for i in suspect_count:
-		var card = NpcCard.generate_card(self, NpcCard.Category.SUSPECT)
+		var card = NpcCard.generate_card(self, NpcCard.NpcCategory.SUSPECT)
 		card.npc_status = NpcCard.NpcStatus.SUSPECT
 		suspects.append(card)
 
@@ -163,7 +166,7 @@ func _randomize():
 			useless_count = randi_range(15, 22)
 
 	for i in useless_count:
-		other_npcs.append(NpcCard.generate_card(self, NpcCard.Category.USELESS))
+		other_npcs.append(NpcCard.generate_card(self, NpcCard.NpcCategory.USELESS))
 
 	# evidence
 
@@ -214,9 +217,9 @@ func _randomize():
 		"culprit_work":
 			location_card = culprits[0].get_work()
 		_:
-			crime_location = find_or_create_location(
-				actual_location, get_npcs().pick_random())
-			location_card = crime_location
+			_crime_location = find_or_create_location(
+				actual_location, get_all_npcs().pick_random())
+			location_card = _crime_location
 
 	if location_card:
 		var known_factor = _motive.get("known_crime_location", 1)
@@ -256,8 +259,51 @@ func _randomize():
 				other_objects.append(obj)
 				obj_count -= 1
 
-	# TODO: friends/enemies/acquaintances/couples??
-	# TODO: links
+	# TODO: friends/enemies/acquaintances/couples
+
+	# cards and links that are revealed initially
+
+	for npc_list in [victims, witnesses, suspects]:
+		for npc in npc_list:
+			npc.is_revealed = true
+			var home = npc.get_home()
+			var work = npc.get_work()
+			home.is_revealed = true
+			work.is_revealed = true
+
+			var pin1 = Pin.allocate()
+			pin1.card_location = Pin.Location.TOP_RIGHT
+			pin1.card = npc
+
+			var pin2 = Pin.allocate()
+			pin2.card_location = home.find_closest_unused_pin(Vector2(0, 0))
+			pin2.card = home
+
+			var link1 = Link.allocate()
+			link1.type = Link.Type.HOME
+			link1.status = Link.Status.CONFIRMED
+			link1.pin1 = pin1
+			link1.pin2 = pin2
+
+			pin1 = Pin.allocate()
+			pin1.card_location = Pin.Location.RIGHT_CENTER
+			pin1.card = npc
+
+			pin2 = Pin.allocate()
+			pin2.card_location = work.find_closest_unused_pin(Vector2(0, 0))
+			pin2.card = work
+
+			var link2 = Link.allocate()
+			link2.type = Link.Type.WORK
+			link2.status = Link.Status.CONFIRMED
+			link2.pin1 = pin1
+			link2.pin2 = pin2
+
+			add_link(link1)
+			add_link(link2)
+
+	if _crime_location:
+		_crime_location.is_revealed = true
 
 func _get_count_from_array(count) -> int:
 	if count is Array and not count.is_empty():
@@ -296,11 +342,14 @@ func get_difficulty() -> int:
 func get_duration() -> int:
 	return _duration
 
+func get_crime_location() -> LocationCard:
+	return _crime_location
+
 ##
 ## Returns all the cards created for the case, including NPCs, objects and
 ## locations.
 ##
-func get_cards() -> Array[BaseCard]:
+func get_all_cards() -> Array[BaseCard]:
 	var all_cards: Array[BaseCard]
 	for card_list in [
 		culprits, victims, witnesses, accomplices, suspects, other_npcs,
@@ -310,9 +359,23 @@ func get_cards() -> Array[BaseCard]:
 	return all_cards
 
 ##
+## Returns an array of the cards that have been revealed to the player thus far.
+##
+func get_revealed_cards() -> Array[BaseCard]:
+	var cards: Array[BaseCard]
+	for card_list in [
+		culprits, victims, witnesses, accomplices, suspects, other_npcs,
+		evidence, other_objects, locations
+	]:
+		for card in card_list:
+			if card.is_revealed:
+				cards.append(card)
+	return cards
+
+##
 ## Returns the cards for all the NPCs created for the case.
 ##
-func get_npcs() -> Array[NpcCard]:
+func get_all_npcs() -> Array[NpcCard]:
 	var all_npcs: Array[NpcCard]
 	for card_list in [
 		culprits, victims, witnesses, accomplices, suspects, other_npcs
@@ -419,7 +482,8 @@ func get_json_dict():
 		"motive": _motive,
 		"difficulty": _difficulty,
 		"duration": _duration,
-		"status": _status
+		"status": _status,
+		"is_layout_needed": is_layout_needed
 	}
 
 	if culprits:
@@ -476,8 +540,8 @@ func get_json_dict():
 			location_refs.append(SaveLoadTools.get_object_id(card))
 		dict["locations"] = location_refs
 
-	if crime_location:
-		dict["crime_location"] = SaveLoadTools.get_object_id(crime_location)
+	if _crime_location:
+		dict["crime_location"] = SaveLoadTools.get_object_id(_crime_location)
 
 	if _links:
 		var link_refs = []
@@ -495,6 +559,7 @@ func restore(dict, catalog):
 	_difficulty = dict.difficulty
 	_duration = dict.duration
 	_status = dict.status
+	is_layout_needed = dict.get("is_layout_needed", true)
 	for ref in dict.get("culprits", []):
 		culprits.append(catalog[ref])
 	for ref in dict.get("victims", []):
@@ -514,7 +579,7 @@ func restore(dict, catalog):
 	for ref in dict.get("locations", []):
 		locations.append(catalog[ref])
 	if "crime_location" in dict:
-		crime_location = catalog[dict.crime_location]
+		_crime_location = catalog[dict.crime_location]
 	for ref in dict.get("links", []):
 		_links.append(catalog[ref])
 

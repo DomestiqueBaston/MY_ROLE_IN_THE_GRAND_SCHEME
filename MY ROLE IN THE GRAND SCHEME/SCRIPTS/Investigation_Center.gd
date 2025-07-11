@@ -55,9 +55,9 @@ func _on_item_selected(index: int):
 	_populate_npc_names(case.witnesses, _witnesses)
 	_populate_npc_names(case.suspects, _suspects)
 
-	if case.crime_location:
+	if case.get_crime_location():
 		var label = _crime_scene.get_node("Location1/Name")
-		label.text = case.crime_location.card_name
+		label.text = case.get_crime_location().card_name
 		_crime_scene.show()
 	else:
 		_crime_scene.hide()
