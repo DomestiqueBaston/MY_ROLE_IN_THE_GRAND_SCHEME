@@ -28,7 +28,7 @@ func _ready():
 func populate():
 	_option_button.clear()
 	for case: Case in GameState.cases:
-		_option_button.add_item(case.get_case_name())
+		_option_button.add_item(case.get_case_id())
 	_option_button.add_separator("Ready for a mess? Pick one and dive in...")
 	_option_button.selected = _option_button.item_count - 1
 	_ok_button.disabled = true
