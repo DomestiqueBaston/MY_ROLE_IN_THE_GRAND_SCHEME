@@ -54,7 +54,7 @@ enum SexualOrientation {
 	set(value):
 		npc_status = value
 		if is_node_ready():
-			_update_background()
+			_update_appearance()
 
 ##
 ## The NPC's apparent health, which is visible to the player.
@@ -63,7 +63,7 @@ enum SexualOrientation {
 	set(value):
 		npc_health = value
 		if is_node_ready():
-			_update_background()
+			_update_appearance()
 
 ##
 ## NPCs are male or female.
@@ -72,7 +72,12 @@ enum SexualOrientation {
 	set(value):
 		npc_sex = value
 		if is_node_ready():
-			_update_background()
+			_update_appearance()
+
+##
+## Outline colors, one for each NpcStatus value.
+##
+@export var outline_colors: Array[Color]
 
 var first_name: String
 var last_name: String
@@ -99,9 +104,9 @@ func get_card_type():
 
 func _ready():
 	super()
-	_update_background()
+	_update_appearance()
 
-func _update_background():
+func _update_appearance():
 	$Card_Mask/Card_BG/Card_Color/Npc/No_Info.visible = (npc_health == NpcHealth.NONE)
 	$Card_Mask/Card_BG/Card_Color/Npc/Good_Health.visible = (npc_health == NpcHealth.GOOD)
 	$Card_Mask/Card_BG/Card_Color/Npc/Average_Health.visible = (npc_health == NpcHealth.AVERAGE)
@@ -117,6 +122,11 @@ func _update_background():
 	$Card_Mask/Card_BG/Accomplice_Status.visible = (npc_status == NpcStatus.ACCOMPLICE)
 	$Card_Mask/Card_BG/Sex/Male.visible = (npc_sex == Sex.MALE)
 	$Card_Mask/Card_BG/Sex/Female.visible = (npc_sex == Sex.FEMALE)
+	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[npc_status]
+	$Card_Drag.modulate = outline_colors[npc_status]
+	var tooltip = NpcStatus.keys()[npc_status].capitalize()
+	$Card_Mask/Card_BG/Card_Text/Card_Name.tooltip_text = tooltip
+	$Card_Mask/Card_BG/Card_Text/Card_Description.tooltip_text = tooltip
 
 func get_home() -> LocationCard:
 	return _home.get_ref()
