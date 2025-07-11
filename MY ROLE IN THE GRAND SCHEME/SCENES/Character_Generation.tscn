@@ -70,7 +70,7 @@ drag_and_drop_selection_enabled = false
 flat = true
 draw_control_chars = true
 caret_blink = true
-caret_blink_interval = 0.5
+caret_blink_interval = 0.33
 
 [node name="PHY" type="Label" parent="Creation_Page"]
 layout_mode = 0
