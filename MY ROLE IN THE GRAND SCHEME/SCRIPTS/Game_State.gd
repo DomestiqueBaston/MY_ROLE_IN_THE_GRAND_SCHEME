@@ -164,8 +164,8 @@ func can_visit_investigation_center() -> bool:
 func visit_investigation_center():
 	if can_visit_investigation_center():
 		await pass_one_hour()
-		await Globals.dialog_overlay.open_investigation_center()
 		_has_visited_hub = true
+		await Globals.dialog_overlay.open_investigation_center()
 
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
