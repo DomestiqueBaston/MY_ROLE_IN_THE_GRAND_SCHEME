@@ -270,37 +270,8 @@ func _randomize():
 			var work = npc.get_work()
 			home.is_revealed = true
 			work.is_revealed = true
-
-			var pin1 = Pin.allocate()
-			pin1.card_location = Pin.Location.TOP_RIGHT
-			pin1.card = npc
-
-			var pin2 = Pin.allocate()
-			pin2.card_location = home.find_closest_unused_pin(Vector2(0, 0))
-			pin2.card = home
-
-			var link1 = Link.allocate()
-			link1.type = Link.Type.HOME
-			link1.status = Link.Status.CONFIRMED
-			link1.pin1 = pin1
-			link1.pin2 = pin2
-
-			pin1 = Pin.allocate()
-			pin1.card_location = Pin.Location.RIGHT_CENTER
-			pin1.card = npc
-
-			pin2 = Pin.allocate()
-			pin2.card_location = work.find_closest_unused_pin(Vector2(0, 0))
-			pin2.card = work
-
-			var link2 = Link.allocate()
-			link2.type = Link.Type.WORK
-			link2.status = Link.Status.CONFIRMED
-			link2.pin1 = pin1
-			link2.pin2 = pin2
-
-			add_link(link1)
-			add_link(link2)
+			_create_link(npc, home, Link.Type.HOME)
+			_create_link(npc, work, Link.Type.WORK)
 
 	if _crime_location:
 		_crime_location.is_revealed = true
@@ -310,6 +281,23 @@ func _get_count_from_array(count) -> int:
 		return count.pick_random()
 	else:
 		return count
+
+func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
+	var pin1 = Pin.allocate()
+	pin1.card_location = from.find_closest_unused_pin(Vector2(BaseCard.size.x, 0))
+	pin1.card = from
+
+	var pin2 = Pin.allocate()
+	pin2.card_location = to.find_closest_unused_pin(Vector2(0, 0))
+	pin2.card = to
+
+	var link = Link.allocate()
+	link.type = type
+	link.pin1 = pin1
+	link.pin2 = pin2
+
+	add_link(link)
+	return link
 
 func _generate_case_id():
 	# [A-Z][a-z]
@@ -412,22 +400,6 @@ func create_location(location_id: String, npc: NpcCard) -> LocationCard:
 	if npc:
 		card.add_npc(npc)
 	locations.append(card)
-
-	# populate the new location with some number of useless objects
-
-	#var obj_count = randi_range(0, 3)
-	#while obj_count > 0:
-		#var obj_id = _object_data.keys().pick_random()
-		#var owners = _object_data[obj_id].get("owners", {})
-		#var npc_owners = owners.get("npc", [0])
-		#var location_owners = owners.get("location", [0])
-		#if (1 in npc_owners or 1.0 in npc_owners) and \
-			#(0 in location_owners or 0.0 in location_owners):
-			#var obj = ObjectCard.create_card(obj_id)
-			#obj.add_object_owner(npc)
-			#other_objects.append(obj)
-			#obj_count -= 1
-
 	return card
 
 ##
