@@ -5,7 +5,6 @@ extends Node2D
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
 @onready var top_bar: Control = $Mask_Card_Playground/Top_Bar
-@onready var playground_shape: CollisionShape2D = $Mask_Card_Playground/Colliders/Playground_Collider/Playground
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
 
@@ -334,8 +333,7 @@ func _stop_drag_card(global_pos: Vector2):
 		_current_card.reparent(reserve, false)
 	else:
 		# card is allowed to overshoot left and top edges by 10 pixels at most
-		var corner = (playground_shape.get_global_transform() *
-					  playground_shape.shape.get_rect().position)
+		var corner = cards.global_position
 		var pos = _current_card.global_position.max(corner - Vector2(10, 10))
 		_current_card.global_position = pos.round()
 		_current_card.reparent(cards)
@@ -408,9 +406,8 @@ func _stuff_to_do_when_drag_ends(dragged_card: BaseCard):
 	Globals.dragging = false
 
 func _is_in_playground(global_pos: Vector2):
-	var local_rect = playground_shape.shape.get_rect()
-	var local_pos = playground_shape.to_local(global_pos)
-	return local_rect.has_point(local_pos)
+	var rect = Rect2(cards.global_position, cards.size)
+	return rect.has_point(global_pos)
 
 func _is_in_reserve(global_pos: Vector2):
 	var rect = Rect2(reserve.global_position, reserve.size)
@@ -591,12 +588,10 @@ func populate(case: Case):
 		cards.add_child(link.pin2)
 
 func _layout_cards():
-	var size = playground_shape.shape.get_rect().size
-	var center = playground_shape.get_global_position()
-	var top_left = (center - size * 0.5).round()
-	var bottom_right = top_left + size
+	var top_left = cards.global_position
+	var bottom_right = top_left + cards.size
 	var npc_pos = top_left
-	var other_pos = top_left + Vector2(round(size.x * 0.35), 0)
+	var other_pos = top_left + Vector2(round(cards.size.x * 0.35), 0)
 	var shift = Vector2(20, 40)
 
 	for child in cards.get_children():

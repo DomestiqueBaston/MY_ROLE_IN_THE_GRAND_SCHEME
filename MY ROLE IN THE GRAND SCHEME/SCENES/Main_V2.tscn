@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
+[ext_resource type="Script" uid="uid://re2c6g3rw3r1" path="res://SCRIPTS/Sized_Node2D.gd" id="3_svm3j"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="7_dmqsm"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="9_twje4"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="11_fx1n6"]
@@ -73,9 +74,6 @@ texture_margin_left = 9.0
 texture_margin_top = 13.0
 texture_margin_right = 19.0
 texture_margin_bottom = 13.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfrfy"]
-size = Vector2(470, 309)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvc8p"]
 content_margin_left = 1.0
@@ -177,6 +175,11 @@ texture = ExtResource("2_lp1db")
 centered = false
 
 [node name="Cards" type="Node2D" parent="."]
+position = Vector2(149, 29)
+script = ExtResource("3_svm3j")
+size = Vector2(469, 309)
+show_bounding_box = true
+metadata/_custom_type_script = "uid://re2c6g3rw3r1"
 
 [node name="Player_Locator" parent="." instance=ExtResource("9_twje4")]
 position = Vector2(544, 64)
@@ -216,30 +219,6 @@ visible = false
 [node name="Mask_Card_Playground" type="Sprite2D" parent="."]
 texture = ExtResource("54_anbsy")
 centered = false
-
-[node name="Colliders" type="Node2D" parent="Mask_Card_Playground"]
-visible = false
-position = Vector2(0, 1)
-
-[node name="Playground_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
-collision_layer = 0
-collision_mask = 0
-monitoring = false
-monitorable = false
-
-[node name="Playground" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Playground_Collider"]
-position = Vector2(383, 183.5)
-shape = SubResource("RectangleShape2D_gfrfy")
-
-[node name="Playground_Card_Position_Collider" type="Area2D" parent="Mask_Card_Playground/Colliders"]
-collision_layer = 0
-collision_mask = 0
-monitoring = false
-monitorable = false
-
-[node name="Playground_Card_Position" type="CollisionShape2D" parent="Mask_Card_Playground/Colliders/Playground_Card_Position_Collider"]
-position = Vector2(383, 183.5)
-shape = SubResource("RectangleShape2D_gfrfy")
 
 [node name="Legend" type="Node2D" parent="Mask_Card_Playground"]
 
