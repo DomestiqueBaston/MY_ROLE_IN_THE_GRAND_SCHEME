@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://euyms52mpy48"]
+[gd_scene load_steps=11 format=3 uid="uid://euyms52mpy48"]
 
 [ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_2ifjr"]
 [ext_resource type="Texture2D" uid="uid://xjwjfkatpljx" path="res://GRAPHICS/LINK_PIN/Player_Place.png" id="2_cf184"]
 [ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/LINK_PIN/Pin_Large.png" id="2_fvhge"]
+[ext_resource type="Texture2D" uid="uid://immdpyjulagj" path="res://GRAPHICS/LINK_PIN/Location_Pointer.png" id="4_jdagr"]
 
 [sub_resource type="Animation" id="Animation_4gwmr"]
 length = 0.001
@@ -98,6 +99,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "You are here!"
 theme = ExtResource("1_2ifjr")
 texture = ExtResource("2_fvhge")
 
@@ -115,9 +117,25 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(40, 40)
-tooltip_text = "You are here!"
 theme = ExtResource("1_2ifjr")
 texture = ExtResource("2_cf184")
+
+[node name="Pointer" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.18, 0.25)
+pivot_offset = Vector2(80, 80)
+theme = ExtResource("1_2ifjr")
+texture = ExtResource("4_jdagr")
 
 [node name="Ring_Animation" type="AnimationPlayer" parent="."]
 libraries = {
