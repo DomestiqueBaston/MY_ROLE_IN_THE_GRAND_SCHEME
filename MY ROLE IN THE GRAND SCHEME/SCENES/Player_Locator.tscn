@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://euyms52mpy48"]
+[gd_scene load_steps=12 format=3 uid="uid://euyms52mpy48"]
 
 [ext_resource type="Theme" uid="uid://dcqa3mg1pmxt1" path="res://UI/Pin_Theme.tres" id="1_2ifjr"]
+[ext_resource type="Script" uid="uid://clp2loc52rpe1" path="res://SCRIPTS/Player_Locator.gd" id="1_nsmi1"]
 [ext_resource type="Texture2D" uid="uid://xjwjfkatpljx" path="res://GRAPHICS/LINK_PIN/Player_Place.png" id="2_cf184"]
 [ext_resource type="Texture2D" uid="uid://k5c2gq6lf752" path="res://GRAPHICS/LINK_PIN/Pin_Large.png" id="2_fvhge"]
 [ext_resource type="Texture2D" uid="uid://immdpyjulagj" path="res://GRAPHICS/LINK_PIN/Location_Pointer.png" id="4_jdagr"]
@@ -85,6 +86,7 @@ _data = {
 
 [node name="Player_Locator" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_nsmi1")
 
 [node name="Pin" type="TextureRect" parent="."]
 self_modulate = Color(0.584314, 0.643137, 0.909804, 1)
@@ -93,10 +95,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -6.0
+offset_top = -26.0
+offset_right = 6.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "You are here!"
@@ -110,9 +112,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -40.0
+offset_top = -60.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
@@ -127,9 +129,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -80.0
-offset_top = -80.0
+offset_top = -100.0
 offset_right = 80.0
-offset_bottom = 80.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.18, 0.25)

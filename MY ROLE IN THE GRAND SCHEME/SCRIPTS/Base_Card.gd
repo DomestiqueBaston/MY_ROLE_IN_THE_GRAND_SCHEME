@@ -35,6 +35,12 @@ var is_revealed: bool = false
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)
 
+## Size of a card when it has been reduced.
+const reduced_size := Vector2i(74, 27)
+
+## Signal emitted when the card's position has changed
+signal moved
+
 var _is_highlighted: bool = false
 var _opacity_before_highlighting: float
 var _is_expanded: bool = true
@@ -56,6 +62,7 @@ func _notification(what):
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
 		for location in _pins:
 			_pins[location].global_position = get_pin_position(location)
+			moved.emit()
 
 ##
 ## Returns the type of the card (to be overridden by each subclass).
