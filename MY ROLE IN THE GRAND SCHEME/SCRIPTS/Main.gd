@@ -8,7 +8,10 @@ extends Node2D
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
 
-## Signal emitted when the user selects Quit in the menu.
+## Signal emitted when the player selects Settings from the menu.
+signal settings
+
+## Signal emitted when the player selects Quit from the menu.
 signal quit
 
 enum MenuItem {
@@ -83,6 +86,7 @@ func _ready():
 	submenu2.id_pressed.connect(_handle_submenu.bind(1))
 	submenu3.id_pressed.connect(_handle_submenu.bind(2))
 	
+	top_bar.settings.connect(func(): settings.emit())
 	top_bar.quit.connect(func(): quit.emit())
 	
 	Globals.mouse_entered_card.connect(_mouse_entered_card)

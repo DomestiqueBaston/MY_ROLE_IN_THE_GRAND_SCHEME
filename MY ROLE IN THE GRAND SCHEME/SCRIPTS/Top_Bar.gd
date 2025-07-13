@@ -3,7 +3,10 @@ extends Control
 ## If true, all menus except Whatever are disabled.
 @export var limited_menus: bool = false
 
-## Signal emitted when the player select Quit from the menu.
+## Signal emitted when the player selects Settings from the menu.
+signal settings
+
+## Signal emitted when the player selects Quit from the menu.
 signal quit
 
 # Define player attributes, where they are displayed, their acceptable ranges,
@@ -51,7 +54,7 @@ enum DailiesMenuItem {
 
 enum WhateverMenuItem {
 	LSD,
-	OPTIONS,
+	SETTINGS,
 	QUIT
 }
 
@@ -146,6 +149,8 @@ func _on_dailies_press(id: int):
 
 func _on_whatever_press(id: int):
 	match id:
+		WhateverMenuItem.SETTINGS:
+			settings.emit()
 		WhateverMenuItem.QUIT:
 			quit.emit()
 

@@ -6,7 +6,7 @@ extends Node2D
 @onready var _credits_scene = preload("res://SCENES/Credits.tscn")
 @onready var _language_scene = preload("res://SCENES/Language.tscn")
 @onready var _tutorial_scene = preload("res://SCENES/Tutorial.tscn")
-@onready var _new_game_scene = preload("res://SCENES/Character_Generation.tscn")
+@onready var _char_gen_scene = preload("res://SCENES/Character_Generation.tscn")
 @onready var _main_scene = preload("res://SCENES/Main_V2.tscn")
 @onready var _quit_scene = preload("res://SCENES/Quit.tscn")
 
@@ -51,18 +51,23 @@ func _on_option_button_pressed(button: StringName):
 		&"Tutorial":
 			_go_to_tutorial()
 		&"New_Game":
-			_go_to_new_game()
+			_go_to_char_gen()
 		&"Continue":
 			_continue_game()
 		&"Quit":
 			_quit()
 
 func _go_to_settings():
+	var is_playing = (
+		$Active_Scene.get_child(0).scene_file_path == _main_scene.resource_path)
 	var settings = await _replace_scene(_settings_scene)
 	await settings.done
 	if settings.is_confirmed():
 		Globals.save_settings()
-	_go_to_option_menu()
+	if is_playing:
+		_continue_game()
+	else:
+		_go_to_option_menu()
 
 func _go_to_credits():
 	var credits = await _replace_scene(_credits_scene)
@@ -79,12 +84,12 @@ func _go_to_tutorial():
 	await tutorial.done
 	_go_to_option_menu()
 
-func _go_to_new_game():
+func _go_to_char_gen():
 	if GameState.player.health > 0:
 		var ok = await Globals.dialog_overlay.ask_for_confirmation(true)
 		if not ok:
 			return
-	var new_game = await _replace_scene(_new_game_scene)
+	var new_game = await _replace_scene(_char_gen_scene)
 	new_game.confirm_pressed.connect(_start_game)
 	new_game.cancel_pressed.connect(_go_to_option_menu)
 
@@ -97,6 +102,7 @@ func _continue_game():
 	var case = GameState.get_current_case()
 	if case:
 		main.populate(case)
+	main.settings.connect(_go_to_settings)
 	main.quit.connect(_go_to_option_menu)
 
 func _quit():
