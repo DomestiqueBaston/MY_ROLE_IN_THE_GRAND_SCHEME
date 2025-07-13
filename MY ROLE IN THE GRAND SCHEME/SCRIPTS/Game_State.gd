@@ -101,7 +101,7 @@ func _new_day(day: int):
 
 	for case in cases:
 		if case.get_status() == Case.Status.ACTIVE:
-			for npc in case.get_npcs():
+			for npc in case.get_all_npcs():
 				npc.new_day()
 
 	# things the player can do only once a day
