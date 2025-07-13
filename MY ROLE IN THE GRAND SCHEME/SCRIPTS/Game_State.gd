@@ -52,8 +52,7 @@ func start_game():
 func end_game():
 	cases.clear()
 	player.reset()
-	# TODO: is there no way to just delete a file?
-	FileAccess.open(_save_path, FileAccess.WRITE)
+	DirAccess.remove_absolute(_save_path)
 
 ##
 ## Returns the number of full days that have passed since play began. Play
