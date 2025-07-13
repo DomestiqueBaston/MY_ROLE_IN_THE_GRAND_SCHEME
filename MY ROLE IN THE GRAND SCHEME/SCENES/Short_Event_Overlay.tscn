@@ -2447,6 +2447,7 @@ libraries = {
 autoplay = "Flashing"
 
 [node name="Investigation_Center" type="Node2D" parent="Overlays"]
+visible = false
 script = ExtResource("86_42ybe")
 
 [node name="Investigation_Center_BG" type="Sprite2D" parent="Overlays/Investigation_Center"]
