@@ -1261,7 +1261,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the name
+tooltip_text = "Here's the ID
 of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
@@ -1275,7 +1275,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the name
+tooltip_text = "Here's the ID
 of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
@@ -1289,7 +1289,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the name
+tooltip_text = "Here's the ID
 of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
@@ -1303,7 +1303,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the name
+tooltip_text = "Here's the ID
 of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
@@ -3696,6 +3696,41 @@ Was it bravery?  Or just  pure
 In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
+
+[node name="Addiction_Crisis_Result" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
+visible = false
+layout_mode = 0
+offset_left = 167.0
+offset_top = 83.0
+offset_right = 482.0
+offset_bottom = 261.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]Your [color=#ff8864]struggle[/color]  has  come to  an  [color=#ff1c18]end[/color].[/pulse]
+
+Was it the  [color=#ff8864]weight[/color]  of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  choices[/color][/shake]  or the  [color=#ff8864]burden[/color] of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  consuming  vices[/color][/shake]?
+
+One thing is  [color=#ff8864]certain[/color]:  where you came from, [shake rate=7.0 level=5 connected=0][color=#ff8864]it's  not  sure [color=#ff1c18]your  case[/color]  will serve  as  an  [color=#ff1c18]example[/color][/color][/shake]...[/center]
+"
+
+[node name="Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 73.0
+offset_right = 488.0
+offset_bottom = 284.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]The  [color=#ff1c18]addiction  crisis[/color] storm  has [color=#ff8864]passed[/color], but the [color=#ff1c18]threat[/color] [color=#ff8864]lingers[/color].[/pulse]
+
+[shake rate=7.0 level=5 connected=0]The  [color=#ff8864]price[/color]  for  this  [color=#ff8864]momentary  peace[/color]  was  [color=#ff1c18]high[/color].[/shake]
+
+The  [color=#ff8864]weight  of the struggle[/color]  has  etched [shake rate=7.0 level=5 connected=0][color=#ff8864]deep[/color]  [color=#ff1c18]marks[/color][/shake], the  [color=#ff8864]calm[/color]  is  [color=#ff1c18]fragile[/color]  and  the [color=#ff8864]horizon[/color] is still  [shake rate=7.0 level=5 connected=0][color=#ff1c18]dark[/color][/shake].[/center]
+"
 
 [node name="Player_Improvement" type="Node2D" parent="Overlays"]
 visible = false
