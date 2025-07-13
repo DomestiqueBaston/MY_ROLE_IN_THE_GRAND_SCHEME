@@ -239,8 +239,8 @@ func _on_dailies_menu_popup():
 
 	# enable/disable items in the drug submenu
 
-	_drug_popup.set_item_disabled(0, player.drugs < 1 or player.addiction > 1)
-	_drug_popup.set_item_disabled(1, player.drugs < 2 or player.addiction > 0)
+	_drug_popup.set_item_disabled(0, player.drugs < 1 or player.drugs_taken_today > 1)
+	_drug_popup.set_item_disabled(1, player.drugs < 2 or player.drugs_taken_today > 0)
 
 func _on_debt_menu_pressed(index: int):
 	$Menu_Bip.play()

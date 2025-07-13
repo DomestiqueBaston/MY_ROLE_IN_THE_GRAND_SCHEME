@@ -9,10 +9,12 @@ extends Node2D
 @onready var _char_gen_scene = preload("res://SCENES/Character_Generation.tscn")
 @onready var _main_scene = preload("res://SCENES/Main_V2.tscn")
 @onready var _quit_scene = preload("res://SCENES/Quit.tscn")
+@onready var _death_scene = preload("res://SCENES/Death.tscn")
 
 func _ready():
 	_title_screen = $Active_Scene/Title_Screen
 	_title_screen.next.connect(_go_to_option_menu)
+	GameState.player.died.connect(_on_death)
 
 func _replace_scene(new_scene: PackedScene) -> Node:
 
@@ -109,3 +111,9 @@ func _quit():
 	await _replace_scene(_quit_scene)
 	await $Transition.transition_finished
 	get_tree().quit()
+
+func _on_death():
+	var death = await _replace_scene(_death_scene)
+	await death.done
+	GameState.end_game()
+	_go_to_option_menu()

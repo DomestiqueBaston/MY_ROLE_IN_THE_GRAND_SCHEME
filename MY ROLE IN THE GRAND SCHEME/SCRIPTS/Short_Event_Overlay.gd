@@ -49,6 +49,20 @@ func show_bill_announcement():
 	$Overlays/Misc/Announces/Bill.hide()
 
 ##
+## Display a message telling the player he has overcome his addiction or died.
+##
+func show_addiction_message(die: bool):
+	$Overlays/Misc/Announces/Addiction_Crisis_Result/Failure.visible = die
+	$Overlays/Misc/Announces/Addiction_Crisis_Result/Success.visible = not die
+	$Overlays/Misc/Announces/Addiction_Crisis_Result.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Addiction_Crisis_Result.hide()
+
+##
 ## Display a message telling the player he has had a nice dream or a nightmare.
 ##
 func show_dream_message(nightmare: bool):

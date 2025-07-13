@@ -15,6 +15,7 @@ var wanted: int: set = set_wanted, get = get_wanted
 var paranoia: int
 var money: int: set = set_money, get = get_money
 var drugs: int: set = set_drugs, get = get_drugs
+var drugs_taken_today: int
 
 signal physical_changed
 signal mental_changed
@@ -25,6 +26,7 @@ signal wanted_changed
 signal money_changed
 signal drugs_changed
 signal debts_changed
+signal died
 
 var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
 var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
@@ -34,7 +36,7 @@ var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").
 var _debts: Array[int]
 var _cards: Array[BaseCard]
 var _signal_pause: int = 0
-var _sleep_bonus_malus: int = 0
+var _sleep_bonus_malus: int
 
 func reset():
 	_signal_pause += 1
@@ -53,6 +55,7 @@ func reset():
 	paranoia = 0
 	money = 0
 	drugs = 0
+	drugs_taken_today = 0
 	_debts.clear()
 	_cards.clear()
 	_sleep_bonus_malus = 0
@@ -75,6 +78,7 @@ func assign(other):
 	paranoia = other.paranoia
 	money = other.money
 	drugs = other.drugs
+	drugs_taken_today = other._drugs_taken_today
 	_debts = other._debts
 	_cards = other._cards
 	_sleep_bonus_malus = other._sleep_bonus_malus
@@ -93,6 +97,7 @@ func start_game():
 	paranoia = 0
 	money = 300 + job_bonus_malus.get("money", 0)
 	drugs = 3 + job_bonus_malus.get("drugs", 0)
+	drugs_taken_today = 0
 	_debts.clear()
 	_cards.clear()
 	_sleep_bonus_malus = 0
@@ -202,6 +207,12 @@ func get_health() -> int:
 
 func set_emotion(emo: int):
 	emo = clampi(emo, -3, 3)
+	if emo == -3:
+		addiction += 1 if addiction > 0 else -1
+		emo = -2
+	elif emo == 3:
+		addiction += 1 if addiction >= 0 else -1
+		emo = 2
 	if emotion != emo:
 		emotion = emo
 		if _signal_pause == 0:
@@ -249,7 +260,7 @@ func get_drugs() -> int:
 	return drugs
 
 func use_drugs(doses: int):
-	doses = mini(doses, drugs)
+	doses = mini(mini(doses, drugs), 2 - drugs_taken_today)
 	drugs -= doses
 	addiction += doses
 
@@ -355,12 +366,24 @@ func sleep(hours: int):
 
 	addiction -= 1
 
+func die():
+	died.emit()
+
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.PLAYER
 
+#
+# For save/load.
+#
 func get_referenced_objects():
 	return _cards
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = {
 		"player_name": player_name,
@@ -378,6 +401,7 @@ func get_json_dict():
 		"paranoia": paranoia,
 		"money": money,
 		"drugs": drugs,
+		"drugs_taken_today": drugs_taken_today,
 		"debts": _debts,
 		"sleep_bonus_malus": _sleep_bonus_malus
 	}
@@ -387,6 +411,9 @@ func get_json_dict():
 	dict["cards"] = card_refs
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	player_name = dict.player_name
 	job_id = dict.job_id
@@ -403,10 +430,14 @@ func restore(dict, catalog):
 	paranoia = dict.paranoia
 	money = dict.money
 	drugs = dict.drugs
+	drugs_taken_today = dict.get("drugs_taken_today", 0)
 	_debts.assign(dict.debts)
 	_sleep_bonus_malus = dict.sleep_bonus_malus
 	for card_ref in dict.cards:
 		_cards.append(catalog[card_ref])
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return Player.new()

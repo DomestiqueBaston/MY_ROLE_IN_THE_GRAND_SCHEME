@@ -35,7 +35,6 @@ var _current_case_index: int
 
 func _ready():
 	load_game()
-	pass
 
 func start_game():
 	_hour = _start_time
@@ -49,6 +48,12 @@ func start_game():
 		cases.append(Case.generate())
 
 	player.start_game()
+
+func end_game():
+	cases.clear()
+	player.reset()
+	# TODO: is there no way to just delete a file?
+	FileAccess.open(_save_path, FileAccess.WRITE)
 
 ##
 ## Returns the number of full days that have passed since play began. Play
@@ -108,6 +113,7 @@ func _new_day(day: int):
 
 	_has_visited_hub = false
 	_has_slept = false
+	player.drugs_taken_today = 0
 
 func _send_new_bill():
 	for i in player.get_debt_count():

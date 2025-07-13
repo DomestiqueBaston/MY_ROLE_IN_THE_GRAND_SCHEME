@@ -104,6 +104,7 @@ func _ready():
 
 	tree_exiting.connect(_detach_cards)
 	GameState.case_changed.connect(_on_case_changed)
+	GameState.player.addiction_changed.connect(_on_addiction_changed)
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -598,6 +599,9 @@ func populate(case: Case):
 		$Player_Locator.detach_from_card()
 		$Player_Locator.hide()
 
+#
+# Lays out the starting cards in a new game.
+#
 func _layout_cards():
 	var top_left = cards.global_position
 	var bottom_right = top_left + cards.size
@@ -627,3 +631,19 @@ func _detach_cards():
 		cards.remove_child(child)
 	for child in reserve.get_children():
 		reserve.remove_child(child)
+
+func _on_addiction_changed():
+	var player = GameState.player
+	if player.addiction > -3 and player.addiction < 3:
+		return
+	var die = (
+		player.health <= 1
+		or absi(player.emotion) >= 2
+		or randi() % 10 > player.health)
+	await Globals.dialog_overlay.show_addiction_message(die)
+	if die:
+		player.die()
+	else:
+		player.addiction = 2 * signi(player.addiction)
+		player.health -= 1
+		player.emotion += signi(player.emotion)
