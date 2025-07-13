@@ -53,7 +53,6 @@ enum DailiesMenuItem {
 }
 
 enum WhateverMenuItem {
-	LSD,
 	SETTINGS,
 	QUIT
 }
