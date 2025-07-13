@@ -587,6 +587,13 @@ func populate(case: Case):
 		cards.add_child(link.pin1)
 		cards.add_child(link.pin2)
 
+	var player_location = case.get_player_location()
+	if player_location:
+		$Player_Locator.attach_to_card(player_location)
+	else:
+		$Player_Locator.detach_from_card()
+		$Player_Locator.hide()
+
 func _layout_cards():
 	var top_left = cards.global_position
 	var bottom_right = top_left + cards.size

@@ -19,7 +19,9 @@ var evidence: Array[ObjectCard]
 var other_objects: Array[ObjectCard]
 var locations: Array[LocationCard]
 
-var _crime_location: LocationCard  # reference to an item in locations
+# references to items in locations
+var _crime_location: LocationCard
+var _player_location: LocationCard
 
 var _case_id: String
 var _case_name: String
@@ -263,6 +265,9 @@ func _randomize():
 
 	# cards and links that are revealed initially
 
+	if _crime_location:
+		_player_location = _crime_location
+
 	for npc_list in [victims, witnesses, suspects]:
 		for npc in npc_list:
 			npc.is_revealed = true
@@ -272,6 +277,8 @@ func _randomize():
 			work.is_revealed = true
 			_create_link(npc, home, Link.Type.HOME)
 			_create_link(npc, work, Link.Type.WORK)
+			if not _player_location:
+				_player_location = work
 
 	if _crime_location:
 		_crime_location.is_revealed = true
@@ -332,6 +339,9 @@ func get_duration() -> int:
 
 func get_crime_location() -> LocationCard:
 	return _crime_location
+
+func get_player_location() -> LocationCard:
+	return _player_location
 
 ##
 ## Returns all the cards created for the case, including NPCs, objects and
@@ -515,6 +525,9 @@ func get_json_dict():
 	if _crime_location:
 		dict["crime_location"] = SaveLoadTools.get_object_id(_crime_location)
 
+	if _player_location:
+		dict["player_location"] = SaveLoadTools.get_object_id(_player_location)
+
 	if _links:
 		var link_refs = []
 		for link in _links:
@@ -552,6 +565,8 @@ func restore(dict, catalog):
 		locations.append(catalog[ref])
 	if "crime_location" in dict:
 		_crime_location = catalog[dict.crime_location]
+	if "player_location" in dict:
+		_player_location = catalog[dict.player_location]
 	for ref in dict.get("links", []):
 		_links.append(catalog[ref])
 
