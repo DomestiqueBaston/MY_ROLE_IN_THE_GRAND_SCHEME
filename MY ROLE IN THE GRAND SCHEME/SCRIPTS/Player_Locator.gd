@@ -35,15 +35,15 @@ func _on_card_move():
 
 	if card_center.x < bounds_center.x:
 		if card_center.y < bounds_center.y:
-			global_position = pos + Vector2(BaseCard.reduced_size)
-			rotation = PI * 0.5
+			global_position = pos + Vector2(BaseCard.size.x, 20)
+			rotation = PI * 0.6
 		else:
-			global_position = pos + Vector2(BaseCard.reduced_size.x, 0)
+			global_position = pos + Vector2(BaseCard.size.x, 0)
 			rotation = PI * 0.4
 	else:
 		if card_center.y < bounds_center.y:
-			global_position = pos + Vector2(0, BaseCard.reduced_size.y)
-			rotation = PI * -0.5
+			global_position = pos + Vector2(0, 20)
+			rotation = PI * -0.6
 		else:
 			global_position = pos
 			rotation = PI * -0.4
