@@ -248,6 +248,11 @@ func set_drugs(doses: int):
 func get_drugs() -> int:
 	return drugs
 
+func use_drugs(doses: int):
+	doses = mini(doses, drugs)
+	drugs -= doses
+	addiction += doses
+
 func add_debt(debt: int):
 	_debts.insert(0, debt)
 	debts_changed.emit()
@@ -347,6 +352,8 @@ func sleep(hours: int):
 			health += 3 + dream_health_bonus
 			emotion = _calm(emotion, 1)
 			_sleep_bonus_malus = 2
+
+	addiction -= 1
 
 func get_custom_class():
 	return SaveLoadTools.Class.PLAYER

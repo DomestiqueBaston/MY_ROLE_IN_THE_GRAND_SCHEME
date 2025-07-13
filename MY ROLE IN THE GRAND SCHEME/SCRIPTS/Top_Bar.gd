@@ -68,6 +68,7 @@ var _day_names = [
 ]
 
 var _debt_popup: PopupMenu
+var _drug_popup: PopupMenu
 
 func _update_controls():
 	var player = GameState.player
@@ -94,7 +95,7 @@ func _ready():
 		$Menus/Dailies:		false,
 		$Menus/Cases:		false,
 		$Menus/Cards:		false,
-		$Menus/Whatever:	true
+		$Menus/Whatever:		true
 	}
 
 	for button: MenuButton in buttons:
@@ -113,9 +114,10 @@ func _ready():
 	_debt_popup = PopupMenu.new()
 	_debt_popup.index_pressed.connect(_on_debt_menu_pressed)
 
-	var submenu2: PopupMenu = PopupMenu.new()
-	submenu2.add_item("Use 1 dose")
-	submenu2.add_item("Use 2 doses")
+	_drug_popup = PopupMenu.new()
+	_drug_popup.add_item("Use 1 dose")
+	_drug_popup.add_item("Use 2 doses")
+	_drug_popup.index_pressed.connect(_on_drug_menu_pressed)
 
 	var popup: PopupMenu = _dailies_button.get_popup()
 	popup.about_to_popup.connect(_on_dailies_menu_popup)
@@ -128,7 +130,7 @@ func _ready():
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_submenu_node_item(
 		"Pay the bill", _debt_popup, DailiesMenuItem.DEBT_SUBMENU)
-	popup.add_submenu_node_item("Get your fix", submenu2)
+	popup.add_submenu_node_item("Get your fix", _drug_popup)
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_item("Go to sleep...", DailiesMenuItem.SLEEP)
 	popup.add_item("Pass time!", DailiesMenuItem.PASS_TIME)
@@ -173,7 +175,7 @@ func _on_attr_changed(attr: PlayerAttr):
 				attr.alert_player.play("Alert")
 		else:
 			if attr.alert_player.current_animation == "Alert":
-				attr.alert_player.play("Reset")
+				attr.alert_player.play("RESET")
 
 func _on_debts_changed():
 	if GameState.player.get_debt_count() >= 4:
@@ -235,7 +237,18 @@ func _on_dailies_menu_popup():
 		dailies.set_item_disabled(index, false)
 		#theme.set_icon("submenu", "PopupMenu", _normal_arrow)
 
+	# enable/disable items in the drug submenu
+
+	_drug_popup.set_item_disabled(0, player.drugs < 1 or player.addiction > 1)
+	_drug_popup.set_item_disabled(1, player.drugs < 2 or player.addiction > 0)
+
 func _on_debt_menu_pressed(index: int):
-	GameState.player.pay_debt(index)
-	GameState.pass_one_hour()
 	$Menu_Bip.play()
+	await GameState.player.pay_debt(index)
+	await GameState.pass_one_hour()
+
+func _on_drug_menu_pressed(index: int):
+	var doses = 1 + index
+	$Menu_Bip.play()
+	await GameState.player.use_drugs(doses)
+	await GameState.pass_one_hour()
