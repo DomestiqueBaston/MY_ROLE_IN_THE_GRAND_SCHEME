@@ -39,6 +39,7 @@ func add_npc(npc: NpcCard):
 		if card.get_ref() == npc:
 			return
 	_npcs.append(weakref(npc))
+	_update_card_name()
 
 func get_npc_count() -> int:
 	return _npcs.size()
@@ -52,11 +53,18 @@ func get_npcs() -> Array[NpcCard]:
 		ret.append(ref.get_ref())
 	return ret
 
+func _update_card_name():
+	var location_name = _location_data[database_id].name
+	if database_id == "LOC001" and _npcs.size() == 1:
+		card_name = "%s's %s" %  [_npcs[0].get_ref().first_name, location_name]
+	else:
+		card_name = location_name
+
 static func create_card(id: String) -> LocationCard:
 	var card = _card_scene.instantiate()
 	var location_info = _location_data[id]
-	card.card_name = location_info["name"]
-	card.description = location_info["description"]
+	card.card_name = location_info.name
+	card.description = location_info.description
 	card.database_id = id
 	return card
 
@@ -98,11 +106,17 @@ func restore(dict, catalog):
 	location_status = dict.get("location_status", LocationStatus.NONE)
 	database_id = dict["database_id"]
 	var location_info = _location_data[database_id]
-	card_name = location_info["name"]
-	description = location_info["description"]
+	card_name = location_info.name
+	description = location_info.description
 	if "npcs" in dict:
 		for card in dict.npcs:
 			_npcs.append(weakref(catalog[card]))
+
+#
+# For save/load. The NPC's name may not have been set yet in restore().
+#
+func post_restore():
+	_update_card_name()
 
 #
 # For save/load.

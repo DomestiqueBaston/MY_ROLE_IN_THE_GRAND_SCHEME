@@ -103,6 +103,13 @@ static func restore_from_json_dict(dict: Dictionary) -> Object:
 		var ref_dict = dict.refs[ref_id]
 		catalog[ref_id].restore(ref_dict["props"], catalog)
 
+	# for classes that define a post_restore() method, call it
+
+	for ref_id in dict.get("refs", {}):
+		var ref = catalog[ref_id]
+		if ref.has_method("post_restore"):
+			ref.post_restore()
+
 	return obj
 
 static func _allocate_object(type: Class) -> Object:
