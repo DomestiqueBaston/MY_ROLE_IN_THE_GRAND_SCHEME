@@ -48,6 +48,8 @@ func _on_card_move():
 			global_position = pos
 			rotation = PI * -0.4
 
+	$Pin.rotation = -rotation
+
 func _on_card_entered_tree():
 	visible = not _the_card.is_stacked()
 
