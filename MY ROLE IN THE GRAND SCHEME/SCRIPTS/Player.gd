@@ -78,7 +78,7 @@ func assign(other):
 	paranoia = other.paranoia
 	money = other.money
 	drugs = other.drugs
-	drugs_taken_today = other._drugs_taken_today
+	drugs_taken_today = other.drugs_taken_today
 	_debts = other._debts
 	_cards = other._cards
 	_sleep_bonus_malus = other._sleep_bonus_malus
