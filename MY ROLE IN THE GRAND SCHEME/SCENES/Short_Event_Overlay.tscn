@@ -1,4 +1,4 @@
-[gd_scene load_steps=252 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=253 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -122,6 +122,7 @@
 [ext_resource type="Texture2D" uid="uid://e46jea1u2qcg" path="res://GRAPHICS/SHORT_EVENT/Drawer_04_Open.png" id="100_ne7xd"]
 [ext_resource type="Texture2D" uid="uid://chdq087hlxnwm" path="res://GRAPHICS/SHORT_EVENT/Drawer_04_Hover.png" id="101_qe60g"]
 [ext_resource type="BitMap" uid="uid://dhrufhokkqgng" path="res://GRAPHICS/SHORT_EVENT/Drawer_04_Mask.png" id="102_mej1r"]
+[ext_resource type="Texture2D" uid="uid://corgiebve1d7v" path="res://GRAPHICS/SHORT_EVENT/Office_BG.png" id="103_b6clx"]
 [ext_resource type="Texture2D" uid="uid://7618q8wffjkt" path="res://GRAPHICS/SHORT_EVENT/Drawer_03_Open.png" id="103_vieyt"]
 [ext_resource type="Texture2D" uid="uid://dt5bvcd6hsq65" path="res://GRAPHICS/SHORT_EVENT/Drawer_03_Hover.png" id="104_bdr4h"]
 [ext_resource type="BitMap" uid="uid://elgd1g4von5o" path="res://GRAPHICS/SHORT_EVENT/Drawer_03_Mask.png" id="105_briu0"]
@@ -3867,6 +3868,58 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
 text = "Ok."
 
+[node name="Office" type="Node2D" parent="Overlays"]
+visible = false
+
+[node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
+position = Vector2(171, 5)
+texture = ExtResource("103_b6clx")
+centered = false
+
+[node name="Office" type="Control" parent="Overlays/Office"]
+layout_mode = 3
+anchors_preset = 0
+tooltip_text = "Ok..."
+theme = ExtResource("68_q1jpv")
+script = ExtResource("69_pf81c")
+
+[node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 75.0
+offset_right = 338.0
+offset_bottom = 245.0
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Office,
+sweet  office![/color][/pulse]
+
+There  ain't  no [shake rate=7.0 level=5 connected=0][color=#ff8864]place  safer[/color][/shake] than  [shake rate=7.0 level=5 connected=0][color=#ff1c18]here[/color][/shake]![/center]"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="Overlays/Office/Office"]
+self_modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 0
+offset_left = 298.0
+offset_top = 263.0
+offset_right = 364.0
+offset_bottom = 284.0
+rotation = -0.12645
+theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
+theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
+theme_override_colors/font_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_colors/font_focus_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("57_gfusj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bkvay")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
+text = "Alright!"
+
 [node name="Rowena" type="Node2D" parent="Overlays"]
 visible = false
 script = ExtResource("71_x6sjh")
@@ -4674,6 +4727,9 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_minus_pressed"]
