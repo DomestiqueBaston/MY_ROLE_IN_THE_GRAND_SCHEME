@@ -843,8 +843,7 @@
 			"name": "Leveraging Secrets for Control",
 			"more_explicit_name": "Psychological Manipulation",
 			"link": [
-				"friend",
-				"enemy"
+				"enemy/friend"
 			],
 			"crime_location": [
 				"none"
@@ -1487,8 +1486,7 @@
 			"name": "Holding On to the Throne at Any Cost",
 			"more_explicit_name": "Maintaining a Position of Power",
 			"link": [
-				"enemy",
-				"friend",
+				"enemy/friend",
 				"ideology"
 			],
 			"crime_location": [
@@ -4477,8 +4475,7 @@
 			"more_explicit_name": "Pathological Jealousy",
 			"link": [
 				"intimacy",
-				"friend",
-				"enemy"
+				"enemy/friend"
 			],
 			"crime_location": [
 				"any_victim"
