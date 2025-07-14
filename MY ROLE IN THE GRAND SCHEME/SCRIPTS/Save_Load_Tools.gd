@@ -30,6 +30,8 @@ class_name SaveLoadTools
 ## and saved to the dictionary) to new object instances of the appropriate type.
 ## Note that those objects are not guaranteed to have been restored to their
 ## saved state yet; you cannot rely on the contents of the referenced objects.
+## If necessary, the class can define a post_restore() method, called after all
+## objects have been restored.
 ##
 ## SaveLoadTools provides two static methods: save_to_json_dict() saves an
 ## object and any other objects it references to a JSON dictionary, and
