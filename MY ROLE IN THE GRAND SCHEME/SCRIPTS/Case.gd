@@ -79,7 +79,7 @@ func _randomize():
 	total_npc_count += other_npc_count
 	var evidence_count = maxi(
 		_get_count_from_array(_motive.get("evidence_number", 0)),
-		culprit_count)
+		culprit_count + accomplice_count)
 
 	# incriminating links (we don't need to know between whom yet)
 
@@ -279,15 +279,22 @@ func _randomize():
 		npc1.add_connection(link_type, npc2)
 		npc2.add_connection(link_type, npc1)
 
-	# TODO: other links between NPCs
+	# other friend, enemy and acquaintance connections between NPCs
+
+	# Note that for NPC #7 (for example), we only look for connections with
+	# NPCs #8 and up, because NPCs 0-6 already have all the connections they
+	# need. That it why we iterate only to the next-to-last NPC, and why we tell
+	# _make_frenemies_for() to look only at NPCs after the given NPC.
+
+	for i in npcs.size() - 1:
+		_make_frenemies_for(npcs[i], i+1)
 
 	# evidence
 
 	if evidence_count > 0:
 		var candidates = _motive.get("evidences", []).duplicate()
-		# this should never be necessary
-		evidence_count = mini(evidence_count, candidates.size() - 1)
-		for i in evidence_count:
+		var count = mini(evidence_count, candidates.size() - 1)
+		for i in count:
 			var which = randi() % candidates.size()
 			var card = ObjectCard.create_card(candidates[which])
 			# TODO: set location and owner?
@@ -440,6 +447,70 @@ func _find_partner_for(npc: NpcCard) -> NpcCard:
 		return other
 
 	return null
+
+#
+# Generates friends, enemies and acquaintances for the given NPC, taking them
+# first from the NPC's entourage (NPCs sharing the same workplace or hangout).
+#
+# Only other NPCs with index >= ignore_count are taken into consideration,
+# because the NPCs with index < ignore_count have already been allocated all
+# the friends, enemies and acquaintances they need.
+#
+func _make_frenemies_for(npc: NpcCard, ignore_count: int):
+	var entourage = []
+	var work = npc.get_work()
+	for other in work.get_connections(Link.Type.WORK):
+		if not other.is_known_to(npc) and npcs.find(other) >= ignore_count:
+			entourage.append(other)
+	var hangout = npc.get_hangout()
+	for other in hangout.get_connections(Link.Type.HANGOUT):
+		if not other.is_known_to(npc) and npcs.find(other) >= ignore_count:
+			entourage.append(other)
+
+	var friend_count = npc.get_connections(Link.Type.FRIEND).size()
+	for i in range(friend_count, randi_range(0, 2)):
+		var friend = _find_frenemy_for(npc, entourage, ignore_count)
+		if not friend:
+			return
+		npc.add_connection(Link.Type.FRIEND, friend)
+		friend.add_connection(Link.Type.FRIEND, npc)
+
+	var enemy_count = npc.get_connections(Link.Type.ENEMY).size()
+	for i in range(enemy_count, randi_range(0, 2)):
+		var enemy = _find_frenemy_for(npc, entourage, ignore_count)
+		if not enemy:
+			return
+		npc.add_connection(Link.Type.ENEMY, enemy)
+		enemy.add_connection(Link.Type.ENEMY, npc)
+
+	var acquaintance_count = npc.get_connections(Link.Type.ACQUAINTANCE).size()
+	for i in range(acquaintance_count, randi_range(0, 3)):
+		var acquaintance = _find_frenemy_for(npc, entourage, ignore_count)
+		if not acquaintance:
+			return
+		npc.add_connection(Link.Type.ACQUAINTANCE, acquaintance)
+		acquaintance.add_connection(Link.Type.ACQUAINTANCE, npc)
+
+func _find_frenemy_for(npc: NpcCard, candidates, ignore_count) -> NpcCard:
+	if candidates.is_empty():
+		var index = randi_range(ignore_count, npcs.size() - 1)
+		for i in npcs.size() - ignore_count:
+			var other = npcs[index]
+			if not (other == npc or
+					other in npc.get_connections(Link.Type.FRIEND) or
+					other in npc.get_connections(Link.Type.ENEMY) or
+					other in npc.get_connections(Link.Type.ACQUAINTANCE)):
+				return other
+			index += 1
+			if index == npcs.size():
+				index = ignore_count
+		#print("not enough NPCs!")
+		return null
+	else:
+		var which = randi() % candidates.size()
+		var other = candidates[which]
+		candidates.remove_at(which)
+		return other
 
 func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
 	var pin1 = Pin.allocate()

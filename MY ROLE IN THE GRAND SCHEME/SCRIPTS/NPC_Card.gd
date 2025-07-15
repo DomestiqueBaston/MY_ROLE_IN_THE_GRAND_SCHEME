@@ -142,6 +142,20 @@ func get_work() -> LocationCard:
 	var cnxs = get_connections(Link.Type.WORK)
 	return null if cnxs.is_empty() else cnxs[0]
 
+func get_hangout() -> LocationCard:
+	var cnxs = get_connections(Link.Type.HANGOUT)
+	return null if cnxs.is_empty() else cnxs[0]
+
+func is_known_to(other: NpcCard) -> bool:
+	if other == self:
+		return true
+	for link_type in [
+		Link.Type.FRIEND, Link.Type.ENEMY, Link.Type.ACQUAINTANCE,
+		Link.Type.INTIMACY]:
+		if other in get_connections(link_type):
+			return true
+	return false
+
 func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	category = cat
 
