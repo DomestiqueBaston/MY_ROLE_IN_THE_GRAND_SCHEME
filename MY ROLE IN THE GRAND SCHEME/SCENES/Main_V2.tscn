@@ -182,6 +182,7 @@ show_bounding_box = true
 metadata/_custom_type_script = "uid://re2c6g3rw3r1"
 
 [node name="Player_Locator" parent="." node_paths=PackedStringArray("bounds") instance=ExtResource("9_twje4")]
+visible = false
 z_index = 1
 position = Vector2(544, 64)
 bounds = NodePath("../Cards")
