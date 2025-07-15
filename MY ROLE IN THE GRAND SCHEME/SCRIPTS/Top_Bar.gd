@@ -170,7 +170,7 @@ func _on_attr_changed(attr: PlayerAttr):
 	var value = GameState.player[attr.attr_name]
 	attr.ui_label.text = str(value)
 	if attr.alert_player:
-		if value < attr.min_value or value < attr.max_value:
+		if value < attr.min_value or value > attr.max_value:
 			if attr.alert_player.current_animation != "Alert":
 				attr.alert_player.play("Alert")
 		else:
