@@ -1516,14 +1516,15 @@ polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 
 [node name="Male" type="Sprite2D" parent="Card_Mask/Card_BG/Sex"]
 visible = false
-self_modulate = Color(1, 1, 1, 0.196078)
+self_modulate = Color(1, 1, 1, 0.294118)
 position = Vector2(11, 34)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("10_laxfo")
 centered = false
 
 [node name="Female" type="Sprite2D" parent="Card_Mask/Card_BG/Sex"]
-self_modulate = Color(1, 1, 1, 0.196078)
+visible = false
+self_modulate = Color(1, 1, 1, 0.294118)
 position = Vector2(5, 26)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_0kggl")
