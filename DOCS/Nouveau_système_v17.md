@@ -674,7 +674,7 @@ Enquête
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	- Voir également à la fin pour les enquêtes de niveau 0 !
 
-Lieu du crime et Lieu caché
+Lieu du crime et Lieu caché (mauvais titre)
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
 	- Le/les domicile(s) du/des coupable(s) peut/peuvent aussi contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
 	- Le lieu du crime est connu dès le départ en suivant : 0, 0.25, 0.5, 0.75 ou 1 chance sur 1 (dans Crime_Motive_Evidence.json à « known_crime_location »).
@@ -688,7 +688,7 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 		Carte Lieu : Blanc, Noir, Vert Clair, Marron, Turquoise, Bleu Très Foncé, Rouge, Violet Clair et Violet sont possibles.
 
 		Il faut au minimum 1 Coupable, 1 Evidence et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête sinon le menu « Validate Case » ne sera pas activé.
-	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Reserve » (en haut à gauche) ou en la (re)prenant d’ici pour la (re)mettre en jeu (Main.tscn).
+	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Reserve » (en haut à gauche) ou en la (re)prenant pour la (re)mettre en jeu (Main.tscn) et cette carte rétablira ses liens en fonction de ceux qui peuvent être rétablis.
 	- Changer le lien Found d’un Objet (par le joueur) peut entrer en contradiction avec les infos de l’Objet et éventuellement de son propriétaire. On prendra alors soin d’afficher le Warning.tscn sur le lien pour signaler la contradiction.
 
 Liens entre les éléments dans l’enquête (Main.tscn)
@@ -733,7 +733,7 @@ Coupable(s)	Voir json des mobiles
 Complice(s)	Voir json des mobiles
 Relations entre les PNJs	Lien(s) plein(s) (confirmé(s)), lien(s) pointillé(s) (probable(s)) / Couleur(s)s du/des lien(s)
 
-	- Le nombre de preuves disponibles sera bien entendu toujours supérieur ou égal au nombre de preuves minimum à découvrir pour valider l’enquête.
+	- Le nombre de preuves disponibles sera toujours supérieur ou égal au nombre de coupables+complices de l’enquête.
 
 Liens et validation d’enquête :
 	- En rapport avec Crime_Mobile_Evidence.json (établissement des liens AVANT début de l’enquête):
@@ -773,7 +773,7 @@ Résolution des enquêtes, gains et implications
 	- À la suite d’une enquête réussie, l’écran Income_Overlay.tscn s’affiche avec les gains. Ensuite, on enchaîne directement sur l’écran Card_Management_Overlay.tscn pour modifier le deck (si besoin).
 
 Autres :
-	- 1 fois par jour, le joueur aura 10% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) qui ne sert à rien sinon faire monter le niveau de Paranoïa (voir déclencher la Paranoïa) !
+	- 1 fois par jour, à une heure aléatoire, le joueur aura 10% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) qui ne sert à rien sinon faire monter le niveau de Paranoïa (voir déclencher la Paranoïa) !
 	- Dans l’enquête finale, à chaque fois que le joueur entrera dans un lieu dans lequel il va découvrir des victimes, il recevra un SMS anonyme. Pas d’influence sur la Paranoïa vu qu’il est déjà paranoïaque.
 
 	- Dans les json (je pense à NPC, OBJ, CASE…) on n’aura que des infos vraies. Les fausses sont générées aléatoirement en jeu.
@@ -787,10 +787,10 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 		1 Mobile
 		1 Lien (s’il y a lieu)
 	- Dans ce même cadre, voici les éléments supplémentaires possiblement nécessaires suivant les types d’enquêtes et la difficulté de l’enquête à résoudre :
-		1 ou plus Complice
-		1 ou plus autre Coupable
-		1 ou plus autre Evidence
-		1 ou plus autre Lien
+		1 ou plus Complice(s)
+		1 ou plus autre Coupable(s)
+		1 ou plus autre Evidence(s)
+		1 ou plus autre Lien(s)
 	- Le nombres de preuves est toujours ≥ au nombre de coupables.
 	- Pondération quand plusieurs choix sont possibles dans une génération d’enquête (link, victims, culprits, accomplices, suspects, witnesses) :
 		- de 1 à 4 composantes possibles : 1=50%, 2=30%, 3=15%, 4=5%
@@ -804,7 +804,7 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 	- Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
 	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 	- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenus/connus par des PNJs.
-	- Il faudra découvrir le mobile du crime dans la liste de mobiles dont les mobiles incompatibles avec ce qu’a établi le joueur disparaîtront. Dès le départ de l’enquête, les mobiles incompatibles avec ce qui est donné seront désactivés.
+	- Il faudra découvrir le mobile du crime dans la liste de mobiles dont les mobiles incompatibles avec ce qu’a établi le joueur disparaîtront. Sans aucun lien noir, le menu est désactivé. Au départ d’une enquête, le menu est désactivé puisqu’aucun lien noir n’est établi.
 	- Chaque PNJ doit connaître (Acquaintance) au moins 1 autre PNJ (en plus de son éventuel conjoint).
 	- Les PNJs qui se connaissent bien (Friend) doivent partager un Lieu Fréquenté (+ appartement pour les couples).
 	- Tous les mobiles ayant un lien « Intimacy » (voir Crime_Motive_Evidence.json) imposent un couple dans l’enquête. Les enquêtes d’adultère nécessitent un/une amant/amante en plus du couple.
@@ -1011,6 +1011,7 @@ Futures idées…
 	- Fabrication de « fausse preuve ».
 	- Chaque partie laisse des traces chez le (nouveau) joueur de la partie suivante (comme si la fille ou le fils reprenait la suite du père ou de la mère).
 	- Add et Emo influent sur Rep.
+	- Add et Emo ajoute des effets en plus au joueur.
 	- Rajouter des hobbies au joueur et PNJs pour d’autres bonus/malus.
 	- Des fois, le joueur « plane » et perd du temps à la redescente.
 	- Faire dépendre plus des choses des caractéristiques du joueur plutôt que du hasard (si possible).

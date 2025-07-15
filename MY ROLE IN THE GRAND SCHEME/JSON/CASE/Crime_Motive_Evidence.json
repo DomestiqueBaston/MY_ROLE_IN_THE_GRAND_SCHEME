@@ -294,7 +294,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -339,7 +340,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -383,7 +385,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -427,7 +430,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -468,7 +472,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -513,7 +518,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -667,7 +673,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -723,7 +730,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -871,7 +879,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -927,7 +936,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -972,7 +982,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1020,7 +1031,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1064,7 +1076,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1119,7 +1132,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1158,8 +1172,7 @@
 			],
 			"accomplices": [
 				1,
-				2,
-				3
+				2
 			],
 			"suspects": [
 				1,
@@ -1172,7 +1185,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1306,7 +1321,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1409,7 +1425,8 @@
 			],
 			"witnesses": [
 				1,
-				2
+				2,
+				3
 			],
 			"evidence_number": [
 				1
@@ -1469,7 +1486,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1548,7 +1566,9 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1591,7 +1611,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1694,7 +1715,9 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3,
+				4
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1783,7 +1806,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1829,7 +1853,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1874,7 +1899,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -1957,7 +1983,8 @@
 				0
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2231,7 +2258,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2286,7 +2314,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2371,9 +2400,7 @@
 				1
 			],
 			"accomplices": [
-				1,
-				2,
-				3
+				1
 			],
 			"suspects": [
 				1,
@@ -2386,7 +2413,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2597,7 +2625,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2726,7 +2755,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2770,7 +2800,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2872,7 +2903,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2921,7 +2953,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -2988,7 +3022,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -3450,7 +3485,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -3493,7 +3529,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -3616,7 +3653,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -3662,7 +3700,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -3773,7 +3812,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -3865,7 +3906,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -3917,7 +3959,9 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4005,7 +4049,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4059,7 +4104,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4122,7 +4168,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4155,13 +4202,11 @@
 			"dead_victims": "no",
 			"culprits": [
 				1,
-				2,
-				3
+				2
 			],
 			"accomplices": [
 				0,
-				1,
-				2
+				1
 			],
 			"suspects": [
 				2,
@@ -4362,7 +4407,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4398,8 +4444,7 @@
 			"accomplices": [
 				0,
 				1,
-				2,
-				3
+				2
 			],
 			"suspects": [
 				0,
@@ -4412,7 +4457,9 @@
 				3
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4459,7 +4506,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4604,7 +4652,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4673,7 +4722,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4717,7 +4767,8 @@
 				0
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4772,7 +4823,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4822,7 +4874,8 @@
 				0
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -4867,7 +4920,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5253,7 +5307,9 @@
 				3
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5405,7 +5461,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5452,7 +5510,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5498,7 +5558,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5543,7 +5604,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5593,7 +5655,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5701,7 +5764,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5751,7 +5816,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5807,7 +5873,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5894,7 +5961,9 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -5961,7 +6030,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6004,8 +6075,7 @@
 			],
 			"accomplices": [
 				0,
-				1,
-				2
+				1
 			],
 			"suspects": [
 				1,
@@ -6019,7 +6089,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6106,8 +6177,7 @@
 			],
 			"accomplices": [
 				0,
-				1,
-				2
+				1
 			],
 			"suspects": [
 				1,
@@ -6120,7 +6190,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6222,7 +6293,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6267,7 +6339,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6315,7 +6388,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6410,7 +6485,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6504,7 +6580,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6553,7 +6630,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6610,7 +6688,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6654,7 +6733,8 @@
 				0
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6701,7 +6781,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6750,7 +6831,8 @@
 				0
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6796,7 +6878,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -6845,7 +6929,8 @@
 			],
 			"evidence_number": [
 				1,
-				2
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7219,7 +7304,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7280,7 +7366,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7341,7 +7429,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7385,7 +7475,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7475,7 +7566,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7523,7 +7615,8 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7705,7 +7798,8 @@
 				1
 			],
 			"evidence_number": [
-				1
+				1,
+				2
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
@@ -7808,7 +7902,9 @@
 				2
 			],
 			"evidence_number": [
-				1
+				1,
+				2,
+				3
 			],
 			"comment_01": "evidence_number >= culprits",
 			"evidences": [
