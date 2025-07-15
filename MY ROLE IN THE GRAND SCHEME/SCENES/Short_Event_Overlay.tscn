@@ -3885,9 +3885,9 @@ script = ExtResource("69_pf81c")
 [node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
 layout_mode = 0
 offset_left = 260.0
-offset_top = 109.0
+offset_top = 104.0
 offset_right = 385.0
-offset_bottom = 279.0
+offset_bottom = 274.0
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Office,
 sweet  office![/color][/pulse]
@@ -3900,9 +3900,9 @@ vertical_alignment = 1
 self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 345.0
-offset_top = 297.0
+offset_top = 292.0
 offset_right = 411.0
-offset_bottom = 318.0
+offset_bottom = 313.0
 rotation = -0.12645
 theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
 theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
