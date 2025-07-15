@@ -3869,6 +3869,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
 text = "Ok."
 
 [node name="Office" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
 position = Vector2(218, 35)
