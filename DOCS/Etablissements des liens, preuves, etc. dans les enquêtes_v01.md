@@ -29,26 +29,29 @@
 	Les NPCs indépendants de l’enquête :
 	- Ils ont des liens totalement aléatoires ou même aucun. En fonction du lien, ils seront liés à n’importe qui de compatible  avec le lien choisi (exemple : on ne peut pas être l’ennemi de son ami):
 		- couple : 50 % (dont 10 % homo)
-		- friend : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
-		- enemy : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
-		- acquaintance : de 0 à 3 (50 % liés au travail et 50 % liés au hangout).
+		Pris dans un pool de 4 ennemis/amis/connaissances au total :
+			- friend : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
+			- enemy : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
+			- acquaintance : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
 		- affair (« lié » à intimacy) : 10 % de chance (on suit sexual_orientation). Le lien Affair est le même lien que Intimacy (rose) dans Main, il sert juste au jeu pour faire la différence entre couple officiel et non-officiel.
-		- debt/influence : de 0 à 2 Creditor(s).
-		- ideology : de 0 à 2 NPCs.
-
-		Exemple : si on tire ideology (exemple) et qu’ensuite on tire 0 NPC, alors pas de lien d’idéologie.
-
+		- debt/influence et Ideology :
+			- 1 PNJ aura 20 % de chance d’avoir 1 des 2 liens (Debt/Influence ou Ideology) avec n’importe qui (si l’enquête le nécessite : sauf la victime car déjà établi) et 10 % de chance d’avoir en plus l’autre lien avec n’importe qui (si l’enquête le nécessite : sauf la victime car déjà établi).
 
 	Les NPCs impliqués dans l’enquête :
 	- Les liens Culprit/Accomplice/Victim/Suspect/Witness sont établis au tout départ en générant ces NPCs après avoir décidé s’il y en a (comme Suspect, Witness et Accomplice) et combien dans l’enquête.
 	- On établit ensuite les autres liens incriminants et on se réfère à « link » du Crime_Motive_Evidence.json en suivant les règles énoncées dans la 2ème étape à /!\ .
 		- couple : 50 % (dont 10 % homo)
-		- friend : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
-		- enemy : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
-		- acquaintance : de 0 à 3 (50 % liés au travail et 50 % liés au hangout).
+		Pris dans un pool de 4 ennemis/amis/connaissances au total :
+			- friend : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
+			- enemy : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
+			- acquaintance : de 0 à 2 (50 % liés au travail et 50 % liés au hangout).
 		- affair (« lié » à intimacy) : de 0 à 1 (homo. si Couple homo). Impératif en cas d'enquête avec lien Intimacy incriminant. Affair, c’est le même lien que Intimacy dans Main, il sert juste au jeu à faire la différence entre couple officiel et inofficiel.
-		- debt/influence : de 1 à X Creditor(s) où X est lié au nombre de coupables.
-		- ideology : de 1 à X où X est lié au nombre de coupable(s)+complice(s).
+		Concernant les Victimes dans les enquêtes nécessitant ces liens) :
+		- debt/influence : X lien(s) où X est le nombre de coupables. Dans les enquêtes avec Debt/Influence incriminant, on a aussi ce lien ou Ideology entre coupables et complices.
+		- ideology : X lien(s) où X est le nombre de coupables. Dans les enquêtes avec Ideology incriminant, on a aussi ce lien entre coupables et complices.
+		Concernant les autres NPCs :
+		- 1 PNJ aura 20 % de chance d’avoir 1 des 2 liens (Debt/Influence ou Ideology) avec n’importe qui (si l’enquête le nécessite : sauf la victime car déjà établi) et 10 % de chance d’avoir en plus l’autre lien avec n’importe qui (si l’enquête le nécessite : sauf la victime car déjà établi).
+
 
 	- On peut aussi avoir d’autres liens mais ils ne seront pas incriminants. Globalement, c’est un peu comme si on passait en revue chaque lien et qu’on voit si le NPC a un tel lien ou pas sauf qu’en priorité, on procède d’abord pour les liens incriminants nécessaires pour l’enquête.
 
