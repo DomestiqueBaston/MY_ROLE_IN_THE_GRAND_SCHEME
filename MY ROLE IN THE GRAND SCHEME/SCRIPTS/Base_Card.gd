@@ -15,7 +15,7 @@ enum CardType {
 	set(value):
 		card_name = value
 		if is_node_ready():
-			$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
+			$Card_Mask/Card_BG/Card_Text/Card_Name.text = get_display_name()
 
 @export var description: String:
 	set(value):
@@ -38,8 +38,11 @@ const size := Vector2i(74, 100)
 ## Size of a card when it has been reduced.
 const reduced_size := Vector2i(74, 27)
 
-## Signal emitted when the card's position has changed
+## Signal emitted when the card's position has changed.
 signal moved
+
+## Maps link types to arrays of cards (locations, objects and NPCs).
+var _connections: Dictionary
 
 var _is_highlighted: bool = false
 var _opacity_before_highlighting: float
@@ -48,7 +51,7 @@ var _was_stacked: bool = false
 var _pins = {}
 
 func _ready():
-	$Card_Mask/Card_BG/Card_Text/Card_Name.text = card_name
+	$Card_Mask/Card_BG/Card_Text/Card_Name.text = get_display_name()
 	$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
 	_update_opacity()
 
@@ -322,11 +325,59 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 
 	return min_pin
 
+func add_connection(type: Link.Type, card: BaseCard):
+	if type in _connections:
+		_connections[type].append(weakref(card))
+	else:
+		_connections[type] = [weakref(card)]
+
+func get_all_connections() -> Array[BaseCard]:
+	var cnxs: Array[BaseCard]
+	for type in _connections:
+		for cnx in _connections[type]:
+			cnxs.append(cnx.get_ref())
+	return cnxs
+
+func get_all_npc_connections() -> Array[NpcCard]:
+	var cnxs: Array[NpcCard]
+	for type in _connections:
+		for cnx in _connections[type]:
+			if cnx.get_ref() is NpcCard:
+				cnxs.append(cnx.get_ref())
+	return cnxs
+
+func get_connections(type: Link.Type) -> Array[BaseCard]:
+	var cnxs: Array[BaseCard]
+	if type in _connections:
+		for cnx in _connections[type]:
+			cnxs.append(cnx.get_ref())
+	return cnxs
+
+func get_one_connection(type: Link.Type) -> BaseCard:
+	if type in _connections:
+		return _connections[type][0].get_ref()
+	return null
+
+func has_connection(type: Link.Type) -> bool:
+	return type in _connections
+
+##
+## Returns the card's name to display in the UI. By default, this is just the
+## card_name property, but some subclasses (NpcCard, LocationCard) override this
+## method and may not use card_name (or not always).
+##
+func get_display_name() -> String:
+	return card_name
+
 #
 # For save/load.
 #
 func get_referenced_objects():
-	return _pins.values()
+	var refs = _pins.values()
+	for cnxs in _connections.values():
+		for cnx in cnxs:
+			refs.append(cnx.get_ref())
+	return refs
 
 #
 # For save/load.
@@ -349,6 +400,14 @@ func get_json_dict():
 		for pin in _pins:
 			pin_refs[pin] = SaveLoadTools.get_object_id(_pins[pin])
 		dict["pins"] = pin_refs
+	if _connections:
+		var cnx_dict = {}
+		for type in _connections:
+			var cnx_array = []
+			for cnx in _connections[type]:
+				cnx_array.append(SaveLoadTools.get_object_id(cnx.get_ref()))
+			cnx_dict[type] = cnx_array
+		dict["connections"] = cnx_dict
 	return dict
 
 #
@@ -363,3 +422,9 @@ func restore(dict, catalog):
 		var pin_refs = dict.pins
 		for pin in pin_refs:
 			_pins[pin as Pin.Location] = catalog[pin_refs[pin]]
+	if "connections" in dict:
+		for type in dict.connections:
+			var refs = []
+			for id in dict.connections[type]:
+				refs.append(weakref(catalog[id]))
+			_connections[type as Link.Type] = refs

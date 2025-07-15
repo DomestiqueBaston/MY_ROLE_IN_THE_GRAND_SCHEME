@@ -3,7 +3,6 @@ class_name NpcCard extends BaseCard
 
 enum NpcCategory {
 	NONE,
-	USELESS,
 	VICTIM,
 	SUSPECT,
 	WITNESS,
@@ -90,11 +89,6 @@ var max_health: int
 var wanted: int
 var player_reputation: int
 
-var _home: WeakRef
-var _work: WeakRef
-var _hangout: WeakRef
-var _hideout: WeakRef
-
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 static var _card_scene = preload("res://SCENES/NPC_Card.tscn")
@@ -128,18 +122,26 @@ func _update_appearance():
 	$Card_Mask/Card_BG/Card_Text/Card_Name.tooltip_text = tooltip
 	$Card_Mask/Card_BG/Card_Text/Card_Description.tooltip_text = tooltip
 
+func get_display_name() -> String:
+	return first_name + " " + last_name
+
 func get_home() -> LocationCard:
-	return _home.get_ref()
+	var cnxs = get_connections(Link.Type.HOME)
+	return null if cnxs.is_empty() else cnxs[0]
 
 func get_work() -> LocationCard:
-	return _work.get_ref()
+	var cnxs = get_connections(Link.Type.WORK)
+	return null if cnxs.is_empty() else cnxs[0]
 
-func _randomize(case: Case, cat: NpcCategory, job_id: String):
+func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	category = cat
 
 	# sex and orientation
 
-	npc_sex = (randi() & 1) as Sex
+	if sex >= 0:
+		npc_sex = sex as Sex
+	else:
+		npc_sex = (randi() & 1) as Sex
 	if randf() < 0.1:
 		orientation = SexualOrientation.HOMO
 	else:
@@ -152,7 +154,6 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String):
 	var _last_names = _name_data["last_name"]
 	first_name = _first_names[randi() % _first_names.size()]
 	last_name = _last_names[randi() % _last_names.size()]
-	card_name = first_name + " " + last_name
 
 	# principal characteristics, randomly assigned between 3 and 7
 
@@ -195,37 +196,34 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String):
 	wanted = randi_range(0, 2)
 	player_reputation = -2 if category == NpcCategory.MINION else 0
 
-	# home and work locations
-
-	var home = case.create_location("LOC001", self)
-	_home = weakref(home)
+	# work location
 
 	var work_place = job_info["work_place"].pick_random()
 	var work
 	if work_place == "LOC001":
-		work = case.create_location("LOC001", self)
+		work = case.create_location("LOC001")
 	else:
-		work = case.find_or_create_location(work_place, self)
-	_work = weakref(work)
+		work = case.find_or_create_location(work_place)
+	add_connection(Link.Type.WORK, work)
+	work.add_connection(Link.Type.WORK, self)
 
 	# everyone has a hangout location
 
-	_hangout = weakref(case.find_hangout(self))
+	var hangout = case.find_hangout()
+	add_connection(Link.Type.HANGOUT, hangout)
+	hangout.add_connection(Link.Type.HANGOUT, self)
 
 	# not all NPCs have a hideout location
 
 	var hideout_probability
-	match category:
-		NpcCategory.USELESS:
-			hideout_probability = 0.2
-		NpcCategory.CULPRIT, NpcCategory.ACCOMPLICE:
-			hideout_probability = 0.8
-		_:
-			hideout_probability = 0.5
-	if randf() < hideout_probability:
-		_hideout = weakref(case.create_hideout(self))
+	if category in [NpcCategory.CULPRIT, NpcCategory.ACCOMPLICE]:
+		hideout_probability = 0.8
 	else:
-		_hideout = null
+		hideout_probability = 0.4
+	if randf() < hideout_probability:
+		var hideout = case.create_hideout()
+		add_connection(Link.Type.HIDEOUT, hideout)
+		hideout.add_connection(Link.Type.HIDEOUT, self)
 
 ##
 ## Call this at the start of each new day: the NPC's health is incremented
@@ -246,35 +244,53 @@ func new_day():
 ## at random for the NPC's profession. If it is not given or is empty, the NPC
 ## may be given any job.
 ##
+## Note that the new character is given a workplace, a hangout, and possibly a
+## hideout, but NOT a home: a home can be assigned later, when it is known
+## whether the NPC lives with someone else.
+##
 static func generate_card(
-	case: Case, cat: NpcCategory, possible_jobs = []) -> NpcCard:
+	case: Case, cat: NpcCategory = NpcCategory.NONE, possible_jobs = [],
+	sex: int = -1) -> NpcCard:
 	var card = _card_scene.instantiate()
 	var job_id: String
 	if possible_jobs:
 		job_id = possible_jobs.pick_random()
-	card._randomize(case, cat, job_id)
+	card._randomize(case, cat, job_id, sex)
 	return card
+
+func print_npc():
+	print("%s:" % get_display_name())
+	print("  category: ", NpcCategory.keys()[category].to_lower())
+	print("  sex: %s (%s)" % [
+		Sex.keys()[npc_sex].to_lower(),
+		SexualOrientation.keys()[orientation].to_lower()])
+	print("  job: ", job)
+	_print_connections_of_type("home", Link.Type.HOME)
+	_print_connections_of_type("work", Link.Type.WORK)
+	_print_connections_of_type("hangout", Link.Type.HANGOUT)
+	_print_connections_of_type("hideout", Link.Type.HIDEOUT)
+	_print_connections_of_type("intimates", Link.Type.INTIMACY)
+	_print_connections_of_type("friends", Link.Type.FRIEND)
+	_print_connections_of_type("enemies", Link.Type.ENEMY)
+	_print_connections_of_type("acquaintances", Link.Type.ACQUAINTANCE)
+
+func _print_connections_of_type(label: String, type: Link.Type):
+	var cnxs = get_connections(type)
+	if cnxs:
+		var text = ""
+		for cnx in cnxs:
+			if not text.is_empty():
+				text += ", "
+			text += cnx.get_display_name()
+		print("  ", label, ": ", text)
+	else:
+		print("  ", label, ": none")
 
 #
 # For save/load.
 #
 func get_custom_class():
 	return SaveLoadTools.Class.NPC_CARD
-
-#
-# For save/load.
-#
-func get_referenced_objects():
-	var refs = super()
-	if _home:
-		refs.append(_home.get_ref())
-	if _work:
-		refs.append(_work.get_ref())
-	if _hangout:
-		refs.append(_hangout.get_ref())
-	if _hideout:
-		refs.append(_hideout.get_ref())
-	return refs
 
 #
 # For save/load.
@@ -296,14 +312,6 @@ func get_json_dict():
 	dict["wanted"] = wanted
 	if player_reputation != 0:
 		dict["player_reputation"] = player_reputation
-	if _home:
-		dict["home"] = SaveLoadTools.get_object_id(_home.get_ref())
-	if _work:
-		dict["work"] = SaveLoadTools.get_object_id(_work.get_ref())
-	if _hangout:
-		dict["hangout"] = SaveLoadTools.get_object_id(_hangout.get_ref())
-	if _hideout:
-		dict["hideout"] = SaveLoadTools.get_object_id(_hideout.get_ref())
 	return dict
 
 #
@@ -326,15 +334,6 @@ func restore(dict, catalog):
 	health = dict.health
 	wanted = dict.wanted
 	player_reputation = dict.get("player_reputation", 0)
-	card_name = first_name + " " + last_name
-	if "home" in dict:
-		_home = weakref(catalog[dict.home])
-	if "work" in dict:
-		_work = weakref(catalog[dict.work])
-	if "hangout" in dict:
-		_hangout = weakref(catalog[dict.hangout])
-	if "hideout" in dict:
-		_hideout = weakref(catalog[dict.hideout])
 
 #
 # For save/load.

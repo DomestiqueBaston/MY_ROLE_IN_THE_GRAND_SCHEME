@@ -148,7 +148,7 @@ func _mouse_entered_card(card: BaseCard):
 			_current_card.set_highlighted(false)
 		card.set_highlighted(true)
 		_current_card = card
-		print("show info about card: ", card.card_name)
+		print("show info about card: ", card.get_display_name())
 	elif _drag_state == DragState.DRAGGING and _clicked_pin and not card.is_stacked():
 		_drop_target = card
 	elif _drag_state == DragState.LINKING:

@@ -51,9 +51,22 @@ func _on_item_selected(index: int):
 
 	_deadline.text = "%d days" % case.get_duration()
 
-	_populate_npc_names(case.victims, _victims)
-	_populate_npc_names(case.witnesses, _witnesses)
-	_populate_npc_names(case.suspects, _suspects)
+	var victims = []
+	var witnesses = []
+	var suspects = []
+
+	for npc in case.npcs:
+		match npc.category:
+			NpcCard.NpcCategory.VICTIM:
+				victims.append(npc)
+			NpcCard.NpcCategory.WITNESS:
+				witnesses.append(npc)
+			NpcCard.NpcCategory.SUSPECT:
+				suspects.append(npc)
+
+	_populate_npc_names(victims, _victims)
+	_populate_npc_names(witnesses, _witnesses)
+	_populate_npc_names(suspects, _suspects)
 
 	if case.get_crime_location():
 		var label = _crime_scene.get_node("Location1/Name")
@@ -73,11 +86,11 @@ func _populate_npc_names(npcs, node):
 		node.get_node("NPC1").visible = true
 		node.get_node("NPC2").visible = (count > 1)
 		node.get_node("NPC3").visible = (count > 2)
-		node.get_node("NPC1/Name").text = npcs[0].card_name
+		node.get_node("NPC1/Name").text = npcs[0].get_display_name()
 		if count > 1:
-			node.get_node("NPC2/Name").text = npcs[1].card_name
+			node.get_node("NPC2/Name").text = npcs[1].get_display_name()
 		if count > 2:
-			node.get_node("NPC3/Name").text = npcs[2].card_name
+			node.get_node("NPC3/Name").text = npcs[2].get_display_name()
 		node.show()
 
 func _on_mouse_entered(button: Button):

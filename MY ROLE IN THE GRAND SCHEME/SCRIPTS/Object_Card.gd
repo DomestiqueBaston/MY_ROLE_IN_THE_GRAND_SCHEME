@@ -10,12 +10,6 @@ class_name ObjectCard extends BaseCard
 ## ID of corresponding entry in object database.
 var database_id: String
 
-# Each owner can be either an NPC (NpcCard) or a location (LocationCard).
-var _owners: Array[WeakRef]
-
-# Where the object is located (a LocationCard).
-var _location: WeakRef
-
 static var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 static var _card_scene = preload("res://SCENES/Object_Card.tscn")
 
@@ -29,21 +23,6 @@ func _ready():
 func _update_background():
 	$Card_Mask/Card_BG/Evidence.visible = is_object_evidence
 
-func get_object_owners() -> Array[BaseCard]:
-	var refs: Array[BaseCard]
-	for card in _owners:
-		refs.append(owner.get_ref())
-	return refs
-
-func add_object_owner(object_owner: BaseCard):
-	_owners.append(weakref(object_owner))
-
-func get_location() -> LocationCard:
-	return _location.get_ref()
-
-func set_location(location: LocationCard):
-	_location = weakref(location)
-
 static func create_card(id: String) -> ObjectCard:
 	var card = _card_scene.instantiate()
 	var object_info = _object_data[id]
@@ -55,26 +34,11 @@ static func create_card(id: String) -> ObjectCard:
 func get_custom_class():
 	return SaveLoadTools.Class.OBJECT_CARD
 
-func get_referenced_objects():
-	var refs = []
-	for card in _owners:
-		refs.append(card.get_ref())
-	if _location:
-		refs.append(_location.get_ref())
-	return refs
-
 func get_json_dict():
 	var dict = super()
 	if is_object_evidence:
 		dict["is_object_evidence"] = is_object_evidence
 	dict["database_id"] = database_id
-	if _owners:
-		var refs = []
-		for card in _owners:
-			refs.append(SaveLoadTools.get_object_id(card.get_ref()))
-		dict["owners"] = refs
-	if _location:
-		dict["location"] = SaveLoadTools.get_object_id(_location.get_ref())
 	return dict
 
 func restore(dict, catalog):
@@ -84,10 +48,6 @@ func restore(dict, catalog):
 	var object_info = _object_data[database_id]
 	card_name = object_info["name"]
 	description = object_info["description"]
-	for card in dict.get("owners", []):
-		add_object_owner(catalog[card])
-	if "location" in dict:
-		_location = weakref(catalog[dict.location])
 
 static func allocate() -> Object:
 	return _card_scene.instantiate()
