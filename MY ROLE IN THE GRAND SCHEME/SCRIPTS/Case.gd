@@ -209,14 +209,14 @@ func _randomize():
 	# other NPCs not involved in the case, and build the array of all NPCs
 	# before any calls to _find_partner_for()
 
-	for i in other_npc_count:
-		npcs.append(NpcCard.generate_card(self))
-
 	npcs.append_array(culprits)
 	npcs.append_array(victims)
 	npcs.append_array(accomplices)
 	npcs.append_array(witnesses)
 	npcs.append_array(suspects)
+
+	for i in other_npc_count:
+		npcs.append(NpcCard.generate_card(self))
 
 	# decide which NPCs are couples
 
