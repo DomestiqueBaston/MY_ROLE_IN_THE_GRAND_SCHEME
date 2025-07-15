@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var text = "\
-In Memoriam: {player_name}, Who Unfortunately Never Quite Got It Right
+In Memoriam: A Private Investigator, Who Unfortunately Never Quite Got It Right.
 
-This private investigator passed away, leaving behind a career marked more by \
+{player_name} passed away, leaving behind a career marked more by \
 persistence than triumph. His methods, often unorthodox, led him down \
 countless false paths, and his conclusions rarely hit the mark. Yet, his drive \
 to uncover the truth never wavered, even when the cases grew colder and the \
