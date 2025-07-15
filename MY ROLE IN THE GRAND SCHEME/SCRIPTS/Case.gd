@@ -224,17 +224,18 @@ func _randomize():
 
 		# NPC has already been coupled to another
 
-		if npc.has_connection(Link.Type.INTIMACY):
+		if npc.is_married:
 			continue
 
-		# each NPC has 1 chance in 2 of having a partner, but 1 chance in 4
-		# here, since one successful roll here actually creates two partners
+		# each NPC has 1 chance in 2 of having a partner
 
-		if randi() % 4 != 0:
+		if randi() & 1:
 			continue
 
 		var other = _find_partner_for(npc)
 		if other:
+			npc.is_married = true
+			other.is_married = true
 			npc.add_connection(Link.Type.INTIMACY, other)
 			other.add_connection(Link.Type.INTIMACY, npc)
 			other.last_name = npc.last_name
@@ -408,9 +409,14 @@ func _find_partner_for(npc: NpcCard) -> NpcCard:
 		if npcs[index] == npc:
 			continue
 
-		# sexually compatible?
+		# other NPC already has somebody?
 
 		var other: NpcCard = npcs[index]
+		if other.is_married:
+			continue
+
+		# sexually compatible?
+
 		if other.orientation != npc.orientation:
 			continue
 		if npc.orientation == NpcCard.SexualOrientation.HOMO:
@@ -419,12 +425,6 @@ func _find_partner_for(npc: NpcCard) -> NpcCard:
 		else:
 			if other.npc_sex == npc.npc_sex:
 				continue
-
-		# other NPC already has somebody? (assume that no affairs have been
-		# generated yet)
-
-		if other.has_connection(Link.Type.INTIMACY):
-			continue
 
 		return other
 
@@ -566,9 +566,9 @@ func pause():
 
 func print_case():
 	print()
-	print("****************************************")
+	print("************************************************************")
 	print("case ", _case_name)
-	print("****************************************")
+	print("************************************************************")
 	for npc in npcs:
 		print()
 		npc.print_npc()

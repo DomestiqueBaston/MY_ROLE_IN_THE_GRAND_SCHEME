@@ -73,6 +73,12 @@ enum SexualOrientation {
 		if is_node_ready():
 			_update_appearance()
 
+@export var is_married: bool:
+	set(value):
+		is_married = value
+		if is_node_ready():
+			_update_appearance()
+
 ##
 ## Outline colors, one for each NpcStatus value.
 ##
@@ -116,6 +122,8 @@ func _update_appearance():
 	$Card_Mask/Card_BG/Accomplice_Status.visible = (npc_status == NpcStatus.ACCOMPLICE)
 	$Card_Mask/Card_BG/Sex/Male.visible = (npc_sex == Sex.MALE)
 	$Card_Mask/Card_BG/Sex/Female.visible = (npc_sex == Sex.FEMALE)
+	$Card_Mask/Card_BG/Card_Color/Npc/Couple.visible = is_married
+	$Card_Mask/Card_BG/Card_Color/Npc/No_Couple.visible = not is_married
 	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[npc_status]
 	$Card_Drag.modulate = outline_colors[npc_status]
 	var tooltip = NpcStatus.keys()[npc_status].capitalize()
@@ -264,6 +272,7 @@ func print_npc():
 	print("  sex: %s (%s)" % [
 		Sex.keys()[npc_sex].to_lower(),
 		SexualOrientation.keys()[orientation].to_lower()])
+	print("  married: ", is_married)
 	print("  job: ", job)
 	_print_connections_of_type("home", Link.Type.HOME)
 	_print_connections_of_type("work", Link.Type.WORK)
@@ -301,6 +310,8 @@ func get_json_dict():
 	dict["status"] = npc_status
 	dict["npc_health"] = npc_health
 	dict["sex"] = npc_sex
+	if is_married:
+		dict["is_married"] = is_married
 	dict["first_name"] = first_name
 	dict["last_name"] = last_name
 	dict["job"] = job
@@ -323,6 +334,7 @@ func restore(dict, catalog):
 	npc_status = dict.get("status", NpcStatus.NONE)
 	npc_health = dict.get("npc_health", NpcHealth.NONE)
 	npc_sex = dict.sex
+	is_married = dict.get("is_married", false)
 	first_name = dict.first_name
 	last_name = dict.last_name
 	job = dict.job
