@@ -30,8 +30,6 @@ class_name SaveLoadTools
 ## and saved to the dictionary) to new object instances of the appropriate type.
 ## Note that those objects are not guaranteed to have been restored to their
 ## saved state yet; you cannot rely on the contents of the referenced objects.
-## If necessary, the class can define a post_restore() method, called after all
-## objects have been restored.
 ##
 ## SaveLoadTools provides two static methods: save_to_json_dict() saves an
 ## object and any other objects it references to a JSON dictionary, and
@@ -104,13 +102,6 @@ static func restore_from_json_dict(dict: Dictionary) -> Object:
 	for ref_id in dict.get("refs", {}):
 		var ref_dict = dict.refs[ref_id]
 		catalog[ref_id].restore(ref_dict["props"], catalog)
-
-	# for classes that define a post_restore() method, call it
-
-	for ref_id in dict.get("refs", {}):
-		var ref = catalog[ref_id]
-		if ref.has_method("post_restore"):
-			ref.post_restore()
 
 	return obj
 

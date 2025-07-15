@@ -9,12 +9,7 @@ enum Status {
 
 var is_layout_needed: bool = true
 
-var culprits: Array[NpcCard]
-var victims: Array[NpcCard]
-var witnesses: Array[NpcCard]
-var accomplices: Array[NpcCard]
-var suspects: Array[NpcCard]
-var other_npcs: Array[NpcCard]
+var npcs: Array[NpcCard]
 var evidence: Array[ObjectCard]
 var other_objects: Array[ObjectCard]
 var locations: Array[LocationCard]
@@ -43,10 +38,7 @@ func _notification(what: int):
 	# connecting them is deleted.
 
 	if what == NOTIFICATION_PREDELETE:
-		for card_list in [
-				culprits, victims, witnesses, accomplices, suspects, other_npcs,
-				evidence, other_objects, locations
-		]:
+		for card_list in [npcs, evidence, other_objects, locations]:
 			for card in card_list:
 				card.queue_free()
 			card_list.clear()
@@ -60,6 +52,7 @@ func _notification(what: int):
 static func generate() -> Case:
 	var case = Case.new()
 	case._randomize()
+	case.print_case()
 	return case
 
 #
@@ -80,14 +73,46 @@ func _randomize():
 	var witness_count = _get_count_from_array(_motive.get("witnesses", 0))
 	var accomplice_count = _get_count_from_array(_motive.get("accomplices", 0))
 	var suspect_count = _get_count_from_array(_motive.get("suspects", 0))
+	var total_npc_count = \
+		culprit_count + victim_count + accomplice_count + suspect_count + witness_count
+	var other_npc_count = 2 * total_npc_count
+	total_npc_count += other_npc_count
 	var evidence_count = maxi(
 		_get_count_from_array(_motive.get("evidence_number", 0)),
 		culprit_count)
 
-	# the difficulty must be determined BEFORE generating the NPCs, because it
-	# determine the number of points added to their main characteristics
+	# incriminating links (we don't need to know between whom yet)
 
-	# TODO: difficulty += number of links * 0.5
+	var pre_links: Array[Link.Type]
+	var link_types = _motive["link"]
+	if link_types.pick_random() != "none":
+		for link_type in link_types:
+			if link_type == "none":
+				continue
+			var roll = randi()
+			if roll & 1:
+				continue
+			match link_type:
+				"intimacy":
+					pre_links.append(Link.Type.INTIMACY)
+				"friend":
+					pre_links.append(Link.Type.FRIEND)
+				"enemy":
+					pre_links.append(Link.Type.ENEMY)
+				"enemy/friend":
+					if roll & 2:
+						pre_links.append(Link.Type.FRIEND)
+					else:
+						pre_links.append(Link.Type.ENEMY)
+				"acquaintance":
+					pre_links.append(Link.Type.INTIMACY)
+				"ideology":
+					pre_links.append(Link.Type.IDEOLOGY)
+				"debt_influence":
+					pre_links.append(Link.Type.DEBT)
+
+	# the difficulty must be determined BEFORE generating the NPCs, because it
+	# determines the number of points added to their main characteristics
 
 	var diff = 19.0/50.0 * (1.0
 		+ culprit_count
@@ -95,7 +120,8 @@ func _randomize():
 		+ accomplice_count * 0.5
 		- suspect_count * 0.5
 		- witness_count * 0.5
-		+ evidence_count)
+		+ evidence_count
+		+ pre_links.size() * 0.5)
 
 	_difficulty = clampi(roundi(diff), 1, 5)
 
@@ -104,23 +130,43 @@ func _randomize():
 	else:
 		_duration = roundi((_difficulty * 4 + 10) * randf_range(0.9, 1.1))
 
-	# NPCs: culprits
+	# NPCs: culprits (if sex is involved, ensure they all have the same sex
+	# and orientation to simplify)
+
+	var culprits: Array[NpcCard]
+	var culprit_sex = -1
+	var culprit_orientation = -1
 
 	if culprit_count > 0:
 		var culprit_jobs = _motive.get("culprits_professions", [])
 		for i in culprit_count:
-			culprits.append(
-				NpcCard.generate_card(
-					self, NpcCard.NpcCategory.CULPRIT, culprit_jobs))
+			var card = NpcCard.generate_card(
+				self, NpcCard.NpcCategory.CULPRIT, culprit_jobs, culprit_sex)
+			if culprit_sex >= 0:
+				card.orientation = culprit_orientation
+			elif Link.Type.INTIMACY in pre_links:
+				culprit_sex = card.npc_sex
+				culprit_orientation = card.orientation
+			culprits.append(card)
 
-	# NPCs: victims
+	# NPCs: victims (if sex is involved, ensure they are all of the sex that
+	# the culprits are interested in)
+
+	var victims: Array[NpcCard]
+	var victim_sex
+	if culprit_sex < 0:
+		victim_sex = -1
+	elif culprit_orientation == NpcCard.SexualOrientation.HOMO:
+		victim_sex = culprit_sex
+	else:
+		victim_sex = 1 - culprit_sex
 
 	if victim_count > 0:
 		var victim_jobs = _motive.get("victims_professions", [])
 		var dead = _motive["dead_victims"]
 		for i in victim_count:
 			var card = NpcCard.generate_card(
-				self, NpcCard.NpcCategory.VICTIM, victim_jobs)
+				self, NpcCard.NpcCategory.VICTIM, victim_jobs, victim_sex)
 			card.npc_status = NpcCard.NpcStatus.VICTIM
 			if dead == "yes":
 				card.npc_status = NpcCard.NpcStatus.DEAD
@@ -131,44 +177,97 @@ func _randomize():
 					card.npc_status = NpcCard.NpcStatus.DEAD
 			victims.append(card)
 
-	# NPCs: witnesses, accomplices, suspects
+	# NPCs: accomplices (if sex is involved, ensure they all have the same
+	# sexual interests as the culprits, to simplify)
+
+	var accomplices: Array[NpcCard]
+
+	for i in accomplice_count:
+		var card = NpcCard.generate_card(
+			self, NpcCard.NpcCategory.ACCOMPLICE, [], culprit_sex)
+		if culprit_sex >= 0:
+			card.orientation = culprit_orientation
+		accomplices.append(card)
+
+	# NPCs: witnesses and suspects
+
+	var witnesses: Array[NpcCard]
 
 	for i in witness_count:
 		var card = NpcCard.generate_card(self, NpcCard.NpcCategory.WITNESS)
 		card.npc_status = NpcCard.NpcStatus.WITNESS
 		witnesses.append(card)
 
-	for i in accomplice_count:
-		accomplices.append(
-			NpcCard.generate_card(self, NpcCard.NpcCategory.ACCOMPLICE))
+	var suspects: Array[NpcCard]
 
 	for i in suspect_count:
-		var card = NpcCard.generate_card(self, NpcCard.NpcCategory.SUSPECT)
+		var card = NpcCard.generate_card(
+			self, NpcCard.NpcCategory.SUSPECT, [], culprit_sex)
 		card.npc_status = NpcCard.NpcStatus.SUSPECT
 		suspects.append(card)
 
-	# NPCs unrelated to the case
+	# other NPCs not involved in the case, and build the array of all NPCs
+	# before any calls to _find_partner_for()
 
-	var useless_count = 0
+	for i in other_npc_count:
+		npcs.append(NpcCard.generate_card(self))
 
-	match _difficulty:
-		0:
-			useless_count = randi_range(2, 3)
-		1:
-			useless_count = randi_range(3, 5)
-		2:
-			useless_count = randi_range(5, 9)
-		3:
-			useless_count = randi_range(8, 13)
-		4:
-			useless_count = randi_range(11, 16)
-		5:
-			useless_count = randi_range(13, 19)
-		6:
-			useless_count = randi_range(15, 22)
+	npcs.append_array(culprits)
+	npcs.append_array(victims)
+	npcs.append_array(accomplices)
+	npcs.append_array(witnesses)
+	npcs.append_array(suspects)
 
-	for i in useless_count:
-		other_npcs.append(NpcCard.generate_card(self, NpcCard.NpcCategory.USELESS))
+	# decide which NPCs are couples
+
+	for npc in npcs:
+
+		# NPC has already been coupled to another
+
+		if npc.has_connection(Link.Type.INTIMACY):
+			continue
+
+		# each NPC has 1 chance in 2 of having a partner, but 1 chance in 4
+		# here, since one successful roll here actually creates two partners
+
+		if randi() % 4 != 0:
+			continue
+
+		var other = _find_partner_for(npc)
+		if other:
+			npc.add_connection(Link.Type.INTIMACY, other)
+			other.add_connection(Link.Type.INTIMACY, npc)
+			other.last_name = npc.last_name
+
+	# assign homes, now that we know which NPCs are couples
+
+	for npc in npcs:
+		if npc.has_connection(Link.Type.HOME):
+			continue
+
+		var home = create_location("LOC001")
+		home.add_connection(Link.Type.HOME, npc)
+		npc.add_connection(Link.Type.HOME, home)
+
+		var partner = npc.get_one_connection(Link.Type.INTIMACY)
+		if partner:
+			home.add_connection(Link.Type.HOME, partner)
+			partner.add_connection(Link.Type.HOME, home)
+
+	# incriminating links between culprits/accomplices and victims
+
+	for link_type in pre_links:
+		var npc1
+		var roll = randi() % (culprit_count + accomplice_count)
+		if roll < culprit_count:
+			npc1 = culprits[roll]
+		else:
+			npc1 = accomplices[roll - culprit_count]
+		var npc2 = victims.pick_random()
+		npc1.add_connection(link_type, npc2)
+		npc2.add_connection(link_type, npc1)
+
+	# TODO: other links between NPCs
 
 	# evidence
 
@@ -219,8 +318,7 @@ func _randomize():
 		"culprit_work":
 			location_card = culprits[0].get_work()
 		_:
-			_crime_location = find_or_create_location(
-				actual_location, get_all_npcs().pick_random())
+			_crime_location = find_or_create_location(actual_location)
 			location_card = _crime_location
 
 	if location_card:
@@ -246,22 +344,33 @@ func _randomize():
 			var npc_owner_count = npc_owners.pick_random() as int
 			var location_owners = owners.get("location", [0])
 			var location_owner_count = location_owners.pick_random() as int
-			if npc_owner_count <= card.get_npc_count():
+
+			# find NPCs associated with the location (home, work, hangout,
+			# hideout) to be designated owners of the object
+
+			var location_npcs = card.get_all_npc_connections()
+			if npc_owner_count <= location_npcs.size():
 				var obj: ObjectCard = ObjectCard.create_card(obj_id)
+
 				if npc_owner_count > 1:
-					var candidates = card.get_npcs().duplicate()
+					var candidates = location_npcs.duplicate()
 					for i in npc_owner_count:
 						var index = randi() % candidates.size()
-						obj.add_object_owner(candidates[index])
+						var owner = candidates[index]
+						obj.add_connection(Link.Type.PROPERTY, owner)
+						owner.add_connection(Link.Type.PROPERTY, obj)
 						candidates.remove_at(index)
 				elif npc_owner_count == 1:
-					obj.add_object_owner(card.get_npcs().pick_random())
+					var owner = location_npcs.pick_random()
+					obj.add_connection(Link.Type.PROPERTY, owner)
+					owner.add_connection(Link.Type.PROPERTY, obj)
+
 				if location_owner_count > 0:
-					obj.add_object_owner(card)
+					obj.add_connection(Link.Type.PROPERTY, card)
+					card.add_connection(Link.Type.PROPERTY, obj)
+
 				other_objects.append(obj)
 				obj_count -= 1
-
-	# TODO: friends/enemies/acquaintances/couples
 
 	# cards and links that are revealed initially
 
@@ -288,6 +397,38 @@ func _get_count_from_array(count) -> int:
 		return count.pick_random()
 	else:
 		return count
+
+func _find_partner_for(npc: NpcCard) -> NpcCard:
+	var start_index = randi() % npcs.size()
+	for i in npcs.size():
+		var index = (start_index + i) % npcs.size()
+
+		# same NPC?
+
+		if npcs[index] == npc:
+			continue
+
+		# sexually compatible?
+
+		var other: NpcCard = npcs[index]
+		if other.orientation != npc.orientation:
+			continue
+		if npc.orientation == NpcCard.SexualOrientation.HOMO:
+			if other.npc_sex != npc.npc_sex:
+				continue
+		else:
+			if other.npc_sex == npc.npc_sex:
+				continue
+
+		# other NPC already has somebody? (assume that no affairs have been
+		# generated yet)
+
+		if other.has_connection(Link.Type.INTIMACY):
+			continue
+
+		return other
+
+	return null
 
 func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
 	var pin1 = Pin.allocate()
@@ -349,10 +490,7 @@ func get_player_location() -> LocationCard:
 ##
 func get_all_cards() -> Array[BaseCard]:
 	var all_cards: Array[BaseCard]
-	for card_list in [
-		culprits, victims, witnesses, accomplices, suspects, other_npcs,
-		evidence, other_objects, locations
-	]:
+	for card_list in [npcs, evidence, other_objects, locations]:
 		all_cards.append_array(card_list)
 	return all_cards
 
@@ -361,10 +499,7 @@ func get_all_cards() -> Array[BaseCard]:
 ##
 func get_revealed_cards() -> Array[BaseCard]:
 	var cards: Array[BaseCard]
-	for card_list in [
-		culprits, victims, witnesses, accomplices, suspects, other_npcs,
-		evidence, other_objects, locations
-	]:
+	for card_list in [npcs, evidence, other_objects, locations]:
 		for card in card_list:
 			if card.is_revealed:
 				cards.append(card)
@@ -374,12 +509,7 @@ func get_revealed_cards() -> Array[BaseCard]:
 ## Returns the cards for all the NPCs created for the case.
 ##
 func get_all_npcs() -> Array[NpcCard]:
-	var all_npcs: Array[NpcCard]
-	for card_list in [
-		culprits, victims, witnesses, accomplices, suspects, other_npcs
-	]:
-		all_npcs.append_array(card_list)
-	return all_npcs
+	return npcs
 
 func add_link(link: Link):
 	_links.append(link)
@@ -392,46 +522,41 @@ func get_links() -> Array[Link]:
 
 ##
 ## Looks for an existing location with the given ID, or creates a new one if
-## none is found. In either case, the given NPC is associated with the location.
+## none is found.
 ##
-func find_or_create_location(location_id: String, npc: NpcCard) -> LocationCard:
+func find_or_create_location(location_id: String) -> LocationCard:
 	for card in locations:
 		if card.database_id == location_id:
-			card.add_npc(npc)
 			return card
-	return create_location(location_id, npc)
+	return create_location(location_id)
 
 ##
-## Creates a new location card from the given ID in the location database. The
-## given NPC is associated with the location.
+## Creates a new location card from the given ID in the location database.
 ##
-func create_location(location_id: String, npc: NpcCard) -> LocationCard:
+func create_location(location_id: String) -> LocationCard:
 	var card = LocationCard.create_card(location_id)
-	if npc:
-		card.add_npc(npc)
 	locations.append(card)
 	return card
 
 ##
-## Finds or creates a random hangout location and associates the given NPC with
-## it.
+## Finds or creates a random hangout location.
 ##
-func find_hangout(npc: NpcCard) -> LocationCard:
+func find_hangout() -> LocationCard:
 	var hangouts = []
 	for loc in _location_data:
 		if "yes" in _location_data[loc].get("hangout", []):
 			hangouts.append(loc)
-	return find_or_create_location(hangouts.pick_random(), npc)
+	return find_or_create_location(hangouts.pick_random())
 
 ##
-## Creates a random hideout location and associates the given NPC with it.
+## Creates a random hideout location.
 ##
-func create_hideout(npc: NpcCard) -> LocationCard:
+func create_hideout() -> LocationCard:
 	var hideouts = []
 	for loc in _location_data:
 		if "secret" in _location_data[loc].get("hangout", []):
 			hideouts.append(loc)
-	return create_location(hideouts.pick_random(), npc)
+	return create_location(hideouts.pick_random())
 
 func start():
 	_status = Status.ACTIVE
@@ -439,23 +564,36 @@ func start():
 func pause():
 	_status = Status.PAUSED
 
+func print_case():
+	print()
+	print("****************************************")
+	print("case ", _case_name)
+	print("****************************************")
+	for npc in npcs:
+		print()
+		npc.print_npc()
+
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.CASE
 
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = []
-	refs.append_array(culprits)
-	refs.append_array(victims)
-	refs.append_array(witnesses)
-	refs.append_array(accomplices)
-	refs.append_array(suspects)
-	refs.append_array(other_npcs)
+	refs.append_array(npcs)
 	refs.append_array(evidence)
 	refs.append_array(other_objects)
 	refs.append_array(locations)
 	refs.append_array(_links)
 	return refs
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = {
 		"case_id": _case_id,
@@ -468,41 +606,11 @@ func get_json_dict():
 		"is_layout_needed": is_layout_needed
 	}
 
-	if culprits:
-		var culprit_refs = []
-		for card in culprits:
-			culprit_refs.append(SaveLoadTools.get_object_id(card))
-		dict["culprits"] = culprit_refs
-
-	if victims:
-		var victim_refs = []
-		for card in victims:
-			victim_refs.append(SaveLoadTools.get_object_id(card))
-		dict["victims"] = victim_refs
-
-	if witnesses:
-		var witness_refs = []
-		for card in witnesses:
-			witness_refs.append(SaveLoadTools.get_object_id(card))
-		dict["witnesses"] = witness_refs
-
-	if accomplices:
-		var accomplice_refs = []
-		for card in accomplices:
-			accomplice_refs.append(SaveLoadTools.get_object_id(card))
-		dict["accomplices"] = accomplice_refs
-
-	if suspects:
-		var suspect_refs = []
-		for card in suspects:
-			suspect_refs.append(SaveLoadTools.get_object_id(card))
-		dict["suspects"] = suspect_refs
-
-	if other_npcs:
-		var other_npc_refs = []
-		for card in other_npcs:
-			other_npc_refs.append(SaveLoadTools.get_object_id(card))
-		dict["other_npcs"] = other_npc_refs
+	if npcs:
+		var npc_refs = []
+		for npc in npcs:
+			npc_refs.append(SaveLoadTools.get_object_id(npc))
+		dict["npcs"] = npc_refs
 
 	if evidence:
 		var evidence_refs = []
@@ -536,6 +644,9 @@ func get_json_dict():
 
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	_case_id = dict.get("case_id", "")
 	_case_name = dict.case_name
@@ -545,18 +656,8 @@ func restore(dict, catalog):
 	_duration = dict.duration
 	_status = dict.status
 	is_layout_needed = dict.get("is_layout_needed", true)
-	for ref in dict.get("culprits", []):
-		culprits.append(catalog[ref])
-	for ref in dict.get("victims", []):
-		victims.append(catalog[ref])
-	for ref in dict.get("witnesses", []):
-		witnesses.append(catalog[ref])
-	for ref in dict.get("accomplices", []):
-		accomplices.append(catalog[ref])
-	for ref in dict.get("suspects", []):
-		suspects.append(catalog[ref])
-	for ref in dict.get("other_npcs", []):
-		other_npcs.append(catalog[ref])
+	for ref in dict.get("npcs", []):
+		npcs.append(catalog[ref])
 	for ref in dict.get("evidence", []):
 		evidence.append(catalog[ref])
 	for ref in dict.get("other_objects", []):
@@ -570,5 +671,8 @@ func restore(dict, catalog):
 	for ref in dict.get("links", []):
 		_links.append(catalog[ref])
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return Case.new()
