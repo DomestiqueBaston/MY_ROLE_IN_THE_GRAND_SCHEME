@@ -3869,10 +3869,9 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
 text = "Ok."
 
 [node name="Office" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
-position = Vector2(171, 5)
+position = Vector2(218, 35)
 texture = ExtResource("103_b6clx")
 centered = false
 
@@ -3885,10 +3884,10 @@ script = ExtResource("69_pf81c")
 
 [node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 75.0
-offset_right = 338.0
-offset_bottom = 245.0
+offset_left = 260.0
+offset_top = 109.0
+offset_right = 385.0
+offset_bottom = 279.0
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Office,
 sweet  office![/color][/pulse]
@@ -3900,10 +3899,10 @@ vertical_alignment = 1
 [node name="Quit" type="Button" parent="Overlays/Office/Office"]
 self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
-offset_left = 298.0
-offset_top = 263.0
-offset_right = 364.0
-offset_bottom = 284.0
+offset_left = 345.0
+offset_top = 297.0
+offset_right = 411.0
+offset_bottom = 318.0
 rotation = -0.12645
 theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
 theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
