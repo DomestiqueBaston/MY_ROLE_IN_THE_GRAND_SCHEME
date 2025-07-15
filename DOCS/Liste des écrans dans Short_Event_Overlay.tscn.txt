@@ -44,6 +44,9 @@ Load_Save_Delete :
 	- pour charger/sauver/effacer des sauvegardes de parties
 
 Misc :
+	- pour les résultats de crises d'addiction
+		- Addiction_Crisis_Result/Failure : échec
+		- Addiction_Crisis_Result/Success : réussite
 	- Bill : lorsque le joueur à trop d'impayés et va en prison 3 jours
 	- pour les résultats des Break-ins
 		- Break_In/Player_Success : réussite
@@ -64,6 +67,9 @@ Misc :
 	- pour annoncer le résultat d'une tentative de fuite du joueur
 		- Run_Away_Success : réussite
 		- Run_Away_Failure : échec
+
+Office :
+	- Lorsque le joueur retour au bureau ( en sécurité).
 
 Player_Improvement :
 	- Informations/Positive_Mental : Lorsque le joueur progresse en MEN positivement

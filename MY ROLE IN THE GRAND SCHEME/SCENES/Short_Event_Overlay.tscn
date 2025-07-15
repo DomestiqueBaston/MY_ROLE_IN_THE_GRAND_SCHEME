@@ -3407,6 +3407,44 @@ offset_bottom = 317.0
 rotation = 0.0265987
 text = "Whatever"
 
+[node name="Addiction_Crisis_Result" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
+visible = false
+layout_mode = 0
+offset_left = 167.0
+offset_top = 83.0
+offset_right = 482.0
+offset_bottom = 261.0
+rotation = 0.0284044
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]Your [color=#ff8864]struggle[/color]  has  come to  an  [color=#ff1c18]end[/color].[/pulse]
+
+Was it the  [color=#ff8864]weight[/color]  of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  choices[/color][/shake]  or the  [color=#ff8864]burden[/color] of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  consuming  vices[/color][/shake]?
+
+One thing is  [color=#ff8864]certain[/color]:  where you came from, [shake rate=7.0 level=5 connected=0][color=#ff8864]it's  not  sure [color=#ff1c18]your  case[/color]  will serve  as  an  [color=#ff1c18]example[/color][/color][/shake]...[/center]
+"
+
+[node name="Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
+visible = false
+layout_mode = 0
+offset_left = 165.0
+offset_top = 56.0
+offset_right = 489.0
+offset_bottom = 287.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]The  [color=#ff1c18]addiction  crisis[/color] storm  has [color=#ff8864]passed[/color], but the [color=#ff1c18]threat[/color] [color=#ff8864]lingers[/color].[/pulse]
+
+[shake rate=7.0 level=5 connected=0]The  [color=#ff8864]price[/color]  for  this  [color=#ff8864]momentary  peace[/color]  was  [color=#ff1c18]high[/color].[/shake]
+
+The  [color=#ff8864]weight  of the struggle[/color]  has  etched [shake rate=7.0 level=5 connected=0][color=#ff8864]deep[/color]  [color=#ff1c18]marks[/color][/shake], the  [color=#ff8864]calm[/color]  is  [color=#ff1c18]fragile[/color]  and  the [color=#ff8864]horizon[/color] is still  [shake rate=7.0 level=5 connected=0][color=#ff1c18]dark[/color][/shake].
+
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Or is it[/color]  [color=#ff1c18]too  late[/color][/shake]?[/center]
+"
+
 [node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
 anchors_preset = 0
@@ -3698,43 +3736,57 @@ In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 con
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
 
-[node name="Addiction_Crisis_Result" type="Control" parent="Overlays/Misc/Announces"]
+[node name="Office" type="Node2D" parent="Overlays"]
 visible = false
+
+[node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
+position = Vector2(218, 35)
+texture = ExtResource("103_b6clx")
+centered = false
+
+[node name="Office" type="Control" parent="Overlays/Office"]
+layout_mode = 3
 anchors_preset = 0
+tooltip_text = "Ok..."
+theme = ExtResource("68_q1jpv")
+script = ExtResource("69_pf81c")
 
-[node name="Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
-visible = false
+[node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
 layout_mode = 0
-offset_left = 167.0
-offset_top = 83.0
-offset_right = 482.0
-offset_bottom = 261.0
-rotation = 0.0284044
+offset_left = 260.0
+offset_top = 104.0
+offset_right = 385.0
+offset_bottom = 274.0
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]Your [color=#ff8864]struggle[/color]  has  come to  an  [color=#ff1c18]end[/color].[/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Office,
+sweet  office![/color][/pulse]
 
-Was it the  [color=#ff8864]weight[/color]  of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  choices[/color][/shake]  or the  [color=#ff8864]burden[/color] of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  consuming  vices[/color][/shake]?
+There  ain't  no [shake rate=7.0 level=5 connected=0][color=#ff8864]place  safer[/color][/shake] than  [shake rate=7.0 level=5 connected=0][color=#ff1c18]here[/color][/shake]![/center]"
+fit_content = true
+vertical_alignment = 1
 
-One thing is  [color=#ff8864]certain[/color]:  where you came from, [shake rate=7.0 level=5 connected=0][color=#ff8864]it's  not  sure [color=#ff1c18]your  case[/color]  will serve  as  an  [color=#ff1c18]example[/color][/color][/shake]...[/center]
-"
-
-[node name="Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
-visible = false
+[node name="Quit" type="Button" parent="Overlays/Office/Office"]
+self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
-offset_left = 165.0
-offset_top = 56.0
-offset_right = 489.0
-offset_bottom = 287.0
-rotation = 0.0356184
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]The  [color=#ff1c18]addiction  crisis[/color] storm  has [color=#ff8864]passed[/color], but the [color=#ff1c18]threat[/color] [color=#ff8864]lingers[/color].[/pulse]
-
-[shake rate=7.0 level=5 connected=0]The  [color=#ff8864]price[/color]  for  this  [color=#ff8864]momentary  peace[/color]  was  [color=#ff1c18]high[/color].[/shake]
-
-The  [color=#ff8864]weight  of the struggle[/color]  has  etched [shake rate=7.0 level=5 connected=0][color=#ff8864]deep[/color]  [color=#ff1c18]marks[/color][/shake], the  [color=#ff8864]calm[/color]  is  [color=#ff1c18]fragile[/color]  and  the [color=#ff8864]horizon[/color] is still  [shake rate=7.0 level=5 connected=0][color=#ff1c18]dark[/color][/shake].
-
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Or is it[/color]  [color=#ff1c18]too  late[/color][/shake]?[/center]
-"
+offset_left = 345.0
+offset_top = 292.0
+offset_right = 411.0
+offset_bottom = 313.0
+rotation = -0.12645
+theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
+theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
+theme_override_colors/font_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_colors/font_focus_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_colors/font_pressed_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("57_gfusj")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bkvay")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
+text = "Alright!"
 
 [node name="Player_Improvement" type="Node2D" parent="Overlays"]
 visible = false
@@ -3867,58 +3919,6 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
 text = "Ok."
-
-[node name="Office" type="Node2D" parent="Overlays"]
-visible = false
-
-[node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
-position = Vector2(218, 35)
-texture = ExtResource("103_b6clx")
-centered = false
-
-[node name="Office" type="Control" parent="Overlays/Office"]
-layout_mode = 3
-anchors_preset = 0
-tooltip_text = "Ok..."
-theme = ExtResource("68_q1jpv")
-script = ExtResource("69_pf81c")
-
-[node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
-layout_mode = 0
-offset_left = 260.0
-offset_top = 104.0
-offset_right = 385.0
-offset_bottom = 274.0
-bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Office,
-sweet  office![/color][/pulse]
-
-There  ain't  no [shake rate=7.0 level=5 connected=0][color=#ff8864]place  safer[/color][/shake] than  [shake rate=7.0 level=5 connected=0][color=#ff1c18]here[/color][/shake]![/center]"
-fit_content = true
-vertical_alignment = 1
-
-[node name="Quit" type="Button" parent="Overlays/Office/Office"]
-self_modulate = Color(1, 1, 1, 0.784314)
-layout_mode = 0
-offset_left = 345.0
-offset_top = 292.0
-offset_right = 411.0
-offset_bottom = 313.0
-rotation = -0.12645
-theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
-theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
-theme_override_colors/font_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
-theme_override_colors/font_focus_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
-theme_override_colors/font_pressed_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("57_gfusj")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bkvay")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
-text = "Alright!"
 
 [node name="Rowena" type="Node2D" parent="Overlays"]
 visible = false
@@ -4724,12 +4724,12 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Rowena/Drug_Store/I_will_take/Plus_Minus/Minus" to="Overlays/Rowena" method="_on_minus_pressed"]
