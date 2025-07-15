@@ -282,6 +282,7 @@ func print_npc():
 	_print_connections_of_type("friends", Link.Type.FRIEND)
 	_print_connections_of_type("enemies", Link.Type.ENEMY)
 	_print_connections_of_type("acquaintances", Link.Type.ACQUAINTANCE)
+	_print_connections_of_type("property", Link.Type.PROPERTY)
 
 func _print_connections_of_type(label: String, type: Link.Type):
 	var cnxs = get_connections(type)
