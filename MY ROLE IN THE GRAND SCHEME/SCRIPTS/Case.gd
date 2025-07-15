@@ -240,7 +240,7 @@ func _randomize():
 			other.add_connection(Link.Type.INTIMACY, npc)
 			other.last_name = npc.last_name
 
-	# assign homes, now that we know which NPCs are couples
+	# assign homes now that we know which NPCs are couples
 
 	for npc in npcs:
 		if npc.has_connection(Link.Type.HOME):
@@ -254,6 +254,17 @@ func _randomize():
 		if partner:
 			home.add_connection(Link.Type.HOME, partner)
 			partner.add_connection(Link.Type.HOME, home)
+
+	# assign workplaces now that we know where everybody lives
+
+	for npc in npcs:
+		var workplace
+		if npc.job_location == "LOC001":
+			workplace = npc.get_home()
+		else:
+			workplace = find_or_create_location(npc.job_location)
+		npc.add_connection(Link.Type.WORK, workplace)
+		workplace.add_connection(Link.Type.WORK, npc)
 
 	# incriminating links between culprits/accomplices and victims
 

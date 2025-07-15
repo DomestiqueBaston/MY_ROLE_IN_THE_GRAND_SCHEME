@@ -87,6 +87,7 @@ enum SexualOrientation {
 var first_name: String
 var last_name: String
 var job: String
+var job_location: String
 var orientation: SexualOrientation
 var physical: int
 var mental: int
@@ -190,6 +191,7 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 		job_id = _job_data.keys().pick_random()
 	var job_info = _job_data[job_id]
 	job = job_info["name"]
+	job_location = job_info["work_place"].pick_random()
 	var bonus_malus = job_info["bonus_malus"]
 	if bonus_malus is Array:
 		bonus_malus = bonus_malus.pick_random()
@@ -203,17 +205,6 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	health = roundi(max_health * randf_range(0.5, 1.0))
 	wanted = randi_range(0, 2)
 	player_reputation = -2 if category == NpcCategory.MINION else 0
-
-	# work location
-
-	var work_place = job_info["work_place"].pick_random()
-	var work
-	if work_place == "LOC001":
-		work = case.create_location("LOC001")
-	else:
-		work = case.find_or_create_location(work_place)
-	add_connection(Link.Type.WORK, work)
-	work.add_connection(Link.Type.WORK, self)
 
 	# everyone has a hangout location
 
@@ -252,9 +243,8 @@ func new_day():
 ## at random for the NPC's profession. If it is not given or is empty, the NPC
 ## may be given any job.
 ##
-## Note that the new character is given a workplace, a hangout, and possibly a
-## hideout, but NOT a home: a home can be assigned later, when it is known
-## whether the NPC lives with someone else.
+## Note that the new character is given a hangout and possibly a hideout, but
+## NOT a home or a place of work. They must be assigned later.
 ##
 static func generate_card(
 	case: Case, cat: NpcCategory = NpcCategory.NONE, possible_jobs = [],
@@ -316,6 +306,7 @@ func get_json_dict():
 	dict["first_name"] = first_name
 	dict["last_name"] = last_name
 	dict["job"] = job
+	dict["job_location"] = job_location
 	dict["orientation"] = orientation
 	dict["physical"] = physical
 	dict["mental"] = mental
@@ -331,14 +322,15 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	super(dict, catalog)
-	category = dict.get("category", NpcCategory.NONE)
-	npc_status = dict.get("status", NpcStatus.NONE)
-	npc_health = dict.get("npc_health", NpcHealth.NONE)
+	category = dict.category
+	npc_status = dict.status
+	npc_health = dict.npc_health
 	npc_sex = dict.sex
 	is_married = dict.get("is_married", false)
 	first_name = dict.first_name
 	last_name = dict.last_name
 	job = dict.job
+	job_location = dict.job_location
 	npc_sex = dict.sex
 	orientation = dict.orientation
 	physical = dict.physical

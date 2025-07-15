@@ -1523,7 +1523,6 @@ texture = ExtResource("10_laxfo")
 centered = false
 
 [node name="Female" type="Sprite2D" parent="Card_Mask/Card_BG/Sex"]
-visible = false
 self_modulate = Color(1, 1, 1, 0.294118)
 position = Vector2(11, 33)
 scale = Vector2(0.2, 0.2)
@@ -1665,6 +1664,7 @@ offset_right = 64.0
 offset_bottom = 23.0
 tooltip_text = "None"
 mouse_filter = 1
+text = " "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
