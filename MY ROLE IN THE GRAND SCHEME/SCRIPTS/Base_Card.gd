@@ -55,6 +55,9 @@ func _ready():
 	$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
 	_update_opacity()
 
+	if not _is_expanded:
+		$Card_Animations.play("Static_Reduced")
+
 	if not Engine.is_editor_hint():
 		$Card_Collider.input_event.connect(_on_card_collider_input_event)
 		$Card_Collider.mouse_entered.connect(_on_card_collider_mouse_entered)
@@ -251,7 +254,8 @@ func _on_card_collider_mouse_exited():
 		Globals.mouse_exited_card.emit(self)
 
 ##
-## Modifies the appearance of the card to show it is being dragged.
+## Modifies the appearance of the card to show it is being dragged. This is a
+## coroutine: await it if you want to wait until the animation finishes.
 ##
 func start_drag():
 	if _is_expanded:
@@ -260,6 +264,7 @@ func start_drag():
 		$Card_Animations.play("Drag_Reduced_Card_Appearance")
 	$Shadow_Animations.play("Shadow_Off")
 	z_index += 1
+	await $Shadow_Animations.animation_finished
 
 ##
 ## Resets the appearance of the card after a call to start_drag(). This is a
@@ -271,8 +276,8 @@ func stop_drag():
 	else:
 		$Card_Animations.play("Drag_Reduced_Card_Disappearance")
 	$Shadow_Animations.play("Shadow_On")
-	await $Shadow_Animations.animation_finished
 	z_index -= 1
+	await $Shadow_Animations.animation_finished
 
 ##
 ## Adds a pin reference to the card: whenever the card moves, the pin's
@@ -397,6 +402,8 @@ func get_json_dict():
 		dict["y"] = position.y
 	if is_revealed:
 		dict["is_revealed"] = is_revealed
+	if not _is_expanded:
+		dict["is_expanded"] = _is_expanded
 	if _pins:
 		var pin_refs = {}
 		for pin in _pins:
@@ -420,6 +427,7 @@ func restore(dict, catalog):
 	_was_stacked = dict.get("was_stacked", false)
 	position = Vector2(dict.get("x", 0.0), dict.get("y", 0.0))
 	is_revealed = dict.get("is_revealed", false)
+	_is_expanded = dict.get("is_expanded", true)
 	if "pins" in dict:
 		var pin_refs = dict.pins
 		for pin in pin_refs:
