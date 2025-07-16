@@ -3258,7 +3258,7 @@
 		{
 			"id": "MOT_FRA_005",
 			"crime_id": "MOT_FRA_005_ID_xxx",
-			"name": "Getting What’s Owed Without the Cost",
+			"name": "Getting What's Owed Without the Cost",
 			"more_explicit_name": "Obtaining Services Without Paying",
 			"link": [
 				"none"
@@ -4117,7 +4117,7 @@
 		{
 			"id": "MOT_TRE_004",
 			"crime_id": "MOT_TRE_004_ID_xxx",
-			"name": "Gathering Clues Where They Shouldn’t Be Found",
+			"name": "Gathering Clues Where They Shouldn't Be Found",
 			"more_explicit_name": "Looking for Information",
 			"link": [
 				"none",
@@ -4420,7 +4420,7 @@
 		{
 			"id": "MOT_ABU_004",
 			"crime_id": "MOT_ABU_004_ID_xxx",
-			"name": "Deriving Pleasure from Others’ Pain",
+			"name": "Deriving Pleasure from Others' Pain",
 			"more_explicit_name": "Extreme Sadism",
 			"link": [
 				"none",
@@ -4519,7 +4519,7 @@
 		{
 			"id": "MOT_MUR_002",
 			"crime_id": "MOT_MUR_002_ID_xxx",
-			"name": "Cleansing the World of a Rival’s Influence",
+			"name": "Cleansing the World of a Rival's Influence",
 			"more_explicit_name": "Pathological Jealousy",
 			"link": [
 				"intimacy",
@@ -4933,7 +4933,7 @@
 		{
 			"id": "MOT_HAC_004",
 			"crime_id": "MOT_HAC_004_ID_xxx",
-			"name": "Capitalizing on a System’s Weakness",
+			"name": "Capitalizing on a System's Weakness",
 			"more_explicit_name": "Instant Financial Gain",
 			"link": [
 				"debt_influence",
@@ -5097,7 +5097,7 @@
 		{
 			"id": "MOT_PIM_001",
 			"crime_id": "MOT_PIM_001_ID_xxx",
-			"name": "Fulfilling an Addiction by Managing Others’ Desires",
+			"name": "Fulfilling an Addiction by Managing Others' Desires",
 			"more_explicit_name": "Drug Addiction",
 			"link": [
 				"none"
@@ -7098,7 +7098,7 @@
 		{
 			"id": "MOT_SEL_004",
 			"crime_id": "MOT_SEL_004_ID_xxx",
-			"name": "Transforming What’s Unwanted into Wealth",
+			"name": "Transforming What's Unwanted into Wealth",
 			"more_explicit_name": "Financial Profit",
 			"link": [
 				"none",
@@ -7958,7 +7958,7 @@
 		{
 			"id": "MOT_THE_004",
 			"crime_id": "MOT_THE_004_ID_xxx",
-			"name": "Grabbing What’s Left to Survive",
+			"name": "Grabbing What's Left to Survive",
 			"more_explicit_name": "Extreme Poverty",
 			"link": [
 				"none",
