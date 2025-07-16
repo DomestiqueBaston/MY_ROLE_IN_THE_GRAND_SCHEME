@@ -20,34 +20,42 @@ Santé (HEA/maxHEA)
 Les caractéristiques secondaires
 
 État émotionnel (Emo)  
-	- L’état émotionnel du joueur variera entre -3 et 3 et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Emo=0.
-	- Emo à -3 ou +3 représente une excitation ou une déprime trop forte (voir conditions dans Système de santé) et ont une influence sur Add,
+	- L’état émotionnel du joueur variera entre -5 et 5 et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Emo=0.
+	- Emo à -5 ou +5 représente une excitation ou une déprime trop forte (voir conditions dans Système de santé) et ont une influence sur Add,
 	- Voir également Paranoïa (Par) pour les effets sur Emo.
 Emo	Effets et/ou modificateur de jet de dé
--3	Emo = -2 et -1 Add si Add ≤ 0 ou +1 Add si Add > 0 
--2	Malus de 1
+-5	Emo = -4 et (-1 Add si Add ≤ 0 ou +1 Add si Add > 0) 
+-4	Malus de 1
+-3	Malus de 1
+-2	/
 -1	/
 0	Bonus de 1
 1	/
-2	Malus de 1
-3	Emo = 2 et +1 Add si Add ≥ 0 ou -1 Add si Add < 0 
+2	/
+3	Malus de 1
+4	Malus de 1
+5	Emo = 4 et (+1 Add si Add ≥ 0 ou -1 Add si Add < 0) 
 
 État d’addiction (Add)
-	- L’état d’addiction du joueur variera entre -3 et 3.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
-	- Add à -3 ou +3 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites critiques n’entraînent pas d’évolution de HEA ni maxHEA.
+	- L’état d’addiction du joueur variera entre -5 et 5.  et représentera un bonus/malus à appliquer au joueur à ses jets de dé (voir tableau ci-dessous). Au départ Add = 0.
+	- Add à -5 ou +5 peut représenter la mort en fonction du tableau suivant (voir aussi Système de santé/Addiction). Les réussites critiques n’entraînent pas d’évolution de HEA ni maxHEA.
 	- Les réussites/échecs critiques n’entraînent pas de progression du joueur (ni n’amplifient les résultats) !
 Add	Effet et/ou modificateur de jet de dé
--3	Mort si un jet de dé contre HEA est raté
+-5	Mort si un jet de dé contre HEA est raté
 sinon
--1HEA, +1Emo → min/max et Add = -2
--2	Malus de 2
+-1HEA, +1Emo → min/max et Add = -4
+-4	Malus de 2 /!\ 
+-3	Malus de 2
+-2	Malus de 1
 -1	Malus de 1
 0	/
 1	Bonus de 1
-2	Bonus de 3
-3	Mort si un jet de dé contre HEA est raté
+2	Bonus de 1
+3	Bonus de 2
+4	Bonus de 3 /!\ 
+5	Mort si un jet de dé contre HEA est raté
 sinon
--1HEA, +1Emo → min/max et Add = 2
+-1HEA, +1Emo → min/max et Add = 4
 
 	- Voir également Paranoïa (Par) pour les effets sur Add.
 	- Voir aussi Système de santé/L’addiction pour le sevrage (et la replonge).
@@ -70,10 +78,11 @@ Recherché/Wanted (Wan)
 	- Une journée sans augmenter le Wan fait -1Wan.
 Niveau de Wanted	Malus au Dé
 0	/
-1	Malus de 1
-2	Malus de 2
-3	Malus de 3
-4	Prison pendant 3 jours ou payement de 100dø de caution, Wan = 0
+1	/
+2	Malus de 1
+3	Malus de 2
+4	Malus de 3
+5	Prison pendant 3 jours ou payement de 100dø de caution, Wan = 0
 
 Paranoïa (Par)
 	- La paranoïa est un cas extrême qui fait abandonner toutes les enquêtes pour poursuivre l’enquête finale (uniquement accessible en devenant paranoïaque - voir Enquête finale et Système de santé/Paranoïa).
@@ -133,12 +142,12 @@ Les PNJs
 	- Leurs infos ne sont pas automatiquement connues du joueur. Cela dépendra de la fiche d’enquête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
 	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction.
 	- Si un PNJ meurt, il ne sera pas retiré de l’enquête pour autant mais sera déclaré mort (voir layer sur carte).
-	- Si le joueur est responsable de la mort d’un PNJ : +1Wan !
+	- Si le joueur est responsable de la mort d’un PNJ : +1Wan (pour le joueur) !
 	- L’état de santé approximatif d’un Pnj n’est jamais connu avant une première rencontre et est mis à jour à chaque début de rencontre.
 	- Les sbires sont des PNJs légèrement différents (voir Sbires).
 
 Wan pour les PNJs
-	- Le Wanted des PNJs évolue de 0 à 4. Au départ, aléatoirement de 0 à 2.
+	- Le Wanted des PNJs évolue de 0 à 5. Au départ, aléatoirement de 0 à 2.
 	- Il est également un malus aux jets de dé du PNJ suivant le tableau ci-dessous.
 	- À 4, le PNJ est arrêté et le joueur ne pourra plus Dialoguer avec lui qu’en allant le voir en prison (jusqu’à la fin de l’enquête).
 	- Son emploi du temps sera adapté en fonction (prison tout le temps et il dormira la nuit !).
@@ -146,10 +155,11 @@ Wan pour les PNJs
 
 Niveau de Wanted	Malus au Dé
 0	/
-1	Malus de 1
-2	Malus de 2
-3	Malus de 3
-4	Prison
+1	/
+2	Malus de 1
+3	Malus de 2
+4	Malus de 3
+5	Prison
 
 Professions possibles (le travail de nuit est à 25 % de chances) :
 	- Real Estate Agent : +1 MEN, -1 maxHEA
@@ -216,7 +226,7 @@ Cas de PHY=0 et/ou MEN=0
 	- Pendant la Paranoïa, cela signifie la mort car le joueur ne dort plus !
 
 Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par
-	- Si à l’issue de évaluation d’un jet de dé, le joueur se retrouve à atteindre Emo ±3 et/ou Add ±3 et/ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (Voir Crise de paranoïa).
+	- Si à l’issue de évaluation d’un jet de dé, le joueur se retrouve à atteindre Emo ±5 et/ou Add ±5 et/ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (Voir Crise de paranoïa).
 	- S’il y a crise de Paranoïa, on finira donc la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour son enquête finale (voir Le complot et Crise de paranoïa). Le joueur va donc abandonner toutes ses enquêtes en cours et se concentrer sur l’enquête finale (voir Le complot et Crise de paranoïa). Et plus aucune autre enquête ne lui sera accessible (accès au Investigation Center vérouillé).
 	- L’overlay Paranoïa ne se déclenchera qu’après la fin de l’interaction (Combat, Dialogue ou Investigation) engagée.
 
@@ -227,7 +237,7 @@ L’addiction
 	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur.
 	- Utiliser 1 ou 2 doses de drogue d’un coup prend 1h.
 	- Paranoïa empêche la prise de drogue.
-	- Si le joueur réussit 3 jets de dé contre la mort par sous-dose (Add = -3) d’affilé, sans avoir repris de drogue entre-temps, alors il est sevré ! Il n’a plus besoin de se droguer et son niveau passe à Add = 0 permanent (menu désactivé). Le joueur ne peut pas revendre ses doses restantes.
+	- Si le joueur réussit 3 jets de dé contre la mort par sous-dose (Add = -5) d’affilé, sans avoir repris de drogue entre-temps, alors il est sevré ! Il n’a plus besoin de se droguer et son niveau passe à Add = 0 permanent (menu désactivé). Le joueur ne peut pas revendre ses doses restantes.
 		- Dans ce cas, si les finances du joueur passent sous la barre de -250Dø, alors il replonge !
 
 Crise de paranoïa
