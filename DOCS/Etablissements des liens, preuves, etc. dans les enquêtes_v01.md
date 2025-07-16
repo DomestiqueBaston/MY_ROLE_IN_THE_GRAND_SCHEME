@@ -3,7 +3,10 @@
 	- /!\ Tous les mobiles ayant un lien « Intimacy » imposent un couple dans l’enquête. Les enquêtes d’adultère nécessitent un/une amant/amante en plus du couple.
 	- /!\ Dans les enquêtes où la victime est décédée, la victime doit avoir au minimum 1 lien connu au départ de l’enquête avec un PNJ (coupable, complice, témoin, suspect…).
 	- Infos données au joueur au départ d’une enquête :
-		- En plus de Victim et Suspect, Witness, Crime Location s'ils sont connus, de la victime nommée au départ, on sait l'adresse (domicile), le job (Location), Schedule (hors hangout/hideout donc incomplet), relations sociales (ami/enemy/acquaintance/couple). Pour les autres que la victime, on sait l'adresse (domicile), le job (Location) et, uniquement s’ils sont liés/partagés avec la victime (vivante) : Schedule si travail au même endroit (hors hangout/hideout donc incomplet) et relations sociales (ami/enemy/acquaintance/couple).
+		- Crime Location s’il y en a un de connu.
+		- Pour la Victime : en plus de Suspect, Witness s'ils sont connus, on sait l'adresse (domicile), le job (Location), Schedule (hors hangout/hideout donc incomplet), relations sociales (couple seulement).
+		- Pour les autres (Suspect, Witness), on sait l'adresse (domicile), le job (Location) et, uniquement s’ils sont liés/partagés avec la victime (vivante) : Schedule si travail au même endroit (hors hangout/hideout donc incomplet) et relations sociales (couple seulement).
+		- On ne donne pas d’autre NPC au joueur que Victim, Suspect et Witness.
 
 
 
