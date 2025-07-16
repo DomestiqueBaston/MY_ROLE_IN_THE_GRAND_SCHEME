@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cqesoumed17do"]
+[gd_scene load_steps=39 format=3 uid="uid://cqesoumed17do"]
 
 [ext_resource type="Script" uid="uid://umxgj5sjyo8l" path="res://SCRIPTS/Location_Card.gd" id="1_mp10x"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="2_dr6f2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://sk4ad5y1tyi0" path="res://GRAPHICS/CARD/Card_Drag.png" id="4_hia4h"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card_Mask.gd" id="5_5o3q3"]
 [ext_resource type="Texture2D" uid="uid://bui4lpomtn0y5" path="res://GRAPHICS/CARD/Card_BG.png" id="6_u2yo8"]
+[ext_resource type="Script" uid="uid://berlxm3rv0xnf" path="res://SCRIPTS/Card_Tooltip.gd" id="12_ksau4"]
 [ext_resource type="Texture2D" uid="uid://bkivcrqpevt45" path="res://GRAPHICS/CARD/Card_Closed.png" id="15_0cfss"]
 [ext_resource type="Texture2D" uid="uid://dhdhudphptbpc" path="res://GRAPHICS/CARD/Card_Closed_Top.png" id="16_0basy"]
 [ext_resource type="Texture2D" uid="uid://df3prwlrjmanx" path="res://GRAPHICS/CARD/Card_Crime_Scene.png" id="33_wsbrb"]
@@ -1378,6 +1379,7 @@ mouse_filter = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("12_ksau4")
 
 [node name="Card_Description" type="Label" parent="Card_Mask/Card_BG/Card_Text"]
 layout_mode = 0
@@ -1389,6 +1391,7 @@ mouse_filter = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("12_ksau4")
 
 [node name="Card_Outlines" type="Sprite2D" parent="Card_Mask/Card_BG"]
 texture = ExtResource("36_2sgwx")

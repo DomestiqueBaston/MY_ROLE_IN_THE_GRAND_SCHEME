@@ -23,6 +23,8 @@ enum CardType {
 		if is_node_ready():
 			$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
 
+@export var tooltip: String
+
 @export var opacity: float = 1:
 	set(value):
 		opacity = value
