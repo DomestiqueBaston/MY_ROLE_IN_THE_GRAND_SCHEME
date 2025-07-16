@@ -195,13 +195,13 @@ func get_health() -> int:
 	return health
 
 func set_emotion(emo: int):
-	emo = clampi(emo, -3, 3)
-	if emo == -3:
+	emo = clampi(emo, -5, 5)
+	if emo == -5:
 		addiction += 1 if addiction > 0 else -1
-		emo = -2
-	elif emo == 3:
+		emo = -4
+	elif emo == 5:
 		addiction += 1 if addiction >= 0 else -1
-		emo = 2
+		emo = 4
 	if emotion != emo:
 		emotion = emo
 		if _signal_pause == 0:
@@ -211,7 +211,7 @@ func get_emotion() -> int:
 	return emotion
 
 func set_addiction(add: int):
-	add = clampi(add, -3, 3)
+	add = clampi(add, -5, 5)
 	if addiction != add:
 		addiction = add
 		if _signal_pause == 0:
@@ -221,7 +221,7 @@ func get_addiction() -> int:
 	return addiction
 
 func set_wanted(wan: int):
-	wan = clampi(wan, 0, 4)
+	wan = clampi(wan, 0, 5)
 	if wanted != wan:
 		wanted = wan
 		if _signal_pause == 0:

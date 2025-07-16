@@ -34,9 +34,9 @@ class PlayerAttr:
 	PlayerAttr.new("physical", $Character_Stats/PHY, 1, 1000, $PHY_Alert),
 	PlayerAttr.new("mental", $Character_Stats/MEN, 1, 1000, $MEN_Alert),
 	PlayerAttr.new("health", $Character_Stats/HEA, 1, 1000, $HEA_Alert),
-	PlayerAttr.new("emotion", $Character_Stats/Emo, -2, 2, $Emo_Alert),
-	PlayerAttr.new("addiction", $Character_Stats/Add, -2, 2, $Add_Alert),
-	PlayerAttr.new("wanted", $Character_Stats/Wan, -1000, 3, $Wan_Alert),
+	PlayerAttr.new("emotion", $Character_Stats/Emo, -4, 4, $Emo_Alert),
+	PlayerAttr.new("addiction", $Character_Stats/Add, -4, 4, $Add_Alert),
+	PlayerAttr.new("wanted", $Character_Stats/Wan, -1000, 4, $Wan_Alert),
 	PlayerAttr.new("money", $Character_Stats/Dough),
 	PlayerAttr.new("drugs", $Character_Stats/Drug)
 ]

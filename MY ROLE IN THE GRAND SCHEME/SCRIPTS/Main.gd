@@ -642,16 +642,16 @@ func _detach_cards():
 
 func _on_addiction_changed():
 	var player = GameState.player
-	if player.addiction > -3 and player.addiction < 3:
+	if player.addiction > -5 and player.addiction < 5:
 		return
 	var die = (
 		player.health <= 1
-		or absi(player.emotion) >= 2
+		or absi(player.emotion) >= 4
 		or randi() % 10 > player.health)
 	await Globals.dialog_overlay.show_addiction_message(die)
 	if die:
 		player.die()
 	else:
-		player.addiction = 2 * signi(player.addiction)
+		player.addiction = 4 * signi(player.addiction)
 		player.health -= 1
 		player.emotion += signi(player.emotion)
