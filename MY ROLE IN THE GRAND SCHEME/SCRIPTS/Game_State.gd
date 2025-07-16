@@ -188,11 +188,15 @@ func set_current_case(index: int):
 		case_changed.emit()
 		save_game()
 
-func save_game():
+func save_game(binary: bool = false):
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
 	if file:
-		var json = JSON.stringify(SaveLoadTools.save_to_json_dict(self), "\t")
-		file.store_line(json)
+		var dict = SaveLoadTools.save_to_json_dict(self)
+		# NB. in a quick test, the binary file was bigger: 157 kb vs. 141 kb!
+		if binary:
+			file.store_var(dict)
+		else:
+			file.store_line(JSON.stringify(dict, "\t"))
 
 func load_game():
 	var json = FileAccess.get_file_as_string(_save_path)
