@@ -13,6 +13,12 @@ enum LocationStatus {
 		if is_node_ready():
 			_update_background()
 
+@export var crime_scene_color: Color = Color("#ff5757"):
+	set(value):
+		crime_scene_color = value
+		if is_node_ready() and location_status == LocationStatus.CRIME_SCENE:
+			_update_background()
+
 ## ID of corresponding entry in location database.
 var database_id: String
 
@@ -29,6 +35,12 @@ func _ready():
 func _update_background():
 	$Card_Mask/Card_BG/Closed_Status.visible = (location_status == LocationStatus.CLOSED)
 	$Card_Mask/Card_BG/Crime_Scene_Status.visible = (location_status == LocationStatus.CRIME_SCENE)
+	if location_status == LocationStatus.CRIME_SCENE:
+		$Card_Mask/Card_BG/Card_Outlines.self_modulate = crime_scene_color
+		$Card_Drag.modulate = crime_scene_color
+	else:
+		$Card_Mask/Card_BG/Card_Outlines.self_modulate = Color.WHITE
+		$Card_Drag.modulate = Color.WHITE
 
 func get_display_name() -> String:
 	var inhabitants = get_connections(Link.Type.HOME)
