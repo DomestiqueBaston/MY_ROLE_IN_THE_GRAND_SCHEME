@@ -127,7 +127,13 @@ func _update_appearance():
 	$Card_Mask/Card_BG/Card_Color/Npc/No_Couple.visible = not is_married
 	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[npc_status]
 	$Card_Drag.modulate = outline_colors[npc_status]
-	var tooltip = NpcStatus.keys()[npc_status].capitalize()
+
+	var tooltip
+	if npc_status == NpcStatus.NONE:
+		tooltip = ""
+	else:
+		tooltip = NpcStatus.keys()[npc_status].capitalize()
+
 	$Card_Mask/Card_BG/Card_Text/Card_Name.tooltip_text = tooltip
 	$Card_Mask/Card_BG/Card_Text/Card_Description.tooltip_text = tooltip
 
