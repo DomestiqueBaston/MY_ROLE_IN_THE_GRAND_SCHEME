@@ -27,10 +27,6 @@ var _duration: int
 var _status: Status = Status.UNASSIGNED
 var _links: Array[Link]
 
-# temporary
-var _entourage_count = 0
-var _non_entourage_count = 0
-
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
@@ -291,7 +287,9 @@ func _randomize():
 		npc1.add_connection(link_type, npc2)
 		npc2.add_connection(link_type, npc1)
 
-	# other friend, enemy and acquaintance connections between NPCs
+	# make other friend, enemy and acquaintance connections between NPCs, AFTER
+	# assigning workplaces, because priority is given to an NPC's colleagues, or
+	# his partner's colleagues
 
 	# Note that for NPC #7 (for example), we only look for connections with
 	# NPCs #8 and up, because NPCs 0-6 already have all the connections they
@@ -314,6 +312,24 @@ func _randomize():
 		for friend in friends:
 			friend.add_connection(Link.Type.HANGOUT, hangout)
 			hangout.add_connection(Link.Type.HANGOUT, friend)
+
+	# affairs between NPCs (do this AFTER determining couples)
+
+	for npc in npcs:
+
+		# do nothing if NPC already has an affair
+
+		var partners = npc.get_connections(Link.Type.INTIMACY)
+		if partners.size() > 1 or (partners.size() == 1 and not npc.is_married):
+			continue
+
+		# otherwise there is a 10% chance NPC is having an affair
+
+		if randi() % 10 == 0:
+			var other = _find_partner_for(npc, true)
+			if other:
+				npc.add_connection(Link.Type.INTIMACY, other)
+				other.add_connection(Link.Type.INTIMACY, npc)
 
 	# evidence
 
@@ -444,7 +460,7 @@ func _get_count_from_array(count) -> int:
 	else:
 		return count
 
-func _find_partner_for(npc: NpcCard) -> NpcCard:
+func _find_partner_for(npc: NpcCard, married_ok: bool = false) -> NpcCard:
 	var start_index = randi() % npcs.size()
 	for i in npcs.size():
 		var index = (start_index + i) % npcs.size()
@@ -453,11 +469,13 @@ func _find_partner_for(npc: NpcCard) -> NpcCard:
 
 		if npcs[index] == npc:
 			continue
-
-		# other NPC already has somebody?
-
 		var other: NpcCard = npcs[index]
-		if other.is_married:
+
+		# other NPC already has somebody, or already has a connection to NPC?
+
+		if other.is_known_to(npc):
+			continue
+		if other.is_married and not married_ok:
 			continue
 
 		# sexually compatible?
@@ -477,7 +495,7 @@ func _find_partner_for(npc: NpcCard) -> NpcCard:
 
 #
 # Generates friends, enemies and acquaintances for the given NPC, taking them
-# first from the NPC's entourage (NPCs sharing the same workplace or hangout).
+# first from the NPC's colleagues, and his partner's colleagues.
 #
 # Only other NPCs with index >= ignore_count are taken into consideration,
 # because the NPCs with index < ignore_count have already been allocated all
@@ -506,17 +524,16 @@ func _make_frenemies_for(npc: NpcCard, ignore_count: int):
 		frenemy.add_connection(link_type, npc)
 
 #
-# Adds to entourage any NPCs sharing the given NPC's workplace or hangout, if
+# Adds to entourage any NPCs sharing the given NPC's workplace, if
 # they are not already in entourage.
 #
 func _add_to_entourage(entourage, npc: NpcCard, ignore_count: int):
-	for link_type in [Link.Type.WORK, Link.Type.HANGOUT]:
-		for location in npc.get_connections(link_type):
-			for other in location.get_connections(link_type):
-				if not (other.is_known_to(npc) or
-						other in entourage or
-						npcs.find(other) < ignore_count):
-					entourage.append(other)
+	for location in npc.get_connections(Link.Type.WORK):
+		for other in location.get_connections(Link.Type.WORK):
+			if not (other.is_known_to(npc) or
+					other in entourage or
+					npcs.find(other) < ignore_count):
+				entourage.append(other)
 
 #
 # Finds and returns an NPC who is not already a friend, enemy or acquaintance of
@@ -530,7 +547,6 @@ func _find_frenemy_for(npc: NpcCard, candidates, ignore_count) -> NpcCard:
 		var which = randi() % candidates.size()
 		var other = candidates[which]
 		candidates.remove_at(which)
-		_entourage_count += 1
 		return other
 
 	var index = randi_range(ignore_count, npcs.size() - 1)
@@ -540,7 +556,6 @@ func _find_frenemy_for(npc: NpcCard, candidates, ignore_count) -> NpcCard:
 				other in npc.get_connections(Link.Type.FRIEND) or
 				other in npc.get_connections(Link.Type.ENEMY) or
 				other in npc.get_connections(Link.Type.ACQUAINTANCE)):
-			_non_entourage_count += 1
 			return other
 		index += 1
 		if index == npcs.size():
@@ -697,9 +712,6 @@ func print_case():
 	print("************************************************************")
 	print("case ", _case_name)
 	print("************************************************************")
-	print()
-	print("connections taken from entourage: ", _entourage_count)
-	print("connections from outside entourage: ", _non_entourage_count)
 	for npc in npcs:
 		print()
 		npc.print_npc()
