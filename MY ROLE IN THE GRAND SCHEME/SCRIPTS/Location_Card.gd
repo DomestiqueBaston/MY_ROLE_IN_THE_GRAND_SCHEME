@@ -11,13 +11,13 @@ enum LocationStatus {
 	set(value):
 		location_status = value
 		if is_node_ready():
-			_update_background()
+			_update_appearance()
 
 @export var crime_scene_color: Color = Color("#ff5757"):
 	set(value):
 		crime_scene_color = value
 		if is_node_ready() and location_status == LocationStatus.CRIME_SCENE:
-			_update_background()
+			_update_appearance()
 
 ## ID of corresponding entry in location database.
 var database_id: String
@@ -30,17 +30,23 @@ func get_card_type():
 
 func _ready():
 	super()
-	_update_background()
+	_update_appearance()
 
-func _update_background():
+func _update_appearance():
 	$Card_Mask/Card_BG/Closed_Status.visible = (location_status == LocationStatus.CLOSED)
 	$Card_Mask/Card_BG/Crime_Scene_Status.visible = (location_status == LocationStatus.CRIME_SCENE)
+
 	if location_status == LocationStatus.CRIME_SCENE:
 		$Card_Mask/Card_BG/Card_Outlines.self_modulate = crime_scene_color
 		$Card_Drag.modulate = crime_scene_color
 	else:
 		$Card_Mask/Card_BG/Card_Outlines.self_modulate = Color.WHITE
 		$Card_Drag.modulate = Color.WHITE
+
+	if not Engine.is_editor_hint():
+		tooltip = card_name
+		if location_status != LocationStatus.NONE:
+			tooltip += "\n" + LocationStatus.keys()[location_status].capitalize()
 
 func get_display_name() -> String:
 	var inhabitants = get_connections(Link.Type.HOME)
