@@ -251,17 +251,6 @@ texture_pressed = ExtResource("28_6l626")
 texture_hover = ExtResource("29_ivich")
 texture_disabled = ExtResource("29_ivich")
 
-[node name="Typing" type="AudioStreamPlayer" parent="Creation_Page"]
-stream = ExtResource("30_7d8wo")
-volume_db = -20.0
-bus = &"FX"
-
-[node name="Sex_Choice" type="AudioStreamPlayer" parent="Creation_Page"]
-stream = ExtResource("35_7d8wo")
-volume_db = -20.0
-bus = &"UI"
-parameters/looping = true
-
 [node name="Story" type="Label" parent="Creation_Page"]
 self_modulate = Color(1, 1, 1, 0.752941)
 layout_mode = 0
@@ -270,7 +259,6 @@ offset_top = 32.0
 offset_right = 608.0
 offset_bottom = 330.0
 theme = ExtResource("29_36uq3")
-text = "Background..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -288,6 +276,17 @@ offset_right = 13.0
 offset_bottom = 4.0
 theme = ExtResource("3_2pyp5")
 metadata/_edit_use_anchors_ = true
+
+[node name="Typing" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("30_7d8wo")
+volume_db = -20.0
+bus = &"FX"
+
+[node name="Sex_Choice" type="AudioStreamPlayer" parent="Creation_Page"]
+stream = ExtResource("35_7d8wo")
+volume_db = -20.0
+bus = &"UI"
+parameters/looping = true
 
 [connection signal="text_changed" from="Creation_Page/Character_Name" to="Creation_Page" method="_enable_disable_ok_button" unbinds=1]
 [connection signal="pressed" from="Creation_Page/PHY/PHY_Moins" to="Creation_Page" method="_on_phy_moins_pressed"]
