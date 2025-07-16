@@ -48,7 +48,7 @@ func get_display_name() -> String:
 		1:
 			return "%s's %s" % [inhabitants[0].first_name, card_name]
 		2:
-			return "%s %s" % [inhabitants[0].last_name, card_name]
+			return "The %s %s" % [inhabitants[0].last_name, card_name]
 		_:
 			return card_name
 
