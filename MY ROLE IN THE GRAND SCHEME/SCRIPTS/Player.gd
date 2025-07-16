@@ -367,6 +367,12 @@ func get_custom_class():
 #
 # For save/load.
 #
+func get_unique_id():
+	return "player"
+
+#
+# For save/load.
+#
 func get_referenced_objects():
 	return _cards
 
@@ -396,7 +402,7 @@ func get_json_dict():
 	}
 	var card_refs = []
 	for card in _cards:
-		card_refs.append(SaveLoadTools.get_object_id(card))
+		card_refs.append(card.get_unique_id())
 	dict["cards"] = card_refs
 	return dict
 

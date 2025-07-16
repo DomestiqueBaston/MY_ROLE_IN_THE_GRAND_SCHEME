@@ -100,6 +100,14 @@ static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Nam
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 static var _card_scene = preload("res://SCENES/NPC_Card.tscn")
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func get_card_type():
 	return CardType.NPC
 
@@ -312,6 +320,12 @@ func _print_connections_of_type(label: String, type: Link.Type):
 #
 func get_custom_class():
 	return SaveLoadTools.Class.NPC_CARD
+
+#
+# For save/load.
+#
+func get_unique_id():
+	return "npc%d" % _unique_id
 
 #
 # For save/load.

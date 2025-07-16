@@ -35,6 +35,14 @@ var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func _notification(what: int):
 
 	# Cards and Links are Nodes, not RefCounted, so they must be deleted
@@ -681,6 +689,12 @@ func get_custom_class():
 #
 # For save/load.
 #
+func get_unique_id():
+	return "case%d" % _unique_id
+
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = []
 	refs.append_array(npcs)
@@ -708,37 +722,37 @@ func get_json_dict():
 	if npcs:
 		var npc_refs = []
 		for npc in npcs:
-			npc_refs.append(SaveLoadTools.get_object_id(npc))
+			npc_refs.append(npc.get_unique_id())
 		dict["npcs"] = npc_refs
 
 	if evidence:
 		var evidence_refs = []
 		for card in evidence:
-			evidence_refs.append(SaveLoadTools.get_object_id(card))
+			evidence_refs.append(card.get_unique_id())
 		dict["evidence"] = evidence_refs
 
 	if other_objects:
 		var object_refs = []
 		for card in other_objects:
-			object_refs.append(SaveLoadTools.get_object_id(card))
+			object_refs.append(card.get_unique_id())
 		dict["other_objects"] = object_refs
 
 	if locations:
 		var location_refs = []
 		for card in locations:
-			location_refs.append(SaveLoadTools.get_object_id(card))
+			location_refs.append(card.get_unique_id())
 		dict["locations"] = location_refs
 
 	if _crime_location:
-		dict["crime_location"] = SaveLoadTools.get_object_id(_crime_location)
+		dict["crime_location"] = _crime_location.get_unique_id()
 
 	if _player_location:
-		dict["player_location"] = SaveLoadTools.get_object_id(_player_location)
+		dict["player_location"] = _player_location.get_unique_id()
 
 	if _links:
 		var link_refs = []
 		for link in _links:
-			link_refs.append(SaveLoadTools.get_object_id(link))
+			link_refs.append(link.get_unique_id())
 		dict["links"] = link_refs
 
 	return dict

@@ -403,14 +403,14 @@ func get_json_dict():
 	if _pins:
 		var pin_refs = {}
 		for pin in _pins:
-			pin_refs[pin] = SaveLoadTools.get_object_id(_pins[pin])
+			pin_refs[pin] = _pins[pin].get_unique_id()
 		dict["pins"] = pin_refs
 	if _connections:
 		var cnx_dict = {}
 		for type in _connections:
 			var cnx_array = []
 			for cnx in _connections[type]:
-				cnx_array.append(SaveLoadTools.get_object_id(cnx))
+				cnx_array.append(cnx.get_unique_id())
 			cnx_dict[type] = cnx_array
 		dict["connections"] = cnx_dict
 	return dict

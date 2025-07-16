@@ -225,6 +225,12 @@ func get_custom_class():
 #
 # For save/load.
 #
+func get_unique_id():
+	return "game"
+
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = [player]
 	for case in cases:
@@ -236,7 +242,7 @@ func get_referenced_objects():
 #
 func get_json_dict():
 	var dict = {
-		"player": SaveLoadTools.get_object_id(player),
+		"player": player.get_unique_id(),
 		"hour": _hour,
 		"has_visited_hub": _has_visited_hub,
 		"has_slept": _has_slept,
@@ -246,7 +252,7 @@ func get_json_dict():
 	if cases:
 		var case_refs = []
 		for case in cases:
-			case_refs.append(SaveLoadTools.get_object_id(case))
+			case_refs.append(case.get_unique_id())
 		dict["cases"] = case_refs
 	return dict
 

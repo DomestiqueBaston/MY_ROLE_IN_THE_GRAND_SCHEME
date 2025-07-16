@@ -129,6 +129,14 @@ var _new_textures: Array[CompressedTexture2D] = [
 # Pins that are linked to the middle of this link.
 var _follower_pins: Array[Pin]
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func _ready():
 	_update_transform()
 	_update_texture()
@@ -288,9 +296,21 @@ func lower():
 	for pin in _follower_pins:
 		pin.z_index -= 1
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.LINK
 
+#
+# For save/load.
+#
+func get_unique_id():
+	return "lnk%d" % _unique_id
+
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = []
 	if pin1:
@@ -301,22 +321,28 @@ func get_referenced_objects():
 		refs.append(pin)
 	return refs
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = {
 		"type": type,
 		"status": status
 	}
 	if pin1:
-		dict["pin1"] = SaveLoadTools.get_object_id(pin1)
+		dict["pin1"] = pin1.get_unique_id()
 	if pin2:
-		dict["pin2"] = SaveLoadTools.get_object_id(pin2)
+		dict["pin2"] = pin2.get_unique_id()
 	if _follower_pins:
 		var pin_refs = []
 		for pin in _follower_pins:
-			pin_refs.append(SaveLoadTools.get_object_id(pin))
+			pin_refs.append(pin.get_unique_id())
 		dict["follower_pins"] = pin_refs
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	type = dict.type
 	status = dict.status
@@ -327,5 +353,8 @@ func restore(dict, catalog):
 	for ref in dict.get("follower_pins", []):
 		_follower_pins.append(catalog[ref])
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return _link_scene.instantiate()

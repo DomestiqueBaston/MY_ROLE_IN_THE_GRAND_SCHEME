@@ -25,6 +25,14 @@ var database_id: String
 static var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 static var _card_scene = preload("res://SCENES/Location_Card.tscn")
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func get_card_type():
 	return CardType.LOCATION
 
@@ -74,6 +82,12 @@ static func create_card(id: String) -> LocationCard:
 #
 func get_custom_class():
 	return SaveLoadTools.Class.LOCATION_CARD
+
+#
+# For save/load.
+#
+func get_unique_id():
+	return "loc%d" % _unique_id
 
 #
 # For save/load.

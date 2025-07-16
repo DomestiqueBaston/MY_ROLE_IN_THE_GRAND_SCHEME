@@ -76,6 +76,14 @@ static var _pin_scene = preload("res://SCENES/Pin_Small.tscn")
 # The link for which this pin is one of the two endpoints.
 var _link_ref: Link
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func _ready():
 	set_notify_transform(true)
 
@@ -140,9 +148,21 @@ func _on_collider_input_event(_viewport: Node, event: InputEvent, _shape_idx: in
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT and not event.double_click:
 			Globals.pin_left_click.emit(event.global_position, self)
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.PIN
 
+#
+# For save/load.
+#
+func get_unique_id():
+	return "pin%d" % _unique_id
+
+#
+# For save/load.
+#
 func get_referenced_objects():
 	var refs = []
 	if card:
@@ -153,6 +173,9 @@ func get_referenced_objects():
 		refs.append(_link_ref)
 	return refs
 
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = {}
 	if type == PinType.CARD:
@@ -165,13 +188,16 @@ func get_json_dict():
 	if position.y != 0.0:
 		dict["y"] = position.y
 	if card:
-		dict["card"] = SaveLoadTools.get_object_id(card)
+		dict["card"] = card.get_unique_id()
 	if link:
-		dict["link"] = SaveLoadTools.get_object_id(link)
+		dict["link"] = link.get_unique_id()
 	if _link_ref:
-		dict["link_ref"] = SaveLoadTools.get_object_id(_link_ref)
+		dict["link_ref"] = _link_ref.get_unique_id()
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	type = dict.get("type", PinType.CARD)
 	card_location = dict.get("card_location", Location.TOP_LEFT)
@@ -184,5 +210,8 @@ func restore(dict, catalog):
 	if "link_ref" in dict:
 		_link_ref = catalog[dict.link_ref]
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return _pin_scene.instantiate()

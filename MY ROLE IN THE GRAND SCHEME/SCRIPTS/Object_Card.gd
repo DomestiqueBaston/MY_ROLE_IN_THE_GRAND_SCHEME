@@ -13,6 +13,14 @@ var database_id: String
 static var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 static var _card_scene = preload("res://SCENES/Object_Card.tscn")
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func get_card_type():
 	return CardType.OBJECT
 
@@ -31,9 +39,21 @@ static func create_card(id: String) -> ObjectCard:
 	card.database_id = id
 	return card
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.OBJECT_CARD
 
+#
+# For save/load.
+#
+func get_unique_id():
+	return "obj%d" % _unique_id
+
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = super()
 	if is_object_evidence:
@@ -41,6 +61,9 @@ func get_json_dict():
 	dict["database_id"] = database_id
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	super(dict, catalog)
 	is_object_evidence = dict.get("is_object_evidence", false)
@@ -49,5 +72,8 @@ func restore(dict, catalog):
 	card_name = object_info["name"]
 	description = object_info["description"]
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return _card_scene.instantiate()

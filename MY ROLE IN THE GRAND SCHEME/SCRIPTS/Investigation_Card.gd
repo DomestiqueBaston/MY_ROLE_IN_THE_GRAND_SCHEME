@@ -19,6 +19,14 @@ var database_id: String
 static var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
 static var _card_scene = preload("res://SCENES/Investigation_Card.tscn")
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func get_card_type():
 	return CardType.INVESTIGATION
 
@@ -38,15 +46,30 @@ static func create_card(id: String) -> InvestigationCard:
 	card.database_id = id
 	return card
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.INVESTIGATION_CARD
 
+#
+# For save/load.
+#
+func get_unique_id():
+	return "inv%d" % _unique_id
+
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = super()
 	dict["investigation_type"] = investigation_type
 	dict["database_id"] = database_id
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	super(dict, catalog)
 	investigation_type = dict["investigation_type"]
@@ -55,5 +78,8 @@ func restore(dict, catalog):
 	card_name = investigation_info["name"]
 	description = investigation_info["description"]
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return _card_scene.instantiate()

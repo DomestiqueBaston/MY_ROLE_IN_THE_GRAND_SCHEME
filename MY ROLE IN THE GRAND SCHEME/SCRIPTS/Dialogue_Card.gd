@@ -7,6 +7,14 @@ var database_id: String
 static var _dialogue_data = preload("res://JSON/INTERACTION/Dialogue.json").data
 static var _card_scene = preload("res://SCENES/Dialogue_Card.tscn")
 
+# for save/load
+var _unique_id: int
+static var _max_id: int
+
+func _init():
+	_max_id += 1
+	_unique_id = _max_id
+
 func get_card_type():
 	return CardType.DIALOGUE
 
@@ -21,14 +29,29 @@ static func create_card(id: String) -> DialogueCard:
 	card.database_id = id
 	return card
 
+#
+# For save/load.
+#
 func get_custom_class():
 	return SaveLoadTools.Class.DIALOGUE_CARD
 
+#
+# For save/load.
+#
+func get_unique_id():
+	return "dia%d" % _unique_id
+
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = super()
 	dict["database_id"] = database_id
 	return dict
 
+#
+# For save/load.
+#
 func restore(dict, catalog):
 	super(dict, catalog)
 	database_id = dict["database_id"]
@@ -36,5 +59,8 @@ func restore(dict, catalog):
 	card_name = dialogue_info["name"]
 	description = dialogue_info["description"]
 
+#
+# For save/load.
+#
 static func allocate() -> Object:
 	return _card_scene.instantiate()

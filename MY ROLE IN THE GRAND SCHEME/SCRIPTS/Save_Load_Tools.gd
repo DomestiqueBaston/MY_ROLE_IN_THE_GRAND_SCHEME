@@ -9,6 +9,10 @@ class_name SaveLoadTools
 ##
 ## Returns the type of object implemented by the class: see the Class Enum.
 ##
+## get_unique_id()
+##
+## Returns a string that uniquely identifies the instance.
+##
 ## get_referenced_objects()
 ##
 ## Returns an Array of other objects referenced by the instance.
@@ -18,18 +22,17 @@ class_name SaveLoadTools
 ## Returns a Dictionary containing all the information about the instance that
 ## needs to be saved. Dictionary values must all be either simple Variants that
 ## can be represented in JSON format (no vectors, no objects) or, for the
-## objects returned by get_referenced_objects(), objects IDs returned by
-## SaveLoadTools.get_object_id().
+## objects returned by get_referenced_objects(), unique object IDs.
 ##
 ## restore(dict, catalog)
 ##
 ## Restores an instance to its saved state, given the dictionary that was
 ## returned by get_json_dict() and reloaded from the JSON file, and a catalog of
 ## other objects that were saved to the JSON file and recreated. The catalog
-## maps object IDs (those that were returned by SaveLoadTools.get_object_id()
-## and saved to the dictionary) to new object instances of the appropriate type.
-## Note that those objects are not guaranteed to have been restored to their
-## saved state yet; you cannot rely on the contents of the referenced objects.
+## maps object IDs (those that were returned by get_unique_id() and saved to the
+## dictionary) to new object instances of the appropriate type. Note that those
+## objects are not guaranteed to have been restored to their saved state yet;
+## you cannot rely on the contents of the referenced objects.
 ##
 ## SaveLoadTools provides two static methods: save_to_json_dict() saves an
 ## object and any other objects it references to a JSON dictionary, and
@@ -50,19 +53,16 @@ enum Class {
 	GAME_STATE
 }
 
-static func get_object_id(obj: Object) -> String:
-	return str(obj.get_instance_id())
-
 static func save_to_json_dict(obj: Object) -> Dictionary:
 	var refs: Array[Object]
 	_find_all_refs(refs, obj)
 
 	var catalog = {}
 	for ref in refs:
-		catalog[get_object_id(ref)] = _make_json_dict(ref)
+		catalog[ref.get_unique_id()] = _make_json_dict(ref)
 
 	var dict = _make_json_dict(obj)
-	dict["id"] = get_object_id(obj)
+	dict["id"] = obj.get_unique_id()
 	if not catalog.is_empty():
 		dict["refs"] = catalog
 
