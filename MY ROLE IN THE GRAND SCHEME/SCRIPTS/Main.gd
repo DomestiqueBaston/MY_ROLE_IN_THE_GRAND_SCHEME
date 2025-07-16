@@ -333,17 +333,18 @@ func _stop_drag_card(global_pos: Vector2):
 	drag_drop_line.hide_line()
 
 	# wait for animation to finish before call to set_expanded() (issue #74)
+	var dragged_card = _current_card
 	await _stuff_to_do_when_drag_ends(_current_card)
 
 	if in_reserve:
-		_current_card.set_expanded(true)
-		_current_card.reparent(reserve, false)
+		dragged_card.set_expanded(true)
+		dragged_card.reparent(reserve, false)
 	else:
 		# card is allowed to overshoot left and top edges by 10 pixels at most
 		var corner = cards.global_position
-		var pos = _current_card.global_position.max(corner - Vector2(10, 10))
-		_current_card.global_position = pos.round()
-		_current_card.reparent(cards)
+		var pos = dragged_card.global_position.max(corner - Vector2(10, 10))
+		dragged_card.global_position = pos.round()
+		dragged_card.reparent(cards)
 
 func _stop_drag_pin(global_pos: Vector2):
 	if not _drop_target:
