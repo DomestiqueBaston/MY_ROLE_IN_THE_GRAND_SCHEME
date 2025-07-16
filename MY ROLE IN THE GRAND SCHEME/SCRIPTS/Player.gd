@@ -311,10 +311,10 @@ func sleep(hours: int):
 
 	if dream < 0.125:
 		dream_health_bonus = 1
-		Globals.dialog_overlay.show_dream_message(false)
+		await Globals.dialog_overlay.show_dream_message(false)
 	elif dream < 0.25:
 		dream_health_bonus = -1
-		Globals.dialog_overlay.show_dream_message(true)
+		await Globals.dialog_overlay.show_dream_message(true)
 
 	match hours:
 		4:

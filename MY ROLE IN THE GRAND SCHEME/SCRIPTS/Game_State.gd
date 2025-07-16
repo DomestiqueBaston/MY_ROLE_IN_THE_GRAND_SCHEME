@@ -155,7 +155,7 @@ func can_sleep() -> bool:
 
 func sleep(hours: int):
 	if can_sleep():
-		player.sleep(hours)
+		await player.sleep(hours)
 		_increment_time(hours)
 		_has_slept = true
 
