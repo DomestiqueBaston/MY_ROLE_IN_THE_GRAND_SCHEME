@@ -128,11 +128,16 @@ func _update_appearance():
 	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[npc_status]
 	$Card_Drag.modulate = outline_colors[npc_status]
 
-	var tooltip
-	if npc_status == NpcStatus.NONE:
-		tooltip = ""
-	else:
-		tooltip = NpcStatus.keys()[npc_status].capitalize()
+	var workplace = get_work()
+	description = "%s %s\nWorks at:\n%s" % [
+		first_name,
+		last_name,
+		"Home" if workplace == get_home() else workplace.get_display_name()
+	]
+
+	var tooltip = get_display_name()
+	if npc_status != NpcStatus.NONE:
+		tooltip += "\n" + NpcStatus.keys()[npc_status].capitalize()
 
 	$Card_Mask/Card_BG/Card_Text/Card_Name.tooltip_text = tooltip
 	$Card_Mask/Card_BG/Card_Text/Card_Description.tooltip_text = tooltip
