@@ -1016,3 +1016,5 @@ Futures idées…
 	- Des fois, le joueur « plane » et perd du temps à la redescente.
 	- Faire dépendre plus des choses des caractéristiques du joueur plutôt que du hasard (si possible).
 	- Attaques du joueur en prison !
+	- Tentatives (échouées ou réussies) de meurtre sur des témoins.
+	- SMS anonymes accusant des suspects.
