@@ -89,7 +89,7 @@ func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
 	return result
 
 ##
-## Displays the investigation center, where the user can select the current
+## Displays the investigation center, where the player can select the current
 ## case, and waits for him to confirm or cancel.
 ##
 func open_investigation_center():
@@ -99,3 +99,13 @@ func open_investigation_center():
 	await $Overlays/Investigation_Center.done
 	await _disappear()
 	$Overlays/Investigation_Center.hide()
+
+##
+## Displays the office and waits for the player to click on OK.
+##
+func open_office():
+	$Overlays/Office.show()
+	await _appear()
+	await $Overlays/Office.done
+	await _disappear()
+	$Overlays/Office.hide()

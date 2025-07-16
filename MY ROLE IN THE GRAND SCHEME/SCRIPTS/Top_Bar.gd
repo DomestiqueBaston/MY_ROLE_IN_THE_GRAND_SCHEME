@@ -47,6 +47,7 @@ class PlayerAttr:
 
 enum DailiesMenuItem {
 	INVESTIGATION_CENTER = 1000,
+	OFFICE,
 	PASS_TIME,
 	SLEEP,
 	DEBT_SUBMENU
@@ -126,7 +127,7 @@ func _ready():
 	popup.add_item("Visit Rowena the dealer...")
 	popup.add_item(
 		"Go to the Investig. Center...", DailiesMenuItem.INVESTIGATION_CENTER)
-	popup.add_item("Back to the office!")
+	popup.add_item("Back to the office!", DailiesMenuItem.OFFICE)
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_submenu_node_item(
 		"Pay the bill", _debt_popup, DailiesMenuItem.DEBT_SUBMENU)
@@ -140,6 +141,9 @@ func _on_dailies_press(id: int):
 	match id:
 		DailiesMenuItem.INVESTIGATION_CENTER:
 			GameState.visit_investigation_center()
+		DailiesMenuItem.OFFICE:
+			await GameState.pass_one_hour()
+			Globals.dialog_overlay.open_office()
 		DailiesMenuItem.PASS_TIME:
 			GameState.pass_one_hour()
 			$Menu_Bip.play()

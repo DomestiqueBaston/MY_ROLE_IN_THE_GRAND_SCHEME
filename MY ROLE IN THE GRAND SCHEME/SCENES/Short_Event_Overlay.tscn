@@ -1,4 +1,4 @@
-[gd_scene load_steps=253 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=254 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -119,6 +119,7 @@
 [ext_resource type="Texture2D" uid="uid://dhbyfuu4ni26y" path="res://GRAPHICS/SHORT_EVENT/Drawer_05_Open.png" id="97_s3phv"]
 [ext_resource type="Texture2D" uid="uid://cwkld6g4rh20e" path="res://GRAPHICS/SHORT_EVENT/Drawer_05_Hover.png" id="98_68eaj"]
 [ext_resource type="BitMap" uid="uid://ciinjcqtgr6m8" path="res://GRAPHICS/SHORT_EVENT/Drawer_05_Mask.png" id="99_h4ggb"]
+[ext_resource type="Script" uid="uid://b4g5hji6qk38y" path="res://SCRIPTS/Office.gd" id="100_42ybe"]
 [ext_resource type="Texture2D" uid="uid://e46jea1u2qcg" path="res://GRAPHICS/SHORT_EVENT/Drawer_04_Open.png" id="100_ne7xd"]
 [ext_resource type="Texture2D" uid="uid://chdq087hlxnwm" path="res://GRAPHICS/SHORT_EVENT/Drawer_04_Hover.png" id="101_qe60g"]
 [ext_resource type="BitMap" uid="uid://dhrufhokkqgng" path="res://GRAPHICS/SHORT_EVENT/Drawer_04_Mask.png" id="102_mej1r"]
@@ -3738,6 +3739,7 @@ In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 con
 
 [node name="Office" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("100_42ybe")
 
 [node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
 position = Vector2(218, 35)
@@ -3749,7 +3751,6 @@ layout_mode = 3
 anchors_preset = 0
 tooltip_text = "Ok..."
 theme = ExtResource("68_q1jpv")
-script = ExtResource("69_pf81c")
 
 [node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
 layout_mode = 0
@@ -4724,9 +4725,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Overlays/Office/Office/Quit" to="Overlays/Office/Office" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_pressed"]
