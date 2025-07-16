@@ -81,8 +81,12 @@ func _ready():
 
 func _notification(what: int):
 	if not Engine.is_editor_hint():
-		if what == NOTIFICATION_TRANSFORM_CHANGED:
-			moved.emit()
+		match what:
+			NOTIFICATION_PREDELETE:
+				card = null
+				link = null
+			NOTIFICATION_TRANSFORM_CHANGED:
+				moved.emit()
 
 func pause_collisions():
 	$Collider.input_pickable = false

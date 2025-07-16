@@ -427,15 +427,15 @@ func _start_linking(card: BaseCard, type: Link.Type, is_confirmed: bool):
 		return
 
 	_src_pin = pin_scene.instantiate()
+	cards.add_child(_src_pin)
 	_src_pin.card_location = src_loc as Pin.Location
 	_src_pin.card = card
-	cards.add_child(_src_pin)
 
 	_dst_pin = pin_scene.instantiate()
+	cards.add_child(_dst_pin)
 	_dst_pin.global_position = get_global_mouse_position()
 	# if the pin is pickable, it hides cards' mouse enter/exit events
 	_dst_pin.pause_collisions()
-	cards.add_child(_dst_pin)
 
 	_new_link = link_scene.instantiate()
 	_new_link.type = type
