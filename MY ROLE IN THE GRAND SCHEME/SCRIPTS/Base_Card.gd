@@ -262,7 +262,8 @@ func start_drag():
 	z_index += 1
 
 ##
-## Resets the appearance of the card after a call to start_drag().
+## Resets the appearance of the card after a call to start_drag(). This is a
+## coroutine: await it if you want to wait until the animation finishes.
 ##
 func stop_drag():
 	if _is_expanded:
@@ -270,6 +271,7 @@ func stop_drag():
 	else:
 		$Card_Animations.play("Drag_Reduced_Card_Disappearance")
 	$Shadow_Animations.play("Shadow_On")
+	await $Shadow_Animations.animation_finished
 	z_index -= 1
 
 ##

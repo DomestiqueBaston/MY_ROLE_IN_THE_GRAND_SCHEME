@@ -331,7 +331,9 @@ func _stop_drag_card(global_pos: Vector2):
 
 	Globals.pop_mouse_cursor()
 	drag_drop_line.hide_line()
-	_stuff_to_do_when_drag_ends(_current_card)
+
+	# wait for animation to finish before call to set_expanded() (issue #74)
+	await _stuff_to_do_when_drag_ends(_current_card)
 
 	if in_reserve:
 		_current_card.set_expanded(true)
@@ -404,7 +406,7 @@ func _stuff_to_do_when_drag_ends(dragged_card: BaseCard):
 		link.lower()
 	_drag_links.clear()
 	if dragged_card:
-		dragged_card.stop_drag()
+		await dragged_card.stop_drag()
 	if _clicked_pin:
 		_clicked_pin.z_index -= 1
 		_clicked_pin.resume_collisions()
