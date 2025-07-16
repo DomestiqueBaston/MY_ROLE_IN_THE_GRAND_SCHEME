@@ -18,6 +18,12 @@ func _ready():
 
 func _replace_scene(new_scene: PackedScene) -> Node:
 
+	# save game before closing main scene
+
+	for child in $Active_Scene.get_children():
+		if child.scene_file_path == _main_scene.resource_path:
+			GameState.save_game()
+
 	# take a screenshot that will fade to reveal the new scene
 
 	await $Transition.start_transition()
