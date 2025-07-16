@@ -716,6 +716,45 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Workplace" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Workplace of:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Workplace_NPC_01" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Rick Hunter"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Workplace_NPC_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Commissaire Maigret"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Weekend" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -765,7 +804,7 @@ text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_05" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -883,7 +922,7 @@ text = "[color=#cf2317]H24[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_05" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_06" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -912,7 +951,7 @@ text = "Pierre Poljac"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_06" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
+[node name="Separator_08" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
