@@ -17,10 +17,10 @@ func _ready():
 		json_data = json_instance.get_data()
 
 func show_random_message():
-	var alpha = json_data["alpha"]
-	var random_alpha = alpha[randi() % alpha.size()]
+	var part_1 = json_data["part_1"]
+	var random_part_1 = part_1[randi() % part_1.size()]
 
-	var beta = json_data["beta"]
-	var random_beta = beta[randi() % beta.size()]
+	var part_2 = json_data["part_2"]
+	var random_part_2 = part_2[randi() % part_2.size()]
 
-	text = random_alpha + random_beta
+	text = random_part_1 + random_part_2
