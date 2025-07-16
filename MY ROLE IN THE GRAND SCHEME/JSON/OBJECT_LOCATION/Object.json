@@ -3,9 +3,9 @@
 		"info_name": "- DEBT ACKNOWLEDGMENT -",
 		"name": "Debt acknowledgment",
 		"description": "Potentially useful in resolving financial disputes.",
-        "owners": {
-            "npc": [2]
-        }
+		"owners": {
+			"npc": [2]
+		}
 	},
 	"OBJ002": {
 		"info_name": "- DNA SAMPLE -",
@@ -92,9 +92,9 @@
 		"info_name": "- MESSAGE -",
 		"name": "Message",
 		"description": "A communication that could serve as evidence.",
-        "owners": {
-            "npc": [2]
-        }
+		"owners": {
+			"npc": [2]
+		}
 	},
 	"OBJ013": {
 		"info_name": "- PHOTOGRAPH -",
@@ -108,33 +108,33 @@
 		"info_name": "- CONDOM -",
 		"name": "Condom",
 		"description": "Even empty, it's still a valid clue. And full...",
-        "owners": {
-            "npc": [2]
-        }
+		"owners": {
+			"npc": [2]
+		}
 	},
 	"OBJ015": {
 		"info_name": "- WEAPON -",
 		"name": "Weapon",
 		"description": "They're rarely used just to make mashed potatoes.",
-        "owners": {
-            "npc": [1]
-        }
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ016": {
 		"info_name": "- EXPLOSIVE -",
 		"name": "Explosive",
 		"description": "There's more than enough to make one hell of a firework.",
-        "owners": {
-            "npc": [1]
-        }
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ017": {
 		"info_name": "- BOOK -",
 		"name": "Book",
 		"description": "The Book of the Galactic Prophecy.",
-        "owners": {
-            "npc": [1]
-        }
+		"owners": {
+			"npc": [1]
+		}
 	},
 	"OBJ018": {
 		"info_name": "- BLUEPRINT -",

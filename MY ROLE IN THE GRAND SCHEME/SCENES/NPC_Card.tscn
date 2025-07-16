@@ -2248,7 +2248,7 @@ theme = ExtResource("35_sa2kq")
 
 [node name="Card_Name" type="Label" parent="Card_Mask/Card_BG/Card_Text"]
 layout_mode = 1
-offset_left = 7.0
+offset_left = 5.0
 offset_right = 65.0
 offset_bottom = 23.0
 mouse_filter = 1
