@@ -27,6 +27,10 @@ var _duration: int
 var _status: Status = Status.UNASSIGNED
 var _links: Array[Link]
 
+# temporary
+var _entourage_count = 0
+var _non_entourage_count = 0
+
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
@@ -393,8 +397,8 @@ func _randomize():
 
 	# cards and links that are revealed initially
 
-	if _crime_location:
-		_player_location = _crime_location
+	#if _crime_location:
+	#	_player_location = _crime_location
 
 	for npc_list in [victims, witnesses, suspects]:
 		for npc in npc_list:
@@ -405,8 +409,16 @@ func _randomize():
 			work.is_revealed = true
 			_create_link(npc, home, Link.Type.HOME)
 			_create_link(npc, work, Link.Type.WORK)
-			if not _player_location:
-				_player_location = work
+			#if not _player_location:
+			#	_player_location = work
+
+	for victim in victims:
+		for link_type in [
+			Link.Type.INTIMACY, Link.Type.FRIEND, Link.Type.ENEMY,
+			Link.Type.ACQUAINTANCE]:
+			for cnx in victim.get_connections(link_type):
+				cnx.is_revealed = true
+				_create_link(victim, cnx, link_type)
 
 	if _crime_location:
 		_crime_location.is_revealed = true
@@ -458,59 +470,68 @@ func _find_partner_for(npc: NpcCard) -> NpcCard:
 #
 func _make_frenemies_for(npc: NpcCard, ignore_count: int):
 	var entourage = []
-	var work = npc.get_work()
-	for other in work.get_connections(Link.Type.WORK):
-		if not other.is_known_to(npc) and npcs.find(other) >= ignore_count:
-			entourage.append(other)
-	var hangout = npc.get_hangout()
-	for other in hangout.get_connections(Link.Type.HANGOUT):
-		if not other.is_known_to(npc) and npcs.find(other) >= ignore_count:
-			entourage.append(other)
+	_add_to_entourage(entourage, npc, ignore_count)
+	for partner in npc.get_connections(Link.Type.INTIMACY):
+		_add_to_entourage(entourage, partner, ignore_count)
 
 	var friend_count = npc.get_connections(Link.Type.FRIEND).size()
-	for i in range(friend_count, randi_range(0, 2)):
-		var friend = _find_frenemy_for(npc, entourage, ignore_count)
-		if not friend:
-			return
-		npc.add_connection(Link.Type.FRIEND, friend)
-		friend.add_connection(Link.Type.FRIEND, npc)
-
 	var enemy_count = npc.get_connections(Link.Type.ENEMY).size()
-	for i in range(enemy_count, randi_range(0, 2)):
-		var enemy = _find_frenemy_for(npc, entourage, ignore_count)
-		if not enemy:
-			return
-		npc.add_connection(Link.Type.ENEMY, enemy)
-		enemy.add_connection(Link.Type.ENEMY, npc)
-
 	var acquaintance_count = npc.get_connections(Link.Type.ACQUAINTANCE).size()
-	for i in range(acquaintance_count, randi_range(0, 3)):
-		var acquaintance = _find_frenemy_for(npc, entourage, ignore_count)
-		if not acquaintance:
-			return
-		npc.add_connection(Link.Type.ACQUAINTANCE, acquaintance)
-		acquaintance.add_connection(Link.Type.ACQUAINTANCE, npc)
+	var total_count = friend_count + enemy_count + acquaintance_count
+	var target_count = [0, 1, 1, 2, 2, 2, 3, 3, 4].pick_random()
 
+	for i in range(total_count, target_count):
+		var link_type = [
+			Link.Type.FRIEND, Link.Type.ENEMY, Link.Type.ACQUAINTANCE
+		].pick_random()
+		var frenemy = _find_frenemy_for(npc, entourage, ignore_count)
+		if not frenemy:
+			return
+		npc.add_connection(link_type, frenemy)
+		frenemy.add_connection(link_type, npc)
+
+#
+# Adds to entourage any NPCs sharing the given NPC's workplace or hangout, if
+# they are not already in entourage.
+#
+func _add_to_entourage(entourage, npc: NpcCard, ignore_count: int):
+	for link_type in [Link.Type.WORK, Link.Type.HANGOUT]:
+		for location in npc.get_connections(link_type):
+			for other in location.get_connections(link_type):
+				if not (other.is_known_to(npc) or
+						other in entourage or
+						npcs.find(other) < ignore_count):
+					entourage.append(other)
+
+#
+# Finds and returns an NPC who is not already a friend, enemy or acquaintance of
+# the given NPC. If the candidates array is not empty, an NPC is taken from
+# there at random, and then removed from candidates; otherwise, an NPC (whose
+# index >= ignore_count) is picked at random. Returns null if no eligible NPC is
+# found.
+#
 func _find_frenemy_for(npc: NpcCard, candidates, ignore_count) -> NpcCard:
-	if candidates.is_empty():
-		var index = randi_range(ignore_count, npcs.size() - 1)
-		for i in npcs.size() - ignore_count:
-			var other = npcs[index]
-			if not (other == npc or
-					other in npc.get_connections(Link.Type.FRIEND) or
-					other in npc.get_connections(Link.Type.ENEMY) or
-					other in npc.get_connections(Link.Type.ACQUAINTANCE)):
-				return other
-			index += 1
-			if index == npcs.size():
-				index = ignore_count
-		#print("not enough NPCs!")
-		return null
-	else:
+	if not candidates.is_empty():
 		var which = randi() % candidates.size()
 		var other = candidates[which]
 		candidates.remove_at(which)
+		_entourage_count += 1
 		return other
+
+	var index = randi_range(ignore_count, npcs.size() - 1)
+	for i in npcs.size() - ignore_count:
+		var other = npcs[index]
+		if not (other == npc or
+				other in npc.get_connections(Link.Type.FRIEND) or
+				other in npc.get_connections(Link.Type.ENEMY) or
+				other in npc.get_connections(Link.Type.ACQUAINTANCE)):
+			_non_entourage_count += 1
+			return other
+		index += 1
+		if index == npcs.size():
+			index = ignore_count
+
+	return null
 
 func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
 	var pin1 = Pin.allocate()
@@ -651,6 +672,9 @@ func print_case():
 	print("************************************************************")
 	print("case ", _case_name)
 	print("************************************************************")
+	print()
+	print("connections taken from entourage: ", _entourage_count)
+	print("connections from outside entourage: ", _non_entourage_count)
 	for npc in npcs:
 		print()
 		npc.print_npc()

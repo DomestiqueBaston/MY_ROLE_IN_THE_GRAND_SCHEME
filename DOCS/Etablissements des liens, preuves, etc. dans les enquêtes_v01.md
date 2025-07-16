@@ -66,7 +66,7 @@
 	Aléatoirement, on attribue les evidences comme suit :
 	- 1 evidence appartenant à la victime doit se trouver dans le hideout d’un coupable ou d’un complice ou chez un coupable ou chez un complice ou sur le lieu de travail du coupable ou le lieu de travail du complice.
  et/ou (ou, c’est s’il n’y a qu’une preuve).
-	- 1 evidence appartenant à 1 coupable ou 1 complice (ou à plusieurs) doit se trouver chez une victime ou sur le lieu du crime (s’il y a un lieu du crime).
+	- 1 evidence appartenant à 1 coupable ou 1 complice (ou à plusieurs) doit se trouver chez une victime ou sur le lieu du crime (s’il y a un lieu du crime) ou sur le lieu de travail de la victime.
 	
 	- Si 1 evidence a plusieurs propriétaires (coupable + victime ou complice + victime), elle se trouvera n’importe où et en priorité (2/3 chances) : sur le lieu du crime ou dans un lieu fréquenté par les propriétaires de la preuve (si un tel lieu existe et n’importe lequel s’il y en a plusieurs).
 	- S’il reste des evidences, on continue la distribution avec ce qui reste.

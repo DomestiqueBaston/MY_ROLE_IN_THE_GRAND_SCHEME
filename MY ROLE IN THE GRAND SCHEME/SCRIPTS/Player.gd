@@ -132,17 +132,6 @@ func start_game():
 				id = _pick_random_abstract_card()
 				_cards.append(AbstractCard.create_card(id))
 
-	print("player: ", player_name)
-	print("sex: ", sex)
-	print("job: ", job_name)
-	print("PHY: ", physical)
-	print("MEN: ", mental)
-	print("HEA: ", health)
-	print("dough: %d Dø" % money)
-	print("drugs: %d doses" % drugs)
-	for card in _cards:
-		print("card: %s (%s)" % [card.card_name, card.database_id])
-
 	_signal_pause -= 1
 
 func _pick_random_abstract_card() -> String:

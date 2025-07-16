@@ -135,16 +135,13 @@ func get_display_name() -> String:
 	return first_name + " " + last_name
 
 func get_home() -> LocationCard:
-	var cnxs = get_connections(Link.Type.HOME)
-	return null if cnxs.is_empty() else cnxs[0]
+	return get_one_connection(Link.Type.HOME)
 
 func get_work() -> LocationCard:
-	var cnxs = get_connections(Link.Type.WORK)
-	return null if cnxs.is_empty() else cnxs[0]
+	return get_one_connection(Link.Type.WORK)
 
 func get_hangout() -> LocationCard:
-	var cnxs = get_connections(Link.Type.HANGOUT)
-	return null if cnxs.is_empty() else cnxs[0]
+	return get_one_connection(Link.Type.HANGOUT)
 
 func is_known_to(other: NpcCard) -> bool:
 	if other == self:
