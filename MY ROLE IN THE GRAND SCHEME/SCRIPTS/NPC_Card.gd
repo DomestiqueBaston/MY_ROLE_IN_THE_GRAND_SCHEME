@@ -235,12 +235,6 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	wanted = randi_range(0, 2)
 	player_reputation = -2 if category == NpcCategory.MINION else 0
 
-	# everyone has a hangout location
-
-	var hangout = case.find_hangout()
-	add_connection(Link.Type.HANGOUT, hangout)
-	hangout.add_connection(Link.Type.HANGOUT, self)
-
 	# not all NPCs have a hideout location
 
 	var hideout_probability
@@ -272,8 +266,9 @@ func new_day():
 ## at random for the NPC's profession. If it is not given or is empty, the NPC
 ## may be given any job.
 ##
-## Note that the new character is given a hangout and possibly a hideout, but
-## NOT a home or a place of work. They must be assigned later.
+## Note that the new character may be given a hideout, since hideouts are never
+## shared, but he will NOT be given a home, a place of work or a hangout. They
+## must be assigned later.
 ##
 static func generate_card(
 	case: Case, cat: NpcCategory = NpcCategory.NONE, possible_jobs = [],

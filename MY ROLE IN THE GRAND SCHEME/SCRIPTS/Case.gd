@@ -301,6 +301,20 @@ func _randomize():
 	for i in npcs.size() - 1:
 		_make_frenemies_for(npcs[i], i+1)
 
+	# assign hangouts, now that we know which NPCs are friends (who share
+	# hangouts)
+
+	for npc in npcs:
+		var hangout = npc.get_hangout()
+		if hangout:
+			continue
+		hangout = find_hangout()
+		var friends: Array[NpcCard]
+		_add_friends_of_friends(friends, npc)
+		for friend in friends:
+			friend.add_connection(Link.Type.HANGOUT, hangout)
+			hangout.add_connection(Link.Type.HANGOUT, friend)
+
 	# evidence
 
 	if evidence_count > 0:
@@ -533,6 +547,16 @@ func _find_frenemy_for(npc: NpcCard, candidates, ignore_count) -> NpcCard:
 			index = ignore_count
 
 	return null
+
+#
+# Returns an array containing the given npc, his friends, all their friends, and
+# so on.
+#
+func _add_friends_of_friends(friends: Array[NpcCard], npc: NpcCard):
+	if not friends.has(npc):
+		friends.append(npc)
+		for ff in npc.get_connections(Link.Type.FRIEND):
+			_add_friends_of_friends(friends, ff)
 
 func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
 	var pin1 = Pin.allocate()
