@@ -334,35 +334,33 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 
 func add_connection(type: Link.Type, card: BaseCard):
 	if type in _connections:
-		_connections[type].append(weakref(card))
+		_connections[type].append(card)
 	else:
-		_connections[type] = [weakref(card)]
+		_connections[type] = [card]
 
 func get_all_connections() -> Array[BaseCard]:
 	var cnxs: Array[BaseCard]
-	for type in _connections:
-		for cnx in _connections[type]:
-			cnxs.append(cnx.get_ref())
+	for cnx_array in _connections.values():
+		cnxs.append_array(cnx_array)
 	return cnxs
 
 func get_all_npc_connections() -> Array[NpcCard]:
 	var cnxs: Array[NpcCard]
-	for type in _connections:
-		for cnx in _connections[type]:
-			if cnx.get_ref() is NpcCard:
-				cnxs.append(cnx.get_ref())
+	for cnx_array in _connections.values():
+		for cnx in cnx_array:
+			if cnx is NpcCard:
+				cnxs.append(cnx)
 	return cnxs
 
 func get_connections(type: Link.Type) -> Array[BaseCard]:
 	var cnxs: Array[BaseCard]
 	if type in _connections:
-		for cnx in _connections[type]:
-			cnxs.append(cnx.get_ref())
+		cnxs.assign(_connections[type])
 	return cnxs
 
 func get_one_connection(type: Link.Type) -> BaseCard:
 	if type in _connections:
-		return _connections[type][0].get_ref()
+		return _connections[type][0]
 	return null
 
 func has_connection(type: Link.Type) -> bool:
@@ -380,11 +378,7 @@ func get_display_name() -> String:
 # For save/load.
 #
 func get_referenced_objects():
-	var refs = _pins.values()
-	for cnxs in _connections.values():
-		for cnx in cnxs:
-			refs.append(cnx.get_ref())
-	return refs
+	return _pins.values() + get_all_connections()
 
 #
 # For save/load.
@@ -414,7 +408,7 @@ func get_json_dict():
 		for type in _connections:
 			var cnx_array = []
 			for cnx in _connections[type]:
-				cnx_array.append(SaveLoadTools.get_object_id(cnx.get_ref()))
+				cnx_array.append(SaveLoadTools.get_object_id(cnx))
 			cnx_dict[type] = cnx_array
 		dict["connections"] = cnx_dict
 	return dict
@@ -436,5 +430,5 @@ func restore(dict, catalog):
 		for type in dict.connections:
 			var refs = []
 			for id in dict.connections[type]:
-				refs.append(weakref(catalog[id]))
+				refs.append(catalog[id])
 			_connections[type as Link.Type] = refs
