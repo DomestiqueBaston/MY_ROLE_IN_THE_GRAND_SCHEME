@@ -397,9 +397,6 @@ func _randomize():
 
 	# cards and links that are revealed initially
 
-	#if _crime_location:
-	#	_player_location = _crime_location
-
 	for npc_list in [victims, witnesses, suspects]:
 		for npc in npc_list:
 			npc.is_revealed = true
@@ -409,8 +406,6 @@ func _randomize():
 			work.is_revealed = true
 			_create_link(npc, home, Link.Type.HOME)
 			_create_link(npc, work, Link.Type.WORK)
-			#if not _player_location:
-			#	_player_location = work
 
 	for victim in victims:
 		for link_type in [

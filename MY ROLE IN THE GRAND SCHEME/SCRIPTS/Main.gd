@@ -579,15 +579,20 @@ func _on_case_changed():
 ## Populates the scene with the given cards and links.
 ##
 func populate(case: Case):
-	for card in case.get_revealed_cards():
-		if card.was_stacked():
-			reserve.add_child(card)
-		else:
-			cards.add_child(card)
-
 	if case.is_layout_needed:
+		for card in case.get_revealed_cards():
+			if card is NpcCard:
+				cards.add_child(card)
+			else:
+				reserve.add_child(card)
 		_layout_cards()
 		case.is_layout_needed = false
+	else:
+		for card in case.get_revealed_cards():
+			if card.was_stacked():
+				reserve.add_child(card)
+			else:
+				cards.add_child(card)
 
 	for link in case.get_links():
 		cards.add_child(link)
@@ -612,7 +617,7 @@ func _layout_cards():
 	var shift = Vector2(20, 40)
 
 	for child in cards.get_children():
-		if child is NpcCard:
+		if child is NpcCard and child.npc_status != NpcCard.NpcStatus.NONE:
 			child.global_position = npc_pos
 			npc_pos += shift
 			if npc_pos.y > bottom_right.y - BaseCard.size.y:
