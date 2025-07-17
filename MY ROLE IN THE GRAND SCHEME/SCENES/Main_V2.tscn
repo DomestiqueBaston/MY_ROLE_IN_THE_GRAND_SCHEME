@@ -726,6 +726,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Scroller_Location" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
+visible = false
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
 anchor_right = 1.0
@@ -1086,7 +1087,6 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Scroller_NPC" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
-visible = false
 custom_minimum_size = Vector2(106, 108)
 anchors_preset = 15
 anchor_right = 1.0
@@ -1201,12 +1201,62 @@ text = "Case Status:"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Status_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]None[/color]"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Status_Victim" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Victim[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Disappeared" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Disappeared[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_In_Jail" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]in Jail[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Minion" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Minion[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Dead" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]Dead[/color]"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1250,16 +1300,6 @@ text = "[color=#cf2317]Witness[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[color=#cf2317]None[/color]"
-fit_content = true
-horizontal_alignment = 1
-
 [node name="Separator_03" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1275,7 +1315,7 @@ custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "Lives with:"
+text = "In a relationship with:"
 fit_content = true
 horizontal_alignment = 1
 
