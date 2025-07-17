@@ -265,24 +265,6 @@ _data = {
 &"Shake": SubResource("Animation_e74pt")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jv51o"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1c880"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di8r4"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vwbes"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j35wb"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yruh1"]
-content_margin_left = 1.0
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txoxf"]
 content_margin_left = 1.0
 
@@ -305,6 +287,24 @@ content_margin_left = 1.0
 content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxcf0"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10axw"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th7js"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yp107"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5itq6"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjg7q"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj4ng"]
 content_margin_left = 1.0
 
 [node name="Interaction" type="Node2D" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line", "top_bar")]
@@ -935,6 +935,45 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Workplace" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Workplace of:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Workplace_NPC_01" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Rick Hunter"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Workplace_NPC_02" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Commissaire Maigret"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Weekend" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -984,7 +1023,7 @@ text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_04" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+[node name="Separator_05" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1013,6 +1052,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Time_Slot_02" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1022,6 +1062,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Time_Slot_03" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1100,7 +1141,7 @@ text = "[color=#cf2317]H24[/color]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_05" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+[node name="Separator_06" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1129,7 +1170,7 @@ text = "Pierre Poljac"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Separator_06" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
+[node name="Separator_08" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1219,8 +1260,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]No info[/color]"
+text = "No info"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1229,8 +1271,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Good[/color]"
+text = "Good"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1239,8 +1282,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Average[/color]"
+text = "Average"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1249,8 +1293,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Low[/color]"
+text = "Low"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1273,12 +1318,68 @@ text = "Case Status:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Status_Victim" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+[node name="Status_None" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Victim[/color]"
+text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Victim" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Victim"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Disappeared" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Disappeared"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_In_Jail" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "in Jail"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Minion" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Minion"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Status_Dead" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Dead"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1287,8 +1388,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Culprit[/color]"
+text = "Culprit"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1297,8 +1399,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Accomplice[/color]"
+text = "Accomplice"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1307,8 +1410,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Suspect[/color]"
+text = "Suspect"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1317,18 +1421,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Witness[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Status_None" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[color=#cf2317]None[/color]"
+text = "Witness"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1347,7 +1442,7 @@ custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "Lives with:"
+text = "In a relationship with:"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1369,6 +1464,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Nobody"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Couple_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1395,7 +1501,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_colors/default_color = Color(0.81, 0.13716, 0.0891, 1)
 bbcode_enabled = true
 text = "Nina Hagen"
 fit_content = true
@@ -1409,6 +1515,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Friends_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1452,6 +1569,17 @@ text = "None"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Enemies_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Separator_06" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1489,6 +1617,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Acquaintance_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1532,6 +1671,17 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Affair_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Separator_08" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1569,6 +1719,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Nobody"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Debt_Influence_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1612,6 +1773,17 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Ideology_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Separator_10" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1650,7 +1822,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Morning"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jv51o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_txoxf")
 bbcode_enabled = true
 text = "Morning:"
 fit_content = true
@@ -1660,7 +1832,7 @@ horizontal_alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Morning"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jv51o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_txoxf")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1671,7 +1843,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jv51o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_txoxf")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -1686,7 +1858,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Afternoon"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1c880")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_okarn")
 bbcode_enabled = true
 text = "Afternoon:"
 fit_content = true
@@ -1696,7 +1868,7 @@ horizontal_alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Afternoon"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1c880")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_okarn")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1707,7 +1879,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1c880")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_okarn")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -1722,7 +1894,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Evening"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_di8r4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0pa5p")
 bbcode_enabled = true
 text = "Evening:"
 fit_content = true
@@ -1733,7 +1905,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_di8r4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0pa5p")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1743,7 +1915,7 @@ horizontal_alignment = 1
 [node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Evening"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_di8r4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0pa5p")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -1758,7 +1930,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Night"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vwbes")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xtvj")
 bbcode_enabled = true
 text = "Night:"
 fit_content = true
@@ -1769,7 +1941,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vwbes")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xtvj")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1779,7 +1951,7 @@ horizontal_alignment = 1
 [node name="Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_Night"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vwbes")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xtvj")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -1794,7 +1966,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Morning"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_j35wb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eabel")
 bbcode_enabled = true
 text = "W-E Morning:"
 fit_content = true
@@ -1804,7 +1976,7 @@ horizontal_alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Morning"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_j35wb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eabel")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1815,7 +1987,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_j35wb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eabel")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -1830,7 +2002,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Afternoon"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yruh1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5qxsw")
 bbcode_enabled = true
 text = "W-E Afternoon:"
 fit_content = true
@@ -1840,7 +2012,7 @@ horizontal_alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Afternoon"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yruh1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5qxsw")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1851,7 +2023,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yruh1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5qxsw")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -1866,7 +2038,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Evening"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_txoxf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hpnnp")
 bbcode_enabled = true
 text = "W-E Evening:"
 fit_content = true
@@ -1876,7 +2048,7 @@ horizontal_alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Evening"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_okarn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nxcf0")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1887,7 +2059,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0pa5p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_10axw")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -1902,7 +2074,7 @@ alignment = 1
 
 [node name="Time_Slot" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Night"]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_4xtvj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_th7js")
 bbcode_enabled = true
 text = "W-E Night:"
 fit_content = true
@@ -1912,7 +2084,7 @@ horizontal_alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Schedule_WE_Night"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_eabel")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yp107")
 bbcode_enabled = true
 text = "Location"
 fit_content = true
@@ -1923,7 +2095,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5qxsw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5itq6")
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
@@ -2089,12 +2261,23 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Hangout_None" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Location"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hangout_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -2128,6 +2311,17 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Hideout_None" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hideout_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -2168,6 +2362,17 @@ text = "None"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Properties_Unknown" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Properties_Object_01" type="FlowContainer" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
@@ -2178,7 +2383,7 @@ alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hpnnp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tjg7q")
 bbcode_enabled = true
 text = "Object"
 fit_content = true
@@ -2196,7 +2401,7 @@ horizontal_alignment = 1
 [node name="Evidence" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nxcf0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hj4ng")
 bbcode_enabled = true
 text = "Evidence"
 fit_content = true
@@ -2221,7 +2426,7 @@ alignment = 1
 [node name="Location" type="RichTextLabel" parent="Bottom_Left_Info_Long/Scroll_NPC/Info_NPC/Properties_Object_02"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_hpnnp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tjg7q")
 bbcode_enabled = true
 text = "Object"
 fit_content = true
@@ -2241,7 +2446,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nxcf0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hj4ng")
 bbcode_enabled = true
 text = "Evidence"
 fit_content = true
