@@ -128,16 +128,26 @@ func show_npc(npc: NpcCard):
 	var status_label: Control
 
 	match npc.npc_status:
-		NpcCard.NpcStatus.VICTIM, NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED:
+		NpcCard.NpcStatus.NONE:
+			status_label = $Scroller_NPC/Info_NPC/Status_None
+		NpcCard.NpcStatus.JAIL:
+			status_label = $Scroller_NPC/Info_NPC/Status_In_Jail
+		NpcCard.NpcStatus.DEAD:
+			status_label = $Scroller_NPC/Info_NPC/Status_Dead
+		NpcCard.NpcStatus.DISAPPEARED:
+			status_label = $Scroller_NPC/Info_NPC/Status_Disappeared
+		NpcCard.NpcStatus.MINION:
+			status_label = $Scroller_NPC/Info_NPC/Status_Minion
+		NpcCard.NpcStatus.VICTIM:
 			status_label = $Scroller_NPC/Info_NPC/Status_Victim
-		NpcCard.NpcStatus.CULPRIT:
-			status_label = $Scroller_NPC/Info_NPC/Status_Culprit
-		NpcCard.NpcStatus.ACCOMPLICE, NpcCard.NpcStatus.JAIL:
-			status_label = $Scroller_NPC/Info_NPC/Status_Accomplice
 		NpcCard.NpcStatus.SUSPECT:
 			status_label = $Scroller_NPC/Info_NPC/Status_Suspect
 		NpcCard.NpcStatus.WITNESS:
 			status_label = $Scroller_NPC/Info_NPC/Status_Witness
+		NpcCard.NpcStatus.CULPRIT:
+			status_label = $Scroller_NPC/Info_NPC/Status_Culprit
+		NpcCard.NpcStatus.ACCOMPLICE:
+			status_label = $Scroller_NPC/Info_NPC/Status_Accomplice
 
 	if status_label:
 		$Scroller_NPC/Info_NPC/Separator_02.show()
@@ -191,6 +201,8 @@ func show_npc(npc: NpcCard):
 		$Scroller_NPC/Info_NPC/Acquaintance_NPC_01.show()
 
 	var affairs = case.find_links_to(npc, Link.Type.INTIMACY)
+	if npc.is_married:
+		affairs.pop_front()
 	if affairs:
 		var text = ""
 		for affair in affairs:
@@ -202,8 +214,59 @@ func show_npc(npc: NpcCard):
 		$Scroller_NPC/Info_NPC/Affair_NPC.text = text
 		$Scroller_NPC/Info_NPC/Affair_NPC.show()
 
-	# TODO: home, work, hangout, hideout, property, debt/influence, ideology,
-	# schedules
+	var debts = case.find_links_to(npc, Link.Type.DEBT)
+	if debts:
+		var text = ""
+		for debt in debts:
+			if not text.is_empty():
+				text += "\n"
+			text += debt.get_display_name()
+		$Scroller_NPC/Info_NPC/Separator_08.show()
+		$Scroller_NPC/Info_NPC/Debt_Influence.show()
+		$Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.show()
+
+	var ideology = case.find_links_to(npc, Link.Type.IDEOLOGY)
+	if ideology:
+		var text = ""
+		for card in ideology:
+			if not text.is_empty():
+				text += "\n"
+			text += card.get_display_name()
+		$Scroller_NPC/Info_NPC/Separator_09.show()
+		$Scroller_NPC/Info_NPC/Ideology.show()
+		$Scroller_NPC/Info_NPC/Ideology_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Ideology_NPC_01.show()
+
+	var home = case.find_links_to(npc, Link.Type.HOME)
+	if home:
+		$Scroller_NPC/Info_NPC/Separator_12.show()
+		$Scroller_NPC/Info_NPC/Home.show()
+		$Scroller_NPC/Info_NPC/Home_Location.text = home[0].get_display_name()
+		$Scroller_NPC/Info_NPC/Home_Location.show()
+
+	var work = case.find_links_to(npc, Link.Type.WORK)
+	if work:
+		$Scroller_NPC/Info_NPC/Separator_13.show()
+		$Scroller_NPC/Info_NPC/Work.show()
+		$Scroller_NPC/Info_NPC/Work_Location.text = work[0].get_display_name()
+		$Scroller_NPC/Info_NPC/Work_Location.show()
+
+	var hangout = case.find_links_to(npc, Link.Type.HANGOUT)
+	if hangout:
+		$Scroller_NPC/Info_NPC/Separator_14.show()
+		$Scroller_NPC/Info_NPC/Hangout.show()
+		$Scroller_NPC/Info_NPC/Hangout_Location.text = hangout[0].get_display_name()
+		$Scroller_NPC/Info_NPC/Hangout_Location.show()
+
+	var hideout = case.find_links_to(npc, Link.Type.HIDEOUT)
+	if hideout:
+		$Scroller_NPC/Info_NPC/Separator_15.show()
+		$Scroller_NPC/Info_NPC/Hideout.show()
+		$Scroller_NPC/Info_NPC/Hideout_Location.text = hideout[0].get_display_name()
+		$Scroller_NPC/Info_NPC/Hideout_Location.show()
+
+	# TODO: property, schedules
 
 	$Scroller_Object.hide()
 	$Scroller_NPC.show()

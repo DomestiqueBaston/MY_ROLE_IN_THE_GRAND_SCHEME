@@ -136,18 +136,10 @@ func _update_appearance():
 	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[npc_status]
 	$Card_Drag.modulate = outline_colors[npc_status]
 
-	if Engine.is_editor_hint():
-		return
-
-	var workplace = get_work()
-	description = "%s %s\n\nWorks at:\n%s" % [
-		first_name, last_name,
-		"Home" if workplace == get_home() else workplace.get_display_name()
-	]
-
-	tooltip = get_display_name()
-	if npc_status != NpcStatus.NONE:
-		tooltip += "\n" + NpcStatus.keys()[npc_status].capitalize()
+	if not Engine.is_editor_hint():
+		tooltip = get_display_name()
+		if npc_status != NpcStatus.NONE:
+			tooltip += "\n" + NpcStatus.keys()[npc_status].capitalize()
 
 func get_display_name() -> String:
 	return first_name + " " + last_name
