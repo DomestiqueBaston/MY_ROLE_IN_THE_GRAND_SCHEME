@@ -86,7 +86,7 @@ func _increment_time(hours: int):
 	var day_after = get_working_day()
 	time_changed.emit()
 
-	for day in range(day_before, day_after):
+	for day in range(day_before + 1, day_after + 1):
 		_new_day(day)
 
 	save_game()
