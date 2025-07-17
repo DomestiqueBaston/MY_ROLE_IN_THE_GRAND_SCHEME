@@ -14,9 +14,8 @@ var evidence: Array[ObjectCard]
 var other_objects: Array[ObjectCard]
 var locations: Array[LocationCard]
 
-# references to items in locations
+# reference to item in locations
 var _crime_location: LocationCard
-var _player_location: LocationCard
 
 var _case_id: String
 var _case_name: String
@@ -624,9 +623,6 @@ func get_duration() -> int:
 func get_crime_location() -> LocationCard:
 	return _crime_location
 
-func get_player_location() -> LocationCard:
-	return _player_location
-
 ##
 ## Returns all the cards created for the case, including NPCs, objects and
 ## locations.
@@ -782,9 +778,6 @@ func get_json_dict():
 	if _crime_location:
 		dict["crime_location"] = _crime_location.get_unique_id()
 
-	if _player_location:
-		dict["player_location"] = _player_location.get_unique_id()
-
 	if _links:
 		var link_refs = []
 		for link in _links:
@@ -815,8 +808,6 @@ func restore(dict, catalog):
 		locations.append(catalog[ref])
 	if "crime_location" in dict:
 		_crime_location = catalog[dict.crime_location]
-	if "player_location" in dict:
-		_player_location = catalog[dict.player_location]
 	for ref in dict.get("links", []):
 		_links.append(catalog[ref])
 

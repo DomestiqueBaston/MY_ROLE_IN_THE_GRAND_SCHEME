@@ -1,5 +1,15 @@
 extends Node
 
+enum PlayerLocation {
+	OFFICE,
+	INVESTIGATION_CENTER,
+	DOCTOR,
+	ROWENA,
+	WARRANT_DESK,
+	PRISON,
+	OTHER
+}
+
 var player: Player = Player.new()
 var cases: Array[Case]
 
@@ -9,6 +19,9 @@ signal time_changed
 
 ## Signal emitted when the current case has changed: see get_current_case().
 signal case_changed
+
+## Signal emitted when the player changes location.
+signal player_location_changed
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
@@ -32,6 +45,9 @@ var _last_crimes: Array[String]
 
 # which case is current
 var _current_case_index: int
+
+var _player_location: PlayerLocation = PlayerLocation.OFFICE
+var _player_location_card: LocationCard
 
 func _ready():
 	load_game()
@@ -169,8 +185,14 @@ func can_visit_investigation_center() -> bool:
 func visit_investigation_center():
 	if can_visit_investigation_center():
 		await pass_one_hour()
+		set_player_location(PlayerLocation.INVESTIGATION_CENTER)
 		_has_visited_hub = true
 		await Globals.dialog_overlay.open_investigation_center()
+
+func visit_office():
+	await pass_one_hour()
+	set_player_location(PlayerLocation.OFFICE)
+	await Globals.dialog_overlay.open_office()
 
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
@@ -187,6 +209,30 @@ func set_current_case(index: int):
 			cases[_current_case_index].start()
 		case_changed.emit()
 		save_game()
+
+##
+## Specifies where the player is located. If location is PlayerLocation.OTHER,
+## then a LocationCard must be given.
+##
+func set_player_location(location: PlayerLocation, card: LocationCard = null):
+	if _player_location != location or _player_location_card != card:
+		_player_location = location
+		_player_location_card = card
+		player_location_changed.emit()
+
+##
+## Returns the current location of the player. If it is PlayerLocation.OTHER,
+## retrieve the exact location with get_player_location_card().
+##
+func get_player_location() -> PlayerLocation:
+	return _player_location
+
+##
+## Returns the location card corresponding to the player's current location.
+## Useful only if get_player_location() returns PlayerLocation.OTHER.
+##
+func get_player_location_card() -> LocationCard:
+	return _player_location_card
 
 func save_game(binary: bool = false):
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
@@ -235,6 +281,8 @@ func get_referenced_objects():
 	var refs = [player]
 	for case in cases:
 		refs.append(case)
+	if _player_location_card:
+		refs.append(_player_location_card)
 	return refs
 
 #
@@ -254,6 +302,10 @@ func get_json_dict():
 		for case in cases:
 			case_refs.append(case.get_unique_id())
 		dict["cases"] = case_refs
+	if _player_location != PlayerLocation.OFFICE:
+		dict["player_location"] = _player_location
+		if _player_location_card:
+			dict["player_location_card"] = _player_location_card.get_unique_id()
 	return dict
 
 #
@@ -268,6 +320,10 @@ func restore(dict, catalog):
 	player = catalog[dict.player]
 	for case_ref in dict.get("cases", []):
 		cases.append(catalog[case_ref])
+	if "player_location" in dict:
+		_player_location = dict.player_location
+		if "player_location_card" in dict:
+			_player_location_card = catalog[dict.player_location_card]
 
 #
 # For save/load.

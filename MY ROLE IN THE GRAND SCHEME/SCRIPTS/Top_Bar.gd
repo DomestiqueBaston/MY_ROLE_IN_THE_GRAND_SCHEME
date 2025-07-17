@@ -142,8 +142,7 @@ func _on_dailies_press(id: int):
 		DailiesMenuItem.INVESTIGATION_CENTER:
 			GameState.visit_investigation_center()
 		DailiesMenuItem.OFFICE:
-			await GameState.pass_one_hour()
-			Globals.dialog_overlay.open_office()
+			GameState.visit_office()
 		DailiesMenuItem.PASS_TIME:
 			GameState.pass_one_hour()
 			$Menu_Bip.play()
@@ -207,7 +206,16 @@ func _on_dailies_menu_popup():
 	var popup: PopupMenu = _dailies_button.get_popup()
 	var item_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
 	popup.set_item_disabled(
-		item_index, not GameState.can_visit_investigation_center())
+		item_index,
+		GameState.get_player_location() == GameState.PlayerLocation.INVESTIGATION_CENTER \
+		or not GameState.can_visit_investigation_center())
+
+	# can the player go to the office?
+
+	item_index = popup.get_item_index(DailiesMenuItem.OFFICE)
+	popup.set_item_disabled(
+		item_index,
+		GameState.get_player_location() == GameState.PlayerLocation.OFFICE)
 
 	# can the player sleep?
 

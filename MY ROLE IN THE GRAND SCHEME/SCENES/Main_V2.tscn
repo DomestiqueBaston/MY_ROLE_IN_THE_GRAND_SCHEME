@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=94 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -70,6 +70,7 @@
 [ext_resource type="Texture2D" uid="uid://cbnfvewpmrros" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_25.png" id="56_fifqw"]
 [ext_resource type="Texture2D" uid="uid://diwly2xc6qh4k" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_25.png" id="59_aw4n3"]
 [ext_resource type="Texture2D" uid="uid://loados8ho24v" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_25.png" id="62_rkm6l"]
+[ext_resource type="Script" uid="uid://d07rm46wfycg6" path="res://SCRIPTS/Bottom_Left_Info.gd" id="65_ruuol"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
 texture = ExtResource("48_sqsjm")
@@ -598,6 +599,7 @@ texture_hover = ExtResource("44_u8ybj")
 texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Bottom_Left_Info" type="Node2D" parent="Mask_Card_Playground"]
+script = ExtResource("65_ruuol")
 
 [node name="Scroller_Object" type="ScrollContainer" parent="Mask_Card_Playground/Bottom_Left_Info"]
 visible = false

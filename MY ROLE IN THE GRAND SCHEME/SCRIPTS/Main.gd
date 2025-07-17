@@ -104,7 +104,10 @@ func _ready():
 
 	tree_exiting.connect(_detach_cards)
 	GameState.case_changed.connect(_on_case_changed)
+	GameState.player_location_changed.connect(_update_player_location_info)
 	GameState.player.addiction_changed.connect(_on_addiction_changed)
+
+	_update_player_location_info()
 
 func _input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
@@ -600,13 +603,6 @@ func populate(case: Case):
 		cards.add_child(link.pin1)
 		cards.add_child(link.pin2)
 
-	var player_location = case.get_player_location()
-	if player_location:
-		$Player_Locator.attach_to_card(player_location)
-	else:
-		$Player_Locator.detach_from_card()
-		$Player_Locator.hide()
-
 #
 # Lays out the starting cards in a new game.
 #
@@ -655,3 +651,16 @@ func _on_addiction_changed():
 		player.addiction = 4 * signi(player.addiction)
 		player.health -= 1
 		player.emotion += signi(player.emotion)
+
+func _update_player_location_info():
+	var location = GameState.get_player_location()
+	var card: LocationCard
+
+	if location == GameState.PlayerLocation.OTHER:
+		card = GameState.get_player_location_card()
+		$Player_Locator.attach_to_card(card)
+	else:
+		$Player_Locator.detach_from_card()
+		$Player_Locator.hide()
+
+	$Mask_Card_Playground/Bottom_Left_Info.show_location(location, card)
