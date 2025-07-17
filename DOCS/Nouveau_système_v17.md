@@ -299,11 +299,13 @@ Le temps
 		Aller à l’investigation Center : 1h. 1 seule fois par jour !
 		Retourner au Bureau : 1h. On ne peut pas y être attaqué !
 		Obtenir une autorisation de fouille : 1h. Pas d’achat pendant la Paranoïa.
-		Dormir prend le temps choisi par le joueur.
+		Dormir prend le temps choisi par le joueur (retour au bureau inclus car oui, le joueur vit au bureau !).
 		Déplacement (Interaction « ratée ») : 1h.
-		Payer une facture : 1h.
+		Payer une facture : 1h (retour au bureau inclus).
+		Prendre 1 ou 2 doses de drogue : 1h (retour au bureau inclus).
 		…
-	- Certaines cartes d’Interaction influent sur le temps passé.
+	- /!\ Certaines cartes d’Interaction influent sur le temps passé.
+	- Seules les actions qui ne se font qu’au bureau ramènent automatiquement le joueur au bureau.
 
 Les emploi du temps
 	- Les jours sont découpés en 4 tranches horaires : Matin (8h/12h), Après-midi (12h/16h), Soirée (16h/20h) et Nuit (20h/8h).
@@ -334,7 +336,7 @@ Le temps des PNJs
 L’argent
 	- La monnaie du jeu, c’est le « Dough » noté Dø.
 	- Les PNJs n’ont pas de besoins d’argent.
-	- Le joueur peut avoir des dettes (voir Factures).
+	- Le joueur peut avoir des dettes (voir Factures) mais uniquement concernant les factures hebdomadaires.
 
 Les factures
 	- Une partie démarre le lundi matin avec la facture de la semaine passée réglée.
@@ -357,6 +359,7 @@ Les achats/dépenses
 	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement de 20h à 8h. 1 dose coûte 25 Dø et prend 1h.
 	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand elle n’en a plus, elle disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir (elle ne sera pas là).
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc possiblement avant l’arrivée du joueur).
+	- Lorsqu’il a des dettes, le joueur ne peut plus rien acheter.
 
 Le bureau
 	- C’est le seul des 2 endroits où le joueur ne peut pas être agressé.
