@@ -251,6 +251,7 @@ texture = ExtResource("54_anbsy")
 centered = false
 
 [node name="Player_Location" type="Control" parent="Mask_Card_Playground"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 620.0
