@@ -34,6 +34,8 @@ func _input(event: InputEvent):
 	if not mouse_inside and not _is_folded:
 		_is_mouse_inside = mouse_inside
 		_fold()
+		# clear current card
+		super(event)
 		return
 
 	# if the mouse has just entered the bounding box, maybe unfold
