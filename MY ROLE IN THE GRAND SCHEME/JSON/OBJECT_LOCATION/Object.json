@@ -195,7 +195,7 @@
 	"OBJ025": {
 		"info_name": "- COUNTERFEIT GOODS -",
 		"name": "Counterfeit goods",
-		"description": "I’m not qualified to judge the forger's skills.",
+		"description": "I'm not qualified to judge the forger's skills.",
 		"owners": {
 			"npc": [1]
 		}
@@ -660,7 +660,7 @@
 	"OBJ251": {
 		"info_name": "- TIME-STAMPED -\n- POLAROID -",
 		"name": "Dated photography",
-		"description": "It shows tomorrow’s newspaper headline. No sign of editing.",
+		"description": "It shows tomorrow's newspaper headline. No sign of editing.",
 		"owners": {
 			"npc": [1]
 		}
@@ -1186,7 +1186,7 @@
 	"OBJ333": {
 		"info_name": "- METAL BRACKET -",
 		"name": "Metal bracket with barcode",
-		"description": "The barcode doesn’t match any known inventory. So far...",
+		"description": "The barcode doesn't match any known inventory. So far...",
 		"owners": {
 			"npc": [1]
 		}
