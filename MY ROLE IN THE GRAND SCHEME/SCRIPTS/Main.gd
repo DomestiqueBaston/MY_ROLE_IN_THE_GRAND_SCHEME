@@ -589,7 +589,9 @@ func _on_case_changed():
 func populate(case: Case):
 	if case.is_layout_needed:
 		for card in case.get_revealed_cards():
-			if card is NpcCard:
+			if card is NpcCard or \
+				(card is LocationCard and \
+				 card.location_status == LocationCard.LocationStatus.CRIME_SCENE):
 				cards.add_child(card)
 			else:
 				reserve.add_child(card)
