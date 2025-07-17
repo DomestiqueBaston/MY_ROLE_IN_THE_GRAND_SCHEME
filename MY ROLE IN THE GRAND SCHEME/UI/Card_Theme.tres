@@ -29,5 +29,6 @@ Label/fonts/font = ExtResource("1_wgrsf")
 TooltipLabel/colors/font_color = Color(1, 1, 1, 0.960784)
 TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 0)
 TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+TooltipLabel/constants/line_spacing = 0
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_pwsw7")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_hoew1")
