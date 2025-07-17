@@ -58,6 +58,8 @@ func start_game():
 	_has_slept = false
 	_last_crimes.clear()
 	_current_case_index = -1
+	_player_location = PlayerLocation.OFFICE
+	_player_location_card = null
 
 	cases.clear()
 	for i in 5:
