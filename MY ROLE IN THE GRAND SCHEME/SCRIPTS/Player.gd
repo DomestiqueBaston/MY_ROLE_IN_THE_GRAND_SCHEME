@@ -250,6 +250,7 @@ func get_drugs() -> int:
 
 func use_drugs(doses: int):
 	doses = mini(mini(doses, drugs), 2 - drugs_taken_today)
+	drugs_taken_today += doses
 	drugs -= doses
 	addiction += doses
 
