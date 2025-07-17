@@ -62,10 +62,7 @@ func get_display_name() -> String:
 		1:
 			return "%s's %s" % [inhabitants[0].first_name, card_name]
 		2:
-			var family_name = inhabitants[0].last_name
-			if not family_name.ends_with("s"):
-				family_name += "s"
-			return "%s' %s" % [family_name, card_name]
+			return "%s Residence" % inhabitants[0].last_name
 		_:
 			return card_name
 
