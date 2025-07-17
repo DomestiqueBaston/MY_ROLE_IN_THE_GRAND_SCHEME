@@ -1147,8 +1147,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]No info[/color]"
+text = "No info"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1157,8 +1158,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Good[/color]"
+text = "Good"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1167,8 +1169,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Average[/color]"
+text = "Average"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1177,8 +1180,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Low[/color]"
+text = "Low"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1205,8 +1209,9 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]None[/color]"
+text = "None"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1215,8 +1220,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Victim[/color]"
+text = "Victim"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1225,8 +1231,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Disappeared[/color]"
+text = "Disappeared"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1235,8 +1242,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]in Jail[/color]"
+text = "in Jail"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1245,8 +1253,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Minion[/color]"
+text = "Minion"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1255,8 +1264,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Dead[/color]"
+text = "Dead"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1265,8 +1275,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Culprit[/color]"
+text = "Culprit"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1275,8 +1286,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Accomplice[/color]"
+text = "Accomplice"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1285,8 +1297,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Suspect[/color]"
+text = "Suspect"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1295,8 +1308,9 @@ visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "[color=#cf2317]Witness[/color]"
+text = "Witness"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1340,6 +1354,17 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Couple_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Separator_04" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1363,7 +1388,7 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+theme_override_colors/default_color = Color(0.81, 0.13716, 0.0891, 1)
 bbcode_enabled = true
 text = "Nina Hagen"
 fit_content = true
@@ -1377,6 +1402,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Friends_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1420,6 +1456,17 @@ text = "None"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Enemies_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Separator_06" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1457,6 +1504,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Acquaintance_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -1500,6 +1558,17 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Affair_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Separator_08" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1540,6 +1609,17 @@ text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Debt_Influence_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Separator_09" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1577,6 +1657,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Nobody"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Ideology_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -2057,12 +2148,23 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Hangout_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Location"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hangout_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
@@ -2102,6 +2204,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
+text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Hideout_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
@@ -2133,6 +2246,17 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "None"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Properties_Unknown" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
