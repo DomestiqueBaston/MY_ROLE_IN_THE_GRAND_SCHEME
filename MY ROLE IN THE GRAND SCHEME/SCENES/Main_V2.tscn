@@ -304,9 +304,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("12_23ylq")
 theme_override_font_sizes/font_size = 8
-text = "In Jail"
+text = "At the Office"
 
 [node name="Jailbreak_Wait" type="Button" parent="Mask_Card_Playground/Player_Location/Text"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
