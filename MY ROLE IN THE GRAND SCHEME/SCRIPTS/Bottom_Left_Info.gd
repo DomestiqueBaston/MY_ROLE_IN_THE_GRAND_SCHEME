@@ -1,6 +1,22 @@
 extends Node2D
 
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
+var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
+
+func clear():
+	$Scroller_Object.hide()
+	$Scroller_NPC.hide()
+	$Scroller_Location.hide()
+
+func show_card(card: BaseCard):
+	if card is LocationCard:
+		show_location(GameState.PlayerLocation.OTHER, card)
+	elif card is ObjectCard:
+		show_object(card)
+	elif card is NpcCard:
+		show_npc(card)
+	else:
+		clear()
 
 func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 	for node in $Scroller_Location/Info_Location.get_children():
@@ -32,6 +48,7 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 			var info = _location_data[card.database_id]
 			loc_name = info["info_name"]
 			loc_desc = info["description"]
+			# TODO: home, workplace, hangout, hideout, etc.
 
 	$Scroller_Location/Info_Location/Name.text = loc_name
 	$Scroller_Location/Info_Location/Description.text = loc_desc
@@ -43,3 +60,151 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 	$Scroller_Object.hide()
 	$Scroller_NPC.hide()
 	$Scroller_Location.show()
+
+func show_object(obj: ObjectCard):
+	for node in $Scroller_Object/Info_Object.get_children():
+		node.hide()
+
+	var info = _object_data[obj.database_id]
+	$Scroller_Object/Info_Object/Name.text = info["info_name"]
+	$Scroller_Object/Info_Object/Description.text = info["description"]
+
+	$Scroller_Object/Info_Object/Name.show()
+	$Scroller_Object/Info_Object/Separator_01.show()
+	$Scroller_Object/Info_Object/Description.show()
+
+	var case = GameState.get_current_case()
+
+	var locations = case.find_links_to(obj, Link.Type.FOUND)
+	if locations:
+		$Scroller_Object/Info_Object/Separator_02.show()
+		$Scroller_Object/Info_Object/Found.show()
+		$Scroller_Object/Info_Object/Found_Location.text = locations[0].get_display_name()
+		$Scroller_Object/Info_Object/Found_Location.show()
+
+	var owner_text = ""
+	for card in case.find_links_to(obj, Link.Type.PROPERTY):
+		if card is NpcCard:
+			if owner_text.is_empty():
+				owner_text += "\n"
+			owner_text += card.get_display_name()
+
+	if owner_text:
+		$Scroller_Object/Info_Object/Separator_03.show()
+		$Scroller_Object/Info_Object/Property.show()
+		$Scroller_Object/Info_Object/Property_NPC.show()
+
+	if obj.is_object_evidence:
+		$Scroller_Object/Info_Object/Separator_04.show()
+		$Scroller_Object/Info_Object/Evidence.show()
+
+	$Scroller_Object.show()
+	$Scroller_NPC.hide()
+	$Scroller_Location.hide()
+
+func show_npc(npc: NpcCard):
+	for node in $Scroller_NPC/Info_NPC.get_children():
+		node.hide()
+
+	$Scroller_NPC/Info_NPC/NPC_Name.text = npc.get_display_name()
+	$Scroller_NPC/Info_NPC/NPC.show()
+	$Scroller_NPC/Info_NPC/NPC_Name.show()
+
+	var health_label: Control
+
+	match npc.npc_health:
+		NpcCard.NpcHealth.GOOD:
+			health_label = $Scroller_NPC/Info_NPC/Health_Good
+		NpcCard.NpcHealth.AVERAGE:
+			health_label = $Scroller_NPC/Info_NPC/Health_Average
+		NpcCard.NpcHealth.LOW:
+			health_label = $Scroller_NPC/Info_NPC/Health_Low
+
+	if health_label:
+		$Scroller_NPC/Info_NPC/Separator_01.show()
+		$Scroller_NPC/Info_NPC/Health.show()
+		health_label.show()
+
+	var status_label: Control
+
+	match npc.npc_status:
+		NpcCard.NpcStatus.VICTIM, NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED:
+			status_label = $Scroller_NPC/Info_NPC/Status_Victim
+		NpcCard.NpcStatus.CULPRIT:
+			status_label = $Scroller_NPC/Info_NPC/Status_Culprit
+		NpcCard.NpcStatus.ACCOMPLICE, NpcCard.NpcStatus.JAIL:
+			status_label = $Scroller_NPC/Info_NPC/Status_Accomplice
+		NpcCard.NpcStatus.SUSPECT:
+			status_label = $Scroller_NPC/Info_NPC/Status_Suspect
+		NpcCard.NpcStatus.WITNESS:
+			status_label = $Scroller_NPC/Info_NPC/Status_Witness
+
+	if status_label:
+		$Scroller_NPC/Info_NPC/Separator_02.show()
+		$Scroller_NPC/Info_NPC/Status.show()
+		status_label.show()
+
+	var case = GameState.get_current_case()
+
+	if npc.is_married:
+		var partners = case.find_links_to(npc, Link.Type.INTIMACY)
+		if not partners.is_empty():
+			$Scroller_NPC/Info_NPC/Separator_03.show()
+			$Scroller_NPC/Info_NPC/Couple.show()
+			$Scroller_NPC/Info_NPC/Couple_NPC.text = partners[0].get_display_name()
+			$Scroller_NPC/Info_NPC/Couple_NPC.show()
+
+	var friends = case.find_links_to(npc, Link.Type.FRIEND)
+	if friends:
+		var text = ""
+		for friend in friends:
+			if not text.is_empty():
+				text += "\n"
+			text += friend.get_display_name()
+		$Scroller_NPC/Info_NPC/Separator_04.show()
+		$Scroller_NPC/Info_NPC/Friends.show()
+		$Scroller_NPC/Info_NPC/Friends_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Friends_NPC_01.show()
+
+	var enemies = case.find_links_to(npc, Link.Type.ENEMY)
+	if enemies:
+		var text = ""
+		for enemy in enemies:
+			if not text.is_empty():
+				text += "\n"
+			text += enemy.get_display_name()
+		$Scroller_NPC/Info_NPC/Separator_05.show()
+		$Scroller_NPC/Info_NPC/Enemies.show()
+		$Scroller_NPC/Info_NPC/Enemies_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Enemies_NPC_01.show()
+
+	var acquaintances = case.find_links_to(npc, Link.Type.ACQUAINTANCE)
+	if acquaintances:
+		var text = ""
+		for acquaintance in acquaintances:
+			if not text.is_empty():
+				text += "\n"
+			text += acquaintance.get_display_name()
+		$Scroller_NPC/Info_NPC/Separator_06.show()
+		$Scroller_NPC/Info_NPC/Acquaintance.show()
+		$Scroller_NPC/Info_NPC/Acquaintance_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Acquaintance_NPC_01.show()
+
+	var affairs = case.find_links_to(npc, Link.Type.INTIMACY)
+	if affairs:
+		var text = ""
+		for affair in affairs:
+			if not text.is_empty():
+				text += "\n"
+			text += affair.get_display_name()
+		$Scroller_NPC/Info_NPC/Separator_07.show()
+		$Scroller_NPC/Info_NPC/Affair.show()
+		$Scroller_NPC/Info_NPC/Affair_NPC.text = text
+		$Scroller_NPC/Info_NPC/Affair_NPC.show()
+
+	# TODO: home, work, hangout, hideout, property, debt/influence, ideology,
+	# schedules
+
+	$Scroller_Object.hide()
+	$Scroller_NPC.show()
+	$Scroller_Location.hide()

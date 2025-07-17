@@ -338,7 +338,7 @@ func _randomize():
 		for i in count:
 			var which = randi() % candidates.size()
 			var card = ObjectCard.create_card(candidates[which])
-			# TODO: set location and owner?
+			# TODO: set location and owner(s)
 			candidates.remove_at(which)
 			evidence.append(card)
 
@@ -411,6 +411,8 @@ func _randomize():
 			var location_npcs = card.get_all_npc_connections()
 			if npc_owner_count <= location_npcs.size():
 				var obj: ObjectCard = ObjectCard.create_card(obj_id)
+				card.add_connection(Link.Type.FOUND, obj)
+				obj.add_connection(Link.Type.FOUND, card)
 
 				if npc_owner_count > 1:
 					var candidates = location_npcs.duplicate()
@@ -658,6 +660,25 @@ func remove_link(link: Link):
 
 func get_links() -> Array[Link]:
 	return _links
+
+##
+## Returns a list of cards that have confirmed links to the given card. If
+## link_type is given, only links of that type are taken into consideration.
+##
+func find_links_to(card: BaseCard, link_type: int = -1) -> Array[BaseCard]:
+	var ret: Array[BaseCard] 
+	for link in _links:
+		if link_type >= 0 and link.type != link_type:
+			continue
+		if link.status == Link.Status.PROBABLE:
+			continue
+		if link.pin1.type != Pin.PinType.CARD or link.pin2.type != Pin.PinType.CARD:
+			continue
+		if link.pin1.card == card:
+			ret.append(link.pin2.card)
+		elif link.pin2.card == card:
+			ret.append(link.pin1.card)
+	return ret
 
 ##
 ## Looks for an existing location with the given ID, or creates a new one if

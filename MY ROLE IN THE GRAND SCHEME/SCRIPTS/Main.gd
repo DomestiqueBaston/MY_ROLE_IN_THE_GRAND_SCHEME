@@ -5,6 +5,7 @@ extends Node2D
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
 @onready var top_bar: Control = $Mask_Card_Playground/Top_Bar
+@onready var info_box: Node2D = $Mask_Card_Playground/Bottom_Left_Info
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
 
@@ -151,7 +152,7 @@ func _mouse_entered_card(card: BaseCard):
 			_current_card.set_highlighted(false)
 		card.set_highlighted(true)
 		_current_card = card
-		print("show info about card: ", card.get_display_name())
+		info_box.show_card(card)
 	elif _drag_state == DragState.DRAGGING and _clicked_pin and not card.is_stacked():
 		_drop_target = card
 	elif _drag_state == DragState.LINKING:
@@ -164,6 +165,9 @@ func _mouse_exited_card(card: BaseCard):
 		card.set_highlighted(false)
 		if _current_card == card:
 			_current_card = null
+			info_box.show_location(
+				GameState.get_player_location(),
+				GameState.get_player_location_card())
 	elif _drag_state == DragState.DRAGGING and _clicked_pin:
 		_drop_target = null
 	elif _drag_state == DragState.LINKING:
@@ -663,4 +667,4 @@ func _update_player_location_info():
 		$Player_Locator.detach_from_card()
 		$Player_Locator.hide()
 
-	$Mask_Card_Playground/Bottom_Left_Info.show_location(location, card)
+	info_box.show_location(location, card)
