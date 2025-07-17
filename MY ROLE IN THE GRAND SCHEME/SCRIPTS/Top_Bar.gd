@@ -50,7 +50,8 @@ enum DailiesMenuItem {
 	OFFICE,
 	PASS_TIME,
 	SLEEP,
-	DEBT_SUBMENU
+	DEBT_SUBMENU,
+	DRUG_SUBMENU
 }
 
 enum WhateverMenuItem {
@@ -131,7 +132,8 @@ func _ready():
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_submenu_node_item(
 		"Pay the bill", _debt_popup, DailiesMenuItem.DEBT_SUBMENU)
-	popup.add_submenu_node_item("Get your fix", _drug_popup)
+	popup.add_submenu_node_item(
+		"Get your fix", _drug_popup, DailiesMenuItem.DRUG_SUBMENU)
 	popup.add_separator(" - - - - - - - - - - - - - ")
 	popup.add_item("Go to sleep...", DailiesMenuItem.SLEEP)
 	popup.add_item("Pass time!", DailiesMenuItem.PASS_TIME)
@@ -142,8 +144,7 @@ func _on_dailies_press(id: int):
 		DailiesMenuItem.INVESTIGATION_CENTER:
 			GameState.visit_investigation_center()
 		DailiesMenuItem.OFFICE:
-			await GameState.pass_one_hour()
-			Globals.dialog_overlay.open_office()
+			GameState.visit_office()
 		DailiesMenuItem.PASS_TIME:
 			GameState.pass_one_hour()
 			$Menu_Bip.play()
@@ -207,7 +208,16 @@ func _on_dailies_menu_popup():
 	var popup: PopupMenu = _dailies_button.get_popup()
 	var item_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
 	popup.set_item_disabled(
-		item_index, not GameState.can_visit_investigation_center())
+		item_index,
+		GameState.get_player_location() == GameState.PlayerLocation.INVESTIGATION_CENTER \
+		or not GameState.can_visit_investigation_center())
+
+	# can the player go to the office?
+
+	item_index = popup.get_item_index(DailiesMenuItem.OFFICE)
+	popup.set_item_disabled(
+		item_index,
+		GameState.get_player_location() == GameState.PlayerLocation.OFFICE)
 
 	# can the player sleep?
 
@@ -229,22 +239,23 @@ func _on_dailies_menu_popup():
 		_debt_popup.add_item(label)
 		_debt_popup.set_item_disabled(i, player.money < debt)
 
-	# if the player has no debts, disable the submenu and get rid of the little
-	# arrow icon, because it annoys Ferdi
+	# if the player has no debts, disable the submenu
 
 	var dailies: PopupMenu = _dailies_button.get_popup()
 	var index = dailies.get_item_index(DailiesMenuItem.DEBT_SUBMENU)
 	if player.get_debt_count() == 0:
 		dailies.set_item_disabled(index, true)
-		#theme.set_icon("submenu", "PopupMenu", _transp_arrow)
 	else:
 		dailies.set_item_disabled(index, false)
-		#theme.set_icon("submenu", "PopupMenu", _normal_arrow)
 
-	# enable/disable items in the drug submenu
+	# enable/disable drug submenu and items as appropriate
 
-	_drug_popup.set_item_disabled(0, player.drugs < 1 or player.drugs_taken_today > 1)
-	_drug_popup.set_item_disabled(1, player.drugs < 2 or player.drugs_taken_today > 0)
+	index = dailies.get_item_index(DailiesMenuItem.DRUG_SUBMENU)
+	if player.drugs < 1 or player.drugs_taken_today >= 2:
+		dailies.set_item_disabled(index, true)
+	else:
+		dailies.set_item_disabled(index, false)
+		_drug_popup.set_item_disabled(1, player.drugs < 2 or player.drugs_taken_today > 0)
 
 func _on_debt_menu_pressed(index: int):
 	$Menu_Bip.play()
