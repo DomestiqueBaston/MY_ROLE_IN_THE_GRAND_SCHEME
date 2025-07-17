@@ -450,6 +450,7 @@ func _randomize():
 		if victim.is_married:
 			var partner = victim.get_one_connection(Link.Type.INTIMACY)
 			partner.is_revealed = true
+			_create_link(partner, partner.get_home(), Link.Type.HOME)
 			# if there are 2 victims and they are a couple...!
 			if not partner in find_links_to(victim, Link.Type.INTIMACY):
 				_create_link(victim, partner, Link.Type.INTIMACY)
