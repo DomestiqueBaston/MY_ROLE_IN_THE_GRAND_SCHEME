@@ -450,7 +450,9 @@ func _randomize():
 		if victim.is_married:
 			var partner = victim.get_one_connection(Link.Type.INTIMACY)
 			partner.is_revealed = true
-			_create_link(victim, partner, Link.Type.INTIMACY)
+			# if there are 2 victims and they are a couple...!
+			if not partner in find_links_to(victim, Link.Type.INTIMACY):
+				_create_link(victim, partner, Link.Type.INTIMACY)
 
 	if _crime_location:
 		_crime_location.is_revealed = true
@@ -662,15 +664,13 @@ func get_links() -> Array[Link]:
 	return _links
 
 ##
-## Returns a list of cards that have confirmed links to the given card. If
-## link_type is given, only links of that type are taken into consideration.
+## Returns a list of cards that have links to the given card. If link_type is
+## given, only links of that type are taken into consideration.
 ##
 func find_links_to(card: BaseCard, link_type: int = -1) -> Array[BaseCard]:
 	var ret: Array[BaseCard] 
 	for link in _links:
 		if link_type >= 0 and link.type != link_type:
-			continue
-		if link.status == Link.Status.PROBABLE:
 			continue
 		if link.pin1.type != Pin.PinType.CARD or link.pin2.type != Pin.PinType.CARD:
 			continue
