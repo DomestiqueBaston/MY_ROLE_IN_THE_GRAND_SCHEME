@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dlnsrbdpccisn"]
+
+[node name="Pin_Locators" type="Node2D"]
+
+[node name="Top_Left_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(-30, 1)
+
+[node name="Top_Center_Left_Position" type="Marker2D" parent="."]
+position = Vector2(-15, 1)
+
+[node name="Top_Center_Position" type="Marker2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="Top_Center_Right_Position" type="Marker2D" parent="."]
+position = Vector2(16, 1)
+
+[node name="Top_Right_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(30, 1)
+
+[node name="Left_Center_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(-30, 8)
+
+[node name="Bottom_Left_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(-30, 14)
+
+[node name="Right_Center_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(30, 8)
+
+[node name="Bottom_Right_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(30, 14)
+
+[node name="Bottom_Center_Left_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(-15, 14)
+
+[node name="Bottom_Center_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(0, 14)
+
+[node name="Bottom_Center_Right_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(16, 14)
+
+[node name="Left_Center_Left_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(-15, 8)
+
+[node name="Center_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="Right_Center_Right_Pin_Position" type="Marker2D" parent="."]
+position = Vector2(16, 8)

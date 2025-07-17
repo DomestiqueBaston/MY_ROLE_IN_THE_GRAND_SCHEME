@@ -1,7 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://bbkii5glov4tg"]
+[gd_scene load_steps=56 format=3 uid="uid://bbkii5glov4tg"]
 
 [ext_resource type="Script" uid="uid://bdvdrmvbal1i1" path="res://SCRIPTS/NPC_Card.gd" id="1_5dxhs"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="2_25ogq"]
+[ext_resource type="PackedScene" uid="uid://dlnsrbdpccisn" path="res://SCENES/Pin_Locators.tscn" id="2_e4sqw"]
 [ext_resource type="Texture2D" uid="uid://c2267c3l31gv" path="res://GRAPHICS/CARD/Card_Mask_Animation.png" id="3_4rd0l"]
 [ext_resource type="Texture2D" uid="uid://sk4ad5y1tyi0" path="res://GRAPHICS/CARD/Card_Drag.png" id="4_iglwj"]
 [ext_resource type="Script" uid="uid://ekfixkompn3p" path="res://SCRIPTS/Card_Mask.gd" id="5_da5cd"]
@@ -2005,35 +2006,8 @@ monitorable = false
 position = Vector2(37, 50)
 shape = SubResource("RectangleShape2D_hp5bo")
 
-[node name="Pin_Locators" type="Node2D" parent="."]
+[node name="Pin_Locators" parent="." instance=ExtResource("2_e4sqw")]
 position = Vector2(37, 6)
-
-[node name="Top_Left_Pin_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(-30, 1)
-
-[node name="Top_Center_Left_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(-15, 1)
-
-[node name="Top_Center_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(0, 1)
-
-[node name="Top_Center_Right_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(16, 1)
-
-[node name="Top_Right_Pin_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(30, 1)
-
-[node name="Left_Center_Pin_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(-30, 8)
-
-[node name="Left_Bottom_Pin_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(-30, 14)
-
-[node name="Right_Center_Pin_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(30, 8)
-
-[node name="Right_Bottom_Pin_Position" type="Marker2D" parent="Pin_Locators"]
-position = Vector2(30, 14)
 
 [node name="Card_Shadow" type="Sprite2D" parent="."]
 visible = false
@@ -2069,37 +2043,37 @@ offset = Vector2(-120, -30)
 
 [node name="Npc" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color"]
 color = Color(0.1248, 0.4208, 0.48, 0.643137)
-polygon = PackedVector2Array(11, 26, 11, 1, 63, 1, 63, 26)
+polygon = PackedVector2Array(15, 26, 15, 1, 59, 1, 59, 26)
 
 [node name="No_Couple" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 position = Vector2(-62, 0)
 color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-polygon = PackedVector2Array(63, 26, 63, 6, 65, 3, 68, 1, 73, 1, 73, 26)
+polygon = PackedVector2Array(63, 26, 63, 6, 65, 3, 68, 1, 77, 1, 77, 26)
 
 [node name="Couple" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 position = Vector2(-62, 0)
 color = Color(1, 0.24, 0.81, 0.643137)
-polygon = PackedVector2Array(63, 26, 63, 6, 65, 3, 68, 1, 73, 1, 73, 26)
+polygon = PackedVector2Array(63, 26, 63, 6, 65, 3, 68, 1, 77, 1, 77, 26)
 
 [node name="No_Info" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 color = Color(0.12549, 0.419608, 0.478431, 0.643137)
-polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+polygon = PackedVector2Array(59, 26, 59, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 
 [node name="Good_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.340667, 0.7, 0.084, 0.643137)
-polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+polygon = PackedVector2Array(59, 26, 59, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 
 [node name="Average_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.65, 0.379167, 0, 0.643137)
-polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+polygon = PackedVector2Array(59, 26, 59, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 
 [node name="Low_Health" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 color = Color(0.65, 0, 0, 0.643137)
-polygon = PackedVector2Array(63, 26, 63, 1, 68, 1, 71, 3, 73, 6, 73, 26)
+polygon = PackedVector2Array(59, 26, 59, 1, 68, 1, 71, 3, 73, 6, 73, 26)
 
 [node name="Sex" type="Node2D" parent="Card_Mask/Card_BG"]
 
@@ -2252,6 +2226,7 @@ offset_left = 5.0
 offset_right = 65.0
 offset_bottom = 23.0
 mouse_filter = 1
+text = " "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
