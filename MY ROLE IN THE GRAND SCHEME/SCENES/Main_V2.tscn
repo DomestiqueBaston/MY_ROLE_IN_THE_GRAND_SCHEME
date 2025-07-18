@@ -2259,7 +2259,7 @@ size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
 alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
+[node name="Object" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
@@ -2272,7 +2272,7 @@ horizontal_alignment = 1
 [node name="Opening_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 bbcode_enabled = true
-text = " -"
+text = " ("
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -2290,7 +2290,7 @@ horizontal_alignment = 1
 [node name="Closing_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
 layout_mode = 2
 bbcode_enabled = true
-text = "-"
+text = ")"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -2302,7 +2302,7 @@ size_flags_horizontal = 3
 theme_override_constants/h_separation = 0
 alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
+[node name="Object" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
@@ -2316,7 +2316,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 bbcode_enabled = true
-text = " -"
+text = " ("
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
@@ -2336,7 +2336,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 bbcode_enabled = true
-text = "-"
+text = ")"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
