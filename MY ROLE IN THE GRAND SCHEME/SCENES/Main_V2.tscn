@@ -808,17 +808,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "Jean Trancène"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Home_NPC_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-bbcode_enabled = true
-text = "Sylvie Culture"
+text = "Jean Trancène
+Sylvie Culture"
 fit_content = true
 horizontal_alignment = 1
 
@@ -847,17 +838,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "Rick Hunter"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Workplace_NPC_02" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-bbcode_enabled = true
-text = "Commissaire Maigret"
+text = "Rick Hunter
+Commissaire Maigret"
 fit_content = true
 horizontal_alignment = 1
 

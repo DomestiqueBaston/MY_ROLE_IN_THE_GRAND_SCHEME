@@ -48,7 +48,6 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 			var info = _location_data[card.database_id]
 			loc_name = info["info_name"]
 			loc_desc = info["description"]
-			# TODO: home, workplace, hangout, hideout, etc.
 
 	$Scroller_Location/Info_Location/Name.text = loc_name
 	$Scroller_Location/Info_Location/Description.text = loc_desc
@@ -56,8 +55,59 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 	$Scroller_Location/Info_Location/Separator_01.show()
 	$Scroller_Location/Info_Location/Description.show()
 
-	if card and card.location_status == LocationCard.LocationStatus.CRIME_SCENE:
-		$Scroller_Location/Info_Location/Crime_Scene.show()
+	if card:
+		var case = GameState.get_current_case()
+
+		if card.location_status == LocationCard.LocationStatus.CRIME_SCENE:
+			$Scroller_Location/Info_Location/Crime_Scene.show()
+
+		var inhabitants = case.find_links_to(card, Link.Type.HOME)
+		if inhabitants:
+			var text = ""
+			for npc in inhabitants:
+				if not text.is_empty():
+					text += "\n"
+				text += npc.get_display_name()
+			$Scroller_Location/Info_Location/Separator_02.show()
+			$Scroller_Location/Info_Location/Home.show()
+			$Scroller_Location/Info_Location/Home_NPC_01.text = text
+			$Scroller_Location/Info_Location/Home_NPC_01.show()
+
+		var workers = case.find_links_to(card, Link.Type.WORK)
+		if workers:
+			var text = ""
+			for npc in workers:
+				if not text.is_empty():
+					text += "\n"
+				text += npc.get_display_name()
+			$Scroller_Location/Info_Location/Separator_03.show()
+			$Scroller_Location/Info_Location/Workplace.show()
+			$Scroller_Location/Info_Location/Workplace_NPC_01.text = text
+			$Scroller_Location/Info_Location/Workplace_NPC_01.show()
+
+		var hangout = case.find_links_to(card, Link.Type.HANGOUT)
+		if hangout:
+			var text = ""
+			for npc in hangout:
+				if not text.is_empty():
+					text += "\n"
+				text += npc.get_display_name()
+			$Scroller_Location/Info_Location/Separator_06.show()
+			$Scroller_Location/Info_Location/Hangout.show()
+			$Scroller_Location/Info_Location/Hangout_NPC_01.text = text
+			$Scroller_Location/Info_Location/Hangout_NPC_01.show()
+
+		var hideout = case.find_links_to(card, Link.Type.HIDEOUT)
+		if hideout:
+			var text = ""
+			for npc in hideout:
+				if not text.is_empty():
+					text += "\n"
+				text += npc.get_display_name()
+			$Scroller_Location/Info_Location/Separator_08.show()
+			$Scroller_Location/Info_Location/Hideout.show()
+			$Scroller_Location/Info_Location/Hideout_NPC_01.text = text
+			$Scroller_Location/Info_Location/Hideout_NPC_01.show()
 
 	$Scroller_Object.hide()
 	$Scroller_NPC.hide()

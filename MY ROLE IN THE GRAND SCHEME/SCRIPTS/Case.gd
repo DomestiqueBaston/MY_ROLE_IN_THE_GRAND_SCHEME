@@ -253,7 +253,7 @@ func _randomize():
 		if npc.has_connection(Link.Type.HOME):
 			continue
 
-		var home = create_location("LOC001")
+		var home = _create_location("LOC001")
 		home.add_connection(Link.Type.HOME, npc)
 		npc.add_connection(Link.Type.HOME, home)
 
@@ -269,7 +269,7 @@ func _randomize():
 		if npc.job_location == "LOC001":
 			workplace = npc.get_home()
 		else:
-			workplace = find_or_create_location(npc.job_location)
+			workplace = _find_or_create_location(npc.job_location)
 		npc.add_connection(Link.Type.WORK, workplace)
 		workplace.add_connection(Link.Type.WORK, npc)
 
@@ -305,7 +305,7 @@ func _randomize():
 		var hangout = npc.get_hangout()
 		if hangout:
 			continue
-		hangout = find_hangout()
+		hangout = _find_hangout()
 		var friends: Array[NpcCard]
 		_add_friends_of_friends(friends, npc)
 		for friend in friends:
@@ -378,7 +378,7 @@ func _randomize():
 		"culprit_work":
 			location_card = culprits[0].get_work()
 		_:
-			_crime_location = find_or_create_location(actual_location)
+			_crime_location = _find_or_create_location(actual_location)
 			location_card = _crime_location
 
 	if location_card:
@@ -681,33 +681,33 @@ func find_links_to(card: BaseCard, link_type: int = -1) -> Array[BaseCard]:
 			ret.append(link.pin1.card)
 	return ret
 
-##
-## Looks for an existing location with the given ID, or creates a new one if
-## none is found.
-##
-func find_or_create_location(location_id: String) -> LocationCard:
+#
+# Looks for an existing location with the given ID, or creates a new one if
+# none is found.
+#
+func _find_or_create_location(location_id: String) -> LocationCard:
 	for card in locations:
 		if card.database_id == location_id:
 			return card
-	return create_location(location_id)
+	return _create_location(location_id)
 
-##
-## Creates a new location card from the given ID in the location database.
-##
-func create_location(location_id: String) -> LocationCard:
+#
+# Creates a new location card from the given ID in the location database.
+#
+func _create_location(location_id: String) -> LocationCard:
 	var card = LocationCard.create_card(location_id)
 	locations.append(card)
 	return card
 
-##
-## Finds or creates a random hangout location.
-##
-func find_hangout() -> LocationCard:
+#
+# Finds or creates a random hangout location.
+#
+func _find_hangout() -> LocationCard:
 	var hangouts = []
 	for loc in _location_data:
 		if "yes" in _location_data[loc].get("hangout", []):
 			hangouts.append(loc)
-	return find_or_create_location(hangouts.pick_random())
+	return _find_or_create_location(hangouts.pick_random())
 
 ##
 ## Creates a random hideout location.
@@ -717,7 +717,7 @@ func create_hideout() -> LocationCard:
 	for loc in _location_data:
 		if "secret" in _location_data[loc].get("hangout", []):
 			hideouts.append(loc)
-	return create_location(hideouts.pick_random())
+	return _create_location(hideouts.pick_random())
 
 func start():
 	_status = Status.ACTIVE
