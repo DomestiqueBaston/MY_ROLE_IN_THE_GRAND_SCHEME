@@ -348,37 +348,30 @@ func _randomize():
 	if location_name is Array and not location_name.is_empty():
 		location_name = location_name.pick_random()
 
-	var actual_location: String
-
-	if location_name.begins_with("any"):
-		var is_any_culprit
-		if location_name == "any_culprit":
-			is_any_culprit = true
-		elif location_name == "any_victim":
-			is_any_culprit = false
-		else:
-			is_any_culprit = ((randi() & 1) == 1)
-		actual_location = "home" if randi() & 1 else "work"
-		if is_any_culprit:
-			actual_location = "culprit_" + actual_location
-	else:
-		actual_location = location_name
-
 	var location_card: LocationCard
 
-	match actual_location:
+	match location_name:
 		"none":
 			location_card = null
+		"any":
+			var who = (culprits if randi() & 1 else victims).pick_random()
+			location_card = who.get_all_location_connections().pick_random()
+		"any_culprit":
+			var who = culprits.pick_random()
+			location_card = who.get_all_location_connections().pick_random()
+		"any_victim":
+			var who = victims.pick_random()
+			location_card = who.get_all_location_connections().pick_random()
 		"home":
-			location_card = victims[0].get_home()
+			location_card = victims.pick_random().get_home()
 		"work":
-			location_card = victims[0].get_work()
+			location_card = victims.pick_random().get_work()
 		"culprit_home":
-			location_card = culprits[0].get_home()
+			location_card = culprits.pick_random().get_home()
 		"culprit_work":
-			location_card = culprits[0].get_work()
+			location_card = culprits.pick_random().get_work()
 		_:
-			location_card = _find_or_create_location(actual_location)
+			location_card = _find_or_create_location(location_name)
 
 	if location_card:
 		var known_factor = _motive.get("known_crime_location", 1)

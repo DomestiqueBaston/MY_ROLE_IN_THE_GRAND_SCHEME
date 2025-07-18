@@ -70,7 +70,7 @@ func _on_item_selected(index: int):
 
 	if case.get_crime_location():
 		var label = _crime_scene.get_node("Location1/Name")
-		label.text = case.get_crime_location().card_name
+		label.text = case.get_crime_location().get_display_name()
 		_crime_scene.show()
 	else:
 		_crime_scene.hide()
