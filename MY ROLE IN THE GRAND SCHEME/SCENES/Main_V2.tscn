@@ -1,10 +1,11 @@
-[gd_scene load_steps=78 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=79 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
 [ext_resource type="Script" uid="uid://re2c6g3rw3r1" path="res://SCRIPTS/Sized_Node2D.gd" id="3_svm3j"]
 [ext_resource type="Texture2D" uid="uid://bnu1fhdrsb6m6" path="res://GRAPHICS/LINK_PIN/Plein_Jaune.png" id="7_dmqsm"]
 [ext_resource type="PackedScene" uid="uid://euyms52mpy48" path="res://SCENES/Player_Locator.tscn" id="9_twje4"]
+[ext_resource type="Theme" uid="uid://dyiybdqrfra0p" path="res://UI/Generic_Theme.tres" id="11_23ylq"]
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="11_fx1n6"]
 [ext_resource type="Texture2D" uid="uid://v753omltvvl8" path="res://GRAPHICS/MAIN/Location_Window.png" id="11_k86l4"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="12_23ylq"]
@@ -217,6 +218,7 @@ offset_top = 12.0
 offset_right = -21.0
 offset_bottom = 30.0
 grow_horizontal = 0
+theme = ExtResource("11_23ylq")
 theme_override_styles/panel = SubResource("StyleBoxTexture_ruuol")
 
 [node name="Text" type="HBoxContainer" parent="Mask_Card_Playground/Player_Location"]
@@ -228,6 +230,8 @@ alignment = 2
 self_modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "We know you're there!"
+mouse_filter = 1
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -240,6 +244,9 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
+tooltip_text = "Spend your time here
+quickly resume your job..."
+mouse_filter = 1
 theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
