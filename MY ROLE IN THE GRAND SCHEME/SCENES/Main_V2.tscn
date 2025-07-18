@@ -341,7 +341,8 @@ script = ExtResource("14_8fxqf")
 
 [node name="Reset" type="Button" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_right = 32.0
+offset_left = 1.0
+offset_right = 33.0
 offset_bottom = 8.0
 tooltip_text = "Toggle all"
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -350,9 +351,9 @@ text = "Legend:"
 
 [node name="Hideout_White" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 39.0
+offset_left = 38.0
 offset_top = 1.0
-offset_right = 47.0
+offset_right = 46.0
 offset_bottom = 9.0
 tooltip_text = "Hideout
 - Dotted: Probable
@@ -365,9 +366,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Debt_Influence_Gray" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 48.0
+offset_left = 47.0
 offset_top = 1.0
-offset_right = 56.0
+offset_right = 55.0
 offset_bottom = 9.0
 tooltip_text = "Debt/Influence
 - Dotted: Probable
@@ -380,9 +381,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 57.0
+offset_left = 56.0
 offset_top = 1.0
-offset_right = 65.0
+offset_right = 64.0
 offset_bottom = 9.0
 tooltip_text = "Culprit/Accomplice/Evidence
 - Dotted: Probable
@@ -395,9 +396,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Intimacy_Pink" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 66.0
+offset_left = 65.0
 offset_top = 1.0
-offset_right = 74.0
+offset_right = 73.0
 offset_bottom = 9.0
 tooltip_text = "Intimacy
 - Dotted: Probable
@@ -410,9 +411,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Friend_Dark_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 75.0
+offset_left = 74.0
 offset_top = 1.0
-offset_right = 83.0
+offset_right = 82.0
 offset_bottom = 9.0
 tooltip_text = "Friend
 - Dotted: Probable
@@ -425,9 +426,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Enemy_Orange" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 84.0
+offset_left = 83.0
 offset_top = 1.0
-offset_right = 92.0
+offset_right = 91.0
 offset_bottom = 9.0
 pivot_offset = Vector2(30, 20)
 tooltip_text = "Enemy
@@ -441,9 +442,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Acquaintance_Light_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 93.0
+offset_left = 92.0
 offset_top = 1.0
-offset_right = 101.0
+offset_right = 100.0
 offset_bottom = 9.0
 pivot_offset = Vector2(30, 20)
 tooltip_text = "Acquaintance
@@ -457,9 +458,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Ideology_Dark_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 102.0
+offset_left = 101.0
 offset_top = 1.0
-offset_right = 110.0
+offset_right = 109.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
 tooltip_text = "Ideology
@@ -473,9 +474,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Inconsistency_Red" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 111.0
+offset_left = 110.0
 offset_top = 1.0
-offset_right = 119.0
+offset_right = 118.0
 offset_bottom = 9.0
 pivot_offset = Vector2(17, 20)
 tooltip_text = "Inconsistency
@@ -489,9 +490,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Witness_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 120.0
+offset_left = 119.0
 offset_top = 1.0
-offset_right = 128.0
+offset_right = 127.0
 offset_bottom = 9.0
 pivot_offset = Vector2(4, 20)
 tooltip_text = "Witness
@@ -505,9 +506,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Property_Light_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 129.0
+offset_left = 128.0
 offset_top = 1.0
-offset_right = 137.0
+offset_right = 136.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-9, 20)
 tooltip_text = "Property
@@ -521,9 +522,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Home_Brown" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 138.0
+offset_left = 137.0
 offset_top = 1.0
-offset_right = 146.0
+offset_right = 145.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "Home
@@ -537,9 +538,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Work_Turquoise" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 147.0
+offset_left = 146.0
 offset_top = 1.0
-offset_right = 155.0
+offset_right = 154.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Work
@@ -553,9 +554,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Hangout_Darkest_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 156.0
+offset_left = 155.0
 offset_top = 1.0
-offset_right = 164.0
+offset_right = 163.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "Hang out
@@ -569,9 +570,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Found_Light_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 165.0
+offset_left = 164.0
 offset_top = 1.0
-offset_right = 173.0
+offset_right = 172.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Found
@@ -585,9 +586,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="New_Dark_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 174.0
+offset_left = 173.0
 offset_top = 1.0
-offset_right = 182.0
+offset_right = 181.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "New
