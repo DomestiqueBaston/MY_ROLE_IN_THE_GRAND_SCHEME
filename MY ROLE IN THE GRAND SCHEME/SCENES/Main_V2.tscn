@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=78 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -8,7 +8,6 @@
 [ext_resource type="Theme" uid="uid://tcgtchlqxtfj" path="res://UI/Link_Theme.tres" id="11_fx1n6"]
 [ext_resource type="Texture2D" uid="uid://v753omltvvl8" path="res://GRAPHICS/MAIN/Location_Window.png" id="11_k86l4"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="12_23ylq"]
-[ext_resource type="Script" uid="uid://dgrcr5wcgq4lo" path="res://SCRIPTS/Location_BG.gd" id="12_ruuol"]
 [ext_resource type="Texture2D" uid="uid://uwl5okulsffk" path="res://GRAPHICS/LINK_PIN/Plein_Blanc.png" id="13_7jg70"]
 [ext_resource type="Script" uid="uid://b28ykehvc2dfs" path="res://SCRIPTS/Legend.gd" id="14_8fxqf"]
 [ext_resource type="Texture2D" uid="uid://dgclhxafihydp" path="res://GRAPHICS/LINK_PIN/Plein_Blanc_50.png" id="14_svm3j"]
@@ -208,45 +207,24 @@ visible = false
 texture = ExtResource("54_anbsy")
 centered = false
 
-[node name="Player_Location" type="Control" parent="Mask_Card_Playground"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = 620.0
-offset_top = 21.0
-offset_right = 620.0
-offset_bottom = 21.0
-
-[node name="Location_BG" type="Panel" parent="Mask_Card_Playground/Player_Location"]
-custom_minimum_size = Vector2(160, 18)
-layout_mode = 2
-offset_left = -160.0
-offset_top = -9.0
-offset_bottom = 9.0
+[node name="Player_Location" type="PanelContainer" parent="Mask_Card_Playground"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 14.0
+offset_right = -20.0
 grow_horizontal = 0
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ruuol")
-script = ExtResource("12_ruuol")
 
 [node name="Text" type="HBoxContainer" parent="Mask_Card_Playground/Player_Location"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = -6.5
-offset_right = -6.0
-offset_bottom = 1.5
-grow_horizontal = 0
-grow_vertical = 2
+layout_mode = 2
 theme_override_constants/separation = 5
 alignment = 2
 
 [node name="You_Are_Here" type="Label" parent="Mask_Card_Playground/Player_Location/Text"]
 self_modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
@@ -257,6 +235,7 @@ text = "You're here for sure:"
 [node name="Location" type="Label" parent="Mask_Card_Playground/Player_Location/Text"]
 self_modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3

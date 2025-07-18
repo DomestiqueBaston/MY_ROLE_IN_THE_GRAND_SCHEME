@@ -6,6 +6,7 @@ extends Node2D
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
 @onready var top_bar: Control = $Mask_Card_Playground/Top_Bar
 @onready var info_box: Node2D = $Mask_Card_Playground/Bottom_Left_Info
+@onready var location_bar = $Mask_Card_Playground/Player_Location/Text/Location
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
 
@@ -662,11 +663,38 @@ func _update_player_location_info():
 	var location = GameState.get_player_location()
 	var card: LocationCard
 
+	# attach the player locator symbol to the appropriate card
+
 	if location == GameState.PlayerLocation.OTHER:
 		card = GameState.get_player_location_card()
 		$Player_Locator.attach_to_card(card)
 	else:
 		$Player_Locator.detach_from_card()
 		$Player_Locator.hide()
+
+	# update player location in the upper right corner
+
+	var loc_text = ""
+
+	match location:
+		GameState.PlayerLocation.OFFICE:
+			loc_text = "In the office"
+		GameState.PlayerLocation.INVESTIGATION_CENTER:
+			loc_text = "At the investigation center"
+		GameState.PlayerLocation.DOCTOR:
+			loc_text = "At Doctor F's"
+		GameState.PlayerLocation.ROWENA:
+			loc_text = "At Rowena's"
+		GameState.PlayerLocation.WARRANT_DESK:
+			loc_text = "At the warrant desk"
+		GameState.PlayerLocation.PRISON:
+			loc_text = "In jail"
+		GameState.PlayerLocation.OTHER:
+			loc_text = card.get_display_name()
+
+	location_bar.text = loc_text
+
+	# show lots of information about the current location in the box in the
+	# lower left corner
 
 	info_box.show_location(location, card)
