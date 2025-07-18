@@ -52,10 +52,12 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 
 	$Scroller_Location/Info_Location/Name.text = loc_name
 	$Scroller_Location/Info_Location/Description.text = loc_desc
-
 	$Scroller_Location/Info_Location/Name.show()
 	$Scroller_Location/Info_Location/Separator_01.show()
 	$Scroller_Location/Info_Location/Description.show()
+
+	if card and card.location_status == LocationCard.LocationStatus.CRIME_SCENE:
+		$Scroller_Location/Info_Location/Crime_Scene.show()
 
 	$Scroller_Object.hide()
 	$Scroller_NPC.hide()
