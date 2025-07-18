@@ -354,6 +354,14 @@ func get_all_npc_connections() -> Array[NpcCard]:
 				cnxs.append(cnx)
 	return cnxs
 
+func get_all_location_connections() -> Array[LocationCard]:
+	var cnxs: Array[LocationCard]
+	for cnx_array in _connections.values():
+		for cnx in cnx_array:
+			if cnx is LocationCard:
+				cnxs.append(cnx)
+	return cnxs
+
 func get_connections(type: Link.Type) -> Array[BaseCard]:
 	var cnxs: Array[BaseCard]
 	if type in _connections:
