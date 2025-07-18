@@ -60,7 +60,7 @@ layout_mode = 0
 offset_right = 78.0
 offset_bottom = 52.0
 tooltip_text = "The game credits
-(don’t dig too deep)."
+(don't dig too deep)."
 toggle_mode = true
 button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("5_gaqfq")

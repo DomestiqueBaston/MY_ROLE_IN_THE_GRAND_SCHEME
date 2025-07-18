@@ -28,7 +28,7 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 	match loc:
 		GameState.PlayerLocation.OFFICE:
 			loc_name = "- AT THE OFFICE -"
-			loc_desc = "Chaos reigns here, the files are trying to escape, and your sanity’s the only thing more disorganized than the paperwork."
+			loc_desc = "Chaos reigns here, the files are trying to escape, and your sanity's the only thing more disorganized than the paperwork."
 		GameState.PlayerLocation.INVESTIGATION_CENTER:
 			loc_name = "- AT THE -\n- INVESTIGATION -\n- CENTER -"
 			loc_desc = "Where you come for a job, and leave with more problems than you came for."

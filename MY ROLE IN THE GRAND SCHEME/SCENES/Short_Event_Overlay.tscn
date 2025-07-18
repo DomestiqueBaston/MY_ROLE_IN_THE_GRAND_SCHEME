@@ -3199,7 +3199,7 @@ offset_right = 280.0
 offset_bottom = 160.0
 bbcode_enabled = true
 text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Health Report[/color][/pulse] -
-Given your [color=#ff8864]current[/color] [color=#ff1c18]state of health[/color], going out to [color=#ff1c18]investigate[/color] would be [color=#ff8864]more[/color] [color=#ff1c18]reckless[/color] than [color=#ff1c18]professional[/color]. Unless [color=#ff8864]stumbling[/color], [color=#ff8864]babbling[/color], and [color=#ff8864]passing out[/color] in the middle of the street are part of [color=#ff1c18]your method[/color], you’ll have to [color=#ff1c18]accept[/color] a... [color=#ff8864]simple truth[/color]: for everyone’s sake, [color=#ff1c18]you need to rest[/color] to [color=#ff8864]avoid confusing suspects with lampposts[/color]!"
+Given your [color=#ff8864]current[/color] [color=#ff1c18]state of health[/color], going out to [color=#ff1c18]investigate[/color] would be [color=#ff8864]more[/color] [color=#ff1c18]reckless[/color] than [color=#ff1c18]professional[/color]. Unless [color=#ff8864]stumbling[/color], [color=#ff8864]babbling[/color], and [color=#ff8864]passing out[/color] in the middle of the street are part of [color=#ff1c18]your method[/color], you'll have to [color=#ff1c18]accept[/color] a... [color=#ff8864]simple truth[/color]: for everyone's sake, [color=#ff1c18]you need to rest[/color] to [color=#ff8864]avoid confusing suspects with lampposts[/color]!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3441,7 +3441,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Finan
 Wow. [shake rate=7.0 level=5 connected=0][color=#ff8864]Four  unpaid  bills[/color][/shake]?  
 That's a really impressive  dedication to [shake rate=7.0 level=5 connected=0][color=#ff1c18]self-sabotage[/color][/shake].
 
-Apparently, [shake rate=7.0 level=5 connected=0][color=#ff8864]ignoring[/color][/shake]  debt  collectors doesn’t  make them  [shake rate=7.0 level=5 connected=0][color=#ff8864]disappear[/color][/shake].  
+Apparently, [shake rate=7.0 level=5 connected=0][color=#ff8864]ignoring[/color][/shake]  debt  collectors doesn't  make them  [shake rate=7.0 level=5 connected=0][color=#ff8864]disappear[/color][/shake].  
 So  now  you get to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meditate[/color][/shake]  on your life  choices...
 ...in a [shake rate=7.0 level=5 connected=0][color=#ff1c18]cell[/color][/shake], [shake rate=7.0 level=5 connected=0][color=#ff8864]for the  next[/color] [color=#ff1c18]3 days[/color][/shake].[/center]
 "
@@ -3462,11 +3462,11 @@ bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]against  all  odds[/color][/pulse])!
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Well, color me surprised…[/color][/shake]
-It’s  almost impressive how you managed to  pull that  off.
+It's  almost impressive how you managed to  pull that  off.
 Did you really  think  that  would  be  your biggest  challenge  today?
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you’ve  done it...[/color][/shake]
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don’t get  too  used to it.[/color][/shake][/center]"
+[shake rate=7.0 level=5 connected=0][color=#ff8864][color=#ff1c18]Congratulations[/color],  you've  done it...[/color][/shake]
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don't get  too  used to it.[/color][/shake][/center]"
 
 [node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
 layout_mode = 0
@@ -3478,9 +3478,9 @@ rotation = 0.0356184
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] tried  something  ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]how  ambitious[/color][/pulse])!
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]That  didn’t go  as  [color=#ff1c18]planned[/color]...[/color][/shake]
+[shake rate=7.0 level=5 connected=0][color=#ff8864]That  didn't go  as  [color=#ff1c18]planned[/color]...[/color][/shake]
 It  seems  like you had  a grand idea, but the execution?
-Let’s just say it wasn’t exactly impressive.
+Let's just say it wasn't exactly impressive.
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe next time, try thinking it through[/color][/shake].
 
 You sure know how to make  an entrance...
@@ -3518,10 +3518,10 @@ rotation = 0.0356184
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an  attack!
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn’t  think it’d  be  that easy,  did you?
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn't  think it'd  be  that easy,  did you?
 
 The  assault  comes  fast  (probably  more  than  you can  handle).
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You’ll need it.
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You'll need it.
 
 Maybe  you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
 
@@ -3559,7 +3559,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The b
 [shake rate=7.0 level=5 connected=0][color=#ff8864]You'd think someone would learn by now[/color][/shake].
 But no, despite all the chances, they decided to turn back...
 The  moment  of escape?  [shake rate=7.0 level=5 connected=0][color=#ff8864]Totally  [color=#ff1c18]missed[/color][/color][/shake].
-It’s  almost  as if they were just waiting  for  the  perfect  moment...
+It's  almost  as if they were just waiting  for  the  perfect  moment...
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Too bad that  moment  never  came[/color][/shake].
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
@@ -3627,7 +3627,7 @@ rotation = 0.0356184
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]One[/color] of  [color=#ff1c18]them[/color]'s [color=#ff8864]lying[/color]![/pulse]
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Funny[/color][/shake] how  all their stories  line  up [shake rate=7.0 level=5 connected=0][color=#ff8864]until you  actually [color=#ff1c18]compare[/color] them[/color][/shake]. Someone’s  clearly [shake rate=7.0 level=5 connected=0][color=#ff8864]making  stuff  up[/color][/shake], and it’s  not even subtle.
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Funny[/color][/shake] how  all their stories  line  up [shake rate=7.0 level=5 connected=0][color=#ff8864]until you  actually [color=#ff1c18]compare[/color] them[/color][/shake]. Someone's  clearly [shake rate=7.0 level=5 connected=0][color=#ff8864]making  stuff  up[/color][/shake], and it's  not even subtle.
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Swell[/color][/shake]!
 Guess  I'll have to  [color=#ff1c18]dive[/color] [color=#ff8864]deeper[/color]...[/center]"
@@ -3792,7 +3792,7 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh, bravo![/color][/pulse]
 
-You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don’t  get  too cocky, it’s  just  a  tiny step. Now let’s  see if you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up without tripping  over yourself[/color][/shake].
+You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don't  get  too cocky, it's  just  a  tiny step. Now let's  see if you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up without tripping  over yourself[/color][/shake].
 At this  point,  you feel a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  stupid.[/color][/shake][/center]"
 fit_content = true
 
@@ -3807,7 +3807,7 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Hurrah![/color][/pulse]
 
-You’ve shown some [shake rate=7.0 level=5 connected=0][color=#ff8864]spark[/color][/shake], dude, but  don’t start celebrating  just  yet. You’ve got  a long  way to go...
+You've shown some [shake rate=7.0 level=5 connected=0][color=#ff8864]spark[/color][/shake], dude, but  don't start celebrating  just  yet. You've got  a long  way to go...
 Anyway.  At  this  point, you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  weak[/color][/shake].[/center]
 "
 fit_content = true
@@ -3823,7 +3823,7 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Well done![/color][/pulse]
 
-You’ve  managed to  push  through  a little [shake rate=7.0 level=5 connected=0][color=#ff8864]resilience[/color][/shake], but  don’t get  ahead  of yourself. This is just  a  fleeting  moment, not  a breakthrough.
+You've  managed to  push  through  a little [shake rate=7.0 level=5 connected=0][color=#ff8864]resilience[/color][/shake], but  don't get  ahead  of yourself. This is just  a  fleeting  moment, not  a breakthrough.
 For now,  though,  you feel  a  bit  [shake rate=7.0 level=5 connected=0][color=#ff8864]less fragile[/color][/shake].[/center]"
 fit_content = true
 
@@ -3839,7 +3839,7 @@ bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh, dear![/color][/pulse]
 
 You managed to [shake rate=7.0 level=5 connected=0][color=#ff8864]make things worse[/color][/shake], as usual.  
-Let’s see if you can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up[/color][/shake] without [shake rate=7.0 level=5 connected=0][color=#ff8864]tripping  again[/color][/shake].
+Let's see if you can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up[/color][/shake] without [shake rate=7.0 level=5 connected=0][color=#ff8864]tripping  again[/color][/shake].
 
 That  being  said, you feel [shake rate=7.0 level=5 connected=0][color=#ff8864]dumber[/color][/shake] than ever.[/center]
 "
@@ -3871,8 +3871,8 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oops![/color][/pulse]
 
-You’ve somehow managed to  [shake rate=7.0 level=5 connected=0][color=#ff8864]dig  a  deeper hole[/color][/shake],  as expected.
-Let’s  see  how long it takes  before  you [shake rate=7.0 level=5 connected=0][color=#ff8864]fall even further[/color][/shake].
+You've somehow managed to  [shake rate=7.0 level=5 connected=0][color=#ff8864]dig  a  deeper hole[/color][/shake],  as expected.
+Let's  see  how long it takes  before  you [shake rate=7.0 level=5 connected=0][color=#ff8864]fall even further[/color][/shake].
 For now,  though,  you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]more broken[/color][/shake].[/center]"
 fit_content = true
 

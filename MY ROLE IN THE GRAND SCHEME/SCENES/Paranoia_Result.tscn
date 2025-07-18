@@ -340,7 +340,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
+text = "[center]That said, maybe [color=#ff8864]it wasn't such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
 
 [node name="Critical_Success_Emo" type="RichTextLabel" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Positive_Report"]
 custom_minimum_size = Vector2(107, 10)
@@ -1031,7 +1031,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "[center]That said, maybe [color=#ff8864]it wasn’t such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
+text = "[center]That said, maybe [color=#ff8864]it wasn't such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...[/center]"
 
 [node name="Rep_Critical_Failure_Container" type="PanelContainer" parent="Content/Frame_Content/Report_Margin/Report/Dialogue/Negative_Report"]
 custom_minimum_size = Vector2(0, 10)
