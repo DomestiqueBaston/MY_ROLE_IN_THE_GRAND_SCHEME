@@ -432,12 +432,15 @@ func _randomize():
 	for npc_list in [victims, witnesses, suspects]:
 		for npc in npc_list:
 			npc.is_revealed = true
-			var home = npc.get_home()
-			var work = npc.get_work()
-			home.is_revealed = true
-			work.is_revealed = true
-			_create_link(npc, home, Link.Type.HOME)
-			_create_link(npc, work, Link.Type.WORK)
+			var roll = randi() % 9
+			if roll % 3 == 0:
+				var home = npc.get_home()
+				home.is_revealed = true
+				_create_link(npc, home, Link.Type.HOME)
+			if roll < 3:
+				var work = npc.get_work()
+				work.is_revealed = true
+				_create_link(npc, work, Link.Type.WORK)
 
 	for victim in victims:
 		if victim.is_married:
