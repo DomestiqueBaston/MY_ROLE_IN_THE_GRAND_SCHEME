@@ -1,5 +1,11 @@
 extends Node2D
 
+## Class that visualizes everything the player thinks he knows about a given
+## card. Call show_card() to show the contents of a given card, or clear() to
+## show nothing. show_location() allows you to visualize information about a
+## few predefined player locations (office, investigation center, etc.) in
+## addition to locations defined by cards.
+
 @export var size := Vector2(114, 144)
 
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
@@ -8,11 +14,19 @@ var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 func _ready():
 	$VBox.size = size
 
+##
+## Shows nothing.
+##
 func clear():
 	$VBox/Scroller_Object.hide()
 	$VBox/Scroller_NPC.hide()
 	$VBox/Scroller_Location.hide()
 
+##
+## Shows the player everthing he thinks he knows about the given card, as
+## determined namely by the links he has created to it. Only location, object
+## and NPC cards are supported.
+##
 func show_card(card: BaseCard):
 	if card is LocationCard:
 		show_location(GameState.PlayerLocation.OTHER, card)
@@ -23,6 +37,13 @@ func show_card(card: BaseCard):
 	else:
 		clear()
 
+##
+## Similar to show_card(), when it is given a location card, but this function
+## also supports a number of predefined locations not defined by cards: see the
+## GameState.PlayerLocation enum. If loc is GameState.PlayerLocation.OTHER, then
+## card must be the card defining the location; otherwise card must not be
+## given.
+##
 func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 	for node in $VBox/Scroller_Location/Info_Location.get_children():
 		node.hide()
@@ -98,6 +119,10 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 	$VBox/Scroller_NPC.hide()
 	$VBox/Scroller_Location.show()
 
+##
+## Shows the player everthing he thinks he knows about the given object card, as
+## determined namely by the links he has created to it.
+##
 func show_object(obj: ObjectCard):
 	for node in $VBox/Scroller_Object/Info_Object.get_children():
 		node.hide()
@@ -135,6 +160,10 @@ func show_object(obj: ObjectCard):
 	$VBox/Scroller_NPC.hide()
 	$VBox/Scroller_Location.hide()
 
+##
+## Shows the player everthing he thinks he knows about the given NPC card, as
+## determined namely by the links he has created to it.
+##
 func show_npc(npc: NpcCard):
 	for node in $VBox/Scroller_NPC/Info_NPC.get_children():
 		node.hide()
