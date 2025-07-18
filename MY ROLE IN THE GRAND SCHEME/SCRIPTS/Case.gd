@@ -378,8 +378,7 @@ func _randomize():
 		"culprit_work":
 			location_card = culprits[0].get_work()
 		_:
-			_crime_location = _find_or_create_location(actual_location)
-			location_card = _crime_location
+			location_card = _find_or_create_location(actual_location)
 
 	if location_card:
 		var known_factor = _motive.get("known_crime_location", 1)
@@ -392,6 +391,7 @@ func _randomize():
 			is_known = (randf() < known_factor)
 		if is_known:
 			location_card.location_status = LocationCard.LocationStatus.CRIME_SCENE
+			_crime_location = location_card
 
 	# populate all locations with useless objects
 
