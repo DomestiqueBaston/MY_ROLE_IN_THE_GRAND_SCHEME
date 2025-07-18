@@ -6,6 +6,8 @@ extends Node2D
 @onready var hover_sound: AudioStreamPlayer = $UI_Sounds/Hover
 @onready var card_entered_sound: AudioStreamPlayer = $UI_Sounds/Card_Entered
 @onready var card_exited_sound: AudioStreamPlayer = $UI_Sounds/Card_Exited
+@onready var lock_sound: AudioStreamPlayer = $UI_Sounds/Lock_Card
+@onready var unlock_sound: AudioStreamPlayer = $UI_Sounds/Unlock_Card
 
 ## Overlay used to block the UI while asking the player a question.
 @onready var dialog_overlay: Node2D = $DialogLayer/Short_Event_Overlay

@@ -27,6 +27,9 @@ enum MenuItem {
 # highlighted card
 var _current_card: BaseCard
 
+# card whose info is displayed in the info box until further notice
+var _blocked_info_card: BaseCard
+
 # the visible pin which has been clicked and not yet released
 var _clicked_pin: Pin
 
@@ -126,6 +129,7 @@ func _input(event: InputEvent):
 			_clicked_pin = null
 	elif _drag_state == DragState.CLICKED:
 		if event is InputEventMouseMotion:
+			_unblock_info_box()
 			if _start_drag():
 				Globals.dragging = true
 				_drag_state = DragState.DRAGGING
@@ -144,6 +148,9 @@ func _input(event: InputEvent):
 		elif event is InputEventMouseButton:
 			get_viewport().set_input_as_handled()
 			_stop_linking(event.global_position)
+	else:
+		if _current_card == null and event.is_action_pressed("Left_Click"):
+			_unblock_info_box()
 
 func _mouse_entered_card(card: BaseCard):
 	if _input_paused:
@@ -153,7 +160,7 @@ func _mouse_entered_card(card: BaseCard):
 			_current_card.set_highlighted(false)
 		card.set_highlighted(true)
 		_current_card = card
-		info_box.show_card(card)
+		_update_info_box()
 	elif _drag_state == DragState.DRAGGING and _clicked_pin and not card.is_stacked():
 		_drop_target = card
 	elif _drag_state == DragState.LINKING:
@@ -166,9 +173,7 @@ func _mouse_exited_card(card: BaseCard):
 		card.set_highlighted(false)
 		if _current_card == card:
 			_current_card = null
-			info_box.show_location(
-				GameState.get_player_location(),
-				GameState.get_player_location_card())
+			_update_info_box()
 	elif _drag_state == DragState.DRAGGING and _clicked_pin:
 		_drop_target = null
 	elif _drag_state == DragState.LINKING:
@@ -180,12 +185,15 @@ func _click_on_card(global_pos: Vector2, card: BaseCard):
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
+	_unblock_info_box()
+	_block_info_box()
 
 func _double_click_on_card(card: BaseCard):
 	if _input_paused:
 		return
 	if not card.is_stacked():
 		card.expand_or_reduce()
+	_unblock_info_box()
 
 func _click_on_pin(global_pos: Vector2, pin: Pin):
 	if _input_paused:
@@ -697,4 +705,37 @@ func _update_player_location_info():
 	# show lots of information about the current location in the box in the
 	# lower left corner
 
-	info_box.show_location(location, card)
+	_update_info_box()
+
+#
+# Blocks the info box so that it shows information about whichever card is
+# current now, until _unblock_info_box() is called.
+#
+func _block_info_box():
+	if _current_card and _current_card != _blocked_info_card:
+		_blocked_info_card = _current_card
+		Globals.lock_sound.play()
+
+#
+# Unblocks the info box, if it was previously blocked by a call to
+# _block_info_box().
+#
+func _unblock_info_box():
+	if _blocked_info_card:
+		_blocked_info_card = null
+		_update_info_box()
+		Globals.unlock_sound.play()
+
+#
+# Updates the contents of the info box with info about the current card, if
+# there is one, or about the player's location, if not. Does nothing if the
+# info box has been blocked by a call to _block_info_box().
+#
+func _update_info_box():
+	if not _blocked_info_card:
+		if _current_card:
+			info_box.show_card(_current_card)
+		else:
+			info_box.show_location(
+				GameState.get_player_location(),
+				GameState.get_player_location_card())
