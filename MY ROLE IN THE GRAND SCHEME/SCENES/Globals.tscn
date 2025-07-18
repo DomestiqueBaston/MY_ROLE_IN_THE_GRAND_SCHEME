@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c7yxbbm1q32sw"]
+[gd_scene load_steps=19 format=3 uid="uid://c7yxbbm1q32sw"]
 
 [ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCRIPTS/Globals.gd" id="1_p5kqw"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://c4y8hctakt5ip" path="res://SOUND/MISC/Hover.ogg" id="9_wgutn"]
 [ext_resource type="AudioStream" uid="uid://cugi11x6eeqoq" path="res://SOUND/MISC/Go_Front.ogg" id="10_xi55q"]
 [ext_resource type="AudioStream" uid="uid://mki238woun53" path="res://SOUND/MISC/Go_Back.ogg" id="11_8eio1"]
+[ext_resource type="AudioStream" uid="uid://begdmpue3itlh" path="res://SOUND/CARD/Unlock_Card.ogg" id="15_ukq3f"]
+[ext_resource type="AudioStream" uid="uid://bypgie5mycjh0" path="res://SOUND/CARD/Lock_Card.ogg" id="16_6ib2w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vnh2"]
 shader = ExtResource("4_f2dh2")
@@ -99,4 +101,14 @@ bus = &"UI"
 [node name="Card_Exited" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("11_8eio1")
 volume_db = -25.0
+bus = &"UI"
+
+[node name="Unlock_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("15_ukq3f")
+volume_db = -45.0
+bus = &"UI"
+
+[node name="Lock_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
+stream = ExtResource("16_6ib2w")
+volume_db = -40.0
 bus = &"UI"
