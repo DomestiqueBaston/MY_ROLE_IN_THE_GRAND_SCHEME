@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=92 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -137,12 +137,6 @@ content_margin_left = 1.0
 content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy7hr"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2b1jy"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0dv1h"]
 content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
@@ -2231,6 +2225,16 @@ text = "Belongings:"
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Properties_Object" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
+bbcode_enabled = true
+text = "Object"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Properties_None" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
@@ -2251,95 +2255,6 @@ theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
 text = "Unknown"
 fit_content = true
-horizontal_alignment = 1
-
-[node name="Properties_Object_01" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/h_separation = 0
-alignment = 1
-
-[node name="Object" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
-bbcode_enabled = true
-text = "Object"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Opening_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
-layout_mode = 2
-bbcode_enabled = true
-text = " ("
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Evidence" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0dv1h")
-bbcode_enabled = true
-text = "Evidence"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Closing_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_01"]
-layout_mode = 2
-bbcode_enabled = true
-text = ")"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Properties_Object_02" type="FlowContainer" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/h_separation = 0
-alignment = 1
-
-[node name="Object" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2b1jy")
-bbcode_enabled = true
-text = "Object"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Opening_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
-visible = false
-layout_mode = 2
-bbcode_enabled = true
-text = " ("
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Evidence" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
-visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_0dv1h")
-bbcode_enabled = true
-text = "Evidence"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Closing_Dash" type="RichTextLabel" parent="Mask_Card_Playground/Bottom_Left_Info/Scroller_NPC/Info_NPC/Properties_Object_02"]
-visible = false
-layout_mode = 2
-bbcode_enabled = true
-text = ")"
-fit_content = true
-autowrap_mode = 0
 horizontal_alignment = 1
 
 [node name="Crime_Motive_Selection" type="Node2D" parent="Mask_Card_Playground"]

@@ -63,50 +63,30 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 
 		var inhabitants = case.find_links_to(card, Link.Type.HOME)
 		if inhabitants:
-			var text = ""
-			for npc in inhabitants:
-				if not text.is_empty():
-					text += "\n"
-				text += npc.get_display_name()
 			$Scroller_Location/Info_Location/Separator_02.show()
 			$Scroller_Location/Info_Location/Home.show()
-			$Scroller_Location/Info_Location/Home_NPC_01.text = text
+			$Scroller_Location/Info_Location/Home_NPC_01.text = _make_card_list(inhabitants)
 			$Scroller_Location/Info_Location/Home_NPC_01.show()
 
 		var workers = case.find_links_to(card, Link.Type.WORK)
 		if workers:
-			var text = ""
-			for npc in workers:
-				if not text.is_empty():
-					text += "\n"
-				text += npc.get_display_name()
 			$Scroller_Location/Info_Location/Separator_03.show()
 			$Scroller_Location/Info_Location/Workplace.show()
-			$Scroller_Location/Info_Location/Workplace_NPC_01.text = text
+			$Scroller_Location/Info_Location/Workplace_NPC_01.text = _make_card_list(workers)
 			$Scroller_Location/Info_Location/Workplace_NPC_01.show()
 
 		var hangout = case.find_links_to(card, Link.Type.HANGOUT)
 		if hangout:
-			var text = ""
-			for npc in hangout:
-				if not text.is_empty():
-					text += "\n"
-				text += npc.get_display_name()
 			$Scroller_Location/Info_Location/Separator_06.show()
 			$Scroller_Location/Info_Location/Hangout.show()
-			$Scroller_Location/Info_Location/Hangout_NPC_01.text = text
+			$Scroller_Location/Info_Location/Hangout_NPC_01.text = _make_card_list(hangout)
 			$Scroller_Location/Info_Location/Hangout_NPC_01.show()
 
 		var hideout = case.find_links_to(card, Link.Type.HIDEOUT)
 		if hideout:
-			var text = ""
-			for npc in hideout:
-				if not text.is_empty():
-					text += "\n"
-				text += npc.get_display_name()
 			$Scroller_Location/Info_Location/Separator_08.show()
 			$Scroller_Location/Info_Location/Hideout.show()
-			$Scroller_Location/Info_Location/Hideout_NPC_01.text = text
+			$Scroller_Location/Info_Location/Hideout_NPC_01.text = _make_card_list(hideout)
 			$Scroller_Location/Info_Location/Hideout_NPC_01.show()
 
 	$Scroller_Object.hide()
@@ -134,16 +114,12 @@ func show_object(obj: ObjectCard):
 		$Scroller_Object/Info_Object/Found_Location.text = locations[0].get_display_name()
 		$Scroller_Object/Info_Object/Found_Location.show()
 
-	var owner_text = ""
-	for card in case.find_links_to(obj, Link.Type.PROPERTY):
-		if card is NpcCard:
-			if owner_text.is_empty():
-				owner_text += "\n"
-			owner_text += card.get_display_name()
-
-	if owner_text:
+	var owners = case.find_links_to(obj, Link.Type.PROPERTY).filter(
+		func(card): return card is NpcCard)
+	if owners:
 		$Scroller_Object/Info_Object/Separator_03.show()
 		$Scroller_Object/Info_Object/Property.show()
+		$Scroller_Object/Info_Object/Property_NPC.text = _make_card_list(owners)
 		$Scroller_Object/Info_Object/Property_NPC.show()
 
 	if obj.is_object_evidence:
@@ -218,76 +194,46 @@ func show_npc(npc: NpcCard):
 
 	var friends = case.find_links_to(npc, Link.Type.FRIEND)
 	if friends:
-		var text = ""
-		for friend in friends:
-			if not text.is_empty():
-				text += "\n"
-			text += friend.get_display_name()
 		$Scroller_NPC/Info_NPC/Separator_04.show()
 		$Scroller_NPC/Info_NPC/Friends.show()
-		$Scroller_NPC/Info_NPC/Friends_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Friends_NPC_01.text = _make_card_list(friends)
 		$Scroller_NPC/Info_NPC/Friends_NPC_01.show()
 
 	var enemies = case.find_links_to(npc, Link.Type.ENEMY)
 	if enemies:
-		var text = ""
-		for enemy in enemies:
-			if not text.is_empty():
-				text += "\n"
-			text += enemy.get_display_name()
 		$Scroller_NPC/Info_NPC/Separator_05.show()
 		$Scroller_NPC/Info_NPC/Enemies.show()
-		$Scroller_NPC/Info_NPC/Enemies_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Enemies_NPC_01.text = _make_card_list(enemies)
 		$Scroller_NPC/Info_NPC/Enemies_NPC_01.show()
 
 	var acquaintances = case.find_links_to(npc, Link.Type.ACQUAINTANCE)
 	if acquaintances:
-		var text = ""
-		for acquaintance in acquaintances:
-			if not text.is_empty():
-				text += "\n"
-			text += acquaintance.get_display_name()
 		$Scroller_NPC/Info_NPC/Separator_06.show()
 		$Scroller_NPC/Info_NPC/Acquaintance.show()
-		$Scroller_NPC/Info_NPC/Acquaintance_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Acquaintance_NPC_01.text = _make_card_list(acquaintances)
 		$Scroller_NPC/Info_NPC/Acquaintance_NPC_01.show()
 
 	var affairs = case.find_links_to(npc, Link.Type.INTIMACY)
 	if npc.is_married:
 		affairs.pop_front()
 	if affairs:
-		var text = ""
-		for affair in affairs:
-			if not text.is_empty():
-				text += "\n"
-			text += affair.get_display_name()
 		$Scroller_NPC/Info_NPC/Separator_07.show()
 		$Scroller_NPC/Info_NPC/Affair.show()
-		$Scroller_NPC/Info_NPC/Affair_NPC.text = text
+		$Scroller_NPC/Info_NPC/Affair_NPC.text = _make_card_list(affairs)
 		$Scroller_NPC/Info_NPC/Affair_NPC.show()
 
 	var debts = case.find_links_to(npc, Link.Type.DEBT)
 	if debts:
-		var text = ""
-		for debt in debts:
-			if not text.is_empty():
-				text += "\n"
-			text += debt.get_display_name()
 		$Scroller_NPC/Info_NPC/Separator_08.show()
 		$Scroller_NPC/Info_NPC/Debt_Influence.show()
-		$Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.text = _make_card_list(debts)
 		$Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.show()
 
 	var ideology = case.find_links_to(npc, Link.Type.IDEOLOGY)
 	if ideology:
-		var text = ""
-		for card in ideology:
-			if not text.is_empty():
-				text += "\n"
-			text += card.get_display_name()
 		$Scroller_NPC/Info_NPC/Separator_09.show()
 		$Scroller_NPC/Info_NPC/Ideology.show()
-		$Scroller_NPC/Info_NPC/Ideology_NPC_01.text = text
+		$Scroller_NPC/Info_NPC/Ideology_NPC_01.text = _make_card_list(ideology)
 		$Scroller_NPC/Info_NPC/Ideology_NPC_01.show()
 
 	var home = case.find_links_to(npc, Link.Type.HOME)
@@ -318,8 +264,28 @@ func show_npc(npc: NpcCard):
 		$Scroller_NPC/Info_NPC/Hideout_Location.text = hideout[0].get_display_name()
 		$Scroller_NPC/Info_NPC/Hideout_Location.show()
 
-	# TODO: property, schedules
+	var property = case.find_links_to(npc, Link.Type.PROPERTY)
+	if property:
+		var text = ""
+		for obj in property:
+			if not text.is_empty():
+				text += "\n"
+			text += obj.get_display_name()
+			if obj.is_object_evidence:
+				text += " (evidence)"
+		$Scroller_NPC/Info_NPC/Separator_16.show()
+		$Scroller_NPC/Info_NPC/Properties.show()
+		$Scroller_NPC/Info_NPC/Properties_Object.text = _make_card_list(property)
+		$Scroller_NPC/Info_NPC/Properties_Object.show()
 
 	$Scroller_Object.hide()
 	$Scroller_NPC.show()
 	$Scroller_Location.hide()
+
+func _make_card_list(cards: Array[BaseCard]) -> String:
+	var text = ""
+	for card in cards:
+		if not text.is_empty():
+			text += "\n"
+		text += card.get_display_name()
+	return text
