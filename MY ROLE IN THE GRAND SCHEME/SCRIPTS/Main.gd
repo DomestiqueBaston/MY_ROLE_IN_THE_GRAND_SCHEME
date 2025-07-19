@@ -714,6 +714,7 @@ func _update_player_location_info():
 func _block_info_box():
 	if _current_card and _current_card != _blocked_info_card:
 		_blocked_info_card = _current_card
+		_blocked_info_card.set_locked(true)
 		Globals.lock_sound.play()
 
 #
@@ -722,6 +723,7 @@ func _block_info_box():
 #
 func _unblock_info_box():
 	if _blocked_info_card:
+		_blocked_info_card.set_locked(false)
 		_blocked_info_card = null
 		_update_info_box()
 		Globals.unlock_sound.play()

@@ -178,6 +178,14 @@ func set_highlighted(highlighted: bool):
 
 	_is_highlighted = highlighted
 
+##
+## If locked is true, an animation is played to indicate that this card has
+## been locked, that is, information about it is displayed in the info box until
+## further notice. Call with false when the card is unlocked.
+##
+func set_locked(locked: bool):
+	$Activation_Card_Animations.play("Active_Card" if locked else "RESET")
+
 #
 # Moves the card in front of its siblings, then does the same for any links to
 # the card, and finally for the pins on those links. This should not be done for
