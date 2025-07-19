@@ -66,6 +66,7 @@ func _on_next_button_pressed():
 		_label.size.y = 170
 		_label.position.y = 98
 		speed_factor = 2.5
+		_next_button.text = "End of line"
 
 	load_tutorial_text()
 	_anim_player.seek(0, true)
