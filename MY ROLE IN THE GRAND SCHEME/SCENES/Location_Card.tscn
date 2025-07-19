@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cqesoumed17do"]
+[gd_scene load_steps=40 format=3 uid="uid://cqesoumed17do"]
 
 [ext_resource type="Script" uid="uid://umxgj5sjyo8l" path="res://SCRIPTS/Location_Card.gd" id="1_mp10x"]
 [ext_resource type="Shader" uid="uid://dmuucm47yp5g" path="res://SHADERS/Card_Shadow.gdshader" id="2_dr6f2"]
@@ -1252,39 +1252,9 @@ tracks/1/keys = {
 "values": [Vector2(-2, -4), Vector2(-1, -3), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_r0f4j"]
-resource_name = "Shadow_Always_On"
-length = 0.0666734
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Card_Shadow:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Card_Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s04w5"]
 _data = {
 &"RESET": SubResource("Animation_02fmt"),
-&"Shadow_Always_On": SubResource("Animation_r0f4j"),
 &"Shadow_Off": SubResource("Animation_iuyk4"),
 &"Shadow_On": SubResource("Animation_nk8id")
 }
