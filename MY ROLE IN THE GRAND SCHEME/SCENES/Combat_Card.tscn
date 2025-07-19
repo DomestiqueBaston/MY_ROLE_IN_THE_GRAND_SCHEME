@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://e2qtkuv67l5g"]
+[gd_scene load_steps=38 format=3 uid="uid://e2qtkuv67l5g"]
 
 [ext_resource type="Script" uid="uid://db2g16c6cxflu" path="res://SCRIPTS/Combat_Card.gd" id="1_csft7"]
 [ext_resource type="PackedScene" uid="uid://dlnsrbdpccisn" path="res://SCENES/Pin_Locators.tscn" id="2_2whlp"]
@@ -860,6 +860,45 @@ _data = {
 &"Shadow_On": SubResource("Animation_nk8id")
 }
 
+[sub_resource type="Animation" id="Animation_sw5ua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Mask/Card_BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jxgf7"]
+resource_name = "Active_Card"
+length = 0.53334
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Mask/Card_BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.333333, 0.4, 0.466667, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1.08333, 1.08333, 1.08333, 1), Color(1.16667, 1.16667, 1.16667, 1), Color(1.25, 1.25, 1.25, 1), Color(1.25, 1.25, 1.25, 1), Color(1.125, 1.125, 1.125, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fj230"]
+_data = {
+&"Active_Card": SubResource("Animation_jxgf7"),
+&"RESET": SubResource("Animation_sw5ua")
+}
+
 [node name="Card" type="Node2D"]
 script = ExtResource("1_csft7")
 
@@ -966,6 +1005,11 @@ libraries = {
 [node name="Shadow_Animations" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_s04w5")
+}
+
+[node name="Activation_Card_Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fj230")
 }
 
 [node name="UI_Sounds" type="Node" parent="."]
