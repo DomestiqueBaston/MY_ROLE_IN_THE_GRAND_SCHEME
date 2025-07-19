@@ -859,21 +859,6 @@ _data = {
 &"Shadow_On": SubResource("Animation_nk8id")
 }
 
-[sub_resource type="Animation" id="Animation_sw5ua"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Card_Mask/Card_BG:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_jxgf7"]
 resource_name = "Active_Card"
 length = 0.53334
@@ -892,13 +877,28 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1.08333, 1.08333, 1.08333, 1), Color(1.16667, 1.16667, 1.16667, 1), Color(1.25, 1.25, 1.25, 1), Color(1.25, 1.25, 1.25, 1), Color(1.125, 1.125, 1.125, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_sw5ua"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card_Mask/Card_BG:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fj230"]
 _data = {
 &"Active_Card": SubResource("Animation_jxgf7"),
 &"RESET": SubResource("Animation_sw5ua")
 }
 
-[node name="Card" type="Node2D"]
+[node name="Card2" type="Node2D"]
 script = ExtResource("1_tl625")
 
 [node name="Card_Collider" type="Area2D" parent="."]
@@ -1000,6 +1000,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_s04w5")
 }
 
+[node name="Activation_Card_Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fj230")
+}
+
 [node name="UI_Sounds" type="Node" parent="."]
 
 [node name="Drop_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
@@ -1015,8 +1020,3 @@ bus = &"UI"
 [node name="UI" type="AudioStreamPlayer" parent="UI_Sounds"]
 volume_db = -37.5
 bus = &"UI"
-
-[node name="Activation_Card_Animations" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_fj230")
-}
