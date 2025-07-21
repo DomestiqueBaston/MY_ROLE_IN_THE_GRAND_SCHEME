@@ -225,27 +225,25 @@ func _randomize():
 	for i in other_npc_count:
 		npcs.append(NpcCard.generate_card(self))
 
-	# decide which NPCs are couples
+	# decide which NPCs are couples (each has a 50% chance of being in a couple)
 
-	for npc in npcs:
+	# Note that for NPC #7 (for example), we only look for partners among NPCs
+	# #8 and up, because we have already "rolled the dice" for NPCs 0-6. That is
+	# why we iterate only as far as the next-to-last NPC here, and is why we
+	# tell _find_partner_for() to look only at NPCs that follow the current NPC
+	# in the list. This same pattern is repeated below whenever we create
+	# connections between pairs of NPCs with a probability of less than 100%.
 
-		# NPC has already been coupled to another
-
-		if npc.is_married:
-			continue
-
-		# each NPC has 1 chance in 2 of having a partner
-
+	for i in npcs.size() - 1:
 		if randi() & 1:
-			continue
-
-		var other = _find_partner_for(npc)
-		if other:
-			npc.is_married = true
-			other.is_married = true
-			npc.add_connection(Link.Type.INTIMACY, other)
-			other.add_connection(Link.Type.INTIMACY, npc)
-			other.last_name = npc.last_name
+			var npc = npcs[i]
+			var other = _find_partner_for(npc, i, false)
+			if other:
+				npc.is_married = true
+				other.is_married = true
+				npc.add_connection(Link.Type.INTIMACY, other)
+				other.add_connection(Link.Type.INTIMACY, npc)
+				other.last_name = npc.last_name
 
 	# assign homes now that we know which NPCs are couples
 
@@ -290,11 +288,6 @@ func _randomize():
 	# assigning workplaces, because priority is given to an NPC's colleagues, or
 	# his partner's colleagues
 
-	# Note that for NPC #7 (for example), we only look for connections with
-	# NPCs #8 and up, because NPCs 0-6 already have all the connections they
-	# need. That it why we iterate only to the next-to-last NPC, and why we tell
-	# _make_frenemies_for() to look only at NPCs after the given NPC.
-
 	for i in npcs.size() - 1:
 		_make_frenemies_for(npcs[i], i+1)
 
@@ -314,7 +307,8 @@ func _randomize():
 
 	# affairs between NPCs (do this AFTER determining couples)
 
-	for npc in npcs:
+	for i in npcs.size() - 1:
+		var npc = npcs[i]
 
 		# do nothing if NPC already has an affair
 
@@ -325,10 +319,21 @@ func _randomize():
 		# otherwise there is a 10% chance NPC is having an affair
 
 		if randi() % 10 == 0:
-			var other = _find_partner_for(npc, true)
+			var other = _find_partner_for(npc, i, true)
 			if other:
 				npc.add_connection(Link.Type.INTIMACY, other)
 				other.add_connection(Link.Type.INTIMACY, npc)
+
+	# debt/influence and ideology links between NPCs
+
+	for i in npcs.size() - 1:
+		var roll = randi() % 10
+		if roll < 3:
+			var npc = npcs[i]
+			if roll != 0:
+				_create_new_connection(npc, Link.Type.DEBT, i)
+			if roll != 1:
+				_create_new_connection(npc, Link.Type.IDEOLOGY, i)
 
 	# evidence
 
@@ -460,10 +465,21 @@ func _get_count_from_array(count) -> int:
 	else:
 		return count
 
-func _find_partner_for(npc: NpcCard, married_ok: bool = false) -> NpcCard:
-	var start_index = randi() % npcs.size()
-	for i in npcs.size():
-		var index = (start_index + i) % npcs.size()
+func _create_new_connection(npc: NpcCard, link_type: Link.Type, ignore_count: int):
+	var existing_cnx = npc.get_connections(link_type)
+	var lambda = func(someone: NpcCard): return not someone in existing_cnx
+	var other = _find_other_npc(npc, lambda, ignore_count)
+	if other:
+		npc.add_connection(link_type, other)
+		other.add_connection(link_type, npc)
+
+func _find_partner_for(
+		npc: NpcCard, ignore_count: int, married_ok: bool) -> NpcCard:
+	var start_index = randi_range(ignore_count, npcs.size() - 1)
+	var remainder = npcs.size() - ignore_count
+
+	for i in remainder:
+		var index = ignore_count + (start_index + i) % remainder
 
 		# same NPC?
 
@@ -549,17 +565,28 @@ func _find_frenemy_for(npc: NpcCard, candidates, ignore_count) -> NpcCard:
 		candidates.remove_at(which)
 		return other
 
-	var index = randi_range(ignore_count, npcs.size() - 1)
-	for i in npcs.size() - ignore_count:
+	var lambda = func(other: NpcCard):
+		return not (other in npc.get_connections(Link.Type.FRIEND) or
+					other in npc.get_connections(Link.Type.ENEMY) or
+					other in npc.get_connections(Link.Type.ACQUAINTANCE)) 
+
+	return _find_other_npc(npc, lambda, ignore_count)
+
+#
+# Finds and returns an NPC who is not the given NPC, and for whom the given
+# Callable returns true. Only NPCs whose index >= ignore_count are taken into
+# consideration. Returns null if no eligible NPC is found.
+#
+func _find_other_npc(
+	npc: NpcCard, filter: Callable = Callable(), ignore_count = 0) -> NpcCard:
+	var start_index = randi_range(ignore_count, npcs.size() - 1)
+	var remainder = npcs.size() - ignore_count
+
+	for i in remainder:
+		var index = ignore_count + (start_index + i) % remainder
 		var other = npcs[index]
-		if not (other == npc or
-				other in npc.get_connections(Link.Type.FRIEND) or
-				other in npc.get_connections(Link.Type.ENEMY) or
-				other in npc.get_connections(Link.Type.ACQUAINTANCE)):
+		if other != npc and (filter.is_null() or filter.call(other)):
 			return other
-		index += 1
-		if index == npcs.size():
-			index = ignore_count
 
 	return null
 
@@ -724,7 +751,7 @@ func pause():
 func print_case():
 	print()
 	print("************************************************************")
-	print("case ", _case_name)
+	print(_case_name)
 	print("************************************************************")
 	for npc in npcs:
 		print()
