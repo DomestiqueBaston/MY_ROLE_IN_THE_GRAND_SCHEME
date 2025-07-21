@@ -109,3 +109,18 @@ func open_office():
 	await $Overlays/Office.done
 	await _disappear()
 	$Overlays/Office.hide()
+
+##
+## Displays the "buy search warrant" dialog and waits for the player to confirm
+## or cancel. Returns true if he confirmed.
+##
+func buy_search_warrant():
+	$Overlays/Search_Warrant/Text_Buy.reset()
+	$Overlays/Search_Warrant/Text_Buy.show()
+	$Overlays/Search_Warrant/Text_Use.hide()
+	$Overlays/Search_Warrant.show()
+	await _appear()
+	await $Overlays/Search_Warrant/Text_Buy.done
+	await _disappear()
+	$Overlays/Search_Warrant.hide()
+	return $Overlays/Search_Warrant/Text_Buy.get_confirmed()

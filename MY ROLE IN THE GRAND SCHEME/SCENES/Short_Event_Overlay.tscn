@@ -1,4 +1,4 @@
-[gd_scene load_steps=254 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=255 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Button.gd" id="3_8qa11"]
 [ext_resource type="Texture2D" uid="uid://vduyten8dj5h" path="res://GRAPHICS/SHORT_EVENT/Search_Warrant_BG.png" id="4_0rnfm"]
 [ext_resource type="Theme" uid="uid://q40hqc75ju80" path="res://UI/Search_Warrant_Use_Theme.tres" id="5_53ag3"]
-[ext_resource type="Script" uid="uid://cn3ukiwadh7rv" path="res://SCRIPTS/Search_Warrant_Use_Buttons.gd" id="6_200re"]
+[ext_resource type="Script" uid="uid://cn3ukiwadh7rv" path="res://SCRIPTS/Search_Warrant.gd" id="6_200re"]
 [ext_resource type="Texture2D" uid="uid://doijy014fekfq" path="res://GRAPHICS/SHORT_EVENT/Run_Away_Break_In_BG.png" id="7_yccgy"]
 [ext_resource type="Script" uid="uid://wdxxwss0sbcg" path="res://SCRIPTS/Run_Away_Break_In_Buttons.gd" id="8_7ujkg"]
 [ext_resource type="Theme" uid="uid://sscuwot1pitg" path="res://UI/Run_Away_Break_In_Theme.tres" id="9_oetaq"]
@@ -129,7 +129,6 @@
 [ext_resource type="BitMap" uid="uid://elgd1g4von5o" path="res://GRAPHICS/SHORT_EVENT/Drawer_03_Mask.png" id="105_briu0"]
 [ext_resource type="Texture2D" uid="uid://cufoeexfcfk2b" path="res://GRAPHICS/SHORT_EVENT/Drawer_02_Open.png" id="106_wowcu"]
 [ext_resource type="Texture2D" uid="uid://mpu7a0x622po" path="res://GRAPHICS/SHORT_EVENT/Drawer_02_Hover.png" id="107_lboli"]
-[ext_resource type="Script" uid="uid://lto500frmsxt" path="res://SCRIPTS/Warrant_Typing.gd" id="107_vj0nj"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="108_fowbj"]
 [ext_resource type="BitMap" uid="uid://dnnhqkxx2eers" path="res://GRAPHICS/SHORT_EVENT/Drawer_02_Mask.png" id="108_yau06"]
 [ext_resource type="Texture2D" uid="uid://co2s7d5k2xxom" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Open.png" id="109_vj0nj"]
@@ -594,12 +593,13 @@ content_margin_top = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ev0la"]
 
-[sub_resource type="Animation" id="Animation_wf7jc"]
+[sub_resource type="Animation" id="Animation_42ybe"]
+resource_name = "RESET"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Text_Buy/Buy_It:visible_ratio")
+tracks/0/path = NodePath("Text:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -611,7 +611,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Text_Buy/Price:visible")
+tracks/1/path = NodePath("Price:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -623,7 +623,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Text_Buy/Price:position")
+tracks/2/path = NodePath("Price:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -635,7 +635,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Text_Buy/Yes:visible")
+tracks/3/path = NodePath("Yes:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -647,7 +647,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Text_Buy/No:visible")
+tracks/4/path = NodePath("No:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -656,39 +656,14 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Text_Use/Yes:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Text_Use/No:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
-[sub_resource type="Animation" id="Animation_d5ayf"]
-resource_name = "Writing_Buy"
-length = 2.06667
-step = 0.0666667
+[sub_resource type="Animation" id="Animation_b6clx"]
+resource_name = "Writing"
+length = 2.0667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Text_Buy/Buy_It:visible_ratio")
+tracks/0/path = NodePath("Text:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -700,7 +675,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Text_Buy/Price:visible")
+tracks/1/path = NodePath("Price:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -712,7 +687,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Text_Buy/Price:position")
+tracks/2/path = NodePath("Price:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -724,7 +699,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Text_Buy/Yes:visible")
+tracks/3/path = NodePath("Yes:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -736,7 +711,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Text_Buy/No:visible")
+tracks/4/path = NodePath("No:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -746,14 +721,59 @@ tracks/4/keys = {
 "values": [false, false, true]
 }
 
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fn3bj"]
+_data = {
+&"RESET": SubResource("Animation_42ybe"),
+&"Writing": SubResource("Animation_b6clx")
+}
+
+[sub_resource type="Animation" id="Animation_wf7jc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text_Use/Yes:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text_Use/No:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text_Use/Text:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_fowbj"]
-resource_name = "Writing_Use"
+resource_name = "Writing"
 length = 2.06667
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Text_Use/Use_It:visible_ratio")
+tracks/0/path = NodePath("Text_Use/Text:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -790,8 +810,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4enr2"]
 _data = {
 &"RESET": SubResource("Animation_wf7jc"),
-&"Writing_Buy": SubResource("Animation_d5ayf"),
-&"Writing_Use": SubResource("Animation_fowbj")
+&"Writing": SubResource("Animation_fowbj")
 }
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th1i4"]
@@ -4196,7 +4215,6 @@ theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 text = "I'm  afraid  I  won't  do that, Dave."
 
 [node name="Search_Warrant" type="Node2D" parent="Overlays"]
-visible = false
 position = Vector2(172, 48)
 
 [node name="Search_Warrant_BG" type="Sprite2D" parent="Overlays/Search_Warrant"]
@@ -4206,7 +4224,6 @@ centered = false
 offset = Vector2(20, 20)
 
 [node name="Text_Buy" type="Control" parent="Overlays/Search_Warrant"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
@@ -4216,7 +4233,7 @@ offset_bottom = -18.0
 theme = ExtResource("5_53ag3")
 script = ExtResource("6_200re")
 
-[node name="Buy_It" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
+[node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
 offset_left = 108.0
@@ -4228,7 +4245,6 @@ bbcode_enabled = true
 text = "[center]This  Warrant costs [color=#992726]        Dø[/color],  and  It   better  be worth it.  Money doesn't  just fall from the sky...  usually.[/center]"
 visible_characters = 0
 visible_ratio = 0.0
-script = ExtResource("107_vj0nj")
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 visible = false
@@ -4276,7 +4292,13 @@ text = "Well, now that
 you mention it..."
 alignment = 0
 
+[node name="Typing_Animation" type="AnimationPlayer" parent="Overlays/Search_Warrant/Text_Buy"]
+libraries = {
+&"": SubResource("AnimationLibrary_fn3bj")
+}
+
 [node name="Text_Use" type="Control" parent="Overlays/Search_Warrant"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
@@ -4286,7 +4308,7 @@ offset_bottom = -18.0
 theme = ExtResource("5_53ag3")
 script = ExtResource("6_200re")
 
-[node name="Use_It" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Use"]
+[node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Use"]
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
 offset_left = 108.0
@@ -4303,7 +4325,6 @@ Search  WarrAnt
 (or is it  racket)?[/center]"
 visible_characters = 0
 visible_ratio = 0.0
-script = ExtResource("107_vj0nj")
 
 [node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_Use"]
 visible = false
@@ -4337,7 +4358,8 @@ text = "Hm...
 Maybe not!"
 alignment = 0
 
-[node name="Typing_Animation" type="AnimationPlayer" parent="Overlays/Search_Warrant"]
+[node name="Typing_Animation" type="AnimationPlayer" parent="Overlays/Search_Warrant/Text_Use"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_4enr2")
 }
@@ -4730,18 +4752,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Buy/Yes" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Buy/Yes" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Search_Warrant/Text_Buy/Yes" to="Overlays/Search_Warrant/Text_Buy" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Buy/No" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Buy/No" to="Overlays/Search_Warrant/Text_Buy" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Search_Warrant/Text_Buy/No" to="Overlays/Search_Warrant/Text_Buy" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Use/Yes" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Use/Yes" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Search_Warrant/Text_Use/Yes" to="Overlays/Search_Warrant/Text_Use" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Search_Warrant/Text_Use/No" to="Overlays/Search_Warrant/Text_Use" method="_on_no_pressed"]
 [connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_surrender_pressed"]

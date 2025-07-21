@@ -16,6 +16,7 @@ var paranoia: int
 var money: int: set = set_money, get = get_money
 var drugs: int: set = set_drugs, get = get_drugs
 var drugs_taken_today: int
+var has_search_warrant: bool
 
 signal physical_changed
 signal mental_changed
@@ -56,6 +57,7 @@ func reset():
 	money = 0
 	drugs = 0
 	drugs_taken_today = 0
+	has_search_warrant = false
 	_debts.clear()
 	_cards.clear()
 	_sleep_bonus_malus = 0
@@ -79,6 +81,7 @@ func assign(other):
 	money = other.money
 	drugs = other.drugs
 	drugs_taken_today = other.drugs_taken_today
+	has_search_warrant = other.has_search_warrant
 	_debts = other._debts
 	_cards = other._cards
 	_sleep_bonus_malus = other._sleep_bonus_malus
@@ -98,6 +101,7 @@ func start_game():
 	money = 300 + job_bonus_malus.get("money", 0)
 	drugs = 3 + job_bonus_malus.get("drugs", 0)
 	drugs_taken_today = 0
+	has_search_warrant = false
 	_debts.clear()
 	_cards.clear()
 	_sleep_bonus_malus = 0
@@ -401,6 +405,8 @@ func get_json_dict():
 		"debts": _debts,
 		"sleep_bonus_malus": _sleep_bonus_malus
 	}
+	if has_search_warrant:
+		dict["has_search_warrant"] = true
 	var card_refs = []
 	for card in _cards:
 		card_refs.append(card.get_unique_id())
@@ -429,6 +435,8 @@ func restore(dict, catalog):
 	drugs_taken_today = dict.get("drugs_taken_today", 0)
 	_debts.assign(dict.debts)
 	_sleep_bonus_malus = dict.sleep_bonus_malus
+	if "has_search_warrant" in dict:
+		has_search_warrant = dict.has_search_warrant
 	for card_ref in dict.cards:
 		_cards.append(catalog[card_ref])
 

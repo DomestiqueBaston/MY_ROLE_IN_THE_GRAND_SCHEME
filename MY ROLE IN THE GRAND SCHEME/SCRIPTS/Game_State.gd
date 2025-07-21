@@ -196,6 +196,20 @@ func visit_office():
 	set_player_location(PlayerLocation.OFFICE)
 	await Globals.dialog_overlay.open_office()
 
+func is_warrant_desk_open():
+	var day = get_day() % 7
+	var hour = get_hour()
+	return day <= 5 and hour >= 8 and hour < 20
+
+func buy_search_warrant():
+	await pass_one_hour()
+	set_player_location(PlayerLocation.WARRANT_DESK)
+	var ok = await Globals.dialog_overlay.buy_search_warrant()
+	if ok:
+		player.money -= 25
+		player.has_search_warrant = true
+		save_game()
+
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
 		return cases[_current_case_index]
@@ -262,6 +276,8 @@ func assign(other):
 	_has_slept = other._has_slept
 	_last_crimes = other._last_crimes
 	_current_case_index = other._current_case_index
+	_player_location = other._player_location
+	_player_location_card = other._player_location_card
 	cases = other.cases
 
 #
@@ -324,6 +340,7 @@ func restore(dict, catalog):
 		cases.append(catalog[case_ref])
 	if "player_location" in dict:
 		_player_location = dict.player_location
+		print("restore: player_location: ", _player_location)
 		if "player_location_card" in dict:
 			_player_location_card = catalog[dict.player_location_card]
 

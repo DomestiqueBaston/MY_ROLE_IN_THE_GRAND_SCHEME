@@ -46,7 +46,8 @@ class PlayerAttr:
 #@onready var _transp_arrow = preload("res://GRAPHICS/UI/Arrow_Transparent_Right.png")
 
 enum DailiesMenuItem {
-	INVESTIGATION_CENTER = 1000,
+	WARRANT = 1000,
+	INVESTIGATION_CENTER,
 	OFFICE,
 	PASS_TIME,
 	SLEEP,
@@ -123,7 +124,7 @@ func _ready():
 
 	var popup: PopupMenu = _dailies_button.get_popup()
 	popup.about_to_popup.connect(_on_dailies_menu_popup)
-	popup.add_item("Buy a search warrant...")
+	popup.add_item("Buy a search warrant...", DailiesMenuItem.WARRANT)
 	popup.add_item("Visit Doctor F...")
 	popup.add_item("Visit Rowena the dealer...")
 	popup.add_item(
@@ -141,6 +142,8 @@ func _ready():
 
 func _on_dailies_press(id: int):
 	match id:
+		DailiesMenuItem.WARRANT:
+			GameState.buy_search_warrant()
 		DailiesMenuItem.INVESTIGATION_CENTER:
 			GameState.visit_investigation_center()
 		DailiesMenuItem.OFFICE:
@@ -202,11 +205,25 @@ func _on_time_changed():
 		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)
 
 func _on_dailies_menu_popup():
+	var player: Player = GameState.player
+	var popup: PopupMenu = _dailies_button.get_popup()
+	var item_index
+
+	# can the player buy a search warrant?
+
+	item_index = popup.get_item_index(DailiesMenuItem.WARRANT)
+	if player.has_search_warrant:
+		popup.set_item_text(item_index, "Search warrant secured")
+		popup.set_item_disabled(item_index, true)
+	else:
+		popup.set_item_text(item_index, "Buy a search warrant...")
+		popup.set_item_disabled(
+			item_index,
+			player.money < 25 or not GameState.is_warrant_desk_open())
 
 	# can the player visit the investigation center?
 
-	var popup: PopupMenu = _dailies_button.get_popup()
-	var item_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
+	item_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
 	popup.set_item_disabled(
 		item_index,
 		GameState.get_player_location() == GameState.PlayerLocation.INVESTIGATION_CENTER \
@@ -228,7 +245,6 @@ func _on_dailies_menu_popup():
 
 	_debt_popup.clear()
 
-	var player = GameState.player
 	for i in player.get_debt_count():
 		var debt = player.get_debt(i)
 		var label
