@@ -7,6 +7,9 @@ func _ready():
 	if $"../..".visible:
 		$"../../Care_Sheet_Animation".play("Writing")
 
+	# start processing when we actually need this thing
+	set_process(false)
+
 func _process(_delta):
 	if $".".visible_ratio < 1.0:
 		if not $"../../Typing".is_playing():

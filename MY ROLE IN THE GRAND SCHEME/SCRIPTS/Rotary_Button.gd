@@ -21,6 +21,8 @@ var last_bottom_button_position : int = -1
 func _ready():
 	update_texture()
 
+# TODO: this should all be handled in _input(), not _process()
+
 func _process(_delta):
 	if top_button.button_position != last_top_button_position or bottom_button.button_position != last_bottom_button_position:
 		if not $"../../Movies/DB".paused:

@@ -12,7 +12,9 @@ func _ready():
 		set_process(false)
 		return
 	visible = false
-	print("Collider trouvé :", target_collider)
+
+	# start processing when we actually need this thing
+	set_process(false)
 
 func _process(_delta):
 	if target_collider == null:

@@ -12,6 +12,9 @@ func _ready():
 	trash_normal.visible = true
 	trash_hover.visible = false
 
+	# start processing when we actually need this thing
+	set_process(false)
+
 func _process(_delta):
 	var mouse_position = get_viewport().get_mouse_position()
 	var collider_global_position = interaction_collider.global_position
