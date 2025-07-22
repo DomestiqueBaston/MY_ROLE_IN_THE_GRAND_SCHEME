@@ -1,4 +1,4 @@
-[gd_scene load_steps=255 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=249 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -592,226 +592,6 @@ content_margin_top = 1.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_equxq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ev0la"]
-
-[sub_resource type="Animation" id="Animation_42ybe"]
-resource_name = "RESET"
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Text:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Price:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Price:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(153, 86)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Yes:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("No:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_b6clx"]
-resource_name = "Writing"
-length = 2.0667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Text:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 1.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Price:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.533333, 0.6, 1.93333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, false, true, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Price:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 1.93333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(153, 86), Vector2(153, 86), Vector2(191, 86), Vector2(185, 86), Vector2(168, 86), Vector2(153, 86), Vector2(153, 86)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Yes:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2, 2.06667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("No:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.93333, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fn3bj"]
-_data = {
-&"RESET": SubResource("Animation_42ybe"),
-&"Writing": SubResource("Animation_b6clx")
-}
-
-[sub_resource type="Animation" id="Animation_wf7jc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Text_Use/Yes:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Text_Use/No:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Text_Use/Text:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_fowbj"]
-resource_name = "Writing"
-length = 2.06667
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Text_Use/Text:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 1.93333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Text_Use/Yes:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 2.06667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Text_Use/No:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.93333, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4enr2"]
-_data = {
-&"RESET": SubResource("Animation_wf7jc"),
-&"Writing": SubResource("Animation_fowbj")
-}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th1i4"]
 
@@ -4244,11 +4024,8 @@ offset_bottom = 222.0
 rotation = 0.0165557
 bbcode_enabled = true
 text = "[center]This  Warrant costs [color=#992726]        Dø[/color],  and  It   better  be worth it.  Money doesn't  just fall from the sky...  usually.[/center]"
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
-visible = false
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
 offset_left = 153.0
@@ -4262,7 +4039,6 @@ text = "25"
 horizontal_alignment = 2
 
 [node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_Buy"]
-visible = false
 layout_mode = 0
 offset_left = 180.0
 offset_top = 233.0
@@ -4278,7 +4054,6 @@ need this one!"
 alignment = 2
 
 [node name="No" type="Button" parent="Overlays/Search_Warrant/Text_Buy"]
-visible = false
 layout_mode = 0
 offset_left = 106.0
 offset_top = 233.0
@@ -4292,11 +4067,6 @@ theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1
 text = "Well, now that
 you mention it..."
 alignment = 0
-
-[node name="Typing_Animation" type="AnimationPlayer" parent="Overlays/Search_Warrant/Text_Buy"]
-libraries = {
-&"": SubResource("AnimationLibrary_fn3bj")
-}
 
 [node name="Text_Use" type="Control" parent="Overlays/Search_Warrant"]
 visible = false
@@ -4324,11 +4094,8 @@ question is:
 Should  I  use  my so expensive
 Search  WarrAnt
 (or is it  racket)?[/center]"
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_Use"]
-visible = false
 layout_mode = 0
 offset_left = 180.0
 offset_top = 233.0
@@ -4344,7 +4111,6 @@ choice!"
 alignment = 2
 
 [node name="No" type="Button" parent="Overlays/Search_Warrant/Text_Use"]
-visible = false
 layout_mode = 0
 offset_left = 106.0
 offset_top = 233.0
@@ -4358,17 +4124,6 @@ theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1
 text = "Hm...
 Maybe not!"
 alignment = 0
-
-[node name="Typing_Animation" type="AnimationPlayer" parent="Overlays/Search_Warrant/Text_Use"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_4enr2")
-}
-
-[node name="Typing" type="AudioStreamPlayer" parent="Overlays/Search_Warrant"]
-stream = ExtResource("108_fowbj")
-volume_db = -20.0
-bus = &"FX"
 
 [node name="Sleep" type="Node2D" parent="Overlays"]
 visible = false

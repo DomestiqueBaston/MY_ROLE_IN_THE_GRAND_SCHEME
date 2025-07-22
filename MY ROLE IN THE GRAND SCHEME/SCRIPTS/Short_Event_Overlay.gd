@@ -115,7 +115,6 @@ func open_office():
 ## or cancel. Returns true if he confirmed.
 ##
 func buy_search_warrant():
-	$Overlays/Search_Warrant/Text_Buy.reset()
 	$Overlays/Search_Warrant/Text_Buy.show()
 	$Overlays/Search_Warrant/Text_Use.hide()
 	$Overlays/Search_Warrant.show()
