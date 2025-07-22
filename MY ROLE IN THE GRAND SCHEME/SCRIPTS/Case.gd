@@ -18,6 +18,7 @@ var locations: Array[LocationCard]
 var _crime_location: LocationCard
 
 var _case_id: String
+var _case_random_name: String
 var _case_name: String
 var _crime: String
 var _motive: Dictionary
@@ -29,6 +30,7 @@ var _links: Array[Link]
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
+var _case_name_data = preload("res://JSON/CASE/Random_Case_Names.json").data
 
 # for save/load
 var _unique_id: int
@@ -68,6 +70,7 @@ static func generate() -> Case:
 #
 func _randomize():
 	_case_id = _generate_case_id()
+	_case_random_name = _generate_random_name()
 
 	# crime, motive and lots of other information about the case
 
@@ -718,8 +721,15 @@ func _generate_case_id():
 
 	return "%s#%s-%s.%s" % [part1, part2, part3, part4]
 
+func _generate_random_name():
+	return _case_name_data.part_1.pick_random() \
+		 + _case_name_data.part_2.pick_random()
+
 func get_case_id() -> String:
 	return _case_id
+
+func get_random_name() -> String:
+	return _case_random_name
 
 func get_case_name() -> String:
 	return _case_name
@@ -875,6 +885,7 @@ func get_referenced_objects():
 func get_json_dict():
 	var dict = {
 		"case_id": _case_id,
+		"case_random_name": _case_random_name,
 		"case_name": _case_name,
 		"crime": _crime,
 		"motive": _motive,
@@ -924,6 +935,7 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	_case_id = dict.get("case_id", "")
+	_case_random_name = dict.get("random_name", "Bork Bork Bork")
 	_case_name = dict.case_name
 	_crime = dict.crime
 	_motive = dict.motive
