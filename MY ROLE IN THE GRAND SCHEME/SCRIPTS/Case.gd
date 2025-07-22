@@ -526,9 +526,7 @@ func _randomize():
 			var partner = victim.get_one_connection(Link.Type.INTIMACY)
 			partner.is_revealed = true
 			_create_link(partner, partner.get_home(), Link.Type.HOME)
-			# if there are 2 victims and they are a couple...!
-			if not partner in find_links_to(victim, Link.Type.INTIMACY):
-				_create_link(victim, partner, Link.Type.INTIMACY)
+			_create_link(victim, partner, Link.Type.INTIMACY)
 
 	if _crime_location:
 		_crime_location.is_revealed = true
@@ -685,7 +683,10 @@ func _get_object_owner_counts(obj_id: String) -> Array:
 	var location_owner_count = location_owners.pick_random() as int
 	return [npc_owner_count, location_owner_count]
 
-func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
+func _create_link(from: BaseCard, to: BaseCard, type: Link.Type):
+	if from in find_links_to(to, type):
+		return
+
 	var pin1 = Pin.allocate()
 	pin1.card_location = from.find_closest_unused_pin(Vector2(BaseCard.size.x, 0))
 	pin1.card = from
@@ -700,7 +701,6 @@ func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
 	link.pin2 = pin2
 
 	add_link(link)
-	return link
 
 func _generate_case_id():
 	# [A-Z][a-z]
