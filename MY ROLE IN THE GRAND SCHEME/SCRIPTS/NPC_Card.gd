@@ -273,36 +273,26 @@ static func generate_card(
 	return card
 
 func print_npc():
-	print("%s:" % get_display_name())
-	print("  category: ", NpcCategory.keys()[category].to_lower())
+	if category == NpcCategory.NONE:
+		print("%s:" % get_display_name())
+	else:
+		print("%s (%s):" % [get_display_name(), NpcCategory.keys()[category].to_lower()])
 	print("  sex: %s (%s)" % [
 		Sex.keys()[npc_sex].to_lower(),
 		SexualOrientation.keys()[orientation].to_lower()])
 	print("  married: ", is_married)
 	print("  job: ", job)
-	_print_connections_of_type("home", Link.Type.HOME)
-	_print_connections_of_type("work", Link.Type.WORK)
-	_print_connections_of_type("hangout", Link.Type.HANGOUT)
-	_print_connections_of_type("hideout", Link.Type.HIDEOUT)
-	_print_connections_of_type("intimates", Link.Type.INTIMACY)
-	_print_connections_of_type("friends", Link.Type.FRIEND)
-	_print_connections_of_type("enemies", Link.Type.ENEMY)
-	_print_connections_of_type("acquaintances", Link.Type.ACQUAINTANCE)
-	_print_connections_of_type("property", Link.Type.PROPERTY)
-	_print_connections_of_type("debt", Link.Type.DEBT)
-	_print_connections_of_type("ideology", Link.Type.IDEOLOGY)
-
-func _print_connections_of_type(label: String, type: Link.Type):
-	var cnxs = get_connections(type)
-	if cnxs:
-		var text = ""
-		for cnx in cnxs:
-			if not text.is_empty():
-				text += ", "
-			text += cnx.get_display_name()
-		print("  ", label, ": ", text)
-	else:
-		print("  ", label, ": none")
+	print_connections_of_type("home", Link.Type.HOME)
+	print_connections_of_type("work", Link.Type.WORK)
+	print_connections_of_type("hangout", Link.Type.HANGOUT)
+	print_connections_of_type("hideout", Link.Type.HIDEOUT)
+	print_connections_of_type("intimates", Link.Type.INTIMACY)
+	print_connections_of_type("friends", Link.Type.FRIEND)
+	print_connections_of_type("enemies", Link.Type.ENEMY)
+	print_connections_of_type("acquaintances", Link.Type.ACQUAINTANCE)
+	print_connections_of_type("property", Link.Type.PROPERTY)
+	print_connections_of_type("debt", Link.Type.DEBT)
+	print_connections_of_type("ideology", Link.Type.IDEOLOGY)
 
 #
 # For save/load.

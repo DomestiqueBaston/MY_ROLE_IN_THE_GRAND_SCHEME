@@ -86,7 +86,7 @@ func _randomize():
 	total_npc_count += other_npc_count
 	var evidence_count = maxi(
 		_get_count_from_array(_motive.get("evidence_number", 0)),
-		culprit_count + accomplice_count)
+		culprit_count + accomplice_count + victim_count)
 
 	# incriminating links (we don't need to know between whom yet)
 
@@ -335,50 +335,38 @@ func _randomize():
 			if roll != 1:
 				_create_new_connection(npc, Link.Type.IDEOLOGY, i)
 
-	# evidence
-
-	if evidence_count > 0:
-		var candidates = _motive.get("evidences", []).duplicate()
-		var count = mini(evidence_count, candidates.size() - 1)
-		for i in count:
-			var which = randi() % candidates.size()
-			var card = ObjectCard.create_card(candidates[which])
-			# TODO: set location and owner(s)
-			candidates.remove_at(which)
-			evidence.append(card)
-
-	# crime location
+	# determine crime location BEFORE distributing evidence
 
 	var location_name = _motive["crime_location"]
 	if location_name is Array and not location_name.is_empty():
 		location_name = location_name.pick_random()
 
-	var location_card: LocationCard
+	var secret_location: LocationCard
 
 	match location_name:
 		"none":
-			location_card = null
+			secret_location = null
 		"any":
 			var who = (culprits if randi() & 1 else victims).pick_random()
-			location_card = who.get_all_location_connections().pick_random()
+			secret_location = who.get_all_location_connections().pick_random()
 		"any_culprit":
 			var who = culprits.pick_random()
-			location_card = who.get_all_location_connections().pick_random()
+			secret_location = who.get_all_location_connections().pick_random()
 		"any_victim":
 			var who = victims.pick_random()
-			location_card = who.get_all_location_connections().pick_random()
+			secret_location = who.get_all_location_connections().pick_random()
 		"home":
-			location_card = victims.pick_random().get_home()
+			secret_location = victims.pick_random().get_home()
 		"work":
-			location_card = victims.pick_random().get_work()
+			secret_location = victims.pick_random().get_work()
 		"culprit_home":
-			location_card = culprits.pick_random().get_home()
+			secret_location = culprits.pick_random().get_home()
 		"culprit_work":
-			location_card = culprits.pick_random().get_work()
+			secret_location = culprits.pick_random().get_work()
 		_:
-			location_card = _find_or_create_location(location_name)
+			secret_location = _find_or_create_location(location_name)
 
-	if location_card:
+	if secret_location:
 		var known_factor = _motive.get("known_crime_location", 1)
 		var is_known
 		if known_factor <= 0:
@@ -388,8 +376,103 @@ func _randomize():
 		else:
 			is_known = (randf() < known_factor)
 		if is_known:
-			location_card.location_status = LocationCard.LocationStatus.CRIME_SCENE
-			_crime_location = location_card
+			secret_location.location_status = LocationCard.LocationStatus.CRIME_SCENE
+			_crime_location = secret_location
+
+	# evidence
+
+	if evidence_count > 0:
+		# which objects to instantiate for evidence
+		var candidates = _motive.get("evidences", []).duplicate()
+
+		# which NPCs the objects belong to
+		var bad_guys = culprits + accomplices
+		var all_owners = bad_guys + victims
+
+		# some NPCs may get more than one piece of evidence, if there are more
+
+		if all_owners.size() < evidence_count:
+			var more_owners = []
+			for i in range(all_owners.size(), evidence_count):
+				more_owners.append(all_owners.pick_random())
+			all_owners.append_array(more_owners)
+
+		# create a card for each piece of evidence and assign it to an NPC (or
+		# possibly several NPCs) and an appropriate location
+
+		for i in evidence_count:
+			if candidates.is_empty():
+				break
+
+			# choose an object ID at random from the given candidates, and look
+			# look up in the database how many owners it has (NPCs and
+			# locations) (we assume a maximum of 2 NPC owners and 1 location
+			# owner)
+
+			var which = randi() % candidates.size()
+			var obj_id = candidates[which]
+			var obj = ObjectCard.create_card(obj_id)
+			candidates.remove_at(which)
+
+			var owner_counts = _get_object_owner_counts(obj_id)
+			var npc_owner_count = owner_counts[0]
+			var location_owner_count = owner_counts[1]
+
+			# choose an appropriate location, depending on the object's owners,
+			# and create all the appropriate PROPERTY and FOUND connections
+
+			var npc = all_owners[i]
+			var location: LocationCard
+
+			obj.add_connection(Link.Type.PROPERTY, npc)
+			npc.add_connection(Link.Type.PROPERTY, obj)
+
+			if npc_owner_count > 1:
+				var other_owner
+				if npc.category == NpcCard.NpcCategory.VICTIM:
+					other_owner = bad_guys.pick_random()
+				else:
+					other_owner = victims.pick_random()
+
+				obj.add_connection(Link.Type.PROPERTY, other_owner)
+				other_owner.add_connection(Link.Type.PROPERTY, obj)
+
+				match randi() % (3 if secret_location else 2):
+					0:
+						location = locations.pick_random()
+					1:
+						location = npc.get_all_location_connections().pick_random()
+					2:
+						location = secret_location
+			else:
+				if npc.category == NpcCard.NpcCategory.VICTIM:
+					var bad_guy = bad_guys.pick_random()
+					var hideout = bad_guy.get_one_connection(Link.Type.HIDEOUT)
+					match randi() % (3 if hideout else 2):
+						0:
+							location = bad_guy.get_home()
+						1:
+							location = bad_guy.get_work()
+						2:
+							location = hideout
+				else:
+					var victim = victims.pick_random()
+					match randi() % (3 if secret_location else 2):
+						0:
+							location = victim.get_home()
+						1:
+							location = victim.get_work()
+						2:
+							location = secret_location
+
+			if location_owner_count > 0:
+				obj.add_connection(Link.Type.PROPERTY, location)
+				location.add_connection(Link.Type.PROPERTY, obj)
+
+			obj.add_connection(Link.Type.FOUND, location)
+			location.add_connection(Link.Type.FOUND, obj)
+
+			evidence.append(obj)
 
 	# populate all locations with useless objects
 
@@ -397,11 +480,9 @@ func _randomize():
 		var obj_count = randi_range(0, 3)
 		while obj_count > 0:
 			var obj_id = _object_data.keys().pick_random()
-			var owners = _object_data[obj_id].get("owners", {})
-			var npc_owners = owners.get("npc", [0])
-			var npc_owner_count = npc_owners.pick_random() as int
-			var location_owners = owners.get("location", [0])
-			var location_owner_count = location_owners.pick_random() as int
+			var owner_counts = _get_object_owner_counts(obj_id)
+			var npc_owner_count = owner_counts[0]
+			var location_owner_count = owner_counts[1]
 
 			# find NPCs associated with the location (home, work, hangout,
 			# hideout) to be designated owners of the object
@@ -600,6 +681,20 @@ func _add_friends_of_friends(friends: Array[NpcCard], npc: NpcCard):
 		for ff in npc.get_connections(Link.Type.FRIEND):
 			_add_friends_of_friends(friends, ff)
 
+#
+# Returns the number of owners an object of the given type belongs to. An object
+# can actually belong to a location as well as to one or more NPCs, so this
+# function returns two integers: the number of NPC owners and the number of
+# location "owners".
+#
+func _get_object_owner_counts(obj_id: String) -> Array:
+	var owners = _object_data[obj_id].get("owners", {})
+	var npc_owners = owners.get("npc", [0])
+	var npc_owner_count = npc_owners.pick_random() as int
+	var location_owners = owners.get("location", [0])
+	var location_owner_count = location_owners.pick_random() as int
+	return [npc_owner_count, location_owner_count]
+
 func _create_link(from: BaseCard, to: BaseCard, type: Link.Type) -> Link:
 	var pin1 = Pin.allocate()
 	pin1.card_location = from.find_closest_unused_pin(Vector2(BaseCard.size.x, 0))
@@ -756,6 +851,9 @@ func print_case():
 	for npc in npcs:
 		print()
 		npc.print_npc()
+	for obj in evidence:
+		print()
+		obj.print_object()
 
 #
 # For save/load.

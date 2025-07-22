@@ -39,6 +39,14 @@ static func create_card(id: String) -> ObjectCard:
 	card.database_id = id
 	return card
 
+func print_object():
+	if is_object_evidence:
+		print("%s (evidence):" % get_display_name())
+	else:
+		print("%s:" % get_display_name())
+	print_connections_of_type("found", Link.Type.FOUND)
+	print_connections_of_type("property", Link.Type.PROPERTY)
+
 #
 # For save/load.
 #

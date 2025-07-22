@@ -384,6 +384,18 @@ func get_one_connection(type: Link.Type) -> BaseCard:
 func has_connection(type: Link.Type) -> bool:
 	return type in _connections
 
+func print_connections_of_type(label: String, type: Link.Type):
+	var cnxs = get_connections(type)
+	if cnxs:
+		var text = ""
+		for cnx in cnxs:
+			if not text.is_empty():
+				text += ", "
+			text += cnx.get_display_name()
+		print("  ", label, ": ", text)
+	else:
+		print("  ", label, ": none")
+
 ##
 ## Returns the card's name to display in the UI. By default, this is just the
 ## card_name property, but some subclasses (NpcCard, LocationCard) override this
