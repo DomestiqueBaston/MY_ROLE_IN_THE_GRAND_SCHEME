@@ -4215,6 +4215,7 @@ theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 text = "I'm  afraid  I  won't  do that, Dave."
 
 [node name="Search_Warrant" type="Node2D" parent="Overlays"]
+visible = false
 position = Vector2(172, 48)
 
 [node name="Search_Warrant_BG" type="Sprite2D" parent="Overlays/Search_Warrant"]
