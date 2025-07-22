@@ -4017,13 +4017,13 @@ script = ExtResource("6_200re")
 [node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
 layout_mode = 0
-offset_left = 108.0
+offset_left = 107.0
 offset_top = 64.0
-offset_right = 249.0
+offset_right = 250.0
 offset_bottom = 222.0
 rotation = 0.0165557
 bbcode_enabled = true
-text = "[center]This  Warrant costs [color=#992726]        Dø[/color],  and  It   better  be worth it.  Money doesn't  just fall from the sky...  usually.[/center]"
+text = "[center]This  [color=ff8864]Warrant costs[/color] [color=#992726]         Dø[/color],  and  It   better  be worth it.  Money doesn't  just fall from the sky...  usually.[/center]"
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
@@ -4091,8 +4091,8 @@ bbcode_enabled = true
 text = "[center]Now the
 question is:
 
-Should  I  use  my so expensive
-Search  WarrAnt
+[color=ff8864]Should  I  use[/color]  my so [color=ff1c18]expensive[/color]
+[color=ff8864]Search  WarrAnt[/color]
 (or is it  racket)?[/center]"
 
 [node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_Use"]
