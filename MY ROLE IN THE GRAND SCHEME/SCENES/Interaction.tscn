@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cet13n014p2ub"]
+[gd_scene load_steps=59 format=3 uid="uid://cet13n014p2ub"]
 
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="1_1c880"]
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="2_v84v6"]
@@ -22,14 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://raefutvrke80" path="res://GRAPHICS/INTERACTION/Bring_It_On_Disabled.png" id="11_di8r4"]
 [ext_resource type="Texture2D" uid="uid://c622uxo2hpnmd" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test.png" id="11_e5wgu"]
 [ext_resource type="Texture2D" uid="uid://ltm43forrvpe" path="res://GRAPHICS/TOP_LEFT_SCREEN/Screen_Mask_Test_ter.png" id="12_rq7o5"]
-[ext_resource type="Script" uid="uid://cslcuvmg0o82w" path="res://SCRIPTS/Random_Interaction.gd" id="14_1c880"]
 [ext_resource type="Texture2D" uid="uid://43qya3ji5i5" path="res://GRAPHICS/INTERACTION/Dialogue_TV.png" id="14_k1rto"]
 [ext_resource type="Texture2D" uid="uid://cvlbkv18hita5" path="res://GRAPHICS/INTERACTION/Combat_TV.png" id="15_5imuv"]
 [ext_resource type="VideoStream" uid="uid://cg658u2alfml5" path="res://GRAPHICS/INTERACTION/DB.ogv" id="15_k1rto"]
 [ext_resource type="VideoStream" uid="uid://cbrvs84gmgpot" path="res://GRAPHICS/INTERACTION/KM.ogv" id="16_5imuv"]
 [ext_resource type="Texture2D" uid="uid://cororpxjkvmhy" path="res://GRAPHICS/INTERACTION/Investigation_TV.png" id="16_jv51o"]
-[ext_resource type="Script" uid="uid://b08whl1g6oj7o" path="res://SCRIPTS/Tv_On_Off_Button.gd" id="16_uvife"]
 [ext_resource type="VideoStream" uid="uid://q17krx83pp8o" path="res://GRAPHICS/INTERACTION/JJ.ogv" id="17_jv51o"]
+[ext_resource type="Script" uid="uid://cpm8h6shpupf4" path="res://SCRIPTS/Top_Left_Screen.gd" id="17_okarn"]
 [ext_resource type="AudioStream" uid="uid://1pdk03jxcw08" path="res://SOUND/MISC/Switch.ogg" id="17_uvife"]
 [ext_resource type="Theme" uid="uid://c0htwuiuqc8ik" path="res://UI/Option_Menu_Theme.tres" id="18_k1rto"]
 [ext_resource type="Texture2D" uid="uid://3ux6y70r4r60" path="res://GRAPHICS/INTERACTION/Rotary_Button_1.png" id="20_rrbp0"]
@@ -403,13 +402,13 @@ position = Vector2(559, 263.5)
 shape = SubResource("RectangleShape2D_c8v8a")
 
 [node name="Top_Left_Screen" type="Node2D" parent="."]
+script = ExtResource("17_okarn")
 
 [node name="Line_Animation" type="Sprite2D" parent="Top_Left_Screen"]
 scale = Vector2(0.97, 1)
 texture = ExtResource("9_cx411")
 centered = false
 hframes = 13
-script = ExtResource("14_1c880")
 
 [node name="Dialogue" type="Sprite2D" parent="Top_Left_Screen/Line_Animation"]
 visible = false
@@ -635,9 +634,13 @@ offset_bottom = 97.0
 tooltip_text = "On/Off"
 theme = ExtResource("2_v84v6")
 toggle_mode = true
+button_pressed = true
 texture_pressed = ExtResource("21_rrbp0")
 texture_click_mask = ExtResource("22_y0drc")
-script = ExtResource("16_uvife")
+
+[node name="Timer" type="Timer" parent="Top_Left_Screen"]
+wait_time = 0.666
+one_shot = true
 
 [node name="Screen_Line_Animation" type="AnimationPlayer" parent="Top_Left_Screen"]
 libraries = {
@@ -731,4 +734,3 @@ limited_menus = true
 [connection signal="mouse_entered" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_exited"]
 [connection signal="pressed" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_pressed"]
-[connection signal="pressed" from="Top_Left_Screen/Tv_On_Off" to="Top_Left_Screen/Tv_On_Off" method="_on_pressed"]
