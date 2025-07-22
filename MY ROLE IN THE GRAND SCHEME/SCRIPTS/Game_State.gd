@@ -156,7 +156,7 @@ func _increment_time(hours: int):
 # Stuff that needs to be dealt with at the start of each new day.
 #
 func _new_day(day: int):
-	
+
 	# send the player a new bill every Monday
 
 	if day % 7 == 0:
@@ -216,6 +216,7 @@ func can_sleep() -> bool:
 
 func sleep(hours: int):
 	if can_sleep():
+		set_player_location(PlayerLocation.OFFICE)
 		await player.sleep(hours)
 		_increment_time(hours)
 		_has_slept = true
