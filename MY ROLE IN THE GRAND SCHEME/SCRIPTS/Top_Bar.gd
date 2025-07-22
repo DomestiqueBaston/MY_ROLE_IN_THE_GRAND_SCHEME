@@ -274,11 +274,8 @@ func _on_dailies_menu_popup():
 
 func _on_debt_menu_pressed(index: int):
 	$Menu_Bip.play()
-	await GameState.player.pay_debt(index)
-	await GameState.pass_one_hour()
+	await GameState.pay_debt(index)
 
 func _on_drug_menu_pressed(index: int):
-	var doses = 1 + index
 	$Menu_Bip.play()
-	await GameState.player.use_drugs(doses)
-	await GameState.pass_one_hour()
+	await GameState.use_drugs(1 + index)

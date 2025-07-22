@@ -230,14 +230,14 @@ func can_visit_investigation_center() -> bool:
 
 func visit_investigation_center():
 	if can_visit_investigation_center():
-		await pass_one_hour()
 		set_player_location(PlayerLocation.INVESTIGATION_CENTER)
 		_has_visited_hub = true
+		await pass_one_hour()
 		await Globals.dialog_overlay.open_investigation_center()
 
 func visit_office():
-	await pass_one_hour()
 	set_player_location(PlayerLocation.OFFICE)
+	await pass_one_hour()
 	await Globals.dialog_overlay.open_office()
 
 func is_warrant_desk_open():
@@ -246,13 +246,23 @@ func is_warrant_desk_open():
 	return day <= 5 and hour >= 8 and hour < 20
 
 func buy_search_warrant():
-	await pass_one_hour()
 	set_player_location(PlayerLocation.WARRANT_DESK)
+	await pass_one_hour()
 	var ok = await Globals.dialog_overlay.buy_search_warrant()
 	if ok:
 		player.money -= 25
 		player.has_search_warrant = true
 		save_game()
+
+func pay_debt(debt_index: int):
+	set_player_location(PlayerLocation.OFFICE)
+	await pass_one_hour()
+	await player.pay_debt(debt_index)
+
+func use_drugs(doses: int):
+	set_player_location(PlayerLocation.OFFICE)
+	await pass_one_hour()
+	await player.use_drugs(doses)
 
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
