@@ -400,18 +400,14 @@ func _randomize():
 		# create a card for each piece of evidence and assign it to an NPC (or
 		# possibly several NPCs) and an appropriate location
 
-		for i in evidence_count:
-			if candidates.is_empty():
-				break
+		for i in mini(evidence_count, candidates.size()):
 
 			# choose an object ID at random from the given candidates, and look
 			# up in the database how many owners it has (NPCs and locations) (we
-			# assume a maximum of 2 NPC owners and 1 location owner)
+			# impose a maximum of 2 NPC owners and 1 location owner here)
 
-			var which = randi() % candidates.size()
-			var obj_id = candidates[which]
+			var obj_id = candidates.pop_at(randi() % candidates.size())
 			var obj = ObjectCard.create_card(obj_id)
-			candidates.remove_at(which)
 
 			var owner_counts = _get_object_owner_counts(obj_id)
 			var npc_owner_count = owner_counts[0]
@@ -495,11 +491,9 @@ func _randomize():
 				if npc_owner_count > 1:
 					var candidates = location_npcs.duplicate()
 					for i in npc_owner_count:
-						var index = randi() % candidates.size()
-						var owner = candidates[index]
+						var owner = candidates.pop_at(randi() % candidates.size())
 						obj.add_connection(Link.Type.PROPERTY, owner)
 						owner.add_connection(Link.Type.PROPERTY, obj)
-						candidates.remove_at(index)
 				elif npc_owner_count == 1:
 					var owner = location_npcs.pick_random()
 					obj.add_connection(Link.Type.PROPERTY, owner)
@@ -640,10 +634,7 @@ func _add_to_entourage(entourage, npc: NpcCard, ignore_count: int):
 #
 func _find_frenemy_for(npc: NpcCard, candidates, ignore_count) -> NpcCard:
 	if not candidates.is_empty():
-		var which = randi() % candidates.size()
-		var other = candidates[which]
-		candidates.remove_at(which)
-		return other
+		return candidates.pop_at(randi() % candidates.size())
 
 	var lambda = func(other: NpcCard):
 		return not (other in npc.get_connections(Link.Type.FRIEND) or
