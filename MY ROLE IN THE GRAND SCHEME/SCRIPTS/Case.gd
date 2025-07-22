@@ -405,9 +405,8 @@ func _randomize():
 				break
 
 			# choose an object ID at random from the given candidates, and look
-			# look up in the database how many owners it has (NPCs and
-			# locations) (we assume a maximum of 2 NPC owners and 1 location
-			# owner)
+			# up in the database how many owners it has (NPCs and locations) (we
+			# assume a maximum of 2 NPC owners and 1 location owner)
 
 			var which = randi() % candidates.size()
 			var obj_id = candidates[which]
@@ -422,10 +421,10 @@ func _randomize():
 			# and create all the appropriate PROPERTY and FOUND connections
 
 			var npc = all_owners[i]
-			var location: LocationCard
-
 			obj.add_connection(Link.Type.PROPERTY, npc)
 			npc.add_connection(Link.Type.PROPERTY, obj)
+
+			var location: LocationCard
 
 			if npc_owner_count > 1:
 				var other_owner
