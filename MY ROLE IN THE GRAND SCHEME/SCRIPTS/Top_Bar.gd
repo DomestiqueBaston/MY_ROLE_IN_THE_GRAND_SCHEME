@@ -87,10 +87,9 @@ func _enter_tree():
 func _ready():
 	_update_controls()
 
-	var player = GameState.player
 	for attr in _attrs:
-		player.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
-	player.debts_changed.connect(_on_debts_changed)
+		GameState.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
+	GameState.debts_changed.connect(_on_debts_changed)
 	GameState.time_changed.connect(_on_time_changed)
 
 	# menu buttons and whether or not they are always enabled

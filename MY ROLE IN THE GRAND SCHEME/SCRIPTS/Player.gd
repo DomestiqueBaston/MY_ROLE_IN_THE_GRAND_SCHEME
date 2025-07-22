@@ -18,17 +18,6 @@ var drugs: int: set = set_drugs, get = get_drugs
 var drugs_taken_today: int
 var has_search_warrant: bool
 
-signal physical_changed
-signal mental_changed
-signal health_changed
-signal emotion_changed
-signal addiction_changed
-signal wanted_changed
-signal money_changed
-signal drugs_changed
-signal debts_changed
-signal died
-
 var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
 var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
 var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
@@ -61,30 +50,6 @@ func reset():
 	_debts.clear()
 	_cards.clear()
 	_sleep_bonus_malus = 0
-	_signal_pause -= 1
-
-func assign(other):
-	_signal_pause += 1
-	player_name = other.player_name
-	job_id = other.job_id
-	job_name = other.job_name
-	job_bonus_malus = other.job_bonus_malus
-	sex = other.sex
-	physical = other.physical
-	mental = other.mental
-	max_health = other.max_health
-	health = other.health
-	emotion = other.emotion
-	addiction = other.addiction
-	wanted = other.wanted
-	paranoia = other.paranoia
-	money = other.money
-	drugs = other.drugs
-	drugs_taken_today = other.drugs_taken_today
-	has_search_warrant = other.has_search_warrant
-	_debts = other._debts
-	_cards = other._cards
-	_sleep_bonus_malus = other._sleep_bonus_malus
 	_signal_pause -= 1
 
 func start_game():
@@ -174,7 +139,7 @@ func set_physical(phy: int):
 	if physical != phy:
 		physical = phy
 		if _signal_pause == 0:
-			physical_changed.emit()
+			GameState.physical_changed.emit()
 
 func get_physical() -> int:
 	return physical
@@ -183,7 +148,7 @@ func set_mental(men: int):
 	if mental != men:
 		mental = men
 		if _signal_pause == 0:
-			mental_changed.emit()
+			GameState.mental_changed.emit()
 
 func get_mental() -> int:
 	return mental
@@ -193,7 +158,7 @@ func set_health(hea: int):
 	if health != hea:
 		health = hea
 		if _signal_pause == 0:
-			health_changed.emit()
+			GameState.health_changed.emit()
 
 func get_health() -> int:
 	return health
@@ -209,7 +174,7 @@ func set_emotion(emo: int):
 	if emotion != emo:
 		emotion = emo
 		if _signal_pause == 0:
-			emotion_changed.emit()
+			GameState.emotion_changed.emit()
 
 func get_emotion() -> int:
 	return emotion
@@ -219,7 +184,7 @@ func set_addiction(add: int):
 	if addiction != add:
 		addiction = add
 		if _signal_pause == 0:
-			addiction_changed.emit()
+			GameState.addiction_changed.emit()
 
 func get_addiction() -> int:
 	return addiction
@@ -229,7 +194,7 @@ func set_wanted(wan: int):
 	if wanted != wan:
 		wanted = wan
 		if _signal_pause == 0:
-			wanted_changed.emit()
+			GameState.wanted_changed.emit()
 
 func get_wanted() -> int:
 	return wanted
@@ -238,7 +203,7 @@ func set_money(dough: int):
 	if money != dough:
 		money = dough
 		if _signal_pause == 0:
-			money_changed.emit()
+			GameState.money_changed.emit()
 
 func get_money() -> int:
 	return money
@@ -247,7 +212,7 @@ func set_drugs(doses: int):
 	if drugs != doses:
 		drugs = doses
 		if _signal_pause == 0:
-			drugs_changed.emit()
+			GameState.drugs_changed.emit()
 
 func get_drugs() -> int:
 	return drugs
@@ -260,7 +225,7 @@ func use_drugs(doses: int):
 
 func add_debt(debt: int):
 	_debts.insert(0, debt)
-	debts_changed.emit()
+	GameState.debts_changed.emit()
 
 func get_debt_count() -> int:
 	return _debts.size()
@@ -274,7 +239,7 @@ func set_debt(index: int, new_debt: int):
 func pay_debt(index: int):
 	money -= _debts[index]
 	_debts.remove_at(index)
-	debts_changed.emit()
+	GameState.debts_changed.emit()
 
 func get_debt_total() -> int:
 	var total = 0
@@ -361,7 +326,7 @@ func sleep(hours: int):
 	addiction -= 1
 
 func die():
-	died.emit()
+	GameState.died.emit()
 
 #
 # For save/load.

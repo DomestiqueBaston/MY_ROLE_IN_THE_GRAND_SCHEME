@@ -14,7 +14,7 @@ extends Node2D
 func _ready():
 	_title_screen = $Active_Scene/Title_Screen
 	_title_screen.next.connect(_go_to_option_menu)
-	GameState.player.died.connect(_on_death)
+	GameState.died.connect(_on_death)
 
 func _replace_scene(new_scene: PackedScene) -> Node:
 

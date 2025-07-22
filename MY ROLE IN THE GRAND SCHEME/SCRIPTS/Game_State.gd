@@ -21,7 +21,50 @@ signal time_changed
 signal case_changed
 
 ## Signal emitted when the player changes location.
-signal player_location_changed
+signal location_changed
+
+## Signal emitted when the player's PHY attribute has changed.
+@warning_ignore("unused_signal")
+signal physical_changed
+
+## Signal emitted when the player's MEN attribute has changed.
+@warning_ignore("unused_signal")
+signal mental_changed
+
+## Signal emitted when the player's HEA attribute has changed.
+@warning_ignore("unused_signal")
+signal health_changed
+
+## Signal emitted when the player's Emo attribute has changed.
+@warning_ignore("unused_signal")
+signal emotion_changed
+
+## Signal emitted when the player's Add attribute has changed.
+@warning_ignore("unused_signal")
+signal addiction_changed
+
+## Signal emitted when the player's Wan attribute has changed.
+@warning_ignore("unused_signal")
+signal wanted_changed
+
+## Signal emitted when the amount of money in the player's possession has
+## changed.
+@warning_ignore("unused_signal")
+signal money_changed
+
+## Signal emitted when the number of drug doses in the player's possession has
+## changed.
+@warning_ignore("unused_signal")
+signal drugs_changed
+
+## Signal emitted when the number of unpaid bills in the player's possession has
+## changed.
+@warning_ignore("unused_signal")
+signal debts_changed
+
+## Signal emitted when the player has died.
+@warning_ignore("unused_signal")
+signal died
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
@@ -234,7 +277,7 @@ func set_player_location(location: PlayerLocation, card: LocationCard = null):
 	if _player_location != location or _player_location_card != card:
 		_player_location = location
 		_player_location_card = card
-		player_location_changed.emit()
+		location_changed.emit()
 
 ##
 ## Returns the current location of the player. If it is PlayerLocation.OTHER,
@@ -270,7 +313,7 @@ func load_game():
 				assign(obj)
 
 func assign(other):
-	player.assign(other.player)
+	player = other.player
 	_hour = other._hour
 	_has_visited_hub = other._has_visited_hub
 	_has_slept = other._has_slept
@@ -340,7 +383,6 @@ func restore(dict, catalog):
 		cases.append(catalog[case_ref])
 	if "player_location" in dict:
 		_player_location = dict.player_location
-		print("restore: player_location: ", _player_location)
 		if "player_location_card" in dict:
 			_player_location_card = catalog[dict.player_location_card]
 

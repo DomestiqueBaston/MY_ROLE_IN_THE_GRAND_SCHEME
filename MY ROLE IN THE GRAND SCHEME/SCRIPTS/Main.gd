@@ -109,8 +109,8 @@ func _ready():
 
 	tree_exiting.connect(_detach_cards)
 	GameState.case_changed.connect(_on_case_changed)
-	GameState.player_location_changed.connect(_update_player_location_info)
-	GameState.player.addiction_changed.connect(_on_addiction_changed)
+	GameState.location_changed.connect(_update_player_location_info)
+	GameState.addiction_changed.connect(_on_addiction_changed)
 
 	_update_player_location_info()
 
