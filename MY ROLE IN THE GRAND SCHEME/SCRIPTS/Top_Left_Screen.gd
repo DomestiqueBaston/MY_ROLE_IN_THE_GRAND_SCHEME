@@ -39,7 +39,7 @@ func _on_timeout():
 
 	if top == 2 and bottom == 5:
 		_current_movie = $Movies/DB
-	elif top == 2 and bottom == 1:
+	elif top == 3 and bottom == 1:
 		_current_movie = $Movies/KM
 	elif top == 5 and bottom == 4:
 		_current_movie = $Movies/JJ
