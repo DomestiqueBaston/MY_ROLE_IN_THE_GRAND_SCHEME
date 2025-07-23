@@ -520,7 +520,7 @@ Dialogue
 		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau).
 	- Une information cachée (hideout) est toujours révélée juste.
-	- Un PNJ peut révéler une info cachée concernant un autre PNJ uniquement si ceux-ci ont un lien d’Intimacy, Friend, Enemy, Culprit, Accomplice entre eux.
+	- Un PNJ peut révéler une info cachée concernant un autre PNJ uniquement si ceux-ci ont un lien reel d’Intimacy, Friend, Enemy, Accomplice entre eux.
 	- Une information fausse pour un lien désignera 2 PNJs aléatoires dans un lien de n’importe laquelle des natures suivantes : debt_influence, intimacy, friend, enemy, acquaintance ou ideology.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet et la couleur de la nature du lien en pointillé de 2 couleurs (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn).
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec son/ses lien(s) Violet et la couleur de la nature du lien en pointillé comme dit au dessus (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn).
@@ -758,13 +758,13 @@ Liens et validation d’enquête :
 Système de Difficulté pour les Enquêtes 
 	- Échelle de Difficulté et bonus/malus aux jets de dé
 Difficulté	Bonus/Malus
-Enquête « à la con » (0)	Enquêtes vraiment simples. (bonus de 4)
-1	Enquêtes simples. (bonus de 3)
-2	Enquêtes modérément complexes. (bonus de 2)
-3	Enquêtes normalement complexes. (bonus de 1)
-4	Enquêtes très complexes. (/)
-5	Enquêtes épouvantablement complexes. (malus de 1)
-Enquête finale (6)	WTF!(malus de 2)
+Enquête « à la con » (0)	Enquêtes vraiment simples. (bonus de 3)
+1	Enquêtes simples. (bonus de 2)
+2	Enquêtes modérément complexes. (bonus de 1)
+3	Enquêtes normalement complexes. (/)
+4	Enquêtes très complexes. (malus de 1)
+5	Enquêtes épouvantablement complexes. (malus de 2)
+Enquête finale (6)	WTF!(malus de 3)
 
 	- Le niveau de difficulté impliquera un bonus/malus à tous les jets de dé du joueur dans cette enquête (voir tableau au dessus).
 	- Dès le départ, le joueur a accès à n’importe quelle enquête de n’importe quel niveau de 1 à 5 (la valeur du niveau de difficulté ne lui sera pas communiquée). À lui d’estimer sa capacité à la gérer avec les informations connues au départ de l’enquête.
@@ -1031,3 +1031,4 @@ Futures idées…
 	- Attaques du joueur en prison !
 	- Tentatives (échouées ou réussies) de meurtre sur des témoins.
 	- SMS anonymes accusant des suspects.
+	- Les coupables et complices peuvent se balancer !
