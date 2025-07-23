@@ -250,7 +250,6 @@ func buy_search_warrant():
 	if _player_location != PlayerLocation.WARRANT_DESK:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.WARRANT_DESK)
-	await pass_one_hour()
 	var ok = await Globals.dialog_overlay.buy_search_warrant()
 	if ok:
 		player.money -= 25
