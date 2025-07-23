@@ -197,8 +197,9 @@ offset_top = 52.0
 offset_right = 145.0
 offset_bottom = 74.0
 rotation = -0.191986
+theme_override_colors/default_color = Color(0.3321, 0.42768, 0.81, 0.705882)
 bbcode_enabled = true
-text = "[color=#ff1c18][pulse freq=3.3 color=#ffffff15 ease=-100.0] Credits[/pulse][/color]"
+text = "[pulse freq=3.3 color=#ffffff15 ease=-100.0] Credits[/pulse]"
 
 [node name="Flavien" type="RichTextLabel" parent="Texts"]
 layout_mode = 0
