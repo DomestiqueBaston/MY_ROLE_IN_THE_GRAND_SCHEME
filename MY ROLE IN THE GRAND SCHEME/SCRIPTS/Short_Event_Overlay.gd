@@ -90,15 +90,17 @@ func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
 
 ##
 ## Displays the investigation center, where the player can select the current
-## case, and waits for him to confirm or cancel.
+## case, and waits for him to confirm or cancel. Returns true if he changed the
+## current case.
 ##
-func open_investigation_center():
+func open_investigation_center()  -> bool:
 	$Overlays/Investigation_Center.populate()
 	$Overlays/Investigation_Center.show()
 	await _appear()
 	await $Overlays/Investigation_Center.done
 	await _disappear()
 	$Overlays/Investigation_Center.hide()
+	return $Overlays/Investigation_Center.has_case_changed()
 
 ##
 ## Displays the office and waits for the player to click on OK.
@@ -114,7 +116,7 @@ func open_office():
 ## Displays the "buy search warrant" dialog and waits for the player to confirm
 ## or cancel. Returns true if he confirmed.
 ##
-func buy_search_warrant():
+func buy_search_warrant() -> bool:
 	$Overlays/Search_Warrant/Text_Buy.show()
 	$Overlays/Search_Warrant/Text_Use.hide()
 	$Overlays/Search_Warrant.show()

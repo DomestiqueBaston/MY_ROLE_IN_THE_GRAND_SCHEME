@@ -224,9 +224,7 @@ func _on_dailies_menu_popup():
 
 	item_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
 	popup.set_item_disabled(
-		item_index,
-		GameState.get_player_location() == GameState.PlayerLocation.INVESTIGATION_CENTER \
-		or not GameState.can_visit_investigation_center())
+		item_index, not GameState.can_visit_investigation_center())
 
 	# can the player go to the office?
 
