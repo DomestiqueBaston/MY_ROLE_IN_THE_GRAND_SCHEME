@@ -68,7 +68,6 @@ theme = ExtResource("3_c5hnn")
 anchors_preset = 0
 
 [node name="Dialogue" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Title"]
-visible = false
 layout_mode = 0
 offset_left = 38.0
 offset_top = 35.0
@@ -90,6 +89,7 @@ text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-1
 autowrap_mode = 2
 
 [node name="Investigation" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Title"]
+visible = false
 layout_mode = 0
 offset_left = 38.0
 offset_top = 37.0
@@ -133,7 +133,6 @@ autowrap_mode = 3
 visible_characters_behavior = 1
 
 [node name="Dialogue" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
-visible = false
 anchors_preset = 0
 
 [node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
@@ -875,6 +874,7 @@ bbcode_enabled = true
 text = "[center]And what's more, I can't say it's made me [color=#ff8864]any more [color=#ff1c18]emotionally[/color] stable[/color].[/center]"
 
 [node name="Combat" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
+visible = false
 anchors_preset = 0
 
 [node name="Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat"]
