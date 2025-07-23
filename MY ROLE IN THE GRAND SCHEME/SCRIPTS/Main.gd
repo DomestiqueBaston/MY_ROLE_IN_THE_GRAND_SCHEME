@@ -136,8 +136,7 @@ func _unhandled_input(event: InputEvent):
 	elif _drag_state == DragState.CLICKED:
 		if event is InputEventMouseMotion:
 			_unblock_info_box()
-			if GameState.get_player_location() == GameState.PlayerLocation.OFFICE \
-				and _start_drag():
+			if _start_drag():
 				Globals.dragging = true
 				_drag_state = DragState.DRAGGING
 			else:
@@ -198,8 +197,7 @@ func _click_on_card(global_pos: Vector2, card: BaseCard):
 func _double_click_on_card(card: BaseCard):
 	if _input_paused:
 		return
-	if GameState.get_player_location() == GameState.PlayerLocation.OFFICE \
-		and not card.is_stacked():
+	if not card.is_stacked():
 		card.expand_or_reduce()
 	_unblock_info_box()
 
@@ -535,9 +533,6 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	if node is BaseCard and node.is_stacked():
 		return
 
-	var can_change_links = node is Link and \
-		GameState.get_player_location() == GameState.PlayerLocation.OFFICE
-
 	var link_item_ids = [
 		MenuItem.CREATE_CONF_LINK,
 		MenuItem.CREATE_PROB_LINK,
@@ -548,7 +543,7 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	
 	for id in link_item_ids:
 		var index = popup.get_item_index(id)
-		popup.set_item_disabled(index, not can_change_links)
+		popup.set_item_disabled(index, not node is Link)
 
 	_popup_node = node
 	popup.popup(Rect2i(pos, Vector2i()))
