@@ -19,6 +19,9 @@ signal quit
 enum MenuItem {
 	DIALOGUE,
 	INVESTIGATION,
+	CREATE_CONF_LINK,
+	CREATE_PROB_LINK,
+	CHANGE_LINK_COLOR,
 	SWITCH_LINK,
 	DELETE_LINK,
 	REMOVE_WARNING
@@ -78,9 +81,12 @@ func _ready():
 	popup.add_item("Dialogue", MenuItem.DIALOGUE)
 	popup.add_item("Investigation", MenuItem.INVESTIGATION)
 	popup.add_separator("  - - - - - - - - - -  ")
-	popup.add_submenu_node_item("Create conf. link", submenu1)
-	popup.add_submenu_node_item("Create prob. link", submenu2)
-	popup.add_submenu_node_item("Change link color", submenu3)
+	popup.add_submenu_node_item(
+		"Create conf. link", submenu1, MenuItem.CREATE_CONF_LINK)
+	popup.add_submenu_node_item(
+		"Create prob. link", submenu2, MenuItem.CREATE_PROB_LINK)
+	popup.add_submenu_node_item(
+		"Change link color", submenu3, MenuItem.CHANGE_LINK_COLOR)
 	popup.add_item("Switch conf./prob.", MenuItem.SWITCH_LINK)
 	popup.add_item("Delete link", MenuItem.DELETE_LINK)
 	popup.add_separator("  - - - - - - - - - -  ")
@@ -114,7 +120,7 @@ func _ready():
 
 	_update_player_location_info()
 
-func _input(event: InputEvent):
+func _unhandled_input(event: InputEvent):
 	if _drag_state == DragState.DRAGGING:
 		if event is InputEventMouseMotion:
 			_drag(event.global_position)
@@ -130,7 +136,8 @@ func _input(event: InputEvent):
 	elif _drag_state == DragState.CLICKED:
 		if event is InputEventMouseMotion:
 			_unblock_info_box()
-			if _start_drag():
+			if GameState.get_player_location() == GameState.PlayerLocation.OFFICE \
+				and _start_drag():
 				Globals.dragging = true
 				_drag_state = DragState.DRAGGING
 			else:
@@ -191,7 +198,8 @@ func _click_on_card(global_pos: Vector2, card: BaseCard):
 func _double_click_on_card(card: BaseCard):
 	if _input_paused:
 		return
-	if not card.is_stacked():
+	if GameState.get_player_location() == GameState.PlayerLocation.OFFICE \
+		and not card.is_stacked():
 		card.expand_or_reduce()
 	_unblock_info_box()
 
@@ -524,14 +532,24 @@ func _stop_linking(global_pos: Vector2):
 func _popup_menu(pos: Vector2, node: Node2D):
 	if _input_paused:
 		return
-	if node is BaseCard:
-		if node.is_stacked():
-			return
-		print("popup menu for card: ", node.card_name)
-	elif node is Link:
-		print("popup menu for link: ", node.get_name())
-	else:
-		print("popup menu for node: ", node.get_name())
+	if node is BaseCard and node.is_stacked():
+		return
+
+	var can_change_links = node is Link and \
+		GameState.get_player_location() == GameState.PlayerLocation.OFFICE
+
+	var link_item_ids = [
+		MenuItem.CREATE_CONF_LINK,
+		MenuItem.CREATE_PROB_LINK,
+		MenuItem.CHANGE_LINK_COLOR,
+		MenuItem.SWITCH_LINK,
+		MenuItem.DELETE_LINK
+	]
+	
+	for id in link_item_ids:
+		var index = popup.get_item_index(id)
+		popup.set_item_disabled(index, not can_change_links)
+
 	_popup_node = node
 	popup.popup(Rect2i(pos, Vector2i()))
 
