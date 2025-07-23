@@ -2,6 +2,8 @@ extends Node2D
 
 signal done
 
+var _case_changed: bool
+
 @onready var _option_button = $Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List
 @onready var _id = $Chalkboard_Content/Chalk_Mask/Case_Report/Case/ID
 @onready var _status = $Chalkboard_Content/Chalk_Mask/Case_Report/Case/Status
@@ -111,6 +113,14 @@ func _on_cancel_pressed():
 func _on_ok_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	if _option_button.selected < GameState.cases.size():
-		GameState.set_current_case(_option_button.selected)
+	_case_changed = false
+	var case_index = _option_button.selected
+	if case_index < GameState.cases.size():
+		var case = GameState.cases[case_index]
+		if case != GameState.get_current_case():
+			_case_changed = true
+			GameState.set_current_case(case_index)
 	done.emit()
+
+func has_case_changed() -> bool:
+	return _case_changed

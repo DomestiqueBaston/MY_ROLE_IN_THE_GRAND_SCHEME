@@ -215,11 +215,12 @@ func can_sleep() -> bool:
 	return not _has_slept
 
 func sleep(hours: int):
-	if can_sleep():
+	if _player_location != PlayerLocation.OFFICE:
+		await pass_one_hour()
 		set_player_location(PlayerLocation.OFFICE)
-		await player.sleep(hours)
-		_increment_time(hours)
-		_has_slept = true
+	await player.sleep(hours)
+	_increment_time(hours)
+	_has_slept = true
 
 ##
 ## Returns false if the player has already visited the Investigation Center
@@ -229,15 +230,15 @@ func can_visit_investigation_center() -> bool:
 	return not _has_visited_hub
 
 func visit_investigation_center():
-	if can_visit_investigation_center():
-		set_player_location(PlayerLocation.INVESTIGATION_CENTER)
-		_has_visited_hub = true
+	if _player_location != PlayerLocation.INVESTIGATION_CENTER:
 		await pass_one_hour()
-		await Globals.dialog_overlay.open_investigation_center()
+		set_player_location(PlayerLocation.INVESTIGATION_CENTER)
+	_has_visited_hub = await Globals.dialog_overlay.open_investigation_center()
 
 func visit_office():
-	set_player_location(PlayerLocation.OFFICE)
-	await pass_one_hour()
+	if _player_location != PlayerLocation.OFFICE:
+		await pass_one_hour()
+		set_player_location(PlayerLocation.OFFICE)
 	await Globals.dialog_overlay.open_office()
 
 func is_warrant_desk_open():
@@ -246,7 +247,9 @@ func is_warrant_desk_open():
 	return day <= 5 and hour >= 8 and hour < 20
 
 func buy_search_warrant():
-	set_player_location(PlayerLocation.WARRANT_DESK)
+	if _player_location != PlayerLocation.WARRANT_DESK:
+		await pass_one_hour()
+		set_player_location(PlayerLocation.WARRANT_DESK)
 	await pass_one_hour()
 	var ok = await Globals.dialog_overlay.buy_search_warrant()
 	if ok:
@@ -255,12 +258,16 @@ func buy_search_warrant():
 		save_game()
 
 func pay_debt(debt_index: int):
-	set_player_location(PlayerLocation.OFFICE)
+	if _player_location != PlayerLocation.OFFICE:
+		await pass_one_hour()
+		set_player_location(PlayerLocation.OFFICE)
 	await pass_one_hour()
 	await player.pay_debt(debt_index)
 
 func use_drugs(doses: int):
-	set_player_location(PlayerLocation.OFFICE)
+	if _player_location != PlayerLocation.OFFICE:
+		await pass_one_hour()
+		set_player_location(PlayerLocation.OFFICE)
 	await pass_one_hour()
 	await player.use_drugs(doses)
 
