@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cq57wrp3dfi0j" path="res://GRAPHICS/SHORT_EVENT/Care_Sheet_BG.png" id="1_gt7nd"]
 [ext_resource type="Theme" uid="uid://bn5ihjhwbd0gk" path="res://UI/Care_Sheet_Theme.tres" id="2_ixkpq"]
 [ext_resource type="Script" uid="uid://6s8ejpvawryf" path="res://TRASH (NEW)/Warrant_Typing.gd" id="3_vnhhu"]
-[ext_resource type="Script" uid="uid://5amx8lvvjfx" path="res://SCRIPTS/Care_Sheet_Buttons.gd" id="4_cb7cy"]
+[ext_resource type="Script" uid="uid://5amx8lvvjfx" path="res://TRASH (NEW)/Care_Sheet_Buttons.gd" id="4_cb7cy"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_jhyu5"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="22_e4e1x"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="23_2qu0w"]

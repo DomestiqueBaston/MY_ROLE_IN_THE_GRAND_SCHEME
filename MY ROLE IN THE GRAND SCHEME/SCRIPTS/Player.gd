@@ -176,6 +176,13 @@ func set_emotion(emo: int):
 		if _signal_pause == 0:
 			GameState.emotion_changed.emit()
 
+##
+## Improves the player's emotional state by at most how_much, meaning Emo
+## increases if it is negative or decreases if it is positive.
+##
+func improve_emotion(how_much: int):
+	set_emotion(_calm(emotion, how_much))
+
 func get_emotion() -> int:
 	return emotion
 
@@ -185,6 +192,13 @@ func set_addiction(add: int):
 		addiction = add
 		if _signal_pause == 0:
 			GameState.addiction_changed.emit()
+
+##
+## Improves the player's addiction state by at most how_much, meaning Add
+## increases if it is negative or decreases if it is positive.
+##
+func improve_addiction(how_much: int):
+	set_addiction(_calm(addiction, how_much))
 
 func get_addiction() -> int:
 	return addiction

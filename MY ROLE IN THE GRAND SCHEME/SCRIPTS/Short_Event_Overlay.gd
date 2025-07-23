@@ -125,3 +125,16 @@ func buy_search_warrant() -> bool:
 	await _disappear()
 	$Overlays/Search_Warrant.hide()
 	return $Overlays/Search_Warrant/Text_Buy.get_confirmed()
+
+##
+## Displays the visit to Doctor F dialog and waits for the player to confirm or
+## cancel. Returns true if he confirmed.
+##
+func visit_doctor() -> bool:
+	$Overlays/Care_Sheet.reset()
+	$Overlays/Care_Sheet.show()
+	await _appear()
+	await $Overlays/Care_Sheet.done
+	await _disappear()
+	$Overlays/Care_Sheet.hide()
+	return $Overlays/Care_Sheet.get_confirmed()

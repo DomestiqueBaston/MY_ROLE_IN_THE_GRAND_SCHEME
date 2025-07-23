@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -13,15 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://cq57wrp3dfi0j" path="res://GRAPHICS/SHORT_EVENT/Care_Sheet_BG.png" id="10_oetaq"]
 [ext_resource type="Theme" uid="uid://bn5ihjhwbd0gk" path="res://UI/Care_Sheet_Theme.tres" id="11_gpjij"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_dgbv7"]
-[ext_resource type="Script" uid="uid://5amx8lvvjfx" path="res://SCRIPTS/Care_Sheet_Buttons.gd" id="12_vr4eh"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_is8fw"]
 [ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/SHORT_EVENT/Wanted_BG.png" id="13_s26gq"]
 [ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Buttons.gd" id="14_adsmj"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="15_wqyuw"]
+[ext_resource type="Script" uid="uid://4guy4cwmilvu" path="res://SCRIPTS/Care_Sheet.gd" id="16_bnyoh"]
 [ext_resource type="ButtonGroup" uid="uid://bna0povlgtisn" path="res://UI/Jail_Money_group.tres" id="16_dog4u"]
 [ext_resource type="AudioStream" uid="uid://bnim7widv0v1h" path="res://SOUND/MISC/Police.ogg" id="17_wp1dn"]
 [ext_resource type="Texture2D" uid="uid://ckrgff87loeg1" path="res://GRAPHICS/SHORT_EVENT/Intercom_BG.png" id="18_15dtw"]
-[ext_resource type="Script" uid="uid://dcpwtsjbwvpts" path="res://SCRIPTS/Care_Sheet_Typing.gd" id="18_fowbj"]
 [ext_resource type="Theme" uid="uid://q1cw5cyqn10g" path="res://UI/Intercom_Theme.tres" id="19_p0ov3"]
 [ext_resource type="Texture2D" uid="uid://b4glfoes4mdlp" path="res://GRAPHICS/SHORT_EVENT/Green_Button_Normal.png" id="20_nc40d"]
 [ext_resource type="Texture2D" uid="uid://b42ohp0p7jqiq" path="res://GRAPHICS/SHORT_EVENT/Red_Button_Normal.png" id="21_8p368"]
@@ -265,10 +264,10 @@ tracks/1/path = NodePath("Note/Yes:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.00001, 2.06667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.00001, 2.06667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -277,10 +276,10 @@ tracks/2/path = NodePath("Note/No:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.06667, 2.13333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.06667, 2.13333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -289,10 +288,10 @@ tracks/3/path = NodePath("Note/Price:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1.8, 1.86667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.8, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6kkd"]
@@ -908,6 +907,7 @@ bus = &"UI"
 [node name="Care_Sheet" type="Node2D" parent="Overlays"]
 visible = false
 position = Vector2(164, 50)
+script = ExtResource("16_bnyoh")
 
 [node name="Care_Sheet_BG" type="Sprite2D" parent="Overlays/Care_Sheet"]
 texture = ExtResource("10_oetaq")
@@ -936,7 +936,6 @@ text = "Are  you  absolutely  certain  you  wish  to incur the expenses  for  th
 Mind you,  we  are  talking about [color=#992726]        Dø[/color] here..."
 visible_characters = 0
 visible_ratio = 0.0
-script = ExtResource("18_fowbj")
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Care_Sheet/Note"]
 visible = false
@@ -968,7 +967,6 @@ theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "No  other
 choice,  Doc."
-script = ExtResource("12_vr4eh")
 
 [node name="No" type="Button" parent="Overlays/Care_Sheet/Note"]
 visible = false
@@ -983,9 +981,8 @@ theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-text = "On  a second
+text = "On second
 thought..."
-script = ExtResource("12_vr4eh")
 
 [node name="Typing" type="AudioStreamPlayer" parent="Overlays/Care_Sheet"]
 stream = ExtResource("108_fowbj")
@@ -3909,7 +3906,7 @@ theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
-text = "On a second
+text = "On second
 thought..."
 alignment = 0
 
@@ -4258,12 +4255,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_cancel_pressed"]
-[connection signal="mouse_entered" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_any_button_exited"]
-[connection signal="pressed" from="Overlays/Care_Sheet/Note/Yes" to="Overlays/Care_Sheet/Note/Yes" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Overlays/Care_Sheet/Note/No" to="Overlays/Care_Sheet/Note/No" method="_on_any_button_entered"]
-[connection signal="mouse_exited" from="Overlays/Care_Sheet/Note/No" to="Overlays/Care_Sheet/Note/No" method="_on_any_button_exited"]
-[connection signal="pressed" from="Overlays/Care_Sheet/Note/No" to="Overlays/Care_Sheet/Note/No" method="_on_no_pressed"]
 [connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_cancel_pressed"]

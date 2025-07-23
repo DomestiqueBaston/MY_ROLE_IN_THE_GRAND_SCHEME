@@ -83,6 +83,9 @@ var _has_visited_hub: bool
 # has the player slept today?
 var _has_slept: bool
 
+# the last day the player visited the doctor
+var _last_doctor_day: int
+
 # the crimes of the last several cases generated, to avoid repetition
 var _last_crimes: Array[String]
 
@@ -99,6 +102,7 @@ func start_game():
 	_hour = _start_time
 	_has_visited_hub = false
 	_has_slept = false
+	_last_doctor_day = -1
 	_last_crimes.clear()
 	_current_case_index = -1
 	_player_location = PlayerLocation.OFFICE
@@ -244,7 +248,7 @@ func visit_office():
 func is_warrant_desk_open():
 	var day = get_day() % 7
 	var hour = get_hour()
-	return day <= 5 and hour >= 8 and hour < 20
+	return day < 5 and hour >= 8 and hour < 20
 
 func buy_search_warrant():
 	if _player_location != PlayerLocation.WARRANT_DESK:
@@ -269,6 +273,26 @@ func use_drugs(doses: int):
 		set_player_location(PlayerLocation.OFFICE)
 	await pass_one_hour()
 	await player.use_drugs(doses)
+
+func can_visit_doctor() -> bool:
+	var day = get_day()
+	var hour = get_hour()
+	if day % 7 >= 5 or hour < 8 or hour >= 20 or player.money < 50:
+		return false
+	return _last_doctor_day < 0 or day - _last_doctor_day >= 7
+
+func visit_doctor():
+	if _player_location != PlayerLocation.DOCTOR:
+		await pass_one_hour()
+		set_player_location(PlayerLocation.DOCTOR)
+	var ok = await Globals.dialog_overlay.visit_doctor()
+	if ok:
+		player.money -= 50
+		player.health += 2
+		player.improve_emotion(1)
+		player.improve_addiction(1)
+		_last_doctor_day = get_day()
+		save_game()
 
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
@@ -329,11 +353,12 @@ func load_game():
 			if obj:
 				assign(obj)
 
-func assign(other):
+func assign(other: GameState):
 	player = other.player
 	_hour = other._hour
 	_has_visited_hub = other._has_visited_hub
 	_has_slept = other._has_slept
+	_last_doctor_day = other._last_doctor_day
 	_last_crimes = other._last_crimes
 	_current_case_index = other._current_case_index
 	_player_location = other._player_location
@@ -372,6 +397,7 @@ func get_json_dict():
 		"hour": _hour,
 		"has_visited_hub": _has_visited_hub,
 		"has_slept": _has_slept,
+		"last_doctor_day": _last_doctor_day,
 		"last_crimes": _last_crimes,
 		"current_case_index": _current_case_index
 	}
@@ -393,6 +419,7 @@ func restore(dict, catalog):
 	_hour = dict.hour
 	_has_visited_hub = dict.get("has_visited_hub", false)
 	_has_slept = dict.get("has_slept", false)
+	_last_doctor_day = dict.get("last_doctor_day", -1)
 	_last_crimes.assign(dict.last_crimes)
 	_current_case_index = dict.current_case_index
 	player = catalog[dict.player]
