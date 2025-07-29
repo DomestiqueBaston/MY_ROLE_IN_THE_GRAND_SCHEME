@@ -48,6 +48,7 @@ class PlayerAttr:
 enum DailiesMenuItem {
 	WARRANT = 1000,
 	DOCTOR,
+	DEALER,
 	INVESTIGATION_CENTER,
 	OFFICE,
 	PASS_TIME,
@@ -98,7 +99,7 @@ func _ready():
 		$Menus/Dailies:		false,
 		$Menus/Cases:		false,
 		$Menus/Cards:		false,
-		$Menus/Whatever:		true
+		$Menus/Whatever:	true
 	}
 
 	for button: MenuButton in buttons:
@@ -126,7 +127,7 @@ func _ready():
 	popup.about_to_popup.connect(_on_dailies_menu_popup)
 	popup.add_item("Buy a search warrant...", DailiesMenuItem.WARRANT)
 	popup.add_item("Visit Doctor F...", DailiesMenuItem.DOCTOR)
-	popup.add_item("Visit Rowena the dealer...")
+	popup.add_item("Visit Rowena the dealer...", DailiesMenuItem.DEALER)
 	popup.add_item(
 		"Go to the Investig. Center...", DailiesMenuItem.INVESTIGATION_CENTER)
 	popup.add_item("Back to the office!", DailiesMenuItem.OFFICE)
@@ -146,6 +147,8 @@ func _on_dailies_press(id: int):
 			GameState.buy_search_warrant()
 		DailiesMenuItem.DOCTOR:
 			GameState.visit_doctor()
+		DailiesMenuItem.DEALER:
+			GameState.visit_dealer()
 		DailiesMenuItem.INVESTIGATION_CENTER:
 			GameState.visit_investigation_center()
 		DailiesMenuItem.OFFICE:
@@ -221,12 +224,19 @@ func _on_dailies_menu_popup():
 		popup.set_item_text(item_index, "Buy a search warrant...")
 		popup.set_item_disabled(
 			item_index,
-			player.money < 25 or player.get_debt_count() > 0 or not GameState.is_warrant_desk_open())
+			player.money < GameState.warrant_price \
+			or player.get_debt_count() > 0 \
+			or not GameState.is_warrant_desk_open())
 
 	# can the player go to the doctor?
 
 	item_index = popup.get_item_index(DailiesMenuItem.DOCTOR)
 	popup.set_item_disabled(item_index, not GameState.can_visit_doctor())
+
+	# can the player go see his dealer?
+
+	item_index = popup.get_item_index(DailiesMenuItem.DEALER)
+	popup.set_item_disabled(item_index, not GameState.can_visit_dealer())
 
 	# can the player visit the investigation center?
 

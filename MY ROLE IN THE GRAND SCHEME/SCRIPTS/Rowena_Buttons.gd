@@ -1,66 +1,81 @@
 extends Node2D
 
+signal done
 
-@onready var price_label = $Drug_Store/I_will_take/Price
-@onready var stock_number_label = $Drug_Store/Stock/Stock_Number
-@onready var purchase_label = $Drug_Store/I_will_take/Purchase
+@onready var _price_label = $Drug_Store/I_will_take/Price
+@onready var _stock_label = $Drug_Store/Stock/Stock_Number
+@onready var _purchase_label = $Drug_Store/I_will_take/Purchase
+@onready var _minus_button = $Drug_Store/I_will_take/Plus_Minus/Minus
+@onready var _plus_button = $Drug_Store/I_will_take/Plus_Minus/Plus
+@onready var _nope_button = $Thanks_Nope/HBoxContainer/Nope
+@onready var _thanks_button = $Thanks_Nope/HBoxContainer/Thanks
+
+var _doses_available: int = 5
+var _doses_purchased: int = 0
+var _funds: int = 0
+
+func reset(doses: int, funds: int):
+	_doses_available = doses
+	_doses_purchased = 0
+	_funds = funds
+	_update_ui()
+
+func get_doses_purchased() -> int:
+	return _doses_purchased
 
 func _ready():
-	stock_number_label.text = "5"
-	purchase_label.text = "0"
-	price_label.text = "0"
+	_update_ui()
+
+	_minus_button.pressed.connect(_on_minus_pressed)
+	_minus_button.mouse_entered.connect(_on_mouse_entered.bind(_minus_button))
+	_minus_button.mouse_exited.connect(_on_mouse_exited.bind(_minus_button))
+
+	_plus_button.pressed.connect(_on_plus_pressed)
+	_plus_button.mouse_entered.connect(_on_mouse_entered.bind(_plus_button))
+	_plus_button.mouse_exited.connect(_on_mouse_exited.bind(_plus_button))
+
+	_nope_button.pressed.connect(_on_nope_pressed)
+	_nope_button.mouse_entered.connect(_on_mouse_entered.bind(_nope_button))
+	_nope_button.mouse_exited.connect(_on_mouse_exited.bind(_nope_button))
+
+	_thanks_button.pressed.connect(_on_thanks_pressed)
+	_thanks_button.mouse_entered.connect(_on_mouse_entered.bind(_thanks_button))
+	_thanks_button.mouse_exited.connect(_on_mouse_exited.bind(_thanks_button))
+
+func _on_mouse_entered(button: BaseButton):
+	if not (button.disabled or Globals.leave_sound.playing or Globals.hover_sound.playing):
+		Globals.hover_sound.play()
+
+func _on_mouse_exited(button: BaseButton):
+	if not (button.disabled or Globals.hover_sound.playing or Globals.leave_sound.playing):
+		Globals.leave_sound.play()
 
 func _on_thanks_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	$"../../On_Off".play("Disappearance")
-	await $"../../On_Off".animation_finished
-
-func _on_mouse_entered():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-
-func _on_mouse_exited():
-	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()
+	done.emit()
 
 func _on_nope_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
-	$"../../On_Off".play("Disappearance")
-	await $"../../On_Off".animation_finished
+	_doses_purchased = 0
+	done.emit()
 
 func _on_minus_pressed():
-	Globals.cancel_sound.play()
-	_update_price(-25)
-	_update_stock_number(-1)
+	if _doses_purchased > 0:
+		Globals.cancel_sound.play()
+		_doses_purchased -= 1
+		_update_ui()
 
 func _on_plus_pressed():
-	Globals.valid_sound.play()
-	_update_price(25)
-	_update_stock_number(1)
+	if _doses_purchased < _doses_available:
+		Globals.valid_sound.play()
+		_doses_purchased += 1
+		_update_ui()
 
-# Fonction pour mettre à jour le label Price
-func _update_price(amount: int):
-	var current_price = int(price_label.text)
-	current_price += amount
-	if current_price < 0:
-		current_price = 0
-	elif current_price > 125:
-		current_price = 125
-	price_label.text = str(current_price)
-
-# Fonction pour mettre à jour les labels Stock_Number et Purchase
-func _update_stock_number(amount: int):
-	var current_stock = int(stock_number_label.text)
-	var current_purchase = int(purchase_label.text)
-
-	if amount > 0 and current_stock > 0:
-		current_stock -= 1
-		current_purchase += 1
-	elif amount < 0 and current_purchase > 0:
-		current_stock += 1
-		current_purchase -= 1
-
-	stock_number_label.text = str(current_stock)
-	purchase_label.text = str(current_purchase)
+func _update_ui():
+	var price = _doses_purchased * GameState.drug_price
+	_stock_label.text = str(_doses_available - _doses_purchased)
+	_purchase_label.text = str(_doses_purchased)
+	_price_label.text = str(price)
+	_thanks_button.disabled = price == 0 or price > _funds

@@ -138,3 +138,27 @@ func visit_doctor() -> bool:
 	await _disappear()
 	$Overlays/Care_Sheet.hide()
 	return $Overlays/Care_Sheet.get_confirmed()
+
+##
+## Displays the dialog for a visit to the dealer. The stock parameter is the
+## number of doses available for purchase, and the funds parameter is how much
+## the player has to spend. Returns the number of doses the player bought.
+##
+func visit_dealer(stock: int, funds: int) -> int:
+	if stock > 0:
+		$Overlays/Rowena.reset(stock, funds)
+		$Overlays/Rowena.show()
+		await _appear()
+		await $Overlays/Rowena.done
+		await _disappear()
+		$Overlays/Rowena.hide()
+		return $Overlays/Rowena.get_doses_purchased()
+	else:
+		$Overlays/Misc/Announces/Rowena_Absent.show()
+		$Overlays/Misc.show()
+		await _appear()
+		await $Overlays/Misc/Announces.done
+		await _disappear()
+		$Overlays/Misc.hide()
+		$Overlays/Misc/Announces/Rowena_Absent.hide()
+		return 0

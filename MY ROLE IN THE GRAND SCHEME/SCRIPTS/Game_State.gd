@@ -13,6 +13,12 @@ enum PlayerLocation {
 var player: Player = Player.new()
 var cases: Array[Case]
 
+## Price for a search warrant.
+const warrant_price: int = 25
+
+## Price for a dose of drugs.
+const drug_price: int = 25
+
 ## Signal emitted when the time has changed: see get_day() and get_hour().
 @warning_ignore("unused_signal")
 signal time_changed
@@ -86,6 +92,9 @@ var _has_slept: bool
 # the last day the player visited the doctor
 var _last_doctor_day: int
 
+# how many doses has Rowena got to sell?
+var _dealer_drug_stock: int
+
 # the crimes of the last several cases generated, to avoid repetition
 var _last_crimes: Array[String]
 
@@ -103,6 +112,7 @@ func start_game():
 	_has_visited_hub = false
 	_has_slept = false
 	_last_doctor_day = -1
+	_dealer_drug_stock = randi_range(5, 10)
 	_last_crimes.clear()
 	_current_case_index = -1
 	_player_location = PlayerLocation.OFFICE
@@ -161,10 +171,15 @@ func _increment_time(hours: int):
 #
 func _new_day(day: int):
 
-	# send the player a new bill every Monday
+	# every Monday the player is sent a new bill, and Rowena replenishes her
+	# stock of drugs
 
 	if day % 7 == 0:
 		_send_new_bill()
+		_dealer_drug_stock = randi_range(5, 10)
+	else:
+		if _dealer_drug_stock > 0 and randi() % 4 == 0:
+			_dealer_drug_stock -= 1
 
 	# increment the health of NPCs in active cases
 
@@ -256,7 +271,7 @@ func buy_search_warrant():
 		set_player_location(PlayerLocation.WARRANT_DESK)
 	var ok = await Globals.dialog_overlay.buy_search_warrant()
 	if ok:
-		player.money -= 25
+		player.money -= warrant_price
 		player.has_search_warrant = true
 		save_game()
 
@@ -273,6 +288,22 @@ func use_drugs(doses: int):
 		set_player_location(PlayerLocation.OFFICE)
 	await pass_one_hour()
 	await player.use_drugs(doses)
+
+func can_visit_dealer() -> bool:
+	var hour = get_hour()
+	return (hour < 8 or hour >= 20) \
+		and player.money >= drug_price and player.get_debt_count() == 0
+
+func visit_dealer():
+	if _player_location != PlayerLocation.ROWENA:
+		await pass_one_hour()
+		set_player_location(PlayerLocation.ROWENA)
+	var doses = await Globals.dialog_overlay.visit_dealer(
+		_dealer_drug_stock, player.money)
+	if doses > 0:
+		_dealer_drug_stock -= doses
+		player.money -= doses * drug_price
+		player.drugs += doses
 
 func can_visit_doctor() -> bool:
 	var day = get_day()
@@ -360,6 +391,7 @@ func assign(other: GameState):
 	_has_visited_hub = other._has_visited_hub
 	_has_slept = other._has_slept
 	_last_doctor_day = other._last_doctor_day
+	_dealer_drug_stock = other._dealer_drug_stock
 	_last_crimes = other._last_crimes
 	_current_case_index = other._current_case_index
 	_player_location = other._player_location
@@ -399,6 +431,7 @@ func get_json_dict():
 		"has_visited_hub": _has_visited_hub,
 		"has_slept": _has_slept,
 		"last_doctor_day": _last_doctor_day,
+		"dealer_drug_stock": _dealer_drug_stock,
 		"last_crimes": _last_crimes,
 		"current_case_index": _current_case_index
 	}
@@ -421,6 +454,7 @@ func restore(dict, catalog):
 	_has_visited_hub = dict.get("has_visited_hub", false)
 	_has_slept = dict.get("has_slept", false)
 	_last_doctor_day = dict.get("last_doctor_day", -1)
+	_dealer_drug_stock = dict.get("dealer_drug_stock", 0)
 	_last_crimes.assign(dict.last_crimes)
 	_current_case_index = dict.current_case_index
 	player = catalog[dict.player]
