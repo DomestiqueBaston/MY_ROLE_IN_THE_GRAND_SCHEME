@@ -221,7 +221,7 @@ func _on_dailies_menu_popup():
 		popup.set_item_text(item_index, "Buy a search warrant...")
 		popup.set_item_disabled(
 			item_index,
-			player.money < 25 or not GameState.is_warrant_desk_open())
+			player.money < 25 or player.get_debt_count() > 0 or not GameState.is_warrant_desk_open())
 
 	# can the player go to the doctor?
 

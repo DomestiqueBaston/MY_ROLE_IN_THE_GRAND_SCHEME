@@ -277,7 +277,8 @@ func use_drugs(doses: int):
 func can_visit_doctor() -> bool:
 	var day = get_day()
 	var hour = get_hour()
-	if day % 7 >= 5 or hour < 8 or hour >= 20 or player.money < 50:
+	if day % 7 >= 5 or hour < 8 or hour >= 20 \
+		or player.money < 50 or player.get_debt_count() > 0:
 		return false
 	return _last_doctor_day < 0 or day - _last_doctor_day >= 7
 
