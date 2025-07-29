@@ -238,8 +238,8 @@ func _randomize():
 	# connections between pairs of NPCs with a probability of less than 100%.
 
 	for i in npcs.size() - 1:
-		if randi() & 1:
-			var npc = npcs[i]
+		var npc = npcs[i]
+		if not npc.is_married and randi() & 1:
 			var other = _find_partner_for(npc, i, false)
 			if other:
 				npc.is_married = true
@@ -528,7 +528,9 @@ func _randomize():
 		if victim.is_married:
 			var partner = victim.get_one_connection(Link.Type.INTIMACY)
 			partner.is_revealed = true
-			_create_link(partner, partner.get_home(), Link.Type.HOME)
+			var home = partner.get_home()
+			if home.is_revealed:
+				_create_link(partner, home, Link.Type.HOME)
 			_create_link(victim, partner, Link.Type.INTIMACY)
 
 	if _crime_location:
