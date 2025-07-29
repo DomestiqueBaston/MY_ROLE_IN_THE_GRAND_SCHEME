@@ -3553,8 +3553,7 @@ modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 3
 anchors_preset = 0
 offset_top = 28.0
-offset_right = 40.0
-offset_bottom = 68.0
+offset_bottom = 28.0
 theme = ExtResource("70_0sc5x")
 
 [node name="Stock" type="RichTextLabel" parent="Overlays/Rowena/Drug_Store"]
