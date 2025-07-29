@@ -516,8 +516,8 @@ Dialogue
 		Auprès d’1 Complice : (3+MEN)/(18+MEN) (prioritaire par rapport à Témoin/Suspect)
 	 - Sauf pour les informations incriminantes (Fiche PNJ) :
 		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(20+MEN) 
-		Auprès d’1 Coupable : (9+MEN)/(10+MEN) (prioritaire par rapport à Témoin/Suspect)
-		Auprès d’1 Complice : (8+MEN)/(12+MEN) (prioritaire par rapport à Témoin/Suspect)
+		Auprès d’1 Coupable : (9+MEN)/(10+MEN) MENT toujours (prioritaire par rapport à Témoin/Suspect) !
+		Auprès d’1 Complice : (8+MEN)/(12+MEN) (7+MEN)/(14+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau).
 	- Une information cachée (hideout) est toujours révélée juste.
 	- Un PNJ peut révéler une info cachée concernant un autre PNJ uniquement si ceux-ci ont un lien reel d’Intimacy, Friend, Enemy, Accomplice entre eux.
