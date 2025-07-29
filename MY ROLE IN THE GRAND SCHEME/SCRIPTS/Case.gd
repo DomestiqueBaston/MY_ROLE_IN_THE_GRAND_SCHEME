@@ -705,6 +705,9 @@ func _create_link(from: BaseCard, to: BaseCard, type: Link.Type):
 	link.pin1 = pin1
 	link.pin2 = pin2
 
+	# for now, block all links revealed initially (player cannot change them)
+	link.blocked = true
+
 	add_link(link)
 
 func _generate_case_id():

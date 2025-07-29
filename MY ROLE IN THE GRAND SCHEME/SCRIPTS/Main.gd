@@ -533,17 +533,24 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	if node is BaseCard and node.is_stacked():
 		return
 
-	var link_item_ids = [
+	var link_create_ids = [
 		MenuItem.CREATE_CONF_LINK,
-		MenuItem.CREATE_PROB_LINK,
+		MenuItem.CREATE_PROB_LINK
+	]
+
+	for id in link_create_ids:
+		var index = popup.get_item_index(id)
+		popup.set_item_disabled(index, node is not BaseCard)
+
+	var link_mod_ids = [
 		MenuItem.CHANGE_LINK_COLOR,
 		MenuItem.SWITCH_LINK,
 		MenuItem.DELETE_LINK
 	]
-	
-	for id in link_item_ids:
+
+	for id in link_mod_ids:
 		var index = popup.get_item_index(id)
-		popup.set_item_disabled(index, not node is Link)
+		popup.set_item_disabled(index, node is not Link or node.blocked)
 
 	_popup_node = node
 	popup.popup(Rect2i(pos, Vector2i()))

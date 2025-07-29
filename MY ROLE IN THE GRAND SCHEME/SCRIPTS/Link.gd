@@ -39,6 +39,9 @@ class_name Link extends Node2D
 			_update_transparency()
 			_update_tooltip()
 
+## A blocked link cannot be changed or deleted by the player.
+var blocked: bool = false
+
 #
 # Note that link types are assumed to begin at 0: see Globals.set_link_mask().
 #
@@ -229,10 +232,11 @@ func _update_tooltip():
 		$Link_Texture.tooltip_text = tooltip
 
 func _show_or_hide():
-	visible = pin1 and pin2 and pin1.visible and pin2.visible \
-		and (Engine.is_editor_hint() or Globals.is_link_visible(self))
-	for pin in _follower_pins:
-		pin.visible = visible
+	if not Engine.is_editor_hint():
+		visible = pin1 and pin2 and pin1.visible and pin2.visible \
+			and Globals.is_link_visible(self)
+		for pin in _follower_pins:
+			pin.visible = visible
 
 func _on_link_collider_input_event(
 		_viewport: Viewport, event: InputEvent, _shape_idx: int):
@@ -327,7 +331,8 @@ func get_referenced_objects():
 func get_json_dict():
 	var dict = {
 		"type": type,
-		"status": status
+		"status": status,
+		"blocked": blocked
 	}
 	if pin1:
 		dict["pin1"] = pin1.get_unique_id()
@@ -346,6 +351,7 @@ func get_json_dict():
 func restore(dict, catalog):
 	type = dict.type
 	status = dict.status
+	blocked = dict.get("blocked", false)
 	if "pin1" in dict:
 		pin1 = catalog[dict.pin1]
 	if "pin2" in dict:
