@@ -218,15 +218,22 @@ func show_npc(npc: NpcCard):
 		$VBox/Scroller_NPC/Info_NPC/Status.show()
 		status_label.show()
 
+	var intimates = npc.find_links(Link.Type.INTIMACY)
+	var partners: Array[Link]
+	var affairs: Array[Link]
+
 	if npc.is_married:
-		var partners = npc.find_links(Link.Type.INTIMACY)
-		if not partners.is_empty():
-			partners.resize(1)
-			$VBox/Scroller_NPC/Info_NPC/Separator_03.show()
-			$VBox/Scroller_NPC/Info_NPC/Couple.show()
-			$VBox/Scroller_NPC/Info_NPC/Couple_NPC.text = \
-				_make_link_list(npc, partners)
-			$VBox/Scroller_NPC/Info_NPC/Couple_NPC.show()
+		partners = intimates.slice(0, 1)
+		affairs = intimates.slice(1, intimates.size())
+	else:
+		affairs = intimates
+
+	if partners:
+		$VBox/Scroller_NPC/Info_NPC/Separator_03.show()
+		$VBox/Scroller_NPC/Info_NPC/Couple.show()
+		$VBox/Scroller_NPC/Info_NPC/Couple_NPC.text = \
+			_make_link_list(npc, partners)
+		$VBox/Scroller_NPC/Info_NPC/Couple_NPC.show()
 
 	var friends = npc.find_links(Link.Type.FRIEND)
 	if friends:
@@ -252,9 +259,6 @@ func show_npc(npc: NpcCard):
 			_make_link_list(npc, acquaintances)
 		$VBox/Scroller_NPC/Info_NPC/Acquaintance_NPC_01.show()
 
-	var affairs = npc.find_links(Link.Type.INTIMACY)
-	if npc.is_married:
-		affairs.pop_front()
 	if affairs:
 		$VBox/Scroller_NPC/Info_NPC/Separator_07.show()
 		$VBox/Scroller_NPC/Info_NPC/Affair.show()
