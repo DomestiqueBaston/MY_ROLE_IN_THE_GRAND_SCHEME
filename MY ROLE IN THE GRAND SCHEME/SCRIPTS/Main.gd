@@ -241,7 +241,7 @@ func _start_drag_card() -> bool:
 	# that they, too, are drawn on top of everything else (BaseCard.start_drag()
 	# does that for the card itself)
 
-	for link in _current_card.find_linked_cards():
+	for link in _current_card.find_links():
 		link.pause_collisions()
 		link.raise()
 		_drag_links.append(link)
