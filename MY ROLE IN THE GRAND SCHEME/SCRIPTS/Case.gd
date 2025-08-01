@@ -923,7 +923,7 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	_case_id = dict.get("case_id", "")
-	_case_random_name = dict.get("random_name", "Bork Bork Bork")
+	_case_random_name = dict.get("case_random_name", "Bork Bork Bork")
 	_case_name = dict.case_name
 	_crime = dict.crime
 	_motive = dict.motive
