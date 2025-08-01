@@ -689,7 +689,7 @@ func _get_object_owner_counts(obj_id: String) -> Array:
 	return [npc_owner_count, location_owner_count]
 
 func _create_link(from: BaseCard, to: BaseCard, type: Link.Type):
-	if from in find_links_to(to, type):
+	if from in to.find_linked_cards(type):
 		return
 
 	var pin1 = Pin.allocate()
@@ -786,23 +786,6 @@ func remove_link(link: Link):
 
 func get_links() -> Array[Link]:
 	return _links
-
-##
-## Returns a list of cards that have links to the given card. If link_type is
-## given, only links of that type are taken into consideration.
-##
-func find_links_to(card: BaseCard, link_type: int = -1) -> Array[BaseCard]:
-	var ret: Array[BaseCard] 
-	for link in _links:
-		if link_type >= 0 and link.type != link_type:
-			continue
-		if link.pin1.type != Pin.PinType.CARD or link.pin2.type != Pin.PinType.CARD:
-			continue
-		if link.pin1.card == card:
-			ret.append(link.pin2.card)
-		elif link.pin2.card == card:
-			ret.append(link.pin1.card)
-	return ret
 
 #
 # Looks for an existing location with the given ID, or creates a new one if

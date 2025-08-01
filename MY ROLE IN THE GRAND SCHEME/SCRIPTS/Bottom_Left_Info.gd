@@ -82,37 +82,39 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 	$VBox/Scroller_Location/Info_Location/Description.show()
 
 	if card:
-		var case = GameState.get_current_case()
-
 		if card.location_status == LocationCard.LocationStatus.CRIME_SCENE:
 			$VBox/Scroller_Location/Info_Location/Crime_Scene.show()
 
-		var inhabitants = case.find_links_to(card, Link.Type.HOME)
+		var inhabitants = card.find_links(Link.Type.HOME)
 		if inhabitants:
 			$VBox/Scroller_Location/Info_Location/Separator_02.show()
 			$VBox/Scroller_Location/Info_Location/Home.show()
-			$VBox/Scroller_Location/Info_Location/Home_NPC_01.text = _make_card_list(inhabitants)
+			$VBox/Scroller_Location/Info_Location/Home_NPC_01.text = \
+				_make_link_list(card, inhabitants)
 			$VBox/Scroller_Location/Info_Location/Home_NPC_01.show()
 
-		var workers = case.find_links_to(card, Link.Type.WORK)
+		var workers = card.find_links(Link.Type.WORK)
 		if workers:
 			$VBox/Scroller_Location/Info_Location/Separator_03.show()
 			$VBox/Scroller_Location/Info_Location/Workplace.show()
-			$VBox/Scroller_Location/Info_Location/Workplace_NPC_01.text = _make_card_list(workers)
+			$VBox/Scroller_Location/Info_Location/Workplace_NPC_01.text = \
+				_make_link_list(card, workers)
 			$VBox/Scroller_Location/Info_Location/Workplace_NPC_01.show()
 
-		var hangout = case.find_links_to(card, Link.Type.HANGOUT)
+		var hangout = card.find_links(Link.Type.HANGOUT)
 		if hangout:
 			$VBox/Scroller_Location/Info_Location/Separator_06.show()
 			$VBox/Scroller_Location/Info_Location/Hangout.show()
-			$VBox/Scroller_Location/Info_Location/Hangout_NPC_01.text = _make_card_list(hangout)
+			$VBox/Scroller_Location/Info_Location/Hangout_NPC_01.text = \
+				_make_link_list(card, hangout)
 			$VBox/Scroller_Location/Info_Location/Hangout_NPC_01.show()
 
-		var hideout = case.find_links_to(card, Link.Type.HIDEOUT)
+		var hideout = card.find_links(Link.Type.HIDEOUT)
 		if hideout:
 			$VBox/Scroller_Location/Info_Location/Separator_08.show()
 			$VBox/Scroller_Location/Info_Location/Hideout.show()
-			$VBox/Scroller_Location/Info_Location/Hideout_NPC_01.text = _make_card_list(hideout)
+			$VBox/Scroller_Location/Info_Location/Hideout_NPC_01.text = \
+				_make_link_list(card, hideout)
 			$VBox/Scroller_Location/Info_Location/Hideout_NPC_01.show()
 
 	$VBox/Scroller_Object.hide()
@@ -135,21 +137,21 @@ func show_object(obj: ObjectCard):
 	$VBox/Scroller_Object/Info_Object/Separator_01.show()
 	$VBox/Scroller_Object/Info_Object/Description.show()
 
-	var case = GameState.get_current_case()
-
-	var locations = case.find_links_to(obj, Link.Type.FOUND)
+	var locations = obj.find_links(Link.Type.FOUND)
 	if locations:
 		$VBox/Scroller_Object/Info_Object/Separator_02.show()
 		$VBox/Scroller_Object/Info_Object/Found.show()
-		$VBox/Scroller_Object/Info_Object/Found_Location.text = locations[0].get_display_name()
+		$VBox/Scroller_Object/Info_Object/Found_Location.text = \
+			_make_link_list(obj, locations)
 		$VBox/Scroller_Object/Info_Object/Found_Location.show()
 
-	var owners = case.find_links_to(obj, Link.Type.PROPERTY).filter(
+	var owners = obj.find_links(Link.Type.PROPERTY).filter(
 		func(card): return card is NpcCard)
 	if owners:
 		$VBox/Scroller_Object/Info_Object/Separator_03.show()
 		$VBox/Scroller_Object/Info_Object/Property.show()
-		$VBox/Scroller_Object/Info_Object/Property_NPC.text = _make_card_list(owners)
+		$VBox/Scroller_Object/Info_Object/Property_NPC.text = \
+			_make_link_list(obj, owners)
 		$VBox/Scroller_Object/Info_Object/Property_NPC.show()
 
 	if obj.is_object_evidence:
@@ -216,110 +218,127 @@ func show_npc(npc: NpcCard):
 		$VBox/Scroller_NPC/Info_NPC/Status.show()
 		status_label.show()
 
-	var case = GameState.get_current_case()
-
 	if npc.is_married:
-		var partners = case.find_links_to(npc, Link.Type.INTIMACY)
+		var partners = npc.find_links(Link.Type.INTIMACY)
 		if not partners.is_empty():
+			partners.resize(1)
 			$VBox/Scroller_NPC/Info_NPC/Separator_03.show()
 			$VBox/Scroller_NPC/Info_NPC/Couple.show()
-			$VBox/Scroller_NPC/Info_NPC/Couple_NPC.text = partners[0].get_display_name()
+			$VBox/Scroller_NPC/Info_NPC/Couple_NPC.text = \
+				_make_link_list(npc, partners)
 			$VBox/Scroller_NPC/Info_NPC/Couple_NPC.show()
 
-	var friends = case.find_links_to(npc, Link.Type.FRIEND)
+	var friends = npc.find_links(Link.Type.FRIEND)
 	if friends:
 		$VBox/Scroller_NPC/Info_NPC/Separator_04.show()
 		$VBox/Scroller_NPC/Info_NPC/Friends.show()
-		$VBox/Scroller_NPC/Info_NPC/Friends_NPC_01.text = _make_card_list(friends)
+		$VBox/Scroller_NPC/Info_NPC/Friends_NPC_01.text = \
+			_make_link_list(npc, friends)
 		$VBox/Scroller_NPC/Info_NPC/Friends_NPC_01.show()
 
-	var enemies = case.find_links_to(npc, Link.Type.ENEMY)
+	var enemies = npc.find_links(Link.Type.ENEMY)
 	if enemies:
 		$VBox/Scroller_NPC/Info_NPC/Separator_05.show()
 		$VBox/Scroller_NPC/Info_NPC/Enemies.show()
-		$VBox/Scroller_NPC/Info_NPC/Enemies_NPC_01.text = _make_card_list(enemies)
+		$VBox/Scroller_NPC/Info_NPC/Enemies_NPC_01.text = \
+			_make_link_list(npc, enemies)
 		$VBox/Scroller_NPC/Info_NPC/Enemies_NPC_01.show()
 
-	var acquaintances = case.find_links_to(npc, Link.Type.ACQUAINTANCE)
+	var acquaintances = npc.find_links(Link.Type.ACQUAINTANCE)
 	if acquaintances:
 		$VBox/Scroller_NPC/Info_NPC/Separator_06.show()
 		$VBox/Scroller_NPC/Info_NPC/Acquaintance.show()
-		$VBox/Scroller_NPC/Info_NPC/Acquaintance_NPC_01.text = _make_card_list(acquaintances)
+		$VBox/Scroller_NPC/Info_NPC/Acquaintance_NPC_01.text = \
+			_make_link_list(npc, acquaintances)
 		$VBox/Scroller_NPC/Info_NPC/Acquaintance_NPC_01.show()
 
-	var affairs = case.find_links_to(npc, Link.Type.INTIMACY)
+	var affairs = npc.find_links(Link.Type.INTIMACY)
 	if npc.is_married:
 		affairs.pop_front()
 	if affairs:
 		$VBox/Scroller_NPC/Info_NPC/Separator_07.show()
 		$VBox/Scroller_NPC/Info_NPC/Affair.show()
-		$VBox/Scroller_NPC/Info_NPC/Affair_NPC.text = _make_card_list(affairs)
+		$VBox/Scroller_NPC/Info_NPC/Affair_NPC.text = \
+			_make_link_list(npc, affairs)
 		$VBox/Scroller_NPC/Info_NPC/Affair_NPC.show()
 
-	var debts = case.find_links_to(npc, Link.Type.DEBT)
+	var debts = npc.find_links(Link.Type.DEBT)
 	if debts:
 		$VBox/Scroller_NPC/Info_NPC/Separator_08.show()
 		$VBox/Scroller_NPC/Info_NPC/Debt_Influence.show()
-		$VBox/Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.text = _make_card_list(debts)
+		$VBox/Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.text = \
+			_make_link_list(npc, debts)
 		$VBox/Scroller_NPC/Info_NPC/Debt_Influence_NPC_01.show()
 
-	var ideology = case.find_links_to(npc, Link.Type.IDEOLOGY)
+	var ideology = npc.find_links(Link.Type.IDEOLOGY)
 	if ideology:
 		$VBox/Scroller_NPC/Info_NPC/Separator_09.show()
 		$VBox/Scroller_NPC/Info_NPC/Ideology.show()
-		$VBox/Scroller_NPC/Info_NPC/Ideology_NPC_01.text = _make_card_list(ideology)
+		$VBox/Scroller_NPC/Info_NPC/Ideology_NPC_01.text = \
+			_make_link_list(npc, ideology)
 		$VBox/Scroller_NPC/Info_NPC/Ideology_NPC_01.show()
 
-	var home = case.find_links_to(npc, Link.Type.HOME)
+	var home = npc.find_links(Link.Type.HOME)
 	if home:
 		$VBox/Scroller_NPC/Info_NPC/Separator_12.show()
 		$VBox/Scroller_NPC/Info_NPC/Home.show()
-		$VBox/Scroller_NPC/Info_NPC/Home_Location.text = home[0].get_display_name()
+		$VBox/Scroller_NPC/Info_NPC/Home_Location.text = \
+			_make_link_list(npc, home)
 		$VBox/Scroller_NPC/Info_NPC/Home_Location.show()
 
-	var work = case.find_links_to(npc, Link.Type.WORK)
+	var work = npc.find_links(Link.Type.WORK)
 	if work:
 		$VBox/Scroller_NPC/Info_NPC/Separator_13.show()
 		$VBox/Scroller_NPC/Info_NPC/Work.show()
-		$VBox/Scroller_NPC/Info_NPC/Work_Location.text = work[0].get_display_name()
+		$VBox/Scroller_NPC/Info_NPC/Work_Location.text = \
+			_make_link_list(npc, work)
 		$VBox/Scroller_NPC/Info_NPC/Work_Location.show()
 
-	var hangout = case.find_links_to(npc, Link.Type.HANGOUT)
+	var hangout = npc.find_links(Link.Type.HANGOUT)
 	if hangout:
 		$VBox/Scroller_NPC/Info_NPC/Separator_14.show()
 		$VBox/Scroller_NPC/Info_NPC/Hangout.show()
-		$VBox/Scroller_NPC/Info_NPC/Hangout_Location.text = hangout[0].get_display_name()
+		$VBox/Scroller_NPC/Info_NPC/Hangout_Location.text = \
+			_make_link_list(npc, hangout)
 		$VBox/Scroller_NPC/Info_NPC/Hangout_Location.show()
 
-	var hideout = case.find_links_to(npc, Link.Type.HIDEOUT)
+	var hideout = npc.find_links(Link.Type.HIDEOUT)
 	if hideout:
 		$VBox/Scroller_NPC/Info_NPC/Separator_15.show()
 		$VBox/Scroller_NPC/Info_NPC/Hideout.show()
-		$VBox/Scroller_NPC/Info_NPC/Hideout_Location.text = hideout[0].get_display_name()
+		$VBox/Scroller_NPC/Info_NPC/Hideout_Location.text = \
+			_make_link_list(npc, hideout)
 		$VBox/Scroller_NPC/Info_NPC/Hideout_Location.show()
 
-	var property = case.find_links_to(npc, Link.Type.PROPERTY)
+	var property = npc.find_links(Link.Type.PROPERTY)
 	if property:
-		var text = ""
-		for obj in property:
-			if not text.is_empty():
-				text += "\n"
-			text += obj.get_display_name()
-			if obj.is_object_evidence:
-				text += " (evidence)"
 		$VBox/Scroller_NPC/Info_NPC/Separator_16.show()
 		$VBox/Scroller_NPC/Info_NPC/Properties.show()
-		$VBox/Scroller_NPC/Info_NPC/Properties_Object.text = _make_card_list(property)
+		$VBox/Scroller_NPC/Info_NPC/Properties_Object.text = \
+			_make_link_list(npc, property)
 		$VBox/Scroller_NPC/Info_NPC/Properties_Object.show()
 
 	$VBox/Scroller_Object.hide()
 	$VBox/Scroller_NPC.show()
 	$VBox/Scroller_Location.hide()
 
-func _make_card_list(cards: Array[BaseCard]) -> String:
+func _make_link_list(card: BaseCard, links: Array[Link]) -> String:
 	var text = ""
-	for card in cards:
+	for link in links:
+		var other_card
+		if link.pin1.type != Pin.PinType.CARD or link.pin2.type != Pin.PinType.CARD:
+			continue
+		if link.pin1.card == card:
+			other_card = link.pin2.card
+		else:
+			other_card = link.pin1.card
 		if not text.is_empty():
 			text += "\n"
-		text += card.get_display_name()
+		if link.status == Link.Status.PROBABLE:
+			text += "[color=cf231796]"
+		text += other_card.get_display_name()
+		if other_card is ObjectCard and other_card.is_object_evidence:
+			text += " (evidence)"
+		if link.status == Link.Status.PROBABLE:
+			text += "[/color]"
 	return text

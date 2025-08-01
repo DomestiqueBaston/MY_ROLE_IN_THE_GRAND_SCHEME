@@ -342,6 +342,35 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 
 	return min_pin
 
+##
+## Returns a list of cards that have links to this card. If link_type is given,
+## only links of that type are taken into consideration.
+##
+func find_linked_cards(link_type: int = -1) -> Array[BaseCard]:
+	var ret: Array[BaseCard]
+	for pin in _pins.values():
+		var link = pin.get_link_reference()
+		if link and (link_type < 0 or link_type == link.type):
+			if pin == link.pin1:
+				if link.pin2.type == Pin.PinType.CARD:
+					ret.append(link.pin2.card)
+			elif pin == link.pin2:
+				if link.pin1.type == Pin.PinType.CARD:
+					ret.append(link.pin1.card)
+	return ret
+
+##
+## Returns a list of links to this card. If link_type is given, only links of
+## that type are taken into consideration.
+##
+func find_links(link_type: int = -1) -> Array[Link]:
+	var ret: Array[Link]
+	for pin in _pins.values():
+		var link = pin.get_link_reference()
+		if link and (link_type < 0 or link_type == link.type):
+			ret.append(link)
+	return ret
+
 func add_connection(type: Link.Type, card: BaseCard):
 	if type in _connections:
 		_connections[type].append(card)

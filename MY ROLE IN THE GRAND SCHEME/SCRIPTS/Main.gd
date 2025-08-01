@@ -241,7 +241,7 @@ func _start_drag_card() -> bool:
 	# that they, too, are drawn on top of everything else (BaseCard.start_drag()
 	# does that for the card itself)
 
-	for link in _find_links_to_card(_current_card):
+	for link in _current_card.find_linked_cards():
 		link.pause_collisions()
 		link.raise()
 		_drag_links.append(link)
@@ -278,19 +278,6 @@ func _start_drag_pin() -> bool:
 	_drag_links.append(link)
 
 	return true
-
-func _find_links_to_card(card: BaseCard) -> Array[Link]:
-	var ret: Array[Link]
-	for pin in card.get_pins():
-		var link = pin.get_link_reference()
-		if link:
-			ret.append(link)
-	#for link in links.get_children():
-		#if link is Link and \
-			#((link.pin1.type == Pin.PinType.CARD and link.pin1.card == card) or
-			 #(link.pin2.type == Pin.PinType.CARD and link.pin2.card == card)):
-			#ret.append(link)
-	return ret
 
 func _find_link_to_pin(pin: Pin) -> Link:
 	return pin.get_link_reference()
