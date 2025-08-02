@@ -527,7 +527,6 @@ func _stop_linking(global_pos: Vector2):
 func _link_exists(card, target, link_type):
 	for link in card.find_links(link_type):
 		if link.pin1.backing == target or link.pin2.backing == target:
-			print("duplicate!")
 			return true
 	return false
 
