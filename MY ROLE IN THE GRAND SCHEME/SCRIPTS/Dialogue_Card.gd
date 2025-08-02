@@ -1,5 +1,5 @@
 @tool
-class_name DialogueCard extends BaseCard
+class_name DialogueCard extends Card
 
 ## ID of corresponding entry in dialogue database.
 var database_id: String

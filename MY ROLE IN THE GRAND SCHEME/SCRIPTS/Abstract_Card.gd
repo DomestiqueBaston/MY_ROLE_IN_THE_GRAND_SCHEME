@@ -1,5 +1,5 @@
 @tool
-class_name AbstractCard extends BaseCard
+class_name AbstractCard extends Card
 
 ## ID of corresponding entry in abstract database.
 var database_id: String

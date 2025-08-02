@@ -22,21 +22,23 @@ enum Location {
 ## The pin can be attached to a card or to a link.
 @export var backing: Node2D:
 	set(value):
-		if backing is BaseCard:
-			backing.remove_pin(card_location)
-		elif backing is Link:
-			backing.remove_follower_pin(self)
+		if backing:
+			if backing is Card:
+				backing.remove_pin(card_location)
+			elif backing is Link:
+				backing.remove_follower_pin(self)
 		backing = value
-		if backing is BaseCard:
-			backing.add_pin(self, card_location)
-		elif backing is Link:
-			backing.add_follower_pin(self)
+		if backing:
+			if backing is Card:
+				backing.add_pin(self, card_location)
+			elif backing is Link:
+				backing.add_follower_pin(self)
 
 ## Where on the card is the pin attached (if backing is a card)?
 @export var card_location: Location:
 	set(value):
 		if card_location != value:
-			if backing is BaseCard:
+			if backing is Card:
 				backing.move_pin(card_location, value)
 			card_location = value
 
@@ -87,7 +89,7 @@ func resume_collisions():
 ##
 ## Attaches the pin to a card at one of the card's predefined pin locations.
 ##
-func move_to_card(to_card: BaseCard, to_location: Location):
+func move_to_card(to_card: Card, to_location: Location):
 	backing = null
 	card_location = to_location
 	backing = to_card
@@ -156,7 +158,7 @@ func get_referenced_objects():
 #
 func get_json_dict():
 	var dict = {}
-	if backing is BaseCard:
+	if backing is Card:
 		dict["card_location"] = card_location
 	elif backing is Link:
 		dict["link_location"] = link_location

@@ -1,5 +1,5 @@
 @tool
-class_name ObjectCard extends BaseCard
+class_name ObjectCard extends Card
 
 @export var is_object_evidence: bool:
 	set(value):

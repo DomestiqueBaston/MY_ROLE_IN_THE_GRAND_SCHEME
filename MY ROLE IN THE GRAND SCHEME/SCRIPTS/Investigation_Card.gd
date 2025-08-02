@@ -1,5 +1,5 @@
 @tool
-class_name InvestigationCard extends BaseCard
+class_name InvestigationCard extends Card
 
 enum InvestigationType {
 	NONE,

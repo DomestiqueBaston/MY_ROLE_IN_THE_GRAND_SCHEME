@@ -1,5 +1,5 @@
 @tool
-class_name BaseCard extends Node2D
+class_name Card extends Node2D
 
 enum CardType {
 	COMBAT,
@@ -212,7 +212,7 @@ func _raise(raise_neighbors: bool = false):
 					other_pin = link.pin2
 				else:
 					other_pin = link.pin1
-				if other_pin.backing is BaseCard:
+				if other_pin.backing is Card:
 					other_pin.backing._raise(false)
 
 	# now move the card itself in front
@@ -346,16 +346,16 @@ func find_closest_unused_pin(global_pos: Vector2) -> int:
 ## Returns a list of cards that have links to this card. If link_type is given,
 ## only links of that type are taken into consideration.
 ##
-func find_linked_cards(link_type: int = -1) -> Array[BaseCard]:
-	var ret: Array[BaseCard]
+func find_linked_cards(link_type: int = -1) -> Array[Card]:
+	var ret: Array[Card]
 	for pin in _pins.values():
 		var link = pin.get_link_reference()
 		if link and (link_type < 0 or link_type == link.type):
 			if pin == link.pin1:
-				if link.pin2.backing is BaseCard:
+				if link.pin2.backing is Card:
 					ret.append(link.pin2.backing)
 			elif pin == link.pin2:
-				if link.pin1.backing is BaseCard:
+				if link.pin1.backing is Card:
 					ret.append(link.pin1.backing)
 	return ret
 
@@ -371,14 +371,14 @@ func find_links(link_type: int = -1) -> Array[Link]:
 			ret.append(link)
 	return ret
 
-func add_connection(type: Link.Type, card: BaseCard):
+func add_connection(type: Link.Type, card: Card):
 	if type in _connections:
 		_connections[type].append(card)
 	else:
 		_connections[type] = [card]
 
-func get_all_connections() -> Array[BaseCard]:
-	var cnxs: Array[BaseCard]
+func get_all_connections() -> Array[Card]:
+	var cnxs: Array[Card]
 	for cnx_array in _connections.values():
 		cnxs.append_array(cnx_array)
 	return cnxs
@@ -399,13 +399,13 @@ func get_all_location_connections() -> Array[LocationCard]:
 				cnxs.append(cnx)
 	return cnxs
 
-func get_connections(type: Link.Type) -> Array[BaseCard]:
-	var cnxs: Array[BaseCard]
+func get_connections(type: Link.Type) -> Array[Card]:
+	var cnxs: Array[Card]
 	if type in _connections:
 		cnxs.assign(_connections[type])
 	return cnxs
 
-func get_one_connection(type: Link.Type) -> BaseCard:
+func get_one_connection(type: Link.Type) -> Card:
 	if type in _connections:
 		return _connections[type][0]
 	return null

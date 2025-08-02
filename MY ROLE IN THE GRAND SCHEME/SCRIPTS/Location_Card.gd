@@ -1,5 +1,5 @@
 @tool
-class_name LocationCard extends BaseCard
+class_name LocationCard extends Card
 
 enum LocationStatus {
 	NONE,

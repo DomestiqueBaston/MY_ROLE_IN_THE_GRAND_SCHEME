@@ -1,5 +1,5 @@
 @tool
-class_name NpcCard extends BaseCard
+class_name NpcCard extends Card
 
 enum NpcCategory {
 	NONE,

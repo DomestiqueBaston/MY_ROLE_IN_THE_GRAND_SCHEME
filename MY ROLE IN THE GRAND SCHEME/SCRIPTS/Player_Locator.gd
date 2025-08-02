@@ -2,9 +2,9 @@ extends Node2D
 
 @export var bounds: SizedNode2D
 
-var _the_card: BaseCard
+var _the_card: Card
 
-func attach_to_card(card: BaseCard):
+func attach_to_card(card: Card):
 	detach_from_card()
 	_the_card = card
 	_the_card.moved.connect(_on_card_move)
@@ -31,14 +31,14 @@ func _on_card_move():
 		return
 
 	var bounds_center = bounds.global_position + bounds.size * 0.5
-	var card_center = pos + BaseCard.reduced_size * 0.5
+	var card_center = pos + Card.reduced_size * 0.5
 
 	if card_center.x < bounds_center.x:
 		if card_center.y < bounds_center.y:
-			global_position = pos + Vector2(BaseCard.size.x, 20)
+			global_position = pos + Vector2(Card.size.x, 20)
 			rotation = PI * 0.6
 		else:
-			global_position = pos + Vector2(BaseCard.size.x, 0)
+			global_position = pos + Vector2(Card.size.x, 0)
 			rotation = PI * 0.4
 	else:
 		if card_center.y < bounds_center.y:

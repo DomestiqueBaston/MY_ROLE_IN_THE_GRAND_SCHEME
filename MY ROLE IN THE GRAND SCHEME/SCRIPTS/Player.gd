@@ -24,7 +24,7 @@ var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
 var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
 
 var _debts: Array[int]
-var _cards: Array[BaseCard]
+var _cards: Array[Card]
 var _signal_pause: int = 0
 var _sleep_bonus_malus: int
 
@@ -105,31 +105,31 @@ func start_game():
 
 func _pick_random_abstract_card() -> String:
 	var id = _abstract_cards.keys().pick_random()
-	while _have_card_already(BaseCard.CardType.ABSTRACT, id):
+	while _have_card_already(Card.CardType.ABSTRACT, id):
 		id = _abstract_cards.keys().pick_random()
 	return id
 
 func _pick_random_dialogue_card() -> String:
 	var id = _dialogue_cards.keys().pick_random()
-	while _have_card_already(BaseCard.CardType.DIALOGUE, id):
+	while _have_card_already(Card.CardType.DIALOGUE, id):
 		id = _dialogue_cards.keys().pick_random()
 	return id
 
 func _pick_random_combat_card() -> String:
 	var id = _combat_cards.keys().pick_random()
 	while (_combat_cards[id]["type"] != "Combat"
-		   or _have_card_already(BaseCard.CardType.COMBAT, id)):
+		   or _have_card_already(Card.CardType.COMBAT, id)):
 		id = _combat_cards.keys().pick_random()
 	return id
 
 func _pick_random_investigation_card() -> String:
 	var id = _investigation_cards.keys().pick_random()
 	while (_investigation_cards[id]["type"] != "Investigation"
-		   or _have_card_already(BaseCard.CardType.INVESTIGATION, id)):
+		   or _have_card_already(Card.CardType.INVESTIGATION, id)):
 		id = _investigation_cards.keys().pick_random()
 	return id
 
-func _have_card_already(type: BaseCard.CardType, id: String):
+func _have_card_already(type: Card.CardType, id: String):
 	for card in _cards:
 		if card.get_card_type() == type and card.database_id == id:
 			return true

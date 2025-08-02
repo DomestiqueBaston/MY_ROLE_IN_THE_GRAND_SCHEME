@@ -1,5 +1,5 @@
 @tool
-class_name CombatCard extends BaseCard
+class_name CombatCard extends Card
 
 enum CombatType {
 	NONE,

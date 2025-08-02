@@ -688,12 +688,12 @@ func _get_object_owner_counts(obj_id: String) -> Array:
 	var location_owner_count = location_owners.pick_random() as int
 	return [npc_owner_count, location_owner_count]
 
-func _create_link(from: BaseCard, to: BaseCard, type: Link.Type):
+func _create_link(from: Card, to: Card, type: Link.Type):
 	if from in to.find_linked_cards(type):
 		return
 
 	var pin1 = Pin.allocate()
-	pin1.card_location = from.find_closest_unused_pin(Vector2(BaseCard.size.x, 0))
+	pin1.card_location = from.find_closest_unused_pin(Vector2(Card.size.x, 0))
 	pin1.backing = from
 
 	var pin2 = Pin.allocate()
@@ -755,8 +755,8 @@ func get_crime_location() -> LocationCard:
 ## Returns all the cards created for the case, including NPCs, objects and
 ## locations.
 ##
-func get_all_cards() -> Array[BaseCard]:
-	var all_cards: Array[BaseCard]
+func get_all_cards() -> Array[Card]:
+	var all_cards: Array[Card]
 	for card_list in [npcs, evidence, other_objects, locations]:
 		all_cards.append_array(card_list)
 	return all_cards
@@ -764,8 +764,8 @@ func get_all_cards() -> Array[BaseCard]:
 ##
 ## Returns an array of the cards that have been revealed to the player thus far.
 ##
-func get_revealed_cards() -> Array[BaseCard]:
-	var cards: Array[BaseCard]
+func get_revealed_cards() -> Array[Card]:
+	var cards: Array[Card]
 	for card_list in [npcs, evidence, other_objects, locations]:
 		for card in card_list:
 			if card.is_revealed:

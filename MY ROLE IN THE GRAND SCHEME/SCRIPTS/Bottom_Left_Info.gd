@@ -27,7 +27,7 @@ func clear():
 ## determined namely by the links he has created to it. Only location, object
 ## and NPC cards are supported.
 ##
-func show_card(card: BaseCard):
+func show_card(card: Card):
 	if card is LocationCard:
 		show_location(GameState.PlayerLocation.OTHER, card)
 	elif card is ObjectCard:
@@ -326,11 +326,11 @@ func show_npc(npc: NpcCard):
 	$VBox/Scroller_NPC.show()
 	$VBox/Scroller_Location.hide()
 
-func _make_link_list(card: BaseCard, links: Array[Link]) -> String:
+func _make_link_list(card: Card, links: Array[Link]) -> String:
 	var text = ""
 	for link in links:
 		var other_card
-		if not (link.pin1.backing is BaseCard and link.pin2.backing is BaseCard):
+		if not (link.pin1.backing is Card and link.pin2.backing is Card):
 			continue
 		if link.pin1.backing == card:
 			other_card = link.pin2.backing

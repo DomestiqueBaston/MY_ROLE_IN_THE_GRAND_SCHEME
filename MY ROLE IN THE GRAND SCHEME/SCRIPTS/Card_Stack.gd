@@ -9,7 +9,7 @@ class_name CardStack extends SizedNode2D
 ## If the stack's orientation is HORIZONTAL, cards are offset from one another
 ## in X, otherwise they are offset in Y.
 ##
-## It is assumed that a CardStack's children are all instances of BaseCard. When
+## It is assumed that a CardStack's children are all instances of Card. When
 ## children are added or removed, the cards are rearranged, depending on the
 ## number of cards and the size of the CardStack: see _layout().
 
@@ -144,7 +144,7 @@ func _input(event: InputEvent):
 ##
 func _layout():
 	var component = 0 if orientation == HORIZONTAL else 1
-	var avail_space = size[component] - BaseCard.size[component]
+	var avail_space = size[component] - Card.size[component]
 
 	_current_card = -1
 	_max_card_count = 1 + int(avail_space / min_card_margin)
@@ -159,7 +159,7 @@ func _layout():
 
 	var rank = 0
 	for card_index in card_count:
-		var card: BaseCard = get_child(card_index)
+		var card: Card = get_child(card_index)
 		if card_index < first_card_index:
 			card.hide()
 		else:
