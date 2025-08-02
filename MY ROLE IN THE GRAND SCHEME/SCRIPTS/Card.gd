@@ -228,7 +228,7 @@ func _raise(raise_neighbors: bool = false):
 		if link:
 			link.move_to_front()
 			for p in link.get_follower_pins():
-				p.link.move_to_front()
+				p.backing.move_to_front()
 			link.pin1.move_to_front()
 			link.pin2.move_to_front()
 			for p in link.get_follower_pins():
