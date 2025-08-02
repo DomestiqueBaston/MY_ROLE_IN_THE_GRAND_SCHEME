@@ -252,7 +252,7 @@ func _start_drag_pin() -> bool:
 
 	# don't allow the user to drag a pin whose associated link is hidden
 
-	var link = _find_link_to_pin(_clicked_pin)
+	var link = _clicked_pin.get_link_reference()
 	if not (link and link.visible):
 		return false
 
@@ -274,13 +274,6 @@ func _start_drag_pin() -> bool:
 	_drag_links.append(link)
 
 	return true
-
-func _find_link_to_pin(pin: Pin) -> Link:
-	return pin.get_link_reference()
-	#for link in links.get_children():
-		#if link is Link and (link.pin1 == pin or link.pin2 == pin):
-			#return link
-	#return null
 
 func _drag(global_pos: Vector2):
 	if _clicked_pin:
