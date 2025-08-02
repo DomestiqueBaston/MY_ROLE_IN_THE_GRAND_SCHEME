@@ -1,11 +1,6 @@
 @tool
 class_name Pin extends Node2D
 
-enum PinType {
-	CARD,
-	LINK
-}
-
 enum Location {
 	TOP_LEFT,
 	TOP_CENTER_LEFT,
@@ -24,51 +19,33 @@ enum Location {
 	RIGHT_CENTER_RIGHT
 }
 
-## Is the pin attached to a card or to a link?
-@export var type: PinType = PinType.CARD:
+## The pin can be attached to a card or to a link.
+@export var backing: Node2D:
 	set(value):
-		if type != value:
-			if type == PinType.CARD:
-				card = null
-			else:
-				link = null
-			type = value
+		if backing is BaseCard:
+			backing.remove_pin(card_location)
+		elif backing is Link:
+			backing.remove_follower_pin(self)
+		backing = value
+		if backing is BaseCard:
+			backing.add_pin(self, card_location)
+		elif backing is Link:
+			backing.add_follower_pin(self)
 
-## Which card is the pin attached to (if type is CARD).
-@export var card: BaseCard:
-	set(value):
-		if type != PinType.CARD or card == value:
-			return
-		if card:
-			card.remove_pin(card_location)
-		card = value
-		if card:
-			card.add_pin(self, card_location)
-
-## Where on the card is the pin attached (if type is CARD)?
+## Where on the card is the pin attached (if backing is a card)?
 @export var card_location: Location:
 	set(value):
 		if card_location != value:
-			if type == PinType.CARD and card:
-				card.move_pin(card_location, value)
+			if backing is BaseCard:
+				backing.move_pin(card_location, value)
 			card_location = value
 
-## Which link is the pin attached to (if type is LINK)?
-@export var link: Link:
-	set(value):
-		if type == PinType.LINK and link != value:
-			if link:
-				link.remove_follower_pin(self)
-			link = value
-			if link:
-				link.add_follower_pin(self)
-
-## Where on the link is the pin attached, between 0 and 1 (if type is LINK)?
+## Where on the link is the pin attached, between 0 and 1 (if backing is a link)?
 @export_range(0.01, 0.99, 0.01) var link_location: float = 0.5:
 	set(value):
 		if link_location != value:
 			link_location = value
-			if type == PinType.LINK and link:
+			if backing is Link:
 				link_location_changed.emit()
 
 ## Signal emitted when the pin's position may have changed.
@@ -97,8 +74,7 @@ func _notification(what: int):
 	if not Engine.is_editor_hint():
 		match what:
 			NOTIFICATION_PREDELETE:
-				card = null
-				link = null
+				backing = null
 			NOTIFICATION_TRANSFORM_CHANGED:
 				moved.emit()
 
@@ -112,20 +88,18 @@ func resume_collisions():
 ## Attaches the pin to a card at one of the card's predefined pin locations.
 ##
 func move_to_card(to_card: BaseCard, to_location: Location):
-	type = PinType.CARD
-	card = null
+	backing = null
 	card_location = to_location
-	card = to_card
+	backing = to_card
 
 ##
 ## Attaches the pin to an existing link, somewhere between the link's first (0)
 ## and second (1) pin.
 ##
 func move_to_link(to_link: Link, to_location: float = 0.5):
-	type = PinType.LINK
-	link = null
+	backing = null
 	link_location = clampf(to_location, 0.01, 0.99)
-	link = to_link
+	backing = to_link
 
 ##
 ## Specifies for which link this pin is one of the two endpoints.
@@ -171,10 +145,8 @@ func get_unique_id():
 #
 func get_referenced_objects():
 	var refs = []
-	if card:
-		refs.append(card)
-	if link:
-		refs.append(link)
+	if backing:
+		refs.append(backing)
 	if _link_ref:
 		refs.append(_link_ref)
 	return refs
@@ -184,19 +156,16 @@ func get_referenced_objects():
 #
 func get_json_dict():
 	var dict = {}
-	if type == PinType.CARD:
+	if backing is BaseCard:
 		dict["card_location"] = card_location
-	else:
-		dict["type"] = type
+	elif backing is Link:
 		dict["link_location"] = link_location
 	if position.x != 0.0:
 		dict["x"] = position.x
 	if position.y != 0.0:
 		dict["y"] = position.y
-	if card:
-		dict["card"] = card.get_unique_id()
-	if link:
-		dict["link"] = link.get_unique_id()
+	if backing:
+		dict["backing"] = backing.get_unique_id()
 	if _link_ref:
 		dict["link_ref"] = _link_ref.get_unique_id()
 	return dict
@@ -205,14 +174,17 @@ func get_json_dict():
 # For save/load.
 #
 func restore(dict, catalog):
-	type = dict.get("type", PinType.CARD)
 	card_location = dict.get("card_location", Location.TOP_LEFT)
 	link_location = dict.get("link_location", 0.5)
 	position = Vector2(dict.get("x", 0.0), dict.get("y", 0.0))
-	if "card" in dict:
-		card = catalog[dict.card]
-	if "link" in dict:
-		link = catalog[dict.link]
+	if "backing" in dict:
+		backing = catalog[dict.backing]
+	# temporary (don't break old save files)
+	elif "card" in dict:
+		backing = catalog[dict.card]
+	# temporary (don't break old save files)
+	elif "link" in dict:
+		backing = catalog[dict.link]
 	if "link_ref" in dict:
 		_link_ref = catalog[dict.link_ref]
 

@@ -694,11 +694,11 @@ func _create_link(from: BaseCard, to: BaseCard, type: Link.Type):
 
 	var pin1 = Pin.allocate()
 	pin1.card_location = from.find_closest_unused_pin(Vector2(BaseCard.size.x, 0))
-	pin1.card = from
+	pin1.backing = from
 
 	var pin2 = Pin.allocate()
 	pin2.card_location = to.find_closest_unused_pin(Vector2(0, 0))
-	pin2.card = to
+	pin2.backing = to
 
 	var link = Link.allocate()
 	link.type = type

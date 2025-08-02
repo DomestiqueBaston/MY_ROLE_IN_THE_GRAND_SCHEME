@@ -330,12 +330,12 @@ func _make_link_list(card: BaseCard, links: Array[Link]) -> String:
 	var text = ""
 	for link in links:
 		var other_card
-		if link.pin1.type != Pin.PinType.CARD or link.pin2.type != Pin.PinType.CARD:
+		if not (link.pin1.backing is BaseCard and link.pin2.backing is BaseCard):
 			continue
-		if link.pin1.card == card:
-			other_card = link.pin2.card
+		if link.pin1.backing == card:
+			other_card = link.pin2.backing
 		else:
-			other_card = link.pin1.card
+			other_card = link.pin1.backing
 		if not text.is_empty():
 			text += "\n"
 		if link.status == Link.Status.PROBABLE:

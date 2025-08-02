@@ -212,8 +212,8 @@ func _raise(raise_neighbors: bool = false):
 					other_pin = link.pin2
 				else:
 					other_pin = link.pin1
-				if other_pin.type == Pin.PinType.CARD:
-					other_pin.card._raise(false)
+				if other_pin.backing is BaseCard:
+					other_pin.backing._raise(false)
 
 	# now move the card itself in front
 
@@ -352,11 +352,11 @@ func find_linked_cards(link_type: int = -1) -> Array[BaseCard]:
 		var link = pin.get_link_reference()
 		if link and (link_type < 0 or link_type == link.type):
 			if pin == link.pin1:
-				if link.pin2.type == Pin.PinType.CARD:
-					ret.append(link.pin2.card)
+				if link.pin2.backing is BaseCard:
+					ret.append(link.pin2.backing)
 			elif pin == link.pin2:
-				if link.pin1.type == Pin.PinType.CARD:
-					ret.append(link.pin1.card)
+				if link.pin1.backing is BaseCard:
+					ret.append(link.pin1.backing)
 	return ret
 
 ##

@@ -256,11 +256,7 @@ func _start_drag_pin() -> bool:
 	if not (link and link.visible):
 		return false
 
-	if _clicked_pin.type == Pin.PinType.CARD:
-		_drop_target = _clicked_pin.card
-	else:
-		_drop_target = _clicked_pin.link
-
+	_drop_target = _clicked_pin.backing
 	_drag_local_init_pos = _clicked_pin.position
 	_drag_global_init_pos = _clicked_pin.global_position
 	_clicked_pin.z_index += 1
@@ -379,9 +375,9 @@ func _stop_drag_pin(global_pos: Vector2):
 
 		var other_card
 		if _clicked_pin == link.pin1:
-			other_card = link.pin2.card
+			other_card = link.pin2.backing
 		else:
-			other_card = link.pin1.card
+			other_card = link.pin1.backing
 
 		if _drop_target == other_card:
 			_abort_drag_pin()
@@ -403,7 +399,7 @@ func _stop_drag_pin(global_pos: Vector2):
 		else:
 			other_pin = link.pin1
 
-		if other_pin.type == Pin.PinType.LINK:
+		if other_pin.backing is Link:
 			_abort_drag_pin()
 			return
 
@@ -438,7 +434,7 @@ func _start_linking(card: BaseCard, type: Link.Type, is_confirmed: bool):
 	_src_pin = pin_scene.instantiate()
 	cards.add_child(_src_pin)
 	_src_pin.card_location = src_loc as Pin.Location
-	_src_pin.card = card
+	_src_pin.backing = card
 
 	_dst_pin = pin_scene.instantiate()
 	cards.add_child(_dst_pin)
@@ -484,7 +480,7 @@ func _stop_linking(global_pos: Vector2):
 
 		# don't allow both endpoints of a link to be on the same card
 
-		if _drop_target == _src_pin.card:
+		if _drop_target == _src_pin.backing:
 			_abort_linking()
 			return
 
@@ -497,7 +493,7 @@ func _stop_linking(global_pos: Vector2):
 		# abort if the pin's other endpoint is also a link (links must have a
 		# card for at least one endpoint)
 
-		if _src_pin.type == Pin.PinType.LINK:
+		if _src_pin.backing is Link:
 			_abort_linking()
 			return
 
