@@ -463,7 +463,17 @@ func _abort_linking():
 	Globals.dragging = false
 
 func _stop_linking(global_pos: Vector2):
+
+	# user dropped the pin on nothing
+
 	if not _drop_target:
+		_abort_linking()
+		return
+
+	# there is already a link of the given type from the source card to the drop
+	# target
+
+	if _link_exists(_src_pin.backing, _drop_target, _new_link.type):
 		_abort_linking()
 		return
 
@@ -509,6 +519,17 @@ func _stop_linking(global_pos: Vector2):
 
 	_drag_state = DragState.NONE
 	Globals.dragging = false
+
+#
+# Returns true if there is already a link of the given type between the given
+# card and target (another card or a link).
+#
+func _link_exists(card, target, link_type):
+	for link in card.find_links(link_type):
+		if link.pin1.backing == target or link.pin2.backing == target:
+			print("duplicate!")
+			return true
+	return false
 
 func _popup_menu(pos: Vector2, node: Node2D):
 	if _input_paused:
