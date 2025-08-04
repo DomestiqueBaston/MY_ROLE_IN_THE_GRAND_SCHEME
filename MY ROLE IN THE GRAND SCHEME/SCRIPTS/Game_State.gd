@@ -10,6 +10,36 @@ enum PlayerLocation {
 	OTHER
 }
 
+##
+## Constants representing time slots during the work week or the weekend. They
+## can be used as flags for a bit mask.
+##
+enum TimeSlot {
+	# 8-12 Monday to Friday
+	MORNING = 0x01,
+	# 12-16 Monday to Friday
+	AFTERNOON = 0x02,
+	# 16-20 Monday to Friday
+	EVENING = 0x04,
+	# 20-8 Monday to Friday
+	NIGHT = 0x08,
+	# 8-12 Saturday and Sunday
+	WE_MORNING = 0x10,
+	# 12-16 Saturday and Sunday
+	WE_AFTERNOON = 0x20,
+	# 16-20 Saturday and Sunday
+	WE_EVENING = 0x40,
+	# 20-8 Saturday and Sunday
+	WE_NIGHT = 0x80,
+
+	# ALL weekday time slots
+	WEEKDAY = 0x0f,
+	# ALL weekend time slots
+	WEEKEND = 0xf0,
+	# ALL time slots
+	ALWAYS = 0xff
+}
+
 var player: Player = Player.new()
 var cases: Array[Case]
 
@@ -150,6 +180,22 @@ func get_working_day() -> int:
 ##
 func get_hour() -> int:
 	return _hour % 24
+
+##
+## Returns the current time slot: morning, afternoon, evening or night; weekday
+## or weekend.
+##
+func get_time_slot() -> TimeSlot:
+	var hour = get_hour()
+	var workday = get_working_day()
+	if hour < 8 or hour >= 20:
+		return TimeSlot.NIGHT if workday < 5 else TimeSlot.WE_NIGHT
+	elif hour < 12:
+		return TimeSlot.MORNING if workday < 5 else TimeSlot.WE_MORNING
+	elif hour < 16:
+		return TimeSlot.AFTERNOON if workday < 5 else TimeSlot.WE_AFTERNOON
+	else:
+		return TimeSlot.EVENING if workday < 5 else TimeSlot.WE_EVENING
 
 func _get_weeks_passed() -> int:
 	@warning_ignore("integer_division")

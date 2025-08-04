@@ -22,6 +22,9 @@ enum LocationStatus {
 ## ID of corresponding entry in location database.
 var database_id: String
 
+## Opening hours (a mask of GameState.TimeSlot bits).
+var opening_hours: int
+
 static var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 static var _card_scene = preload("res://SCENES/Location_Card.tscn")
 
@@ -66,12 +69,40 @@ func get_display_name() -> String:
 		_:
 			return card_name
 
+func is_open() -> bool:
+	return (opening_hours & GameState.get_time_slot()) != 0
+
+static func _parse_hours(id) -> int:
+	var hours: int = 0
+	for flag in _location_data[id].open_hours:
+		match flag:
+			"h24":
+				hours = GameState.TimeSlot.ALWAYS
+			"morning":
+				hours |= GameState.TimeSlot.MORNING
+			"afternoon":
+				hours |= GameState.TimeSlot.AFTERNOON
+			"evening":
+				hours |= GameState.TimeSlot.EVENING
+			"night":
+				hours |= GameState.TimeSlot.NIGHT
+			"we_morning":
+				hours |= GameState.TimeSlot.WE_MORNING
+			"we_afternoon":
+				hours |= GameState.TimeSlot.WE_AFTERNOON
+			"we_evening":
+				hours |= GameState.TimeSlot.WE_EVENING
+			"we_night":
+				hours |= GameState.TimeSlot.WE_NIGHT
+	return hours
+
 static func create_card(id: String) -> LocationCard:
 	var card = _card_scene.instantiate()
 	var location_info = _location_data[id]
 	card.card_name = location_info.name
 	card.description = location_info.description
 	card.database_id = id
+	card.opening_hours = _parse_hours(id)
 	return card
 
 #
@@ -94,6 +125,7 @@ func get_json_dict():
 	if location_status != LocationStatus.NONE:
 		dict["location_status"] = location_status
 	dict["database_id"] = database_id
+	dict["hours"] = opening_hours
 	return dict
 
 #
@@ -102,6 +134,7 @@ func get_json_dict():
 func restore(dict, catalog):
 	super(dict, catalog)
 	location_status = dict.get("location_status", LocationStatus.NONE)
+	opening_hours = dict.get("hours", 0)
 	database_id = dict["database_id"]
 	var location_info = _location_data[database_id]
 	card_name = location_info.name

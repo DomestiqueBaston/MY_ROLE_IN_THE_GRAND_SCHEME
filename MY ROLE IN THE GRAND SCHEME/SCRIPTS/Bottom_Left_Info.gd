@@ -101,6 +101,41 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 				_make_link_list(card, workers)
 			$VBox/Scroller_Location/Info_Location/Workplace_NPC_01.show()
 
+		var hours = card.opening_hours
+
+		$VBox/Scroller_Location/Info_Location/Separator_04.show()
+		$VBox/Scroller_Location/Info_Location/Weekend.show()
+		if hours == 0:
+			$VBox/Scroller_Location/Info_Location/Weekend_day_01.show()
+		elif (hours & GameState.TimeSlot.WEEKEND) != 0:
+			$VBox/Scroller_Location/Info_Location/Weekend_day_02.show()
+		else:
+			$VBox/Scroller_Location/Info_Location/Weekend_day_03.show()
+
+		$VBox/Scroller_Location/Info_Location/Separator_05.show()
+		$VBox/Scroller_Location/Info_Location/Hours.show()
+		if hours == 0:
+			$VBox/Scroller_Location/Info_Location/Time_Slot_01.show()
+		elif hours == GameState.TimeSlot.ALWAYS:
+			$VBox/Scroller_Location/Info_Location/Time_Slot_10.show()
+		else:
+			$VBox/Scroller_Location/Info_Location/Time_Slot_02.visible = \
+				(hours & GameState.TimeSlot.MORNING != 0)
+			$VBox/Scroller_Location/Info_Location/Time_Slot_03.visible = \
+				(hours & GameState.TimeSlot.AFTERNOON != 0)
+			$VBox/Scroller_Location/Info_Location/Time_Slot_04.visible = \
+				(hours & GameState.TimeSlot.EVENING != 0)
+			$VBox/Scroller_Location/Info_Location/Time_Slot_05.visible = \
+				(hours & GameState.TimeSlot.NIGHT != 0)
+			$VBox/Scroller_Location/Info_Location/Time_Slot_06.visible = \
+				(hours & GameState.TimeSlot.WE_MORNING != 0)
+			$VBox/Scroller_Location/Info_Location/Time_Slot_07.visible = \
+				(hours & GameState.TimeSlot.WE_AFTERNOON != 0)
+			$VBox/Scroller_Location/Info_Location/Time_Slot_08.visible = \
+				(hours & GameState.TimeSlot.WE_EVENING != 0)
+			$VBox/Scroller_Location/Info_Location/Time_Slot_09.visible = \
+				(hours & GameState.TimeSlot.WE_NIGHT != 0)
+
 		var hangout = card.find_links(Link.Type.HANGOUT)
 		if hangout:
 			$VBox/Scroller_Location/Info_Location/Separator_06.show()
