@@ -549,7 +549,7 @@ func _set_drop_target(target: Node2D):
 #
 func _can_link(source: Node2D, target: Node2D, link_type: Link.Type):
 	return (source and target and source != target
-		and (source is Card or target is Card)
+		and Link.is_link_valid(source, target, link_type)
 		and not _link_exists(source, target, link_type))
 
 #
@@ -588,7 +588,15 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 	for id in link_create_ids:
 		var index = popup.get_item_index(id)
-		popup.set_item_disabled(index, node is not Card)
+		if node is Card:
+			popup.set_item_disabled(index, false)
+			var submenu = popup.get_item_submenu_node(index)
+			for i in submenu.item_count:
+				var link_type = submenu.get_item_id(i)
+				submenu.set_item_disabled(
+					i, not Link.is_link_valid(node, null, link_type))
+		else:
+			popup.set_item_disabled(index, true)
 
 	var link_mod_ids = [
 		MenuItem.CHANGE_LINK_COLOR,
@@ -604,13 +612,13 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 	var change_submenu_index = popup.get_item_index(MenuItem.CHANGE_LINK_COLOR)
 	if not popup.is_item_disabled(change_submenu_index):
-		var submenu: PopupMenu = popup.get_item_submenu_node(change_submenu_index)
-		for index in submenu.item_count:
-			var link_type = submenu.get_item_id(index)
+		var submenu = popup.get_item_submenu_node(change_submenu_index)
+		for i in submenu.item_count:
+			var link_type = submenu.get_item_id(i)
 			submenu.set_item_disabled(
-				index,
-				link_type == node.type or _link_exists(
-					node.pin1.backing, node.pin2.backing, link_type))
+				i, link_type == node.type \
+				or not Link.is_link_valid(node.pin1.backing, node.pin2.backing, link_type) \
+				or _link_exists(node.pin1.backing, node.pin2.backing, link_type))
 
 	_popup_node = node
 	popup.popup(Rect2i(pos, Vector2i()))
