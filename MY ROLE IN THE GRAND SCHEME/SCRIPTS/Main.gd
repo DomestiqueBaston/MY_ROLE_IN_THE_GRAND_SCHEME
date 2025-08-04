@@ -602,6 +602,18 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		var index = popup.get_item_index(id)
 		popup.set_item_disabled(index, node is not Link or node.blocked)
 
+	# player cannot change a link to a type for which there is already a link
+
+	var change_submenu_index = popup.get_item_index(MenuItem.CHANGE_LINK_COLOR)
+	if not popup.is_item_disabled(change_submenu_index):
+		var submenu: PopupMenu = popup.get_item_submenu_node(change_submenu_index)
+		for index in submenu.item_count:
+			var link_type = submenu.get_item_id(index)
+			submenu.set_item_disabled(
+				index,
+				link_type == node.type or _link_exists(
+					node.pin1.backing, node.pin2.backing, link_type))
+
 	_popup_node = node
 	popup.popup(Rect2i(pos, Vector2i()))
 
