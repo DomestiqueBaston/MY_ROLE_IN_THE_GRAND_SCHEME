@@ -310,7 +310,7 @@ func lower():
 ## Note that only the types of the endpoints are taken into consideration, not
 ## the specific instances.
 ##
-static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type):
+static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bool:
 	if endpt1 == null and endpt2 == null:
 		return true
 
@@ -331,6 +331,8 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type):
 				return endpt is ObjectCard or endpt is NpcCard or endpt is LocationCard
 			Type.FOUND:
 				return endpt is ObjectCard or endpt is LocationCard
+			_:
+				return true
 
 	match link_type:
 		Type.HIDEOUT, Type.HOME, Type.WORK, Type.HANGOUT:
@@ -353,6 +355,8 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type):
 		Type.FOUND:
 			return (endpt1 is ObjectCard and endpt2 is LocationCard) \
 				or (endpt1 is LocationCard and endpt2 is ObjectCard)
+		_:
+			return true
 
 #
 # For save/load.
