@@ -42,12 +42,6 @@ window/layer_3="Pin"
 
 movie_writer/main_scene="uid://mnqpfr0mjern"
 
-[file_customization]
-
-folder_colors={
-"res://TRASH (NEW)/": "red"
-}
-
 [input]
 
 Left_Click={
