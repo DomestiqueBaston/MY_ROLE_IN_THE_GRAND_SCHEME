@@ -176,21 +176,19 @@ func _mouse_exited_card(card: Card):
 	if _input_paused:
 		return
 
-	# this test is necessary because, for some reason, when the mouse moves
-	# directly from one card to another, the mouse_entered signal for the new
-	# card is received BEFORE the mouse_exited signal for the old one
-
-	if card != _current_card:
-		return
+	# note that, for some reason, when the mouse moves directly from one card to
+	# another, the mouse_entered signal for the new card is received BEFORE the
+	# mouse_exited signal for the old one
 
 	if _drag_state == DragState.NONE:
 		card.set_highlighted(false)
-		_current_card = null
-		_update_info_box()
-	elif _drag_state == DragState.DRAGGING and _clicked_pin:
-		_set_drop_target(null)
-	elif _drag_state == DragState.LINKING:
-		_set_drop_target(null)
+		if card == _current_card:
+			_current_card = null
+			_update_info_box()
+	elif ((_drag_state == DragState.DRAGGING and _clicked_pin)
+		or _drag_state == DragState.LINKING):
+		if card == _drop_target:
+			_set_drop_target(null)
 
 func _click_on_card(global_pos: Vector2, card: Card):
 	if _input_paused:
@@ -517,7 +515,7 @@ func _stop_linking(global_pos: Vector2):
 #
 func _set_drop_target(target: Node2D):
 	_drop_target = target
-	var ok = false
+	var ok = true
 
 	if _drop_target:
 
@@ -541,7 +539,7 @@ func _set_drop_target(target: Node2D):
 			ok = _can_link(_src_pin.backing, _drop_target, _new_link.type)
 
 	if ok:
-		Globals.set_mouse_cursor(Globals.MouseCursor.ARROW)
+		Globals.set_mouse_cursor(Globals.MouseCursor.CIRCLE)
 	else:
 		Globals.set_mouse_cursor(Globals.MouseCursor.CROSS)
 
