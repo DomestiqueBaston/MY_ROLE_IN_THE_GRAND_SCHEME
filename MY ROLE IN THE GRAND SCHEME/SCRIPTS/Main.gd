@@ -168,22 +168,29 @@ func _mouse_entered_card(card: Card):
 		_current_card = card
 		_update_info_box()
 	elif _drag_state == DragState.DRAGGING and _clicked_pin and not card.is_stacked():
-		_drop_target = card
+		_set_drop_target(card)
 	elif _drag_state == DragState.LINKING:
-		_drop_target = card
+		_set_drop_target(card)
 
 func _mouse_exited_card(card: Card):
 	if _input_paused:
 		return
+
+	# this test is necessary because, for some reason, when the mouse moves
+	# directly from one card to another, the mouse_entered signal for the new
+	# card is received BEFORE the mouse_exited signal for the old one
+
+	if card != _current_card:
+		return
+
 	if _drag_state == DragState.NONE:
 		card.set_highlighted(false)
-		if _current_card == card:
-			_current_card = null
-			_update_info_box()
+		_current_card = null
+		_update_info_box()
 	elif _drag_state == DragState.DRAGGING and _clicked_pin:
-		_drop_target = null
+		_set_drop_target(null)
 	elif _drag_state == DragState.LINKING:
-		_drop_target = null
+		_set_drop_target(null)
 
 func _click_on_card(global_pos: Vector2, card: Card):
 	if _input_paused:
@@ -211,12 +218,18 @@ func _click_on_pin(global_pos: Vector2, pin: Pin):
 func _mouse_entered_link(link: Link):
 	if _input_paused:
 		return
-	_drop_target = link
+	if _drag_state == DragState.DRAGGING and _clicked_pin:
+		_set_drop_target(link)
+	elif _drag_state == DragState.LINKING:
+		_set_drop_target(link)
 
 func _mouse_exited_link(_link: Link):
 	if _input_paused:
 		return
-	_drop_target = null
+	if _drag_state == DragState.DRAGGING and _clicked_pin:
+		_set_drop_target(null)
+	elif _drag_state == DragState.LINKING:
+		_set_drop_target(null)
 
 func _start_drag() -> bool:
 	if _clicked_pin:
@@ -256,7 +269,7 @@ func _start_drag_pin() -> bool:
 	if not (link and link.visible):
 		return false
 
-	_drop_target = _clicked_pin.backing
+	_set_drop_target(_clicked_pin.backing)
 	_drag_local_init_pos = _clicked_pin.position
 	_drag_global_init_pos = _clicked_pin.global_position
 	_clicked_pin.z_index += 1
@@ -410,6 +423,7 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 		_clicked_pin.z_index -= 1
 		_clicked_pin.resume_collisions()
 	Globals.dragging = false
+	Globals.set_mouse_cursor(Globals.MouseCursor.ARROW)
 
 func _is_in_playground(global_pos: Vector2):
 	var rect = Rect2(cards.global_position, cards.size)
@@ -454,19 +468,15 @@ func _abort_linking():
 	_dst_pin.queue_free()
 	_drag_state = DragState.NONE
 	Globals.dragging = false
+	Globals.set_mouse_cursor(Globals.MouseCursor.ARROW)
 
 func _stop_linking(global_pos: Vector2):
 
-	# user dropped the pin on nothing
+	# user dropped the pin on nothing, or there is already a link of the given
+	# type from the source card to the drop target, or both the source and the
+	# target are the same card or link, or they are both links
 
-	if not _drop_target:
-		_abort_linking()
-		return
-
-	# there is already a link of the given type from the source card to the drop
-	# target
-
-	if _link_exists(_src_pin.backing, _drop_target, _new_link.type):
+	if not _can_link(_src_pin.backing, _drop_target, _new_link.type):
 		_abort_linking()
 		return
 
@@ -481,25 +491,11 @@ func _stop_linking(global_pos: Vector2):
 			_abort_linking()
 			return
 
-		# don't allow both endpoints of a link to be on the same card
-
-		if _drop_target == _src_pin.backing:
-			_abort_linking()
-			return
-
 		_dst_pin.move_to_card(_drop_target, dst_loc as Pin.Location)
 
 	# user dropped the pin on a link
 
 	else:
-
-		# abort if the pin's other endpoint is also a link (links must have a
-		# card for at least one endpoint)
-
-		if _src_pin.backing is Link:
-			_abort_linking()
-			return
-
 		_dst_pin.move_to_link_at(_drop_target, global_pos)
 
 	_dst_pin.resume_collisions()
@@ -512,15 +508,73 @@ func _stop_linking(global_pos: Vector2):
 
 	_drag_state = DragState.NONE
 	Globals.dragging = false
+	Globals.set_mouse_cursor(Globals.MouseCursor.ARROW)
+
+#
+# Sets the "drop target" while creating a new link or dragging an existing pin.
+# The mouse cursor is set to reflect whether or not the new drop target is
+# valid, that is, whether the new link can be created or the pin moved there.
+#
+func _set_drop_target(target: Node2D):
+	_drop_target = target
+	var ok = false
+
+	if _drop_target:
+
+		# dragging an existing pin
+
+		if _clicked_pin:
+			if _clicked_pin.backing == _drop_target:
+				ok = true
+			else:
+				var link = _clicked_pin.get_link_reference()
+				var src
+				if _clicked_pin == link.pin1:
+					src = link.pin2.backing
+				else:
+					src = link.pin1.backing
+				ok = _can_link(src, _drop_target, link.type)
+
+		# creating a new link
+
+		else:
+			ok = _can_link(_src_pin.backing, _drop_target, _new_link.type)
+
+	if ok:
+		Globals.set_mouse_cursor(Globals.MouseCursor.ARROW)
+	else:
+		Globals.set_mouse_cursor(Globals.MouseCursor.CROSS)
+
+#
+# Returns true if a link of the given type can be created between source and
+# target.
+#
+func _can_link(source: Node2D, target: Node2D, link_type: Link.Type):
+	return (source and target and source != target
+		and (source is Card or target is Card)
+		and not _link_exists(source, target, link_type))
 
 #
 # Returns true if there is already a link of the given type between the given
-# card and target (another card or a link).
+# two nodes (one must be a card, the other can be a card or a link).
 #
-func _link_exists(card, target, link_type):
+func _link_exists(source: Node2D, target: Node2D, link_type: Link.Type):
+	var card
+	var card_or_link
+
+	if source is Card:
+		card = source
+		card_or_link = target
+	elif target is Card:
+		card = target
+		card_or_link = source
+	else:
+		return false
+
 	for link in card.find_links(link_type):
-		if link.pin1.backing == target or link.pin2.backing == target:
+		if card_or_link in [link.pin1.backing, link.pin2.backing]:
 			return true
+
 	return false
 
 func _popup_menu(pos: Vector2, node: Node2D):
