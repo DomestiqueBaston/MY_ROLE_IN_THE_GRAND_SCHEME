@@ -548,32 +548,7 @@ func _set_drop_target(target: Node2D):
 # target.
 #
 func _can_link(source: Node2D, target: Node2D, link_type: Link.Type):
-	return (source and target and source != target
-		and Link.is_link_valid(source, target, link_type)
-		and not _link_exists(source, target, link_type))
-
-#
-# Returns true if there is already a link of the given type between the given
-# two nodes (one must be a card, the other can be a card or a link).
-#
-func _link_exists(source: Node2D, target: Node2D, link_type: Link.Type):
-	var card
-	var card_or_link
-
-	if source is Card:
-		card = source
-		card_or_link = target
-	elif target is Card:
-		card = target
-		card_or_link = source
-	else:
-		return false
-
-	for link in card.find_links(link_type):
-		if card_or_link in [link.pin1.backing, link.pin2.backing]:
-			return true
-
-	return false
+	return source and target and Link.is_link_valid(source, target, link_type)
 
 func _popup_menu(pos: Vector2, node: Node2D):
 	if _input_paused:
@@ -616,9 +591,8 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		for i in submenu.item_count:
 			var link_type = submenu.get_item_id(i)
 			submenu.set_item_disabled(
-				i, link_type == node.type \
-				or not Link.is_link_valid(node.pin1.backing, node.pin2.backing, link_type) \
-				or _link_exists(node.pin1.backing, node.pin2.backing, link_type))
+				i, link_type == node.type or not Link.is_link_valid(
+					node.pin1.backing, node.pin2.backing, link_type))
 
 	_popup_node = node
 	popup.popup(Rect2i(pos, Vector2i()))

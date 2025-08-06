@@ -301,14 +301,12 @@ func lower():
 		pin.z_index -= 1
 
 ##
-## Returns true if a link of the given type can be created between cards and/or
-## links of the same types as endpt1 and endpt2. If either endpoint is null,
-## only the type of the other endpoint is taken into consideration. So, for
-## example, if endpt1 is an ObjectCard and endpt2 is null, the function returns
-## true for link types that can sometimes be connected to an ObjectCard.
-##
-## Note that only the types of the endpoints are taken into consideration, not
-## the specific instances.
+## Returns true if a link of the given type can be created between the given
+## endpoints. At least one of the endpoints must be a card; the other can be
+## either a card or a link. If either endpoint is null, only the type of the
+## other endpoint is taken into consideration. So, for example, if endpt1 is an
+## ObjectCard and endpt2 is null, the function returns true for link types that
+## can sometimes be connected to an ObjectCard.
 ##
 static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bool:
 	if endpt1 == null and endpt2 == null:
@@ -334,29 +332,59 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 			_:
 				return true
 
+	if endpt1 == endpt2:
+		return false
+
+	var ok
+
 	match link_type:
 		Type.HIDEOUT, Type.HOME, Type.WORK, Type.HANGOUT:
-			return (endpt1 is NpcCard and endpt2 is LocationCard) \
+			ok = (endpt1 is NpcCard and endpt2 is LocationCard) \
 				or (endpt1 is LocationCard and endpt2 is NpcCard)
 		Type.DEBT, Type.INTIMACY, Type.FRIEND, Type.ENEMY, Type.ACQUAINTANCE, Type.IDEOLOGY:
-			return endpt1 is NpcCard and endpt2 is NpcCard
+			ok = endpt1 is NpcCard and endpt2 is NpcCard
 		Type.GUILT:
-			return (endpt1 is NpcCard and endpt2 is NpcCard) \
+			ok = (endpt1 is NpcCard and endpt2 is NpcCard) \
 				or (endpt1 is NpcCard and endpt2 is ObjectCard) \
 				or (endpt1 is ObjectCard and endpt2 is NpcCard)
 		Type.INCONSISTENCY:
-			return true
+			ok = true
 		Type.WITNESS:
-			return (endpt1 is NpcCard and endpt2 is Link) \
-				or (endpt1 is Link and endpt2 is NpcCard)
+			ok = (endpt1 is NpcCard and endpt2 is Link and endpt2.type != Type.WITNESS) \
+				or (endpt1 is Link and endpt1.type != Type.WITNESS and endpt2 is NpcCard)
 		Type.PROPERTY:
-			return (endpt1 is ObjectCard and (endpt2 is NpcCard or endpt2 is LocationCard)) \
+			ok = (endpt1 is ObjectCard and (endpt2 is NpcCard or endpt2 is LocationCard)) \
 				or (endpt2 is ObjectCard and (endpt1 is NpcCard or endpt1 is LocationCard))
 		Type.FOUND:
-			return (endpt1 is ObjectCard and endpt2 is LocationCard) \
+			ok = (endpt1 is ObjectCard and endpt2 is LocationCard) \
 				or (endpt1 is LocationCard and endpt2 is ObjectCard)
 		_:
+			ok = true
+
+	return ok and not is_link_found(endpt1, endpt2, link_type)
+
+##
+## Returns true if there is a link of the given type between the given two nodes
+## (one must be a card, the other can be a card or a link).
+##
+static func is_link_found(source: Node2D, target: Node2D, link_type: Type) -> bool:
+	var card
+	var card_or_link
+
+	if source is Card:
+		card = source
+		card_or_link = target
+	elif target is Card:
+		card = target
+		card_or_link = source
+	else:
+		return false
+
+	for link in card.find_links(link_type):
+		if card_or_link in [link.pin1.backing, link.pin2.backing]:
 			return true
+
+	return false
 
 #
 # For save/load.
