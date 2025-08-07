@@ -317,6 +317,30 @@ func show_npc(npc: NpcCard):
 			_make_link_list(npc, ideology)
 		$VBox/Scroller_NPC/Info_NPC/Ideology_NPC_01.show()
 
+	var work = npc.find_links(Link.Type.WORK)
+
+	$VBox/Scroller_NPC/Info_NPC/Separator_10.show()
+	$VBox/Scroller_NPC/Info_NPC/Schedule.show()
+	if work.is_empty():
+		$VBox/Scroller_NPC/Info_NPC/Schedule_None.show()
+	elif npc.work_shifts & GameState.TimeSlot.NIGHT:
+		$VBox/Scroller_NPC/Info_NPC/Schedule_Night.show()
+	elif (npc.work_shifts & GameState.TimeSlot.MORNING) == 0:
+		$VBox/Scroller_NPC/Info_NPC/Schedule_Aft_Eve.show()
+	elif (npc.work_shifts & GameState.TimeSlot.AFTERNOON) == 0:
+		$VBox/Scroller_NPC/Info_NPC/Schedule_Morn_Eve.show()
+	else:
+		$VBox/Scroller_NPC/Info_NPC/Schedule_Morn_Aft.show()
+
+	$VBox/Scroller_NPC/Info_NPC/Separator_11.show()
+	$VBox/Scroller_NPC/Info_NPC/Weekend.show()
+	if work.is_empty():
+		$VBox/Scroller_NPC/Info_NPC/Weekend_None.show()
+	elif npc.has_weekend_shift:
+		$VBox/Scroller_NPC/Info_NPC/Weekend_Mon_Tue.show()
+	else:
+		$VBox/Scroller_NPC/Info_NPC/Weekend_Sat_Sun.show()
+
 	var home = npc.find_links(Link.Type.HOME)
 	if home:
 		$VBox/Scroller_NPC/Info_NPC/Separator_12.show()
@@ -325,7 +349,6 @@ func show_npc(npc: NpcCard):
 			_make_link_list(npc, home)
 		$VBox/Scroller_NPC/Info_NPC/Home_Location.show()
 
-	var work = npc.find_links(Link.Type.WORK)
 	if work:
 		$VBox/Scroller_NPC/Info_NPC/Separator_13.show()
 		$VBox/Scroller_NPC/Info_NPC/Work.show()

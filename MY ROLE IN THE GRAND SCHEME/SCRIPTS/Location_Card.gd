@@ -70,7 +70,7 @@ func get_display_name() -> String:
 			return card_name
 
 func is_open() -> bool:
-	return (opening_hours & GameState.get_time_slot()) != 0
+	return opening_hours == 0 or (opening_hours & GameState.get_time_slot())
 
 static func _parse_hours(id) -> int:
 	var hours: int = 0

@@ -96,6 +96,16 @@ var max_health: int
 var wanted: int
 var player_reputation: int
 
+## Work shifts (a mask of GameState.TimeSlot bits: MORNING, AFTERNOON, EVENING
+## and/or NIGHT).
+var work_shifts: int
+
+## If true work Wed-Sun, else work Mon-Fri.
+var has_weekend_shift: bool
+
+# Roll of the dice to introduce daily randomness into NPC's location.
+var _location_randomness: int = randi()
+
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
 static var _card_scene = preload("res://SCENES/NPC_Card.tscn")
@@ -152,6 +162,136 @@ func get_work() -> LocationCard:
 
 func get_hangout() -> LocationCard:
 	return get_one_connection(Link.Type.HANGOUT)
+
+##
+## An NPC who works the night shift sleeps in the morning and the afternoon;
+## other NPCs sleep at night.
+##
+func is_asleep() -> bool:
+	var hour = GameState.get_hour()
+	if work_shifts & GameState.TimeSlot.NIGHT:
+		return hour >= 8 and hour < 16
+	else:
+		return hour < 8 or hour >= 20
+
+##
+## Returns the location where the NPC can be found right now, or null if
+## unknown.
+##
+func locate() -> LocationCard:
+
+	# NPC sleeps at home
+
+	if is_asleep():
+		return get_home()
+
+	var hour = GameState.get_hour()
+
+	# each work day there is 1 chance in 10 that the NPC will change his
+	# schedule and be at alternative location when he normally works
+
+	if (_location_randomness % 10 == 0) and is_work_day():
+		var at_hideout = false
+
+		# night worker: he is off work all night
+
+		if work_shifts & GameState.TimeSlot.NIGHT:
+			at_hideout = (hour < 8 or hour >= 20)
+
+		# day worker: he doesn't work one of his two usual shifts
+
+		elif hour >= 8 and hour < 20:
+			var off_shift = 0
+			var counter = 0
+			for shift in [GameState.TimeSlot.MORNING,
+						  GameState.TimeSlot.AFTERNOON,
+						  GameState.TimeSlot.EVENING]:
+				if work_shifts & shift:
+					if (_location_randomness % 20) == 0:
+						if counter == 0:
+							off_shift = shift
+					else:
+						if counter == 1:
+							off_shift = shift
+					if off_shift:
+						break
+					counter += 1
+			if hour < 12:
+				at_hideout = (off_shift == GameState.TimeSlot.MORNING)
+			elif hour < 16:
+				at_hideout = (off_shift == GameState.TimeSlot.AFTERNOON)
+			else:
+				at_hideout = (off_shift == GameState.TimeSlot.EVENING)
+
+		# if the NPC is unexpectedly off work, he can be found at his hideout,
+		# if he has one, or at his hangout if not
+
+		if at_hideout:
+			return _get_alternative_location()
+
+	# NPC is working
+
+	if should_be_at_work():
+		return get_work()
+
+	# 50/50 roll that is independent of the 1 in 10 roll for schedule changes
+
+	@warning_ignore("integer_division")
+	var roll = (((_location_randomness / 10) & 1) == 0)
+
+	# NPCs that don't work the night shift spend either the morning or the
+	# afternoon at their hideout or hangout, and the rest of the time at home
+	# (we know it is not nighttime now because the NPC is not sleeping)
+
+	if (work_shifts & GameState.TimeSlot.NIGHT) == 0 and not is_work_day():
+		if hour < 12:
+			return get_home() if roll else _get_alternative_location()
+		elif hour < 16:
+			return get_home() if not roll else _get_alternative_location()
+		else:
+			return get_home()
+
+	# remaining free time: NPC is either at home or at his hideout or hangout
+
+	return get_home() if roll else _get_alternative_location()
+
+#
+# Returns an alternative location where the NPC may be found: either his
+# hideout (if he has one, and it is open) or his hangout (if it is open).
+#
+func _get_alternative_location() -> LocationCard:
+	var location = get_one_connection(Link.Type.HIDEOUT)
+	if location and location.is_open():
+		return location
+	location = get_hangout()
+	return location if location.is_open() else null
+
+##
+## Returns true if the NPC would normally be at work now.
+##
+func should_be_at_work() -> bool:
+	if not is_work_day():
+		return false
+	var hour = GameState.get_hour()
+	if hour < 8 or hour >= 20:
+		return (work_shifts & GameState.TimeSlot.NIGHT) != 0
+	elif hour < 12:
+		return (work_shifts & GameState.TimeSlot.MORNING) != 0
+	elif hour < 16:
+		return (work_shifts & GameState.TimeSlot.AFTERNOON) != 0
+	else:
+		return (work_shifts & GameState.TimeSlot.EVENING) != 0
+
+##
+## Returns true if today is normally a work day for the NPC: Wednesday to Sunday
+## for NPCs that work the weekend shift, Monday to Friday for the others.
+##
+func is_work_day() -> bool:
+	var workday = GameState.get_working_day()
+	if has_weekend_shift:
+		return workday >= 2
+	else:
+		return workday < 5
 
 func is_known_to(other: NpcCard) -> bool:
 	if other == self:
@@ -221,6 +361,25 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 		mental += bonus_malus.get("MEN", 0)
 		max_health += bonus_malus.get("HEA", 0)
 
+	# work shifts
+
+	var night_prob = job_info.get("night_shift_chance", 0.0)
+	var weekend_prob = job_info.get("weekend_shift_chance", 0.0)
+	var work_night = (randf() <= night_prob) if night_prob > 0.0 else false
+
+	has_weekend_shift = (randf() <= weekend_prob) if weekend_prob > 0.0 else false
+
+	if work_night:
+		work_shifts = GameState.TimeSlot.NIGHT
+	else:
+		var roll = randi() % 3
+		if roll != 0:
+			work_shifts |= GameState.TimeSlot.MORNING
+		if roll != 1:
+			work_shifts |= GameState.TimeSlot.AFTERNOON
+		if roll != 2:
+			work_shifts |= GameState.TimeSlot.EVENING
+
 	# initial health, wanted, etc.
 
 	health = roundi(max_health * randf_range(0.5, 1.0))
@@ -240,13 +399,20 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 		hideout.add_connection(Link.Type.HIDEOUT, self)
 
 ##
-## Call this at the start of each new day: the NPC's health is incremented
-## until it reaches max_health. (Perhaps this should be done at different times
-## depending on NPCs' work schedules?)
+## Call this at the start of each new day to update the NPC's health and/or
+## location.
 ##
 func new_day():
+
+	# the NPC's health is incremented until it reaches max_health (perhaps this
+	# should be done at different times depending on his work schedules)
+
 	if health < max_health:
 		health += 1
+
+	# introduce a bit of randomness into the NPC's schedule
+
+	_location_randomness = randi()
 
 ##
 ## Generates and returns a random non-playing character for a case.
@@ -329,6 +495,9 @@ func get_json_dict():
 	dict["wanted"] = wanted
 	if player_reputation != 0:
 		dict["player_reputation"] = player_reputation
+	dict["work_shifts"] = work_shifts
+	if has_weekend_shift:
+		dict["has_weekend_shift"] = has_weekend_shift
 	return dict
 
 #
@@ -353,6 +522,8 @@ func restore(dict, catalog):
 	health = dict.health
 	wanted = dict.wanted
 	player_reputation = dict.get("player_reputation", 0)
+	work_shifts = dict.get("work_shifts", 0)
+	has_weekend_shift = dict.get("has_weekend_shift", false)
 
 #
 # For save/load.

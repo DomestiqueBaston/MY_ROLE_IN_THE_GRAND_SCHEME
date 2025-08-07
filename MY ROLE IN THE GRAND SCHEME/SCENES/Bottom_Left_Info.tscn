@@ -1,43 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://ldrpsbr35wp0"]
+[gd_scene load_steps=3 format=3 uid="uid://ldrpsbr35wp0"]
 
 [ext_resource type="Script" uid="uid://d07rm46wfycg6" path="res://SCRIPTS/Bottom_Left_Info.gd" id="1_jl4r3"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="2_qkikf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvc8p"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksebp"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsks5"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_871an"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmwof"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xx3ct"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s563f"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lctu2"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqutl"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3hjo"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bgqcn"]
-content_margin_left = 1.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy7hr"]
-content_margin_left = 1.0
 
 [node name="Bottom_Left_Info" type="Node2D"]
 script = ExtResource("1_jl4r3")
@@ -1099,11 +1063,11 @@ custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "Schedule:"
+text = "Work schedule:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Schedule_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
+[node name="Schedule_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
@@ -1114,292 +1078,48 @@ text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Schedule_Morning" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
+[node name="Schedule_Morn_Aft" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
+custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Morning"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
-bbcode_enabled = true
-text = "Morning:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Morning"]
-layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
 bbcode_enabled = true
-text = "Location"
+text = "8 AM - 4 PM"
 fit_content = true
-autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Morning"]
+[node name="Schedule_Aft_Eve" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wvc8p")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Schedule_Afternoon" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
+custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
-bbcode_enabled = true
-text = "Afternoon:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
-layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
 bbcode_enabled = true
-text = "Location"
+text = "12 PM - 8 PM"
 fit_content = true
-autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Afternoon"]
+[node name="Schedule_Morn_Eve" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ksebp")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Schedule_Evening" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
+custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Evening"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
+theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "Evening:"
+text = "8 AM - 12 PM
+4 PM - 8 PM"
 fit_content = true
-autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Evening"]
+[node name="Schedule_Night" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
-bbcode_enabled = true
-text = "Location"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Evening"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nsks5")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Schedule_Night" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
+custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Night"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
-bbcode_enabled = true
-text = "Night:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Night"]
-visible = false
-layout_mode = 2
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
 bbcode_enabled = true
-text = "Location"
+text = "8 PM - 8 AM"
 fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_Night"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_871an")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Schedule_WE_Morning" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
-bbcode_enabled = true
-text = "W-E Morning:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
-bbcode_enabled = true
-text = "Location"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Morning"]
-visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_bmwof")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Schedule_WE_Afternoon" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
-bbcode_enabled = true
-text = "W-E Afternoon:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
-bbcode_enabled = true
-text = "Location"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Afternoon"]
-visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_xx3ct")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Schedule_WE_Evening" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_s563f")
-bbcode_enabled = true
-text = "W-E Evening:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lctu2")
-bbcode_enabled = true
-text = "Location"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Evening"]
-visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iqutl")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Schedule_WE_Night" type="FlowContainer" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(95, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="Time_Slot" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
-layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_q3hjo")
-bbcode_enabled = true
-text = "W-E Night:"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_bgqcn")
-bbcode_enabled = true
-text = "Location"
-fit_content = true
-autowrap_mode = 0
-horizontal_alignment = 1
-
-[node name="Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC/Schedule_WE_Night"]
-visible = false
-layout_mode = 2
-theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jy7hr")
-bbcode_enabled = true
-text = "Unknown"
-fit_content = true
-autowrap_mode = 0
 horizontal_alignment = 1
 
 [node name="Separator_11" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
