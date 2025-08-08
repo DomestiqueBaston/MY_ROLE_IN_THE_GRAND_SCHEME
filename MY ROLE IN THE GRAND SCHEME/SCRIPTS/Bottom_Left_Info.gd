@@ -104,6 +104,95 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 		var hours = card.opening_hours
 
 		$VBox/Scroller_Location/Info_Location/Separator_04.show()
+		$VBox/Scroller_Location/Info_Location/Hours.show()
+		if hours == 0:
+			$VBox/Scroller_Location/Info_Location/Time_Slot_None.show()
+		elif hours == GameState.TimeSlot.ALWAYS:
+			$VBox/Scroller_Location/Info_Location/Time_Slot_H24.show()
+		else:
+			var weekday_hours: Array[String]
+			if hours & GameState.TimeSlot.MORNING:
+				weekday_hours.append("8 AM")
+				weekday_hours.append("12 PM")
+			if hours & GameState.TimeSlot.AFTERNOON:
+				if not weekday_hours.is_empty() and weekday_hours[-1] == "12 PM":
+					weekday_hours[-1] = "4 PM"
+				else:
+					weekday_hours.append("12 PM")
+					weekday_hours.append("4 PM")
+			if hours & GameState.TimeSlot.EVENING:
+				if not weekday_hours.is_empty() and weekday_hours[-1] == "4 PM":
+					weekday_hours[-1] = "8 PM"
+				else:
+					weekday_hours.append("4 PM")
+					weekday_hours.append("8 PM")
+			if hours & GameState.TimeSlot.NIGHT:
+				if not weekday_hours.is_empty() and weekday_hours[-1] == "8 PM":
+					weekday_hours[-1] = "8 AM"
+				else:
+					weekday_hours.append("8 PM")
+					weekday_hours.append("8 AM")
+
+			var weekend_hours: Array[String]
+			if hours & GameState.TimeSlot.WE_MORNING:
+				weekend_hours.append("8 AM")
+				weekend_hours.append("12 PM")
+			if hours & GameState.TimeSlot.WE_AFTERNOON:
+				if not weekend_hours.is_empty() and weekend_hours[-1] == "12 PM":
+					weekend_hours[-1] = "4 PM"
+				else:
+					weekend_hours.append("12 PM")
+					weekend_hours.append("4 PM")
+			if hours & GameState.TimeSlot.WE_EVENING:
+				if not weekend_hours.is_empty() and weekend_hours[-1] == "4 PM":
+					weekend_hours[-1] = "8 PM"
+				else:
+					weekend_hours.append("4 PM")
+					weekend_hours.append("8 PM")
+			if hours & GameState.TimeSlot.WE_NIGHT:
+				if not weekend_hours.is_empty() and weekend_hours[-1] == "8 PM":
+					weekend_hours[-1] = "8 AM"
+				else:
+					weekend_hours.append("8 PM")
+					weekend_hours.append("8 AM")
+
+			var open_text = ""
+
+			if not weekday_hours.is_empty() \
+				and (weekend_hours.is_empty() or weekend_hours == weekday_hours):
+				for i in range(0, weekday_hours.size(), 2):
+					if not open_text.is_empty():
+						open_text += "\n"
+					open_text += weekday_hours[i]
+					open_text += " - "
+					open_text += weekday_hours[i+1]
+			elif weekday_hours.is_empty() and not weekend_hours.is_empty():
+				for i in range(0, weekend_hours.size(), 2):
+					if not open_text.is_empty():
+						open_text += "\n"
+					open_text += weekend_hours[i]
+					open_text += " - "
+					open_text += weekend_hours[i+1]
+			else:
+				for i in range(0, weekday_hours.size(), 2):
+					if not open_text.is_empty():
+						open_text += "\n"
+					open_text += weekday_hours[i]
+					open_text += " - "
+					open_text += weekday_hours[i+1]
+					open_text += " Mon-Fri"
+				for i in range(0, weekend_hours.size(), 2):
+					if not open_text.is_empty():
+						open_text += "\n"
+					open_text += weekend_hours[i]
+					open_text += " - "
+					open_text += weekend_hours[i+1]
+					open_text += " Sat-Sun"
+
+			$VBox/Scroller_Location/Info_Location/Time_Slots.text = open_text
+			$VBox/Scroller_Location/Info_Location/Time_Slots.show()
+
+		$VBox/Scroller_Location/Info_Location/Separator_05.show()
 		$VBox/Scroller_Location/Info_Location/Weekend.show()
 		if hours == 0:
 			$VBox/Scroller_Location/Info_Location/Weekend_day_01.show()
@@ -111,30 +200,6 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 			$VBox/Scroller_Location/Info_Location/Weekend_day_02.show()
 		else:
 			$VBox/Scroller_Location/Info_Location/Weekend_day_03.show()
-
-		$VBox/Scroller_Location/Info_Location/Separator_05.show()
-		$VBox/Scroller_Location/Info_Location/Hours.show()
-		if hours == 0:
-			$VBox/Scroller_Location/Info_Location/Time_Slot_01.show()
-		elif hours == GameState.TimeSlot.ALWAYS:
-			$VBox/Scroller_Location/Info_Location/Time_Slot_10.show()
-		else:
-			$VBox/Scroller_Location/Info_Location/Time_Slot_02.visible = \
-				(hours & GameState.TimeSlot.MORNING != 0)
-			$VBox/Scroller_Location/Info_Location/Time_Slot_03.visible = \
-				(hours & GameState.TimeSlot.AFTERNOON != 0)
-			$VBox/Scroller_Location/Info_Location/Time_Slot_04.visible = \
-				(hours & GameState.TimeSlot.EVENING != 0)
-			$VBox/Scroller_Location/Info_Location/Time_Slot_05.visible = \
-				(hours & GameState.TimeSlot.NIGHT != 0)
-			$VBox/Scroller_Location/Info_Location/Time_Slot_06.visible = \
-				(hours & GameState.TimeSlot.WE_MORNING != 0)
-			$VBox/Scroller_Location/Info_Location/Time_Slot_07.visible = \
-				(hours & GameState.TimeSlot.WE_AFTERNOON != 0)
-			$VBox/Scroller_Location/Info_Location/Time_Slot_08.visible = \
-				(hours & GameState.TimeSlot.WE_EVENING != 0)
-			$VBox/Scroller_Location/Info_Location/Time_Slot_09.visible = \
-				(hours & GameState.TimeSlot.WE_NIGHT != 0)
 
 		var hangout = card.find_links(Link.Type.HANGOUT)
 		if hangout:

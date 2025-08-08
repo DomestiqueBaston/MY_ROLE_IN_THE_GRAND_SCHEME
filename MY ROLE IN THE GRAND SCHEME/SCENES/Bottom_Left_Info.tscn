@@ -131,6 +131,7 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_qkikf")
+scroll_vertical = 78
 horizontal_scroll_mode = 3
 
 [node name="Info_Location" type="HFlowContainer" parent="VBox/Scroller_Location"]
@@ -246,12 +247,60 @@ text = " "
 fit_content = true
 horizontal_alignment = 1
 
+[node name="Hours" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Opening hours:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_None" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]N/A[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slots" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "in the [color=#cf2317]Morning[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Time_Slot_H24" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
+visible = false
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#cf2317]H24[/color]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Separator_05" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 4
+bbcode_enabled = true
+text = " "
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Weekend" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "Closed days:"
+text = "Closed:"
 fit_content = true
 horizontal_alignment = 1
 
@@ -271,7 +320,7 @@ custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[color=#cf2317]None[/color]"
+text = "[color=#cf2317]Open every day[/color]"
 fit_content = true
 horizontal_alignment = 1
 
@@ -281,135 +330,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Saturday[/color] & [color=#cf2317]Sunday[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Weekend_day_04" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]
-"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Separator_05" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/normal_font_size = 4
-bbcode_enabled = true
-text = " "
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Hours" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "Open:"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_01" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[color=#cf2317]No opening hours[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_02" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "in the [color=#cf2317]Morning[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_03" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "in the [color=#cf2317]Afternoon[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_04" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "in the [color=#cf2317]Evening[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_05" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "at [color=#cf2317]Night[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_06" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "in the [color=#cf2317](W-E) Morning[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_07" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "in the [color=#cf2317](W-E) Afternoon[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_08" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "in the [color=#cf2317](W-E) Evening[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_09" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "at [color=#cf2317](W-E) Night[/color]"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Time_Slot_10" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-visible = false
-custom_minimum_size = Vector2(106, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-bbcode_enabled = true
-text = "[color=#cf2317]H24[/color]"
 fit_content = true
 horizontal_alignment = 1
 
