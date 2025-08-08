@@ -380,10 +380,10 @@ func get_current_case() -> Case:
 
 func set_current_case(index: int):
 	if _current_case_index != index:
-		if _current_case_index >= 0:
+		if _current_case_index >= 0 and _current_case_index < cases.size():
 			cases[_current_case_index].pause()
 		_current_case_index = index
-		if _current_case_index >= 0:
+		if _current_case_index >= 0 and _current_case_index < cases.size():
 			cases[_current_case_index].start()
 		case_changed.emit()
 		save_game()

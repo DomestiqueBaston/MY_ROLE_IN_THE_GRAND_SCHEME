@@ -132,4 +132,5 @@ static func _allocate_object(type: Class) -> Object:
 		Class.GAME_STATE:
 			return GameState.allocate()
 		_:
+			push_error("Unknown save/load class: " + str(type))
 			return null

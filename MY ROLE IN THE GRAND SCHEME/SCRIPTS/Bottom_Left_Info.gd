@@ -394,6 +394,8 @@ func _make_link_list(card: Card, links: Array[Link]) -> String:
 			other_card = link.pin2.backing
 		else:
 			other_card = link.pin1.backing
+		if other_card == null:
+			continue
 		if not text.is_empty():
 			text += "\n"
 		if link.status == Link.Status.PROBABLE:
