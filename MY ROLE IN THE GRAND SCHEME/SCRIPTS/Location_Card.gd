@@ -69,8 +69,22 @@ func get_display_name() -> String:
 		_:
 			return card_name
 
+##
+## Returns true if the location is open now, or if it has no opening hours
+## defined.
+##
 func is_open() -> bool:
 	return opening_hours == 0 or (opening_hours & GameState.get_time_slot())
+
+##
+## Returns a list of any NPCs present now at the location.
+##
+func get_npcs_present() -> Array[NpcCard]:
+	var npcs: Array[NpcCard]
+	for npc in get_all_npc_connections():
+		if npc.locate() == self:
+			npcs.append(npc)
+	return npcs
 
 static func _parse_hours(id) -> int:
 	var hours: int = 0

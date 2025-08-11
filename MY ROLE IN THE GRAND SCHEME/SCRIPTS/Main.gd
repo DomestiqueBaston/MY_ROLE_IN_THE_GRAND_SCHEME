@@ -602,7 +602,15 @@ func _handle_popup(id: int):
 		MenuItem.DIALOGUE:
 			print("start dialogue")
 		MenuItem.INVESTIGATION:
-			print("start investigation")
+			if _popup_node is LocationCard:
+				print("start investigation: ", _popup_node.get_display_name())
+				print("is open: ", _popup_node.is_open())
+				var msg = ""
+				for npc in _popup_node.get_npcs_present():
+					if not msg.is_empty():
+						msg += ", "
+					msg += npc.get_display_name()
+				print("NPCs present: " + (msg if msg else "none"))
 		MenuItem.SWITCH_LINK:
 			if _popup_node is Link:
 				if _popup_node.status == Link.Status.CONFIRMED:
