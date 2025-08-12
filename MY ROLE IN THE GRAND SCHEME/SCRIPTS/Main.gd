@@ -13,6 +13,9 @@ extends Node2D
 ## Signal emitted when the player selects Settings from the menu.
 signal settings
 
+## Signal emitted when the player starts an investigation.
+signal investigate(location: LocationCard)
+
 ## Signal emitted when the player selects Quit from the menu.
 signal quit
 
@@ -556,13 +559,25 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	if node is Card and node.is_stacked():
 		return
 
+	var player_is_apt = (
+		GameState.player.physical >= 0 and
+		GameState.player.mental >= 0 and
+		GameState.player.health >= 0)
+
+	var index = popup.get_item_index(MenuItem.INVESTIGATION)
+	popup.set_item_disabled(
+		index,
+		not player_is_apt
+		or node is not LocationCard
+		or node.has_been_investigated_today())
+
 	var link_create_ids = [
 		MenuItem.CREATE_CONF_LINK,
 		MenuItem.CREATE_PROB_LINK
 	]
 
 	for id in link_create_ids:
-		var index = popup.get_item_index(id)
+		index = popup.get_item_index(id)
 		if node is Card:
 			popup.set_item_disabled(index, false)
 			var submenu = popup.get_item_submenu_node(index)
@@ -580,7 +595,7 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	]
 
 	for id in link_mod_ids:
-		var index = popup.get_item_index(id)
+		index = popup.get_item_index(id)
 		popup.set_item_disabled(index, node is not Link or node.blocked)
 
 	# player cannot change a link to a type for which there is already a link
@@ -602,15 +617,7 @@ func _handle_popup(id: int):
 		MenuItem.DIALOGUE:
 			print("start dialogue")
 		MenuItem.INVESTIGATION:
-			if _popup_node is LocationCard:
-				print("start investigation: ", _popup_node.get_display_name())
-				print("is open: ", _popup_node.is_open())
-				var msg = ""
-				for npc in _popup_node.get_npcs_present():
-					if not msg.is_empty():
-						msg += ", "
-					msg += npc.get_display_name()
-				print("NPCs present: " + (msg if msg else "none"))
+			investigate.emit(_popup_node)
 		MenuItem.SWITCH_LINK:
 			if _popup_node is Link:
 				if _popup_node.status == Link.Status.CONFIRMED:

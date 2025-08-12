@@ -8,6 +8,7 @@ extends Node2D
 @onready var _tutorial_scene = preload("res://SCENES/Tutorial.tscn")
 @onready var _char_gen_scene = preload("res://SCENES/Character_Generation.tscn")
 @onready var _main_scene = preload("res://SCENES/Main_V2.tscn")
+@onready var _interaction_scene = preload("res://SCENES/Interaction.tscn")
 @onready var _quit_scene = preload("res://SCENES/Quit.tscn")
 @onready var _death_scene = preload("res://SCENES/Death.tscn")
 
@@ -66,8 +67,8 @@ func _on_option_button_pressed(button: StringName):
 			_quit()
 
 func _go_to_settings():
-	var is_playing = (
-		$Active_Scene.get_child(0).scene_file_path == _main_scene.resource_path)
+	var is_playing = \
+		$Active_Scene.get_child(0).scene_file_path == _main_scene.resource_path
 	var settings = await _replace_scene(_settings_scene)
 	await settings.done
 	if settings.is_confirmed():
@@ -111,6 +112,7 @@ func _continue_game():
 	if case:
 		main.populate(case)
 	main.settings.connect(_go_to_settings)
+	main.investigate.connect(_investigate)
 	main.quit.connect(_go_to_option_menu)
 
 func _quit():
@@ -123,3 +125,9 @@ func _on_death():
 	await death.done
 	GameState.end_game()
 	_go_to_option_menu()
+
+func _investigate(location: LocationCard):
+	var interaction = await _replace_scene(_interaction_scene)
+	interaction.start_investigation(location)
+	await interaction.done
+	_continue_game()

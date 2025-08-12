@@ -26,6 +26,9 @@ extends Node2D
 ## Optional Top_Bar scene containing the menu bar and player stats.
 @export var top_bar: Node
 
+## Optional Bottom_Left_Info scene showing information about the current card.
+@export var info_box: Node
+
 ## If false, the scene does not process input events.
 @export var enabled: bool = true:
 	set(value):
@@ -36,6 +39,9 @@ extends Node2D
 					_enable()
 				else:
 					_disable()
+
+## Signal emitted when the interaction is done.
+signal done
 
 ## Signal emitted when the user selects Quit in the menu.
 signal quit
@@ -70,6 +76,8 @@ var _area_overlays = {}
 # came from
 var _cards_played: Dictionary
 
+var _temporary_cards: Array[Card]
+
 func _ready():
 	for area in card_area_overlays:
 		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
@@ -77,10 +85,16 @@ func _ready():
 	if top_bar:
 		top_bar.quit.connect(func(): quit.emit())
 
+	if info_box:
+		info_box.clear()
+
 	if enabled:
 		_enable()
 	else:
 		_disable()
+
+	tree_exiting.connect(_detach_cards)
+	$Button/Bring_It_On.pressed.connect(func(): done.emit())
 
 func _enable():
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
@@ -126,13 +140,16 @@ func _mouse_entered_card(card: Card):
 			_current_card.set_highlighted(false)
 		card.set_highlighted(true)
 		_current_card = card
-		print("show info about card: ", card.card_name)
+		if info_box:
+			info_box.show_card(_current_card)
 
 func _mouse_exited_card(card: Card):
 	if _drag_state == DragState.NONE:
 		card.set_highlighted(false)
 		if _current_card == card:
 			_current_card = null
+			if info_box:
+				info_box.clear()
 
 func _click_on_card(global_pos: Vector2, card: Card):
 	_mouse_entered_card(card)
@@ -267,3 +284,68 @@ func _layout_played_cards():
 		if card.position != pos:
 			tween.tween_property(card, "position", pos, 0.1)
 		pos.x += Card.size.x + margin
+
+#
+# Removes cards from the scene without deleting them, because GameState holds
+# references to them. Temporary cards are NOT removed, and so will be deleted.
+#
+func _detach_cards():
+	for card in $Cards.find_children("*", "", true, false):
+		if card is Card and not card in _temporary_cards:
+			card.get_parent().remove_child(card)
+
+##
+## Starts an investigation at the given location.
+##
+func start_investigation(_location: LocationCard):
+
+	# populate Mastery deck with the player's cards
+
+	for card in GameState.player.get_mastery_cards():
+		$Cards/Mastery.add_child(card)
+
+	# populate Fallback deck with 5 random cards
+
+	_temporary_cards = GameState.player.pick_investigation_cards()
+	for card in _temporary_cards:
+		$Cards/Fallback.add_child(card)
+
+#
+# For save/load.
+#
+func get_referenced_objects():
+	var refs = []
+	for card in $Cards.find_children("*", "", true, false):
+		refs.append(card.get_unique_id())
+	return refs
+
+#
+# For save/load.
+#
+func get_json_dict():
+	var card_array = []
+	for card in $Cards.find_children("*", "", true, false):
+		var card_dict = {
+			"card": card.get_unique_id(),
+			"location": card.get_parent().name,
+			"source": _cards_played.get(card, card.get_parent()).name
+		}
+		card_array.append(card_dict)
+	var dict = {
+		"cards": card_array
+	}
+	return dict
+
+#
+# For save/load.
+#
+func restore(dict, catalog):
+	for card_dict in dict.cards:
+		var card = catalog.get_card(card_dict.card)
+		var location = $Cards.get_node(card_dict.location)
+		var source = $Cards.get_node(card_dict.source)
+		location.add_child(card)
+		if card_dict.location == "Interaction":
+			_cards_played[card] = source
+		if card_dict.source == "Fallback":
+			_temporary_cards.append(card)

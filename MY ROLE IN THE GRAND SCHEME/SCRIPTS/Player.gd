@@ -261,6 +261,55 @@ func get_debt_total() -> int:
 		total += debt
 	return total
 
+##
+## Returns the cards the player has in his "mastery" deck.
+##
+func get_mastery_cards() -> Array[Card]:
+	return _cards
+
+##
+## Picks 5 cards at random for an investigation, ensuring that there are no
+## duplicates with the player's "mastery" cards. Note that it is the caller's
+## responsibility to delete the cards afterwards.
+##
+func pick_investigation_cards() -> Array[Card]:
+	var ret: Array[Card]
+
+	# 1 or 2 abstract cards
+
+	var abstract_count = randi_range(1, 2)
+	var ids: Array[String]
+
+	while ret.size() < abstract_count:
+		var id = _abstract_cards.keys().pick_random()
+		if not id in ids and not _have_card_already(Card.CardType.ABSTRACT, id):
+			ids.append(id)
+			ret.append(AbstractCard.create_card(id))
+
+	# 3 or 4 Investigation (at least 1) and Investigation SPECIAL cards
+
+	var investigation_count = 0
+	ids.clear()
+
+	while ret.size() < 5:
+		var id = _investigation_cards.keys().pick_random()
+		if id in ids or _have_card_already(Card.CardType.INVESTIGATION, id):
+			continue
+		var ok
+		match _investigation_cards[id]["type"]:
+			"Investigation":
+				ok = true
+				investigation_count += 1
+			"Investigation SPECIAL":
+				ok = investigation_count > 0
+			_:
+				ok = false
+		if ok:
+			ids.append(id)
+			ret.append(InvestigationCard.create_card(id))
+
+	return ret
+
 func pass_one_hour():
 	if randi() % 10 == 0:
 		match randi() % 3:

@@ -264,7 +264,7 @@ _data = {
 &"Shake": SubResource("Animation_e74pt")
 }
 
-[node name="Interaction" type="Node2D" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line", "top_bar")]
+[node name="Interaction" type="Node2D" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line", "top_bar", "info_box")]
 script = ExtResource("1_1c880")
 card_area_overlays = {
 NodePath("Cards/Fallback"): NodePath("Interaction_BG/Fallback_Pile"),
@@ -279,6 +279,7 @@ interaction_cards = NodePath("Cards/Interaction")
 the_button = NodePath("Button/Bring_It_On")
 drag_drop_line = NodePath("Drag_Drop_Line")
 top_bar = NodePath("Top_Bar")
+info_box = NodePath("Bottom_Left_Info")
 
 [node name="Interaction_BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_y864e")

@@ -131,7 +131,6 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_qkikf")
-scroll_vertical = 78
 horizontal_scroll_mode = 3
 
 [node name="Info_Location" type="HFlowContainer" parent="VBox/Scroller_Location"]

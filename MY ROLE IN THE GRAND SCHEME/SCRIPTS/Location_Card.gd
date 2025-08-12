@@ -25,6 +25,9 @@ var database_id: String
 ## Opening hours (a mask of GameState.TimeSlot bits).
 var opening_hours: int
 
+## Working day when the location was last investigated.
+var _last_investigation: int = -1
+
 static var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 static var _card_scene = preload("res://SCENES/Location_Card.tscn")
 
@@ -68,6 +71,18 @@ func get_display_name() -> String:
 			return "%s Residence" % inhabitants[0].last_name
 		_:
 			return card_name
+
+##
+## Returns true if the location has not been investigated yet today.
+##
+func has_been_investigated_today() -> bool:
+	return _last_investigation == GameState.get_working_day()
+
+##
+## Flags the location as having been investigated today.
+##
+func set_investigated_today():
+	_last_investigation = GameState.get_working_day()
 
 ##
 ## Returns true if the location is open now, or if it has no opening hours
@@ -140,6 +155,8 @@ func get_json_dict():
 		dict["location_status"] = location_status
 	dict["database_id"] = database_id
 	dict["hours"] = opening_hours
+	if _last_investigation >= 0:
+		dict["last_investigation"] = _last_investigation
 	return dict
 
 #
@@ -149,6 +166,7 @@ func restore(dict, catalog):
 	super(dict, catalog)
 	location_status = dict.get("location_status", LocationStatus.NONE)
 	opening_hours = dict.get("hours", 0)
+	_last_investigation = dict.get("last_investigation", -1)
 	database_id = dict["database_id"]
 	var location_info = _location_data[database_id]
 	card_name = location_info.name
