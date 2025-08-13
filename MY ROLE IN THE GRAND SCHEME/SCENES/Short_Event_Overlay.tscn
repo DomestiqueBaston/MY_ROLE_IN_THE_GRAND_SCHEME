@@ -2954,6 +2954,7 @@ text = "No thanks..."
 script = ExtResource("92_bnyoh")
 
 [node name="Health_Issue" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Health_Issue_BG" type="Sprite2D" parent="Overlays/Health_Issue"]
 texture = ExtResource("93_b6clx")
