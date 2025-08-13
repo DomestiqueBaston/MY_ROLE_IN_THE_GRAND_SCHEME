@@ -7,6 +7,7 @@ var _the_card: Card
 func attach_to_card(card: Card):
 	detach_from_card()
 	_the_card = card
+	_on_card_move()
 	_the_card.moved.connect(_on_card_move)
 	_the_card.tree_entered.connect(_on_card_entered_tree)
 	_the_card.tree_exited.connect(_on_card_exited_tree)
@@ -14,7 +15,7 @@ func attach_to_card(card: Card):
 
 func detach_from_card():
 	if _the_card:
-		_the_card.moved.disconnect(_on_card_move())
+		_the_card.moved.disconnect(_on_card_move)
 		_the_card.tree_entered.disconnect(_on_card_entered_tree)
 		_the_card.tree_exited.disconnect(_on_card_exited_tree)
 		_the_card = null
