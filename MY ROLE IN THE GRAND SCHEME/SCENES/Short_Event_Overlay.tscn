@@ -2954,7 +2954,6 @@ text = "No thanks..."
 script = ExtResource("92_bnyoh")
 
 [node name="Health_Issue" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Health_Issue_BG" type="Sprite2D" parent="Overlays/Health_Issue"]
 texture = ExtResource("93_b6clx")
@@ -2962,6 +2961,7 @@ centered = false
 offset = Vector2(195, 89)
 
 [node name="Health_Report" type="Control" parent="Overlays/Health_Issue"]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 3
 anchors_preset = 0
@@ -2984,9 +2984,10 @@ Given your [color=#ff8864]current[/color] [color=#ff1c18]state of health[/color]
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Buttons" type="Node2D" parent="Overlays/Health_Issue"]
+[node name="Buttons" type="Node2D" parent="Overlays/Health_Issue/Health_Report"]
+position = Vector2(-136, -84)
 
-[node name="Ok" type="Button" parent="Overlays/Health_Issue/Buttons"]
+[node name="Ok" type="Button" parent="Overlays/Health_Issue/Health_Report/Buttons"]
 self_modulate = Color(1, 1, 1, 0.784314)
 offset_left = 320.0
 offset_top = 248.0
@@ -3000,6 +3001,51 @@ theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 text = "Not much of a choice."
+alignment = 2
+script = ExtResource("92_bnyoh")
+
+[node name="Rest_Report" type="Control" parent="Overlays/Health_Issue"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 136.0
+offset_top = 84.0
+offset_right = 136.0
+offset_bottom = 84.0
+theme = ExtResource("88_7rvn5")
+
+[node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Rest_Report"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+offset_left = 91.0
+offset_top = 33.0
+offset_right = 280.0
+offset_bottom = 160.0
+bbcode_enabled = true
+text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]You definitely need to rest[/color][/pulse] -
+
+The plan was solid at first: bust your ass to [color=#ff8864]crack this case[/color] fast, [color=#ff8864]pay the bills[/color] before they drown you, and keep up with the bare [color=#ff8864]essentials of a life[/color] that's a bit [color=#ff8864]over the top[/color], but hey, [color=#ff8864]the body's got its limits[/color], and right now, yours is[color=#ff8864] screaming for a break[/color].
+[pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Time to crash and catch some z's[/color][/pulse]!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Node2D" parent="Overlays/Health_Issue/Rest_Report"]
+position = Vector2(-136, -84)
+
+[node name="Ok" type="Button" parent="Overlays/Health_Issue/Rest_Report/Buttons"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 297.0
+offset_top = 249.0
+offset_right = 428.0
+offset_bottom = 257.0
+theme = ExtResource("88_7rvn5")
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
+theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+text = "That's proably for the best."
 alignment = 2
 script = ExtResource("92_bnyoh")
 
@@ -4295,9 +4341,12 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_cancel_pressed"]
-[connection signal="mouse_entered" from="Overlays/Health_Issue/Buttons/Ok" to="Overlays/Health_Issue/Buttons/Ok" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Health_Issue/Buttons/Ok" to="Overlays/Health_Issue/Buttons/Ok" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Health_Issue/Buttons/Ok" to="Overlays/Health_Issue/Buttons/Ok" method="_on_ok_pressed"]
+[connection signal="mouse_entered" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_ok_pressed"]
+[connection signal="mouse_entered" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_ok_pressed"]
 [connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
