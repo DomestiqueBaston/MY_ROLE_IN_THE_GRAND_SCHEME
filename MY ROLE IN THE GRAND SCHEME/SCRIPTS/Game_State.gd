@@ -397,6 +397,35 @@ func visit_doctor():
 		save_game()
 
 func start_investigation(location: LocationCard):
+	if (_player_location != PlayerLocation.OTHER
+		or _player_location_card != location):
+		await pass_one_hour()
+		set_player_location(PlayerLocation.OTHER, location)
+
+	var npcs = location.get_npcs_present()
+
+	# if no NPCs are present, the player can either try to break in or leave
+
+	if npcs.is_empty():
+		var ok = await Globals.dialog_overlay.confirm_break_in()
+		if not ok:
+			return
+
+	# if NPCs are present and the player has a search warrant, ask if he wants
+	# to use it
+
+	elif GameState.player.has_search_warrant:
+		var ok = await Globals.dialog_overlay.use_search_warrant()
+		if not ok:
+			return
+
+	# if NPCs are present and the player does NOT have a search warrant, there
+	# is nothing he can do
+
+	else:
+		await Globals.dialog_overlay.no_search_warrant()
+		return
+
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
 	_current_interaction_card = location

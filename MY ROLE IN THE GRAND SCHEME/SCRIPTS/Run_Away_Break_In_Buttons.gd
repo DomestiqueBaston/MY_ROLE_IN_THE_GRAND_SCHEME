@@ -1,19 +1,23 @@
 extends Control
 
+signal done
 
+var _confirmed: bool
 
+func get_confirmed() -> bool:
+	return _confirmed
 
 func _on_yes_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	$"../../../On_Off".play("Disappearance")
-	await $"../../../On_Off".animation_finished
+	_confirmed = true
+	done.emit()
 
 func _on_no_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
-	$"../../../On_Off".play("Disappearance")
-	await $"../../../On_Off".animation_finished
+	_confirmed = false
+	done.emit()
 
 func _on_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):

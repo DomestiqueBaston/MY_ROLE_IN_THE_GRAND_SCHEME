@@ -118,13 +118,54 @@ func open_office():
 ##
 func buy_search_warrant() -> bool:
 	$Overlays/Search_Warrant/Text_Buy.show()
-	$Overlays/Search_Warrant/Text_Use.hide()
 	$Overlays/Search_Warrant.show()
 	await _appear()
 	await $Overlays/Search_Warrant/Text_Buy.done
 	await _disappear()
 	$Overlays/Search_Warrant.hide()
+	$Overlays/Search_Warrant/Text_Buy.hide()
 	return $Overlays/Search_Warrant/Text_Buy.get_confirmed()
+
+##
+## Displays the "use search warrant" dialog and waits for the player to confirm
+## or cancel. Returns true if he confirmed.
+##
+func use_search_warrant() -> bool:
+	$Overlays/Search_Warrant/Text_Use.show()
+	$Overlays/Search_Warrant.show()
+	await _appear()
+	await $Overlays/Search_Warrant/Text_Use.done
+	await _disappear()
+	$Overlays/Search_Warrant.hide()
+	$Overlays/Search_Warrant/Text_Use.hide()
+	return $Overlays/Search_Warrant/Text_Use.get_confirmed()
+
+##
+## Displays a message telling the player he hasn't got the search warrant he
+## needs.
+##
+func no_search_warrant():
+	$Overlays/Search_Warrant/Text_No_Warrant.show()
+	$Overlays/Search_Warrant.show()
+	await _appear()
+	await $Overlays/Search_Warrant/Text_No_Warrant.done
+	await _disappear()
+	$Overlays/Search_Warrant.hide()
+	$Overlays/Search_Warrant/Text_No_Warrant.hide()
+
+##
+## Displays a dialog asking the player whether he wants to break in. Returns
+## true if he does.
+##
+func confirm_break_in() -> bool:
+	$Overlays/Run_Away_Break_In/Announces/Break_In.show()
+	$Overlays/Run_Away_Break_In.show()
+	await _appear()
+	await $Overlays/Run_Away_Break_In/Announces.done
+	await _disappear()
+	$Overlays/Run_Away_Break_In.hide()
+	$Overlays/Run_Away_Break_In/Announces/Break_In.hide()
+	return $Overlays/Run_Away_Break_In/Announces.get_confirmed()
 
 ##
 ## Displays the visit to Doctor F dialog and waits for the player to confirm or
