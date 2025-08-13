@@ -133,9 +133,10 @@ func _pick_random_investigation_card() -> String:
 	return id
 
 func _have_card_already(type: Card.CardType, id: String):
-	for card in _mastery_cards:
-		if card.get_card_type() == type and card.database_id == id:
-			return true
+	for card_list in [_mastery_cards, _fallback_cards]:
+		for card in card_list:
+			if card.get_card_type() == type and card.database_id == id:
+				return true
 	return false
 
 func set_physical(phy: int):
@@ -304,22 +305,19 @@ func pick_investigation_cards():
 	# 1 or 2 abstract cards
 
 	var abstract_count = randi_range(1, 2)
-	var ids: Array[String]
 
 	while _fallback_cards.size() < abstract_count:
 		var id = _abstract_cards.keys().pick_random()
-		if not id in ids and not _have_card_already(Card.CardType.ABSTRACT, id):
-			ids.append(id)
+		if not _have_card_already(Card.CardType.ABSTRACT, id):
 			_fallback_cards.append(AbstractCard.create_card(id))
 
 	# 3 or 4 Investigation (at least 1) and Investigation SPECIAL cards
 
 	var investigation_count = 0
-	ids.clear()
 
 	while _fallback_cards.size() < 5:
 		var id = _investigation_cards.keys().pick_random()
-		if id in ids or _have_card_already(Card.CardType.INVESTIGATION, id):
+		if _have_card_already(Card.CardType.INVESTIGATION, id):
 			continue
 		var ok
 		match _investigation_cards[id]["type"]:
@@ -331,7 +329,6 @@ func pick_investigation_cards():
 			_:
 				ok = false
 		if ok:
-			ids.append(id)
 			_fallback_cards.append(InvestigationCard.create_card(id))
 
 func pass_one_hour():
