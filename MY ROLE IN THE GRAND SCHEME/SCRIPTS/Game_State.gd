@@ -177,6 +177,13 @@ func end_game():
 	DirAccess.remove_absolute(_save_path)
 
 ##
+## Returns the number of hours that have passed since midnight of the day play
+## began.
+##
+func get_time() -> int:
+	return _hour
+
+##
 ## Returns the number of full days that have passed since play began. Play
 ## always begins on Monday, so the number of days % 7 gives you the day of the
 ## week (0 for Monday).

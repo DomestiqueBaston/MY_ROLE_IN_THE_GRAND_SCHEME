@@ -203,11 +203,19 @@ func _on_debts_changed():
 
 func _on_time_changed():
 	$Date_Time/Day.text = _day_names[GameState.get_day() % 7]
+
 	var hour = GameState.get_hour()
 	if hour < 12:
 		$Date_Time/Time.text = "%dam" % (12 if hour == 0 else hour)
 	else:
 		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)
+
+	if GameState.player.get_hours_awake() >= 16:
+		$Date_Time/Time.tooltip_text = "You need to sleep!"
+		$Sleep_Alert.play("Alert")
+	else:
+		$Date_Time/Time.tooltip_text = ""
+		$Sleep_Alert.play("RESET")
 
 func _on_dailies_menu_popup():
 	var player: Player = GameState.player

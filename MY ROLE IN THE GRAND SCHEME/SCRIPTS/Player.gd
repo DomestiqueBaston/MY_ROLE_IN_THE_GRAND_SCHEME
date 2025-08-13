@@ -27,6 +27,7 @@ var _debts: Array[int]
 var _mastery_cards: Array[Card]
 var _fallback_cards: Array[Card]
 var _signal_pause: int = 0
+var _last_wake_time: int
 var _sleep_bonus_malus: int
 
 func reset():
@@ -51,6 +52,7 @@ func reset():
 	_debts.clear()
 	clear_mastery_cards()
 	clear_fallback_cards()
+	_last_wake_time = 0
 	_sleep_bonus_malus = 0
 	_signal_pause -= 1
 
@@ -72,6 +74,7 @@ func start_game():
 	_debts.clear()
 	clear_mastery_cards()
 	clear_fallback_cards()
+	_last_wake_time = GameState.get_time()
 	_sleep_bonus_malus = 0
 
 	# all players start with one card from each category
@@ -359,7 +362,20 @@ func _calm(start_value: int, how_much: int) -> int:
 	else:
 		return maxi(0, start_value - how_much)
 
+##
+## Returns the number of hours since the player last slept.
+##
+func get_hours_awake() -> int:
+	return GameState.get_time() - _last_wake_time
+
+##
+## Puts the player to sleep for a certain number of hours. His health, emotion
+## and addiction characteristics are updated accordingly, and it is noted that
+## he will awake the given number of hours later.
+##
 func sleep(hours: int):
+	_last_wake_time = GameState.get_time() + hours
+
 	var dream_health_bonus = 0
 	var dream = randf()
 
@@ -452,6 +468,7 @@ func get_json_dict():
 		"drugs": drugs,
 		"drugs_taken_today": drugs_taken_today,
 		"debts": _debts,
+		"last_wake_time": _last_wake_time,
 		"sleep_bonus_malus": _sleep_bonus_malus
 	}
 	if has_search_warrant:
@@ -491,6 +508,7 @@ func restore(dict, catalog):
 	drugs = dict.drugs
 	drugs_taken_today = dict.get("drugs_taken_today", 0)
 	_debts.assign(dict.debts)
+	_last_wake_time = dict.get("last_wake_time", 8)
 	_sleep_bonus_malus = dict.sleep_bonus_malus
 	if "has_search_warrant" in dict:
 		has_search_warrant = dict.has_search_warrant
