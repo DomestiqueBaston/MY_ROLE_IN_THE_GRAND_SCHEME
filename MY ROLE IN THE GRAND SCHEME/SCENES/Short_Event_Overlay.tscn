@@ -3883,7 +3883,6 @@ theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 text = "I'm  afraid  I  won't  do that, Dave."
 
 [node name="Search_Warrant" type="Node2D" parent="Overlays"]
-visible = false
 position = Vector2(172, 48)
 
 [node name="Search_Warrant_BG" type="Sprite2D" parent="Overlays/Search_Warrant"]
@@ -3893,6 +3892,7 @@ centered = false
 offset = Vector2(20, 20)
 
 [node name="Text_Buy" type="Control" parent="Overlays/Search_Warrant"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -31.0
@@ -4012,6 +4012,44 @@ theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1
 text = "Hm...
 Maybe not!"
 alignment = 0
+
+[node name="Text_No_Warrant" type="Control" parent="Overlays/Search_Warrant"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -31.0
+offset_top = -18.0
+offset_right = -31.0
+offset_bottom = -18.0
+theme = ExtResource("5_53ag3")
+script = ExtResource("6_200re")
+
+[node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_No_Warrant"]
+self_modulate = Color(1, 1, 1, 0.921569)
+layout_mode = 0
+offset_left = 108.0
+offset_top = 64.0
+offset_right = 249.0
+offset_bottom = 222.0
+rotation = 0.0165557
+bbcode_enabled = true
+text = "[center]No  warrant?
+
+[color=ff1c18]Way too  risky [/color] and  you  just  can’t  [color=ff8864]afford  a lawyer if  things  go  south[/color].[/center]"
+
+[node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_No_Warrant"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 241.0
+offset_right = 244.0
+offset_bottom = 249.0
+theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
+theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
+theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+text = "Crap!"
+alignment = 2
 
 [node name="Sleep" type="Node2D" parent="Overlays"]
 visible = false
