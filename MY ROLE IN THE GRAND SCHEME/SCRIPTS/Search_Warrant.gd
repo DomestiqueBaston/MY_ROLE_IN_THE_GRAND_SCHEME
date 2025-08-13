@@ -5,9 +5,11 @@ signal done
 var _confirmed: bool
 
 func _ready():
-	$No.pressed.connect(_on_no_pressed)
-	$No.mouse_entered.connect(_on_mouse_entered)
-	$No.mouse_exited.connect(_on_mouse_exited)
+	var no_button = find_child("No", false)
+	if no_button:
+		no_button.pressed.connect(_on_no_pressed)
+		no_button.mouse_entered.connect(_on_mouse_entered)
+		no_button.mouse_exited.connect(_on_mouse_exited)
 
 	$Yes.pressed.connect(_on_yes_pressed)
 	$Yes.mouse_entered.connect(_on_mouse_entered)
