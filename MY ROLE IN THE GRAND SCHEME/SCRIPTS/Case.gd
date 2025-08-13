@@ -244,8 +244,7 @@ func _randomize():
 			if other:
 				npc.is_married = true
 				other.is_married = true
-				npc.add_connection(Link.Type.INTIMACY, other)
-				other.add_connection(Link.Type.INTIMACY, npc)
+				Card.add_bidirectional_connection(Link.Type.INTIMACY, npc, other)
 				other.last_name = npc.last_name
 
 	# assign homes now that we know which NPCs are couples
@@ -255,13 +254,11 @@ func _randomize():
 			continue
 
 		var home = _create_location("LOC001")
-		home.add_connection(Link.Type.HOME, npc)
-		npc.add_connection(Link.Type.HOME, home)
+		Card.add_bidirectional_connection(Link.Type.HOME, home, npc)
 
 		var partner = npc.get_one_connection(Link.Type.INTIMACY)
 		if partner:
-			home.add_connection(Link.Type.HOME, partner)
-			partner.add_connection(Link.Type.HOME, home)
+			Card.add_bidirectional_connection(Link.Type.HOME, home, partner)
 
 	# assign workplaces now that we know where everybody lives
 
@@ -271,8 +268,7 @@ func _randomize():
 			workplace = npc.get_home()
 		else:
 			workplace = _find_or_create_location(npc.job_location)
-		npc.add_connection(Link.Type.WORK, workplace)
-		workplace.add_connection(Link.Type.WORK, npc)
+		Card.add_bidirectional_connection(Link.Type.WORK, npc, workplace)
 
 	# incriminating links between culprits/accomplices and victims
 
@@ -284,8 +280,7 @@ func _randomize():
 		else:
 			npc1 = accomplices[roll - culprit_count]
 		var npc2 = victims.pick_random()
-		npc1.add_connection(link_type, npc2)
-		npc2.add_connection(link_type, npc1)
+		Card.add_bidirectional_connection(link_type, npc1, npc2)
 
 	# make other friend, enemy and acquaintance connections between NPCs, AFTER
 	# assigning workplaces, because priority is given to an NPC's colleagues, or
@@ -305,8 +300,7 @@ func _randomize():
 		var friends: Array[NpcCard]
 		_add_friends_of_friends(friends, npc)
 		for friend in friends:
-			friend.add_connection(Link.Type.HANGOUT, hangout)
-			hangout.add_connection(Link.Type.HANGOUT, friend)
+			Card.add_bidirectional_connection(Link.Type.HANGOUT, friend, hangout)
 
 	# affairs between NPCs (do this AFTER determining couples)
 
@@ -324,8 +318,7 @@ func _randomize():
 		if randi() % 10 == 0:
 			var other = _find_partner_for(npc, i, true)
 			if other:
-				npc.add_connection(Link.Type.INTIMACY, other)
-				other.add_connection(Link.Type.INTIMACY, npc)
+				Card.add_bidirectional_connection(Link.Type.INTIMACY, npc, other)
 
 	# debt/influence and ideology links between NPCs
 
@@ -420,8 +413,7 @@ func _randomize():
 			# and create all the appropriate PROPERTY and FOUND connections
 
 			var npc = all_owners[i]
-			obj.add_connection(Link.Type.PROPERTY, npc)
-			npc.add_connection(Link.Type.PROPERTY, obj)
+			Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, npc)
 
 			var location: LocationCard
 
@@ -432,8 +424,7 @@ func _randomize():
 				else:
 					other_owner = victims.pick_random()
 
-				obj.add_connection(Link.Type.PROPERTY, other_owner)
-				other_owner.add_connection(Link.Type.PROPERTY, obj)
+				Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, other_owner)
 
 				match randi() % (3 if secret_location else 2):
 					0:
@@ -464,11 +455,9 @@ func _randomize():
 							location = secret_location
 
 			if location_owner_count > 0:
-				obj.add_connection(Link.Type.PROPERTY, location)
-				location.add_connection(Link.Type.PROPERTY, obj)
+				Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, location)
 
-			obj.add_connection(Link.Type.FOUND, location)
-			location.add_connection(Link.Type.FOUND, obj)
+			Card.add_bidirectional_connection(Link.Type.FOUND, obj, location)
 
 			evidence.append(obj)
 
@@ -488,23 +477,19 @@ func _randomize():
 			var location_npcs = card.get_all_npc_connections()
 			if npc_owner_count <= location_npcs.size():
 				var obj: ObjectCard = ObjectCard.create_card(obj_id)
-				card.add_connection(Link.Type.FOUND, obj)
-				obj.add_connection(Link.Type.FOUND, card)
+				Card.add_bidirectional_connection(Link.Type.FOUND, card, obj)
 
 				if npc_owner_count > 1:
 					var candidates = location_npcs.duplicate()
 					for i in npc_owner_count:
 						var owner = candidates.pop_at(randi() % candidates.size())
-						obj.add_connection(Link.Type.PROPERTY, owner)
-						owner.add_connection(Link.Type.PROPERTY, obj)
+						Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, owner)
 				elif npc_owner_count == 1:
 					var owner = location_npcs.pick_random()
-					obj.add_connection(Link.Type.PROPERTY, owner)
-					owner.add_connection(Link.Type.PROPERTY, obj)
+					Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, owner)
 
 				if location_owner_count > 0:
-					obj.add_connection(Link.Type.PROPERTY, card)
-					card.add_connection(Link.Type.PROPERTY, obj)
+					Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, card)
 
 				other_objects.append(obj)
 				obj_count -= 1
@@ -547,8 +532,7 @@ func _create_new_connection(npc: NpcCard, link_type: Link.Type, ignore_count: in
 	var lambda = func(someone: NpcCard): return not someone in existing_cnx
 	var other = _find_other_npc(npc, lambda, ignore_count)
 	if other:
-		npc.add_connection(link_type, other)
-		other.add_connection(link_type, npc)
+		Card.add_bidirectional_connection(link_type, npc, other)
 
 func _find_partner_for(
 		npc: NpcCard, ignore_count: int, married_ok: bool) -> NpcCard:
@@ -613,8 +597,7 @@ func _make_frenemies_for(npc: NpcCard, ignore_count: int):
 		var frenemy = _find_frenemy_for(npc, entourage, ignore_count)
 		if not frenemy:
 			return
-		npc.add_connection(link_type, frenemy)
-		frenemy.add_connection(link_type, npc)
+		Card.add_bidirectional_connection(link_type, npc, frenemy)
 
 #
 # Adds to entourage any NPCs sharing the given NPC's workplace, if

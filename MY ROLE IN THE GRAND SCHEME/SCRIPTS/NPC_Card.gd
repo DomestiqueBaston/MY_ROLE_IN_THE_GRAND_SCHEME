@@ -395,8 +395,7 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 		hideout_probability = 0.4
 	if randf() < hideout_probability:
 		var hideout = case.create_hideout()
-		add_connection(Link.Type.HIDEOUT, hideout)
-		hideout.add_connection(Link.Type.HIDEOUT, self)
+		Card.add_bidirectional_connection(Link.Type.HIDEOUT, self, hideout)
 
 ##
 ## Call this at the start of each new day to update the NPC's health and/or

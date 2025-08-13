@@ -371,11 +371,18 @@ func find_links(link_type: int = -1) -> Array[Link]:
 			ret.append(link)
 	return ret
 
-func add_connection(type: Link.Type, card: Card):
+func _add_connection(type: Link.Type, card: Card):
 	if type in _connections:
 		_connections[type].append(card)
 	else:
 		_connections[type] = [card]
+
+##
+## Static function to add a bidirectional connection between two cards.
+##
+static func add_bidirectional_connection(type: Link.Type, card_a: Card, card_b: Card):
+	card_a._add_connection(type, card_b)
+	card_b._add_connection(type, card_a)
 
 func get_all_connections() -> Array[Card]:
 	var cnxs: Array[Card]
