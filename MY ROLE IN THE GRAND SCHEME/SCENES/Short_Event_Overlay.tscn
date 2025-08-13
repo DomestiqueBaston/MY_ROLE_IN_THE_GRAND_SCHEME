@@ -3778,6 +3778,7 @@ offset_bottom = -48.0
 script = ExtResource("8_7ujkg")
 
 [node name="Run_Away" type="Control" parent="Overlays/Run_Away_Break_In/Announces"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 141.0
@@ -3883,6 +3884,7 @@ theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 text = "I'm  afraid  I  won't  do that, Dave."
 
 [node name="Search_Warrant" type="Node2D" parent="Overlays"]
+visible = false
 position = Vector2(172, 48)
 
 [node name="Search_Warrant_BG" type="Sprite2D" parent="Overlays/Search_Warrant"]
