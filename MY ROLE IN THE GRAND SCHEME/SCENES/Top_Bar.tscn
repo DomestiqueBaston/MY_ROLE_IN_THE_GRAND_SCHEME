@@ -331,19 +331,6 @@ anchors_preset = 0
 theme = ExtResource("1_2tgjx")
 script = ExtResource("1_0mfvj")
 
-[node name="A_VIRER_1" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 12.0
-offset_top = -151.0
-offset_right = 84.0
-offset_bottom = -2.0
-theme_override_font_sizes/normal_font_size = 8
-theme_override_font_sizes/bold_font_size = 1
-bbcode_enabled = true
-text = "[center][color=ff1c18]Au delà de 16h de veille[/color] (pas plus de 24h, je le rappelle), on aura l'animation [color=ff1c18]Sleep_Alert[/color] et le Tooltip affichera \"[color=ff1c18]You need to sleep![/color]\" à la place de \"[color=ff1c18]Tick-Tock...[/color]\"
-||
-V[/center]"
-
 [node name="Date_Time" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
