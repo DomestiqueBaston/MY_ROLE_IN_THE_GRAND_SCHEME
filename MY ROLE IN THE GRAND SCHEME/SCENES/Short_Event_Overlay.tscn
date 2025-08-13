@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Button.gd" id="3_8qa11"]
 [ext_resource type="Texture2D" uid="uid://vduyten8dj5h" path="res://GRAPHICS/SHORT_EVENT/Search_Warrant_BG.png" id="4_0rnfm"]
 [ext_resource type="Theme" uid="uid://q40hqc75ju80" path="res://UI/Search_Warrant_Use_Theme.tres" id="5_53ag3"]
-[ext_resource type="Script" uid="uid://cn3ukiwadh7rv" path="res://SCRIPTS/Search_Warrant.gd" id="6_200re"]
 [ext_resource type="Texture2D" uid="uid://doijy014fekfq" path="res://GRAPHICS/SHORT_EVENT/Run_Away_Break_In_BG.png" id="7_yccgy"]
 [ext_resource type="Script" uid="uid://wdxxwss0sbcg" path="res://SCRIPTS/Run_Away_Break_In_Buttons.gd" id="8_7ujkg"]
 [ext_resource type="Theme" uid="uid://sscuwot1pitg" path="res://UI/Run_Away_Break_In_Theme.tres" id="9_oetaq"]
@@ -135,6 +134,7 @@
 [ext_resource type="Texture2D" uid="uid://cftm8jfj7vlfi" path="res://GRAPHICS/SHORT_EVENT/Mastery_Zone.png" id="114_4721e"]
 [ext_resource type="Texture2D" uid="uid://cn2e8ojjmxn8j" path="res://GRAPHICS/SHORT_EVENT/Interaction_Zone.png" id="115_dhp6t"]
 [ext_resource type="Texture2D" uid="uid://bgupvlyk8die6" path="res://GRAPHICS/SHORT_EVENT/Fallback_Zone.png" id="117_68eaj"]
+[ext_resource type="Script" uid="uid://dyuxevnnl3iki" path="res://SCRIPTS/Search_Warrant_No_Warrant.gd" id="117_smut4"]
 [ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="118_h4ggb"]
 [ext_resource type="Script" uid="uid://cufnnlb44k16t" path="res://SCRIPTS/Run_Away_Break_In_Interaction_Button.gd" id="119_ne7xd"]
 [ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="120_qe60g"]
@@ -3902,7 +3902,7 @@ offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
 theme = ExtResource("5_53ag3")
-script = ExtResource("6_200re")
+script = ExtResource("117_smut4")
 
 [node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
@@ -3967,7 +3967,7 @@ offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
 theme = ExtResource("5_53ag3")
-script = ExtResource("6_200re")
+script = ExtResource("117_smut4")
 
 [node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Use"]
 self_modulate = Color(1, 1, 1, 0.921569)
@@ -4024,7 +4024,7 @@ offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
 theme = ExtResource("5_53ag3")
-script = ExtResource("6_200re")
+script = ExtResource("117_smut4")
 
 [node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_No_Warrant"]
 self_modulate = Color(1, 1, 1, 0.921569)
