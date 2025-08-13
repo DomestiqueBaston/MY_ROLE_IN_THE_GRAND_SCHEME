@@ -24,7 +24,8 @@ var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
 var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").data
 
 var _debts: Array[int]
-var _cards: Array[Card]
+var _mastery_cards: Array[Card]
+var _fallback_cards: Array[Card]
 var _signal_pause: int = 0
 var _sleep_bonus_malus: int
 
@@ -48,7 +49,8 @@ func reset():
 	drugs_taken_today = 0
 	has_search_warrant = false
 	_debts.clear()
-	_cards.clear()
+	clear_mastery_cards()
+	clear_fallback_cards()
 	_sleep_bonus_malus = 0
 	_signal_pause -= 1
 
@@ -68,38 +70,39 @@ func start_game():
 	drugs_taken_today = 0
 	has_search_warrant = false
 	_debts.clear()
-	_cards.clear()
+	clear_mastery_cards()
+	clear_fallback_cards()
 	_sleep_bonus_malus = 0
 
 	# all players start with one card from each category
 
 	var id
 	id = _pick_random_combat_card()
-	_cards.append(CombatCard.create_card(id))
+	_mastery_cards.append(CombatCard.create_card(id))
 	id = _pick_random_investigation_card()
-	_cards.append(InvestigationCard.create_card(id))
+	_mastery_cards.append(InvestigationCard.create_card(id))
 	id = _pick_random_dialogue_card()
-	_cards.append(DialogueCard.create_card(id))
+	_mastery_cards.append(DialogueCard.create_card(id))
 	id = _pick_random_abstract_card()
-	_cards.append(AbstractCard.create_card(id))
+	_mastery_cards.append(AbstractCard.create_card(id))
 
 	# some players get bonus cards
 
-	var init_card_count = _cards.size() + job_bonus_malus.get("cards", 0)
-	while _cards.size() < init_card_count:
+	var init_card_count = _mastery_cards.size() + job_bonus_malus.get("cards", 0)
+	while _mastery_cards.size() < init_card_count:
 		match randi() % 4:
 			0:
 				id = _pick_random_combat_card()
-				_cards.append(CombatCard.create_card(id))
+				_mastery_cards.append(CombatCard.create_card(id))
 			1:
 				id = _pick_random_investigation_card()
-				_cards.append(InvestigationCard.create_card(id))
+				_mastery_cards.append(InvestigationCard.create_card(id))
 			2:
 				id = _pick_random_dialogue_card()
-				_cards.append(DialogueCard.create_card(id))
+				_mastery_cards.append(DialogueCard.create_card(id))
 			3:
 				id = _pick_random_abstract_card()
-				_cards.append(AbstractCard.create_card(id))
+				_mastery_cards.append(AbstractCard.create_card(id))
 
 	_signal_pause -= 1
 
@@ -130,7 +133,7 @@ func _pick_random_investigation_card() -> String:
 	return id
 
 func _have_card_already(type: Card.CardType, id: String):
-	for card in _cards:
+	for card in _mastery_cards:
 		if card.get_card_type() == type and card.database_id == id:
 			return true
 	return false
@@ -265,33 +268,56 @@ func get_debt_total() -> int:
 ## Returns the cards the player has in his "mastery" deck.
 ##
 func get_mastery_cards() -> Array[Card]:
-	return _cards
+	return _mastery_cards
+
+##
+## Clears the player's "mastery" deck, deleting any cards it contains.
+##
+func clear_mastery_cards():
+	for card in _mastery_cards:
+		card.queue_free()
+	_mastery_cards.clear()
+
+##
+## Returns the cards the player has in his temporary "fallback" deck for
+## interactions.
+##
+func get_fallback_cards() -> Array[Card]:
+	return _fallback_cards
+
+##
+## Clears the player's "fallback" deck, deleting any cards it contains.
+##
+func clear_fallback_cards():
+	for card in _fallback_cards:
+		card.queue_free()
+	_fallback_cards.clear()
 
 ##
 ## Picks 5 cards at random for an investigation, ensuring that there are no
-## duplicates with the player's "mastery" cards. Note that it is the caller's
-## responsibility to delete the cards afterwards.
+## duplicates with the player's "mastery" cards, and puts them in the player's
+## "fallback" deck. Any cards already in the fallback deck are deleted.
 ##
-func pick_investigation_cards() -> Array[Card]:
-	var ret: Array[Card]
+func pick_investigation_cards():
+	clear_fallback_cards()
 
 	# 1 or 2 abstract cards
 
 	var abstract_count = randi_range(1, 2)
 	var ids: Array[String]
 
-	while ret.size() < abstract_count:
+	while _fallback_cards.size() < abstract_count:
 		var id = _abstract_cards.keys().pick_random()
 		if not id in ids and not _have_card_already(Card.CardType.ABSTRACT, id):
 			ids.append(id)
-			ret.append(AbstractCard.create_card(id))
+			_fallback_cards.append(AbstractCard.create_card(id))
 
 	# 3 or 4 Investigation (at least 1) and Investigation SPECIAL cards
 
 	var investigation_count = 0
 	ids.clear()
 
-	while ret.size() < 5:
+	while _fallback_cards.size() < 5:
 		var id = _investigation_cards.keys().pick_random()
 		if id in ids or _have_card_already(Card.CardType.INVESTIGATION, id):
 			continue
@@ -306,9 +332,7 @@ func pick_investigation_cards() -> Array[Card]:
 				ok = false
 		if ok:
 			ids.append(id)
-			ret.append(InvestigationCard.create_card(id))
-
-	return ret
+			_fallback_cards.append(InvestigationCard.create_card(id))
 
 func pass_one_hour():
 	if randi() % 10 == 0:
@@ -407,7 +431,7 @@ func get_unique_id():
 # For save/load.
 #
 func get_referenced_objects():
-	return _cards
+	return _mastery_cards + _fallback_cards
 
 #
 # For save/load.
@@ -435,10 +459,18 @@ func get_json_dict():
 	}
 	if has_search_warrant:
 		dict["has_search_warrant"] = true
+
 	var card_refs = []
-	for card in _cards:
+	for card in _mastery_cards:
 		card_refs.append(card.get_unique_id())
 	dict["cards"] = card_refs
+
+	if not _fallback_cards.is_empty():
+		card_refs = []
+		for card in _fallback_cards:
+			card_refs.append(card.get_unique_id())
+		dict["fallback_cards"] = card_refs
+
 	return dict
 
 #
@@ -466,7 +498,9 @@ func restore(dict, catalog):
 	if "has_search_warrant" in dict:
 		has_search_warrant = dict.has_search_warrant
 	for card_ref in dict.cards:
-		_cards.append(catalog[card_ref])
+		_mastery_cards.append(catalog[card_ref])
+	for card_ref in dict.get("fallback_cards", []):
+		_fallback_cards.append(catalog[card_ref])
 
 #
 # For save/load.

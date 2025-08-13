@@ -15,6 +15,7 @@ extends Node2D
 func _ready():
 	_title_screen = $Active_Scene/Title_Screen
 	_title_screen.next.connect(_go_to_option_menu)
+	GameState.interaction_started.connect(_on_interaction_started)
 	GameState.died.connect(_on_death)
 
 func _replace_scene(new_scene: PackedScene) -> Node:
@@ -68,7 +69,7 @@ func _on_option_button_pressed(button: StringName):
 
 func _go_to_settings():
 	var is_playing = \
-		$Active_Scene.get_child(0).scene_file_path == _main_scene.resource_path
+		$Active_Scene.get_child(0).scene_file_path != _option_menu_scene.resource_path
 	var settings = await _replace_scene(_settings_scene)
 	await settings.done
 	if settings.is_confirmed():
@@ -107,13 +108,34 @@ func _start_game():
 	_continue_game()
 
 func _continue_game():
-	var main = await _replace_scene(_main_scene)
-	var case = GameState.get_current_case()
-	if case:
-		main.populate(case)
-	main.settings.connect(_go_to_settings)
-	main.investigate.connect(_investigate)
-	main.quit.connect(_go_to_option_menu)
+	if GameState.get_current_interaction() == GameState.InteractionType.NONE:
+		var main = await _replace_scene(_main_scene)
+		var case = GameState.get_current_case()
+		if case:
+			main.populate(case)
+		main.settings.connect(_go_to_settings)
+		main.quit.connect(_go_to_option_menu)
+	else:
+		_on_interaction_started()
+
+func _on_interaction_started():
+	var interaction_type = GameState.get_current_interaction()
+	var interaction_card = GameState.get_current_interaction_card()
+
+	var interaction_scene = await _replace_scene(_interaction_scene)
+	interaction_scene.done.connect(_on_interaction_ended)
+	interaction_scene.settings.connect(_go_to_settings)
+	interaction_scene.quit.connect(_go_to_option_menu)
+
+	if interaction_type == GameState.InteractionType.INVESTIGATION:
+		interaction_scene.start_investigation(
+			interaction_card,
+			GameState.player.get_mastery_cards(),
+			GameState.player.get_fallback_cards())
+
+func _on_interaction_ended():
+	GameState.end_interaction()
+	_continue_game()
 
 func _quit():
 	await _replace_scene(_quit_scene)
@@ -125,9 +147,3 @@ func _on_death():
 	await death.done
 	GameState.end_game()
 	_go_to_option_menu()
-
-func _investigate(location: LocationCard):
-	var interaction = await _replace_scene(_interaction_scene)
-	interaction.start_investigation(location)
-	await interaction.done
-	_continue_game()

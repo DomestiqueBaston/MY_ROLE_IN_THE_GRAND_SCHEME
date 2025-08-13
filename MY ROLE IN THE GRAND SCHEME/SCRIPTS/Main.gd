@@ -10,13 +10,10 @@ extends Node2D
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
 
-## Signal emitted when the player selects Settings from the menu.
+## Signal emitted when the player selects Settings in the menu.
 signal settings
 
-## Signal emitted when the player starts an investigation.
-signal investigate(location: LocationCard)
-
-## Signal emitted when the player selects Quit from the menu.
+## Signal emitted when the player selects Quit in the menu.
 signal quit
 
 enum MenuItem {
@@ -617,7 +614,7 @@ func _handle_popup(id: int):
 		MenuItem.DIALOGUE:
 			print("start dialogue")
 		MenuItem.INVESTIGATION:
-			investigate.emit(_popup_node)
+			GameState.start_investigation(_popup_node)
 		MenuItem.SWITCH_LINK:
 			if _popup_node is Link:
 				if _popup_node.status == Link.Status.CONFIRMED:

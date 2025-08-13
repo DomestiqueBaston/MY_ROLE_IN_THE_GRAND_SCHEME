@@ -10,6 +10,13 @@ enum PlayerLocation {
 	OTHER
 }
 
+enum InteractionType {
+	NONE,
+	DIALOGUE,
+	COMBAT,
+	INVESTIGATION
+}
+
 ##
 ## Constants representing time slots during the work week or the weekend. They
 ## can be used as flags for a bit mask.
@@ -102,6 +109,9 @@ signal debts_changed
 @warning_ignore("unused_signal")
 signal died
 
+## Signal emitted when the player starts an interaction.
+signal interaction_started
+
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
 # where game state is saved/reloaded
@@ -128,11 +138,16 @@ var _dealer_drug_stock: int
 # the crimes of the last several cases generated, to avoid repetition
 var _last_crimes: Array[String]
 
-# which case is current
+# which case is current?
 var _current_case_index: int
 
+# player location
 var _player_location: PlayerLocation = PlayerLocation.OFFICE
 var _player_location_card: LocationCard
+
+# current interaction
+var _current_interaction: InteractionType = InteractionType.NONE
+var _current_interaction_card: Card
 
 func _ready():
 	load_game()
@@ -147,6 +162,8 @@ func start_game():
 	_current_case_index = -1
 	_player_location = PlayerLocation.OFFICE
 	_player_location_card = null
+	_current_interaction = InteractionType.NONE
+	_current_interaction_card = null
 
 	cases.clear()
 	for i in 5:
@@ -372,6 +389,24 @@ func visit_doctor():
 		_last_doctor_day = get_day()
 		save_game()
 
+func start_investigation(location: LocationCard):
+	player.pick_investigation_cards()
+	_current_interaction = InteractionType.INVESTIGATION
+	_current_interaction_card = location
+	save_game()
+	interaction_started.emit()
+
+func end_interaction():
+	player.clear_fallback_cards()
+	_current_interaction = InteractionType.NONE
+	_current_interaction_card = null
+
+func get_current_interaction() -> InteractionType:
+	return _current_interaction
+
+func get_current_interaction_card() -> Card:
+	return _current_interaction_card
+
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
 		return cases[_current_case_index]
@@ -433,6 +468,7 @@ func load_game():
 
 func assign(other: GameState):
 	player = other.player
+	cases = other.cases
 	_hour = other._hour
 	_has_visited_hub = other._has_visited_hub
 	_has_slept = other._has_slept
@@ -442,7 +478,8 @@ func assign(other: GameState):
 	_current_case_index = other._current_case_index
 	_player_location = other._player_location
 	_player_location_card = other._player_location_card
-	cases = other.cases
+	_current_interaction = other._current_interaction
+	_current_interaction_card = other._current_interaction_card
 
 #
 # For save/load.
@@ -465,6 +502,8 @@ func get_referenced_objects():
 		refs.append(case)
 	if _player_location_card:
 		refs.append(_player_location_card)
+	if _current_interaction_card:
+		refs.append(_current_interaction_card)
 	return refs
 
 #
@@ -481,15 +520,23 @@ func get_json_dict():
 		"last_crimes": _last_crimes,
 		"current_case_index": _current_case_index
 	}
+
 	if cases:
 		var case_refs = []
 		for case in cases:
 			case_refs.append(case.get_unique_id())
 		dict["cases"] = case_refs
+
 	if _player_location != PlayerLocation.OFFICE:
 		dict["player_location"] = _player_location
 		if _player_location_card:
 			dict["player_location_card"] = _player_location_card.get_unique_id()
+
+	if _current_interaction != InteractionType.NONE:
+		dict["interaction"] = _current_interaction
+		if _current_interaction_card:
+			dict["interaction_card"] = _current_interaction_card.get_unique_id()
+
 	return dict
 
 #
@@ -504,12 +551,19 @@ func restore(dict, catalog):
 	_last_crimes.assign(dict.last_crimes)
 	_current_case_index = dict.current_case_index
 	player = catalog[dict.player]
+
 	for case_ref in dict.get("cases", []):
 		cases.append(catalog[case_ref])
+
 	if "player_location" in dict:
 		_player_location = dict.player_location
 		if "player_location_card" in dict:
 			_player_location_card = catalog[dict.player_location_card]
+
+	if "interaction" in dict:
+		_current_interaction = dict.interaction
+		if "interaction_card" in dict:
+			_current_interaction_card = catalog[dict.interaction_card]
 
 #
 # For save/load.
