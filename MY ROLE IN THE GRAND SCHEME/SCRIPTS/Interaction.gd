@@ -79,6 +79,9 @@ var _area_overlays = {}
 # came from
 var _cards_played: Dictionary
 
+# what kind of interaction is in progress
+var _interaction_type: GameState.InteractionType = GameState.InteractionType.NONE
+
 func _ready():
 	for area in card_area_overlays:
 		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
@@ -95,14 +98,16 @@ func _ready():
 	else:
 		_disable()
 
+	if the_button:
+		the_button.pressed.connect(_end_interaction)
+
 	tree_exiting.connect(_detach_cards)
-	$Button/Bring_It_On.pressed.connect(func(): done.emit())
 
 func _enable():
 	Globals.mouse_entered_card.connect(_mouse_entered_card)
 	Globals.mouse_exited_card.connect(_mouse_exited_card)
 	Globals.card_left_click.connect(_click_on_card)
-	the_button.disabled = (min_card_count > 0)
+	_enable_disable_button()
 	set_process_input(true)
 
 func _disable():
@@ -112,7 +117,8 @@ func _disable():
 		Globals.mouse_exited_card.disconnect(_mouse_exited_card)
 	if Globals.card_left_click.is_connected(_click_on_card):
 		Globals.card_left_click.disconnect(_click_on_card)
-	the_button.disabled = true
+	if the_button:
+		the_button.disabled = true
 	set_process_input(false)
 
 func _input(event: InputEvent):
@@ -239,12 +245,12 @@ func _stop_drag(global_pos: Vector2):
 		_cards_played[_current_card] = _current_card.get_parent()
 		_current_card.reparent(interaction_cards)
 
+	Globals.pop_mouse_cursor()
 	_stuff_to_do_when_drag_ends(_current_card)
-	the_button.disabled = _cards_played.size() < min_card_count
+	_enable_disable_button()
 	_layout_played_cards()
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
-	Globals.pop_mouse_cursor()
 	drag_drop_line.hide_line()
 	if dragged_card:
 		dragged_card.stop_drag()
@@ -296,6 +302,28 @@ func _detach_cards():
 		if card is Card:
 			card.get_parent().remove_child(card)
 
+func _enable_disable_button():
+	if the_button == null:
+		return
+	match _interaction_type:
+		GameState.InteractionType.INVESTIGATION:
+			var inv_count = 0
+			var inv_special_count = 0
+			var abstract_count = 0
+			for card in _cards_played:
+				if card is InvestigationCard:
+					match card.get_card_subtype():
+						InvestigationCard.InvestigationType.NONE:
+							inv_count += 1
+						InvestigationCard.InvestigationType.SPECIAL:
+							inv_special_count += 1
+				elif card is AbstractCard:
+					abstract_count += 1
+			the_button.disabled = \
+				inv_count != 1 or inv_special_count > 1 or abstract_count > 1
+		_:
+			the_button.disabled = _cards_played.size() < min_card_count
+
 ##
 ## Starts an investigation.
 ##
@@ -303,7 +331,15 @@ func start_investigation(
 	_location: LocationCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
 
 	for card in mastery_cards:
-		$Cards/Mastery.add_child(card)
+		if (card is InvestigationCard and
+			card.get_card_subtype() != InvestigationCard.InvestigationType.BREAK_IN):
+			$Cards/Mastery.add_child(card)
 
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
+
+	_interaction_type = GameState.InteractionType.INVESTIGATION
+
+func _end_interaction():
+	_interaction_type = GameState.InteractionType.NONE
+	done.emit()

@@ -30,6 +30,15 @@ func _init():
 func get_card_type():
 	return CardType.INVESTIGATION
 
+func get_card_subtype() -> InvestigationType:
+	match _investigation_data[database_id]["type"]:
+		"Investigation SPECIAL":
+			return InvestigationType.SPECIAL
+		"Investigation BREAK-IN":
+			return InvestigationType.BREAK_IN
+		_:
+			return InvestigationType.NONE
+
 func _ready():
 	super()
 	_update_background()

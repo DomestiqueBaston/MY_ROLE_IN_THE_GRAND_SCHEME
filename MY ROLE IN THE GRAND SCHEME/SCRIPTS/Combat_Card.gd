@@ -30,6 +30,15 @@ func _init():
 func get_card_type():
 	return CardType.COMBAT
 
+func get_card_subtype() -> CombatType:
+	match _combat_data[database_id]["type"]:
+		"Combat SPECIAL":
+			return CombatType.SPECIAL
+		"Combat RUN-AWAY":
+			return CombatType.RUN_AWAY
+		_:
+			return CombatType.NONE
+
 func _ready():
 	super()
 	_update_background()
