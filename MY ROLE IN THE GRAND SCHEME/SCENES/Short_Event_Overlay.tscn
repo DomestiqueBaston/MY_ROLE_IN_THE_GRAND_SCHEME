@@ -1948,6 +1948,7 @@ texture = ExtResource("124_briu0")
 centered = false
 
 [node name="Run_Away" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In/Title"]
+visible = false
 texture = ExtResource("125_wowcu")
 centered = false
 

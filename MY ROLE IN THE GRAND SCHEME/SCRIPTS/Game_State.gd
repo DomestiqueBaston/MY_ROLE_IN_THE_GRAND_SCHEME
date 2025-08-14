@@ -14,7 +14,8 @@ enum InteractionType {
 	NONE,
 	DIALOGUE,
 	COMBAT,
-	INVESTIGATION
+	INVESTIGATION,
+	BREAK_IN
 }
 
 ##
@@ -407,7 +408,8 @@ func start_investigation(location: LocationCard):
 	# if no NPCs are present, the player can either try to break in or leave
 
 	if npcs.is_empty():
-		var ok = await Globals.dialog_overlay.confirm_break_in()
+		var ok = (await Globals.dialog_overlay.confirm_break_in() and
+				  await Globals.dialog_overlay.attempt_break_in(location))
 		if not ok:
 			return
 

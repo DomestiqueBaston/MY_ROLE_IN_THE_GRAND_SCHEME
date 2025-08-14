@@ -143,7 +143,8 @@ func _input(event: InputEvent):
 			_drag_state = DragState.NONE
 
 func _mouse_entered_card(card: Card):
-	if _drag_state == DragState.NONE and card != _current_card:
+	# if this is a sub-scene, ignore signals from other cards in the scene
+	if _drag_state == DragState.NONE and card != _current_card and is_ancestor_of(card):
 		if _current_card:
 			_current_card.set_highlighted(false)
 		card.set_highlighted(true)
@@ -152,17 +153,19 @@ func _mouse_entered_card(card: Card):
 			info_box.show_card(_current_card)
 
 func _mouse_exited_card(card: Card):
-	if _drag_state == DragState.NONE:
+	# if this is a sub-scene, ignore signals from other cards in the scene
+	if _drag_state == DragState.NONE and card == _current_card:
 		card.set_highlighted(false)
-		if _current_card == card:
-			_current_card = null
-			if info_box:
-				info_box.clear()
+		_current_card = null
+		if info_box:
+			info_box.clear()
 
 func _click_on_card(global_pos: Vector2, card: Card):
-	_mouse_entered_card(card)
-	_drag_state = DragState.CLICKED
-	_drag_click_pos = global_pos
+	# if this is a sub-scene, ignore signals from other cards in the scene
+	if is_ancestor_of(card):
+		_mouse_entered_card(card)
+		_drag_state = DragState.CLICKED
+		_drag_click_pos = global_pos
 
 func _start_drag() -> bool:
 	_drag_local_init_pos = _current_card.position
@@ -177,7 +180,7 @@ func _start_drag() -> bool:
 	drag_drop_line.show_line()
 	Globals.push_mouse_cursor(Globals.MouseCursor.CIRCLE)
 
-	# highlight the name of the pile the card belongs to
+	# highlight the pile the card belongs to
 
 	var pile = _cards_played.get(_current_card, _current_card.get_parent())
 	_highlighted_overlay = _area_overlays[pile]
@@ -294,7 +297,7 @@ func _layout_played_cards():
 		pos.x += Card.size.x + margin
 
 #
-# Removes cards from the scene without deleting them, because GameState holds
+# Removes cards from the scene without deleting them, because the Player holds
 # references to them.
 #
 func _detach_cards():
@@ -321,25 +324,54 @@ func _enable_disable_button():
 					abstract_count += 1
 			the_button.disabled = \
 				inv_count != 1 or inv_special_count > 1 or abstract_count > 1
+
+		GameState.InteractionType.BREAK_IN:
+			var break_in_count = 0
+			var abstract_count = 0
+			for card in _cards_played:
+				if card is InvestigationCard:
+					break_in_count += 1
+				elif card is AbstractCard:
+					abstract_count += 1
+			the_button.disabled = not (
+				(break_in_count + abstract_count == 0) or
+				(break_in_count == 1 and abstract_count <= 1))
+
 		_:
 			the_button.disabled = _cards_played.size() < min_card_count
 
 ##
-## Starts an investigation.
+## Starts an investigation. A done() signal is emitted when it finishes.
 ##
 func start_investigation(
 	_location: LocationCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
-
 	for card in mastery_cards:
-		if (card is InvestigationCard and
-			card.get_card_subtype() != InvestigationCard.InvestigationType.BREAK_IN):
+		if card is AbstractCard or card is InvestigationCard:
 			$Cards/Mastery.add_child(card)
-
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
-
 	_interaction_type = GameState.InteractionType.INVESTIGATION
 
+##
+## Starts a break-in. A done() signal is emitted when it finishes.
+##
+func start_break_in(
+	_location: LocationCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
+	for card in mastery_cards:
+		if card is AbstractCard:
+			$Cards/Mastery.add_child(card)
+	for card in fallback_cards:
+		$Cards/Fallback.add_child(card)
+	_interaction_type = GameState.InteractionType.BREAK_IN
+
+#
+# Resets the scene andemits a done() signal when an interaction finishes. The
+# reset is important, because this scene may be instanced within another scene,
+# meaning _ready() may only be called once. 
+#
 func _end_interaction():
 	_interaction_type = GameState.InteractionType.NONE
+	_current_card = null
+	_cards_played.clear()
+	_detach_cards()
 	done.emit()

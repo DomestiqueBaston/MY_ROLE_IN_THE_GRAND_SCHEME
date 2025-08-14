@@ -122,14 +122,16 @@ func _pick_random_dialogue_card() -> String:
 	return id
 
 func _pick_random_combat_card(
-	is_special_ok: bool = false, is_run_away_ok: bool = false) -> String:
+	is_normal_ok: bool = true,
+	is_special_ok: bool = false,
+	is_run_away_ok: bool = false) -> String:
 	var id = ""
 	var ok = false
 	while not ok:
 		id = _combat_cards.keys().pick_random()
 		match _combat_cards[id]["type"]:
 			"Combat":
-				ok = true
+				ok = is_normal_ok
 			"Combat SPECIAL":
 				ok = is_special_ok
 			"Combat RUN-AWAY":
@@ -138,14 +140,16 @@ func _pick_random_combat_card(
 	return id
 
 func _pick_random_investigation_card(
-	is_special_ok: bool = false, is_break_in_ok = false) -> String:
+	is_normal_ok: bool = true,
+	is_special_ok: bool = false,
+	is_break_in_ok: bool = false) -> String:
 	var id = ""
 	var ok = false
 	while not ok:
 		id = _investigation_cards.keys().pick_random()
 		match _investigation_cards[id]["type"]:
 			"Investigation":
-				ok = true
+				ok = is_normal_ok
 			"Investigation SPECIAL":
 				ok = is_special_ok
 			"Investigation BREAK-IN":
@@ -316,9 +320,10 @@ func clear_fallback_cards():
 	_fallback_cards.clear()
 
 ##
-## Picks 5 cards at random for an investigation, ensuring that there are no
-## duplicates with the player's "mastery" cards, and puts them in the player's
-## "fallback" deck. Any cards already in the fallback deck are deleted.
+## Picks 5 abstract and/or investigation cards at random for an investigation,
+## ensuring that there are no duplicates with the player's "mastery" cards, and
+## puts them in the player's "fallback" deck. Any cards already in the fallback
+## deck are deleted.
 ##
 func pick_investigation_cards():
 	clear_fallback_cards()
@@ -336,11 +341,28 @@ func pick_investigation_cards():
 	var investigation_count = 0
 
 	while _fallback_cards.size() < 5:
-		var id = _pick_random_investigation_card(investigation_count > 0)
+		var id = _pick_random_investigation_card(true, investigation_count > 0)
 		var card = InvestigationCard.create_card(id)
 		_fallback_cards.append(card)
 		if card.get_card_subtype() == InvestigationCard.InvestigationType.NORMAL:
 			investigation_count += 1
+
+##
+## Picks 3 cards abstract and/or break-in cards at random for a break-in,
+## ensuring that there are no duplicates with the player's "mastery" cards, and
+## puts them in the player's "fallback" deck. Any cards already in the fallback
+## deck are deleted.
+##
+func pick_break_in_cards():
+	clear_fallback_cards()
+	var roll = randi()
+	for i in 3:
+		if roll & (1 << i):
+			var id = _pick_random_abstract_card()
+			_fallback_cards.append(AbstractCard.create_card(id))
+		else:
+			var id = _pick_random_investigation_card(false, false, true)
+			_fallback_cards.append(InvestigationCard.create_card(id))
 
 func pass_one_hour():
 	if randi() % 10 == 0:
