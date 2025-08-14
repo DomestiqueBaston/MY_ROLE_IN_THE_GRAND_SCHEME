@@ -70,7 +70,7 @@ func _notification(what):
 	if what == NOTIFICATION_TRANSFORM_CHANGED:
 		for location in _pins:
 			_pins[location].global_position = get_pin_position(location)
-			moved.emit()
+		moved.emit()
 
 ##
 ## Returns the type of the card (to be overridden by each subclass).
