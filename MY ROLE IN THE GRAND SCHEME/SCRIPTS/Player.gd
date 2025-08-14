@@ -344,7 +344,7 @@ func pick_investigation_cards():
 		var id = _pick_random_investigation_card(true, investigation_count > 0)
 		var card = InvestigationCard.create_card(id)
 		_fallback_cards.append(card)
-		if card.get_card_subtype() == InvestigationCard.InvestigationType.NORMAL:
+		if card.investigation_type == InvestigationCard.InvestigationType.NORMAL:
 			investigation_count += 1
 
 ##

@@ -318,7 +318,7 @@ func _enable_disable_button():
 			var abstract_count = 0
 			for card in _cards_played:
 				if card is InvestigationCard:
-					match card.get_card_subtype():
+					match card.investigation_type:
 						InvestigationCard.InvestigationType.NORMAL:
 							inv_count += 1
 						InvestigationCard.InvestigationType.SPECIAL:

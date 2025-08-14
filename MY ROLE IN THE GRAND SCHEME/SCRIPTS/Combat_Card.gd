@@ -7,7 +7,7 @@ enum CombatType {
 	RUN_AWAY
 }
 
-@export var combat_type: CombatType:
+@export var combat_type: CombatType = CombatType.NORMAL:
 	set(value):
 		combat_type = value
 		if is_node_ready():
@@ -30,15 +30,6 @@ func _init():
 func get_card_type():
 	return CardType.COMBAT
 
-func get_card_subtype() -> CombatType:
-	match _combat_data[database_id]["type"]:
-		"Combat SPECIAL":
-			return CombatType.SPECIAL
-		"Combat RUN-AWAY":
-			return CombatType.RUN_AWAY
-		_:
-			return CombatType.NORMAL
-
 func _ready():
 	super()
 	_update_background()
@@ -52,6 +43,11 @@ static func create_card(id: String) -> CombatCard:
 	var combat_info = _combat_data[id]
 	card.card_name = combat_info["name"]
 	card.description = combat_info["description"]
+	match combat_info["type"]:
+		"Combat SPECIAL":
+			card.combat_type = CombatType.SPECIAL
+		"Combat RUN-AWAY":
+			card.combat_type = CombatType.RUN_AWAY
 	card.database_id = id
 	return card
 
