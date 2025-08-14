@@ -1386,6 +1386,7 @@ theme = ExtResource("35_50jtl")
 
 [node name="Card_Name" type="Label" parent="Card_Mask/Card_BG/Card_Text"]
 layout_mode = 1
+offset_left = 1.0
 offset_right = 70.0
 offset_bottom = 23.0
 mouse_filter = 1
