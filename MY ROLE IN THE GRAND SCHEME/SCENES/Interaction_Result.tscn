@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dqhearrxagi71"]
+[gd_scene load_steps=26 format=3 uid="uid://dqhearrxagi71"]
 
 [ext_resource type="Texture2D" uid="uid://ddyok5fbos80x" path="res://GRAPHICS/INTERACTION_RESULT/Interaction_Result_BG.png" id="1_k2rcs"]
 [ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c3oj1c6jo6ikm" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Turquoise.png" id="7_wphtr"]
 [ext_resource type="Texture2D" uid="uid://dmuhwilbaywkx" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Tres_Fonce.png" id="8_v86ur"]
 [ext_resource type="Texture2D" uid="uid://cnkohi6nkpx16" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Blanc.png" id="9_eugly"]
+[ext_resource type="Texture2D" uid="uid://dniypqi3j55w0" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Marron.png" id="11_8585a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wphtr"]
 
@@ -133,6 +134,7 @@ autowrap_mode = 3
 visible_characters_behavior = 1
 
 [node name="Dialogue" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
+visible = false
 anchors_preset = 0
 
 [node name="Positive_Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue"]
@@ -1131,7 +1133,6 @@ bbcode_enabled = true
 text = "[center]Well, I dont want to find myself in any more trouble...[/center]"
 
 [node name="Investigation" type="Control" parent="Chalkboard_Content/Chalk_Mask/Content/Report"]
-visible = false
 anchors_preset = 0
 
 [node name="Report" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation"]
@@ -1497,6 +1498,111 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/Link_Information/Links_Container/Link_04"]
+layout_mode = 2
+text = "... "
+fit_content = true
+autowrap_mode = 0
+
+[node name="People_Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success"]
+custom_minimum_size = Vector2(111, 141)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center][color=#ff8864]People [/color]present:[/center]"
+
+[node name="Links_Container" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+
+[node name="Link_01" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01"]
+layout_mode = 2
+text = " - "
+fit_content = true
+autowrap_mode = 0
+
+[node name="NPC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01"]
+layout_mode = 2
+tooltip_text = "Info related to
+NPC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "Flavien Algans"
+fit_content = true
+autowrap_mode = 0
+
+[node name="State" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01"]
+layout_mode = 2
+text = " was "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Activity" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01"]
+layout_mode = 2
+tooltip_text = "Info related to
+LOC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "working "
+fit_content = true
+autowrap_mode = 0
+
+[node name="LOC_01" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01"]
+layout_mode = 2
+tooltip_text = "Info related to
+LOC"
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+text = "here"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Colon" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01"]
+layout_mode = 2
+text = ": "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Link_Color_Container" type="CenterContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Link_Color" type="TextureRect" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_01/Link_Color_Container"]
+custom_minimum_size = Vector2(8, 6)
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Link type"
+texture = ExtResource("11_8585a")
+expand_mode = 1
+
+[node name="Separator_01" type="Label" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 3
+horizontal_alignment = 1
+
+[node name="Link_02" type="HFlowContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Dash" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_02"]
+layout_mode = 2
+text = " - "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Ellipsis" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Investigation/Report/Normal_And_Critical_Success/People_Information/Links_Container/Link_02"]
 layout_mode = 2
 text = "... "
 fit_content = true
