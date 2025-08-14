@@ -121,18 +121,36 @@ func _pick_random_dialogue_card() -> String:
 		id = _dialogue_cards.keys().pick_random()
 	return id
 
-func _pick_random_combat_card() -> String:
-	var id = _combat_cards.keys().pick_random()
-	while (_combat_cards[id]["type"] != "Combat"
-		   or _have_card_already(Card.CardType.COMBAT, id)):
+func _pick_random_combat_card(
+	is_special_ok: bool = false, is_run_away_ok: bool = false) -> String:
+	var id = ""
+	var ok = false
+	while not ok:
 		id = _combat_cards.keys().pick_random()
-	return id
+		match _combat_cards[id]["type"]:
+			"Combat":
+				ok = true
+			"Combat SPECIAL":
+				ok = is_special_ok
+			"Combat RUN-AWAY":
+				ok = is_run_away_ok
+		ok = ok and not _have_card_already(Card.CardType.COMBAT, id)
+	return ""
 
-func _pick_random_investigation_card() -> String:
-	var id = _investigation_cards.keys().pick_random()
-	while (_investigation_cards[id]["type"] != "Investigation"
-		   or _have_card_already(Card.CardType.INVESTIGATION, id)):
+func _pick_random_investigation_card(
+	is_special_ok: bool = false, is_break_in_ok = false) -> String:
+	var id = ""
+	var ok = false
+	while not ok:
 		id = _investigation_cards.keys().pick_random()
+		match _investigation_cards[id]["type"]:
+			"Investigation":
+				ok = true
+			"Investigation SPECIAL":
+				ok = is_special_ok
+			"Investigation BREAK-IN":
+				ok = is_break_in_ok
+		ok = ok and not _have_card_already(Card.CardType.INVESTIGATION, id)
 	return id
 
 func _have_card_already(type: Card.CardType, id: String):
@@ -310,29 +328,18 @@ func pick_investigation_cards():
 	var abstract_count = randi_range(1, 2)
 
 	while _fallback_cards.size() < abstract_count:
-		var id = _abstract_cards.keys().pick_random()
-		if not _have_card_already(Card.CardType.ABSTRACT, id):
-			_fallback_cards.append(AbstractCard.create_card(id))
+		var id = _pick_random_abstract_card()
+		_fallback_cards.append(AbstractCard.create_card(id))
 
 	# 3 or 4 Investigation (at least 1) and Investigation SPECIAL cards
 
 	var investigation_count = 0
 
 	while _fallback_cards.size() < 5:
-		var id = _investigation_cards.keys().pick_random()
-		if _have_card_already(Card.CardType.INVESTIGATION, id):
-			continue
-		var ok
-		match _investigation_cards[id]["type"]:
-			"Investigation":
-				ok = true
-				investigation_count += 1
-			"Investigation SPECIAL":
-				ok = investigation_count > 0
-			_:
-				ok = false
-		if ok:
-			_fallback_cards.append(InvestigationCard.create_card(id))
+		var id = _pick_random_investigation_card(investigation_count > 0)
+		_fallback_cards.append(InvestigationCard.create_card(id))
+		if _investigation_cards[id]["type"] == "Investigation":
+			investigation_count += 1
 
 func pass_one_hour():
 	if randi() % 10 == 0:
