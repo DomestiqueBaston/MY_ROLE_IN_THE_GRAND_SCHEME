@@ -26,6 +26,9 @@ extends Node2D
 ## Optional Top_Bar scene containing the menu bar and player stats.
 @export var top_bar: Node
 
+## Optional TV screen that plays during the interaction.
+@export var tv_screen: Node2D
+
 ## Optional Bottom_Left_Info scene showing information about the current card.
 @export var info_box: Node
 
@@ -366,7 +369,8 @@ func start_break_in(
 
 func _start_interaction(type: GameState.InteractionType):
 	_interaction_type = type
-	$Top_Left_Screen.set_interaction_type(type)
+	if tv_screen:
+		tv_screen.set_interaction_type(type)
 
 #
 # Resets the scene andemits a done() signal when an interaction finishes. The
