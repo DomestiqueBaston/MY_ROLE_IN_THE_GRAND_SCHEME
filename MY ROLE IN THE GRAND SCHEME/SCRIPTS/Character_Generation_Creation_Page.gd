@@ -22,6 +22,7 @@ func _update_controls():
 	_update_remaining()
 	$SliderBg/HSlider.value = _sex
 	$Character_Name.text = _first_name
+	_enable_disable_ok_button()
 
 func _points_remaining():
 	return _total_points - (_phy + _men + _hea)

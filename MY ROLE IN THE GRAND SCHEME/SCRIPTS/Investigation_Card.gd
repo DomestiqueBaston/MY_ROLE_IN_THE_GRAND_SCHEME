@@ -7,7 +7,7 @@ enum InvestigationType {
 	BREAK_IN
 }
 
-@export var investigation_type: InvestigationType:
+@export var investigation_type: InvestigationType = InvestigationType.NORMAL:
 	set(value):
 		investigation_type = value
 		if is_node_ready():
@@ -30,15 +30,6 @@ func _init():
 func get_card_type():
 	return CardType.INVESTIGATION
 
-func get_card_subtype() -> InvestigationType:
-	match _investigation_data[database_id]["type"]:
-		"Investigation SPECIAL":
-			return InvestigationType.SPECIAL
-		"Investigation BREAK-IN":
-			return InvestigationType.BREAK_IN
-		_:
-			return InvestigationType.NORMAL
-
 func _ready():
 	super()
 	_update_background()
@@ -52,6 +43,11 @@ static func create_card(id: String) -> InvestigationCard:
 	var investigation_info = _investigation_data[id]
 	card.card_name = investigation_info["name"]
 	card.description = investigation_info["description"]
+	match investigation_info["type"]:
+		"Investigation SPECIAL":
+			card.investigation_type = InvestigationType.SPECIAL
+		"Investigation BREAK-IN":
+			card.investigation_type = InvestigationType.BREAK_IN
 	card.database_id = id
 	return card
 
