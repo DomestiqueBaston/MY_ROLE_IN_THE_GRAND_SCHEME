@@ -2,7 +2,7 @@
 class_name InvestigationCard extends Card
 
 enum InvestigationType {
-	NONE,
+	NORMAL,
 	SPECIAL,
 	BREAK_IN
 }
@@ -37,7 +37,7 @@ func get_card_subtype() -> InvestigationType:
 		"Investigation BREAK-IN":
 			return InvestigationType.BREAK_IN
 		_:
-			return InvestigationType.NONE
+			return InvestigationType.NORMAL
 
 func _ready():
 	super()

@@ -337,8 +337,9 @@ func pick_investigation_cards():
 
 	while _fallback_cards.size() < 5:
 		var id = _pick_random_investigation_card(investigation_count > 0)
-		_fallback_cards.append(InvestigationCard.create_card(id))
-		if _investigation_cards[id]["type"] == "Investigation":
+		var card = InvestigationCard.create_card(id)
+		_fallback_cards.append(card)
+		if card.get_card_subtype() == InvestigationCard.InvestigationType.NORMAL:
 			investigation_count += 1
 
 func pass_one_hour():

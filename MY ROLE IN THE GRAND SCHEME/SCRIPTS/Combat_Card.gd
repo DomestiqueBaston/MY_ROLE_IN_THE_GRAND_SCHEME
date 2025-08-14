@@ -2,7 +2,7 @@
 class_name CombatCard extends Card
 
 enum CombatType {
-	NONE,
+	NORMAL,
 	SPECIAL,
 	RUN_AWAY
 }
@@ -37,7 +37,7 @@ func get_card_subtype() -> CombatType:
 		"Combat RUN-AWAY":
 			return CombatType.RUN_AWAY
 		_:
-			return CombatType.NONE
+			return CombatType.NORMAL
 
 func _ready():
 	super()

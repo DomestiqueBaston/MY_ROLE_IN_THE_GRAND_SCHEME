@@ -313,7 +313,7 @@ func _enable_disable_button():
 			for card in _cards_played:
 				if card is InvestigationCard:
 					match card.get_card_subtype():
-						InvestigationCard.InvestigationType.NONE:
+						InvestigationCard.InvestigationType.NORMAL:
 							inv_count += 1
 						InvestigationCard.InvestigationType.SPECIAL:
 							inv_special_count += 1
