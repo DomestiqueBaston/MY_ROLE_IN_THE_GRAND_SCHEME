@@ -350,7 +350,7 @@ func start_investigation(
 			$Cards/Mastery.add_child(card)
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
-	_interaction_type = GameState.InteractionType.INVESTIGATION
+	_start_interaction(GameState.InteractionType.INVESTIGATION)
 
 ##
 ## Starts a break-in. A done() signal is emitted when it finishes.
@@ -362,7 +362,11 @@ func start_break_in(
 			$Cards/Mastery.add_child(card)
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
-	_interaction_type = GameState.InteractionType.BREAK_IN
+	_start_interaction(GameState.InteractionType.BREAK_IN)
+
+func _start_interaction(type: GameState.InteractionType):
+	_interaction_type = type
+	$Top_Left_Screen.set_interaction_type(type)
 
 #
 # Resets the scene andemits a done() signal when an interaction finishes. The

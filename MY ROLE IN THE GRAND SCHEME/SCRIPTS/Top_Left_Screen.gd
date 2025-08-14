@@ -7,19 +7,24 @@ extends Node2D
 var _current_movie: VideoStreamPlayer
 
 func _ready():
-	var roll = randi() % 3
-	$Line_Animation/Dialogue.visible = (roll == 0)
-	$Interaction/Dialogue.visible = (roll == 0)
-	$Line_Animation/Combat.visible = (roll == 1)
-	$Interaction/Combat.visible = (roll == 1)
-	$Line_Animation/Investigation.visible = (roll == 2)
-	$Interaction/Investigation.visible = (roll == 2)
-
 	_on_off_button.pressed.connect(_on_on_off_pressed)
 	_top_button.button_moved.connect(_on_dial_moved)
 	_bottom_button.button_moved.connect(_on_dial_moved)
 
 	$Timer.timeout.connect(_on_timeout)
+
+func set_interaction_type(type: GameState.InteractionType):
+	var is_dialogue = (type == GameState.InteractionType.DIALOGUE)
+	var is_combat = (type == GameState.InteractionType.COMBAT)
+	var is_investigation = type in [
+		GameState.InteractionType.INVESTIGATION,
+		GameState.InteractionType.BREAK_IN]
+	$Line_Animation/Dialogue.visible = is_dialogue
+	$Interaction/Dialogue.visible = is_dialogue
+	$Line_Animation/Combat.visible = is_combat
+	$Interaction/Combat.visible = is_combat
+	$Line_Animation/Investigation.visible = is_investigation
+	$Interaction/Investigation.visible = is_investigation
 
 func _on_on_off_pressed():
 	$Tv_Switch.play()
