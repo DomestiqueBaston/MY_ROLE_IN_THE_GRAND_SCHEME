@@ -145,7 +145,10 @@ func push_mouse_cursor(cursor: MouseCursor):
 ## push_mouse_cursor().
 ##
 func pop_mouse_cursor():
-	_mouse.set_cursor(_mouse_cursor_stack.pop_back())
+	if _mouse_cursor_stack.is_empty():
+		push_error("pop_mouse_cursor: stack is empty!")
+	else:
+		_mouse.set_cursor(_mouse_cursor_stack.pop_back())
 
 ##
 ## Specifies whether links of the given type are visible or not. By default,
