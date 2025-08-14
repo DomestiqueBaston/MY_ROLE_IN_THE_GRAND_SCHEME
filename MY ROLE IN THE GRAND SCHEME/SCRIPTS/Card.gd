@@ -242,13 +242,22 @@ func _update_opacity():
 		$Card_Shadow.material.set_shader_parameter(
 			"shadow_color", Color(0, 0, 0, opacity * 0.3))
 
+#
+# Note that for left click events, we DO NOT set the input as handled. When cards are drawn in the
+# break-in overlay on top of the main scene, two overlapping cards may both receive input events,
+# even though Viewport.physics_object_picking_sort and Viewport.physics_object_picking_first_only
+# are set to true. What's more, the cards in the main scene seem to receive the events before the
+# cards in the overlay on top of them. I have no idea why. To work around the problem, we leave the
+# input event unhandled, meaning two clicks are received, and the overlay ignores clicks from cards
+# that do not belong to it. See issue #115.
+#
 func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton:
-		get_viewport().set_input_as_handled()
 		if $Card_Animations.is_playing():
 			pass
 		elif event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
 			Globals.card_right_click.emit(event.global_position, self)
+			get_viewport().set_input_as_handled()
 		elif event.button_mask == MOUSE_BUTTON_MASK_LEFT:
 			if event.double_click:
 				Globals.card_double_click.emit(self)
