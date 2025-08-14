@@ -62,10 +62,6 @@ func _ready():
 	_layout()
 	child_order_changed.connect(_layout)
 
-func _draw():
-	if show_bounding_box and Engine.is_editor_hint():
-		draw_rect(Rect2(Vector2(0, 0), size), Color.GREEN, false, 1)
-
 ##
 ## The CardStack's _input() method is responsible for determining which card, if
 ## any, is under the mouse, and for emitting signals when the mouse leaves the
