@@ -135,7 +135,7 @@ func _pick_random_combat_card(
 			"Combat RUN-AWAY":
 				ok = is_run_away_ok
 		ok = ok and not _have_card_already(Card.CardType.COMBAT, id)
-	return ""
+	return id
 
 func _pick_random_investigation_card(
 	is_special_ok: bool = false, is_break_in_ok = false) -> String:
