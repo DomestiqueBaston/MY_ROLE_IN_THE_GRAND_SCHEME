@@ -322,8 +322,8 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	var _first_names = \
 		_name_data["male_first_name" if npc_sex == Sex.MALE else "female_first_name"]
 	var _last_names = _name_data["last_name"]
-	first_name = _first_names[randi() % _first_names.size()]
-	last_name = _last_names[randi() % _last_names.size()]
+	first_name = _first_names.pick_random()
+	last_name = _last_names.pick_random()
 
 	# principal characteristics, randomly assigned between 3 and 7
 

@@ -7,15 +7,21 @@ const _total_points = 15
 var _phy = 3
 var _men = 3
 var _hea = 3
+var _sex = 0.0
+var _first_name = ""
+
+var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 
 func _ready():
-	_update_count_controls()
+	_update_controls()
 
-func _update_count_controls():
+func _update_controls():
 	$PHY.text = str(_phy)
 	$MEN.text = str(_men)
 	$HEA.text = str(_hea)
 	_update_remaining()
+	$SliderBg/HSlider.value = _sex
+	$Character_Name.text = _first_name
 
 func _points_remaining():
 	return _total_points - (_phy + _men + _hea)
@@ -56,14 +62,13 @@ func _on_any_button_mouse_exited():
 		Globals.leave_sound.play()
 
 func _on_h_slider_value_changed(value: float):
-	var pitch = lerp(0.5, 0.505, value)
-	$Sex_Choice.pitch_scale = pitch
-	if not $Sex_Choice.playing:
-		$Sex_Choice.play()
+	$Sex_Choice.pitch_scale = lerp(0.5, 0.505, value)
 
-func _input(event: InputEvent):
-	if event.is_action_released("Left_Click"):
-		$Sex_Choice.stop()
+func _on_h_slider_drag_started():
+	$Sex_Choice.play()
+
+func _on_h_slider_drag_ended(_value_changed):
+	$Sex_Choice.stop()
 
 func _on_phy_moins_pressed():
 	Globals.cancel_sound.play()
@@ -100,7 +105,15 @@ func _on_randomize_pressed():
 	var max_men = mini(7, _total_points - _phy - 3)
 	_men = randi_range(min_men, max_men)
 	_hea = _total_points - _phy - _men
-	_update_count_controls()
+	var name_key
+	if randi() & 1:
+		_sex = 100.0
+		name_key = "female_first_name"
+	else:
+		_sex = 0.0
+		name_key = "male_first_name"
+	_first_name = _name_data[name_key].pick_random()
+	_update_controls()
 
 func _on_reset_pressed():
 	Globals.cancel_sound.play()
@@ -108,7 +121,7 @@ func _on_reset_pressed():
 	_phy = 3
 	_men = 3
 	_hea = 3
-	_update_count_controls()
+	_update_controls()
 
 func _on_background_list_item_selected():
 	Globals.valid_sound.play()
