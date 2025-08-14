@@ -332,6 +332,9 @@ func _stop_drag_card(global_pos: Vector2):
 	var in_reserve: bool
 	if _is_in_reserve(global_pos):
 		in_reserve = true
+		if _current_card.get_parent() == reserve:
+			_abort_drag_card()
+			return
 	elif _is_in_playground(global_pos):
 		in_reserve = false
 	else:
