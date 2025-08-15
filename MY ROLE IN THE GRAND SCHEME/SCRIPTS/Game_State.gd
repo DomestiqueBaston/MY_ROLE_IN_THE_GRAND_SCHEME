@@ -397,28 +397,33 @@ func visit_doctor():
 		_last_doctor_day = get_day()
 		save_game()
 
-func start_investigation(location: LocationCard):
+func attempt_investigation(location: LocationCard):
+
+	# go to the location first
+
 	if (_player_location != PlayerLocation.OTHER
 		or _player_location_card != location):
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OTHER, location)
 
+	# check whether there is anybody there, whether the player has a warrant he
+	# can use or if he wants to break in, etc.
+
 	var npcs = location.get_npcs_present()
+	var break_in_needed = false
 
 	# if no NPCs are present, the player can either try to break in or leave
 
 	if npcs.is_empty():
-		var ok = (await Globals.dialog_overlay.confirm_break_in() and
-				  await Globals.dialog_overlay.attempt_break_in(location))
-		if not ok:
+		if not await Globals.dialog_overlay.confirm_break_in():
 			return
+		break_in_needed = true
 
 	# if NPCs are present and the player has a search warrant, ask if he wants
 	# to use it
 
 	elif GameState.player.has_search_warrant:
-		var ok = await Globals.dialog_overlay.use_search_warrant()
-		if not ok:
+		if not await Globals.dialog_overlay.use_search_warrant():
 			return
 
 	# if NPCs are present and the player does NOT have a search warrant, there
@@ -428,6 +433,33 @@ func start_investigation(location: LocationCard):
 		await Globals.dialog_overlay.no_search_warrant()
 		return
 
+	# if nobody is there and the player wants to break in, set up the pseudo-
+	# interaction (pseudo because it takes place not in the Interaction scene
+	# but in an overlay of the Main scene) and try to break in
+
+	if break_in_needed:
+		player.pick_break_in_cards()
+		_current_interaction = InteractionType.BREAK_IN
+		_current_interaction_card = location
+		save_game()
+		if not await Globals.dialog_overlay.attempt_break_in(location):
+			return
+
+	# finally, start the investigation
+
+	await start_investigation(location)
+
+##
+## Called if the game was interrupted during a break-in, to resume where we
+## left off.
+##
+func resume_break_in():
+	var ok = await Globals.dialog_overlay.attempt_break_in(
+		_current_interaction_card)
+	if ok:
+		start_investigation(_current_interaction_card)
+
+func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
 	_current_interaction_card = location

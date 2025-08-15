@@ -174,9 +174,8 @@ func confirm_break_in() -> bool:
 ## TODO: the game logic is not implemented yet, the player always succeeds!
 ##
 func attempt_break_in(location: LocationCard) -> bool:
-	var player = GameState.player
-	player.pick_break_in_cards()
 	$Overlays/Interaction_Run_Away_Break_In.enabled = true
+	var player = GameState.player
 	$Overlays/Interaction_Run_Away_Break_In.start_break_in(
 		location, player.get_mastery_cards(), player.get_fallback_cards())
 	$Overlays/Interaction_Run_Away_Break_In/Title/Break_In.show()

@@ -108,13 +108,17 @@ func _start_game():
 	_continue_game()
 
 func _continue_game():
-	if GameState.get_current_interaction() == GameState.InteractionType.NONE:
+	var interaction = GameState.get_current_interaction()
+	if interaction in [
+			GameState.InteractionType.NONE, GameState.InteractionType.BREAK_IN]:
 		var main = await _replace_scene(_main_scene)
 		var case = GameState.get_current_case()
 		if case:
 			main.populate(case)
 		main.settings.connect(_go_to_settings)
 		main.quit.connect(_go_to_option_menu)
+		if interaction == GameState.InteractionType.BREAK_IN:
+			GameState.resume_break_in()
 	else:
 		_on_interaction_started()
 

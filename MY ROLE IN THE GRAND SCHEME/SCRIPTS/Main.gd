@@ -617,7 +617,7 @@ func _handle_popup(id: int):
 		MenuItem.DIALOGUE:
 			print("start dialogue")
 		MenuItem.INVESTIGATION:
-			GameState.start_investigation(_popup_node)
+			GameState.attempt_investigation(_popup_node)
 		MenuItem.SWITCH_LINK:
 			if _popup_node is Link:
 				if _popup_node.status == Link.Status.CONFIRMED:
