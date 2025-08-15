@@ -443,6 +443,7 @@ func attempt_investigation(location: LocationCard):
 		_current_interaction_card = location
 		save_game()
 		if not await Globals.dialog_overlay.attempt_break_in(location):
+			end_interaction()
 			return
 
 	# finally, start the investigation
@@ -454,10 +455,11 @@ func attempt_investigation(location: LocationCard):
 ## left off.
 ##
 func resume_break_in():
-	var ok = await Globals.dialog_overlay.attempt_break_in(
-		_current_interaction_card)
-	if ok:
+	if await Globals.dialog_overlay.attempt_break_in(
+		_current_interaction_card):
 		start_investigation(_current_interaction_card)
+	else:
+		end_interaction()
 
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
@@ -470,6 +472,7 @@ func end_interaction():
 	player.clear_fallback_cards()
 	_current_interaction = InteractionType.NONE
 	_current_interaction_card = null
+	save_game()
 
 func get_current_interaction() -> InteractionType:
 	return _current_interaction
