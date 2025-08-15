@@ -1858,14 +1858,6 @@ the_button = NodePath("Button/Bring_It_On")
 drag_drop_line = NodePath("Drag_Drop_Line")
 enabled = false
 
-[node name="Mouse_Click_Blocker" type="Control" parent="Overlays/Interaction_Run_Away_Break_In"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -63.0
-offset_top = -13.0
-offset_right = 352.0
-offset_bottom = 275.0
-
 [node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
 visible = false
 position = Vector2(-172, -48)
