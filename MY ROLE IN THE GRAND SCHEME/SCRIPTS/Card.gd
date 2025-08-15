@@ -253,7 +253,6 @@ func _update_opacity():
 #
 func _on_card_collider_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if event is InputEventMouseButton and event.is_pressed():
-		print("input event: ", get_display_name())
 		if $Card_Animations.is_playing():
 			pass
 		elif event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
