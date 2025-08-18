@@ -156,7 +156,8 @@ func resume_collisions():
 	$Link_Texture/Link_Collider.input_pickable = true
 
 #
-# When a Link is deleted, delete the pins at its endpoints, too.
+# When a Link is deleted, delete the pins at its endpoints, and any other
+# links connected to it, too.
 #
 func _notification(what: int):
 	if what == NOTIFICATION_PREDELETE and not Engine.is_editor_hint():
