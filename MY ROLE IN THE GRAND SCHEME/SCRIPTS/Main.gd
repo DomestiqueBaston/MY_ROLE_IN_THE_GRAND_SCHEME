@@ -365,7 +365,14 @@ func _stop_drag_pin(global_pos: Vector2):
 
 	# the link the dragged pin is connected to
 
-	var link = _drag_links[0]
+	var link = _clicked_pin.get_link_reference()
+
+	# for a blocked link, the user can only move the pin to a different
+	# location on the same card or link
+
+	if link.blocked and _drop_target != _clicked_pin.backing:
+		_abort_drag_pin()
+		return
 
 	# user dropped the pin on a card
 
@@ -518,7 +525,7 @@ func _stop_linking(global_pos: Vector2):
 #
 func _set_drop_target(target: Node2D):
 	_drop_target = target
-	var ok = true
+	var ok
 
 	if _drop_target:
 
@@ -529,17 +536,34 @@ func _set_drop_target(target: Node2D):
 				ok = true
 			else:
 				var link = _clicked_pin.get_link_reference()
-				var src
-				if _clicked_pin == link.pin1:
-					src = link.pin2.backing
+				if link.blocked:
+					ok = false
 				else:
-					src = link.pin1.backing
-				ok = _can_link(src, _drop_target, link.type)
+					var src
+					if _clicked_pin == link.pin1:
+						src = link.pin2.backing
+					else:
+						src = link.pin1.backing
+					ok = _can_link(src, _drop_target, link.type)
 
 		# creating a new link
 
 		else:
 			ok = _can_link(_src_pin.backing, _drop_target, _new_link.type)
+
+	else:
+		# when dragging an existing pin, turn on the cross cursor as soon as
+		# the user leaves the original card or link
+	
+		if _clicked_pin:
+			var link = _clicked_pin.get_link_reference()
+			ok = not link.blocked
+
+		# but when creating a new link, DON'T turn on the cross cursor if the
+		# mouse is not over anything
+
+		else:
+			ok = true
 
 	if ok:
 		Globals.set_mouse_cursor(Globals.MouseCursor.CIRCLE)
@@ -626,10 +650,7 @@ func _handle_popup(id: int):
 					_popup_node.status = Link.Status.CONFIRMED
 		MenuItem.DELETE_LINK:
 			if _popup_node is Link:
-				var case = GameState.get_current_case()
-				if case:
-					case.remove_link(_popup_node)
-				_popup_node.queue_free()
+				_delete_link(_popup_node)
 				_popup_node = null
 		MenuItem.REMOVE_WARNING:
 			print("remove warning")
@@ -645,6 +666,20 @@ func _handle_submenu(id: int, submenu: int):
 		2:
 			if _popup_node is Link:
 				_popup_node.type = id
+
+func _delete_link(link: Link):
+
+	# remove the link, and any other links connected to it, from the case
+
+	var case = GameState.get_current_case()
+	if case:
+		for pin in link.get_follower_pins():
+			case.remove_link(pin.get_link_reference())
+		case.remove_link(link)
+
+	# delete the link (which also deletes any links connected to it)
+
+	link.queue_free()
 
 #
 # Called before a (modal) dialog is displayed: all input handling is paused
