@@ -33,6 +33,7 @@ enum {
 			_layout()
 
 var _max_card_count: int
+var _is_full: bool
 var _current_card: int = -1
 var _tween: Tween
 
@@ -79,14 +80,21 @@ func _input(event: InputEvent):
 	var new_card = -1
 
 	if mouse_inside:
-		var vis_card_count = mini(card_count, _max_card_count)
-		var first_card_index = card_count - vis_card_count
-		var local_pos = to_local(event.global_position)
 		var component = 0 if orientation == HORIZONTAL else 1
-		var card_index = first_card_index + \
-			int(vis_card_count * local_pos[component] / size[component])
-		if card_index < get_child_count():
-			new_card = card_index
+		var local_pos = to_local(event.global_position)[component]
+		if _is_full:
+			var vis_card_count = mini(card_count, _max_card_count)
+			var first_card_index = card_count - vis_card_count
+			var card_index = first_card_index + \
+				int(vis_card_count * local_pos / size[component])
+			if card_index < get_child_count():
+				new_card = card_index
+		else:
+			for card_index in card_count:
+				var card_pos = get_child(card_index).position[component]
+				if local_pos >= card_pos and local_pos < card_pos + Card.size[component]:
+					new_card = card_index
+					break
 
 	if _current_card == new_card:
 		return
@@ -141,11 +149,18 @@ func _input(event: InputEvent):
 func _layout():
 	var component = 0 if orientation == HORIZONTAL else 1
 	var avail_space = size[component] - Card.size[component]
+	var card_count = get_child_count()
 
 	_current_card = -1
 	_max_card_count = 1 + int(avail_space / min_card_margin)
 
-	var card_count = get_child_count()
+	if card_count == 0:
+		_is_full = false
+	else:
+		_is_full = (size[component] <=
+			Card.size[component] * card_count
+			+ min_card_margin * (card_count - 1))
+
 	var vis_card_count = mini(card_count, _max_card_count)
 	var first_card_index = card_count - vis_card_count
 
