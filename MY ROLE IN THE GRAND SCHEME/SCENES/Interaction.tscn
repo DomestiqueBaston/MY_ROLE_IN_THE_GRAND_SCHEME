@@ -330,7 +330,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
-mouse_filter = 2
+mouse_filter = 1
 theme = ExtResource("2_v84v6")
 script = ExtResource("7_xjgkp")
 
