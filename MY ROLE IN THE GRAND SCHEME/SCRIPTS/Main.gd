@@ -651,17 +651,15 @@ func _handle_submenu(id: int, submenu: int):
 # until it is done.
 #
 func _pause_input_handling():
+	process_mode = Node.PROCESS_MODE_DISABLED
 	_input_paused = true
-	set_process_input(false)
-	reserve.set_process_input(false)
 
 #
 # Called when a (modal) dialog is hidden to resume input handling.
 #
 func _resume_input_handling():
+	process_mode = Node.PROCESS_MODE_INHERIT
 	_input_paused = false
-	set_process_input(true)
-	reserve.set_process_input(true)
 
 func _on_case_changed():
 	_detach_cards()
