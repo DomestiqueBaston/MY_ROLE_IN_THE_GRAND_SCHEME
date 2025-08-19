@@ -328,16 +328,18 @@ texture = ExtResource("3_6vqkd")
 [node name="Button" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = 309.0
+offset_top = 302.0
+offset_right = 456.0
+offset_bottom = 336.0
 mouse_filter = 1
 theme = ExtResource("2_v84v6")
 script = ExtResource("7_xjgkp")
 
 [node name="Bring_It_On" type="TextureButton" parent="Button"]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_right = 147.0
+offset_bottom = 34.0
 texture_normal = ExtResource("5_46aa5")
 texture_pressed = ExtResource("7_qrm58")
 texture_hover = ExtResource("6_dhbug")
