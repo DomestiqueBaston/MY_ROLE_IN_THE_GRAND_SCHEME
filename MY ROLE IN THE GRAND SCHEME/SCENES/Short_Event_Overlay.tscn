@@ -1843,7 +1843,6 @@ position = Vector2(319, 152)
 position = Vector2(0, 12)
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
-visible = false
 position = Vector2(172, 48)
 script = ExtResource("62_smut4")
 card_area_overlays = {
@@ -1919,20 +1918,18 @@ texture = ExtResource("115_dhp6t")
 [node name="Button" type="Control" parent="Overlays/Interaction_Run_Away_Break_In"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -172.0
-offset_top = -48.0
-offset_right = 468.0
-offset_bottom = 312.0
+offset_left = 71.0
+offset_top = 207.0
+offset_right = 218.0
+offset_bottom = 241.0
 mouse_filter = 1
 theme = ExtResource("118_h4ggb")
 script = ExtResource("119_ne7xd")
 
 [node name="Bring_It_On" type="TextureButton" parent="Overlays/Interaction_Run_Away_Break_In/Button"]
 layout_mode = 0
-offset_left = -66.0
-offset_top = -46.0
-offset_right = 574.0
-offset_bottom = 314.0
+offset_right = 147.0
+offset_bottom = 34.0
 texture_normal = ExtResource("120_qe60g")
 texture_pressed = ExtResource("121_mej1r")
 texture_hover = ExtResource("122_vieyt")
