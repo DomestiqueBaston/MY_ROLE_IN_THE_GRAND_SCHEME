@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=220 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -69,21 +69,17 @@
 [ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="60_llwhl"]
 [ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="61_5iqpn"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="62_gjkrj"]
-[ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="62_smut4"]
 [ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/SHORT_EVENT/Player_Improvement_BG.png" id="67_a7igc"]
 [ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="68_q1jpv"]
 [ext_resource type="Script" uid="uid://bt5qe37nll5h5" path="res://SCRIPTS/Player_improvement_Button.gd" id="69_pf81c"]
 [ext_resource type="Theme" uid="uid://bwhe2wx8ls2rq" path="res://UI/Rowena_Theme.tres" id="70_0sc5x"]
 [ext_resource type="Script" uid="uid://d3u0wr723p4si" path="res://SCRIPTS/Rowena_Buttons.gd" id="71_x6sjh"]
-[ext_resource type="Texture2D" uid="uid://raefutvrke80" path="res://GRAPHICS/INTERACTION/Bring_It_On_Disabled.png" id="72_jo5q1"]
 [ext_resource type="Texture2D" uid="uid://dbmjuo4ovocyv" path="res://GRAPHICS/SHORT_EVENT/Rowena_BG.png" id="72_m5y04"]
 [ext_resource type="Texture2D" uid="uid://bnccay48pluv" path="res://GRAPHICS/SHORT_EVENT/Minus_Normal.png" id="73_xv6ix"]
 [ext_resource type="Texture2D" uid="uid://dsksdoxu1xfhi" path="res://GRAPHICS/SHORT_EVENT/Minus_Pressed.png" id="74_0b7va"]
 [ext_resource type="Texture2D" uid="uid://c4tdk55kjldtf" path="res://GRAPHICS/SHORT_EVENT/Minus_Hover.png" id="75_tst27"]
-[ext_resource type="Script" uid="uid://bfic46uloqv5p" path="res://SCRIPTS/Card_Stack.gd" id="76_5oqru"]
 [ext_resource type="BitMap" uid="uid://dctue2soxk2cs" path="res://GRAPHICS/SHORT_EVENT/Minus_Mask.png" id="76_u6y7r"]
 [ext_resource type="Texture2D" uid="uid://s5x8jgyl5u0p" path="res://GRAPHICS/SHORT_EVENT/Plus_Normal.png" id="77_kf4o3"]
-[ext_resource type="Script" uid="uid://re2c6g3rw3r1" path="res://SCRIPTS/Sized_Node2D.gd" id="77_smut4"]
 [ext_resource type="Texture2D" uid="uid://dkbajl6j7ktg5" path="res://GRAPHICS/SHORT_EVENT/Plus_Pressed.png" id="78_bxkh1"]
 [ext_resource type="Texture2D" uid="uid://bbs7ssu3nub6u" path="res://GRAPHICS/SHORT_EVENT/Plus_Hover.png" id="79_wt5xr"]
 [ext_resource type="BitMap" uid="uid://dohqyo1qij7qr" path="res://GRAPHICS/SHORT_EVENT/Plus_Mask.png" id="80_d324j"]
@@ -131,18 +127,6 @@
 [ext_resource type="Texture2D" uid="uid://bs3a082t7hyfi" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Hover.png" id="110_fowbj"]
 [ext_resource type="BitMap" uid="uid://cvtklig2xg1im" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Mask.png" id="111_wf7jc"]
 [ext_resource type="AudioStream" uid="uid://barjuuhijkaqq" path="res://SOUND/MISC/Metal_Drawer.ogg" id="112_d5ayf"]
-[ext_resource type="Texture2D" uid="uid://cydqmld1i1nfl" path="res://GRAPHICS/SHORT_EVENT/BG.png" id="113_ku2a5"]
-[ext_resource type="Texture2D" uid="uid://cftm8jfj7vlfi" path="res://GRAPHICS/SHORT_EVENT/Mastery_Zone.png" id="114_4721e"]
-[ext_resource type="Texture2D" uid="uid://cn2e8ojjmxn8j" path="res://GRAPHICS/SHORT_EVENT/Interaction_Zone.png" id="115_dhp6t"]
-[ext_resource type="Texture2D" uid="uid://bgupvlyk8die6" path="res://GRAPHICS/SHORT_EVENT/Fallback_Zone.png" id="117_68eaj"]
-[ext_resource type="Theme" uid="uid://dpwiujh33dm3h" path="res://UI/Run_Away_Break_In_Interaction_Theme.tres" id="118_h4ggb"]
-[ext_resource type="Script" uid="uid://cufnnlb44k16t" path="res://SCRIPTS/Run_Away_Break_In_Interaction_Button.gd" id="119_ne7xd"]
-[ext_resource type="Texture2D" uid="uid://chtlsl5br1nvv" path="res://GRAPHICS/INTERACTION/Bring_It_On_Normal.png" id="120_qe60g"]
-[ext_resource type="Texture2D" uid="uid://caiv707k6jf1c" path="res://GRAPHICS/INTERACTION/Bring_It_On_Pressed.png" id="121_mej1r"]
-[ext_resource type="Texture2D" uid="uid://b4fm72pj552c5" path="res://GRAPHICS/INTERACTION/Bring_It_On_Hover.png" id="122_vieyt"]
-[ext_resource type="BitMap" uid="uid://bfpm6a5py123e" path="res://GRAPHICS/INTERACTION/Bring_It_On_Mask.png" id="123_bdr4h"]
-[ext_resource type="Texture2D" uid="uid://c6b5jldeguvjc" path="res://GRAPHICS/SHORT_EVENT/Break_In.png" id="124_briu0"]
-[ext_resource type="Texture2D" uid="uid://ccpmarqkfa7hg" path="res://GRAPHICS/SHORT_EVENT/Run_Away.png" id="125_wowcu"]
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/SHORT_EVENT/Card_Management_BG.png" id="126_lboli"]
 [ext_resource type="Texture2D" uid="uid://cgclmrs55a25d" path="res://GRAPHICS/SHORT_EVENT/Left_Zone.png" id="127_yau06"]
 [ext_resource type="Script" uid="uid://b4r5r5y6144de" path="res://SCRIPTS/Card_Management_Zones.gd" id="128_vj0nj"]
@@ -463,15 +447,6 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7igc"]
 content_margin_left = 2.0
 content_margin_bottom = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lboli"]
-size = Vector2(154, 104)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yau06"]
-size = Vector2(76, 139)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj0nj"]
-size = Vector2(76, 139)
 
 [sub_resource type="Animation" id="Animation_gdsr2"]
 resource_name = "Flashing"
@@ -1841,141 +1816,6 @@ position = Vector2(319, 152)
 
 [node name="TMP_4_à_5_cartes" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
 position = Vector2(0, 12)
-
-[node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
-visible = false
-position = Vector2(172, 48)
-script = ExtResource("62_smut4")
-card_area_overlays = {
-NodePath("Cards/Mastery"): NodePath("Interaction_BG/Mastery_Zone"),
-NodePath("Cards/Fallback"): NodePath("Interaction_BG/Fallback_Zone"),
-NodePath("Cards/Interaction"): NodePath("Interaction_BG/Interaction_Zone")
-}
-interaction_cards = NodePath("Cards/Interaction")
-max_card_count = 2
-min_card_count = 0
-the_button = NodePath("Button/Bring_It_On")
-drag_drop_line = NodePath("Drag_Drop_Line")
-enabled = false
-
-[node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
-visible = false
-position = Vector2(-172, -48)
-
-[node name="Interaction_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
-monitoring = false
-monitorable = false
-
-[node name="Interaction" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Interaction_Area"]
-position = Vector2(316, 186)
-shape = SubResource("RectangleShape2D_lboli")
-
-[node name="Mastery_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
-monitoring = false
-monitorable = false
-
-[node name="Mastery" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Mastery_Area"]
-position = Vector2(174, 220.5)
-shape = SubResource("RectangleShape2D_yau06")
-
-[node name="Fallback_Area" type="Area2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders"]
-monitoring = false
-monitorable = false
-
-[node name="Fallback" type="CollisionShape2D" parent="Overlays/Interaction_Run_Away_Break_In/Colliders/Fallback_Area"]
-position = Vector2(459, 221.5)
-shape = SubResource("RectangleShape2D_vj0nj")
-
-[node name="Interaction_BG" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In"]
-position = Vector2(-83, -33)
-texture = ExtResource("113_ku2a5")
-centered = false
-offset = Vector2(20, 20)
-
-[node name="Mastery_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
-visible = false
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 435.0
-offset_bottom = 307.0
-texture = ExtResource("114_4721e")
-
-[node name="Fallback_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
-visible = false
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 20.0
-texture = ExtResource("117_68eaj")
-
-[node name="Interaction_Zone" type="TextureRect" parent="Overlays/Interaction_Run_Away_Break_In/Interaction_BG"]
-visible = false
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 435.0
-offset_bottom = 307.0
-texture = ExtResource("115_dhp6t")
-
-[node name="Button" type="Control" parent="Overlays/Interaction_Run_Away_Break_In"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -172.0
-offset_top = -48.0
-offset_right = 468.0
-offset_bottom = 312.0
-mouse_filter = 1
-theme = ExtResource("118_h4ggb")
-script = ExtResource("119_ne7xd")
-
-[node name="Bring_It_On" type="TextureButton" parent="Overlays/Interaction_Run_Away_Break_In/Button"]
-layout_mode = 0
-offset_left = -66.0
-offset_top = -46.0
-offset_right = 574.0
-offset_bottom = 314.0
-texture_normal = ExtResource("120_qe60g")
-texture_pressed = ExtResource("121_mej1r")
-texture_hover = ExtResource("122_vieyt")
-texture_disabled = ExtResource("72_jo5q1")
-texture_click_mask = ExtResource("123_bdr4h")
-
-[node name="Title" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
-position = Vector2(-63, -13)
-
-[node name="Break_In" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In/Title"]
-visible = false
-texture = ExtResource("124_briu0")
-centered = false
-
-[node name="Run_Away" type="Sprite2D" parent="Overlays/Interaction_Run_Away_Break_In/Title"]
-visible = false
-texture = ExtResource("125_wowcu")
-centered = false
-
-[node name="Cards" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
-position = Vector2(-172, -48)
-
-[node name="Mastery" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
-position = Vector2(137, 152)
-script = ExtResource("76_5oqru")
-orientation = 1
-size = Vector2(74, 137)
-metadata/_custom_type_script = "uid://bfic46uloqv5p"
-
-[node name="Fallback" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
-position = Vector2(422, 152)
-script = ExtResource("76_5oqru")
-orientation = 1
-size = Vector2(74, 137)
-metadata/_custom_type_script = "uid://bfic46uloqv5p"
-
-[node name="Interaction" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In/Cards"]
-position = Vector2(240, 136)
-script = ExtResource("77_smut4")
-size = Vector2(152, 100)
-
-[node name="Drag_Drop_Line" parent="Overlays/Interaction_Run_Away_Break_In" instance=ExtResource("136_lkigo")]
-visible = false
 
 [node name="Intercom" type="Node2D" parent="Overlays"]
 visible = false
@@ -4368,9 +4208,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_pressed"]
-[connection signal="mouse_entered" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_pressed"]
 [connection signal="mouse_entered" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_pressed"]
