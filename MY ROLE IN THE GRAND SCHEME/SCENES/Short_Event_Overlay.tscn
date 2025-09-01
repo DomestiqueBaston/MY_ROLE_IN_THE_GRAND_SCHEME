@@ -2954,7 +2954,6 @@ text = "No thanks..."
 script = ExtResource("92_bnyoh")
 
 [node name="Health_Issue" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Health_Issue_BG" type="Sprite2D" parent="Overlays/Health_Issue"]
 texture = ExtResource("93_b6clx")
@@ -2990,7 +2989,7 @@ position = Vector2(-136, -84)
 
 [node name="Ok" type="Button" parent="Overlays/Health_Issue/Health_Report/Buttons"]
 self_modulate = Color(1, 1, 1, 0.784314)
-offset_left = 320.0
+offset_left = 323.0
 offset_top = 248.0
 offset_right = 424.0
 offset_bottom = 256.0
@@ -3005,7 +3004,104 @@ text = "Not much of a choice."
 alignment = 2
 script = ExtResource("92_bnyoh")
 
+[node name="Add_Report" type="Control" parent="Overlays/Health_Issue"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 136.0
+offset_top = 84.0
+offset_right = 136.0
+offset_bottom = 84.0
+theme = ExtResource("88_7rvn5")
+
+[node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Add_Report"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+offset_left = 91.0
+offset_top = 33.0
+offset_right = 280.0
+offset_bottom = 160.0
+bbcode_enabled = true
+text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Addiction Report[/color][/pulse] -
+
+I gotta do something [color=#ff8864]quick[/color], 'cause it's a fact: [color=#ff1c18]I'm way too hooked[/color], and in this state, I won't [color=#ff1c18]make it much longer[/color].
+
+And thinking about how I ended up in this [color=#ff8864]mess[/color]... it's [color=#ff8864]not[/color] gonna [color=#ff1c18]fix[/color] [color=#ff8864]anything[/color]...
+
+Hell, I can barely [color=#ff8864]think straight[/color] right now."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Node2D" parent="Overlays/Health_Issue/Add_Report"]
+position = Vector2(-136, -84)
+
+[node name="Ok" type="Button" parent="Overlays/Health_Issue/Add_Report/Buttons"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 345.0
+offset_top = 248.0
+offset_right = 424.0
+offset_bottom = 256.0
+theme = ExtResource("88_7rvn5")
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
+theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+text = "Thanks Dr. Fix-It!"
+alignment = 2
+script = ExtResource("92_bnyoh")
+
+[node name="Emo_Report" type="Control" parent="Overlays/Health_Issue"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 136.0
+offset_top = 84.0
+offset_right = 136.0
+offset_bottom = 84.0
+theme = ExtResource("88_7rvn5")
+
+[node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Emo_Report"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+offset_left = 91.0
+offset_top = 33.0
+offset_right = 280.0
+offset_bottom = 160.0
+bbcode_enabled = true
+text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Emotional Report[/color][/pulse] -
+
+In this [color=#ff8864]job[/color], the [color=#ff1c18]key[/color] thing is supposed to be [color=#ff1c18]keeping cool[/color].
+But, well... That's not really [color=#ff8864]happening[/color] [color=#ff1c18]right now[/color]. Every time I think I've got a [color=#ff8864]grip on things[/color], I just [color=#ff8864]loose it again[/color]!
+
+Guess we all know by now that [color=#ff8864]keeping your nerves under control[/color] is just a [color=#ff8864]myth[/color]."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Node2D" parent="Overlays/Health_Issue/Emo_Report"]
+position = Vector2(-136, -84)
+
+[node name="Ok" type="Button" parent="Overlays/Health_Issue/Emo_Report/Buttons"]
+self_modulate = Color(1, 1, 1, 0.784314)
+offset_left = 345.0
+offset_top = 248.0
+offset_right = 424.0
+offset_bottom = 256.0
+theme = ExtResource("88_7rvn5")
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
+theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+text = "Thanks Dr. Freud!"
+alignment = 2
+script = ExtResource("92_bnyoh")
+
 [node name="Rest_Report" type="Control" parent="Overlays/Health_Issue"]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 3
 anchors_preset = 0
@@ -3035,7 +3131,7 @@ position = Vector2(-136, -84)
 
 [node name="Ok" type="Button" parent="Overlays/Health_Issue/Rest_Report/Buttons"]
 self_modulate = Color(1, 1, 1, 0.784314)
-offset_left = 297.0
+offset_left = 296.0
 offset_top = 249.0
 offset_right = 428.0
 offset_bottom = 257.0
@@ -4385,6 +4481,12 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_ok_pressed"]
+[connection signal="mouse_entered" from="Overlays/Health_Issue/Add_Report/Buttons/Ok" to="Overlays/Health_Issue/Add_Report/Buttons/Ok" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Health_Issue/Add_Report/Buttons/Ok" to="Overlays/Health_Issue/Add_Report/Buttons/Ok" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Health_Issue/Add_Report/Buttons/Ok" to="Overlays/Health_Issue/Add_Report/Buttons/Ok" method="_on_ok_pressed"]
+[connection signal="mouse_entered" from="Overlays/Health_Issue/Emo_Report/Buttons/Ok" to="Overlays/Health_Issue/Emo_Report/Buttons/Ok" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Overlays/Health_Issue/Emo_Report/Buttons/Ok" to="Overlays/Health_Issue/Emo_Report/Buttons/Ok" method="_on_mouse_exited"]
+[connection signal="pressed" from="Overlays/Health_Issue/Emo_Report/Buttons/Ok" to="Overlays/Health_Issue/Emo_Report/Buttons/Ok" method="_on_ok_pressed"]
 [connection signal="mouse_entered" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_ok_pressed"]
