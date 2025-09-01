@@ -43,8 +43,8 @@ Emo	Effets et/ou modificateur de jet de dé
 Add	Effet et/ou modificateur de jet de dé
 -5	Mort si un jet de dé contre HEA est raté
 sinon
--1HEA, +1Emo → min/max et Add = -4
--4	Malus de 2 /!\ 
+-1HEA et Add = -4
+-4	Malus de 2
 -3	Malus de 2
 -2	Malus de 1
 -1	Malus de 1
@@ -52,10 +52,10 @@ sinon
 1	Bonus de 1
 2	Bonus de 1
 3	Bonus de 2
-4	Bonus de 3 /!\ 
+4	Bonus de 3
 5	Mort si un jet de dé contre HEA est raté
 sinon
--1HEA, +1Emo → min/max et Add = 4
+-1HEA et Add = 4
 
 	- Voir également Paranoïa (Par) pour les effets sur Add.
 	- Voir aussi Système de santé/L’addiction pour le sevrage (et la replonge).
@@ -304,7 +304,7 @@ Le temps
 		Payer une facture : 1h (retour au bureau inclus).
 		Prendre 1 ou 2 doses de drogue : 1h (retour au bureau inclus).
 		…
-	- /!\ Certaines cartes d’Interaction influent sur le temps passé.
+	- Certaines cartes d’Interaction influent sur le temps passé.
 	- Seules les actions qui ne se font qu’au bureau ramènent automatiquement le joueur au bureau.
 
 Les emploi du temps
@@ -408,13 +408,13 @@ Cartes Investigation (et Spécial et Break In) :
 	- Ces cartes peuvent être jouées seules.
 	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
 	- Une fois jouées, ces cartes ne sont pas perdues.
-	- /!\ Une carte Investigation BREAK IN ne peut pas être jouée en combinaison d’une autre carte Investigation mais une carte Abstraite, oui.
+	- Une carte Investigation BREAK IN ne peut pas être jouée en combinaison d’une autre carte Investigation mais une carte Abstraite, oui.
 
 Cartes Combat (et Spécial et Run Away) :
 	- Elles sont des cartes peuvent qui se jouer uniquement en Combat.
 	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
 	- Une fois jouées, ces cartes ne sont pas perdues.
-	- /!\ Une carte Combat RUN AWAY ne peut pas être jouée en combinaison d’une autre carte Combat mais une carte Abstraite, oui.
+	- Une carte Combat RUN AWAY ne peut pas être jouée en combinaison d’une autre carte Combat mais une carte Abstraite, oui.
 
 Cartes de Lieu :
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
@@ -612,7 +612,7 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
 	- Pas d’attaque de sbire dans les enquêtes de niveau 0.
 	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale).
-	- /!\ Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr avec la prison où le joueur ne peut pas être attaqué)! /!\ 
+	- Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr avec la prison où le joueur ne peut pas être attaqué)!
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
 	- Si le joueur fouille le sbire mort, avec une probabilité de 10%, le joueur se verra révéler le nom du/d’un des coupable(s) du crime de l’enquête (aléatoirement s’il y en a plusieurs) (établissement d’un Lien Violet) et comme pour un « non sbire », on peut aussi trouver de l’argent avec les même probabilités (voir plus haut à Combat). Être attaqué n’est pas une preuve pour l’enquête.
@@ -623,7 +623,7 @@ Fuir un Combat (Joueur) – RUN AWAY
 	- La main Fallback proposera 3 cartes Abstraite et/ou Run Away aléatoires. ≠ de celles que le joueur a en main.
 	- On peut jouer Run Away seule.
 	- On ne peut pas jouer une carte Abstraite seule.
-	- /!\ On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 au jet de dé.
+	- On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 au jet de dé.
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Run Away (il ne peut y avoir qu’une carte Run Away max).
 	- Pour fuir un combat (avant qu’il ne commence), le joueur lance un dé contre round((PHY×2 + MEN + HEA)÷4).
 	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de Maîtrise, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Factures impayées, Sommeil, Veille, de Lieu, Malus d’action de Nuit, de jeu sans aucune carte.
@@ -791,7 +791,7 @@ Autres :
 
 	- Dans les json (je pense à NPC, OBJ, CASE…) on n’aura que des infos vraies. Les fausses sont générées aléatoirement en jeu.
 
-	- /!\  Si on en venait à vouloir recycler les PNJs d’une enquête à l’autre, peut-être qu’en fait, ce qui simplifierait les choses, serait de générer toute une population de PNJs dans laquelle on viendrait piocher au fur et à mesure des besoins des diverses enquêtes ! /!\ 
+	- Si on en venait à vouloir recycler les PNJs d’une enquête à l’autre, peut-être qu’en fait, ce qui simplifierait les choses, serait de générer toute une population de PNJs dans laquelle on viendrait piocher au fur et à mesure des besoins des diverses enquêtes !
 
 Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre
 	- Dans ce cadre, voici les éléments absolument nécessaires au minimum pour résoudre une enquête :
@@ -812,7 +812,7 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 	 - La différence entre Complice et Coupable dans la Fiche d’enquête est la suivante :
 		- Un Coupable est lié (en Noir) à la victime.
 		- Un Complice est lié (en Noir) au Coupable.
-	- Les Témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable. /!\  Faire en sorte qu’au départ de l’enquête cette condition soit remplie ! /!\ 
+	- Les Témoins sont liés au milieu d’un autre lien établi entre un Complice ou un Coupable et un Objet, Lieu ou un Complice/Coupable. Faire en sorte qu’au départ de l’enquête cette condition soit remplie !
 	- On caractérise un Objet en evidence en le liant en noir plein à un Coupable ou un Complice.
 	- Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
 	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
@@ -834,7 +834,7 @@ Niveau de difficulté	PNJs inutiles min	PNJs inutiles max
 5	13	19
 6	15	22
 
-/!\  Les sbires ne font pas partie du pool de PNJs, ils sont générés à chaque besoin et on se fout de tout les concernant à part leurs stats principales et secondaires, on va dire. /!\ 
+Les sbires ne font pas partie du pool de PNJs, ils sont générés à chaque besoin et on se fout de tout les concernant à part leurs stats principales et secondaires, on va dire.
 
 Enquêtes niveau 0 :
  - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
