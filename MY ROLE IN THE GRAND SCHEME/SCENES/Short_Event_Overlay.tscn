@@ -3005,6 +3005,7 @@ alignment = 2
 script = ExtResource("92_bnyoh")
 
 [node name="Add_Report" type="Control" parent="Overlays/Health_Issue"]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 3
 anchors_preset = 0
