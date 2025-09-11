@@ -501,24 +501,26 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		attrs.play_card(card)
 	attrs.apply_changes_to_player()
 
-	# roll the dice
+	# roll the die
 
 	var bonus_malus = player.get_bonus_malus()
 	print("player bonus/malus: %s" % bonus_malus)
 	if cards_played.is_empty():
 		bonus_malus += 1
-		print("no cards played => malus 1")
-	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0) + bonus_malus
+		print("no cards played malus: 1")
+	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
 	print("min roll: %s" % min_roll)
 	var roll = randi_range(1, 10)
 	print("actual roll: %s" % roll)
+	roll += bonus_malus
+	print("with bonus/malus: %s" % roll)
 
-	if roll == 10:
+	if roll >= 10:
 		print("critical failure: update HEA, Emo, Wan")
 		player.health -= 1
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
-	elif roll == 1:
+	elif roll <= 1:
 		print("critical success: update Emo")
 		player.emotion = Player.calm(player.emotion)
 		_current_interaction_bonus_malus = -1
@@ -529,7 +531,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	else:
 		print("success: margin = %s" % [min_roll - roll])
 
-	return roll == 1 or roll <= min_roll
+	return roll <= 1 or roll <= min_roll
 
 #
 # Game logic for an investigation (possibly following a break-in).
@@ -545,21 +547,25 @@ func _play_investigation(cards_played: Array[Card]):
 		attrs.play_card(card)
 	attrs.apply_changes_to_player()
 
-	# roll the dice
+	# roll the die
 
 	var bonus_malus = player.get_bonus_malus()
 	print("player bonus/malus: %s" % bonus_malus)
-	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0) \
-		+ bonus_malus + _current_interaction_bonus_malus
+	if _current_interaction_bonus_malus != 0:
+		bonus_malus += _current_interaction_bonus_malus
+		print("break-in bonus: %s" % _current_interaction_bonus_malus)
+	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
 	print("min roll: %s" % min_roll)
 	var roll = randi_range(1, 10)
 	print("actual roll: %s" % roll)
+	roll += bonus_malus
+	print("with bonus/malus: %s" % roll)
 
-	if roll == 10:
+	if roll >= 10:
 		print("critical failure: update HEA, Emo")
 		player.health -= 1
 		player.emotion -= 1
-	elif roll == 1:
+	elif roll <= 1:
 		print("critical success: update money")
 		player.money += randi_range(50, 100)
 	elif roll > min_roll:
