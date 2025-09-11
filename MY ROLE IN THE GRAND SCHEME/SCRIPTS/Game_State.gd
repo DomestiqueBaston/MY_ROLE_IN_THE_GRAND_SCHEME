@@ -510,28 +510,28 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		print("no cards played malus: 1")
 	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
 	print("min roll: %s" % min_roll)
-	var roll = randi_range(1, 10)
-	print("actual roll: %s" % roll)
-	roll += bonus_malus
-	print("with bonus/malus: %s" % roll)
+	var actual_roll = randi_range(1, 10)
+	print("actual roll: %s" % actual_roll)
+	var net_roll = actual_roll + bonus_malus
+	print("with bonus/malus: %s" % net_roll)
 
-	if roll >= 10:
+	if actual_roll == 10:
 		print("critical failure: update HEA, Emo, Wan")
 		player.health -= 1
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
-	elif roll <= 1:
+	elif actual_roll == 1:
 		print("critical success: update Emo")
 		player.emotion = Player.calm(player.emotion)
 		_current_interaction_bonus_malus = -1
-	elif roll > min_roll:
+	elif net_roll > min_roll:
 		print("failure: update Emo, Wan")
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
 	else:
-		print("success: margin = %s" % [min_roll - roll])
+		print("success: margin = %s" % [min_roll - net_roll])
 
-	return roll <= 1 or roll <= min_roll
+	return actual_roll == 1 or net_roll <= min_roll
 
 #
 # Game logic for an investigation (possibly following a break-in).
@@ -556,23 +556,23 @@ func _play_investigation(cards_played: Array[Card]):
 		print("break-in bonus: %s" % _current_interaction_bonus_malus)
 	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
 	print("min roll: %s" % min_roll)
-	var roll = randi_range(1, 10)
-	print("actual roll: %s" % roll)
-	roll += bonus_malus
-	print("with bonus/malus: %s" % roll)
+	var actual_roll = randi_range(1, 10)
+	print("actual roll: %s" % actual_roll)
+	var net_roll = actual_roll + bonus_malus
+	print("with bonus/malus: %s" % net_roll)
 
-	if roll >= 10:
+	if actual_roll == 10:
 		print("critical failure: update HEA, Emo")
 		player.health -= 1
 		player.emotion -= 1
-	elif roll <= 1:
+	elif actual_roll == 1:
 		print("critical success: update money")
 		player.money += randi_range(50, 100)
-	elif roll > min_roll:
+	elif net_roll > min_roll:
 		print("failure: update Emo")
 		player.emotion -= 1
 	else:
-		print("success: margin = %s" % [min_roll - roll])
+		print("success: margin = %s" % [min_roll - net_roll])
 
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
