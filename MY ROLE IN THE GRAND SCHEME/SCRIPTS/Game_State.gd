@@ -491,6 +491,7 @@ func resume_break_in():
 # successful.
 #
 func _play_break_in(cards_played: Array[Card]) -> bool:
+	print("\n*** break-in: %s ***" % _current_interaction_card.get_display_name())
 
 	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
 	# changes are temporary; Emo and Add changes are permanent
@@ -537,6 +538,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 # Game logic for an investigation (possibly following a break-in).
 #
 func _play_investigation(cards_played: Array[Card]):
+	print("\n*** investigation: %s ***" % _current_interaction_card.get_display_name())
 
 	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
 	# changes are temporary; Emo and Add changes are permanent
