@@ -367,19 +367,28 @@ func start_break_in(
 		$Cards/Fallback.add_child(card)
 	_start_interaction(GameState.InteractionType.BREAK_IN)
 
+##
+## After an interaction has finished, returns the cards that were played, that
+## is, that were dragged into the interaction zone.
+##
+func get_cards_played() -> Array[Card]:
+	var cards: Array[Card]
+	cards.assign(_cards_played.keys())
+	return cards
+
 func _start_interaction(type: GameState.InteractionType):
+	_cards_played.clear()
 	_interaction_type = type
 	if tv_screen:
 		tv_screen.set_interaction_type(type)
 
 #
-# Resets the scene andemits a done() signal when an interaction finishes. The
+# Resets the scene and emits a done() signal when an interaction finishes. The
 # reset is important, because this scene may be instanced within another scene,
 # meaning _ready() may only be called once. 
 #
 func _end_interaction():
 	_interaction_type = GameState.InteractionType.NONE
 	_current_card = null
-	_cards_played.clear()
 	_detach_cards()
 	done.emit()

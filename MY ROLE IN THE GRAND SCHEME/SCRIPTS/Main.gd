@@ -116,7 +116,6 @@ func _ready():
 	tree_exiting.connect(_detach_cards)
 	GameState.case_changed.connect(_on_case_changed)
 	GameState.location_changed.connect(_update_player_location_info)
-	GameState.addiction_changed.connect(_on_addiction_changed)
 
 	_update_player_location_info()
 
@@ -760,22 +759,6 @@ func _detach_cards():
 		cards.remove_child(child)
 	for child in reserve.get_children():
 		reserve.remove_child(child)
-
-func _on_addiction_changed():
-	var player = GameState.player
-	if player.addiction > -5 and player.addiction < 5:
-		return
-	var die = (
-		player.health <= 1
-		or absi(player.emotion) >= 4
-		or randi() % 10 > player.health)
-	await Globals.dialog_overlay.show_addiction_message(die)
-	if die:
-		player.die()
-	else:
-		player.addiction = 4 * signi(player.addiction)
-		player.health -= 1
-		player.emotion += signi(player.emotion)
 
 func _update_player_location_info():
 	var location = GameState.get_player_location()

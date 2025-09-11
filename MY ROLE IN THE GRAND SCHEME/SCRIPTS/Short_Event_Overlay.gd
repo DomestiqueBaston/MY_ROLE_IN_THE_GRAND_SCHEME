@@ -169,11 +169,10 @@ func confirm_break_in() -> bool:
 
 ##
 ## Displays an overlay where the player attempts to break in to the given
-## locations. Returns true if he is successful.
+## locations. Returns the cards that have been dragged to the interaction zone
+## when the player clicks on the button. 
 ##
-## TODO: the game logic is not implemented yet, the player always succeeds!
-##
-func attempt_break_in(location: LocationCard) -> bool:
+func attempt_break_in(location: LocationCard) -> Array[Card]:
 	$Overlays/Interaction_Run_Away_Break_In.enabled = true
 	var player = GameState.player
 	$Overlays/Interaction_Run_Away_Break_In.start_break_in(
@@ -186,7 +185,7 @@ func attempt_break_in(location: LocationCard) -> bool:
 	$Overlays/Interaction_Run_Away_Break_In.hide()
 	$Overlays/Interaction_Run_Away_Break_In/Title/Break_In.hide()
 	$Overlays/Interaction_Run_Away_Break_In.enabled = false
-	return true
+	return $Overlays/Interaction_Run_Away_Break_In.get_cards_played()
 
 ##
 ## Displays the visit to Doctor F dialog and waits for the player to confirm or

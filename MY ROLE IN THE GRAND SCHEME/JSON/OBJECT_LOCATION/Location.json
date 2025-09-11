@@ -22,7 +22,7 @@
 		"comment_5": "Ce lieu est considéré comme tout le temps accessible si un PNJ s'y trouve et inaccessible si personne ne s'y trouve",
 		"hangout": ["no"],
 		"reduced_card": false,
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC002": {
 		"loc_id": "LOC002_IDxxx",
@@ -46,11 +46,9 @@
 		"open_hours": ["morning", "afternoon"],
 		"hangout": ["no"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": -1
+		}
 	},
 	"LOC003": {
 		"loc_id": "LOC003_IDxxx",
@@ -74,11 +72,9 @@
 		"open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC004": {
 		"loc_id": "LOC004_IDxxx",
@@ -102,11 +98,9 @@
 		"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
 		"hangout": ["no", "secret"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": 1
+		}
 	},
 	"LOC005": {
 		"loc_id": "LOC005_IDxxx",
@@ -131,7 +125,7 @@
 		"comment_5": "exceptionnellement, les open_hours dépendent de l'emploi du temps des PNJs y travaillant",
 		"hangout": ["no"],
 		"reduced_card": false,
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC006": {
 		"loc_id": "LOC006_IDxxx",
@@ -155,11 +149,9 @@
 		"open_hours": ["morning", "afternoon"],
 		"hangout": ["no"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": 1
+		}
 	},
 	"LOC007": {
 		"loc_id": "LOC007_IDxxx",
@@ -183,11 +175,10 @@
 		"open_hours": ["h24"],
 		"hangout": ["no"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "+1", "MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": 1,
+            "MEN": -1
+		}
 	},
 	"LOC008": {
 		"loc_id": "LOC008_IDxxx",
@@ -211,11 +202,9 @@
 		"open_hours": ["h24"],
 		"hangout": ["no", "secret"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": 1
+		}
 	},
 	"LOC009": {
 		"loc_id": "LOC009_IDxxx",
@@ -239,11 +228,9 @@
 		"open_hours": ["morning", "afternoon", "evening", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": -1
+		}
 	},
 	"LOC010": {
 		"loc_id": "LOC010_IDxxx",
@@ -267,11 +254,9 @@
 		"open_hours": ["night", "we_night"],
 		"hangout": ["yes"],
 		"reduced_card": false,
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC011": {
 		"loc_id": "LOC011_IDxxx",
@@ -294,11 +279,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC012": {
 		"loc_id": "LOC012_IDxxx",
@@ -321,11 +304,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": 1
+		}
 	},
 	"LOC013": {
 		"loc_id": "LOC013_IDxxx",
@@ -348,11 +329,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening"],
 		"hangout": ["no", "secret"],
-		"bonus_malus": [
-			{
-				"effects": {"HEA": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"HEA": -1
+		}
 	},
 	"LOC014": {
 		"loc_id": "LOC014_IDxxx",
@@ -375,11 +354,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening"],
 		"hangout": ["no", "secret"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": 1
+		}
 	},
 	"LOC015": {
 		"loc_id": "LOC015_IDxxx",
@@ -402,11 +379,10 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["h24"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "-1", "HEA": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": -1,
+            "HEA": 1
+		}
 	},
 	"LOC016": {
 		"loc_id": "LOC016_IDxxx",
@@ -429,7 +405,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["h24"],
 		"hangout": ["no", "secret"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC017": {
 		"loc_id": "LOC017_IDxxx",
@@ -452,11 +428,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": 1
+		}
 	},
 	"LOC018": {
 		"loc_id": "LOC018_IDxxx",
@@ -479,11 +453,10 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "-1", "MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": -1,
+            "MEN": -1
+		}
 	},
 	"LOC019": {
 		"loc_id": "LOC019_IDxxx",
@@ -506,11 +479,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC021": {
 		"loc_id": "LOC021_IDxxx",
@@ -533,11 +504,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": -1
+		}
 	},
 	"LOC022": {
 		"loc_id": "LOC022_IDxxx",
@@ -560,7 +529,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["h24"],
 		"hangout": ["yes", "secret"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC023": {
 		"loc_id": "LOC023_IDxxx",
@@ -583,11 +552,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": -1
+		}
 	},
 	"LOC024": {
 		"loc_id": "LOC024_IDxxx",
@@ -610,11 +577,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC025": {
 		"loc_id": "LOC025_IDxxx",
@@ -637,11 +602,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["no", "secret"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC026": {
 		"loc_id": "LOC026_IDxxx",
@@ -664,11 +627,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC027": {
 		"loc_id": "LOC027_IDxxx",
@@ -691,11 +652,10 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["afternoon", "evening", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "-1", "MEN": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": -1,
+            "MEN": 1
+		}
 	},
 	"LOC028": {
 		"loc_id": "LOC028_IDxxx",
@@ -718,11 +678,10 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "+1", "MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": 1,
+            "MEN": -1
+		}
 	},
 	"LOC029": {
 		"loc_id": "LOC029_IDxxx",
@@ -745,11 +704,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening"],
 		"hangout": ["yes", "secret"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": 1
+		}
 	},
 	"LOC030": {
 		"loc_id": "LOC030_IDxxx",
@@ -772,7 +729,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["h24"],
 		"hangout": ["no", "secret"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC031": {
 		"loc_id": "LOC031_IDxxx",
@@ -795,7 +752,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC032": {
 		"loc_id": "LOC032_IDxxx",
@@ -818,11 +775,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["h24"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "-1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": -1
+		}
 	},
 	"LOC033": {
 		"loc_id": "LOC033_IDxxx",
@@ -845,11 +800,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["h24"],
 		"hangout": ["no"],
-		"bonus_malus": [
-			{
-				"effects": {"PHY": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"PHY": 1
+		}
 	},
 	"LOC034": {
 		"loc_id": "LOC034_IDxxx",
@@ -872,11 +825,9 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["yes"],
-		"bonus_malus": [
-			{
-				"effects": {"MEN": "+1"}
-			}
-		]
+		"bonus_malus": {
+			"MEN": 1
+		}
 	},
 	"LOC035": {
 		"loc_id": "LOC035_IDxxx",
@@ -899,7 +850,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC036": {
 		"loc_id": "LOC036_IDxxx",
@@ -922,7 +873,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC037": {
 		"loc_id": "LOC037_IDxxx",
@@ -945,7 +896,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC038": {
 		"loc_id": "LOC038_IDxxx",
@@ -968,7 +919,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC039": {
 		"loc_id": "LOC039_IDxxx",
@@ -991,7 +942,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC040": {
 		"loc_id": "LOC040_IDxxx",
@@ -1014,7 +965,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC041": {
 		"loc_id": "LOC041_IDxxx",
@@ -1037,7 +988,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "we_morning", "we_afternoon"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC042": {
 		"loc_id": "LOC042_IDxxx",
@@ -1060,7 +1011,7 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["no"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	},
 	"LOC043": {
 		"loc_id": "LOC043_IDxxx",
@@ -1083,6 +1034,6 @@
 		"comment_4": "uniquement des objets Evidence",
 		"open_hours": ["morning", "afternoon", "evening", "we_morning", "we_afternoon", "we_evening"],
 		"hangout": ["yes", "secret"],
-		"bonus_malus": []
+		"bonus_malus": {}
 	}
 }

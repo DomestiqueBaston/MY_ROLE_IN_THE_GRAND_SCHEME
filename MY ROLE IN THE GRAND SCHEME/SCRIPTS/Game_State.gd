@@ -114,6 +114,9 @@ signal died
 signal interaction_started
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
+var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
+var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
+var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
 
 # where game state is saved/reloaded
 const _save_path = "user://game.sav"
@@ -226,14 +229,24 @@ func _get_weeks_passed() -> int:
 	@warning_ignore("integer_division")
 	return (_hour - _start_time) / (24 * 7)
 
+#
+# Increments the given time by the given number of hours. Note that this is a
+# coroutine to be awaited, and also that the player may have died on return.
+#
 func _increment_time(hours: int):
 	var day_before = get_working_day()
 	_hour += hours
 	var day_after = get_working_day()
 	time_changed.emit()
 
+	# TODO: if player has not slept for 24 hours, force him to take a day off
+	# TODO: if wanted == 5, send player to prison
+
 	for day in range(day_before + 1, day_after + 1):
 		_new_day(day)
+		if not await player.test_health():
+			died.emit()
+			return
 
 	save_game()
 
@@ -263,7 +276,7 @@ func _new_day(day: int):
 
 	_has_visited_hub = false
 	_has_slept = false
-	player.drugs_taken_today = 0
+	player.new_day()
 
 func _send_new_bill():
 	for i in player.get_debt_count():
@@ -294,9 +307,13 @@ func get_new_crime() -> String:
 
 	return crime
 
+##
+## Lets an hour pass. Note that this is a coroutine to be awaited, and also that
+## the player may have died on return.
+##
 func pass_one_hour():
 	player.pass_one_hour()
-	_increment_time(1)
+	await _increment_time(1)
 
 ##
 ## Returns false if the player has already slept today.
@@ -304,12 +321,17 @@ func pass_one_hour():
 func can_sleep() -> bool:
 	return not _has_slept
 
+##
+## Takes the player back to the office, if he is not there already, then puts
+## him to sleep for the given number of hours. Note that this is a coroutine to
+## be awaited, and also that the player may wake up dead!
+##
 func sleep(hours: int):
 	if _player_location != PlayerLocation.OFFICE:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OFFICE)
 	await player.sleep(hours)
-	_increment_time(hours)
+	await _increment_time(hours)
 	_has_slept = true
 
 ##
@@ -442,7 +464,8 @@ func attempt_investigation(location: LocationCard):
 		_current_interaction = InteractionType.BREAK_IN
 		_current_interaction_card = location
 		save_game()
-		if not await Globals.dialog_overlay.attempt_break_in(location):
+		var cards = await Globals.dialog_overlay.attempt_break_in(location)
+		if not _play_break_in(location, cards):
 			end_interaction()
 			return
 
@@ -455,11 +478,147 @@ func attempt_investigation(location: LocationCard):
 ## left off.
 ##
 func resume_break_in():
-	if await Globals.dialog_overlay.attempt_break_in(
-		_current_interaction_card):
+	var cards = await Globals.dialog_overlay.attempt_break_in(
+		_current_interaction_card)
+	if _play_break_in(_current_interaction_card, cards):
 		start_investigation(_current_interaction_card)
 	else:
 		end_interaction()
+
+#
+# Class for handling changes to the player's primary and secondary attributes
+# during an interaction.
+#
+class PlayerAttrs:
+	var PHY: int
+	var MEN: int
+	var HEA: int
+	var Emo: int
+	var Add: int
+	var max_health: int
+
+	func _init(player: Player):
+		PHY = player.physical
+		MEN = player.mental
+		HEA = player.health
+		Emo = player.emotion
+		Add = player.addiction
+		max_health = player.max_health
+
+	func apply_changes_to_player(player: Player):
+		player.emotion = Emo
+		player.addiction = Add
+
+	func apply_bonus_malus(bonus_malus: Dictionary):
+		for key in bonus_malus:
+			var before = self[key]
+			match key:
+				"PHY", "MEN":
+					self[key] += bonus_malus[key]
+				"HEA":
+					HEA = mini(max_health, HEA + bonus_malus[key])
+				"Emo", "Add":
+					var attr_value = self[key]
+					var dict_value = bonus_malus[key]
+					if dict_value is String and dict_value.begins_with("mag"):
+						var change = dict_value.substr(3).to_int()
+						if change > 0:
+							if attr_value >= 0:
+								attr_value += change
+							else:
+								attr_value -= change
+						elif change < 0:
+							if attr_value > 0:
+								attr_value = maxi(0, attr_value + change)
+							elif attr_value < 0:
+								attr_value = mini(0, attr_value - change)
+					else:
+						attr_value += dict_value as int
+					self[key] = attr_value
+			var after = self[key]
+			print("card bonus/malus: %s %s" % [key, after - before])
+
+	func is_condition_met(attr: String, condition: String) -> bool:
+		var op = condition.substr(0, 1)
+		var value = condition.substr(1).to_int()
+		match op:
+			'>':
+				return self[attr] > value
+			'<':
+				return self[attr] > value
+			'=':
+				return self[attr] == value
+			'!':
+				return self[attr] != value
+			_:
+				return false
+
+	func are_conditions_met(conditions: Dictionary) -> bool:
+		for attr in conditions:
+			if not is_condition_met(attr, conditions[attr]):
+				return false
+		return true
+
+#
+# Game logic for a break-in. Given the location and the optional cards played
+# (break-in and/or abstract cards), rolls the dice to determine whether the
+# break-in is successful or not. Returns true if the break-in is successful.
+#
+func _play_break_in(location: LocationCard, cards_played: Array[Card]) -> bool:
+
+	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
+	# changes are temporary; Emo and Add changes are permanent
+
+	var attrs = PlayerAttrs.new(player)
+	var loc_info = _location_data[location.database_id]
+	attrs.apply_bonus_malus(loc_info.get("bonus_malus", {}))
+
+	for card in cards_played:
+		if card is InvestigationCard:
+			var investigation_info = _investigation_data[card.database_id]
+			print("applying card: %s" % investigation_info["name"])
+			attrs.apply_bonus_malus(investigation_info.get("bonus_malus", {}))
+		elif card is AbstractCard:
+			var abstract_info = _abstract_data[card.database_id]
+			print("applying card: %s" % abstract_info["name"])
+			for entry in abstract_info.get("bonus_malus", []):
+				var conditions = entry.get("conditions", "")
+				if attrs.are_conditions_met(conditions):
+					var effects = entry.get("effects", {})
+					attrs.apply_bonus_malus(effects)
+					break
+			player.remove_mastery_card(card)
+
+	attrs.apply_changes_to_player(player)
+
+	# roll the dice
+
+	var bonus_malus = player.get_bonus_malus()
+	print("player bonus/malus: %s" % bonus_malus)
+	if cards_played.is_empty():
+		bonus_malus += 1
+		print("no cards played => malus 1")
+	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0) + bonus_malus
+	print("min roll: %s" % min_roll)
+	var roll = randi_range(1, 10)
+	print("actual roll: %s" % roll)
+
+	if roll == 10:
+		print("critical failure: update HEA, Emo, Wan")
+		player.health -= 1
+		player.emotion = Player.exacerbate(player.emotion)
+		player.wanted += 1
+	elif roll == 1:
+		print("critical success: update Emo")
+		player.emotion = Player.calm(player.emotion)
+	elif roll > min_roll:
+		print("failure: update Emo, Wan")
+		player.emotion = Player.exacerbate(player.emotion)
+		player.wanted += 1
+	else:
+		print("success: margin = %s" % [min_roll - roll])
+
+	return roll == 1 or roll <= min_roll
 
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
@@ -472,7 +631,10 @@ func end_interaction():
 	player.clear_fallback_cards()
 	_current_interaction = InteractionType.NONE
 	_current_interaction_card = null
-	save_game()
+	if await player.test_health():
+		save_game()
+	else:
+		died.emit()
 
 func get_current_interaction() -> InteractionType:
 	return _current_interaction

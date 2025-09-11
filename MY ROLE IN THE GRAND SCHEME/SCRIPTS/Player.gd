@@ -189,17 +189,35 @@ func set_health(hea: int):
 		if _signal_pause == 0:
 			GameState.health_changed.emit()
 
+##
+## Checks the player's health, emotion and addiction levels, and returns false
+## if he has died. Note that if his emotion level reaches -5 or 5, that has
+## negative consequences for his addiction level. And if his addiction level
+## reaches -5 or 5, a message is displayed, indicating whether or not he has
+## survived. As a result, this function is a coroutine to be awaited.
+##
+func test_health() -> bool:
+	if health <= 0:
+		return false
+
+	if emotion <= -5 or emotion >= 5:
+		addiction += 1 if addiction > 0 else -1
+		emotion = 4 * signi(emotion)
+
+	if addiction <= -5 or addiction >= 5:
+		var die = (health == 1 or randi_range(1, 10) > health)
+		await Globals.dialog_overlay.show_addiction_message(die)
+		if die:
+			return false
+		addiction = 4 * signi(addiction)
+
+	return true
+
 func get_health() -> int:
 	return health
 
 func set_emotion(emo: int):
 	emo = clampi(emo, -5, 5)
-	if emo == -5:
-		addiction += 1 if addiction > 0 else -1
-		emo = -4
-	elif emo == 5:
-		addiction += 1 if addiction >= 0 else -1
-		emo = 4
 	if emotion != emo:
 		emotion = emo
 		if _signal_pause == 0:
@@ -210,7 +228,7 @@ func set_emotion(emo: int):
 ## increases if it is negative or decreases if it is positive.
 ##
 func improve_emotion(how_much: int):
-	set_emotion(_calm(emotion, how_much))
+	set_emotion(calm(emotion, how_much))
 
 func get_emotion() -> int:
 	return emotion
@@ -227,7 +245,7 @@ func set_addiction(add: int):
 ## increases if it is negative or decreases if it is positive.
 ##
 func improve_addiction(how_much: int):
-	set_addiction(_calm(addiction, how_much))
+	set_addiction(calm(addiction, how_much))
 
 func get_addiction() -> int:
 	return addiction
@@ -305,6 +323,18 @@ func clear_mastery_cards():
 	_mastery_cards.clear()
 
 ##
+## Removes the given card from the player's "mastery" deck, if found there, and
+## deletes it. Returns true if successful, false if the card is not in the deck.
+##
+func remove_mastery_card(card: Card) -> bool:
+	var index = _mastery_cards.find(card)
+	if index < 0:
+		return false
+	_mastery_cards.remove_at(index)
+	card.queue_free()
+	return true
+
+##
 ## Returns the cards the player has in his temporary "fallback" deck for
 ## interactions.
 ##
@@ -374,7 +404,11 @@ func pass_one_hour():
 			2:
 				health += 1
 
-func _exacerbate(start_value: int, how_much: int) -> int:
+##
+## Given the current value of a signed attribute (emotion or addiction),
+## returns a value that is worse (farther from zero) by how_much.
+##
+static func exacerbate(start_value: int, how_much: int = 1) -> int:
 	if start_value < 0:
 		return start_value - how_much
 	elif start_value > 0:
@@ -384,7 +418,11 @@ func _exacerbate(start_value: int, how_much: int) -> int:
 	else:
 		return -how_much
 
-func _calm(start_value: int, how_much: int) -> int:
+##
+## Given the current value of a signed attribute (emotion or addiction),
+## returns a value that is better (closer to zero) by at most how_much.
+##
+static func calm(start_value: int, how_much: int = 1) -> int:
 	if start_value == 0:
 		return start_value
 	elif start_value < 0:
@@ -419,44 +457,91 @@ func sleep(hours: int):
 	match hours:
 		4:
 			health += dream_health_bonus
-			emotion = _exacerbate(emotion, 1)
-			addiction = _exacerbate(addiction, 1)
-			_sleep_bonus_malus = -2
+			emotion = exacerbate(emotion, 1)
+			addiction = exacerbate(addiction, 1) - 1
+			_sleep_bonus_malus = 2
 		5:
 			health += dream_health_bonus
-			emotion = _exacerbate(emotion, 1)
-			_sleep_bonus_malus = -1
+			emotion = exacerbate(emotion, 1)
+			addiction -= 1
+			_sleep_bonus_malus = 1
 		6:
 			health += dream_health_bonus
-			_sleep_bonus_malus = -1
+			addiction -= 1
+			_sleep_bonus_malus = 1
 		7:
 			health += 1 + dream_health_bonus
+			addiction -= 1
 			_sleep_bonus_malus = 0
 		8:
 			health += 1 + dream_health_bonus
-			emotion = _calm(emotion, 1)
+			emotion = calm(emotion, 1)
+			addiction -= 1
 			_sleep_bonus_malus = 0
 		9:
 			health += 1 + dream_health_bonus
-			emotion = _calm(emotion, 2)
+			emotion = calm(emotion, 2)
+			addiction -= 1
 			_sleep_bonus_malus = 0
 		10:
 			health += 2 + dream_health_bonus
-			emotion = _calm(emotion, 1)
-			_sleep_bonus_malus = 1
+			emotion = calm(emotion, 1)
+			addiction -= 1
+			_sleep_bonus_malus = -1
 		11:
 			health += 2 + dream_health_bonus
-			emotion = _calm(emotion, 2)
-			_sleep_bonus_malus = 1
+			emotion = calm(emotion, 2)
+			addiction -= 1
+			_sleep_bonus_malus = -1
 		12:
 			health += 3 + dream_health_bonus
-			emotion = _calm(emotion, 1)
-			_sleep_bonus_malus = 2
+			emotion = calm(emotion, 1)
+			addiction -= 1
+			_sleep_bonus_malus = -2
 
-	addiction -= 1
+##
+## Call this at the start of each new day, to tell the player he hasn't taken
+## any drugs yet today, and to reduce his "wanted" level by 1.
+##
+func new_day():
+	drugs_taken_today = 0
+	if wanted > 0:
+		wanted -= 1
 
-func die():
-	GameState.died.emit()
+##
+## Returns a bonus/malus to be added to dice rolls, depending on the player's
+## emotion, addiction and wanted levels, how long it has been since he slept,
+## and how well he slept last time. A negative number is a bonus, a positive
+## number is a malus.
+##
+func get_bonus_malus() -> int:
+	var ret = _sleep_bonus_malus
+
+	var time_awake = get_hours_awake()
+	if time_awake > 16:
+		@warning_ignore("integer_division")
+		ret += (time_awake - 16) / 2
+
+	if absi(emotion) > 2:
+		ret += 1
+	elif emotion == 0:
+		ret -= 1
+
+	if addiction <= -3:
+		ret += 2
+	elif addiction < 0:
+		ret += 1
+	elif addiction >= 4:
+		ret -= 3
+	elif addiction == 3:
+		ret -= 2
+	elif addiction > 0:
+		ret -= 1
+
+	if wanted > 1:
+		ret += wanted - 1
+
+	return ret
 
 #
 # For save/load.
