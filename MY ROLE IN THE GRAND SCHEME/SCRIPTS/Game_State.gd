@@ -114,9 +114,6 @@ signal died
 signal interaction_started
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
-var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
-var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
-var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
 
 # where game state is saved/reloaded
 const _save_path = "user://game.sav"
@@ -152,6 +149,7 @@ var _player_location_card: LocationCard
 # current interaction
 var _current_interaction: InteractionType = InteractionType.NONE
 var _current_interaction_card: Card
+var _current_interaction_bonus_malus: int
 
 func _ready():
 	load_game()
@@ -168,6 +166,7 @@ func start_game():
 	_player_location_card = null
 	_current_interaction = InteractionType.NONE
 	_current_interaction_card = null
+	_current_interaction_bonus_malus = 0
 
 	cases.clear()
 	for i in 5:
@@ -465,7 +464,7 @@ func attempt_investigation(location: LocationCard):
 		_current_interaction_card = location
 		save_game()
 		var cards = await Globals.dialog_overlay.attempt_break_in(location)
-		if not _play_break_in(location, cards):
+		if not _play_break_in(cards):
 			end_interaction()
 			return
 
@@ -480,116 +479,27 @@ func attempt_investigation(location: LocationCard):
 func resume_break_in():
 	var cards = await Globals.dialog_overlay.attempt_break_in(
 		_current_interaction_card)
-	if _play_break_in(_current_interaction_card, cards):
+	if _play_break_in(cards):
 		start_investigation(_current_interaction_card)
 	else:
 		end_interaction()
 
 #
-# Class for handling changes to the player's primary and secondary attributes
-# during an interaction.
+# Game logic for a break-in. Given the current location card, and the optional
+# cards played (break-in and/or abstract cards), rolls the dice to determine
+# whether the break-in is successful or not. Returns true if the break-in is
+# successful.
 #
-class PlayerAttrs:
-	var PHY: int
-	var MEN: int
-	var HEA: int
-	var Emo: int
-	var Add: int
-	var max_health: int
-
-	func _init(player: Player):
-		PHY = player.physical
-		MEN = player.mental
-		HEA = player.health
-		Emo = player.emotion
-		Add = player.addiction
-		max_health = player.max_health
-
-	func apply_changes_to_player(player: Player):
-		player.emotion = Emo
-		player.addiction = Add
-
-	func apply_bonus_malus(bonus_malus: Dictionary):
-		for key in bonus_malus:
-			var before = self[key]
-			match key:
-				"PHY", "MEN":
-					self[key] += bonus_malus[key]
-				"HEA":
-					HEA = mini(max_health, HEA + bonus_malus[key])
-				"Emo", "Add":
-					var attr_value = self[key]
-					var dict_value = bonus_malus[key]
-					if dict_value is String and dict_value.begins_with("mag"):
-						var change = dict_value.substr(3).to_int()
-						if change > 0:
-							if attr_value >= 0:
-								attr_value += change
-							else:
-								attr_value -= change
-						elif change < 0:
-							if attr_value > 0:
-								attr_value = maxi(0, attr_value + change)
-							elif attr_value < 0:
-								attr_value = mini(0, attr_value - change)
-					else:
-						attr_value += dict_value as int
-					self[key] = attr_value
-			var after = self[key]
-			print("card bonus/malus: %s %s" % [key, after - before])
-
-	func is_condition_met(attr: String, condition: String) -> bool:
-		var op = condition.substr(0, 1)
-		var value = condition.substr(1).to_int()
-		match op:
-			'>':
-				return self[attr] > value
-			'<':
-				return self[attr] > value
-			'=':
-				return self[attr] == value
-			'!':
-				return self[attr] != value
-			_:
-				return false
-
-	func are_conditions_met(conditions: Dictionary) -> bool:
-		for attr in conditions:
-			if not is_condition_met(attr, conditions[attr]):
-				return false
-		return true
-
-#
-# Game logic for a break-in. Given the location and the optional cards played
-# (break-in and/or abstract cards), rolls the dice to determine whether the
-# break-in is successful or not. Returns true if the break-in is successful.
-#
-func _play_break_in(location: LocationCard, cards_played: Array[Card]) -> bool:
+func _play_break_in(cards_played: Array[Card]) -> bool:
 
 	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
 	# changes are temporary; Emo and Add changes are permanent
 
-	var attrs = PlayerAttrs.new(player)
-	var loc_info = _location_data[location.database_id]
-	attrs.apply_bonus_malus(loc_info.get("bonus_malus", {}))
-
+	var attrs = InteractionAttributes.new()
+	attrs.play_card(_current_interaction_card)
 	for card in cards_played:
-		if card is InvestigationCard:
-			var investigation_info = _investigation_data[card.database_id]
-			print("applying card: %s" % investigation_info["name"])
-			attrs.apply_bonus_malus(investigation_info.get("bonus_malus", {}))
-		elif card is AbstractCard:
-			var abstract_info = _abstract_data[card.database_id]
-			print("applying card: %s" % abstract_info["name"])
-			for entry in abstract_info.get("bonus_malus", []):
-				var conditions = entry.get("conditions", "")
-				if attrs.are_conditions_met(conditions):
-					var effects = entry.get("effects", {})
-					attrs.apply_bonus_malus(effects)
-					break
-			player.remove_mastery_card(card)
-
-	attrs.apply_changes_to_player(player)
+		attrs.play_card(card)
+	attrs.apply_changes_to_player()
 
 	# roll the dice
 
@@ -611,6 +521,7 @@ func _play_break_in(location: LocationCard, cards_played: Array[Card]) -> bool:
 	elif roll == 1:
 		print("critical success: update Emo")
 		player.emotion = Player.calm(player.emotion)
+		_current_interaction_bonus_malus = -1
 	elif roll > min_roll:
 		print("failure: update Emo, Wan")
 		player.emotion = Player.exacerbate(player.emotion)
@@ -620,6 +531,43 @@ func _play_break_in(location: LocationCard, cards_played: Array[Card]) -> bool:
 
 	return roll == 1 or roll <= min_roll
 
+#
+# Game logic for an investigation (possibly following a break-in).
+#
+func _play_investigation(cards_played: Array[Card]):
+
+	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
+	# changes are temporary; Emo and Add changes are permanent
+
+	var attrs = InteractionAttributes.new()
+	attrs.play_card(_current_interaction_card)
+	for card in cards_played:
+		attrs.play_card(card)
+	attrs.apply_changes_to_player()
+
+	# roll the dice
+
+	var bonus_malus = player.get_bonus_malus()
+	print("player bonus/malus: %s" % bonus_malus)
+	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0) \
+		+ bonus_malus + _current_interaction_bonus_malus
+	print("min roll: %s" % min_roll)
+	var roll = randi_range(1, 10)
+	print("actual roll: %s" % roll)
+
+	if roll == 10:
+		print("critical failure: update HEA, Emo")
+		player.health -= 1
+		player.emotion -= 1
+	elif roll == 1:
+		print("critical success: update money")
+		player.money += randi_range(50, 100)
+	elif roll > min_roll:
+		print("failure: update Emo")
+		player.emotion -= 1
+	else:
+		print("success: margin = %s" % [min_roll - roll])
+
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
@@ -627,10 +575,14 @@ func start_investigation(location: LocationCard):
 	save_game()
 	interaction_started.emit()
 
-func end_interaction():
+func end_interaction(cards_played: Array[Card] = []):
+	if _current_interaction == InteractionType.INVESTIGATION:
+		_play_investigation(cards_played)
+
 	player.clear_fallback_cards()
 	_current_interaction = InteractionType.NONE
 	_current_interaction_card = null
+	_current_interaction_bonus_malus = 0
 	if await player.test_health():
 		save_game()
 	else:
@@ -715,6 +667,7 @@ func assign(other: GameState):
 	_player_location_card = other._player_location_card
 	_current_interaction = other._current_interaction
 	_current_interaction_card = other._current_interaction_card
+	_current_interaction_bonus_malus = other._current_interaction_bonus_malus
 
 #
 # For save/load.
@@ -771,6 +724,8 @@ func get_json_dict():
 		dict["interaction"] = _current_interaction
 		if _current_interaction_card:
 			dict["interaction_card"] = _current_interaction_card.get_unique_id()
+		if _current_interaction_bonus_malus != 0:
+			dict["interaction_bonus_malus"] = _current_interaction_bonus_malus
 
 	return dict
 
@@ -799,6 +754,7 @@ func restore(dict, catalog):
 		_current_interaction = dict.interaction
 		if "interaction_card" in dict:
 			_current_interaction_card = catalog[dict.interaction_card]
+		_current_interaction_bonus_malus = dict.get("interaction_bonus_malus", 0)
 
 #
 # For save/load.

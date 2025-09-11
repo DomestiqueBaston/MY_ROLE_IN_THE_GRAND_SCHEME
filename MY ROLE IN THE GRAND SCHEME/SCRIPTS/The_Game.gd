@@ -138,7 +138,8 @@ func _on_interaction_started():
 			GameState.player.get_fallback_cards())
 
 func _on_interaction_ended():
-	GameState.end_interaction()
+	var interaction_scene = $Active_Scene.get_child(0)
+	GameState.end_interaction(interaction_scene.get_cards_played())
 	_continue_game()
 
 func _quit():
