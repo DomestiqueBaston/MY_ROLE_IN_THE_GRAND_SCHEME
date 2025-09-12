@@ -468,7 +468,7 @@ Les interactions : Dialogue, Combat et Investigation
 	- Tout PNJ découvert ultérieurement sera donné, SANS MENSONGE, par son nom et son adresse. Le reste des infos sera sujet à mensonge (voir règle concernant les mensonges plus bas) MAIS… Un PNJ ne peut pas mentir concernant les informations liées aux relations sociales et de hangout à moins d’être coupable ou complice !
 	- Les jets de dé pour Combat et Dialogue sont basés sur un test de caractéristiques du joueur contre celles du PNJ.
 	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement.
-	- Bonus de 1 aux jets de dé avec les cartes en Main de Maîtrise.
+	- Malus de 1 aux jets de dé avec chaque carte jouée prise dans la main de Fallback.
 	- On ne peut pas se débarrasser de la carte sur laquelle « Player_Location.tscn » se trouve. Pour cela, il faut quitter le lieu.
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant le lendemain sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
@@ -488,7 +488,7 @@ Dialogue
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Bonus de 1 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, Maîtrise, d’Evidence (bonne ou mauvaise utilisation), de difficulté de l’enquête, de Rep, d’Emo, d’Add, de Wan, de Factures impayées, de Sommeil, de Veille, de Lieu (sur place uniquement, pas une carte jouée), d’action de Nuit, de Bonus dû à la carte Combat Special « Ne pas tuer ! ».
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, Non-Maîtrise, d’Evidence (bonne ou mauvaise utilisation), de difficulté de l’enquête, de Rep, d’Emo, d’Add, de Wan, de Factures impayées, de Sommeil, de Veille, de Lieu (sur place uniquement, pas une carte jouée), d’action de Nuit, de Bonus dû à la carte Combat Special « Ne pas tuer ! ».
 		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de Mensonge (voir plus bas), tentative ratée de fuite et précédente fuite de Dialogue.
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
 	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
@@ -563,7 +563,7 @@ Combat
 	- La main Fall back proposera 5 cartes Combat, Combat Spécial et Abstraite aléatoires. 2 cartes Combat minimum. ≠ de celles que le joueur a en main.
 	- Un Combat durera 2h.
 	- Le jet de dé de base pour un Combat est : round((PHY×2 + MEN + HEA)÷4).
-		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de Maîtrise, de difficulté de l’enquête, d’Emo, d’Add, de Wan, de Rep, de Factures impayées, de Sommeil, de Veille, de Lieu , Malus d’action de Nuit.
+		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Combat (incluses Spécial) et Abstraite, de Non-Maîtrise, de difficulté de l’enquête, d’Emo, d’Add, de Wan, de Rep, de Factures impayées, de Sommeil, de Veille, de Lieu , Malus d’action de Nuit.
 		Pour le PNJ : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
 	- Un échec signifie que le protagoniste rate son coup.
@@ -626,7 +626,7 @@ Fuir un Combat (Joueur) – RUN AWAY
 	- On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 au jet de dé.
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Run Away (il ne peut y avoir qu’une carte Run Away max).
 	- Pour fuir un combat (avant qu’il ne commence), le joueur lance un dé contre round((PHY×2 + MEN + HEA)÷4).
-	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de Maîtrise, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Factures impayées, Sommeil, Veille, de Lieu, Malus d’action de Nuit, de jeu sans aucune carte.
+	- Viendront s’ajouter ou se soustraire les éventuels bonus/malus de carte Run Away et cartes Abstraite, de Non-Maîtrise, de difficulté de l’enquête, bonus/malus de Emo, Add, Wan, Rep, Factures impayées, Sommeil, Veille, de Lieu, Malus d’action de Nuit, de jeu sans aucune carte.
 	- En cas de réussite, aucun effet, le joueur fuit.
 	- En cas de réussite critique, +1Emo → 0. La règle de progression s’applique.
 	- En cas d’échec, le joueur prend +1Emo → Min/Max et reste pour le Combat qui va suivre.
@@ -642,7 +642,7 @@ Investigation
 	- On ne doit théoriquement investiguer un Lieu qu’avec une autorisation de fouille (mais voir plus loin).
 	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois. Et pas pendant la Paranoïa.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
-	- Pour le joueur (uniquement!) : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de Maîtrise, de difficulté de l’enquête, d’Emo, d’Add et Wan, de Factures impayées, de Sommeil, de Veille, de Lieu, Malus d’action de Nuit, bonus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
+	- Pour le joueur (uniquement!) : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de Non-Maîtrise, de difficulté de l’enquête, d’Emo, d’Add et Wan, de Factures impayées, de Sommeil, de Veille, de Lieu, Malus d’action de Nuit, bonus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
 	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par round(marge de réussite de l’investigation÷3). Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes (si applicable).
 	- Une réussite critique donne de +50Dø à +100Dø en plus de ce qui est trouvé avec une réussite « normale ». La règle de progression s’applique.
 	- Un échec donne -1Emo.
@@ -664,7 +664,7 @@ Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à 
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Break in. ≠ de celles que le joueur a en main.
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
 	- On peut tenter l’action sans carte du tout avec un malus de 1.
-	- Le jet de dé de base se fera sur round((PHY+MEN × 2+HEA)÷4). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Maîtrise, de Difficulté d’enquête, d’Emo, d’Add, de Wan, de Sommeil, de Veille, de Nuit, de Lieu (uniquement sur place) et de jeu sans carte.
+	- Le jet de dé de base se fera sur round((PHY+MEN × 2+HEA)÷4). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Non-Maîtrise, de Difficulté d’enquête, d’Emo, d’Add, de Wan, de Sommeil, de Veille, de Nuit, de Lieu (uniquement sur place) et de jeu sans carte.
 	- En cas de réussite critique, +1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit. La règle de progression s’applique.
 	- En cas d’échec, le joueur prendra +1Wan, +1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
 	- En cas d’échec critique, -1HEA, +1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain. Il peut atteindre le seuil pour aller en prison et les règles à ce sujet s’appliquent. La règle de progression s’applique.
