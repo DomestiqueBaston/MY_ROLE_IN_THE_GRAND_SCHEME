@@ -200,9 +200,9 @@ func test_health() -> bool:
 	if health <= 0:
 		return false
 
-	if emotion <= -5 or emotion >= 5:
+	while emotion <= -5 or emotion >= 5:
 		addiction += 1 if addiction > 0 else -1
-		emotion = 4 * signi(emotion)
+		emotion -= signi(emotion)
 
 	if addiction <= -5 or addiction >= 5:
 		var die = (health == 1 or randi_range(1, 10) > health)
