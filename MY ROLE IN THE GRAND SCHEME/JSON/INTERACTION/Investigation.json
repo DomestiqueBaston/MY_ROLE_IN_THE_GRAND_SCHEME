@@ -214,7 +214,7 @@
 	"INB001": {
 		"name": "Break the Door",
 		"type": "Investigation BREAK-IN",
-		"description": "Force your way through the door.",
+		"description": "Force your way through the door (matter over mind).",
 		"info": "- BREAK THE DOOR -\n\nForce your way through the door, gaining immediate access but at the cost of mental fatigue. This method is fast but loud, leaving you vulnerable and possibly attracting unwanted attention.\n\n''Sometimes, force is the only way through.''",
 		"bonus_malus": {
 			"PHY": 2,
@@ -224,7 +224,7 @@
 	"INB002": {
 		"name": "Force the Lock",
 		"type": "Investigation BREAK-IN",
-		"description": "Pick the lock to gain access.",
+		"description": "Pick the lock to gain access (mind in turmoil).",
 		"info": "- FORCE THE LOCK -\n\nPick the lock to gain access quietly and efficiently. While this approach avoids making noise, it demands mental focus and precision, providing a small boost after success.\n\n''A delicate touch can open the hardest of doors.''",
 		"bonus_malus": {
 			"MEN": 1,
@@ -234,7 +234,7 @@
 	"INB003": {
 		"name": "Climb the Gutter",
 		"type": "Investigation BREAK-IN",
-		"description": "Climb up the building using the gutter.",
+		"description": "Climb up the building using the gutter (strength strain).",
 		"info": "- CLIMB THE GUTTER -\n\nUse the building's gutter to climb up and gain access. This method requires physical strength and agility, but rewards you with an easy access.\n\n''When the door's locked, sometimes the only way in is up.''",
 		"bonus_malus": {
 			"PHY": 1,
@@ -244,7 +244,7 @@
 	"INB004": {
 		"name": "Disable the Security",
 		"type": "Investigation BREAK-IN",
-		"description": "Neutralize the security system.",
+		"description": "Neutralize the security system (mental focus).",
 		"info": "- DISABLE THE SECURITY -\n\nNeutralize the security system to gain unrestricted access. This task sharpens your mental focus but may come with a sense of tension or stress, as it requires precision and concentration.\n\n''Silence the alarms, and the path will be clear.''",
 		"bonus_malus": {
 			"MEN": 1

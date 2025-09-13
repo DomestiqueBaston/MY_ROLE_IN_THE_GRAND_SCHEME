@@ -236,7 +236,7 @@
 	"COS001": {
 		"name": "Adrenaline!",
 		"type": "Combat SPECIAL",
-		"description": "Increase your dice roll by 1, emotional effects ±1.",
+		"description": "An adrenaline rush (craving builds).",
 		"info": "- ADRENALINE! -\n\nA surge of energy courses through your veins, heightening your reflexes and strength for a crucial moment. This sudden rush gives you an extra boost on your next move, but the emotional volatility of the moment may leave you more susceptible to emotional swings.\n\n''I live for this shit! Get some!''",
 		"bonus_malus": [
 			{
@@ -254,7 +254,7 @@
 	"COS002": {
 		"name": "Disarm!",
 		"type": "Combat SPECIAL",
-		"description": "Disarm the opponent, giving them a penalty to their dice roll.",
+		"description": "Disarm the opponent, giving them a disadvantage.",
 		"info": "- DISARM! -\n\nA swift move to disarm your opponent, leaving them without their advantage and reducing their effectiveness. By taking control of the situation, you force them into a defensive position. The success of such a move depends on perfect timing and precision.\n\n''You'll have to try harder than that if you want to keep your edge!''",
 		"bonus_malus": [
 			{
@@ -269,9 +269,9 @@
 		]
 	},
 	"COS003": {
-		"name": "All or Nothing!",
+		"name": "Double or Nothing!",
 		"type": "Combat SPECIAL",
-		"description": "Increase your dice roll by 1, and amplify emotional effects.",
+		"description": "Go all in (gambles with sanity).",
 		"info": "- ALL OR NOTHING! -\n\nYou go all in, taking a risky approach that amplifies your power at the cost of your emotional stability. The stakes are high as you push yourself to the limit, but the result could either be a game-changer or a total collapse, depending on how well you manage the intensity of the moment.\n\n''This is it! No turning back now!''",
 		"bonus_malus": [
 			{
@@ -288,7 +288,7 @@
 	"COS004": {
 		"name": "Do Not Kill!",
 		"type": "Combat SPECIAL",
-		"description": "If the opponent would die, their health is set to 1. Dialogue becomes available with the opponent.",
+		"description": "If the opponent dies, he's disabled instead (difficult but dialogue possible).",
 		"info": "- DO NOT KILL! -\n\nA decision in the heat of battle to spare your opponent's life, offering them a chance to survive and converse. This action allows for a moment of dialogue, but the cost is a temporary reduction in your emotional intensity, as mercy comes at a personal cost.\n\n''I could end this... but I won't. Let's talk, now, you little rat!''",
 		"bonus_malus": [
 			{
@@ -307,7 +307,7 @@
 	"COS005": {
 		"name": "Bad Luck!",
 		"type": "Combat SPECIAL",
-		"description": "The opponent gets a -2 penalty to their dice roll, and you get a -1 penalty.",
+		"description": "Tough luck for you, but your opponent’s got it worse.",
 		"info": "- BAD LUCK! -\n\nA twist of fate strikes the opponent, causing them to suffer some handicaps. However, the same misfortune seems to affect you as well, causing a slight setback in your own chances. It's a gamble, but sometimes, fate favors the bold.\n\n''Bad luck (Fale)! But it looks like it's catching up with me, too...''",
 		"bonus_malus": [
 			{
@@ -325,7 +325,7 @@
 	"COS006": {
 		"name": "Self-control!",
 		"type": "Combat SPECIAL",
-		"description": "Cancel some emotional effect.",
+		"description": "Staying in control makes a difference.",
 		"info": "- SELF-CONTROL! -\n\nA moment of clarity in the midst of chaos, allowing you to suppress overwhelming emotions and regain control. While you can neutralize some of the emotional toll, this discipline boosts your mental focus, giving you an edge in your next move.\n\n''Steady... Keep it together... focus, focus...''",
 		"bonus_malus": [
 			{
@@ -343,7 +343,7 @@
 	"COR001": {
 		"name": "Flee",
 		"type": "Combat RUN-AWAY",
-		"description": "Escape the fight by increasing your physical and mental capabilities.",
+		"description": "Why choose mind over matter when you can have both?",
 		"info": "- RUN-AWAY -\n\nIn the heat of battle, sometimes the best option is to escape, using your speed and mental sharpness to get away unscathed. A successful escape boosts both your physical endurance and mental clarity, but running away can still have its consequences.\n\n''I think, therefore I am. But maybe I should run away now.''",
 		"bonus_malus": [
 			{
