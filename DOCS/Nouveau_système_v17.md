@@ -348,7 +348,7 @@ Les factures
 Factures impayées	Malus
 1	/
 2	1
-3	1 et +1Emo → min/max
+3	1 ou 2 (aléatoirement)
 4	2
 5	Prison 3 jours, plus ancienne facture réglée et retour à 4 impayés
 
