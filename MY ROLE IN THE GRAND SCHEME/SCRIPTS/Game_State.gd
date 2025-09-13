@@ -497,20 +497,18 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	# changes are temporary; Emo and Add changes are permanent
 
 	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_card)
+	attrs.play_card(_current_interaction_card, false)
 	for card in cards_played:
-		attrs.play_card(card)
-	attrs.apply_changes_to_player()
+		attrs.play_card(card, card in player.get_fallback_cards())
 
 	# roll the die
 
-	var bonus_malus = player.get_bonus_malus()
-	print("player bonus/malus: %s" % bonus_malus)
+	var bonus_malus = attrs.get_bonus_malus()
 	if cards_played.is_empty():
 		bonus_malus += 1
 		print("no cards played malus: 1")
-	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
-	print("min roll: %s" % min_roll)
+	var max_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
+	print("max roll: %s" % max_roll)
 	var actual_roll = randi_range(1, 10)
 	print("actual roll: %s" % actual_roll)
 	var net_roll = actual_roll + bonus_malus
@@ -525,14 +523,14 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		print("critical success: update Emo")
 		player.emotion = Player.calm(player.emotion)
 		_current_interaction_bonus_malus = -1
-	elif net_roll > min_roll:
+	elif net_roll > max_roll:
 		print("failure: update Emo, Wan")
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
 	else:
-		print("success: margin = %s" % [min_roll - net_roll])
+		print("success: margin = %s" % [max_roll - net_roll])
 
-	return actual_roll == 1 or net_roll <= min_roll
+	return actual_roll == 1 or net_roll <= max_roll
 
 #
 # Game logic for an investigation (possibly following a break-in).
@@ -544,20 +542,18 @@ func _play_investigation(cards_played: Array[Card]):
 	# changes are temporary; Emo and Add changes are permanent
 
 	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_card)
+	attrs.play_card(_current_interaction_card, false)
 	for card in cards_played:
-		attrs.play_card(card)
-	attrs.apply_changes_to_player()
+		attrs.play_card(card, card in GameState.player.get_fallback_cards())
 
 	# roll the die
 
-	var bonus_malus = player.get_bonus_malus()
-	print("player bonus/malus: %s" % bonus_malus)
+	var bonus_malus = attrs.get_bonus_malus()
 	if _current_interaction_bonus_malus != 0:
 		bonus_malus += _current_interaction_bonus_malus
 		print("break-in bonus: %s" % _current_interaction_bonus_malus)
-	var min_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
-	print("min roll: %s" % min_roll)
+	var max_roll = roundi((attrs.PHY + attrs.MEN + attrs.HEA) / 3.0)
+	print("max roll: %s" % max_roll)
 	var actual_roll = randi_range(1, 10)
 	print("actual roll: %s" % actual_roll)
 	var net_roll = actual_roll + bonus_malus
@@ -570,11 +566,11 @@ func _play_investigation(cards_played: Array[Card]):
 	elif actual_roll == 1:
 		print("critical success: update money")
 		player.money += randi_range(50, 100)
-	elif net_roll > min_roll:
+	elif net_roll > max_roll:
 		print("failure: update Emo")
 		player.emotion -= 1
 	else:
-		print("success: margin = %s" % [min_roll - net_roll])
+		print("success: margin = %s" % [max_roll - net_roll])
 
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()

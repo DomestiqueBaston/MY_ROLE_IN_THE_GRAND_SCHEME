@@ -2,47 +2,38 @@ class_name InteractionAttributes extends RefCounted
 
 ## Class for handling changes to the player's primary and secondary attributes
 ## during an interaction. PHY, MEN and HEA changes are temporary; Emo and Add
-## changes are made permanent by calling apply_changes_to_player().
+## changes are permanent.
 
 var PHY: int
 var MEN: int
 var HEA: int
-var Emo: int
-var Add: int
+
+var _fallback_card_count: int
 
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
 var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
 
-##
-## The attributes are initialized from the player's actual attributes.
-##
 func _init():
+	reset()
+
+func reset():
 	var player = GameState.player
 	PHY = player.physical
 	MEN = player.mental
 	HEA = player.health
-	Emo = player.emotion
-	Add = player.addiction
-
-##
-## Applies any emotion or addiction changes that have been made to the
-## player's actual attributes.
-##
-func apply_changes_to_player():
-	var player = GameState.player
-	player.emotion = Emo
-	player.addiction = Add
+	_fallback_card_count = 0
 
 ##
 ## Retrieves bonus/malus information from the given card and applies it to any
-## mentioned attributes (PHY, Emo, etc.). No changes are actually applied to the
-## player until apply_changes_to_player() is called.
+## mentioned attributes (PHY, Emo, etc.).
 ##
-## If the card is an abstract card from the player's mastery deck, it is removed
-## from the deck and deleted!
+## A malus of 1 is added for each card player where is_fallback is true.
 ##
-func play_card(card: Card):
+## If is_fallback is false, and the card is an abstract card from the player's
+## mastery deck, it is removed from the deck and deleted!
+##
+func play_card(card: Card, is_fallback: bool):
 	match card.get_card_type():
 		Card.CardType.LOCATION:
 			var loc_info = _location_data[card.database_id]
@@ -63,7 +54,11 @@ func play_card(card: Card):
 					var effects = entry.get("effects", {})
 					apply_bonus_malus(effects)
 					break
-			GameState.player.remove_mastery_card(card)
+
+	if is_fallback:
+		_fallback_card_count += 1
+	elif card is AbstractCard:
+		GameState.player.remove_mastery_card(card)
 
 ##
 ## Applies any number of bonus/malus changes from a dictionary of entries like
@@ -75,52 +70,86 @@ func play_card(card: Card):
 ## decreases (gets closer to zero).
 ##
 func apply_bonus_malus(bonus_malus: Dictionary):
+	var player = GameState.player
 	for key in bonus_malus:
 		if not key in self:
 			continue
-		var before = self[key]
+		var value = bonus_malus[key]
+		var delta: int = 0
 		match key:
-			"PHY", "MEN":
-				self[key] += bonus_malus[key]
+			"PHY":
+				delta = value
+				PHY += delta
+			"MEN":
+				delta = value
+				MEN += delta
 			"HEA":
-				HEA = mini(GameState.player.max_health, HEA + bonus_malus[key])
-			"Emo", "Add":
-				var attr_value = self[key]
-				var dict_value = bonus_malus[key]
-				if dict_value is String and dict_value.begins_with("mag"):
-					var change = dict_value.substr(3).to_int()
-					if change > 0:
-						if attr_value >= 0:
-							attr_value += change
-						else:
-							attr_value -= change
-					elif change < 0:
-						if attr_value > 0:
-							attr_value = maxi(0, attr_value + change)
-						elif attr_value < 0:
-							attr_value = mini(0, attr_value - change)
-				else:
-					attr_value += dict_value as int
-				self[key] = attr_value
-		var after = self[key]
-		print("card bonus/malus: %s %s" % [key, after - before])
+				delta = mini(value, player.max_health - HEA)
+				HEA += delta
+			"Emo":
+				delta = _interpret_bonus_malus_value(player.emotion, value)
+				player.emotion += delta
+			"Add":
+				delta = _interpret_bonus_malus_value(player.addiction, value)
+				player.addiction += delta
+		if delta != 0:
+			print("card bonus/malus: %s %s" % [key, delta])
+
+#
+# Given a current attribute value and a bonus/malus value from the dictionary,
+# returns the integer value that should be added to the attribute value.
+#
+func _interpret_bonus_malus_value(attr_value: int, dict_value) -> int:
+	if dict_value is String and dict_value.begins_with("mag"):
+		var delta = dict_value.substr(3).to_int()
+		if delta >= 0:
+			if attr_value >= 0:
+				return delta
+			else:
+				return -delta
+		else:
+			if attr_value > 0:
+				return maxi(delta, -attr_value)
+			elif attr_value < 0:
+				return mini(-delta, -attr_value)
+			else:
+				return 0
+	else:
+		return dict_value as int
 
 ##
 ## Returns true if the named attribute satisfies the given condition. For
 ## example, if attr is "MEN" and condition is ">1", returns true if MEN > 1.
 ##
 func is_condition_met(attr: String, condition: String) -> bool:
-	var op = condition.substr(0, 1)
-	var value = condition.substr(1).to_int()
-	match op:
+	var attr_value: int
+	match attr:
+		"PHY":
+			attr_value = PHY
+		"MEN":
+			attr_value = MEN
+		"HEA":
+			attr_value = HEA
+		"Emo":
+			attr_value = GameState.player.emotion
+		"Add":
+			attr_value = GameState.player.addiction
+		"Wan":
+			attr_value = GameState.player.wanted
+		_:
+			return false
+
+	var test_op = condition.substr(0, 1)
+	var test_value = condition.substr(1).to_int()
+	match test_op:
 		'>':
-			return self[attr] > value
+			return attr_value > test_value
 		'<':
-			return self[attr] > value
+			return attr_value > test_value
 		'=':
-			return self[attr] == value
+			return attr_value == test_value
 		'!':
-			return self[attr] != value
+			return attr_value != test_value
 		_:
 			return false
 
@@ -133,3 +162,15 @@ func are_conditions_met(conditions: Dictionary) -> bool:
 		if not is_condition_met(attr, conditions[attr]):
 			return false
 	return true
+
+##
+## Returns the final bonus/malus value to be applied, as determined by the
+## cards that have been played.
+##
+func get_bonus_malus() -> int:
+	var bonus_malus = GameState.player.get_bonus_malus()
+	print("player bonus/malus: %s" % bonus_malus)
+	if _fallback_card_count > 0:
+		bonus_malus += _fallback_card_count
+		print("fallback card malus: %s" % _fallback_card_count)
+	return bonus_malus
