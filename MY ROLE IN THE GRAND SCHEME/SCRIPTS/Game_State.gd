@@ -240,6 +240,7 @@ func _increment_time(hours: int):
 
 	# TODO: if player has not slept for 24 hours, force him to take a day off
 	# TODO: if wanted == 5, send player to prison
+	# TODO: if player has 5 debts, send him to prison
 
 	for day in range(day_before + 1, day_after + 1):
 		_new_day(day)

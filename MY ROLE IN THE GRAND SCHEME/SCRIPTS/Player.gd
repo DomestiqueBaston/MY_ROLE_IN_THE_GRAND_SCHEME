@@ -511,8 +511,8 @@ func new_day():
 ##
 ## Returns a bonus/malus to be added to dice rolls, depending on the player's
 ## emotion, addiction and wanted levels, how long it has been since he slept,
-## and how well he slept last time. A negative number is a bonus, a positive
-## number is a malus.
+## how well he slept last time, and the number of unpaid bills he has. A
+## negative number is a bonus, a positive number is a malus.
 ##
 func get_bonus_malus() -> int:
 	var ret = _sleep_bonus_malus
@@ -540,6 +540,14 @@ func get_bonus_malus() -> int:
 
 	if wanted > 1:
 		ret += wanted - 1
+
+	var debt_count = get_debt_count()
+	if debt_count >= 4:
+		ret += 2
+	elif debt_count == 3:
+		ret += randi_range(1, 2)
+	elif debt_count == 2:
+		ret += 1
 
 	return ret
 
