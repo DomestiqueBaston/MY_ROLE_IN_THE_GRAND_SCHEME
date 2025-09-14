@@ -164,7 +164,7 @@
 		"description": "Complete your task without leaving a trace.",
 		"info": "- UNNOTICED! -\n\nComplete your task without leaving a trace, ensuring no evidence of your actions is found. This stealthy approach helps restore your emotional balance and gives you a boost in your next attempt, though it requires subtlety and careful execution.\n\n''Like a shadow, unseen and unheard...''",
 		"bonus_malus": {
-			"Emo": "cancel_another_Investigation_Emo_malus",
+			"other": "cancel_Emo_malus",
 			"dice": 1
 		}
 	},
