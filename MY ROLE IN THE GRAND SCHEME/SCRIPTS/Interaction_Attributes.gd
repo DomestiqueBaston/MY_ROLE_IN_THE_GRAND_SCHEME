@@ -192,7 +192,6 @@ func get_bonus_malus() -> int:
 			_last_emo_malus = 0
 
 	var bonus_malus = GameState.player.get_bonus_malus()
-	print("player bonus/malus: %s" % bonus_malus)
 
 	if _fallback_card_count > 0:
 		bonus_malus += _fallback_card_count

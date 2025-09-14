@@ -515,39 +515,58 @@ func new_day():
 ## negative number is a bonus, a positive number is a malus.
 ##
 func get_bonus_malus() -> int:
-	var ret = _sleep_bonus_malus
+	var ret = 0
+
+	if _sleep_bonus_malus != 0:
+		print("sleep bonus/malus: %s" % _sleep_bonus_malus)
+		ret += _sleep_bonus_malus
 
 	var time_awake = get_hours_awake()
 	if time_awake > 16:
 		@warning_ignore("integer_division")
-		ret += (time_awake - 16) / 2
+		var wake_time_delta = (time_awake - 16) / 2
+		print("wake time malus: %s" % wake_time_delta)
+		ret += wake_time_delta
 
+	var emo_delta = 0
 	if absi(emotion) > 2:
-		ret += 1
+		emo_delta = 1
 	elif emotion == 0:
-		ret -= 1
+		emo_delta = -1
+	if emo_delta != 0:
+		print("Emo bonus/malus: %s" % emo_delta)
+		ret += emo_delta
 
+	var add_delta = 0
 	if addiction <= -3:
-		ret += 2
+		add_delta = 2
 	elif addiction < 0:
-		ret += 1
+		add_delta = 1
 	elif addiction >= 4:
-		ret -= 3
+		add_delta = -3
 	elif addiction == 3:
-		ret -= 2
+		add_delta = -2
 	elif addiction > 0:
-		ret -= 1
+		add_delta = -1
+	if add_delta != 0:
+		print("Add bonus/malus: %s" % add_delta)
+		ret += add_delta
 
 	if wanted > 1:
+		print("Wan malus: %s" % (wanted - 1))
 		ret += wanted - 1
 
+	var debt_delta = 0
 	var debt_count = get_debt_count()
 	if debt_count >= 4:
-		ret += 2
+		debt_delta = 2
 	elif debt_count == 3:
-		ret += randi_range(1, 2)
+		debt_delta = randi_range(1, 2)
 	elif debt_count == 2:
-		ret += 1
+		debt_delta = 1
+	if debt_delta != 0:
+		print("unpaid bills malus: %s" % debt_delta)
+		ret += debt_delta
 
 	return ret
 
