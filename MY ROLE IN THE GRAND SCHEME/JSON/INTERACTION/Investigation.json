@@ -5,7 +5,7 @@
 		"description": "Examine the details with great precision.",
 		"info": "- DETAILED ANALYSIS -\n\nExamine the details with great precision, using your mental focus to uncover the hidden truths. A successful analysis sharpens your mind and provides clarity, and it can also create a sense equilibrium, distancing you from the emotional aspects of the situation.\n\n''The devil is in the details.''",
 		"bonus_malus": {
-			"MEN": 1,
+			"MEN": 2,
 			"Emo": "mag-1"
 		}
 	},
@@ -15,7 +15,6 @@
 		"description": "Perform a quick examination, not very thorough.",
 		"info": "- BRIEF ANALYSIS -\n\nPerform a quick examination of the situation, making the best use of available time. While this analysis is less thorough, it still provides a snapshot of key details, but at the cost of losing some mental clarity and focus over time.\n\n''I don't have much time, but let's see what I can catch in a hurry...''",
 		"bonus_malus": {
-			"MEN": -1,
 			"hours": -1
 		}
 	},
@@ -25,7 +24,7 @@
 		"description": "A full and thorough examination of the area.",
 		"info": "- COMPLETE -\n- EXAMINATION -\n\nConduct a thorough and methodical examination of the area, uncovering valuable insights and hidden details. While it sharpens your understanding and offers a sense of accomplishment, it demands significant focus and time.\n\n''You can't solve a mystery with half the facts.''",
 		"bonus_malus": {
-			"MEN": 1,
+			"MEN": 2,
 			"PHY": 1,
 			"Emo": "mag+2",
 			"Object": 1,
@@ -38,7 +37,7 @@
 		"description": "A very detailed examination, with a focus on every little aspect.",
 		"info": "- METICULOUS -\n- EXAMINATION -\n\nEngage in a highly detailed investigation, focusing on every small aspect and nuance. This careful analysis enhances your physical endurance but drains your emotional energy, consuming a portion of your time.\n\n''Every little detail counts... I need to make sure I don't miss anything.''",
 		"bonus_malus": {
-			"PHY": 1,
+			"PHY": 2,
 			"Emo": -1,
 			"hours": 1
 		}
@@ -49,7 +48,7 @@
 		"description": "Search the area carefully, ensuring no detail is overlooked.",
 		"info": "- THOROUGH SEARCH -\n\nCarefully search the area, making sure no detail goes unnoticed. This meticulous approach enhances your physical endurance and allows you to find valuable items, though it consumes a significant amount of time.\n\n''You never know what you might find... Better check everything, just to be sure.''",
 		"bonus_malus": {
-			"PHY": 1,
+			"PHY": 2,
 			"Object": 1,
 			"hours": 2
 		}
@@ -60,6 +59,7 @@
 		"description": "A methodical and structured search.",
 		"info": "- SYSTEMATIC SEARCH -\n\nA methodical and structured approach to searching, ensuring that no corner is left unchecked. This thoroughness offers clarity and emotional balance but requires a steady pace.\n\n''Step by step, I'll find what's hidden... patience is key.''",
 		"bonus_malus": {
+			"MEN": 1,
 			"Emo": "mag+1"
 		}
 	},
@@ -69,7 +69,7 @@
 		"description": "A comprehensive inspection with a focus on key aspects.",
 		"info": "- DETAILED INSPECTION -\n\nA comprehensive inspection with a focus on key aspects. This focused approach sharpens your mental clarity and enhances emotional balance, but it requires you to narrow your attention to the most critical details.\n\n''Only the essentials matter right now. Let's focus on what counts.''",
 		"bonus_malus": {
-			"MEN": 1,
+			"MEN": 2,
 			"Emo": "mag+1"
 		}
 	},
@@ -79,7 +79,6 @@
 		"description": "A fast inspection with minimal effort.",
 		"info": "- QUICK INSPECTION -\n\nA fast and minimal inspection, designed to give you a brief overview of the situation. This hasty approach drains your physical and mental energy, but it offers a quick look at what's important, with a slight emotional boost.\n\n''I don't have time for details... let's get this over with.''",
 		"bonus_malus": {
-			"PHY": -1,
 			"MEN": -1,
 			"Emo": "mag-1",
 			"hours": -1
@@ -92,7 +91,7 @@
 		"info": "- QUICK GLANCE -\n\nA rapid and careless survey of the area, aiming for speed over thoroughness. This fleeting glance uses up both your physical and mental energy, leaving little time for deeper analysis, and may even cause you to overlook important details.\n\n''You only get one chance to make a first impression.''",
 		"bonus_malus": {
 			"PHY": -1,
-			"MEN": -1,
+			 "MEN": -1,
 			"Object": -1,
 			"hours": -2
 		}
@@ -112,7 +111,6 @@
 		"description": "A rushed search with little attention to detail.",
 		"info": "- FAST SEARCH -\n\nA rushed search, focusing on speed rather than thoroughness. While you save time, the lack of attention to detail means you might miss important clues, and the physical toll takes a toll on your stamina.\n\n''Gotta move fast, no time to waste!''",
 		"bonus_malus": {
-			"PHY": -1,
 			"hours": -2
 		}
 	},
@@ -122,7 +120,7 @@
 		"description": "Use Luminol to reveal hidden traces.",
 		"info": "- WITH LUMINOL! -\n\nUse Luminol to uncover hidden traces that would otherwise remain invisible to the naked eye. This powerful tool enhances your mental focus and provides clarity, while giving you a stronger emotional response to what you uncover. However, it also consumes time.\n\n''Let's see what the darkness is hiding... Luminol reveals all.''",
 		"bonus_malus": {
-			"MEN": 1,
+			"MEN": 2,
 			"Emo": 1,
 			"hours": 1
 		}
@@ -133,7 +131,6 @@
 		"description": "Use an endoscopic camera for a detailed inspection.",
 		"info": "- ENDOSCOPIC CAMERA! -\n\nUse an endoscopic camera to perform a detailed inspection in hard-to-reach areas. This advanced tool enhances your ability to gather insights, though it requires focus and time, and might leave you physically drained.\n\n''Sometimes, you need to look where others can't reach...''",
 		"bonus_malus": {
-			"PHY": -1,
 			"MEN": 2,
 			"hours": 1
 		}
@@ -144,6 +141,7 @@
 		"description": "A lucky break that boosts your chances.",
 		"info": "- STROKE OF LUCK! -\n\nA fortunate turn of events that boosts your chances of success. This stroke of luck sharpens your emotional state, giving you a burst of optimism, though it might come with some unpredictable effects on your actions.\n\n''Sometimes, it's all about being in the right place at the right time...''",
 		"bonus_malus": {
+			"MEN": 1,
 			"dice": -1,
 			"Emo": 2
 		}
@@ -154,7 +152,7 @@
 		"description": "Carefully dismantle an object or device.",
 		"info": "- SYSTEMATIC DISMANTLING! -\n\nCarefully dismantle an object or device, taking your time to ensure every part is examined and removed with precision. This methodical approach increases your physical endurance as you work but consumes a fair amount of time.\n\n''Patience is key... every piece tells a story.''",
 		"bonus_malus": {
-			"PHY": 1,
+			"PHY": 2,
 			"hours": 2
 		}
 	},
@@ -175,7 +173,6 @@
 		"info": "- LOCKPICKING TOOLS! -\n\nUtilize lockpicking tools to gain access to locked areas or objects. This skill boosts your physical endurance but requires mental focus and time, making it a delicate balance between speed and precision.\n\n''With the right tools, there's always a way in... but it costs me a bit of time and energy.''",
 		"bonus_malus": {
 			"PHY": 2,
-			"MEN": -1,
 			"hours": 1
 		}
 	},
@@ -186,7 +183,7 @@
 		"info": "- IMPROVISED TOOLS! -\n\nUse whatever you can find to fashion makeshift tools, allowing you to access or disassemble objects. While this method boosts your physical abilities, it drains your mental focus and consumes time.\n\n''Not ideal, but when there's no choice, you make do with what's around.''",
 		"bonus_malus": {
 			"PHY": 1,
-			"MEN": -2,
+			"MEN": 1,
 			"hours": 1
 		}
 	},
@@ -197,7 +194,7 @@
 		"info": "- TRACING! -\n\nConduct a meticulous search for traces left behind in the environment, revealing subtle clues and offering insights into what happened. It requires attention to detail but can be done quickly, uncovering hidden narratives along the way.\n\n''Every trace tells a story.''",
 		"bonus_malus": {
 			"PHY": -1,
-			"MEN": 1,
+			"MEN": 2,
 			"hours": 1
 		}
 	},
@@ -207,7 +204,7 @@
 		"description": "Use a detector to find hidden objects or traces.",
 		"info": "- USE A DETECTOR! -\n\nUsing a detector allows you to uncover hidden items or traces that are otherwise invisible. It provides a clearer perspective on the environment but at the cost of physical energy and mental focus.\n\n''Sometimes the most obvious clues are hidden from sight, but with the right tool, they're impossible to miss.''",
 		"bonus_malus": {
-			"PHY": -2,
+			"PHY": -1,
 			"MEN": 2
 		}
 	},
@@ -218,7 +215,7 @@
 		"info": "- BREAK THE DOOR -\n\nForce your way through the door, gaining immediate access but at the cost of mental fatigue. This method is fast but loud, leaving you vulnerable and possibly attracting unwanted attention.\n\n''Sometimes, force is the only way through.''",
 		"bonus_malus": {
 			"PHY": 2,
-			"MEN": -2
+			"MEN": -1
 		}
 	},
 	"INB002": {
@@ -227,7 +224,7 @@
 		"description": "Pick the lock to gain access (mind in turmoil).",
 		"info": "- FORCE THE LOCK -\n\nPick the lock to gain access quietly and efficiently. While this approach avoids making noise, it demands mental focus and precision, providing a small boost after success.\n\n''A delicate touch can open the hardest of doors.''",
 		"bonus_malus": {
-			"MEN": 1,
+			"MEN": 2,
 			"Emo": 1
 		}
 	},
@@ -237,7 +234,7 @@
 		"description": "Climb up the building using the gutter (strength strain).",
 		"info": "- CLIMB THE GUTTER -\n\nUse the building's gutter to climb up and gain access. This method requires physical strength and agility, but rewards you with an easy access.\n\n''When the door's locked, sometimes the only way in is up.''",
 		"bonus_malus": {
-			"PHY": 1,
+			"PHY": 2,
 			"Emo": 1
 		}
 	},
@@ -247,7 +244,7 @@
 		"description": "Neutralize the security system (mental focus).",
 		"info": "- DISABLE THE SECURITY -\n\nNeutralize the security system to gain unrestricted access. This task sharpens your mental focus but may come with a sense of tension or stress, as it requires precision and concentration.\n\n''Silence the alarms, and the path will be clear.''",
 		"bonus_malus": {
-			"MEN": 1
+			"MEN": 2
 		}
 	}
 }

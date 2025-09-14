@@ -11,6 +11,7 @@
 				},
 				"effects": {
 					"PHY": 2,
+					"MEN": 1,
 					"Emo": -2
 				}
 			}
@@ -27,7 +28,7 @@
 					"result": "success"
 				},
 				"effects": {
-					"PHY": 1,
+					"PHY": 2,
 					"MEN": -1,
 					"Emo": 1
 				}
@@ -62,7 +63,7 @@
 					"result": "success"
 				},
 				"effects": {
-					"MEN": 1,
+					"MEN": 2,
 					"Emo": 1
 				}
 			}
@@ -79,8 +80,6 @@
 					"result": "success"
 				},
 				"effects": {
-					"PHY": -1,
-					"MEN": -1,
 					"Emo": "+1_toward_zero",
 					"damage": "-2_if_hit"
 				},
@@ -99,7 +98,6 @@
 					"result": "success"
 				},
 				"effects": {
-					"PHY": -1,
 					"MEN": 2,
 					"Emo": 1
 				}
@@ -117,7 +115,8 @@
 					"result": "success"
 				},
 				"effects": {
-					"MEN": -1,
+					"MEN": 1,
+					"PHY": 1,
 					"Emo": -1,
 					"damage": "-1_if_hit"
 				},
@@ -137,7 +136,6 @@
 				},
 				"effects": {
 					"PHY": 2,
-					"MEN": -1,
 					"Emo": -2
 				}
 			}
@@ -154,7 +152,6 @@
 					"result": "success"
 				},
 				"effects": {
-					"PHY": -1,
 					"Emo": 1,
 					"damage": "-1_if_hit"
 				},
@@ -173,7 +170,7 @@
 					"result": "success"
 				},
 				"effects": {
-					"MEN": 1,
+					"MEN": 2,
 					"Emo": "+1_toward_zero"
 				},
 				"comment_5": "Something to see, here"
@@ -192,7 +189,7 @@
 				},
 				"effects": {
 					"PHY": 1,
-					"MEN": 1,
+					"MEN": 2,
 					"Emo": -1
 				}
 			}
@@ -209,7 +206,7 @@
 					"result": "success"
 				},
 				"effects": {
-					"PHY": "+3",
+					"PHY": 3,
 					"MEN": -1,
 					"Emo": "+2_toward_closest_min_max"
 				},
@@ -228,7 +225,7 @@
 					"result": "success"
 				},
 				"effects": {
-					"PHY": 1
+					"PHY": 2
 				}
 			}
 		]
@@ -262,7 +259,8 @@
 					"result": "success"
 				},
 				"effects": {
-					"opponent_dice": -1
+					"PHY": -1,
+					"opponent_dice": -2
 				},
 				"comment_8": "Something to see, here"
 			}
@@ -279,6 +277,8 @@
 					"result": "success"
 				},
 				"effects": {
+					"PHY": 1,
+					"MEN": 1,
 					"dice": -1,
 					"Emo": 1
 				}
@@ -315,8 +315,8 @@
 					"result": "success"
 				},
 				"effects": {
-					"opponent_dice": 2,
-					"player_dice": 1
+					"opponent_dice": -3,
+					"player_dice": -1
 				},
 				"comment_10": "Something to see, here"
 			}
@@ -351,7 +351,7 @@
 					"result": "success"
 				},
 				"effects": {
-					"PHY": 1,
+					"PHY": 2,
 					"MEN": 1
 				}
 			}

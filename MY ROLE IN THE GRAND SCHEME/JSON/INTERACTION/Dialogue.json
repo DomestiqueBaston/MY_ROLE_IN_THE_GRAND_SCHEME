@@ -8,7 +8,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1}
+				"effects": {"MEN": 2}
 			}
 		]
 	},
@@ -21,7 +21,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"PHY": -1, "MEN": 1}
+				"effects": {"MEN": 1}
 			}
 		]
 	},
@@ -47,7 +47,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1, "Info": -1},
+				"effects": {"MEN": 2, "Info": -1},
 				"comment_1": "Something to see, here"
 			}
 		]
@@ -61,7 +61,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"PHY": 1, "Rep": -1}
+				"effects": {"PHY": 2, "Rep": -1}
 			}
 		]
 	},
@@ -74,7 +74,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1, "Rep": -1}
+				"effects": {"MEN": 2, "Rep": -1}
 			}
 		]
 	},
@@ -87,7 +87,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"PHY": 2, "MEN": 1, "Rep": -2}
+				"effects": {"PHY": 2, "MEN": 2, "Rep": -2}
 			}
 		]
 	},
@@ -100,7 +100,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1, "info": 1},
+				"effects": {"MEN": 2, "info": 1},
 				"comment_2": "Something to see, here"
 			}
 		]
@@ -114,7 +114,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"PHY": 2, "Rep": -2}
+				"effects": {"PHY": 3, "Rep": -2}
 			}
 		]
 	},
@@ -127,7 +127,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"PHY": 1, "Rep": -1}
+				"effects": {"PHY": 2, "Rep": -1}
 			}
 		]
 	},
@@ -140,7 +140,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1},
+				"effects": {"MEN": 1, "PHY": 1},
 				"comment_3": "Something to see, here"
 			},
 			{
@@ -159,7 +159,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1, "Rep": -1}
+				"effects": {"MEN": 2, "Rep": -1}
 			}
 		]
 	},
@@ -172,7 +172,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"PHY": 1, "Rep": 1}
+				"effects": {"PHY": 1, "MEN": 1, "Rep": 1}
 			}
 		]
 	},
@@ -185,7 +185,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"info": 1, "Dø": "-10 × Difficulty", "Rep": 1},
+				"effects": {"MEN": 1, "info": 1, "Dø": "-10 × Difficulty", "Rep": 1},
 				"comment_5": "Something to see, here"
 			},
 			{
@@ -203,12 +203,12 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1, "Dø": "-20 × Difficulty", "info": 1, "Rep": 1},
+				"effects": {"MEN": 2, "Dø": "-20 × Difficulty", "info": 1, "Rep": 2},
 				"comment_6": "Something to see, here"
 			},
 			{
 				"condition": {"result": "failure"},
-				"effects": {"Rep": -2}
+				"effects": {"Rep": -1}
 			}
 		]
 	},
@@ -221,7 +221,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 2, "Rep": -2}
+				"effects": {"MEN": 3, "Rep": -2}
 			}
 		]
 	},
@@ -234,7 +234,7 @@
 		"bonus_malus": [
 			{
 				"condition": {"result": "success"},
-				"effects": {"MEN": 1, "info": 1, "Rep": -1},
+				"effects": {"MEN": 2, "info": 1, "Rep": -1},
 				"comment_7": "Something to see, here"
 			}
 		]
@@ -253,7 +253,7 @@
 			},
 			{
 				"condition": {"result": "failure"},
-				"effects": {"Rep": -2}
+				"effects": {"Rep": -1}
 			}
 		]
 	}
