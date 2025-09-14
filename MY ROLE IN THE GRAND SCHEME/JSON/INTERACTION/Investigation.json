@@ -91,7 +91,7 @@
 		"info": "- QUICK GLANCE -\n\nA rapid and careless survey of the area, aiming for speed over thoroughness. This fleeting glance uses up both your physical and mental energy, leaving little time for deeper analysis, and may even cause you to overlook important details.\n\n''You only get one chance to make a first impression.''",
 		"bonus_malus": {
 			"PHY": -1,
-			 "MEN": -1,
+			"MEN": -1,
 			"Object": -1,
 			"hours": -2
 		}

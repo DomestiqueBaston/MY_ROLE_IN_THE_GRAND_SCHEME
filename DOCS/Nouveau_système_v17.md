@@ -277,7 +277,7 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
 	- 25% de chance de faire un rêve/cauchemar qui aura un effet sur la récupération : rêve = +1 HEA et cauchemar -1 HEA (on peut donc perdre des HEA en dormant) !
-	- Intervention Thérapeutique (médecin) : +2 HEA, +1 Emo → 0 et +1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
+	- Intervention Thérapeutique (médecin) : +3 HEA, +2 Emo → 0 et +1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa (menu désactivé) !
 	- On ne peut dormir qu’1 fois par jour. SAUF voir Paranoïa pour le sommeil.
 	- Sauf pendant une crise de paranoïa, le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 aux jets de dé par tranche de 2 heures. Il ne peut pas faire plus de 24h d’éveil d’affilé sinon « tombe de fatigue » : il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil (donc annule une partie des bénéfices du sommeil) ! Il peut également subir les bonus/malus de rêve/cauchemar.
