@@ -413,8 +413,8 @@ func visit_doctor():
 	var ok = await Globals.dialog_overlay.visit_doctor()
 	if ok:
 		player.money -= 50
-		player.health += 2
-		player.improve_emotion(1)
+		player.health += 3
+		player.improve_emotion(2)
 		player.improve_addiction(1)
 		_last_doctor_day = get_day()
 		save_game()
