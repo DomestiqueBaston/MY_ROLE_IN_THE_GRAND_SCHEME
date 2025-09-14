@@ -9,6 +9,8 @@ var MEN: int
 var HEA: int
 
 var _fallback_card_count: int
+var _dice: int
+var _other_bonus_malus: Dictionary
 
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
@@ -22,7 +24,9 @@ func reset():
 	PHY = player.physical
 	MEN = player.mental
 	HEA = player.health
+	_dice = 0
 	_fallback_card_count = 0
+	_other_bonus_malus.clear()
 
 ##
 ## Retrieves bonus/malus information from the given card and applies it to any
@@ -72,8 +76,6 @@ func play_card(card: Card, is_fallback: bool):
 func apply_bonus_malus(bonus_malus: Dictionary):
 	var player = GameState.player
 	for key in bonus_malus:
-		if not key in self:
-			continue
 		var value = bonus_malus[key]
 		var delta: int = 0
 		match key:
@@ -92,6 +94,14 @@ func apply_bonus_malus(bonus_malus: Dictionary):
 			"Add":
 				delta = _interpret_bonus_malus_value(player.addiction, value)
 				player.addiction += delta
+			"dice":
+				delta = value
+				_dice += delta
+			_:
+				if key in _other_bonus_malus:
+					_other_bonus_malus[key].append(value)
+				else:
+					_other_bonus_malus[key] = [value]
 		if delta != 0:
 			print("card bonus/malus: %s %s" % [key, delta])
 
@@ -170,7 +180,18 @@ func are_conditions_met(conditions: Dictionary) -> bool:
 func get_bonus_malus() -> int:
 	var bonus_malus = GameState.player.get_bonus_malus()
 	print("player bonus/malus: %s" % bonus_malus)
+	if _dice != 0:
+		bonus_malus += _dice
+		print("dice bonus/malus: %s" % _dice)
 	if _fallback_card_count > 0:
 		bonus_malus += _fallback_card_count
 		print("fallback card malus: %s" % _fallback_card_count)
 	return bonus_malus
+
+##
+## Returns a Dictionary of bonus/malus effects that were found in the cards
+## played but whose keys were not handled here. Each entry contains an array of
+## effects for the given key.
+##
+func get_unhandled_bonus_malus() -> Dictionary:
+	return _other_bonus_malus

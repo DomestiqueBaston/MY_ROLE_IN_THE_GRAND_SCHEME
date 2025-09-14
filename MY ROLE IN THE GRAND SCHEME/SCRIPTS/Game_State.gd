@@ -573,6 +573,15 @@ func _play_investigation(cards_played: Array[Card]):
 	else:
 		print("success: margin = %s" % [max_roll - net_roll])
 
+	var duration = 2
+	var other_bonus_malus = attrs.get_unhandled_bonus_malus()
+	var hours_bonus_malus = other_bonus_malus.get("hours", [])
+	for h in hours_bonus_malus:
+		duration += h as int
+	if duration > 0:
+		await _increment_time(duration)
+	print("duration: %s hour(s)" % duration)
+
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
@@ -582,7 +591,7 @@ func start_investigation(location: LocationCard):
 
 func end_interaction(cards_played: Array[Card] = []):
 	if _current_interaction == InteractionType.INVESTIGATION:
-		_play_investigation(cards_played)
+		await _play_investigation(cards_played)
 
 	player.clear_fallback_cards()
 	_current_interaction = InteractionType.NONE
