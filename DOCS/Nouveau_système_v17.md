@@ -531,7 +531,7 @@ Dialogue
 	- Le jeu n’établit pas non plus de lien pointillé Violet/Noir.
 	- Une nouvelle carte révélée n’est donc JAMAIS qualifiée d’Evidence automatiquement. C’est au joueur de le faire.
 	- Si une information révélée concerne les informations personnelles d’un PNJ, vraie ou fausse, elle sera consultable dans la fiche/carte du PNJ (dans Main.tscn ou Interaction.tscn, tout se qui se raccorde à la carte clignotera) en bas à gauche de l’écran !
-	- Un PNJ peut donner/redonner une info existante dans la fiche d’enquête ou déjà donnée préalablement. Mais on ne change pas la nature du lien déjà présent s’il n’est plus Violet. Si l’info devrait modifier une info déjà établie, alors on affichera le Warning.tscn sur le lien !
+	- Un PNJ peut donner/redonner une info existante dans la fiche d’enquête ou déjà donnée préalablement. Mais on ne change pas la nature du lien déjà présent s’il n’est plus Violet. Si l’info devrait modifier une info déjà établie, alors on affichera le Warning.tscn sur le lien.
 	- Un PNJ a les mêmes chances de corriger une information précédemment donnée comme fausse (voir juste au dessus).
 	- Un PNJ ne corrigera pas une information vraie.
 	- Le Dialogue a-t-il eu lieu avec un PNJ qui dormait (il a été réveillé !) ? Si oui, -1Rep à l’issue du Dialogue.
