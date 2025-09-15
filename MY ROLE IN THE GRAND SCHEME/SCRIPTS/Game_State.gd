@@ -455,6 +455,8 @@ func attempt_investigation(location: LocationCard):
 		await Globals.dialog_overlay.no_search_warrant()
 		return
 
+	location.set_investigated_today()
+
 	# if nobody is there and the player wants to break in, set up the pseudo-
 	# interaction (pseudo because it takes place not in the Interaction scene
 	# but in an overlay of the Main scene) and try to break in
