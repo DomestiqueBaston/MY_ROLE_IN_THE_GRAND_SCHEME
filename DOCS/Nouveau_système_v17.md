@@ -457,36 +457,35 @@ Les différentes piles de cartes du joueur (en interaction)
 
 Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas faire plusieurs interactions en même temps.
-	- On ne peut pas interagir sans jouer aucune carte.
+	- On ne peut pas interagir sans jouer aucune carte (sauf Spécial).
 	- On joue au maximum 3 cartes par Interaction et au minimum 1 (max une de chaque type) sauf Break In et Run Away : 2 cartes max (la deuxième sera une carte Abstraite) ou aucune (avec un malus de 1 au jet de dé – voir plus bas).
 	- La main Fallback proposera 5 cartes Interaction et/ou Abstraite aléatoires (2 Interaction minimum ≠ celle que le joueur a en main).
-	- On ne peut pas savoir si un PNJ suit son emploi du temps autrement qu’en se rendant où il devrait être à l’heure dite.
- 	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom et Adresse (voir aussi Dialogue).
-	 - PAS DE MENSONGE possible sur le nom et l’adresse!
+	- On ne peut pas savoir si un PNJ respecte son emploi du temps autrement qu’en se rendant où il devrait être à l’heure dite.
+ 	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom et Adresse et/ou lieu de travail (voir aussi Dialogue).
+	 - PAS DE MENSONGE possible sur le nom, le lieu de travail et l’adresse!
 	- On connaît le nom, l’adresse, le job, l’emploi du temps, les soupçons, relations sociales, etc. (si ils existent) des PNJs (victimes vivantes et mortes) nommés au départ dans une Fiche d’enquête.
 	- On connaît le nom, l’adresse, le job et l’emploi du temps des PNJs (suspects et témoins) nommés au départ dans la Fiche d’enquête.
-	- Tout PNJ découvert ultérieurement sera donné, SANS MENSONGE, par son nom et son adresse. Le reste des infos sera sujet à mensonge (voir règle concernant les mensonges plus bas) MAIS… Un PNJ ne peut pas mentir concernant les informations liées aux relations sociales et de hangout à moins d’être coupable ou complice !
+	- Tout PNJ découvert ultérieurement sera donné, SANS MENSONGE, par son nom et son adresse. Le reste des infos sera possiblement sujet à mensonge (voir règle concernant les mensonges plus bas) MAIS… Un PNJ ne peut pas mentir concernant les informations liées aux relations sociales et de hangout à moins d’être coupable ou complice !
 	- Les jets de dé pour Combat et Dialogue sont basés sur un test de caractéristiques du joueur contre celles du PNJ.
 	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement.
 	- Malus de 1 aux jets de dé avec chaque carte jouée prise dans la main de Fallback.
-	- On ne peut pas se débarrasser de la carte sur laquelle « Player_Location.tscn » se trouve. Pour cela, il faut quitter le lieu.
-	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant le lendemain sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet.
+	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant le lendemain sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet (voir à la fin de Combat).
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
 	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir en cas de Combat mais ça n’est pas vraiment une annulation et cela intervient juste avant).
-	- À la fin d’une interaction réussie, l’écran de résolution d’interaction s’affiche et proposera au joueur de récupérer les cartes jouées afin de modifier sa main de cartes (Mastery). Cet écran apparaît à la fin de l’interaction initiée par le joueur et intégrera AUSSI les cartes jouées avant en Break In.
+	- À la fin d’une interaction réussie, le jeu proposera au joueur de récupérer les cartes jouées afin de modifier sa main de cartes (Mastery). Cet écran apparaît à la fin de l’interaction initiée par le joueur et intégrera AUSSI les cartes jouées avant en Break In.
 	- Après un Run Away réussi, on aura AUSSI l’écran de récupération de cartes cité juste au dessus.
 
 Dialogue
 	- Un seul Dialogue avec un PNJ par jour.
-	- Un Dialogue durera 2h (déplacement compris). 
+	- Un Dialogue durera 2h (déplacement compris). Des modificateurs peuvent être appliqués en fonction des cartes jouées. Mais de toute manière, un Dialogue ne durera jamais moins d’1 heure.
 	- On joue 3 cartes maximum par Dialogue de type : Dialogue, Objet, PNJ, Lieu et Abstraite (1 seule pour chaque type). Au moins 1 carte Dialogue.
 	- La main Fall back proposera 5 cartes Dialogue et Abstraite aléatoires. 2 cartes Dialogue minimum. ≠ de celles que le joueur a en main.
-	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps, etc.), l’action du menu sera inacessible.
+	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps, etc.), l’action du menu sera inaccessible.
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire, etc.), il ne trouvera personne et aura droit à la scène de l’interphone (Short_Event_Overlay.tscn/Intercom/Away). Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
 	- Pour Dialoguer avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci :Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
 	- Le joueur ne peut pas fuir une agression d’avant Dialogue ! Voir Déclenchement d’un combat par un PNJ lié à l’enquête à Combat.
 	- À la première rencontre, il n’y a pas de risque d’agression !
-	- Bonus de 1 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
+	- Bonus de 2 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
 		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, Non-Maîtrise, d’Evidence (bonne ou mauvaise utilisation), de difficulté de l’enquête, de Rep, d’Emo, d’Add, de Wan, de Factures impayées, de Sommeil, de Veille, de Lieu (sur place uniquement, pas une carte jouée), d’action de Nuit, de Bonus dû à la carte Combat Special « Ne pas tuer ! ».
 		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de Mensonge (voir plus bas), tentative ratée de fuite et précédente fuite de Dialogue.
@@ -497,20 +496,23 @@ Dialogue
 	- Pour établir l’issue de l’Interaction les deux protagonistes lancent 1d10 :
 		- On établit la marge de réussite/échec donnant un nombre positif (réussite) ou négatif (échec).
 		- On fait marge de réussite du Joueur – marge de réussite du PNJ.
-	- En cas de réussite normale, et en fonction de la marge de réussite, il obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). Jamais plus qu’un PNJ ne peut en délivrer.
+	- En cas de réussite normale, et en fonction de la marge de réussite, il obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). 1 info minimum. Jamais plus qu’un PNJ ne peut en délivrer.
 	- En cas d’échec normal (marge d’échec > 0) : rien.
 	- Et en plus pour le joueur, en cas d’échec critique (1 naturel au jet de dé), le joueur prend +1Emo → Min/Max ainsi que -1Rep avec le PNJ. Et règle de progression s’applique.
 	- Et en plus pour le joueur, en cas de réussite critique (10 naturel au jet de dé), le joueur prend +1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante) en plus de réussite normale. Et règle de progression s’applique.
-	- Et en plus pour le PNJ en cas de réussite critique (10 naturel au jet de dé) : -1 info et -1Rep. Et règle de progression s’applique.
+	- Et en plus pour le PNJ en cas de réussite critique (10 naturel au jet de dé) : -1 info (inutile quand le joueur échoue) et -1Rep. Et règle de progression s’applique.
 	- Si le PNJ seul fait une réussite critique, cela implique un échec pour le joueur (même si ce dernier aurait pu gagner de par sa marge de réussite).
 	- Et en plus pour le PNJ, en cas d’échec critique (1 naturel au jet de dé) : +1 info et +1Rep. Et règle de progression s’applique.
 	- Si les deux font une réussite critique ou un échec critique : Pas de changement lié au critique.  Et règle de progression s’applique.
 	- Si l’un fait un échec critique et l’autre une réussite critique, les effets se cumulent.
-	- En cas de mise en jeu d’une carte Objet ou Lieu ou PNJ, s’il y a réussite, les infos récupérées concernent en priorité la carte jouée et ce qui s’y rattache, bien entendu.
-	- Pour la révélation d’une information cachée (Hideout)d’un PNJ, le joueur doit avoir eu une marge de réussite de 3+ au jet de dé de Dialogue, une réussite critique ou avoir utilisé une carte Dialogue « Question piège » (et une réussite au moins « normale »).
+	- En cas de mise en jeu d’une carte Objet ou Lieu ou PNJ, s’il y a réussite, les infos récupérées concernent en priorité la carte jouée et ce qui s’y rattache.
+	- Pour la révélation d’une information cachée (Hideout) d’un PNJ, le joueur doit avoir eu une marge de réussite de 2+ au jet de dé de Dialogue, une réussite critique ou avoir utilisé une carte Dialogue « Question piège » (et une réussite au moins « normale »).
 	- Les informations sont choisies aléatoirement parmi celles pouvant être obtenues auprès du PNJ.
+	- Si le PNJ n’a plus rien à révéler de nouveau, alors il ne révèle rien.
+	- Si le joueur a joué une carte Evidence, Obj ou Lieu et qu’il sait tout de cette carte, alors rien n’est révélé concernant cette carte.
+	- On peut ainsi, au bout d’un moment, réussir et n’obtenir aucune information !
 	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (pas une « vraie » preuve en réalité) rajoute un malus de 1 au jet de dé.
-	- Chances que chaque information donnée soit fausse (par erreur ou mensonge, peu importe) :
+	- Chances que chaque information donnée soit fausse (par erreur ou mensonge, peu importe). Basé sur MEN du PNJ :
 		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
 		Auprès d’1 Coupable : (5+MEN)/(15+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (3+MEN)/(18+MEN) (prioritaire par rapport à Témoin/Suspect)
@@ -518,13 +520,14 @@ Dialogue
 		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(20+MEN) 
 		Auprès d’1 Coupable : (9+MEN)/(10+MEN) MENT toujours (prioritaire par rapport à Témoin/Suspect) !
 		Auprès d’1 Complice : (8+MEN)/(12+MEN) (7+MEN)/(14+MEN) (prioritaire par rapport à Témoin/Suspect)
-	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau).
+	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau et alors, il cumule).
 	- Une information cachée (hideout) est toujours révélée juste.
 	- Un PNJ peut révéler une info cachée concernant un autre PNJ uniquement si ceux-ci ont un lien reel d’Intimacy, Friend, Enemy, Accomplice entre eux.
 	- Une information fausse pour un lien désignera 2 PNJs aléatoires dans un lien de n’importe laquelle des natures suivantes : debt_influence, intimacy, friend, enemy, acquaintance ou ideology.
 	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet et la couleur de la nature du lien en pointillé de 2 couleurs (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn).
 	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec son/ses lien(s) Violet et la couleur de la nature du lien en pointillé comme dit au dessus (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn).
 	- Si un lien nouveau est donné pour une carte pré-existante, uniquement les nouveaux liens seront Violet et la couleur de la nature du lien en pointillé comme dit au dessus.
+	- Peut-on se retrouver avec, par exemple, 1 PNJ avec 2 liens Intimacy ?
 	- Le jeu n’établit pas non plus de lien pointillé Violet/Noir.
 	- Une nouvelle carte révélée n’est donc JAMAIS qualifiée d’Evidence automatiquement. C’est au joueur de le faire.
 	- Si une information révélée concerne les informations personnelles d’un PNJ, vraie ou fausse, elle sera consultable dans la fiche/carte du PNJ (dans Main.tscn ou Interaction.tscn, tout se qui se raccorde à la carte clignotera) en bas à gauche de l’écran !
@@ -537,7 +540,8 @@ Quelles informations peuvent être révélées par un PNJ
 	- Si une carte Objet, Lieu ou PNJ est jouée en dialogue, les infos obtenues (en cas de réussite) seront en priorité liées à cette carte. Si d’autres infos doivent être obtenues (par ex. la réussite implique que plus soient révélées), alors les infos seront liées à des révélations personnelles d’ordre social, professionnel, etc.
 	- Dans tous les cas, le choix des infos révélées sera aléatoire parmi ce qu’il est possible d’être révélé (en tenant compte de ce qui a été dit à propos du vrai/faux plus haut) par les cartes jouées et/ou ce que sait le PNJ.
 	- Quoi qu’il en soit, on ne révélera forcément pas plus qu’il n’y a d’infos disponibles (PNJ de l’Interaction ou carte Objet/lieu/PNJ).
-	 - S’il n’y a plus rien à révéler : aucune info !
+	- S’il n’y a plus rien à révéler : aucune info !
+	- Si le joueur a seulement joué Dialogue (et éventuellement avec Abstrait), les infos ne concerneront QUE le PNJ avec lequel le joueur dialogue.
 
 Fuir un Dialogue (PNJ)
 	- Un PNJ a 1/(MEN×2) chance de vouloir fuir un Dialogue.
@@ -547,7 +551,7 @@ Fuir un Dialogue (PNJ)
 	- Une réussite signifie que le PNJ fuit.
 	- Une réussite critique signifie que le PNJ fuit et la règle de progression s’applique.
 	- Un échec représente un malus de 1 au jet de dé de Dialogue à venir.
-	- Un échec critique représente un malus de 1 au jet de dé de Dialogue à venir. Règle de progression s’applique.
+	- Un échec critique représente un malus de 1 au jet de dé de Dialogue à venir. Règle de progression s’applique (avant le Dialogue).
 	- Un PNJ en prison ne peut pas fuir un Dialogue.
 	- Après avoir fuit, le PNJ ne sera plus accessible avant le lendemain et il aura un malus de 1 au prochain Dialogue.
 	- S’il y a fuite, on n’ajoute qu’1 heure au temps écoulé (déplacement du joueur) car l’Interaction n’aura pas eu lieu.
@@ -632,6 +636,7 @@ Fuir un Combat (Joueur) – RUN AWAY
 	- En cas d’échec, le joueur prend +1Emo → Min/Max et reste pour le Combat qui va suivre.
 	- En cas d’échec critique, prend -1HEA, +1Emo → Min/max et reste pour le Combat qui va suivre. La règle de progression s’applique.
 	- on ajoute +1h au lieu de +2h car l’Interaction prévue n’a pas eu lieu !
+	- Jouer la carte « Ne pas tuer ! » permet d’en chaîner directement sur un Dialogue si le combat a été une réussite (ou réussite critique). Le Dialogue qui suit durera 1h de moins puisque le joueur ne se déplace pas. Et le PNJ reste également sur place pour le Dialogue, bien entendu. Le PNJ n’a pas d’autre choix que d’accepter le Dialogue.
 
 
 Investigation
@@ -708,6 +713,7 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Tout changement de lien et ou de carte dans la zone de droite (Main.tscn) peut amener automatiquement à l’invalidation du mobile précédemment choisi ! Il sera alors désélectionné, le menu affichera de nouveau « Select a crime motive... » et clignotera (il y a une boucle d’animation pour ça et elle sera à jouer jusqu’à ce que le joueur change le mobile).
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
+	- Le joueur ne peut pas déplacer une origine d’un lien tant que celui-ci est pointillé.
 	- Couleurs des liens :
           Noir : Coupable/Complice/Preuve Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
           Vert foncé : Ami (pas exploité dans toutes les enquêtes)
