@@ -127,9 +127,6 @@ var _hour: int
 # has the player visited the investigation center today?
 var _has_visited_hub: bool
 
-# has the player slept today?
-var _has_slept: bool
-
 # the last day the player visited the doctor
 var _last_doctor_day: int
 
@@ -157,7 +154,6 @@ func _ready():
 func start_game():
 	_hour = _start_time
 	_has_visited_hub = false
-	_has_slept = false
 	_last_doctor_day = -1
 	_dealer_drug_stock = randi_range(5, 10)
 	_last_crimes.clear()
@@ -275,7 +271,6 @@ func _new_day(day: int):
 	# things the player can do only once a day
 
 	_has_visited_hub = false
-	_has_slept = false
 	player.new_day()
 
 func _send_new_bill():
@@ -316,12 +311,6 @@ func pass_one_hour():
 	await _increment_time(1)
 
 ##
-## Returns false if the player has already slept today.
-##
-func can_sleep() -> bool:
-	return not _has_slept
-
-##
 ## Takes the player back to the office, if he is not there already, then puts
 ## him to sleep for the given number of hours. Note that this is a coroutine to
 ## be awaited, and also that the player may wake up dead!
@@ -332,7 +321,6 @@ func sleep(hours: int):
 		set_player_location(PlayerLocation.OFFICE)
 	await player.sleep(hours)
 	await _increment_time(hours)
-	_has_slept = true
 
 ##
 ## Returns false if the player has already visited the Investigation Center
@@ -701,7 +689,6 @@ func assign(other: GameState):
 	cases = other.cases
 	_hour = other._hour
 	_has_visited_hub = other._has_visited_hub
-	_has_slept = other._has_slept
 	_last_doctor_day = other._last_doctor_day
 	_dealer_drug_stock = other._dealer_drug_stock
 	_last_crimes = other._last_crimes
@@ -745,7 +732,6 @@ func get_json_dict():
 		"player": player.get_unique_id(),
 		"hour": _hour,
 		"has_visited_hub": _has_visited_hub,
-		"has_slept": _has_slept,
 		"last_doctor_day": _last_doctor_day,
 		"dealer_drug_stock": _dealer_drug_stock,
 		"last_crimes": _last_crimes,
@@ -778,7 +764,6 @@ func get_json_dict():
 func restore(dict, catalog):
 	_hour = dict.hour
 	_has_visited_hub = dict.get("has_visited_hub", false)
-	_has_slept = dict.get("has_slept", false)
 	_last_doctor_day = dict.get("last_doctor_day", -1)
 	_dealer_drug_stock = dict.get("dealer_drug_stock", 0)
 	_last_crimes.assign(dict.last_crimes)
