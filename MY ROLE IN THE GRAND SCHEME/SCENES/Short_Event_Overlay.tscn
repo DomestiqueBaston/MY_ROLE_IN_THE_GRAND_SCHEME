@@ -3385,6 +3385,55 @@ Let's  see  how long it takes  before  you [shake rate=7.0 level=5 connected=0][
 For now,  though,  you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]more broken[/color][/shake].[/center]"
 fit_content = true
 
+[node name="Positive_Total" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
+visible = false
+layout_mode = 0
+offset_left = 208.0
+offset_top = 50.0
+offset_right = 413.0
+offset_bottom = 302.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Well done![/color][/pulse]
+
+You've  taken  a whole [color=#ff1c18]step forward[/color],  but  [color=#ff8864]don't get  too  carried  away[/color]. Nothing  to  celebrate just  yet.  
+And  let's  see if you can  [color=#ff8864]keep  this  momentum without  stumbling[/color].  For now,  you feel  [shake rate=7.0 level=5 connected=0][color=#ff1c18]a  little less   uncertain[/color][/shake]."
+fit_content = true
+
+[node name="Positive_And_Negative" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
+visible = false
+layout_mode = 0
+offset_left = 208.0
+offset_top = 50.0
+offset_right = 413.0
+offset_bottom = 302.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]What  a  rollercoaster![/color][/pulse]
+
+You’ve  had  [color=#ff1c18]one  huge success[/color],  but  also
+[color=#ff1c18]a  major  failure[/color].
+You  made  progress,  but with  just  as  many setbacks.
+It’s  a  [color=#ff8864]double-edged  result[/color].
+And now,  you’re  left feeling...  [shake rate=7.0 level=5 connected=0][color=#ff1c18]uncertain[/color][/shake]!"
+fit_content = true
+
+[node name="Negative_Total" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
+visible = false
+layout_mode = 0
+offset_left = 208.0
+offset_top = 50.0
+offset_right = 413.0
+offset_bottom = 302.0
+rotation = -0.0964869
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]What  a  failure![/color][/pulse]
+
+You’ve  [color=#ff1c18]completely messed  up[/color].  Nothing  went as planned,  and  now you’re  [color=#ff1c18]even  further from[/color] your  goal.
+[color=#ff8864]Pull  yourself  together[/color], or  risk [color=#ff1c18]falling  behind[/color] even more.
+Now,  you feel...  [shake rate=7.0 level=5 connected=0][color=#ff1c18]lost and  unsure[/color][/shake]."
+fit_content = true
+
 [node name="Quit" type="Button" parent="Overlays/Player_Improvement/Informations"]
 self_modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
