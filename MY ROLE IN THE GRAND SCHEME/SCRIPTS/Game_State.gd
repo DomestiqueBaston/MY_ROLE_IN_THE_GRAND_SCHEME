@@ -516,18 +516,32 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	print("with bonus/malus: %s" % net_roll)
 
 	if actual_roll == 10:
-		print("critical failure: update HEA, Emo, Wan")
+		var which_attr
+		if randi() & 1:
+			player.physical -= 1
+			which_attr = "PHY"
+		else:
+			player.mental -= 1
+			which_attr = "MEN"
 		player.health -= 1
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
+		print("critical failure: update HEA, %s, Emo, Wan" % which_attr)
 	elif actual_roll == 1:
-		print("critical success: update Emo")
+		var which_attr
+		if randi() & 1:
+			player.physical += 1
+			which_attr = "PHY"
+		else:
+			player.mental += 1
+			which_attr = "MEN"
 		player.emotion = Player.calm(player.emotion)
+		print("critical success: update %s, Emo" % which_attr)
 		_current_interaction_bonus_malus = -1
 	elif net_roll > max_roll:
-		print("failure: update Emo, Wan")
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
+		print("failure: update Emo, Wan")
 	else:
 		print("success: margin = %s" % [max_roll - net_roll])
 
@@ -561,15 +575,28 @@ func _play_investigation(cards_played: Array[Card]):
 	print("with bonus/malus: %s" % net_roll)
 
 	if actual_roll == 10:
-		print("critical failure: update HEA, Emo")
+		var which_attr
+		if randi() & 1:
+			player.physical -= 1
+			which_attr = "PHY"
+		else:
+			player.mental -= 1
+			which_attr = "MEN"
 		player.health -= 1
-		player.emotion -= 1
+		print("critical failure: update HEA, %s" % which_attr)
 	elif actual_roll == 1:
-		print("critical success: update money")
+		var which_attr
+		if randi() & 1:
+			player.physical += 1
+			which_attr = "PHY"
+		else:
+			player.mental += 1
+			which_attr = "MEN"
 		player.money += randi_range(50, 100)
+		print("critical success: update %s, money" % which_attr)
 	elif net_roll > max_roll:
-		print("failure: update Emo")
 		player.emotion -= 1
+		print("failure: update Emo")
 	else:
 		print("success: margin = %s" % [max_roll - net_roll])
 
