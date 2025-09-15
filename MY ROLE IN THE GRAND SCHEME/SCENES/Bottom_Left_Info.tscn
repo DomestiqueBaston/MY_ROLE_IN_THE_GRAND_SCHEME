@@ -1321,3 +1321,24 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+
+[node name="Scroller_Other" type="ScrollContainer" parent="VBox"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_qkikf")
+horizontal_scroll_mode = 3
+
+[node name="Info_Other" type="HFlowContainer" parent="VBox/Scroller_Other"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Info" type="RichTextLabel" parent="VBox/Scroller_Other/Info_Other"]
+custom_minimum_size = Vector2(106, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "- INFO -"
+fit_content = true
+horizontal_alignment = 1

@@ -8,6 +8,8 @@ extends Node2D
 
 @export var size := Vector2(114, 144)
 
+var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
+var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 
@@ -19,23 +21,49 @@ func _ready():
 ##
 func clear():
 	$VBox/Scroller_Object.hide()
-	$VBox/Scroller_NPC.hide()
 	$VBox/Scroller_Location.hide()
+	$VBox/Scroller_NPC.hide()
+	$VBox/Scroller_Other.hide()
 
 ##
 ## Shows the player everthing he thinks he knows about the given card, as
-## determined namely by the links he has created to it. Only location, object
-## and NPC cards are supported.
+## determined namely by the links he has created to it. Location, Object, NPC,
+## Abstract and Investigation cards are supported.
 ##
 func show_card(card: Card):
-	if card is LocationCard:
-		show_location(GameState.PlayerLocation.OTHER, card)
-	elif card is ObjectCard:
-		show_object(card)
-	elif card is NpcCard:
-		show_npc(card)
-	else:
-		clear()
+	match card.get_card_type():
+		Card.CardType.INVESTIGATION, Card.CardType.ABSTRACT:
+			show_other(card)
+		Card.CardType.OBJECT:
+			show_object(card)
+		Card.CardType.LOCATION:
+			show_location(GameState.PlayerLocation.OTHER, card)
+		Card.CardType.NPC:
+			show_npc(card)
+		_:
+			clear()
+
+##
+## Shows predefined information about the given Abstract or Invesigation card.
+##
+func show_other(card: Card):
+	var card_data: Variant
+	match card.get_card_type():
+		Card.CardType.INVESTIGATION:
+			card_data = _investigation_data
+		Card.CardType.ABSTRACT:
+			card_data = _abstract_data
+		_:
+			clear()
+			return
+
+	$VBox/Scroller_Other/Info_Other/Info.text = \
+		card_data[card.database_id].get("info", "")
+
+	$VBox/Scroller_Object.hide()
+	$VBox/Scroller_Location.hide()
+	$VBox/Scroller_NPC.hide()
+	$VBox/Scroller_Other.show()
 
 ##
 ## Similar to show_card(), when it is given a location card, but this function
@@ -218,8 +246,9 @@ func show_location(loc: GameState.PlayerLocation, card: LocationCard = null):
 			$VBox/Scroller_Location/Info_Location/Hideout_NPC_01.show()
 
 	$VBox/Scroller_Object.hide()
-	$VBox/Scroller_NPC.hide()
 	$VBox/Scroller_Location.show()
+	$VBox/Scroller_NPC.hide()
+	$VBox/Scroller_Other.hide()
 
 ##
 ## Shows the player everthing he thinks he knows about the given object card, as
@@ -259,8 +288,9 @@ func show_object(obj: ObjectCard):
 		$VBox/Scroller_Object/Info_Object/Evidence.show()
 
 	$VBox/Scroller_Object.show()
-	$VBox/Scroller_NPC.hide()
 	$VBox/Scroller_Location.hide()
+	$VBox/Scroller_NPC.hide()
+	$VBox/Scroller_Other.hide()
 
 ##
 ## Shows the player everthing he thinks he knows about the given NPC card, as
@@ -446,8 +476,9 @@ func show_npc(npc: NpcCard):
 		$VBox/Scroller_NPC/Info_NPC/Properties_Object.show()
 
 	$VBox/Scroller_Object.hide()
-	$VBox/Scroller_NPC.show()
 	$VBox/Scroller_Location.hide()
+	$VBox/Scroller_NPC.show()
+	$VBox/Scroller_Other.hide()
 
 func _make_link_list(card: Card, links: Array[Link]) -> String:
 	var text = ""
