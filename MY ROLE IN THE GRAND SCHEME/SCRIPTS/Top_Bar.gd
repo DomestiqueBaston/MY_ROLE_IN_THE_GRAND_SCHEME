@@ -262,7 +262,7 @@ func _on_dailies_menu_popup():
 	# can the player sleep?
 
 	item_index = popup.get_item_index(DailiesMenuItem.SLEEP)
-	popup.set_item_disabled(item_index, not GameState.can_sleep())
+	popup.set_item_disabled(item_index, not player.can_sleep())
 
 	# populate the debts submenu with an item for each debt
 
