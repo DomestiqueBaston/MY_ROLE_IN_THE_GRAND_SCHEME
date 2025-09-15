@@ -663,7 +663,7 @@ Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à 
 	- On ne peut pas jouer une carte Abstraite seule.
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Break in. ≠ de celles que le joueur a en main.
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
-	- On peut tenter l’action sans carte du tout avec un malus de 1.
+	- On peut tenter l’action sans carte du tout avec un malus de 1 par carte.
 	- Le jet de dé de base se fera sur round((PHY+MEN × 2+HEA)÷4). On ajoutera les bonus/malus de cartes Break in et Abstraite, de Non-Maîtrise, de Difficulté d’enquête, d’Emo, d’Add, de Wan, de Sommeil, de Veille, de Nuit, de Lieu (uniquement sur place) et de jeu sans carte.
 	- En cas de réussite critique, +1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit. La règle de progression s’applique.
 	- En cas d’échec, le joueur prendra +1Wan, +1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
