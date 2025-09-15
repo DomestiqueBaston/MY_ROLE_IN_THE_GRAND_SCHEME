@@ -72,7 +72,6 @@
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="62_smut4"]
 [ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/SHORT_EVENT/Player_Improvement_BG.png" id="67_a7igc"]
 [ext_resource type="Theme" uid="uid://nbbens0bdc2i" path="res://UI/Player_Progression_Theme.tres" id="68_q1jpv"]
-[ext_resource type="Script" uid="uid://bt5qe37nll5h5" path="res://SCRIPTS/Player_improvement_Button.gd" id="69_pf81c"]
 [ext_resource type="Theme" uid="uid://bwhe2wx8ls2rq" path="res://UI/Rowena_Theme.tres" id="70_0sc5x"]
 [ext_resource type="Script" uid="uid://d3u0wr723p4si" path="res://SCRIPTS/Rowena_Buttons.gd" id="71_x6sjh"]
 [ext_resource type="Texture2D" uid="uid://raefutvrke80" path="res://GRAPHICS/INTERACTION/Bring_It_On_Disabled.png" id="72_jo5q1"]
@@ -112,6 +111,7 @@
 [ext_resource type="Texture2D" uid="uid://rfgygfo7x74i" path="res://GRAPHICS/SHORT_EVENT/Drawer_06_Open.png" id="94_ku2a5"]
 [ext_resource type="Texture2D" uid="uid://ciqjhh4duttdq" path="res://GRAPHICS/SHORT_EVENT/Drawer_06_Hover.png" id="95_4721e"]
 [ext_resource type="BitMap" uid="uid://cc5nkujqyqkj" path="res://GRAPHICS/SHORT_EVENT/Drawer_06_Mask.png" id="96_dhp6t"]
+[ext_resource type="Script" uid="uid://ig24wobf5ji5" path="res://SCRIPTS/Player_Improvement.gd" id="97_hjqqn"]
 [ext_resource type="Texture2D" uid="uid://dhbyfuu4ni26y" path="res://GRAPHICS/SHORT_EVENT/Drawer_05_Open.png" id="97_s3phv"]
 [ext_resource type="Texture2D" uid="uid://cwkld6g4rh20e" path="res://GRAPHICS/SHORT_EVENT/Drawer_05_Hover.png" id="98_68eaj"]
 [ext_resource type="BitMap" uid="uid://ciinjcqtgr6m8" path="res://GRAPHICS/SHORT_EVENT/Drawer_05_Mask.png" id="99_h4ggb"]
@@ -3277,6 +3277,7 @@ text = "Alright!"
 
 [node name="Player_Improvement" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("97_hjqqn")
 
 [node name="Player_Improvement_BG" type="Sprite2D" parent="Overlays/Player_Improvement"]
 position = Vector2(171, 5)
@@ -3288,9 +3289,9 @@ layout_mode = 3
 anchors_preset = 0
 tooltip_text = "Ok..."
 theme = ExtResource("68_q1jpv")
-script = ExtResource("69_pf81c")
 
 [node name="Positive_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
+visible = false
 layout_mode = 0
 offset_left = 219.0
 offset_top = 52.0
@@ -4489,9 +4490,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Overlays/Player_Improvement/Informations/Quit" to="Overlays/Player_Improvement/Informations" method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
