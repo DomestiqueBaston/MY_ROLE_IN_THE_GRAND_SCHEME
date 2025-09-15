@@ -455,7 +455,7 @@ func attempt_investigation(location: LocationCard):
 		_current_interaction_card = location
 		save_game()
 		var cards = await Globals.dialog_overlay.attempt_break_in(location)
-		if not _play_break_in(cards):
+		if not await _play_break_in(cards):
 			end_interaction()
 			return
 
@@ -470,7 +470,7 @@ func attempt_investigation(location: LocationCard):
 func resume_break_in():
 	var cards = await Globals.dialog_overlay.attempt_break_in(
 		_current_interaction_card)
-	if _play_break_in(cards):
+	if await _play_break_in(cards):
 		start_investigation(_current_interaction_card)
 	else:
 		end_interaction()
@@ -505,28 +505,28 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	var net_roll = actual_roll + bonus_malus
 	print("with bonus/malus: %s" % net_roll)
 
+	var critical_attr: StringName
+
 	if actual_roll == 10:
-		var which_attr
 		if randi() & 1:
 			player.physical -= 1
-			which_attr = "PHY"
+			critical_attr = &"PHY"
 		else:
 			player.mental -= 1
-			which_attr = "MEN"
+			critical_attr = &"MEN"
 		player.health -= 1
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
-		print("critical failure: update HEA, %s, Emo, Wan" % which_attr)
+		print("critical failure: update HEA, %s, Emo, Wan" % critical_attr)
 	elif actual_roll == 1:
-		var which_attr
 		if randi() & 1:
 			player.physical += 1
-			which_attr = "PHY"
+			critical_attr = &"PHY"
 		else:
 			player.mental += 1
-			which_attr = "MEN"
+			critical_attr = &"MEN"
 		player.emotion = Player.calm(player.emotion)
-		print("critical success: update %s, Emo" % which_attr)
+		print("critical success: update %s, Emo" % critical_attr)
 		_current_interaction_bonus_malus = -1
 	elif net_roll > max_roll:
 		player.emotion = Player.exacerbate(player.emotion)
@@ -534,6 +534,11 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		print("failure: update Emo, Wan")
 	else:
 		print("success: margin = %s" % [max_roll - net_roll])
+
+	if actual_roll == 10:
+		await Globals.dialog_overlay.show_player_improvement(-1)
+	elif actual_roll == 1:
+		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
 	return actual_roll == 1 or net_roll <= max_roll
 
@@ -564,26 +569,26 @@ func _play_investigation(cards_played: Array[Card]):
 	var net_roll = actual_roll + bonus_malus
 	print("with bonus/malus: %s" % net_roll)
 
+	var critical_attr: StringName
+
 	if actual_roll == 10:
-		var which_attr
 		if randi() & 1:
 			player.physical -= 1
-			which_attr = "PHY"
+			critical_attr = &"PHY"
 		else:
 			player.mental -= 1
-			which_attr = "MEN"
+			critical_attr = &"MEN"
 		player.health -= 1
-		print("critical failure: update HEA, %s" % which_attr)
+		print("critical failure: update HEA, %s" % critical_attr)
 	elif actual_roll == 1:
-		var which_attr
 		if randi() & 1:
 			player.physical += 1
-			which_attr = "PHY"
+			critical_attr = &"PHY"
 		else:
 			player.mental += 1
-			which_attr = "MEN"
+			critical_attr = &"MEN"
 		player.money += randi_range(50, 100)
-		print("critical success: update %s, money" % which_attr)
+		print("critical success: update %s, money" % critical_attr)
 	elif net_roll > max_roll:
 		player.emotion -= 1
 		print("failure: update Emo")
@@ -598,6 +603,11 @@ func _play_investigation(cards_played: Array[Card]):
 	if duration > 0:
 		await _increment_time(duration)
 	print("duration: %s hour(s)" % duration)
+
+	if actual_roll == 10:
+		await Globals.dialog_overlay.show_player_improvement(-1)
+	elif actual_roll == 1:
+		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()

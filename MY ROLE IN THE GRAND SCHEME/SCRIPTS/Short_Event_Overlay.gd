@@ -224,26 +224,31 @@ func visit_dealer(stock: int, funds: int) -> int:
 		$Overlays/Misc/Announces/Rowena_Absent.hide()
 		return 0
 
-func show_player_improvement(attr_name: StringName, is_positive: bool):
+func show_player_improvement(direction: int, attr_name: StringName = StringName()):
 	var ctrl: Control
 	match attr_name:
 		&"HEA":
-			if is_positive:
+			if direction > 0:
 				ctrl = $Overlays/Player_Improvement/Informations/Positive_Health
 			else:
 				ctrl = $Overlays/Player_Improvement/Informations/Negative_Health
 		&"PHY":
-			if is_positive:
+			if direction > 0:
 				ctrl = $Overlays/Player_Improvement/Informations/Positive_Physic
 			else:
 				ctrl = $Overlays/Player_Improvement/Informations/Negative_Physic
 		&"MEN":
-			if is_positive:
+			if direction > 0:
 				ctrl = $Overlays/Player_Improvement/Informations/Positive_Mental
 			else:
 				ctrl = $Overlays/Player_Improvement/Informations/Negative_Mental
 		_:
-			return
+			if direction > 0:
+				ctrl = $Overlays/Player_Improvement/Informations/Positive_Total
+			elif direction < 0:
+				ctrl = $Overlays/Player_Improvement/Informations/Negative_Total
+			else:
+				ctrl = $Overlays/Player_Improvement/Informations/Positive_And_Negative
 	ctrl.show()
 	$Overlays/Player_Improvement.show()
 	await _appear()
