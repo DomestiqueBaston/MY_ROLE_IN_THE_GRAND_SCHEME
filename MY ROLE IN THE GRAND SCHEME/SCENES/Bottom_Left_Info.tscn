@@ -1329,12 +1329,7 @@ size_flags_vertical = 3
 theme = ExtResource("2_qkikf")
 horizontal_scroll_mode = 3
 
-[node name="Info_Other" type="HFlowContainer" parent="VBox/Scroller_Other"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Info" type="RichTextLabel" parent="VBox/Scroller_Other/Info_Other"]
+[node name="Info" type="RichTextLabel" parent="VBox/Scroller_Other"]
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3

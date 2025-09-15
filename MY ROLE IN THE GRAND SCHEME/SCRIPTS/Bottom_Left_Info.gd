@@ -57,8 +57,7 @@ func show_other(card: Card):
 			clear()
 			return
 
-	$VBox/Scroller_Other/Info_Other/Info.text = \
-		card_data[card.database_id].get("info", "")
+	$VBox/Scroller_Other/Info.text = card_data[card.database_id].get("info", "")
 
 	$VBox/Scroller_Object.hide()
 	$VBox/Scroller_Location.hide()
