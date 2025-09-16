@@ -443,6 +443,8 @@ Cartes PNJ
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
 	- On ne joue qu’1 carte PNJ par interaction.
 
+On ne joue qu’une carte PNJ ou Evidence ou Lieu ou Objet par interaction (et en Dialogue uniquement) !
+
 Les différentes piles de cartes du joueur (en interaction)
 	- Pile de maîtrise (cartes Dialogue, toutes Combat, toutes Investigation, Abstraite (max 3)) / 10 Max
 	- Pile de non-maîtrise (cartes Dialogue, Combat, Investigation, Abstraite) / 5 Max et aléatoires (mais possibles dans le contexte, pas de Dialogue en Combat, par exemple).
