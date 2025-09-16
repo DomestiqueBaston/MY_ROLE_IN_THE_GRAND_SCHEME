@@ -482,7 +482,7 @@ Dialogue
 	- La main Fall back proposera 5 cartes Dialogue et Abstraite aléatoires. 2 cartes Dialogue minimum. ≠ de celles que le joueur a en main.
 	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps, etc.), l’action du menu sera inaccessible.
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire, etc.), il ne trouvera personne et aura droit à la scène de l’interphone (Short_Event_Overlay.tscn/Intercom/Away). Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
-	- Pour Dialoguer avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci :Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
+	- Pour Dialoguer avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci : Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
 	- Le joueur ne peut pas fuir une agression d’avant Dialogue ! Voir Déclenchement d’un combat par un PNJ lié à l’enquête à Combat.
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Bonus de 2 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
