@@ -435,6 +435,7 @@ func attempt_investigation(location: LocationCard):
 	elif GameState.player.has_search_warrant:
 		if not await Globals.dialog_overlay.use_search_warrant():
 			return
+		GameState.player.has_search_warrant = false
 
 	# if NPCs are present and the player does NOT have a search warrant, there
 	# is nothing he can do
