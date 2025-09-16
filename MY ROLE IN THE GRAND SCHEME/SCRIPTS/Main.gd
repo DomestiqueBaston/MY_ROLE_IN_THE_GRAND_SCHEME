@@ -595,19 +595,34 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		GameState.player.mental >= 0 and
 		GameState.player.health >= 0)
 
+	# dialogue submenu: disable locations unknown to the player, or that do not
+	# correspond to the NPC's work schedule (if known)
+
 	var index = popup.get_item_index(MenuItem.DIALOGUE)
-	if node is NpcCard:
+	if (node is not NpcCard
+		or not player_is_apt
+		or node.npc_status in [NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED]):
+		# TODO: or if NPC has already been seen today
+		popup.set_item_disabled(index, true)
+	else:
 		var links_found = []
+		var should_be_at_work = false
 		for link in node.find_links():
 			links_found.append(link.type)
+			if link.type == Link.Type.WORK:
+				should_be_at_work = node.should_be_at_work()
 		var submenu = popup.get_item_submenu_node(index)
 		for link_type in [Link.Type.HOME, Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
 			var i = submenu.get_item_index(link_type)
-			submenu.set_item_disabled(i, not link_type in links_found)
-		popup.set_item_disabled(index, not player_is_apt)
-		# TODO: disable if NPC has already been seen today
-	else:
-		popup.set_item_disabled(index, true)
+			var ok
+			if not link_type in links_found:
+				ok = false
+			elif link_type == Link.Type.WORK:
+				ok = should_be_at_work
+			else:
+				ok = not should_be_at_work
+			submenu.set_item_disabled(i, not ok)
+		popup.set_item_disabled(index, false)
 
 	index = popup.get_item_index(MenuItem.INVESTIGATION)
 	popup.set_item_disabled(
@@ -689,10 +704,16 @@ func _handle_submenu(id: int, submenu: int):
 func _handle_dialogue_submenu(id: int):
 	if _popup_node is not NpcCard:
 		return
-	var other_cards = _popup_node.find_linked_cards(id as Link.Type)
-	if other_cards.is_empty():
+	var npc: NpcCard = _popup_node
+	var other_cards = npc.find_linked_cards(id as Link.Type)
+	if other_cards.is_empty() or other_cards[0] is not LocationCard:
 		return
-	print("dialogue at %s: %s" % [Link.Type.keys()[id], other_cards[0].get_display_name()])
+	var location: LocationCard = other_cards[0]
+	print("dialogue at %s: %s" % [Link.Type.keys()[id], location.get_display_name()])
+	if npc.locate() == location:
+		print("NPC is there!")
+	else:
+		print("NPC is NOT there")
 
 func _delete_link(link: Link):
 
