@@ -3010,7 +3010,7 @@ rotation = 0.0356184
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Someone[/color][/pulse]'s  not  happy to see [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]you[/color][/pulse]!
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Not  what  you expected[/color][/shake]. Just  as  you approached, the  person in  front  of  you [shake rate=7.0 level=5 connected=0][color=#ff8864]turns  on  you[/color][/shake].
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Not  what  you expected[/color][/shake]. Just  as  you approached, the  person  ahead  suddenly [shake rate=7.0 level=5 connected=0][color=#ff1c18]spins  to  face  you[/color][/shake].
 
 In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  to this, but [shake rate=7.0 level=5 connected=0][color=#ff8864]you're in  deep [color=#ff1c18]trouble[/color][/color][/shake].
 
@@ -3025,12 +3025,12 @@ offset_right = 484.0
 offset_bottom = 299.0
 rotation = 0.0356184
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh look[/color][/pulse],  an  attack!
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Oh  look[/color][/pulse],  here  comes  an [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18] attack[/color][/pulse]!
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] Didn't  think it'd  be  that easy,  did you?
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Surprised?[/color][/shake] You  didn't  really  think it'd  be  that  easy,  did you?
 
 The  assault  comes  fast  (probably  more  than  you can  handle).
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Good luck with that[/color][/shake]. You'll need it.
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Good  luck  with  that[/color][/shake].  You'll need it.
 
 Maybe  you'd  better  prepare  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meet your  [color=#ff1c18]fate[/color][/color][/shake]?[/center]"
 
