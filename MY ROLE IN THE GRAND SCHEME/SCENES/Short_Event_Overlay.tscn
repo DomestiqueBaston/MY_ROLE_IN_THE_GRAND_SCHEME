@@ -2977,6 +2977,7 @@ Did you really  think  that  would  be  your biggest  challenge  today?
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  don't get  too  used to it.[/color][/shake][/center]"
 
 [node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
+visible = false
 layout_mode = 0
 offset_left = 165.0
 offset_top = 55.0

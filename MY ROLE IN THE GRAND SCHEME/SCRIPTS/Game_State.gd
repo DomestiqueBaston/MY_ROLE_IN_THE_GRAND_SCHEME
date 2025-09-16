@@ -505,6 +505,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	var net_roll = actual_roll + bonus_malus
 	print("with bonus/malus: %s" % net_roll)
 
+	var success = false
 	var critical_attr: StringName
 
 	if actual_roll == 10:
@@ -528,12 +529,16 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		player.emotion = Player.calm(player.emotion)
 		print("critical success: update %s, Emo" % critical_attr)
 		_current_interaction_bonus_malus = -1
+		success = true
 	elif net_roll > max_roll:
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
 		print("failure: update Emo, Wan")
 	else:
 		print("success: margin = %s" % [max_roll - net_roll])
+		success = true
+
+	await Globals.dialog_overlay.show_break_in_message(success)
 
 	if actual_roll == 10:
 		await Globals.dialog_overlay.show_player_improvement(-1)

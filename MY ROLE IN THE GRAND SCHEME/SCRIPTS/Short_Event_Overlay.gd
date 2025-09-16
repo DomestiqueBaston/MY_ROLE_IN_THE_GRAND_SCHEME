@@ -77,6 +77,21 @@ func show_dream_message(nightmare: bool):
 	$Overlays/Misc/Announces/Dreams.hide()
 
 ##
+## Display a message telling the player whether his break-in attempt has failed
+## or succeeded.
+##
+func show_break_in_message(success: bool):
+	$Overlays/Misc/Announces/Break_In/Player_Failure.visible = not success
+	$Overlays/Misc/Announces/Break_In/Player_Success.visible = success
+	$Overlays/Misc/Announces/Break_In.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Break_In.hide()
+
+##
 ## Display a dialog asking the player for a yes or no and return the answer.
 ##
 func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
