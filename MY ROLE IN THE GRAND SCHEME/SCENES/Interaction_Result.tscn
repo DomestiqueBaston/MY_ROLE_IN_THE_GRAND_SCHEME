@@ -495,7 +495,7 @@ autowrap_mode = 0
 [node name="Hangout" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Dialogue/Positive_Report/Report_Content_Including_Critical/NPC_Information/Links_Container/Link_02"]
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
-text = "Hang out"
+text = "Hangout"
 fit_content = true
 autowrap_mode = 0
 

@@ -495,7 +495,7 @@ offset_top = 1.0
 offset_right = 163.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
-tooltip_text = "Hang out
+tooltip_text = "Hangout
 - Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
@@ -628,7 +628,7 @@ item_11/id = 11
 item_12/text = "Work"
 item_12/icon = ExtResource("37_qpjgg")
 item_12/id = 12
-item_13/text = "Hang out"
+item_13/text = "Hangout"
 item_13/icon = ExtResource("39_raids")
 item_13/id = 13
 item_14/text = "Found"

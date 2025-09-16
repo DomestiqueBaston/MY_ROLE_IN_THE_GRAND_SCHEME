@@ -77,8 +77,15 @@ func _ready():
 	var submenu3 = submenu1.duplicate()
 	popup.add_child(submenu2)
 	popup.add_child(submenu3)
+
+	var dialogue_submenu = PopupMenu.new()
+	dialogue_submenu.add_item("At Home", Link.Type.HOME)
+	dialogue_submenu.add_item("At Work", Link.Type.WORK)
+	dialogue_submenu.add_item("At Hangout", Link.Type.HANGOUT)
+	dialogue_submenu.add_item("At Hideout", Link.Type.HIDEOUT)
+	popup.add_child(dialogue_submenu)
 	
-	popup.add_item("Dialogue", MenuItem.DIALOGUE)
+	popup.add_submenu_node_item("Dialogue", dialogue_submenu, MenuItem.DIALOGUE)
 	popup.add_item("Investigation", MenuItem.INVESTIGATION)
 	popup.add_separator("  - - - - - - - - - -  ")
 	popup.add_submenu_node_item(
@@ -96,6 +103,7 @@ func _ready():
 	submenu1.id_pressed.connect(_handle_submenu.bind(0))
 	submenu2.id_pressed.connect(_handle_submenu.bind(1))
 	submenu3.id_pressed.connect(_handle_submenu.bind(2))
+	dialogue_submenu.id_pressed.connect(_handle_dialogue_submenu)
 	
 	top_bar.settings.connect(func(): settings.emit())
 	top_bar.quit.connect(func(): quit.emit())
@@ -587,7 +595,21 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		GameState.player.mental >= 0 and
 		GameState.player.health >= 0)
 
-	var index = popup.get_item_index(MenuItem.INVESTIGATION)
+	var index = popup.get_item_index(MenuItem.DIALOGUE)
+	if node is NpcCard:
+		var links_found = []
+		for link in node.find_links():
+			links_found.append(link.type)
+		var submenu = popup.get_item_submenu_node(index)
+		for link_type in [Link.Type.HOME, Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
+			var i = submenu.get_item_index(link_type)
+			submenu.set_item_disabled(i, not link_type in links_found)
+		popup.set_item_disabled(index, not player_is_apt)
+		# TODO: disable if NPC has already been seen today
+	else:
+		popup.set_item_disabled(index, true)
+
+	index = popup.get_item_index(MenuItem.INVESTIGATION)
 	popup.set_item_disabled(
 		index,
 		not player_is_apt
@@ -637,8 +659,6 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 func _handle_popup(id: int):
 	match id:
-		MenuItem.DIALOGUE:
-			print("start dialogue")
 		MenuItem.INVESTIGATION:
 			GameState.attempt_investigation(_popup_node)
 		MenuItem.SWITCH_LINK:
@@ -665,6 +685,14 @@ func _handle_submenu(id: int, submenu: int):
 		2:
 			if _popup_node is Link:
 				_popup_node.type = id
+
+func _handle_dialogue_submenu(id: int):
+	if _popup_node is not NpcCard:
+		return
+	var other_cards = _popup_node.find_linked_cards(id as Link.Type)
+	if other_cards.is_empty():
+		return
+	print("dialogue at %s: %s" % [Link.Type.keys()[id], other_cards[0].get_display_name()])
 
 func _delete_link(link: Link):
 
