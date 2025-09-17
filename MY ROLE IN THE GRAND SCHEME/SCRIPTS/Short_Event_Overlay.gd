@@ -183,15 +183,15 @@ func confirm_break_in() -> bool:
 	return $Overlays/Run_Away_Break_In/Announces.get_confirmed()
 
 ##
-## Displays an overlay where the player attempts to break in to the given
-## locations. Returns the cards that have been dragged to the interaction zone
-## when the player clicks on the button. 
+## Displays an overlay where the player attempts to break in to some location.
+## Returns the cards that have been dragged to the interaction zone when the
+## player clicks on the button. 
 ##
-func attempt_break_in(location: LocationCard) -> Array[Card]:
+func attempt_break_in() -> Array[Card]:
 	$Overlays/Interaction_Run_Away_Break_In.enabled = true
 	var player = GameState.player
 	$Overlays/Interaction_Run_Away_Break_In.start_break_in(
-		location, player.get_mastery_cards(), player.get_fallback_cards())
+		player.get_mastery_cards(), player.get_fallback_cards())
 	$Overlays/Interaction_Run_Away_Break_In/Title/Break_In.show()
 	$Overlays/Interaction_Run_Away_Break_In.show()
 	await _appear()

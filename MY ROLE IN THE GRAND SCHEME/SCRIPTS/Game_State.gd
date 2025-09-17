@@ -145,7 +145,8 @@ var _player_location_card: LocationCard
 
 # current interaction
 var _current_interaction: InteractionType = InteractionType.NONE
-var _current_interaction_card: Card
+var _current_interaction_location: LocationCard
+var _current_interaction_npc: NpcCard
 var _current_interaction_bonus_malus: int
 
 func _ready():
@@ -161,7 +162,8 @@ func start_game():
 	_player_location = PlayerLocation.OFFICE
 	_player_location_card = null
 	_current_interaction = InteractionType.NONE
-	_current_interaction_card = null
+	_current_interaction_location = null
+	_current_interaction_npc = null
 	_current_interaction_bonus_malus = 0
 
 	cases.clear()
@@ -453,9 +455,9 @@ func attempt_investigation(location: LocationCard):
 	if break_in_needed:
 		player.pick_break_in_cards()
 		_current_interaction = InteractionType.BREAK_IN
-		_current_interaction_card = location
+		_current_interaction_location = location
 		save_game()
-		var cards = await Globals.dialog_overlay.attempt_break_in(location)
+		var cards = await Globals.dialog_overlay.attempt_break_in()
 		if not await _play_break_in(cards):
 			end_interaction()
 			return
@@ -469,10 +471,9 @@ func attempt_investigation(location: LocationCard):
 ## left off.
 ##
 func resume_break_in():
-	var cards = await Globals.dialog_overlay.attempt_break_in(
-		_current_interaction_card)
+	var cards = await Globals.dialog_overlay.attempt_break_in()
 	if await _play_break_in(cards):
-		start_investigation(_current_interaction_card)
+		start_investigation(_current_interaction_location)
 	else:
 		end_interaction()
 
@@ -483,13 +484,13 @@ func resume_break_in():
 # successful.
 #
 func _play_break_in(cards_played: Array[Card]) -> bool:
-	print("\n*** break-in: %s ***" % _current_interaction_card.get_display_name())
+	print("\n*** break-in: %s ***" % _current_interaction_location.get_display_name())
 
 	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
 	# changes are temporary; Emo and Add changes are permanent
 
 	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_card, false)
+	attrs.play_card(_current_interaction_location, false)
 	for card in cards_played:
 		attrs.play_card(card, card in player.get_fallback_cards())
 
@@ -552,13 +553,13 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 # Game logic for an investigation (possibly following a break-in).
 #
 func _play_investigation(cards_played: Array[Card]):
-	print("\n*** investigation: %s ***" % _current_interaction_card.get_display_name())
+	print("\n*** investigation: %s ***" % _current_interaction_location.get_display_name())
 
 	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
 	# changes are temporary; Emo and Add changes are permanent
 
 	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_card, false)
+	attrs.play_card(_current_interaction_location, false)
 	for card in cards_played:
 		attrs.play_card(card, card in GameState.player.get_fallback_cards())
 
@@ -618,7 +619,35 @@ func _play_investigation(cards_played: Array[Card]):
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
-	_current_interaction_card = location
+	_current_interaction_location = location
+	save_game()
+	interaction_started.emit()
+
+func attempt_dialogue(npc: NpcCard, location: LocationCard):
+
+	# go to the location first
+
+	if (_player_location != PlayerLocation.OTHER
+		or _player_location_card != location):
+		await pass_one_hour()
+		set_player_location(PlayerLocation.OTHER, location)
+
+	# check whether the NPC is there
+
+	if npc.locate() != location:
+		await Globals.dialog_overlay.show_npc_away(npc)
+		return
+
+	# start the dialogue
+
+	npc.set_seen_today()
+	start_dialogue(npc, location)
+
+func start_dialogue(npc: NpcCard, location: LocationCard):
+	player.pick_dialogue_cards()
+	_current_interaction = InteractionType.DIALOGUE
+	_current_interaction_location = location
+	_current_interaction_npc = npc
 	save_game()
 	interaction_started.emit()
 
@@ -628,7 +657,8 @@ func end_interaction(cards_played: Array[Card] = []):
 
 	player.clear_fallback_cards()
 	_current_interaction = InteractionType.NONE
-	_current_interaction_card = null
+	_current_interaction_location = null
+	_current_interaction_npc = null
 	_current_interaction_bonus_malus = 0
 	if await player.test_health():
 		save_game()
@@ -638,8 +668,11 @@ func end_interaction(cards_played: Array[Card] = []):
 func get_current_interaction() -> InteractionType:
 	return _current_interaction
 
-func get_current_interaction_card() -> Card:
-	return _current_interaction_card
+func get_current_interaction_location() -> LocationCard:
+	return _current_interaction_location
+
+func get_current_interaction_npc() -> NpcCard:
+	return _current_interaction_npc
 
 func get_current_case() -> Case:
 	if _current_case_index >= 0:
@@ -712,7 +745,8 @@ func assign(other: GameState):
 	_player_location = other._player_location
 	_player_location_card = other._player_location_card
 	_current_interaction = other._current_interaction
-	_current_interaction_card = other._current_interaction_card
+	_current_interaction_location = other._current_interaction_location
+	_current_interaction_npc = other._current_interaction_npc
 	_current_interaction_bonus_malus = other._current_interaction_bonus_malus
 
 #
@@ -736,8 +770,10 @@ func get_referenced_objects():
 		refs.append(case)
 	if _player_location_card:
 		refs.append(_player_location_card)
-	if _current_interaction_card:
-		refs.append(_current_interaction_card)
+	if _current_interaction_location:
+		refs.append(_current_interaction_location)
+	if _current_interaction_npc:
+		refs.append(_current_interaction_npc)
 	return refs
 
 #
@@ -767,8 +803,10 @@ func get_json_dict():
 
 	if _current_interaction != InteractionType.NONE:
 		dict["interaction"] = _current_interaction
-		if _current_interaction_card:
-			dict["interaction_card"] = _current_interaction_card.get_unique_id()
+		if _current_interaction_location:
+			dict["interaction_location"] = _current_interaction_location.get_unique_id()
+		if _current_interaction_npc:
+			dict["interaction_npc"] = _current_interaction_npc.get_unique_id()
 		if _current_interaction_bonus_malus != 0:
 			dict["interaction_bonus_malus"] = _current_interaction_bonus_malus
 
@@ -796,8 +834,10 @@ func restore(dict, catalog):
 
 	if "interaction" in dict:
 		_current_interaction = dict.interaction
-		if "interaction_card" in dict:
-			_current_interaction_card = catalog[dict.interaction_card]
+		if "interaction_location" in dict:
+			_current_interaction_location = catalog[dict.interaction_location]
+		if "interaction_npc" in dict:
+			_current_interaction_npc = catalog[dict.interaction_npc]
 		_current_interaction_bonus_malus = dict.get("interaction_bonus_malus", 0)
 
 #

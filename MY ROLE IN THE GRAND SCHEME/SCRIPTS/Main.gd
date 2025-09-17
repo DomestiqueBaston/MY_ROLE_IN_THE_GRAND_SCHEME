@@ -709,11 +709,7 @@ func _handle_dialogue_submenu(id: int):
 	if other_cards.is_empty() or other_cards[0] is not LocationCard:
 		return
 	var location: LocationCard = other_cards[0]
-	print("dialogue at %s: %s" % [Link.Type.keys()[id], location.get_display_name()])
-	if npc.locate() == location:
-		print("NPC is there!")
-	else:
-		print("NPC is NOT there")
+	GameState.attempt_dialogue(npc, location)
 
 func _delete_link(link: Link):
 

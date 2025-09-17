@@ -346,8 +346,7 @@ func _enable_disable_button():
 ##
 ## Starts an investigation. A done() signal is emitted when it finishes.
 ##
-func start_investigation(
-	_location: LocationCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
+func start_investigation(mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card in mastery_cards:
 		if card is AbstractCard or card is InvestigationCard:
 			$Cards/Mastery.add_child(card)
@@ -358,14 +357,38 @@ func start_investigation(
 ##
 ## Starts a break-in. A done() signal is emitted when it finishes.
 ##
-func start_break_in(
-	_location: LocationCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
+func start_break_in(mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card in mastery_cards:
 		if card is AbstractCard:
 			$Cards/Mastery.add_child(card)
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
 	_start_interaction(GameState.InteractionType.BREAK_IN)
+
+##
+## Starts a dialogue. A done() signal is emitted when it finishes.
+##
+func start_dialogue(mastery_cards: Array[Card], fallback_cards: Array[Card]):
+	for card: Card in GameState.get_current_case().get_revealed_cards():
+		if card.find_links(Link.Type.GUILT):
+			$Cards/Evidence.add_child(card)
+		else:
+			match card.get_card_type():
+				Card.CardType.OBJECT:
+					$Cards/Objects.add_child(card)
+				Card.CardType.LOCATION:
+					$Cards/Locations.add_child(card)
+				Card.CardType.NPC:
+					$Cards/NPCs.add_child(card)
+
+	for card in mastery_cards:
+		if card is AbstractCard or card is DialogueCard:
+			$Cards/Mastery.add_child(card)
+
+	for card in fallback_cards:
+		$Cards/Fallback.add_child(card)
+
+	_start_interaction(GameState.InteractionType.DIALOGUE)
 
 ##
 ## After an interaction has finished, returns the cards that were played, that

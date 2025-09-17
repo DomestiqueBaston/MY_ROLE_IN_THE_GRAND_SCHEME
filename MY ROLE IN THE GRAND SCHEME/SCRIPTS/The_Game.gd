@@ -124,18 +124,21 @@ func _continue_game():
 
 func _on_interaction_started():
 	var interaction_type = GameState.get_current_interaction()
-	var interaction_card = GameState.get_current_interaction_card()
 
 	var interaction_scene = await _replace_scene(_interaction_scene)
 	interaction_scene.done.connect(_on_interaction_ended)
 	interaction_scene.settings.connect(_go_to_settings)
 	interaction_scene.quit.connect(_go_to_option_menu)
 
-	if interaction_type == GameState.InteractionType.INVESTIGATION:
-		interaction_scene.start_investigation(
-			interaction_card,
-			GameState.player.get_mastery_cards(),
-			GameState.player.get_fallback_cards())
+	match interaction_type:
+		GameState.InteractionType.INVESTIGATION:
+			interaction_scene.start_investigation(
+				GameState.player.get_mastery_cards(),
+				GameState.player.get_fallback_cards())
+		GameState.InteractionType.DIALOGUE:
+			interaction_scene.start_dialogue(
+				GameState.player.get_mastery_cards(),
+				GameState.player.get_fallback_cards())
 
 func _on_interaction_ended():
 	var interaction_scene = $Active_Scene.get_child(0)

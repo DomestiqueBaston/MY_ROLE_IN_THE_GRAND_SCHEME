@@ -397,6 +397,31 @@ func pick_break_in_cards():
 			var id = _pick_random_investigation_card(false, false, true)
 			_fallback_cards.append(InvestigationCard.create_card(id))
 
+##
+## Picks 5 abstract and/or dialogue cards at random for a dialogue, ensuring
+## that there are no duplicates with the player's "mastery" cards, and puts them
+## in the player's "fallback" deck. Any cards already in the fallback deck are
+## deleted.
+##
+func pick_dialogue_cards():
+	clear_fallback_cards()
+
+	# 2-5 dialogue cards
+
+	var dialogue_count = randi_range(2, 5)
+
+	while _fallback_cards.size() < dialogue_count:
+		var id = _pick_random_dialogue_card()
+		var card = DialogueCard.create_card(id)
+		_fallback_cards.append(card)
+
+	# the rest are abstract cards
+
+	while _fallback_cards.size() < 5:
+		var id = _pick_random_abstract_card()
+		var card = AbstractCard.create_card(id)
+		_fallback_cards.append(card)
+
 func pass_one_hour():
 	if randi() % 10 == 0:
 		match randi() % 3:
