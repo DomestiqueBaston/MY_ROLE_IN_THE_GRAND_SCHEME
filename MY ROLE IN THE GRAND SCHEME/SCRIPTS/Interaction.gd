@@ -386,8 +386,11 @@ func start_break_in(mastery_cards: Array[Card], fallback_cards: Array[Card]):
 ##
 ## Starts a dialogue. A done() signal is emitted when it finishes.
 ##
-func start_dialogue(mastery_cards: Array[Card], fallback_cards: Array[Card]):
+func start_dialogue(
+	npc: NpcCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card: Card in GameState.get_current_case().get_revealed_cards():
+		if card == npc:
+			continue
 		_saved_card_state[card] = CardState.new(card)
 		card.get_parent().remove_child(card)
 		if card.find_links(Link.Type.GUILT):
@@ -408,7 +411,7 @@ func start_dialogue(mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
 
-	_start_interaction(GameState.InteractionType.DIALOGUE)
+	_start_interaction(GameState.InteractionType.DIALOGUE, npc)
 
 ##
 ## After an interaction has finished, returns the cards that were played, that
@@ -419,10 +422,12 @@ func get_cards_played() -> Array[Card]:
 	cards.assign(_cards_played.keys())
 	return cards
 
-func _start_interaction(type: GameState.InteractionType):
+func _start_interaction(type: GameState.InteractionType, npc: NpcCard = null):
 	_cards_played.clear()
 	_interaction_type = type
 	if tv_screen:
+		if type == GameState.InteractionType.DIALOGUE and npc:
+			tv_screen.set_dialogue_npc(npc)
 		tv_screen.set_interaction_type(type)
 
 #

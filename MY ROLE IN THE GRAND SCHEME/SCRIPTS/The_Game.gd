@@ -137,6 +137,7 @@ func _on_interaction_started():
 				GameState.player.get_fallback_cards())
 		GameState.InteractionType.DIALOGUE:
 			interaction_scene.start_dialogue(
+				GameState.get_current_interaction_npc(),
 				GameState.player.get_mastery_cards(),
 				GameState.player.get_fallback_cards())
 
