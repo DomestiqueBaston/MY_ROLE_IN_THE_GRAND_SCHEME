@@ -5,21 +5,21 @@ var _is_macos = (OS.get_name() == "macOS")
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
+func _notification(what: int):
+	# on macOS only, the cursor remains invisible when the mouse leaves the
+	# window
+	if _is_macos:
+		match what:
+			NOTIFICATION_WM_MOUSE_ENTER:
+				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			NOTIFICATION_WM_MOUSE_EXIT:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _process(_delta):
 	# while the mouse is captured, we need to set the mouse position in
 	# _input(), because the system mouse position is not updated
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		return
-
-	global_position = get_global_mouse_position().round()
-
-	# on platforms other than macOS, the cursor is always made visible when it
-	# leaves the window
-	if _is_macos:
-		if get_viewport_rect().has_point(global_position):
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		global_position = get_global_mouse_position().round()
 
 func _input(event: InputEvent):
 	# while the mouse is captured, we have to update its position using
