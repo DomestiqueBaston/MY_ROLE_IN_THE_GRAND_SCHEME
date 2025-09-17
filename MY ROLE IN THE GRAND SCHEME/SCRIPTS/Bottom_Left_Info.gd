@@ -9,7 +9,9 @@ extends Node2D
 @export var size := Vector2(114, 144)
 
 var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
+var _combat_data = preload("res://JSON/INTERACTION/Combat.json").data
 var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
+var _dialogue_data = preload("res://JSON/INTERACTION/Dialogue.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 
@@ -27,13 +29,10 @@ func clear():
 
 ##
 ## Shows the player everthing he thinks he knows about the given card, as
-## determined namely by the links he has created to it. Location, Object, NPC,
-## Abstract and Investigation cards are supported.
+## determined namely by the links he has created to it.
 ##
 func show_card(card: Card):
 	match card.get_card_type():
-		Card.CardType.INVESTIGATION, Card.CardType.ABSTRACT:
-			show_other(card)
 		Card.CardType.OBJECT:
 			show_object(card)
 		Card.CardType.LOCATION:
@@ -41,16 +40,21 @@ func show_card(card: Card):
 		Card.CardType.NPC:
 			show_npc(card)
 		_:
-			clear()
+			show_other(card)
 
 ##
-## Shows predefined information about the given Abstract or Invesigation card.
+## Shows predefined information about the given Combat, Invesigation, Dialogue
+## or Abstract card.
 ##
 func show_other(card: Card):
 	var card_data: Variant
 	match card.get_card_type():
+		Card.CardType.COMBAT:
+			card_data = _combat_data
 		Card.CardType.INVESTIGATION:
 			card_data = _investigation_data
+		Card.CardType.DIALOGUE:
+			card_data = _dialogue_data
 		Card.CardType.ABSTRACT:
 			card_data = _abstract_data
 		_:
