@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://b42ohp0p7jqiq" path="res://GRAPHICS/SHORT_EVENT/Red_Button_Normal.png" id="21_8p368"]
 [ext_resource type="Texture2D" uid="uid://jdptx3olu22w" path="res://GRAPHICS/SHORT_EVENT/Red_Button_Hover.png" id="22_v0nqa"]
 [ext_resource type="BitMap" uid="uid://ds00ff5fyqqv" path="res://GRAPHICS/SHORT_EVENT/Red_Button_Mask.png" id="23_1nskf"]
-[ext_resource type="Script" uid="uid://rcrpg5ifpj3v" path="res://SCRIPTS/Intercom_Overlay_Button.gd" id="24_fjtuv"]
 [ext_resource type="AudioStream" uid="uid://cd8g0rywkt8i3" path="res://SOUND/MISC/Intercom.ogg" id="25_7hyo2"]
 [ext_resource type="Texture2D" uid="uid://bldatry1ckp7d" path="res://GRAPHICS/SHORT_EVENT/Case_Management_BG.png" id="26_akg4w"]
 [ext_resource type="Theme" uid="uid://vbgd5rjttbbi" path="res://UI/Case_Management_Theme.tres" id="27_0f70e"]
@@ -80,6 +79,7 @@
 [ext_resource type="Texture2D" uid="uid://dsksdoxu1xfhi" path="res://GRAPHICS/SHORT_EVENT/Minus_Pressed.png" id="74_0b7va"]
 [ext_resource type="Texture2D" uid="uid://c4tdk55kjldtf" path="res://GRAPHICS/SHORT_EVENT/Minus_Hover.png" id="75_tst27"]
 [ext_resource type="Script" uid="uid://bfic46uloqv5p" path="res://SCRIPTS/Card_Stack.gd" id="76_5oqru"]
+[ext_resource type="Script" uid="uid://bqypwf64rlger" path="res://SCRIPTS/Intercom.gd" id="76_hjqqn"]
 [ext_resource type="BitMap" uid="uid://dctue2soxk2cs" path="res://GRAPHICS/SHORT_EVENT/Minus_Mask.png" id="76_u6y7r"]
 [ext_resource type="Texture2D" uid="uid://s5x8jgyl5u0p" path="res://GRAPHICS/SHORT_EVENT/Plus_Normal.png" id="77_kf4o3"]
 [ext_resource type="Script" uid="uid://re2c6g3rw3r1" path="res://SCRIPTS/Sized_Node2D.gd" id="77_smut4"]
@@ -166,29 +166,29 @@ size = Vector2(196, 102)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqy00"]
 size = Vector2(38, 60)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnyoh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7rvn5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6clx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42ybe"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tatxf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fn3bj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tatxf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_42ybe"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w41fr"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6clx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_370rn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7rvn5"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjw5q"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnyoh"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjwr4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kru6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66707"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5kru6"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjwr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjw5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_370rn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w41fr"]
 
 [sub_resource type="Animation" id="Animation_hb476"]
 length = 0.001
@@ -306,17 +306,17 @@ content_margin_left = 15.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kptx7"]
 content_margin_left = 15.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vprm5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llwhl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5iqpn"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjkrj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k24xe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8uoa"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k24xe"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjkrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5iqpn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llwhl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vprm5"]
 
 [sub_resource type="Animation" id="Animation_dq6i6"]
 resource_name = "Blinking"
@@ -357,15 +357,15 @@ _data = {
 &"RESET": SubResource("Animation_vfbvc")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8x3ap"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfusj"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sfan1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojkpy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8rvk"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ojkpy"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sfan1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfusj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8x3ap"]
 
 [sub_resource type="Animation" id="Animation_751i2"]
 length = 0.001
@@ -517,61 +517,61 @@ content_margin_left = 1.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd502"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0b85y"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1jcv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3l5m6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqy00"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ng262"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6axv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ng262"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqy00"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b8by"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3l5m6"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_270rd"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1jcv"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6dky"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70hjh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yoi0y"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0b85y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0bajf"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkvay"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yoi0y"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ssw2u"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70hjh"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twsct"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e6dky"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nymkd"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_270rd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b8by"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0sc5x"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jx6w3"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nymkd"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unam2"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twsct"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5p83"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ssw2u"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_equxq"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bkvay"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ev0la"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th1i4"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_equxq"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psfuj"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y5p83"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo5q1"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unam2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5oqru"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jx6w3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjqqn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smut4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjqqn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5oqru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo5q1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psfuj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_th1i4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na1nk"]
 
@@ -794,22 +794,22 @@ offset_left = 512.0
 offset_top = 218.0
 offset_right = 538.0
 offset_bottom = 239.0
-theme_override_colors/font_disabled_color = Color(0.163542, 0.25, 0.0425, 0.756863)
-theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
-theme_override_colors/font_hover_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
 theme_override_colors/font_color = Color(0.35, 0.5, 0.14, 0.635294)
 theme_override_colors/font_focus_color = Color(0.76725, 0.93, 0.5394, 0.647059)
 theme_override_colors/font_pressed_color = Color(0.35, 0.5, 0.14, 0.635294)
+theme_override_colors/font_hover_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
+theme_override_colors/font_hover_pressed_color = Color(0.768627, 0.929412, 0.541176, 0.647059)
+theme_override_colors/font_disabled_color = Color(0.163542, 0.25, 0.0425, 0.756863)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bnyoh")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_7rvn5")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_b6clx")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_42ybe")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_fn3bj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tatxf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fn3bj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_42ybe")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_b6clx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7rvn5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bnyoh")
 text = "Ok!"
 
 [node name="Exit" type="Button" parent="Overlays/Card_Management/Buttons"]
@@ -818,22 +818,22 @@ offset_left = 490.0
 offset_top = 241.0
 offset_right = 539.0
 offset_bottom = 262.0
-theme_override_colors/font_disabled_color = Color(0.3, 0.1262, 0.063, 0.847059)
-theme_override_colors/font_hover_pressed_color = Color(1, 0.596078, 0.45098, 0.556863)
-theme_override_colors/font_hover_color = Color(1, 0.596078, 0.45098, 0.556863)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
 theme_override_colors/font_color = Color(0.78, 0.32812, 0.1638, 0.631373)
 theme_override_colors/font_focus_color = Color(1, 0.596667, 0.45, 0.556863)
 theme_override_colors/font_pressed_color = Color(0.78, 0.32812, 0.1638, 0.631373)
+theme_override_colors/font_hover_color = Color(1, 0.596078, 0.45098, 0.556863)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.596078, 0.45098, 0.556863)
+theme_override_colors/font_disabled_color = Color(0.3, 0.1262, 0.063, 0.847059)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.752941)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_w41fr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_370rn")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rjw5q")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tjwr4")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_66707")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5kru6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_66707")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tjwr4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_rjw5q")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_370rn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w41fr")
 text = "Cancel"
 
 [node name="Trash" type="Control" parent="Overlays/Card_Management/Buttons"]
@@ -961,11 +961,11 @@ offset_top = 167.658
 offset_right = 322.0
 offset_bottom = 209.658
 rotation = -0.0942478
-theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
 theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "No  other
 choice,  Doc."
 
@@ -977,11 +977,11 @@ offset_top = 216.658
 offset_right = 322.0
 offset_bottom = 258.658
 rotation = -0.0942478
-theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
-theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 text = "On second
 thought..."
 
@@ -1121,7 +1121,7 @@ offset_right = 329.0
 offset_bottom = 289.0
 
 [node name="Case" type="Label" parent="Overlays/Case_Summary/Sheet/Left_Page"]
-layout_mode = 2
+layout_mode = 0
 offset_right = 149.0
 offset_bottom = 8.0
 theme_override_colors/font_color = Color(0.98, 0.975427, 0.9604, 1)
@@ -1512,22 +1512,22 @@ offset_left = 294.0
 offset_top = 210.0
 offset_right = 306.0
 offset_bottom = 218.0
-theme_override_colors/font_disabled_color = Color(0.55, 0.309467, 0.099, 0.635294)
-theme_override_colors/font_hover_pressed_color = Color(0.8, 0.612267, 0.448, 0.635294)
-theme_override_colors/font_hover_color = Color(0.93, 0.82088, 0.7254, 0.87451)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.823529)
 theme_override_colors/font_color = Color(0.8, 0.611765, 0.447059, 0.635294)
 theme_override_colors/font_focus_color = Color(0.54902, 0.309804, 0.0980392, 0.635294)
 theme_override_colors/font_pressed_color = Color(0.8, 0.611765, 0.447059, 0.635294)
+theme_override_colors/font_hover_color = Color(0.93, 0.82088, 0.7254, 0.87451)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.612267, 0.448, 0.635294)
+theme_override_colors/font_disabled_color = Color(0.55, 0.309467, 0.099, 0.635294)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.823529)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("55_s8rvk")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_vprm5")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_llwhl")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5iqpn")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_gjkrj")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_t8uoa")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k24xe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t8uoa")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gjkrj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5iqpn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_llwhl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vprm5")
 text = "Ok!"
 
 [node name="Blinking_Button" type="AnimationPlayer" parent="Overlays/Cellphone"]
@@ -1579,20 +1579,20 @@ offset_left = -46.0
 offset_top = -6.0
 offset_right = -20.0
 offset_bottom = 8.0
-theme_override_colors/font_hover_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
-theme_override_colors/font_hover_color = Color(0.41875, 0.67, 0.1675, 0.843137)
-theme_override_colors/font_outline_color = Color(0.00637, 0.02, 0.0026, 0.843137)
 theme_override_colors/font_color = Color(0.7221, 0.87, 0.5742, 0.843137)
 theme_override_colors/font_focus_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
 theme_override_colors/font_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_hover_color = Color(0.41875, 0.67, 0.1675, 0.843137)
+theme_override_colors/font_hover_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_outline_color = Color(0.00637, 0.02, 0.0026, 0.843137)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ojkpy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
 text = "Yes!"
 flat = true
 
@@ -1602,20 +1602,20 @@ offset_left = 20.0
 offset_top = -6.0
 offset_right = 42.0
 offset_bottom = 8.0
-theme_override_colors/font_hover_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
-theme_override_colors/font_hover_color = Color(0.75, 0.293125, 0.1125, 0.843137)
-theme_override_colors/font_outline_color = Color(0.11, 0.0479967, 0.0121, 0.886275)
 theme_override_colors/font_color = Color(0.94, 0.6298, 0.517, 0.843137)
 theme_override_colors/font_focus_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
 theme_override_colors/font_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_hover_color = Color(0.75, 0.293125, 0.1125, 0.843137)
+theme_override_colors/font_hover_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_outline_color = Color(0.11, 0.0479967, 0.0121, 0.886275)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ojkpy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
 text = "No..."
 flat = true
 
@@ -1978,6 +1978,7 @@ visible = false
 
 [node name="Intercom" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("76_hjqqn")
 
 [node name="Intercom_BG" type="Sprite2D" parent="Overlays/Intercom"]
 position = Vector2(209, 38)
@@ -1999,6 +2000,7 @@ centered = false
 offset = Vector2(20, 20)
 
 [node name="Screens" type="Control" parent="Overlays/Intercom/Interface"]
+visible = false
 modulate = Color(1, 1, 1, 0.917647)
 anchors_preset = 0
 
@@ -2215,7 +2217,6 @@ texture_normal = ExtResource("21_8p368")
 texture_pressed = ExtResource("21_8p368")
 texture_hover = ExtResource("22_v0nqa")
 texture_click_mask = ExtResource("23_1nskf")
-script = ExtResource("24_fjtuv")
 
 [node name="Intercom" type="AudioStreamPlayer" parent="Overlays/Intercom"]
 stream = ExtResource("25_7hyo2")
@@ -2633,22 +2634,22 @@ offset_left = 472.0
 offset_top = 269.0
 offset_right = 498.0
 offset_bottom = 277.0
-theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
-theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_constants/outline_size = 6
 theme_override_constants/h_separation = 4
 theme_override_fonts/font = ExtResource("55_s8rvk")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0b85y")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_r1jcv")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3l5m6")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_xqy00")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6axv")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ng262")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6axv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xqy00")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3l5m6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_r1jcv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0b85y")
 text = "I'm in!"
 
 [node name="Cancel" type="Button" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask"]
@@ -2657,22 +2658,22 @@ offset_left = 471.0
 offset_top = 282.0
 offset_right = 499.0
 offset_bottom = 290.0
-theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
-theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.71, 0.34648, 0.2556, 0.823529)
 theme_override_colors/font_focus_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
+theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
+theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_constants/outline_size = 6
 theme_override_constants/h_separation = 4
 theme_override_fonts/font = ExtResource("55_s8rvk")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_8b8by")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_270rd")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e6dky")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_70hjh")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_yoi0y")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0bajf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_yoi0y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_70hjh")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e6dky")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_270rd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8b8by")
 text = "Cancel"
 
 [node name="Health_Issue" type="Node2D" parent="Overlays"]
@@ -2696,7 +2697,7 @@ theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Health_Report"]
 custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
+layout_mode = 0
 offset_left = 91.0
 offset_top = 33.0
 offset_right = 280.0
@@ -2717,12 +2718,12 @@ offset_top = 248.0
 offset_right = 424.0
 offset_bottom = 256.0
 theme = ExtResource("88_7rvn5")
-theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
-theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "Not much of a choice."
 alignment = 2
 script = ExtResource("92_bnyoh")
@@ -2740,7 +2741,7 @@ theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Add_Report"]
 custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
+layout_mode = 0
 offset_left = 91.0
 offset_top = 33.0
 offset_right = 280.0
@@ -2766,12 +2767,12 @@ offset_top = 248.0
 offset_right = 424.0
 offset_bottom = 256.0
 theme = ExtResource("88_7rvn5")
-theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
-theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "Thanks Dr. Fix-It!"
 alignment = 2
 script = ExtResource("92_bnyoh")
@@ -2789,7 +2790,7 @@ theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Emo_Report"]
 custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
+layout_mode = 0
 offset_left = 91.0
 offset_top = 33.0
 offset_right = 280.0
@@ -2814,12 +2815,12 @@ offset_top = 248.0
 offset_right = 424.0
 offset_bottom = 256.0
 theme = ExtResource("88_7rvn5")
-theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
-theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "Thanks Dr. Freud!"
 alignment = 2
 script = ExtResource("92_bnyoh")
@@ -2837,7 +2838,7 @@ theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Rest_Report"]
 custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
+layout_mode = 0
 offset_left = 91.0
 offset_top = 33.0
 offset_right = 280.0
@@ -2860,12 +2861,12 @@ offset_top = 249.0
 offset_right = 428.0
 offset_bottom = 257.0
 theme = ExtResource("88_7rvn5")
-theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
-theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "That's proably for the best."
 alignment = 2
 script = ExtResource("92_bnyoh")
@@ -3261,19 +3262,19 @@ offset_top = 292.0
 offset_right = 411.0
 offset_bottom = 313.0
 rotation = -0.12645
-theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
-theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
 theme_override_colors/font_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
 theme_override_colors/font_focus_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
+theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bkvay")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bkvay")
 text = "Alright!"
 
 [node name="Player_Improvement" type="Node2D" parent="Overlays"]
@@ -3443,19 +3444,19 @@ offset_top = 289.0
 offset_right = 418.0
 offset_bottom = 310.0
 rotation = -0.12645
-theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
-theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
 theme_override_colors/font_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
 theme_override_colors/font_focus_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.670588, 0.219608, 0.882353)
+theme_override_colors/font_hover_color = Color(0.59408, 0.79, 0.4108, 0.882353)
+theme_override_colors/font_hover_pressed_color = Color(0.438068, 0.67, 0.2211, 0.882353)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bkvay")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0sc5x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nymkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_twsct")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ssw2u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bkvay")
 text = "Ok."
 
 [node name="Rowena" type="Node2D" parent="Overlays"]
@@ -3592,40 +3593,40 @@ alignment = 1
 [node name="Nope" type="Button" parent="Overlays/Rowena/Thanks_Nope/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
-theme_override_colors/font_hover_color = Color(0.9, 0.5544, 0.468, 0.843137)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_colors/font_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
 theme_override_colors/font_focus_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
 theme_override_colors/font_pressed_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
+theme_override_colors/font_hover_color = Color(0.9, 0.5544, 0.468, 0.843137)
+theme_override_colors/font_hover_pressed_color = Color(0.819608, 0.431373, 0.337255, 0.882353)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jx6w3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_unam2")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_y5p83")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_equxq")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ev0la")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_equxq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y5p83")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_unam2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jx6w3")
 text = "Well..."
 flat = true
 
 [node name="Thanks" type="Button" parent="Overlays/Rowena/Thanks_Nope/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_hover_pressed_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
-theme_override_colors/font_hover_color = Color(0.641333, 0.74, 0.444, 0.843137)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_colors/font_color = Color(0.4267, 0.51, 0.2601, 0.921569)
 theme_override_colors/font_focus_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
 theme_override_colors/font_pressed_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
+theme_override_colors/font_hover_color = Color(0.641333, 0.74, 0.444, 0.843137)
+theme_override_colors/font_hover_pressed_color = Color(0.427451, 0.509804, 0.258824, 0.921569)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.843137)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jx6w3")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_unam2")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_y5p83")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_equxq")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ev0la")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_equxq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y5p83")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_unam2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jx6w3")
 text = "Thanks!"
 flat = true
 
@@ -3650,7 +3651,6 @@ script = ExtResource("8_7ujkg")
 
 [node name="Run_Away" type="Control" parent="Overlays/Run_Away_Break_In/Announces"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
 offset_left = 141.0
 offset_top = 30.0
@@ -3678,12 +3678,12 @@ offset_top = 87.0
 offset_right = 373.0
 offset_bottom = 108.0
 rotation = 0.0310151
-theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
 theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
+theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
 text = "Yes,  I totally  agree  with that..."
 
 [node name="No" type="Button" parent="Overlays/Run_Away_Break_In/Announces/Run_Away"]
@@ -3693,17 +3693,16 @@ offset_top = 171.0
 offset_right = 319.0
 offset_bottom = 192.0
 rotation = 0.0310151
-theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
-theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
 theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
 theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
 text = "No, not in this world!"
 
 [node name="Break_In" type="Control" parent="Overlays/Run_Away_Break_In/Announces"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
 offset_left = 141.0
 offset_top = 30.0
@@ -3731,12 +3730,12 @@ offset_top = 87.0
 offset_right = 354.0
 offset_bottom = 108.0
 rotation = 0.0310151
-theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
-theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_color = Color(0.55025, 0.71, 0.3266, 1)
 theme_override_colors/font_focus_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
+theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
+theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
 text = "Yes,  It's  now  or...  It's now!"
 
 [node name="No" type="Button" parent="Overlays/Run_Away_Break_In/Announces/Break_In"]
@@ -3746,12 +3745,12 @@ offset_top = 168.0
 offset_right = 356.0
 offset_bottom = 189.0
 rotation = 0.0310151
-theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
-theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
 theme_override_colors/font_color = Color(0.71, 0.33938, 0.3266, 1)
 theme_override_colors/font_focus_color = Color(0.9, 0.639, 0.63, 1)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
+theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
 text = "I'm  afraid  I  won't  do that, Dave."
 
 [node name="Search_Warrant" type="Node2D" parent="Overlays"]
@@ -3805,11 +3804,11 @@ offset_left = 180.0
 offset_top = 233.0
 offset_right = 244.0
 offset_bottom = 249.0
-theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
 theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "I need
 this one!"
 alignment = 2
@@ -3820,11 +3819,11 @@ offset_left = 106.0
 offset_top = 233.0
 offset_right = 171.0
 offset_bottom = 249.0
-theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
-theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 text = "On second
 thought..."
 alignment = 0
@@ -3862,11 +3861,11 @@ offset_left = 180.0
 offset_top = 233.0
 offset_right = 244.0
 offset_bottom = 249.0
-theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
 theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "No other
 choice!"
 alignment = 2
@@ -3877,11 +3876,11 @@ offset_left = 106.0
 offset_top = 233.0
 offset_right = 171.0
 offset_bottom = 249.0
-theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
-theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
+theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 text = "Hm...
 Maybe not!"
 alignment = 0
@@ -3916,11 +3915,11 @@ offset_left = 220.0
 offset_top = 241.0
 offset_right = 244.0
 offset_bottom = 249.0
-theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
-theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
 theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
+theme_override_colors/font_hover_color = Color(0.646507, 0.76, 0.5168, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.490196, 0.611765, 0.34902, 1)
 text = "Crap!"
 alignment = 2
 
@@ -4059,21 +4058,21 @@ offset_top = 10.0
 offset_right = 435.0
 offset_bottom = 18.0
 rotation = -0.0126771
-theme_override_colors/font_disabled_color = Color(1, 0.4, 0.25, 0.823529)
-theme_override_colors/font_hover_pressed_color = Color(1, 0.4, 0.25, 0.823529)
-theme_override_colors/font_hover_color = Color(1, 0.725, 0.67, 1)
 theme_override_colors/font_color = Color(1, 0.4, 0.25, 1)
 theme_override_colors/font_focus_color = Color(1, 0.4, 0.25098, 0.823529)
 theme_override_colors/font_pressed_color = Color(1, 0.4, 0.25098, 0.823529)
+theme_override_colors/font_hover_color = Color(1, 0.725, 0.67, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.4, 0.25, 0.823529)
+theme_override_colors/font_disabled_color = Color(1, 0.4, 0.25, 0.823529)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("55_s8rvk")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_th1i4")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_psfuj")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jo5q1")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5oqru")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_smut4")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hjqqn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_smut4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5oqru")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jo5q1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_psfuj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_th1i4")
 text = "To sleep is to die a bit!"
 
 [node name="Drawer" type="AudioStreamPlayer" parent="Overlays/Sleep"]
@@ -4096,7 +4095,6 @@ script = ExtResource("14_adsmj")
 
 [node name="Player" type="Control" parent="Overlays/Wanted/Info"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -4145,19 +4143,18 @@ offset_left = 430.0
 offset_top = 273.0
 offset_right = 534.0
 offset_bottom = 289.0
-theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
 theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
 theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
 theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
 toggle_mode = true
 button_group = ExtResource("16_dog4u")
 text = "Easy, easy... I can pay!"
 alignment = 2
 
 [node name="NPC" type="Control" parent="Overlays/Wanted/Info"]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -4181,12 +4178,12 @@ offset_left = 404.0
 offset_top = 289.0
 offset_right = 534.0
 offset_bottom = 305.0
-theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
-theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
 theme_override_colors/font_color = Color(0.399467, 0.64, 0.288, 1)
 theme_override_colors/font_focus_color = Color(0.62188, 0.84, 0.5208, 1)
 theme_override_colors/font_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.623529, 0.839216, 0.521569, 1)
+theme_override_colors/font_disabled_color = Color(0.13048, 0.16, 0.1168, 1)
 toggle_mode = true
 button_group = ExtResource("16_dog4u")
 text = "Ha! Ha! See you in lockup!"
@@ -4450,12 +4447,12 @@ offset_top = 248.0
 offset_right = 426.0
 offset_bottom = 256.0
 theme = ExtResource("88_hjqqn")
-theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
-theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_focus_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
 theme_override_colors/font_pressed_color = Color(0.439216, 0.611765, 0.231373, 0.862745)
+theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
+theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "I'm in!"
 script = ExtResource("92_bnyoh")
 
@@ -4466,12 +4463,12 @@ offset_top = 248.0
 offset_right = 392.0
 offset_bottom = 256.0
 theme = ExtResource("88_hjqqn")
-theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
-theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 theme_override_colors/font_color = Color(0.71, 0.34648, 0.2556, 0.823529)
 theme_override_colors/font_focus_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
+theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
+theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "No thanks..."
 script = ExtResource("92_bnyoh")
 
@@ -4567,4 +4564,3 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_cancel_pressed"]
-[connection signal="animation_finished" from="On_Off" to="Overlays/Intercom/Interface/Quit" method="_on_on_off_animation_finished"]

@@ -103,6 +103,9 @@ var work_shifts: int
 ## If true work Wed-Sun, else work Mon-Fri.
 var has_weekend_shift: bool
 
+## Working day when the NPC was last seen.
+var _last_dialogue: int = -1
+
 # Roll of the dice to introduce daily randomness into NPC's location.
 var _location_randomness: int = randi()
 
@@ -162,6 +165,18 @@ func get_work() -> LocationCard:
 
 func get_hangout() -> LocationCard:
 	return get_one_connection(Link.Type.HANGOUT)
+
+##
+## Returns true if the NPC has not been seen yet today.
+##
+func has_been_seen_today() -> bool:
+	return _last_dialogue == GameState.get_working_day()
+
+##
+## Flags the location as having been seen today.
+##
+func set_seen_today():
+	_last_dialogue = GameState.get_working_day()
 
 ##
 ## An NPC who works the night shift sleeps in the morning and the afternoon;
@@ -500,6 +515,8 @@ func get_json_dict():
 	dict["work_shifts"] = work_shifts
 	if has_weekend_shift:
 		dict["has_weekend_shift"] = has_weekend_shift
+	if _last_dialogue >= 0:
+		dict["last_dialogue"] = _last_dialogue
 	return dict
 
 #
@@ -526,6 +543,7 @@ func restore(dict, catalog):
 	player_reputation = dict.get("player_reputation", 0)
 	work_shifts = dict.get("work_shifts", 0)
 	has_weekend_shift = dict.get("has_weekend_shift", false)
+	_last_dialogue = dict.get("last_dialogue", -1)
 
 #
 # For save/load.

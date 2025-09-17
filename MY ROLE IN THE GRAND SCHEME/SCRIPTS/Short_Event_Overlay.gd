@@ -271,3 +271,16 @@ func show_player_improvement(direction: int, attr_name: StringName = StringName(
 	await _disappear()
 	$Overlays/Player_Improvement.hide()
 	ctrl.hide()
+
+##
+## Displays an overlay indicating that the given NPC is not there.
+##
+func show_npc_away(npc: NpcCard):
+	$Overlays/Intercom/Interface/Screens/Away/NPC.text = npc.get_display_name()
+	$Overlays/Intercom.show()
+	await _appear()
+	$Overlays/Intercom.start()
+	await $Overlays/Intercom.done
+	await _disappear()
+	$Overlays/Intercom.stop()
+	$Overlays/Intercom.hide()

@@ -601,8 +601,8 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	var index = popup.get_item_index(MenuItem.DIALOGUE)
 	if (node is not NpcCard
 		or not player_is_apt
-		or node.npc_status in [NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED]):
-		# TODO: or if NPC has already been seen today
+		or node.npc_status in [NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED]
+		or node.has_been_seen_today()):
 		popup.set_item_disabled(index, true)
 	else:
 		var links_found = []
