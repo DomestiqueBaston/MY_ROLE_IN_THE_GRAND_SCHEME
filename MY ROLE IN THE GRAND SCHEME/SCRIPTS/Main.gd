@@ -762,7 +762,7 @@ func populate(case: Case):
 		case.is_layout_needed = false
 	else:
 		for card in case.get_revealed_cards():
-			if card.was_stacked():
+			if card.was_stacked:
 				reserve.add_child(card)
 			else:
 				cards.add_child(card)

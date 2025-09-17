@@ -34,6 +34,10 @@ enum CardType {
 ## Has the card been revealed to the player?
 var is_revealed: bool = false
 
+## Was the card in the main scene's reserve pile before it was removed from the
+## scene?
+var was_stacked: bool = false
+
 ## Size of a card in pixels.
 const size := Vector2i(74, 100)
 
@@ -49,7 +53,6 @@ var _connections: Dictionary
 var _is_highlighted: bool = false
 var _opacity_before_highlighting: float
 var _is_expanded: bool = true
-var _was_stacked: bool = false
 var _pins = {}
 
 func _ready():
@@ -90,13 +93,6 @@ func is_stacked() -> bool:
 	return parent and parent is CardStack
 
 ##
-## Returns true if the card WAS in a stack before it was last removed from the
-## tree.
-##
-func was_stacked() -> bool:
-	return _was_stacked
-
-##
 ## When the card is parented to a CardStack, hide its pins.
 ##
 func _enter_tree():
@@ -111,8 +107,8 @@ func _enter_tree():
 ## When the card is removed from its CardStack parent, show its pins.
 ##
 func _exit_tree():
-	_was_stacked = is_stacked()
-	if _was_stacked:
+	was_stacked = is_stacked()
+	if was_stacked:
 		# because a stacked card's Z index is incremented when highlighted
 		if _is_highlighted:
 			z_index -= 1
@@ -460,7 +456,7 @@ func get_referenced_objects():
 #
 func get_json_dict():
 	var dict = {}
-	var stacked = is_stacked() if is_inside_tree() else _was_stacked
+	var stacked = is_stacked() if is_inside_tree() else was_stacked
 	if stacked:
 		dict["was_stacked"] = stacked
 	if opacity != 1.0:
@@ -493,7 +489,7 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	opacity = dict.get("opacity", 1.0)
-	_was_stacked = dict.get("was_stacked", false)
+	was_stacked = dict.get("was_stacked", false)
 	position = Vector2(dict.get("x", 0.0), dict.get("y", 0.0))
 	is_revealed = dict.get("is_revealed", false)
 	_is_expanded = dict.get("is_expanded", true)
