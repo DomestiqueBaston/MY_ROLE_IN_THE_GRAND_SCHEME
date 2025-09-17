@@ -180,6 +180,9 @@ func is_asleep() -> bool:
 ##
 func locate() -> LocationCard:
 
+	if npc_status in [NpcStatus.DEAD, NpcStatus.DISAPPEARED]:
+		return null
+
 	# NPC sleeps at home
 
 	if is_asleep():
