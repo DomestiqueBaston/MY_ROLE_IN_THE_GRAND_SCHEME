@@ -248,14 +248,13 @@ func _stop_drag(global_pos: Vector2):
 		_current_card.reparent(new_parent, false)
 
 	# if the card is in a pile, it can only be dropped in the interaction area,
-	# but only until it is full, and not if the new card would make for an
-	# invalid combination of cards
+	# but only until it is full, and not if there is already a card of the same
+	# type
 
 	else:
 		if (new_parent != interaction_cards
 			or _cards_played.size() == max_card_count
-			or (the_button and not the_button.disabled
-				and not _is_card_combo_ok(_current_card))):
+			or _is_card_type_in_interaction_zone(_current_card)):
 			_abort_drag()
 			return
 		_cards_played[_current_card] = _current_card.get_parent()
@@ -318,22 +317,22 @@ func _detach_cards():
 		if card is Card:
 			card.get_parent().remove_child(card)
 
+func _is_card_type_in_interaction_zone(card: Card) -> bool:
+	for other_card in _cards_played:
+		if other_card.get_card_type() == card.get_card_type():
+			return true
+	return false
+
 func _enable_disable_button():
 	if the_button:
 		the_button.disabled = not _is_card_combo_ok()
 
-func _is_card_combo_ok(new_card: Card = null) -> bool:
-	var test_cards
-	if new_card:
-		test_cards = _cards_played.keys() + [new_card]
-	else:
-		test_cards = _cards_played.keys()
-
+func _is_card_combo_ok() -> bool:
 	match _interaction_type:
 		GameState.InteractionType.DIALOGUE:
 			var ok = true
 			var card_types = []
-			for card in test_cards:
+			for card in _cards_played:
 				var card_type = card.get_card_type()
 				if card_type in card_types:
 					ok = false
@@ -345,7 +344,7 @@ func _is_card_combo_ok(new_card: Card = null) -> bool:
 			var inv_count = 0
 			var inv_special_count = 0
 			var abstract_count = 0
-			for card in test_cards:
+			for card in _cards_played:
 				if card is InvestigationCard:
 					match card.investigation_type:
 						InvestigationCard.InvestigationType.NORMAL:
@@ -359,7 +358,7 @@ func _is_card_combo_ok(new_card: Card = null) -> bool:
 		GameState.InteractionType.BREAK_IN:
 			var break_in_count = 0
 			var abstract_count = 0
-			for card in test_cards:
+			for card in _cards_played:
 				if card is InvestigationCard:
 					break_in_count += 1
 				elif card is AbstractCard:
@@ -368,7 +367,7 @@ func _is_card_combo_ok(new_card: Card = null) -> bool:
 					(break_in_count == 1 and abstract_count <= 1))
 
 		_:
-			return test_cards.size() >= min_card_count
+			return _cards_played.size() >= min_card_count
 
 ##
 ## Starts an investigation. A done() signal is emitted when it finishes.
