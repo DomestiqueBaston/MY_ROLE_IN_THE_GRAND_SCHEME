@@ -2886,15 +2886,6 @@ anchors_preset = 0
 theme = ExtResource("2_vr7x7")
 script = ExtResource("3_8qa11")
 
-[node name="Quit" type="Button" parent="Overlays/Misc/Announces"]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 296.0
-offset_right = 481.0
-offset_bottom = 317.0
-rotation = 0.0265987
-text = "Whatever"
-
 [node name="Addiction_Crisis_Result" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
 anchors_preset = 0
@@ -3224,6 +3215,15 @@ Was it bravery?  Or just  pure
 In the end, you'll have to face the one who wants to [shake rate=7.0 level=5 connected=0][color=#ff8864]take good care of you...[/color][/shake]
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just  [color=#ff1c18]not what  you were  hoping  for[/color] though[/color][/shake]![/center]"
+
+[node name="Quit" type="Button" parent="Overlays/Misc/Announces"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 296.0
+offset_right = 481.0
+offset_bottom = 317.0
+rotation = 0.0265987
+text = "Whatever"
 
 [node name="Office" type="Node2D" parent="Overlays"]
 visible = false
