@@ -654,8 +654,13 @@ func start_dialogue(npc: NpcCard, location: LocationCard):
 	interaction_started.emit()
 
 func end_interaction(cards_played: Array[Card] = []):
-	if _current_interaction == InteractionType.INVESTIGATION:
-		await _play_investigation(cards_played)
+	match _current_interaction:
+		InteractionType.INVESTIGATION:
+			await _play_investigation(cards_played)
+			_pop_card_state()
+		InteractionType.DIALOGUE:
+			# TODO
+			_pop_card_state()
 
 	player.clear_fallback_cards()
 	_current_interaction = InteractionType.NONE
@@ -663,7 +668,6 @@ func end_interaction(cards_played: Array[Card] = []):
 	_current_interaction_npc = null
 	_current_interaction_bonus_malus = 0
 
-	_pop_card_state()
 	if await player.test_health():
 		save_game()
 	else:
