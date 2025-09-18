@@ -85,17 +85,6 @@ var _cards_played: Dictionary
 # what kind of interaction is in progress
 var _interaction_type: GameState.InteractionType = GameState.InteractionType.NONE
 
-# state of cards in the main scene, restored at the end of the interaction
-class CardState:
-	var was_stacked: bool
-	var position: Vector2
-	func _init(card: Card):
-		was_stacked = card.is_stacked()
-		position = card.position
-
-# a map of Card instances to CardState instances
-var _saved_card_state: Dictionary
-
 func _ready():
 	for area in card_area_overlays:
 		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
@@ -319,13 +308,6 @@ func _detach_cards():
 		if card is Card:
 			card.get_parent().remove_child(card)
 
-	for card in _saved_card_state:
-		var state = _saved_card_state[card]
-		card.was_stacked = state.was_stacked
-		card.position = state.position
-
-	_saved_card_state.clear()
-
 func _enable_disable_button():
 	if the_button == null:
 		return
@@ -391,8 +373,7 @@ func start_dialogue(
 	for card: Card in GameState.get_current_case().get_revealed_cards():
 		if card == npc:
 			continue
-		_saved_card_state[card] = CardState.new(card)
-		card.get_parent().remove_child(card)
+		card.set_expanded(true, false)
 		if card.find_links(Link.Type.GUILT):
 			$Cards/Evidence.add_child(card)
 		else:

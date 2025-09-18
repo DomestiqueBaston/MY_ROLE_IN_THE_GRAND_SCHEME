@@ -620,6 +620,7 @@ func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
 	_current_interaction_location = location
+	save_card_state()
 	save_game()
 	interaction_started.emit()
 
@@ -648,6 +649,7 @@ func start_dialogue(npc: NpcCard, location: LocationCard):
 	_current_interaction = InteractionType.DIALOGUE
 	_current_interaction_location = location
 	_current_interaction_npc = npc
+	save_card_state()
 	save_game()
 	interaction_started.emit()
 
@@ -660,6 +662,8 @@ func end_interaction(cards_played: Array[Card] = []):
 	_current_interaction_location = null
 	_current_interaction_npc = null
 	_current_interaction_bonus_malus = 0
+
+	restore_card_state()
 	if await player.test_health():
 		save_game()
 	else:
@@ -713,6 +717,27 @@ func get_player_location() -> PlayerLocation:
 ##
 func get_player_location_card() -> LocationCard:
 	return _player_location_card
+
+##
+## Saves the visual state of all object, location and NPC cards that are visible
+## to the player. This is done before switching from the main scene to the
+## interaction scene so that, however the cards move around during
+## the interaction, they can be put back where they were afterwards.
+##
+func save_card_state():
+	for card in get_current_case().get_revealed_cards():
+		if card.get_card_type() in [Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC]:
+			card.push_state()
+
+##
+## Restores the visual state of all object, location and NPC cards after a
+## previous call to save_card_state(). This is done before switching back from
+## the interaction scene to the main scene.
+##
+func restore_card_state():
+	for card in get_current_case().get_revealed_cards():
+		if card.get_card_type() in [Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC]:
+			card.pop_state()
 
 func save_game(binary: bool = false):
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)

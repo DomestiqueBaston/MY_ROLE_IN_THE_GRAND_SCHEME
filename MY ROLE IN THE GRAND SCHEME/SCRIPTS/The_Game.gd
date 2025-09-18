@@ -38,7 +38,7 @@ func _replace_scene(new_scene: PackedScene) -> Node:
 			child.fade_out()
 			_title_screen = null
 		else:
-			child.queue_free()
+			child.free()
 
 	# instantiate the new scene
 
@@ -123,14 +123,12 @@ func _continue_game():
 		_on_interaction_started()
 
 func _on_interaction_started():
-	var interaction_type = GameState.get_current_interaction()
-
 	var interaction_scene = await _replace_scene(_interaction_scene)
 	interaction_scene.done.connect(_on_interaction_ended)
 	interaction_scene.settings.connect(_go_to_settings)
 	interaction_scene.quit.connect(_go_to_option_menu)
 
-	match interaction_type:
+	match GameState.get_current_interaction():
 		GameState.InteractionType.INVESTIGATION:
 			interaction_scene.start_investigation(
 				GameState.player.get_mastery_cards(),

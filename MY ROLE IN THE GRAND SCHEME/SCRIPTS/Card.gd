@@ -47,9 +47,38 @@ const reduced_size := Vector2i(74, 27)
 ## Signal emitted when the card's position has changed.
 signal moved
 
-## Maps link types to arrays of cards (locations, objects and NPCs).
+# Maps link types to arrays of cards (locations, objects and NPCs).
 var _connections: Dictionary
 
+#
+# Class which allows us to save the state of a card (its position, whether it is
+# expanded or reduced, etc.) and restore it later. This is done when the game
+# switches from the main scene to the interaction scene and back again. Some
+# cards (object, location and NPC cards) are visible in both scenes, and can be
+# manipulated in both scenes. So card states are saved before the interaction
+# scene is brought up, and restored afterward. And saved states are saved with
+# the game, in case the user quits in the middle of an interaction.
+#
+class State:
+	var is_stacked: bool
+	var is_expanded: bool
+	var position: Vector2
+
+	func _init(card: Card = null):
+		if card:
+			is_stacked = card.is_stacked()
+			is_expanded = card.is_expanded()
+			position = card.position
+		else:
+			is_stacked = false
+			is_expanded = true
+
+	func restore(card: Card):
+		card.was_stacked = is_stacked
+		card.set_expanded(is_expanded, false)
+		card.position = position
+
+var _state_stack: Array[State]
 var _is_highlighted: bool = false
 var _opacity_before_highlighting: float
 var _is_expanded: bool = true
@@ -118,15 +147,25 @@ func _exit_tree():
 func get_pin_position(which: int) -> Vector2:
 	return $Pin_Locators.get_child(which).global_position
 
+func is_expanded() -> bool:
+	return _is_expanded
+
 ##
-## Expands (true) or reduces (false) the card.
+## Expands (true) or reduces (false) the card. If with_animation is false, the
+## transition is instantaneous.
 ##
-func set_expanded(expanded: bool):
+func set_expanded(expanded: bool, with_animation: bool = true):
 	if _is_expanded != expanded:
 		if expanded:
-			$Card_Animations.play("Expand_Card")
+			if with_animation:
+				$Card_Animations.play("Expand_Card")
+			else:
+				$Card_Animations.play("Static_Expanded")
 		else:
-			$Card_Animations.play("Reduce_Card")
+			if with_animation:
+				$Card_Animations.play("Reduce_Card")
+			else:
+				$Card_Animations.play("Static_Reduced")
 		_is_expanded = expanded
 
 ##
@@ -438,6 +477,21 @@ func print_connections_of_type(label: String, type: Link.Type):
 		print("  ", label, ": none")
 
 ##
+## Pushes the current state of the card (position, expanded/reduced, in a stack
+## or not) onto a stack, so that it can be modified and restored later. The
+## state stack is saved and restored along with the game.
+##
+func push_state():
+	_state_stack.push_back(State.new(self))
+
+##
+## Restores the state of the card from the last time push_state() was called,
+## popping the saved state off the stack.
+##
+func pop_state():
+	_state_stack.pop_back().restore(self)
+
+##
 ## Returns the card's name to display in the UI. By default, this is just the
 ## card_name property, but some subclasses (NpcCard, LocationCard) override this
 ## method and may not use card_name (or not always).
@@ -482,6 +536,16 @@ func get_json_dict():
 				cnx_array.append(cnx.get_unique_id())
 			cnx_dict[type] = cnx_array
 		dict["connections"] = cnx_dict
+	if not _state_stack.is_empty():
+		var state_array = []
+		for state in _state_stack:
+			state_array.append({
+				"is_stacked": state.is_stacked,
+				"is_expanded": state.is_expanded,
+				"x": state.position.x,
+				"y": state.position.y
+			})
+		dict["state_stack"] = state_array
 	return dict
 
 #
@@ -503,3 +567,12 @@ func restore(dict, catalog):
 			for id in dict.connections[type]:
 				refs.append(catalog[id])
 			_connections[type as Link.Type] = refs
+	if "state_stack" in dict:
+		for entry in dict.state_stack:
+			var state = State.new()
+			state.is_stacked = entry.get("is_stacked", false)
+			state.is_expanded = entry.get("is_expanded", true)
+			state.position = Vector2(
+				entry.get("x", 0.0),
+				entry.get("y", 0.0))
+			_state_stack.push_back(state)
