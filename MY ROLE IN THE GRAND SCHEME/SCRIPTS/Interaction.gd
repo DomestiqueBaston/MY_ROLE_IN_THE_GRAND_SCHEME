@@ -1,5 +1,11 @@
 extends Node2D
 
+## This script is used in two different but similar contexts: with Interaction
+## (a standalone scene), and with a subscene of the Short_Event_Overlay scene
+## (for run-away and break-in interactions). That is why a number of UI elements
+## are exported properties: because not all UI elements are present in both
+## contexts.
+
 ## Areas containing cards (piles and the interaction zone), and the overlays
 ## used to highlight each area. Keys and values in the Dictionary are all
 ## NodePaths: each key is a SizedNode2D containing cards, and its value is the
@@ -311,7 +317,20 @@ func _detach_cards():
 func _enable_disable_button():
 	if the_button == null:
 		return
+
 	match _interaction_type:
+		GameState.InteractionType.DIALOGUE:
+			var ok = true
+			var card_types = []
+			for card in _cards_played:
+				var card_type = card.get_card_type()
+				if card_type in card_types:
+					ok = false
+					break
+				card_types.append(card_type)
+			the_button.disabled = \
+				not (ok and Card.CardType.DIALOGUE in card_types)
+
 		GameState.InteractionType.INVESTIGATION:
 			var inv_count = 0
 			var inv_special_count = 0
