@@ -248,10 +248,14 @@ func _stop_drag(global_pos: Vector2):
 		_current_card.reparent(new_parent, false)
 
 	# if the card is in a pile, it can only be dropped in the interaction area,
-	# and only until it is full
+	# but only until it is full, and not if the new card would make for an
+	# invalid combination of cards
 
 	else:
-		if new_parent != interaction_cards or _cards_played.size() == max_card_count:
+		if (new_parent != interaction_cards
+			or _cards_played.size() == max_card_count
+			or (the_button and not the_button.disabled
+				and not _is_card_combo_ok(_current_card))):
 			_abort_drag()
 			return
 		_cards_played[_current_card] = _current_card.get_parent()
@@ -315,27 +319,33 @@ func _detach_cards():
 			card.get_parent().remove_child(card)
 
 func _enable_disable_button():
-	if the_button == null:
-		return
+	if the_button:
+		the_button.disabled = not _is_card_combo_ok()
+
+func _is_card_combo_ok(new_card: Card = null) -> bool:
+	var test_cards
+	if new_card:
+		test_cards = _cards_played.keys() + [new_card]
+	else:
+		test_cards = _cards_played.keys()
 
 	match _interaction_type:
 		GameState.InteractionType.DIALOGUE:
 			var ok = true
 			var card_types = []
-			for card in _cards_played:
+			for card in test_cards:
 				var card_type = card.get_card_type()
 				if card_type in card_types:
 					ok = false
 					break
 				card_types.append(card_type)
-			the_button.disabled = \
-				not (ok and Card.CardType.DIALOGUE in card_types)
+			return ok and Card.CardType.DIALOGUE in card_types
 
 		GameState.InteractionType.INVESTIGATION:
 			var inv_count = 0
 			var inv_special_count = 0
 			var abstract_count = 0
-			for card in _cards_played:
+			for card in test_cards:
 				if card is InvestigationCard:
 					match card.investigation_type:
 						InvestigationCard.InvestigationType.NORMAL:
@@ -344,23 +354,21 @@ func _enable_disable_button():
 							inv_special_count += 1
 				elif card is AbstractCard:
 					abstract_count += 1
-			the_button.disabled = \
-				inv_count != 1 or inv_special_count > 1 or abstract_count > 1
+			return inv_count == 1 and inv_special_count <= 1 and abstract_count <= 1
 
 		GameState.InteractionType.BREAK_IN:
 			var break_in_count = 0
 			var abstract_count = 0
-			for card in _cards_played:
+			for card in test_cards:
 				if card is InvestigationCard:
 					break_in_count += 1
 				elif card is AbstractCard:
 					abstract_count += 1
-			the_button.disabled = not (
-				(break_in_count + abstract_count == 0) or
-				(break_in_count == 1 and abstract_count <= 1))
+			return ((break_in_count + abstract_count == 0) or
+					(break_in_count == 1 and abstract_count <= 1))
 
 		_:
-			the_button.disabled = _cards_played.size() < min_card_count
+			return test_cards.size() >= min_card_count
 
 ##
 ## Starts an investigation. A done() signal is emitted when it finishes.
