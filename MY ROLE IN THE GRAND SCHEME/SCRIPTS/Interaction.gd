@@ -91,6 +91,11 @@ var _cards_played: Dictionary
 # what kind of interaction is in progress
 var _interaction_type: GameState.InteractionType = GameState.InteractionType.NONE
 
+# only one of these card types can be played in a dialogue interaction
+const _dialog_question_types = [
+	Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
+]
+
 func _ready():
 	for area in card_area_overlays:
 		_area_overlays[get_node(area)] = get_node(card_area_overlays[area])
@@ -252,9 +257,8 @@ func _stop_drag(global_pos: Vector2):
 	# type
 
 	else:
-		if (new_parent != interaction_cards
-			or _cards_played.size() == max_card_count
-			or _is_card_type_in_interaction_zone(_current_card)):
+		if not (new_parent == interaction_cards
+				and _is_card_droppable(_current_card)):
 			_abort_drag()
 			return
 		_cards_played[_current_card] = _current_card.get_parent()
@@ -317,11 +321,31 @@ func _detach_cards():
 		if card is Card:
 			card.get_parent().remove_child(card)
 
-func _is_card_type_in_interaction_zone(card: Card) -> bool:
+#
+# Returns true if the given card can be dropped in the interaction zone.
+#
+func _is_card_droppable(card: Card) -> bool:
+
+	# the number of cards is always limited to max_card_count
+
+	if _cards_played.size() >= max_card_count:
+		return false
+
+	# you can never play two cards of the same type
+
 	for other_card in _cards_played:
 		if other_card.get_card_type() == card.get_card_type():
-			return true
-	return false
+			return false
+
+	# in a dialogue, there can only be one object, location or NPC card
+
+	if (_interaction_type == GameState.InteractionType.DIALOGUE
+		and card.get_card_type() in _dialog_question_types):
+			for other_card in _cards_played:
+				if other_card.get_card_type() in _dialog_question_types:
+					return false
+
+	return true
 
 func _enable_disable_button():
 	if the_button:
@@ -331,12 +355,18 @@ func _is_card_combo_ok() -> bool:
 	match _interaction_type:
 		GameState.InteractionType.DIALOGUE:
 			var ok = true
+			var got_question = false
 			var card_types = []
 			for card in _cards_played:
 				var card_type = card.get_card_type()
 				if card_type in card_types:
 					ok = false
 					break
+				if card_type in _dialog_question_types:
+					if got_question:
+						ok = false
+						break
+					got_question = true
 				card_types.append(card_type)
 			return ok and Card.CardType.DIALOGUE in card_types
 
