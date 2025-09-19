@@ -203,8 +203,11 @@ func _click_on_card(global_pos: Vector2, card: Card):
 	_mouse_entered_card(card)
 	_drag_state = DragState.CLICKED
 	_drag_click_pos = global_pos
-	_unblock_info_box()
-	_block_info_box()
+	if card == _blocked_info_card:
+		_unblock_info_box()
+	else:
+		_unblock_info_box()
+		_block_info_box()
 
 func _double_click_on_card(card: Card):
 	if _input_paused:
