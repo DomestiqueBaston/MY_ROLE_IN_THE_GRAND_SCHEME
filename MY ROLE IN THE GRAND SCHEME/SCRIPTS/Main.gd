@@ -803,6 +803,7 @@ func _layout_cards():
 # GameState holds references to them.
 #
 func _detach_cards():
+	_unblock_info_box()
 	for child in cards.get_children():
 		cards.remove_child(child)
 	for child in reserve.get_children():
