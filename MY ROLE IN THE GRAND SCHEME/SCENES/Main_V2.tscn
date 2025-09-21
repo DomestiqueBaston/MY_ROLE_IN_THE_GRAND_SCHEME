@@ -551,16 +551,15 @@ mouse_filter = 2
 theme = ExtResource("46_xcxgf")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
 
-[node name="Motive_List" type="OptionButton" parent="Mask_Card_Playground/Crime_Motive_Selection/Motive_Selector"]
+[node name="Motive_List" type="MenuButton" parent="Mask_Card_Playground/Crime_Motive_Selection/Motive_Selector"]
 custom_minimum_size = Vector2(100, 16)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Which word are you struggling with?"
 theme_override_icons/arrow = ExtResource("52_lp1db")
 toggle_mode = false
-flat = true
+text = "Select a crime motive..."
 text_overrun_behavior = 3
-fit_to_longest_item = false
 script = ExtResource("47_wt7ed")
 
 [node name="Motive_Alert_Animation" type="AnimationPlayer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
