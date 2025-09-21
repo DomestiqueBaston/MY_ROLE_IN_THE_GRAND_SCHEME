@@ -548,23 +548,22 @@ position = Vector2(10, 198)
 position = Vector2(147, 11)
 
 [node name="Motive_Selector" type="PanelContainer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
-custom_minimum_size = Vector2(113, 18)
+custom_minimum_size = Vector2(132, 18)
 offset_left = 1.0
 offset_top = 1.0
-offset_right = 128.0
+offset_right = 132.0
 offset_bottom = 19.0
 mouse_filter = 2
 theme = ExtResource("46_xcxgf")
 theme_override_styles/panel = SubResource("StyleBoxTexture_8lk47")
 
 [node name="Motive_List" type="MenuButton" parent="Mask_Card_Playground/Crime_Motive_Selection/Motive_Selector"]
-custom_minimum_size = Vector2(95, 16)
+custom_minimum_size = Vector2(95, 15)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Which word are you struggling with?"
 toggle_mode = false
 text = "Select a crime motive..."
-alignment = 0
 script = ExtResource("47_wt7ed")
 
 [node name="Motive_Alert_Animation" type="AnimationPlayer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
