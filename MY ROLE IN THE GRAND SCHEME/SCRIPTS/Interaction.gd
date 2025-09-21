@@ -335,7 +335,15 @@ func _is_card_droppable(card: Card) -> bool:
 
 	for other_card in _cards_played:
 		if other_card.get_card_type() == card.get_card_type():
-			return false
+			match card.get_card_type():
+				Card.CardType.COMBAT:
+					if other_card.combat_type == card.combat_type:
+						return false
+				Card.CardType.INVESTIGATION:
+					if other_card.investigation_type == card.investigation_type:
+						return false
+				_:
+					return false
 
 	# in a dialogue, there can only be one object, location or NPC card
 
