@@ -12,7 +12,7 @@ func _ready():
 		var submenu: PopupMenu = PopupMenu.new()
 		for motive in _crime_data[crime]:
 			submenu.add_item(motive["name"])
-		popup.add_submenu_node_item(crime, submenu)
+		popup.add_submenu_node_item(crime + "            ", submenu)
 		submenu.index_pressed.connect(_on_item_pressed.bind(submenu))
 
 func _on_item_pressed(idx: int, submenu: PopupMenu):

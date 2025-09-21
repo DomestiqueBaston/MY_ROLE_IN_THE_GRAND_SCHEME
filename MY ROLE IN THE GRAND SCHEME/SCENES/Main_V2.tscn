@@ -61,7 +61,6 @@
 [ext_resource type="AudioStream" uid="uid://bkjfvpaccisok" path="res://SOUND/MISC/Unfolding.ogg" id="50_vlxab"]
 [ext_resource type="Script" uid="uid://mhjop2gadmxm" path="res://SCRIPTS/Reserve.gd" id="51_6gmax"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="52_2uhvq"]
-[ext_resource type="Texture2D" uid="uid://cp7big13j1qg1" path="res://GRAPHICS/UI/Arrow_Down_Yellow.png" id="52_lp1db"]
 [ext_resource type="Texture2D" uid="uid://c06beumbghko7" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise_25.png" id="53_7n148"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="53_vyyi7"]
 [ext_resource type="Texture2D" uid="uid://kh2r3htrojer" path="res://GRAPHICS/MAIN/Main_Border.png" id="54_anbsy"]
@@ -70,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://diwly2xc6qh4k" path="res://GRAPHICS/LINK_PIN/Plein_Violet_Clair_25.png" id="59_aw4n3"]
 [ext_resource type="Texture2D" uid="uid://loados8ho24v" path="res://GRAPHICS/LINK_PIN/Dashed_Violet_Fonce_25.png" id="62_rkm6l"]
 [ext_resource type="PackedScene" uid="uid://ldrpsbr35wp0" path="res://SCENES/Bottom_Left_Info.tscn" id="67_8lk47"]
+[ext_resource type="Texture2D" uid="uid://c51vgunjllfkw" path="res://GRAPHICS/MAIN/Mobile_Window.png" id="67_23ylq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ksebp"]
 texture = ExtResource("48_sqsjm")
@@ -102,7 +102,13 @@ expand_margin_right = 1.0
 expand_margin_bottom = 1.0
 anti_aliasing = false
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dod4a"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lk47"]
+content_margin_left = 4.0
+texture = ExtResource("67_23ylq")
+texture_margin_left = 10.0
+texture_margin_right = 10.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(0, 0, 194, 18)
 
 [sub_resource type="Animation" id="Animation_wvc8p"]
 resource_name = "Alert"
@@ -542,24 +548,23 @@ position = Vector2(10, 198)
 position = Vector2(147, 11)
 
 [node name="Motive_Selector" type="PanelContainer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
-custom_minimum_size = Vector2(184, 0)
-offset_left = 5.0
-offset_right = 189.0
-offset_bottom = 16.0
-size_flags_vertical = 0
+custom_minimum_size = Vector2(113, 18)
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 19.0
 mouse_filter = 2
 theme = ExtResource("46_xcxgf")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_dod4a")
+theme_override_styles/panel = SubResource("StyleBoxTexture_8lk47")
 
 [node name="Motive_List" type="MenuButton" parent="Mask_Card_Playground/Crime_Motive_Selection/Motive_Selector"]
-custom_minimum_size = Vector2(100, 16)
+custom_minimum_size = Vector2(95, 16)
 layout_mode = 2
 size_flags_vertical = 0
 tooltip_text = "Which word are you struggling with?"
-theme_override_icons/arrow = ExtResource("52_lp1db")
 toggle_mode = false
 text = "Select a crime motive..."
-text_overrun_behavior = 3
+alignment = 0
 script = ExtResource("47_wt7ed")
 
 [node name="Motive_Alert_Animation" type="AnimationPlayer" parent="Mask_Card_Playground/Crime_Motive_Selection"]
