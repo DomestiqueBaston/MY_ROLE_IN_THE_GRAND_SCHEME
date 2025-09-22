@@ -305,6 +305,7 @@ func show_npc(npc: NpcCard):
 
 	$VBox/Scroller_NPC/Info_NPC/NPC_Name.text = npc.get_display_name()
 	$VBox/Scroller_NPC/Info_NPC/NPC.show()
+	$VBox/Scroller_NPC/Info_NPC/Separator_17.show()
 	$VBox/Scroller_NPC/Info_NPC/NPC_Name.show()
 
 	var health_label: Control
