@@ -103,6 +103,9 @@ var work_shifts: int
 ## If true work Wed-Sun, else work Mon-Fri.
 var has_weekend_shift: bool
 
+## Which case the NPC belongs to
+var _case: Case
+
 ## Working day when the NPC was last seen.
 var _last_dialogue: int = -1
 
@@ -173,9 +176,15 @@ func has_been_seen_today() -> bool:
 	return _last_dialogue == GameState.get_working_day()
 
 ##
-## Flags the location as having been seen today.
+## Updates the NPC's visible health, and flags him as having been seen today.
 ##
-func set_seen_today():
+func visit():
+	if health >= 8:
+		npc_health = NpcHealth.GOOD
+	elif health >= 4:
+		npc_health = NpcHealth.AVERAGE
+	else:
+		npc_health = NpcHealth.LOW
 	_last_dialogue = GameState.get_working_day()
 
 ##
@@ -420,12 +429,49 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 ## location.
 ##
 func new_day():
+	var yesterday = GameState.get_working_day() - 1
+
+	if _last_dialogue < yesterday:
+
+		# each day the NPC has not interacted with the player, there is a 10%
+		# chance one of PHY, MEN or maxHEA will change
+
+		match randi() % 6:
+			0:
+				physical += 1
+				print("%s: PHY +1" % get_display_name())
+			1:
+				physical -= 1
+				print("%s: PHY -1" % get_display_name())
+			2:
+				mental += 1
+				print("%s: MEN +1" % get_display_name())
+			3:
+				mental -= 1
+				print("%s: MEN -1" % get_display_name())
+			4:
+				max_health += 1
+				print("%s: maxHEA +1" % get_display_name())
+			5:
+				max_health -= 1
+				health = mini(health, max_health)
+				print("%s: maxHEA -1" % get_display_name())
+
+		# the player's reputation increases by 1 every N days without interaction,
+		# where N is the difficulty of the case
+
+		if _case and npc_status != NpcStatus.MINION and player_reputation < 2:
+			var difficulty = maxi(1, _case.get_difficulty())
+			if (yesterday - _last_dialogue - 1) % difficulty == difficulty - 1:
+				player_reputation += 1
+				print("%s: Rep +1" % get_display_name())
 
 	# the NPC's health is incremented until it reaches max_health (perhaps this
 	# should be done at different times depending on his work schedules)
 
 	if health < max_health:
 		health += 1
+		print("%s: HEA +1" % get_display_name())
 
 	# introduce a bit of randomness into the NPC's schedule
 
@@ -449,6 +495,7 @@ static func generate_card(
 	case: Case, cat: NpcCategory = NpcCategory.NONE, possible_jobs = [],
 	sex: int = -1) -> NpcCard:
 	var card = _card_scene.instantiate()
+	card._case = case
 	var job_id: String
 	if possible_jobs:
 		job_id = possible_jobs.pick_random()
@@ -492,6 +539,15 @@ func get_unique_id():
 #
 # For save/load.
 #
+func get_referenced_objects():
+	var refs = super()
+	if _case:
+		refs.append(_case)
+	return refs
+
+#
+# For save/load.
+#
 func get_json_dict():
 	var dict = super()
 	dict["category"] = category
@@ -517,6 +573,8 @@ func get_json_dict():
 		dict["has_weekend_shift"] = has_weekend_shift
 	if _last_dialogue >= 0:
 		dict["last_dialogue"] = _last_dialogue
+	if _case:
+		dict["case"] = _case.get_unique_id()
 	return dict
 
 #
@@ -544,6 +602,8 @@ func restore(dict, catalog):
 	work_shifts = dict.get("work_shifts", 0)
 	has_weekend_shift = dict.get("has_weekend_shift", false)
 	_last_dialogue = dict.get("last_dialogue", -1)
+	if "case" in dict:
+		_case = catalog[dict.case]
 
 #
 # For save/load.

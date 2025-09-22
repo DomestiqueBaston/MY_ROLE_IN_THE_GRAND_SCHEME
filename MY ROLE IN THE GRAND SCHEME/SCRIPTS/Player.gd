@@ -546,8 +546,9 @@ func new_day():
 ##
 ## Returns a bonus/malus to be added to dice rolls, depending on the player's
 ## emotion, addiction and wanted levels, how long it has been since he slept,
-## how well he slept last time, and the number of unpaid bills he has. A
-## negative number is a bonus, a positive number is a malus.
+## how well he slept last time, the number of unpaid bills he has, the time,
+## the difficulty of the current case... A negative number is a bonus, a
+## positive number is a malus.
 ##
 func get_bonus_malus() -> int:
 	var ret = 0
@@ -602,6 +603,16 @@ func get_bonus_malus() -> int:
 	if debt_delta != 0:
 		print("unpaid bills malus: %s" % debt_delta)
 		ret += debt_delta
+
+	var hour = GameState.get_hour()
+	if hour < 8 or hour >= 20:
+		print("night action malus: 1")
+		ret += 1
+
+	var difficulty = GameState.get_current_case().get_difficulty()
+	if difficulty != 3:
+		var diff_delta = difficulty - 3
+		print("case difficulty bonus/malus: %s" % diff_delta)
 
 	return ret
 

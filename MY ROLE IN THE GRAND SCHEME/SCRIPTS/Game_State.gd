@@ -641,7 +641,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 
 	# start the dialogue
 
-	npc.set_seen_today()
+	npc.visit()
 	start_dialogue(npc, location)
 
 func start_dialogue(npc: NpcCard, location: LocationCard):
@@ -653,13 +653,32 @@ func start_dialogue(npc: NpcCard, location: LocationCard):
 	save_game()
 	interaction_started.emit()
 
+func _play_dialogue(cards_played: Array[Card]):
+	print("\n*** dialogue: %s ***" % _current_interaction_npc.get_display_name())
+
+	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
+	# changes are temporary; Emo and Add changes are permanent
+
+	var attrs = InteractionAttributes.new()
+	attrs.play_card(_current_interaction_location, false)
+	for card in cards_played:
+		attrs.play_card(card, card in GameState.player.get_fallback_cards())
+
+	var bonus_malus = attrs.get_bonus_malus()
+	var rep = _current_interaction_npc.player_reputation
+	if rep != 0:
+		bonus_malus -= rep
+		print("Rep bonus/malus: %s" % -rep)
+
+	# TODO: roll dice for player and NPC, etc.
+
 func end_interaction(cards_played: Array[Card] = []):
 	match _current_interaction:
 		InteractionType.INVESTIGATION:
 			await _play_investigation(cards_played)
 			_pop_card_state()
 		InteractionType.DIALOGUE:
-			# TODO
+			await _play_dialogue(cards_played)
 			_pop_card_state()
 
 	player.clear_fallback_cards()
