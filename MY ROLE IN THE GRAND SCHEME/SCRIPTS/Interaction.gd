@@ -91,6 +91,9 @@ var _cards_played: Dictionary
 # what kind of interaction is in progress
 var _interaction_type: GameState.InteractionType = GameState.InteractionType.NONE
 
+# which card to show info about when the mouse is not over a card
+var _default_info_card: Card
+
 # only one of these card types can be played in a dialogue interaction
 const _dialog_question_types = [
 	Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
@@ -172,7 +175,7 @@ func _mouse_exited_card(card: Card):
 		card.set_highlighted(false)
 		_current_card = null
 		if info_box:
-			info_box.clear()
+			info_box.show_card(_default_info_card)
 
 func _click_on_card(global_pos: Vector2, card: Card):
 	# if this is a sub-scene, ignore signals from other cards in the scene
@@ -473,6 +476,9 @@ func _start_interaction(type: GameState.InteractionType, npc: NpcCard = null):
 	if tv_screen:
 		if type == GameState.InteractionType.DIALOGUE and npc:
 			tv_screen.set_dialogue_npc(npc)
+			if info_box:
+				_default_info_card = npc
+				info_box.show_card(npc)
 		tv_screen.set_interaction_type(type)
 
 #
@@ -482,6 +488,7 @@ func _start_interaction(type: GameState.InteractionType, npc: NpcCard = null):
 #
 func _end_interaction():
 	_interaction_type = GameState.InteractionType.NONE
+	_default_info_card = null
 	_current_card = null
 	_detach_cards()
 	done.emit()
