@@ -19,21 +19,23 @@ class PlayerAttr:
 	var min_value: int
 	var max_value: int
 	var alert_player: AnimationPlayer
+	var alert_timer: Timer
 
 	@warning_ignore("shadowed_global_identifier")
 	func _init(
 		name: String, label: Label, min: int = 0, max: int = 0,
-		alert: AnimationPlayer = null):
+		alert: AnimationPlayer = null, timer: Timer = null):
 		attr_name = name
 		ui_label = label
 		min_value = min
 		max_value = max
 		alert_player = alert
+		alert_timer = timer
 
 @onready var _attrs: Array[PlayerAttr] = [
-	PlayerAttr.new("physical", $Character_Stats/PHY, 1, 1000, $PHY_Alert),
-	PlayerAttr.new("mental", $Character_Stats/MEN, 1, 1000, $MEN_Alert),
-	PlayerAttr.new("health", $Character_Stats/HEA, 1, 1000, $HEA_Alert),
+	PlayerAttr.new("physical", $Character_Stats/PHY, 1, 1000, $PHY_Alert, $PHY_Alert_Timer),
+	PlayerAttr.new("mental", $Character_Stats/MEN, 1, 1000, $MEN_Alert, $MEN_Alert_Timer),
+	PlayerAttr.new("health", $Character_Stats/HEA, 1, 1000, $HEA_Alert, $HEA_Alert_Timer),
 	PlayerAttr.new("emotion", $Character_Stats/Emo, -4, 4, $Emo_Alert),
 	PlayerAttr.new("addiction", $Character_Stats/Add, -4, 4, $Add_Alert),
 	PlayerAttr.new("wanted", $Character_Stats/Wan, -1000, 4, $Wan_Alert),
@@ -91,6 +93,8 @@ func _ready():
 
 	for attr in _attrs:
 		GameState.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
+		if attr.alert_timer:
+			attr.alert_timer.timeout.connect(_on_attr_alert_timeout.bind(attr))
 	GameState.debts_changed.connect(_on_debts_changed)
 	GameState.time_changed.connect(_on_time_changed)
 
@@ -184,11 +188,20 @@ func _on_attr_changed(attr: PlayerAttr):
 	attr.ui_label.text = str(value)
 	if attr.alert_player:
 		if value <= attr.min_value or value >= attr.max_value:
+			if attr.alert_timer:
+				attr.alert_timer.stop()
 			if attr.alert_player.current_animation != "Alert":
 				attr.alert_player.play("Alert")
 		else:
-			if attr.alert_player.current_animation == "Alert":
-				attr.alert_player.play("RESET")
+			if attr.alert_timer:
+				attr.alert_timer.start()
+				attr.alert_player.play("Alert")
+			else:
+				if attr.alert_player.current_animation == "Alert":
+					attr.alert_player.play("RESET")
+
+func _on_attr_alert_timeout(attr: PlayerAttr):
+	attr.alert_player.play("RESET")
 
 func _on_debts_changed():
 	if GameState.player.get_debt_count() >= 4:

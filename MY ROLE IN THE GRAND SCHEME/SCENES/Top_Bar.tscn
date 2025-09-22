@@ -358,11 +358,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "12am"
 
 [node name="Menus" type="Control" parent="."]
-layout_mode = 3
 anchors_preset = 0
 
 [node name="Double_Bar_1" type="Label" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 53.0
 offset_top = 1.0
 offset_right = 62.0
@@ -371,7 +370,7 @@ theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " ||"
 
 [node name="Dailies" type="MenuButton" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 58.0
 offset_top = -1.0
 offset_right = 104.0
@@ -382,7 +381,7 @@ text = "Dailies"
 switch_on_hover = true
 
 [node name="Single_Bar_1" type="Label" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 94.0
 offset_top = 1.0
 offset_right = 103.0
@@ -391,7 +390,7 @@ theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
 
 [node name="Cases" type="MenuButton" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 96.0
 offset_top = -1.0
 offset_right = 142.0
@@ -414,7 +413,7 @@ popup/item_4/text = "Give up case!"
 popup/item_4/id = 4
 
 [node name="Single_Bar_2" type="Label" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 131.0
 offset_top = 1.0
 offset_right = 140.0
@@ -423,7 +422,7 @@ theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
 
 [node name="Cards" type="MenuButton" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 133.0
 offset_top = -1.0
 offset_right = 179.0
@@ -438,7 +437,7 @@ popup/item_0/text = "Card management..."
 popup/item_0/id = 0
 
 [node name="Single_Bar_3" type="Label" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 168.0
 offset_top = 1.0
 offset_right = 177.0
@@ -447,7 +446,7 @@ theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 text = " |"
 
 [node name="Whatever" type="MenuButton" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 176.0
 offset_top = -1.0
 offset_right = 225.0
@@ -463,7 +462,7 @@ popup/item_1/text = "Quit"
 popup/item_1/id = 1
 
 [node name="Double_Bar_2" type="Label" parent="Menus"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 221.0
 offset_top = 1.0
 offset_right = 230.0
@@ -639,16 +638,28 @@ libraries = {
 &"": SubResource("AnimationLibrary_0mfvj")
 }
 
+[node name="PHY_Alert_Timer" type="Timer" parent="."]
+wait_time = 3.3329999999999997
+one_shot = true
+
 [node name="MEN_Alert" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_17x0y")
 }
+
+[node name="MEN_Alert_Timer" type="Timer" parent="."]
+wait_time = 3.3329999999999997
+one_shot = true
 
 [node name="HEA_Alert" type="AnimationPlayer" parent="."]
 root_node = NodePath("../MEN_Alert")
 libraries = {
 &"": SubResource("AnimationLibrary_g6ys3")
 }
+
+[node name="HEA_Alert_Timer" type="Timer" parent="."]
+wait_time = 3.3329999999999997
+one_shot = true
 
 [node name="Soft_Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0mfvj")
