@@ -12,6 +12,14 @@ extends Node2D
 @onready var _quit_scene = preload("res://SCENES/Quit.tscn")
 @onready var _death_scene = preload("res://SCENES/Death.tscn")
 
+#
+# Player attributes saved before leaving the main scene and restored afterward,
+# so we can detect if they have changed, i.e. by an interaction.
+#
+var _saved_PHY = -1
+var _saved_MEN = -1
+var _saved_HEA = -1
+
 func _ready():
 	_title_screen = $Active_Scene/Title_Screen
 	_title_screen.next.connect(_go_to_option_menu)
@@ -25,6 +33,7 @@ func _replace_scene(new_scene: PackedScene) -> Node:
 	for child in $Active_Scene.get_children():
 		if child.scene_file_path == _main_scene.resource_path:
 			GameState.save_game()
+			_save_player_attrs()
 
 	# take a screenshot that will fade to reveal the new scene
 
@@ -112,6 +121,7 @@ func _continue_game():
 	if interaction in [
 			GameState.InteractionType.NONE, GameState.InteractionType.BREAK_IN]:
 		var main = await _replace_scene(_main_scene)
+		_check_player_attrs()
 		var case = GameState.get_current_case()
 		if case:
 			main.populate(case)
@@ -143,6 +153,21 @@ func _on_interaction_ended():
 	var interaction_scene = $Active_Scene.get_child(0)
 	await GameState.end_interaction(interaction_scene.get_cards_played())
 	_continue_game()
+
+func _save_player_attrs():
+	_saved_PHY = GameState.player.physical
+	_saved_MEN = GameState.player.mental
+	_saved_HEA = GameState.player.health
+
+func _check_player_attrs():
+	if _saved_PHY < 0:
+		return
+	if GameState.player.physical != _saved_PHY:
+		GameState.physical_changed.emit()
+	if GameState.player.mental != _saved_MEN:
+		GameState.mental_changed.emit()
+	if GameState.player.health != _saved_HEA:
+		GameState.health_changed.emit()
 
 func _quit():
 	await _replace_scene(_quit_scene)

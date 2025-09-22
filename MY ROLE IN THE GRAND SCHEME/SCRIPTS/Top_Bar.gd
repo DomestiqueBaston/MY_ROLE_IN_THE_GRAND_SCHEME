@@ -3,6 +3,9 @@ extends Control
 ## If true, all menus except Whatever are disabled.
 @export var limited_menus: bool = false
 
+## If false, don't listen for changes to player attributes, time, etc.
+@export var listen_for_changes: bool = true
+
 ## Signal emitted when the player selects Settings from the menu.
 signal settings
 
@@ -81,7 +84,8 @@ func _update_controls():
 	var player = GameState.player
 	$Character_Stats/Player_Name.text = player.player_name
 	for attr in _attrs:
-		attr.ui_label.text = str(player[attr.attr_name])
+		_on_attr_changed(attr, false)
+	_on_debts_changed()
 	_on_time_changed()
 
 func _enter_tree():
@@ -91,12 +95,14 @@ func _enter_tree():
 func _ready():
 	_update_controls()
 
-	for attr in _attrs:
-		GameState.connect(attr.attr_name + "_changed", _on_attr_changed.bind(attr))
-		if attr.alert_timer:
-			attr.alert_timer.timeout.connect(_on_attr_alert_timeout.bind(attr))
-	GameState.debts_changed.connect(_on_debts_changed)
-	GameState.time_changed.connect(_on_time_changed)
+	if listen_for_changes:
+		for attr in _attrs:
+			GameState.connect(
+				attr.attr_name + "_changed", _on_attr_changed.bind(attr, true))
+			if attr.alert_timer:
+				attr.alert_timer.timeout.connect(_on_attr_alert_timeout.bind(attr))
+		GameState.debts_changed.connect(_on_debts_changed)
+		GameState.time_changed.connect(_on_time_changed)
 
 	# menu buttons and whether or not they are always enabled
 	var buttons = {
@@ -183,7 +189,7 @@ func _on_mouse_exited():
 func _on_button_pressed():
 	Globals.valid_sound.play()
 
-func _on_attr_changed(attr: PlayerAttr):
+func _on_attr_changed(attr: PlayerAttr, alert_to_all_changes: bool = true):
 	var value = GameState.player[attr.attr_name]
 	attr.ui_label.text = str(value)
 	if attr.alert_player:
@@ -192,7 +198,7 @@ func _on_attr_changed(attr: PlayerAttr):
 				attr.alert_timer.stop()
 			if attr.alert_player.current_animation != "Alert":
 				attr.alert_player.play("Alert")
-		else:
+		elif alert_to_all_changes:
 			if attr.alert_timer:
 				attr.alert_timer.start()
 				attr.alert_player.play("Alert")
