@@ -734,6 +734,7 @@ visible = false
 
 [node name="Top_Bar" parent="." instance=ExtResource("9_x1nkx")]
 limited_menus = true
+listen_for_changes = false
 
 [connection signal="mouse_entered" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_entered"]
 [connection signal="mouse_exited" from="Button/Bring_It_On" to="Button" method="_on_bring_it_on_mouse_exited"]
