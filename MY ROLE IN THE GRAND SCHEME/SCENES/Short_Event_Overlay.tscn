@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=235 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -125,7 +125,6 @@
 [ext_resource type="BitMap" uid="uid://elgd1g4von5o" path="res://GRAPHICS/SHORT_EVENT/Drawer_03_Mask.png" id="105_briu0"]
 [ext_resource type="Texture2D" uid="uid://cufoeexfcfk2b" path="res://GRAPHICS/SHORT_EVENT/Drawer_02_Open.png" id="106_wowcu"]
 [ext_resource type="Texture2D" uid="uid://mpu7a0x622po" path="res://GRAPHICS/SHORT_EVENT/Drawer_02_Hover.png" id="107_lboli"]
-[ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="108_fowbj"]
 [ext_resource type="BitMap" uid="uid://dnnhqkxx2eers" path="res://GRAPHICS/SHORT_EVENT/Drawer_02_Mask.png" id="108_yau06"]
 [ext_resource type="Texture2D" uid="uid://co2s7d5k2xxom" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Open.png" id="109_vj0nj"]
 [ext_resource type="Texture2D" uid="uid://bs3a082t7hyfi" path="res://GRAPHICS/SHORT_EVENT/Drawer_01_Hover.png" id="110_fowbj"]
@@ -189,116 +188,6 @@ size = Vector2(38, 60)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_370rn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w41fr"]
-
-[sub_resource type="Animation" id="Animation_hb476"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Note/Doctor_F:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Note/Yes:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Note/No:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Note/Price:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_4enr2"]
-resource_name = "Writing"
-length = 2.13334
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Note/Doctor_F:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Note/Yes:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.00001, 2.06667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Note/No:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.06667, 2.13333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Note/Price:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.8, 1.86667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6kkd"]
-_data = {
-&"RESET": SubResource("Animation_hb476"),
-&"Writing": SubResource("Animation_4enr2")
-}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsifl"]
 content_margin_left = 15.0
@@ -935,11 +824,8 @@ bbcode_enabled = true
 text = "Are  you  absolutely  certain  you  wish  to incur the expenses  for  this consultation?
 
 Mind you,  we  are  talking about [color=#992726]        Dø[/color] here..."
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Care_Sheet/Note"]
-visible = false
 modulate = Color(1, 1, 1, 0.745098)
 layout_mode = 0
 offset_left = 93.0
@@ -954,7 +840,6 @@ fit_content = true
 horizontal_alignment = 2
 
 [node name="Yes" type="Button" parent="Overlays/Care_Sheet/Note"]
-visible = false
 layout_mode = 0
 offset_left = 227.0
 offset_top = 167.658
@@ -970,7 +855,6 @@ text = "No  other
 choice,  Doc."
 
 [node name="No" type="Button" parent="Overlays/Care_Sheet/Note"]
-visible = false
 layout_mode = 0
 offset_left = 233.0
 offset_top = 216.658
@@ -984,16 +868,6 @@ theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
 text = "On second
 thought..."
-
-[node name="Typing" type="AudioStreamPlayer" parent="Overlays/Care_Sheet"]
-stream = ExtResource("108_fowbj")
-volume_db = -20.0
-bus = &"FX"
-
-[node name="Care_Sheet_Animation" type="AnimationPlayer" parent="Overlays/Care_Sheet"]
-libraries = {
-&"": SubResource("AnimationLibrary_m6kkd")
-}
 
 [node name="Case_Management" type="Node2D" parent="Overlays"]
 visible = false

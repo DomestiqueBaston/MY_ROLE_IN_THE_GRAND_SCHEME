@@ -207,7 +207,6 @@ func attempt_break_in() -> Array[Card]:
 ## cancel. Returns true if he confirmed.
 ##
 func visit_doctor() -> bool:
-	$Overlays/Care_Sheet.reset()
 	$Overlays/Care_Sheet.show()
 	await _appear()
 	await $Overlays/Care_Sheet.done
