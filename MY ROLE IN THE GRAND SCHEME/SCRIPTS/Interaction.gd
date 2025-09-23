@@ -175,7 +175,10 @@ func _mouse_exited_card(card: Card):
 		card.set_highlighted(false)
 		_current_card = null
 		if info_box:
-			info_box.show_card(_default_info_card)
+			if _default_info_card:
+				info_box.show_card(_default_info_card)
+			else:
+				info_box.clear()
 
 func _click_on_card(global_pos: Vector2, card: Card):
 	# if this is a sub-scene, ignore signals from other cards in the scene
