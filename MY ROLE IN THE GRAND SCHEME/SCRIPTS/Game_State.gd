@@ -693,7 +693,7 @@ func _play_dialogue(cards_played: Array[Card]):
 
 	var critical_attr: StringName
 
-	if actual_roll == 10 and npc_actual_roll != 10:
+	if actual_roll == 10:
 		if randi() & 1:
 			player.max_health -= 1
 			player.health = mini(player.health, player.max_health)
@@ -701,20 +701,26 @@ func _play_dialogue(cards_played: Array[Card]):
 		else:
 			player.mental -= 1
 			critical_attr = &"MEN"
-		player.improve_emotion(-1)
-		npc.player_reputation = maxi(-2, npc.player_reputation - 1)
-		print("critical failure: update Emo, Rep, %s" % critical_attr)
-	elif actual_roll == 1 and npc_actual_roll != 1:
+		if npc_actual_roll == 10:
+			print("critical failure: update %s" % critical_attr)
+		else:
+			player.improve_emotion(-1)
+			npc.player_reputation = maxi(-2, npc.player_reputation - 1)
+			print("critical failure: update Emo, Rep, %s" % critical_attr)
+	elif actual_roll == 1:
 		if randi() & 1:
 			player.max_health += 1
 			critical_attr = &"maxHEA"
 		else:
 			player.mental += 1
 			critical_attr = &"MEN"
-		player.improve_emotion(-1)
-		print("critical success: update Emo, %s" % critical_attr)
+		if npc_actual_roll == 1:
+			print("critical success: update %s" % critical_attr)
+		else:
+			player.improve_emotion(-1)
+			print("critical success: update Emo, %s" % critical_attr)
 
-	if npc_actual_roll == 10 and actual_roll != 10:
+	if npc_actual_roll == 10:
 		if randi() & 1:
 			npc.max_health -= 1
 			npc.health = mini(npc.health, npc.max_health)
@@ -722,17 +728,23 @@ func _play_dialogue(cards_played: Array[Card]):
 		else:
 			npc.mental -= 1
 			critical_attr = &"MEN"
-		npc.player_reputation = mini(2, npc.player_reputation + 1)
-		print("NPC critical failure: update Rep, %s" % critical_attr)
-	elif npc_actual_roll == 1 and actual_roll != 1:
+		if actual_roll == 10:
+			print("NPC critical failure: update %s" % critical_attr)
+		else:
+			npc.player_reputation = mini(2, npc.player_reputation + 1)
+			print("NPC critical failure: update Rep, %s" % critical_attr)
+	elif npc_actual_roll == 1:
 		if randi() & 1:
 			npc.max_health += 1
 			critical_attr = &"maxHEA"
 		else:
 			npc.mental += 1
 			critical_attr = &"MEN"
-		npc.player_reputation = maxi(-2, npc.player_reputation - 1)
-		print("NPC critical success: update Rep, %s" % critical_attr)
+		if actual_roll == 1:
+			print("NPC critical success: update %s" % critical_attr)
+		else:
+			npc.player_reputation = maxi(-2, npc.player_reputation - 1)
+			print("NPC critical success: update Rep, %s" % critical_attr)
 
 	if actual_roll > 1:
 		if npc_actual_roll == 1:
