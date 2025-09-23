@@ -654,7 +654,8 @@ func start_dialogue(npc: NpcCard, location: LocationCard):
 	interaction_started.emit()
 
 func _play_dialogue(cards_played: Array[Card]):
-	print("\n*** dialogue: %s ***" % _current_interaction_npc.get_display_name())
+	var npc: NpcCard = _current_interaction_npc
+	print("\n*** dialogue: %s ***" % npc.get_display_name())
 
 	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
 	# changes are temporary; Emo and Add changes are permanent
@@ -665,12 +666,83 @@ func _play_dialogue(cards_played: Array[Card]):
 		attrs.play_card(card, card in GameState.player.get_fallback_cards())
 
 	var bonus_malus = attrs.get_bonus_malus()
-	var rep = _current_interaction_npc.player_reputation
+	var rep = npc.player_reputation
 	if rep != 0:
 		bonus_malus -= rep
 		print("Rep bonus/malus: %s" % -rep)
 
-	# TODO: roll dice for player and NPC, etc.
+	# roll the die for the player
+
+	var max_roll = roundi((attrs.PHY + 2 * attrs.MEN + attrs.HEA) / 4.0)
+	print("max roll: %s" % max_roll)
+	var actual_roll = randi_range(1, 10)
+	print("actual roll: %s" % actual_roll)
+	var net_roll = actual_roll + bonus_malus
+	print("with bonus/malus: %s" % net_roll)
+
+	# roll the die for the NPC
+
+	var npc_max_roll = roundi((npc.physical + 2 * npc.mental + npc.health) / 4.0)
+	print("NPC max roll: %s" % npc_max_roll)
+	var npc_actual_roll = randi_range(1, 10)
+	print("NPC actual roll: %s" % npc_actual_roll)
+	var npc_net_roll = npc_actual_roll
+	if npc.wanted > 1:
+		npc_net_roll += npc.wanted - 1
+		print("after Wan malus: %s" % npc_net_roll)
+
+	var critical_attr: StringName
+
+	if actual_roll == 10 and npc_actual_roll != 10:
+		if randi() & 1:
+			player.max_health -= 1
+			player.health = mini(player.health, player.max_health)
+			critical_attr = &"maxHEA"
+		else:
+			player.mental -= 1
+			critical_attr = &"MEN"
+		player.improve_emotion(-1)
+		npc.player_reputation = maxi(-2, npc.player_reputation - 1)
+		print("critical failure: update Emo, Rep, %s" % critical_attr)
+	elif actual_roll == 1 and npc_actual_roll != 1:
+		if randi() & 1:
+			player.max_health += 1
+			critical_attr = &"maxHEA"
+		else:
+			player.mental += 1
+			critical_attr = &"MEN"
+		player.improve_emotion(-1)
+		print("critical success: update Emo, %s" % critical_attr)
+
+	if npc_actual_roll == 10 and actual_roll != 10:
+		if randi() & 1:
+			npc.max_health -= 1
+			npc.health = mini(npc.health, npc.max_health)
+			critical_attr = &"maxHEA"
+		else:
+			npc.mental -= 1
+			critical_attr = &"MEN"
+		npc.player_reputation = mini(2, npc.player_reputation + 1)
+		print("NPC critical failure: update Rep, %s" % critical_attr)
+	elif npc_actual_roll == 1 and actual_roll != 1:
+		if randi() & 1:
+			npc.max_health += 1
+			critical_attr = &"maxHEA"
+		else:
+			npc.mental += 1
+			critical_attr = &"MEN"
+		npc.player_reputation = maxi(-2, npc.player_reputation - 1)
+		print("NPC critical success: update Rep, %s" % critical_attr)
+
+	if actual_roll > 1:
+		if npc_actual_roll == 1:
+			print("failure due to NPC's critical success")
+		else:
+			var margin = max_roll - net_roll
+			var npc_margin = npc_max_roll - npc_net_roll
+			print("player success margin: %s" % margin)
+			print("NPC success margin: %s" % npc_margin)
+			print("net success margin: %s" % (margin - npc_margin))
 
 func end_interaction(cards_played: Array[Card] = []):
 	match _current_interaction:
