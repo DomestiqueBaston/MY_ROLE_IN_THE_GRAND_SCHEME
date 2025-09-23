@@ -576,24 +576,27 @@ func _play_investigation(cards_played: Array[Card]):
 	var net_roll = actual_roll + bonus_malus
 	print("with bonus/malus: %s" % net_roll)
 
+	var tweak_attr = func(who, value) -> StringName:
+		match randi() % 3:
+			0:
+				who.mental += value
+				return &"MEN"
+			1:
+				who.physical += value
+				return &"PHY"
+			_:
+				who.max_health += value
+				who.health = mini(who.health, who.max_value)
+				return &"maxHEA"
+
 	var critical_attr: StringName
 
 	if actual_roll == 10:
-		if randi() & 1:
-			player.physical -= 1
-			critical_attr = &"PHY"
-		else:
-			player.mental -= 1
-			critical_attr = &"MEN"
 		player.health -= 1
+		critical_attr = tweak_attr.call(player, -1)
 		print("critical failure: update HEA, %s" % critical_attr)
 	elif actual_roll == 1:
-		if randi() & 1:
-			player.physical += 1
-			critical_attr = &"PHY"
-		else:
-			player.mental += 1
-			critical_attr = &"MEN"
+		critical_attr = tweak_attr.call(player, 1)
 		player.money += randi_range(50, 100)
 		print("critical success: update %s, money" % critical_attr)
 	elif net_roll > max_roll:
@@ -691,16 +694,23 @@ func _play_dialogue(cards_played: Array[Card]):
 		npc_net_roll += npc.wanted - 1
 		print("after Wan malus: %s" % npc_net_roll)
 
+	var tweak_attr = func(who, value) -> StringName:
+		match randi() % 5:
+			0, 1, 2:
+				who.mental += value
+				return &"MEN"
+			3:
+				who.physical += value
+				return &"PHY"
+			_:
+				who.max_health += value
+				who.health = mini(who.health, who.max_value)
+				return &"maxHEA"
+
 	var critical_attr: StringName
 
 	if actual_roll == 10:
-		if randi() & 1:
-			player.max_health -= 1
-			player.health = mini(player.health, player.max_health)
-			critical_attr = &"maxHEA"
-		else:
-			player.mental -= 1
-			critical_attr = &"MEN"
+		critical_attr = tweak_attr.call(player, -1)
 		if npc_actual_roll == 10:
 			print("critical failure: update %s" % critical_attr)
 		else:
@@ -708,12 +718,7 @@ func _play_dialogue(cards_played: Array[Card]):
 			npc.player_reputation = maxi(-2, npc.player_reputation - 1)
 			print("critical failure: update Emo, Rep, %s" % critical_attr)
 	elif actual_roll == 1:
-		if randi() & 1:
-			player.max_health += 1
-			critical_attr = &"maxHEA"
-		else:
-			player.mental += 1
-			critical_attr = &"MEN"
+		critical_attr = tweak_attr.call(player, 1)
 		if npc_actual_roll == 1:
 			print("critical success: update %s" % critical_attr)
 		else:
@@ -721,25 +726,14 @@ func _play_dialogue(cards_played: Array[Card]):
 			print("critical success: update Emo, %s" % critical_attr)
 
 	if npc_actual_roll == 10:
-		if randi() & 1:
-			npc.max_health -= 1
-			npc.health = mini(npc.health, npc.max_health)
-			critical_attr = &"maxHEA"
-		else:
-			npc.mental -= 1
-			critical_attr = &"MEN"
+		critical_attr = tweak_attr.call(npc, -1)
 		if actual_roll == 10:
 			print("NPC critical failure: update %s" % critical_attr)
 		else:
 			npc.player_reputation = mini(2, npc.player_reputation + 1)
 			print("NPC critical failure: update Rep, %s" % critical_attr)
 	elif npc_actual_roll == 1:
-		if randi() & 1:
-			npc.max_health += 1
-			critical_attr = &"maxHEA"
-		else:
-			npc.mental += 1
-			critical_attr = &"MEN"
+		critical_attr = tweak_attr.call(npc, 1)
 		if actual_roll == 1:
 			print("NPC critical success: update %s" % critical_attr)
 		else:
