@@ -586,7 +586,7 @@ func _play_investigation(cards_played: Array[Card]):
 				return &"PHY"
 			_:
 				who.max_health += value
-				who.health = mini(who.health, who.max_value)
+				who.health = mini(who.health, who.max_health)
 				return &"maxHEA"
 
 	var critical_attr: StringName
@@ -704,7 +704,7 @@ func _play_dialogue(cards_played: Array[Card]):
 				return &"PHY"
 			_:
 				who.max_health += value
-				who.health = mini(who.health, who.max_value)
+				who.health = mini(who.health, who.max_health)
 				return &"maxHEA"
 
 	var critical_attr: StringName
