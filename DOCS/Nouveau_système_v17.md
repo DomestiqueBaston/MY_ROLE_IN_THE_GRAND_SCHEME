@@ -128,9 +128,9 @@ Progression du joueur (pas des PNJs !)
 	- Seules les réussites et échecs critiques (1 ou 10 « naturel » obtenus directement sur le dé, avant l’application de tout modificateur) font varier les caractéristiques principales du joueur (réussite critique : +1 et échec critique : -1) et uniquement après avoir évalué le résultat de l’action entreprise.
 	- N’importe quel jet de dé (hors jet de dé contre Mort par Add vu au dessus) impliquant PHY, MEN ou HEA peut amener à ces évolutions et la modification sera toujours effective après la résolution de l’action entreprise.
 	- La caractéristique qui évoluera sera sélectionnée parmi celles utilisées pour le jet de dé selon :
-		- Dialogue : MEN ou maxHEA aléatoirement (si maxHEA < HEA → HEA = maxHEA)
-		- Combat : PHY ou maxHEA aléatoirement (si maxHEA < HEA → HEA = maxHEA)
-		- Investigation : PHY ou MEN aléatoirement
+		- Dialogue : MEN à 3/5 chances, ou PHY à 1/5 chances ou maxHEA à 1/5 chances (si maxHEA < HEA → HEA = maxHEA)
+		- Combat : PHY à 3/5 chances, ou MEN à 1/5 chances ou maxHEA à 1/5 chances (si maxHEA < HEA → HEA = maxHEA)
+		- Investigation : PHY ou MEN ou maxHEA aléatoirement (si maxHEA < HEA → HEA = maxHEA)
 	- Dans les cas hypothétiques ou un jet de dé est lancé sur 1 seule caractéristique, c’est celle-ci qui évolue.
 	- Dans tous les autres cas, la caractéristique qui évoluera sera choisie aléatoirement parmi celles testées.
 
@@ -491,6 +491,7 @@ Dialogue
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
 		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, Non-Maîtrise, d’Evidence (bonne ou mauvaise utilisation), de difficulté de l’enquête, de Rep, d’Emo, d’Add, de Wan, de Factures impayées, de Sommeil, de Veille, de Lieu (sur place uniquement, pas une carte jouée), d’action de Nuit, de Bonus dû à la carte Combat Special « Ne pas tuer ! ».
 		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de Mensonge (voir plus bas), tentative ratée de fuite et précédente fuite de Dialogue.
+
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
 	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
 	- On ne rajoute le temps écoulé qu’à la fin du Dialogue.
@@ -498,13 +499,13 @@ Dialogue
 	- Pour établir l’issue de l’Interaction les deux protagonistes lancent 1d10 :
 		- On établit la marge de réussite/échec donnant un nombre positif (réussite) ou négatif (échec).
 		- On fait marge de réussite du Joueur – marge de réussite du PNJ.
-	- En cas de réussite normale, et en fonction de la marge de réussite, il obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). 1 info minimum. Jamais plus qu’un PNJ ne peut en délivrer.
+	- En cas de réussite normale, et en fonction de la marge de réussite, le joueur obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). 1 info minimum. Jamais plus qu’un PNJ ne peut en délivrer.
 	- En cas d’échec normal (marge d’échec > 0) : rien.
-	- Et en plus pour le joueur, en cas d’échec critique (1 naturel au jet de dé), le joueur prend +1Emo → Min/Max ainsi que -1Rep avec le PNJ. Et règle de progression s’applique.
-	- Et en plus pour le joueur, en cas de réussite critique (10 naturel au jet de dé), le joueur prend +1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante) en plus de réussite normale. Et règle de progression s’applique.
-	- Et en plus pour le PNJ en cas de réussite critique (10 naturel au jet de dé) : -1 info (inutile quand le joueur échoue) et -1Rep. Et règle de progression s’applique.
+	- Et en plus pour le joueur, en cas d’échec critique (10 naturel au jet de dé), le joueur prend +1Emo → Min/Max ainsi que -1Rep avec le PNJ. Et règle de progression s’applique.
+	- Et en plus pour le joueur, en cas de réussite critique (1 naturel au jet de dé), le joueur prend +1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante) en plus de réussite normale. Et règle de progression s’applique.
+	- Et en plus pour le PNJ en cas de réussite critique (1 naturel au jet de dé) : -1 info (inutile quand le joueur échoue) et -1Rep. Et règle de progression s’applique.
 	- Si le PNJ seul fait une réussite critique, cela implique un échec pour le joueur (même si ce dernier aurait pu gagner de par sa marge de réussite).
-	- Et en plus pour le PNJ, en cas d’échec critique (1 naturel au jet de dé) : +1 info et +1Rep. Et règle de progression s’applique.
+	- Et en plus pour le PNJ, en cas d’échec critique (10 naturel au jet de dé) : +1 info et +1Rep. Et règle de progression s’applique.
 	- Si les deux font une réussite critique ou un échec critique : Pas de changement lié au critique.  Et règle de progression s’applique.
 	- Si l’un fait un échec critique et l’autre une réussite critique, les effets se cumulent.
 	- En cas de mise en jeu d’une carte Objet ou Lieu ou PNJ, s’il y a réussite, les infos récupérées concernent en priorité la carte jouée et ce qui s’y rattache.
