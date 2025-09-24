@@ -7,15 +7,15 @@
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_dc34s"]
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="6_gwqe6"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lalru"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s180t"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ymd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0uj0l"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ymd"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s180t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lalru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
 
 [sub_resource type="Animation" id="Animation_du0wi"]
 resource_name = "Display_Text"
@@ -156,19 +156,19 @@ grow_vertical = 0
 tooltip_text = "Next time, right-click
 to fast-forward..."
 theme = ExtResource("3_5nlpe")
-theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
-theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
 theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("5_dc34s")
 theme_override_font_sizes/font_size = 8
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_31ymd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
 text = "Next..."
 
 [node name="Typing_Animation" type="AnimationPlayer" parent="."]
