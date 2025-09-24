@@ -2912,7 +2912,7 @@ offset_right = 484.0
 offset_bottom = 299.0
 rotation = 0.0356184
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The coward[/color][/pulse] has fled!
+text = "[center]The [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]coward[/color][/pulse] has fled!
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Not exactly  a shocker[/color][/shake]. It  appears that the  mere thought  of  facing  you - or, you know,  any challenge - was simply too  much to  handle.
 
@@ -2929,7 +2929,7 @@ offset_right = 486.0
 offset_bottom = 299.0
 rotation = 0.0356184
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]The bastard[/color][/pulse] tried to flee!
+text = "[center]The [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]bastard[/color][/pulse] tried to flee!
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]You'd think someone would learn by now[/color][/shake].
 But no, despite all the chances, they decided to turn back...
@@ -2938,6 +2938,47 @@ It's  almost  as if they were just waiting  for  the  perfect  moment...
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Too bad that  moment  never  came[/color][/shake].
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Maybe  next  time[/color][/shake], right?[/center]"
+
+[node name="Reputation" type="Control" parent="Overlays/Misc/Announces"]
+visible = false
+anchors_preset = 0
+
+[node name="Lower_Rep" type="RichTextLabel" parent="Overlays/Misc/Announces/Reputation"]
+visible = false
+layout_mode = 0
+offset_left = 169.0
+offset_top = 55.0
+offset_right = 484.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "
+[center]Hmm...  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Not good[/color][/pulse]!
+
+Looks like you  [shake rate=7.0 level=5 connected=0][color=#ff8864]didn’t exactly  make  the best impression[/color][/shake] this  time!
+
+That’s probably  [shake rate=7.0 level=5 connected=0][color=#ff1c18]not  gonna  help  things  moving  forward[/color][/shake], buddy!
+
+Or [shake rate=7.0 level=5 connected=0][color=#ff8864]did you do that  [color=#ff1c18]on purpose[/color][/color][/shake]?[/center]"
+
+[node name="Higher_Rep" type="RichTextLabel" parent="Overlays/Misc/Announces/Reputation"]
+visible = false
+layout_mode = 0
+offset_left = 167.0
+offset_top = 55.0
+offset_right = 486.0
+offset_bottom = 299.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center]Very  [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Impressive[/color][/pulse]!
+
+Damn,  [shake rate=7.0 level=5 connected=0][color=#ff8864]you're such  a  [color=#ff1c18]pain[/color][/color][/shake]!
+
+Really,  [shake rate=7.0 level=5 connected=0][color=#ff8864]I  [color=#ff1c18]never[/color] would've  thought  this  would  [color=#ff1c18]work[/color][/color][/shake].
+You  really  [shake rate=7.0 level=5 connected=0][color=#ff8864]put  stars  in their  eyes[/color][/shake],  mate...
+...just   [shake rate=7.0 level=5 connected=0][color=#ff8864]kidding[/color][/shake]!
+
+And good job  nonetheless.[/center]"
 
 [node name="Dreams" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
