@@ -726,19 +726,19 @@ func _play_dialogue(cards_played: Array[Card]):
 			print("critical success: update Emo, %s" % critical_attr)
 
 	if npc_actual_roll == 10:
-		critical_attr = tweak_attr.call(npc, -1)
+		var npc_critical_attr = tweak_attr.call(npc, -1)
 		if actual_roll == 10:
-			print("NPC critical failure: update %s" % critical_attr)
+			print("NPC critical failure: update %s" % npc_critical_attr)
 		else:
 			npc.player_reputation = mini(2, npc.player_reputation + 1)
-			print("NPC critical failure: update Rep, %s" % critical_attr)
+			print("NPC critical failure: update Rep, %s" % npc_critical_attr)
 	elif npc_actual_roll == 1:
-		critical_attr = tweak_attr.call(npc, 1)
+		var npc_critical_attr = tweak_attr.call(npc, 1)
 		if actual_roll == 1:
-			print("NPC critical success: update %s" % critical_attr)
+			print("NPC critical success: update %s" % npc_critical_attr)
 		else:
 			npc.player_reputation = maxi(-2, npc.player_reputation - 1)
-			print("NPC critical success: update Rep, %s" % critical_attr)
+			print("NPC critical success: update Rep, %s" % npc_critical_attr)
 
 	if actual_roll > 1:
 		if npc_actual_roll == 1:
@@ -749,6 +749,13 @@ func _play_dialogue(cards_played: Array[Card]):
 			print("player success margin: %s" % margin)
 			print("NPC success margin: %s" % npc_margin)
 			print("net success margin: %s" % (margin - npc_margin))
+
+	await _increment_time(2)
+
+	if actual_roll == 10:
+		await Globals.dialog_overlay.show_player_improvement(-1)
+	elif actual_roll == 1:
+		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
 func end_interaction(cards_played: Array[Card] = []):
 	match _current_interaction:
