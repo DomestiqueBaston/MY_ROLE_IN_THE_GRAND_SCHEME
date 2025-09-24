@@ -589,6 +589,7 @@ func _play_investigation(cards_played: Array[Card]):
 				who.health = mini(who.health, who.max_health)
 				return &"maxHEA"
 
+	var success = false
 	var critical_attr: StringName
 
 	if actual_roll == 10:
@@ -599,14 +600,16 @@ func _play_investigation(cards_played: Array[Card]):
 		critical_attr = tweak_attr.call(player, 1)
 		player.money += randi_range(50, 100)
 		print("critical success: update %s, money" % critical_attr)
+		success = true
 	elif net_roll > max_roll:
 		player.emotion -= 1
 		print("failure: update Emo")
 	else:
 		print("success: margin = %s" % [max_roll - net_roll])
+		success = true
 
 	var duration = 2
-	var other_bonus_malus = attrs.get_unhandled_bonus_malus()
+	var other_bonus_malus = attrs.get_post_bonus_malus(success)
 	var hours_bonus_malus = other_bonus_malus.get("hours", [])
 	for h in hours_bonus_malus:
 		duration += h as int
@@ -707,6 +710,7 @@ func _play_dialogue(cards_played: Array[Card]):
 				who.health = mini(who.health, who.max_health)
 				return &"maxHEA"
 
+	var success = false
 	var critical_attr: StringName
 
 	if actual_roll == 10:
@@ -715,7 +719,7 @@ func _play_dialogue(cards_played: Array[Card]):
 			print("critical failure: update %s" % critical_attr)
 		else:
 			player.improve_emotion(-1)
-			npc.player_reputation = maxi(-2, npc.player_reputation - 1)
+			npc.player_reputation -= 1
 			print("critical failure: update Emo, Rep, %s" % critical_attr)
 	elif actual_roll == 1:
 		critical_attr = tweak_attr.call(player, 1)
@@ -724,20 +728,21 @@ func _play_dialogue(cards_played: Array[Card]):
 		else:
 			player.improve_emotion(-1)
 			print("critical success: update Emo, %s" % critical_attr)
+		success = true
 
 	if npc_actual_roll == 10:
 		var npc_critical_attr = tweak_attr.call(npc, -1)
 		if actual_roll == 10:
 			print("NPC critical failure: update %s" % npc_critical_attr)
 		else:
-			npc.player_reputation = mini(2, npc.player_reputation + 1)
+			npc.player_reputation += 1
 			print("NPC critical failure: update Rep, %s" % npc_critical_attr)
 	elif npc_actual_roll == 1:
 		var npc_critical_attr = tweak_attr.call(npc, 1)
 		if actual_roll == 1:
 			print("NPC critical success: update %s" % npc_critical_attr)
 		else:
-			npc.player_reputation = maxi(-2, npc.player_reputation - 1)
+			npc.player_reputation -= 1
 			print("NPC critical success: update Rep, %s" % npc_critical_attr)
 
 	if actual_roll > 1:
@@ -749,6 +754,39 @@ func _play_dialogue(cards_played: Array[Card]):
 			print("player success margin: %s" % margin)
 			print("NPC success margin: %s" % npc_margin)
 			print("net success margin: %s" % (margin - npc_margin))
+			success = (margin >= npc_margin)
+
+	var other_bonus_malus = attrs.get_post_bonus_malus(success)
+	for key in other_bonus_malus:
+		match key:
+			"PHY":
+				var delta = 0
+				for value in other_bonus_malus[key]:
+					delta += value
+				player.physical += delta
+				print("post bonus/malus %s: %s" % [key, delta])
+			"MEN":
+				var delta = 0
+				for value in other_bonus_malus[key]:
+					delta += value
+				player.mental += delta
+				print("post bonus/malus %s: %s" % [key, delta])
+			"Rep":
+				var delta = 0
+				for value in other_bonus_malus[key]:
+					delta += value
+				npc.player_reputation += delta
+				print("post bonus/malus %s: %s" % [key, delta])
+			"money":
+				var delta = 0
+				for value in other_bonus_malus[key]:
+					delta += value
+				delta *= maxi(1, get_current_case().get_difficulty())
+				player.money += delta
+				print("post bonus/malus %s: %s" % [key, delta])
+			_:
+				for value in other_bonus_malus[key]:
+					print("post bonus/malus %s: %s" % [key, value])
 
 	await _increment_time(2)
 

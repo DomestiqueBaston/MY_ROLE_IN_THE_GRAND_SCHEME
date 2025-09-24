@@ -12,10 +12,13 @@ var _fallback_card_count: int
 var _dice: int
 var _last_emo_malus: int
 var _unhandled_bonus_malus: Dictionary
+var _unhandled_success_bonus: Array[Dictionary]
+var _unhandled_failure_malus: Array[Dictionary]
 
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
 var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
+var _dialogue_data = preload("res://JSON/INTERACTION/Dialogue.json").data
 
 func _init():
 	reset()
@@ -29,6 +32,8 @@ func reset():
 	_dice = 0
 	_last_emo_malus = 0
 	_unhandled_bonus_malus.clear()
+	_unhandled_success_bonus.clear()
+	_unhandled_failure_malus.clear()
 
 ##
 ## Retrieves bonus/malus information from the given card and applies it to any
@@ -60,6 +65,19 @@ func play_card(card: Card, is_fallback: bool):
 					var effects = entry.get("effects", {})
 					apply_bonus_malus(effects)
 					break
+
+		Card.CardType.DIALOGUE:
+			var dialogue_info = _dialogue_data[card.database_id]
+			print("applying card: %s" % dialogue_info["name"])
+			for entry in dialogue_info.get("bonus_malus", []):
+				var condition = entry.get("condition", {})
+				var result = condition.get("result", "")
+				var effects = entry.get("effects", {})
+				if not effects.is_empty():
+					if result == "success":
+						_unhandled_success_bonus.append(effects)
+					elif result == "failure":
+						_unhandled_failure_malus.append(effects)
 
 	if is_fallback:
 		_fallback_card_count += 1
@@ -208,5 +226,28 @@ func get_bonus_malus() -> int:
 ## played but whose keys were not handled here. Each entry contains an array of
 ## effects for the given key.
 ##
-func get_unhandled_bonus_malus() -> Dictionary:
-	return _unhandled_bonus_malus
+## Dialogue cards have effects that depend on whether the dialogue was
+## successful or not (success true or false).
+##
+func get_post_bonus_malus(success: bool) -> Dictionary:
+	var conditional: Array[Dictionary]
+
+	if success:
+		conditional = _unhandled_success_bonus
+	else:
+		conditional = _unhandled_failure_malus
+
+	if conditional.is_empty():
+		return _unhandled_bonus_malus
+
+	var ret = _unhandled_bonus_malus.duplicate(true)
+
+	for dict in conditional:
+		for key in dict:
+			var value = dict[key]
+			if key in ret:
+				ret[key].append(value)
+			else:
+				ret[key] = [value]
+
+	return ret

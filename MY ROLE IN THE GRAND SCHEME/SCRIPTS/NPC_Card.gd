@@ -94,7 +94,12 @@ var mental: int
 var health: int
 var max_health: int
 var wanted: int
-var player_reputation: int
+
+var player_reputation: int:
+	set(value):
+		player_reputation = clampi(value, -2, 2)
+	get:
+		return player_reputation
 
 ## Work shifts (a mask of GameState.TimeSlot bits: MORNING, AFTERNOON, EVENING
 ## and/or NIGHT).
