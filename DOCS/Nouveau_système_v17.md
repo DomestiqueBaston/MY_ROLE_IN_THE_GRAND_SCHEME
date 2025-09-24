@@ -232,6 +232,7 @@ Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, A
 
 L’addiction
 	- L’Add évolue (naturellement) uniquement au réveil (-1Add). Le joueur a besoin de sa dose (presque) quotidienne qui lui coûte de l’argent.
+	- L’Emo évolue (naturellement) uniquement au réveil (±1Emo → 0).
 	- Avec 1 dose de drogue : +1Add.
 	- Le joueur peut prendre 2 doses maximum par jour. Au delà, ce serait l’overdose !
 	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur.
