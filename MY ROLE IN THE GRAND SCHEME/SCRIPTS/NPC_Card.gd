@@ -204,6 +204,15 @@ func is_asleep() -> bool:
 		return hour < 8 or hour >= 20
 
 ##
+## Checks the NPC's health and returns false if he has died.
+##
+func test_health() -> bool:
+	if health <= 0:
+		npc_status = NpcStatus.DEAD
+		return false
+	return true
+
+##
 ## Returns the location where the NPC can be found right now, or null if
 ## unknown.
 ##

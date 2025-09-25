@@ -810,6 +810,7 @@ func end_interaction(cards_played: Array[Card] = []):
 			_pop_card_state()
 		InteractionType.DIALOGUE:
 			await _play_dialogue(cards_played)
+			_current_interaction_npc.test_health()
 			_pop_card_state()
 
 	player.clear_fallback_cards()
