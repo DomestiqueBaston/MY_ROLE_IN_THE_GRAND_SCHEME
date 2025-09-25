@@ -92,6 +92,21 @@ func show_break_in_message(success: bool):
 	$Overlays/Misc/Announces/Break_In.hide()
 
 ##
+## Displays a message telling the player that his reputation has gotten better
+## (higher = true) or worse (higher = false).
+##
+func show_rep_message(higher: bool):
+	$Overlays/Misc/Announces/Reputation/Lower_Rep.visible = not higher
+	$Overlays/Misc/Announces/Reputation/Higher_Rep.visible = higher
+	$Overlays/Misc/Announces/Reputation.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Reputation.hide()
+
+##
 ## Display a dialog asking the player for a yes or no and return the answer.
 ##
 func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:

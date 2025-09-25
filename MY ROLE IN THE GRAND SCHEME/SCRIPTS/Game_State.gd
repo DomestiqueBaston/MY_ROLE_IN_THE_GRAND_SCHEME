@@ -608,19 +608,19 @@ func _play_investigation(cards_played: Array[Card]):
 		print("success: margin = %s" % [max_roll - net_roll])
 		success = true
 
+	if actual_roll == 10:
+		await Globals.dialog_overlay.show_player_improvement(-1)
+	elif actual_roll == 1:
+		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
+
 	var duration = 2
 	var other_bonus_malus = attrs.get_post_bonus_malus(success)
 	var hours_bonus_malus = other_bonus_malus.get("hours", [])
 	for h in hours_bonus_malus:
 		duration += h as int
+	print("duration: %s hour(s)" % duration)
 	if duration > 0:
 		await _increment_time(duration)
-	print("duration: %s hour(s)" % duration)
-
-	if actual_roll == 10:
-		await Globals.dialog_overlay.show_player_improvement(-1)
-	elif actual_roll == 1:
-		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
@@ -712,6 +712,7 @@ func _play_dialogue(cards_played: Array[Card]):
 
 	var success = false
 	var critical_attr: StringName
+	var rep_delta = 0
 
 	if actual_roll == 10:
 		critical_attr = tweak_attr.call(player, -1)
@@ -719,7 +720,7 @@ func _play_dialogue(cards_played: Array[Card]):
 			print("critical failure: update %s" % critical_attr)
 		else:
 			player.improve_emotion(-1)
-			npc.player_reputation -= 1
+			rep_delta -= 1
 			print("critical failure: update Emo, Rep, %s" % critical_attr)
 	elif actual_roll == 1:
 		critical_attr = tweak_attr.call(player, 1)
@@ -735,14 +736,14 @@ func _play_dialogue(cards_played: Array[Card]):
 		if actual_roll == 10:
 			print("NPC critical failure: update %s" % npc_critical_attr)
 		else:
-			npc.player_reputation += 1
+			rep_delta += 1
 			print("NPC critical failure: update Rep, %s" % npc_critical_attr)
 	elif npc_actual_roll == 1:
 		var npc_critical_attr = tweak_attr.call(npc, 1)
 		if actual_roll == 1:
 			print("NPC critical success: update %s" % npc_critical_attr)
 		else:
-			npc.player_reputation -= 1
+			rep_delta -= 1
 			print("NPC critical success: update Rep, %s" % npc_critical_attr)
 
 	if actual_roll > 1:
@@ -760,25 +761,25 @@ func _play_dialogue(cards_played: Array[Card]):
 	for key in other_bonus_malus:
 		match key:
 			"PHY":
-				var delta = 0
+				var delta: int = 0
 				for value in other_bonus_malus[key]:
 					delta += value
 				player.physical += delta
 				print("post bonus/malus %s: %s" % [key, delta])
 			"MEN":
-				var delta = 0
+				var delta: int = 0
 				for value in other_bonus_malus[key]:
 					delta += value
 				player.mental += delta
 				print("post bonus/malus %s: %s" % [key, delta])
 			"Rep":
-				var delta = 0
+				var delta: int = 0
 				for value in other_bonus_malus[key]:
 					delta += value
-				npc.player_reputation += delta
+				rep_delta += delta
 				print("post bonus/malus %s: %s" % [key, delta])
 			"money":
-				var delta = 0
+				var delta: int = 0
 				for value in other_bonus_malus[key]:
 					delta += value
 				delta *= maxi(1, get_current_case().get_difficulty())
@@ -786,14 +787,21 @@ func _play_dialogue(cards_played: Array[Card]):
 				print("post bonus/malus %s: %s" % [key, delta])
 			_:
 				for value in other_bonus_malus[key]:
-					print("post bonus/malus %s: %s" % [key, value])
+					print("post bonus/malus %s: %d" % [key, value])
 
-	await _increment_time(2)
+	if rep_delta != 0:
+		var old_rep = npc.player_reputation
+		npc.player_reputation += rep_delta
+		var actual_delta = npc.player_reputation - old_rep
+		if absi(actual_delta) > 1:
+			await Globals.dialog_overlay.show_rep_message(actual_delta > 0)
 
 	if actual_roll == 10:
 		await Globals.dialog_overlay.show_player_improvement(-1)
 	elif actual_roll == 1:
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
+
+	await _increment_time(2)
 
 func end_interaction(cards_played: Array[Card] = []):
 	match _current_interaction:
