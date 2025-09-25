@@ -192,6 +192,9 @@ func set_health(hea: int):
 		if _signal_pause == 0:
 			GameState.health_changed.emit()
 
+func get_health() -> int:
+	return health
+
 ##
 ## Checks the player's health, emotion and addiction levels, and returns false
 ## if he has died. Note that if his emotion level reaches -5 or 5, that has
@@ -215,9 +218,6 @@ func test_health() -> bool:
 		addiction = 4 * signi(addiction)
 
 	return true
-
-func get_health() -> int:
-	return health
 
 func set_emotion(emo: int):
 	emo = clampi(emo, -5, 5)
@@ -536,12 +536,14 @@ func sleep(hours: int):
 
 ##
 ## Call this at the start of each new day, to tell the player he hasn't taken
-## any drugs yet today, and to reduce his "wanted" level by 1.
+## any drugs yet today, to reduce his "wanted" level by 1, and to calm his
+## emotions a bit.
 ##
 func new_day():
 	drugs_taken_today = 0
 	if wanted > 0:
 		wanted -= 1
+	improve_emotion(1)
 
 ##
 ## Returns a bonus/malus to be added to dice rolls, depending on the player's
