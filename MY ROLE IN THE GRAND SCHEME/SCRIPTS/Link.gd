@@ -349,7 +349,7 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 				or (endpt1 is LocationCard and endpt2 is NpcCard)
 			if ok:
 				var npc: NpcCard = endpt1 if endpt1 is NpcCard else endpt2
-				var max_links = 2 if link_type == Type.HANGOUT else 2
+				var max_links = 2 if link_type == Type.HANGOUT else 1
 				ok = npc.find_links(link_type).size() < max_links
 		Type.DEBT, Type.INTIMACY, Type.FRIEND, Type.ENEMY, Type.ACQUAINTANCE, Type.IDEOLOGY:
 			ok = endpt1 is NpcCard and endpt2 is NpcCard
