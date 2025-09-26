@@ -79,10 +79,6 @@ func _ready():
 	popup.add_child(submenu3)
 
 	var dialogue_submenu = PopupMenu.new()
-	dialogue_submenu.add_item("At Home", Link.Type.HOME)
-	dialogue_submenu.add_item("At Work", Link.Type.WORK)
-	dialogue_submenu.add_item("At Hangout", Link.Type.HANGOUT)
-	dialogue_submenu.add_item("At Hideout", Link.Type.HIDEOUT)
 	popup.add_child(dialogue_submenu)
 	
 	popup.add_submenu_node_item("Dialogue", dialogue_submenu, MenuItem.DIALOGUE)
@@ -103,7 +99,8 @@ func _ready():
 	submenu1.id_pressed.connect(_handle_submenu.bind(0))
 	submenu2.id_pressed.connect(_handle_submenu.bind(1))
 	submenu3.id_pressed.connect(_handle_submenu.bind(2))
-	dialogue_submenu.id_pressed.connect(_handle_dialogue_submenu)
+	dialogue_submenu.index_pressed.connect(
+		_handle_dialogue_submenu.bind(dialogue_submenu))
 	
 	top_bar.settings.connect(func(): settings.emit())
 	top_bar.quit.connect(func(): quit.emit())
@@ -602,29 +599,37 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	# correspond to the NPC's work schedule (if known)
 
 	var index = popup.get_item_index(MenuItem.DIALOGUE)
+	var dialogue_menu = popup.get_item_submenu_node(index)
+	dialogue_menu.clear(true)
+
 	if (node is not NpcCard
 		or not player_is_apt
 		or node.npc_status in [NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED]
 		or node.has_been_seen_today()):
 		popup.set_item_disabled(index, true)
 	else:
-		var links_found = []
-		var should_be_at_work = false
-		for link in node.find_links():
-			links_found.append(link.type)
-			if link.type == Link.Type.WORK:
-				should_be_at_work = node.should_be_at_work()
-		var submenu = popup.get_item_submenu_node(index)
+		var should_be_at_work
+		if node.find_links(Link.Type.WORK):
+			should_be_at_work = node.should_be_at_work()
+		else:
+			should_be_at_work = false
 		for link_type in [Link.Type.HOME, Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
-			var i = submenu.get_item_index(link_type)
-			var ok
-			if not link_type in links_found:
-				ok = false
-			elif link_type == Link.Type.WORK:
-				ok = should_be_at_work
+			var places = node.find_linked_cards(link_type)
+			var ok = should_be_at_work if link_type == Link.Type.WORK else not should_be_at_work
+			var title = "At %s" % Link.Type.keys()[link_type].capitalize()
+			if places.size() < 2 or not ok:
+				dialogue_menu.add_item(title)
+				if places.is_empty() or not ok:
+					dialogue_menu.set_item_disabled(dialogue_menu.item_count - 1, true)
+				else:
+					dialogue_menu.set_item_metadata(dialogue_menu.item_count - 1, places[0])
 			else:
-				ok = not should_be_at_work
-			submenu.set_item_disabled(i, not ok)
+				var submenu = PopupMenu.new()
+				for place in places:
+					submenu.add_item(place.get_display_name())
+					submenu.set_item_metadata(submenu.item_count - 1, place)
+				submenu.index_pressed.connect(_handle_dialogue_submenu.bind(submenu))
+				dialogue_menu.add_submenu_node_item(title, submenu)
 		popup.set_item_disabled(index, false)
 
 	index = popup.get_item_index(MenuItem.INVESTIGATION)
@@ -704,14 +709,9 @@ func _handle_submenu(id: int, submenu: int):
 			if _popup_node is Link:
 				_popup_node.type = id
 
-func _handle_dialogue_submenu(id: int):
-	if _popup_node is not NpcCard:
-		return
+func _handle_dialogue_submenu(idx: int, menu: PopupMenu):
 	var npc: NpcCard = _popup_node
-	var other_cards = npc.find_linked_cards(id as Link.Type)
-	if other_cards.is_empty() or other_cards[0] is not LocationCard:
-		return
-	var location: LocationCard = other_cards[0]
+	var location: LocationCard = menu.get_item_metadata(idx)
 	GameState.attempt_dialogue(npc, location)
 
 func _delete_link(link: Link):

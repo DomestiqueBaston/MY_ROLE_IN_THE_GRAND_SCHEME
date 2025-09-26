@@ -294,13 +294,21 @@ func _randomize():
 
 	for npc in npcs:
 		var hangout = npc.get_hangout()
-		if hangout:
-			continue
-		hangout = _find_hangout()
-		var friends: Array[NpcCard]
-		_add_friends_of_friends(friends, npc)
-		for friend in friends:
-			Card.add_bidirectional_connection(Link.Type.HANGOUT, friend, hangout)
+
+		# one hangout is shared by the NPC, his friends, their friends, etc.
+		if hangout == null:
+			hangout = _find_hangout()
+			var friends: Array[NpcCard]
+			_add_friends_of_friends(friends, npc)
+			for friend in friends:
+				Card.add_bidirectional_connection(Link.Type.HANGOUT, friend, hangout)
+
+		# 1 in 4 NPCs has a second hangout of his own
+		if randi() % 4 == 0:
+			var hangout2 = null
+			while hangout2 == null or hangout2 == hangout:
+				hangout2 = _find_hangout()
+			Card.add_bidirectional_connection(Link.Type.HANGOUT, npc, hangout2)
 
 	# affairs between NPCs (do this AFTER determining couples)
 
