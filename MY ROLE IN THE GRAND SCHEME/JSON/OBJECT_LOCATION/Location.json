@@ -177,7 +177,7 @@
 		"reduced_card": false,
 		"bonus_malus": {
 			"PHY": 1,
-            "MEN": -1
+			"MEN": -1
 		}
 	},
 	"LOC008": {
@@ -381,7 +381,7 @@
 		"hangout": ["no"],
 		"bonus_malus": {
 			"PHY": -1,
-            "HEA": 1
+			"HEA": 1
 		}
 	},
 	"LOC016": {
@@ -455,7 +455,7 @@
 		"hangout": ["yes"],
 		"bonus_malus": {
 			"PHY": -1,
-            "MEN": -1
+			"MEN": -1
 		}
 	},
 	"LOC019": {
@@ -654,7 +654,7 @@
 		"hangout": ["yes"],
 		"bonus_malus": {
 			"PHY": -1,
-            "MEN": 1
+			"MEN": 1
 		}
 	},
 	"LOC028": {
@@ -680,7 +680,7 @@
 		"hangout": ["yes"],
 		"bonus_malus": {
 			"PHY": 1,
-            "MEN": -1
+			"MEN": -1
 		}
 	},
 	"LOC029": {
