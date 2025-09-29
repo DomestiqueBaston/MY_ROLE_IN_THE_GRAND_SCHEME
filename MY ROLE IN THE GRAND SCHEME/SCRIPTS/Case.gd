@@ -14,6 +14,9 @@ var evidence: Array[ObjectCard]
 var other_objects: Array[ObjectCard]
 var locations: Array[LocationCard]
 
+var selected_crime: String
+var selected_motive: String
+
 # reference to item in locations
 var _crime_location: LocationCard
 
@@ -75,7 +78,9 @@ func _randomize():
 	# crime, motive and lots of other information about the case
 
 	_crime = GameState.get_new_crime()
-	_motive = _crime_data[_crime].pick_random()
+	var crime_dict = _crime_data[_crime]
+	var motive_id = crime_dict.keys().pick_random()
+	_motive = crime_dict[motive_id]
 	_case_name = _motive["name"]
 
 	var culprit_count = _get_count_from_array(_motive.get("culprits", 0))
@@ -871,7 +876,9 @@ func get_json_dict():
 		"difficulty": _difficulty,
 		"duration": _duration,
 		"status": _status,
-		"is_layout_needed": is_layout_needed
+		"selected_crime": selected_crime,
+		"selected_motive": selected_motive,
+		"is_layout_needed": is_layout_needed,
 	}
 
 	if npcs:
@@ -921,6 +928,8 @@ func restore(dict, catalog):
 	_difficulty = dict.difficulty
 	_duration = dict.duration
 	_status = dict.status
+	selected_crime = dict.get("selected_crime", "")
+	selected_motive = dict.get("selected_motive", "")
 	is_layout_needed = dict.get("is_layout_needed", true)
 	for ref in dict.get("npcs", []):
 		npcs.append(catalog[ref])
