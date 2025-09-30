@@ -392,7 +392,7 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	if job_id.is_empty():
 		job_id = _job_data.keys().pick_random()
 	var job_info = _job_data[job_id]
-	job = job_info["name"]
+	job = job_id
 	job_location = job_info["work_place"].pick_random()
 	var bonus_malus = job_info["bonus_malus"]
 	if bonus_malus is Array:
@@ -525,7 +525,7 @@ func print_npc():
 		Sex.keys()[npc_sex].to_lower(),
 		SexualOrientation.keys()[orientation].to_lower()])
 	print("  married: ", is_married)
-	print("  job: ", job)
+	print("  job: ", _job_data[job].name)
 	print_connections_of_type("home", Link.Type.HOME)
 	print_connections_of_type("work", Link.Type.WORK)
 	print_connections_of_type("hangout", Link.Type.HANGOUT)

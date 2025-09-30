@@ -177,7 +177,11 @@ func _randomize():
 		victim_sex = 1 - culprit_sex
 
 	if victim_count > 0:
-		var victim_jobs = _motive.get("victims_professions", [])
+		var victim_jobs
+		if "same_professions" in _motive.get("flags", []):
+			victim_jobs = [culprits[0].job]
+		else:
+			victim_jobs = _motive.get("victims_professions", [])
 		var dead = _motive["dead_victims"]
 		for i in victim_count:
 			var card = NpcCard.generate_card(

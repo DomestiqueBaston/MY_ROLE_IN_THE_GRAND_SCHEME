@@ -1206,7 +1206,9 @@
 				"JOB008",
 				"JOB017"
 			],
-			"comment": "Victime et Coupable doivent avoir la même profession (mais ça rend les choses probablement trop simple et je ne sais pas quelle parade trouver à ça à part mettre plein de PNJs avec cette profession également)",
+            "flags": [
+                "same_professions"
+            ],
 			"victims": [
 				1
 			],
@@ -1437,7 +1439,9 @@
 				"JOB038",
 				"JOB029"
 			],
-			"comment": "Victime et Coupable doivent avoir la même profession (mais ça rend les choses probablement trop simple et je ne sais pas quelle parade trouver à ça à part mettre plein de PNJs avec cette profession également)",
+            "flags": [
+                "same_professions"
+            ],
 			"victims": [
 				1
 			],
@@ -1978,7 +1982,9 @@
 				"JOB039",
 				"JOB023"
 			],
-			"comment": "Victime et Coupable doivent avoir la même profession (mais ça rend les choses probablement trop simple et je ne sais pas quelle parade trouver à ça à part mettre plein de PNJs avec cette profession également)",
+            "flags": [
+                "same_professions"
+            ],
 			"victims": [
 				1
 			],
@@ -3375,7 +3381,9 @@
 				"JOB039",
 				"JOB023"
 			],
-			"comment": "Victime et Coupable doivent avoir la même profession (mais ça rend les choses probablement trop simple et je ne sais pas quelle parade trouver à ça à part mettre plein de PNJs avec cette profession également)",
+            "flags": [
+                "same_professions"
+            ],
 			"victims": [
 				1
 			],
@@ -4354,7 +4362,9 @@
 				"JOB037",
 				"JOB029"
 			],
-			"comment": "Victime et Coupable doivent avoir la même profession (mais ça rend les choses probablement trop simple et je ne sais pas quelle parade trouver à ça à part mettre plein de PNJs avec cette profession également)",
+            "flags": [
+                "same_professions"
+            ],
 			"victims": [
 				1
 			],
@@ -5490,7 +5500,9 @@
 				"JOB039",
 				"JOB023"
 			],
-			"comment": "Victime et Coupable doivent avoir la même profession (mais ça rend les choses probablement trop simple et je ne sais pas quelle parade trouver à ça à part mettre plein de PNJs avec cette profession également)",
+            "flags": [
+                "same_professions"
+            ],
 			"victims": [
 				1
 			],
