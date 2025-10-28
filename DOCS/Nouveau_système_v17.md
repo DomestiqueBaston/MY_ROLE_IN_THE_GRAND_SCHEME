@@ -603,7 +603,7 @@ Rep	Pourcentage en plus
 +1	-2%
 +2	-5 %
 
-	- Les types de liens dans la Fiche d'Enquête modifient aussi ces chances (les % s’appliquent quel que soit le nombre de lien de chaque type) hors liens ne servant pas à incriminer :
+	- Les types de liens établis par le joueur dans la Fiche d'Enquête modifient aussi ces chances (les % s’appliquent quel que soit le nombre de lien de chaque type) hors liens ne servant pas à incriminer :
 Type de lien (Incriminants)	Pourcentage en plus
 Aucun	0 %
 Uniquement Pointillé	+1 %
