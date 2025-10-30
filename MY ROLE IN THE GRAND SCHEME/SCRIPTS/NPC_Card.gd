@@ -175,10 +175,16 @@ func get_hangout() -> LocationCard:
 	return get_one_connection(Link.Type.HANGOUT)
 
 ##
-## Returns true if the NPC has not been seen yet today.
+## Returns false if the player has not yet seen this NPC today.
 ##
 func has_been_seen_today() -> bool:
 	return _last_dialogue == GameState.get_working_day()
+
+##
+## Returns false if the player has never seen this NPC.
+##
+func has_been_seen() -> bool:
+	return _last_dialogue >= 0
 
 ##
 ## Updates the NPC's visible health, and flags him as having been seen today.

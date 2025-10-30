@@ -302,6 +302,15 @@ func lower():
 		pin.z_index -= 1
 
 ##
+## Returns true if the link is one of the incriminating link types.
+##
+func is_incriminating() -> bool:
+	return type in [
+		Type.DEBT, Type.GUILT, Type.INTIMACY, Type.FRIEND, Type.ENEMY,
+		Type.IDEOLOGY
+	]
+
+##
 ## Returns true if a link of the given type can be created between the given
 ## endpoints. At least one of the endpoints must be a card; the other can be
 ## either a card or a link. If either endpoint is null, only the type of the

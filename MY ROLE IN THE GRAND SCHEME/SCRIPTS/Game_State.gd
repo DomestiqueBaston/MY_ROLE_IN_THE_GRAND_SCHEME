@@ -645,6 +645,13 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 		await Globals.dialog_overlay.show_npc_away(npc)
 		return
 
+	# the NPC may choose to attack the player
+
+	if _does_npc_attack(npc):
+		print("%s attacks!" % npc.get_display_name())
+	else:
+		print("%s does NOT attack" % npc.get_display_name())
+
 	# start the dialogue
 
 	npc.visit()
@@ -872,6 +879,49 @@ func get_player_location() -> PlayerLocation:
 ##
 func get_player_location_card() -> LocationCard:
 	return _player_location_card
+
+#
+# The chances of the NPC attacking the player before a dialogue depend on
+# whether the player has met him before, his reputation, the number of
+# incriminating links the player has established, and the difficulty of the
+# case.
+#
+func _does_npc_attack(npc: NpcCard) -> bool:
+	if not npc.has_been_seen():
+		return false
+
+	var percent: int = 0
+
+	match npc.player_reputation:
+		-2:
+			percent += 5
+		-1:
+			percent += 2
+		1:
+			percent -= 2
+		2:
+			percent -= 5
+
+	var case: Case = get_current_case()
+	var full_link_count: int = 0
+	var dotted_link_count: int = 0
+
+	for link in case.get_links():
+		if link.is_incriminating():
+			if link.status == Link.Status.CONFIRMED:
+				full_link_count += 1
+			else:
+				dotted_link_count += 1
+
+	if full_link_count + dotted_link_count > 0:
+		if full_link_count == 0:
+			percent += 1
+		elif dotted_link_count > full_link_count:
+			percent += 3
+		else:
+			percent += 5
+
+	return randi_range(1, 100) > percent * case.get_difficulty()
 
 #
 # Saves the visual state of all object, location and NPC cards that are visible
