@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmgno35x65yqb"]
+
+[ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_dprvf"]
+[ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="2_ykdmj"]
+[ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="3_dqfca"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_7mmy6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ymd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0uj0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s180t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lalru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="Tuto_Bg" type="Sprite2D" parent="."]
+texture = ExtResource("1_dprvf")
+centered = false
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Chalk_Mask" type="Sprite2D" parent="Node2D"]
+clip_children = 1
+texture = ExtResource("2_ykdmj")
+centered = false
+
+[node name="Tutorial_Text" type="RichTextLabel" parent="Node2D/Chalk_Mask"]
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 630.0
+offset_bottom = 353.0
+theme = ExtResource("3_dqfca")
+bbcode_enabled = true
+text = "[color=#ffffff]-[/color] Welcome to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]MY ROLE IN THE GRAND SCHEME[/pulse][/color]!
+
+   [color=#ffffff]-[/color] In the dark and grimy alleys of [color=#ff8864]NEW-CAELUM[/color], you're a former... well, that's not important anymore. What matters now is that you're a [color=#ff8864]PRIVATE EYE[/color], navigating a city full of [color=#ff8864]corruption[/color], [color=#ff8864]crime[/color], and [color=#ff8864]shadowy secrets[/color]. Every case is a [color=#ff8864]puzzle[/color], and you must use all your wits and resources to [color=#ff1c18]piece it together[/color].
+
+   [color=#ffffff]-[/color] As you dive deeper into lies and hidden truths, you'll need to [color=#ff8864]keep track of everything you discover[/color]. In your office, there's a [color=#ff8864]dedicated space on the wall[/color] where you can [color=#ff1c18]organize your findings[/color] and begin to see the [color=#ff8864]connections[/color] between [color=#ff1c18]clues[/color], [color=#ff1c18]suspects[/color], and [color=#ff1c18]locations[/color].
+
+   [color=#ffffff]-[/color] Each [color=#ff8864]piece of information[/color] you uncover can lead to [color=#ff8864]new revelations[/color], and your job is to [color=#ff8864]link[/color] these discoveries - sometimes with [color=#ff1c18]threads of certainty[/color], other times with [color=#ff1c18]threads of suspicion[/color]. Slowly, the larger picture will take shape, and you'll start to understand how each [color=#ff1c18]person[/color], [color=#ff1c18]object[/color], and [color=#ff1c18]location[/color] is part of the [color=#ff8864]story[/color].
+
+   [color=#ffffff]-[/color] You'll [color=#ff1c18]arrange[/color] and [color=#ff1c18]rearrange[/color] these [color=#ff8864]pieces[/color], [color=#ff1c18]testing[/color] connections and [color=#ff1c18]discarding[/color] those that [color=#ff8864]don't fit[/color]. It's a constant process of refinement, pushing you closer to solving the case, but also reminding you how easy it is to [color=#ff8864]get lost[/color] in the web of deceit.
+
+   [color=#ffffff]-[/color] However, be [color=#ff8864]warned[/color]: [color=#ff1c18]solving a case[/color] [color=#ff8864]often[/color] requires [color=#ff8864]more[/color] than just uncovering [color=#ff1c18]one culprit[/color], [color=#ff1c18]one piece of evidence[/color], and a [color=#ff1c18]motive[/color]. The truth is rarely that simple. You'll need to dig deeper, challenge your assumptions, and sometimes even [color=#ff8864]question the facts you've uncovered[/color]. The answers are [color=#ff8864]never[/color] as clear-cut as they may seem at first.
+
+   [color=#ffffff]-[/color] In [color=#ff8864]NEW-CAELUM[/color], [color=#ff1c18]solving a case[/color] brings [color=#ff8864]more[/color] than just [color=#ff1c18]financial relief[/color]. It brings you [color=#ff8864]one step closer[/color] to uncovering the [color=#ff1c18]dark heart of the city[shake rate=7.0 level=5 connected=0]...[/shake][/color]"
+
+[node name="Next_Button" type="Button" parent="Node2D/Chalk_Mask"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_dqfca")
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_7mmy6")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_31ymd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
+text = "Next..."
