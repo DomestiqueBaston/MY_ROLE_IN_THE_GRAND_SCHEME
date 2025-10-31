@@ -107,6 +107,21 @@ func show_rep_message(higher: bool):
 	$Overlays/Misc/Announces/Reputation.hide()
 
 ##
+## Displays a message telling the player that he is being attacked by an NPC.
+##
+func show_attack_message(npc: NpcCard):
+	var is_minion = npc.category == NpcCard.NpcCategory.MINION
+	$Overlays/Misc/Announces/Combat/NPC_Attack.visible = not is_minion
+	$Overlays/Misc/Announces/Combat/Minion_Attack.visible = is_minion
+	$Overlays/Misc/Announces/Combat.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Combat.hide()
+
+##
 ## Display a dialog asking the player for a yes or no and return the answer.
 ##
 func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
@@ -216,6 +231,20 @@ func attempt_break_in() -> Array[Card]:
 	$Overlays/Interaction_Run_Away_Break_In/Title/Break_In.hide()
 	$Overlays/Interaction_Run_Away_Break_In.enabled = false
 	return $Overlays/Interaction_Run_Away_Break_In.get_cards_played()
+
+##
+## Displays a dialog asking the player whether he wants to run away. Returns
+## true if he does.
+##
+func confirm_run_away() -> bool:
+	$Overlays/Run_Away_Break_In/Announces/Run_Away.show()
+	$Overlays/Run_Away_Break_In.show()
+	await _appear()
+	await $Overlays/Run_Away_Break_In/Announces.done
+	await _disappear()
+	$Overlays/Run_Away_Break_In.hide()
+	$Overlays/Run_Away_Break_In/Announces/Run_Away.hide()
+	return $Overlays/Run_Away_Break_In/Announces.get_confirmed()
 
 ##
 ## Displays the visit to Doctor F dialog and waits for the player to confirm or

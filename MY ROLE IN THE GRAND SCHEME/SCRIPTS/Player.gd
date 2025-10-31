@@ -371,14 +371,15 @@ func pick_investigation_cards():
 
 	# 3 or 4 Investigation (at least 1) and Investigation SPECIAL cards
 
-	var investigation_count = 0
+	var normal_count = 0
 
 	while _fallback_cards.size() < 5:
-		var id = _pick_random_investigation_card(true, investigation_count > 0)
+		var special_ok = normal_count + (5 - _fallback_cards.size()) > 1
+		var id = _pick_random_investigation_card(true, special_ok)
 		var card = InvestigationCard.create_card(id)
 		_fallback_cards.append(card)
 		if card.investigation_type == InvestigationCard.InvestigationType.NORMAL:
-			investigation_count += 1
+			normal_count += 1
 
 ##
 ## Picks 3 cards abstract and/or break-in cards at random for a break-in,
@@ -421,6 +422,35 @@ func pick_dialogue_cards():
 		var id = _pick_random_abstract_card()
 		var card = AbstractCard.create_card(id)
 		_fallback_cards.append(card)
+
+##
+## Picks 5 abstract and/or combat cards at random for a combat, ensuring that
+## there are no duplicates with the player's "mastery" cards, and puts them in
+## the player's "fallback" deck. Any cards already in the fallback deck are
+## deleted.
+##
+func pick_combat_cards():
+	clear_fallback_cards()
+
+	# 0-2 abstract cards
+
+	var abstract_count = randi() % 3
+
+	while _fallback_cards.size() < abstract_count:
+		var id = _pick_random_abstract_card()
+		_fallback_cards.append(AbstractCard.create_card(id))
+
+	# the rest are Combat (at least 2) and Combat SPECIAL cards
+
+	var normal_count = 0
+
+	while _fallback_cards.size() < 5:
+		var special_ok = normal_count + (5 - _fallback_cards.size()) > 2
+		var id = _pick_random_combat_card(true, special_ok)
+		var card = CombatCard.create_card(id)
+		_fallback_cards.append(card)
+		if card.combat_type == CombatCard.CombatType.NORMAL:
+			normal_count += 1
 
 func pass_one_hour():
 	if randi() % 10 == 0:

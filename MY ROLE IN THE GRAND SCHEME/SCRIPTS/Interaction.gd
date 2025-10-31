@@ -384,9 +384,24 @@ func _is_card_combo_ok() -> bool:
 				card_types.append(card_type)
 			return ok and Card.CardType.DIALOGUE in card_types
 
+		GameState.InteractionType.COMBAT:
+			var combat_count = 0
+			var special_count = 0
+			var abstract_count = 0
+			for card in _cards_played:
+				if card is CombatCard:
+					match card.combat_type:
+						CombatCard.CombatType.NORMAL:
+							combat_count += 1
+						CombatCard.CombatType.SPECIAL:
+							special_count += 1
+				elif card is AbstractCard:
+					abstract_count += 1
+			return combat_count == 1 and special_count <= 1 and abstract_count <= 1
+
 		GameState.InteractionType.INVESTIGATION:
 			var inv_count = 0
-			var inv_special_count = 0
+			var special_count = 0
 			var abstract_count = 0
 			for card in _cards_played:
 				if card is InvestigationCard:
@@ -394,10 +409,10 @@ func _is_card_combo_ok() -> bool:
 						InvestigationCard.InvestigationType.NORMAL:
 							inv_count += 1
 						InvestigationCard.InvestigationType.SPECIAL:
-							inv_special_count += 1
+							special_count += 1
 				elif card is AbstractCard:
 					abstract_count += 1
-			return inv_count == 1 and inv_special_count <= 1 and abstract_count <= 1
+			return inv_count == 1 and special_count <= 1 and abstract_count <= 1
 
 		GameState.InteractionType.BREAK_IN:
 			var break_in_count = 0
@@ -465,6 +480,20 @@ func start_dialogue(
 	_start_interaction(GameState.InteractionType.DIALOGUE, npc)
 
 ##
+## Starts a combat. A done() signal is emitted when it finishes.
+##
+func start_combat(
+	npc: NpcCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
+	for card in mastery_cards:
+		if card is AbstractCard or (
+				card is CombatCard and
+				card.combat_type != CombatCard.CombatType.RUN_AWAY):
+			$Cards/Mastery.add_child(card)
+	for card in fallback_cards:
+		$Cards/Fallback.add_child(card)
+	_start_interaction(GameState.InteractionType.COMBAT, npc)
+
+##
 ## After an interaction has finished, returns the cards that were played, that
 ## is, that were dragged into the interaction zone.
 ##
@@ -477,8 +506,8 @@ func _start_interaction(type: GameState.InteractionType, npc: NpcCard = null):
 	_cards_played.clear()
 	_interaction_type = type
 	if tv_screen:
-		if type == GameState.InteractionType.DIALOGUE and npc:
-			tv_screen.set_dialogue_npc(npc)
+		if npc:
+			tv_screen.set_npc(npc)
 			if info_box:
 				_default_info_card = npc
 				info_box.show_card(npc)

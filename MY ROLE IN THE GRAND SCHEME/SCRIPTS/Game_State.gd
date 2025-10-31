@@ -652,16 +652,14 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 	if await _does_npc_run(npc):
 		return
 
-	# the NPC may choose to attack the player
+	# if the NPC attacks the player, start a combat, if not, start the dialogue
 
 	if _does_npc_attack(npc):
-		print("%s attacks!" % npc.get_display_name())
+		await Globals.dialog_overlay.show_attack_message(npc)
+		if not await Globals.dialog_overlay.confirm_run_away():
+			start_combat(npc, location)
 	else:
-		print("%s does NOT attack" % npc.get_display_name())
-
-	# start the dialogue
-
-	start_dialogue(npc, location)
+		start_dialogue(npc, location)
 
 func start_dialogue(npc: NpcCard, location: LocationCard):
 	player.pick_dialogue_cards()
@@ -819,6 +817,15 @@ func _play_dialogue(cards_played: Array[Card]):
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
 	await _increment_time(2)
+
+func start_combat(npc: NpcCard, location: LocationCard):
+	player.pick_combat_cards()
+	_current_interaction = InteractionType.COMBAT
+	_current_interaction_location = location
+	_current_interaction_npc = npc
+	_push_card_state()
+	save_game()
+	interaction_started.emit()
 
 func end_interaction(cards_played: Array[Card] = []):
 	match _current_interaction:

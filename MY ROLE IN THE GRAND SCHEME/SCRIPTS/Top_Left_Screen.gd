@@ -26,8 +26,10 @@ func set_interaction_type(type: GameState.InteractionType):
 	$Line_Animation/Investigation.visible = is_investigation
 	$Interaction/Investigation.visible = is_investigation
 
-func set_dialogue_npc(npc: NpcCard):
-	$Interaction/Dialogue/NPC.text = npc.get_display_name()
+func set_npc(npc: NpcCard):
+	var npc_name = npc.get_display_name()
+	$Interaction/Dialogue/NPC.text = npc_name
+	$Interaction/Combat/NPC.text = npc_name
 
 func _on_on_off_pressed():
 	$Tv_Switch.play()
