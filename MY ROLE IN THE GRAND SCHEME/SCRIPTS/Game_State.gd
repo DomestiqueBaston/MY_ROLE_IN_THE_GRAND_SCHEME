@@ -645,6 +645,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 		await Globals.dialog_overlay.show_npc_away(npc)
 		return
 
+	var first_visit = not npc.has_been_seen()
 	npc.visit()
 
 	# the NPC may try to run away
@@ -654,7 +655,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 
 	# if the NPC attacks the player, start a combat, if not, start the dialogue
 
-	if _does_npc_attack(npc):
+	if not first_visit and _does_npc_attack(npc):
 		await Globals.dialog_overlay.show_attack_message(npc)
 		if not await Globals.dialog_overlay.confirm_run_away():
 			start_combat(npc, location)
@@ -961,9 +962,6 @@ func _does_npc_run(npc: NpcCard) -> bool:
 # case.
 #
 func _does_npc_attack(npc: NpcCard) -> bool:
-	if not npc.has_been_seen():
-		return false
-
 	var percent: int = 0
 
 	match npc.player_reputation:
