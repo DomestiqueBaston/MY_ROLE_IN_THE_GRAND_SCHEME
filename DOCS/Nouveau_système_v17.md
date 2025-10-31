@@ -474,7 +474,7 @@ Les interactions : Dialogue, Combat et Investigation
 	- Malus de 1 aux jets de dé avec chaque carte jouée prise dans la main de Fallback.
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant le lendemain sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet (voir à la fin de Combat).
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
-	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler (à moins de fuir en cas de Combat mais ça n’est pas vraiment une annulation et cela intervient juste avant).
+	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler.
 	- À la fin d’une interaction réussie, le jeu proposera au joueur de récupérer les cartes jouées afin de modifier sa main de cartes (Mastery). Cet écran apparaît à la fin de l’interaction initiée par le joueur et intégrera AUSSI les cartes jouées avant en Break In.
 	- Après un Run Away réussi, on aura AUSSI l’écran de récupération de cartes cité juste au dessus.
 
@@ -486,7 +486,7 @@ Dialogue
 	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps, etc.), l’action du menu sera inaccessible.
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire, etc.), il ne trouvera personne et aura droit à la scène de l’interphone (Short_Event_Overlay.tscn/Intercom/Away). Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
 	- Pour Dialoguer avec un PNJ, il faut connaître son emploi du temps (donc savoir où il est à cette heure-ci : Liens Blancs – Voir Liens entre les éléments dans la fiche d’enquête plus loin).
-	- Le joueur ne peut pas fuir une agression d’avant Dialogue ! Voir Déclenchement d’un combat par un PNJ lié à l’enquête à Combat.
+	- Le joueur peut fuir une agression d’avant Dialogue ! Voir Déclenchement d’un combat par un PNJ lié à l’enquête à Combat.
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Bonus de 2 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
