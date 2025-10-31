@@ -1559,6 +1559,8 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congr
 
 
 
+
+
 [center]Not that it'll make any change![/center]"
 
 [node name="Money_Cards" type="FlowContainer" parent="Overlays/Income_Start/Income/Chalk"]
@@ -1630,10 +1632,8 @@ text = " to) improve yourself...
 fit_content = true
 autowrap_mode = 0
 
-[node name="TMP_1_à_6_cartes" type="Node2D" parent="Overlays/Income_Start/Income"]
-position = Vector2(0, 12)
-
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
+visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
@@ -1679,13 +1679,15 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]A fre
 
 
 
+
+
 [center]Already seeing the 5m belly flop![/center]"
 
 [node name="Money" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
 offset_left = -59.0
-offset_top = -54.0
+offset_top = -58.0
 offset_right = -42.0
-offset_bottom = -45.0
+offset_bottom = -49.0
 theme = ExtResource("60_llwhl")
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 bbcode_enabled = true
@@ -1695,9 +1697,9 @@ horizontal_alignment = 2
 
 [node name="Drug" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
 offset_left = 27.0
-offset_top = -54.0
+offset_top = -58.0
 offset_right = 36.0
-offset_bottom = -45.0
+offset_bottom = -49.0
 theme = ExtResource("60_llwhl")
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 bbcode_enabled = true
@@ -1709,13 +1711,10 @@ horizontal_alignment = 2
 position = Vector2(0, 12)
 
 [node name="First_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
-position = Vector2(247, 152)
+position = Vector2(243, 152)
 
 [node name="Last_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
-position = Vector2(319, 152)
-
-[node name="TMP_4_à_5_cartes" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
-position = Vector2(0, 12)
+position = Vector2(323, 152)
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
 visible = false
