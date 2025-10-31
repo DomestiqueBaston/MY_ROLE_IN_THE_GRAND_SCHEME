@@ -645,6 +645,13 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 		await Globals.dialog_overlay.show_npc_away(npc)
 		return
 
+	npc.visit()
+
+	# the NPC may try to run away
+
+	if await _does_npc_run(npc):
+		return
+
 	# the NPC may choose to attack the player
 
 	if _does_npc_attack(npc):
@@ -654,7 +661,6 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 
 	# start the dialogue
 
-	npc.visit()
 	start_dialogue(npc, location)
 
 func start_dialogue(npc: NpcCard, location: LocationCard):
@@ -700,6 +706,10 @@ func _play_dialogue(cards_played: Array[Card]):
 	var npc_actual_roll = randi_range(1, 10)
 	print("NPC actual roll: %s" % npc_actual_roll)
 	var npc_net_roll = npc_actual_roll
+	if npc.next_dialogue_malus > 0:
+		npc_net_roll += npc.next_dialogue_malus
+		npc.next_dialogue_malus = 0
+		print("after escape malus: %s" % npc_net_roll)
 	if npc.wanted > 1:
 		npc_net_roll += npc.wanted - 1
 		print("after Wan malus: %s" % npc_net_roll)
@@ -879,6 +889,61 @@ func get_player_location() -> PlayerLocation:
 ##
 func get_player_location_card() -> LocationCard:
 	return _player_location_card
+
+#
+# Returns true if the NPC runs away before a dialogue, false if he does not run
+# away, or if he tries to run away but fails.
+#
+func _does_npc_run(npc: NpcCard) -> bool:
+
+	# in most cases he does not try
+
+	if randi() % (2 * npc.mental) > 0:
+		return false
+
+	# if he does want to try, roll the die...
+
+	var max_roll = roundi((npc.physical + npc.mental + npc.health) / 3.0)
+	var actual_roll = randi_range(1, 10)
+	var net_roll = actual_roll
+	if npc.wanted > 1:
+		net_roll += npc.wanted - 1
+	var success: bool
+
+	var tweak_attr = func(value):
+		match randi() % 5:
+			0, 1, 2:
+				npc.mental += value
+			3:
+				npc.physical += value
+			_:
+				npc.max_health += value
+				npc.health = mini(npc.health, npc.max_health)
+
+	if actual_roll == 10:
+		# critical failure
+		tweak_attr.call(-1)
+		success = false
+	elif actual_roll == 1:
+		# critical success
+		tweak_attr.call(1)
+		success = true
+	elif net_roll > max_roll:
+		# normal failure
+		success = false
+	else:
+		# normal success
+		success = true
+
+	if success:
+		npc.wanted += 1
+	else:
+		npc.next_dialogue_malus = 1
+
+	save_game()
+	await Globals.dialog_overlay.show_npc_run(success)
+
+	return success
 
 #
 # The chances of the NPC attacking the player before a dialogue depend on

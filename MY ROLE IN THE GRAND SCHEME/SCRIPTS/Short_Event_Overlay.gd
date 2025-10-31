@@ -298,3 +298,18 @@ func show_npc_away(npc: NpcCard):
 	await _disappear()
 	$Overlays/Intercom.stop()
 	$Overlays/Intercom.hide()
+
+##
+## Displays an overlay indicating that an NPC has tried to run away before a
+## dialogue (and possibly succeeded).
+##
+func show_npc_run(success: bool):
+	$Overlays/Misc/Announces/Dialogue/NPC_Success.visible = success
+	$Overlays/Misc/Announces/Dialogue/NPC_Failure.visible = not success
+	$Overlays/Misc/Announces/Dialogue.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Dialogue.hide()

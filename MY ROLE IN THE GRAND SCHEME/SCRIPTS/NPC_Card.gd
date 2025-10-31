@@ -93,13 +93,20 @@ var physical: int
 var mental: int
 var health: int
 var max_health: int
-var wanted: int
+
+var wanted: int:
+	set(value):
+		wanted = clampi(value, 0, 4)
+	get:
+		return wanted
 
 var player_reputation: int:
 	set(value):
 		player_reputation = clampi(value, -2, 2)
 	get:
 		return player_reputation
+
+var next_dialogue_malus: int = 0
 
 ## Work shifts (a mask of GameState.TimeSlot bits: MORNING, AFTERNOON, EVENING
 ## and/or NIGHT).
@@ -588,6 +595,8 @@ func get_json_dict():
 	dict["wanted"] = wanted
 	if player_reputation != 0:
 		dict["player_reputation"] = player_reputation
+	if next_dialogue_malus != 0:
+		dict["next_dialogue_malus"] = next_dialogue_malus
 	dict["work_shifts"] = work_shifts
 	if has_weekend_shift:
 		dict["has_weekend_shift"] = has_weekend_shift
@@ -619,6 +628,7 @@ func restore(dict, catalog):
 	health = dict.health
 	wanted = dict.wanted
 	player_reputation = dict.get("player_reputation", 0)
+	next_dialogue_malus = dict.get("next_dialogue_malus", 0)
 	work_shifts = dict.get("work_shifts", 0)
 	has_weekend_shift = dict.get("has_weekend_shift", false)
 	_last_dialogue = dict.get("last_dialogue", -1)
