@@ -940,7 +940,9 @@ func _does_npc_run(npc: NpcCard) -> bool:
 	else:
 		npc.next_dialogue_malus = 1
 
+	npc.test_health()
 	save_game()
+
 	await Globals.dialog_overlay.show_npc_run(success)
 
 	return success
