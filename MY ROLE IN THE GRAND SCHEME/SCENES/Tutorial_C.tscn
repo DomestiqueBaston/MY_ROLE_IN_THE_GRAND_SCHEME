@@ -15,20 +15,20 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
 
-[node name="Tutorial" type="Node2D"]
+[node name="Tutorial_C" type="Node2D"]
 
 [node name="Tuto_Bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_t7xe0")
 centered = false
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Text" type="Node2D" parent="."]
 
-[node name="Chalk_Mask" type="Sprite2D" parent="Node2D"]
+[node name="Chalk_Mask" type="Sprite2D" parent="Text"]
 clip_children = 1
 texture = ExtResource("2_8lysa")
 centered = false
 
-[node name="Tutorial_Text" type="RichTextLabel" parent="Node2D/Chalk_Mask"]
+[node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
 offset_left = 8.0
 offset_top = 13.0
 offset_right = 630.0
@@ -58,7 +58,7 @@ text = "  [color=#ff1c18]ESTABLISH INVESTIGATION RELATIONSHIPS[/color]
 	  [color=#ffffff]-[/color] In order to [color=#ff1c18]VALIDATE[/color] a [color=#ff1c18]CASE[/color], you'll need [color=#ff8864]at least[/color] [color=#ff1c18]1 CULPRIT[/color], [color=#ff1c18]1 EVIDENCE[/color], and [color=#ff1c18]1 CRIME MOTIVE[/color].
 	  [color=#ffffff]-[/color] You can [color=#ff1c18]VALIDATE[/color] or [color=#ff1c18]GIVE UP[/color] a [color=#ff8864]case[/color] by using the [color=#ff8864]TOP BAR[/color] menu, select \\\"[color=#ff8864]CASES[/color]\\\", then \\\"[color=#ff8864]VALIDATE CASE![/color]\\\" or \\\"[color=#ff8864]GIVE UP CASE...[/color]\\\"[color=#ff1c18][shake rate=7.0 level=5 connected=0]...[/shake][/color]"
 
-[node name="Next_Button" type="Button" parent="Node2D/Chalk_Mask"]
+[node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

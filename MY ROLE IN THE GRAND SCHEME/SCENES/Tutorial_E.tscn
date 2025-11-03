@@ -1,0 +1,328 @@
+[gd_scene load_steps=14 format=3 uid="uid://wsr05jmb3u7v"]
+
+[ext_resource type="Texture2D" uid="uid://2kbegs7pq6qi" path="res://GRAPHICS/TUTO/Tuto_02.png" id="1_5drip"]
+[ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="2_qg8yb"]
+[ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="3_08hqt"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_f8gtn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwr3e"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="Animation" id="Animation_xwr3e"]
+resource_name = "Blink"
+length = 0.53334004
+loop_mode = 1
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info_Container:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5882353)]
+}
+
+[sub_resource type="Animation" id="Animation_6tuv8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info_Container:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3vlcy"]
+_data = {
+&"Blink": SubResource("Animation_xwr3e"),
+&"RESET": SubResource("Animation_6tuv8")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ymd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0uj0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s180t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lalru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
+
+[node name="Tutorial_E" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Tuto_02" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+texture = ExtResource("1_5drip")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Info_Container" type="Control" parent="Tuto_02"]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_qg8yb")
+metadata/_edit_lock_ = true
+
+[node name="Motive" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 143.0
+offset_right = 593.0
+offset_bottom = 159.0
+tooltip_text = "The Locations deck contains the places you're aware of.
+Using them will make them the main topic of discussion."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Fallback" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 170.0
+offset_right = 591.0
+offset_bottom = 186.0
+tooltip_text = "The Fallback hand contains a random selection
+of cards from the current Interaction type,
+Abstracts, or possibly Special ones.
+You’re neither particularly skilled nor clumsy
+with them, mainly due to a lack of interest."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Evidence" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 143.0
+offset_right = 237.0
+offset_bottom = 159.0
+tooltip_text = "The Evidence deck contains the cards (Objects or NPCs)
+you've marked as evidence (with Confirmed Black Links).
+These will also be the main topic of discussion if you use them.
+They can help you if you haven't made a mistake, otherwise..."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Objects" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 143.0
+offset_right = 469.0
+offset_bottom = 159.0
+tooltip_text = "The Object cards represent the \"things\" you've
+found but haven't specifically distinguished.
+By using them, they become the main topic of discussion."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Mastery" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 171.0
+offset_right = 236.0
+offset_bottom = 187.0
+tooltip_text = "This is your Mastery hand,
+the actions that come more easily to you."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Characters" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 143.0
+offset_right = 361.0
+offset_bottom = 159.0
+tooltip_text = "The Characters (NPCs) deck contains
+the cards representing NPCs you haven't (yet)
+specifically distinguished.
+By using these cards, they become
+the subject of the interaction."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Interaction" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 171.0
+offset_right = 427.0
+offset_bottom = 187.0
+tooltip_text = "This is where you play your cards.
+At least 1, at most 3.
+Only one of each type.
+Evidence, Characters, Objects, and Locations
+count as the same type.
+Of course, you can change your mind
+and return a card to its place!"
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Run_Away_Break_In" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 183.0
+offset_right = 320.23135
+offset_bottom = 217.60847
+rotation = -0.22863813
+tooltip_text = "Note: Everything mentioned here also applies to
+the Break In and Run Away interaction screens!"
+color = Color(0, 1, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Play" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 312.0
+offset_right = 444.0
+offset_bottom = 326.0
+tooltip_text = "This is where you click to start
+the interaction for good.
+If your card selection is invalid,
+the button will let you know."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Interaction_TV" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 19.0
+offset_right = 72.0
+offset_bottom = 31.0
+tooltip_text = "Here, the current interaction type is displayed."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Name_Location_TV" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 78.0
+offset_right = 83.0
+offset_bottom = 87.0
+tooltip_text = "Here, the location or person you're interacting with is displayed."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Info" type="ColorRect" parent="Tuto_02/Info_Container"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 142.0
+offset_right = 118.0
+offset_bottom = 339.0
+tooltip_text = "Here you’ll find the info about
+the cards you're hovering over."
+color = Color(1, 0, 0, 0.29411766)
+metadata/_edit_lock_ = true
+
+[node name="Tuto" type="ColorRect" parent="Tuto_02"]
+visible = false
+offset_left = 256.0
+offset_top = 205.0
+offset_right = 375.0
+offset_bottom = 284.0
+theme = ExtResource("2_qg8yb")
+color = Color(1, 0.8000001, 0, 0.5882353)
+metadata/_edit_lock_ = true
+
+[node name="Tuto_Text" type="Label" parent="Tuto_02/Tuto"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwr3e")
+text = "Hover over the flashing
+red squares to learn a
+lot of things!
+
+Then click Next... to learn more incredible things."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Next" type="Label" parent="Tuto_02/Tuto/Tuto_Text"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 45.0
+offset_right = 89.0
+offset_bottom = 53.0
+tooltip_text = "Not this one,
+the one below!"
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 0.10980392, 0.09411765, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+text = "Next..."
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Container_Animation" type="AnimationPlayer" parent="Tuto_02"]
+libraries = {
+&"": SubResource("AnimationLibrary_3vlcy")
+}
+autoplay = "Blink"
+
+[node name="Text" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Chalk_Mask" type="Sprite2D" parent="Text"]
+clip_children = 1
+texture = ExtResource("3_08hqt")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -23.0
+offset_right = 13.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_qg8yb")
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_f8gtn")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_31ymd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
+text = "Next..."
+metadata/_edit_lock_ = true

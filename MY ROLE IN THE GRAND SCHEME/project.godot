@@ -40,6 +40,10 @@ window/layer_3="Pin"
 
 [editor]
 
+movie_writer/video_quality=1.0
+movie_writer/ogv/audio_quality=0.24999999999999997
+movie_writer/movie_file="D:/GRAPHISME/PIXEL/PIXEL ART IV/MY ROLE IN THE GRAND SCHEME/Video.ogv"
+movie_writer/fps=30
 movie_writer/main_scene="uid://mnqpfr0mjern"
 
 [input]

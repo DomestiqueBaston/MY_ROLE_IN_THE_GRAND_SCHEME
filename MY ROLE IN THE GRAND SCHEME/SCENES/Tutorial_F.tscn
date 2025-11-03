@@ -21,14 +21,14 @@
 texture = ExtResource("1_6tuv8")
 centered = false
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Text" type="Node2D" parent="."]
 
-[node name="Chalk_Mask" type="Sprite2D" parent="Node2D"]
+[node name="Chalk_Mask" type="Sprite2D" parent="Text"]
 clip_children = 1
 texture = ExtResource("2_3vlcy")
 centered = false
 
-[node name="Tutorial_Text" type="RichTextLabel" parent="Node2D/Chalk_Mask"]
+[node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
 offset_left = 8.0
 offset_top = 13.0
 offset_right = 630.0
@@ -52,7 +52,7 @@ text = "
 [color=#ff8864]D.B.[/color]"
 horizontal_alignment = 1
 
-[node name="Next_Button" type="Button" parent="Node2D/Chalk_Mask"]
+[node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
