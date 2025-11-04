@@ -15,17 +15,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wphtr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yobwp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p25vo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxvq7"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stdcw"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqg13"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w38dj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqg13"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stdcw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cxvq7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p25vo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yobwp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8585a"]
 content_margin_left = 1.0
@@ -970,7 +970,7 @@ layout_mode = 2
 
 [node name="Information" type="RichTextLabel" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Result/Search_Body"]
 custom_minimum_size = Vector2(107, 11)
-layout_mode = 2
+layout_mode = 0
 offset_right = 547.0
 offset_bottom = 11.0
 size_flags_horizontal = 3
@@ -980,7 +980,7 @@ text = "[center]Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/
 
 [node name="Yes_No" type="HBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Result/Search_Body"]
 custom_minimum_size = Vector2(0, 11)
-layout_mode = 2
+layout_mode = 0
 offset_top = 11.0
 offset_right = 547.0
 offset_bottom = 22.0
@@ -989,35 +989,35 @@ alignment = 1
 [node name="Yes" type="Button" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Result/Search_Body/Yes_No"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 0.532333, 0.39, 0.752941)
-theme_override_colors/font_hover_color = Color(0.627333, 1, 0.57, 0.752941)
 theme_override_colors/font_color = Color(1, 0.959333, 0.39, 0.752941)
 theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
 theme_override_colors/font_pressed_color = Color(0.285013, 0.64, 0.2304, 0.752941)
+theme_override_colors/font_hover_color = Color(0.627333, 1, 0.57, 0.752941)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.532333, 0.39, 0.752941)
 theme_override_constants/outline_size = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cxvq7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uqg13")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cxvq7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
 text = "Yes!"
 
 [node name="No" type="Button" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Result/Search_Body/Yes_No"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.388235, 0.752941)
-theme_override_colors/font_hover_color = Color(1, 0.388235, 0.388235, 0.752941)
 theme_override_colors/font_color = Color(1, 0.51, 0.51, 0.905882)
 theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
 theme_override_colors/font_pressed_color = Color(0.45, 0.047325, 0.0405, 0.752941)
+theme_override_colors/font_hover_color = Color(1, 0.388235, 0.388235, 0.752941)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.388235, 0.752941)
 theme_override_constants/outline_size = 3
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cxvq7")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_uqg13")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w38dj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_stdcw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_cxvq7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p25vo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yobwp")
 text = "No..."
 
 [node name="Search_Result" type="VBoxContainer" parent="Chalkboard_Content/Chalk_Mask/Content/Report/Combat/Report/Result/Search_Body"]
@@ -1632,12 +1632,12 @@ text = "[center]Swell! I [color=#ff1c18]hurt myself[/color]... Is there somethin
 [node name="Quit" type="Button" parent="Chalkboard_Content"]
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 0
-offset_left = 297.0
+offset_left = 287.0
 offset_top = 331.0
-offset_right = 343.0
+offset_right = 353.0
 offset_bottom = 345.0
 theme = ExtResource("3_c5hnn")
-text = "Oh well!"
+text = "Understood!"
 script = ExtResource("5_vxlp8")
 
 [connection signal="mouse_entered" from="Chalkboard_Content/Quit" to="Chalkboard_Content/Quit" method="_on_mouse_entered"]

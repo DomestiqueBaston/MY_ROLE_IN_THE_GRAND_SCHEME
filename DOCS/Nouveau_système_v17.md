@@ -71,9 +71,9 @@ Rep	Effet et/ou modificateur de jet de dé
 2	Bonus de 2
 
 Recherché/Wanted (Wan)
-	- Le Wanted évolue de 0 à 4. Au début du jeu : Wan = 0. Il représente le niveau d’emmerdes qu’a le joueur avec les autorités.
+	- Le Wanted évolue de 0 à 5. Au début du jeu : Wan = 0. Il représente le niveau d’emmerdes qu’a le joueur avec les autorités.
 	- Il est également un malus aux jets de dé suivant le tableau ci-dessous.
-	- À 4, le joueur est arrêté, va en prison et ne peut plus rien faire pendant 3 jours à moins de payer une caution de 100Dø. À la sortie de prison, Wan = 0.
+	- À 5, le joueur est arrêté, va en prison et ne peut plus rien faire pendant 3 jours à moins de payer une caution de 100Dø. À la sortie de prison, Wan = 0.
 	- Résoudre une Enquête remet le Wan à 0.
 	- Une journée sans augmenter le Wan fait -1Wan.
 Niveau de Wanted	Malus au Dé
@@ -106,7 +106,7 @@ Backgrounds
 		- Curé : -1PHY, +1HEA et maxHEA
 		- Danseur : +1PHY, -1MEN, +1HEA et maxHEA
 		- Écrivain : -1PHY, +1MEN, -1HEA et maxHEA
-		- Flic : 1/3 chance de ne pas aller en prison ou devoir de caution à Wan = 4
+		- Flic : 1/3 chance de ne pas aller en prison ou devoir de caution à Wan = 5
 		- Gardien de musée : -1PHY, +1MEN, +1HEA et maxHEA
 		- Éboueur : +1PHY
 		- Guide touristique : +1PHY, +1MEN, -1HEA et maxHEA
@@ -149,7 +149,7 @@ Les PNJs
 Wan pour les PNJs
 	- Le Wanted des PNJs évolue de 0 à 5. Au départ, aléatoirement de 0 à 2.
 	- Il est également un malus aux jets de dé du PNJ suivant le tableau ci-dessous.
-	- À 4, le PNJ est arrêté et le joueur ne pourra plus Dialoguer avec lui qu’en allant le voir en prison (jusqu’à la fin de l’enquête).
+	- À 5, le PNJ est arrêté et le joueur ne pourra plus Dialoguer avec lui qu’en allant le voir en prison (jusqu’à la fin de l’enquête).
 	- Son emploi du temps sera adapté en fonction (prison tout le temps et il dormira la nuit !).
 	- Il ne sera plus visitable que pour dialoguer, le matin. 1 seule fois par jour.
 
@@ -995,7 +995,7 @@ Difficulté du jeu
 		They are watching : +10% de chance de SMS !
 		Cat’s eye : le malus de jet de dé de nuit est annulé et passe de jour !
 	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on désactive de la même manière) :
-		I am one of them : le Wan du joueur ne peut jamais dépasser 3.
+		I am one of them : le Wan du joueur ne peut jamais dépasser 4. Il n’ira donc ainsi jamais en prison !
 		
 Éléments additionnels « tout court »
 	- On ne peut sauver que depuis Main_V2.tscn !

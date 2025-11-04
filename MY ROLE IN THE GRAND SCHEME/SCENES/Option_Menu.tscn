@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dxsbbamjqxk1s"]
+[gd_scene load_steps=31 format=3 uid="uid://dxsbbamjqxk1s"]
 
 [ext_resource type="Texture2D" uid="uid://dlaelf2f7bceg" path="res://GRAPHICS/OPTIONS/Settings_BG.png" id="1_7b261"]
 [ext_resource type="Script" uid="uid://g5avjy64tpdx" path="res://SCRIPTS/Option_Menu.gd" id="1_asrw6"]
@@ -24,9 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://cwyb25ikdwm7f" path="res://GRAPHICS/OPTIONS/New_Game_Button_Pressed.png" id="20_gmknp"]
 [ext_resource type="Texture2D" uid="uid://okdg1e5jce7e" path="res://GRAPHICS/OPTIONS/New_Game_Button_Hover.png" id="21_v6bhl"]
 [ext_resource type="BitMap" uid="uid://dton6iewjr24f" path="res://GRAPHICS/OPTIONS/New_Game_Button_Mask.png" id="22_bf3ky"]
-[ext_resource type="Texture2D" uid="uid://dd8d724xh70jj" path="res://GRAPHICS/OPTIONS/LSD_Button_Pressed.png" id="23_h11g4"]
-[ext_resource type="Texture2D" uid="uid://bw2ns5k33wq4w" path="res://GRAPHICS/OPTIONS/LSD_Button_Hover.png" id="24_srw0v"]
-[ext_resource type="BitMap" uid="uid://cshny4khdlmjh" path="res://GRAPHICS/OPTIONS/LSD_Button_Mask.png" id="25_qftad"]
 [ext_resource type="Texture2D" uid="uid://c1qmuoj1q7n2c" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Pressed.png" id="26_2vyex"]
 [ext_resource type="Texture2D" uid="uid://ch4fjd8a7biue" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Hover.png" id="27_g1d07"]
 [ext_resource type="BitMap" uid="uid://c1g5cug1nwku6" path="res://GRAPHICS/OPTIONS/Tutorial_Button_Mask.png" id="28_qcawn"]
@@ -126,19 +123,6 @@ button_group = ExtResource("4_t0v3g")
 texture_pressed = ExtResource("20_gmknp")
 texture_hover = ExtResource("21_v6bhl")
 texture_click_mask = ExtResource("22_bf3ky")
-
-[node name="LSD" type="TextureButton" parent="Drawers"]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-tooltip_text = "Your choices,
-their records."
-toggle_mode = true
-button_group = ExtResource("4_t0v3g")
-texture_pressed = ExtResource("23_h11g4")
-texture_hover = ExtResource("24_srw0v")
-texture_click_mask = ExtResource("25_qftad")
 
 [node name="Tutorial" type="TextureButton" parent="Drawers"]
 layout_mode = 0
