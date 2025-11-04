@@ -30,24 +30,33 @@ centered = false
 
 [node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
 offset_left = 8.0
-offset_top = 13.0
+offset_top = 5.0
 offset_right = 630.0
-offset_bottom = 353.0
+offset_bottom = 344.0
 theme = ExtResource("3_dqfca")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.333)
+theme_override_constants/shadow_outline_size = 15
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 6
 bbcode_enabled = true
-text = "[color=#ffffff]-[/color] Welcome to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]MY ROLE IN THE GRAND SCHEME[/pulse][/color]!
+text = "
+[center]Welcome to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]MY ROLE IN THE GRAND SCHEME[/pulse][/color]![/center]
 
-   [color=#ffffff]-[/color] In the dark and grimy alleys of [color=#ff8864]NEW-CAELUM[/color], you're a former... well, that's not important anymore. What matters now is that you're a [color=#ff8864]PRIVATE EYE[/color], navigating a city full of [color=#ff8864]corruption[/color], [color=#ff8864]crime[/color], and [color=#ff8864]shadowy secrets[/color]. Every case is a [color=#ff8864]puzzle[/color], and you must use all your wits and resources to [color=#ff1c18]piece it together[/color].
 
-   [color=#ffffff]-[/color] As you dive deeper into lies and hidden truths, you'll need to [color=#ff8864]keep track of everything you discover[/color]. In your office, there's a [color=#ff8864]dedicated space on the wall[/color] where you can [color=#ff1c18]organize your findings[/color] and begin to see the [color=#ff8864]connections[/color] between [color=#ff1c18]clues[/color], [color=#ff1c18]suspects[/color], and [color=#ff1c18]locations[/color].
+	[color=#ffffff]-[/color] In the shadowy alleys of [color=#ff8864]NEW-CAELUM[/color], you're now a [color=#ff8864]PRIVATE EYE[/color] uncovering [color=#ff8864]corruption[/color], [color=#ff8864]crime[/color], and [color=#ff8864]secrets[/color]. Every case is a [color=#ff8864]puzzle[/color] that requires you to [color=#ff8864]organize[/color] your [color=#ff8864]discoveries[/color], [color=#ff8864]link clues[/color], [color=#ff8864]suspects[/color], and [color=#ff8864]locations[/color]. The deeper you dig, the more complex the truth becomes, often requiring you to [color=#ff8864]re-examine everything[/color]. Solving a case is just the first step in exposing the dark heart of the city...
 
-   [color=#ffffff]-[/color] Each [color=#ff8864]piece of information[/color] you uncover can lead to [color=#ff8864]new revelations[/color], and your job is to [color=#ff8864]link[/color] these discoveries - sometimes with [color=#ff1c18]threads of certainty[/color], other times with [color=#ff1c18]threads of suspicion[/color]. Slowly, the larger picture will take shape, and you'll start to understand how each [color=#ff1c18]person[/color], [color=#ff1c18]object[/color], and [color=#ff1c18]location[/color] is part of the [color=#ff8864]story[/color].
+[center]- [color=#ff1c18]CARDS[/color] & [color=#ff1c18]INTERACTIONS[/color] -[/center]
 
-   [color=#ffffff]-[/color] You'll [color=#ff1c18]arrange[/color] and [color=#ff1c18]rearrange[/color] these [color=#ff8864]pieces[/color], [color=#ff1c18]testing[/color] connections and [color=#ff1c18]discarding[/color] those that [color=#ff8864]don't fit[/color]. It's a constant process of refinement, pushing you closer to solving the case, but also reminding you how easy it is to [color=#ff8864]get lost[/color] in the web of deceit.
 
-   [color=#ffffff]-[/color] However, be [color=#ff8864]warned[/color]: [color=#ff1c18]solving a case[/color] [color=#ff8864]often[/color] requires [color=#ff8864]more[/color] than just uncovering [color=#ff1c18]one culprit[/color], [color=#ff1c18]one piece of evidence[/color], and a [color=#ff1c18]motive[/color]. The truth is rarely that simple. You'll need to dig deeper, challenge your assumptions, and sometimes even [color=#ff8864]question the facts you've uncovered[/color]. The answers are [color=#ff8864]never[/color] as clear-cut as they may seem at first.
+	[color=#ffffff]-[/color] [color=#ff1c18]Cards[/color] are your [color=#ff8864]primary tools[/color] for [color=#ff1c18]interaction[/color], representing [color=#ff1c18]CHARACTERS[/color], [color=#ff1c18]OBJECTS[/color], [color=#ff1c18]LOCATIONS[/color], [color=#ff1c18]EVIDENCE[/color], and [color=#ff1c18]ACTIONS[/color] ([color=#ff8864]Dialogue[/color], [color=#ff8864]Investigation[/color], [color=#ff8864]Combat[/color], [color=#ff8864]Abstract[/color], etc.). You'll use them to [color=#ff8864]interrogate[/color], [color=#ff8864]search[/color], or [color=#ff8864]fight[/color] (if needed). [color=#ff8864]Organize[/color] your [color=#ff8864]cards[/color] into a [color=#ff1c18]Mastery Hand[/color] ([color=#ff8864]10 Interaction cards[/color], with a [color=#ff8864]maximum[/color] of [color=#ff8864]3 Abstract cards[/color]) to assist [color=#ff8864]beneficially[/color] in your [color=#ff8864]investigations[/color].
 
-   [color=#ffffff]-[/color] In [color=#ff8864]NEW-CAELUM[/color], [color=#ff1c18]solving a case[/color] brings [color=#ff8864]more[/color] than just [color=#ff1c18]financial relief[/color]. It brings you [color=#ff8864]one step closer[/color] to uncovering the [color=#ff1c18]dark heart of the city[shake rate=7.0 level=5 connected=0]...[/shake][/color]"
+[center]- [color=#ff1c18]ESTABLISHING INVESTIGATION RELATIONSHIPS[/color] -[/center]
+
+	[color=#ffffff]-[/color] Use the [color=#ff8864]Investigation Board[/color] to [color=#ff8864]organize[/color] [color=#ff1c18]clues[/color] and [color=#ff8864]connect[/color] [color=#ff1c18]cards[/color] with [color=#ff1c18]colored threads[/color] (each color represents a different relation type like [color=#ff1c18]Friendship[/color], [color=#ff1c18]Intimacy[/color], [color=#ff1c18]Culprit[/color], [color=#ff1c18]Accomplice[/color], etc.) to [color=#ff8864]visualize relationships[/color], make [color=#ff1c18]accusations[/color], and [color=#ff1c18]establish evidence[/color]. These [color=#ff8864]links[/color] can be [color=#ff1c18]Confirmed[/color] ([color=#ff8864]Solid[/color]) or [color=#ff1c18]Probable[/color] ([color=#ff8864]Dashed[/color]) and represent relations between elements of the case.
+	[color=#ffffff]-[/color] A [color=#ff1c18]Culprit[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Victim[/color], An [color=#ff1c18]Accomplice[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Culprit[/color] and a [color=#ff1c18]Witness[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to [color=#ff1c18]another link[/color].
+	[color=#ffffff]-[/color] Make sure you have [color=#ff8864]at least[/color] one [color=#ff1c18]culprit[/color], one piece of [color=#ff1c18]evidence[/color], and a [color=#ff1c18]motive[/color]. When you're ready, [color=#ff1c18]validate the case[/color] (in the [color=#ff8864]Cases menu[/color]).
+"
 
 [node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
 anchors_preset = 7

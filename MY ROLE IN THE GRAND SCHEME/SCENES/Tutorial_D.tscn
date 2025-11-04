@@ -1,65 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://40wfxya6vuwh"]
+[gd_scene load_steps=10 format=3 uid="uid://bjfl6d13jjwc1"]
 
-[ext_resource type="Texture2D" uid="uid://dk0qryv0ru4yc" path="res://GRAPHICS/TUTO/Tuto_01.png" id="1_lwv6c"]
+[ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="1_lwv6c"]
 [ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="2_o72vk"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="3_6ehsp"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="4_8je4d"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwr3e"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-anti_aliasing = false
-
-[sub_resource type="Animation" id="Animation_xwr3e"]
-resource_name = "Blink"
-length = 0.53334004
-loop_mode = 1
-step = 0.06666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Info_Container:modulate")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.5882353)]
-}
-
-[sub_resource type="Animation" id="Animation_6tuv8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Info_Container:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3vlcy"]
-_data = {
-&"Blink": SubResource("Animation_xwr3e"),
-&"RESET": SubResource("Animation_6tuv8")
-}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ymd"]
 
@@ -71,315 +15,42 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
 
-[node name="Tutorial_D" type="Node2D"]
-metadata/_edit_lock_ = true
+[node name="Tutorial" type="Node2D"]
 
-[node name="Tuto_01" type="Sprite2D" parent="."]
-position = Vector2(-1, -1)
+[node name="Tuto_Bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_lwv6c")
 centered = false
-metadata/_edit_lock_ = true
-
-[node name="Info_Container" type="Control" parent="Tuto_01"]
-custom_minimum_size = Vector2(640, 360)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("2_o72vk")
-metadata/_edit_lock_ = true
-
-[node name="Date_Time" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 49.0
-offset_bottom = 9.0
-tooltip_text = "Keep an eye on the date and time.
-So you don't miss anything...
-or just to go to sleep."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Menus" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 66.0
-offset_top = 2.0
-offset_right = 221.0
-offset_bottom = 9.0
-tooltip_text = "The Dailies menu for your (almost) daily actions,
-Cases to manage your investigations,
-Cards to handle your interaction deck,
-and Whatever... well, whatever!"
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Name" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 258.0
-offset_top = 2.0
-offset_right = 282.0
-offset_bottom = 9.0
-tooltip_text = "That's where your name is written!"
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Stats" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 2.0
-offset_right = 637.0
-offset_bottom = 9.0
-tooltip_text = "Player stats: PHY/MEN/HEA on 10,
-Emo/Add -5 to +5.
-Money & drugs left."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Motive" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 159.0
-offset_top = 14.0
-offset_right = 267.0
-offset_bottom = 24.0
-tooltip_text = "The ideal menu for selecting
-the crime motive..."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Pin" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 328.0
-offset_top = 67.0
-offset_right = 343.0
-offset_bottom = 83.0
-tooltip_text = "These pins let you adjust (by click+drag)
-the anchor points of links created."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Card_Description" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 172.0
-offset_top = 84.0
-offset_right = 238.0
-offset_bottom = 153.0
-tooltip_text = "The ideal spot for concise card info...
-Otherwise, check the INFO zone bottom-left of the screen."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Card_Top" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 64.0
-offset_right = 227.0
-offset_bottom = 75.0
-tooltip_text = "The card's name. A place, an NPC, an object, etc."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Hover" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 219.0
-offset_top = 148.0
-offset_right = 270.0
-offset_bottom = 175.0
-tooltip_text = "Sometimes, just hovering over something...
-for a TOOLTIP!"
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Status" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 272.0
-offset_top = 90.0
-offset_right = 338.0
-offset_bottom = 157.0
-tooltip_text = "On the left, the NPC's status
-as established at the start,
-In the center, their gender,
-And on the right... a surprise."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Interaction" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 386.0
-offset_top = 64.0
-offset_right = 449.0
-offset_bottom = 148.0
-tooltip_text = "Click and drag to move a card,
-double-click to lock focus on the info
-wherever you move the mouse,
-and right-click to create a link or
-interact with the card."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Link" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 239.82704
-offset_top = 72.07992
-offset_right = 272.82703
-offset_bottom = 82.60191
-rotation = 0.15882497
-tooltip_text = "Right-click a link to delete it,
-change its type, etc."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Location_1" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 486.0
-offset_top = 14.0
-offset_right = 615.0
-offset_bottom = 24.0
-tooltip_text = "The place you're actually in."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Location_2" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 441.0
-offset_top = 201.0
-offset_right = 471.0
-offset_bottom = 224.0
-tooltip_text = "The card with this symbol is
-the case-related place you’re in."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Health" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 412.0
-offset_top = 220.0
-offset_right = 432.0
-offset_bottom = 251.0
-tooltip_text = "In the top-right corner of an NPC card,
-you'll find the last known estimate of their health."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Relation" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 220.0
-offset_right = 376.0
-offset_bottom = 253.0
-tooltip_text = "In the top-left corner of an NPC card,
-you may find out whether
-they're in a relationship or not."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Reduced_Card" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 471.0
-offset_top = 218.0
-offset_right = 547.0
-offset_bottom = 247.0
-tooltip_text = "To reduce or enlarge a card,
-a double-click works perfectly..."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Legend" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 152.0
-offset_top = 342.0
-offset_right = 335.0
-offset_bottom = 352.0
-tooltip_text = "The Legend button toggles
-the display of all links.
-The colored squares allow you
-to filter the links by type."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Reserve" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 36.0
-offset_right = 124.0
-offset_bottom = 145.0
-tooltip_text = "This is where you put the cards
-you don't want to deal with right now...
-It's also where you can retrieve them!"
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Info" type="ColorRect" parent="Tuto_01/Info_Container"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 198.0
-offset_right = 118.0
-offset_bottom = 313.0
-tooltip_text = "Here you'll find the info about
-the cards or the place you're in."
-color = Color(1, 0, 0, 0.29411766)
-metadata/_edit_lock_ = true
-
-[node name="Tuto" type="ColorRect" parent="Tuto_01"]
-offset_left = 185.0
-offset_top = 218.0
-offset_right = 313.0
-offset_bottom = 294.0
-theme = ExtResource("2_o72vk")
-color = Color(1, 0.8000001, 0, 0.5882353)
-metadata/_edit_lock_ = true
-
-[node name="Tuto_Text" type="Label" parent="Tuto_01/Tuto"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/outline_size = 2
-theme_override_constants/shadow_outline_size = 6
-theme_override_styles/normal = SubResource("StyleBoxFlat_xwr3e")
-text = "Hover over the flashing
-red squares to learn a
-lot of things!
-
-Then click Next... to learn more incredible things."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-metadata/_edit_lock_ = true
-
-[node name="Next" type="Label" parent="Tuto_01/Tuto/Tuto_Text"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 49.0
-offset_right = 80.0
-offset_bottom = 57.0
-tooltip_text = "Not this one,
-the one below!"
-mouse_filter = 0
-theme_override_colors/font_color = Color(1, 0.10980392, 0.09411765, 1)
-theme_override_constants/outline_size = 0
-theme_override_constants/shadow_outline_size = 0
-text = "Next..."
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_lock_ = true
-
-[node name="Container_Animation" type="AnimationPlayer" parent="Tuto_01"]
-libraries = {
-&"": SubResource("AnimationLibrary_3vlcy")
-}
-autoplay = "Blink"
 
 [node name="Text" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Chalk_Mask" type="Sprite2D" parent="Text"]
 clip_children = 1
 texture = ExtResource("3_6ehsp")
 centered = false
-metadata/_edit_lock_ = true
+
+[node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
+offset_left = 59.0
+offset_top = 13.0
+offset_right = 583.0
+offset_bottom = 331.0
+theme = ExtResource("2_o72vk")
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+[color=#ff1c18]A FEW LAST WORDS[/color]...
+
+[color=#ffffff]-[/color] Even though we've shown you the basics, we've already told you [color=#ff8864]way too much[/color]. In this game, it's just like in [color=#ff8864]NEW-CAELUM[/color]: [shake rate=7.0 level=5 connected=0][color=#ff1c18]figure it out yourself[/color][/shake]! Learn how things work around here the hard way. Life doesn't cut you any slack, and [color=#ff8864]neither will we[/color]. Besides, [color=#ff1c18]the fun is [color=#ff8864]also[/color] in the challenge of it all[/color]!
+
+
+[color=#ff8864]D.B.[/color]"
+horizontal_alignment = 1
 
 [node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
 anchors_preset = 7
@@ -387,10 +58,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = -62.0
-offset_right = -56.0
-offset_bottom = -54.0
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_o72vk")
@@ -407,5 +78,4 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
-text = "Next..."
-metadata/_edit_lock_ = true
+text = "End of Line"

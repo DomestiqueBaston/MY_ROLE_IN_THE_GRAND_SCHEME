@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://baodeo0e6aijd"]
+
+[ext_resource type="Texture2D" uid="uid://x3ceo24nloow" path="res://GRAPHICS/TUTO/Tuto_BG.png" id="2_fleoh"]
+[ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="3_2fovi"]
+[ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="4_dg5q6"]
+[ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_8t86h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31ymd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0uj0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s180t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lalru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
+
+[node name="Tutorial_B" type="Node2D"]
+
+[node name="Tuto_Bg" type="Sprite2D" parent="."]
+texture = ExtResource("2_fleoh")
+centered = false
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="Chalk_Mask" type="Sprite2D" parent="Text"]
+clip_children = 1
+texture = ExtResource("3_2fovi")
+centered = false
+
+[node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
+offset_left = 8.0
+offset_top = 13.0
+offset_right = 630.0
+offset_bottom = 353.0
+theme = ExtResource("4_dg5q6")
+bbcode_enabled = true
+text = "  [color=#ff1c18]CARDS & INTERACTIONS[/color]
+
+   [color=#ffffff]-[/color] [color=#ff8864]Cards[/color] are your main [color=#ff8864]tools[/color] for [color=#ff1c18]INTERACTING[/color]. They represent [color=#ff1c18]ACTIONS[/color], [color=#ff1c18]DYNAMICS[/color], [color=#ff1c18]OBJECTS[/color], [color=#ff1c18]LOCATIONS[/color] or [color=#ff1c18]CHARACTERS[/color].
+
+   [color=#ffffff]-[/color] CARD TYPES
+	  [color=#ffffff]-[/color] [color=#ff1c18]DIALOGUE[/color], [color=#ff1c18]INVESTIGATION[/color] and [color=#ff1c18]COMBAT[/color]: Interaction cards used to [color=#ff8864]interrogate[/color] Characters, [color=#ff8864]search[/color] locations and [color=#ff8864]fight[/color].
+	  [color=#ffffff]-[/color] [color=#ff1c18]ABSTRACT[/color]: Cards representing a [color=#ff8864]dynamic[/color] for the action undertaken, along with its [color=#ff8864]advantages[/color] (and [color=#ff8864]disadvantages[/color])...
+	  [color=#ffffff]-[/color] [color=#ff1c18]CHARACTER[/color], [color=#ff1c18]OBJECT[/color] and [color=#ff1c18]LOCATION[/color]: Represent [color=#ff8864]Characters[/color], [color=#ff8864]Objects[/color] and [color=#ff8864]Locations[/color] (Oh?).
+
+   [color=#ffffff]-[/color] CARD HANDS
+	  [color=#ffffff]-[/color] [color=#ff1c18]MASTERY HAND[/color]: Contains the [color=#ff8864]cards[/color] you have [color=#ff1c18]mastered[/color], granting you a [color=#ff8864]bonus[/color]. Limit of [color=#ff1c18]10[/color] [color=#ff8864]cards[/color] (incl. max. [color=#ff1c18]3[/color] [color=#ff8864]Abstract cards[/color]).
+	  [color=#ffffff]-[/color] [color=#ff1c18]FALLBACK HAND[/color]: Contains [color=#ff1c18]random[/color] [color=#ff8864]cards[/color] that you have [color=#ff1c18]not mastered[/color] but think you [color=#ff8864]could use[/color].
+	  [color=#ffffff]-[/color] [color=#ff1c18]EVIDENCE[/color]: Contains [color=#ff8864]Object[/color] and [color=#ff8864]Character[/color] cards [color=#ff8864]you[/color] qualified as [color=#ff1c18]Evidence[/color].
+	  [color=#ffffff]-[/color] [color=#ff1c18]OBJECTS[/color], [color=#ff1c18]LOCATIONS[/color] and [color=#ff1c18]CHARACTERS[/color]: Contain [color=#ff8864]Object[/color], [color=#ff8864]Location[/color] and [color=#ff8864]Character[/color] cards (Oh?).
+
+   [color=#ffffff]-[/color] USING CARDS
+	  [color=#ffffff]-[/color] [color=#ff1c18]DRAG & DROP[/color] (with [color=#ff8864]Left-Click[/color]): To [color=#ff8864]play[/color] or [color=#ff8864]move[/color] a card.
+	  [color=#ffffff]-[/color] [color=#ff1c18]RIGHT-CLICK[/color]: To [color=#ff8864]interact[/color] with a card then [color=#ff8864]select an action[/color] in the [color=#ff8864]menu[/color].
+	  [color=#ffffff]-[/color] [color=#ff1c18]LEFT-CLICK[/color]: To [color=#ff8864]keep focus[/color] on a [color=#ff8864]card[/color].
+
+   [color=#ffffff]-[/color] INTERACTIONS
+	  [color=#ffffff]-[/color] Mainly, you play a [color=#ff1c18]minimum[/color] of [color=#ff1c18]1 card[/color] and a [color=#ff1c18]maximum[/color] of [color=#ff1c18]3 cards[/color], only [color=#ff1c18]1[/color] of [color=#ff1c18]each kind[/color].
+	  [color=#ffffff]-[/color] [color=#ff1c18]DIALOGUE[/color]: [color=#ff8864]Dialogue[/color], [color=#ff8864]Object[/color]/[color=#ff8864]Location[/color]/[color=#ff8864]Character[/color]/[color=#ff8864]Evidence[/color], and [color=#ff8864]Abstract[/color].
+	  [color=#ffffff]-[/color] [color=#ff1c18]INVESTIGATION[/color] & [color=#ff1c18]COMBAT[/color]: [color=#ff8864]Investigation[/color] or [color=#ff8864]Combat[/color], [color=#ff8864]SPECIAL[/color], and [color=#ff8864]Abstract[/color].
+	  [color=#ffffff]-[/color] [color=#ff8864]*[/color][color=#ff1c18]BREAK-IN[/color] & [color=#ff8864]*[/color][color=#ff1c18]RUN-AWAY[/color]: With a [color=#ff1c18]BREAK-IN[/color] or a [color=#ff1c18]RUN-AWAY[/color] card (plus possibly [color=#ff1c18]1[/color] [color=#ff8864]Abstract[/color]) or [color=#ff1c18]no card[/color] [color=#ff8864]at all[/color][color=#ff1c18][shake rate=7.0 level=5 connected=0]...[/shake][/color]"
+
+[node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_dg5q6")
+theme_override_colors/font_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_colors/font_focus_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.533333, 0.392157, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_8t86h")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_31ymd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_0uj0l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
+text = "Next..."
