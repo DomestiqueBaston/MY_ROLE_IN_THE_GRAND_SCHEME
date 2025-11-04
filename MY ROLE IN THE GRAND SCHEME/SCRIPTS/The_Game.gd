@@ -119,7 +119,10 @@ func _start_game():
 func _continue_game():
 	var interaction = GameState.get_current_interaction()
 	if interaction in [
-			GameState.InteractionType.NONE, GameState.InteractionType.BREAK_IN]:
+			GameState.InteractionType.NONE,
+			GameState.InteractionType.BREAK_IN,
+			GameState.InteractionType.RUN_AWAY
+	]:
 		var main = await _replace_scene(_main_scene)
 		_check_player_attrs()
 		var case = GameState.get_current_case()
@@ -129,6 +132,8 @@ func _continue_game():
 		main.quit.connect(_go_to_option_menu)
 		if interaction == GameState.InteractionType.BREAK_IN:
 			GameState.resume_break_in()
+		elif interaction == GameState.InteractionType.RUN_AWAY:
+			GameState.resume_run_away()
 	else:
 		_on_interaction_started()
 

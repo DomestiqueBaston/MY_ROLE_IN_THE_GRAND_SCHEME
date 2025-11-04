@@ -92,6 +92,21 @@ func show_break_in_message(success: bool):
 	$Overlays/Misc/Announces/Break_In.hide()
 
 ##
+## Display a message telling the player whether his run-away attempt has failed
+## or succeeded.
+##
+func show_run_away_message(success: bool):
+	$Overlays/Misc/Announces/Run_Away/Player_Failure.visible = not success
+	$Overlays/Misc/Announces/Run_Away/Player_Success.visible = success
+	$Overlays/Misc/Announces/Run_Away.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Run_Away.hide()
+
+##
 ## Displays a message telling the player that his reputation has gotten better
 ## (higher = true) or worse (higher = false).
 ##
@@ -229,6 +244,26 @@ func attempt_break_in() -> Array[Card]:
 	await _disappear()
 	$Overlays/Interaction_Run_Away_Break_In.hide()
 	$Overlays/Interaction_Run_Away_Break_In/Title/Break_In.hide()
+	$Overlays/Interaction_Run_Away_Break_In.enabled = false
+	return $Overlays/Interaction_Run_Away_Break_In.get_cards_played()
+
+##
+## Displays an overlay where the player attempts to run away before a combat.
+## Returns the cards that have been dragged to the interaction zone when the
+## player clicks on the button. 
+##
+func attempt_run_away() -> Array[Card]:
+	$Overlays/Interaction_Run_Away_Break_In.enabled = true
+	var player = GameState.player
+	$Overlays/Interaction_Run_Away_Break_In.start_run_away(
+		player.get_mastery_cards(), player.get_fallback_cards())
+	$Overlays/Interaction_Run_Away_Break_In/Title/Run_Away.show()
+	$Overlays/Interaction_Run_Away_Break_In.show()
+	await _appear()
+	await $Overlays/Interaction_Run_Away_Break_In.done
+	await _disappear()
+	$Overlays/Interaction_Run_Away_Break_In.hide()
+	$Overlays/Interaction_Run_Away_Break_In/Title/Run_Away.hide()
 	$Overlays/Interaction_Run_Away_Break_In.enabled = false
 	return $Overlays/Interaction_Run_Away_Break_In.get_cards_played()
 

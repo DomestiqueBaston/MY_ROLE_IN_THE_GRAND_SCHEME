@@ -15,7 +15,8 @@ enum InteractionType {
 	DIALOGUE,
 	COMBAT,
 	INVESTIGATION,
-	BREAK_IN
+	BREAK_IN,
+	RUN_AWAY
 }
 
 ##
@@ -477,6 +478,17 @@ func resume_break_in():
 	else:
 		end_interaction()
 
+##
+## Called if the game was interrupted during a run-away attempt, to resume where
+## we left off.
+##
+func resume_run_away():
+	var cards = await Globals.dialog_overlay.attempt_run_away()
+	if await _play_run_away(cards):
+		end_interaction()
+	else:
+		start_combat(_current_interaction_npc, _current_interaction_location)
+
 #
 # Game logic for a break-in. Given the current location card, and the optional
 # cards played (break-in and/or abstract cards), rolls the dice to determine
@@ -507,7 +519,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	var net_roll = actual_roll + bonus_malus
 	print("with bonus/malus: %s" % net_roll)
 
-	var success = false
+	var success: bool
 	var critical_attr: StringName
 
 	if actual_roll == 10:
@@ -521,6 +533,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
 		print("critical failure: update HEA, %s, Emo, Wan" % critical_attr)
+		success = false
 	elif actual_roll == 1:
 		if randi() & 1:
 			player.physical += 1
@@ -536,6 +549,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		player.emotion = Player.exacerbate(player.emotion)
 		player.wanted += 1
 		print("failure: update Emo, Wan")
+		success = false
 	else:
 		print("success: margin = %s" % [max_roll - net_roll])
 		success = true
@@ -547,7 +561,79 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	elif actual_roll == 1:
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
-	return actual_roll == 1 or net_roll <= max_roll
+	return success
+
+#
+# Game logic for a run-away attempt before a combat. Given the current location
+# and NPC, and the optional cards played (run-away and/or abstract cards), rolls
+# the dice to determine whether the attempt is successful or not. Returns true
+# if it is.
+#
+func _play_run_away(cards_played: Array[Card]) -> bool:
+	print("\n*** run away: %s ***" % _current_interaction_location.get_display_name())
+
+	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
+	# changes are temporary; Emo and Add changes are permanent
+
+	var attrs = InteractionAttributes.new()
+	attrs.play_card(_current_interaction_location, false)
+	for card in cards_played:
+		attrs.play_card(card, card in player.get_fallback_cards())
+
+	# roll the die
+
+	var bonus_malus = attrs.get_bonus_malus()
+	if cards_played.is_empty():
+		bonus_malus += 1
+		print("no cards played malus: 1")
+	var max_roll = roundi((attrs.PHY * 2 + attrs.MEN + attrs.HEA) / 4.0)
+	print("max roll: %s" % max_roll)
+	var actual_roll = randi_range(1, 10)
+	print("actual roll: %s" % actual_roll)
+	var net_roll = actual_roll + bonus_malus
+	print("with bonus/malus: %s" % net_roll)
+
+	var tweak_attr = func(value) -> StringName:
+		match randi() % 5:
+			0, 1, 2:
+				player.physical += value
+				return &"PHY"
+			3:
+				player.mental += value
+				return &"MEN"
+			_:
+				player.max_health += value
+				return &"maxHEA"
+
+	var success: bool
+	var critical_attr: StringName
+
+	if actual_roll == 10:
+		critical_attr = tweak_attr.call(-1)
+		print("critical failure: update %s" % critical_attr)
+		success = false
+	elif actual_roll == 1:
+		critical_attr = tweak_attr.call(1)
+		print("critical success: update %s" % critical_attr)
+		success = true
+	elif net_roll > max_roll:
+		print("failure")
+		success = false
+	else:
+		print("success")
+		success = true
+
+	if not success:
+		player.next_dialogue_bonus_malus = 1
+
+	await Globals.dialog_overlay.show_run_away_message(success)
+
+	if actual_roll == 10:
+		await Globals.dialog_overlay.show_player_improvement(-1)
+	elif actual_roll == 1:
+		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
+
+	return success
 
 #
 # Game logic for an investigation (possibly following a break-in).
@@ -586,7 +672,6 @@ func _play_investigation(cards_played: Array[Card]):
 				return &"PHY"
 			_:
 				who.max_health += value
-				who.health = mini(who.health, who.max_health)
 				return &"maxHEA"
 
 	var success = false
@@ -653,14 +738,27 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 	if await _does_npc_run(npc):
 		return
 
-	# if the NPC attacks the player, start a combat, if not, start the dialogue
+	# if the NPC attacks the player, start a combat, not a dialogue, and give
+	# the player the chance to try to run away first
 
 	if not first_visit and _does_npc_attack(npc):
 		await Globals.dialog_overlay.show_attack_message(npc)
-		if not await Globals.dialog_overlay.confirm_run_away():
-			start_combat(npc, location)
-	else:
-		start_dialogue(npc, location)
+		if await Globals.dialog_overlay.confirm_run_away():
+			player.pick_run_away_cards()
+			_current_interaction = InteractionType.RUN_AWAY
+			_current_interaction_location = location
+			_current_interaction_npc = npc
+			save_game()
+			var cards = await Globals.dialog_overlay.attempt_run_away()
+			if await _play_run_away(cards):
+				end_interaction()
+				return
+		start_combat(npc, location)
+		# TODO: if player played the Do Not Kill! card and won, set his
+		# next_dialogue_bonus_malus to -1 and start the dialogue
+		return
+
+	start_dialogue(npc, location)
 
 func start_dialogue(npc: NpcCard, location: LocationCard):
 	player.pick_dialogue_cards()
@@ -688,6 +786,10 @@ func _play_dialogue(cards_played: Array[Card]):
 	if rep != 0:
 		bonus_malus -= rep
 		print("Rep bonus/malus: %s" % -rep)
+	if player.next_dialogue_malus != 0:
+		bonus_malus += player.next_dialogue_malus
+		print("dialogue bonus/malus: %s" % player.next_dialogue_bonus_malus)
+		player.next_dialogue_bonus_malus = 0
 
 	# roll the die for the player
 
@@ -704,14 +806,12 @@ func _play_dialogue(cards_played: Array[Card]):
 	print("NPC max roll: %s" % npc_max_roll)
 	var npc_actual_roll = randi_range(1, 10)
 	print("NPC actual roll: %s" % npc_actual_roll)
-	var npc_net_roll = npc_actual_roll
+	var npc_net_roll = npc_actual_roll + attrs.get_npc_bonus_malus(npc)
 	if npc.next_dialogue_malus > 0:
 		npc_net_roll += npc.next_dialogue_malus
+		print("NPC escape malus: %s" % npc.next_dialogue_malus)
 		npc.next_dialogue_malus = 0
-		print("after escape malus: %s" % npc_net_roll)
-	if npc.wanted > 1:
-		npc_net_roll += npc.wanted - 1
-		print("after Wan malus: %s" % npc_net_roll)
+	print("NPC roll with bonus/malus: %s" % npc_net_roll)
 
 	var tweak_attr = func(who, value) -> StringName:
 		match randi() % 5:
@@ -723,7 +823,6 @@ func _play_dialogue(cards_played: Array[Card]):
 				return &"PHY"
 			_:
 				who.max_health += value
-				who.health = mini(who.health, who.max_health)
 				return &"maxHEA"
 
 	var success = false
@@ -828,6 +927,103 @@ func start_combat(npc: NpcCard, location: LocationCard):
 	save_game()
 	interaction_started.emit()
 
+func _play_combat(cards_played: Array[Card]):
+	var loc: LocationCard = _current_interaction_location
+	var npc: NpcCard = _current_interaction_npc
+	print("\n*** combat: %s with %s ***"
+		  % [loc.get_display_name(), npc.get_display_name()])
+
+	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
+	# changes are temporary; Emo and Add changes are permanent
+
+	var attrs = InteractionAttributes.new()
+	attrs.play_card(_current_interaction_location, false)
+	for card in cards_played:
+		attrs.play_card(card, card in player.get_fallback_cards())
+
+	# roll the die for the player
+
+	var bonus_malus = attrs.get_bonus_malus()
+	var rep = npc.player_reputation
+	if rep != 0:
+		bonus_malus -= rep
+		print("Rep bonus/malus: %s" % -rep)
+	var max_roll = roundi((attrs.PHY * 2 + attrs.MEN + attrs.HEA) / 4.0)
+	print("max roll: %s" % max_roll)
+	var actual_roll = randi_range(1, 10)
+	print("actual roll: %s" % actual_roll)
+	var net_roll = actual_roll + bonus_malus
+	print("with bonus/malus: %s" % net_roll)
+
+	# roll the die for the NPC
+
+	var npc_max_roll = roundi((npc.physical + 2 * npc.mental + npc.health) / 4.0)
+	print("NPC max roll: %s" % npc_max_roll)
+	var npc_actual_roll = randi_range(1, 10)
+	print("NPC actual roll: %s" % npc_actual_roll)
+	var npc_net_roll = npc_actual_roll + attrs.get_npc_bonus_malus(npc)
+	print("NPC roll with bonus/malus: %s" % npc_net_roll)
+
+	# check for critical failures and successes, and calculate the damages done
+	# by each combattant
+
+	var tweak_attr = func(who, value) -> StringName:
+		match randi() % 5:
+			0, 1, 2:
+				who.physical += value
+				return &"PHY"
+			3:
+				who.mental += value
+				return &"MEN"
+			_:
+				who.max_health += value
+				return &"maxHEA"
+
+	var critical_attr: StringName
+	var damages: int = maxi(0, npc_net_roll - npc_max_roll)
+	var npc_damages: int = maxi(0, net_roll - max_roll)
+
+	if actual_roll == 10:
+		critical_attr = tweak_attr.call(player, -1)
+		player.improve_emotion(-1)
+		damages += 1
+		print("critical failure: update Emo, %s" % critical_attr)
+	elif actual_roll == 1:
+		critical_attr = tweak_attr.call(player, 1)
+		player.improve_emotion(1)
+		npc_damages += 1
+		print("critical success: update Emo, %s" % critical_attr)
+
+	if npc_actual_roll == 10:
+		var npc_critical_attr = tweak_attr.call(npc, -1)
+		npc_damages += 1
+		print("NPC critical failure: update %s" % npc_critical_attr)
+	elif npc_actual_roll == 1:
+		var npc_critical_attr = tweak_attr.call(npc, 1)
+		player.improve_emotion(-1)
+		damages += 1
+		print("NPC critical success: update %s and player Emo" % npc_critical_attr)
+
+	# the player cannot die if he had a critical success
+
+	if actual_roll == 1:
+		damages = mini(damages, player.health - 1)
+
+	print("player inflicts %d damage point(s) on NPC" % npc_damages)
+	print("NPC inflicts %d damage point(s) on player" % damages)
+
+	player.health -= damages
+	npc.health -= npc_damages
+	npc.wanted += 1
+	npc.player_reputation -= 2
+
+	if actual_roll == 10:
+		await Globals.dialog_overlay.show_player_improvement(-1)
+	elif actual_roll == 1:
+		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
+
+	await _increment_time(2)
+
 func end_interaction(cards_played: Array[Card] = []):
 	match _current_interaction:
 		InteractionType.INVESTIGATION:
@@ -835,6 +1031,10 @@ func end_interaction(cards_played: Array[Card] = []):
 			_pop_card_state()
 		InteractionType.DIALOGUE:
 			await _play_dialogue(cards_played)
+			_current_interaction_npc.test_health()
+			_pop_card_state()
+		InteractionType.COMBAT:
+			await _play_combat(cards_played)
 			_current_interaction_npc.test_health()
 			_pop_card_state()
 
@@ -924,9 +1124,8 @@ func _does_npc_run(npc: NpcCard) -> bool:
 				npc.mental += value
 			3:
 				npc.physical += value
-			_:
+			4:
 				npc.max_health += value
-				npc.health = mini(npc.health, npc.max_health)
 
 	if actual_roll == 10:
 		# critical failure

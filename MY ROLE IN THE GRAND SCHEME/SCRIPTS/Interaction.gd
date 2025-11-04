@@ -425,6 +425,17 @@ func _is_card_combo_ok() -> bool:
 			return ((break_in_count + abstract_count == 0) or
 					(break_in_count == 1 and abstract_count <= 1))
 
+		GameState.InteractionType.RUN_AWAY:
+			var run_away_count = 0
+			var abstract_count = 0
+			for card in _cards_played:
+				if card is CombatCard:
+					run_away_count += 1
+				elif card is AbstractCard:
+					abstract_count += 1
+			return ((run_away_count + abstract_count == 0) or
+					(run_away_count == 1 and abstract_count <= 1))
+
 		_:
 			return _cards_played.size() >= min_card_count
 
@@ -478,6 +489,19 @@ func start_dialogue(
 		$Cards/Fallback.add_child(card)
 
 	_start_interaction(GameState.InteractionType.DIALOGUE, npc)
+
+##
+## Starts a run-away attempt. A done() signal is emitted when it finishes.
+##
+func start_run_away(mastery_cards: Array[Card], fallback_cards: Array[Card]):
+	for card in mastery_cards:
+		if (card is AbstractCard
+			or (card is CombatCard
+				and card.combat_type == CombatCard.CombatType.RUN_AWAY)):
+			$Cards/Mastery.add_child(card)
+	for card in fallback_cards:
+		$Cards/Fallback.add_child(card)
+	_start_interaction(GameState.InteractionType.RUN_AWAY)
 
 ##
 ## Starts a combat. A done() signal is emitted when it finishes.

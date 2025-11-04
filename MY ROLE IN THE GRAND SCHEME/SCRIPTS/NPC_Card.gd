@@ -91,8 +91,8 @@ var job_location: String
 var orientation: SexualOrientation
 var physical: int
 var mental: int
-var health: int
-var max_health: int
+var health: int: set = set_health, get = get_health
+var max_health: int: set = set_max_health, get = get_max_health
 
 var wanted: int:
 	set(value):
@@ -168,6 +168,20 @@ func _update_appearance():
 		tooltip = get_display_name()
 		if npc_status != NpcStatus.NONE:
 			tooltip += "\n" + NpcStatus.keys()[npc_status].capitalize()
+
+func set_health(hea: int):
+	health = mini(hea, max_health)
+
+func get_health() -> int:
+	return health
+
+func set_max_health(max_hea: int):
+	if max_health != max_hea:
+		max_health = max_hea
+		health = mini(health, max_health)
+
+func get_max_health() -> int:
+	return max_health
 
 func get_display_name() -> String:
 	return first_name + " " + last_name
@@ -481,7 +495,6 @@ func new_day():
 				print("%s: maxHEA +1" % get_display_name())
 			5:
 				max_health -= 1
-				health = mini(health, max_health)
 				print("%s: maxHEA -1" % get_display_name())
 
 		# the player's reputation increases by 1 every N days without interaction,

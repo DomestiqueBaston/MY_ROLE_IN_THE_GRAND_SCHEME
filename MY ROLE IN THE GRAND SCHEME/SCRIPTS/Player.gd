@@ -8,7 +8,7 @@ var sex: float
 var physical: int: set = set_physical, get = get_physical
 var mental: int: set = set_mental, get = get_mental
 var health: int: set = set_health, get = get_health
-var max_health: int
+var max_health: int: set = set_max_health, get = get_max_health
 var emotion: int: set = set_emotion, get = get_emotion
 var addiction: int: set = set_addiction, get = get_addiction
 var wanted: int: set = set_wanted, get = get_wanted
@@ -17,6 +17,7 @@ var money: int: set = set_money, get = get_money
 var drugs: int: set = set_drugs, get = get_drugs
 var drugs_taken_today: int
 var has_search_warrant: bool
+var next_dialogue_bonus_malus: int = 0
 
 var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
 var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
@@ -126,8 +127,7 @@ func _pick_random_dialogue_card() -> String:
 
 func _pick_random_combat_card(
 	is_normal_ok: bool = true,
-	is_special_ok: bool = false,
-	is_run_away_ok: bool = false) -> String:
+	is_special_ok: bool = false) -> String:
 	var id = ""
 	var ok = false
 	while not ok:
@@ -137,8 +137,8 @@ func _pick_random_combat_card(
 				ok = is_normal_ok
 			"Combat SPECIAL":
 				ok = is_special_ok
-			"Combat RUN-AWAY":
-				ok = is_run_away_ok
+			#"Combat RUN-AWAY":
+			#	ok = is_run_away_ok
 		ok = ok and not _have_card_already(Card.CardType.COMBAT, id)
 	return id
 
@@ -194,6 +194,14 @@ func set_health(hea: int):
 
 func get_health() -> int:
 	return health
+
+func set_max_health(max_hea: int):
+	if max_health != max_hea:
+		max_health = max_hea
+		health = mini(health, max_health)
+
+func get_max_health() -> int:
+	return max_health
 
 ##
 ## Checks the player's health, emotion and addiction levels, and returns false
@@ -382,10 +390,10 @@ func pick_investigation_cards():
 			normal_count += 1
 
 ##
-## Picks 3 cards abstract and/or break-in cards at random for a break-in,
-## ensuring that there are no duplicates with the player's "mastery" cards, and
-## puts them in the player's "fallback" deck. Any cards already in the fallback
-## deck are deleted.
+## Picks 3 abstract and/or break-in cards at random for a break-in, ensuring
+## that there are no duplicates with the player's "mastery" cards, and puts them
+## in the player's "fallback" deck. Any cards already in the fallback deck are
+## deleted.
 ##
 func pick_break_in_cards():
 	clear_fallback_cards()
@@ -461,6 +469,27 @@ func pass_one_hour():
 				mental += 1
 			2:
 				health += 1
+
+##
+## Picks 3 abstract and/or run-away cards at random for fleeing a combat,
+## ensuring that there are no duplicates with the player's "mastery" cards, and
+## puts them in the player's "fallback" deck. Any cards already in the fallback
+## deck are deleted.
+##
+func pick_run_away_cards():
+	clear_fallback_cards()
+
+	# There is exactly one run-away card in the combat deck, with ID "COR001".
+	# We give the player one chance in three of picking it, if he does not have
+	# it in his mastery deck already. The other cards picked are all abstract.
+
+	if (randi() % 3 == 0
+		and not _have_card_already(Card.CardType.COMBAT, "COR001")):
+		_fallback_cards.append(CombatCard.create_card("COR001"));
+
+	while _fallback_cards.size() < 3:
+		var id = _pick_random_abstract_card()
+		_fallback_cards.append(AbstractCard.create_card(id))
 
 ##
 ## Given the current value of a signed attribute (emotion or addiction),
@@ -694,6 +723,8 @@ func get_json_dict():
 	}
 	if has_search_warrant:
 		dict["has_search_warrant"] = true
+	if next_dialogue_bonus_malus != 0:
+		dict["next_dialogue_bonus_malus"] = next_dialogue_bonus_malus
 
 	var card_refs = []
 	for card in _mastery_cards:
@@ -732,8 +763,8 @@ func restore(dict, catalog):
 	_last_wake_time = dict.get("last_wake_time", 8)
 	_last_sleep_time = dict.get("last_sleep_time", _last_wake_time - 8)
 	_sleep_bonus_malus = dict.sleep_bonus_malus
-	if "has_search_warrant" in dict:
-		has_search_warrant = dict.has_search_warrant
+	has_search_warrant = dict.get("has_search_warrant", false)
+	next_dialogue_bonus_malus = dict.get("next_dialogue_bonus_malus", 0)
 	for card_ref in dict.cards:
 		_mastery_cards.append(catalog[card_ref])
 	for card_ref in dict.get("fallback_cards", []):

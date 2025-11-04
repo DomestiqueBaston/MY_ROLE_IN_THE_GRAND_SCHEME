@@ -10,6 +10,7 @@ var HEA: int
 
 var _fallback_card_count: int
 var _dice: int
+var _npc_dice: int
 var _last_emo_malus: int
 var _unhandled_bonus_malus: Dictionary
 var _unhandled_success_bonus: Array[Dictionary]
@@ -19,6 +20,7 @@ var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
 var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
 var _dialogue_data = preload("res://JSON/INTERACTION/Dialogue.json").data
+var _combat_data = preload("res://JSON/INTERACTION/Combat.json").data
 
 func _init():
 	reset()
@@ -30,6 +32,7 @@ func reset():
 	HEA = player.health
 	_fallback_card_count = 0
 	_dice = 0
+	_npc_dice = 0
 	_last_emo_malus = 0
 	_unhandled_bonus_malus.clear()
 	_unhandled_success_bonus.clear()
@@ -79,6 +82,11 @@ func play_card(card: Card, is_fallback: bool):
 					elif result == "failure":
 						_unhandled_failure_malus.append(effects)
 
+		Card.CardType.COMBAT:
+			var combat_info = _combat_data[card.database_id]
+			print("applying card: %s" % combat_info["name"])
+			apply_bonus_malus(combat_info.get("bonus_malus", {}))
+
 	if is_fallback:
 		_fallback_card_count += 1
 	elif card is AbstractCard:
@@ -120,6 +128,9 @@ func apply_bonus_malus(bonus_malus: Dictionary):
 			"dice":
 				delta = value
 				_dice += delta
+			"opponent_dice":
+				delta = value
+				_npc_dice += delta
 			_:
 				if key in _unhandled_bonus_malus:
 					_unhandled_bonus_malus[key].append(value)
@@ -218,6 +229,24 @@ func get_bonus_malus() -> int:
 	if _dice != 0:
 		bonus_malus += _dice
 		print("dice bonus/malus: %s" % _dice)
+
+	return bonus_malus
+
+##
+## Returns the bonus/malus to be applied to an NPC's roll of the dice, as
+## determined by his wanted status and, in the case of a combat, by any
+## combat cards' "opponent_dice" bonus/malus.
+##
+func get_npc_bonus_malus(npc: NpcCard) -> int:
+	var bonus_malus: int = 0
+
+	if npc.wanted > 1:
+		print("NPC Wan malus: %s" % (npc.wanted - 1))
+		bonus_malus += npc.wanted - 1
+
+	if _npc_dice != 0:
+		print("NPC dice bonus/malus: %s" % _npc_dice)
+		bonus_malus += _npc_dice
 
 	return bonus_malus
 
