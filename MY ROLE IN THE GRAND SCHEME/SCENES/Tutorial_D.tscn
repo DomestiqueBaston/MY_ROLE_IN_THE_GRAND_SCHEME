@@ -175,7 +175,7 @@ offset_left = 182.0
 offset_top = 64.0
 offset_right = 227.0
 offset_bottom = 75.0
-tooltip_text = "The card’s name. A place, an NPC, an object, etc."
+tooltip_text = "The card's name. A place, an NPC, an object, etc."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -196,7 +196,7 @@ offset_left = 272.0
 offset_top = 90.0
 offset_right = 338.0
 offset_bottom = 157.0
-tooltip_text = "On the left, the NPC’s status
+tooltip_text = "On the left, the NPC's status
 as established at the start,
 In the center, their gender,
 And on the right... a surprise."
@@ -213,7 +213,7 @@ tooltip_text = "Click and drag to move a card,
 double-click to lock focus on the info
 wherever you move the mouse,
 and right-click to create a link or
-interact \"physically\" with the card."
+interact with the card."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -257,7 +257,7 @@ offset_top = 220.0
 offset_right = 432.0
 offset_bottom = 251.0
 tooltip_text = "In the top-right corner of an NPC card,
-you’ll find the last known estimate of their health."
+you'll find the last known estimate of their health."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -269,7 +269,7 @@ offset_right = 376.0
 offset_bottom = 253.0
 tooltip_text = "In the top-left corner of an NPC card,
 you may find out whether
-they’re in a relationship or not."
+they're in a relationship or not."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -304,7 +304,8 @@ offset_top = 36.0
 offset_right = 124.0
 offset_bottom = 145.0
 tooltip_text = "This is where you put the cards
-you don’t want to deal with right now..."
+you don't want to deal with right now...
+It's also where you can retrieve them!"
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -314,8 +315,8 @@ offset_left = 15.0
 offset_top = 198.0
 offset_right = 118.0
 offset_bottom = 313.0
-tooltip_text = "Here you’ll find the info about
-the cards or the place you’re in."
+tooltip_text = "Here you'll find the info about
+the cards or the place you're in."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 

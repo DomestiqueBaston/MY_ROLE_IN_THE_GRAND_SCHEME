@@ -548,6 +548,7 @@ Quelles informations peuvent être révélées par un PNJ
 	- Si le joueur a seulement joué Dialogue (et éventuellement avec Abstrait), les infos ne concerneront QUE le PNJ avec lequel le joueur dialogue.
 
 Fuir un Dialogue (PNJ)
+	- Un PNJ ne fuit pas à la première rencontre.
 	- Un PNJ a 1/(MEN×2) chance de vouloir fuir un Dialogue.
 	- S’il décide de fuir, il jetera un dé contre (PHY+MEN+HEA)÷3.
 	- Le malus de Wan s’applique s’il existe.

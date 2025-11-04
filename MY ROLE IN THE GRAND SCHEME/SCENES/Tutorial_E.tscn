@@ -187,7 +187,7 @@ offset_top = 183.0
 offset_right = 320.23135
 offset_bottom = 217.60847
 rotation = -0.22863813
-tooltip_text = "Note: Everything mentioned here also applies to
+tooltip_text = "Note: Everything mentioned here also applies (more or less) to
 the Break In and Run Away interaction screens!"
 color = Color(0, 1, 0, 0.29411766)
 metadata/_edit_lock_ = true
@@ -211,7 +211,8 @@ offset_left = 31.0
 offset_top = 19.0
 offset_right = 72.0
 offset_bottom = 31.0
-tooltip_text = "Here, the current interaction type is displayed."
+tooltip_text = "Here, the current interaction
+type is displayed."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -221,7 +222,8 @@ offset_left = 22.0
 offset_top = 78.0
 offset_right = 83.0
 offset_bottom = 87.0
-tooltip_text = "Here, the location or person you're interacting with is displayed."
+tooltip_text = "Here, the location or person you're
+interacting with is displayed."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -231,7 +233,7 @@ offset_left = 14.0
 offset_top = 142.0
 offset_right = 118.0
 offset_bottom = 339.0
-tooltip_text = "Here you’ll find the info about
+tooltip_text = "Here you'll find the info about
 the cards you're hovering over."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
