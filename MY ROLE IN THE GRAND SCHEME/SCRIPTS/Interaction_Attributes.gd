@@ -258,7 +258,7 @@ func get_npc_bonus_malus(npc: NpcCard) -> int:
 ## Dialogue cards have effects that depend on whether the dialogue was
 ## successful or not (success true or false).
 ##
-func get_post_bonus_malus(success: bool) -> Dictionary:
+func get_post_bonus_malus(success: bool = true) -> Dictionary:
 	var conditional: Array[Dictionary]
 
 	if success:

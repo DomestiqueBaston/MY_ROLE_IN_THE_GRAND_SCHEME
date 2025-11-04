@@ -964,7 +964,7 @@ func _play_combat(cards_played: Array[Card]):
 	var npc_net_roll = npc_actual_roll + attrs.get_npc_bonus_malus(npc)
 	print("NPC roll with bonus/malus: %s" % npc_net_roll)
 
-	# check for critical failures and successes, and calculate the damages done
+	# check for critical failures and successes, and calculate the damage done
 	# by each combattant
 
 	var tweak_attr = func(who, value) -> StringName:
@@ -980,40 +980,50 @@ func _play_combat(cards_played: Array[Card]):
 				return &"maxHEA"
 
 	var critical_attr: StringName
-	var damages: int = maxi(0, npc_net_roll - npc_max_roll)
-	var npc_damages: int = maxi(0, net_roll - max_roll)
+	var damage: int = maxi(0, npc_net_roll - npc_max_roll)
+	var npc_damage: int = maxi(0, net_roll - max_roll)
 
 	if actual_roll == 10:
 		critical_attr = tweak_attr.call(player, -1)
 		player.improve_emotion(-1)
-		damages += 1
+		damage += 1
 		print("critical failure: update Emo, %s" % critical_attr)
 	elif actual_roll == 1:
 		critical_attr = tweak_attr.call(player, 1)
 		player.improve_emotion(1)
-		npc_damages += 1
+		npc_damage += 1
 		print("critical success: update Emo, %s" % critical_attr)
 
 	if npc_actual_roll == 10:
 		var npc_critical_attr = tweak_attr.call(npc, -1)
-		npc_damages += 1
+		npc_damage += 1
 		print("NPC critical failure: update %s" % npc_critical_attr)
 	elif npc_actual_roll == 1:
 		var npc_critical_attr = tweak_attr.call(npc, 1)
 		player.improve_emotion(-1)
-		damages += 1
+		damage += 1
 		print("NPC critical success: update %s and player Emo" % npc_critical_attr)
+
+	# check for combat cards with damage adjustment
+
+	if damage > 0:
+		var damage_adjust: int = 0
+		var other_bonus_malus = attrs.get_post_bonus_malus()
+		for value in other_bonus_malus.get("damage", []):
+			damage_adjust += value
+		print("player damage adjustment: %s" % damage_adjust)
+		damage = maxi(0, damage + damage_adjust)
 
 	# the player cannot die if he had a critical success
 
 	if actual_roll == 1:
-		damages = mini(damages, player.health - 1)
+		damage = mini(damage, player.health - 1)
 
-	print("player inflicts %d damage point(s) on NPC" % npc_damages)
-	print("NPC inflicts %d damage point(s) on player" % damages)
+	print("player inflicts %d damage point(s) on NPC" % npc_damage)
+	print("NPC inflicts %d damage point(s) on player" % damage)
 
-	player.health -= damages
-	npc.health -= npc_damages
+	player.health -= damage
+	npc.health -= npc_damage
 	npc.wanted += 1
 	npc.player_reputation -= 2
 
