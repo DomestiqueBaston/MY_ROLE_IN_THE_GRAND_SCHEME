@@ -81,7 +81,6 @@ theme = ExtResource("2_d824c")
 script = ExtResource("3_louds")
 
 [node name="Sliders" type="Control" parent="Buttons_Sliders"]
-layout_mode = 3
 anchors_preset = 0
 
 [node name="Master" type="VSlider" parent="Buttons_Sliders/Sliders"]
@@ -162,7 +161,8 @@ offset_left = 451.0
 offset_top = 246.0
 offset_right = 475.0
 offset_bottom = 322.0
-tooltip_text = "Who remembers this?"
+tooltip_text = "Wait... Are there any
+videos inthat game?"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
@@ -176,6 +176,8 @@ offset_left = 563.0
 offset_top = 256.0
 offset_right = 587.0
 offset_bottom = 318.0
+tooltip_text = "Are you crazy enough to
+raise the game's difficulty?"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
@@ -186,15 +188,13 @@ script = ExtResource("14_28wos")
 
 [node name="Buttons" type="Control" parent="Buttons_Sliders"]
 modulate = Color(1, 1, 1, 0.823529)
-layout_mode = 3
 anchors_preset = 0
 
 [node name="Drug_Quality" type="TextureButton" parent="Buttons_Sliders/Buttons"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Khoristan
-or Azteca"
+tooltip_text = "Drug prices are rising"
 toggle_mode = true
 texture_pressed = ExtResource("8_bkqa6")
 texture_hover = ExtResource("9_xmmom")
@@ -204,9 +204,7 @@ texture_click_mask = ExtResource("10_vme2i")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Zeta
-or
-Phi"
+tooltip_text = "Reduced time to solve cases"
 toggle_mode = true
 texture_pressed = ExtResource("11_ngshc")
 texture_hover = ExtResource("12_fdgbm")
@@ -216,9 +214,8 @@ texture_click_mask = ExtResource("13_1cwnt")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Aliot Cess
-or
-El Napone"
+tooltip_text = "Search warrants are
+more expensive"
 toggle_mode = true
 texture_pressed = ExtResource("14_sddwl")
 texture_hover = ExtResource("15_5ns6u")
@@ -228,9 +225,7 @@ texture_click_mask = ExtResource("16_dr4o6")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "A gift to Zeus
-or
-to the usurer"
+tooltip_text = "Weekly bills are higher"
 toggle_mode = true
 texture_pressed = ExtResource("17_firvi")
 texture_hover = ExtResource("18_jdi3y")
@@ -240,9 +235,7 @@ texture_click_mask = ExtResource("19_q88u0")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Authoritarian nationalism
-or
-Anarcho-communism"
+tooltip_text = "Increased bail price"
 toggle_mode = true
 texture_pressed = ExtResource("20_8fsru")
 texture_hover = ExtResource("21_etjho")
@@ -252,7 +245,7 @@ texture_click_mask = ExtResource("22_l5huo")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Tougher morons"
+tooltip_text = "Minions are healthier"
 toggle_mode = true
 texture_pressed = ExtResource("29_mg7qw")
 texture_hover = ExtResource("30_xxbya")
@@ -262,7 +255,7 @@ texture_click_mask = ExtResource("31_cafje")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Liars, more liars!"
+tooltip_text = "People lie more often"
 toggle_mode = true
 texture_pressed = ExtResource("32_28wos")
 texture_hover = ExtResource("33_y56al")
@@ -272,7 +265,7 @@ texture_click_mask = ExtResource("34_vfauo")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "You got spam!"
+tooltip_text = "More text messages"
 toggle_mode = true
 texture_pressed = ExtResource("36_y4hsp")
 texture_hover = ExtResource("37_exg86")
@@ -282,7 +275,8 @@ texture_click_mask = ExtResource("38_y3axq")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Darkness in daylight..."
+tooltip_text = "Night dice roll penalty canceled
+and moved to day!"
 toggle_mode = true
 texture_pressed = ExtResource("39_ihs63")
 texture_hover = ExtResource("40_5yx3t")
@@ -292,7 +286,7 @@ texture_click_mask = ExtResource("41_jio2x")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Frantic mode!"
+tooltip_text = "Time passes faster"
 toggle_mode = true
 texture_pressed = ExtResource("42_ges0r")
 texture_hover = ExtResource("43_1ctmw")
@@ -302,15 +296,13 @@ texture_click_mask = ExtResource("44_vahfd")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-tooltip_text = "Good health,
-bad wallet."
+tooltip_text = "Consulting a doctor costs more"
 toggle_mode = true
 texture_pressed = ExtResource("45_ihs63")
 texture_hover = ExtResource("46_5yx3t")
 texture_click_mask = ExtResource("47_jio2x")
 
 [node name="Ok_Cancel_Reset_Buttons" type="Control" parent="Buttons_Sliders"]
-layout_mode = 3
 anchors_preset = 0
 
 [node name="Ok" type="TextureButton" parent="Buttons_Sliders/Ok_Cancel_Reset_Buttons"]
@@ -343,7 +335,6 @@ texture_hover = ExtResource("34_3y8mq")
 texture_click_mask = ExtResource("34_lqmfg")
 
 [node name="Cosmetic_Buttons" type="Control" parent="Buttons_Sliders"]
-layout_mode = 3
 anchors_preset = 0
 
 [node name="Video_Shader" type="TextureButton" parent="Buttons_Sliders/Cosmetic_Buttons"]
@@ -371,6 +362,8 @@ texture_click_mask = ExtResource("38_k42nh")
 [node name="Sound_Test" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("64_jio2x")
 volume_db = -25.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="mouse_entered" from="Buttons_Sliders/Sliders/Master" to="Buttons_Sliders" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons_Sliders/Sliders/Master" to="Buttons_Sliders" method="_on_mouse_exited"]

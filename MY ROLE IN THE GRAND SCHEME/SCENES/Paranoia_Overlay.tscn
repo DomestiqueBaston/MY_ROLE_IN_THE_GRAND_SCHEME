@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbkvt2bpth73k"]
+[gd_scene load_steps=21 format=3 uid="uid://bbkvt2bpth73k"]
 
 [ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_j15aw"]
 [ext_resource type="Script" uid="uid://d180ar25m8udl" path="res://SCRIPTS/Paranoia_Overlay.gd" id="1_kx442"]
@@ -7,7 +7,6 @@
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="4_654ki"]
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_amqcs"]
 [ext_resource type="Shader" uid="uid://dg21tch3316wp" path="res://SHADERS/Grain.gdshader" id="5_654ki"]
-[ext_resource type="Script" uid="uid://8m3qwndeyy8w" path="res://SCRIPTS/Paranoya_Overlay_Message.gd" id="5_re1fv"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_vpb4g"]
 [ext_resource type="AudioStream" uid="uid://be2742fcue6hc" path="res://SOUND/MISC/Alarm_02.ogg" id="6_akqqg"]
 [ext_resource type="AudioStream" uid="uid://dtdh8de6r8ymv" path="res://SOUND/MISC/White_noise.ogg" id="10_1sn5l"]
@@ -743,7 +742,6 @@ Hey!  [color=#ff8864]You[/color],  there,  [color=#ff1c18]WHAT  DO  YOU  KNOW[/c
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("5_re1fv")
 
 [node name="Grain" type="ColorRect" parent="Inner_Voice"]
 self_modulate = Color(1, 1, 1, 0)

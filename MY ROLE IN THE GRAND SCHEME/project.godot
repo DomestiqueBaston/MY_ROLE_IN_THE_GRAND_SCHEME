@@ -46,6 +46,12 @@ movie_writer/movie_file="D:/GRAPHISME/PIXEL/PIXEL ART IV/MY ROLE IN THE GRAND SC
 movie_writer/fps=30
 movie_writer/main_scene="uid://mnqpfr0mjern"
 
+[file_customization]
+
+folder_colors={
+"res://TRASH/": "red"
+}
+
 [input]
 
 Left_Click={
