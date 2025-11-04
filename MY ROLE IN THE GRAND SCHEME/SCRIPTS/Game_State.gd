@@ -786,8 +786,8 @@ func _play_dialogue(cards_played: Array[Card]):
 	if rep != 0:
 		bonus_malus -= rep
 		print("Rep bonus/malus: %s" % -rep)
-	if player.next_dialogue_malus != 0:
-		bonus_malus += player.next_dialogue_malus
+	if player.next_dialogue_bonus_malus != 0:
+		bonus_malus += player.next_dialogue_bonus_malus
 		print("dialogue bonus/malus: %s" % player.next_dialogue_bonus_malus)
 		player.next_dialogue_bonus_malus = 0
 
