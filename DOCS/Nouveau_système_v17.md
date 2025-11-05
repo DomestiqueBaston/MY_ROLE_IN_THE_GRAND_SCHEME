@@ -8,7 +8,7 @@ Caractéristiques du Joueur
 Les caractéristiques principales
 	- À la création du personnage, 15 points à répartir entre PHY, MEN et maxHEA avec un minimum de 3 et un maximum de 7.
 	- À la création, HEA=maxHEA.
-	- PHY=0 et/ou MEN=0 → incapacité d‘Interagir (voir Système de Santé et Pcrise de Paranoïa).
+	- PHY=0 et/ou MEN=0 → incapacité d‘Interagir (voir Système de Santé et Crise de Paranoïa).
 	- HEA=0 → mort du joueur.
 Physique (PHY)  
 	- Mesure l’habileté et les aptitudes physiques.
@@ -80,8 +80,8 @@ Niveau de Wanted	Malus au Dé
 0	/
 1	/
 2	Malus de 1
-3	Malus de 2
-4	Malus de 3
+3	Malus de 1
+4	Malus de 2
 5	Prison pendant 3 jours ou payement de 100dø de caution, Wan = 0
 
 Paranoïa (Par)
@@ -139,7 +139,7 @@ Progression du joueur (pas des PNJs !)
 Les PNJs
 	- Les PNJs sont définis par PHY, MEN, HEA (et maxHEA) et Wan.
 	- Le joueur ne connaîtra jamais les caractéristiques d’un PNJ.
-	- Leurs infos ne sont pas automatiquement connues du joueur. Cela dépendra de la fiche d’enquête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
+	- Leurs infos ne sont pas toutes automatiquement connues du joueur. Cela dépendra de la fiche d’enquête. Pour en savoir plus, → fiche d’enquête, fiche de PNJ, etc. : au fur et à mesure des infos collectées.
 	- Les PNJs ne sont pas sujets à la Paranoïa, à l’Emotion ni à l’Addiction.
 	- Si un PNJ meurt, il ne sera pas retiré de l’enquête pour autant mais sera déclaré mort (voir layer sur carte).
 	- Si le joueur est responsable de la mort d’un PNJ : +1Wan (pour le joueur) !
@@ -155,7 +155,7 @@ Wan pour les PNJs
 
 Niveau de Wanted	Malus au Dé
 0	/
-1	/
+1	Malus de 1
 2	Malus de 1
 3	Malus de 2
 4	Malus de 3
@@ -216,7 +216,7 @@ Progression des PNJs (pas du joueur)
 
 La réputation du joueur auprès d’un PNJ
 	- Après (niveau de difficulté de l’enquête) jours sans interaction : +1 Rep. Pour niveau 0, on compte comme niveau 1.
-	- Établir un ou plusieurs Lien(s) plein(s) avec un PNJ → -1Rep, le(s) défaire (tous) →  +1Rep. (Voir Enquête pour les liens)
+	- Avoir établi un ou plusieurs Lien(s) plein(s) avec un PNJ → -1Rep, l’(es) avoir défaits (tous) →  +1Rep. (Voir Enquête pour les liens).
 	- Le joueur a TOUJOURS Rep = -2 avec un sbire (voir Combat et Enquête).
 
 
@@ -227,19 +227,20 @@ Cas de PHY=0 et/ou MEN=0
 
 Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par
 	- Si à l’issue de évaluation d’un jet de dé, le joueur se retrouve à atteindre Emo ±5 et/ou Add ±5 et/ou déclencher Par, alors on évaluera en premier les implications pour Emo puis Add et enfin Par (Voir Crise de paranoïa).
-	- S’il y a crise de Paranoïa, on finira donc la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour son enquête finale (voir Le complot et Crise de paranoïa). Le joueur va donc abandonner toutes ses enquêtes en cours et se concentrer sur l’enquête finale (voir Le complot et Crise de paranoïa). Et plus aucune autre enquête ne lui sera accessible (accès au Investigation Center vérouillé).
+	- S’il y a crise de Paranoïa, on finira donc la phase d’interaction en cours (le jet de dé et ses implications) avant que le joueur n’abandonne tout pour son enquête finale (voir Le complot et Crise de paranoïa). Le joueur va donc abandonner toutes ses enquêtes en cours et se concentrer sur l’enquête finale (voir Le complot et Crise de paranoïa). Et plus aucune autre enquête ne lui sera accessible (accès au Investigation Center verrouillé).
 	- L’overlay Paranoïa ne se déclenchera qu’après la fin de l’interaction (Combat, Dialogue ou Investigation) engagée.
 
-L’addiction
+L’addiction (et l’émotion un peu aussi)
 	- L’Add évolue (naturellement) uniquement au réveil (-1Add). Le joueur a besoin de sa dose (presque) quotidienne qui lui coûte de l’argent.
 	- L’Emo évolue (naturellement) uniquement au réveil (±1Emo → 0).
 	- Avec 1 dose de drogue : +1Add.
 	- Le joueur peut prendre 2 doses maximum par jour. Au delà, ce serait l’overdose !
-	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a le joueur.
+	- On a un compteur en haut de l’écran (noté Drug) comptabilisant le nombre de doses de drogue qu’a en stock le joueur.
 	- Utiliser 1 ou 2 doses de drogue d’un coup prend 1h.
 	- Paranoïa empêche la prise de drogue.
-	- Si le joueur réussit 3 jets de dé contre la mort par sous-dose (Add = -5) d’affilé, sans avoir repris de drogue entre-temps, alors il est sevré ! Il n’a plus besoin de se droguer et son niveau passe à Add = 0 permanent (menu désactivé). Le joueur ne peut pas revendre ses doses restantes.
+	- Si le joueur réussit 3 jets de dé contre la mort par sous-dose (Add = -5) d’affilé, sans avoir repris de drogue entre-temps, alors il est sevré ! Il n’a plus besoin de se droguer et son niveau passe à Add = 0 permanent (menu désactivé).
 		- Dans ce cas, si les finances du joueur passent sous la barre de -250Dø, alors il replonge !
+	- Le joueur ne peut pas revendre ses doses restantes.
 
 Crise de paranoïa
 	- La paranoïa se déclenche après :
@@ -255,10 +256,10 @@ Crise de paranoïa
 	- Au fur et à mesure que le joueur se rapproche de la crise de Paranoïa, le volume sonore de Paranoia_Voices (dans Ambiance_Sound.tscn) va monter (pour « informer » le joueur de son état) :
 		- le volume sonore sera défini par le niveau le plus proche du déclenchement d’une crise (voir la liste au dessus). Au départ d’une partie à -80db.
 	- Le joueur va tout d'un coup, quand le cap défini est franchi, devenir paranoïaque (on finira l’éventuelle interaction en cours avant comme dit dans Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par).
-	- Le joueur aura 15 jours pour résoudre l’enquête finale puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné).
+	- Le joueur aura 15 jours pour résoudre l’enquête finale puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné juste après avoir cliqué sur « Validate Case! »).
 	- Les effets de la Paranoïa sont également les suivants (sans jamais dépasser les seuils max/min) :
-		Bonus : +2 en PHY ou MEN ou maxHEA (et HEA) aléatoirement (sans passer le maximum).
-		Malus : -1 dans les autres caractéristiques principales (sans passer le seuil minimum).
+		Bonus : +2 en PHY ou MEN ou maxHEA (et HEA) aléatoirement (sans dépasser le maximum).
+		Malus : -1 dans les autres caractéristiques principales (sans dépasser le seuil minimum).
 	- Pas de sommeil, donc pas de récupération en dormant ! Si PHY=0 et/ou MEN=0 → Mort du joueur !
 
 Récupération (joueur)
@@ -278,11 +279,11 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
 	- 25% de chance de faire un rêve/cauchemar qui aura un effet sur la récupération : rêve = +1 HEA et cauchemar -1 HEA (on peut donc perdre des HEA en dormant) !
-	- Intervention Thérapeutique (médecin) : +3 HEA, +2 Emo → 0 et +1 Add → O avec un maximum d’1 intervention/semaine et coûte 50Dø.
+	- Intervention Thérapeutique (médecin) : +3 HEA, +2 Emo → 0 et +1 Add → O avec un maximum de 2 interventions/semaine et coûte 50Dø.
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa (menu désactivé) !
 	- On ne peut dormir qu’1 fois par jour. SAUF voir Paranoïa pour le sommeil.
 	- Sauf pendant une crise de paranoïa, le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 aux jets de dé par tranche de 2 heures. Il ne peut pas faire plus de 24h d’éveil d’affilé sinon « tombe de fatigue » : il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil (donc annule une partie des bénéfices du sommeil) ! Il peut également subir les bonus/malus de rêve/cauchemar.
-	- Rappel : les Bonus/Malus au jets de dé dus au sommeil ne durent que jusqu’au prochain dodo et les Malus au jets de dé dus à la veille/sommeil ne durent que jusqu’au prochain dodo !
+	- Rappel : les Bonus/Malus au jets de dé dus au sommeil ne durent que jusqu’au prochain dodo et les Malus au jets de dé dus à la veille/sommeil ne durent que jusqu’au prochain dodo aussi !
 	- Les PNJs ne subissent pas les effets de bonus/malus liés au cycle veille/sommeil.
 
 Récupération (PNJs)
@@ -303,7 +304,7 @@ Le temps
 		Dormir prend le temps choisi par le joueur (retour au bureau inclus car oui, le joueur vit au bureau !).
 		Déplacement (Interaction « ratée ») : 1h.
 		Payer une facture : 1h (retour au bureau inclus).
-		Prendre 1 ou 2 doses de drogue : 1h (retour au bureau inclus).
+		Prendre 1 ou 2 doses de drogue d’un coup : 1h (retour au bureau inclus).
 		…
 	- Certaines cartes d’Interaction influent sur le temps passé.
 	- Seules les actions qui ne se font qu’au bureau ramènent automatiquement le joueur au bureau.
@@ -313,9 +314,9 @@ Les emploi du temps
 		- On travaille 5 jours par semaine (en général du lundi au vendredi).
 		- Un PNJ qui a un boulot sera sur son lieu de travail pendant 2 tranches horaires de 4h consécutives (seulement la Nuit pour le travail de nuit).
 		- Lorsqu’un PNJ travaille aussi le Week-end, SON week-end sera les Lundi et mardi.
-		- Personne ne travail en soirée + la nuit.
+		- Personne ne travail la nuit + une autre tranche horaire.
 		- Un PNJ dormira chez lui la Nuit.
-		- Un PNJ qui travaille de nuit dormira le matin et l’après-midi.
+		- Un PNJ qui travaille de nuit dormira chez lui le matin et l’après-midi.
 		- On peut interagir avec un PNJ qui dort avec -1Rep à l’issue de l’Interaction !
 		- Pendant la tranche horaire non travaillée (hors sommeil), un PNJ est (à 50/50) chez lui ou sur un lieu alternatif (Hangout ou Hideout).
 		- Un PNJ qui travaille de nuit, sera en soirée chez lui ou sur un lieu alternatif (Hangout ou Hideout) (à 50/50).
@@ -323,13 +324,13 @@ Les emploi du temps
 		- Le Weekend, un PNJ dormira chez lui la nuit. S’il travaille de nuit, il dormira chez lui le Matin et l’Après-midi.
 		- Il y a 1/10 chance qu’un PNJ change d’emploi du temps pour une tranche horaire de travail par jour. Il sera alors trouvable UNIQUEMENT sur son Hideout et s’il n’en a pas, son Hangout). Si le PNJ travaille de nuit, alors il sera toute la nuit sur son Hideout et s’il n’en a pas, son Hangout.
 		- Un PNJ en prison ne sera visitable que le matin. Il n’en bougera plus jusqu’à la fin de l’enquête.
-		- Si le Hangout ou le Hideout du Pnj doit être fermé alors il sera introuvable.
+		- Si le Hangout ou le Hideout du PNJ doit être fermé alors ce PNJ sera introuvable.
 
 Passer le temps
 	- Lorsqu’il ne dort pas, le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure.
 
 Passer le temps pendant la paranoïa
-	- Chaque « Pass time » donne 1/10 chance d’avoir ±1 de PHY, MEN ou HEA (pas maxHEA et sans jamais dépasser Min/Max).
+	- Chaque « Pass time » donne 1/10 chance d’avoir ±1 de PHY, MEN ou HEA (pas maxHEA et sans jamais dépasser le Min/Max).
 
 Le temps des PNJs
 	- Les PNJs suivent le cycle jour/nuit par leur emploi du temps mais si le joueur les emmène au delà des limites par une interaction, ils suivront le joueur puis reprendront leur emploi du temps normal sans effet pour eux en fin d’Interaction.
@@ -349,16 +350,16 @@ Les factures
 Factures impayées	Malus
 1	/
 2	1
-3	1 ou 2 (aléatoirement)
+3	1
 4	2
-5	Prison 3 jours, plus ancienne facture réglée et retour à 4 impayés
+5	Prison 3 jours, la plus ancienne facture réglée et retour à 4 impayés
 
 	- Lorsqu’on en a plusieurs, on paye la facture que l’on veut/peut.
 	- Le joueur ne peut pas avoir plus de 4 factures impayées. Sinon, quand la 5ème tombe, il va directement 3 jours en prison et redescend à 4 factures impayées.
 Les achats/dépenses
 	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois. Ouvert pendant les 3 premières tranches horaires de la journée et hors weekend. Menu désactivé quand c’est fermé. Jamais pendant la Paranoïa (menu désactivé). En acheter prend 1h.
-	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement de 20h à 8h. 1 dose coûte 25 Dø et prend 1h.
-	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand elle n’en a plus, elle disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir (elle ne sera pas là).
+	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement de 20h à 8h. Prend 1h. 1 dose coûte 25 Dø.
+	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand elle n’en a plus, elle disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir (elle ne sera pas là et 1h de déplacement tout de même).
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc possiblement avant l’arrivée du joueur).
 	- Lorsqu’il a des dettes, le joueur ne peut plus rien acheter.
 
@@ -381,41 +382,44 @@ Démarrage d’une partie
 	- 3 doses de Drogue.
 	- La facture de la semaine passée réglée.
 	- Pour la main de Maîtrise, le jeu proposera 4 cartes d’interaction au joueur : 1 Dialogue, 1 Combat (hors Spécial et Run Away), 1 Investigation (hors Spécial et Break In) et 1 Abstraite. Toutes choisies aléatoirement.
+	- Attention : certains backgrounds modifie certaines de ces valeurs.
 
 
 
 Les cartes
 	- Elles indiquent seulement leur nom et une description succincte, pas d’informations chiffrées !
-	- Les cartes sont de type Dialogue, Combat, Investigation, Abstraites , Objet, Lieu et PNJ.
+	- Les cartes sont de type Dialogue, Combat (et Special et Run Away), Investigation (et Special et Break In), Abstraites , Objet, Lieu et PNJ.
 	- Le joueur disposera dans sa main de maîtrise de max.10 cartes Dialogue/Combat/Investigation/Abstraite (dont 3 max. pour Abstraite). Ce sont ces cartes qui représentent les « actions » qu’il maîtrise et avec lesquelles il a un bonus de 1 aux jets de dé.
 	- Les effets d’une carte sur PHY, MEN et HEA sont temporaires (le temps de l’Interaction) !
-	- Les effets d’une carte sur Emo, Add et/ou Wan sont permanents !
+	- Les effets d’une carte sur Emo, Add et Wan sont permanents !
 	- Lorsque des effets autres que sur les caractéristiques principales et secondaires sont mentionnés (« condition ») sur des cartes, ils sont à appliquer après le jet de dé.
 	- Certains effets peuvent aller jusqu’à totalement annuler des résultats positifs si la marge de réussite n’a pas été suffisante.
+	- Toutes les cartes d’interaction sont uniques.
 
 Cartes Abstraites :
 	- Elles représentent des dynamiques amenant des modifications aux jets de dé en interactions avec des PNJs ou l’environnement.	- Ces cartes se jouent à n’importe quel moment où on joue des cartes.
-	- Les cartes Abstraite se jouent en combinaison de n’importe quelle autre carte ou seules (sauf exception).
+	- Les cartes Abstraite se jouent en combinaison de n’importe quelle autre carte ou seules (sauf exception comme Run Away et Break In par exemple).
 	- Par interaction, le joueur ne peut jouer qu’1 carte Abstraite.
 	- Une fois jouée, une carte abstraite est perdue.
 
 Cartes Dialogue :
 	- Elles sont des cartes qui peuvent se jouer uniquement en Dialogue.
-	- Elles peuvent être jouées en combinaison d’une carte Abstraite, Objet, PNJ, Lieu ou Evidence uniquement ou seules (sauf exception).
+	- Elles peuvent être jouées en combinaison d’une carte Abstraite, Objet, PNJ, Lieu ou Evidence uniquement ou seules.
 	- Une fois jouées, ces cartes ne sont pas perdues.
 
 Cartes Investigation (et Spécial et Break In) :
 	- Elles sont des cartes qui peuvent se jouer uniquement en Investigation.
-	- Ces cartes peuvent être jouées seules.
+	- Ces cartes peuvent être jouées seules ou avec Special.
 	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
 	- Une fois jouées, ces cartes ne sont pas perdues.
-	- Une carte Investigation BREAK IN ne peut pas être jouée en combinaison d’une autre carte Investigation mais une carte Abstraite, oui.
+	- Une carte Investigation BREAK IN peut être jouée en combinaison que d’une carte Abstraite ou seule. On peut aussi n’en jouer aucune mais c’est détaillé plus loin !
 
 Cartes Combat (et Spécial et Run Away) :
 	- Elles sont des cartes peuvent qui se jouer uniquement en Combat.
+	- Ces cartes peuvent être jouées seules ou avec Special.
 	- Elles ne peuvent pas être jouées en combinaison de cartes Objet, PNJ ou Lieu.
 	- Une fois jouées, ces cartes ne sont pas perdues.
-	- Une carte Combat RUN AWAY ne peut pas être jouée en combinaison d’une autre carte Combat mais une carte Abstraite, oui.
+	- Une carte Combat RUN AWAY peut être jouée en combinaison que d’une carte Abstraite ou seule. On peut aussi n’en jouer aucune mais c’est détaillé plus loin !
 
 Cartes de Lieu :
 	- Elles sont des cartes qui se jouent uniquement en Dialogue.
@@ -461,13 +465,13 @@ Les différentes piles de cartes du joueur (en interaction)
 Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas faire plusieurs interactions en même temps.
 	- On ne peut pas interagir sans jouer aucune carte (sauf Spécial).
-	- On joue au maximum 3 cartes par Interaction et au minimum 1 (max une de chaque type) sauf Break In et Run Away : 2 cartes max (la deuxième sera une carte Abstraite) ou aucune (avec un malus de 1 au jet de dé – voir plus bas).
+	- On joue au maximum 3 cartes par Interaction et au minimum 1 (max une de chaque type – voir précédemment aux Cartes) sauf Break In et Run Away : 2 cartes max (la deuxième sera une carte Abstraite) ou aucune (avec un malus de 1 au jet de dé – voir plus bas).
 	- La main Fallback proposera 5 cartes Interaction et/ou Abstraite aléatoires (2 Interaction minimum ≠ celle que le joueur a en main).
 	- On ne peut pas savoir si un PNJ respecte son emploi du temps autrement qu’en se rendant où il devrait être à l’heure dite.
  	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom et Adresse et/ou lieu de travail (voir aussi Dialogue).
 	 - PAS DE MENSONGE possible sur le nom, le lieu de travail et l’adresse!
-	- On connaît le nom, l’adresse, le job, l’emploi du temps, les soupçons, relations sociales, etc. (si ils existent) des PNJs (victimes vivantes et mortes) nommés au départ dans une Fiche d’enquête.
-	- On connaît le nom, l’adresse, le job et l’emploi du temps des PNJs (suspects et témoins) nommés au départ dans la Fiche d’enquête.
+	- On connaît le nom, l’adresse, le job, l’emploi du temps, les soupçons, relations sociales, etc. (si ils existent) des PNJs victimes (vivantes ou mortes) nommés au départ dans une Fiche d’enquête.
+	- On connaît le nom, l’adresse, le job et l’emploi du temps des PNJs (suspects et témoins) nommés au départ dans la Fiche d’enquête. Ça a été modifié dans le jeu (je ne sais plus comment au moment où j’écris).
 	- Tout PNJ découvert ultérieurement sera donné, SANS MENSONGE, par son nom et son adresse. Le reste des infos sera possiblement sujet à mensonge (voir règle concernant les mensonges plus bas) MAIS… Un PNJ ne peut pas mentir concernant les informations liées aux relations sociales et de hangout à moins d’être coupable ou complice !
 	- Les jets de dé pour Combat et Dialogue sont basés sur un test de caractéristiques du joueur contre celles du PNJ.
 	- Les jets de dé pour Investigation sont basées sur un test de caractéristiques du joueur seulement.
@@ -480,8 +484,8 @@ Les interactions : Dialogue, Combat et Investigation
 
 Dialogue
 	- Un seul Dialogue avec un PNJ par jour.
-	- Un Dialogue durera 2h (déplacement compris). Des modificateurs peuvent être appliqués en fonction des cartes jouées. Mais de toute manière, un Dialogue ne durera jamais moins d’1 heure.
-	- On joue 3 cartes maximum par Dialogue de type : Dialogue, Objet, PNJ, Lieu et Abstraite (1 seule pour chaque type). Au moins 1 carte Dialogue.
+	- Un Dialogue durera 2h (déplacement compris). Des modificateurs peuvent être appliqués en fonction des cartes jouées. Mais de toute manière, un Dialogue ne durera jamais moins d’1 heure (ne serait-ce que pour le déplacement).
+	- On joue 3 cartes maximum par Dialogue de type : Dialogue, Objet, PNJ, Lieu, Evidence et Abstraite (1 seule pour chaque type) Et PNJ ou Objet ou Lieu ou Evidence. 1 carte Dialogue est nécessaire.
 	- La main Fall back proposera 5 cartes Dialogue et Abstraite aléatoires. 2 cartes Dialogue minimum. ≠ de celles que le joueur a en main.
 	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps, etc.), l’action du menu sera inaccessible.
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire, etc.), il ne trouvera personne et aura droit à la scène de l’interphone (Short_Event_Overlay.tscn/Intercom/Away). Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
@@ -500,7 +504,7 @@ Dialogue
 	- Pour établir l’issue de l’Interaction les deux protagonistes lancent 1d10 :
 		- On établit la marge de réussite/échec donnant un nombre positif (réussite) ou négatif (échec).
 		- On fait marge de réussite du Joueur – marge de réussite du PNJ.
-	- En cas de réussite normale, et en fonction de la marge de réussite, le joueur obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). 1 info minimum. Jamais plus qu’un PNJ ne peut en délivrer.
+	- En cas de réussite normale, et en fonction de la marge de réussite, le joueur obtiendra round(Marge de réussite÷2) informations (vraies et/ou fausses, voir plus bas). 1 info minimum. Mais jamais plus qu’un PNJ ne peut en délivrer (cette règle peut invalider celle de la phrase d’avant).
 	- En cas d’échec normal (marge d’échec > 0) : rien.
 	- Et en plus pour le joueur, en cas d’échec critique (10 naturel au jet de dé), le joueur prend +1Emo → Min/Max ainsi que -1Rep avec le PNJ. Et règle de progression s’applique.
 	- Et en plus pour le joueur, en cas de réussite critique (1 naturel au jet de dé), le joueur prend +1Emo → 0 ainsi qu’1 information cachée (voir également la règle suivante) en plus de réussite normale. Et règle de progression s’applique.
@@ -513,36 +517,36 @@ Dialogue
 	- Pour la révélation d’une information cachée (Hideout) d’un PNJ, le joueur doit avoir eu une marge de réussite de 2+ au jet de dé de Dialogue, une réussite critique ou avoir utilisé une carte Dialogue « Question piège » (et une réussite au moins « normale »).
 	- Les informations sont choisies aléatoirement parmi celles pouvant être obtenues auprès du PNJ.
 	- Si le PNJ n’a plus rien à révéler de nouveau, alors il ne révèle rien.
-	- Si le joueur a joué une carte Evidence, Obj ou Lieu et qu’il sait tout de cette carte, alors rien n’est révélé concernant cette carte.
+	- Si le joueur a joué une carte PNJ, Evidence, Obj ou Lieu et qu’il sait tout de cette carte, alors rien n’est révélé concernant cette carte.
 	- On peut ainsi, au bout d’un moment, réussir et n’obtenir aucune information !
-	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (pas une « vraie » preuve en réalité) rajoute un malus de 1 au jet de dé.
+	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (pas une « vraie » preuve en réalité) ajoute un malus de 1 au jet de dé.
 	- Chances que chaque information donnée soit fausse (par erreur ou mensonge, peu importe). Basé sur MEN du PNJ :
 		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
 		Auprès d’1 Coupable : (5+MEN)/(15+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (3+MEN)/(18+MEN) (prioritaire par rapport à Témoin/Suspect)
 	 - Sauf pour les informations incriminantes (Fiche PNJ) :
 		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(20+MEN) 
-		Auprès d’1 Coupable : (9+MEN)/(10+MEN) MENT toujours (prioritaire par rapport à Témoin/Suspect) !
-		Auprès d’1 Complice : (8+MEN)/(12+MEN) (7+MEN)/(14+MEN) (prioritaire par rapport à Témoin/Suspect)
+		Auprès d’1 Coupable : MENT toujours (prioritaire par rapport à Témoin/Suspect) !
+		Auprès d’1 Complice : (7+MEN)/(14+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau et alors, il cumule).
 	- Une information cachée (hideout) est toujours révélée juste.
 	- Un PNJ peut révéler une info cachée concernant un autre PNJ uniquement si ceux-ci ont un lien reel d’Intimacy, Friend, Enemy, Accomplice entre eux.
 	- Une information fausse pour un lien désignera 2 PNJs aléatoires dans un lien de n’importe laquelle des natures suivantes : debt_influence, intimacy, friend, enemy, acquaintance ou ideology.
-	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet et la couleur de la nature du lien en pointillé de 2 couleurs (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn).
-	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec son/ses lien(s) Violet et la couleur de la nature du lien en pointillé comme dit au dessus (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn).
-	- Si un lien nouveau est donné pour une carte pré-existante, uniquement les nouveaux liens seront Violet et la couleur de la nature du lien en pointillé comme dit au dessus.
+	- Si une information doit donner lieu à la création d’un lien dans la Fiche d’Enquête, il sera établi en Violet et la couleur de la nature du lien en pointillé des 2 couleurs (voir Liens entre les éléments dans la Fiche d’Enquête), qu’il soit vrai ou faux (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn).
+	- Toute carte révélée apparaîtra dans l’écran principal (Main.tscn) avec son/ses lien(s) Violet et la couleur de la nature du lien en pointillé comme dit au dessus (à moins qu’il n’existe déjà, auquel cas on affichera le signal Warning.tscn). Si au moins une des cartes est en réserve, on ne fait pas de Warning.
+	- Si un lien nouveau est donné pour une carte pré-existante, uniquement les nouveaux liens seront Violet et la couleur de la nature du lien en pointillé comme dit au dessus. Si au moins une des cartes est en réserve, on ne fait pas de Warning.
 	- Peut-on se retrouver avec, par exemple, 1 PNJ avec 2 liens Intimacy ?
 	- Le jeu n’établit pas non plus de lien pointillé Violet/Noir.
 	- Une nouvelle carte révélée n’est donc JAMAIS qualifiée d’Evidence automatiquement. C’est au joueur de le faire.
-	- Si une information révélée concerne les informations personnelles d’un PNJ, vraie ou fausse, elle sera consultable dans la fiche/carte du PNJ (dans Main.tscn ou Interaction.tscn, tout se qui se raccorde à la carte clignotera) en bas à gauche de l’écran !
-	- Un PNJ peut donner/redonner une info existante dans la fiche d’enquête ou déjà donnée préalablement. Mais on ne change pas la nature du lien déjà présent s’il n’est plus Violet. Si l’info devrait modifier une info déjà établie, alors on affichera le Warning.tscn sur le lien !
+	- Si une information révélée concerne les informations personnelles d’un PNJ, vraie ou fausse, elle sera consultable dans la fiche/carte du PNJ (dans Main.tscn ou Interaction.tscn, tout ce qui se raccorde à la carte clignotera) en bas à gauche de l’écran (Zone Info) !
+	- Un PNJ peut donner/redonner une info existante dans la fiche d’enquête ou déjà donnée préalablement. Mais on ne change pas la nature du lien déjà présent s’il n’est plus Violet. Si l’info devrait modifier une info déjà établie, alors on affichera le Warning.tscn sur le lien ! Si au moins une des cartes est en réserve, on ne fait pas de Warning.
 	- Un PNJ a les mêmes chances de corriger une information précédemment donnée comme fausse (voir juste au dessus).
 	- Un PNJ ne corrigera pas une information que le joueur a établie comme vraie et qui EST vraie.
 	- Le Dialogue a-t-il eu lieu avec un PNJ qui dormait (il a été réveillé !) ? Si oui, -1Rep à l’issue du Dialogue.
 
 Quelles informations peuvent être révélées par un PNJ
-	- Si une carte Objet, Lieu ou PNJ est jouée en dialogue, les infos obtenues (en cas de réussite) seront en priorité liées à cette carte. Si d’autres infos doivent être obtenues (par ex. la réussite implique que plus soient révélées), alors les infos seront liées à des révélations personnelles d’ordre social, professionnel, etc.
-	- Dans tous les cas, le choix des infos révélées sera aléatoire parmi ce qu’il est possible d’être révélé (en tenant compte de ce qui a été dit à propos du vrai/faux plus haut) par les cartes jouées et/ou ce que sait le PNJ.
+	- Si une carte Evidence, Objet, Lieu ou PNJ est jouée en dialogue, les infos obtenues (en cas de réussite) seront en priorité liées à cette carte. Si d’autres infos doivent être obtenues (par ex. la réussite implique que plus soient révélées), alors les infos seront liées à des révélations personnelles d’ordre social, professionnel, etc.
+	- Dans tous les cas, le choix des infos révélées sera aléatoire parmi ce qui est possible d’être révélé (en tenant compte de ce qui a été dit à propos du vrai/faux plus haut) par les cartes jouées et/ou ce que sait le PNJ.
 	- Quoi qu’il en soit, on ne révélera forcément pas plus qu’il n’y a d’infos disponibles (PNJ de l’Interaction ou carte Objet/lieu/PNJ).
 	- S’il n’y a plus rien à révéler : aucune info !
 	- Si le joueur a seulement joué Dialogue (et éventuellement avec Abstrait), les infos ne concerneront QUE le PNJ avec lequel le joueur dialogue.
@@ -551,8 +555,8 @@ Fuir un Dialogue (PNJ)
 	- Un PNJ ne fuit pas à la première rencontre.
 	- Un PNJ a 1/(MEN×2) chance de vouloir fuir un Dialogue.
 	- S’il décide de fuir, il jetera un dé contre (PHY+MEN+HEA)÷3.
-	- Le malus de Wan s’applique s’il existe.
-	- Pour un PNJ, fuir un Dialogue représente +1Wan.
+	- Le malus de Wan s’applique.
+	- Pour un PNJ, fuir un Dialogue représente +1Wan (après la tentative).
 	- Une réussite signifie que le PNJ fuit.
 	- Une réussite critique signifie que le PNJ fuit et la règle de progression s’applique.
 	- Un échec représente un malus de 1 au jet de dé de Dialogue à venir.
@@ -576,24 +580,24 @@ Combat
 		Pour le PNJ : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
 	- Un échec signifie que le protagoniste rate son coup.
-	- Par défaut et en cas de réussite (y compris critique), chacun inflige des dégâts à l’autre définis par la marge de réussite/2 :
+	- Par défaut et en cas de réussite (y compris critique), chacun inflige des dégâts à l’autre : marge de réussite/2
 		- 1 réussite critique (joueur) :
-			au PNJ : 100% de dégâts et +1HEA dégât (si mort → pas mort → KO) et +1Emo → 0. La règle de progression s’applique.
+			au PNJ : 100% des dégâts et +1HEA dégât (si mort → pas mort → KO) et +1Emo → 0. La règle de progression s’applique.
 		- 1 réussite critique (PNJ) :
-			au joueur : 100% de dégâts et +1HEA dégât et +1Emo → min/max. La règle de progression s’applique.
+			au joueur : 100% des dégâts et +1HEA dégât et +1Emo → min/max. La règle de progression s’applique.
 		- 1 échec critique (joueur) :
 			au joueur : +1HEA de dégât et +1Emo -> min/max. La règle de progression s’applique.
 		- 1 échec critique (PNJ) :
 			au PNJ : +1HEA de dégât. La règle de progression s’applique.
-		- Réussite critique d'un côté et échec critique de l'autre peuvent se cumuler.
+		- Réussite critique et échec critique d’un côté et de l'autre peuvent se cumuler.
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances. (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).
-	- Si un PNJ meurt en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 100dø (±10%) et 25% de chance de prendre +1Wan. On peut donc ne rien trouver et prendre +1Wan !
+	- Si un PNJ meurt ou tombe KO en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 100dø (±10%) et 25% de chance de prendre +1Wan. On peut donc ne rien trouver et prendre +1Wan !
 
 Déclenchement d’un combat par un PNJ lié à l’enquête avant Dialogue
 	- À la première rencontre, il n’y a pas de risque !
-	- Ensuite, à chaque fois que le joueur rencontre ce PNJ, ce dernier, s’il ne fuit pas, peut agresser le joueur selon ces probabilités :
+	- Ensuite, à chaque fois que le joueur rencontre ce PNJ, ce dernier, s’il ne fuit pas (ou rate sa fuite), peut agresser le joueur selon ces probabilités :
 	- Un PNJ en prison ne peut pas déclencher un Combat.
 	- Par défaut, il y a 0% de chance d’attaque d’un PNJ.
 	- Rep modifie ces chances selon ce tableau :
@@ -621,7 +625,7 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
 	- Pas d’attaque de sbire dans les enquêtes de niveau 0.
 	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale).
-	- Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF rentrer ou être au bureau (lieu sûr avec la prison où le joueur ne peut pas être attaqué)!
+	- Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF être au bureau et y faire des trucs comme se droguer (lieu sûr avec la prison où le joueur ne peut pas être attaqué)!
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
 	- Si le joueur fouille le sbire mort, avec une probabilité de 10%, le joueur se verra révéler le nom du/d’un des coupable(s) du crime de l’enquête (aléatoirement s’il y en a plusieurs) (établissement d’un Lien Violet) et comme pour un « non sbire », on peut aussi trouver de l’argent avec les même probabilités (voir plus haut à Combat). Être attaqué n’est pas une preuve pour l’enquête.
@@ -678,7 +682,7 @@ Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à 
 	- En cas de réussite critique, +1Emo → O,  Bonus de 1 au jet de dé de l’Investigation qui suit. La règle de progression s’applique.
 	- En cas d’échec, le joueur prendra +1Wan, +1Emo → Min/max. Le joueur part et ne pourra ré-essayer qu’à partir du lendemain.
 	- En cas d’échec critique, -1HEA, +1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain. Il peut atteindre le seuil pour aller en prison et les règles à ce sujet s’appliquent. La règle de progression s’applique.
-	- En cas de réussite normale, pas de bonus ni de malus à l’Investigation qui suit.
+	- En cas de réussite normale, rien à signaler.
 
 
 
@@ -687,12 +691,12 @@ Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- Le niveau de difficulté d’une enquête est déterminé d’après l’enquête établie !
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
-		Difficulté = round(clamp(((victimes + coupables + (complices × 0.5) + (liens × 0.5) + evidences - (suspects × 0.5) - (témoins × 0.5)) × 19 ÷ 50 + 1), 1, 5). Cela devrait donner un niveau de difficulté entre 1 et 5.
+		Difficulté = round(clamp(((victimes + coupables + (complices × 0.5) + (liens incriminants × 0.5) + preuves - (suspects × 0.5) - (témoins × 0.5)) × 19 ÷ 50 + 1), 1, 5). Cela devrait donner un niveau de difficulté entre 1 et 5.
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Prendre une enquête la fait passer automatiquement en enquête en cours.
 	- Changer d’enquête active ne stoppe pas le temps qui passe dans les autres enquêtes du joueur !
 	- À la validation d’une enquête, si c’est bon : gros bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
-	- 3 liens max autres que noirs pleins supplémentaires faux : n’est pas considéré comme une erreur tant que les bons liens sont établis.
+	- Jusqu’à 3 liens autres que noirs pleins supplémentaires faux : n’est pas considéré comme une erreur tant que les bons liens sont établis.
 	- Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’au moins 1 PNJ.
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	- Voir également à la fin pour les enquêtes de niveau 0 !
