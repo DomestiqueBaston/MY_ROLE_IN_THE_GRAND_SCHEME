@@ -980,8 +980,14 @@ func _play_combat(cards_played: Array[Card]):
 				return &"maxHEA"
 
 	var critical_attr: StringName
-	var damage: int = maxi(0, npc_net_roll - npc_max_roll)
-	var npc_damage: int = maxi(0, net_roll - max_roll)
+	var damage: int = 0
+	var npc_damage: int = 0
+
+	if net_roll > max_roll:
+		npc_damage = roundi((net_roll - max_roll) / 2.0)
+
+	if npc_net_roll > npc_max_roll:
+		damage = roundi((npc_net_roll - npc_max_roll) / 2.0)
 
 	if actual_roll == 10:
 		critical_attr = tweak_attr.call(player, -1)
