@@ -72,15 +72,15 @@ func play_card(card: Card, is_fallback: bool):
 		Card.CardType.DIALOGUE:
 			var dialogue_info = _dialogue_data[card.database_id]
 			print("applying card: %s" % dialogue_info["name"])
-			for entry in dialogue_info.get("bonus_malus", []):
-				var condition = entry.get("condition", {})
-				var result = condition.get("result", "")
-				var effects = entry.get("effects", {})
-				if not effects.is_empty():
-					if result == "success":
-						_unhandled_success_bonus.append(effects)
-					elif result == "failure":
-						_unhandled_failure_malus.append(effects)
+			var bonus_malus = dialogue_info.get("bonus_malus", {})
+			for key in bonus_malus:
+				match key:
+					"temporary":
+						apply_bonus_malus(bonus_malus[key])
+					"on_success":
+						_unhandled_success_bonus.append(bonus_malus[key])
+					"on_failure":
+						_unhandled_failure_malus.append(bonus_malus[key])
 
 		Card.CardType.COMBAT:
 			var combat_info = _combat_data[card.database_id]
