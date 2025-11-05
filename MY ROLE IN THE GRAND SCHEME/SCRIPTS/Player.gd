@@ -168,6 +168,7 @@ func _have_card_already(type: Card.CardType, id: String):
 	return false
 
 func set_physical(phy: int):
+	phy = clampi(phy, 0, 10)
 	if physical != phy:
 		physical = phy
 		if _signal_pause == 0:
@@ -177,6 +178,7 @@ func get_physical() -> int:
 	return physical
 
 func set_mental(men: int):
+	men = clampi(men, 0, 10)
 	if mental != men:
 		mental = men
 		if _signal_pause == 0:
@@ -186,7 +188,7 @@ func get_mental() -> int:
 	return mental
 
 func set_health(hea: int):
-	hea = mini(hea, max_health)
+	hea = clampi(hea, 0, max_health)
 	if health != hea:
 		health = hea
 		if _signal_pause == 0:
@@ -196,6 +198,7 @@ func get_health() -> int:
 	return health
 
 func set_max_health(max_hea: int):
+	max_hea = clampi(max_hea, 0, 10)
 	if max_health != max_hea:
 		max_health = max_hea
 		health = mini(health, max_health)
