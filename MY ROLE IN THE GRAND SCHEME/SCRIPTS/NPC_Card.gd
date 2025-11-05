@@ -89,23 +89,12 @@ var last_name: String
 var job: String
 var job_location: String
 var orientation: SexualOrientation
-var physical: int
-var mental: int
+var physical: int: set = set_physical, get = get_physical
+var mental: int: set = set_mental, get = get_mental
 var health: int: set = set_health, get = get_health
 var max_health: int: set = set_max_health, get = get_max_health
-
-var wanted: int:
-	set(value):
-		wanted = clampi(value, 0, 4)
-	get:
-		return wanted
-
-var player_reputation: int:
-	set(value):
-		player_reputation = clampi(value, -2, 2)
-	get:
-		return player_reputation
-
+var wanted: int: set = set_wanted, get = get_wanted
+var player_reputation: int: set = set_player_reputation, get = get_player_reputation
 var next_dialogue_malus: int = 0
 
 ## Work shifts (a mask of GameState.TimeSlot bits: MORNING, AFTERNOON, EVENING
@@ -169,19 +158,44 @@ func _update_appearance():
 		if npc_status != NpcStatus.NONE:
 			tooltip += "\n" + NpcStatus.keys()[npc_status].capitalize()
 
+func set_physical(phy: int):
+	physical = clampi(phy, 0, 10)
+
+func get_physical() -> int:
+	return physical
+
+func set_mental(men: int):
+	mental = clampi(men, 0, 10)
+
+func get_mental() -> int:
+	return mental
+
 func set_health(hea: int):
-	health = mini(hea, max_health)
+	health = clampi(hea, 0, max_health)
 
 func get_health() -> int:
 	return health
 
 func set_max_health(max_hea: int):
+	max_hea = clampi(max_hea, 0, 10)
 	if max_health != max_hea:
 		max_health = max_hea
 		health = mini(health, max_health)
 
 func get_max_health() -> int:
 	return max_health
+
+func set_wanted(wan: int):
+	wanted = clampi(wan, 0, 4)
+
+func get_wanted() -> int:
+	return wanted
+
+func set_player_reputation(rep: int):
+	player_reputation = clampi(rep, -2, 2)
+
+func get_player_reputation() -> int:
+	return player_reputation
 
 func get_display_name() -> String:
 	return first_name + " " + last_name

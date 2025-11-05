@@ -620,7 +620,7 @@ func _play_run_away(cards_played: Array[Card]) -> bool:
 		print("failure")
 		success = false
 	else:
-		print("success")
+		print("success: margin = %s" % [max_roll - net_roll])
 		success = true
 
 	if not success:
@@ -730,18 +730,18 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 		await Globals.dialog_overlay.show_npc_away(npc)
 		return
 
-	var first_visit = not npc.has_been_seen()
+	var is_first_visit = not npc.has_been_seen()
 	npc.visit()
 
 	# the NPC may try to run away
 
-	if await _does_npc_run(npc):
+	if not is_first_visit and await _does_npc_run(npc):
 		return
 
 	# if the NPC attacks the player, start a combat, not a dialogue, and give
 	# the player the chance to try to run away first
 
-	if not first_visit and _does_npc_attack(npc):
+	if not is_first_visit and _does_npc_attack(npc):
 		await Globals.dialog_overlay.show_attack_message(npc)
 		if await Globals.dialog_overlay.confirm_run_away():
 			player.pick_run_away_cards()
@@ -980,8 +980,14 @@ func _play_combat(cards_played: Array[Card]):
 				return &"maxHEA"
 
 	var critical_attr: StringName
-	var damage: int = maxi(0, npc_net_roll - npc_max_roll)
-	var npc_damage: int = maxi(0, net_roll - max_roll)
+	var damage: int = 0
+	var npc_damage: int = 0
+
+	if net_roll > max_roll:
+		npc_damage = roundi((net_roll - max_roll) / 2.0)
+
+	if npc_net_roll > npc_max_roll:
+		damage = roundi((npc_net_roll - npc_max_roll) / 2.0)
 
 	if actual_roll == 10:
 		critical_attr = tweak_attr.call(player, -1)

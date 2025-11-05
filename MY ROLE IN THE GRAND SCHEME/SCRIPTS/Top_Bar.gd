@@ -6,6 +6,8 @@ extends Control
 ## If false, don't listen for changes to player attributes, time, etc.
 @export var listen_for_changes: bool = true
 
+@export var alert_debug: bool = false
+
 ## Signal emitted when the player selects Settings from the menu.
 signal settings
 
@@ -190,19 +192,30 @@ func _on_button_pressed():
 	Globals.valid_sound.play()
 
 func _on_attr_changed(attr: PlayerAttr, alert_to_all_changes: bool = true):
+	if alert_debug:
+		if alert_to_all_changes:
+			print("attr changed: %s" % attr.attr_name)
+		else:
+			print("updating attr: %s" % attr.attr_name)
 	var value = GameState.player[attr.attr_name]
 	attr.ui_label.text = str(value)
 	if attr.alert_player:
 		if value <= attr.min_value or value >= attr.max_value:
+			if alert_debug:
+				print("=> out of bounds, playing infinite Alert")
 			if attr.alert_timer:
 				attr.alert_timer.stop()
 			if attr.alert_player.current_animation != "Alert":
 				attr.alert_player.play("Alert")
 		elif alert_to_all_changes:
 			if attr.alert_timer:
+				if alert_debug:
+					print("=> in bounds, playing temporary Alert")
 				attr.alert_timer.start()
 				attr.alert_player.play("Alert")
 			else:
+				if alert_debug:
+					print("=> in bounds, resetting Alert")
 				if attr.alert_player.current_animation == "Alert":
 					attr.alert_player.play("RESET")
 
