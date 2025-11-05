@@ -124,7 +124,7 @@ func _continue_game():
 			GameState.InteractionType.RUN_AWAY
 	]:
 		var main = await _replace_scene(_main_scene)
-		#_check_player_attrs()
+		_check_player_attrs()
 		var case = GameState.get_current_case()
 		if case:
 			main.populate(case)
