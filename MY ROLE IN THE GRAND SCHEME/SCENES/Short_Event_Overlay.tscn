@@ -1,4 +1,4 @@
-[gd_scene load_steps=235 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=232 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -255,99 +255,6 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfusj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8x3ap"]
-
-[sub_resource type="Animation" id="Animation_751i2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Confirmation/Do_You_Confirm_That:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Do you
-confirm that?"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Confirmation/Yes_No/Yes:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Yes!"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Confirmation/Yes_No/No:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["No..."]
-}
-
-[sub_resource type="Animation" id="Animation_wqng6"]
-resource_name = "Text_Animation"
-length = 0.266673
-loop_mode = 1
-step = 0.0666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Confirmation/Do_You_Confirm_That:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": ["Do yOu
-coNFiRm THat?", "Do yOu
-coNFiRm THat?", "dO YoU
-COnfIrM thAT?", "dO YoU
-COnfIrM thAT?", "Do yOu
-coNFiRm THat?"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Confirmation/Yes_No/Yes:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": ["yES", "Yes", "Yes", "yES", "yES"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Confirmation/Yes_No/No:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": ["No", "No", "nO", "nO", "No"]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lew6r"]
-_data = {
-&"RESET": SubResource("Animation_751i2"),
-&"Text_Animation": SubResource("Animation_wqng6")
-}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7igc"]
 content_margin_left = 2.0
@@ -842,9 +749,9 @@ horizontal_alignment = 2
 [node name="Yes" type="Button" parent="Overlays/Care_Sheet/Note"]
 layout_mode = 0
 offset_left = 227.0
-offset_top = 167.658
+offset_top = 165.65799
 offset_right = 322.0
-offset_bottom = 209.658
+offset_bottom = 207.65799
 rotation = -0.0942478
 theme_override_colors/font_color = Color(0.491965, 0.61, 0.3477, 1)
 theme_override_colors/font_focus_color = Color(0.490196, 0.611765, 0.34902, 1)
@@ -866,8 +773,8 @@ theme_override_colors/font_focus_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_pressed_color = Color(0.658824, 0.364706, 0.282353, 1)
 theme_override_colors/font_hover_color = Color(0.77, 0.546828, 0.4851, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.66, 0.36531, 0.2838, 1)
-text = "On second
-thought..."
+text = "Nope,  I'll
+skip it!"
 
 [node name="Case_Management" type="Node2D" parent="Overlays"]
 visible = false
@@ -919,8 +826,6 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the ID
-of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
 texture_pressed = ExtResource("37_sfan1")
@@ -933,8 +838,6 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the ID
-of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
 texture_pressed = ExtResource("40_vprm5")
@@ -947,8 +850,6 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the ID
-of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
 texture_pressed = ExtResource("43_gjkrj")
@@ -961,8 +862,6 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 60.0
 offset_bottom = 60.0
-tooltip_text = "Here's the ID
-of the case!"
 toggle_mode = true
 button_group = ExtResource("36_gfusj")
 texture_pressed = ExtResource("46_a7igc")
@@ -1432,8 +1331,8 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("57_gfusj")
 theme_override_font_sizes/font_size = 32
-text = "Do you
-confirm that?"
+text = "Do yOu
+coNFiRm THat?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1467,7 +1366,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
-text = "Yes!"
+text = "yES"
 flat = true
 
 [node name="No" type="Button" parent="Overlays/Confirmation/Yes_No"]
@@ -1490,15 +1389,8 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
-text = "No..."
+text = "No"
 flat = true
-
-[node name="Vibration" type="AnimationPlayer" parent="Overlays/Confirmation"]
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_lew6r")
-}
-autoplay = "Text_Animation"
 
 [node name="Income_Start" type="Node2D" parent="Overlays"]
 visible = false
@@ -1873,7 +1765,6 @@ centered = false
 offset = Vector2(20, 20)
 
 [node name="Screens" type="Control" parent="Overlays/Intercom/Interface"]
-visible = false
 modulate = Color(1, 1, 1, 0.917647)
 anchors_preset = 0
 
@@ -2079,6 +1970,15 @@ offset_top = 236.0
 offset_right = 291.0
 offset_bottom = 244.0
 text = "*"
+
+[node name="Leave" type="Label" parent="Overlays/Intercom/Interface"]
+self_modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 0
+offset_left = 367.0
+offset_top = 235.0
+offset_right = 392.0
+offset_bottom = 243.0
+text = "Leave"
 
 [node name="Quit" type="TextureButton" parent="Overlays/Intercom/Interface"]
 layout_mode = 0
@@ -2577,6 +2477,7 @@ offset_right = 280.0
 offset_bottom = 160.0
 bbcode_enabled = true
 text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Health Report[/color][/pulse] -
+
 Given your [color=#ff8864]current[/color] [color=#ff1c18]state of health[/color], going out to [color=#ff1c18]investigate[/color] would be [color=#ff8864]more[/color] [color=#ff1c18]reckless[/color] than [color=#ff1c18]professional[/color]. Unless [color=#ff8864]stumbling[/color], [color=#ff8864]babbling[/color], and [color=#ff8864]passing out[/color] in the middle of the street are part of [color=#ff1c18]your method[/color], you'll have to [color=#ff1c18]accept[/color] a... [color=#ff8864]simple truth[/color]: for everyone's sake, [color=#ff1c18]you need to rest[/color] to [color=#ff8864]avoid confusing suspects with lampposts[/color]!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2672,6 +2573,7 @@ bbcode_enabled = true
 text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Emotional Report[/color][/pulse] -
 
 In this [color=#ff8864]job[/color], the [color=#ff1c18]key[/color] thing is supposed to be [color=#ff1c18]keeping cool[/color].
+
 But, well... That's not really [color=#ff8864]happening[/color] [color=#ff1c18]right now[/color]. Every time I think I've got a [color=#ff8864]grip on things[/color], I just [color=#ff8864]loose it again[/color]!
 
 Guess we all know by now that [color=#ff8864]keeping your nerves under control[/color] is just a [color=#ff8864]myth[/color]."
@@ -2720,6 +2622,7 @@ bbcode_enabled = true
 text = "[center]- [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]You definitely need to rest[/color][/pulse] -
 
 The plan was solid at first: bust your ass to [color=#ff8864]crack this case[/color] fast, [color=#ff8864]pay the bills[/color] before they drown you, and keep up with the bare [color=#ff8864]essentials of a life[/color] that's a bit [color=#ff8864]over the top[/color], but hey, [color=#ff8864]the body's got its limits[/color], and right now, yours is[color=#ff8864] screaming for a break[/color].
+
 [pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Time to crash and catch some z's[/color][/pulse]!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2772,11 +2675,11 @@ offset_right = 482.0
 offset_bottom = 261.0
 rotation = 0.0284044
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]Your [color=#ff8864]struggle[/color]  has  come to  an  [color=#ff1c18]end[/color].[/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]Your  [color=#ff8864]struggle[/color]  has  come  to  an  [color=#ff1c18]end[/color].[/pulse]
 
-Was it the  [color=#ff8864]weight[/color]  of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  choices[/color][/shake]  or the  [color=#ff8864]burden[/color] of [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  consuming  vices[/color][/shake]?
+Was  it  the  [color=#ff8864]weight[/color]  of  [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  choices[/color][/shake]  or the  [color=#ff8864]burden[/color]  of  [shake rate=7.0 level=5 connected=0][color=#ff1c18]your  consuming  vices[/color][/shake]?
 
-One thing is  [color=#ff8864]certain[/color]:  where you came from, [shake rate=7.0 level=5 connected=0][color=#ff8864]it's  not  sure [color=#ff1c18]your  case[/color]  will serve  as  an  [color=#ff1c18]example[/color][/color][/shake]...[/center]
+One  thing  is  [color=#ff8864]certain[/color]:  where  you  came from,  [shake rate=7.0 level=5 connected=0][color=#ff8864]it's  not  sure  [color=#ff1c18]your  case[/color]  will serve  as  an  [color=#ff1c18]example[/color][/color][/shake]...[/center]
 "
 
 [node name="Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
@@ -2788,13 +2691,13 @@ offset_right = 489.0
 offset_bottom = 287.0
 rotation = 0.0356184
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]The  [color=#ff1c18]addiction  crisis[/color] storm  has [color=#ff8864]passed[/color], but the [color=#ff1c18]threat[/color] [color=#ff8864]lingers[/color].[/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0]The  [color=#ff1c18]addiction  crisis[/color]  storm  has  [color=#ff8864]passed[/color],  but the  [color=#ff1c18]threat[/color]  [color=#ff8864]lingers[/color].[/pulse]
 
-[shake rate=7.0 level=5 connected=0]The  [color=#ff8864]price[/color]  for  this  [color=#ff8864]momentary  peace[/color]  was  [color=#ff1c18]high[/color].[/shake]
+[shake rate=7.0 level=5 connected=0]The  [color=#ff8864]price[/color]  for  this  [color=#ff8864]momentary  peace[/color] was  [color=#ff1c18]high[/color].[/shake]
 
-The  [color=#ff8864]weight  of the struggle[/color]  has  etched [shake rate=7.0 level=5 connected=0][color=#ff8864]deep[/color]  [color=#ff1c18]marks[/color][/shake], the  [color=#ff8864]calm[/color]  is  [color=#ff1c18]fragile[/color]  and  the [color=#ff8864]horizon[/color] is still  [shake rate=7.0 level=5 connected=0][color=#ff1c18]dark[/color][/shake].
+The  [color=#ff8864]weight  of  the  struggle[/color]  has  etched [shake rate=7.0 level=5 connected=0][color=#ff8864]deep[/color]  [color=#ff1c18]marks[/color][/shake],  the  [color=#ff8864]calm[/color]  is  [color=#ff1c18]fragile[/color]  and  the [color=#ff8864]horizon[/color]  is  still  [shake rate=7.0 level=5 connected=0][color=#ff1c18]dark[/color][/shake].
 
-[shake rate=7.0 level=5 connected=0][color=#ff8864]Or is it[/color]  [color=#ff1c18]too  late[/color][/shake]?[/center]
+[shake rate=7.0 level=5 connected=0][color=#ff8864]Or  is  it[/color]  [color=#ff1c18]too  late[/color][/shake]?[/center]
 "
 
 [node name="Bill" type="Control" parent="Overlays/Misc/Announces"]
@@ -3209,16 +3112,16 @@ theme = ExtResource("68_q1jpv")
 [node name="Positive_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
-offset_left = 219.0
-offset_top = 52.0
-offset_right = 409.0
-offset_bottom = 304.0
+offset_left = 213.64554
+offset_top = 52.518246
+offset_right = 411.34088
+offset_bottom = 325.51825
 rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh, bravo![/color][/pulse]
 
-You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don't  get  too cocky, it's  just  a  tiny step. Now let's  see if you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up without tripping  over yourself[/color][/shake].
-At this  point,  you feel a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  stupid.[/color][/shake][/center]"
+You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don't  get  too  cocky, it's  just  a  tiny  step. Now  let's  see if you  can  [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up  without tripping  over yourself[/color][/shake].
+At  this  point,  you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  stupid.[/color][/shake][/center]"
 fit_content = true
 
 [node name="Positive_Physic" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
@@ -3232,8 +3135,8 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Hurrah![/color][/pulse]
 
-You've shown some [shake rate=7.0 level=5 connected=0][color=#ff8864]spark[/color][/shake], dude, but  don't start celebrating  just  yet. You've got  a long  way to go...
-Anyway.  At  this  point, you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  weak[/color][/shake].[/center]
+You've shown some [shake rate=7.0 level=5 connected=0][color=#ff8864]spark[/color][/shake],  dude,  but  don't start  celebrating  just  yet.  You've got  a long  way  to  go...
+Anyway.  At  this  point, you  feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  weak[/color][/shake].[/center]
 "
 fit_content = true
 
@@ -3248,25 +3151,25 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Well done![/color][/pulse]
 
-You've  managed to  push  through  a little [shake rate=7.0 level=5 connected=0][color=#ff8864]resilience[/color][/shake], but  don't get  ahead  of yourself. This is just  a  fleeting  moment, not  a breakthrough.
-For now,  though,  you feel  a  bit  [shake rate=7.0 level=5 connected=0][color=#ff8864]less fragile[/color][/shake].[/center]"
+You've  managed to  push  through  a  little [shake rate=7.0 level=5 connected=0][color=#ff8864]resilience[/color][/shake],  but  don't get  ahead  of yourself. This is  just  a  fleeting  moment,  not  a breakthrough.
+For  now,  though,  you feel  a  bit  [shake rate=7.0 level=5 connected=0][color=#ff8864]less fragile[/color][/shake].[/center]"
 fit_content = true
 
 [node name="Negative_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
 layout_mode = 0
-offset_left = 217.0
-offset_top = 52.0
-offset_right = 411.0
-offset_bottom = 304.0
+offset_left = 214.69498
+offset_top = 52.2231
+offset_right = 411.75858
+offset_bottom = 304.22308
 rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh, dear![/color][/pulse]
 
-You managed to [shake rate=7.0 level=5 connected=0][color=#ff8864]make things worse[/color][/shake], as usual.  
-Let's see if you can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up[/color][/shake] without [shake rate=7.0 level=5 connected=0][color=#ff8864]tripping  again[/color][/shake].
+You  managed  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]make things  worse[/color][/shake],  as usual.  
+Let's  see  if  you  can [shake rate=7.0 level=5 connected=0][color=#ff8864]pick  yourself  up[/color][/shake] without  [shake rate=7.0 level=5 connected=0][color=#ff8864]tripping  again[/color][/shake].
 
-That  being  said, you feel [shake rate=7.0 level=5 connected=0][color=#ff8864]dumber[/color][/shake] than ever.[/center]
+That  being  said, you feel  [shake rate=7.0 level=5 connected=0][color=#ff8864]dumber[/color][/shake]  than  ever.[/center]
 "
 fit_content = true
 
@@ -3279,10 +3182,10 @@ offset_right = 411.0
 offset_bottom = 304.0
 rotation = -0.0964869
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh my God![/color][/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh  my  God![/color][/pulse]
 
-The \"[shake rate=7.0 level=5 connected=0][color=#ff8864]progress[/color][/shake]\" you've made is  almost impressive. But  hey, don't  worry, it's  [shake rate=7.0 level=5 connected=0][color=#ff8864]not[/color][/shake] like  anyone  expected [shake rate=7.0 level=5 connected=0][color=#ff8864]much  more[/color][/shake] at  this point, right?
-Honestly, you seem to be getting  [shake rate=7.0 level=5 connected=0][color=#ff8864]weaker[/color][/shake] by the  minute.[/center]"
+The \"[shake rate=7.0 level=5 connected=0][color=#ff8864]progress[/color][/shake]\"  you've made  is  almost impressive.  But  hey, don't  worry, it's  [shake rate=7.0 level=5 connected=0][color=#ff8864]not[/color][/shake] like  anyone  expected [shake rate=7.0 level=5 connected=0][color=#ff8864]much  more[/color][/shake]  at  this point,  right?
+Honestly,  you  seem  to be  getting   [shake rate=7.0 level=5 connected=0][color=#ff8864]weaker[/color][/shake]  by the  minute.[/center]"
 fit_content = true
 
 [node name="Negative_Health" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
@@ -3296,9 +3199,9 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oops![/color][/pulse]
 
-You've somehow managed to  [shake rate=7.0 level=5 connected=0][color=#ff8864]dig  a  deeper hole[/color][/shake],  as expected.
-Let's  see  how long it takes  before  you [shake rate=7.0 level=5 connected=0][color=#ff8864]fall even further[/color][/shake].
-For now,  though,  you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]more broken[/color][/shake].[/center]"
+You've  somehow managed  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]dig  a  deeper hole[/color][/shake],  as  expected.
+Let's  see  how  long  it takes  before  you  [shake rate=7.0 level=5 connected=0][color=#ff8864]fall even  further[/color][/shake].
+For  now,  though,  you  feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]more broken[/color][/shake].[/center]"
 fit_content = true
 
 [node name="Positive_Total" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
@@ -3310,10 +3213,10 @@ offset_right = 413.0
 offset_bottom = 302.0
 rotation = -0.0964869
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Well done![/color][/pulse]
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Well  done![/color][/pulse]
 
-You've  taken  a whole [color=#ff1c18]step forward[/color],  but  [color=#ff8864]don't get  too  carried  away[/color]. Nothing  to  celebrate just  yet.  
-And  let's  see if you can  [color=#ff8864]keep  this  momentum without  stumbling[/color].  For now,  you feel  [shake rate=7.0 level=5 connected=0][color=#ff1c18]a  little less   uncertain[/color][/shake]."
+You've  taken  a  whole [color=#ff1c18]step  forward[/color],  but  [color=#ff8864]don't get  too  carried  away[/color]. Nothing  to  celebrate just  yet.  
+And  let's  see  if you  can  [color=#ff8864]keep  this  momentum without  stumbling[/color].  For now,  you  feel  [shake rate=7.0 level=5 connected=0][color=#ff1c18]a  little less   uncertain[/color][/shake]."
 fit_content = true
 
 [node name="Positive_And_Negative" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
@@ -3330,8 +3233,8 @@ text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]What 
 You’ve  had  [color=#ff1c18]one  huge success[/color],  but  also
 [color=#ff1c18]a  major  failure[/color].
 You  made  progress,  but with  just  as  many setbacks.
-It’s  a  [color=#ff8864]double-edged  result[/color].
-And now,  you’re  left feeling...  [shake rate=7.0 level=5 connected=0][color=#ff1c18]uncertain[/color][/shake]!"
+It’s   a  [color=#ff8864]double-edged  result[/color].
+And  now,  you’re  left feeling...  [shake rate=7.0 level=5 connected=0][color=#ff1c18]uncertain[/color][/shake]!"
 fit_content = true
 
 [node name="Negative_Total" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
@@ -3345,9 +3248,9 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]What  a  failure![/color][/pulse]
 
-You’ve  [color=#ff1c18]completely messed  up[/color].  Nothing  went as planned,  and  now you’re  [color=#ff1c18]even  further from[/color] your  goal.
-[color=#ff8864]Pull  yourself  together[/color], or  risk [color=#ff1c18]falling  behind[/color] even more.
-Now,  you feel...  [shake rate=7.0 level=5 connected=0][color=#ff1c18]lost and  unsure[/color][/shake]."
+You’ve  [color=#ff1c18]completely messed  up[/color].  Nothing  went as  planned,  and  now you’re  [color=#ff1c18]even  further from[/color]  your  goal.
+[color=#ff8864]Pull  yourself  together[/color], or  risk  [color=#ff1c18]falling  behind[/color] even  more.
+Now,  you  feel...  [shake rate=7.0 level=5 connected=0][color=#ff1c18]lost and   unsure[/color][/shake]."
 fit_content = true
 
 [node name="Quit" type="Button" parent="Overlays/Player_Improvement/Informations"]
@@ -3581,7 +3484,7 @@ offset_bottom = 219.0
 rotation = 0.035035
 bbcode_enabled = true
 text = "Hm...
-I guess [color=#ff1c18] now[/color][color=#ff8864] would  be the perfect  time to  [/color][color=#ff1c18][shake rate=7.0 level=5 connected=0]run  away[/shake][/color], right?"
+I  guess [color=#ff1c18] now[/color][color=#ff8864] would  be  the perfect  time to  [/color][color=#ff1c18][shake rate=7.0 level=5 connected=0]run  away[/shake][/color], right?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3633,7 +3536,7 @@ offset_bottom = 222.0
 rotation = 0.035035
 bbcode_enabled = true
 text = "Alright,
-[color=#ff1c18]nobody's there[/color]. Looks like the[color=#ff8864] perfect time [/color]to  [color=#ff1c18][shake rate=7.0 level=5 connected=0]break in[/shake][/color] [color=#ff8864]inside[/color]!"
+[color=#ff1c18]nobody's there[/color].  Looks like  the[color=#ff8864] perfect  time [/color]to  [color=#ff1c18][shake rate=7.0 level=5 connected=0]break  in[/shake][/color] [color=#ff8864]inside[/color]!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3650,7 +3553,7 @@ theme_override_colors/font_pressed_color = Color(0.54902, 0.709804, 0.32549, 1)
 theme_override_colors/font_hover_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.831373, 0.941176, 0.678431, 1)
 theme_override_colors/font_disabled_color = Color(0.094, 0.12, 0.0576, 1)
-text = "Yes,  It's  now  or...  It's now!"
+text = "Yes,  let's  go!"
 
 [node name="No" type="Button" parent="Overlays/Run_Away_Break_In/Announces/Break_In"]
 layout_mode = 0
@@ -3665,7 +3568,7 @@ theme_override_colors/font_pressed_color = Color(0.709804, 0.341176, 0.32549, 1)
 theme_override_colors/font_hover_color = Color(0.901961, 0.639216, 0.631373, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.639216, 0.631373, 1)
 theme_override_colors/font_disabled_color = Color(0.15, 0.0862, 0.084, 1)
-text = "I'm  afraid  I  won't  do that, Dave."
+text = "No,   I  won't  do  that,  Dave."
 
 [node name="Search_Warrant" type="Node2D" parent="Overlays"]
 visible = false
@@ -3697,7 +3600,7 @@ offset_right = 250.0
 offset_bottom = 222.0
 rotation = 0.0165557
 bbcode_enabled = true
-text = "[center]This  [color=ff8864]Warrant costs[/color] [color=#992726]         Dø[/color],  and  It   better  be worth it.  Money doesn't  just fall from the sky...  usually.[/center]"
+text = "[center]This  [color=ff8864]Warrant costs[/color] [color=#992726]         Dø[/color],  and  It   better  be worth  it.  Money doesn't  just fall  from  the sky...   usually.[/center]"
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
@@ -3762,12 +3665,12 @@ offset_right = 249.0
 offset_bottom = 222.0
 rotation = 0.0165557
 bbcode_enabled = true
-text = "[center]Now the
-question is:
+text = "[center]Now  the
+question  is:
 
-[color=ff8864]Should  I  use[/color]  my so [color=ff1c18]expensive[/color]
+[color=ff8864]Should  I  use[/color]  my so  [color=ff1c18]expensive[/color]
 [color=ff8864]Search  WarrAnt[/color]
-(or is it  racket)?[/center]"
+(or is  it  racket)?[/center]"
 
 [node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_Use"]
 layout_mode = 0
@@ -3821,7 +3724,7 @@ rotation = 0.0165557
 bbcode_enabled = true
 text = "[center]No  warrant?
 
-[color=ff1c18]Way too  risky [/color] and  you  just  can’t  [color=ff8864]afford  a lawyer if  things  go  south[/color].[/center]"
+[color=ff1c18]Way  too  risky [/color] and  you  just  can’t  [color=ff8864]afford  a lawyer  if  things  go  south[/color].[/center]"
 
 [node name="Yes" type="Button" parent="Overlays/Search_Warrant/Text_No_Warrant"]
 layout_mode = 0
@@ -4023,14 +3926,14 @@ offset_bottom = 267.0
 bbcode_enabled = true
 text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] You've crossed the line, [color=#ff8864]the authorities[/color] have sent people to straighten you out, and you'll be spending [color=#ff1c18]3 days[/color] [color=#ff8864]in jail[/color]. Unless, of course, you can afford an [color=#ff8864]instant pardon[/color] (for [color=#ff8864]   Dø[/color])."
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="Money" type="RichTextLabel" parent="Overlays/Wanted/Info/Player/Situation"]
 layout_mode = 1
 offset_left = 67.0
-offset_top = 105.0
+offset_top = 102.0
 offset_right = 87.0
-offset_bottom = 116.0
+offset_bottom = 113.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_na1nk")
 bbcode_enabled = true
@@ -4069,6 +3972,7 @@ text = "Easy, easy... I can pay!"
 alignment = 2
 
 [node name="NPC" type="Control" parent="Overlays/Wanted/Info"]
+visible = false
 anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
@@ -4084,7 +3988,7 @@ bbcode_enabled = true
 text = "[shake rate=7.0 level=1 connected=0][color=#ff1c18]Here's the situation[/color][/shake][color=#ff8864]:[/color] That [color=#ff8864]idiot[/color] crossed the line, [color=#ff8864]the authorities[/color] have sent people to handle it, and that means spending [color=#ff1c18]several weeks[/color] [color=#ff8864]in jail[/color].
 "
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="Ok" type="Button" parent="Overlays/Wanted/Info/NPC"]
 layout_mode = 0

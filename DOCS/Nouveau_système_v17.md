@@ -576,7 +576,7 @@ Combat
 		Pour le PNJ : malus de Wan.
 	- On résout chaque Combat en une seule fois donc en 1 seul jet de dé.
 	- Un échec signifie que le protagoniste rate son coup.
-	- Par défaut et en cas de réussite (y compris critique), chacun inflige des dégâts à l’autre définis par la marge de réussite :
+	- Par défaut et en cas de réussite (y compris critique), chacun inflige des dégâts à l’autre définis par la marge de réussite/2 :
 		- 1 réussite critique (joueur) :
 			au PNJ : 100% de dégâts et +1HEA dégât (si mort → pas mort → KO) et +1Emo → 0. La règle de progression s’applique.
 		- 1 réussite critique (PNJ) :
