@@ -288,6 +288,7 @@ _data = {
 [sub_resource type="Animation" id="Animation_gfo54"]
 resource_name = "Alert"
 length = 0.666673
+loop_mode = 1
 step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
