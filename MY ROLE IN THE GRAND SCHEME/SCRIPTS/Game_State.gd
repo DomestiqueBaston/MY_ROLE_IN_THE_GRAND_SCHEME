@@ -730,18 +730,18 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 		await Globals.dialog_overlay.show_npc_away(npc)
 		return
 
-	var first_visit = not npc.has_been_seen()
+	var is_first_visit = not npc.has_been_seen()
 	npc.visit()
 
 	# the NPC may try to run away
 
-	if await _does_npc_run(npc):
+	if not is_first_visit and await _does_npc_run(npc):
 		return
 
 	# if the NPC attacks the player, start a combat, not a dialogue, and give
 	# the player the chance to try to run away first
 
-	if not first_visit and _does_npc_attack(npc):
+	if not is_first_visit and _does_npc_attack(npc):
 		await Globals.dialog_overlay.show_attack_message(npc)
 		if await Globals.dialog_overlay.confirm_run_away():
 			player.pick_run_away_cards()
