@@ -162,7 +162,8 @@ offset_top = 246.0
 offset_right = 475.0
 offset_bottom = 322.0
 tooltip_text = "Wait... Are there any
-videos inthat game?"
+videos in that game?
+Where are they located?"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
