@@ -23,7 +23,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Name" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -31,6 +31,7 @@ text = "- THERMAL SENSOR -
 - UNIT -"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_01" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
@@ -41,15 +42,17 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Something used for writing (if you have paper) and that still has ink inside..."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_02" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
@@ -60,24 +63,27 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Found" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Found in:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Found_Location" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Library[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_03" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
@@ -88,24 +94,27 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Property" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Owned by:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Property_NPC" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Théo Jasmin[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_04" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
 custom_minimum_size = Vector2(106, 0)
@@ -116,15 +125,17 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Evidence" type="RichTextLabel" parent="VBox/Scroller_Object/Info_Object"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Marked: [color=#cf2317]Evidence[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Scroller_Location" type="ScrollContainer" parent="VBox"]
 visible = false
@@ -139,13 +150,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Name" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "- PLACE OF WORSHIP -"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_01" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
@@ -156,18 +168,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Description" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "A place to sip overpriced coffee and pretend you're doing something important."
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Crime_Scene" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -175,6 +189,7 @@ text = "
 - [color=cf2317]CRIME SCENE[/color] -"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_02" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
@@ -185,26 +200,28 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Home" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Home of:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Home_NPC_01" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "Jean Trancène
-Sylvie Culture"
+text = "Jean Trancène"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_03" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
@@ -215,26 +232,28 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Workplace" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Workplace of:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Workplace_NPC_01" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
 bbcode_enabled = true
-text = "Rick Hunter
-Commissaire Maigret"
+text = "Rick Hunter"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_04" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
@@ -245,44 +264,49 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hours" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Opening hours:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Time_Slot_None" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]N/A[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Time_Slots" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "in the [color=#cf2317]Morning[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Time_Slot_H24" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]H24[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_05" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
@@ -293,44 +317,49 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Closed:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend_day_01" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]N/A[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend_day_02" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Open every day[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend_day_03" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Saturday[/color] & [color=#cf2317]Sunday[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_06" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
@@ -341,18 +370,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hangout" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Hangout of:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hangout_NPC_01" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -360,6 +391,7 @@ bbcode_enabled = true
 text = "Pierre Poljac"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_08" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
 custom_minimum_size = Vector2(106, 0)
@@ -370,18 +402,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hideout" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Hideout of:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hideout_NPC_01" type="RichTextLabel" parent="VBox/Scroller_Location/Info_Location"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -389,8 +423,10 @@ bbcode_enabled = true
 text = "Michel Drucker"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Scroller_NPC" type="ScrollContainer" parent="VBox"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("2_qkikf")
@@ -402,13 +438,14 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="NPC" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "- CHARACTER -"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_17" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -419,9 +456,10 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NPC_Name" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -429,6 +467,7 @@ bbcode_enabled = true
 text = "Jean Trancène"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_01" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -439,18 +478,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Health" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Last known health:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Health_No_Info" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -458,10 +499,11 @@ bbcode_enabled = true
 text = "No info"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Health_Good" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -469,10 +511,11 @@ bbcode_enabled = true
 text = "Good"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Health_Average" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -480,10 +523,11 @@ bbcode_enabled = true
 text = "Average"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Health_Low" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -491,6 +535,7 @@ bbcode_enabled = true
 text = "Low"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_02" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -501,18 +546,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Case Status:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -520,10 +567,11 @@ bbcode_enabled = true
 text = "None"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Victim" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -531,10 +579,11 @@ bbcode_enabled = true
 text = "Victim"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Disappeared" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -542,10 +591,11 @@ bbcode_enabled = true
 text = "Disappeared"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_In_Jail" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -553,10 +603,11 @@ bbcode_enabled = true
 text = "in Jail"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Minion" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -564,10 +615,11 @@ bbcode_enabled = true
 text = "Minion"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Dead" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -575,10 +627,11 @@ bbcode_enabled = true
 text = "Dead"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Culprit" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -586,10 +639,11 @@ bbcode_enabled = true
 text = "Culprit"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Accomplice" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -597,10 +651,11 @@ bbcode_enabled = true
 text = "Accomplice"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Suspect" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -608,10 +663,11 @@ bbcode_enabled = true
 text = "Suspect"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Status_Witness" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -619,6 +675,7 @@ bbcode_enabled = true
 text = "Witness"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_03" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -629,18 +686,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Couple" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "In a relationship with:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Couple_NPC" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -648,10 +707,11 @@ bbcode_enabled = true
 text = "Robert Smith"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Couple_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -659,10 +719,11 @@ bbcode_enabled = true
 text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Couple_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -670,6 +731,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_04" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -680,18 +742,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Friends" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Friend with:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Friends_NPC_01" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.81, 0.13716, 0.0891, 1)
@@ -699,10 +763,11 @@ bbcode_enabled = true
 text = "Nina Hagen"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Friends_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -710,10 +775,11 @@ bbcode_enabled = true
 text = "None"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Friends_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -721,6 +787,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_05" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -731,18 +798,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Enemies" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Enemy of:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Enemies_NPC_01" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -750,10 +819,11 @@ bbcode_enabled = true
 text = "Jean-Jacques Goldman"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Enemies_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -761,10 +831,11 @@ bbcode_enabled = true
 text = "None"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Enemies_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -772,6 +843,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_06" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -782,18 +854,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Acquaintance" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Knows:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Acquaintance_NPC_01" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -801,10 +875,11 @@ bbcode_enabled = true
 text = "Marc Ribot"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Acquaintance_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -812,10 +887,11 @@ bbcode_enabled = true
 text = "None"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Acquaintance_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -823,6 +899,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_07" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -833,18 +910,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Affair" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Has an affair with:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Affair_NPC" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -852,10 +931,11 @@ bbcode_enabled = true
 text = "Sylvie Vartan"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Affair_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -863,10 +943,11 @@ bbcode_enabled = true
 text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Affair_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -874,6 +955,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_08" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -884,18 +966,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Debt_Influence" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Debt or Influence relationship:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Debt_Influence_NPC_01" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -903,10 +987,11 @@ bbcode_enabled = true
 text = "Mylène Farmer"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Debt_Influence_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -914,10 +999,11 @@ bbcode_enabled = true
 text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Debt_Influence_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -925,6 +1011,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_09" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -935,18 +1022,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Ideology" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Ideological relationship:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Ideology_NPC_01" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -954,10 +1043,11 @@ bbcode_enabled = true
 text = "John Lurie"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Ideology_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -965,10 +1055,11 @@ bbcode_enabled = true
 text = "Nobody"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Ideology_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -976,6 +1067,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_10" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -986,19 +1078,21 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Schedule" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Work schedule:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Schedule_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1006,9 +1100,10 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Schedule_Morn_Aft" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1016,10 +1111,11 @@ bbcode_enabled = true
 text = "8 AM - 4 PM"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Schedule_Aft_Eve" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1027,10 +1123,11 @@ bbcode_enabled = true
 text = "12 PM - 8 PM"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Schedule_Morn_Eve" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1039,10 +1136,11 @@ text = "8 AM - 12 PM
 4 PM - 8 PM"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Schedule_Night" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1050,6 +1148,7 @@ bbcode_enabled = true
 text = "8 PM - 8 AM"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_11" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -1060,44 +1159,49 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Doesn't work on:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend_Sat_Sun" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Saturday[/color] & [color=#cf2317]Sunday[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend_Mon_Tue" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Monday[/color] & [color=#cf2317]Tuesday[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weekend_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[color=#cf2317]Unknown[/color]"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_12" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -1108,18 +1212,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Home" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Home:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Home_Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1127,10 +1233,11 @@ bbcode_enabled = true
 text = "Location"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Home_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1138,6 +1245,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_13" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -1148,18 +1256,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Work" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Work Place:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Work_Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1167,10 +1277,11 @@ bbcode_enabled = true
 text = "Location"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Work_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1178,6 +1289,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_14" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -1188,19 +1300,21 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hangout" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Hangout Place:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hangout_Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1208,10 +1322,11 @@ bbcode_enabled = true
 text = "Location"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hangout_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1219,9 +1334,10 @@ bbcode_enabled = true
 text = "Location"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hangout_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1229,6 +1345,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_15" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -1239,18 +1356,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hideout" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Hideout Place:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hideout_Location" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1258,10 +1377,11 @@ bbcode_enabled = true
 text = "Location"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hideout_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1269,10 +1389,11 @@ bbcode_enabled = true
 text = "None"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hideout_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1280,6 +1401,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Separator_16" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 custom_minimum_size = Vector2(106, 0)
@@ -1290,18 +1412,20 @@ bbcode_enabled = true
 text = " "
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Properties" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "Belongings:"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Properties_Object" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1309,10 +1433,11 @@ bbcode_enabled = true
 text = "Object"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Properties_None" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1320,10 +1445,11 @@ bbcode_enabled = true
 text = "None"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Properties_Unknown" type="RichTextLabel" parent="VBox/Scroller_NPC/Info_NPC"]
 visible = false
-custom_minimum_size = Vector2(106, 0)
+custom_minimum_size = Vector2(106, 10)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0.811765, 0.137255, 0.0901961, 1)
@@ -1331,6 +1457,7 @@ bbcode_enabled = true
 text = "Unknown"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Scroller_Other" type="ScrollContainer" parent="VBox"]
 visible = false
@@ -1347,3 +1474,4 @@ bbcode_enabled = true
 text = "- INFO -"
 fit_content = true
 horizontal_alignment = 1
+vertical_alignment = 1
