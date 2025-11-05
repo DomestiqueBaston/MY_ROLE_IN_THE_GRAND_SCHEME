@@ -620,7 +620,7 @@ func _play_run_away(cards_played: Array[Card]) -> bool:
 		print("failure")
 		success = false
 	else:
-		print("success")
+		print("success: margin = %s" % [max_roll - net_roll])
 		success = true
 
 	if not success:
