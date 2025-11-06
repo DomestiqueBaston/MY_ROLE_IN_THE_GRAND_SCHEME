@@ -314,7 +314,7 @@ layout_mode = 0
 offset_left = 15.0
 offset_top = 198.0
 offset_right = 118.0
-offset_bottom = 313.0
+offset_bottom = 339.0
 tooltip_text = "Here you'll find the info about
 the cards or the place you're in."
 color = Color(1, 0, 0, 0.29411766)
@@ -339,8 +339,7 @@ grow_vertical = 2
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 6
 theme_override_styles/normal = SubResource("StyleBoxFlat_xwr3e")
-text = "Hover over the flashing
-red squares to learn a
+text = "Hover over the flashing squares to learn a
 lot of things!
 
 Then click Next... to learn more incredible things."
@@ -355,8 +354,7 @@ offset_left = 54.0
 offset_top = 49.0
 offset_right = 80.0
 offset_bottom = 57.0
-tooltip_text = "Not this one,
-the one below!"
+tooltip_text = "Not this one!"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.10980392, 0.09411765, 1)
 theme_override_constants/outline_size = 0
@@ -387,10 +385,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = -62.0
-offset_right = -56.0
-offset_bottom = -54.0
+offset_left = 48.0
+offset_top = -23.0
+offset_right = 74.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("4_dg5q6")

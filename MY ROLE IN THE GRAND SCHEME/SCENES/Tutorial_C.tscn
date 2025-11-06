@@ -182,10 +182,10 @@ metadata/_edit_lock_ = true
 
 [node name="Run_Away_Break_In" type="ColorRect" parent="Tuto_03/Info_Container"]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 183.0
-offset_right = 320.23135
-offset_bottom = 217.60847
+offset_left = 251.0
+offset_top = 180.00002
+offset_right = 321.23135
+offset_bottom = 214.60849
 rotation = -0.22863813
 tooltip_text = "Note: Everything mentioned here also applies (more or less) to
 the Break In and Run Away interaction screens!"
@@ -239,11 +239,10 @@ color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
 [node name="Tuto" type="ColorRect" parent="Tuto_03"]
-visible = false
 offset_left = 256.0
-offset_top = 205.0
+offset_top = 207.0
 offset_right = 375.0
-offset_bottom = 284.0
+offset_bottom = 286.0
 theme = ExtResource("3_8o0g4")
 color = Color(1, 0.8000001, 0, 0.5882353)
 metadata/_edit_lock_ = true
@@ -258,8 +257,7 @@ grow_vertical = 2
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 6
 theme_override_styles/normal = SubResource("StyleBoxFlat_xwr3e")
-text = "Hover over the flashing
-red squares to learn a
+text = "Hover over the flashing squares to learn a
 lot of things!
 
 Then click Next... to learn more incredible things."
@@ -274,8 +272,7 @@ offset_left = 63.0
 offset_top = 45.0
 offset_right = 89.0
 offset_bottom = 53.0
-tooltip_text = "Not this one,
-the one below!"
+tooltip_text = "Not this one!"
 mouse_filter = 0
 theme_override_colors/font_color = Color(1, 0.10980392, 0.09411765, 1)
 theme_override_constants/outline_size = 0
@@ -306,9 +303,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -13.0
+offset_left = 48.0
 offset_top = -23.0
-offset_right = 13.0
+offset_right = 74.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 0

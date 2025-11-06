@@ -29,10 +29,10 @@ texture = ExtResource("2_ykdmj")
 centered = false
 
 [node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
-offset_left = 8.0
-offset_top = 5.0
-offset_right = 630.0
-offset_bottom = 344.0
+offset_left = 14.0
+offset_top = 3.0
+offset_right = 632.0
+offset_bottom = 346.0
 theme = ExtResource("3_dqfca")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.333)
 theme_override_constants/shadow_outline_size = 15
@@ -43,19 +43,20 @@ bbcode_enabled = true
 text = "
 [center]Welcome to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]MY ROLE IN THE GRAND SCHEME[/pulse][/color]![/center]
 
+	[color=#ffffff]-[/color] In the shadowy alleys of [color=#ff8864]NEW-CAELUM[/color], you're now a [color=#ff8864]PRIVATE EYE[/color] uncovering [color=#ff8864]corruption[/color], [color=#ff8864]crime[/color], and [color=#ff8864]secrets[/color]. Every case is a [color=#ff8864]puzzle[/color] that requires you to [color=#ff8864]organize[/color] your [color=#ff8864]discoveries[/color], [color=#ff8864]link clues[/color], [color=#ff8864]suspects[/color], and [color=#ff8864]locations[/color]. The deeper you dig, the more complex the truth becomes, often requiring you to [color=#ff8864]re-examine everything[/color]. Solving a case is just the first step in exposing the dark heart of the city... Or could it be even [color=#ff1c18]darker[/color] still? There's only [color=#ff8864]one way[/color] to [color=#ff8864]find out[/color]... But [color=#ff1c18]the city always takes its due[/color].
 
-	[color=#ffffff]-[/color] In the shadowy alleys of [color=#ff8864]NEW-CAELUM[/color], you're now a [color=#ff8864]PRIVATE EYE[/color] uncovering [color=#ff8864]corruption[/color], [color=#ff8864]crime[/color], and [color=#ff8864]secrets[/color]. Every case is a [color=#ff8864]puzzle[/color] that requires you to [color=#ff8864]organize[/color] your [color=#ff8864]discoveries[/color], [color=#ff8864]link clues[/color], [color=#ff8864]suspects[/color], and [color=#ff8864]locations[/color]. The deeper you dig, the more complex the truth becomes, often requiring you to [color=#ff8864]re-examine everything[/color]. Solving a case is just the first step in exposing the dark heart of the city...
 
 [center]- [color=#ff1c18]CARDS[/color] & [color=#ff1c18]INTERACTIONS[/color] -[/center]
 
-
-	[color=#ffffff]-[/color] [color=#ff1c18]Cards[/color] are your [color=#ff8864]primary tools[/color] for [color=#ff1c18]interaction[/color], representing [color=#ff1c18]CHARACTERS[/color], [color=#ff1c18]OBJECTS[/color], [color=#ff1c18]LOCATIONS[/color], [color=#ff1c18]EVIDENCE[/color], and [color=#ff1c18]ACTIONS[/color] ([color=#ff8864]Dialogue[/color], [color=#ff8864]Investigation[/color], [color=#ff8864]Combat[/color], [color=#ff8864]Abstract[/color], etc.). You'll use them to [color=#ff8864]interrogate[/color], [color=#ff8864]search[/color], or [color=#ff8864]fight[/color] (if needed). [color=#ff8864]Organize[/color] your [color=#ff8864]cards[/color] into a [color=#ff1c18]Mastery Hand[/color] ([color=#ff8864]10 Interaction cards[/color], with a [color=#ff8864]maximum[/color] of [color=#ff8864]3 Abstract cards[/color]) to assist [color=#ff8864]beneficially[/color] in your [color=#ff8864]investigations[/color].
+	[color=#ffffff]-[/color] [color=#ff1c18]Cards[/color] are your [color=#ff8864]primary tools[/color] for [color=#ff1c18]interaction[/color], representing [color=#ff1c18]CHARACTERS[/color], [color=#ff1c18]OBJECTS[/color], [color=#ff1c18]LOCATIONS[/color], [color=#ff1c18]EVIDENCE[/color], and... [color=#ff1c18]INTERACTIONS[/color]. You'll use them to [color=#ff8864]interrogate[/color], [color=#ff8864]search[/color], or [color=#ff8864]fight[/color] (if needed).
+	[color=#ffffff]-[/color] [color=#ff1c18]DIALOGUE[/color], [color=#ff1c18]COMBAT[/color] and [color=#ff1c18]INVESTIGATION[/color] cards represent your [color=#ff8864]actions[/color], [color=#ff1c18]SPECIAL[/color] cards represent [color=#ff8864]tactical options[/color] and [color=#ff1c18]ABSTRACT[/color] cards represent [color=#ff8864]dynamic modifiers[/color].
+	[color=#ffffff]-[/color] [color=#ff8864]Organize[/color] your [color=#ff8864]cards[/color] into a [color=#ff1c18]Mastery Hand[/color] ([color=#ff8864]10 Interaction cards[/color], with a [color=#ff8864]max.[/color] of [color=#ff8864]3 Abstract cards[/color]) to assist you [color=#ff8864]beneficially[/color].
 
 [center]- [color=#ff1c18]ESTABLISHING INVESTIGATION RELATIONSHIPS[/color] -[/center]
 
-	[color=#ffffff]-[/color] Use the [color=#ff8864]Investigation Board[/color] to [color=#ff8864]organize[/color] [color=#ff1c18]clues[/color] and [color=#ff8864]connect[/color] [color=#ff1c18]cards[/color] with [color=#ff1c18]colored threads[/color] (each color represents a different relation type like [color=#ff1c18]Friendship[/color], [color=#ff1c18]Intimacy[/color], [color=#ff1c18]Culprit[/color], [color=#ff1c18]Accomplice[/color], etc.) to [color=#ff8864]visualize relationships[/color], make [color=#ff1c18]accusations[/color], and [color=#ff1c18]establish evidence[/color]. These [color=#ff8864]links[/color] can be [color=#ff1c18]Confirmed[/color] ([color=#ff8864]Solid[/color]) or [color=#ff1c18]Probable[/color] ([color=#ff8864]Dashed[/color]) and represent relations between elements of the case.
+	[color=#ffffff]-[/color] Use the [color=#ff8864]Investigation Board[/color] to [color=#ff8864]organize[/color] [color=#ff1c18]clues[/color] and [color=#ff8864]connect[/color] [color=#ff1c18]cards[/color] with [color=#ff1c18]colored threads[/color] (each color represents a different relation type like [color=#ff1c18]Friendship[/color], [color=#ff1c18]Intimacy[/color], [color=#ff1c18]Culprit[/color], [color=#ff1c18]Accomplice[/color], etc.) to visualize [color=#ff1c18]relationships[/color], make [color=#ff1c18]accusations[/color], and [color=#ff1c18]establish evidence[/color]. These [color=#ff8864]links[/color] can be [color=#ff1c18]Confirmed[/color] ([color=#ff8864]Solid[/color]) or [color=#ff1c18]Probable[/color] ([color=#ff8864]Dashed[/color]) and represent relations between elements of the case.
 	[color=#ffffff]-[/color] A [color=#ff1c18]Culprit[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Victim[/color], An [color=#ff1c18]Accomplice[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Culprit[/color] and a [color=#ff1c18]Witness[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to [color=#ff1c18]another link[/color].
-	[color=#ffffff]-[/color] Make sure you have [color=#ff8864]at least[/color] one [color=#ff1c18]culprit[/color], one piece of [color=#ff1c18]evidence[/color], and a [color=#ff1c18]motive[/color]. When you're ready, [color=#ff1c18]validate the case[/color] (in the [color=#ff8864]Cases menu[/color]).
+	[color=#ffffff]-[/color] Make sure you have [color=#ff8864]at least[/color] one [color=#ff1c18]culprit[/color], one piece of [color=#ff1c18]evidence[/color], and a [color=#ff1c18]motive[/color]. When you're ready, [color=#ff1c18]validate the case[/color] (in the [color=#ff8864]Cases[/color] menu).
 "
 
 [node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
