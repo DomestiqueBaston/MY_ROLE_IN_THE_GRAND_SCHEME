@@ -5,7 +5,12 @@ extends Node2D
 @onready var _settings_scene = preload("res://SCENES/Settings.tscn")
 @onready var _credits_scene = preload("res://SCENES/Credits.tscn")
 @onready var _language_scene = preload("res://SCENES/Language.tscn")
-@onready var _tutorial_scene = preload("res://SCENES/Tutorial.tscn")
+@onready var _tutorial_scenes = [
+	preload("res://SCENES/Tutorial_A.tscn"),
+	preload("res://SCENES/Tutorial_B.tscn"),
+	preload("res://SCENES/Tutorial_C.tscn"),
+	preload("res://SCENES/Tutorial_D.tscn")
+]
 @onready var _char_gen_scene = preload("res://SCENES/Character_Generation.tscn")
 @onready var _main_scene = preload("res://SCENES/Main_V2.tscn")
 @onready var _interaction_scene = preload("res://SCENES/Interaction.tscn")
@@ -99,8 +104,9 @@ func _go_to_language_scene():
 	_go_to_option_menu()
 
 func _go_to_tutorial():
-	var tutorial = await _replace_scene(_tutorial_scene)
-	await tutorial.done
+	for scene in _tutorial_scenes:
+		var tutorial = await _replace_scene(scene)
+		await tutorial.done
 	_go_to_option_menu()
 
 func _go_to_char_gen():

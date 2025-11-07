@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://40wfxya6vuwh"]
+[gd_scene load_steps=15 format=3 uid="uid://40wfxya6vuwh"]
 
 [ext_resource type="Texture2D" uid="uid://dk0qryv0ru4yc" path="res://GRAPHICS/TUTO/Tuto_01.png" id="1_64c1n"]
+[ext_resource type="Script" uid="uid://dm4301nlmc26d" path="res://SCRIPTS/Tutorial.gd" id="1_anl5i"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="3_2fovi"]
 [ext_resource type="Theme" uid="uid://dlmptat7076r" path="res://UI/Tutorial_Theme.tres" id="4_dg5q6"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="5_8t86h"]
@@ -71,7 +72,9 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc34s"]
 
-[node name="Tutorial_B" type="Node2D"]
+[node name="Tutorial_B" type="Node2D" node_paths=PackedStringArray("next_button")]
+script = ExtResource("1_anl5i")
+next_button = NodePath("Text/Chalk_Mask/Next_Button")
 metadata/_edit_lock_ = true
 
 [node name="Tuto_02" type="Sprite2D" parent="."]
