@@ -14,6 +14,7 @@ var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json
 
 func _ready():
 	_update_controls()
+	$Background_List.background_selected.connect(_on_background_list_item_selected)
 
 func _update_controls():
 	$PHY.text = str(_phy)
@@ -100,7 +101,7 @@ func _on_hea_plus_pressed():
 
 func _on_randomize_pressed():
 	Globals.valid_sound.play()
-	$Background_Selector/Background_List.randomize()
+	$Background_List.randomize()
 	_phy = randi_range(3, 7)
 	var min_men = maxi(3, _total_points - _phy - 7)
 	var max_men = mini(7, _total_points - _phy - 3)
@@ -118,7 +119,7 @@ func _on_randomize_pressed():
 
 func _on_reset_pressed():
 	Globals.cancel_sound.play()
-	$Background_Selector/Background_List.reset()
+	$Background_List.reset()
 	_phy = 3
 	_men = 3
 	_hea = 3
@@ -126,20 +127,20 @@ func _on_reset_pressed():
 
 func _on_background_list_item_selected():
 	Globals.valid_sound.play()
-	$Story.text = $Background_Selector/Background_List.get_background_story()
+	$Story.text = $Background_List.get_background_story()
 	_enable_disable_ok_button()
 
 func _enable_disable_ok_button():
 	$Confirm.disabled = (
 		_points_remaining() > 0 or
 		$Character_Name.text.strip_edges().is_empty() or
-		$Background_Selector/Background_List.get_background_story().is_empty())
+		$Background_List.get_background_story().is_empty())
 
 func _on_confirm_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
 	var player = GameState.player
-	var bg = $Background_Selector/Background_List.get_background()
+	var bg = $Background_List.get_background()
 	player.reset()
 	player.player_name = $Character_Name.text.strip_edges()
 	player.sex = $SliderBg/HSlider.value / 100.0

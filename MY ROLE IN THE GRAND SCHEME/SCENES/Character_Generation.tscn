@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cjvtdra3n1tqy"]
+[gd_scene load_steps=29 format=3 uid="uid://cjvtdra3n1tqy"]
 
 [ext_resource type="Texture2D" uid="uid://dexexjyffb7ey" path="res://GRAPHICS/CHARACTER_GENERATION/Character_Generation_BG.png" id="1_fahl1"]
 [ext_resource type="Script" uid="uid://dr420si05lccy" path="res://SCRIPTS/Character_Generation.gd" id="1_nmg6f"]
@@ -29,8 +29,6 @@
 [ext_resource type="AudioStream" uid="uid://u88x0ht2xme6" path="res://SOUND/MISC/Typing.ogg" id="30_7d8wo"]
 [ext_resource type="AudioStream" uid="uid://d10rphc4dsk4c" path="res://SOUND/MISC/Sex_choice.ogg" id="35_7d8wo"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5l0o"]
-
 [node name="Character_Generation" type="Node2D"]
 script = ExtResource("1_nmg6f")
 
@@ -53,11 +51,11 @@ offset_left = 136.0
 offset_top = 61.0
 offset_right = 239.0
 offset_bottom = 77.0
-theme_override_colors/selection_color = Color(0.1998, 0.27, 0.21969, 0.341176)
-theme_override_colors/caret_color = Color(0.1998, 0.27, 0.21969, 0.662745)
-theme_override_colors/font_placeholder_color = Color(0.2, 0.270588, 0.219608, 0.341176)
-theme_override_colors/font_selected_color = Color(0.1998, 0.27, 0.21969, 0.662745)
 theme_override_colors/font_color = Color(0.1998, 0.27, 0.21969, 0.843137)
+theme_override_colors/font_selected_color = Color(0.1998, 0.27, 0.21969, 0.662745)
+theme_override_colors/font_placeholder_color = Color(0.2, 0.270588, 0.219608, 0.341176)
+theme_override_colors/caret_color = Color(0.1998, 0.27, 0.21969, 0.662745)
+theme_override_colors/selection_color = Color(0.1998, 0.27, 0.21969, 0.341176)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
 placeholder_text = "Enter a name here..."
@@ -182,22 +180,17 @@ theme_override_colors/font_color = Color(0.2, 0.270588, 0.219608, 0.843137)
 theme_override_fonts/font = ExtResource("6_ntsua")
 theme_override_font_sizes/font_size = 8
 
-[node name="Background_Selector" type="PanelContainer" parent="Creation_Page"]
+[node name="Background_List" type="MenuButton" parent="Creation_Page"]
+custom_minimum_size = Vector2(153, 16)
 layout_mode = 0
 offset_left = 107.0
 offset_top = 211.0
 offset_right = 269.0
-offset_bottom = 328.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_h5l0o")
-
-[node name="Background_List" type="OptionButton" parent="Creation_Page/Background_Selector"]
-custom_minimum_size = Vector2(153, 16)
-layout_mode = 2
+offset_bottom = 227.0
 size_flags_vertical = 0
 tooltip_text = "You need
 a past..."
 toggle_mode = false
-flat = true
 script = ExtResource("5_2k6nw")
 
 [node name="Randomize" type="TextureButton" parent="Creation_Page"]
@@ -295,10 +288,6 @@ parameters/looping = true
 [connection signal="pressed" from="Creation_Page/MEN/MEN_Plus" to="Creation_Page" method="_on_men_plus_pressed"]
 [connection signal="pressed" from="Creation_Page/HEA/HEA_Moins" to="Creation_Page" method="_on_hea_moins_pressed"]
 [connection signal="pressed" from="Creation_Page/HEA/HEA_Plus" to="Creation_Page" method="_on_hea_plus_pressed"]
-[connection signal="background_selected" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page" method="_on_background_list_item_selected"]
-[connection signal="button_down" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_down"]
-[connection signal="button_up" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_button_up"]
-[connection signal="item_selected" from="Creation_Page/Background_Selector/Background_List" to="Creation_Page/Background_Selector/Background_List" method="_on_item_selected"]
 [connection signal="mouse_entered" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Creation_Page/Randomize" to="Creation_Page" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Creation_Page/Randomize" to="Creation_Page" method="_on_randomize_pressed"]

@@ -1,29 +1,34 @@
-extends OptionButton
-
-var _backgrounds = preload("res://JSON/PLAYER/Background_Descriptions.json").data
+extends MenuButton
 
 signal background_selected
 
+var _backgrounds = preload("res://JSON/PLAYER/Background_Descriptions.json").data
+var _selected: int
+
 func _ready():
 	var popup = get_popup()
-	popup.transparent = true
-	popup.max_size = Vector2(162, 101)
 
 	if _backgrounds is Array and _backgrounds.size() > 0:
 		for item in _backgrounds:
-			add_item(item["profession"])
-		add_separator("Select a background")
-		selected = item_count - 1
+			popup.add_item(item["profession"])
+
+	popup.index_pressed.connect(_on_item_selected)
+	button_down.connect(_on_button_down)
+	button_up.connect(_on_button_up)
+
+	reset()
 
 func reset():
-	selected = item_count - 1
+	_selected = -1
+	text = "Select a background"
 	background_selected.emit()
 
 func randomize():
-	selected = randi_range(0, _backgrounds.size() - 1)
-	background_selected.emit()
+	_on_item_selected(randi() % _backgrounds.size())
 
-func _on_item_selected(_index: int):
+func _on_item_selected(index: int):
+	_selected = index
+	text = _backgrounds[_selected].profession
 	background_selected.emit()
 
 func _on_button_down():
@@ -33,13 +38,13 @@ func _on_button_up():
 	Globals.leave_sound.play()
 
 func get_background() -> Dictionary:
-	if selected >= 0 and selected < _backgrounds.size():
-		return _backgrounds[selected]
+	if _selected >= 0 and _selected < _backgrounds.size():
+		return _backgrounds[_selected]
 	else:
 		return {}
 
 func get_background_story() -> String:
-	if selected >= 0 and selected < _backgrounds.size():
-		return _backgrounds[selected]["description"]
+	if _selected >= 0 and _selected < _backgrounds.size():
+		return _backgrounds[_selected].description
 	else:
 		return ""
