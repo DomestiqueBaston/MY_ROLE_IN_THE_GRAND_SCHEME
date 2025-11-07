@@ -661,15 +661,9 @@ func get_bonus_malus() -> int:
 		print("Wan malus: %s" % wanted_malus)
 		ret += wanted_malus
 
-	var debt_delta = 0
-	var debt_count = get_debt_count()
-	if debt_count >= 4:
-		debt_delta = 2
-	elif debt_count == 3:
-		debt_delta = randi_range(1, 2)
-	elif debt_count == 2:
-		debt_delta = 1
-	if debt_delta != 0:
+	@warning_ignore("integer_division")
+	var debt_delta = get_debt_count() / 2
+	if debt_delta > 0:
 		print("unpaid bills malus: %s" % debt_delta)
 		ret += debt_delta
 
