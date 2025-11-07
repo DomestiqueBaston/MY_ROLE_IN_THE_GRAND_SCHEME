@@ -13,6 +13,9 @@ func _ready():
 	$Note/No.mouse_entered.connect(_on_any_button_entered)
 	$Note/No.mouse_exited.connect(_on_any_button_exited)
 
+func set_price(price: int):
+	$Note/Price.text = str(price)
+
 func get_confirmed() -> bool:
 	return _confirmed
 

@@ -44,8 +44,7 @@
 	{
 		"id": "JOB007",
 		"profession": "Drug Addict",
-		"bonus_malus": {"MEN": -1, "HEA": -1, "drugs": 1},
-		"special": {"discount": "-50%", "bonus": "bonus 1", "drug_dose": 1},
+		"bonus_malus": {"MEN": -1, "HEA": -1, "drugs": 1, "dealer_discount": 0.5},
 		"comment_1": "-50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose, +1 dose de drogue",
 		"description": "I've been to places most people wouldn't dare imagine, lost in a world where the boundaries of right and wrong blurred into nothing. The drugs, the chaos, the grime (it was all I knew for a time). I found myself in the depths, but eventually, something snapped. I pulled myself out (don't ask me how; I barely remember), but the scars, the remnants of that life, never truly disappeared.\n\nI thought I left it all behind. I found a new path, a new purpose. As a private detective now, I try to help others who are lost, guiding them out of their darkness. But the truth is, I've never fully escaped. Every case I take, every shadow I chase, pulls me back into that world I swore I'd left. The streets, the lies, the filth, it all comes rushing back. And to get over it, believe me, it takes strength I don't always have.\n\nI clean up the mess of others, but I can't help but feel I'm still wading through my own. Every mystery I solve reminds me that the grime I once lived in never really left. I still carry that burden. It's just a different kind of dirt I'm digging through now."
 	},
@@ -74,7 +73,6 @@
 		"id": "JOB011",
 		"profession": "Ice Cream Vendor",
 		"bonus_malus": {"money": 150},
-		"special": "+150Dø ",
 		"comment_1": "+150Dø au démarrage de la partie",
 		"description": "Selling ice cream seemed simple at first. On hot days, people would line up, eager for a cool treat. I'd serve them their cones with a smile, and for a while, that was enough. The joy of seeing someone's day a little sweeter, made it feel like I was doing something important.\n\nBesides, at the time, I never really cared about global warming. Barely noticing that, year after year, I sold more than the year before. I was content with my lie about my products' qualities, convincing myself I deserved it.\n\nBut as time passed, I began to notice things. The way people avoided eye contact, the tension in their voices when they asked for a flavor, the subtle shifts in their mood as they handed over the money. There was always something more beneath the surface, something unspoken.\n\nEventually, it became clear: serving ice cream wasn't enough. I needed to uncover the deeper truths, the stories people tried to hide. So, I traded my scoop for something else: a sharp mind. Now, as a private eye, I still observe people but instead of offering a sweet treat, I dig for the hidden truths, the secrets they keep buried. The job may have changed, but my thirst for uncovering the unseen has stayed the same."
 	},
@@ -181,8 +179,7 @@
 	{
 		"id": "JOB026",
 		"profession": "Veterinarian",
-		"bonus_malus": {},
-		"special": "-50%",
+		"bonus_malus": {"doctor_discount": 0.5},
 		"comment_1": "-50 % sur les interventions thérapeutiques",
 		"description": "You know what a veterinarian is, right? It's all about healing animals, fixing what is broken, and bringing relief where it is needed.\n\nIt was satisfying work, but I began to notice something more. With every creature I treated, I could sense there was always more: the pain, the hidden struggles, the silent stories. Those creatures could tell so much more.\n\nAnimals don't lie. Their eyes, their behavior, and the smallest of their movements spoke volumes. I started to understand their condition in ways others didn't. It wasn't just about medicine; it was about reading between the lines.\n\nEventually, I realized that my true calling wasn't just about healing animals. It was about finding out the hidden parts of life, no matter who they belonged to. So, I left the clinic behind and became a detective. Now, I seek the mysteries people hide, using the same instincts I once used to heal."
 	},

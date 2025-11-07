@@ -401,9 +401,14 @@ func visit_doctor():
 	if _player_location != PlayerLocation.DOCTOR:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.DOCTOR)
-	var ok = await Globals.dialog_overlay.visit_doctor()
+
+	var price = 50
+	if "doctor_discount" in player.job_bonus_malus:
+		price = roundi(price * player.job_bonus_malus.doctor_discount)
+
+	var ok = await Globals.dialog_overlay.visit_doctor(price)
 	if ok:
-		player.money -= 50
+		player.money -= price
 		player.health += 3
 		player.improve_emotion(2)
 		player.improve_addiction(1)
