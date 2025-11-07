@@ -64,9 +64,9 @@
 [ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/SHORT_EVENT/Confirmation.png" id="56_8x3ap"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="57_gfusj"]
 [ext_resource type="Script" uid="uid://hwofijnch3v5" path="res://SCRIPTS/Confirmation_Overlay_Buttons.gd" id="58_sfan1"]
+[ext_resource type="Script" uid="uid://b2xm7f0adahaa" path="res://SCRIPTS/Starting_Hand.gd" id="59_smut4"]
 [ext_resource type="Texture2D" uid="uid://6wn0yf5hibwo" path="res://GRAPHICS/SHORT_EVENT/Income_BG.png" id="59_vprm5"]
 [ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="60_llwhl"]
-[ext_resource type="Script" uid="uid://cg2gp72651q86" path="res://SCRIPTS/Income_Overlay_Button.gd" id="61_5iqpn"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="62_gjkrj"]
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="62_smut4"]
 [ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/SHORT_EVENT/Player_Improvement_BG.png" id="67_a7igc"]
@@ -1415,7 +1415,6 @@ offset_top = 303.0
 offset_right = 343.0
 offset_bottom = 313.0
 text = "Ok, nice..."
-script = ExtResource("61_5iqpn")
 
 [node name="Chalk" type="Sprite2D" parent="Overlays/Income_Start/Income"]
 clip_children = 1
@@ -1530,6 +1529,7 @@ modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("60_llwhl")
+script = ExtResource("59_smut4")
 
 [node name="Quit" type="Button" parent="Overlays/Income_Start/Starting_Hand"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -1539,7 +1539,6 @@ offset_top = 303.0
 offset_right = 343.0
 offset_bottom = 313.0
 text = "Well, ok..."
-script = ExtResource("61_5iqpn")
 
 [node name="Chalk" type="Sprite2D" parent="Overlays/Income_Start/Starting_Hand"]
 clip_children = 1
@@ -1600,6 +1599,7 @@ fit_content = true
 horizontal_alignment = 2
 
 [node name="Card_Places" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
+visible = false
 position = Vector2(0, 12)
 
 [node name="First_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
@@ -1607,6 +1607,13 @@ position = Vector2(243, 152)
 
 [node name="Last_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
 position = Vector2(323, 152)
+
+[node name="Cards" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
+position = Vector2(243, 164)
+script = ExtResource("76_5oqru")
+size = Vector2(154, 100)
+show_bounding_box = true
+metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
 visible = false
@@ -4325,12 +4332,6 @@ bus = &"UI"
 [connection signal="mouse_entered" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_switch_pressed"]
-[connection signal="mouse_entered" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Income_Start/Income/Quit" to="Overlays/Income_Start/Income/Quit" method="_on_pressed"]
-[connection signal="mouse_entered" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Income_Start/Starting_Hand/Quit" to="Overlays/Income_Start/Starting_Hand/Quit" method="_on_pressed"]
 [connection signal="mouse_entered" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_exited"]
 [connection signal="pressed" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_pressed"]

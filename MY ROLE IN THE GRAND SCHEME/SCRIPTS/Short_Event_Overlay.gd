@@ -377,3 +377,18 @@ func show_npc_run(success: bool):
 	await _disappear()
 	$Overlays/Misc.hide()
 	$Overlays/Misc/Announces/Dialogue.hide()
+
+##
+## Displays an overlay showing the money, drugs and mastery cards the player is
+## starting the game with.
+##
+func show_starting_hand():
+	$Overlays/Income_Start/Starting_Hand.populate()
+	$Overlays/Income_Start/Starting_Hand.show()
+	$Overlays/Income_Start.show()
+	await _appear()
+	await $Overlays/Income_Start/Starting_Hand.done
+	await _disappear()
+	$Overlays/Income_Start.hide()
+	$Overlays/Income_Start/Starting_Hand.hide()
+	$Overlays/Income_Start/Starting_Hand.clear()

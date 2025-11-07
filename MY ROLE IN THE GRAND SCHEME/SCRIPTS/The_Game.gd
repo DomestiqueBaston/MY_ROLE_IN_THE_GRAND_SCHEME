@@ -120,7 +120,8 @@ func _go_to_char_gen():
 
 func _start_game():
 	GameState.start_game()
-	_continue_game()
+	await _continue_game()
+	await Globals.dialog_overlay.show_starting_hand()
 
 func _continue_game():
 	var interaction = GameState.get_current_interaction()
