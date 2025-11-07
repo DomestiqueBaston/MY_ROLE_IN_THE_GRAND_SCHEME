@@ -305,7 +305,13 @@ func lower():
 ## Returns true if the link is one of the incriminating link types.
 ##
 func is_incriminating() -> bool:
-	return type in [
+	return is_type_incriminating(type)
+
+##
+## Returns true if the given link type is incriminating.
+##
+static func is_type_incriminating(link_type: Link.Type) -> bool:
+	return link_type in [
 		Type.DEBT, Type.GUILT, Type.INTIMACY, Type.FRIEND, Type.ENEMY,
 		Type.IDEOLOGY
 	]
