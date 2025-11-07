@@ -1598,18 +1598,8 @@ text = "3"
 fit_content = true
 horizontal_alignment = 2
 
-[node name="Card_Places" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
-visible = false
-position = Vector2(0, 12)
-
-[node name="First_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
-position = Vector2(243, 152)
-
-[node name="Last_Card" type="Marker2D" parent="Overlays/Income_Start/Starting_Hand/Card_Places"]
-position = Vector2(323, 152)
-
 [node name="Cards" type="Node2D" parent="Overlays/Income_Start/Starting_Hand"]
-position = Vector2(243, 164)
+position = Vector2(243, 162)
 script = ExtResource("76_5oqru")
 size = Vector2(154, 100)
 show_bounding_box = true
