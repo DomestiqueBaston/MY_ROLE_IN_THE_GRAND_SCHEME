@@ -55,9 +55,6 @@ var cases: Array[Case]
 ## Price for a search warrant.
 const warrant_price: int = 25
 
-## Price for a dose of drugs.
-const drug_price: int = 25
-
 ## Signal emitted when the time has changed: see get_day() and get_hour().
 @warning_ignore("unused_signal")
 signal time_changed
@@ -374,15 +371,16 @@ func use_drugs(doses: int):
 	await player.use_drugs(doses)
 
 func get_player_drug_price() -> int:
-	var price: int = drug_price
+	var price: int = 25
 	if "dealer_discount" in player.job_bonus_malus:
 		price = roundi(price * player.job_bonus_malus.dealer_discount)
 	return price
 
 func can_visit_dealer() -> bool:
-	var hour = get_hour()
 	var price = get_player_drug_price()
-	return (hour < 8 or hour >= 20) \
+	var travel_time = 0 if _player_location == PlayerLocation.ROWENA else 1
+	var eta = get_hour() + travel_time
+	return (eta < 8 or eta >= 20) \
 		and player.money >= price and player.get_debt_count() == 0
 
 func visit_dealer():
@@ -397,11 +395,19 @@ func visit_dealer():
 		player.money -= doses * price
 		player.drugs += doses
 
+func get_player_doctor_fee() -> int:
+	var price: int = 50
+	if "doctor_discount" in player.job_bonus_malus:
+		price = roundi(price * player.job_bonus_malus.doctor_discount)
+	return price
+
 func can_visit_doctor() -> bool:
 	var day = get_day()
-	var hour = get_hour()
-	if day % 7 >= 5 or hour < 8 or hour >= 20 \
-		or player.money < 50 or player.get_debt_count() > 0:
+	var travel_time = 0 if _player_location == PlayerLocation.DOCTOR else 1
+	var eta = get_hour() + travel_time
+	var fee = get_player_doctor_fee()
+	if day % 7 >= 5 or eta < 8 or eta >= 20 \
+		or player.money < fee or player.get_debt_count() > 0:
 		return false
 	return _last_doctor_day < 0 or day - _last_doctor_day >= 4
 
@@ -410,13 +416,10 @@ func visit_doctor():
 		await pass_one_hour()
 		set_player_location(PlayerLocation.DOCTOR)
 
-	var price = 50
-	if "doctor_discount" in player.job_bonus_malus:
-		price = roundi(price * player.job_bonus_malus.doctor_discount)
+	var fee = get_player_doctor_fee()
 
-	var ok = await Globals.dialog_overlay.visit_doctor(price)
-	if ok:
-		player.money -= price
+	if await Globals.dialog_overlay.visit_doctor(fee):
+		player.money -= fee
 		player.health += 3
 		player.improve_emotion(2)
 		player.improve_addiction(1)
