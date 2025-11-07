@@ -1129,9 +1129,7 @@ func _does_npc_run(npc: NpcCard) -> bool:
 
 	var max_roll = roundi((npc.physical + npc.mental + npc.health) / 3.0)
 	var actual_roll = randi_range(1, 10)
-	var net_roll = actual_roll
-	if npc.wanted > 1:
-		net_roll += npc.wanted - 1
+	var net_roll = actual_roll + npc.get_wanted_malus()
 	var success: bool
 
 	var tweak_attr = func(value):

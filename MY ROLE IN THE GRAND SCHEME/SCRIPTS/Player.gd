@@ -265,7 +265,7 @@ func get_addiction() -> int:
 	return addiction
 
 func set_wanted(wan: int):
-	wan = clampi(wan, 0, 5)
+	wan = clampi(wan, 0, 4)
 	if wanted != wan:
 		wanted = wan
 		if _signal_pause == 0:
@@ -273,6 +273,10 @@ func set_wanted(wan: int):
 
 func get_wanted() -> int:
 	return wanted
+
+func get_wanted_malus() -> int:
+	@warning_ignore("integer_division")
+	return wanted / 2
 
 func set_money(dough: int):
 	if money != dough:
@@ -652,9 +656,10 @@ func get_bonus_malus() -> int:
 		print("Add bonus/malus: %s" % add_delta)
 		ret += add_delta
 
-	if wanted > 1:
-		print("Wan malus: %s" % (wanted - 1))
-		ret += wanted - 1
+	var wanted_malus = get_wanted_malus()
+	if wanted_malus > 0:
+		print("Wan malus: %s" % wanted_malus)
+		ret += wanted_malus
 
 	var debt_delta = 0
 	var debt_count = get_debt_count()

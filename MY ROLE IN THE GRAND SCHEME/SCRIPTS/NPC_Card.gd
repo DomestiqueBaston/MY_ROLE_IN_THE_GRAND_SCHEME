@@ -191,6 +191,17 @@ func set_wanted(wan: int):
 func get_wanted() -> int:
 	return wanted
 
+func get_wanted_malus() -> int:
+	match wanted:
+		0:
+			return 0
+		1, 2:
+			return 1
+		3:
+			return 2
+		_:
+			return 3
+
 func set_player_reputation(rep: int):
 	player_reputation = clampi(rep, -2, 2)
 

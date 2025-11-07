@@ -238,11 +238,9 @@ func get_bonus_malus() -> int:
 ## combat cards' "opponent_dice" bonus/malus.
 ##
 func get_npc_bonus_malus(npc: NpcCard) -> int:
-	var bonus_malus: int = 0
-
-	if npc.wanted > 1:
-		print("NPC Wan malus: %s" % (npc.wanted - 1))
-		bonus_malus += npc.wanted - 1
+	var bonus_malus: int = npc.get_wanted_malus()
+	if bonus_malus > 0:
+		print("NPC Wan malus: %s" % bonus_malus)
 
 	if _npc_dice != 0:
 		print("NPC dice bonus/malus: %s" % _npc_dice)
