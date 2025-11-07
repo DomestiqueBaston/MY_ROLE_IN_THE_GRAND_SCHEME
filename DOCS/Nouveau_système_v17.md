@@ -465,7 +465,7 @@ Les différentes piles de cartes du joueur (en interaction)
 Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas faire plusieurs interactions en même temps.
 	- On ne peut pas interagir sans jouer aucune carte (sauf Spécial).
-	- On joue au maximum 3 cartes par Interaction et au minimum 1 (max une de chaque type – voir précédemment aux Cartes) sauf Break In et Run Away : 2 cartes max (la deuxième sera une carte Abstraite) ou aucune (avec un malus de 1 au jet de dé – voir plus bas).
+	- On joue au maximum 3 cartes maximum par Interaction et au minimum 1 (max une de chaque type – voir précédemment aux Cartes) sauf Break In et Run Away : 2 cartes max (la deuxième sera une carte Abstraite) ou aucune (avec un malus de 1 au jet de dé – voir plus bas). Voir le détail dans chaque à interaction plus bas.
 	- La main Fallback proposera 5 cartes Interaction et/ou Abstraite aléatoires (2 Interaction minimum ≠ celle que le joueur a en main).
 	- On ne peut pas savoir si un PNJ respecte son emploi du temps autrement qu’en se rendant où il devrait être à l’heure dite.
  	- Informations obtenues concernant les PNJs lors de la première rencontre « physique » et avant même l’interaction (si certaines ne sont pas déjà connus) : Nom et Adresse et/ou lieu de travail (voir aussi Dialogue).
@@ -485,7 +485,7 @@ Les interactions : Dialogue, Combat et Investigation
 Dialogue
 	- Un seul Dialogue avec un PNJ par jour.
 	- Un Dialogue durera 2h (déplacement compris). Des modificateurs peuvent être appliqués en fonction des cartes jouées. Mais de toute manière, un Dialogue ne durera jamais moins d’1 heure (ne serait-ce que pour le déplacement).
-	- On joue 3 cartes maximum par Dialogue de type : Dialogue, Objet, PNJ, Lieu, Evidence et Abstraite (1 seule pour chaque type) Et PNJ ou Objet ou Lieu ou Evidence. 1 carte Dialogue est nécessaire.
+	- On joue 3 cartes maximum par Dialogue de type : Dialogue, Objet, PNJ, Lieu, Evidence et Abstraite. 1 carte Dialogue est nécessaire. On peut ajouter une carte Abstraite. Et on peut également ajouter une carte Objet ou PNJ ou Lieu ou Evidence.
 	- La main Fall back proposera 5 cartes Dialogue et Abstraite aléatoires. 2 cartes Dialogue minimum. ≠ de celles que le joueur a en main.
 	- Si au moment de la demande de Dialogue, le Lieu où se trouve le PNJ n’est pas connu (lacune dans la connaissance de son l’emploi du temps, etc.), l’action du menu sera inaccessible.
 	- Si le joueur se rend sur un Lieu pour y rencontrer un PNJ selon l’emploi du temps qu’il lui connaît mais que ce dernier n’y est pas (mensonge ou changement d’emploi du temps temporaire, etc.), il ne trouvera personne et aura droit à la scène de l’interphone (Short_Event_Overlay.tscn/Intercom/Away). Au joueur d’en tirer les conclusions sur la Fiche d’Enquête… On avancera le temps d’1 heure pour le déplacement.
@@ -632,7 +632,7 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 
 Fuir un Combat (Joueur) – RUN AWAY
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir SAUF avant un Dialogue.
-	- On ne peut jouer que 2 cartes maximum pour fuir (la carte Run Away + une carte Abstraite).
+	- On ne peut jouer que jusqu’à 2 cartes maximum pour fuir (la carte Run Away + éventuellement une carte Abstraite).
 	- La main Fallback proposera 3 cartes Abstraite et/ou Run Away aléatoires. ≠ de celles que le joueur a en main.
 	- On peut jouer Run Away seule.
 	- On ne peut pas jouer une carte Abstraite seule.
@@ -673,7 +673,7 @@ Investigation en présence d’un PNJ SANS autorisation de fouille
 
 Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ – BREAK IN
 	- Il faut avant tout arriver à pénétrer dans le lieu et pour ce faire, il faut pouvoir « forcer » l’accès (grimper, forcer une serrure, etc.).
-	- On ne peut jouer que 2 cartes maximum : Break in et Abstraite (1 de chaque).
+	- On ne peut jouer que 2 cartes maximum : Break in et ,éventuellement, 1 carte Abstraite en plus.
 	- On ne peut pas jouer une carte Abstraite seule.
 	- Le joueur trouvera dans la main de Fallback (aléatoirement) 3 cartes : Abstraites et/ou Break in. ≠ de celles que le joueur a en main.
 	- Avant toute chose, et comme pour les évaluations d’attaque de PNJ, il faudra faire un jet de dé pour savoir si le joueur réussit à pénétrer le Lieu.
