@@ -2,7 +2,8 @@ extends Node2D
 
 signal done
 
-@onready var _price_label = $Drug_Store/I_will_take/Price
+@onready var _total_price_label = $Drug_Store/I_will_take/Price
+@onready var _price_label = $Drug_Store/Stock/HBoxContainer/Price
 @onready var _stock_label = $Drug_Store/Stock/Stock_Number
 @onready var _purchase_label = $Drug_Store/I_will_take/Purchase
 @onready var _minus_button = $Drug_Store/I_will_take/Plus_Minus/Minus
@@ -13,11 +14,13 @@ signal done
 var _doses_available: int = 5
 var _doses_purchased: int = 0
 var _funds: int = 0
+var _price: int = 0
 
-func reset(doses: int, funds: int):
+func reset(doses: int, funds: int, price: int):
 	_doses_available = doses
 	_doses_purchased = 0
 	_funds = funds
+	_price = price
 	_update_ui()
 
 func get_doses_purchased() -> int:
@@ -74,8 +77,9 @@ func _on_plus_pressed():
 		_update_ui()
 
 func _update_ui():
-	var price = _doses_purchased * GameState.drug_price
+	var total_price = _doses_purchased * _price
+	_price_label.text = str(_price)
 	_stock_label.text = str(_doses_available - _doses_purchased)
 	_purchase_label.text = str(_doses_purchased)
-	_price_label.text = str(price)
-	_thanks_button.disabled = price == 0 or price > _funds
+	_total_price_label.text = str(total_price)
+	_thanks_button.disabled = total_price == 0 or total_price > _funds

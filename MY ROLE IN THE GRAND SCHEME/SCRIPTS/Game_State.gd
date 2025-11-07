@@ -373,20 +373,28 @@ func use_drugs(doses: int):
 	await pass_one_hour()
 	await player.use_drugs(doses)
 
+func get_player_drug_price() -> int:
+	var price: int = drug_price
+	if "dealer_discount" in player.job_bonus_malus:
+		price = roundi(price * player.job_bonus_malus.dealer_discount)
+	return price
+
 func can_visit_dealer() -> bool:
 	var hour = get_hour()
+	var price = get_player_drug_price()
 	return (hour < 8 or hour >= 20) \
-		and player.money >= drug_price and player.get_debt_count() == 0
+		and player.money >= price and player.get_debt_count() == 0
 
 func visit_dealer():
 	if _player_location != PlayerLocation.ROWENA:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.ROWENA)
+	var price = get_player_drug_price()
 	var doses = await Globals.dialog_overlay.visit_dealer(
-		_dealer_drug_stock, player.money)
+		_dealer_drug_stock, player.money, price)
 	if doses > 0:
 		_dealer_drug_stock -= doses
-		player.money -= doses * drug_price
+		player.money -= doses * price
 		player.drugs += doses
 
 func can_visit_doctor() -> bool:

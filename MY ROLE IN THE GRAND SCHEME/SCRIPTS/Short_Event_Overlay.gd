@@ -296,12 +296,13 @@ func visit_doctor(price: int) -> bool:
 
 ##
 ## Displays the dialog for a visit to the dealer. The stock parameter is the
-## number of doses available for purchase, and the funds parameter is how much
-## the player has to spend. Returns the number of doses the player bought.
+## number of doses available for purchase, the funds parameter is how much the
+## player has to spend, and price is the price of a dose. Returns the number of
+## doses the player bought.
 ##
-func visit_dealer(stock: int, funds: int) -> int:
+func visit_dealer(stock: int, funds: int, price: int) -> int:
 	if stock > 0:
-		$Overlays/Rowena.reset(stock, funds)
+		$Overlays/Rowena.reset(stock, funds, price)
 		$Overlays/Rowena.show()
 		await _appear()
 		await $Overlays/Rowena.done
