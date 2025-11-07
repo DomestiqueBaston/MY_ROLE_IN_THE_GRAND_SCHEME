@@ -1033,6 +1033,9 @@ func _play_combat(cards_played: Array[Card]):
 	npc.wanted += 1
 	npc.player_reputation -= 2
 
+	# TODO: if NPC dies, player searches him and has 25% chance of finding 100
+	# units of money (+/- 10%) and 25% chance of adding +1 Wan
+
 	if actual_roll == 10:
 		await Globals.dialog_overlay.show_player_improvement(-1)
 	elif actual_roll == 1:
