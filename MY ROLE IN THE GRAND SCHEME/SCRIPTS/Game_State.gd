@@ -395,7 +395,7 @@ func can_visit_doctor() -> bool:
 	if day % 7 >= 5 or hour < 8 or hour >= 20 \
 		or player.money < 50 or player.get_debt_count() > 0:
 		return false
-	return _last_doctor_day < 0 or day - _last_doctor_day >= 7
+	return _last_doctor_day < 0 or day - _last_doctor_day >= 4
 
 func visit_doctor():
 	if _player_location != PlayerLocation.DOCTOR:
