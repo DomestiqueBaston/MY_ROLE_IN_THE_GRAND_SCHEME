@@ -285,7 +285,8 @@ func confirm_run_away() -> bool:
 ## Displays the visit to Doctor F dialog and waits for the player to confirm or
 ## cancel. Returns true if he confirmed.
 ##
-func visit_doctor() -> bool:
+func visit_doctor(price: int) -> bool:
+	$Overlays/Care_Sheet.set_price(price)
 	$Overlays/Care_Sheet.show()
 	await _appear()
 	await $Overlays/Care_Sheet.done
