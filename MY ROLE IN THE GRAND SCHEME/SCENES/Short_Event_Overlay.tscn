@@ -3301,7 +3301,56 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center][color=#9c7f5f]I only have
     dose(s)
-left for [color=#e85d68]25[/color] [color=#d41c2b]Dø[/color] each.[/color][/center]"
+[/color][/center]"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlays/Rowena/Drug_Store/Stock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Begginning_Text" type="RichTextLabel" parent="Overlays/Rowena/Drug_Store/Stock/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(66, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.6117647, 0.49803922, 0.37254903, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("57_gfusj")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "left for"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Price" type="RichTextLabel" parent="Overlays/Rowena/Drug_Store/Stock/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.9098039, 0.3647059, 0.40784314, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("57_gfusj")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "25"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="End_Text" type="RichTextLabel" parent="Overlays/Rowena/Drug_Store/Stock/HBoxContainer"]
+custom_minimum_size = Vector2(66, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0.6117647, 0.49803922, 0.37254903, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/normal_font = ExtResource("57_gfusj")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[color=#d41c2b]Dø[/color] each."
+vertical_alignment = 2
 
 [node name="Stock_Number" type="Label" parent="Overlays/Rowena/Drug_Store/Stock"]
 layout_mode = 0
