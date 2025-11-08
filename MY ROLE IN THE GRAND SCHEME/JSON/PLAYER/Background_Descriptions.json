@@ -1,6 +1,7 @@
 [
 	{
 		"id": "JOB001",
+		"category": "Trade and Craft",
 		"profession": "Carpet Dealer",
 		"bonus_malus": {"MEN": 1},
 		"special": "",
@@ -8,6 +9,7 @@
 	},
 	{
 		"id": "JOB002",
+		"category": "Culture",
 		"profession": "Chorister",
 		"bonus_malus": {"PHY": 1},
 		"special": "",
@@ -15,6 +17,7 @@
 	},
 	{
 		"id": "JOB003",
+		"category": "Culture",
 		"profession": "CG Artist",
 		"bonus_malus": {"PHY": -1, "MEN": -1, "HEA": -1},
 		"special": "",
@@ -22,6 +25,7 @@
 	},
 	{
 		"id": "JOB004",
+		"category": "Production",
 		"profession": "Construction Worker",
 		"bonus_malus": {"PHY": 1, "MEN": -1, "HEA": -1},
 		"special": "",
@@ -29,6 +33,7 @@
 	},
 	{
 		"id": "JOB005",
+		"category": "Culture",
 		"profession": "Dancer",
 		"bonus_malus": {"PHY": 1, "MEN": -1, "HEA": 1},
 		"special": "",
@@ -36,6 +41,7 @@
 	},
 	{
 		"id": "JOB006",
+		"category": "Sport",
 		"profession": "Darts Champion",
 		"bonus_malus": {"PHY": -1, "MEN": 1},
 		"special": "",
@@ -43,6 +49,7 @@
 	},
 	{
 		"id": "JOB007",
+		"category": "Unproductive",
 		"profession": "Drug Addict",
 		"bonus_malus": {"MEN": -1, "HEA": -1, "drugs": 1, "dealer_discount": 0.5},
 		"comment_1": "-50 % sur le prix des doses de drogue, bonus de 1 jets de dé de sous/surdose, +1 dose de drogue",
@@ -50,6 +57,7 @@
 	},
 	{
 		"id": "JOB008",
+		"category": "Trade and Craft",
 		"profession": "Farrier",
 		"bonus_malus": {"PHY": 1, "HEA": -1},
 		"special": "",
@@ -57,6 +65,7 @@
 	},
 	{
 		"id": "JOB009",
+		"category": "Production",
 		"profession": "Farmer",
 		"bonus_malus": {"PHY": 1, "MEN": -1, "HEA": 1},
 		"special": "",
@@ -64,6 +73,7 @@
 	},
 	{
 		"id": "JOB010",
+		"category": "Service",
 		"profession": "Garbage Collector",
 		"bonus_malus": {"PHY": 1},
 		"special": "",
@@ -71,6 +81,7 @@
 	},
 	{
 		"id": "JOB011",
+		"category": "Trade and Craft",
 		"profession": "Ice Cream Vendor",
 		"bonus_malus": {"money": 150},
 		"comment_1": "+150Dø au démarrage de la partie",
@@ -78,6 +89,7 @@
 	},
 	{
 		"id": "JOB012",
+		"category": "Service",
 		"profession": "Janitor",
 		"bonus_malus": {"PHY": 1, "MEN": 1, "HEA": 1},
 		"special": "",
@@ -85,6 +97,7 @@
 	},
 	{
 		"id": "JOB013",
+		"category": "Culture",
 		"profession": "Museum Attendant",
 		"bonus_malus": {"PHY": -1, "MEN": 1, "HEA": 1},
 		"special": "",
@@ -92,6 +105,7 @@
 	},
 	{
 		"id": "JOB014",
+		"category": "Service",
 		"profession": "Parking Enforcement Officer",
 		"bonus_malus": {"MEN": -1, "HEA": 1},
 		"special": "",
@@ -99,6 +113,7 @@
 	},
 	{
 		"id": "JOB015",
+		"category": "Education and Research",
 		"profession": "Philosopher",
 		"bonus_malus": {"MEN": 1},
 		"special": "",
@@ -106,6 +121,7 @@
 	},
 	{
 		"id": "JOB016",
+		"category": "Service",
 		"profession": "Policeman",
 		"bonus_malus": {},
 		"special": "1/3",
@@ -114,6 +130,7 @@
 	},
 	{
 		"id": "JOB017",
+		"category": "Unproductive",
 		"profession": "Priest",
 		"bonus_malus": {"PHY": -1, "HEA": 1},
 		"special": "",
@@ -121,6 +138,7 @@
 	},
 	{
 		"id": "JOB018",
+		"category": "Service",
 		"profession": "Part-time Superhero",
 		"bonus_malus": {"PHY": 2, "MEN": -2},
 		"special": "",
@@ -128,6 +146,7 @@
 	},
 	{
 		"id": "JOB019",
+		"category": "Education and Research",
 		"profession": "Quantum Physicist",
 		"bonus_malus": {"PHY": -1, "MEN": 2, "HEA": -1},
 		"special": "",
@@ -135,6 +154,7 @@
 	},
 	{
 		"id": "JOB020",
+		"category": "Unproductive",
 		"profession": "Retired",
 		"bonus_malus": {"PHY": -1, "MEN": 1, "HEA": -2},
 		"special": "",
@@ -142,6 +162,7 @@
 	},
 	{
 		"id": "JOB021",
+		"category": "Trade and Craft",
 		"profession": "Taxidermist",
 		"bonus_malus": {"MEN": -1, "HEA": 1},
 		"special": "",
@@ -149,6 +170,7 @@
 	},
 	{
 		"id": "JOB022",
+		"category": "Education and Research",
 		"profession": "Teacher",
 		"bonus_malus": {"MEN": 1, "HEA": -1},
 		"special": "",
@@ -156,6 +178,7 @@
 	},
 	{
 		"id": "JOB023",
+		"category": "Culture",
 		"profession": "Tour Guide",
 		"bonus_malus": {"PHY": 1, "MEN": 1, "HEA": -1},
 		"special": "",
@@ -163,6 +186,7 @@
 	},
 	{
 		"id": "JOB024",
+		"category": "Unproductive",
 		"profession": "Unemployed",
 		"bonus_malus": {"cards": 1},
 		"special": "+1 carte",
@@ -171,6 +195,7 @@
 	},
 	{
 		"id": "JOB025",
+		"category": "Trade and Craft",
 		"profession": "Vegan Cook",
 		"bonus_malus": {},
 		"special": "",
@@ -178,6 +203,7 @@
 	},
 	{
 		"id": "JOB026",
+		"category": "Healthcare",
 		"profession": "Veterinarian",
 		"bonus_malus": {"doctor_discount": 0.5},
 		"comment_1": "-50 % sur les interventions thérapeutiques",
@@ -185,6 +211,7 @@
 	},
 	{
 		"id": "JOB027",
+		"category": "Sport",
 		"profession": "Wrestler",
 		"bonus_malus": {"PHY": 1, "MEN": -1},
 		"special": "",
@@ -192,6 +219,7 @@
 	},
 	{
 		"id": "JOB028",
+		"category": "Culture",
 		"profession": "Writer",
 		"bonus_malus": {"PHY": -1, "MEN": 1, "HEA": -1},
 		"special": "",
@@ -199,6 +227,7 @@
 	},
 	{
 		"id": "JOB029",
+		"category": "Healthcare",
 		"profession": "Yoga Teacher",
 		"bonus_malus": {"HEA": 1},
 		"special": "",

@@ -183,14 +183,16 @@ theme_override_font_sizes/font_size = 8
 [node name="Background_List" type="MenuButton" parent="Creation_Page"]
 custom_minimum_size = Vector2(153, 16)
 layout_mode = 0
-offset_left = 107.0
+offset_left = 112.0
 offset_top = 211.0
-offset_right = 269.0
+offset_right = 265.0
 offset_bottom = 227.0
 size_flags_vertical = 0
 tooltip_text = "You need
 a past..."
 toggle_mode = false
+text = "Select a background..."
+alignment = 0
 script = ExtResource("5_2k6nw")
 
 [node name="Randomize" type="TextureButton" parent="Creation_Page"]
