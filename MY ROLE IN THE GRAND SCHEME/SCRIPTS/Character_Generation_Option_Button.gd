@@ -13,10 +13,8 @@ func _ready():
 			var item = _backgrounds[id]
 			var category = item.category
 			var profession = item.profession
-			var submenu: PopupMenu
-			if category in submenus:
-				submenu = submenus[category]
-			else:
+			var submenu: PopupMenu = submenus.get(category)
+			if not submenu:
 				submenu = PopupMenu.new()
 				popup.add_submenu_node_item(category, submenu)
 				submenu.id_pressed.connect(_on_item_selected)
