@@ -1,7 +1,7 @@
 [
 	{
 		"id": "JOB001",
-		"category": "Trade and Craft",
+		"category": "Trade and Crafts",
 		"profession": "Carpet Dealer",
 		"bonus_malus": {"MEN": 1},
 		"special": "",
@@ -41,7 +41,7 @@
 	},
 	{
 		"id": "JOB006",
-		"category": "Sport",
+		"category": "Sports",
 		"profession": "Darts Champion",
 		"bonus_malus": {"PHY": -1, "MEN": 1},
 		"special": "",
@@ -57,7 +57,7 @@
 	},
 	{
 		"id": "JOB008",
-		"category": "Trade and Craft",
+		"category": "Trade and Crafts",
 		"profession": "Farrier",
 		"bonus_malus": {"PHY": 1, "HEA": -1},
 		"special": "",
@@ -81,7 +81,7 @@
 	},
 	{
 		"id": "JOB011",
-		"category": "Trade and Craft",
+		"category": "Trade and Crafts",
 		"profession": "Ice Cream Vendor",
 		"bonus_malus": {"money": 150},
 		"comment_1": "+150Dø au démarrage de la partie",
@@ -162,7 +162,7 @@
 	},
 	{
 		"id": "JOB021",
-		"category": "Trade and Craft",
+		"category": "Trade and Crafts",
 		"profession": "Taxidermist",
 		"bonus_malus": {"MEN": -1, "HEA": 1},
 		"special": "",
@@ -195,7 +195,7 @@
 	},
 	{
 		"id": "JOB025",
-		"category": "Trade and Craft",
+		"category": "Trade and Crafts",
 		"profession": "Vegan Cook",
 		"bonus_malus": {},
 		"special": "",
@@ -211,7 +211,7 @@
 	},
 	{
 		"id": "JOB027",
-		"category": "Sport",
+		"category": "Sports",
 		"profession": "Wrestler",
 		"bonus_malus": {"PHY": 1, "MEN": -1},
 		"special": "",
