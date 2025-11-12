@@ -111,6 +111,7 @@ signal died
 ## Signal emitted when the player starts an interaction.
 signal interaction_started
 
+var _combat_data = preload("res://JSON/INTERACTION/Combat.json").data
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
 # where game state is saved/reloaded
@@ -723,6 +724,12 @@ func _play_investigation(cards_played: Array[Card]):
 	if duration > 0:
 		await _increment_time(duration)
 
+##
+## Starts an investigation interaction: picks the fallback cards for the
+## investigation, saves the state of the cards in the Main scene (before we
+## switch to the Interaction scene), and emits an interaction_started() signal
+## telling The Game to switch scenes.
+##
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
@@ -770,18 +777,28 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 				end_interaction()
 				return
 		start_combat(npc, location)
-		# TODO: if player played the Do Not Kill! card and won, set his
-		# next_dialogue_bonus_malus to -1 and start the dialogue
-		return
+	else:
+		start_dialogue(npc, location)
 
-	start_dialogue(npc, location)
-
-func start_dialogue(npc: NpcCard, location: LocationCard):
+##
+## Starts a dialogue interaction: picks the fallback cards for the dialogue,
+## saves the state of the cards in the Main scene (before we switch to the
+## Interaction scene), and emits an interaction_started() signal telling The
+## Game to switch scenes.
+##
+## There is one case where we do NOT want the state of the cards to be saved
+## first: when going directly from a combat to a dialogue, because we are
+## already in the Interaction scene. In that case, save_card_state should be
+## false.
+##
+func start_dialogue(
+		npc: NpcCard, location: LocationCard, save_card_state: bool = true):
 	player.pick_dialogue_cards()
 	_current_interaction = InteractionType.DIALOGUE
 	_current_interaction_location = location
 	_current_interaction_npc = npc
-	_push_card_state()
+	if save_card_state:
+		_push_card_state()
 	save_game()
 	interaction_started.emit()
 
@@ -934,6 +951,12 @@ func _play_dialogue(cards_played: Array[Card]):
 
 	await _increment_time(2)
 
+##
+## Starts a combat interaction: picks the fallback cards for the combat, saves
+## the state of the cards in the Main scene (before we switch to the Interaction
+## scene), and emits an interaction_started() signal telling The Game to switch
+## scenes.
+##
 func start_combat(npc: NpcCard, location: LocationCard):
 	player.pick_combat_cards()
 	_current_interaction = InteractionType.COMBAT
@@ -943,7 +966,13 @@ func start_combat(npc: NpcCard, location: LocationCard):
 	save_game()
 	interaction_started.emit()
 
-func _play_combat(cards_played: Array[Card]):
+#
+# Rolls the dice for a combat. Returns true if a dialogue will follow the
+# combat, that is, if the player played a Do Not Kill card and was "successful",
+# meaning either he rolled a 1 (critical success) or his roll was good enough to
+# do some damage.
+#
+func _play_combat(cards_played: Array[Card]) -> bool:
 	var loc: LocationCard = _current_interaction_location
 	var npc: NpcCard = _current_interaction_npc
 	print("\n*** combat: %s with %s ***"
@@ -999,11 +1028,11 @@ func _play_combat(cards_played: Array[Card]):
 	var damage: int = 0
 	var npc_damage: int = 0
 
-	if net_roll > max_roll:
-		npc_damage = roundi((net_roll - max_roll) / 2.0)
+	if max_roll > net_roll:
+		npc_damage = roundi((max_roll - net_roll) / 2.0)
 
-	if npc_net_roll > npc_max_roll:
-		damage = roundi((npc_net_roll - npc_max_roll) / 2.0)
+	if npc_max_roll > npc_net_roll:
+		damage = roundi((npc_max_roll - npc_net_roll) / 2.0)
 
 	if actual_roll == 10:
 		critical_attr = tweak_attr.call(player, -1)
@@ -1041,6 +1070,23 @@ func _play_combat(cards_played: Array[Card]):
 	if actual_roll == 1:
 		damage = mini(damage, player.health - 1)
 
+	# if the player played a Do Not Kill card, the NPC cannot die, and the
+	# player receives a bonus for the ensuing dialogue
+
+	var do_not_kill = false
+
+	for card in cards_played:
+		if card is CombatCard:
+			var combat_bonus_malus = \
+				_combat_data[card.database_id].get("bonus_malus", {})
+			if combat_bonus_malus.get("other") == "opponent_survives":
+				do_not_kill = true
+				break
+
+	if do_not_kill and npc_damage > 0:
+		npc_damage = mini(npc_damage, npc.health - 1)
+		player.next_dialogue_bonus_malus = -1
+
 	print("player inflicts %d damage point(s) on NPC" % npc_damage)
 	print("NPC inflicts %d damage point(s) on player" % damage)
 
@@ -1059,7 +1105,24 @@ func _play_combat(cards_played: Array[Card]):
 
 	await _increment_time(2)
 
+	return do_not_kill and (actual_roll == 1 or max_roll > net_roll)
+
+##
+## Called when the player has clicked on the OK button in the Interaction scene
+## to proceed with (that is, roll the dice for) the current interaction. All the
+## game logic is performed, the current interaction is reset, and the state of
+## the cards is restored before we switch from the Interaction scene back to the
+## Main scene.
+##
+## Returns true in one case only: if the interaction was a combat, and if the
+## player played a Do Not Kill card (and was not killed himself), so that a
+## dialogue with the NPC may ensue. In that case, since we will be staying in
+## the Interaction scene rather than switching to the Main scene, the state of
+## the cards for Main is NOT restored yet.
+##
 func end_interaction(cards_played: Array[Card] = []):
+	var dialogue_ensues = false
+
 	match _current_interaction:
 		InteractionType.INVESTIGATION:
 			await _play_investigation(cards_played)
@@ -1069,9 +1132,10 @@ func end_interaction(cards_played: Array[Card] = []):
 			_current_interaction_npc.test_health()
 			_pop_card_state()
 		InteractionType.COMBAT:
-			await _play_combat(cards_played)
+			dialogue_ensues = await _play_combat(cards_played)
 			_current_interaction_npc.test_health()
-			_pop_card_state()
+			if not dialogue_ensues:
+				_pop_card_state()
 
 	player.clear_fallback_cards()
 	_current_interaction = InteractionType.NONE
@@ -1081,8 +1145,12 @@ func end_interaction(cards_played: Array[Card] = []):
 
 	if await player.test_health():
 		save_game()
+		return dialogue_ensues
 	else:
+		if dialogue_ensues:
+			_pop_card_state()
 		died.emit()
+		return false
 
 func get_current_interaction() -> InteractionType:
 	return _current_interaction

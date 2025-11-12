@@ -126,8 +126,10 @@ func show_rep_message(higher: bool):
 ##
 func show_attack_message(npc: NpcCard):
 	var is_minion = npc.category == NpcCard.NpcCategory.MINION
-	$Overlays/Misc/Announces/Combat/NPC_Attack.visible = not is_minion
-	$Overlays/Misc/Announces/Combat/Minion_Attack.visible = is_minion
+	if is_minion:
+		$Overlays/Misc/Announces/Combat/Minion_Attack.show()
+	else:
+		$Overlays/Misc/Announces/Combat/NPC_Attack.show()
 	$Overlays/Misc/Announces/Combat.show()
 	$Overlays/Misc.show()
 	await _appear()
@@ -135,6 +137,25 @@ func show_attack_message(npc: NpcCard):
 	await _disappear()
 	$Overlays/Misc.hide()
 	$Overlays/Misc/Announces/Combat.hide()
+	if is_minion:
+		$Overlays/Misc/Announces/Combat/Minion_Attack.hide()
+	else:
+		$Overlays/Misc/Announces/Combat/NPC_Attack.hide()
+
+##
+## Displays a message telling the player that he and an NPC both survived an
+## attack, and he can now question the NPC.
+##
+func show_do_not_kill_message():
+	$Overlays/Misc/Announces/Combat/Do_Not_Kill.show()
+	$Overlays/Misc/Announces/Combat.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Combat.hide()
+	$Overlays/Misc/Announces/Combat/Do_Not_Kill.hide()
 
 ##
 ## Display a dialog asking the player for a yes or no and return the answer.
