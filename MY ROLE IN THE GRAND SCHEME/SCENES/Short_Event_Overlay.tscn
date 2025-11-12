@@ -2781,6 +2781,21 @@ In  an instant, the  attack  comes-swift, calculated. It's  unclear  what  led  
 
 Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  all  along[/color][/shake]?[/center]"
 
+[node name="Do_Not_Kill" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
+visible = false
+layout_mode = 0
+offset_left = 167.0
+offset_top = 56.0
+offset_right = 484.0
+offset_bottom = 294.0
+rotation = 0.0356184
+bbcode_enabled = true
+text = "[center]Time  to  have  a   [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]little chat[/color][/pulse]! 
+
+When  someone  [shake rate=7.0 level=5 connected=0][color=#ff8864]comes  at  me  for  no  damn  reason[/color][/shake],  I  know  it’s  [shake rate=7.0 level=5 connected=0][color=#ff1c18]fear[/color][/shake]  talking.  You’d  have  to  be  in  [shake rate=7.0 level=5 connected=0][color=#ff1c18]deep  shit[/color][/shake]  to  risk  that  kind  of  move  (especially  with  me).
+
+- Alright!  Now  that  you’ve  [shake rate=7.0 level=5 connected=0][color=#ff8864]cooled  off[/color][/shake], my friend,  let’s  [shake rate=7.0 level=5 connected=0][color=#ff1c18]talk  this  out[/color][/shake]  like  adults.[/center]"
+
 [node name="Minion_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
 visible = false
 layout_mode = 0
