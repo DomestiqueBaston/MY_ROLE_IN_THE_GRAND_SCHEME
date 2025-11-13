@@ -8,6 +8,9 @@ extends Control
 
 @export var alert_debug: bool = false
 
+## Signal emitted when the player selects Card Management from the menu.
+signal manage_cards
+
 ## Signal emitted when the player selects Settings from the menu.
 signal settings
 
@@ -122,6 +125,7 @@ func _ready():
 			button.mouse_exited.connect(_on_mouse_exited)
 			button.pressed.connect(_on_button_pressed)
 
+	$Menus/Cards.get_popup().id_pressed.connect(func(_id): manage_cards.emit())
 	$Menus/Whatever.get_popup().id_pressed.connect(_on_whatever_press)
 
 	if _dailies_button.disabled:

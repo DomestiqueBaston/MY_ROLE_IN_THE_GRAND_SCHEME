@@ -499,6 +499,13 @@ func pop_state():
 func get_display_name() -> String:
 	return card_name
 
+##
+## Returns detailed information about the card to be displayed in the UI. This
+## is not handled by all card types.
+##
+func get_info() -> String:
+	return ""
+
 #
 # For save/load.
 #

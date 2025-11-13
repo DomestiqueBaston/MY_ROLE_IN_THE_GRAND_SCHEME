@@ -18,6 +18,9 @@ func _init():
 func get_card_type():
 	return CardType.ABSTRACT
 
+func get_info() -> String:
+	return _abstract_data[database_id].get("info", "")
+
 func _ready():
 	super()
 

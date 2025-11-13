@@ -30,6 +30,9 @@ func _init():
 func get_card_type():
 	return CardType.INVESTIGATION
 
+func get_info() -> String:
+	return _investigation_data[database_id].get("info", "")
+
 func _ready():
 	super()
 	_update_background()

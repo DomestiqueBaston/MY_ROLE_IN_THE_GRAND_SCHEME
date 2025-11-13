@@ -102,6 +102,7 @@ func _ready():
 	dialogue_submenu.index_pressed.connect(
 		_handle_dialogue_submenu.bind(dialogue_submenu))
 	
+	top_bar.manage_cards.connect(func(): Globals.dialog_overlay.manage_cards())
 	top_bar.settings.connect(func(): settings.emit())
 	top_bar.quit.connect(func(): quit.emit())
 	
@@ -683,6 +684,7 @@ func _popup_menu(pos: Vector2, node: Node2D):
 func _handle_popup(id: int):
 	match id:
 		MenuItem.INVESTIGATION:
+			GameState.player.clear_discard_cards()
 			GameState.attempt_investigation(_popup_node)
 		MenuItem.SWITCH_LINK:
 			if _popup_node is Link:
@@ -712,6 +714,7 @@ func _handle_submenu(id: int, submenu: int):
 func _handle_dialogue_submenu(idx: int, menu: PopupMenu):
 	var npc: NpcCard = _popup_node
 	var location: LocationCard = menu.get_item_metadata(idx)
+	GameState.player.clear_discard_cards()
 	GameState.attempt_dialogue(npc, location)
 
 func _delete_link(link: Link):

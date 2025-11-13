@@ -19,6 +19,16 @@ enum InteractionType {
 	RUN_AWAY
 }
 
+## The outcome of a dialogue, a combat or an investigation.
+enum InteractionOutcome {
+	## The interaction was a failure.
+	FAILURE,
+	## The interaction was a success.
+	SUCCESS,
+	## The combat was successful and should be followed by a dialogue.
+	CONTINUE
+}
+
 ##
 ## Constants representing time slots during the work week or the weekend. They
 ## can be used as flags for a bit mask.
@@ -507,6 +517,28 @@ func resume_run_away():
 		start_combat(_current_interaction_npc, _current_interaction_location)
 
 #
+# "Plays" the given cards, tracking any temporary bonus/malus effects in the
+# returned InteractionAttributes instance. Changes made by the cards to the
+# player's Emo and Add attributes are made directly, and are permanent. When an
+# abstract card is played from the mastery desk, or any card at all is played
+# from the fallback deck, the card is moved to the player's "discard" deck.
+#
+func _play_cards(cards: Array[Card]) -> InteractionAttributes:
+	var attrs = InteractionAttributes.new()
+
+	attrs.play_card(_current_interaction_location, false)
+
+	for card in cards:
+		var is_fallback = card in player.get_fallback_cards()
+		attrs.play_card(card, is_fallback)
+		if is_fallback:
+			player.discard_fallback_card(card)
+		elif card is AbstractCard:
+			player.discard_mastery_card(card)
+
+	return attrs
+
+#
 # Game logic for a break-in. Given the current location card, and the optional
 # cards played (break-in and/or abstract cards), rolls the dice to determine
 # whether the break-in is successful or not. Returns true if the break-in is
@@ -515,16 +547,9 @@ func resume_run_away():
 func _play_break_in(cards_played: Array[Card]) -> bool:
 	print("\n*** break-in: %s ***" % _current_interaction_location.get_display_name())
 
-	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
-	# changes are temporary; Emo and Add changes are permanent
-
-	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_location, false)
-	for card in cards_played:
-		attrs.play_card(card, card in player.get_fallback_cards())
-
 	# roll the die
 
+	var attrs: InteractionAttributes = _play_cards(cards_played)
 	var bonus_malus = attrs.get_bonus_malus()
 	if cards_played.is_empty():
 		bonus_malus += 1
@@ -589,16 +614,9 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 func _play_run_away(cards_played: Array[Card]) -> bool:
 	print("\n*** run away: %s ***" % _current_interaction_location.get_display_name())
 
-	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
-	# changes are temporary; Emo and Add changes are permanent
-
-	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_location, false)
-	for card in cards_played:
-		attrs.play_card(card, card in player.get_fallback_cards())
-
 	# roll the die
 
+	var attrs: InteractionAttributes = _play_cards(cards_played)
 	var bonus_malus = attrs.get_bonus_malus()
 	if cards_played.is_empty():
 		bonus_malus += 1
@@ -655,19 +673,12 @@ func _play_run_away(cards_played: Array[Card]) -> bool:
 #
 # Game logic for an investigation (possibly following a break-in).
 #
-func _play_investigation(cards_played: Array[Card]):
+func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 	print("\n*** investigation: %s ***" % _current_interaction_location.get_display_name())
-
-	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
-	# changes are temporary; Emo and Add changes are permanent
-
-	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_location, false)
-	for card in cards_played:
-		attrs.play_card(card, card in GameState.player.get_fallback_cards())
 
 	# roll the die
 
+	var attrs: InteractionAttributes = _play_cards(cards_played)
 	var bonus_malus = attrs.get_bonus_malus()
 	if _current_interaction_bonus_malus != 0:
 		bonus_malus += _current_interaction_bonus_malus
@@ -723,6 +734,8 @@ func _play_investigation(cards_played: Array[Card]):
 	print("duration: %s hour(s)" % duration)
 	if duration > 0:
 		await _increment_time(duration)
+
+	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
 
 ##
 ## Starts an investigation interaction: picks the fallback cards for the
@@ -802,18 +815,14 @@ func start_dialogue(
 	save_game()
 	interaction_started.emit()
 
-func _play_dialogue(cards_played: Array[Card]):
+#
+# Game logic for a dialogue (possibly following a combat).
+#
+func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 	var npc: NpcCard = _current_interaction_npc
 	print("\n*** dialogue: %s ***" % npc.get_display_name())
 
-	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
-	# changes are temporary; Emo and Add changes are permanent
-
-	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_location, false)
-	for card in cards_played:
-		attrs.play_card(card, card in GameState.player.get_fallback_cards())
-
+	var attrs: InteractionAttributes = _play_cards(cards_played)
 	var bonus_malus = attrs.get_bonus_malus()
 	var rep = npc.player_reputation
 	if rep != 0:
@@ -951,6 +960,8 @@ func _play_dialogue(cards_played: Array[Card]):
 
 	await _increment_time(2)
 
+	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
+
 ##
 ## Starts a combat interaction: picks the fallback cards for the combat, saves
 ## the state of the cards in the Main scene (before we switch to the Interaction
@@ -967,27 +978,20 @@ func start_combat(npc: NpcCard, location: LocationCard):
 	interaction_started.emit()
 
 #
-# Rolls the dice for a combat. Returns true if a dialogue will follow the
+# Rolls the dice for a combat. Returns CONTINUE if a dialogue will follow the
 # combat, that is, if the player played a Do Not Kill card and was "successful",
 # meaning either he rolled a 1 (critical success) or his roll was good enough to
 # do some damage.
 #
-func _play_combat(cards_played: Array[Card]) -> bool:
+func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 	var loc: LocationCard = _current_interaction_location
 	var npc: NpcCard = _current_interaction_npc
 	print("\n*** combat: %s with %s ***"
 		  % [loc.get_display_name(), npc.get_display_name()])
 
-	# retrieve bonus/malus points from the cards played: PHY, MEN and HEA
-	# changes are temporary; Emo and Add changes are permanent
-
-	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_location, false)
-	for card in cards_played:
-		attrs.play_card(card, card in player.get_fallback_cards())
-
 	# roll the die for the player
 
+	var attrs: InteractionAttributes = _play_cards(cards_played)
 	var bonus_malus = attrs.get_bonus_malus()
 	var rep = npc.player_reputation
 	if rep != 0:
@@ -1105,7 +1109,12 @@ func _play_combat(cards_played: Array[Card]) -> bool:
 
 	await _increment_time(2)
 
-	return do_not_kill and (actual_roll == 1 or max_roll > net_roll)
+	if actual_roll == 10 or net_roll > max_roll:
+		return InteractionOutcome.FAILURE
+	elif do_not_kill:
+		return InteractionOutcome.CONTINUE
+	else:
+		return InteractionOutcome.SUCCESS
 
 ##
 ## Called when the player has clicked on the OK button in the Interaction scene
@@ -1114,27 +1123,28 @@ func _play_combat(cards_played: Array[Card]) -> bool:
 ## the cards is restored before we switch from the Interaction scene back to the
 ## Main scene.
 ##
-## Returns true in one case only: if the interaction was a combat, and if the
-## player played a Do Not Kill card (and was not killed himself), so that a
-## dialogue with the NPC may ensue. In that case, since we will be staying in
-## the Interaction scene rather than switching to the Main scene, the state of
-## the cards for Main is NOT restored yet.
+## The outcome returned is usually either FAILURE or SUCCESS, but CONTINUE is
+## returned in one case only: if the interaction was a combat, and if the player
+## played a Do Not Kill card (and was not killed himself), so that a dialogue
+## with the NPC may ensue. In that case, since we will be staying in the
+## Interaction scene rather than switching to the Main scene, the state of the
+## cards for Main is NOT restored yet.
 ##
-func end_interaction(cards_played: Array[Card] = []):
-	var dialogue_ensues = false
+func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
+	var outcome = InteractionOutcome.FAILURE
 
 	match _current_interaction:
 		InteractionType.INVESTIGATION:
-			await _play_investigation(cards_played)
+			outcome = await _play_investigation(cards_played)
 			_pop_card_state()
 		InteractionType.DIALOGUE:
-			await _play_dialogue(cards_played)
+			outcome = await _play_dialogue(cards_played)
 			_current_interaction_npc.test_health()
 			_pop_card_state()
 		InteractionType.COMBAT:
-			dialogue_ensues = await _play_combat(cards_played)
+			outcome = await _play_combat(cards_played)
 			_current_interaction_npc.test_health()
-			if not dialogue_ensues:
+			if outcome != InteractionOutcome.CONTINUE:
 				_pop_card_state()
 
 	player.clear_fallback_cards()
@@ -1145,12 +1155,13 @@ func end_interaction(cards_played: Array[Card] = []):
 
 	if await player.test_health():
 		save_game()
-		return dialogue_ensues
 	else:
-		if dialogue_ensues:
+		if outcome == InteractionOutcome.CONTINUE:
 			_pop_card_state()
 		died.emit()
-		return false
+		outcome = InteractionOutcome.FAILURE
+
+	return outcome
 
 func get_current_interaction() -> InteractionType:
 	return _current_interaction

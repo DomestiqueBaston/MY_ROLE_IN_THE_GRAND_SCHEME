@@ -1,7 +1,8 @@
-[gd_scene load_steps=232 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=231 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
+[ext_resource type="Script" uid="uid://c2pajop2yrn5s" path="res://SCRIPTS/Card_Management.gd" id="2_jo5q1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Button.gd" id="3_8qa11"]
 [ext_resource type="Texture2D" uid="uid://vduyten8dj5h" path="res://GRAPHICS/SHORT_EVENT/Search_Warrant_BG.png" id="4_0rnfm"]
@@ -144,11 +145,9 @@
 [ext_resource type="Texture2D" uid="uid://ccpmarqkfa7hg" path="res://GRAPHICS/SHORT_EVENT/Run_Away.png" id="125_wowcu"]
 [ext_resource type="Texture2D" uid="uid://dmuycjafxmxj" path="res://GRAPHICS/SHORT_EVENT/Card_Management_BG.png" id="126_lboli"]
 [ext_resource type="Texture2D" uid="uid://cgclmrs55a25d" path="res://GRAPHICS/SHORT_EVENT/Left_Zone.png" id="127_yau06"]
-[ext_resource type="Script" uid="uid://b4r5r5y6144de" path="res://SCRIPTS/Card_Management_Zones.gd" id="128_vj0nj"]
 [ext_resource type="Texture2D" uid="uid://d2oe083rsfyp0" path="res://GRAPHICS/SHORT_EVENT/Right_Zone.png" id="129_fowbj"]
 [ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="130_wf7jc"]
 [ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="131_d5ayf"]
-[ext_resource type="Script" uid="uid://cj4kkd1mdr47l" path="res://SCRIPTS/Card_Management_Trash.gd" id="132_4enr2"]
 [ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/SHORT_EVENT/Trash_Normal.png" id="133_hb476"]
 [ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/SHORT_EVENT/Trash_Hover.png" id="134_m6kkd"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="135_tdxs6"]
@@ -525,8 +524,10 @@ position = Vector2(-640, 0)
 
 [node name="Card_Management" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("2_jo5q1")
 
 [node name="Colliders" type="Node2D" parent="Overlays/Card_Management"]
+visible = false
 
 [node name="Card_Pool_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
 
@@ -560,8 +561,6 @@ offset_top = 20.0
 offset_right = 621.0
 offset_bottom = 340.0
 texture = ExtResource("127_yau06")
-script = ExtResource("128_vj0nj")
-target_collider_path = NodePath("../../Colliders/Card_Pool_Collider/Card_Pool")
 
 [node name="Right_Zone" type="TextureRect" parent="Overlays/Card_Management/Card_Management_BG"]
 visible = false
@@ -571,8 +570,18 @@ offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 340.0
 texture = ExtResource("129_fowbj")
-script = ExtResource("128_vj0nj")
-target_collider_path = NodePath("../../Colliders/Mastery_Hand_Collider/Mastery_Hand")
+
+[node name="Pool_Cards" type="Node2D" parent="Overlays/Card_Management"]
+position = Vector2(204, 74)
+script = ExtResource("76_5oqru")
+size = Vector2(156, 102)
+metadata/_custom_type_script = "uid://bfic46uloqv5p"
+
+[node name="Mastery_Cards" type="Node2D" parent="Overlays/Card_Management"]
+position = Vector2(370, 74)
+script = ExtResource("76_5oqru")
+size = Vector2(196, 102)
+metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
 [node name="Buttons" type="Control" parent="Overlays/Card_Management"]
 layout_mode = 3
@@ -640,7 +649,6 @@ offset_right = 366.0
 offset_bottom = 257.0
 tooltip_text = "Drop a card here
 to discard it"
-script = ExtResource("132_4enr2")
 
 [node name="Trash_Normal" type="TextureRect" parent="Overlays/Card_Management/Buttons/Trash"]
 layout_mode = 0
@@ -680,11 +688,6 @@ custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "- PARRY -
-
-A precise and controlled block that redirects an incoming attack, reducing its impact. While it demands physical precision, successfully parrying boosts your confidence and morale. It's a skillful move, but it requires focus and can leave you momentarily off-balance.
-
-''Nice try, but that was my elbow, not my chin, you moron!''"
 fit_content = true
 horizontal_alignment = 1
 
@@ -4360,12 +4363,6 @@ libraries = {
 volume_db = -37.5
 bus = &"UI"
 
-[connection signal="mouse_entered" from="Overlays/Card_Management/Buttons/Ok" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Card_Management/Buttons/Ok" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Overlays/Card_Management/Buttons/Ok" to="Overlays/Card_Management/Buttons" method="_on_switch_pressed"]
-[connection signal="mouse_entered" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Overlays/Card_Management/Buttons/Exit" to="Overlays/Card_Management/Buttons" method="_on_cancel_pressed"]
 [connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_cancel_pressed"]

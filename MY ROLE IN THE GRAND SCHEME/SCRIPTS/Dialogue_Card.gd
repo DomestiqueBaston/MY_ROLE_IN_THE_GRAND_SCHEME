@@ -18,6 +18,9 @@ func _init():
 func get_card_type():
 	return CardType.DIALOGUE
 
+func get_info() -> String:
+	return _dialogue_data[database_id].get("info", "")
+
 func _ready():
 	super()
 

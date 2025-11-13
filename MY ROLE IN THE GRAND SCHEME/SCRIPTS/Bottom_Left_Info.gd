@@ -8,10 +8,6 @@ extends Node2D
 
 @export var size := Vector2(114, 144)
 
-var _abstract_data = preload("res://JSON/INTERACTION/Abstract.json").data
-var _combat_data = preload("res://JSON/INTERACTION/Combat.json").data
-var _investigation_data = preload("res://JSON/INTERACTION/Investigation.json").data
-var _dialogue_data = preload("res://JSON/INTERACTION/Dialogue.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 
@@ -47,26 +43,19 @@ func show_card(card: Card):
 ## or Abstract card.
 ##
 func show_other(card: Card):
-	var card_data: Variant
-	match card.get_card_type():
-		Card.CardType.COMBAT:
-			card_data = _combat_data
-		Card.CardType.INVESTIGATION:
-			card_data = _investigation_data
-		Card.CardType.DIALOGUE:
-			card_data = _dialogue_data
-		Card.CardType.ABSTRACT:
-			card_data = _abstract_data
-		_:
-			clear()
-			return
-
-	$VBox/Scroller_Other/Info.text = card_data[card.database_id].get("info", "")
-
-	$VBox/Scroller_Object.hide()
-	$VBox/Scroller_Location.hide()
-	$VBox/Scroller_NPC.hide()
-	$VBox/Scroller_Other.show()
+	if card.get_card_type() in [
+		Card.CardType.COMBAT,
+		Card.CardType.INVESTIGATION,
+		Card.CardType.DIALOGUE,
+		Card.CardType.ABSTRACT
+	]:
+		$VBox/Scroller_Other/Info.text = card.get_info()
+		$VBox/Scroller_Object.hide()
+		$VBox/Scroller_Location.hide()
+		$VBox/Scroller_NPC.hide()
+		$VBox/Scroller_Other.show()
+	else:
+		clear()
 
 ##
 ## Similar to show_card(), when it is given a location card, but this function

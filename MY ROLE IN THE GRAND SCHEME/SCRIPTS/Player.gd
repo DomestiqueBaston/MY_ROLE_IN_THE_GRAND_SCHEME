@@ -27,6 +27,7 @@ var _investigation_cards = preload("res://JSON/INTERACTION/Investigation.json").
 var _debts: Array[int]
 var _mastery_cards: Array[Card]
 var _fallback_cards: Array[Card]
+var _discard_cards: Array[Card]
 var _signal_pause: int = 0
 var _last_sleep_time: int
 var _last_wake_time: int
@@ -161,7 +162,7 @@ func _pick_random_investigation_card(
 	return id
 
 func _have_card_already(type: Card.CardType, id: String):
-	for card_list in [_mastery_cards, _fallback_cards]:
+	for card_list in [_mastery_cards, _fallback_cards, _discard_cards]:
 		for card in card_list:
 			if card.get_card_type() == type and card.database_id == id:
 				return true
@@ -341,15 +342,16 @@ func clear_mastery_cards():
 	_mastery_cards.clear()
 
 ##
-## Removes the given card from the player's "mastery" deck, if found there, and
-## deletes it. Returns true if successful, false if the card is not in the deck.
+## Moves the given card from the player's "mastery" deck, if found there, to his
+## "discard" deck. Returns true if successful, false if the card is not in the
+## deck.
 ##
-func remove_mastery_card(card: Card) -> bool:
+func discard_mastery_card(card: Card) -> bool:
 	var index = _mastery_cards.find(card)
 	if index < 0:
 		return false
 	_mastery_cards.remove_at(index)
-	card.queue_free()
+	_discard_cards.append(card)
 	return true
 
 ##
@@ -366,6 +368,35 @@ func clear_fallback_cards():
 	for card in _fallback_cards:
 		card.queue_free()
 	_fallback_cards.clear()
+
+##
+## Moves the given card from the player's "fallback" deck, if found there, to
+## his "discard" deck. Returns true if successful, false if the card is not in
+## the deck.
+##
+func discard_fallback_card(card: Card) -> bool:
+	var index = _fallback_cards.find(card)
+	if index < 0:
+		return false
+	_fallback_cards.remove_at(index)
+	_discard_cards.append(card)
+	return true
+
+##
+## Returns the cards in the player's "discard" deck: cards he has used from the
+## "fallback" deck during a recent interaction, or abstract cards from his
+## "mastery" used during an interaction.
+##
+func get_discard_cards() -> Array[Card]:
+	return _discard_cards
+
+##
+## Clears the player's "discard" deck, deleting any cards it contains.
+##
+func clear_discard_cards():
+	for card in _discard_cards:
+		card.queue_free()
+	_discard_cards.clear()
 
 ##
 ## Picks 5 abstract and/or investigation cards at random for an investigation,

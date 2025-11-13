@@ -171,13 +171,15 @@ func _on_interaction_ended():
 	var npc = GameState.get_current_interaction_npc()
 	var loc = GameState.get_current_interaction_location()
 
-	# GameState.end_interaction() returns true in one special case: after a
+	# GameState.end_interaction() returns CONTINUE in one special case: after a
 	# combat, when the player has succeeded AND has played a Do Not Kill card,
 	# meaning we go straight to a dialogue with the NPC. This is a very special
 	# case, in that we do not have to switch from the Main scene to the
 	# Interaction scene, because we are already there.
 
-	if await GameState.end_interaction(interaction_scene.get_cards_played()):
+	var outcome = await GameState.end_interaction(interaction_scene.get_cards_played())
+
+	if outcome == GameState.InteractionOutcome.CONTINUE:
 		await Globals.dialog_overlay.show_do_not_kill_message()
 		await GameState.start_dialogue(npc, loc, false)
 		interaction_scene.start_dialogue(
@@ -185,6 +187,9 @@ func _on_interaction_ended():
 			GameState.player.get_mastery_cards(),
 			GameState.player.get_fallback_cards())
 	else:
+		if outcome == GameState.InteractionOutcome.SUCCESS:
+			await Globals.dialog_overlay.manage_cards()
+		GameState.player.clear_discard_cards()
 		_continue_game()
 
 func _save_player_attrs():

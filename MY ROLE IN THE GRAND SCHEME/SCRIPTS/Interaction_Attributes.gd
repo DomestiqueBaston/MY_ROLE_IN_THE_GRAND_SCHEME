@@ -89,8 +89,6 @@ func play_card(card: Card, is_fallback: bool):
 
 	if is_fallback:
 		_fallback_card_count += 1
-	elif card is AbstractCard:
-		GameState.player.remove_mastery_card(card)
 
 ##
 ## Applies any number of bonus/malus changes from a dictionary of entries like
