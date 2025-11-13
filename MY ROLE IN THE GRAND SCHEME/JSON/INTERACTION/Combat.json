@@ -170,10 +170,10 @@
 		"type": "Combat SPECIAL",
 		"description": "If the opponent dies, he's disabled instead (difficult but dialogue possible).",
 		"info": "- DO NOT KILL! -\n\nA decision in the heat of battle to spare your opponent's life, offering them a chance to survive and converse. This action allows for a moment of dialogue, but the cost is a temporary reduction in your emotional intensity, as mercy comes at a personal cost.\n\n''I could end this... but I won't. Let's talk, now, you little rat!''",
-        "bonus_malus": {
-            "other": "opponent_survives"
-        },
-        "comment": "if successful, opponent health >= 1, dialogue ensues, -1 bonus on dialogue"
+		"bonus_malus": {
+			"other": "opponent_survives"
+		},
+		"comment": "if successful, opponent health >= 1, dialogue ensues, -1 bonus on dialogue"
 	},
 	"COS005": {
 		"name": "Bad Luck!",
