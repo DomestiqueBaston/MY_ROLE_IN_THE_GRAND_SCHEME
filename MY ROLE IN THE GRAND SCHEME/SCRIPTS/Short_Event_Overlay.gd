@@ -428,3 +428,4 @@ func manage_cards():
 	await $Overlays/Card_Management.done
 	await _disappear()
 	$Overlays/Card_Management.hide()
+	$Overlays/Card_Management.reset()

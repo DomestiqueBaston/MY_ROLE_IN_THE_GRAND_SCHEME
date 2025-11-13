@@ -530,12 +530,14 @@ script = ExtResource("2_jo5q1")
 visible = false
 
 [node name="Card_Pool_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
+monitoring = false
 
 [node name="Card_Pool" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Card_Pool_Collider"]
 position = Vector2(282, 125)
 shape = SubResource("RectangleShape2D_0b85y")
 
 [node name="Mastery_Hand_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
+monitoring = false
 
 [node name="Mastery_Hand" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Mastery_Hand_Collider"]
 position = Vector2(468, 125)
@@ -543,6 +545,7 @@ shape = SubResource("RectangleShape2D_efgx4")
 
 [node name="Trash_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
 position = Vector2(91, 0)
+monitoring = false
 
 [node name="Trash" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Trash_Collider"]
 position = Vector2(274, 246)
@@ -590,6 +593,7 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 340.0
+mouse_filter = 2
 theme = ExtResource("130_wf7jc")
 script = ExtResource("131_d5ayf")
 
