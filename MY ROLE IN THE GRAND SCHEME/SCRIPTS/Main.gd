@@ -42,7 +42,7 @@ var _drop_target: Node2D
 # has something been clicked on, or is something being dragged?
 enum DragState {
 	NONE,		# nothing is going on
-	CLICKED,		# a card or a pin has been clicked but is not being dragged yet
+	CLICKED,	# a card or a pin has been clicked but is not being dragged yet
 	DRAGGING,	# a card or a pin is being dragged
 	LINKING		# the free end of a new link is being dragged
 }
