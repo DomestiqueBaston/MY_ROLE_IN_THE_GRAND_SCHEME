@@ -187,9 +187,9 @@ func _on_interaction_ended():
 			GameState.player.get_mastery_cards(),
 			GameState.player.get_fallback_cards())
 	else:
-		if outcome == GameState.InteractionOutcome.SUCCESS:
+		if GameState.player.get_discard_cards().size() > 0:
 			await Globals.dialog_overlay.manage_cards()
-		GameState.player.clear_discard_cards()
+			GameState.player.clear_discard_cards()
 		_continue_game()
 
 func _save_player_attrs():

@@ -519,24 +519,26 @@ func resume_run_away():
 #
 # "Plays" the given cards, tracking any temporary bonus/malus effects in the
 # returned InteractionAttributes instance. Changes made by the cards to the
-# player's Emo and Add attributes are made directly, and are permanent. When an
-# abstract card is played from the mastery desk, or any card at all is played
-# from the fallback deck, the card is moved to the player's "discard" deck.
+# player's Emo and Add attributes are made directly, and are permanent.
 #
 func _play_cards(cards: Array[Card]) -> InteractionAttributes:
 	var attrs = InteractionAttributes.new()
-
 	attrs.play_card(_current_interaction_location, false)
-
 	for card in cards:
-		var is_fallback = card in player.get_fallback_cards()
-		attrs.play_card(card, is_fallback)
-		if is_fallback:
-			player.discard_fallback_card(card)
-		elif card is AbstractCard:
-			player.discard_mastery_card(card)
-
+		attrs.play_card(card, card in player.get_fallback_cards())
 	return attrs
+
+#
+# Discards abstract cards played from the mastery deck, and all cards played
+# from the fallback deck. If success is true, those cards are moved to the
+# player's "discard" deck; if not, they are deleted.
+#
+func _discard_cards(cards: Array[Card], success: bool):
+	for card in cards:
+		if card in player.get_fallback_cards():
+			player.discard_fallback_card(card, success)
+		elif card is AbstractCard:
+			player.discard_mastery_card(card, success)
 
 #
 # Game logic for a break-in. Given the current location card, and the optional
@@ -603,6 +605,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 	elif actual_roll == 1:
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
+	_discard_cards(cards_played, success)
 	return success
 
 #
@@ -668,6 +671,7 @@ func _play_run_away(cards_played: Array[Card]) -> bool:
 	elif actual_roll == 1:
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
+	_discard_cards(cards_played, success)
 	return success
 
 #
@@ -735,6 +739,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 	if duration > 0:
 		await _increment_time(duration)
 
+	_discard_cards(cards_played, success)
 	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
 
 ##
@@ -960,6 +965,7 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 
 	await _increment_time(2)
 
+	_discard_cards(cards_played, success)
 	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
 
 ##
@@ -1110,11 +1116,11 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 	await _increment_time(2)
 
 	if actual_roll == 10 or net_roll > max_roll:
+		_discard_cards(cards_played, false)
 		return InteractionOutcome.FAILURE
-	elif do_not_kill:
-		return InteractionOutcome.CONTINUE
 	else:
-		return InteractionOutcome.SUCCESS
+		_discard_cards(cards_played, true)
+		return InteractionOutcome.CONTINUE if do_not_kill else InteractionOutcome.SUCCESS
 
 ##
 ## Called when the player has clicked on the OK button in the Interaction scene

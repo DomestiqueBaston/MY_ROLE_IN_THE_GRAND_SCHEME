@@ -342,16 +342,19 @@ func clear_mastery_cards():
 	_mastery_cards.clear()
 
 ##
-## Moves the given card from the player's "mastery" deck, if found there, to his
-## "discard" deck. Returns true if successful, false if the card is not in the
-## deck.
+## Removes the given card from the player's "mastery" deck, if found there. If
+## keep_discard is true, the card is moved to his "discard" deck; if not, it is
+## deleted. Returns true if successful, false if the card is not in the deck.
 ##
-func discard_mastery_card(card: Card) -> bool:
+func discard_mastery_card(card: Card, keep_discard: bool) -> bool:
 	var index = _mastery_cards.find(card)
 	if index < 0:
 		return false
 	_mastery_cards.remove_at(index)
-	_discard_cards.append(card)
+	if keep_discard:
+		_discard_cards.append(card)
+	else:
+		card.queue_free()
 	return true
 
 ##
@@ -370,16 +373,20 @@ func clear_fallback_cards():
 	_fallback_cards.clear()
 
 ##
-## Moves the given card from the player's "fallback" deck, if found there, to
-## his "discard" deck. Returns true if successful, false if the card is not in
-## the deck.
+## Removes the given card from the player's "fallback" deck, if found there. If
+## keep_discard is true, the card is moved to his "discard" deck; if not, it is
+## deleted. Returns true if successful, false if the card is not in the deck.
 ##
-func discard_fallback_card(card: Card) -> bool:
+##
+func discard_fallback_card(card: Card, keep_discard: bool) -> bool:
 	var index = _fallback_cards.find(card)
 	if index < 0:
 		return false
 	_fallback_cards.remove_at(index)
-	_discard_cards.append(card)
+	if keep_discard:
+		_discard_cards.append(card)
+	else:
+		card.queue_free()
 	return true
 
 ##
