@@ -1,4 +1,4 @@
-[gd_scene load_steps=226 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=224 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -150,12 +150,6 @@
 [ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="131_d5ayf"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="135_tdxs6"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="136_lkigo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b85y"]
-size = Vector2(156, 102)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efgx4"]
-size = Vector2(196, 102)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tatxf"]
 
@@ -518,23 +512,6 @@ position = Vector2(-640, 0)
 [node name="Card_Management" type="Node2D" parent="Overlays"]
 visible = false
 script = ExtResource("2_jo5q1")
-
-[node name="Colliders" type="Node2D" parent="Overlays/Card_Management"]
-visible = false
-
-[node name="Card_Pool_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
-monitoring = false
-
-[node name="Card_Pool" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Card_Pool_Collider"]
-position = Vector2(282, 125)
-shape = SubResource("RectangleShape2D_0b85y")
-
-[node name="Mastery_Hand_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
-monitoring = false
-
-[node name="Mastery_Hand" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Mastery_Hand_Collider"]
-position = Vector2(468, 125)
-shape = SubResource("RectangleShape2D_efgx4")
 
 [node name="Card_Management_BG" type="Sprite2D" parent="Overlays/Card_Management"]
 texture = ExtResource("126_lboli")
