@@ -420,9 +420,7 @@ func show_starting_hand():
 ## Displays the dialog for managing the player's mastery cards.
 ##
 func manage_cards():
-	var player: Player = GameState.player
-	$Overlays/Card_Management.start(
-		player.get_mastery_cards(), player.get_discard_cards())
+	$Overlays/Card_Management.start()
 	$Overlays/Card_Management.show()
 	await _appear()
 	await $Overlays/Card_Management.done

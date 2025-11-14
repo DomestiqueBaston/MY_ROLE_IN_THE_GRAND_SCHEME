@@ -55,6 +55,7 @@ func reset():
 	_debts.clear()
 	clear_mastery_cards()
 	clear_fallback_cards()
+	clear_discard_cards()
 	_last_sleep_time = 0
 	_last_wake_time = 0
 	_sleep_bonus_malus = 0
@@ -78,6 +79,7 @@ func start_game():
 	_debts.clear()
 	clear_mastery_cards()
 	clear_fallback_cards()
+	clear_discard_cards()
 	_last_wake_time = GameState.get_time()
 	_last_sleep_time = _last_wake_time - 8
 	_sleep_bonus_malus = 0
@@ -358,6 +360,18 @@ func discard_mastery_card(card: Card, keep_discard: bool) -> bool:
 	return true
 
 ##
+## Moves the given card from the player's "discard" deck to his "mastery" deck.
+## Returns true if successful, false if the card is not in the deck.
+##
+func undiscard_mastery_card(card: Card) -> bool:
+	var index = _discard_cards.find(card)
+	if index < 0:
+		return false
+	_discard_cards.remove_at(index)
+	_mastery_cards.append(card)
+	return true
+
+##
 ## Returns the cards the player has in his temporary "fallback" deck for
 ## interactions.
 ##
@@ -376,7 +390,6 @@ func clear_fallback_cards():
 ## Removes the given card from the player's "fallback" deck, if found there. If
 ## keep_discard is true, the card is moved to his "discard" deck; if not, it is
 ## deleted. Returns true if successful, false if the card is not in the deck.
-##
 ##
 func discard_fallback_card(card: Card, keep_discard: bool) -> bool:
 	var index = _fallback_cards.find(card)
@@ -733,7 +746,7 @@ func get_unique_id():
 # For save/load.
 #
 func get_referenced_objects():
-	return _mastery_cards + _fallback_cards
+	return _mastery_cards + _fallback_cards + _discard_cards
 
 #
 # For save/load.
@@ -777,6 +790,12 @@ func get_json_dict():
 			card_refs.append(card.get_unique_id())
 		dict["fallback_cards"] = card_refs
 
+	if not _discard_cards.is_empty():
+		card_refs = []
+		for card in _discard_cards:
+			card_refs.append(card.get_unique_id())
+		dict["discard_cards"] = card_refs
+
 	return dict
 
 #
@@ -809,6 +828,8 @@ func restore(dict, catalog):
 		_mastery_cards.append(catalog[card_ref])
 	for card_ref in dict.get("fallback_cards", []):
 		_fallback_cards.append(catalog[card_ref])
+	for card_ref in dict.get("discard_cards", []):
+		_discard_cards.append(catalog[card_ref])
 
 #
 # For save/load.

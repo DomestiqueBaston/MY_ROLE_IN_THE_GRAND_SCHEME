@@ -31,10 +31,11 @@ func _ready():
 	$Buttons.ok.connect(_on_ok_pressed)
 	$Buttons.cancel.connect(_on_cancel_pressed)
 
-func start(mastery: Array[Card], pool: Array[Card]):
-	for card in mastery:
+func start():
+	var player: Player = GameState.player
+	for card in player.get_mastery_cards():
 		$Mastery_Cards.add_child(card)
-	for card in pool:
+	for card in player.get_discard_cards():
 		$Pool_Cards.add_child(card)
 	Globals.mouse_entered_card.connect(_on_card_entered)
 	Globals.mouse_exited_card.connect(_on_card_exited)
@@ -73,15 +74,19 @@ func _start_drag():
 	_drag_global_init_pos = _current_card.global_position
 	_current_card.start_drag()
 
-	# turn on the drag & drop line that connects the initial and current
-	# mouse positions
-
 	$Drag_Drop_Line.point1 = _drag_click_pos
 	$Drag_Drop_Line.point2 = _drag_click_pos
 	$Drag_Drop_Line.show_line()
 
 	Globals.push_mouse_cursor(Globals.MouseCursor.CIRCLE)
 	Globals.dragging = true
+
+func _stuff_to_do_when_drag_ends(dragged_card: Card):
+	$Drag_Drop_Line.hide_line()
+	if dragged_card:
+		dragged_card.stop_drag()
+	Globals.dragging = false
+	Globals.pop_mouse_cursor()
 
 func _drag(global_pos: Vector2):
 	_current_card.global_position = \
@@ -97,21 +102,31 @@ func _abort_drag():
 	_stuff_to_do_when_drag_ends(card)
 
 func _stop_drag(global_pos: Vector2):
+	var ok = true
+
+	# check whether the card is dropped on the other area (Mastery or Pool),
+	# and enforce some constraints: the mastery deck can contain at most 10
+	# cards, including at most 3 abstract cards
+
 	var new_parent = _get_card_area_at(global_pos)
-	if (new_parent == null
-		or new_parent == _current_card.get_parent()
-		or (new_parent == $Mastery_Cards and $Mastery_Cards.get_child_count() >= 10)):
-		_abort_drag()
-	else:
+	if new_parent == null or new_parent == _current_card.get_parent():
+		ok = false
+	elif new_parent == $Mastery_Cards:
+		if $Mastery_Cards.get_child_count() >= 10:
+			ok = false
+		elif _current_card is AbstractCard:
+			var abstract_count = 0
+			for card in $Mastery_Cards.get_children():
+				if card is AbstractCard:
+					abstract_count += 1
+			if abstract_count >= 3:
+				ok = false
+
+	if ok:
 		_current_card.reparent(new_parent, false)
 		_stuff_to_do_when_drag_ends(_current_card)
-
-func _stuff_to_do_when_drag_ends(dragged_card: Card):
-	$Drag_Drop_Line.hide_line()
-	if dragged_card:
-		dragged_card.stop_drag()
-	Globals.dragging = false
-	Globals.pop_mouse_cursor()
+	else:
+		_abort_drag()
 
 func _get_card_area_at(global_pos: Vector2) -> Node2D:
 	if _is_in_sized_node2d($Pool_Cards, global_pos):
@@ -154,6 +169,13 @@ func get_confirmed() -> bool:
 	return _confirmed
 
 func _on_ok_pressed():
+	var player = GameState.player
+	for card in player.get_mastery_cards():
+		if card.get_parent() == $Pool_Cards:
+			player.discard_mastery_card(card, true)
+	for card in player.get_discard_cards():
+		if card.get_parent() == $Mastery_Cards:
+			player.undiscard_mastery_card(card)
 	_confirmed = true
 	done.emit()
 
