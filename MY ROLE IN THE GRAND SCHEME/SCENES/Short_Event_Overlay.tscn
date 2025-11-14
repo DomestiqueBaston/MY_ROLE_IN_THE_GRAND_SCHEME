@@ -1,4 +1,4 @@
-[gd_scene load_steps=231 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=226 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -148,21 +148,14 @@
 [ext_resource type="Texture2D" uid="uid://d2oe083rsfyp0" path="res://GRAPHICS/SHORT_EVENT/Right_Zone.png" id="129_fowbj"]
 [ext_resource type="Theme" uid="uid://debbat8iktsn5" path="res://UI/Card_Management_Theme.tres" id="130_wf7jc"]
 [ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="131_d5ayf"]
-[ext_resource type="Texture2D" uid="uid://7388holnybqv" path="res://GRAPHICS/SHORT_EVENT/Trash_Normal.png" id="133_hb476"]
-[ext_resource type="Texture2D" uid="uid://gifoi2s6fg7k" path="res://GRAPHICS/SHORT_EVENT/Trash_Hover.png" id="134_m6kkd"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="135_tdxs6"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="136_lkigo"]
-[ext_resource type="AudioStream" uid="uid://0xs5pryxxfxj" path="res://SOUND/MISC/Trash_Open.ogg" id="137_qmu3t"]
-[ext_resource type="AudioStream" uid="uid://e7mx8yp2bmn" path="res://SOUND/MISC/Trash_Close.ogg" id="138_th1i4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b85y"]
 size = Vector2(156, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efgx4"]
 size = Vector2(196, 102)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqy00"]
-size = Vector2(38, 60)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tatxf"]
 
@@ -543,14 +536,6 @@ monitoring = false
 position = Vector2(468, 125)
 shape = SubResource("RectangleShape2D_efgx4")
 
-[node name="Trash_Collider" type="Area2D" parent="Overlays/Card_Management/Colliders"]
-position = Vector2(91, 0)
-monitoring = false
-
-[node name="Trash" type="CollisionShape2D" parent="Overlays/Card_Management/Colliders/Trash_Collider"]
-position = Vector2(274, 246)
-shape = SubResource("RectangleShape2D_xqy00")
-
 [node name="Card_Management_BG" type="Sprite2D" parent="Overlays/Card_Management"]
 texture = ExtResource("126_lboli")
 centered = false
@@ -645,32 +630,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_370rn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_w41fr")
 text = "Cancel"
 
-[node name="Trash" type="Control" parent="Overlays/Card_Management/Buttons"]
-anchors_preset = 0
-offset_left = 325.0
-offset_top = 193.0
-offset_right = 366.0
-offset_bottom = 257.0
-tooltip_text = "Drop a card here
-to discard it"
-
-[node name="Trash_Normal" type="TextureRect" parent="Overlays/Card_Management/Buttons/Trash"]
-layout_mode = 0
-offset_left = -11.0
-offset_top = -9.0
-offset_right = 50.0
-offset_bottom = 71.0
-texture = ExtResource("133_hb476")
-
-[node name="Trash_Hover" type="TextureRect" parent="Overlays/Card_Management/Buttons/Trash"]
-visible = false
-layout_mode = 0
-offset_left = -11.0
-offset_top = -9.0
-offset_right = 50.0
-offset_bottom = 71.0
-texture = ExtResource("134_m6kkd")
-
 [node name="Bottom_Left_Info_Long" type="Node2D" parent="Overlays/Card_Management"]
 position = Vector2(63, -69)
 
@@ -697,16 +656,6 @@ horizontal_alignment = 1
 
 [node name="Drag_Drop_Line" parent="Overlays/Card_Management" instance=ExtResource("136_lkigo")]
 position = Vector2(640, 0)
-
-[node name="Trash_Open" type="AudioStreamPlayer" parent="Overlays/Card_Management"]
-stream = ExtResource("137_qmu3t")
-volume_db = -25.0
-bus = &"UI"
-
-[node name="Trash_Close" type="AudioStreamPlayer" parent="Overlays/Card_Management"]
-stream = ExtResource("138_th1i4")
-volume_db = -37.5
-bus = &"UI"
 
 [node name="Care_Sheet" type="Node2D" parent="Overlays"]
 visible = false

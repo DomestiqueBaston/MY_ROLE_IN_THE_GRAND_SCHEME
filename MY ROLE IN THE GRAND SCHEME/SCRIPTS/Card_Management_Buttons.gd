@@ -12,9 +12,6 @@ func _ready():
 	$Exit.mouse_exited.connect(_on_mouse_exited)
 	$Exit.pressed.connect(_on_cancel_pressed)
 
-	$Trash.mouse_entered.connect(_on_trash_entered)
-	$Trash.mouse_exited.connect(_on_trash_exited)
-
 func _on_mouse_entered():
 	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
 		Globals.hover_sound.play()
@@ -32,11 +29,3 @@ func _on_ok_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
 	ok.emit()
-
-func _on_trash_entered():
-	$Trash/Trash_Hover.show()
-	$Trash/Trash_Normal.hide()
-
-func _on_trash_exited():
-	$Trash/Trash_Hover.hide()
-	$Trash/Trash_Normal.show()
