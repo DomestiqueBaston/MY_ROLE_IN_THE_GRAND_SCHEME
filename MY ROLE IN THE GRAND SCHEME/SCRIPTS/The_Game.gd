@@ -189,7 +189,6 @@ func _on_interaction_ended():
 	else:
 		if GameState.player.get_discard_cards().size() > 0:
 			await Globals.dialog_overlay.manage_cards()
-			GameState.player.clear_discard_cards()
 		_continue_game()
 
 func _save_player_attrs():
