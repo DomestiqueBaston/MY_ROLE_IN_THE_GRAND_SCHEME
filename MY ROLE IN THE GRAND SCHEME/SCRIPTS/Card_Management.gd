@@ -87,11 +87,16 @@ func _stuff_to_do_when_drag_ends(dragged_card: Card):
 		dragged_card.stop_drag()
 	Globals.dragging = false
 	Globals.pop_mouse_cursor()
+	$Card_Management_BG/Right_Zone.hide()
+	$Card_Management_BG/Left_Zone.hide()
 
 func _drag(global_pos: Vector2):
 	_current_card.global_position = \
 		(_drag_global_init_pos + (global_pos - _drag_click_pos)).round()
 	$Drag_Drop_Line.point2 = global_pos
+	var zone = _get_card_area_at(global_pos)
+	$Card_Management_BG/Right_Zone.visible = (zone == $Mastery_Cards)
+	$Card_Management_BG/Left_Zone.visible = (zone == $Pool_Cards)
 
 func _abort_drag():
 	$Drag_Drop_Line.hide_line()
