@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=3 uid="uid://dqhearrxagi71"]
 
-[ext_resource type="Texture2D" uid="uid://ddyok5fbos80x" path="res://GRAPHICS/INTERACTION_RESULT/Interaction_Result_BG.png" id="1_k2rcs"]
-[ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
-[ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="3_c5hnn"]
+[ext_resource type="Texture2D" uid="uid://ddyok5fbos80x" path="res://TRASH/INTERACTION_RESULT/Interaction_Result_BG.png" id="1_k2rcs"]
+[ext_resource type="Texture2D" uid="uid://dopbrt682h1ju" path="res://TRASH/INTERACTION_RESULT/Chalk_Mask.png" id="2_0koxd"]
+[ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://TRASH/Interaction_Result_Theme.tres" id="3_c5hnn"]
 [ext_resource type="Texture2D" uid="uid://b8q6qi07sx8gk" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png" id="4_k30ls"]
 [ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="5_vxlp8"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png" id="5_wphtr"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dopbrt682h1ju"
-path="res://.godot/imported/Chalk_Mask.png-8723f77b29f60077708d52845c31ddf8.ctex"
+path="res://.godot/imported/Chalk_Mask.png-298f960a62769d8f562c502fad9f1777.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GRAPHICS/INTERACTION_RESULT/Chalk_Mask.png"
-dest_files=["res://.godot/imported/Chalk_Mask.png-8723f77b29f60077708d52845c31ddf8.ctex"]
+source_file="res://TRASH/INTERACTION_RESULT/Chalk_Mask.png"
+dest_files=["res://.godot/imported/Chalk_Mask.png-298f960a62769d8f562c502fad9f1777.ctex"]
 
 [params]
 

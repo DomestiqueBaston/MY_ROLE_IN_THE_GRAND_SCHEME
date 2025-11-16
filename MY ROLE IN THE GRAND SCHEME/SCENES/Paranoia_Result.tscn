@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c3oj1c6jo6ikm" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Turquoise.png" id="7_kxiw5"]
 [ext_resource type="Texture2D" uid="uid://dmuhwilbaywkx" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Tres_Fonce.png" id="8_yrw8b"]
 [ext_resource type="Texture2D" uid="uid://cnkohi6nkpx16" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Blanc.png" id="9_xb81k"]
-[ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://UI/Interaction_Result_Theme.tres" id="10_ymndd"]
+[ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://TRASH/Interaction_Result_Theme.tres" id="10_ymndd"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="11_mhvlv"]
 [ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="12_iqw3g"]
 [ext_resource type="Shader" uid="uid://b378yoqi4ij68" path="res://SHADERS/Scanlines.gdshader" id="13_kd5g3"]

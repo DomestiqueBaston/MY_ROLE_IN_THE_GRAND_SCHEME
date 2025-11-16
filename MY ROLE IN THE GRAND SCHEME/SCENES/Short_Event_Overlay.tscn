@@ -1,4 +1,4 @@
-[gd_scene load_steps=224 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=236 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/SHORT_EVENT/CellPhone_BG.png" id="50_cbb3s"]
 [ext_resource type="Texture2D" uid="uid://5gxa8b1vcj0n" path="res://GRAPHICS/SHORT_EVENT/CellPhone_Blinking_Button.png" id="51_ysja1"]
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/CellPhone_Theme.tres" id="52_8x3ap"]
+[ext_resource type="Theme" uid="uid://wwkr2f8y2ykq" path="res://UI/Interaction_Result_Theme.tres" id="52_lkigo"]
 [ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="53_gfusj"]
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="54_sfan1"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="55_s8rvk"]
@@ -67,7 +68,6 @@
 [ext_resource type="Script" uid="uid://hwofijnch3v5" path="res://SCRIPTS/Confirmation_Overlay_Buttons.gd" id="58_sfan1"]
 [ext_resource type="Script" uid="uid://b2xm7f0adahaa" path="res://SCRIPTS/Starting_Hand.gd" id="59_smut4"]
 [ext_resource type="Texture2D" uid="uid://6wn0yf5hibwo" path="res://GRAPHICS/SHORT_EVENT/Income_BG.png" id="59_vprm5"]
-[ext_resource type="Theme" uid="uid://sbjobfvuehya" path="res://UI/Income_Theme.tres" id="60_llwhl"]
 [ext_resource type="Texture2D" uid="uid://blk6yx3qvmvqn" path="res://GRAPHICS/TUTO/Chalk_Mask.png" id="62_gjkrj"]
 [ext_resource type="Script" uid="uid://nki0ci8sbjv2" path="res://SCRIPTS/Interaction.gd" id="62_smut4"]
 [ext_resource type="Texture2D" uid="uid://crswnkw68ti3y" path="res://GRAPHICS/SHORT_EVENT/Player_Improvement_BG.png" id="67_a7igc"]
@@ -245,6 +245,36 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7igc"]
 content_margin_left = 2.0
 content_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmu3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_junrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_216ik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6miuo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rki2v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yrs3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qlus"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1gp5g"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0hpm3"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgwvj"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_418ty"]
+content_margin_left = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khv8s"]
+content_margin_left = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lboli"]
 size = Vector2(154, 104)
@@ -626,6 +656,7 @@ theme = ExtResource("135_tdxs6")
 horizontal_scroll_mode = 3
 
 [node name="Description" type="RichTextLabel" parent="Overlays/Card_Management/Bottom_Left_Info_Long/Scroll_Interaction"]
+clip_contents = false
 custom_minimum_size = Vector2(106, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -656,6 +687,7 @@ theme = ExtResource("11_gpjij")
 
 [node name="Doctor_F" type="RichTextLabel" parent="Overlays/Care_Sheet/Note"]
 modulate = Color(1, 1, 1, 0.745098)
+clip_contents = false
 layout_mode = 0
 offset_left = 36.0
 offset_top = 51.0
@@ -669,6 +701,7 @@ Mind you,  we  are  talking about [color=#992726]        Dø[/color] here..."
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Care_Sheet/Note"]
 modulate = Color(1, 1, 1, 0.745098)
+clip_contents = false
 layout_mode = 0
 offset_left = 93.0
 offset_top = 174.0
@@ -1340,7 +1373,7 @@ visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 
 [node name="Quit" type="Button" parent="Overlays/Income_Start/Income"]
 modulate = Color(1, 1, 1, 0.882353)
@@ -1357,11 +1390,12 @@ position = Vector2(315, 178)
 texture = ExtResource("62_gjkrj")
 
 [node name="Content" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk"]
+clip_contents = false
 offset_left = -73.0
 offset_top = -108.0
 offset_right = 82.0
 offset_bottom = 101.0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Congratulations![/color][/pulse][/center]
 
@@ -1398,18 +1432,20 @@ theme_override_constants/h_separation = -1
 theme_override_constants/v_separation = 0
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 bbcode_enabled = true
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Money" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 bbcode_enabled = true
 text = "XXX"
@@ -1417,18 +1453,20 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="And" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 bbcode_enabled = true
 text = "[color=#ff8864]Dø[/color] and "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Cards" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 bbcode_enabled = true
 text = "X"
@@ -1436,19 +1474,21 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="Beginning_Of_End" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
+clip_contents = false
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 bbcode_enabled = true
 text = " [color=#ff8864]card(s)[/color] to (try "
 fit_content = true
 autowrap_mode = 0
 
 [node name="End_Of_End" type="RichTextLabel" parent="Overlays/Income_Start/Income/Chalk/Money_Cards"]
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 theme_override_constants/line_separation = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a7igc")
 bbcode_enabled = true
@@ -1463,7 +1503,7 @@ visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 script = ExtResource("59_smut4")
 
 [node name="Quit" type="Button" parent="Overlays/Income_Start/Starting_Hand"]
@@ -1481,11 +1521,12 @@ position = Vector2(315, 178)
 texture = ExtResource("62_gjkrj")
 
 [node name="Content" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
+clip_contents = false
 offset_left = -72.0
 offset_top = -108.0
 offset_right = 82.0
 offset_bottom = 101.0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]A fresh disaster? That's great![/color][/pulse][/center]
 
@@ -1510,11 +1551,12 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]A fre
 [center]Already seeing the 5m belly flop![/center]"
 
 [node name="Money" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
+clip_contents = false
 offset_left = -59.0
 offset_top = -58.0
 offset_right = -42.0
 offset_bottom = -49.0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 bbcode_enabled = true
 text = "300"
@@ -1522,11 +1564,12 @@ fit_content = true
 horizontal_alignment = 2
 
 [node name="Drug" type="RichTextLabel" parent="Overlays/Income_Start/Starting_Hand/Chalk"]
+clip_contents = false
 offset_left = 27.0
 offset_top = -58.0
 offset_right = 36.0
 offset_bottom = -49.0
-theme = ExtResource("60_llwhl")
+theme = ExtResource("52_lkigo")
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 bbcode_enabled = true
 text = "3"
@@ -1539,6 +1582,555 @@ script = ExtResource("76_5oqru")
 size = Vector2(154, 100)
 show_bounding_box = true
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
+
+[node name="Interaction_Result" type="Node2D" parent="Overlays"]
+visible = false
+
+[node name="Interaction_Result_BG" type="Sprite2D" parent="Overlays/Interaction_Result"]
+position = Vector2(200, 25)
+texture = ExtResource("59_vprm5")
+centered = false
+
+[node name="Dialogue" type="Control" parent="Overlays/Interaction_Result"]
+visible = false
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("52_lkigo")
+
+[node name="Quit" type="Button" parent="Overlays/Interaction_Result/Dialogue"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 303.0
+offset_right = 342.0
+offset_bottom = 313.0
+text = "Awsome!"
+
+[node name="Chalk" type="Sprite2D" parent="Overlays/Interaction_Result/Dialogue"]
+clip_children = 1
+position = Vector2(315, 178)
+texture = ExtResource("62_gjkrj")
+
+[node name="Control" type="Control" parent="Overlays/Interaction_Result/Dialogue/Chalk"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -73.0
+offset_top = -109.0
+offset_right = 83.0
+offset_bottom = 100.0
+theme = ExtResource("52_lkigo")
+
+[node name="Title" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control"]
+clip_contents = false
+custom_minimum_size = Vector2(154, 12)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 155.0
+offset_bottom = 14.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Interrogation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
+fit_content = true
+
+[node name="Report" type="VBoxContainer" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 155.0
+offset_bottom = 209.0
+alignment = 1
+
+[node name="Generic_Information" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(154, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#ff8864]Well[/color], that was intense, but I'm glad we had the [color=#ff8864]discussion[/color]. And who knows, maybe this will all turn out better than expected.
+
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Sleeping_PNJ" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "That said, maybe [color=#ff8864]it wasn't such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...
+
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Critical_Success_Emo" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "And good news is, I can feel I'm [color=#ff1c18]emotionally[/color] regaining some [color=#ff8864]confidence[/color] after that little chat session."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Combat" type="Control" parent="Overlays/Interaction_Result"]
+visible = false
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("52_lkigo")
+
+[node name="Quit" type="Button" parent="Overlays/Interaction_Result/Combat"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 303.0
+offset_right = 343.0
+offset_bottom = 313.0
+text = "Well..."
+
+[node name="Chalk" type="Sprite2D" parent="Overlays/Interaction_Result/Combat"]
+clip_children = 1
+position = Vector2(315, 178)
+texture = ExtResource("62_gjkrj")
+
+[node name="Control" type="Control" parent="Overlays/Interaction_Result/Combat/Chalk"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -73.0
+offset_top = -109.0
+offset_right = 83.0
+offset_bottom = 100.0
+theme = ExtResource("52_lkigo")
+
+[node name="Title" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control"]
+clip_contents = false
+custom_minimum_size = Vector2(154, 12)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 155.0
+offset_bottom = 14.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Combat Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
+fit_content = true
+
+[node name="Report" type="VBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 155.0
+offset_bottom = 161.0
+alignment = 1
+
+[node name="Generic_Information" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(154, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "I hate when it comes to hands. Let's just hope that's the end of it. But who am I kidding?"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Player_Success_Or_Fail" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]Ok! [color=#ff8864]I am [color=#ff1c18]alive[/color][/color]. And that's [color=#ff1c18]good[/color]...[/center]"
+fit_content = true
+
+[node name="But_Player_Hit" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]...considering [color=#ff8864]I also [color=#ff1c18]got hit[/color] by that [color=#ff1c18]freak[/color][/color]![/center]"
+fit_content = true
+
+[node name="But_Player_Critically_Hit" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]...considering [color=#ff8864]I also [color=#ff1c18]got seriously hit[/color] by that [color=#ff1c18]freak[/color][/color]! Hell! I [color=#ff1c18]didn't[/color] [color=#ff8864]need that[/color].[/center]"
+fit_content = true
+
+[node name="Player_Critical_Hit_Or_No_Kill" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]But somehow, I [color=#ff8864]managed[/color] to [color=#ff1c18]spare[/color] my [color=#ff1c18]opponent[/color]'s [color=#ff1c18]life[/color] and that's a [color=#ff1c18]KO[/color] [color=#ff8864]for the count[/color].[/center]"
+fit_content = true
+
+[node name="End_NPC_Alive" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center][color=#ff8864]See you[/color] [color=#ff1c18]next time[/color] Buddy, but don't even think I'll forget about you for a second![/center]"
+fit_content = true
+
+[node name="End_NPC_Dead" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[center]That was a [color=#ff8864]hell of a fight[/color] but you [color=#ff8864]pushed[/color] your [color=#ff1c18]luck too far[/color], my friend![/center]"
+fit_content = true
+
+[node name="Separator" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+
+[node name="Search_Body" type="Control" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+layout_mode = 2
+
+[node name="Information" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 11)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -1.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/color]?[/center]"
+
+[node name="Yes" type="Button" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 5.0
+offset_right = 122.0
+offset_bottom = 13.0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 0.959333, 0.39, 0.752941)
+theme_override_colors/font_focus_color = Color(1, 0.532333, 0.39, 0.752941)
+theme_override_colors/font_pressed_color = Color(0.285013, 0.64, 0.2304, 0.752941)
+theme_override_colors/font_hover_color = Color(0.627333, 1, 0.57, 0.752941)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.532333, 0.39, 0.752941)
+theme_override_constants/outline_size = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qmu3t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_junrj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_216ik")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_6miuo")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rki2v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0yrs3")
+text = "-> Let's do that! <-"
+
+[node name="Search_Result" type="VBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]
+custom_minimum_size = Vector2(154, 11)
+layout_mode = 0
+offset_top = 16.0
+offset_right = 154.0
+offset_bottom = 51.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="If_Yes_Search_Money" type="HBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Beginning" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0qlus")
+bbcode_enabled = true
+text = "Ok, I found "
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="Money" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(4, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1gp5g")
+bbcode_enabled = true
+text = "50"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="End" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0hpm3")
+bbcode_enabled = true
+text = "[color=#ff1c18]dø[/color]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="And_Wan" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(62, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = " and [color=#ff1c18]trouble[/color]!"
+
+[node name="If_Yes_Search_No_Money" type="HBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
+visible = false
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Nothing" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_No_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]Swell! [color=#ff1c18]Nothing[/color]...[/center]"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="But_Wan" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_No_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(62, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = " but [color=#ff1c18]trouble[/color]!"
+
+[node name="If_Search_And_Minion" type="VBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
+custom_minimum_size = Vector2(154, 22)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="Beginning" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Search_And_Minion"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 9)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xgwvj")
+bbcode_enabled = true
+text = "And... Ho! Wait... I know now that"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Search_And_Minion"]
+layout_mode = 2
+alignment = 1
+
+[node name="NPC" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Search_And_Minion/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+tooltip_text = "We have a
+guilty party."
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_418ty")
+bbcode_enabled = true
+text = "Michel Polnareff"
+fit_content = true
+autowrap_mode = 0
+
+[node name="End" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Search_And_Minion/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_khv8s")
+bbcode_enabled = true
+text = "sent you."
+fit_content = true
+autowrap_mode = 0
+
+[node name="Investigation" type="Control" parent="Overlays/Interaction_Result"]
+visible = false
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("52_lkigo")
+
+[node name="Quit" type="Button" parent="Overlays/Interaction_Result/Investigation"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 303.0
+offset_right = 343.0
+offset_bottom = 313.0
+text = "Ok. Next!"
+
+[node name="Chalk" type="Sprite2D" parent="Overlays/Interaction_Result/Investigation"]
+clip_children = 1
+position = Vector2(315, 178)
+texture = ExtResource("62_gjkrj")
+
+[node name="Control" type="Control" parent="Overlays/Interaction_Result/Investigation/Chalk"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -73.0
+offset_top = -109.0
+offset_right = 83.0
+offset_bottom = 100.0
+theme = ExtResource("52_lkigo")
+
+[node name="Title" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control"]
+clip_contents = false
+custom_minimum_size = Vector2(154, 12)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 155.0
+offset_bottom = 14.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Investigation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
+fit_content = true
+
+[node name="Positive_Report" type="VBoxContainer" parent="Overlays/Interaction_Result/Investigation/Chalk/Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 155.0
+offset_bottom = 209.0
+alignment = 1
+
+[node name="Generic_Information" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report"]
+clip_contents = false
+custom_minimum_size = Vector2(154, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Searching through every cor-ner, hoping to find something that will bring clarity.
+But the truth often remains elusive until the very end.
+
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Report" type="VBoxContainer" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report"]
+layout_mode = 2
+
+[node name="Search_Result" type="VBoxContainer" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report"]
+custom_minimum_size = Vector2(154, 11)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Critical_Success_Money" type="HBoxContainer" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result"]
+custom_minimum_size = Vector2(0, 11)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -1
+alignment = 1
+
+[node name="Beginning" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Success_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0qlus")
+bbcode_enabled = true
+text = "[color=#ff8864]Great[/color]! I found "
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="Money" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Success_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(4, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1gp5g")
+bbcode_enabled = true
+text = "50"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="End" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Success_Money"]
+clip_contents = false
+custom_minimum_size = Vector2(11, 11)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0hpm3")
+bbcode_enabled = true
+text = "[color=#ff1c18]dø[/color]. I'll keep it."
+fit_content = true
+autowrap_mode = 0
+
+[node name="Failure" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 3
+bbcode_enabled = true
+text = "What? [color=#ff1c18]Nothing here[/color]? [color=#ff8864]This isn't good[/color] at all. I was pretty sure I'd find something... [color=#ff8864]I'm doomed[/color]!"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Critical_Failure" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report"]
+clip_contents = false
+custom_minimum_size = Vector2(107, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 3
+bbcode_enabled = true
+text = "[center]Swell! I [color=#ff1c18]hurt myself[/color]... Is there something else?[/center]"
 
 [node name="Interaction_Run_Away_Break_In" type="Node2D" parent="Overlays" node_paths=PackedStringArray("interaction_cards", "the_button", "drag_drop_line")]
 visible = false
@@ -1960,6 +2552,7 @@ theme = ExtResource("88_7rvn5")
 text = "Case Report:"
 
 [node name="Case" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report"]
+clip_contents = false
 layout_mode = 0
 offset_top = 12.0
 offset_right = 365.0
@@ -2017,6 +2610,7 @@ custom_minimum_size = Vector2(8, 0)
 layout_mode = 2
 
 [node name="Report_Description" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(151, 113)
 layout_mode = 2
 size_flags_vertical = 4
@@ -2041,6 +2635,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="Victim" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 bbcode_enabled = true
@@ -2053,12 +2648,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC1"]
+clip_contents = false
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC1"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Jean-Marc Papageorgiou"
@@ -2071,12 +2668,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC2"]
+clip_contents = false
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC2"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Jean Trancène"
@@ -2089,12 +2688,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC3"]
+clip_contents = false
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Victim_Container/NPC3"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Simon Cussonez"
@@ -2106,6 +2707,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="Witness" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 bbcode_enabled = true
@@ -2118,12 +2720,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC1"]
+clip_contents = false
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC1"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "None"
@@ -2136,12 +2740,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC2"]
+clip_contents = false
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC2"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "José Paldir"
@@ -2154,12 +2760,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC3"]
+clip_contents = false
 layout_mode = 2
 text = "- "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Witness_Container/NPC3"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Sarah Croche"
@@ -2171,6 +2779,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="Suspect" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 bbcode_enabled = true
@@ -2183,12 +2792,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC1"]
+clip_contents = false
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC1"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Aude Toilète"
@@ -2201,12 +2812,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC2"]
+clip_contents = false
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC2"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Armelle Couvair"
@@ -2219,12 +2832,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC3"]
+clip_contents = false
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Suspect_Container/NPC3"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Garcin Lasare"
@@ -2236,6 +2851,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="Crime_Scene" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 bbcode_enabled = true
@@ -2248,12 +2864,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location1"]
+clip_contents = false
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location1"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "None"
@@ -2267,12 +2885,14 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location2"]
+clip_contents = false
 layout_mode = 2
 text = " - "
 fit_content = true
 autowrap_mode = 0
 
 [node name="Name" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Location2"]
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 text = "Library"
@@ -2401,6 +3021,7 @@ offset_bottom = 84.0
 theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Health_Report"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 0
 offset_left = 91.0
@@ -2446,6 +3067,7 @@ offset_bottom = 84.0
 theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Add_Report"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 0
 offset_left = 91.0
@@ -2495,6 +3117,7 @@ offset_bottom = 84.0
 theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Emo_Report"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 0
 offset_left = 91.0
@@ -2544,6 +3167,7 @@ offset_bottom = 84.0
 theme = ExtResource("88_7rvn5")
 
 [node name="Report" type="RichTextLabel" parent="Overlays/Health_Issue/Rest_Report"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 0
 offset_left = 91.0
@@ -2600,6 +3224,7 @@ anchors_preset = 0
 
 [node name="Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 83.0
@@ -2616,6 +3241,7 @@ One  thing  is  [color=#ff8864]certain[/color]:  where  you  came from,  [shake 
 
 [node name="Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Addiction_Crisis_Result"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 165.0
 offset_top = 56.0
@@ -2637,6 +3263,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Bill"]
+clip_contents = false
 layout_mode = 0
 offset_left = 170.0
 offset_top = 48.0
@@ -2660,6 +3287,7 @@ anchors_preset = 0
 
 [node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 178.0
 offset_top = 70.0
@@ -2678,6 +3306,7 @@ Did you really  think  that  would  be  your biggest  challenge  today?
 
 [node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Break_In"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 165.0
 offset_top = 55.0
@@ -2701,6 +3330,7 @@ anchors_preset = 0
 
 [node name="NPC_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 56.0
@@ -2718,6 +3348,7 @@ Were  you the  [shake rate=7.0 level=5 connected=0][color=#ff8864]real target  a
 
 [node name="Do_Not_Kill" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 56.0
@@ -2733,6 +3364,7 @@ When  someone  [shake rate=7.0 level=5 connected=0][color=#ff8864]comes  at  me 
 
 [node name="Minion_Attack" type="RichTextLabel" parent="Overlays/Misc/Announces/Combat"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 59.0
@@ -2754,6 +3386,7 @@ visible = false
 anchors_preset = 0
 
 [node name="NPC_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
+clip_contents = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 55.0
@@ -2771,6 +3404,7 @@ Or [shake rate=7.0 level=5 connected=0][color=#ff8864]could it  be just... [colo
 
 [node name="NPC_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 55.0
@@ -2794,6 +3428,7 @@ anchors_preset = 0
 
 [node name="Lower_Rep" type="RichTextLabel" parent="Overlays/Misc/Announces/Reputation"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 55.0
@@ -2812,6 +3447,7 @@ Or [shake rate=7.0 level=5 connected=0][color=#ff8864]did you do that  [color=#f
 
 [node name="Higher_Rep" type="RichTextLabel" parent="Overlays/Misc/Announces/Reputation"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 55.0
@@ -2835,6 +3471,7 @@ anchors_preset = 0
 
 [node name="Dream" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 167.0
 offset_top = 106.0
@@ -2849,6 +3486,7 @@ text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Well,
 
 [node name="Nightmare" type="RichTextLabel" parent="Overlays/Misc/Announces/Dreams"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 168.0
 offset_top = 94.0
@@ -2867,6 +3505,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Irrelevant_Motive"]
+clip_contents = false
 layout_mode = 0
 offset_left = 176.0
 offset_top = 111.0
@@ -2883,6 +3522,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Lie"]
+clip_contents = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 74.0
@@ -2902,6 +3542,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Annonce" type="RichTextLabel" parent="Overlays/Misc/Announces/Outdated_Case"]
+clip_contents = false
 layout_mode = 0
 offset_left = 169.0
 offset_top = 62.0
@@ -2923,6 +3564,7 @@ visible = false
 anchors_preset = 0
 
 [node name="Message" type="RichTextLabel" parent="Overlays/Misc/Announces/Rowena_Absent"]
+clip_contents = false
 layout_mode = 0
 offset_left = 159.0
 offset_top = 56.0
@@ -2945,6 +3587,7 @@ anchors_preset = 0
 
 [node name="Player_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 159.0
 offset_top = 44.0
@@ -2962,6 +3605,7 @@ Either way, you sure  know  how  to  [color=#ff8864]leave an impression[/color].
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
 
 [node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
+clip_contents = false
 layout_mode = 0
 offset_left = 165.0
 offset_top = 50.0
@@ -3005,6 +3649,7 @@ tooltip_text = "Ok..."
 theme = ExtResource("68_q1jpv")
 
 [node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
+clip_contents = false
 layout_mode = 0
 offset_left = 260.0
 offset_top = 104.0
@@ -3058,6 +3703,7 @@ theme = ExtResource("68_q1jpv")
 
 [node name="Positive_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 213.64554
 offset_top = 52.518246
@@ -3073,6 +3719,7 @@ fit_content = true
 
 [node name="Positive_Physic" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 221.0
 offset_top = 72.0
@@ -3089,6 +3736,7 @@ fit_content = true
 
 [node name="Positive_Health" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 219.0
 offset_top = 52.0
@@ -3104,6 +3752,7 @@ fit_content = true
 
 [node name="Negative_Mental" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 214.69498
 offset_top = 52.2231
@@ -3122,6 +3771,7 @@ fit_content = true
 
 [node name="Negative_Physic" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 217.0
 offset_top = 52.0
@@ -3137,6 +3787,7 @@ fit_content = true
 
 [node name="Negative_Health" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 217.0
 offset_top = 52.0
@@ -3153,6 +3804,7 @@ fit_content = true
 
 [node name="Positive_Total" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 208.0
 offset_top = 50.0
@@ -3168,6 +3820,7 @@ fit_content = true
 
 [node name="Positive_And_Negative" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 208.0
 offset_top = 50.0
@@ -3186,6 +3839,7 @@ fit_content = true
 
 [node name="Negative_Total" type="RichTextLabel" parent="Overlays/Player_Improvement/Informations"]
 visible = false
+clip_contents = false
 layout_mode = 0
 offset_left = 208.0
 offset_top = 50.0
@@ -3240,6 +3894,7 @@ offset_bottom = 28.0
 theme = ExtResource("70_0sc5x")
 
 [node name="Stock" type="RichTextLabel" parent="Overlays/Rowena/Drug_Store"]
+clip_contents = false
 layout_mode = 0
 offset_left = 191.0
 offset_top = 124.0
@@ -3292,6 +3947,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="End_Text" type="RichTextLabel" parent="Overlays/Rowena/Drug_Store/Stock/HBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(66, 0)
 layout_mode = 2
 theme_override_colors/default_color = Color(0.6117647, 0.49803922, 0.37254903, 1)
@@ -3472,6 +4128,7 @@ offset_bottom = 30.0
 theme = ExtResource("9_oetaq")
 
 [node name="Info" type="RichTextLabel" parent="Overlays/Run_Away_Break_In/Announces/Run_Away"]
+clip_contents = false
 layout_mode = 0
 offset_left = -57.0
 offset_top = 57.0
@@ -3524,6 +4181,7 @@ offset_bottom = 30.0
 theme = ExtResource("9_oetaq")
 
 [node name="Info" type="RichTextLabel" parent="Overlays/Run_Away_Break_In/Announces/Break_In"]
+clip_contents = false
 layout_mode = 0
 offset_left = -61.0
 offset_top = 53.0
@@ -3589,6 +4247,7 @@ script = ExtResource("6_200re")
 
 [node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
+clip_contents = false
 layout_mode = 0
 offset_left = 107.0
 offset_top = 64.0
@@ -3600,6 +4259,7 @@ text = "[center]This  [color=ff8864]Warrant costs[/color] [color=#992726]       
 
 [node name="Price" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Buy"]
 self_modulate = Color(1, 1, 1, 0.921569)
+clip_contents = false
 layout_mode = 0
 offset_left = 153.0
 offset_top = 86.0
@@ -3654,6 +4314,7 @@ script = ExtResource("6_200re")
 
 [node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_Use"]
 self_modulate = Color(1, 1, 1, 0.921569)
+clip_contents = false
 layout_mode = 0
 offset_left = 108.0
 offset_top = 64.0
@@ -3711,6 +4372,7 @@ script = ExtResource("6_200re")
 
 [node name="Text" type="RichTextLabel" parent="Overlays/Search_Warrant/Text_No_Warrant"]
 self_modulate = Color(1, 1, 1, 0.921569)
+clip_contents = false
 layout_mode = 0
 offset_left = 108.0
 offset_top = 64.0
@@ -3914,6 +4576,7 @@ offset_bottom = 360.0
 theme = ExtResource("15_wqyuw")
 
 [node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/Player"]
+clip_contents = false
 layout_mode = 0
 offset_left = 418.0
 offset_top = 148.0
@@ -3975,6 +4638,7 @@ offset_bottom = 360.0
 theme = ExtResource("15_wqyuw")
 
 [node name="Situation" type="RichTextLabel" parent="Overlays/Wanted/Info/NPC"]
+clip_contents = false
 layout_mode = 0
 offset_left = 418.0
 offset_top = 191.0
@@ -4029,6 +4693,7 @@ offset_bottom = 84.0
 theme = ExtResource("88_hjqqn")
 
 [node name="Case_Delivery" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
+clip_contents = false
 layout_mode = 0
 offset_left = 92.0
 offset_top = 32.0
@@ -4050,6 +4715,7 @@ text = "(see case.json or the rules)"
 autowrap_mode = 2
 
 [node name="Case_Name" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
+clip_contents = false
 layout_mode = 0
 offset_left = 92.0
 offset_top = 42.0
@@ -4072,6 +4738,7 @@ text = "(see \"name\" in Zero_Level...json)"
 autowrap_mode = 2
 
 [node name="Description" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
+clip_contents = false
 layout_mode = 0
 offset_left = 91.0
 offset_top = 52.0
@@ -4087,6 +4754,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Separator" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report"]
+clip_contents = false
 layout_mode = 0
 offset_left = 91.0
 offset_top = 76.0
@@ -4107,6 +4775,7 @@ offset_bottom = 160.0
 pivot_offset = Vector2(102, 219)
 
 [node name="Report_Introduction" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer"]
+clip_contents = false
 custom_minimum_size = Vector2(60, 40)
 layout_mode = 2
 theme_override_constants/line_separation = 1
@@ -4127,6 +4796,7 @@ layout_mode = 2
 theme_override_constants/separation = -2
 
 [node name="Victim" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Victim_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 bbcode_enabled = true
@@ -4139,6 +4809,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_01"]
+clip_contents = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
 text = "-"
@@ -4146,6 +4817,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="NPC_01" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Victim_Container/Link_01"]
+clip_contents = false
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -4160,6 +4832,7 @@ layout_mode = 2
 theme_override_constants/separation = -2
 
 [node name="Witness" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Witness_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 bbcode_enabled = true
@@ -4172,6 +4845,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_01"]
+clip_contents = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
 text = "-"
@@ -4179,6 +4853,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="NPC_01" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Witness_Container/Link_01"]
+clip_contents = false
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -4193,6 +4868,7 @@ layout_mode = 2
 theme_override_constants/separation = -2
 
 [node name="Suspect" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Suspect_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 bbcode_enabled = true
@@ -4205,6 +4881,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_01"]
+clip_contents = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
 text = " -"
@@ -4212,6 +4889,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="NPC_01" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Suspect_Container/Link_01"]
+clip_contents = false
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
@@ -4226,6 +4904,7 @@ layout_mode = 2
 theme_override_constants/separation = -2
 
 [node name="Crime_Scene" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container"]
+clip_contents = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 bbcode_enabled = true
@@ -4238,6 +4917,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Dash" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_02"]
+clip_contents = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cde65")
 text = " -"
@@ -4245,6 +4925,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="Location_01" type="RichTextLabel" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Case_Report/VBoxContainer/Info_Container/Crime_Scene_Container/Link_02"]
+clip_contents = false
 layout_mode = 2
 tooltip_text = "Info related to
 NPC"
