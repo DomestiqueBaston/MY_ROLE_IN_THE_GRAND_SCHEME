@@ -537,13 +537,13 @@ offset_bottom = 340.0
 texture = ExtResource("129_fowbj")
 
 [node name="Pool_Cards" type="Node2D" parent="Overlays/Card_Management"]
-position = Vector2(204, 74)
+position = Vector2(203, 115)
 script = ExtResource("76_5oqru")
 size = Vector2(156, 102)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
 [node name="Mastery_Cards" type="Node2D" parent="Overlays/Card_Management"]
-position = Vector2(370, 74)
+position = Vector2(368, 115)
 script = ExtResource("76_5oqru")
 size = Vector2(196, 102)
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
@@ -562,9 +562,9 @@ script = ExtResource("131_d5ayf")
 [node name="Ok" type="Button" parent="Overlays/Card_Management/Buttons"]
 layout_mode = 0
 offset_left = 512.0
-offset_top = 218.0
+offset_top = 244.0
 offset_right = 538.0
-offset_bottom = 239.0
+offset_bottom = 265.0
 theme_override_colors/font_color = Color(0.35, 0.5, 0.14, 0.635294)
 theme_override_colors/font_focus_color = Color(0.76725, 0.93, 0.5394, 0.647059)
 theme_override_colors/font_pressed_color = Color(0.35, 0.5, 0.14, 0.635294)
@@ -585,10 +585,10 @@ text = "Ok!"
 
 [node name="Exit" type="Button" parent="Overlays/Card_Management/Buttons"]
 layout_mode = 0
-offset_left = 490.0
-offset_top = 241.0
-offset_right = 539.0
-offset_bottom = 262.0
+offset_left = 450.0
+offset_top = 244.0
+offset_right = 499.0
+offset_bottom = 265.0
 theme_override_colors/font_color = Color(0.78, 0.32812, 0.1638, 0.631373)
 theme_override_colors/font_focus_color = Color(1, 0.596667, 0.45, 0.556863)
 theme_override_colors/font_pressed_color = Color(0.78, 0.32812, 0.1638, 0.631373)
