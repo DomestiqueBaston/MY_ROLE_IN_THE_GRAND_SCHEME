@@ -1,4 +1,4 @@
-[gd_scene load_steps=236 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=237 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -62,6 +62,7 @@
 [ext_resource type="Theme" uid="uid://wwkr2f8y2ykq" path="res://UI/Interaction_Result_Theme.tres" id="52_lkigo"]
 [ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="53_gfusj"]
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="54_sfan1"]
+[ext_resource type="Texture2D" uid="uid://bmt6odimg2n26" path="res://GRAPHICS/SHORT_EVENT/Interaction_Result_BG.png" id="55_qmu3t"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="55_s8rvk"]
 [ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/SHORT_EVENT/Confirmation.png" id="56_8x3ap"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="57_gfusj"]
@@ -1587,8 +1588,8 @@ metadata/_custom_type_script = "uid://bfic46uloqv5p"
 visible = false
 
 [node name="Interaction_Result_BG" type="Sprite2D" parent="Overlays/Interaction_Result"]
-position = Vector2(200, 25)
-texture = ExtResource("59_vprm5")
+position = Vector2(172, 25)
+texture = ExtResource("55_qmu3t")
 centered = false
 
 [node name="Dialogue" type="Control" parent="Overlays/Interaction_Result"]
@@ -1596,14 +1597,16 @@ visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
+offset_left = -28.0
+offset_right = -28.0
 theme = ExtResource("52_lkigo")
 
 [node name="Quit" type="Button" parent="Overlays/Interaction_Result/Dialogue"]
 modulate = Color(1, 1, 1, 0.882353)
 layout_mode = 0
-offset_left = 296.0
+offset_left = 327.0
 offset_top = 303.0
-offset_right = 342.0
+offset_right = 373.0
 offset_bottom = 313.0
 text = "Awsome!"
 
@@ -1613,32 +1616,33 @@ position = Vector2(315, 178)
 texture = ExtResource("62_gjkrj")
 
 [node name="Control" type="Control" parent="Overlays/Interaction_Result/Dialogue/Chalk"]
+custom_minimum_size = Vector2(216, 0)
 layout_mode = 3
 anchors_preset = 0
 offset_left = -73.0
 offset_top = -109.0
-offset_right = 83.0
+offset_right = 142.0
 offset_bottom = 100.0
 theme = ExtResource("52_lkigo")
 
 [node name="Title" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control"]
 clip_contents = false
-custom_minimum_size = Vector2(154, 12)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 155.0
-offset_bottom = 14.0
+custom_minimum_size = Vector2(216, 12)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Interrogation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
 fit_content = true
 
 [node name="Report" type="VBoxContainer" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control"]
+custom_minimum_size = Vector2(216, 0)
 layout_mode = 0
-offset_left = 1.0
 offset_top = 15.0
-offset_right = 155.0
+offset_right = 215.0
 offset_bottom = 209.0
 alignment = 1
 
@@ -1648,33 +1652,33 @@ custom_minimum_size = Vector2(154, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "[color=#ff8864]Well[/color], that was intense, but I'm glad we had the [color=#ff8864]discussion[/color]. And who knows, maybe this will all turn out better than expected.
+text = "[color=#ff8864]Well[/color], that was intense, but I'm glad we had the [color=#ff8864]discussion[/color]. And who knows, maybe this will all turn out better than expected at some point. Am I [color=#ff8864]fooling[/color] myself?
 
 "
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Sleeping_PNJ" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+[node name="Info" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(107, 14)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "That said, maybe [color=#ff8864]it wasn't such a great idea[/color] for my [color=#ff1c18]reputation[/color] to come and chat [color=#ff8864]while[/color] they were [color=#ff8864]napping[/color]...
-
-"
+text = "I knew I'd get [color=#ff1c18]answers[/color]. I'm starting to [color=#ff8864]know them well[/color], all those [color=#ff8864]little sewer rats[/color]..."
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Critical_Success_Emo" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+[node name="No_Info" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(107, 14)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 bbcode_enabled = true
-text = "And good news is, I can feel I'm [color=#ff1c18]emotionally[/color] regaining some [color=#ff8864]confidence[/color] after that little chat session."
+text = "I really thought that [color=#ff8864]little chat[/color] would give me [color=#ff1c18]some answers[/color], but I [color=#ff1c18]totally screwed up[/color]..."
 fit_content = true
 horizontal_alignment = 1
 
@@ -1702,26 +1706,27 @@ texture = ExtResource("62_gjkrj")
 [node name="Control" type="Control" parent="Overlays/Interaction_Result/Combat/Chalk"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -73.0
+offset_left = -101.0
 offset_top = -109.0
-offset_right = 83.0
+offset_right = 115.0
 offset_bottom = 100.0
 theme = ExtResource("52_lkigo")
 
 [node name="Title" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control"]
 clip_contents = false
 custom_minimum_size = Vector2(154, 12)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 155.0
-offset_bottom = 14.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Combat Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
 fit_content = true
 
 [node name="Report" type="VBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control"]
+custom_minimum_size = Vector2(216, 0)
 layout_mode = 0
 offset_left = 1.0
 offset_top = 15.0
@@ -1739,8 +1744,7 @@ text = "I hate when it comes to hands. Let's just hope that's the end of it. But
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Player_Success_Or_Fail" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
-visible = false
+[node name="Player_Alive" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
 clip_contents = false
 custom_minimum_size = Vector2(107, 11)
 layout_mode = 2
@@ -1748,8 +1752,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/line_separation = 2
 bbcode_enabled = true
-text = "[center]Ok! [color=#ff8864]I am [color=#ff1c18]alive[/color][/color]. And that's [color=#ff1c18]good[/color]...[/center]"
+text = "Ok! [color=#ff8864]I am [color=#ff1c18]alive[/color][/color]. And that's a [color=#ff1c18]good start[/color]..."
 fit_content = true
+horizontal_alignment = 1
 
 [node name="But_Player_Hit" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
 visible = false
@@ -1764,6 +1769,7 @@ text = "[center]...considering [color=#ff8864]I also [color=#ff1c18]got hit[/col
 fit_content = true
 
 [node name="But_Player_Critically_Hit" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(107, 11)
 layout_mode = 2
@@ -1782,10 +1788,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/line_separation = 2
 bbcode_enabled = true
-text = "[center]But somehow, I [color=#ff8864]managed[/color] to [color=#ff1c18]spare[/color] my [color=#ff1c18]opponent[/color]'s [color=#ff1c18]life[/color] and that's a [color=#ff1c18]KO[/color] [color=#ff8864]for the count[/color].[/center]"
+text = "And somehow, I [color=#ff8864]managed[/color] to [color=#ff1c18]spare[/color] my [color=#ff1c18]opponent[/color]'s [color=#ff8864]life[/color]: [color=#ff1c18]Down[/color] [color=#ff8864]for the count[/color] and ready for a little [color=#ff1c18]chat[/color]!"
 fit_content = true
+horizontal_alignment = 1
 
 [node name="End_NPC_Alive" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(107, 11)
 layout_mode = 2
@@ -1818,6 +1826,7 @@ theme_override_constants/line_separation = 2
 bbcode_enabled = true
 
 [node name="Search_Body" type="Control" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+visible = false
 layout_mode = 2
 
 [node name="Information" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]
@@ -1838,10 +1847,10 @@ bbcode_enabled = true
 text = "[center]Should I [color=#ff1c18]search[/color] the [color=#ff8864]body[/color]?[/center]"
 
 [node name="Yes" type="Button" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]
+custom_minimum_size = Vector2(215, 0)
 layout_mode = 0
-offset_left = 32.0
 offset_top = 5.0
-offset_right = 122.0
+offset_right = 215.0
 offset_bottom = 13.0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(1, 0.959333, 0.39, 0.752941)
@@ -1859,7 +1868,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_0yrs3")
 text = "-> Let's do that! <-"
 
 [node name="Search_Result" type="VBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]
-custom_minimum_size = Vector2(154, 11)
+custom_minimum_size = Vector2(215, 11)
 layout_mode = 0
 offset_top = 16.0
 offset_right = 154.0
@@ -1868,6 +1877,7 @@ theme_override_constants/separation = 0
 alignment = 1
 
 [node name="If_Yes_Search_Money" type="HBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
+visible = false
 custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1906,11 +1916,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0hpm3")
 bbcode_enabled = true
-text = "[color=#ff1c18]dø[/color]"
+text = "[color=#ff1c18]dø[/color]!"
 fit_content = true
 autowrap_mode = 0
 
 [node name="And_Wan" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_Money"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(62, 11)
 layout_mode = 2
@@ -1918,7 +1929,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/line_separation = 2
 bbcode_enabled = true
-text = " and [color=#ff1c18]trouble[/color]!"
+text = " And [color=#ff1c18]trouble[/color]!"
 
 [node name="If_Yes_Search_No_Money" type="HBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
 visible = false
@@ -1940,6 +1951,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 
 [node name="But_Wan" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_No_Money"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(62, 11)
 layout_mode = 2
@@ -1950,6 +1962,7 @@ bbcode_enabled = true
 text = " but [color=#ff1c18]trouble[/color]!"
 
 [node name="If_Search_And_Minion" type="VBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
+visible = false
 custom_minimum_size = Vector2(154, 22)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -2016,28 +2029,30 @@ position = Vector2(315, 178)
 texture = ExtResource("62_gjkrj")
 
 [node name="Control" type="Control" parent="Overlays/Interaction_Result/Investigation/Chalk"]
+custom_minimum_size = Vector2(215, 0)
 layout_mode = 3
 anchors_preset = 0
-offset_left = -73.0
+offset_left = -100.0
 offset_top = -109.0
-offset_right = 83.0
+offset_right = 115.0
 offset_bottom = 100.0
 theme = ExtResource("52_lkigo")
 
 [node name="Title" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control"]
 clip_contents = false
-custom_minimum_size = Vector2(154, 12)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 155.0
-offset_bottom = 14.0
+custom_minimum_size = Vector2(215, 12)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[center][color=#ff8864]-[/color] [pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Investigation Report[/color][/pulse] [color=#ff8864]-[/color][/center]"
 fit_content = true
 
 [node name="Positive_Report" type="VBoxContainer" parent="Overlays/Interaction_Result/Investigation/Chalk/Control"]
+custom_minimum_size = Vector2(215, 0)
 layout_mode = 0
 offset_left = 1.0
 offset_top = 15.0
@@ -2051,7 +2066,7 @@ custom_minimum_size = Vector2(154, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
-text = "Searching through every cor-ner, hoping to find something that will bring clarity.
+text = "Searching through every corner, hoping to find something that will bring clarity.
 But the truth often remains elusive until the very end.
 
 "
@@ -2067,7 +2082,21 @@ layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 1
 
+[node name="Success" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result"]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(107, 22)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/line_separation = 3
+bbcode_enabled = true
+text = "I [color=#ff8864]felt it[/color], I knew I would [color=#ff1c18]find something[/color]. There was a slight [color=#ff8864]smell of success[/color] here!"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="Critical_Success_Money" type="HBoxContainer" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result"]
+visible = false
 custom_minimum_size = Vector2(0, 11)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -2081,7 +2110,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0qlus")
 bbcode_enabled = true
-text = "[color=#ff8864]Great[/color]! I found "
+text = "And I found "
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 2
@@ -2106,11 +2135,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0hpm3")
 bbcode_enabled = true
-text = "[color=#ff1c18]dø[/color]. I'll keep it."
+text = "[color=#ff1c18]dø[/color]. I'll keep it as a refund."
 fit_content = true
 autowrap_mode = 0
 
-[node name="Failure" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report"]
+[node name="Failure" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(107, 22)
 layout_mode = 2
@@ -2122,7 +2152,8 @@ text = "What? [color=#ff1c18]Nothing here[/color]? [color=#ff8864]This isn't goo
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Critical_Failure" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report"]
+[node name="Critical_Failure" type="RichTextLabel" parent="Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result"]
+visible = false
 clip_contents = false
 custom_minimum_size = Vector2(107, 25)
 layout_mode = 2
@@ -3274,11 +3305,11 @@ bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Financial[/color]  [color=#ff8864]mastermind[/color]![/pulse]
 
 Wow. [shake rate=7.0 level=5 connected=0][color=#ff8864]Four  unpaid  bills[/color][/shake]?  
-That's a really impressive  dedication to [shake rate=7.0 level=5 connected=0][color=#ff1c18]self-sabotage[/color][/shake].
+That's  a  really  impressive  dedication to [shake rate=7.0 level=5 connected=0][color=#ff1c18]self-sabotage[/color][/shake].
 
 Apparently, [shake rate=7.0 level=5 connected=0][color=#ff8864]ignoring[/color][/shake]  debt  collectors doesn't  make them  [shake rate=7.0 level=5 connected=0][color=#ff8864]disappear[/color][/shake].  
-So  now  you get to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meditate[/color][/shake]  on your life  choices...
-...in a [shake rate=7.0 level=5 connected=0][color=#ff1c18]cell[/color][/shake], [shake rate=7.0 level=5 connected=0][color=#ff8864]for the  next[/color] [color=#ff1c18]3 days[/color][/shake].[/center]
+So  now  you  get  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]meditate[/color][/shake]  on  your life  choices...
+...in  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]cell[/color][/shake],  [shake rate=7.0 level=5 connected=0][color=#ff8864]for the  next[/color] [color=#ff1c18]3 days[/color][/shake].[/center]
 "
 
 [node name="Break_In" type="Control" parent="Overlays/Misc/Announces"]
@@ -3386,6 +3417,7 @@ visible = false
 anchors_preset = 0
 
 [node name="NPC_Success" type="RichTextLabel" parent="Overlays/Misc/Announces/Dialogue"]
+visible = false
 clip_contents = false
 layout_mode = 0
 offset_left = 169.0
@@ -3446,7 +3478,6 @@ That’s probably  [shake rate=7.0 level=5 connected=0][color=#ff1c18]not  gonna
 Or [shake rate=7.0 level=5 connected=0][color=#ff8864]did you do that  [color=#ff1c18]on purpose[/color][/color][/shake]?[/center]"
 
 [node name="Higher_Rep" type="RichTextLabel" parent="Overlays/Misc/Announces/Reputation"]
-visible = false
 clip_contents = false
 layout_mode = 0
 offset_left = 167.0
@@ -3605,6 +3636,7 @@ Either way, you sure  know  how  to  [color=#ff8864]leave an impression[/color].
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Just [color=#ff1c18]not the  one[/color] you were  aiming  for[/color][/shake]![/center]"
 
 [node name="Player_Failure" type="RichTextLabel" parent="Overlays/Misc/Announces/Run_Away"]
+visible = false
 clip_contents = false
 layout_mode = 0
 offset_left = 165.0
