@@ -951,6 +951,10 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 				for value in other_bonus_malus[key]:
 					print("post bonus/malus %s: %d" % [key, value])
 
+	if npc.is_asleep():
+		rep_delta -= 1
+		print("NPC was sleeping: rep -1")
+
 	if rep_delta != 0:
 		var old_rep = npc.player_reputation
 		npc.player_reputation += rep_delta
