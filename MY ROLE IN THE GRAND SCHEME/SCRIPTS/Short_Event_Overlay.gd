@@ -429,3 +429,75 @@ func manage_cards():
 	$Overlays/Card_Management.hide()
 	$Overlays/Card_Management.reset()
 	return $Overlays/Card_Management.get_confirmed()
+
+##
+## Displays the results of a dialogue with an NPC.
+##
+func show_dialogue_result(got_info: bool):
+	$Overlays/Interaction_Result/Dialogue/Chalk/Control/Report/Info.visible = got_info
+	$Overlays/Interaction_Result/Dialogue/Chalk/Control/Report/No_Info.visible = not got_info
+	$Overlays/Interaction_Result/Dialogue.show()
+	$Overlays/Interaction_Result.show()
+	await _appear()
+	await $Overlays/Interaction_Result.done
+	await _disappear()
+	$Overlays/Interaction_Result.hide()
+	$Overlays/Interaction_Result/Dialogue.hide()
+
+##
+## Displays the results of a combat with an NPC. If the NPC died, the player is
+## given the option of searching the body (for money).
+##
+func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.NpcCombatState):
+	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/But_Player_Hit.visible = \
+		damage == GameState.CombatDamage.HIT
+	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/But_Player_Critically_Hit.visible = \
+		damage == GameState.CombatDamage.CRITICAL_HIT
+	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/Do_Not_Kill.visible = \
+		npc_state == GameState.NpcCombatState.WILL_TALK
+	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/End_NPC_Alive.visible = \
+		npc_state != GameState.NpcCombatState.DEAD
+	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/End_NPC_Dead.visible = \
+		npc_state == GameState.NpcCombatState.DEAD
+	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body.visible = \
+		npc_state == GameState.NpcCombatState.DEAD
+	$Overlays/Interaction_Result/Combat.show()
+	$Overlays/Interaction_Result.show()
+	await _appear()
+
+	# if the player searches the NPC's body, he has a 25% chance of finding 100
+	# units of money (+/- 10%) and a 25% chance of adding +1 Wan
+
+	var search_result: Node = null
+
+	if npc_state == GameState.NpcCombatState.DEAD:
+		if await $Overlays/Interaction_Result.ask_to_search_body():
+			var wan: int = 0
+			var money: int = 0
+			if randi() % 4 == 0:
+				wan = 1
+			if randi() % 4 == 0:
+				money = roundi(100 * randf_range(0.9, 1.1))
+			if money > 0:
+				search_result = $Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_Money
+				search_result.find_child("Money").text = str(money)
+				search_result.find_child("And_Wan").visible = wan > 0
+			else:
+				search_result = $Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_No_Money
+				search_result.find_child("But_Wan").visible = wan > 0
+			if wan > 0:
+				GameState.player.wanted += wan
+		else:
+			search_result = $Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_No
+
+	if search_result:
+		search_result.show()
+
+	await $Overlays/Interaction_Result.done
+	await _disappear()
+
+	if search_result:
+		search_result.hide()
+
+	$Overlays/Interaction_Result.hide()
+	$Overlays/Interaction_Result/Combat.hide()

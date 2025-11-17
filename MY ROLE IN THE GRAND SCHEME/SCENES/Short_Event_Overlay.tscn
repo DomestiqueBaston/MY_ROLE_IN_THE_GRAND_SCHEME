@@ -64,7 +64,7 @@
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="54_sfan1"]
 [ext_resource type="Texture2D" uid="uid://bmt6odimg2n26" path="res://GRAPHICS/SHORT_EVENT/Interaction_Result_BG.png" id="55_qmu3t"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="55_s8rvk"]
-[ext_resource type="Script" path="res://SCRIPTS/Interaction_Result.gd" id="55_th1i4"]
+[ext_resource type="Script" uid="uid://dqk3manj87jh5" path="res://SCRIPTS/Interaction_Result.gd" id="55_th1i4"]
 [ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/SHORT_EVENT/Confirmation.png" id="56_8x3ap"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="57_gfusj"]
 [ext_resource type="Script" uid="uid://hwofijnch3v5" path="res://SCRIPTS/Confirmation_Overlay_Buttons.gd" id="58_sfan1"]
@@ -1586,6 +1586,7 @@ show_bounding_box = true
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
 [node name="Interaction_Result" type="Node2D" parent="Overlays"]
+visible = false
 script = ExtResource("55_th1i4")
 
 [node name="Interaction_Result_BG" type="Sprite2D" parent="Overlays/Interaction_Result"]
@@ -1684,6 +1685,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Combat" type="Control" parent="Overlays/Interaction_Result"]
+visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
@@ -1783,7 +1785,7 @@ text = "...considering [color=#ff8864]I also [color=#ff1c18]got seriously hit[/c
 fit_content = true
 horizontal_alignment = 1
 
-[node name="Player_Critical_Hit_Or_No_Kill" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
+[node name="Do_Not_Kill" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
 visible = false
 clip_contents = false
 custom_minimum_size = Vector2(107, 11)
@@ -1833,7 +1835,6 @@ bbcode_enabled = true
 horizontal_alignment = 1
 
 [node name="Search_Body" type="Control" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report"]
-visible = false
 layout_mode = 2
 
 [node name="Information" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]

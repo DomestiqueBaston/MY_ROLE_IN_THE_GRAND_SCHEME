@@ -59,6 +59,18 @@ enum TimeSlot {
 	ALWAYS = 0xff
 }
 
+enum CombatDamage {
+	NONE,
+	HIT,
+	CRITICAL_HIT
+}
+
+enum NpcCombatState {
+	ESCAPED,
+	DEAD,
+	WILL_TALK
+}
+
 var player: Player = Player.new()
 var cases: Array[Case]
 
@@ -238,8 +250,9 @@ func _get_weeks_passed() -> int:
 #
 # Increments the given time by the given number of hours. Note that this is a
 # coroutine to be awaited, and also that the player may have died on return.
+# Returns true if the player is still alive, false if he has died.
 #
-func _increment_time(hours: int):
+func _increment_time(hours: int) -> bool:
 	var day_before = get_working_day()
 	_hour += hours
 	var day_after = get_working_day()
@@ -253,9 +266,10 @@ func _increment_time(hours: int):
 		_new_day(day)
 		if not await player.test_health():
 			died.emit()
-			return
+			return false
 
 	save_game()
+	return true
 
 #
 # Stuff that needs to be dealt with at the start of each new day.
@@ -967,7 +981,9 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 	elif actual_roll == 1:
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
-	await _increment_time(2)
+	if await _increment_time(2):
+		# TODO: was information revealed or not?
+		await Globals.dialog_overlay.show_dialogue_result(success)
 
 	_discard_cards(cards_played, success)
 	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
@@ -1109,15 +1125,27 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 	npc.wanted += 1
 	npc.player_reputation -= 2
 
-	# TODO: if NPC dies, player searches him and has 25% chance of finding 100
-	# units of money (+/- 10%) and 25% chance of adding +1 Wan
-
 	if actual_roll == 10:
 		await Globals.dialog_overlay.show_player_improvement(-1)
 	elif actual_roll == 1:
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
-	await _increment_time(2)
+	if await _increment_time(2):
+		var player_damage: CombatDamage
+		var npc_state: NpcCombatState
+		if actual_roll == 10 or npc_actual_roll == 1:
+			player_damage = CombatDamage.CRITICAL_HIT
+		elif damage > 0:
+			player_damage = CombatDamage.HIT
+		else:
+			player_damage = CombatDamage.NONE
+		if npc.health <= 0:
+			npc_state = NpcCombatState.DEAD
+		elif do_not_kill and (actual_roll == 1 or net_roll <= max_roll):
+			npc_state = NpcCombatState.WILL_TALK
+		else:
+			npc_state = NpcCombatState.ESCAPED
+		await Globals.dialog_overlay.show_combat_result(player_damage, npc_state)
 
 	if actual_roll == 10 or net_roll > max_roll:
 		_discard_cards(cards_played, false)
