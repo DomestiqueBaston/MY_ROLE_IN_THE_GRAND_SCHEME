@@ -1913,6 +1913,17 @@ offset_bottom = 51.0
 theme_override_constants/separation = 0
 alignment = 1
 
+[node name="If_No" type="RichTextLabel" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(107, 17)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "Yeah, I've got [color=#ff1c18]enough trouble[/color] as it is, if I get caught, I'm gonna be in [color=#ff8864]even more shit[/color]!"
+horizontal_alignment = 1
+
 [node name="If_Yes_Search_Money" type="HBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result"]
 visible = false
 custom_minimum_size = Vector2(0, 11)
