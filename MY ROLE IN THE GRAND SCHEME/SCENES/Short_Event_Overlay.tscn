@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=238 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -64,6 +64,7 @@
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="54_sfan1"]
 [ext_resource type="Texture2D" uid="uid://bmt6odimg2n26" path="res://GRAPHICS/SHORT_EVENT/Interaction_Result_BG.png" id="55_qmu3t"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="55_s8rvk"]
+[ext_resource type="Script" uid="uid://dqk3manj87jh5" path="res://SCRIPTS/Interaction_Result.gd" id="55_th1i4"]
 [ext_resource type="Texture2D" uid="uid://b38kusgcpwork" path="res://GRAPHICS/SHORT_EVENT/Confirmation.png" id="56_8x3ap"]
 [ext_resource type="FontFile" uid="uid://b2uirpckleqcw" path="res://UI/sd_auto_pilot.ttf" id="57_gfusj"]
 [ext_resource type="Script" uid="uid://hwofijnch3v5" path="res://SCRIPTS/Confirmation_Overlay_Buttons.gd" id="58_sfan1"]
@@ -1586,6 +1587,7 @@ metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
 [node name="Interaction_Result" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("55_th1i4")
 
 [node name="Interaction_Result_BG" type="Sprite2D" parent="Overlays/Interaction_Result"]
 position = Vector2(172, 25)
@@ -1608,7 +1610,7 @@ offset_left = 327.0
 offset_top = 303.0
 offset_right = 373.0
 offset_bottom = 313.0
-text = "Awsome!"
+text = "Awesome!"
 
 [node name="Chalk" type="Sprite2D" parent="Overlays/Interaction_Result/Dialogue"]
 clip_children = 1
