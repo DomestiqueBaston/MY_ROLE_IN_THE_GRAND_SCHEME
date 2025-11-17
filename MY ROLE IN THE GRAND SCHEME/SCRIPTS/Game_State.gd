@@ -889,7 +889,7 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		if npc_actual_roll == 1:
 			print("critical success: update %s" % critical_attr)
 		else:
-			player.improve_emotion(-1)
+			player.improve_emotion(1)
 			print("critical success: update Emo, %s" % critical_attr)
 		success = true
 
