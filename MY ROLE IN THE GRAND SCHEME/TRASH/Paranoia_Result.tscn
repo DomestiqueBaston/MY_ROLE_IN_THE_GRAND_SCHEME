@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=3 uid="uid://6u8qm8dm4oy4"]
 
-[ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://GRAPHICS/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_fl50a"]
+[ext_resource type="Texture2D" uid="uid://cb8ylrjdkgsxx" path="res://TRASH/PARANOIA_COMMUNICATION/Paranoia_BG.png" id="1_fl50a"]
 [ext_resource type="Theme" uid="uid://bnunycy4luos4" path="res://UI/Paranoia_Communication_Theme.tres" id="2_fjgqo"]
 [ext_resource type="Texture2D" uid="uid://b8q6qi07sx8gk" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png" id="3_2cog1"]
 [ext_resource type="Texture2D" uid="uid://dum31gxvr6ubj" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rose.png" id="4_q2jmb"]
