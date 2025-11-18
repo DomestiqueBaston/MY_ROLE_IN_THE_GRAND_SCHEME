@@ -524,10 +524,10 @@ func _randomize():
 			var home = npc.get_home()
 			var work = npc.get_work()
 			var roll = 2 if home == work else randi() % 3
-			if roll != 0:
+			if roll != 0 or home == _crime_location:
 				home.is_revealed = true
 				_create_link(npc, home, Link.Type.HOME)
-			if roll != 1:
+			if roll != 1 or work == _crime_location:
 				work.is_revealed = true
 				_create_link(npc, work, Link.Type.WORK)
 
