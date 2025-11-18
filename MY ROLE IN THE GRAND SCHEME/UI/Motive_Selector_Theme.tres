@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=34 format=3 uid="uid://dl27ehg3u0o37"]
+[gd_resource type="Theme" load_steps=35 format=3 uid="uid://dl27ehg3u0o37"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_j72gi"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="2_wgfem"]
 [ext_resource type="Texture2D" uid="uid://cqg4hjaql7t" path="res://GRAPHICS/UI/Arrow_Down.png" id="3_78s4b"]
 [ext_resource type="Texture2D" uid="uid://c4hd4dqldjhun" path="res://GRAPHICS/CHARACTER_GENERATION/Transparent_Pixel.png" id="4_dri82"]
+[ext_resource type="Texture2D" uid="uid://mhyaah0utksp" path="res://GRAPHICS/UI/Coche_Menu.png" id="4_n7ahp"]
 [ext_resource type="Texture2D" uid="uid://dlu5emhasmh3n" path="res://GRAPHICS/UI/Arrow_Normal_Right.png" id="5_bdbuh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rsf7"]
@@ -171,6 +172,7 @@ PopupMenu/constants/separator_outline_size = 6
 PopupMenu/constants/v_separation = 3
 PopupMenu/font_sizes/font_size = 8
 PopupMenu/fonts/font = ExtResource("2_wgfem")
+PopupMenu/icons/checked = ExtResource("4_n7ahp")
 PopupMenu/icons/radio_checked = ExtResource("4_dri82")
 PopupMenu/icons/radio_checked_disabled = ExtResource("4_dri82")
 PopupMenu/icons/radio_unchecked = ExtResource("4_dri82")
