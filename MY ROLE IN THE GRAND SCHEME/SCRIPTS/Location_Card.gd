@@ -63,7 +63,7 @@ func _update_appearance():
 			tooltip += "\n" + LocationStatus.keys()[location_status].capitalize()
 
 func get_display_name() -> String:
-	var inhabitants = get_connections(Link.Type.HOME)
+	var inhabitants = find_linked_cards(Link.Type.HOME)
 	match inhabitants.size():
 		1:
 			return "%s's %s" % [inhabitants[0].first_name, card_name]
