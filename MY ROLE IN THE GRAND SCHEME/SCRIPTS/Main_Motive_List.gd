@@ -3,29 +3,38 @@ extends MenuButton
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
 func _ready():
+	# populate the popup menu
+
 	var popup: PopupMenu = get_popup()
 	for crime in _crime_data:
 		var crime_dict = _crime_data[crime]
 		var submenu: PopupMenu = PopupMenu.new()
-		for motive in crime_dict:
-			var motive_dict = crime_dict[motive]
-			submenu.add_check_item(motive_dict.name)
-			submenu.set_item_metadata(submenu.item_count - 1, motive)
-		popup.add_submenu_node_item(_get_submenu_name(crime, false), submenu)
+		for motive_id in crime_dict:
+			var motive_dict = crime_dict[motive_id]
+			submenu.add_item(_get_label(motive_dict.name))
+			submenu.set_item_metadata(submenu.item_count - 1, motive_id)
+		popup.add_submenu_node_item(_get_label(crime), submenu)
 		submenu.index_pressed.connect(_on_item_pressed.bind(submenu, crime))
 
-	var case: Case = GameState.get_current_case()
-	if case:
-		var current_crime = case.selected_crime
-		var current_motive = case.selected_motive
-		if current_crime and current_motive:
-			text = _crime_data[current_crime][current_motive].name
-			tooltip_text = current_crime
-			_set_motive_checked(current_crime, current_motive, true)
+	# if a crime and motive have been selected, highlight them in the menu, and
+	# set the menu's label and tooltip accordingly
 
+	var case: Case = GameState.get_current_case()
+	if case and case.selected_crime and case.selected_motive:
+		text = _crime_data[case.selected_crime][case.selected_motive].name
+		tooltip_text = case.selected_crime
+		_set_motive_checked(case.selected_crime, case.selected_motive, true)
+
+#
+# Callback invoked when the user selects a motive from the menu.
+#
 func _on_item_pressed(idx: int, submenu: PopupMenu, crime: String):
+	# update the menu's label and tooltip
+
 	text = submenu.get_item_text(idx)
 	tooltip_text = crime
+
+	# unhighlight the previous motive and highlight the new one
 
 	var case: Case = GameState.get_current_case()
 	if case:
@@ -33,18 +42,22 @@ func _on_item_pressed(idx: int, submenu: PopupMenu, crime: String):
 			_set_motive_checked(case.selected_crime, case.selected_motive, false)
 		case.selected_crime = crime
 		case.selected_motive = submenu.get_item_metadata(idx)
-		if case.selected_crime and case.selected_motive:
-			_set_motive_checked(case.selected_crime, case.selected_motive, true)
+		_set_motive_checked(case.selected_crime, case.selected_motive, true)
 
-func _set_motive_checked(crime: String, motive: String, checked: bool):
-	var popup: PopupMenu = get_popup()
+#
+# Highlights or unhighlights the given crime and motive in the menu.
+#
+func _set_motive_checked(crime: String, motive_id: String, checked: bool):
 	var submenu_index = _crime_data.keys().find(crime)
 	if submenu_index >= 0:
-		popup.set_item_text(submenu_index, _get_submenu_name(crime, checked))
+		var popup: PopupMenu = get_popup()
+		popup.set_item_text(submenu_index, _get_label(crime, checked))
 		var submenu: PopupMenu = popup.get_item_submenu_node(submenu_index)
-		var motive_index = _crime_data[crime].keys().find(motive)
+		var crime_dict = _crime_data[crime]
+		var motive_index = crime_dict.keys().find(motive_id)
 		if motive_index >= 0:
-			submenu.set_item_checked(motive_index, checked)
+			var motive_name = crime_dict[motive_id].name
+			submenu.set_item_text(motive_index, _get_label(motive_name, checked))
 
-func _get_submenu_name(crime: String, checked: bool) -> String:
-	return (">" if checked else " ") + crime
+func _get_label(base_name: String, checked: bool = false) -> String:
+	return (">" if checked else " ") + base_name
