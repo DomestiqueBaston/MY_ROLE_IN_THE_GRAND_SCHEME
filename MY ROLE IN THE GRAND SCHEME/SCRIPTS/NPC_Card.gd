@@ -92,7 +92,6 @@ var orientation: SexualOrientation
 var physical: int: set = set_physical, get = get_physical
 var mental: int: set = set_mental, get = get_mental
 var health: int: set = set_health, get = get_health
-var max_health: int: set = set_max_health, get = get_max_health
 var wanted: int: set = set_wanted, get = get_wanted
 var player_reputation: int: set = set_player_reputation, get = get_player_reputation
 var next_dialogue_malus: int = 0
@@ -171,19 +170,10 @@ func get_mental() -> int:
 	return mental
 
 func set_health(hea: int):
-	health = clampi(hea, 0, max_health)
+	health = clampi(hea, 0, 10)
 
 func get_health() -> int:
 	return health
-
-func set_max_health(max_hea: int):
-	max_hea = clampi(max_hea, 0, 10)
-	if max_health != max_hea:
-		max_health = max_hea
-		health = mini(health, max_health)
-
-func get_max_health() -> int:
-	return max_health
 
 func set_wanted(wan: int):
 	wanted = clampi(wan, 0, 4)
@@ -425,13 +415,13 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	var min_men = maxi(3, base_points - physical - 7)
 	var max_men = mini(7, base_points - physical - 3)
 	mental = randi_range(min_men, max_men)
-	max_health = base_points - physical - mental
+	health = base_points - physical - mental
 
 	# add extra points to principal characteristics at random, limiting to 10
 
 	var extra_points = case.get_difficulty()
 	if extra_points > 0:
-		var candidates = [&"physical", &"mental", &"max_health"]
+		var candidates = [&"physical", &"mental", &"health"]
 		for i in extra_points:
 			var attr_index = randi() % candidates.size()
 			var attr_name = candidates[attr_index]
@@ -452,7 +442,7 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	if bonus_malus is Dictionary:
 		physical += bonus_malus.get("PHY", 0)
 		mental += bonus_malus.get("MEN", 0)
-		max_health += bonus_malus.get("HEA", 0)
+		health += bonus_malus.get("HEA", 0)
 
 	# work shifts
 
@@ -473,9 +463,8 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 		if roll != 2:
 			work_shifts |= GameState.TimeSlot.EVENING
 
-	# initial health, wanted, etc.
+	# wanted, player reputation
 
-	health = roundi(max_health * randf_range(0.5, 1.0))
 	wanted = randi_range(0, 2)
 	player_reputation = -2 if category == NpcCategory.MINION else 0
 
@@ -500,7 +489,7 @@ func new_day():
 	if _last_dialogue < yesterday:
 
 		# each day the NPC has not interacted with the player, there is a 10%
-		# chance one of PHY, MEN or maxHEA will change
+		# chance one of PHY, MEN or HEA will change
 
 		match randi() % 6:
 			0:
@@ -516,11 +505,11 @@ func new_day():
 				mental -= 1
 				print("%s: MEN -1" % get_display_name())
 			4:
-				max_health += 1
-				print("%s: maxHEA +1" % get_display_name())
+				health += 1
+				print("%s: HEA +1" % get_display_name())
 			5:
-				max_health -= 1
-				print("%s: maxHEA -1" % get_display_name())
+				health -= 1
+				print("%s: HEA -1" % get_display_name())
 
 		# the player's reputation increases by 1 every N days without interaction,
 		# where N is the difficulty of the case
@@ -531,10 +520,10 @@ func new_day():
 				player_reputation += 1
 				print("%s: Rep +1" % get_display_name())
 
-	# the NPC's health is incremented until it reaches max_health (perhaps this
-	# should be done at different times depending on his work schedules)
+	# the NPC's health is incremented until it reaches 10 (perhaps this should
+	# be done at different times depending on his work schedules)
 
-	if health < max_health:
+	if health < 10:
 		health += 1
 		print("%s: HEA +1" % get_display_name())
 
@@ -629,7 +618,6 @@ func get_json_dict():
 	dict["physical"] = physical
 	dict["mental"] = mental
 	dict["health"] = health
-	dict["max_health"] = max_health
 	dict["wanted"] = wanted
 	if player_reputation != 0:
 		dict["player_reputation"] = player_reputation
@@ -662,7 +650,6 @@ func restore(dict, catalog):
 	orientation = dict.orientation
 	physical = dict.physical
 	mental = dict.mental
-	max_health = dict.max_health
 	health = dict.health
 	wanted = dict.wanted
 	player_reputation = dict.get("player_reputation", 0)

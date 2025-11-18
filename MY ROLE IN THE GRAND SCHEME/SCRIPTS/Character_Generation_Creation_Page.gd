@@ -149,5 +149,5 @@ func _on_confirm_pressed():
 	player.job_bonus_malus = bg.bonus_malus
 	player.physical = _phy
 	player.mental = _men
-	player.max_health = _hea
+	player.health = _hea
 	confirm_pressed.emit()

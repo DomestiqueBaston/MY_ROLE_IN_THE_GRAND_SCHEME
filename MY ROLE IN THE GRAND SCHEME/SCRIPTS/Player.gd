@@ -8,7 +8,6 @@ var sex: float
 var physical: int: set = set_physical, get = get_physical
 var mental: int: set = set_mental, get = get_mental
 var health: int: set = set_health, get = get_health
-var max_health: int: set = set_max_health, get = get_max_health
 var emotion: int: set = set_emotion, get = get_emotion
 var addiction: int: set = set_addiction, get = get_addiction
 var wanted: int: set = set_wanted, get = get_wanted
@@ -42,7 +41,6 @@ func reset():
 	sex = 0
 	physical = 0
 	mental = 0
-	max_health = 0
 	health = 0
 	emotion = 0
 	addiction = 0
@@ -66,8 +64,7 @@ func start_game():
 
 	physical += job_bonus_malus.get("PHY", 0)
 	mental += job_bonus_malus.get("MEN", 0)
-	max_health += job_bonus_malus.get("HEA", 0)
-	health = max_health
+	health += job_bonus_malus.get("HEA", 0)
 	emotion = 0
 	addiction = 0
 	wanted = 0
@@ -191,7 +188,7 @@ func get_mental() -> int:
 	return mental
 
 func set_health(hea: int):
-	hea = clampi(hea, 0, max_health)
+	hea = clampi(hea, 0, 10)
 	if health != hea:
 		health = hea
 		if _signal_pause == 0:
@@ -199,15 +196,6 @@ func set_health(hea: int):
 
 func get_health() -> int:
 	return health
-
-func set_max_health(max_hea: int):
-	max_hea = clampi(max_hea, 0, 10)
-	if max_health != max_hea:
-		max_health = max_hea
-		health = mini(health, max_health)
-
-func get_max_health() -> int:
-	return max_health
 
 ##
 ## Checks the player's health, emotion and addiction levels, and returns false
@@ -761,7 +749,6 @@ func get_json_dict():
 		"physical": physical,
 		"mental": mental,
 		"health": health,
-		"max_health": max_health,
 		"emotion": emotion,
 		"addiction": addiction,
 		"wanted": wanted,
@@ -809,7 +796,6 @@ func restore(dict, catalog):
 	sex = dict.sex
 	physical = dict.physical
 	mental = dict.mental
-	max_health = dict.max_health
 	health = dict.health
 	emotion = dict.emotion
 	addiction = dict.addiction

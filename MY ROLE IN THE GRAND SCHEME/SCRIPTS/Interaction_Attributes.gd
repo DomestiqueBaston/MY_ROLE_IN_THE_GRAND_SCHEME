@@ -112,7 +112,7 @@ func apply_bonus_malus(bonus_malus: Dictionary):
 				delta = value
 				MEN += delta
 			"HEA":
-				delta = mini(value, player.max_health - HEA)
+				delta = value
 				HEA += delta
 			"Emo":
 				delta = _interpret_bonus_malus_value(player.emotion, value)

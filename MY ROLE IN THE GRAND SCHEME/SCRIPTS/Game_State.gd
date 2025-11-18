@@ -654,8 +654,8 @@ func _play_run_away(cards_played: Array[Card]) -> bool:
 				player.mental += value
 				return &"MEN"
 			_:
-				player.max_health += value
-				return &"maxHEA"
+				player.health += value
+				return &"HEA"
 
 	var success: bool
 	var critical_attr: StringName
@@ -717,8 +717,8 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 				who.physical += value
 				return &"PHY"
 			_:
-				who.max_health += value
-				return &"maxHEA"
+				who.health += value
+				return &"HEA"
 
 	var success = false
 	var critical_attr: StringName
@@ -893,8 +893,8 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 				who.physical += value
 				return &"PHY"
 			_:
-				who.max_health += value
-				return &"maxHEA"
+				who.health += value
+				return &"HEA"
 
 	var success = false
 	var critical_attr: StringName
@@ -1061,8 +1061,8 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 				who.mental += value
 				return &"MEN"
 			_:
-				who.max_health += value
-				return &"maxHEA"
+				who.health += value
+				return &"HEA"
 
 	var critical_attr: StringName
 	var damage: int = 0
@@ -1285,7 +1285,7 @@ func _does_npc_run(npc: NpcCard) -> bool:
 			3:
 				npc.physical += value
 			4:
-				npc.max_health += value
+				npc.health += value
 
 	if actual_roll == 10:
 		# critical failure
