@@ -133,9 +133,9 @@ offset_left = 320.0
 offset_top = 2.0
 offset_right = 637.0
 offset_bottom = 9.0
-tooltip_text = "Player stats: PHY/MEN/HEA on 10,
+tooltip_text = "Player stats: PHY/MEN/HEA out of 10.
 Emo/Add -5 to +5.
-Money & drug left."
+Money & drugs left."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
