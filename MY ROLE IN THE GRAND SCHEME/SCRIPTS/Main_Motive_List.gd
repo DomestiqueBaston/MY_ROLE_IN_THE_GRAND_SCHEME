@@ -6,15 +6,16 @@ func _ready():
 	# populate the popup menu
 
 	var popup: PopupMenu = get_popup()
+	var crime_index = 0
 	for crime in _crime_data:
 		var crime_dict = _crime_data[crime]
 		var submenu: PopupMenu = PopupMenu.new()
 		for motive_id in crime_dict:
 			var motive_dict = crime_dict[motive_id]
 			submenu.add_item(_get_label(motive_dict.name))
-			submenu.set_item_metadata(submenu.item_count - 1, motive_id)
 		popup.add_submenu_node_item(_get_label(crime), submenu)
-		submenu.index_pressed.connect(_on_item_pressed.bind(submenu, crime))
+		submenu.index_pressed.connect(_on_item_pressed.bind(crime_index))
+		crime_index += 1
 
 	# if a crime and motive have been selected, highlight them in the menu, and
 	# set the menu's label and tooltip accordingly
@@ -28,10 +29,13 @@ func _ready():
 #
 # Callback invoked when the user selects a motive from the menu.
 #
-func _on_item_pressed(idx: int, submenu: PopupMenu, crime: String):
+func _on_item_pressed(motive_index: int, crime_index: int):
 	# update the menu's label and tooltip
 
-	text = submenu.get_item_text(idx)
+	var crime = _crime_data.keys()[crime_index]
+	var crime_dict = _crime_data[crime]
+	var motive_id = crime_dict.keys()[motive_index]
+	text = crime_dict[motive_id].name
 	tooltip_text = crime
 
 	# unhighlight the previous motive and highlight the new one
@@ -41,7 +45,7 @@ func _on_item_pressed(idx: int, submenu: PopupMenu, crime: String):
 		if case.selected_crime and case.selected_motive:
 			_set_motive_checked(case.selected_crime, case.selected_motive, false)
 		case.selected_crime = crime
-		case.selected_motive = submenu.get_item_metadata(idx)
+		case.selected_motive = motive_id
 		_set_motive_checked(case.selected_crime, case.selected_motive, true)
 
 #
