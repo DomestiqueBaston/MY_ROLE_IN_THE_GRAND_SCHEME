@@ -496,8 +496,40 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 	await $Overlays/Interaction_Result.done
 	await _disappear()
 
+	$Overlays/Interaction_Result.hide()
+	$Overlays/Interaction_Result/Combat.hide()
+
 	if search_result:
 		search_result.hide()
 
+##
+## Displays the results of an investigation, including whether it was a failure,
+## a success, a critical failure or a critical success and, in the last case,
+## how much money was found.
+##
+func show_investigation_result(success: bool, critical: bool, money: int = 0):
+	var search_result: Node
+
+	if success:
+		if critical:
+			search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Success_Money
+			search_result.find_child("Money").text = str(money)
+		else:
+			search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Success
+	else:
+		if critical:
+			search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Failure
+		else:
+			search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Failure
+
+	search_result.show()
+
+	$Overlays/Interaction_Result/Investigation.show()
+	$Overlays/Interaction_Result.show()
+	await _appear()
+	await $Overlays/Interaction_Result.done
+	await _disappear()
 	$Overlays/Interaction_Result.hide()
-	$Overlays/Interaction_Result/Combat.hide()
+	$Overlays/Interaction_Result/Investigation.hide()
+
+	search_result.hide()

@@ -722,6 +722,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 
 	var success = false
 	var critical_attr: StringName
+	var money_found: int = 0
 
 	if actual_roll == 10:
 		player.health -= 1
@@ -729,7 +730,8 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 		print("critical failure: update HEA, %s" % critical_attr)
 	elif actual_roll == 1:
 		critical_attr = tweak_attr.call(player, 1)
-		player.money += randi_range(50, 100)
+		money_found = randi_range(50, 100)
+		player.money += money_found
 		print("critical success: update %s, money" % critical_attr)
 		success = true
 	elif net_roll > max_roll:
@@ -750,8 +752,16 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 	for h in hours_bonus_malus:
 		duration += h as int
 	print("duration: %s hour(s)" % duration)
+
+	var survived
 	if duration > 0:
-		await _increment_time(duration)
+		survived = await _increment_time(duration)
+	else:
+		survived = await player.test_health()
+
+	if survived:
+		await Globals.dialog_overlay.show_investigation_result(
+			success, actual_roll in [1, 10], money_found)
 
 	_discard_cards(cards_played, success)
 	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
