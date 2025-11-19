@@ -713,7 +713,7 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 
 		Il faut au minimum 1 Coupable, 1 Evidence et 1 mobile (menu Mobile dans la zone de jeu de Main.tscn) pour pouvoir lancer la validation d’une Enquête sinon le menu « Validate Case » ne sera pas activé.
 	- Le joueur peut aussi (re)sortir ou (re)mettre une carte en jeu (Main.tscn) en la remettant dans le paquet « Reserve » (en haut à gauche) ou en la (re)prenant pour la (re)mettre en jeu (Main.tscn) et cette carte rétablira ses liens en fonction de ceux qui peuvent être rétablis.
-	- Changer le lien Found d’un Objet (par le joueur) peut entrer en contradiction avec les infos de l’Objet et éventuellement de son propriétaire. On prendra alors soin d’afficher le Warning.tscn sur le lien pour signaler la contradiction.
+	- Changer le lien Found d’un Objet (par le joueur) peut entrer en contradiction avec les infos de l’Objet et éventuellement de son propriétaire. On prendra alors soin d’afficher le Warning.tscn sur le lien pour signaler la contradiction (ou on l’interdit ?).
 
 Liens entre les éléments dans l’enquête (Main.tscn)
 	- Tout changement de lien et ou de carte dans la zone de droite (Main.tscn) peut amener automatiquement à l’invalidation du mobile précédemment choisi ! Il sera alors désélectionné, le menu affichera de nouveau « Select a crime motive... » et clignotera (il y a une boucle d’animation pour ça et elle sera à jouer jusqu’à ce que le joueur change le mobile).
@@ -737,6 +737,8 @@ Bleu très foncé : Lieu fréquenté (hangout) NE SERT PAS À VALIDER UNE ENQU�
 Blanc : Planque (Hideout) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Violet clair : Trouvé (sert à se souvenir d’où vient un objet) NE SERT PAS À VALIDER UNE ENQUÊTE.
           Violet foncé : nouveaux liens (issus des interactions Dialogue ou Investigation, toujours en pointillé. Le joueur peut les défaire sans malus. Il ne peut pas les faire/refaire sans changer leur nature de « lien Violet ») NE SERT PAS À VALIDER UNE ENQUÊTE.
+	- Un coupable réel désigné par le joueur comme coupable possible (lien pointillé) sera 2 fois plus souvent TOTALEMENT introuvable (ou sur son Hideout).
+	- lorsqu'un coupable réel est désigné (lien plein) par le joueur, un sbire attaquera dans les 4h qui viennent ou dès que cela sera possible ! 
 
 Fiche d'enquête :
 
