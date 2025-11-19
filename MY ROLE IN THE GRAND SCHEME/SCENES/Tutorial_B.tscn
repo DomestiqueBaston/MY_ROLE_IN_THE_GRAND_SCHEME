@@ -168,7 +168,8 @@ offset_top = 84.0
 offset_right = 238.0
 offset_bottom = 153.0
 tooltip_text = "The ideal spot for concise card info...
-Otherwise, check the INFO zone bottom-left of the screen."
+Otherwise, check the INFO zone
+bottom-left of the screen."
 color = Color(1, 0, 0, 0.29411766)
 metadata/_edit_lock_ = true
 
@@ -371,7 +372,7 @@ metadata/_edit_lock_ = true
 offset_left = 463.0
 offset_top = 38.0
 offset_right = 608.0
-offset_bottom = 178.0
+offset_bottom = 181.0
 theme = ExtResource("4_dg5q6")
 color = Color(1, 0.8000001, 0, 0.5882353)
 
@@ -399,12 +400,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 3
 bbcode_enabled = true
-text = "[center]How to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]establish the charges[/pulse][/color] ([color=#ff8864]Solid Black links[/color])![/center]
+text = "How to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]establish the charges[/pulse][/color] ([color=#ff8864]Solid Black links[/color])!
 
 [color=#ffffff]-[/color] A [color=#ff1c18]Culprit[/color] is [color=#ff8864]linked[/color] to a [color=#ff1c18]Victim[/color].
 [color=#ffffff]-[/color] An [color=#ff1c18]Accomplice[/color] is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color].
 [color=#ffffff]-[/color] A [color=#ff1c18]Witness[/color] is [color=#ff8864]linked[/color] to [color=#ff1c18]another Link[/color].
 [color=#ffffff]-[/color] An [color=#ff1c18]Evidence[/color] (Object) is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color]."
+horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
 
