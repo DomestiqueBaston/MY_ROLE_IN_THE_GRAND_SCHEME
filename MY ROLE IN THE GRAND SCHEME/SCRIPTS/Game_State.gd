@@ -1236,6 +1236,19 @@ func set_current_case(index: int):
 		case_changed.emit()
 		save_game()
 
+func find_case(case: Case) -> int:
+	return cases.find(case)
+
+##
+## Returns a list of all open cases (active or paused).
+##
+func get_open_cases() -> Array[Case]:
+	var ret: Array[Case]
+	for case in cases:
+		if case.get_status() in [Case.Status.ACTIVE, Case.Status.PAUSED]:
+			ret.append(case)
+	return ret
+
 ##
 ## Specifies where the player is located. If location is PlayerLocation.OTHER,
 ## then a LocationCard must be given.

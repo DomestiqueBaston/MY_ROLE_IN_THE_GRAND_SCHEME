@@ -8,6 +8,9 @@ extends Control
 
 @export var alert_debug: bool = false
 
+## Signal emitted when the player selects Case Management from the menu.
+signal manage_cases
+
 ## Signal emitted when the player selects Card Management from the menu.
 signal manage_cards
 
@@ -52,8 +55,6 @@ class PlayerAttr:
 ]
 
 @onready var _dailies_button: MenuButton = $Menus/Dailies
-#@onready var _normal_arrow = preload("res://GRAPHICS/UI/Arrow_Normal_Right.png")
-#@onready var _transp_arrow = preload("res://GRAPHICS/UI/Arrow_Transparent_Right.png")
 
 enum DailiesMenuItem {
 	WARRANT = 1000,
@@ -65,6 +66,12 @@ enum DailiesMenuItem {
 	SLEEP,
 	DEBT_SUBMENU,
 	DRUG_SUBMENU
+}
+
+enum CasesMenuItem {
+	MANAGE,
+	VALIDATE,
+	GIVE_UP
 }
 
 enum WhateverMenuItem {
@@ -125,6 +132,8 @@ func _ready():
 			button.mouse_exited.connect(_on_mouse_exited)
 			button.pressed.connect(_on_button_pressed)
 
+	$Menus/Cases.get_popup().id_pressed.connect(_on_cases_press)
+	$Menus/Cases.get_popup().about_to_popup.connect(_on_cases_popup)
 	$Menus/Cards.get_popup().id_pressed.connect(func(_id): manage_cards.emit())
 	$Menus/Whatever.get_popup().id_pressed.connect(_on_whatever_press)
 
@@ -176,6 +185,15 @@ func _on_dailies_press(id: int):
 			var hours = await Globals.dialog_overlay.choose_sleep_time()
 			if hours > 0:
 				GameState.sleep(hours)
+
+func _on_cases_popup():
+	var popup: PopupMenu = $Menus/Cases.get_popup()
+	var index = popup.get_item_index(CasesMenuItem.MANAGE)
+	popup.set_item_disabled(index, GameState.get_open_cases().size() < 2)
+
+func _on_cases_press(id: int):
+	if id == CasesMenuItem.MANAGE:
+		manage_cases.emit()
 
 func _on_whatever_press(id: int):
 	match id:

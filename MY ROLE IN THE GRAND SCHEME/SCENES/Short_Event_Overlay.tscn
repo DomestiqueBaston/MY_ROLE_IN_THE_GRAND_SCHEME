@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_is8fw"]
 [ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/SHORT_EVENT/Wanted_BG.png" id="13_s26gq"]
 [ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Buttons.gd" id="14_adsmj"]
+[ext_resource type="Script" uid="uid://be2m1ibq7gkoh" path="res://SCRIPTS/Case_Management.gd" id="15_tdxs6"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="15_wqyuw"]
 [ext_resource type="Script" uid="uid://4guy4cwmilvu" path="res://SCRIPTS/Care_Sheet.gd" id="16_bnyoh"]
 [ext_resource type="ButtonGroup" uid="uid://bna0povlgtisn" path="res://UI/Jail_Money_group.tres" id="16_dog4u"]
@@ -30,7 +31,6 @@
 [ext_resource type="AudioStream" uid="uid://cd8g0rywkt8i3" path="res://SOUND/MISC/Intercom.ogg" id="25_7hyo2"]
 [ext_resource type="Texture2D" uid="uid://bldatry1ckp7d" path="res://GRAPHICS/SHORT_EVENT/Case_Management_BG.png" id="26_akg4w"]
 [ext_resource type="Theme" uid="uid://vbgd5rjttbbi" path="res://UI/Case_Management_Theme.tres" id="27_0f70e"]
-[ext_resource type="Script" uid="uid://w21ho5e5x33c" path="res://SCRIPTS/Case_Management_Buttons.gd" id="28_lqtnk"]
 [ext_resource type="ButtonGroup" uid="uid://dt020cjh7e6ws" path="res://UI/Case_Management_group_Valid_Cancel.tres" id="29_7in4k"]
 [ext_resource type="Texture2D" uid="uid://cailha23k34yd" path="res://GRAPHICS/SHORT_EVENT/Cancel_Pressed.png" id="30_twcyk"]
 [ext_resource type="Texture2D" uid="uid://s6d7fcwywqn" path="res://GRAPHICS/SHORT_EVENT/Cancel_Hover.png" id="31_gxuo2"]
@@ -739,6 +739,7 @@ skip it!"
 [node name="Case_Management" type="Node2D" parent="Overlays"]
 visible = false
 position = Vector2(172, 48)
+script = ExtResource("15_tdxs6")
 
 [node name="Case_Management_BG" type="Sprite2D" parent="Overlays/Case_Management"]
 position = Vector2(-31, -18)
@@ -754,7 +755,6 @@ offset_top = -18.0
 offset_right = -31.0
 offset_bottom = -18.0
 theme = ExtResource("27_0f70e")
-script = ExtResource("28_lqtnk")
 
 [node name="Cancel" type="TextureButton" parent="Overlays/Case_Management/Buttons"]
 layout_mode = 0
@@ -4686,20 +4686,6 @@ libraries = {
 volume_db = -37.5
 bus = &"UI"
 
-[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Overlays/Case_Management/Buttons/Cancel" to="Overlays/Case_Management/Buttons" method="_on_cancel_pressed"]
-[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/Switch" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/Switch" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Overlays/Case_Management/Buttons/Switch" to="Overlays/Case_Management/Buttons" method="_on_switch_pressed"]
-[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/03" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/03" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/04" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/04" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/01" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/01" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="mouse_entered" from="Overlays/Case_Management/Buttons/02" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Case_Management/Buttons/02" to="Overlays/Case_Management/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="mouse_entered" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_exited"]
 [connection signal="pressed" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_switch_pressed"]

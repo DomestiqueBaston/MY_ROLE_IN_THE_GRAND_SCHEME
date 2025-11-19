@@ -431,6 +431,20 @@ func manage_cards():
 	return $Overlays/Card_Management.get_confirmed()
 
 ##
+## Displays the dialog managing open cases. Returns true if the current case
+## has changed.
+##
+func manage_cases() -> bool:
+	$Overlays/Case_Management.start()
+	$Overlays/Case_Management.show()
+	await _appear()
+	await $Overlays/Case_Management.done
+	await _disappear()
+	$Overlays/Case_Management.hide()
+	$Overlays/Case_Management.reset()
+	return $Overlays/Case_Management.has_case_changed()
+
+##
 ## Displays the results of a dialogue with an NPC.
 ##
 func show_dialogue_result(got_info: bool):
