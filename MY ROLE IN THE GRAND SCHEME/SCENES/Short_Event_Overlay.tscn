@@ -2287,9 +2287,9 @@ autowrap_mode = 2
 [node name="Status" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/Case"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 10.0
+offset_top = 8.0
 offset_right = 365.0
-offset_bottom = 20.0
+offset_bottom = 18.0
 theme_override_colors/default_color = Color(1, 0.533333, 0.392157, 1)
 theme_override_constants/line_separation = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
@@ -2298,9 +2298,9 @@ autowrap_mode = 2
 [node name="Delay" type="RichTextLabel" parent="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case_Report/Case"]
 layout_mode = 0
 offset_left = 41.0
-offset_top = 20.0
+offset_top = 16.0
 offset_right = 365.0
-offset_bottom = 30.0
+offset_bottom = 26.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 theme_override_constants/line_separation = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lj007")
