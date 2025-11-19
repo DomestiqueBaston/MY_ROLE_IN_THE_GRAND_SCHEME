@@ -102,6 +102,7 @@ func _ready():
 	dialogue_submenu.index_pressed.connect(
 		_handle_dialogue_submenu.bind(dialogue_submenu))
 	
+	top_bar.manage_cases.connect(_manage_cases)
 	top_bar.manage_cards.connect(_manage_cards)
 	top_bar.settings.connect(func(): settings.emit())
 	top_bar.quit.connect(func(): quit.emit())
@@ -886,6 +887,10 @@ func _update_info_box():
 			info_box.show_location(
 				GameState.get_player_location(),
 				GameState.get_player_location_card())
+
+func _manage_cases():
+	if await Globals.dialog_overlay.manage_cases():
+		GameState.save_game()
 
 func _manage_cards():
 	if await Globals.dialog_overlay.manage_cards():
