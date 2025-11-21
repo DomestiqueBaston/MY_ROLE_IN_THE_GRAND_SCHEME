@@ -220,6 +220,7 @@ La réputation du joueur auprès d’un PNJ
 Système de santé
 Cas de PHY=0 et/ou MEN=0
 	- Si au moins une des deux caractéristiques atteint 0, le joueur restera chez lui (lieu sûr avec la prison !). Il aura alors besoin d’une journée complète (24h) de repos pour récupérer et remettre sa ou ses caractéristiques (PHY et MEN) à 1. Par la même occasion, il récupèrera comme une nuit de 12h (mais qui aura duré 24h). (voir Récupération)
+	- Pendant cette période de récupération forcée, Add n’évoluera pas.
 	- Pendant la Paranoïa, cela signifie la mort car le joueur ne dort plus !
 
 Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par
@@ -367,6 +368,7 @@ Le bureau
 
 La prison
 	- C’est l’autre endroit où le joueur ne peut pas être agressé.
+	- Durant le séjour en prison, Add n’évoluera pas.
 
 Système de Dés
 	- Lors des jets de dé, il faut que le jet de dé soit inférieur ou égal au score à effectuer (pour une réussite).
