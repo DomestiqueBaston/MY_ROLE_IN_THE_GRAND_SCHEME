@@ -683,8 +683,8 @@ Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à 
 	- En cas d’échec critique, -1HEA, +1Emo → Min/max et +1Wan. Le joueur part (s’il ne meurt pas) et ne pourra ré-essayer qu’à partir du lendemain. Il peut atteindre le seuil pour aller en prison et les règles à ce sujet s’appliquent. La règle de progression s’applique.
 	- En cas de réussite normale, rien à signaler.
 
-
-
+Investigation SANS autorisation et accès au Lieux ouverts à investiguer hors présence de PNJ
+	- Lorsque l’on va investiguer dans un Lieu ouvert (horaires) et qu’aucun PNJ connu du joueur n’est présent, on n’a pas besoin de Break-in. Cela n’est pas valable pour les Appartements !
 Enquête
 	- Pour les enquêtes « niveau 0 », voir la fin de cette partie consacrée aux enquêtes.
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
@@ -1008,44 +1008,46 @@ Difficulté du jeu
 	- Dans Interaction.tscn, seul le menu Whatever est accessible.
 	- Dans aucune autre scène on ne pourra avoir accès à Top_Bar.tscn.
 Futures idées…
-	- La possibilité de filature.
-	- Recyclage de PNJs d’une enquête à l’autre.
-	- Aider un peu plus à ce que les PNJs qui travaillent au même endroit aient des liens Acquaintance (50%) et que ces liens soient transformés en Friend (20%). 
-	- Méta-réseau : des PNJs récurrents forment un réseau à « démasquer ».
-	- Le joueur initie les Combats (des fois qu’il croise un sbire, par exemple).
-	- La possibilité d’interagir avec plusieurs PNJs en même temps (pas sûr de mon coup, là).
-	- La possibilité de savoir quels autres PNJs sont éventuellement présents là où est le joueur et pouvoir interagir avec eux.
-	- Pouvoir vendre/acheter (objets, drogue…) pour se faire de l’argent sur un « marché noir ».
-	- Pouvoir s’entraîner pour améliorer ses caractéristiques et/ou sa main de cartes.
-	- Événements aléatoires :
-		Grève, black-out, canicule…
-	- Plus de backgrounds, professions, lieux, objets, etc.
-	- Plus de cartes d’Interaction/Abstraites/Objets/Locations/etc…
-	- Plus de crimes…
-	- Système de blessures (traumatismes, handicaps, empoisonnements, etc.) pouvant durer « un certain temps » ou être permanents.
-	- (Cartes) « Rumeurs » (vraies/fausses).
-	- Zones/quartiers à risque influençant Wan, Emo, Add, Rep ou augmentant le risque d’attaque (même de n’importe qui) ou au contraire, zones/quartiers sûrs…
-	- Mini-objectifs non obligatoires cachés qui donnent des avantages :
-		Ne jamais être en dessous de 200Dø pendant 10 jours.
-		Parler à un PNJ 5 fois sans qu’il fuit.
-		Résoudre 2 enquêtes sans se battre une seule fois.
-		…
-	- Traits du personnage joueur ou PNJ:
-		Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
-	- Indic’ : Un PNJ offre une info (vraie ou fausse) en échange d’une contrepartie.
-	- Au fur et à mesure que le joueur vire Paranoïaque, l’affichage de ses stats (Top_Bar.tscn) commence à « merder ». (Mouaif…)
-	- Un système de double-vie pour des PNJs ?
-	- Le joueur devient Détective privé « à temps partiel ». Cela lui permet de gagner de l’argent mais il perd du temps dans ses enquêtes. Pour cela il faudrait aller à l’agence d’intérim’ pour voir s’il y aurait du boulot pour lui. Bien entendu, il pourrait lui arriver des choses (bonnes ou mauvaises) dans ce boulot.
-	- Le Joueur est mytho’ et s’invente des suspects, victimes, coupables, etc.
-	- Fabrication de « fausse preuve ».
-	- Chaque partie laisse des traces chez le (nouveau) joueur de la partie suivante (comme si la fille ou le fils reprenait la suite du père ou de la mère).
-	- Add et Emo influent sur Rep.
-	- Add et Emo ajoute des effets en plus au joueur.
-	- Rajouter des hobbies au joueur et PNJs pour d’autres bonus/malus.
-	- Des fois, le joueur « plane » et perd du temps à la redescente.
-	- Faire dépendre plus des choses des caractéristiques du joueur plutôt que du hasard (si possible).
+- La possibilité de filature.
+ - Recyclage de PNJs d’une enquête à l’autre.
+ - Aider un peu plus à ce que les PNJs qui travaillent au même endroit aient des liens Acquaintance (50%) et que ces liens soient transformés en Friend (20%). 
+ - Méta-réseau : des PNJs récurrents forment un réseau à « démasquer ».
+ - Le joueur initie les Combats (des fois qu’il croise un sbire, par exemple).
+ - La possibilité d’interagir avec plusieurs PNJs en même temps (pas sûr de mon coup, là).
+ - La possibilité de savoir quels autres PNJs sont éventuellement présents là où est le joueur et pouvoir interagir avec eux.
+ - Pouvoir vendre/acheter (objets, drogue…) pour se faire de l’argent sur un « marché noir ».
+ - Pouvoir s’entraîner pour améliorer ses caractéristiques et/ou sa main de cartes.
+ - Événements aléatoires :
+ Grève, black-out, canicule…
+ - Plus de backgrounds, professions, lieux, objets, etc.
+ - Plus de cartes d’Interaction/Abstraites/Objets/Locations/etc…
+ - Plus de crimes…
+ - Système de blessures (traumatismes, handicaps, empoisonnements, etc.) pouvant durer « un certain temps » ou être permanents.
+ - (Cartes) « Rumeurs » (vraies/fausses).
+ - Zones/quartiers à risque influençant Wan, Emo, Add, Rep ou augmentant le risque d’attaque (même de n’importe qui) ou au contraire, zones/quartiers sûrs…
+ - Mini-objectifs non obligatoires cachés qui donnent des avantages :
+ Ne jamais être en dessous de 200Dø pendant 10 jours.
+ Parler à un PNJ 5 fois sans qu’il fuit.
+ Résoudre 2 enquêtes sans se battre une seule fois.
+ …
+ - Traits du personnage joueur ou PNJ:
+ Trouble du sommeil, Hypermnésie, Tendance compulsive, Résistance à la douleur, Déficit immunitaire…
+ - Indic’ : Un PNJ offre une info (vraie ou fausse) en échange d’une contrepartie.
+ - Au fur et à mesure que le joueur vire Paranoïaque, l’affichage de ses stats (Top_Bar.tscn) commence à « merder ». (Mouaif…)
+ - Un système de double-vie pour des PNJs ?
+ - Le joueur devient Détective privé « à temps partiel ». Cela lui permet de gagner de l’argent mais il perd du temps dans ses enquêtes. Pour cela il faudrait aller à l’agence d’intérim’ pour voir s’il y aurait du boulot pour lui. Bien entendu, il pourrait lui arriver des choses (bonnes ou mauvaises) dans ce boulot.
+ - Le Joueur est mytho’ et s’invente des suspects, victimes, coupables, etc.
+ - Fabrication de « fausse preuve ».
+ - Chaque partie laisse des traces chez le (nouveau) joueur de la partie suivante (comme si la fille ou le fils reprenait la suite du père ou de la mère).
+ - Add et Emo influent sur Rep.
+ - Add et Emo ajoute des effets en plus au joueur.
+ - Rajouter des hobbies au joueur et PNJs pour d’autres bonus/malus.
+ - Des fois, le joueur « plane » et perd du temps à la redescente.
+ - Faire dépendre plus des choses des caractéristiques du joueur plutôt que du hasard (si possible).
 	- Attaques du joueur en prison !
 	- Tentatives (échouées ou réussies) de meurtre sur des témoins.
 	- SMS anonymes accusant des suspects.
 	- Les coupables et complices peuvent se balancer !
 	- HEA et HEAmax ne sont pas si pertinents que ça. On pourrait n’avoir finalement que HEA.
+
+
