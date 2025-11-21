@@ -499,30 +499,31 @@ func attempt_investigation(location: LocationCard):
 	# check whether there is anybody there, whether the player has a warrant he
 	# can use or if he wants to break in, etc.
 
-	var npcs = location.get_npcs_present()
 	var break_in_needed = false
 
-	# if no NPCs are present, the player can either try to break in or leave
+	if not location.is_open_for_business():
 
-	if npcs.is_empty():
-		if not await Globals.dialog_overlay.confirm_break_in():
+		# if no NPCs are present, the player can either try to break in or leave
+
+		if location.get_npcs_present().is_empty():
+			if not await Globals.dialog_overlay.confirm_break_in():
+				return
+			break_in_needed = true
+
+		# if NPCs are present and the player has a search warrant, ask if he
+		# wants to use it
+
+		elif GameState.player.has_search_warrant:
+			if not await Globals.dialog_overlay.use_search_warrant():
+				return
+			GameState.player.has_search_warrant = false
+
+		# if NPCs are present and the player does NOT have a search warrant,
+		# there is nothing he can do
+
+		else:
+			await Globals.dialog_overlay.no_search_warrant()
 			return
-		break_in_needed = true
-
-	# if NPCs are present and the player has a search warrant, ask if he wants
-	# to use it
-
-	elif GameState.player.has_search_warrant:
-		if not await Globals.dialog_overlay.use_search_warrant():
-			return
-		GameState.player.has_search_warrant = false
-
-	# if NPCs are present and the player does NOT have a search warrant, there
-	# is nothing he can do
-
-	else:
-		await Globals.dialog_overlay.no_search_warrant()
-		return
 
 	location.set_investigated_today()
 

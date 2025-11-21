@@ -86,10 +86,17 @@ func set_investigated_today():
 
 ##
 ## Returns true if the location is open now, or if it has no opening hours
-## defined.
+## defined (so an apartment is always considered to be open).
 ##
 func is_open() -> bool:
 	return opening_hours == 0 or (opening_hours & GameState.get_time_slot())
+
+##
+## Returns true if the location is open for business now, false if it has no
+## opening hours defined.
+##
+func is_open_for_business() -> bool:
+	return opening_hours & GameState.get_time_slot()
 
 ##
 ## Returns a list of any NPCs present now at the location.
