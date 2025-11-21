@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=233 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -86,6 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://bbs7ssu3nub6u" path="res://GRAPHICS/SHORT_EVENT/Plus_Hover.png" id="79_wt5xr"]
 [ext_resource type="BitMap" uid="uid://dohqyo1qij7qr" path="res://GRAPHICS/SHORT_EVENT/Plus_Mask.png" id="80_d324j"]
 [ext_resource type="Texture2D" uid="uid://cecs6l03ghxq" path="res://GRAPHICS/SHORT_EVENT/Sleep_BG.png" id="81_a4t42"]
+[ext_resource type="Script" uid="uid://bv7qgpiuro56d" path="res://SCRIPTS/Health_Issue.gd" id="81_tdxs6"]
 [ext_resource type="Theme" uid="uid://bleu1oddsbqsk" path="res://UI/Sleep_Theme.tres" id="82_gq4jn"]
 [ext_resource type="Script" uid="uid://cyjp6v2sykuxq" path="res://SCRIPTS/Sleep_Buttons.gd" id="83_2lphy"]
 [ext_resource type="ButtonGroup" uid="uid://snsroxg0p6rs" path="res://UI/Sleep_Button_Group.tres" id="84_bbmvh"]
@@ -1850,12 +1851,12 @@ NodePath("Cards/Mastery"): NodePath("Interaction_BG/Mastery_Zone"),
 NodePath("Cards/Fallback"): NodePath("Interaction_BG/Fallback_Zone"),
 NodePath("Cards/Interaction"): NodePath("Interaction_BG/Interaction_Zone")
 }
-interaction_cards = NodePath("Cards/Interaction")
 max_card_count = 2
 min_card_count = 0
+enabled = false
+interaction_cards = NodePath("Cards/Interaction")
 the_button = NodePath("Button/Bring_It_On")
 drag_drop_line = NodePath("Drag_Drop_Line")
-enabled = false
 
 [node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
 visible = false
@@ -2712,6 +2713,7 @@ text = "Cancel"
 
 [node name="Health_Issue" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("81_tdxs6")
 
 [node name="Health_Issue_BG" type="Sprite2D" parent="Overlays/Health_Issue"]
 texture = ExtResource("93_b6clx")
@@ -2762,7 +2764,6 @@ theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "Not much of a choice."
 alignment = 2
-script = ExtResource("92_bnyoh")
 
 [node name="Add_Report" type="Control" parent="Overlays/Health_Issue"]
 visible = false
@@ -2812,7 +2813,6 @@ theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "Thanks Dr. Fix-It!"
 alignment = 2
-script = ExtResource("92_bnyoh")
 
 [node name="Emo_Report" type="Control" parent="Overlays/Health_Issue"]
 visible = false
@@ -2862,7 +2862,6 @@ theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "Thanks Dr. Freud!"
 alignment = 2
-script = ExtResource("92_bnyoh")
 
 [node name="Rest_Report" type="Control" parent="Overlays/Health_Issue"]
 visible = false
@@ -2910,7 +2909,6 @@ theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "That's proably for the best."
 alignment = 2
-script = ExtResource("92_bnyoh")
 
 [node name="Misc" type="Node2D" parent="Overlays"]
 visible = false
@@ -4698,18 +4696,6 @@ bus = &"UI"
 [connection signal="button_down" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_down"]
 [connection signal="button_up" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_up"]
 [connection signal="item_selected" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_item_selected"]
-[connection signal="mouse_entered" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Health_Issue/Health_Report/Buttons/Ok" to="Overlays/Health_Issue/Health_Report/Buttons/Ok" method="_on_ok_pressed"]
-[connection signal="mouse_entered" from="Overlays/Health_Issue/Add_Report/Buttons/Ok" to="Overlays/Health_Issue/Add_Report/Buttons/Ok" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Health_Issue/Add_Report/Buttons/Ok" to="Overlays/Health_Issue/Add_Report/Buttons/Ok" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Health_Issue/Add_Report/Buttons/Ok" to="Overlays/Health_Issue/Add_Report/Buttons/Ok" method="_on_ok_pressed"]
-[connection signal="mouse_entered" from="Overlays/Health_Issue/Emo_Report/Buttons/Ok" to="Overlays/Health_Issue/Emo_Report/Buttons/Ok" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Health_Issue/Emo_Report/Buttons/Ok" to="Overlays/Health_Issue/Emo_Report/Buttons/Ok" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Health_Issue/Emo_Report/Buttons/Ok" to="Overlays/Health_Issue/Emo_Report/Buttons/Ok" method="_on_ok_pressed"]
-[connection signal="mouse_entered" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Health_Issue/Rest_Report/Buttons/Ok" to="Overlays/Health_Issue/Rest_Report/Buttons/Ok" method="_on_ok_pressed"]
 [connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]

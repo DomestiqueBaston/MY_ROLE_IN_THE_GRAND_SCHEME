@@ -248,28 +248,46 @@ func _get_weeks_passed() -> int:
 	return (_hour - _start_time) / (24 * 7)
 
 #
-# Increments the given time by the given number of hours. Note that this is a
-# coroutine to be awaited, and also that the player may have died on return.
-# Returns true if the player is still alive, false if he has died.
+# Increments the given time by the given number of hours. If check_player_status
+# is true, the player's health, wanted status and debts are checked as well each
+# morning. In that case, one or more messages may be displayed, making this is a
+# coroutine to be awaited, and the player may even have died on return.
 #
-func _increment_time(hours: int) -> bool:
+func _increment_time(hours: int, check_player_status: bool):
 	var day_before = get_working_day()
 	_hour += hours
 	var day_after = get_working_day()
 	time_changed.emit()
 
-	# TODO: if player has not slept for 24 hours, force him to take a day off
+	for day in range(day_before + 1, day_after + 1):
+		_new_day(day)
+		if check_player_status:
+			await _check_player_status()
+			if player.health <= 0:
+				return
+
+	save_game()
+
+#
+# Checks the player's health, wanted status and debts. One or more messages may
+# be displayed, making this a coroutine to be awaited. The player may also be
+# forced to rest, sent to prison or die.
+#
+func _check_player_status():
+
 	# TODO: if wanted == 5, send player to prison
 	# TODO: if player has 5 debts, send him to prison
 
-	for day in range(day_before + 1, day_after + 1):
-		_new_day(day)
-		if not await player.test_health():
-			died.emit()
-			return false
+	match await player.test_health():
+		Player.PlayerState.KO:
+			if _player_location != PlayerLocation.OFFICE:
+				set_player_location(PlayerLocation.OFFICE)
+			await _increment_time(12, false)
+			await player.sleep(12)
+			await _increment_time(12, false)
 
-	save_game()
-	return true
+		Player.PlayerState.DEAD:
+			died.emit()
 
 #
 # Stuff that needs to be dealt with at the start of each new day.
@@ -333,7 +351,7 @@ func get_new_crime() -> String:
 ##
 func pass_one_hour():
 	player.pass_one_hour()
-	await _increment_time(1)
+	await _increment_time(1, true)
 
 ##
 ## Takes the player back to the office, if he is not there already, then puts
@@ -344,8 +362,10 @@ func sleep(hours: int):
 	if _player_location != PlayerLocation.OFFICE:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OFFICE)
+		if player.health <= 0:
+			return
 	await player.sleep(hours)
-	await _increment_time(hours)
+	await _increment_time(hours, true)
 
 ##
 ## Returns false if the player has already visited the Investigation Center
@@ -358,12 +378,16 @@ func visit_investigation_center():
 	if _player_location != PlayerLocation.INVESTIGATION_CENTER:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.INVESTIGATION_CENTER)
+		if player.health <= 0:
+			return
 	_has_visited_hub = await Globals.dialog_overlay.open_investigation_center()
 
 func visit_office():
 	if _player_location != PlayerLocation.OFFICE:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OFFICE)
+		if player.health <= 0:
+			return
 	await Globals.dialog_overlay.open_office()
 
 func is_warrant_desk_open():
@@ -375,8 +399,9 @@ func buy_search_warrant():
 	if _player_location != PlayerLocation.WARRANT_DESK:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.WARRANT_DESK)
-	var ok = await Globals.dialog_overlay.buy_search_warrant()
-	if ok:
+		if player.health <= 0:
+			return
+	if await Globals.dialog_overlay.buy_search_warrant():
 		player.money -= warrant_price
 		player.has_search_warrant = true
 		save_game()
@@ -385,6 +410,8 @@ func pay_debt(debt_index: int):
 	if _player_location != PlayerLocation.OFFICE:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OFFICE)
+		if player.health <= 0:
+			return
 	await pass_one_hour()
 	await player.pay_debt(debt_index)
 
@@ -392,6 +419,8 @@ func use_drugs(doses: int):
 	if _player_location != PlayerLocation.OFFICE:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OFFICE)
+		if player.health <= 0:
+			return
 	await pass_one_hour()
 	await player.use_drugs(doses)
 
@@ -412,6 +441,9 @@ func visit_dealer():
 	if _player_location != PlayerLocation.ROWENA:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.ROWENA)
+		if player.health <= 0:
+			return
+
 	var price = get_player_drug_price()
 	var doses = await Globals.dialog_overlay.visit_dealer(
 		_dealer_drug_stock, player.money, price)
@@ -440,6 +472,8 @@ func visit_doctor():
 	if _player_location != PlayerLocation.DOCTOR:
 		await pass_one_hour()
 		set_player_location(PlayerLocation.DOCTOR)
+		if player.health <= 0:
+			return
 
 	var fee = get_player_doctor_fee()
 
@@ -459,6 +493,8 @@ func attempt_investigation(location: LocationCard):
 		or _player_location_card != location):
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OTHER, location)
+		if player.health <= 0:
+			return
 
 	# check whether there is anybody there, whether the player has a warrant he
 	# can use or if he wants to break in, etc.
@@ -753,15 +789,14 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 		duration += h as int
 	print("duration: %s hour(s)" % duration)
 
-	var survived
-	if duration > 0:
-		survived = await _increment_time(duration)
-	else:
-		survived = await player.test_health()
-
-	if survived:
+	if player.health > 0:
 		await Globals.dialog_overlay.show_investigation_result(
 			success, actual_roll in [1, 10], money_found)
+
+	if duration > 0:
+		# player's status (health, etc.) will be checked in end_interaction()
+		await _increment_time(duration, false)
+		player.pass_time(duration)
 
 	_discard_cards(cards_played, success)
 	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
@@ -788,6 +823,8 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 		or _player_location_card != location):
 		await pass_one_hour()
 		set_player_location(PlayerLocation.OTHER, location)
+		if player.health <= 0:
+			return
 
 	# check whether the NPC is there
 
@@ -986,14 +1023,17 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		if absi(actual_delta) > 1:
 			await Globals.dialog_overlay.show_rep_message(actual_delta > 0)
 
-	if actual_roll == 10:
-		await Globals.dialog_overlay.show_player_improvement(-1)
-	elif actual_roll == 1:
-		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
-
-	if await _increment_time(2):
+	if player.health > 0:
+		if actual_roll == 10:
+			await Globals.dialog_overlay.show_player_improvement(-1)
+		elif actual_roll == 1:
+			await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 		# TODO: was information revealed or not?
 		await Globals.dialog_overlay.show_dialogue_result(success)
+
+	# player's status (health, etc.) will be checked in end_interaction()
+	await _increment_time(2, false)
+	player.pass_time(2)
 
 	_discard_cards(cards_played, success)
 	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
@@ -1135,12 +1175,12 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 	npc.wanted += 1
 	npc.player_reputation -= 2
 
-	if actual_roll == 10:
-		await Globals.dialog_overlay.show_player_improvement(-1)
-	elif actual_roll == 1:
-		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
+	if player.health > 0:
+		if actual_roll == 10:
+			await Globals.dialog_overlay.show_player_improvement(-1)
+		elif actual_roll == 1:
+			await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
 
-	if await _increment_time(2):
 		var player_damage: CombatDamage
 		var npc_state: NpcCombatState
 		if actual_roll == 10 or npc_actual_roll == 1:
@@ -1156,6 +1196,10 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 		else:
 			npc_state = NpcCombatState.ESCAPED
 		await Globals.dialog_overlay.show_combat_result(player_damage, npc_state)
+
+	# player's status (health, etc.) will be checked in end_interaction()
+	await _increment_time(2, false)
+	player.pass_time(2)
 
 	if actual_roll == 10 or net_roll > max_roll:
 		_discard_cards(cards_played, false)
@@ -1187,11 +1231,17 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 			_pop_card_state()
 		InteractionType.DIALOGUE:
 			outcome = await _play_dialogue(cards_played)
-			_current_interaction_npc.test_health()
+			if _current_interaction_npc:
+				_current_interaction_npc.test_health()
+			else:
+				print("interaction is dialogue but there is no NPC!?")
 			_pop_card_state()
 		InteractionType.COMBAT:
 			outcome = await _play_combat(cards_played)
-			_current_interaction_npc.test_health()
+			if _current_interaction_npc:
+				_current_interaction_npc.test_health()
+			else:
+				print("interaction is combat but there is no NPC!?")
 			if outcome != InteractionOutcome.CONTINUE:
 				_pop_card_state()
 
@@ -1201,12 +1251,12 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 	_current_interaction_npc = null
 	_current_interaction_bonus_malus = 0
 
-	if await player.test_health():
+	await _check_player_status()
+	if player.health > 0:
 		save_game()
 	else:
 		if outcome == InteractionOutcome.CONTINUE:
 			_pop_card_state()
-		died.emit()
 		outcome = InteractionOutcome.FAILURE
 
 	return outcome

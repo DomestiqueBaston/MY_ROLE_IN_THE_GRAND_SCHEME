@@ -442,13 +442,14 @@ func _is_card_combo_ok() -> bool:
 ##
 ## Starts an investigation. A done() signal is emitted when it finishes.
 ##
-func start_investigation(mastery_cards: Array[Card], fallback_cards: Array[Card]):
+func start_investigation(
+	location: LocationCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card in mastery_cards:
 		if card is AbstractCard or card is InvestigationCard:
 			$Cards/Mastery.add_child(card)
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
-	_start_interaction(GameState.InteractionType.INVESTIGATION)
+	_start_interaction(GameState.InteractionType.INVESTIGATION, location)
 
 ##
 ## Starts a break-in. A done() signal is emitted when it finishes.
@@ -526,15 +527,18 @@ func get_cards_played() -> Array[Card]:
 	cards.assign(_cards_played.keys())
 	return cards
 
-func _start_interaction(type: GameState.InteractionType, npc: NpcCard = null):
+func _start_interaction(type: GameState.InteractionType, card: Card = null):
 	_cards_played.clear()
 	_interaction_type = type
 	if tv_screen:
-		if npc:
-			tv_screen.set_npc(npc)
+		if card:
+			if card is NpcCard:
+				tv_screen.set_npc(card)
+			elif card is LocationCard:
+				tv_screen.set_location(card)
 			if info_box:
-				_default_info_card = npc
-				info_box.show_card(npc)
+				_default_info_card = card
+				info_box.show_card(card)
 		tv_screen.set_interaction_type(type)
 
 #

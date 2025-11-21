@@ -163,6 +163,7 @@ func _on_interaction_started():
 				GameState.player.get_fallback_cards())
 		GameState.InteractionType.INVESTIGATION:
 			interaction_scene.start_investigation(
+				GameState.get_current_interaction_location(),
 				GameState.player.get_mastery_cards(),
 				GameState.player.get_fallback_cards())
 

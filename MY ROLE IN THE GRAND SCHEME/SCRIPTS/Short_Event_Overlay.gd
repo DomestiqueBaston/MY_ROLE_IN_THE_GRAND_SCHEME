@@ -547,3 +547,22 @@ func show_investigation_result(success: bool, critical: bool, money: int = 0):
 	$Overlays/Interaction_Result/Investigation.hide()
 
 	search_result.hide()
+
+##
+## Announces to the player that he is going to have to rest for 24 hours, either
+## because he has gone without sleep for too long (lack_of_sleep = true) or
+## because he has health issues (lack_of_sleep = false).
+##
+func announce_forced_rest(lack_of_sleep: bool):
+	var report: Control
+	if lack_of_sleep:
+		report = $Overlays/Health_Issue/Rest_Report
+	else:
+		report = $Overlays/Health_Issue/Health_Report
+	report.show()
+	$Overlays/Health_Issue.show()
+	await _appear()
+	await $Overlays/Health_Issue.done
+	await _disappear()
+	$Overlays/Health_Issue.hide()
+	report.hide()

@@ -18,6 +18,15 @@ var drugs_taken_today: int
 var has_search_warrant: bool
 var next_dialogue_bonus_malus: int = 0
 
+enum PlayerState {
+	## Player is OK.
+	OK,
+	## Player is alive but must rest for 24 hours.
+	KO,
+	## Player is dead.
+	DEAD
+}
+
 var _abstract_cards = preload("res://JSON/INTERACTION/Abstract.json").data
 var _combat_cards = preload("res://JSON/INTERACTION/Combat.json").data
 var _dialogue_cards = preload("res://JSON/INTERACTION/Dialogue.json").data
@@ -198,15 +207,16 @@ func get_health() -> int:
 	return health
 
 ##
-## Checks the player's health, emotion and addiction levels, and returns false
-## if he has died. Note that if his emotion level reaches -5 or 5, that has
-## negative consequences for his addiction level. And if his addiction level
+## Checks the player's health, emotion and addiction levels, and returns his
+## status: OK, KO or DEAD. Note that if his emotion level reaches -5 or 5, that
+## has negative consequences for his addiction level. And if his addiction level
 ## reaches -5 or 5, a message is displayed, indicating whether or not he has
-## survived. As a result, this function is a coroutine to be awaited.
+## survived. A message is also displayed if he is too tired to continue (KO). As
+## a result, this function is a coroutine to be awaited.
 ##
-func test_health() -> bool:
+func test_health() -> PlayerState:
 	if health <= 0:
-		return false
+		return PlayerState.DEAD
 
 	while emotion <= -5 or emotion >= 5:
 		addiction += 1 if addiction > 0 else -1
@@ -216,10 +226,20 @@ func test_health() -> bool:
 		var die = (health == 1 or randi_range(1, 10) > health)
 		await Globals.dialog_overlay.show_addiction_message(die)
 		if die:
-			return false
+			return PlayerState.DEAD
 		addiction = 4 * signi(addiction)
 
-	return true
+	if physical <= 0 or mental <= 0:
+		await Globals.dialog_overlay.announce_forced_rest(false)
+		physical = mini(1, physical)
+		mental = mini(1, mental)
+		return PlayerState.KO
+
+	if get_hours_awake() >= 24:
+		await Globals.dialog_overlay.announce_forced_rest(true)
+		return PlayerState.KO
+
+	return PlayerState.OK
 
 func set_emotion(emo: int):
 	emo = clampi(emo, -5, 5)
@@ -506,6 +526,17 @@ func pick_combat_cards():
 		if card.combat_type == CombatCard.CombatType.NORMAL:
 			normal_count += 1
 
+##
+## See pass_one_hour().
+##
+func pass_time(hours: int):
+	for i in hours:
+		pass_one_hour()
+
+##
+## For every waking hour, there is one chance in three that the player physical,
+## mental or health attribute will improve.
+##
 func pass_one_hour():
 	if randi() % 10 == 0:
 		match randi() % 3:

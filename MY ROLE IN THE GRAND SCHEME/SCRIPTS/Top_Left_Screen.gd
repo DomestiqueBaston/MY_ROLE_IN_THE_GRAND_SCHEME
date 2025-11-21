@@ -31,6 +31,9 @@ func set_npc(npc: NpcCard):
 	$Interaction/Dialogue/NPC.text = npc_name
 	$Interaction/Combat/NPC.text = npc_name
 
+func set_location(location: LocationCard):
+	$Interaction/Investigation/Location.text = location.get_display_name()
+
 func _on_on_off_pressed():
 	$Tv_Switch.play()
 	_update_tv()
