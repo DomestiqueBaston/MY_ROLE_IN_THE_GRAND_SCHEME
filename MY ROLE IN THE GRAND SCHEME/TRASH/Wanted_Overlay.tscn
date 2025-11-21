@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://bpkowclume2ch"]
 
-[ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_d2h0h"]
-[ext_resource type="Shader" uid="uid://c84t7nfl20xo5" path="res://SHADERS/Texture.gdshader" id="2_ocisw"]
-[ext_resource type="Texture2D" uid="uid://dvk5h8e7yhmvs" path="res://GRAPHICS/OVERLAYS/Texture_Wanted.png" id="3_dvpwx"]
-[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_j5gq4"]
-[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_aobqd"]
-[ext_resource type="AudioStream" uid="uid://dl3yq1xjs5va0" path="res://SOUND/MISC/Alarm_01.ogg" id="6_mrkhl"]
+[ext_resource type="FontFile" uid="uid://bta0q3p3nub6c" path="res://UI/junkos typewriter.ttf" id="1_gtgxf"]
+[ext_resource type="Shader" uid="uid://c84t7nfl20xo5" path="res://SHADERS/Texture.gdshader" id="2_p5jcl"]
+[ext_resource type="Texture2D" uid="uid://dvk5h8e7yhmvs" path="res://TRASH/Texture_Wanted.png" id="3_sloo8"]
+[ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="4_fgety"]
+[ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="5_4x80x"]
+[ext_resource type="AudioStream" uid="uid://dl3yq1xjs5va0" path="res://SOUND/MISC/Alarm_01.ogg" id="6_3yg17"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ghmjl"]
-shader = ExtResource("2_ocisw")
-shader_parameter/img = ExtResource("3_dvpwx")
+shader = ExtResource("2_p5jcl")
+shader_parameter/img = ExtResource("3_sloo8")
 
 [sub_resource type="Animation" id="Animation_yu1ea"]
 resource_name = "Pumping"
@@ -168,7 +168,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("4_j5gq4")
+"stream": ExtResource("4_fgety")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -212,7 +212,7 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("5_aobqd")
+"stream": ExtResource("5_4x80x")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -279,7 +279,7 @@ theme_override_constants/shadow_offset_x = 15
 theme_override_constants/shadow_offset_y = 11
 theme_override_constants/outline_size = 30
 theme_override_constants/shadow_outline_size = 17
-theme_override_fonts/font = ExtResource("1_d2h0h")
+theme_override_fonts/font = ExtResource("1_gtgxf")
 theme_override_font_sizes/font_size = 155
 text = "ThEy wAnt To
 sileNt You!"
@@ -296,7 +296,7 @@ offset_right = 1101.0
 offset_bottom = 490.148
 rotation = -0.122173
 scale = Vector2(0.58, 0.725)
-theme_override_fonts/font = ExtResource("1_d2h0h")
+theme_override_fonts/font = ExtResource("1_gtgxf")
 theme_override_font_sizes/font_size = 155
 text = "ThEy wAnt To
 sileNt You!"
@@ -329,7 +329,7 @@ volume_db = -35.0
 bus = &"UI"
 
 [node name="Alarm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_mrkhl")
+stream = ExtResource("6_3yg17")
 volume_db = -60.0
 autoplay = true
 bus = &"FX"
