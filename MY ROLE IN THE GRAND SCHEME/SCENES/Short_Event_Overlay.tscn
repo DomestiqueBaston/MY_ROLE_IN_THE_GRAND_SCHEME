@@ -1,4 +1,4 @@
-[gd_scene load_steps=233 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=235 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -49,7 +49,9 @@
 [ext_resource type="Texture2D" uid="uid://dn6iqo8hcrag5" path="res://GRAPHICS/SHORT_EVENT/Case_1_Hover.png" id="44_t8uoa"]
 [ext_resource type="BitMap" uid="uid://1muvlh7ldcm0" path="res://GRAPHICS/SHORT_EVENT/Case_1_Mask.png" id="45_k24xe"]
 [ext_resource type="Texture2D" uid="uid://tn484qetw520" path="res://GRAPHICS/SHORT_EVENT/Case_2_Pressed.png" id="46_a7igc"]
+[ext_resource type="Texture2D" uid="uid://b7cxmfsbqausl" path="res://GRAPHICS/SHORT_EVENT/Case_BG.png" id="47_lkigo"]
 [ext_resource type="Texture2D" uid="uid://da8bh8o7oyd4g" path="res://GRAPHICS/SHORT_EVENT/Case_2_Hover.png" id="47_q1jpv"]
+[ext_resource type="Script" uid="uid://cg8d08ap6qvog" path="res://SCRIPTS/Give_Up_Case_Buttons.gd" id="47_qmu3t"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/SHORT_EVENT/Case_2_Mask.png" id="48_pf81c"]
 [ext_resource type="AudioStream" uid="uid://gaoc58dislyn" path="res://SOUND/MISC/Wooden_Drawer.ogg" id="49_7vfi6"]
 [ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/SHORT_EVENT/CellPhone_BG.png" id="50_cbb3s"]
@@ -990,6 +992,148 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
 text = "No"
 flat = true
 
+[node name="Give_Up_Case" type="Node2D" parent="Overlays"]
+visible = false
+script = ExtResource("47_qmu3t")
+
+[node name="Confirmation_BG" type="Sprite2D" parent="Overlays/Give_Up_Case"]
+position = Vector2(320, 180)
+texture = ExtResource("47_lkigo")
+
+[node name="Left_Page" type="RichTextLabel" parent="Overlays/Give_Up_Case"]
+offset_left = 185.94
+offset_top = 75.00774
+offset_right = 329.0547
+offset_bottom = 280.92804
+rotation = 0.02599052
+theme_override_colors/default_color = Color(0.95, 0.94303334, 0.91199994, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = ExtResource("55_s8rvk")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "The [color=#ff8864]Administrative Services[/color] of the [color=#ff1c18]Investigation Centre[/color] acknowledge receipt of your request.
+
+Following internal review, your name has been [color=#ff8864]withdrawn[/color] from the [color=#ff1c18]list[/color] of [color=#ff8864]active investigators[/color] attached to the [color=#ff1c18]case[/color]. This [color=#ff8864]withdrawal[/color] is effective [color=#ff1c18]immediately[/color].
+
+It must nevertheless be noted that the complete [color=#ff1c18]administrative closure[/color] of the [color=#ff8864]file[/color], its [color=#ff8864]transfer[/color] to [color=#ff1c18]dormant status[/color], the [color=#ff8864]maintenance[/color] of [color=#ff1c18]archival traceability[/color], and the [color=#ff8864]preservation[/color] of the possibility of [color=#ff1c18]future reactivation[/color] by our [color=#ff8864]agents[/color] [color=#ff8864]generate [color=#ff1c18]processing costs[/color][/color] that [color=#ff8864]the departments[/color] are [color=#ff1c18]not[/color] in a position to [color=#ff1c18]assume[/color]."
+horizontal_alignment = 1
+
+[node name="Right_Page" type="RichTextLabel" parent="Overlays/Give_Up_Case"]
+offset_left = 348.0
+offset_top = 77.0
+offset_right = 483.06317
+offset_bottom = 279.85782
+rotation = 0.01327762
+theme_override_colors/default_color = Color(0.95, 0.94303334, 0.91199994, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = ExtResource("55_s8rvk")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "While the financial aspect may appear secondary in relation to the matters usually handled by the Centre, please rest assured that it will in no way, [color=#ff8864]even marginally[/color], [color=#ff1c18]affect the regard in which your professional standing is held[/color].
+
+We remain at your disposal for any further information and beg you to accept, Sir or Madam, the expression of our most bureaucratic considerations.
+
+[color=#ff1c18]Head of File Management and Continuity Unit[/color]
+By [color=#ff8864]delegation[/color]
+
+Accordingly, find here your [color=#ff8864]fixed[/color] [color=#ff1c18]administrative fee[/color]:"
+horizontal_alignment = 1
+
+[node name="Fee" type="Label" parent="Overlays/Give_Up_Case"]
+offset_left = 379.0
+offset_top = 265.0
+offset_right = 414.0
+offset_bottom = 273.0
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 0.53333336, 0.39215687, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("55_s8rvk")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 2
+
+[node name="Do" type="Label" parent="Overlays/Give_Up_Case/Fee"]
+layout_mode = 0
+offset_left = 36.0
+offset_right = 46.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 0.10980392, 0.09411765, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("55_s8rvk")
+theme_override_font_sizes/font_size = 8
+text = "Dø"
+
+[node name="Yes_No" type="Control" parent="Overlays/Give_Up_Case"]
+modulate = Color(1, 1, 1, 0.843137)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 413.0
+offset_top = 284.0
+offset_right = 413.0
+offset_bottom = 284.0
+rotation = 0.0101378
+
+[node name="No" type="Button" parent="Overlays/Give_Up_Case/Yes_No"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -7.162018
+offset_right = -4.0
+offset_bottom = 6.837982
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.94, 0.6298, 0.517, 0.843137)
+theme_override_colors/font_focus_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_hover_color = Color(0.75, 0.293125, 0.1125, 0.843137)
+theme_override_colors/font_hover_pressed_color = Color(0.941176, 0.631373, 0.517647, 0.843137)
+theme_override_colors/font_outline_color = Color(0.11, 0.0479967, 0.0121, 0.886275)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("55_s8rvk")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ojkpy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
+text = "What? No way!"
+flat = true
+alignment = 2
+
+[node name="Yes" type="Button" parent="Overlays/Give_Up_Case/Yes_No"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 14.999847
+offset_top = -7.030426
+offset_right = 72.99985
+offset_bottom = 6.969574
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.7221, 0.87, 0.5742, 0.843137)
+theme_override_colors/font_focus_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_hover_color = Color(0.41875, 0.67, 0.1675, 0.843137)
+theme_override_colors/font_hover_pressed_color = Color(0.721569, 0.870588, 0.572549, 0.843137)
+theme_override_colors/font_outline_color = Color(0.00637, 0.02, 0.0026, 0.843137)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("55_s8rvk")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ojkpy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s8rvk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sfan1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
+text = "Ok! I'll pay."
+flat = true
+alignment = 0
+
 [node name="Income_Start" type="Node2D" parent="Overlays"]
 visible = false
 
@@ -1851,12 +1995,12 @@ NodePath("Cards/Mastery"): NodePath("Interaction_BG/Mastery_Zone"),
 NodePath("Cards/Fallback"): NodePath("Interaction_BG/Fallback_Zone"),
 NodePath("Cards/Interaction"): NodePath("Interaction_BG/Interaction_Zone")
 }
+interaction_cards = NodePath("Cards/Interaction")
 max_card_count = 2
 min_card_count = 0
-enabled = false
-interaction_cards = NodePath("Cards/Interaction")
 the_button = NodePath("Button/Bring_It_On")
 drag_drop_line = NodePath("Drag_Drop_Line")
+enabled = false
 
 [node name="Colliders" type="Node2D" parent="Overlays/Interaction_Run_Away_Break_In"]
 visible = false
