@@ -700,6 +700,7 @@ Enquête
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	- Voir également à la fin pour les enquêtes de niveau 0 !
 
+
 Lieu du crime et Lieu caché (mauvais titre)
 	- Lorsqu’il y a un lieu du crime, il peut contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
 	- Le/les domicile(s) du/des coupable(s) peut/peuvent aussi contenir 1 evidence. Voir COMMENT REPARTIR LES EVIDENCES ?
@@ -793,7 +794,7 @@ Résolution des enquêtes, gains et implications
 		- Emo = 0, Add = 0, Wan = 0
  	- Si le joueur valide une enquête et qu’il s’est trompé, l’enquête est terminée pour lui et implique :
 		- Emo +1 → Min/Max ou Emo -1 si Emo = 0.
-	- Renoncer à une enquête n’implique pas de malus ni de bonus.
+	- Renoncer à une enquête n’implique pas de malus ni de bonus mais coûte de l’argent selon : round(niveau de difficulté × nombre de jours prévus pour résoudre l’enquête + nombre de jours passés depuis l’acceptation de l’enquête)Dø.
 	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo +1 → Emo Min/Max ou Emo -1 si Emo = 0. L’annonce se fera avec Short_Event_Overlay.
 	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours. Pour les enquêtes de niveau 0, on compte comme niveau 1.
 	- Le joueur peut mener jusqu’à 4 enquêtes de front. À lui de gérer son temps et le nombre d’enquêtes simultanées.
