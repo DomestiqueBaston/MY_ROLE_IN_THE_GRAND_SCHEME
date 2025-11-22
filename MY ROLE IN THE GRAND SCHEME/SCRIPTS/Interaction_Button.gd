@@ -1,14 +1,10 @@
 extends Control
 
-@onready var the_button = $Bring_It_On
+func _ready():
+	var button = $Bring_It_On
+	button.mouse_entered.connect(Globals.on_mouse_entered.bind(button))
+	button.mouse_exited.connect(Globals.on_mouse_exited.bind(button))
+	button.pressed.connect(_on_bring_it_on_pressed)
 
 func _on_bring_it_on_pressed():
 	Globals.valid_sound.play()
-
-func _on_bring_it_on_mouse_entered():
-	if not (the_button.disabled or Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.hover_sound.play()
-
-func _on_bring_it_on_mouse_exited():
-	if not (the_button.disabled or Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()

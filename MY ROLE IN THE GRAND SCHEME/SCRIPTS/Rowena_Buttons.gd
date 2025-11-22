@@ -30,28 +30,20 @@ func _ready():
 	_update_ui()
 
 	_minus_button.pressed.connect(_on_minus_pressed)
-	_minus_button.mouse_entered.connect(_on_mouse_entered.bind(_minus_button))
-	_minus_button.mouse_exited.connect(_on_mouse_exited.bind(_minus_button))
+	_minus_button.mouse_entered.connect(Globals.on_mouse_entered.bind(_minus_button))
+	_minus_button.mouse_exited.connect(Globals.on_mouse_exited.bind(_minus_button))
 
 	_plus_button.pressed.connect(_on_plus_pressed)
-	_plus_button.mouse_entered.connect(_on_mouse_entered.bind(_plus_button))
-	_plus_button.mouse_exited.connect(_on_mouse_exited.bind(_plus_button))
+	_plus_button.mouse_entered.connect(Globals.on_mouse_entered.bind(_plus_button))
+	_plus_button.mouse_exited.connect(Globals.on_mouse_exited.bind(_plus_button))
 
 	_nope_button.pressed.connect(_on_nope_pressed)
-	_nope_button.mouse_entered.connect(_on_mouse_entered.bind(_nope_button))
-	_nope_button.mouse_exited.connect(_on_mouse_exited.bind(_nope_button))
+	_nope_button.mouse_entered.connect(Globals.on_mouse_entered.bind(_nope_button))
+	_nope_button.mouse_exited.connect(Globals.on_mouse_exited.bind(_nope_button))
 
 	_thanks_button.pressed.connect(_on_thanks_pressed)
-	_thanks_button.mouse_entered.connect(_on_mouse_entered.bind(_thanks_button))
-	_thanks_button.mouse_exited.connect(_on_mouse_exited.bind(_thanks_button))
-
-func _on_mouse_entered(button: BaseButton):
-	if not (button.disabled or Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-
-func _on_mouse_exited(button: BaseButton):
-	if not (button.disabled or Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()
+	_thanks_button.mouse_entered.connect(Globals.on_mouse_entered.bind(_thanks_button))
+	_thanks_button.mouse_exited.connect(Globals.on_mouse_exited.bind(_thanks_button))
 
 func _on_thanks_pressed():
 	Globals.valid_sound.play()

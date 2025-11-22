@@ -20,22 +20,14 @@ extends Control
 }
 
 func _ready():
-	$Reset.mouse_entered.connect(_on_mouse_enter)
-	$Reset.mouse_exited.connect(_on_mouse_exit)
+	$Reset.mouse_entered.connect(Globals.on_mouse_entered)
+	$Reset.mouse_exited.connect(Globals.on_mouse_exited)
 	$Reset.pressed.connect(_reset)
 
 	for button in _color_buttons:
-		button.mouse_entered.connect(_on_mouse_enter)
-		button.mouse_exited.connect(_on_mouse_exit)
+		button.mouse_entered.connect(Globals.on_mouse_entered)
+		button.mouse_exited.connect(Globals.on_mouse_exited)
 		button.toggled.connect(_on_toggle.bind(_color_buttons[button]))
-
-func _on_mouse_enter():
-	if not Globals.hover_sound.playing and not Globals.leave_sound.playing:
-		Globals.hover_sound.play()
-
-func _on_mouse_exit():
-	if not Globals.hover_sound.playing and not Globals.leave_sound.playing:
-		Globals.leave_sound.play()
 
 func _reset():
 	Globals.cancel_sound.play()

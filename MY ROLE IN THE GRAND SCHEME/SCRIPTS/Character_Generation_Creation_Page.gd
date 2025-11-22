@@ -13,6 +13,10 @@ var _first_name = ""
 var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 
 func _ready():
+	for button in [$Randomize, $Reset, $Cancel, $Confirm]:
+		button.mouse_entered.connect(Globals.on_mouse_entered)
+		button.mouse_exited.connect(Globals.on_mouse_exited)
+
 	_update_controls()
 	$Background_List.background_selected.connect(_on_background_list_item_selected)
 
@@ -54,14 +58,6 @@ func _on_cancel_pressed():
 	Globals.cancel_sound.play()
 	await Globals.cancel_sound.finished
 	cancel_pressed.emit()
-
-func _on_any_button_mouse_entered():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-	
-func _on_any_button_mouse_exited():
-	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()
 
 func _on_h_slider_value_changed(value: float):
 	$Sex_Choice.pitch_scale = lerp(0.5, 0.505, value)

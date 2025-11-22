@@ -128,8 +128,8 @@ func _ready():
 		var enabled = not limited_menus or buttons[button]
 		button.disabled = not enabled
 		if enabled:
-			button.mouse_entered.connect(_on_mouse_entered)
-			button.mouse_exited.connect(_on_mouse_exited)
+			button.mouse_entered.connect(Globals.on_mouse_entered)
+			button.mouse_exited.connect(Globals.on_mouse_exited)
 			button.pressed.connect(_on_button_pressed)
 
 	$Menus/Cases.get_popup().id_pressed.connect(_on_cases_press)
@@ -201,14 +201,6 @@ func _on_whatever_press(id: int):
 			settings.emit()
 		WhateverMenuItem.QUIT:
 			quit.emit()
-
-func _on_mouse_entered():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-
-func _on_mouse_exited():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.leave_sound.play()
 
 func _on_button_pressed():
 	Globals.valid_sound.play()

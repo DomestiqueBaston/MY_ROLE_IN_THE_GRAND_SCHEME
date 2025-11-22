@@ -7,8 +7,8 @@ var _case_changed: bool
 
 func _ready():
 	for button: BaseButton in $Buttons.get_children():
-		button.mouse_entered.connect(_on_mouse_entered.bind(button))
-		button.mouse_exited.connect(_on_mouse_exited.bind(button))
+		button.mouse_entered.connect(Globals.on_mouse_entered.bind(button))
+		button.mouse_exited.connect(Globals.on_mouse_exited.bind(button))
 		button.pressed.connect(_on_button_pressed.bind(button))
 
 func start():
@@ -51,14 +51,6 @@ func _get_current_index() -> int:
 ##
 func has_case_changed() -> bool:
 	return _case_changed
-
-func _on_mouse_entered(button: BaseButton):
-	if not (button.disabled or Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-
-func _on_mouse_exited(button: BaseButton):
-	if not (button.disabled or Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()
 
 func _on_button_pressed(button: BaseButton):
 	if button == $Buttons/Switch:

@@ -17,12 +17,12 @@ var _case_changed: bool
 @onready var _cancel_button = $Chalkboard_Content/Chalk_Mask/Cancel
 
 func _ready():
-	_ok_button.mouse_entered.connect(_on_mouse_entered.bind(_ok_button))
-	_ok_button.mouse_exited.connect(_on_mouse_exited.bind(_ok_button))
+	_ok_button.mouse_entered.connect(Globals.on_mouse_entered.bind(_ok_button))
+	_ok_button.mouse_exited.connect(Globals.on_mouse_exited.bind(_ok_button))
 	_ok_button.pressed.connect(_on_ok_pressed)
 
-	_cancel_button.mouse_entered.connect(_on_mouse_entered.bind(_cancel_button))
-	_cancel_button.mouse_exited.connect(_on_mouse_exited.bind(_cancel_button))
+	_cancel_button.mouse_entered.connect(Globals.on_mouse_entered.bind(_cancel_button))
+	_cancel_button.mouse_exited.connect(Globals.on_mouse_exited.bind(_cancel_button))
 	_cancel_button.pressed.connect(_on_cancel_pressed)
 
 	_option_button.item_selected.connect(_on_item_selected)
@@ -94,16 +94,6 @@ func _populate_npc_names(npcs, node):
 		if count > 2:
 			node.get_node("NPC3/Name").text = npcs[2].get_display_name()
 		node.show()
-
-func _on_mouse_entered(button: Button):
-	if not button.disabled:
-		if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-			Globals.hover_sound.play()
-
-func _on_mouse_exited(button: Button):
-	if not button.disabled:
-		if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-			Globals.leave_sound.play()
 
 func _on_cancel_pressed():
 	Globals.valid_sound.play()

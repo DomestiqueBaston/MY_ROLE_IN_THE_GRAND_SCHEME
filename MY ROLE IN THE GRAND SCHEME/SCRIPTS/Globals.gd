@@ -226,3 +226,15 @@ func get_volume(bus_name: StringName) -> float:
 func set_volume(bus_name: StringName, volume: float):
 	var bus = AudioServer.get_bus_index(bus_name)
 	AudioServer.set_bus_volume_linear(bus, volume)
+
+func on_mouse_entered(button: BaseButton = null):
+	if button and button.disabled:
+		return
+	if not (leave_sound.playing or hover_sound.playing):
+		hover_sound.play()
+
+func on_mouse_exited(button: BaseButton = null):
+	if button and button.disabled:
+		return
+	if not (hover_sound.playing or leave_sound.playing):
+		leave_sound.play()

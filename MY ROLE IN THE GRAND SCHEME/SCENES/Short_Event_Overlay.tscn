@@ -106,7 +106,6 @@
 [ext_resource type="Texture2D" uid="uid://ba46o38pc137e" path="res://GRAPHICS/SHORT_EVENT/Zero_Level_Case_Proposal.png" id="91_bnyoh"]
 [ext_resource type="Texture2D" uid="uid://bf63i4vh474y6" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Open.png" id="91_lv3q8"]
 [ext_resource type="Script" uid="uid://d0qlesy3dsiqa" path="res://SCRIPTS/Investigation_Center_Case_List.gd" id="91_smut4"]
-[ext_resource type="Script" uid="uid://cxsocuna2rgk1" path="res://SCRIPTS/Zero_Level_Case_Proposal_Buttons.gd" id="92_bnyoh"]
 [ext_resource type="Texture2D" uid="uid://ct8dnr468euog" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Hover.png" id="92_vy32t"]
 [ext_resource type="Texture2D" uid="uid://bh7ocmtx1xi8m" path="res://GRAPHICS/SHORT_EVENT/Health_Issue_BG.png" id="93_b6clx"]
 [ext_resource type="BitMap" uid="uid://bsf6mhdh14ked" path="res://GRAPHICS/SHORT_EVENT/Drawer_07_Mask.png" id="93_n5ncc"]
@@ -151,6 +150,7 @@
 [ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="131_d5ayf"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="135_tdxs6"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="136_lkigo"]
+[ext_resource type="Script" uid="uid://dum3gyvvhe4qg" path="res://SCRIPTS/Zero_Level_Case_Proposal.gd" id="147_th1i4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tatxf"]
 
@@ -4526,6 +4526,7 @@ bus = &"FX"
 
 [node name="Zero_Level_Case_Proposal" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("147_th1i4")
 
 [node name="Zero_Level_Case_Proposal_BG" type="Sprite2D" parent="Overlays/Zero_Level_Case_Proposal"]
 texture = ExtResource("91_bnyoh")
@@ -4801,7 +4802,6 @@ theme_override_colors/font_hover_color = Color(0.766, 1, 0.48, 0.784314)
 theme_override_colors/font_hover_pressed_color = Color(0.43981, 0.61, 0.2318, 0.862745)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "I'm in!"
-script = ExtResource("92_bnyoh")
 
 [node name="Cancel" type="Button" parent="Overlays/Zero_Level_Case_Proposal/Proposal_Content"]
 self_modulate = Color(1, 1, 1, 0.784314)
@@ -4817,7 +4817,6 @@ theme_override_colors/font_hover_color = Color(1, 0.616, 0.52, 0.862745)
 theme_override_colors/font_hover_pressed_color = Color(0.709804, 0.345098, 0.254902, 0.823529)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "No thanks..."
-script = ExtResource("92_bnyoh")
 
 [node name="On_Off" type="AnimationPlayer" parent="."]
 libraries = {
@@ -4828,45 +4827,6 @@ libraries = {
 volume_db = -37.5
 bus = &"UI"
 
-[connection signal="mouse_entered" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_any_button_mouse_exited"]
-[connection signal="pressed" from="Overlays/Cellphone/Buttons/Ok" to="Overlays/Cellphone/Buttons" method="_on_switch_pressed"]
-[connection signal="mouse_entered" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Interaction_Run_Away_Break_In/Button/Bring_It_On" to="Overlays/Interaction_Run_Away_Break_In/Button" method="_on_bring_it_on_pressed"]
-[connection signal="mouse_entered" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Intercom/Interface/Quit" to="Overlays/Intercom/Interface/Quit" method="_on_pressed"]
 [connection signal="button_down" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_down"]
 [connection signal="button_up" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_up"]
 [connection signal="item_selected" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_item_selected"]
-[connection signal="mouse_entered" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="Overlays/Misc/Announces/Quit" to="Overlays/Misc/Announces" method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Run_Away/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Run_Away/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Run_Away/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Run_Away/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Break_In/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Break_In/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Break_In/Yes" to="Overlays/Run_Away_Break_In/Announces" method="_on_yes_pressed"]
-[connection signal="mouse_entered" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Run_Away_Break_In/Announces/Break_In/No" to="Overlays/Run_Away_Break_In/Announces" method="_on_no_pressed"]
-[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Wanted/Info/Player/Surrender" to="Overlays/Wanted/Info" method="_on_surrender_pressed"]
-[connection signal="mouse_entered" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Wanted/Info/Player/Pay" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Overlays/Wanted/Info/NPC/Ok" to="Overlays/Wanted/Info" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Wanted/Info/NPC/Ok" to="Overlays/Wanted/Info" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Wanted/Info/NPC/Ok" to="Overlays/Wanted/Info" method="_on_pay_pressed"]
-[connection signal="mouse_entered" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Ok" method="_on_ok_pressed"]
-[connection signal="mouse_entered" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_mouse_exited"]
-[connection signal="pressed" from="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" to="Overlays/Zero_Level_Case_Proposal/Proposal_Content/Cancel" method="_on_cancel_pressed"]

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cnkohi6nkpx16" path="res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Blanc.png" id="9_xb81k"]
 [ext_resource type="Theme" uid="uid://cp6iw3lgtp8ia" path="res://TRASH/Interaction_Result_Theme.tres" id="10_ymndd"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="11_mhvlv"]
-[ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://SCRIPTS/Interaction_Result_Button.gd" id="12_iqw3g"]
+[ext_resource type="Script" uid="uid://be51sdtu3ymqc" path="res://TRASH/Interaction_Result_Button.gd" id="12_iqw3g"]
 [ext_resource type="Shader" uid="uid://b378yoqi4ij68" path="res://SHADERS/Scanlines.gdshader" id="13_kd5g3"]
 [ext_resource type="AudioStream" uid="uid://cwr25kfmg05cl" path="res://SOUND/AMBIANCE/Hum.ogg" id="14_dc88q"]
 

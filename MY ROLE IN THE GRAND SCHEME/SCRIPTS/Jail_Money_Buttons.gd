@@ -1,8 +1,13 @@
 extends Control
 
-
-
 func _ready():
+	for button in [$Player/Surrender, $Player/Pay, $NPC/Ok]:
+		button.mouse_entered.connect(Globals.on_mouse_entered)
+		button.mouse_exited.connect(Globals.on_mouse_exited)
+	$Player/Surrender.pressed.connect(_on_surrender_pressed)
+	$Player/Pay.pressed.connect(_on_pay_pressed)
+	$NPC/Ok.pressed.connect(_on_pay_pressed)
+
 	if $"..".visible:
 		$"../Police".play()
 
@@ -12,17 +17,6 @@ func _on_surrender_pressed():
 	$"../Police".stop()
 	$"../../../On_Off".play("Disappearance")
 	await $"../../../On_Off".animation_finished
-
-
-func _on_mouse_entered():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-
-
-func _on_mouse_exited():
-	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()
-
 
 func _on_pay_pressed():
 	Globals.valid_sound.play()

@@ -7,8 +7,8 @@ var _current_card: Card
 
 func _ready():
 	$Quit.pressed.connect(_on_pressed)
-	$Quit.mouse_entered.connect(_on_mouse_entered)
-	$Quit.mouse_exited.connect(_on_mouse_exited)
+	$Quit.mouse_entered.connect(Globals.on_mouse_entered)
+	$Quit.mouse_exited.connect(Globals.on_mouse_exited)
 
 ##
 ## Call this before displaying the dialog to populate it with information about
@@ -45,11 +45,3 @@ func _on_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
 	done.emit()
-
-func _on_mouse_entered():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-
-func _on_mouse_exited():
-	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()

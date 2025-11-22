@@ -4,6 +4,16 @@ signal done
 
 var _confirmed: bool
 
+func _ready():
+	for button in [$Run_Away/Yes, $Run_Away/No, $Break_In/Yes, $Break_In/No]:
+		button.mouse_entered.connect(Globals.on_mouse_entered)
+		button.mouse_exited.connect(Globals.on_mouse_exited)
+
+	$Run_Away/Yes.pressed.connect(_on_yes_pressed)
+	$Run_Away/No.pressed.connect(_on_no_pressed)
+	$Break_In/Yes.pressed.connect(_on_yes_pressed)
+	$Break_In/No.pressed.connect(_on_no_pressed)
+
 func get_confirmed() -> bool:
 	return _confirmed
 
@@ -18,11 +28,3 @@ func _on_no_pressed():
 	await Globals.cancel_sound.finished
 	_confirmed = false
 	done.emit()
-
-func _on_mouse_entered():
-	if not (Globals.leave_sound.playing or Globals.hover_sound.playing):
-		Globals.hover_sound.play()
-
-func _on_mouse_exited():
-	if not (Globals.hover_sound.playing or Globals.leave_sound.playing):
-		Globals.leave_sound.play()
