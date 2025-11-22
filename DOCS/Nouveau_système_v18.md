@@ -993,7 +993,7 @@ Difficulté du jeu
 		Plot Depth : Temps imparti pour résoudre une enquête : -20%.
 		Corruption : Prix d’une autorisation de fouille +20%.
 		Retail Investment :  Les factures augmentent de +20%.
-		Vice : Prix de la caution (prison) +25%.
+		Vice : Prix de la caution (prison) +25% et prix d’un abandon d’enquête + 20%.
 		Mentirosos : +10 % de chances de mensonge.
 		Hardboiled Minions : +10% HEA sans dépasser 10.
 		Over Crowded City : +20% de PNJs inutiles.
