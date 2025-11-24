@@ -3494,7 +3494,6 @@ rotation = 0.0265987
 text = "Whatever"
 
 [node name="Office" type="Node2D" parent="Overlays"]
-visible = false
 script = ExtResource("100_42ybe")
 
 [node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
@@ -3509,6 +3508,7 @@ tooltip_text = "Ok..."
 theme = ExtResource("68_q1jpv")
 
 [node name="Message" type="RichTextLabel" parent="Overlays/Office/Office"]
+visible = false
 clip_contents = false
 layout_mode = 0
 offset_left = 260.0
@@ -3520,6 +3520,20 @@ text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Offic
 sweet  office![/color][/pulse]
 
 There  ain't  no [shake rate=7.0 level=5 connected=0][color=#ff8864]place  safer[/color][/shake] than  [shake rate=7.0 level=5 connected=0][color=#ff1c18]here[/color][/shake]![/center]"
+fit_content = true
+vertical_alignment = 1
+
+[node name="Pay_The_Bill" type="RichTextLabel" parent="Overlays/Office/Office"]
+clip_contents = false
+layout_mode = 0
+offset_left = 260.0
+offset_top = 98.0
+offset_right = 385.0
+offset_bottom = 275.0
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Just  a  reminder![/color][/pulse]
+
+The  [shake rate=7.0 level=5 connected=0][color=#ff8864]week[/color][/shake] always  [shake rate=7.0 level=5 connected=0][color=#ff8864]starts[/color][/shake] with  these damn  [shake rate=7.0 level=5 connected=0][color=#ff1c18]bills[/color][/shake] hitting  first.[/center]"
 fit_content = true
 vertical_alignment = 1
 
