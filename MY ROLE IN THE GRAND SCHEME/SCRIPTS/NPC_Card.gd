@@ -110,7 +110,7 @@ var _case: Case
 var _last_dialogue: int = -1
 
 # Roll of the dice to introduce daily randomness into NPC's location.
-var _location_randomness: int = randi()
+var _location_randomness: int = 0
 
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
@@ -240,7 +240,7 @@ func visit():
 ##
 func is_asleep() -> bool:
 	var hour = GameState.get_hour()
-	if work_shifts & GameState.TimeSlot.NIGHT:
+	if (work_shifts & GameState.TimeSlot.NIGHT) and npc_status != NpcStatus.JAIL:
 		return hour >= 8 and hour < 16
 	else:
 		return hour < 8 or hour >= 20
@@ -260,7 +260,7 @@ func test_health() -> bool:
 ##
 func locate() -> LocationCard:
 
-	if npc_status in [NpcStatus.DEAD, NpcStatus.DISAPPEARED]:
+	if npc_status in [NpcStatus.JAIL, NpcStatus.DEAD, NpcStatus.DISAPPEARED]:
 		return null
 
 	# NPC sleeps at home
@@ -353,7 +353,7 @@ func _get_alternative_location() -> LocationCard:
 ## Returns true if the NPC would normally be at work now.
 ##
 func should_be_at_work() -> bool:
-	if not is_work_day():
+	if not is_work_day() or npc_status == NpcStatus.JAIL:
 		return false
 	var hour = GameState.get_hour()
 	if hour < 8 or hour >= 20:
@@ -630,6 +630,8 @@ func get_json_dict():
 		dict["last_dialogue"] = _last_dialogue
 	if _case:
 		dict["case"] = _case.get_unique_id()
+	if _location_randomness != 0:
+		dict["location_randomness"] = _location_randomness
 	return dict
 
 #
@@ -659,6 +661,7 @@ func restore(dict, catalog):
 	_last_dialogue = dict.get("last_dialogue", -1)
 	if "case" in dict:
 		_case = catalog[dict.case]
+	_location_randomness = dict.get("location_randomness", 0)
 
 #
 # For save/load.

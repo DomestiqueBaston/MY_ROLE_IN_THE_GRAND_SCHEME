@@ -574,7 +574,8 @@ func resume_run_away():
 #
 func _play_cards(cards: Array[Card]) -> InteractionAttributes:
 	var attrs = InteractionAttributes.new()
-	attrs.play_card(_current_interaction_location, false)
+	if _current_interaction_location:
+		attrs.play_card(_current_interaction_location, false)
 	for card in cards:
 		attrs.play_card(card, card in player.get_fallback_cards())
 	return attrs
@@ -816,20 +817,29 @@ func start_investigation(location: LocationCard):
 	save_game()
 	interaction_started.emit()
 
+##
+## Note that a null location means the NPC is in jail.
+##
 func attempt_dialogue(npc: NpcCard, location: LocationCard):
 
 	# go to the location first
 
-	if (_player_location != PlayerLocation.OTHER
-		or _player_location_card != location):
-		await pass_one_hour()
-		set_player_location(PlayerLocation.OTHER, location)
-		if player.health <= 0:
-			return
+	if location:
+		if (_player_location != PlayerLocation.OTHER
+			or _player_location_card != location):
+			await pass_one_hour()
+			set_player_location(PlayerLocation.OTHER, location)
+	else:
+		if _player_location != PlayerLocation.PRISON:
+			await pass_one_hour()
+			set_player_location(PlayerLocation.PRISON)
+
+	if player.health <= 0:
+		return
 
 	# check whether the NPC is there
 
-	if npc.locate() != location:
+	if location and npc.locate() != location:
 		await Globals.dialog_overlay.show_npc_away(npc)
 		return
 
@@ -844,7 +854,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 	# if the NPC attacks the player, start a combat, not a dialogue, and give
 	# the player the chance to try to run away first
 
-	if not is_first_visit and _does_npc_attack(npc):
+	if not is_first_visit and location != null and _does_npc_attack(npc):
 		await Globals.dialog_overlay.show_attack_message(npc)
 		if await Globals.dialog_overlay.confirm_run_away():
 			player.pick_run_away_cards()
@@ -865,6 +875,8 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 ## saves the state of the cards in the Main scene (before we switch to the
 ## Interaction scene), and emits an interaction_started() signal telling The
 ## Game to switch scenes.
+##
+## Note that a location of null means the dialogue takes place in prison.
 ##
 ## There is one case where we do NOT want the state of the cards to be saved
 ## first: when going directly from a combat to a dialogue, because we are
@@ -1173,8 +1185,9 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 
 	player.health -= damage
 	npc.health -= npc_damage
-	npc.wanted += 1
 	npc.player_reputation -= 2
+
+	await _increase_npc_wanted(npc)
 
 	if player.health > 0:
 		if actual_roll == 10:
@@ -1366,17 +1379,24 @@ func _does_npc_run(npc: NpcCard) -> bool:
 		# normal success
 		success = true
 
-	if success:
-		npc.wanted += 1
-	else:
+	if not success:
 		npc.next_dialogue_malus = 1
 
-	npc.test_health()
+	if npc.test_health() and success:
+		await _increase_npc_wanted(npc)
+
 	save_game()
 
 	await Globals.dialog_overlay.show_npc_run(success)
 
 	return success
+
+func _increase_npc_wanted(npc: NpcCard):
+	if npc.wanted < 4:
+		npc.wanted += 1
+	else:
+		npc.npc_status = NpcCard.NpcStatus.JAIL
+		await Globals.dialog_overlay.announce_prison(false)
 
 #
 # The chances of the NPC attacking the player before a dialogue depend on

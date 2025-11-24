@@ -16,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://cmaq0rei2xo0c" path="res://SOUND/OVERLAYS/Overlay_In.ogg" id="12_dgbv7"]
 [ext_resource type="AudioStream" uid="uid://jmovxfgs7qrf" path="res://SOUND/OVERLAYS/Overlay_Out.ogg" id="13_is8fw"]
 [ext_resource type="Texture2D" uid="uid://opb8r7nbxv5y" path="res://GRAPHICS/SHORT_EVENT/Wanted_BG.png" id="13_s26gq"]
-[ext_resource type="Script" uid="uid://cu6swn31m3fcr" path="res://SCRIPTS/Jail_Money_Buttons.gd" id="14_adsmj"]
 [ext_resource type="Script" uid="uid://be2m1ibq7gkoh" path="res://SCRIPTS/Case_Management.gd" id="15_tdxs6"]
 [ext_resource type="Theme" uid="uid://boxdoq12jj63m" path="res://UI/Jail_Money_Theme.tres" id="15_wqyuw"]
 [ext_resource type="Script" uid="uid://4guy4cwmilvu" path="res://SCRIPTS/Care_Sheet.gd" id="16_bnyoh"]
@@ -150,6 +149,7 @@
 [ext_resource type="Script" uid="uid://4rr58eqvfdoa" path="res://SCRIPTS/Card_Management_Buttons.gd" id="131_d5ayf"]
 [ext_resource type="Theme" uid="uid://oc1qwpv8yb2t" path="res://UI/Bottom_Left_Theme.tres" id="135_tdxs6"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="136_lkigo"]
+[ext_resource type="Script" uid="uid://cssbe7enhigso" path="res://SCRIPTS/Wanted.gd" id="142_th1i4"]
 [ext_resource type="Script" uid="uid://dum3gyvvhe4qg" path="res://SCRIPTS/Zero_Level_Case_Proposal.gd" id="147_th1i4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tatxf"]
@@ -4409,6 +4409,7 @@ bus = &"UI"
 
 [node name="Wanted" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("142_th1i4")
 
 [node name="Wanted_BG" type="Sprite2D" parent="Overlays/Wanted"]
 position = Vector2(95, 48)
@@ -4418,7 +4419,6 @@ centered = false
 [node name="Info" type="Control" parent="Overlays/Wanted"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("14_adsmj")
 
 [node name="Player" type="Control" parent="Overlays/Wanted/Info"]
 visible = false
@@ -4448,7 +4448,7 @@ offset_bottom = 113.0
 theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_na1nk")
 bbcode_enabled = true
-text = "200"
+text = "100"
 fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 2

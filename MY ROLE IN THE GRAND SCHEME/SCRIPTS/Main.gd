@@ -617,8 +617,14 @@ func _popup_menu(pos: Vector2, node: Node2D):
 			should_be_at_work = false
 		for link_type in [Link.Type.HOME, Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
 			var places = node.find_linked_cards(link_type)
-			var ok = should_be_at_work if link_type == Link.Type.WORK else not should_be_at_work
 			var title = "At %s" % Link.Type.keys()[link_type].capitalize()
+			var ok
+			if node.npc_status == NpcCard.NpcStatus.JAIL:
+				ok = false
+			elif link_type == Link.Type.WORK:
+				ok = should_be_at_work
+			else:
+				ok = not should_be_at_work
 			if places.size() < 2 or not ok:
 				dialogue_menu.add_item(title)
 				if places.is_empty() or not ok:
@@ -632,6 +638,11 @@ func _popup_menu(pos: Vector2, node: Node2D):
 					submenu.set_item_metadata(submenu.item_count - 1, place)
 				submenu.index_pressed.connect(_handle_dialogue_submenu.bind(submenu))
 				dialogue_menu.add_submenu_node_item(title, submenu)
+		if node.npc_status == NpcCard.NpcStatus.JAIL:
+			var hour = GameState.get_hour()
+			dialogue_menu.add_item("In Jail")
+			dialogue_menu.set_item_disabled(
+				dialogue_menu.item_count - 1, hour < 8 or hour >= 12)
 		popup.set_item_disabled(index, false)
 
 	index = popup.get_item_index(MenuItem.INVESTIGATION)

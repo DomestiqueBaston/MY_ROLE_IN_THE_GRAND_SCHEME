@@ -566,3 +566,25 @@ func announce_forced_rest(lack_of_sleep: bool):
 	await _disappear()
 	$Overlays/Health_Issue.hide()
 	report.hide()
+
+##
+## Announces that either the player (is_player true) or an NPC (is_player false)
+## has been arrested and will be sent to jail. If is_player and can_pay are both
+## true, the player is given the option to pay in order to avoid jail. Returns
+## true if the player opts to pay.
+##
+func announce_prison(is_player: bool, can_pay: bool = false) -> bool:
+	var node: Control
+	if is_player:
+		node = $Overlays/Wanted/Info/Player
+	else:
+		node = $Overlays/Wanted/Info/NPC
+	node.show()
+	$Overlays/Wanted.start(can_pay)
+	$Overlays/Wanted.show()
+	await _appear()
+	await $Overlays/Wanted.done
+	await _disappear()
+	$Overlays/Wanted.hide()
+	node.hide()
+	return is_player and can_pay and $Overlays/Wanted.is_pay_clicked()
