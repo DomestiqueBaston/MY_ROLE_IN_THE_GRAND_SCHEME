@@ -210,30 +210,34 @@ func get_time() -> int:
 ## always begins on Monday, so the number of days % 7 gives you the day of the
 ## week (0 for Monday).
 ##
-func get_day() -> int:
+## If travel_time is not zero, it is added to the current time first.
+##
+func get_day(travel_time: int = 0) -> int:
 	@warning_ignore("integer_division")
-	return _hour / 24
+	return (_hour + travel_time) / 24
 
 ##
 ## Like get_day(), but considers that the day starts at 8 AM.
 ##
-func get_working_day() -> int:
+func get_working_day(travel_time: int = 0) -> int:
 	@warning_ignore("integer_division")
-	return (_hour - 8) / 24
+	return (_hour + travel_time - 8) / 24
 
 ##
-## Returns the current time (hour), in the range 0-23.
+## Returns the current time (hour), in the range 0-23. If travel_time is not
+## zero, it is added to the current time first.
 ##
-func get_hour() -> int:
-	return _hour % 24
+func get_hour(travel_time: int = 0) -> int:
+	return (_hour + travel_time) % 24
 
 ##
 ## Returns the current time slot: morning, afternoon, evening or night; weekday
-## or weekend.
+## or weekend. If travel_time is not zero, it is added to the current time
+## first.
 ##
-func get_time_slot() -> TimeSlot:
-	var hour = get_hour()
-	var workday = get_working_day()
+func get_time_slot(travel_time: int = 0) -> TimeSlot:
+	var hour = get_hour(travel_time)
+	var workday = get_working_day(travel_time)
 	if hour < 8 or hour >= 20:
 		return TimeSlot.NIGHT if workday < 5 else TimeSlot.WE_NIGHT
 	elif hour < 12:
@@ -242,10 +246,6 @@ func get_time_slot() -> TimeSlot:
 		return TimeSlot.AFTERNOON if workday < 5 else TimeSlot.WE_AFTERNOON
 	else:
 		return TimeSlot.EVENING if workday < 5 else TimeSlot.WE_EVENING
-
-func _get_weeks_passed() -> int:
-	@warning_ignore("integer_division")
-	return (_hour - _start_time) / (24 * 7)
 
 #
 # Increments the given time by the given number of hours. If check_player_status

@@ -610,39 +610,41 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		or node.has_been_seen_today()):
 		popup.set_item_disabled(index, true)
 	else:
-		var should_be_at_work
-		if node.find_links(Link.Type.WORK):
-			should_be_at_work = node.should_be_at_work()
-		else:
-			should_be_at_work = false
+		var workplace = node.find_linked_cards(Link.Type.WORK)
+		workplace = null if workplace.is_empty() else workplace[0]
+
 		for link_type in [Link.Type.HOME, Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
 			var places = node.find_linked_cards(link_type)
 			var title = "At %s" % Link.Type.keys()[link_type].capitalize()
-			var ok
-			if node.npc_status == NpcCard.NpcStatus.JAIL:
-				ok = false
-			elif link_type == Link.Type.WORK:
-				ok = should_be_at_work
-			else:
-				ok = not should_be_at_work
-			if places.size() < 2 or not ok:
+			var item_index = dialogue_menu.item_count
+
+			if places.is_empty() or node.npc_status == NpcCard.NpcStatus.JAIL:
 				dialogue_menu.add_item(title)
-				if places.is_empty() or not ok:
-					dialogue_menu.set_item_disabled(dialogue_menu.item_count - 1, true)
+				dialogue_menu.set_item_disabled(item_index, true)
+			elif places.size() == 1:
+				dialogue_menu.add_item(title)
+				if _will_npc_be_there(node, places[0], workplace):
+					dialogue_menu.set_item_metadata(item_index, places[0])
 				else:
-					dialogue_menu.set_item_metadata(dialogue_menu.item_count - 1, places[0])
+					dialogue_menu.set_item_disabled(item_index, true)
 			else:
 				var submenu = PopupMenu.new()
 				for place in places:
+					var sub_index = submenu.item_count
 					submenu.add_item(place.get_display_name())
-					submenu.set_item_metadata(submenu.item_count - 1, place)
+					if _will_npc_be_there(node, place, workplace):
+						submenu.set_item_metadata(sub_index, place)
+					else:
+						submenu.set_item_disabled(sub_index, true)
 				submenu.index_pressed.connect(_handle_dialogue_submenu.bind(submenu))
 				dialogue_menu.add_submenu_node_item(title, submenu)
+
 		if node.npc_status == NpcCard.NpcStatus.JAIL:
 			var hour = GameState.get_hour()
 			dialogue_menu.add_item("In Jail")
 			dialogue_menu.set_item_disabled(
 				dialogue_menu.item_count - 1, hour < 8 or hour >= 12)
+
 		popup.set_item_disabled(index, false)
 
 	index = popup.get_item_index(MenuItem.INVESTIGATION)
@@ -692,6 +694,30 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 	_popup_node = node
 	popup.popup(Rect2i(pos, Vector2i()))
+
+#
+# Calculates the time it will take the player to get to the given location, then
+# returns true if the given NPC should be there when the player arrives. Note
+# that if the player does not know where the NPC works, then he does not know
+# the NPC's work schedule, so this will always return true.
+#
+func _will_npc_be_there(
+	npc: NpcCard, where: LocationCard, workplace: LocationCard) -> bool:
+	if workplace == null:
+		return true
+
+	var travel_time
+	if (GameState.get_player_location() == GameState.PlayerLocation.OTHER
+		and GameState.get_player_location_card() == where):
+		travel_time = 0
+	else:
+		travel_time = 1
+
+	var should_be_at_work = npc.should_be_at_work(travel_time)
+	if where == workplace:
+		return should_be_at_work
+	else:
+		return not should_be_at_work
 
 func _handle_popup(id: int):
 	match id:

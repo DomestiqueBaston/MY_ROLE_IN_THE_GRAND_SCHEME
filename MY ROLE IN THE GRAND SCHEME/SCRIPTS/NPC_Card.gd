@@ -110,7 +110,7 @@ var _case: Case
 var _last_dialogue: int = -1
 
 # Roll of the dice to introduce daily randomness into NPC's location.
-var _location_randomness: int = 0
+var _location_randomness: int = randi()
 
 static var _name_data = preload("res://JSON/NPC/Last_Names_Male_Female_First_Names.json").data
 static var _job_data = preload("res://JSON/NPC/NPC_Job.json").data
@@ -350,12 +350,13 @@ func _get_alternative_location() -> LocationCard:
 	return location if location.is_open() else null
 
 ##
-## Returns true if the NPC would normally be at work now.
+## Returns true if the NPC would normally be at work now or, if travel_time is
+## not zero, in that many hours.
 ##
-func should_be_at_work() -> bool:
-	if not is_work_day() or npc_status == NpcStatus.JAIL:
+func should_be_at_work(travel_time: int = 0) -> bool:
+	if not is_work_day(travel_time) or npc_status == NpcStatus.JAIL:
 		return false
-	var hour = GameState.get_hour()
+	var hour = GameState.get_hour(travel_time)
 	if hour < 8 or hour >= 20:
 		return (work_shifts & GameState.TimeSlot.NIGHT) != 0
 	elif hour < 12:
@@ -367,10 +368,11 @@ func should_be_at_work() -> bool:
 
 ##
 ## Returns true if today is normally a work day for the NPC: Wednesday to Sunday
-## for NPCs that work the weekend shift, Monday to Friday for the others.
+## for NPCs that work the weekend shift, Monday to Friday for the others. If
+## travel_time is not zero, it is added to the current time first.
 ##
-func is_work_day() -> bool:
-	var workday = GameState.get_working_day()
+func is_work_day(travel_time: int = 0) -> bool:
+	var workday = GameState.get_working_day(travel_time)
 	if has_weekend_shift:
 		return workday >= 2
 	else:
@@ -630,8 +632,7 @@ func get_json_dict():
 		dict["last_dialogue"] = _last_dialogue
 	if _case:
 		dict["case"] = _case.get_unique_id()
-	if _location_randomness != 0:
-		dict["location_randomness"] = _location_randomness
+	dict["location_randomness"] = _location_randomness
 	return dict
 
 #
