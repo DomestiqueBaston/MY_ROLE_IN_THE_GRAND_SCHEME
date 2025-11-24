@@ -2147,6 +2147,7 @@ modulate = Color(1, 1, 1, 0.917647)
 anchors_preset = 0
 
 [node name="Away" type="Label" parent="Overlays/Intercom/Interface/Screens"]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
@@ -2154,6 +2155,7 @@ offset_top = 101.0
 offset_right = 370.0
 offset_bottom = 142.0
 theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
+theme_override_constants/line_spacing = 4
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 6
@@ -2166,9 +2168,11 @@ autowrap_mode = 3
 
 [node name="NPC" type="Label" parent="Overlays/Intercom/Interface/Screens/Away"]
 layout_mode = 0
-offset_right = 99.0
+offset_left = 3.0
+offset_right = 96.0
 offset_bottom = 41.0
 theme_override_colors/font_color = Color(0.99, 0.6402, 0.4653, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 6
@@ -2186,10 +2190,12 @@ offset_top = 101.0
 offset_right = 370.0
 offset_bottom = 142.0
 theme_override_colors/font_color = Color(0.99, 0.94215, 0.7029, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 6
 text = "Sorry,
+
 
 doesn't want to talk to you."
 horizontal_alignment = 1
@@ -2198,9 +2204,11 @@ autowrap_mode = 3
 
 [node name="NPC" type="Label" parent="Overlays/Intercom/Interface/Screens/Refuse"]
 layout_mode = 0
+offset_top = -1.0
 offset_right = 99.0
-offset_bottom = 31.0
+offset_bottom = 33.0
 theme_override_colors/font_color = Color(0.988235, 0.639216, 0.466667, 1)
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_outline_size = 6
