@@ -1187,8 +1187,8 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 	player.health -= damage
 	npc.health -= npc_damage
 	npc.player_reputation -= 2
-
-	await _increase_npc_wanted(npc)
+	var npc_jail = _increase_npc_wanted(npc)
+	save_game()
 
 	if player.health > 0:
 		if actual_roll == 10:
@@ -1211,6 +1211,9 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 		else:
 			npc_state = NpcCombatState.ESCAPED
 		await Globals.dialog_overlay.show_combat_result(player_damage, npc_state)
+
+	if npc_jail:
+		await Globals.dialog_overlay.announce_prison(false)
 
 	# player's status (health, etc.) will be checked in end_interaction()
 	await _increment_time(2, false)
@@ -1383,21 +1386,26 @@ func _does_npc_run(npc: NpcCard) -> bool:
 	if not success:
 		npc.next_dialogue_malus = 1
 
+	var npc_jail = false
 	if npc.test_health() and success:
-		await _increase_npc_wanted(npc)
+		npc_jail = _increase_npc_wanted(npc)
 
 	save_game()
 
-	await Globals.dialog_overlay.show_npc_run(success)
+	if npc_jail:
+		await Globals.dialog_overlay.announce_prison(false)
+	else:
+		await Globals.dialog_overlay.show_npc_run(success)
 
 	return success
 
-func _increase_npc_wanted(npc: NpcCard):
+func _increase_npc_wanted(npc: NpcCard) -> bool:
 	if npc.wanted < 4:
 		npc.wanted += 1
+		return false
 	else:
 		npc.npc_status = NpcCard.NpcStatus.JAIL
-		await Globals.dialog_overlay.announce_prison(false)
+		return true
 
 #
 # The chances of the NPC attacking the player before a dialogue depend on
