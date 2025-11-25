@@ -187,11 +187,25 @@ func open_investigation_center()  -> bool:
 ## Displays the office and waits for the player to click on OK.
 ##
 func open_office():
+	$Overlays/Office/Office/Message.show()
 	$Overlays/Office.show()
 	await _appear()
 	await $Overlays/Office.done
 	await _disappear()
 	$Overlays/Office.hide()
+	$Overlays/Office/Office/Message.hide()
+
+##
+## Displays a reminder that the player has one or more bills to pay.
+##
+func show_debt_reminder():
+	$Overlays/Office/Office/Pay_The_Bill.show()
+	$Overlays/Office.show()
+	await _appear()
+	await $Overlays/Office.done
+	await _disappear()
+	$Overlays/Office.hide()
+	$Overlays/Office/Office/Pay_The_Bill.hide()
 
 ##
 ## Displays the "buy search warrant" dialog and waits for the player to confirm

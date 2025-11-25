@@ -260,7 +260,7 @@ func _increment_time(hours: int, check_player_status: bool):
 	time_changed.emit()
 
 	for day in range(day_before + 1, day_after + 1):
-		_new_day(day)
+		await _new_day(day)
 		if check_player_status:
 			await _check_player_status()
 			if player.health <= 0:
@@ -299,6 +299,7 @@ func _new_day(day: int):
 
 	if day % 7 == 0:
 		_send_new_bill()
+		await Globals.dialog_overlay.show_debt_reminder()
 		_dealer_drug_stock = randi_range(5, 10)
 	else:
 		if _dealer_drug_stock > 0 and randi() % 4 == 0:
