@@ -175,10 +175,12 @@ func get_confirmed() -> bool:
 
 func _on_ok_pressed():
 	var player = GameState.player
-	for card in player.get_mastery_cards():
+	var mastery_cards = player.get_mastery_cards().duplicate()
+	var discard_cards = player.get_discard_cards().duplicate()
+	for card in mastery_cards:
 		if card.get_parent() == $Pool_Cards:
 			player.discard_mastery_card(card, true)
-	for card in player.get_discard_cards():
+	for card in discard_cards:
 		if card.get_parent() == $Mastery_Cards:
 			player.undiscard_mastery_card(card)
 	_confirmed = true
