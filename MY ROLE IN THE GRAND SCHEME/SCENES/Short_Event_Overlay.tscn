@@ -2147,7 +2147,6 @@ modulate = Color(1, 1, 1, 0.917647)
 anchors_preset = 0
 
 [node name="Away" type="Label" parent="Overlays/Intercom/Interface/Screens"]
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
@@ -3494,6 +3493,7 @@ rotation = 0.0265987
 text = "Whatever"
 
 [node name="Office" type="Node2D" parent="Overlays"]
+visible = false
 script = ExtResource("100_42ybe")
 
 [node name="Office_BG" type="Sprite2D" parent="Overlays/Office"]
@@ -3524,6 +3524,7 @@ fit_content = true
 vertical_alignment = 1
 
 [node name="Pay_The_Bill" type="RichTextLabel" parent="Overlays/Office/Office"]
+visible = false
 clip_contents = false
 layout_mode = 0
 offset_left = 260.0
