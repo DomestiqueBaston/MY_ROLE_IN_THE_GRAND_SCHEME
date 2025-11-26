@@ -484,7 +484,7 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/Do_Not_Kill.visible = \
 		npc_state == GameState.NpcCombatState.WILL_TALK
 	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/End_NPC_Alive.visible = \
-		npc_state != GameState.NpcCombatState.DEAD
+		npc_state == GameState.NpcCombatState.ESCAPED
 	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/End_NPC_Dead.visible = \
 		npc_state == GameState.NpcCombatState.DEAD
 	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body.visible = \
