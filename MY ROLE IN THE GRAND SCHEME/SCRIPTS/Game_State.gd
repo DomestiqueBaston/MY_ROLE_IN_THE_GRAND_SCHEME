@@ -1034,8 +1034,13 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		var old_rep = npc.player_reputation
 		npc.player_reputation += rep_delta
 		var actual_delta = npc.player_reputation - old_rep
-		if absi(actual_delta) > 1:
+		if absi(actual_delta) > 1 and npc.npc_status != NpcCard.NpcStatus.JAIL:
 			await Globals.dialog_overlay.show_rep_message(actual_delta > 0)
+
+	# this can happen if the NPC's Wanted level increased after the preceding
+	# combat, but he couldn't be sent to jail before the ensuing dialogue
+	if npc.npc_status == NpcCard.NpcStatus.JAIL:
+		await Globals.dialog_overlay.announce_prison(false)
 
 	if player.health > 0:
 		if actual_roll == 10:
@@ -1212,7 +1217,8 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 			npc_state = NpcCombatState.ESCAPED
 		await Globals.dialog_overlay.show_combat_result(player_damage, npc_state)
 
-	if npc_jail:
+	# don't send the NPC to jail until AFTER the ensuing dialogue!
+	if npc_jail and not do_not_kill:
 		await Globals.dialog_overlay.announce_prison(false)
 
 	# player's status (health, etc.) will be checked in end_interaction()
