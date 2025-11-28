@@ -684,6 +684,7 @@ func sleep(hours: int):
 func new_day():
 	if not _in_jail_or_bed:
 		drugs_taken_today = 0
+		# TODO: Wan -1 only if 3 days have gone by without increasing it (#154)
 		wanted -= 1
 		improve_emotion(1)
 
