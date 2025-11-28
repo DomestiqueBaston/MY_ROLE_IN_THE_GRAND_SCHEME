@@ -906,7 +906,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 
 	# the NPC may try to run away
 
-	if not is_first_visit and await _does_npc_run(npc):
+	if not is_first_visit and location != null and await _does_npc_run(npc):
 		return
 
 	# if the NPC attacks the player, start a combat, not a dialogue, and give
