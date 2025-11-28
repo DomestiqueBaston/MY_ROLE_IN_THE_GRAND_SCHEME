@@ -73,7 +73,7 @@ Recherché/Wanted (Wan)
 	- Il est également un malus aux jets de dé suivant le tableau ci-dessous.
 	- À 5, le joueur est arrêté, va en prison et ne peut plus rien faire pendant 3 jours à moins de payer une caution de 100Dø. À la sortie de prison, Wan = 0.
 	- Résoudre une Enquête remet le Wan à 0.
-	- Une journée sans augmenter le Wan fait -1Wan.
+	- 3 jours sans augmenter le Wan fait -1Wan.
 Niveau de Wanted	Malus au Dé
 0	/
 1	/
