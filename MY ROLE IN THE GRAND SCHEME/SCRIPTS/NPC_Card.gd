@@ -15,13 +15,7 @@ enum NpcStatus {
 	NONE,
 	JAIL,
 	DEAD,
-	DISAPPEARED,
-	MINION,
-	VICTIM,
-	SUSPECT,
-	WITNESS,
-	CULPRIT,
-	ACCOMPLICE
+	DISAPPEARED
 }
 
 enum NpcHealth {
@@ -44,10 +38,20 @@ enum SexualOrientation {
 ##
 ## The NPC's underlying category, which is NOT visible to the player.
 ##
-@export var category: NpcCategory
+@export var actual_category: NpcCategory
 
 ##
-## The NPC's status, which IS visible to the player.
+## The NPC's apparent category, which IS visible to the player (but may be
+## wrong).
+##
+@export var apparent_category: NpcCategory:
+	set(value):
+		apparent_category = value
+		if is_node_ready():
+			_update_appearance()
+
+##
+## The NPC's status, which is visible to the player.
 ##
 @export var npc_status: NpcStatus:
 	set(value):
@@ -80,7 +84,7 @@ enum SexualOrientation {
 			_update_appearance()
 
 ##
-## Outline colors, one for each NpcStatus value.
+## Outline colors, one for each NpcCategory value.
 ##
 @export var outline_colors: Array[Color]
 
@@ -139,23 +143,23 @@ func _update_appearance():
 	$Card_Mask/Card_BG/Jail_Status.visible = (npc_status == NpcStatus.JAIL)
 	$Card_Mask/Card_BG/Dead_Status.visible = (npc_status == NpcStatus.DEAD)
 	$Card_Mask/Card_BG/Disappeared_Status.visible = (npc_status == NpcStatus.DISAPPEARED)
-	$Card_Mask/Card_BG/Minion_Status.visible = (npc_status == NpcStatus.MINION)
-	$Card_Mask/Card_BG/Victim_Status.visible = (npc_status == NpcStatus.VICTIM)
-	$Card_Mask/Card_BG/Suspect_Status.visible = (npc_status == NpcStatus.SUSPECT)
-	$Card_Mask/Card_BG/Witness_Status.visible = (npc_status == NpcStatus.WITNESS)
-	$Card_Mask/Card_BG/Culprit_Status.visible = (npc_status == NpcStatus.CULPRIT)
-	$Card_Mask/Card_BG/Accomplice_Status.visible = (npc_status == NpcStatus.ACCOMPLICE)
+	$Card_Mask/Card_BG/Minion_Status.visible = (apparent_category == NpcCategory.MINION)
+	$Card_Mask/Card_BG/Victim_Status.visible = (apparent_category == NpcCategory.VICTIM)
+	$Card_Mask/Card_BG/Suspect_Status.visible = (apparent_category == NpcCategory.SUSPECT)
+	$Card_Mask/Card_BG/Witness_Status.visible = (apparent_category == NpcCategory.WITNESS)
+	$Card_Mask/Card_BG/Culprit_Status.visible = (apparent_category == NpcCategory.CULPRIT)
+	$Card_Mask/Card_BG/Accomplice_Status.visible = (apparent_category == NpcCategory.ACCOMPLICE)
 	$Card_Mask/Card_BG/Sex/Male.visible = (npc_sex == Sex.MALE)
 	$Card_Mask/Card_BG/Sex/Female.visible = (npc_sex == Sex.FEMALE)
 	$Card_Mask/Card_BG/Card_Color/Npc/Couple.visible = is_married
 	$Card_Mask/Card_BG/Card_Color/Npc/No_Couple.visible = not is_married
-	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[npc_status]
+	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[apparent_category]
 	$Card_Drag.modulate = outline_colors[npc_status]
 
 	if not Engine.is_editor_hint():
 		tooltip = get_display_name()
-		if npc_status != NpcStatus.NONE:
-			tooltip += "\n" + NpcStatus.keys()[npc_status].capitalize()
+		if apparent_category != NpcCategory.NONE:
+			tooltip += "\n" + NpcCategory.keys()[apparent_category].capitalize()
 
 func set_physical(phy: int):
 	physical = clampi(phy, 0, 10)
@@ -260,7 +264,7 @@ func test_health() -> bool:
 ##
 func locate() -> LocationCard:
 
-	if npc_status in [NpcStatus.JAIL, NpcStatus.DEAD, NpcStatus.DISAPPEARED]:
+	if npc_status != NpcStatus.NONE:
 		return null
 
 	# NPC sleeps at home
@@ -389,7 +393,7 @@ func is_known_to(other: NpcCard) -> bool:
 	return false
 
 func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
-	category = cat
+	actual_category = cat
 
 	# sex and orientation
 
@@ -468,12 +472,12 @@ func _randomize(case: Case, cat: NpcCategory, job_id: String, sex: int):
 	# wanted, player reputation
 
 	wanted = randi_range(0, 2)
-	player_reputation = -2 if category == NpcCategory.MINION else 0
+	player_reputation = -2 if actual_category == NpcCategory.MINION else 0
 
 	# not all NPCs have a hideout location
 
 	var hideout_probability
-	if category in [NpcCategory.CULPRIT, NpcCategory.ACCOMPLICE]:
+	if actual_category in [NpcCategory.CULPRIT, NpcCategory.ACCOMPLICE]:
 		hideout_probability = 0.8
 	else:
 		hideout_probability = 0.4
@@ -516,7 +520,7 @@ func new_day():
 		# the player's reputation increases by 1 every N days without interaction,
 		# where N is the difficulty of the case
 
-		if _case and npc_status != NpcStatus.MINION and player_reputation < 2:
+		if _case and actual_category != NpcCategory.MINION and player_reputation < 2:
 			var difficulty = maxi(1, _case.get_difficulty())
 			if (yesterday - _last_dialogue - 1) % difficulty == difficulty - 1:
 				player_reputation += 1
@@ -559,10 +563,11 @@ static func generate_card(
 	return card
 
 func print_npc():
-	if category == NpcCategory.NONE:
+	if actual_category == NpcCategory.NONE:
 		print("%s:" % get_display_name())
 	else:
-		print("%s (%s):" % [get_display_name(), NpcCategory.keys()[category].to_lower()])
+		print("%s (%s):" % [
+			get_display_name(), NpcCategory.keys()[actual_category].to_lower()])
 	print("  sex: %s (%s)" % [
 		Sex.keys()[npc_sex].to_lower(),
 		SexualOrientation.keys()[orientation].to_lower()])
@@ -606,7 +611,8 @@ func get_referenced_objects():
 #
 func get_json_dict():
 	var dict = super()
-	dict["category"] = category
+	dict["actual_category"] = actual_category
+	dict["apparent_category"] = apparent_category
 	dict["status"] = npc_status
 	dict["npc_health"] = npc_health
 	dict["sex"] = npc_sex
@@ -640,7 +646,8 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	super(dict, catalog)
-	category = dict.category
+	actual_category = dict.actual_category
+	apparent_category = dict.apparent_category
 	npc_status = dict.status
 	npc_health = dict.npc_health
 	npc_sex = dict.sex

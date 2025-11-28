@@ -58,7 +58,7 @@ func _on_item_selected(index: int):
 	var suspects = []
 
 	for npc in case.npcs:
-		match npc.category:
+		match npc.actual_category:
 			NpcCard.NpcCategory.VICTIM:
 				victims.append(npc)
 			NpcCard.NpcCategory.WITNESS:

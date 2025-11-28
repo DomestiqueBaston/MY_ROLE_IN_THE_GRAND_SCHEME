@@ -313,33 +313,40 @@ func show_npc(npc: NpcCard):
 		health_label.show()
 
 	var status_label: Control
+	var category_label: Control
 
 	match npc.npc_status:
-		NpcCard.NpcStatus.NONE:
-			status_label = $VBox/Scroller_NPC/Info_NPC/Status_None
 		NpcCard.NpcStatus.JAIL:
 			status_label = $VBox/Scroller_NPC/Info_NPC/Status_In_Jail
 		NpcCard.NpcStatus.DEAD:
 			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Dead
 		NpcCard.NpcStatus.DISAPPEARED:
 			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Disappeared
-		NpcCard.NpcStatus.MINION:
-			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Minion
-		NpcCard.NpcStatus.VICTIM:
-			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Victim
-		NpcCard.NpcStatus.SUSPECT:
-			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Suspect
-		NpcCard.NpcStatus.WITNESS:
-			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Witness
-		NpcCard.NpcStatus.CULPRIT:
-			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Culprit
-		NpcCard.NpcStatus.ACCOMPLICE:
-			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Accomplice
 
-	if status_label:
-		$VBox/Scroller_NPC/Info_NPC/Separator_02.show()
-		$VBox/Scroller_NPC/Info_NPC/Status.show()
-		status_label.show()
+	match npc.apparent_category:
+		NpcCard.NpcCategory.VICTIM:
+			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Victim
+		NpcCard.NpcCategory.SUSPECT:
+			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Suspect
+		NpcCard.NpcCategory.WITNESS:
+			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Witness
+		NpcCard.NpcCategory.CULPRIT:
+			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Culprit
+		NpcCard.NpcCategory.ACCOMPLICE:
+			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Accomplice
+		NpcCard.NpcCategory.MINION:
+			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Minion
+
+	$VBox/Scroller_NPC/Info_NPC/Separator_02.show()
+	$VBox/Scroller_NPC/Info_NPC/Status.show()
+
+	if status_label or category_label:
+		if status_label:
+			status_label.show()
+		if category_label:
+			category_label.show()
+	else:
+		$VBox/Scroller_NPC/Info_NPC/Status_None.show()
 
 	var intimates = npc.find_links(Link.Type.INTIMACY)
 	var partners: Array[Link]

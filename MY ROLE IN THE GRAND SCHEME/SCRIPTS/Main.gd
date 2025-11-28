@@ -515,6 +515,8 @@ func _stop_linking(global_pos: Vector2):
 	else:
 		_dst_pin.move_to_link_at(_drop_target, global_pos)
 
+	# TODO: update NPCs' apparent categories
+
 	_dst_pin.resume_collisions()
 	_new_link.resume_collisions()
 	_new_link.lower()
@@ -748,6 +750,7 @@ func _handle_submenu(id: int, submenu: int):
 		2:
 			if _popup_node is Link:
 				_popup_node.type = id
+				# TODO: update NPCs' apparent categories
 
 func _handle_dialogue_submenu(idx: int, menu: PopupMenu):
 	var npc: NpcCard = _popup_node
@@ -768,6 +771,8 @@ func _delete_link(link: Link):
 	# delete the link (which also deletes any links connected to it)
 
 	link.queue_free()
+
+	# TODO: update NPCs' apparent categories
 
 #
 # Called before a (modal) dialog is displayed: all input handling is paused
@@ -827,7 +832,7 @@ func _layout_cards():
 	var shift = Vector2(20, 40)
 
 	for child in cards.get_children():
-		if child is NpcCard and child.npc_status != NpcCard.NpcStatus.NONE:
+		if child is NpcCard and child.apparent_category != NpcCard.NpcCategory.NONE:
 			child.global_position = npc_pos
 			npc_pos += shift
 			if npc_pos.y > bottom_right.y - Card.size.y:
