@@ -592,7 +592,7 @@ Combat
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances. (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).
-	- Si un PNJ meurt ou tombe KO en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 100dø (±10%) et 25% de chance de prendre +1Wan. On peut donc ne rien trouver et prendre +1Wan !
+	- Si un PNJ meurt ou tombe KO en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 100dø (±10%) et 25% de chance de prendre +1Wan. On peut donc ne rien trouver et prendre +1Wan ! Si le PNJ meurt, ça sera de toute manière +1Wan (cumulable avec le précédent) !
 
 Déclenchement d’un combat par un PNJ lié à l’enquête avant Dialogue
 	- À la première rencontre, il n’y a pas de risque !
