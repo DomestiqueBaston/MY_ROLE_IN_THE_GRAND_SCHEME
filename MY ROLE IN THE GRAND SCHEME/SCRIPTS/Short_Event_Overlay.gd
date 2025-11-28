@@ -493,17 +493,17 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 	$Overlays/Interaction_Result.show()
 	await _appear()
 
-	# if the player searches the NPC's body, he has a 25% chance of finding 100
-	# units of money (+/- 10%) and a 25% chance of adding +1 Wan
+	# if the player searches the NPC's body, he gets +1 Wan, has a 25% chance of
+	# finding 100 units of money (+/- 10%) and a 25% chance of +1 Wan more
 
 	var search_result: Node = null
 
 	if npc_state == GameState.NpcCombatState.DEAD:
+		var wan: int = 1
 		if await $Overlays/Interaction_Result.ask_to_search_body():
-			var wan: int = 0
 			var money: int = 0
 			if randi() % 4 == 0:
-				wan = 1
+				wan += 1
 			if randi() % 4 == 0:
 				money = roundi(100 * randf_range(0.9, 1.1))
 			if money > 0:
@@ -513,12 +513,13 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 			else:
 				search_result = $Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_No_Money
 				search_result.find_child("But_Wan").visible = wan > 0
-			if wan > 0:
-				GameState.player.wanted += wan
 			if money > 0:
 				GameState.player.money += money
 		else:
 			search_result = $Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_No
+		if wan > 0:
+			GameState.player.wanted += wan
+		GameState.save_game()
 
 	if search_result:
 		search_result.show()

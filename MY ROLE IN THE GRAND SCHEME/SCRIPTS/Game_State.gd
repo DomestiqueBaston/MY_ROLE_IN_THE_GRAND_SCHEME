@@ -1283,7 +1283,8 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 		else:
 			await Globals.dialog_overlay.announce_prison_for_wanted(false)
 
-	# player's status (health, etc.) will be checked in end_interaction()
+	# player's status (health, wanted, etc.) will be checked in
+	# end_interaction()
 
 	await _increment_time(2, false)
 	player.pass_time(2)
