@@ -515,6 +515,8 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 				search_result.find_child("But_Wan").visible = wan > 0
 			if wan > 0:
 				GameState.player.wanted += wan
+			if money > 0:
+				GameState.player.money += money
 		else:
 			search_result = $Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_No
 
