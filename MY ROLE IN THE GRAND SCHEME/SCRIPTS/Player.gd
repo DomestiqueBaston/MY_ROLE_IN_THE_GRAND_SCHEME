@@ -40,6 +40,7 @@ var _signal_pause: int = 0
 var _last_sleep_time: int
 var _last_wake_time: int
 var _sleep_bonus_malus: int
+var _in_jail_or_bed: bool
 
 func reset():
 	_signal_pause += 1
@@ -66,6 +67,7 @@ func reset():
 	_last_sleep_time = 0
 	_last_wake_time = 0
 	_sleep_bonus_malus = 0
+	_in_jail_or_bed = false
 	_signal_pause -= 1
 
 func start_game():
@@ -89,6 +91,7 @@ func start_game():
 	_last_wake_time = GameState.get_time()
 	_last_sleep_time = _last_wake_time - 8
 	_sleep_bonus_malus = 0
+	_in_jail_or_bed = false
 
 	# all players start with one card from each category
 
@@ -276,7 +279,7 @@ func get_addiction() -> int:
 	return addiction
 
 func set_wanted(wan: int):
-	wan = clampi(wan, 0, 4)
+	wan = clampi(wan, 0, 5)
 	if wanted != wan:
 		wanted = wan
 		if _signal_pause == 0:
@@ -328,6 +331,9 @@ func set_debt(index: int, new_debt: int):
 
 func pay_debt(index: int):
 	money -= _debts[index]
+	remove_debt(index)
+
+func remove_debt(index: int):
 	_debts.remove_at(index)
 	GameState.debts_changed.emit()
 
@@ -676,10 +682,45 @@ func sleep(hours: int):
 ## emotions a bit.
 ##
 func new_day():
-	drugs_taken_today = 0
-	if wanted > 0:
+	if not _in_jail_or_bed:
+		drugs_taken_today = 0
 		wanted -= 1
-	improve_emotion(1)
+		improve_emotion(1)
+
+##
+## Specifies that the player has been sent to prison. Until he is released,
+## nights of sleep will have no effect on his wanted level or on his emotions.
+##
+func begin_jail_term():
+	_in_jail_or_bed = true
+
+##
+## Specifies that the player has been released from prison. It is assumed he has
+## just gotten 8 hours of sleep.
+##
+func end_jail_term():
+	_end_jail_or_forced_rest(8)
+
+##
+## Specifies that the player has been sent to bed to rest, which has the same
+## effect on him as 12 hours of sleep.
+##
+func begin_forced_rest():
+	_in_jail_or_bed = true
+	await sleep(12)
+
+##
+## Specifies that the player is allowed out of bed again.
+##
+func end_forced_rest():
+	_end_jail_or_forced_rest(12)
+
+func _end_jail_or_forced_rest(sleep_time: int):
+	_in_jail_or_bed = false
+	drugs_taken_today = 0
+	_last_wake_time = GameState.get_time()
+	_last_sleep_time = _last_wake_time - sleep_time
+	_sleep_bonus_malus = 0
 
 ##
 ## Returns a bonus/malus to be added to dice rolls, depending on the player's

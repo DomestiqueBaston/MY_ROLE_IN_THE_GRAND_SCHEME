@@ -77,6 +77,9 @@ var cases: Array[Case]
 ## Price for a search warrant.
 const warrant_price: int = 25
 
+## Price to avoid prison.
+const prison_bail: int = 100
+
 ## Signal emitted when the time has changed: see get_day() and get_hour().
 @warning_ignore("unused_signal")
 signal time_changed
@@ -169,6 +172,7 @@ var _current_interaction: InteractionType = InteractionType.NONE
 var _current_interaction_location: LocationCard
 var _current_interaction_npc: NpcCard
 var _current_interaction_bonus_malus: int
+var _current_interaction_do_not_kill: bool
 
 func _ready():
 	load_game()
@@ -182,16 +186,20 @@ func start_game():
 	_current_case_index = -1
 	_player_location = PlayerLocation.OFFICE
 	_player_location_card = null
-	_current_interaction = InteractionType.NONE
-	_current_interaction_location = null
-	_current_interaction_npc = null
-	_current_interaction_bonus_malus = 0
+	_reset_interaction()
 
 	cases.clear()
 	for i in 5:
 		cases.append(Case.generate())
 
 	player.start_game()
+
+func _reset_interaction():
+	_current_interaction = InteractionType.NONE
+	_current_interaction_location = null
+	_current_interaction_npc = null
+	_current_interaction_bonus_malus = 0
+	_current_interaction_do_not_kill = false
 
 func end_game():
 	cases.clear()
@@ -274,20 +282,68 @@ func _increment_time(hours: int, check_player_status: bool):
 # forced to rest, sent to prison or die.
 #
 func _check_player_status():
-
-	# TODO: if wanted == 5, send player to prison
-	# TODO: if player has 5 debts, send him to prison
-
 	match await player.test_health():
 		Player.PlayerState.KO:
-			if _player_location != PlayerLocation.OFFICE:
-				set_player_location(PlayerLocation.OFFICE)
-			await _increment_time(12, false)
-			await player.sleep(12)
-			await _increment_time(12, false)
+			await _send_player_to_bed()
 
 		Player.PlayerState.DEAD:
 			died.emit()
+			return
+
+	if player.wanted >= 5:
+		var can_pay = (player.money >= prison_bail)
+		var pay = await Globals.dialog_overlay.announce_prison_for_wanted(true, can_pay)
+		player.wanted = 4
+		if pay:
+			player.money -= prison_bail
+		else:
+			_send_player_to_prison()
+
+	if player.get_debt_count() >= 5:
+		await Globals.dialog_overlay.announce_prison_for_debts()
+		while player.get_debt_count() >= 5:
+			player.remove_debt(0)
+		_send_player_to_prison()
+
+#
+# Sends the player to bed for about 24 hours (until 8 AM the following day or
+# the day after).
+#
+func _send_player_to_bed():
+	if _player_location != PlayerLocation.OFFICE:
+		set_player_location(PlayerLocation.OFFICE)
+	var hour = get_hour()
+	var duration
+	if hour < 18:
+		duration = 32 - hour
+	else:
+		duration = 56 - hour
+
+	player.begin_forced_rest()
+	await _increment_time(duration, false)
+	player.end_forced_rest()
+
+	save_game()
+
+#
+# Sends the player sent to prison, where he spends 3 nights (4 nights if he
+# arrives in the evening) and is released at 8 AM.
+#
+func _send_player_to_prison():
+	if _player_location != PlayerLocation.PRISON:
+		set_player_location(PlayerLocation.PRISON)
+	var hour = get_hour()
+	var duration
+	if hour < 20:
+		duration = 80 - hour
+	else:
+		duration = 104 - hour
+
+	player.begin_jail_term()
+	await _increment_time(duration, false)
+	player.end_jail_term()
+
+	save_game()
 
 #
 # Stuff that needs to be dealt with at the start of each new day.
@@ -1038,10 +1094,11 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		if absi(actual_delta) > 1 and npc.npc_status != NpcCard.NpcStatus.JAIL:
 			await Globals.dialog_overlay.show_rep_message(actual_delta > 0)
 
-	# this can happen if the NPC's Wanted level increased after the preceding
+	# this means the NPC's Wanted level increased to 5 after the preceding
 	# combat, but he couldn't be sent to jail before the ensuing dialogue
-	if npc.npc_status == NpcCard.NpcStatus.JAIL:
-		await Globals.dialog_overlay.announce_prison(false)
+
+	if _current_interaction_do_not_kill:
+		await Globals.dialog_overlay.announce_prison_for_wanted(false)
 
 	if player.health > 0:
 		if actual_roll == 10:
@@ -1219,10 +1276,15 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 		await Globals.dialog_overlay.show_combat_result(player_damage, npc_state)
 
 	# don't send the NPC to jail until AFTER the ensuing dialogue!
-	if npc_jail and not do_not_kill:
-		await Globals.dialog_overlay.announce_prison(false)
+
+	if npc_jail:
+		if do_not_kill:
+			_current_interaction_do_not_kill = true
+		else:
+			await Globals.dialog_overlay.announce_prison_for_wanted(false)
 
 	# player's status (health, etc.) will be checked in end_interaction()
+
 	await _increment_time(2, false)
 	player.pass_time(2)
 
@@ -1271,10 +1333,7 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 				_pop_card_state()
 
 	player.clear_fallback_cards()
-	_current_interaction = InteractionType.NONE
-	_current_interaction_location = null
-	_current_interaction_npc = null
-	_current_interaction_bonus_malus = 0
+	_reset_interaction()
 
 	await _check_player_status()
 	if player.health > 0:
@@ -1400,7 +1459,7 @@ func _does_npc_run(npc: NpcCard) -> bool:
 	save_game()
 
 	if npc_jail:
-		await Globals.dialog_overlay.announce_prison(false)
+		await Globals.dialog_overlay.announce_prison_for_wanted(false)
 	else:
 		await Globals.dialog_overlay.show_npc_run(success)
 
@@ -1513,6 +1572,7 @@ func assign(other: GameState):
 	_current_interaction_location = other._current_interaction_location
 	_current_interaction_npc = other._current_interaction_npc
 	_current_interaction_bonus_malus = other._current_interaction_bonus_malus
+	_current_interaction_do_not_kill = other._current_interaction_do_not_kill
 
 #
 # For save/load.
@@ -1574,6 +1634,8 @@ func get_json_dict():
 			dict["interaction_npc"] = _current_interaction_npc.get_unique_id()
 		if _current_interaction_bonus_malus != 0:
 			dict["interaction_bonus_malus"] = _current_interaction_bonus_malus
+		if _current_interaction_do_not_kill:
+			dict["interaction_do_not_kill"] = _current_interaction_do_not_kill
 
 	return dict
 
@@ -1604,6 +1666,7 @@ func restore(dict, catalog):
 		if "interaction_npc" in dict:
 			_current_interaction_npc = catalog[dict.interaction_npc]
 		_current_interaction_bonus_malus = dict.get("interaction_bonus_malus", 0)
+		_current_interaction_do_not_kill = dict.get("interaction_do_not_kill", false)
 
 #
 # For save/load.

@@ -582,12 +582,13 @@ func announce_forced_rest(lack_of_sleep: bool):
 	report.hide()
 
 ##
-## Announces that either the player (is_player true) or an NPC (is_player false)
-## has been arrested and will be sent to jail. If is_player and can_pay are both
-## true, the player is given the option to pay in order to avoid jail. Returns
-## true if the player opts to pay.
+## Announces that the wanted attribute of either the player (is_player true) or
+## an NPC (is_player false) has become too high, and that he will be sent to
+## jail as a result. If is_player and can_pay are both true, the player is given
+## the option to pay in order to avoid jail. Returns true if the player opts to
+## pay.
 ##
-func announce_prison(is_player: bool, can_pay: bool = false) -> bool:
+func announce_prison_for_wanted(is_player: bool, can_pay: bool = false) -> bool:
 	var node: Control
 	if is_player:
 		node = $Overlays/Wanted/Info/Player
@@ -602,3 +603,16 @@ func announce_prison(is_player: bool, can_pay: bool = false) -> bool:
 	$Overlays/Wanted.hide()
 	node.hide()
 	return is_player and can_pay and $Overlays/Wanted.is_pay_clicked()
+
+##
+## Announes that the player has accumulated too many debts and will be sent to
+## prison as a result.
+##
+func announce_prison_for_debts():
+	$Overlays/Misc/Announces/Bill.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Bill.hide()
