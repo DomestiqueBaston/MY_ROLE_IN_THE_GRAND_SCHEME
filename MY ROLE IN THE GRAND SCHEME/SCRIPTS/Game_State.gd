@@ -293,7 +293,7 @@ func _check_player_status():
 	if player.wanted >= 5:
 		var can_pay = (player.money >= prison_bail)
 		var pay = await Globals.dialog_overlay.announce_prison_for_wanted(true, can_pay)
-		player.wanted = 4
+		player.wanted = 0
 		if pay:
 			player.money -= prison_bail
 		else:
