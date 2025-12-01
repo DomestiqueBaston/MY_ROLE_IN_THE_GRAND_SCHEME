@@ -39,7 +39,7 @@ var _discard_cards: Array[Card]
 var _signal_pause: int = 0
 var _last_sleep_time: int
 var _last_wake_time: int
-var _last_wanted_change_time: int
+var _last_wanted_change: int
 var _sleep_bonus_malus: int
 var _in_jail_or_bed: bool
 
@@ -67,7 +67,7 @@ func reset():
 	clear_discard_cards()
 	_last_sleep_time = 0
 	_last_wake_time = 0
-	_last_wanted_change_time = 0
+	_last_wanted_change = 0
 	_sleep_bonus_malus = 0
 	_in_jail_or_bed = false
 	_signal_pause -= 1
@@ -92,7 +92,7 @@ func start_game():
 	clear_discard_cards()
 	_last_wake_time = GameState.get_time()
 	_last_sleep_time = _last_wake_time - 8
-	_last_wanted_change_time = 0
+	_last_wanted_change = 0
 	_sleep_bonus_malus = 0
 	_in_jail_or_bed = false
 
@@ -285,7 +285,7 @@ func set_wanted(wan: int):
 	wan = clampi(wan, 0, 5)
 	if wanted != wan:
 		wanted = wan
-		_last_wanted_change_time = GameState.get_time()
+		_last_wanted_change = GameState.get_working_day()
 		if _signal_pause == 0:
 			GameState.wanted_changed.emit()
 
@@ -688,7 +688,7 @@ func sleep(hours: int):
 func new_day():
 	if not _in_jail_or_bed:
 		drugs_taken_today = 0
-		if wanted > 0 and GameState.get_time() - _last_wanted_change_time >= 72:
+		if wanted > 0 and GameState.get_working_day() - _last_wanted_change >= 3:
 			wanted -= 1
 		improve_emotion(1)
 
@@ -836,7 +836,7 @@ func get_json_dict():
 		"debts": _debts,
 		"last_sleep_time": _last_sleep_time,
 		"last_wake_time": _last_wake_time,
-		"last_wanted_change_time": _last_wanted_change_time,
+		"last_wanted_change": _last_wanted_change,
 		"sleep_bonus_malus": _sleep_bonus_malus
 	}
 	if has_search_warrant:
@@ -884,7 +884,7 @@ func restore(dict, catalog):
 	drugs_taken_today = dict.get("drugs_taken_today", 0)
 	_debts.assign(dict.debts)
 	_last_wake_time = dict.get("last_wake_time", 8)
-	_last_wanted_change_time = dict.get("last_wanted_change_time", 0)
+	_last_wanted_change = dict.get("last_wanted_change", 0)
 	_last_sleep_time = dict.get("last_sleep_time", _last_wake_time - 8)
 	_sleep_bonus_malus = dict.sleep_bonus_malus
 	has_search_warrant = dict.get("has_search_warrant", false)

@@ -262,18 +262,30 @@ func get_time_slot(travel_time: int = 0) -> TimeSlot:
 # coroutine to be awaited, and the player may even have died on return.
 #
 func _increment_time(hours: int, check_player_status: bool):
-	var day_before = get_working_day()
-	_hour += hours
-	var day_after = get_working_day()
+	while hours > 0:
+
+		# move forward at most to the beginning of the next working day (8 AM)
+
+		var to_next_working_day
+		var now = get_hour()
+		if now < 8:
+			to_next_working_day = 8 - now
+		else:
+			to_next_working_day = 32 - now
+		var delta = mini(hours, to_next_working_day)
+		_hour += delta
+		hours -= delta
+
+		# stuff to do at the start of each working day
+
+		if get_hour() == 8:
+			await _new_day()
+			if check_player_status:
+				await _check_player_status()
+				if player.health <= 0:
+					return
+
 	time_changed.emit()
-
-	for day in range(day_before + 1, day_after + 1):
-		await _new_day(day)
-		if check_player_status:
-			await _check_player_status()
-			if player.health <= 0:
-				return
-
 	save_game()
 
 #
@@ -346,14 +358,14 @@ func _send_player_to_prison():
 	save_game()
 
 #
-# Stuff that needs to be dealt with at the start of each new day.
+# Stuff that needs to be dealt with at the start of each new working day.
 #
-func _new_day(day: int):
+func _new_day():
 
 	# every Monday the player is sent a new bill, and Rowena replenishes her
 	# stock of drugs
 
-	if day % 7 == 0:
+	if get_working_day() == 0:
 		_send_new_bill()
 		await Globals.dialog_overlay.show_debt_reminder()
 		_dealer_drug_stock = randi_range(5, 10)
