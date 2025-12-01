@@ -2147,7 +2147,6 @@ modulate = Color(1, 1, 1, 0.917647)
 anchors_preset = 0
 
 [node name="Away" type="Label" parent="Overlays/Intercom/Interface/Screens"]
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 0
 offset_left = 271.0
