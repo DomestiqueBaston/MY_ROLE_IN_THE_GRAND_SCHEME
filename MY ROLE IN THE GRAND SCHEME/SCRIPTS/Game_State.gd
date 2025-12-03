@@ -719,13 +719,12 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 		print("success: margin = %s" % [max_roll - net_roll])
 		success = true
 
-	if not success:
-		await Globals.dialog_overlay.show_break_in_message(false)
-
 	if actual_roll == 10:
 		await Globals.dialog_overlay.show_player_improvement(-1)
 	elif actual_roll == 1:
 		await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
+	else:
+		await Globals.dialog_overlay.show_break_in_message(success)
 
 	_discard_cards(cards_played, success)
 	return success
