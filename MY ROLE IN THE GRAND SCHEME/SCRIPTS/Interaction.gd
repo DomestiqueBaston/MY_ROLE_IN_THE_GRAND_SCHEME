@@ -445,7 +445,9 @@ func _is_card_combo_ok() -> bool:
 func start_investigation(
 	location: LocationCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card in mastery_cards:
-		if card is AbstractCard or card is InvestigationCard:
+		if card is AbstractCard or (
+				card is InvestigationCard and
+				card.investigation_type != InvestigationCard.InvestigationType.BREAK_IN):
 			$Cards/Mastery.add_child(card)
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
