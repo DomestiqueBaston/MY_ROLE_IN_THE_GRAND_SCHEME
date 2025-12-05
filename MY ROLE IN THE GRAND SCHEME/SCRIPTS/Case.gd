@@ -836,6 +836,49 @@ func start():
 func pause():
 	_status = Status.PAUSED
 
+##
+## Update the apparent roles of NPCs based on the guilt/proof links that have
+## been created by the player. Call this after the player creates, modifies or
+## removes any guilt/proof links.
+##
+func update_npc_roles():
+
+	# start by restoring NPCs whose apparent roles are culprit or accomplice to
+	# their default roles
+
+	for npc in npcs:
+		if npc.apparent_role in [
+				NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE]:
+			if npc.actual_role in [
+					NpcCard.NpcRole.VICTIM,
+					NpcCard.NpcRole.SUSPECT,
+					NpcCard.NpcRole.WITNESS]:
+				npc.apparent_role = npc.actual_role
+			else:
+				npc.apparent_role = NpcCard.NpcRole.NONE
+
+	# NPCs that are linked to a victim are labeled culprits
+
+	for link in _links:
+		if (link.type == Link.Type.GUILT
+			and link.pin1.backing is NpcCard
+			and link.pin2.backing is NpcCard):
+			if link.pin1.backing.apparent_role == NpcCard.NpcRole.VICTIM:
+				link.pin2.backing.apparent_role = NpcCard.NpcRole.CULPRIT
+			elif link.pin2.backing.apparent_role == NpcCard.NpcRole.VICTIM:
+				link.pin1.backing.apparent_role = NpcCard.NpcRole.CULPRIT
+
+	# NPCs that are linked to a culprit are labeled accomplices
+
+	for link in _links:
+		if (link.type == Link.Type.GUILT
+			and link.pin1.backing is NpcCard
+			and link.pin2.backing is NpcCard):
+			if link.pin1.backing.apparent_role == NpcCard.NpcRole.CULPRIT:
+				link.pin2.backing.apparent_role = NpcCard.NpcRole.ACCOMPLICE
+			elif link.pin2.backing.apparent_role == NpcCard.NpcRole.CULPRIT:
+				link.pin1.backing.apparent_role = NpcCard.NpcRole.ACCOMPLICE
+
 func print_case():
 	print()
 	print("************************************************************")
