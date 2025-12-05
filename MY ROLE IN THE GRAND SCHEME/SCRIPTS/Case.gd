@@ -161,7 +161,7 @@ func _randomize():
 		var culprit_jobs = _motive.get("culprits_professions", [])
 		for i in culprit_count:
 			var card = NpcCard.generate_card(
-				self, NpcCard.NpcCategory.CULPRIT, culprit_jobs, culprit_sex)
+				self, NpcCard.NpcRole.CULPRIT, culprit_jobs, culprit_sex)
 			if culprit_sex >= 0:
 				card.orientation = culprit_orientation
 			elif Link.Type.INTIMACY in pre_links:
@@ -190,8 +190,8 @@ func _randomize():
 		var dead = _motive["dead_victims"]
 		for i in victim_count:
 			var card = NpcCard.generate_card(
-				self, NpcCard.NpcCategory.VICTIM, victim_jobs, victim_sex)
-			card.apparent_category = NpcCard.NpcCategory.VICTIM
+				self, NpcCard.NpcRole.VICTIM, victim_jobs, victim_sex)
+			card.apparent_role = NpcCard.NpcRole.VICTIM
 			if dead == "yes":
 				card.npc_status = NpcCard.NpcStatus.DEAD
 			elif dead == "disappeared":
@@ -208,7 +208,7 @@ func _randomize():
 
 	for i in accomplice_count:
 		var card = NpcCard.generate_card(
-			self, NpcCard.NpcCategory.ACCOMPLICE, [], culprit_sex)
+			self, NpcCard.NpcRole.ACCOMPLICE, [], culprit_sex)
 		if culprit_sex >= 0:
 			card.orientation = culprit_orientation
 		accomplices.append(card)
@@ -218,16 +218,16 @@ func _randomize():
 	var witnesses: Array[NpcCard]
 
 	for i in witness_count:
-		var card = NpcCard.generate_card(self, NpcCard.NpcCategory.WITNESS)
-		card.apparent_category = NpcCard.NpcCategory.WITNESS
+		var card = NpcCard.generate_card(self, NpcCard.NpcRole.WITNESS)
+		card.apparent_role = NpcCard.NpcRole.WITNESS
 		witnesses.append(card)
 
 	var suspects: Array[NpcCard]
 
 	for i in suspect_count:
 		var card = NpcCard.generate_card(
-			self, NpcCard.NpcCategory.SUSPECT, [], culprit_sex)
-		card.apparent_category = NpcCard.NpcCategory.SUSPECT
+			self, NpcCard.NpcRole.SUSPECT, [], culprit_sex)
+		card.apparent_role = NpcCard.NpcRole.SUSPECT
 		suspects.append(card)
 
 	# other NPCs not involved in the case, and build the array of all NPCs
@@ -441,7 +441,7 @@ func _randomize():
 
 			if npc_owner_count > 1:
 				var other_owner
-				if npc.actual_category == NpcCard.NpcCategory.VICTIM:
+				if npc.actual_role == NpcCard.NpcRole.VICTIM:
 					other_owner = bad_guys.pick_random()
 				else:
 					other_owner = victims.pick_random()
@@ -456,7 +456,7 @@ func _randomize():
 					2:
 						location = secret_location
 			else:
-				if npc.actual_category == NpcCard.NpcCategory.VICTIM:
+				if npc.actual_role == NpcCard.NpcRole.VICTIM:
 					var bad_guy = bad_guys.pick_random()
 					var hideout = bad_guy.get_one_connection(Link.Type.HIDEOUT)
 					match randi() % (3 if hideout else 2):

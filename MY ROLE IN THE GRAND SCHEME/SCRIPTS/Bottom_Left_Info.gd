@@ -313,7 +313,7 @@ func show_npc(npc: NpcCard):
 		health_label.show()
 
 	var status_label: Control
-	var category_label: Control
+	var role_label: Control
 
 	match npc.npc_status:
 		NpcCard.NpcStatus.JAIL:
@@ -323,28 +323,28 @@ func show_npc(npc: NpcCard):
 		NpcCard.NpcStatus.DISAPPEARED:
 			status_label = $VBox/Scroller_NPC/Info_NPC/Status_Disappeared
 
-	match npc.apparent_category:
-		NpcCard.NpcCategory.VICTIM:
-			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Victim
-		NpcCard.NpcCategory.SUSPECT:
-			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Suspect
-		NpcCard.NpcCategory.WITNESS:
-			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Witness
-		NpcCard.NpcCategory.CULPRIT:
-			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Culprit
-		NpcCard.NpcCategory.ACCOMPLICE:
-			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Accomplice
-		NpcCard.NpcCategory.MINION:
-			category_label = $VBox/Scroller_NPC/Info_NPC/Status_Minion
+	match npc.apparent_role:
+		NpcCard.NpcRole.VICTIM:
+			role_label = $VBox/Scroller_NPC/Info_NPC/Status_Victim
+		NpcCard.NpcRole.SUSPECT:
+			role_label = $VBox/Scroller_NPC/Info_NPC/Status_Suspect
+		NpcCard.NpcRole.WITNESS:
+			role_label = $VBox/Scroller_NPC/Info_NPC/Status_Witness
+		NpcCard.NpcRole.CULPRIT:
+			role_label = $VBox/Scroller_NPC/Info_NPC/Status_Culprit
+		NpcCard.NpcRole.ACCOMPLICE:
+			role_label = $VBox/Scroller_NPC/Info_NPC/Status_Accomplice
+		NpcCard.NpcRole.MINION:
+			role_label = $VBox/Scroller_NPC/Info_NPC/Status_Minion
 
 	$VBox/Scroller_NPC/Info_NPC/Separator_02.show()
 	$VBox/Scroller_NPC/Info_NPC/Status.show()
 
-	if status_label or category_label:
+	if status_label or role_label:
 		if status_label:
 			status_label.show()
-		if category_label:
-			category_label.show()
+		if role_label:
+			role_label.show()
 	else:
 		$VBox/Scroller_NPC/Info_NPC/Status_None.show()
 

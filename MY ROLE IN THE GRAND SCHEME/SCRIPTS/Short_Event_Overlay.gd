@@ -125,7 +125,7 @@ func show_rep_message(higher: bool):
 ## Displays a message telling the player that he is being attacked by an NPC.
 ##
 func show_attack_message(npc: NpcCard):
-	var is_minion = npc.actual_category == NpcCard.NpcCategory.MINION
+	var is_minion = npc.actual_role == NpcCard.NpcRole.MINION
 	if is_minion:
 		$Overlays/Misc/Announces/Combat/Minion_Attack.show()
 	else:

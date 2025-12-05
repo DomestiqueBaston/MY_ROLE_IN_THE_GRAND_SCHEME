@@ -832,7 +832,7 @@ func _layout_cards():
 	var shift = Vector2(20, 40)
 
 	for child in cards.get_children():
-		if child is NpcCard and child.apparent_category != NpcCard.NpcCategory.NONE:
+		if child is NpcCard and child.apparent_role != NpcCard.NpcRole.NONE:
 			child.global_position = npc_pos
 			npc_pos += shift
 			if npc_pos.y > bottom_right.y - Card.size.y:

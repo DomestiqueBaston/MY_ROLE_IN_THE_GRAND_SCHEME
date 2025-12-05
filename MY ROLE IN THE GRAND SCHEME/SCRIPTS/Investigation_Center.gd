@@ -58,12 +58,12 @@ func _on_item_selected(index: int):
 	var suspects = []
 
 	for npc in case.npcs:
-		match npc.actual_category:
-			NpcCard.NpcCategory.VICTIM:
+		match npc.actual_role:
+			NpcCard.NpcRole.VICTIM:
 				victims.append(npc)
-			NpcCard.NpcCategory.WITNESS:
+			NpcCard.NpcRole.WITNESS:
 				witnesses.append(npc)
-			NpcCard.NpcCategory.SUSPECT:
+			NpcCard.NpcRole.SUSPECT:
 				suspects.append(npc)
 
 	_populate_npc_names(victims, _victims)
