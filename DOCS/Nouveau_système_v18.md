@@ -724,7 +724,7 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Le joueur ne peut pas déplacer une origine d’un lien tant que celui-ci est pointillé.
 	- Couleurs des liens :
-          Noir : Coupable/Complice/Preuve Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien pour les preuves/témoins (voir Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels sont les éléments communs nécessaires dans cette entreprise et autres choses de cet ordre)…
+          Noir : Coupable/Complice/Preuve/Témoin
           Vert foncé : Ami (pas exploité dans toutes les enquêtes)
 Orange : Ennemi (pas exploité dans toutes les enquêtes)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
@@ -732,10 +732,9 @@ Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
           Bleu clair : Connaissance NE SERT PAS À VALIDER UNE ENQUÊTE.
 Rouge : Incohérence Il faudrait pouvoir AUSSI attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
-Jaune : Témoin Il faudrait pouvoir attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
           Vert clair : Propriété NE SERT PAS À VALIDER UNE ENQUÊTE.
           Marron : Domicile NE SERT PAS À VALIDER UNE ENQUÊTE.
-Turquoise : Travail NE SERT PAS À VALIDER UNE ENQUÊTE.
+Jaune : Travail NE SERT PAS À VALIDER UNE ENQUÊTE.
 Bleu très foncé : Lieu fréquenté (hangout) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Blanc : Planque (Hideout) NE SERT PAS À VALIDER UNE ENQUÊTE.
 Violet clair : Trouvé (sert à se souvenir d’où vient un objet) NE SERT PAS À VALIDER UNE ENQUÊTE.

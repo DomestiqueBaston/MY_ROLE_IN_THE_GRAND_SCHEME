@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://0rfg1gax0rcj"]
+[gd_scene load_steps=76 format=3 uid="uid://0rfg1gax0rcj"]
 
 [ext_resource type="Script" uid="uid://dnm3enhl36y8a" path="res://SCRIPTS/Main.gd" id="1_oybpi"]
 [ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_lp1db"]
@@ -41,8 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://i4863qe8ipob" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair_25.png" id="35_npi2l"]
 [ext_resource type="Texture2D" uid="uid://dagpcsr7ee2dj" path="res://GRAPHICS/LINK_PIN/Plein_Marron.png" id="35_q323g"]
 [ext_resource type="Texture2D" uid="uid://blskqwv4kqlo5" path="res://GRAPHICS/LINK_PIN/Plein_Marron_50.png" id="36_kj55d"]
-[ext_resource type="Texture2D" uid="uid://chw0hrxhbsjf" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise.png" id="37_qpjgg"]
-[ext_resource type="Texture2D" uid="uid://csdkvkbgwc73b" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise_50.png" id="38_mtj1t"]
 [ext_resource type="Texture2D" uid="uid://c4qjt4ysk8ja" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce_25.png" id="38_spbrc"]
 [ext_resource type="Texture2D" uid="uid://s6171shdoa65" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png" id="39_raids"]
 [ext_resource type="Texture2D" uid="uid://ccabfvx0eg0bn" path="res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce_50.png" id="40_o5lu0"]
@@ -61,7 +59,6 @@
 [ext_resource type="AudioStream" uid="uid://bkjfvpaccisok" path="res://SOUND/MISC/Unfolding.ogg" id="50_vlxab"]
 [ext_resource type="Script" uid="uid://mhjop2gadmxm" path="res://SCRIPTS/Reserve.gd" id="51_6gmax"]
 [ext_resource type="PackedScene" uid="uid://dfmit6at3wmw6" path="res://SCENES/Drag_Drop_Line.tscn" id="52_2uhvq"]
-[ext_resource type="Texture2D" uid="uid://c06beumbghko7" path="res://GRAPHICS/LINK_PIN/Plein_Turquoise_25.png" id="53_7n148"]
 [ext_resource type="PackedScene" uid="uid://hl8yhfvhjhtn" path="res://SCENES/Top_Bar.tscn" id="53_vyyi7"]
 [ext_resource type="Texture2D" uid="uid://kh2r3htrojer" path="res://GRAPHICS/MAIN/Main_Border.png" id="54_anbsy"]
 [ext_resource type="Theme" uid="uid://dwmkmvdoaqflh" path="res://UI/Right_Click_Menu_Theme.tres" id="54_x4cyf"]
@@ -321,7 +318,7 @@ texture_pressed = ExtResource("20_k86l4")
 texture_hover = ExtResource("17_23ylq")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Culp_Acco_Evid_Black" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Culp_Acco_Evid_Witn_Black" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 1.0
@@ -430,22 +427,6 @@ texture_pressed = ExtResource("41_lygj3")
 texture_hover = ExtResource("31_rix1k")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Witness_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 1.0
-offset_right = 127.0
-offset_bottom = 9.0
-pivot_offset = Vector2(4, 20)
-tooltip_text = "Witness
-- Dotted: Probable
-- Solid: Confirmed"
-toggle_mode = true
-texture_normal = ExtResource("7_dmqsm")
-texture_pressed = ExtResource("44_wqedo")
-texture_hover = ExtResource("32_ap25g")
-texture_click_mask = ExtResource("15_yimpa")
-
 [node name="Property_Light_Green" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
 offset_left = 128.0
@@ -478,27 +459,27 @@ texture_pressed = ExtResource("50_50s3b")
 texture_hover = ExtResource("36_kj55d")
 texture_click_mask = ExtResource("15_yimpa")
 
-[node name="Work_Turquoise" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
+[node name="Work_Yellow" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 146.0
+offset_left = 119.0
 offset_top = 1.0
-offset_right = 154.0
+offset_right = 127.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Work
 - Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
-texture_normal = ExtResource("37_qpjgg")
-texture_pressed = ExtResource("53_7n148")
-texture_hover = ExtResource("38_mtj1t")
+texture_normal = ExtResource("7_dmqsm")
+texture_pressed = ExtResource("44_wqedo")
+texture_hover = ExtResource("32_ap25g")
 texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Hangout_Darkest_Blue" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 155.0
+offset_left = 146.0
 offset_top = 1.0
-offset_right = 163.0
+offset_right = 154.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "Hangout
@@ -512,9 +493,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="Found_Light_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 164.0
+offset_left = 155.0
 offset_top = 1.0
-offset_right = 172.0
+offset_right = 163.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-22, 20)
 tooltip_text = "Found
@@ -528,9 +509,9 @@ texture_click_mask = ExtResource("15_yimpa")
 
 [node name="New_Dark_Purple" type="TextureButton" parent="Mask_Card_Playground/Legend/Colors"]
 layout_mode = 0
-offset_left = 173.0
+offset_left = 164.0
 offset_top = 1.0
-offset_right = 181.0
+offset_right = 172.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-35, 20)
 tooltip_text = "New
