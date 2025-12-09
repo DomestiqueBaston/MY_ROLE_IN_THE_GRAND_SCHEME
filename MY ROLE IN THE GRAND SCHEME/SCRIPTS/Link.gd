@@ -55,7 +55,6 @@ enum Type {
 	ACQUAINTANCE,
 	IDEOLOGY,
 	INCONSISTENCY,
-	WITNESS,
 	PROPERTY,
 	HOME,
 	WORK,
@@ -85,10 +84,9 @@ var _solid_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Plein_Bleu_Clair.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Bleu_Fonce.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Rouge.png"),
-	preload("res://GRAPHICS/LINK_PIN/Plein_Jaune.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Vert_Clair.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Marron.png"),
-	preload("res://GRAPHICS/LINK_PIN/Plein_Turquoise.png"),
+	preload("res://GRAPHICS/LINK_PIN/Plein_Jaune.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Bleu_Tres_Fonce.png"),
 	preload("res://GRAPHICS/LINK_PIN/Plein_Violet_Clair.png")
 ]
@@ -103,10 +101,9 @@ var _dotted_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Bleu_Clair.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Bleu_Fonce.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Rouge.png"),
-	preload("res://GRAPHICS/LINK_PIN/Pointille_Jaune.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Vert_Clair.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Marron.png"),
-	preload("res://GRAPHICS/LINK_PIN/Pointille_Turquoise.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Jaune.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Bleu_Tres_Fonce.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Clair.png")
 ]
@@ -121,10 +118,9 @@ var _new_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Clair.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Fonce.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Rouge.png"),
-	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Jaune.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Vert_Clair.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Marron.png"),
-	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Turquoise.png"),
+	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Jaune.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Bleu_Tres_Fonce.png"),
 	preload("res://GRAPHICS/LINK_PIN/Pointille_Violet_Fonce_Violet_Clair.png")
 ]
@@ -344,8 +340,6 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 				return endpt is NpcCard or endpt is ObjectCard
 			Type.INCONSISTENCY:
 				return true
-			Type.WITNESS:
-				return endpt is NpcCard or endpt is Link
 			Type.PROPERTY:
 				return endpt is ObjectCard or endpt is NpcCard or endpt is LocationCard
 			Type.FOUND:
@@ -374,9 +368,6 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 				or (endpt1 is ObjectCard and endpt2 is NpcCard)
 		Type.INCONSISTENCY:
 			ok = true
-		Type.WITNESS:
-			ok = (endpt1 is NpcCard and endpt2 is Link and endpt2.type != Type.WITNESS) \
-				or (endpt1 is Link and endpt1.type != Type.WITNESS and endpt2 is NpcCard)
 		Type.PROPERTY:
 			ok = (endpt1 is ObjectCard and (endpt2 is NpcCard or endpt2 is LocationCard)) \
 				or (endpt2 is ObjectCard and (endpt1 is NpcCard or endpt1 is LocationCard))
