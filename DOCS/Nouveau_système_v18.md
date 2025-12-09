@@ -277,7 +277,7 @@ Durée de Sommeil	Effets sur la Santé (HEA)	Effets sur les Émotions (Emo)	Bonu
 12 heures	+3 HEA	+1 Emo → 0	Bonus de 2
 
 	- 25% de chance de faire un rêve/cauchemar qui aura un effet sur la récupération : rêve = +1 HEA et cauchemar -1 HEA (on peut donc perdre des HEA en dormant) !
-	- Intervention Thérapeutique (médecin) : +3 HEA, +2 Emo → 0 et +1 Add → O avec un maximum de 2 interventions/semaine et coûte 50Dø. Si PHY et/ou MEN sont à 1, alors +1PHY et/ou +1MEN.
+	- Intervention Thérapeutique (médecin) : +3 HEA, +2 Emo → 0 et +1 Add → O avec un maximum de 2 interventions/semaine et coûte 75Dø. Si PHY et/ou MEN sont à 1, alors +1PHY et/ou +1MEN.
 	- Pas d’intervention thérapeutique pendant une crise de Paranoïa (menu désactivé) !
 	- On ne peut dormir qu’1 fois par jour. SAUF voir Paranoïa pour le sommeil.
 	- Sauf pendant une crise de paranoïa, le joueur peux rester éveillé jusqu’à 16h sans malus. Au delà, il prend un malus de 1 aux jets de dé par tranche de 2 heures. Il ne peut pas faire plus de 24h d’éveil d’affilé sinon « tombe de fatigue » : il termine ce qu’il est en train de faire s’il est en interaction et rentre automatiquement se coucher chez lui pour dormir 12h d’affilé (bénéficie des bonus d’une nuit de sommeil de 12h) et prend -1HEA au réveil (donc annule une partie des bénéfices du sommeil) ! Il peut également subir les bonus/malus de rêve/cauchemar.
@@ -355,9 +355,9 @@ Factures impayées	Malus
 	- Lorsqu’on en a plusieurs, on paye la facture que l’on veut/peut.
 	- Le joueur ne peut pas avoir plus de 4 factures impayées. Sinon, quand la 5ème tombe, il va directement 3 jours en prison et redescend à 4 factures impayées.
 Les achats/dépenses
-	- Une Autorisation de fouille coûte 25 Dø. Le joueur ne peut en avoir qu’1 à la fois. Ouvert pendant les 3 premières tranches horaires de la journée et hors weekend. Menu désactivé quand c’est fermé. Jamais pendant la Paranoïa (menu désactivé). En acheter prend 1h.
-	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement de 20h à 8h. Prend 1h. 1 dose coûte 25 Dø.
-	- Rowena n’a aléatoirement que 5 à 10 doses par semaine, quand elle n’en a plus, elle disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir (elle ne sera pas là et 1h de déplacement tout de même).
+	- Une Autorisation de fouille coûte 45Dø. Le joueur ne peut en avoir qu’1 à la fois. Ouvert pendant les 3 premières tranches horaires de la journée et hors weekend. Menu désactivé quand c’est fermé. Jamais pendant la Paranoïa (menu désactivé). En acheter prend 1h.
+	- Le joueur connaît un point de deal (Rowena) où il pourra acheter sa/ses dose(s). Uniquement de 20h à 8h. Prend 1h. 1 dose coûte 35 Dø.
+	- Rowena n’a aléatoirement que 3 à 7 doses par semaine, quand elle n’en a plus, elle disparaît jusqu’au lundi suivant. Le joueur ne le saura qu’en allant la voir (elle ne sera pas là et 1h de déplacement tout de même).
 	- Chaque jour, Rowena a 25% de chance d’avoir vendu 1 dose dès l’« ouverture » (donc possiblement avant l’arrivée du joueur).
 	- Lorsqu’il a des dettes, le joueur ne peut plus rien acheter.
 
@@ -388,7 +388,7 @@ Démarrage d’une partie
 Les cartes
 	- Elles indiquent seulement leur nom et une description succincte, pas d’informations chiffrées !
 	- Les cartes sont de type Dialogue, Combat (et Special et Run Away), Investigation (et Special et Break In), Abstraites , Objet, Lieu et PNJ.
-	- Le joueur disposera dans sa main de maîtrise de max.10 cartes Dialogue/Combat/Investigation/Abstraite (dont 3 max. pour Abstraite). Ce sont ces cartes qui représentent les « actions » qu’il maîtrise et avec lesquelles il a un bonus de 1 aux jets de dé.
+	- Le joueur disposera dans sa main de maîtrise de max.10 cartes Dialogue/Combat/Investigation/Abstraite (dont 3 max. pour Abstraite). Ce sont ces cartes qui représentent les « actions » qu’il maîtrise et avec lesquelles il a un bonus de 1 aux jets de dé. Cette main se composera de max. : 3 cartes abstraites, 2 cartes Combat, 2 cartes Combat Spécial, 2 cartes Dialogue, 2 cartes Investigation, 2 cartes Investigation Special, 2 carte Break In et 1 carte Run Away.
 	- Les effets d’une carte sur PHY, MEN et HEA sont temporaires (le temps de l’Interaction) !
 	- Les effets d’une carte sur Emo, Add et Wan sont permanents !
 	- Lorsque des effets autres que sur les caractéristiques principales et secondaires sont mentionnés (« condition ») sur des cartes, ils sont à appliquer après le jet de dé.
@@ -450,7 +450,7 @@ Cartes PNJ
 On ne joue qu’une carte PNJ ou Evidence ou Lieu ou Objet par interaction (et en Dialogue uniquement) !
 
 Les différentes piles de cartes du joueur (en interaction)
-	- Pile de maîtrise (cartes Dialogue, toutes Combat, toutes Investigation, Abstraite (max 3)) / 10 Max
+	- Pile de maîtrise (cartes Dialogue, toutes Combat, toutes Investigation, Abstraite) / 10 Max (Voir Les cartes pour le détail).
 	- Pile de non-maîtrise (cartes Dialogue, Combat, Investigation, Abstraite) / 5 Max et aléatoires (mais possibles dans le contexte, pas de Dialogue en Combat, par exemple).
 	- Pile Evidence (cartes Objet, PNJ, pas de Lieu) contient tout ce qui est qualifié d’Evidence par le joueur.
 	- Pile PNJ (cartes PNJ)
@@ -478,7 +478,7 @@ Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas passer à Dialogue avec un PNJ après un Combat avant le lendemain sauf cas particuliers liés à l’utilisation de la carte de Combat spéciale « Ne pas tuer ! ») qui le permet (voir à la fin de Combat).
 	- Dès qu’une interaction est lancée, un PNJ qui devrait arriver sur place (en suivant son emploi du temps) fera « demi-tour » et ne reprendra son emploi du temps qu’une fois le joueur parti.
 	- Une fois l’écran d’Interaction affiché, le joueur doit aller au bout, il ne peut plus annuler.
-	- À la fin d’une interaction réussie, le jeu proposera au joueur de récupérer les cartes jouées afin de modifier sa main de cartes (Mastery). Cet écran apparaît à la fin de l’interaction initiée par le joueur et intégrera AUSSI les cartes jouées avant en Break In.
+	- À la fin d’une interaction réussie, le jeu proposera au joueur de récupérer les cartes jouées afin de modifier sa main de cartes (Maîtrise) sauf les cartes Abstraites issues de sa main de Maîtrise. Cet écran apparaît à la fin de l’interaction initiée par le joueur et intégrera AUSSI les cartes jouées précédemment en Break In.
 	- Après un Run Away réussi, on aura AUSSI l’écran de récupération de cartes cité juste au dessus.
 
 Dialogue
@@ -592,7 +592,7 @@ Combat
 	- À la fin d’un combat, le PNJ disparaîtra (s’il ne meurt pas). Le Joueur aura (à la fin du Combat) -2Rep auprès du PNJ.
 	- Lorsqu’un combat est déclenché par un PNJ, le joueur a la possibilité de fuir. Il fera un jet de dé avant l’évaluation du combat. Il pourra également jouer sa carte Combat (spéciale) Fuir (Run Away) pour améliorer ses chances. (voir Fuir un combat (Joueur) plus bas)
 	- Lorsqu’un PNJ déclenche un Combat, son Wan augmente de +1. S’il atteint le seuil maximum, à la fin du combat s’il est encore en vie, il ira en prison et c’est le seul endroit où le joueur pourra Dialoguer avec lui (seule interaction possible avec lui à partir de ce moment-là dans l’enquête).
-	- Si un PNJ meurt ou tombe KO en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 100dø (±10%) et 25% de chance de prendre +1Wan. On peut donc ne rien trouver et prendre +1Wan ! Si le PNJ meurt, ça sera de toute manière +1Wan (cumulable avec le précédent) !
+	- Si un PNJ meurt ou tombe KO en Combat, le joueur a la possibilité de le fouiller le corps et aura 25% de chance de trouver 50dø (±10%) et 25% de chance de prendre +1Wan. On peut donc ne rien trouver et prendre +1Wan ! Si le PNJ meurt, ça sera de toute manière +1Wan (cumulable avec le précédent) !
 
 Déclenchement d’un combat par un PNJ lié à l’enquête avant Dialogue
 	- À la première rencontre, il n’y a pas de risque !
@@ -632,7 +632,6 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 Fuir un Combat (Joueur) – RUN AWAY
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir SAUF avant un Dialogue.
 	- On ne peut jouer que jusqu’à 2 cartes maximum pour fuir (la carte Run Away + éventuellement une carte Abstraite).
-	- La main Fallback proposera 3 cartes Abstraite et/ou Run Away aléatoires. ≠ de celles que le joueur a en main.
 	- On peut jouer Run Away seule.
 	- On ne peut pas jouer une carte Abstraite seule.
 	- On peut tenter de fuir sans carte Run Away mais on ne joue pas de carte du tout et les règles suivantes s’appliquent avec un malus de 1 au jet de dé.
@@ -653,11 +652,11 @@ Investigation
 	- On ne joue que des cartes Investigation, Investigation Spéciale et Abstraite. Maximum 1 de chaque. 1 carte Investigation minimum.
 	- La main Fallback proposera 5 cartes Investigation, Investigation Spécial et Abstraite aléatoires. 1 carte Investigation minimum. ≠ de celles que le joueur a en main.
 	- On ne doit théoriquement investiguer un Lieu qu’avec une autorisation de fouille (mais voir plus loin).
-	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une (à 25 Dø) ! Pas plus d’1 à la fois. Et pas pendant la Paranoïa.
+	- Une autorisation de fouille utilisée est ensuite perdue mais on peut toujours en racheter une ! Pas plus d’1 à la fois. Et pas pendant la Paranoïa.
 	- Le jet de dé de base pour une Investigation est : round((PHY + MEN + HEA)÷3).
 	- Pour le joueur (uniquement!) : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Investigation (incluses Spécial) et Abstraite, de Non-Maîtrise, de difficulté de l’enquête, d’Emo, d’Add et Wan, de Factures impayées, de Sommeil, de Veille, de Lieu, Malus d’action de Nuit, bonus de Break in (voir Investigation SANS autorisation et accès au Lieux fermés et/ou sécurisés à investiguer hors présence de PNJ plus bas).
 	- Pour une réussite, s’il y a des Objets, des fréquentations (PNJ) à découvrir, le nombre découvert sera déterminé par round(marge de réussite de l’investigation÷3). Si la marge de réussite est ≥3, 1 contenu caché parmi les découvertes (si applicable).
-	- Une réussite critique donne de +50Dø à +100Dø en plus de ce qui est trouvé avec une réussite « normale ». La règle de progression s’applique.
+	- Une réussite critique donne de +25Dø à +50Dø en plus de ce qui est trouvé avec une réussite « normale ». La règle de progression s’applique.
 	- Un échec donne -1Emo.
 	- 1 échec critique fait -1HEA en plus de l’échec « normal ». La règle de progression s’applique.
 	- On ne peut pas découvrir plus de contenu qu’il n’y en a de prévu par l’enquête dans le Lieu investigué !
@@ -857,7 +856,7 @@ Enquêtes niveau 0 :
  - Chaque semaine, n’importe quel jour et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposer 1 enquête de niveau 0 par un PNJ quelconque.
 	- Pour ces crimes, un mobile ne sera pas « nécessaire » (le menu Crime Motive sera prérempli avec le seul mobile accessible).
 	- Les emplacements des preuves sont précisés dans le json !
-	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 200Dø.
+	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 150Dø.
 	- Le joueur à un bonus de 4 à ses jets de dé dans ces enquêtes.
 	- Le temps imparti pour résoudre une telle enquête est de : 6, 7 ou 8 jours.
 	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
@@ -984,7 +983,7 @@ Difficulté du jeu
 		Tranquille : +10 % de Dø en fin de enquête réussie, PNJs: -1 à PHY, MEN ou HEA à la génération.
 		Routine : /
 		Stressant : -10 % de Dø en fin de enquête réussie, PNJs: +1 à PHY, MEN ou HEA à la génération.
-		Cauchemar : malus de 1 aux jets de dé, -10 % de Dø en fin d’enquête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
+		Cauchemar : malus de 1 supplémentaire à TOUS les jets de dé, -10 % de Dø en fin d’enquête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
 
 Éléments additionnels de difficulté
 	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
