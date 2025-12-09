@@ -2,12 +2,12 @@
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_cenje"]
 resource_name = "EQ"
-band_db/32_hz = 15.0
-band_db/100_hz = 5.0
-band_db/320_hz = 10.0
-band_db/1000_hz = 5.0
+band_db/32_hz = 7.5
+band_db/100_hz = 2.5
+band_db/320_hz = 5.0
+band_db/1000_hz = 2.5
 band_db/3200_hz = -60.0
-band_db/10000_hz = 20.0
+band_db/10000_hz = 10.0
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_5t1r3"]
 resource_name = "EQ"
@@ -54,7 +54,7 @@ bus/1/name = &"MUSIC"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = -15.198082
+bus/1/volume_db = -10.0
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectEQ_cenje")
 bus/1/effect/0/enabled = true
