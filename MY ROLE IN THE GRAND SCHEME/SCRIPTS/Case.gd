@@ -857,27 +857,37 @@ func update_npc_roles():
 			else:
 				npc.apparent_role = NpcCard.NpcRole.NONE
 
-	# NPCs that are linked to a victim are labeled culprits
+	# NPCs that are linked to a victim are labeled culprits (except for victims,
+	# whose roles never change)
 
 	for link in _links:
 		if (link.type == Link.Type.GUILT
 			and link.pin1.backing is NpcCard
 			and link.pin2.backing is NpcCard):
-			if link.pin1.backing.apparent_role == NpcCard.NpcRole.VICTIM:
-				link.pin2.backing.apparent_role = NpcCard.NpcRole.CULPRIT
-			elif link.pin2.backing.apparent_role == NpcCard.NpcRole.VICTIM:
-				link.pin1.backing.apparent_role = NpcCard.NpcRole.CULPRIT
+			var card1: NpcCard = link.pin1.backing
+			var card2: NpcCard = link.pin2.backing
+			if card1.apparent_role == NpcCard.NpcRole.VICTIM:
+				if card2.actual_role != NpcCard.NpcRole.VICTIM:
+					card2.apparent_role = NpcCard.NpcRole.CULPRIT
+			elif card2.apparent_role == NpcCard.NpcRole.VICTIM:
+				if card1.actual_role != NpcCard.NpcRole.VICTIM:
+					card1.apparent_role = NpcCard.NpcRole.CULPRIT
 
-	# NPCs that are linked to a culprit are labeled accomplices
+	# NPCs that are linked to a culprit are labeled accomplices (except for
+	# victims, whose roles never change)
 
 	for link in _links:
 		if (link.type == Link.Type.GUILT
 			and link.pin1.backing is NpcCard
 			and link.pin2.backing is NpcCard):
-			if link.pin1.backing.apparent_role == NpcCard.NpcRole.CULPRIT:
-				link.pin2.backing.apparent_role = NpcCard.NpcRole.ACCOMPLICE
-			elif link.pin2.backing.apparent_role == NpcCard.NpcRole.CULPRIT:
-				link.pin1.backing.apparent_role = NpcCard.NpcRole.ACCOMPLICE
+			var card1: NpcCard = link.pin1.backing
+			var card2: NpcCard = link.pin2.backing
+			if card1.apparent_role == NpcCard.NpcRole.CULPRIT:
+				if card2.actual_role != NpcCard.NpcRole.VICTIM:
+					card2.apparent_role = NpcCard.NpcRole.ACCOMPLICE
+			elif card2.apparent_role == NpcCard.NpcRole.CULPRIT:
+				if card1.actual_role != NpcCard.NpcRole.VICTIM:
+					card1.apparent_role = NpcCard.NpcRole.ACCOMPLICE
 
 func print_case():
 	print()
