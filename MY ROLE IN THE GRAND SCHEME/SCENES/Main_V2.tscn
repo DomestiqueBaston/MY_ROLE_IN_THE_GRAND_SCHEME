@@ -324,7 +324,7 @@ offset_left = 56.0
 offset_top = 1.0
 offset_right = 64.0
 offset_bottom = 9.0
-tooltip_text = "Culprit/Accomplice/Evidence
+tooltip_text = "Culprit/Accomplice/Evidence/Witness
 - Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
