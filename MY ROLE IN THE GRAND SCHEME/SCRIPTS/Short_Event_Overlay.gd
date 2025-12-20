@@ -276,7 +276,7 @@ func attempt_break_in() -> Array[Card]:
 	$Overlays/Interaction_Run_Away_Break_In/Title/Break_In.show()
 	$Overlays/Interaction_Run_Away_Break_In.show()
 	await _appear()
-	await $Overlays/Interaction_Run_Away_Break_In.done
+	await $Overlays/Interaction_Run_Away_Break_In.break_in_done
 	await _disappear()
 	$Overlays/Interaction_Run_Away_Break_In.hide()
 	$Overlays/Interaction_Run_Away_Break_In/Title/Break_In.hide()
@@ -296,7 +296,7 @@ func attempt_run_away() -> Array[Card]:
 	$Overlays/Interaction_Run_Away_Break_In/Title/Run_Away.show()
 	$Overlays/Interaction_Run_Away_Break_In.show()
 	await _appear()
-	await $Overlays/Interaction_Run_Away_Break_In.done
+	await $Overlays/Interaction_Run_Away_Break_In.run_away_done
 	await _disappear()
 	$Overlays/Interaction_Run_Away_Break_In.hide()
 	$Overlays/Interaction_Run_Away_Break_In/Title/Run_Away.hide()

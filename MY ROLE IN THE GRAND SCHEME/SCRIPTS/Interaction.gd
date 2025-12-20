@@ -49,8 +49,14 @@ extends Node2D
 				else:
 					_disable()
 
-## Signal emitted when the interaction is done.
+## Signal emitted when a combat, a dialogue or an investigation is done.
 signal done
+
+## Signal emitted when a break-in attempt is done.
+signal break_in_done
+
+## Signal emitted when a run-away attempt is done.
+signal run_away_done
 
 ## Signal emitted when the player selects Settings in the menu.
 signal settings
@@ -544,13 +550,20 @@ func _start_interaction(type: GameState.InteractionType, card: Card = null):
 		tv_screen.set_interaction_type(type)
 
 #
-# Resets the scene and emits a done() signal when an interaction finishes. The
-# reset is important, because this scene may be instanced within another scene,
-# meaning _ready() may only be called once. 
+# Resets the scene and emits the appropriate signal when an interaction 
+# finishes. The reset is important, because this scene may be instanced within
+# another scene, meaning _ready() may only be called once. 
 #
 func _end_interaction():
+	var type = _interaction_type
 	_interaction_type = GameState.InteractionType.NONE
 	_default_info_card = null
 	_current_card = null
 	_detach_cards()
-	done.emit()
+	match type:
+		GameState.InteractionType.BREAK_IN:
+			break_in_done.emit()
+		GameState.InteractionType.RUN_AWAY:
+			run_away_done.emit()
+		_:
+			done.emit()
