@@ -399,7 +399,8 @@ Cartes Abstraites :
 	- Elles représentent des dynamiques amenant des modifications aux jets de dé en interactions avec des PNJs ou l’environnement.	- Ces cartes se jouent à n’importe quel moment où on joue des cartes.
 	- Les cartes Abstraite se jouent en combinaison de n’importe quelle autre carte ou seules (sauf exception comme Run Away et Break In par exemple).
 	- Par interaction, le joueur ne peut jouer qu’1 carte Abstraite.
-	- Une fois jouée, une carte abstraite est perdue.
+	- Une fois jouée, une carte abstraite de la main de maîtrise est perdue.
+	- Une carte abstraite jouée depuis la main Fallback peut être récupérée ensuite en cas de réussite d’interaction.
 
 Cartes Dialogue :
 	- Elles sont des cartes qui peuvent se jouer uniquement en Dialogue.
