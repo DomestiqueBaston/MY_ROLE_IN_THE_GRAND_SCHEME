@@ -111,7 +111,9 @@ func _stop_drag(global_pos: Vector2):
 
 	# check whether the card is dropped on the other area (Mastery or Pool),
 	# and enforce some constraints: the mastery deck can contain at most 10
-	# cards, including at most 3 abstract cards
+	# cards, including at most 3 abstract cards, 2 combat cards, 2 special
+	# combat cards, 2 dialogue cards, 2 investigation cards, 2 special
+	# investigation cards, 2 break-in cards and 1 run-away card
 
 	var new_parent = _get_card_area_at(global_pos)
 	if new_parent == null or new_parent == _current_card.get_parent():
@@ -119,13 +121,34 @@ func _stop_drag(global_pos: Vector2):
 	elif new_parent == $Mastery_Cards:
 		if $Mastery_Cards.get_child_count() >= 10:
 			ok = false
-		elif _current_card is AbstractCard:
-			var abstract_count = 0
-			for card in $Mastery_Cards.get_children():
-				if card is AbstractCard:
-					abstract_count += 1
-			if abstract_count >= 3:
-				ok = false
+		else:
+			var count = 1
+			var limit = 10
+			match _current_card.get_card_type():
+				Card.CardType.COMBAT:
+					var combat_type = _current_card.combat_type
+					for card in $Mastery_Cards.get_children():
+						if card is CombatCard and card.combat_type == combat_type:
+							count += 1
+					limit = 1 if combat_type == CombatCard.CombatType.RUN_AWAY else 2
+				Card.CardType.INVESTIGATION:
+					var investigation_type = _current_card.investigation_type
+					for card in $Mastery_Cards.get_children():
+						if (card is InvestigationCard
+							and card.investigation_type == investigation_type):
+							count += 1
+					limit = 2
+				Card.CardType.DIALOGUE:
+					for card in $Mastery_Cards.get_children():
+						if card is DialogueCard:
+							count += 1
+					limit = 2
+				Card.CardType.ABSTRACT:
+					for card in $Mastery_Cards.get_children():
+						if card is AbstractCard:
+							count += 1
+					limit = 3
+			ok = (count <= limit)
 
 	if ok:
 		_current_card.reparent(new_parent, false)

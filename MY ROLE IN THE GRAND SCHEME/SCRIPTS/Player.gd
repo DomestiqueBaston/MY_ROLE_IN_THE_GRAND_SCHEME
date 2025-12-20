@@ -406,15 +406,16 @@ func clear_fallback_cards():
 
 ##
 ## Removes the given card from the player's "fallback" deck, if found there. If
-## keep_discard is true, the card is moved to his "discard" deck; if not, it is
-## deleted. Returns true if successful, false if the card is not in the deck.
+## keep_discard is true, and if the card is not an abstract card, it is moved to
+## the player's "discard" deck; otherwise, it is deleted. Returns true if
+## successful, false if the card is not in the deck.
 ##
 func discard_fallback_card(card: Card, keep_discard: bool) -> bool:
 	var index = _fallback_cards.find(card)
 	if index < 0:
 		return false
 	_fallback_cards.remove_at(index)
-	if keep_discard:
+	if keep_discard and not card is AbstractCard:
 		_discard_cards.append(card)
 	else:
 		card.queue_free()

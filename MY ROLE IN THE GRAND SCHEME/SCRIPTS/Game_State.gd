@@ -652,7 +652,8 @@ func _play_cards(cards: Array[Card]) -> InteractionAttributes:
 #
 # Discards abstract cards played from the mastery deck, and all cards played
 # from the fallback deck. If success is true, those cards are moved to the
-# player's "discard" deck; if not, they are deleted.
+# player's "discard" deck (with the exception of abstract cards played from the
+# fallback deck); if not, they are deleted.
 #
 func _discard_cards(cards: Array[Card], success: bool):
 	for card in cards:
