@@ -75,7 +75,7 @@ var player: Player = Player.new()
 var cases: Array[Case]
 
 ## Price for a search warrant.
-const warrant_price: int = 25
+const warrant_price: int = 45
 
 ## Price to avoid prison.
 const prison_bail: int = 100
@@ -181,7 +181,7 @@ func start_game():
 	_hour = _start_time
 	_has_visited_hub = false
 	_last_doctor_day = -1
-	_dealer_drug_stock = randi_range(5, 10)
+	_dealer_drug_stock = randi_range(3, 7)
 	_last_crimes.clear()
 	_current_case_index = -1
 	_player_location = PlayerLocation.OFFICE
@@ -368,7 +368,7 @@ func _new_day():
 	if get_working_day() == 0:
 		_send_new_bill()
 		await Globals.dialog_overlay.show_debt_reminder()
-		_dealer_drug_stock = randi_range(5, 10)
+		_dealer_drug_stock = randi_range(3, 7)
 	else:
 		if _dealer_drug_stock > 0 and randi() % 4 == 0:
 			_dealer_drug_stock -= 1
@@ -470,7 +470,7 @@ func buy_search_warrant():
 		set_player_location(PlayerLocation.WARRANT_DESK)
 		if player.health <= 0:
 			return
-	if await Globals.dialog_overlay.buy_search_warrant():
+	if await Globals.dialog_overlay.buy_search_warrant(warrant_price):
 		player.money -= warrant_price
 		player.has_search_warrant = true
 		save_game()
@@ -494,7 +494,7 @@ func use_drugs(doses: int):
 	await player.use_drugs(doses)
 
 func get_player_drug_price() -> int:
-	var price: int = 25
+	var price: int = 35
 	if "dealer_discount" in player.job_bonus_malus:
 		price = roundi(price * player.job_bonus_malus.dealer_discount)
 	return price
@@ -522,7 +522,7 @@ func visit_dealer():
 		player.drugs += doses
 
 func get_player_doctor_fee() -> int:
-	var price: int = 50
+	var price: int = 75
 	if "doctor_discount" in player.job_bonus_malus:
 		price = roundi(price * player.job_bonus_malus.doctor_discount)
 	return price
@@ -837,7 +837,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 		print("critical failure: update HEA, %s" % critical_attr)
 	elif actual_roll == 1:
 		critical_attr = tweak_attr.call(player, 1)
-		money_found = randi_range(50, 100)
+		money_found = randi_range(25, 50)
 		player.money += money_found
 		print("critical success: update %s, money" % critical_attr)
 		success = true

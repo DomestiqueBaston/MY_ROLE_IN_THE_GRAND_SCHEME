@@ -211,7 +211,8 @@ func show_debt_reminder():
 ## Displays the "buy search warrant" dialog and waits for the player to confirm
 ## or cancel. Returns true if he confirmed.
 ##
-func buy_search_warrant() -> bool:
+func buy_search_warrant(price: int) -> bool:
+	$Overlays/Search_Warrant/Text_Buy/Price.text = str(price)
 	$Overlays/Search_Warrant/Text_Buy.show()
 	$Overlays/Search_Warrant.show()
 	await _appear()
@@ -505,7 +506,7 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 			if randi() % 4 == 0:
 				wan += 1
 			if randi() % 4 == 0:
-				money = roundi(100 * randf_range(0.9, 1.1))
+				money = roundi(50 * randf_range(0.9, 1.1))
 			if money > 0:
 				search_result = $Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body/Search_Result/If_Yes_Search_Money
 				search_result.find_child("Money").text = str(money)
