@@ -153,7 +153,7 @@ func _update_appearance():
 	$Card_Mask/Card_BG/Card_Color/Npc/Couple.visible = is_married
 	$Card_Mask/Card_BG/Card_Color/Npc/No_Couple.visible = not is_married
 	$Card_Mask/Card_BG/Card_Outlines.self_modulate = outline_colors[apparent_role]
-	$Card_Drag.modulate = outline_colors[npc_status]
+	$Card_Drag.modulate = outline_colors[apparent_role]
 
 	if not Engine.is_editor_hint():
 		tooltip = get_display_name()
