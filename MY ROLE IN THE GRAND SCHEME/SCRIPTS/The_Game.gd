@@ -146,9 +146,9 @@ func _continue_game():
 
 func _on_interaction_started():
 	var interaction_scene = await _replace_scene(_interaction_scene)
-	interaction_scene.done.connect(_on_interaction_ended)
-	interaction_scene.settings.connect(_go_to_settings)
-	interaction_scene.quit.connect(_go_to_option_menu)
+	interaction_scene.done.connect(_on_interaction_ended, CONNECT_DEFERRED)
+	interaction_scene.settings.connect(_go_to_settings, CONNECT_DEFERRED)
+	interaction_scene.quit.connect(_go_to_option_menu, CONNECT_DEFERRED)
 
 	match GameState.get_current_interaction():
 		GameState.InteractionType.DIALOGUE:
