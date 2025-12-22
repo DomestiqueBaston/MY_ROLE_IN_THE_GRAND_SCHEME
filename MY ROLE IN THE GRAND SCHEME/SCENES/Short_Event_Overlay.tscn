@@ -3153,7 +3153,7 @@ offset_right = 474.0
 offset_bottom = 294.0
 rotation = 0.0356184
 bbcode_enabled = true
-text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]against  all  odds[/color][/pulse])!
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You[/color][/pulse] succeeded  ([pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff8864]against  all  odds[/color][/pulse])!
 
 [shake rate=7.0 level=5 connected=0][color=#ff8864]Well, color me surprised…[/color][/shake]
 It's  almost impressive how you managed to  pull that  off.
