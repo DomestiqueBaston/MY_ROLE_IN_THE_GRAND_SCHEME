@@ -312,7 +312,7 @@ Les emploi du temps
 		- On travaille 5 jours par semaine (en général du lundi au vendredi).
 		- Un PNJ qui a un boulot sera sur son lieu de travail pendant 2 tranches horaires de 4h consécutives (seulement la Nuit pour le travail de nuit).
 		- Lorsqu’un PNJ travaille aussi le Week-end, SON week-end sera les Lundi et mardi.
-		- Personne ne travail la nuit + une autre tranche horaire.
+		- Personne ne travaille la nuit + une autre tranche horaire.
 		- Un PNJ dormira chez lui la Nuit.
 		- Un PNJ qui travaille de nuit dormira chez lui le matin et l’après-midi.
 		- On peut interagir avec un PNJ qui dort avec -1Rep à l’issue de l’Interaction !
@@ -458,8 +458,6 @@ Les différentes piles de cartes du joueur (en interaction)
 	- Pile Objet (cartes Objet)
 	- Pile Lieu (cartes Lieu)
 	Les piles PNJ, Objet et Lieu contiennent tout ce qui est connu du joueur et qui n’est pas qualifié d’Evidence.
-
-
 
 Les interactions : Dialogue, Combat et Investigation
 	- On ne peut pas faire plusieurs interactions en même temps.
