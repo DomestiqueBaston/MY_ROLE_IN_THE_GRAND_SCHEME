@@ -219,7 +219,7 @@ func _update_transparency():
 		if Globals.is_link_visible(self):
 			modulate.a = 1
 		else:
-			modulate.a = 0.25
+			modulate.a = 0
 
 func _update_tooltip():
 	if not Engine.is_editor_hint():
