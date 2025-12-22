@@ -434,7 +434,7 @@ offset_top = 1.0
 offset_right = 136.0
 offset_bottom = 9.0
 pivot_offset = Vector2(-9, 20)
-tooltip_text = "Property
+tooltip_text = "Ownership
 - Dotted: Probable
 - Solid: Confirmed"
 toggle_mode = true
