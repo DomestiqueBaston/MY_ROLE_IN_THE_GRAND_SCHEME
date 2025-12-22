@@ -202,7 +202,7 @@ func _on_ok_pressed():
 	var discard_cards = player.get_discard_cards().duplicate()
 	for card in mastery_cards:
 		if card.get_parent() == $Pool_Cards:
-			player.discard_mastery_card(card, true)
+			player.discard_mastery_card(card)
 	for card in discard_cards:
 		if card.get_parent() == $Mastery_Cards:
 			player.undiscard_mastery_card(card)
