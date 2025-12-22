@@ -731,9 +731,16 @@ func _generate_case_id():
 
 	return "%s#%s-%s.%s" % [part1, part2, part3, part4]
 
-func _generate_random_name():
-	return _case_name_data.part_1.pick_random() \
-		 + _case_name_data.part_2.pick_random()
+func _generate_random_name() -> String:
+	var name: String = ""
+	while name.is_empty():
+		name = (_case_name_data.part_1.pick_random() +
+				_case_name_data.part_2.pick_random())
+		for case in GameState.cases:
+			if name == case.get_random_name():
+				name = ""
+				break
+	return name
 
 func get_case_id() -> String:
 	return _case_id
