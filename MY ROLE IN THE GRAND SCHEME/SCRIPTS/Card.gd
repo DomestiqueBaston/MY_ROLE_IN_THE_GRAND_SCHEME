@@ -405,13 +405,14 @@ func find_linked_cards(link_type: int = -1) -> Array[Card]:
 
 ##
 ## Returns a list of links to this card. If link_type is given, only links of
-## that type are taken into consideration.
+## that type are taken into consideration. Temporary links are ignored.
 ##
 func find_links(link_type: int = -1) -> Array[Link]:
 	var ret: Array[Link]
 	for pin in _pins.values():
 		var link = pin.get_link_reference()
-		if link and (link_type < 0 or link_type == link.type):
+		if (link and (link_type < 0 or link_type == link.type)
+			and not link.is_temporary()):
 			ret.append(link)
 	return ret
 

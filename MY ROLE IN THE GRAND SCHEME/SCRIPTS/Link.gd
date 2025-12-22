@@ -298,6 +298,13 @@ func lower():
 		pin.z_index -= 1
 
 ##
+## Returns true if the link is temporary, that is, if one of the endpoints has
+## not yet been specified.
+##
+func is_temporary():
+	return not (pin1.backing and pin2.backing)
+
+##
 ## Returns true if the link is one of the incriminating link types.
 ##
 func is_incriminating() -> bool:
