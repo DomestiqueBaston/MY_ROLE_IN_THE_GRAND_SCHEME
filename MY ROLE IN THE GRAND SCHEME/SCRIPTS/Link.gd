@@ -223,7 +223,14 @@ func _update_transparency():
 
 func _update_tooltip():
 	if not Engine.is_editor_hint():
-		var tooltip = Type.keys()[type].capitalize()
+		var tooltip
+		match type:
+			Type.DEBT:
+				tooltip = "Debt\nInfluence"
+			Type.GUILT:
+				tooltip = "Culprit\nAccomplice\nEvidence\nWitness"
+			_:
+				tooltip = Type.keys()[type].capitalize()
 		if status == Status.NEW:
 			tooltip = "New " + tooltip
 		$Link_Texture.tooltip_text = tooltip
