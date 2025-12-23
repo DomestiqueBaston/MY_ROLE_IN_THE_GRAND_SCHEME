@@ -27,9 +27,9 @@ var _saved_HEA = -1
 
 func _ready():
 	_title_screen = $Active_Scene/Title_Screen
-	_title_screen.next.connect(_go_to_option_menu)
-	GameState.interaction_started.connect(_on_interaction_started)
-	GameState.died.connect(_on_death)
+	_title_screen.next.connect(_go_to_option_menu, CONNECT_DEFERRED)
+	GameState.interaction_started.connect(_on_interaction_started, CONNECT_DEFERRED)
+	GameState.died.connect(_on_death, CONNECT_DEFERRED)
 
 func _replace_scene(new_scene: PackedScene) -> Node:
 
@@ -62,7 +62,7 @@ func _replace_scene(new_scene: PackedScene) -> Node:
 
 func _go_to_option_menu():
 	var option_menu = await _replace_scene(_option_menu_scene)
-	option_menu.button_pressed.connect(_on_option_button_pressed)
+	option_menu.button_pressed.connect(_on_option_button_pressed, CONNECT_DEFERRED)
 
 func _on_option_button_pressed(button: StringName):
 	match button:
@@ -115,8 +115,8 @@ func _go_to_char_gen():
 		if not ok:
 			return
 	var new_game = await _replace_scene(_char_gen_scene)
-	new_game.confirm_pressed.connect(_start_game)
-	new_game.cancel_pressed.connect(_go_to_option_menu)
+	new_game.confirm_pressed.connect(_start_game, CONNECT_DEFERRED)
+	new_game.cancel_pressed.connect(_go_to_option_menu, CONNECT_DEFERRED)
 
 func _start_game():
 	GameState.start_game()
@@ -135,8 +135,8 @@ func _continue_game():
 		var case = GameState.get_current_case()
 		if case:
 			main.populate(case)
-		main.settings.connect(_go_to_settings)
-		main.quit.connect(_go_to_option_menu)
+		main.settings.connect(_go_to_settings, CONNECT_DEFERRED)
+		main.quit.connect(_go_to_option_menu, CONNECT_DEFERRED)
 		if interaction == GameState.InteractionType.BREAK_IN:
 			GameState.resume_break_in()
 		elif interaction == GameState.InteractionType.RUN_AWAY:
@@ -179,6 +179,9 @@ func _on_interaction_ended():
 	# Interaction scene, because we are already there.
 
 	var outcome = await GameState.end_interaction(interaction_scene.get_cards_played())
+
+	if GameState.player.health <= 0:
+		return
 
 	if outcome == GameState.InteractionOutcome.CONTINUE:
 		await Globals.dialog_overlay.show_do_not_kill_message()
