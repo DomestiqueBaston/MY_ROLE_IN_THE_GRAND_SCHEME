@@ -607,7 +607,7 @@ func attempt_investigation(location: LocationCard):
 		save_game()
 		var cards = await Globals.dialog_overlay.attempt_break_in()
 		if not await _play_break_in(cards):
-			end_interaction()
+			await end_interaction()
 			return
 
 	# finally, start the investigation
@@ -623,7 +623,7 @@ func resume_break_in():
 	if await _play_break_in(cards):
 		start_investigation(_current_interaction_location)
 	else:
-		end_interaction()
+		await end_interaction()
 
 ##
 ## Called if the game was interrupted during a run-away attempt, to resume where
@@ -632,7 +632,7 @@ func resume_break_in():
 func resume_run_away():
 	var cards = await Globals.dialog_overlay.attempt_run_away()
 	if await _play_run_away(cards):
-		end_interaction()
+		await end_interaction()
 	else:
 		start_combat(_current_interaction_npc, _current_interaction_location)
 
@@ -933,7 +933,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 			save_game()
 			var cards = await Globals.dialog_overlay.attempt_run_away()
 			if await _play_run_away(cards):
-				end_interaction()
+				await end_interaction()
 				return
 		start_combat(npc, location)
 	else:
