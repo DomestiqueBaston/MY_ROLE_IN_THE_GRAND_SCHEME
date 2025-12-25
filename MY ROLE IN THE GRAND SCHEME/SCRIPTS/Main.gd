@@ -806,9 +806,15 @@ func _on_case_changed():
 		populate(case)
 
 ##
-## Populates the scene with the given cards and links.
+## Populates the scene with the cards in the given case that have already been
+## revealed, and the visible links between them. If newly_revealed_cards is
+## given, those cards are revealed now.
 ##
-func populate(case: Case):
+func populate(case: Case, newly_revealed_cards: Array[Card] = []):
+
+	# if this is the first time the case has been displayed, layout the cards
+	# automatically
+
 	if case.is_layout_needed:
 		for card in case.get_revealed_cards():
 			if card is NpcCard or \
@@ -819,12 +825,29 @@ func populate(case: Case):
 				reserve.add_child(card)
 		_layout_cards()
 		case.is_layout_needed = false
+
+	# otherwise restore the card layout from last time
+
 	else:
 		for card in case.get_revealed_cards():
 			if card.was_stacked:
 				reserve.add_child(card)
 			else:
 				cards.add_child(card)
+
+	# put any newly revealed cards in the lower right corner
+
+	if newly_revealed_cards:
+		var bottom_right = cards.global_position + cards.size
+		var pos = bottom_right - Vector2(Card.size) - Vector2(5, 5)
+		for card in newly_revealed_cards:
+			cards.add_child(card)
+			card.blink()
+			card.is_revealed = true
+			card.global_position = pos
+			pos.x -= Card.size.x + 5
+
+	# add links AFTER cards so that they always appear in front
 
 	for link in case.get_links():
 		cards.add_child(link)

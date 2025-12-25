@@ -134,7 +134,7 @@ func _continue_game():
 		_check_player_attrs()
 		var case = GameState.get_current_case()
 		if case:
-			main.populate(case)
+			main.populate(case, GameState.take_newly_revealed_cards())
 		main.settings.connect(_go_to_settings, CONNECT_DEFERRED)
 		main.quit.connect(_go_to_option_menu, CONNECT_DEFERRED)
 		if interaction == GameState.InteractionType.BREAK_IN:

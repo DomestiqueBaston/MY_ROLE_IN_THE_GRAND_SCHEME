@@ -175,6 +175,12 @@ func expand_or_reduce():
 	set_expanded(not _is_expanded)
 
 ##
+## Causes the card to blink briefly.
+##
+func blink():
+	$Card_Animations.play("Card_Blink")
+
+##
 ## Specifies whether or not the card is highlighted. When a card is highlighted,
 ## its Z index is increased and its shadow is displayed. Sounds are played when
 ## a card's highlight state changes.
@@ -451,6 +457,14 @@ func get_all_location_connections() -> Array[LocationCard]:
 				cnxs.append(cnx)
 	return cnxs
 
+func get_all_object_connections() -> Array[ObjectCard]:
+	var cnxs: Array[ObjectCard]
+	for cnx_array in _connections.values():
+		for cnx in cnx_array:
+			if cnx is ObjectCard:
+				cnxs.append(cnx)
+	return cnxs
+
 func get_connections(type: Link.Type) -> Array[Card]:
 	var cnxs: Array[Card]
 	if type in _connections:
@@ -487,10 +501,16 @@ func push_state():
 
 ##
 ## Restores the state of the card from the last time push_state() was called,
-## popping the saved state off the stack.
+## popping the saved state off the stack. Returns false if push_state() has not
+## been called.
 ##
-func pop_state():
-	_state_stack.pop_back().restore(self)
+func pop_state() -> bool:
+	if _state_stack.is_empty():
+		push_error("pop_state: stack is empty for card ", get_display_name())
+		return false
+	else:
+		_state_stack.pop_back().restore(self)
+		return true
 
 ##
 ## Returns the card's name to display in the UI. By default, this is just the

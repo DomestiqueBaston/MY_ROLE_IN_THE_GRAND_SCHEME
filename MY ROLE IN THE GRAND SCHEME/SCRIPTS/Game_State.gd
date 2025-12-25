@@ -174,6 +174,9 @@ var _current_interaction_npc: NpcCard
 var _current_interaction_bonus_malus: int
 var _current_interaction_do_not_kill: bool
 
+# cards that were revealed by the previous interaction
+var _newly_revealed_cards: Array[Card]
+
 func _ready():
 	load_game()
 
@@ -187,6 +190,7 @@ func start_game():
 	_player_location = PlayerLocation.OFFICE
 	_player_location_card = null
 	_reset_interaction()
+	_newly_revealed_cards.clear()
 
 	cases.clear()
 	for i in 5:
@@ -827,7 +831,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 				who.health += value
 				return &"HEA"
 
-	var success = false
+	var success: bool
 	var critical_attr: StringName
 	var money_found: int = 0
 
@@ -835,6 +839,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 		player.health -= 1
 		critical_attr = tweak_attr.call(player, -1)
 		print("critical failure: update HEA, %s" % critical_attr)
+		success = false
 	elif actual_roll == 1:
 		critical_attr = tweak_attr.call(player, 1)
 		money_found = randi_range(25, 50)
@@ -844,9 +849,25 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 	elif net_roll > max_roll:
 		player.emotion -= 1
 		print("failure: update Emo")
+		success = false
 	else:
-		print("success: margin = %s" % [max_roll - net_roll])
+		print("success")
 		success = true
+
+	# if successful, reveal newly discovered information (NPCs and/or objects)
+
+	if success and net_roll <= max_roll:
+		var margin = max_roll - net_roll
+		var evidence_count = 1 if margin >= 3 else 0
+		var other_count = roundi(margin / 3.0) - evidence_count
+		print("success margin: %s" % margin)
+		_newly_revealed_cards = _get_unknown_connections_to_location(
+			_current_interaction_location, evidence_count, other_count)
+		for card in _newly_revealed_cards:
+			print("discovery: ", card.get_display_name())
+		save_game()
+
+	# display messages, increment the time, discard the cards that were played
 
 	if actual_roll == 10:
 		await Globals.dialog_overlay.show_player_improvement(-1)
@@ -1327,22 +1348,25 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 	match _current_interaction:
 		InteractionType.INVESTIGATION:
 			outcome = await _play_investigation(cards_played)
-			_pop_card_state()
+			if not _pop_card_state():
+				push_error("failed to restore card state at end of investigation")
 		InteractionType.DIALOGUE:
 			outcome = await _play_dialogue(cards_played)
 			if _current_interaction_npc:
 				_current_interaction_npc.test_health()
 			else:
-				print("interaction is dialogue but there is no NPC!?")
-			_pop_card_state()
+				push_error("interaction is dialogue but there is no NPC")
+			if not _pop_card_state():
+				push_error("failed to restore card state at end of dialogue")
 		InteractionType.COMBAT:
 			outcome = await _play_combat(cards_played)
 			if _current_interaction_npc:
 				_current_interaction_npc.test_health()
 			else:
-				print("interaction is combat but there is no NPC!?")
+				push_error("interaction is combat but there is no NPC")
 			if outcome != InteractionOutcome.CONTINUE:
-				_pop_card_state()
+				if not _pop_card_state():
+					push_error("failed to restore card state at end of combat")
 
 	player.clear_fallback_cards()
 	_reset_interaction()
@@ -1352,7 +1376,7 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 		save_game()
 	else:
 		if outcome == InteractionOutcome.CONTINUE:
-			_pop_card_state()
+			_pop_card_state(true)
 		outcome = InteractionOutcome.FAILURE
 
 	return outcome
@@ -1526,6 +1550,92 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 	return randi_range(1, 100) > percent * case.get_difficulty()
 
 #
+# Selects at random and returns discoveries (NPCs or objects) from the given
+# location.
+#
+func _get_unknown_connections_to_location(
+	location: LocationCard, evidence_count: int, other_count: int) -> Array[Card]:
+
+	var case: Case = get_current_case()
+
+	# maps evidence objects to associated NPC, or to the location if null
+	var evidence = {}
+	# maps useless objects to NPC or null, and NPCs to an arbitrary value
+	var others = {}
+
+	for npc in location.get_all_npc_connections():
+
+		# unknown objects associated with known NPCs
+
+		if npc.is_revealed:
+			for obj in npc.get_all_object_connections():
+				if not obj.is_revealed:
+					var map = evidence if obj in case.evidence else others
+					map[obj] = npc
+
+		# unknown NPCs associated with location
+
+		else:
+			others[npc] = null
+
+	# unknown objects associated with location (note that if the same object is
+	# associated with both an NPC and the location, the location will win, since
+	# this loop is done after the NPC loop)
+
+	for obj in location.get_all_object_connections():
+		if not obj.is_revealed:
+			var map = evidence if obj in case.evidence else others
+			map[obj] = null
+
+	# choose pieces of evidence at random
+
+	var cards: Array[Card]
+
+	while evidence_count > 0 and not evidence.is_empty():
+		var obj = evidence.keys().pick_random()
+		var npc = evidence[obj]
+		cards.append(obj)
+		if npc:
+			case.add_links_between_object_and_npc(obj, npc)
+		else:
+			case.add_links_between_object_and_location(obj, location)
+		evidence.erase(obj)
+		evidence_count -= 1
+
+	# choose other things at random (NPCs and/or useless objects)
+
+	while other_count > 0 and not others.is_empty():
+		var card = others.keys().pick_random()
+		if card is NpcCard:
+			var home = card.get_home()
+			if not home.is_revealed:
+				cards.append(home)
+			var link = case.create_link(card, home, Link.Type.HOME)
+			if link:
+				link.status = Link.Status.NEW
+			case.add_links_between_npc_and_location(card, location)
+		else:
+			var npc = others[card]
+			if npc:
+				case.add_links_between_object_and_npc(card, npc)
+			else:
+				case.add_links_between_object_and_location(card, location)
+		cards.append(card)
+		others.erase(card)
+		other_count -= 1
+
+	return cards
+
+##
+## Returns an array (possibly empty) of cards that were revealed by the last
+## interaction. The internal array is cleared.
+##
+func take_newly_revealed_cards() -> Array[Card]:
+	var ret = _newly_revealed_cards.duplicate()
+	_newly_revealed_cards.clear()
+	return ret
+
+#
 # Saves the visual state of all object, location and NPC cards that are visible
 # to the player. This is done before switching from the main scene to the
 # interaction scene so that, however the cards move around during the
@@ -1541,14 +1651,25 @@ func _push_card_state():
 #
 # Restores the visual state of all object, location and NPC cards after a
 # previous call to _push_card_state(). This is done before switching back from
-# the interaction scene to the main scene.
+# the interaction scene to the main scene. Returns false if the card state
+# cannot be restored correctly.
 #
-func _pop_card_state():
+func _pop_card_state(on_death: bool = false):
+	if not (on_death or _current_interaction in [
+			InteractionType.INVESTIGATION,
+			InteractionType.DIALOGUE,
+			InteractionType.COMBAT]):
+		push_error("cannot pop card state: no current interaction")
+		return false
+
+	var ok = true
 	for card in get_current_case().get_revealed_cards():
 		if card.get_card_type() in [
 			Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
 		]:
-			card.pop_state()
+			if not card.pop_state():
+				ok = false
+	return ok
 
 func save_game(binary: bool = false):
 	var file = FileAccess.open(_save_path, FileAccess.WRITE)
@@ -1585,6 +1706,7 @@ func assign(other: GameState):
 	_current_interaction_npc = other._current_interaction_npc
 	_current_interaction_bonus_malus = other._current_interaction_bonus_malus
 	_current_interaction_do_not_kill = other._current_interaction_do_not_kill
+	_newly_revealed_cards = other._newly_revealed_cards
 
 #
 # For save/load.
@@ -1611,6 +1733,8 @@ func get_referenced_objects():
 		refs.append(_current_interaction_location)
 	if _current_interaction_npc:
 		refs.append(_current_interaction_npc)
+	for card in _newly_revealed_cards:
+		refs.append(card)
 	return refs
 
 #
@@ -1649,6 +1773,12 @@ func get_json_dict():
 		if _current_interaction_do_not_kill:
 			dict["interaction_do_not_kill"] = _current_interaction_do_not_kill
 
+	if _newly_revealed_cards:
+		var card_refs = []
+		for card in _newly_revealed_cards:
+			card_refs.append(card.get_unique_id())
+		dict["newly_revealed_cards"] = card_refs
+
 	return dict
 
 #
@@ -1679,6 +1809,9 @@ func restore(dict, catalog):
 			_current_interaction_npc = catalog[dict.interaction_npc]
 		_current_interaction_bonus_malus = dict.get("interaction_bonus_malus", 0)
 		_current_interaction_do_not_kill = dict.get("interaction_do_not_kill", false)
+
+	for card_ref in dict.get("newly_revealed_cards", []):
+		_newly_revealed_cards.append(catalog[card_ref])
 
 #
 # For save/load.

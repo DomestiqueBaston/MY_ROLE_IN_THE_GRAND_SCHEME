@@ -526,10 +526,10 @@ func _randomize():
 			var roll = 2 if home == work else randi() % 3
 			if roll != 0 or home == _crime_location:
 				home.is_revealed = true
-				_create_link(npc, home, Link.Type.HOME)
+				create_link(npc, home, Link.Type.HOME)
 			if roll != 1 or work == _crime_location:
 				work.is_revealed = true
-				_create_link(npc, work, Link.Type.WORK)
+				create_link(npc, work, Link.Type.WORK)
 
 	for victim in victims:
 		if victim.is_married:
@@ -537,8 +537,8 @@ func _randomize():
 			partner.is_revealed = true
 			var home = partner.get_home()
 			if home.is_revealed:
-				_create_link(partner, home, Link.Type.HOME)
-			_create_link(victim, partner, Link.Type.INTIMACY)
+				create_link(partner, home, Link.Type.HOME)
+			create_link(victim, partner, Link.Type.INTIMACY)
 
 	if _crime_location:
 		_crime_location.is_revealed = true
@@ -693,9 +693,13 @@ func _get_object_owner_counts(obj_id: String) -> Array:
 	var location_owner_count = location_owners.pick_random() as int
 	return [npc_owner_count, location_owner_count]
 
-func _create_link(from: Card, to: Card, type: Link.Type):
+##
+## Creates a visible link of the given type from one card to another and returns
+## it. Does nothing if there is already a link like that.
+##
+func create_link(from: Card, to: Card, type: Link.Type) -> Link:
 	if from in to.find_linked_cards(type):
-		return
+		return null
 
 	var pin1 = Pin.allocate()
 	pin1.card_location = from.find_closest_unused_pin(Vector2(Card.size.x, 0))
@@ -714,6 +718,7 @@ func _create_link(from: Card, to: Card, type: Link.Type):
 	link.blocked = true
 
 	add_link(link)
+	return link
 
 func _generate_case_id():
 	# [A-Z][a-z]
@@ -895,6 +900,40 @@ func update_npc_roles():
 			elif card2.apparent_role == NpcCard.NpcRole.CULPRIT:
 				if card1.actual_role != NpcCard.NpcRole.VICTIM:
 					card1.apparent_role = NpcCard.NpcRole.ACCOMPLICE
+
+##
+## Adds initial, visible links between a newly discovered NPC and a location (if
+## the location is the NPC's place of work, hangout or hideout).
+##
+func add_links_between_npc_and_location(npc: NpcCard, location: LocationCard):
+	for type in [Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
+		if location in npc.get_connections(type):
+			var link = create_link(npc, location, type)
+			if link:
+				link.status = Link.Status.NEW
+				link.blocked = (type == Link.Type.WORK)
+
+##
+## Adds the initial, visible link between a newly discovered object and an NPC
+## (if the object belongs to the NPC).
+##
+func add_links_between_object_and_npc(object: ObjectCard, npc: NpcCard):
+	if npc in object.get_connections(Link.Type.PROPERTY):
+		var link = create_link(npc, object, Link.Type.PROPERTY)
+		if link:
+			link.status = Link.Status.NEW
+			link.blocked = false
+
+##
+## Adds the initial, visible link between a newly discovered object and a
+## location (if the object is found in the location).
+##
+func add_links_between_object_and_location(object: ObjectCard, location: LocationCard):
+	if location in object.get_connections(Link.Type.FOUND):
+		var link = create_link(location, object, Link.Type.FOUND)
+		if link:
+			link.status = Link.Status.NEW
+			link.blocked = false
 
 func print_case():
 	print()
