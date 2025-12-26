@@ -36,8 +36,7 @@
 		"name": "Key",
 		"description": "It could link someone to a crime scene.",
 		"owners": {
-			"npc": [1],
-			"location": [1]
+			"npc": [1]
 		}
 	},
 	"OBJ006": {
