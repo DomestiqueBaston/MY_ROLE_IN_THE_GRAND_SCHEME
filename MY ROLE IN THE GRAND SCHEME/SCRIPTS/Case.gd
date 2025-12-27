@@ -520,28 +520,28 @@ func _randomize():
 
 	for npc_list in [victims, witnesses, suspects]:
 		for npc in npc_list:
-			npc.is_revealed = true
+			npc.reveal_status = Card.RevealStatus.REVEALED
 			var home = npc.get_home()
 			var work = npc.get_work()
 			var roll = 2 if home == work else randi() % 3
 			if roll != 0 or home == _crime_location:
-				home.is_revealed = true
+				home.reveal_status = Card.RevealStatus.REVEALED
 				create_link(npc, home, Link.Type.HOME)
 			if roll != 1 or work == _crime_location:
-				work.is_revealed = true
+				work.reveal_status = Card.RevealStatus.REVEALED
 				create_link(npc, work, Link.Type.WORK)
 
 	for victim in victims:
 		if victim.is_married:
 			var partner = victim.get_one_connection(Link.Type.INTIMACY)
-			partner.is_revealed = true
+			partner.reveal_status = Card.RevealStatus.REVEALED
 			var home = partner.get_home()
-			if home.is_revealed:
+			if home.reveal_status == Card.RevealStatus.REVEALED:
 				create_link(partner, home, Link.Type.HOME)
 			create_link(victim, partner, Link.Type.INTIMACY)
 
 	if _crime_location:
-		_crime_location.is_revealed = true
+		_crime_location.reveal_status = Card.RevealStatus.REVEALED
 
 func _get_count_from_array(count) -> int:
 	if count is Array and not count.is_empty():
@@ -702,11 +702,13 @@ func create_link(from: Card, to: Card, type: Link.Type) -> Link:
 		return null
 
 	var pin1 = Pin.allocate()
-	pin1.card_location = from.find_closest_unused_pin(Vector2(Card.size.x, 0))
+	var pos = from.to_global(Vector2(Card.size.x, 0))
+	pin1.card_location = from.find_closest_unused_pin(pos)
 	pin1.backing = from
 
 	var pin2 = Pin.allocate()
-	pin2.card_location = to.find_closest_unused_pin(Vector2(0, 0))
+	pos = to.to_global(Vector2(0, 0))
+	pin2.card_location = to.find_closest_unused_pin(pos)
 	pin2.backing = to
 
 	var link = Link.allocate()
@@ -779,15 +781,29 @@ func get_all_cards() -> Array[Card]:
 	return all_cards
 
 ##
-## Returns an array of the cards that have been revealed to the player thus far.
+## Returns an array of the cards that have been revealed to the player thus far,
+## that is, whose RevealStatus is REVEALED.
 ##
 func get_revealed_cards() -> Array[Card]:
 	var cards: Array[Card]
 	for card_list in [npcs, evidence, other_objects, locations]:
 		for card in card_list:
-			if card.is_revealed:
+			if card.reveal_status == Card.RevealStatus.REVEALED:
 				cards.append(card)
 	return cards
+
+##
+## Returns cards that have either been revealed to the player already or have
+## not yet been revealed but are ready to be.
+##
+func get_unhidden_cards(revealed_cards, cards_in_limbo):
+	for card_list in [npcs, evidence, other_objects, locations]:
+		for card in card_list:
+			match card.reveal_status:
+				Card.RevealStatus.LIMBO:
+					cards_in_limbo.append(card)
+				Card.RevealStatus.REVEALED:
+					revealed_cards.append(card)
 
 ##
 ## Returns the cards for all the NPCs created for the case.

@@ -807,16 +807,22 @@ func _on_case_changed():
 
 ##
 ## Populates the scene with the cards in the given case that have already been
-## revealed, and the visible links between them. If newly_revealed_cards is
-## given, those cards are revealed now.
+## revealed, and the visible links between them. Any cards "in limbo", that have
+## been discovered but not yet revealed, are revealed now.
 ##
-func populate(case: Case, newly_revealed_cards: Array[Card] = []):
+func populate(case: Case):
+
+	# which cards have already been revealed, and which need to be revealed now?
+
+	var revealed_cards: Array[Card]
+	var cards_in_limbo: Array[Card]
+	case.get_unhidden_cards(revealed_cards, cards_in_limbo)
 
 	# if this is the first time the case has been displayed, layout the cards
 	# automatically
 
 	if case.is_layout_needed:
-		for card in case.get_revealed_cards():
+		for card in revealed_cards:
 			if card is NpcCard or \
 				(card is LocationCard and \
 				 card.location_status == LocationCard.LocationStatus.CRIME_SCENE):
@@ -829,7 +835,7 @@ func populate(case: Case, newly_revealed_cards: Array[Card] = []):
 	# otherwise restore the card layout from last time
 
 	else:
-		for card in case.get_revealed_cards():
+		for card in revealed_cards:
 			if card.was_stacked:
 				reserve.add_child(card)
 			else:
@@ -837,13 +843,13 @@ func populate(case: Case, newly_revealed_cards: Array[Card] = []):
 
 	# put any newly revealed cards in the lower right corner
 
-	if newly_revealed_cards:
+	if cards_in_limbo:
 		var bottom_right = cards.global_position + cards.size
 		var pos = bottom_right - Vector2(Card.size) - Vector2(5, 5)
-		for card in newly_revealed_cards:
+		for card in cards_in_limbo:
 			cards.add_child(card)
 			card.blink()
-			card.is_revealed = true
+			card.reveal_status = Card.RevealStatus.REVEALED
 			card.global_position = pos
 			pos.x -= Card.size.x + 5
 

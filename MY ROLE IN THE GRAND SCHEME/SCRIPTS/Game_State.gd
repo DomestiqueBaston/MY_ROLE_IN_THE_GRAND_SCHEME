@@ -174,9 +174,6 @@ var _current_interaction_npc: NpcCard
 var _current_interaction_bonus_malus: int
 var _current_interaction_do_not_kill: bool
 
-# cards that were revealed by the previous interaction
-var _newly_revealed_cards: Array[Card]
-
 func _ready():
 	load_game()
 
@@ -190,7 +187,6 @@ func start_game():
 	_player_location = PlayerLocation.OFFICE
 	_player_location_card = null
 	_reset_interaction()
-	_newly_revealed_cards.clear()
 
 	cases.clear()
 	for i in 5:
@@ -861,10 +857,11 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 		var evidence_count = 1 if margin >= 3 else 0
 		var other_count = roundi(margin / 3.0) - evidence_count
 		print("success margin: %s" % margin)
-		_newly_revealed_cards = _get_unknown_connections_to_location(
+		var newly_revealed_cards = _get_unknown_connections_to_location(
 			_current_interaction_location, evidence_count, other_count)
-		for card in _newly_revealed_cards:
+		for card in newly_revealed_cards:
 			print("discovery: ", card.get_display_name())
+			card.reveal_status = Card.RevealStatus.LIMBO
 		save_game()
 
 	# display messages, increment the time, discard the cards that were played
@@ -1567,9 +1564,9 @@ func _get_unknown_connections_to_location(
 
 		# unknown objects associated with known NPCs
 
-		if npc.is_revealed:
+		if npc.reveal_status == Card.RevealStatus.REVEALED:
 			for obj in npc.get_all_object_connections():
-				if not obj.is_revealed:
+				if obj.reveal_status == Card.RevealStatus.HIDDEN:
 					var map = evidence if obj in case.evidence else others
 					map[obj] = npc
 
@@ -1583,7 +1580,7 @@ func _get_unknown_connections_to_location(
 	# this loop is done after the NPC loop)
 
 	for obj in location.get_all_object_connections():
-		if not obj.is_revealed:
+		if obj.reveal_status == Card.RevealStatus.HIDDEN:
 			var map = evidence if obj in case.evidence else others
 			map[obj] = null
 
@@ -1608,7 +1605,7 @@ func _get_unknown_connections_to_location(
 		var card = others.keys().pick_random()
 		if card is NpcCard:
 			var home = card.get_home()
-			if not home.is_revealed:
+			if home.reveal_status == Card.RevealStatus.HIDDEN:
 				cards.append(home)
 			var link = case.create_link(card, home, Link.Type.HOME)
 			if link:
@@ -1625,15 +1622,6 @@ func _get_unknown_connections_to_location(
 		other_count -= 1
 
 	return cards
-
-##
-## Returns an array (possibly empty) of cards that were revealed by the last
-## interaction. The internal array is cleared.
-##
-func take_newly_revealed_cards() -> Array[Card]:
-	var ret = _newly_revealed_cards.duplicate()
-	_newly_revealed_cards.clear()
-	return ret
 
 #
 # Saves the visual state of all object, location and NPC cards that are visible
@@ -1706,7 +1694,6 @@ func assign(other: GameState):
 	_current_interaction_npc = other._current_interaction_npc
 	_current_interaction_bonus_malus = other._current_interaction_bonus_malus
 	_current_interaction_do_not_kill = other._current_interaction_do_not_kill
-	_newly_revealed_cards = other._newly_revealed_cards
 
 #
 # For save/load.
@@ -1733,8 +1720,6 @@ func get_referenced_objects():
 		refs.append(_current_interaction_location)
 	if _current_interaction_npc:
 		refs.append(_current_interaction_npc)
-	for card in _newly_revealed_cards:
-		refs.append(card)
 	return refs
 
 #
@@ -1773,12 +1758,6 @@ func get_json_dict():
 		if _current_interaction_do_not_kill:
 			dict["interaction_do_not_kill"] = _current_interaction_do_not_kill
 
-	if _newly_revealed_cards:
-		var card_refs = []
-		for card in _newly_revealed_cards:
-			card_refs.append(card.get_unique_id())
-		dict["newly_revealed_cards"] = card_refs
-
 	return dict
 
 #
@@ -1809,9 +1788,6 @@ func restore(dict, catalog):
 			_current_interaction_npc = catalog[dict.interaction_npc]
 		_current_interaction_bonus_malus = dict.get("interaction_bonus_malus", 0)
 		_current_interaction_do_not_kill = dict.get("interaction_do_not_kill", false)
-
-	for card_ref in dict.get("newly_revealed_cards", []):
-		_newly_revealed_cards.append(catalog[card_ref])
 
 #
 # For save/load.

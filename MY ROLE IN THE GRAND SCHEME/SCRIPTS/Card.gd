@@ -11,6 +11,12 @@ enum CardType {
 	NPC
 }
 
+enum RevealStatus {
+	HIDDEN,
+	LIMBO,
+	REVEALED
+}
+
 @export var card_name: String:
 	set(value):
 		card_name = value
@@ -32,7 +38,7 @@ enum CardType {
 			_update_opacity()
 
 ## Has the card been revealed to the player?
-var is_revealed: bool = false
+var reveal_status: RevealStatus = RevealStatus.HIDDEN
 
 ## Was the card in the main scene's reserve pile before it was removed from the
 ## scene?
@@ -547,8 +553,8 @@ func get_json_dict():
 		dict["x"] = position.x
 	if position.y != 0.0:
 		dict["y"] = position.y
-	if is_revealed:
-		dict["is_revealed"] = is_revealed
+	if reveal_status != RevealStatus.HIDDEN:
+		dict["reveal_status"] = reveal_status
 	if not _is_expanded:
 		dict["is_expanded"] = _is_expanded
 	if _pins:
@@ -583,7 +589,7 @@ func restore(dict, catalog):
 	opacity = dict.get("opacity", 1.0)
 	was_stacked = dict.get("was_stacked", false)
 	position = Vector2(dict.get("x", 0.0), dict.get("y", 0.0))
-	is_revealed = dict.get("is_revealed", false)
+	reveal_status = dict.get("reveal_status", RevealStatus.HIDDEN)
 	_is_expanded = dict.get("is_expanded", true)
 	if "pins" in dict:
 		var pin_refs = dict.pins
