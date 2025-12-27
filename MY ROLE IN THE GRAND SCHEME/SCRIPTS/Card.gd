@@ -527,6 +527,14 @@ func get_display_name() -> String:
 	return card_name
 
 ##
+## Card subclasses should call this when the display name has changed, to update
+## the UI.
+##
+func display_name_changed():
+	if is_node_ready():
+		$Card_Mask/Card_BG/Card_Text/Card_Name.text = get_display_name()
+
+##
 ## Returns detailed information about the card to be displayed in the UI. This
 ## is not handled by all card types.
 ##

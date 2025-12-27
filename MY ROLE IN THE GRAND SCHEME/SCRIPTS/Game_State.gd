@@ -1610,6 +1610,7 @@ func _get_unknown_connections_to_location(
 			var link = case.create_link(card, home, Link.Type.HOME)
 			if link:
 				link.status = Link.Status.NEW
+				home.display_name_changed()
 			case.add_links_between_npc_and_location(card, location)
 		else:
 			var npc = others[card]

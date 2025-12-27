@@ -62,6 +62,10 @@ func _update_appearance():
 		if location_status != LocationStatus.NONE:
 			tooltip += "\n" + LocationStatus.keys()[location_status].capitalize()
 
+##
+## Overrides the method from the base class to generate a name that reflects the
+## name of the inhabitant(s), if known.
+##
 func get_display_name() -> String:
 	var inhabitants = find_linked_cards(Link.Type.HOME)
 	match inhabitants.size():
