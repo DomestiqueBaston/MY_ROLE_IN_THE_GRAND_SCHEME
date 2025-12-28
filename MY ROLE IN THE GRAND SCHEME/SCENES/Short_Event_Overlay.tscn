@@ -1,4 +1,4 @@
-[gd_scene load_steps=235 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=238 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -236,6 +236,69 @@ _data = {
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gfusj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8x3ap"]
+
+[sub_resource type="Animation" id="Animation_qmu3t"]
+resource_name = "Blink"
+length = 0.40000668
+loop_mode = 1
+step = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yes:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Yes", "yES", "Yes", "Yes"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("No:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["No", "nO", "nO"]
+}
+
+[sub_resource type="Animation" id="Animation_th1i4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yes:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["yES"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("No:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["No"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_psfuj"]
+_data = {
+&"Blink": SubResource("Animation_qmu3t"),
+&"RESET": SubResource("Animation_th1i4")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a7igc"]
 content_margin_left = 2.0
@@ -991,6 +1054,12 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gfusj")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8x3ap")
 text = "No"
 flat = true
+
+[node name="Yes_No" type="AnimationPlayer" parent="Overlays/Confirmation/Yes_No"]
+libraries = {
+&"": SubResource("AnimationLibrary_psfuj")
+}
+autoplay = "Blink"
 
 [node name="Give_Up_Case" type="Node2D" parent="Overlays"]
 visible = false
