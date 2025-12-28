@@ -24,7 +24,7 @@ enum MenuItem {
 	CHANGE_LINK_COLOR,
 	SWITCH_LINK,
 	DELETE_LINK,
-	REMOVE_WARNING
+	REMOVE_NEW
 }
 
 # highlighted card
@@ -93,7 +93,7 @@ func _ready():
 	popup.add_item("Switch conf./prob.", MenuItem.SWITCH_LINK)
 	popup.add_item("Delete link", MenuItem.DELETE_LINK)
 	popup.add_separator("  - - - - - - - - - -  ")
-	popup.add_item("Remove warning", MenuItem.REMOVE_WARNING)
+	popup.add_item("Remove new indicator", MenuItem.REMOVE_NEW)
 	
 	popup.id_pressed.connect(_handle_popup)
 	submenu1.id_pressed.connect(_handle_submenu.bind(0))
@@ -593,6 +593,10 @@ func _set_drop_target(target: Node2D):
 func _can_link(source: Node2D, target: Node2D, link_type: Link.Type):
 	return source and target and Link.is_link_valid(source, target, link_type)
 
+#
+# Called to display the popup menu. Items are enabled or disabled as appropriate
+# first, depending on where the user clicked.
+#
 func _popup_menu(pos: Vector2, node: Node2D):
 	if _input_paused:
 		return
@@ -654,12 +658,18 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 		popup.set_item_disabled(index, false)
 
+	# investigation: enable only for locations the player can investigate, and
+	# if he is apt
+
 	index = popup.get_item_index(MenuItem.INVESTIGATION)
 	popup.set_item_disabled(
 		index,
 		not player_is_apt
 		or node is not LocationCard
 		or node.has_been_investigated_today())
+
+	# link creation items: enable only if player clicked on a card, and enable
+	# only appropriate link types
 
 	var link_create_ids = [
 		MenuItem.CREATE_CONF_LINK,
@@ -678,6 +688,8 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		else:
 			popup.set_item_disabled(index, true)
 
+	# link modification items: enable only for links that the player can modify
+
 	var link_mod_ids = [
 		MenuItem.CHANGE_LINK_COLOR,
 		MenuItem.SWITCH_LINK,
@@ -687,6 +699,10 @@ func _popup_menu(pos: Vector2, node: Node2D):
 	for id in link_mod_ids:
 		index = popup.get_item_index(id)
 		popup.set_item_disabled(index, node is not Link or node.blocked)
+
+	index = popup.get_item_index(MenuItem.REMOVE_NEW)
+	popup.set_item_disabled(
+		index, node is not Link or node.status != Link.Status.NEW)
 
 	# player cannot change a link to a type for which there is already a link
 
@@ -726,6 +742,9 @@ func _will_npc_be_there(
 	else:
 		return not should_be_at_work
 
+#
+# Called when an item is chosen from the main popup menu.
+#
 func _handle_popup(id: int):
 	match id:
 		MenuItem.INVESTIGATION:
@@ -741,9 +760,14 @@ func _handle_popup(id: int):
 			if _popup_node is Link:
 				_delete_link(_popup_node)
 				_popup_node = null
-		MenuItem.REMOVE_WARNING:
-			print("remove warning")
+		MenuItem.REMOVE_NEW:
+			if _popup_node is Link:
+				_popup_node.status = Link.Status.CONFIRMED
 
+#
+# Called when an item is chosen from one of the link type submenus (Create
+# confirmed link, Create probable link, Change link color).
+#
 func _handle_submenu(id: int, submenu: int):
 	match submenu:
 		0:
@@ -755,6 +779,8 @@ func _handle_submenu(id: int, submenu: int):
 		2:
 			if _popup_node is Link:
 				_popup_node.type = id
+				if _popup_node.status == Link.Status.NEW:
+					_popup_node.status = Link.Status.CONFIRMED
 				var case = GameState.get_current_case()
 				if case:
 					case.update_npc_roles()
