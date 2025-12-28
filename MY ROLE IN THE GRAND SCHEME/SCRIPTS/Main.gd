@@ -803,7 +803,7 @@ func _delete_link(link: Link):
 
 	# delete the link (which also deletes any links connected to it)
 
-	link.queue_free()
+	link.free()
 
 	# need to update NPCs' apparent roles
 
