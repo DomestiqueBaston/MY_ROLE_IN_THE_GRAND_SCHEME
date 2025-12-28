@@ -71,6 +71,12 @@ enum NpcCombatState {
 	WILL_TALK
 }
 
+enum NpcEscapeOutcome {
+	STAYED,
+	FAILED,
+	SUCCEEDED
+}
+
 var player: Player = Player.new()
 var cases: Array[Case]
 
@@ -935,13 +941,17 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 
 	# the NPC may try to run away
 
-	if not is_first_visit and location != null and await _does_npc_run(npc):
-		return
+	var npc_fled := NpcEscapeOutcome.STAYED
+	if not is_first_visit and location:
+		npc_fled = await _does_npc_run(npc)
+		if npc_fled == NpcEscapeOutcome.SUCCEEDED:
+			return
 
 	# if the NPC attacks the player, start a combat, not a dialogue, and give
 	# the player the chance to try to run away first
 
-	if not is_first_visit and location != null and _does_npc_attack(npc):
+	if (not is_first_visit and location and npc_fled == NpcEscapeOutcome.STAYED
+		and _does_npc_attack(npc)):
 		await Globals.dialog_overlay.show_attack_message(npc)
 		if await Globals.dialog_overlay.confirm_run_away():
 			player.pick_run_away_cards()
@@ -1444,12 +1454,12 @@ func get_player_location_card() -> LocationCard:
 # Returns true if the NPC runs away before a dialogue, false if he does not run
 # away, or if he tries to run away but fails.
 #
-func _does_npc_run(npc: NpcCard) -> bool:
+func _does_npc_run(npc: NpcCard) -> NpcEscapeOutcome:
 
 	# in most cases he does not try
 
 	if randi() % (2 * npc.mental) > 0:
-		return false
+		return NpcEscapeOutcome.STAYED
 
 	# if he does want to try, roll the die...
 
@@ -1496,7 +1506,7 @@ func _does_npc_run(npc: NpcCard) -> bool:
 	else:
 		await Globals.dialog_overlay.show_npc_run(success)
 
-	return success
+	return NpcEscapeOutcome.SUCCEEDED if success else NpcEscapeOutcome.FAILED
 
 func _increase_npc_wanted(npc: NpcCard) -> bool:
 	if npc.wanted < 4:
