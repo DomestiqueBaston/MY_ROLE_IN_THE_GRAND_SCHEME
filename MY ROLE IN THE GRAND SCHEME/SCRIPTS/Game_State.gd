@@ -1554,7 +1554,7 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 		else:
 			percent += 5
 
-	return randi_range(1, 100) > percent * case.get_difficulty()
+	return randi_range(1, 100) <= percent * case.get_difficulty()
 
 #
 # Selects at random and returns discoveries (NPCs or objects) from the given
