@@ -1523,7 +1523,7 @@ func _increase_npc_wanted(npc: NpcCard) -> bool:
 # case.
 #
 func _does_npc_attack(npc: NpcCard) -> bool:
-	var percent: int = 0
+	var percent = 0
 
 	match npc.player_reputation:
 		-2:
@@ -1554,7 +1554,12 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 		else:
 			percent += 5
 
-	return randi_range(1, 100) <= percent * case.get_difficulty()
+	percent *= case.get_difficulty()
+
+	if npc.actual_role == NpcCard.NpcRole.VICTIM:
+		percent *= 0.25
+
+	return randi_range(1, 100) <= percent
 
 #
 # Selects at random and returns discoveries (NPCs or objects) from the given
