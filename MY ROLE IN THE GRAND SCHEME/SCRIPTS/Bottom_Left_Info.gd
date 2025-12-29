@@ -267,7 +267,8 @@ func show_object(obj: ObjectCard):
 		$VBox/Scroller_Object/Info_Object/Found_Location.show()
 
 	var owners = obj.find_links(Link.Type.PROPERTY).filter(
-		func(card): return card is NpcCard)
+		func(link):
+			return link.pin1.backing is NpcCard or link.pin2.backing is NpcCard)
 	if owners:
 		$VBox/Scroller_Object/Info_Object/Separator_03.show()
 		$VBox/Scroller_Object/Info_Object/Property.show()
