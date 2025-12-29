@@ -22,7 +22,7 @@ present at any given time, and The_Game.tscn makes nice transitions when the
 current scene changes.
 
 **Globals.tscn** contains stuff which is always useful, regardless of the
-current scene (Main_V2, Interaction, etc.): the mouse, overlays for making the
+current scene (Main_V2, Interaction, etc.): the mouse; overlays for making the
 image shaky and the text hard to read; sound effects and music; and a sub-scene
 containing all the message boxes, dialogs, etc. (see Short_Event_Overlay.tscn
 below).
@@ -45,7 +45,7 @@ for cards.
 
 The class Link is defined in scene Link.tscn (and the script Link.gd). Each link
 contains two pins (instances of Pin_Small.tscn) for its endpoints. Each pin is
-attached to either a Card or another Link (because a link can connect a card to
+attached to either a Card or a Link (because a link can connect a card to
 another link).
 
 Main_V2.tscn, which is the only scene where links and pins are displayed,
