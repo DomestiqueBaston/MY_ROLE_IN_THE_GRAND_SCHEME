@@ -560,6 +560,19 @@ func visit_doctor():
 		_last_doctor_day = get_day()
 		save_game()
 
+#
+# Returns true if location is a place of residence but all its residents are in
+# jail.
+#
+func _are_residents_in_jail(location: LocationCard) -> bool:
+	var npcs = location.find_linked_cards(Link.Type.HOME)
+	if npcs.is_empty():
+		return false
+	for npc in npcs:
+		if npc is NpcCard and npc.npc_status != NpcCard.NpcStatus.JAIL:
+			return false
+	return true
+
 func attempt_investigation(location: LocationCard):
 
 	# go to the location first
@@ -579,8 +592,10 @@ func attempt_investigation(location: LocationCard):
 	if not location.is_open_for_business():
 
 		# if no NPCs are present, the player can either try to break in or leave
+		# except for one special case: if this is a residence and all the
+		# residents are in prison, the player can enter with a warrant
 
-		if location.get_npcs_present().is_empty():
+		if not (location.get_npcs_present() or _are_residents_in_jail(location)):
 			if not await Globals.dialog_overlay.confirm_break_in():
 				return
 			break_in_needed = true
