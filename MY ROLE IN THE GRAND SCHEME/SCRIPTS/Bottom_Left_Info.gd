@@ -279,6 +279,7 @@ func show_object(obj: ObjectCard):
 	if obj.is_object_evidence:
 		$VBox/Scroller_Object/Info_Object/Separator_04.show()
 		$VBox/Scroller_Object/Info_Object/Evidence.show()
+		$VBox/Scroller_Object/Info_Object/Evidence_Mark.show()
 
 	$VBox/Scroller_Object.show()
 	$VBox/Scroller_Location.hide()
