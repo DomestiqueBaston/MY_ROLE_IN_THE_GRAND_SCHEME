@@ -762,7 +762,15 @@ func _handle_popup(id: int):
 				_popup_node = null
 		MenuItem.REMOVE_NEW:
 			if _popup_node is Link:
-				_popup_node.status = Link.Status.CONFIRMED
+				if _popup_node.type in [
+						Link.Type.PROPERTY,
+						Link.Type.HOME,
+						Link.Type.WORK,
+						Link.Type.FOUND
+				]:
+					_popup_node.status = Link.Status.CONFIRMED
+				else:
+					_popup_node.status = Link.Status.PROBABLE
 
 #
 # Called when an item is chosen from one of the link type submenus (Create
