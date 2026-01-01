@@ -491,9 +491,10 @@ Dialogue
 	- Le joueur peut fuir une agression d’avant Dialogue ! Voir Déclenchement d’un combat par un PNJ lié à l’enquête à Combat.
 	- À la première rencontre, il n’y a pas de risque d’agression !
 	- Bonus de 2 aux cartes Evidence si le lien incriminant est valide (réellement dans l’enquête).
+	- Les PNJs témoins ont un malus de 1 au jet de dé.
 	- Le jet de dé de base pour un dialogue est : round((PHY + MEN×2 + HEA)÷4).
 		Pour le joueur : viendront s’ajouter ou se soustraire les éventuels bonus/malus des cartes Dialogue et Abstraite, Non-Maîtrise, d’Evidence (bonne ou mauvaise utilisation), de difficulté de l’enquête, de Rep, d’Emo, d’Add, de Wan, de Factures impayées, de Sommeil, de Veille, de Lieu (sur place uniquement, pas une carte jouée), d’action de Nuit, de Bonus dû à la carte Combat Special « Ne pas tuer ! ».
-		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de Mensonge (voir plus bas), tentative ratée de fuite et précédente fuite de Dialogue.
+		Pour le PNJ (seulement ses caractéristiques, pas de cartes) : malus de Wan, malus de Mensonge (voir plus bas), malus de témoin,  tentative ratée de fuite et précédente fuite de Dialogue.
 
 	- On résout chaque Dialogue en une seule fois donc en 1 seul jet de dé.
 	- À partir du moment ou un Dialogue est engagé, le PNJ est « soustrait » à son emploi du temps qui reprendra dès la fin de l’interaction. Quelle que soit l’issue du Dialogue, le PNJ ne sera plus accessible avant le lendemain pour une nouvelle interaction.
