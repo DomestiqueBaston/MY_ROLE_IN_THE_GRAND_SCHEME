@@ -1513,6 +1513,18 @@ text = "I knew I'd get [color=#ff1c18]answers[/color]. I'm starting to [color=#f
 fit_content = true
 horizontal_alignment = 1
 
+[node name="No_New_Info" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(107, 14)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "...even though [color=#ff1c18]nothing new[/color] [color=#ff8864]came up[/color]."
+fit_content = true
+horizontal_alignment = 1
+
 [node name="No_Info" type="RichTextLabel" parent="Overlays/Interaction_Result/Dialogue/Chalk/Control/Report"]
 visible = false
 clip_contents = false
