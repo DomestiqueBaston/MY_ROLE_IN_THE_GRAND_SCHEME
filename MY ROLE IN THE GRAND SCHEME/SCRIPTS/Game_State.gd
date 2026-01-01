@@ -160,6 +160,9 @@ var _has_visited_hub: bool
 # the last day the player visited the doctor
 var _last_doctor_day: int
 
+# the last working day the player visited Rowena the dealer
+var _last_dealer_day: int
+
 # how many doses has Rowena got to sell?
 var _dealer_drug_stock: int
 
@@ -187,6 +190,7 @@ func start_game():
 	_hour = _start_time
 	_has_visited_hub = false
 	_last_doctor_day = -1
+	_last_dealer_day = -1
 	_dealer_drug_stock = randi_range(3, 7)
 	_last_crimes.clear()
 	_current_case_index = -1
@@ -509,8 +513,9 @@ func can_visit_dealer() -> bool:
 	var price = get_player_drug_price()
 	var travel_time = 0 if _player_location == PlayerLocation.ROWENA else 1
 	var eta = get_hour() + travel_time
-	return (eta < 8 or eta >= 20) \
-		and player.money >= price and player.get_debt_count() == 0
+	return ((eta < 8 or eta >= 20)
+			and player.money >= price and player.get_debt_count() == 0
+			and _last_dealer_day < get_working_day())
 
 func visit_dealer():
 	if _player_location != PlayerLocation.ROWENA:
@@ -520,12 +525,17 @@ func visit_dealer():
 			return
 
 	var price = get_player_drug_price()
+
 	var doses = await Globals.dialog_overlay.visit_dealer(
 		_dealer_drug_stock, player.money, price)
+
 	if doses > 0:
 		_dealer_drug_stock -= doses
 		player.money -= doses * price
 		player.drugs += doses
+
+	_last_dealer_day = get_working_day()
+	save_game()
 
 func get_player_doctor_fee() -> int:
 	var price: int = 75
@@ -1718,6 +1728,7 @@ func assign(other: GameState):
 	_hour = other._hour
 	_has_visited_hub = other._has_visited_hub
 	_last_doctor_day = other._last_doctor_day
+	_last_dealer_day = other._last_dealer_day
 	_dealer_drug_stock = other._dealer_drug_stock
 	_last_crimes = other._last_crimes
 	_current_case_index = other._current_case_index
@@ -1765,6 +1776,7 @@ func get_json_dict():
 		"hour": _hour,
 		"has_visited_hub": _has_visited_hub,
 		"last_doctor_day": _last_doctor_day,
+		"last_dealer_day": _last_dealer_day,
 		"dealer_drug_stock": _dealer_drug_stock,
 		"last_crimes": _last_crimes,
 		"current_case_index": _current_case_index
@@ -1801,6 +1813,7 @@ func restore(dict, catalog):
 	_hour = dict.hour
 	_has_visited_hub = dict.get("has_visited_hub", false)
 	_last_doctor_day = dict.get("last_doctor_day", -1)
+	_last_dealer_day = dict.get("last_dealer_day", -1)
 	_dealer_drug_stock = dict.get("dealer_drug_stock", 0)
 	_last_crimes.assign(dict.last_crimes)
 	_current_case_index = dict.current_case_index
