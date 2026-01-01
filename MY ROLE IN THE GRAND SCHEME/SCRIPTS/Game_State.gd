@@ -1044,6 +1044,9 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		npc_net_roll += npc.next_dialogue_malus
 		print("NPC escape malus: %s" % npc.next_dialogue_malus)
 		npc.next_dialogue_malus = 0
+	if npc.actual_role == NpcCard.NpcRole.WITNESS:
+		npc_net_roll += 1
+		print("NPC witness malus: 1")
 	print("NPC roll with bonus/malus: %s" % npc_net_roll)
 
 	var tweak_attr = func(who, value) -> StringName:
