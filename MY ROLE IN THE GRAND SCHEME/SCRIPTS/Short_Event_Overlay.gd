@@ -536,18 +536,27 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 
 ##
 ## Displays the results of an investigation, including whether it was a failure,
-## a success, a critical failure or a critical success and, in the last case,
-## how much money was found.
+## a success, a critical failure or a critical success. money is the amount of
+## money that was found (in case of a critical success), and infos is the
+## number of pieces of information that were discovered in case of success
+## (critical or not).
 ##
-func show_investigation_result(success: bool, critical: bool, money: int = 0):
+func show_investigation_result(
+	success: bool, critical: bool, money: int = 0, infos: int = 0):
 	var search_result: Node
 
 	if success:
 		if critical:
-			search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Success_Money
+			if infos > 0:
+				search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Success_Money
+			else:
+				search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Success_But_Nothing_Money
 			search_result.find_child("Money").text = str(money)
 		else:
-			search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Success
+			if infos > 0:
+				search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Success
+			else:
+				search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Success_But_Nothing
 	else:
 		if critical:
 			search_result = $Overlays/Interaction_Result/Investigation/Chalk/Control/Positive_Report/Report/Search_Result/Critical_Failure

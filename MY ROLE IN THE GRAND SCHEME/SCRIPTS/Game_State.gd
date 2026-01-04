@@ -861,6 +861,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 	var success: bool
 	var critical_attr: StringName
 	var money_found: int = 0
+	var info_found: int = 0
 
 	if actual_roll == 10:
 		player.health -= 1
@@ -885,14 +886,15 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 
 	if success and net_roll <= max_roll:
 		var margin = max_roll - net_roll
+		var total_count = roundi(margin / 3.0)
 		var evidence_count = 1 if margin >= 3 else 0
-		var other_count = roundi(margin / 3.0) - evidence_count
 		print("success margin: %s" % margin)
 		var newly_revealed_cards = _get_unknown_connections_to_location(
-			_current_interaction_location, evidence_count, other_count)
+			_current_interaction_location, evidence_count, total_count)
 		for card in newly_revealed_cards:
 			print("discovery: ", card.get_display_name())
 			card.reveal_status = Card.RevealStatus.LIMBO
+		info_found = newly_revealed_cards.size()
 		save_game()
 
 	# display messages, increment the time, discard the cards that were played
@@ -911,7 +913,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 
 	if player.health > 0:
 		await Globals.dialog_overlay.show_investigation_result(
-			success, actual_roll in [1, 10], money_found)
+			success, actual_roll in [1, 10], money_found, info_found)
 
 	if duration > 0:
 		# player's status (health, etc.) will be checked in end_interaction()
@@ -1591,10 +1593,12 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 
 #
 # Selects at random and returns discoveries (NPCs or objects) from the given
-# location.
+# location. evidence_count is the maximum number of pieces of evidence that the
+# player may find; total_count is the maximum number of objects that he may
+# find, whether actual evidence or not.
 #
 func _get_unknown_connections_to_location(
-	location: LocationCard, evidence_count: int, other_count: int) -> Array[Card]:
+	location: LocationCard, evidence_count: int, total_count: int) -> Array[Card]:
 
 	var case: Case = get_current_case()
 
@@ -1641,10 +1645,11 @@ func _get_unknown_connections_to_location(
 			case.add_links_between_object_and_location(obj, location)
 		evidence.erase(obj)
 		evidence_count -= 1
+		total_count -= 1
 
 	# choose other things at random (NPCs and/or useless objects)
 
-	while other_count > 0 and not others.is_empty():
+	while total_count > 0 and not others.is_empty():
 		var card = others.keys().pick_random()
 		if card is NpcCard:
 			var home = card.get_home()
@@ -1663,7 +1668,7 @@ func _get_unknown_connections_to_location(
 				case.add_links_between_object_and_location(card, location)
 		cards.append(card)
 		others.erase(card)
-		other_count -= 1
+		total_count -= 1
 
 	return cards
 
