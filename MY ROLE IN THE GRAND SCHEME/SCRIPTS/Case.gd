@@ -955,11 +955,11 @@ func add_links_between_npc_and_location(npc: NpcCard, location: LocationCard):
 
 ##
 ## Adds the initial, visible link between a newly discovered object and an NPC
-## (if the object belongs to the NPC).
+## or a location (if the object belongs to it).
 ##
-func add_links_between_object_and_npc(object: ObjectCard, npc: NpcCard):
-	if npc in object.get_connections(Link.Type.PROPERTY):
-		var link = create_link(npc, object, Link.Type.PROPERTY)
+func add_links_between_object_and_owner(object: ObjectCard, obj_owner: Card):
+	if obj_owner in object.get_connections(Link.Type.PROPERTY):
+		var link = create_link(obj_owner, object, Link.Type.PROPERTY)
 		if link:
 			link.status = Link.Status.NEW
 			link.blocked = false

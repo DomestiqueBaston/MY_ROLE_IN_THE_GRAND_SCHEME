@@ -32,6 +32,14 @@ func _ready():
 func _update_background():
 	$Card_Mask/Card_BG/Evidence.visible = is_object_evidence
 
+##
+## Returns true if the object's "automatic_owners_reveal" flag is set, meaning
+## that, when the object is revealed to the players, its owners are revealed,
+## too.
+##
+func get_owner_reveal() -> bool:
+	return _object_data[database_id].get("automatic_owners_reveal", false)
+
 static func create_card(id: String) -> ObjectCard:
 	var card = _card_scene.instantiate()
 	var object_info = _object_data[id]

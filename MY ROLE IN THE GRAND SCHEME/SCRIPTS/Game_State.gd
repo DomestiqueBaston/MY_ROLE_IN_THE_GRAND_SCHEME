@@ -1602,10 +1602,16 @@ func _get_unknown_connections_to_location(
 
 	var case: Case = get_current_case()
 
-	# maps evidence objects to associated NPC, or to the location if null
-	var evidence = {}
-	# maps useless objects to NPC or null, and NPCs to an arbitrary value
-	var others = {}
+	# objects that are evidence
+	var evidence = []
+
+	# useless objects and NPCs
+	var others = []
+
+	# for each object, an array of owners
+	var object_owners = {}
+
+	# look at every NPC connected with this location
 
 	for npc in location.get_all_npc_connections():
 
@@ -1614,61 +1620,86 @@ func _get_unknown_connections_to_location(
 		if npc.reveal_status == Card.RevealStatus.REVEALED:
 			for obj in npc.get_all_object_connections():
 				if obj.reveal_status == Card.RevealStatus.HIDDEN:
-					var map = evidence if obj in case.evidence else others
-					map[obj] = npc
+					if obj in case.evidence:
+						evidence.append(obj)
+					else:
+						others.append(obj)
+					if obj in object_owners:
+						object_owners[obj].append(npc)
+					else:
+						object_owners[obj] = [npc]
 
-		# unknown NPCs associated with location
+		# unknown NPCs associated with the location
 
 		else:
-			others[npc] = null
+			others.append(npc)
 
 	# unknown objects associated with location (note that if the same object is
-	# associated with both an NPC and the location, the location will win, since
-	# this loop is done after the NPC loop)
+	# associated with both an NPC and the location, the location wins)
 
 	for obj in location.get_all_object_connections():
 		if obj.reveal_status == Card.RevealStatus.HIDDEN:
-			var map = evidence if obj in case.evidence else others
-			map[obj] = null
+			if obj in case.evidence:
+				var array = evidence if obj in case.evidence else others
+				if obj in array:
+					object_owners.erase(obj)
+				else:
+					array.append(obj)
 
-	# choose pieces of evidence at random
+	# first choose pieces of evidence at random, if the player has earned it
 
 	var cards: Array[Card]
 
 	while evidence_count > 0 and not evidence.is_empty():
-		var obj = evidence.keys().pick_random()
-		var npc = evidence[obj]
+		var obj = evidence.pick_random()
 		cards.append(obj)
-		if npc:
-			case.add_links_between_object_and_npc(obj, npc)
-		else:
-			case.add_links_between_object_and_location(obj, location)
 		evidence.erase(obj)
 		evidence_count -= 1
 		total_count -= 1
 
-	# choose other things at random (NPCs and/or useless objects)
+	# then choose other things at random (NPCs and/or useless objects)
 
 	while total_count > 0 and not others.is_empty():
-		var card = others.keys().pick_random()
+		var card = others.pick_random()
+		cards.append(card)
+		others.erase(card)
+		total_count -= 1
+
+	# also reveal the owners of objects as appropriate (NPCs and/or a location)
+
+	for card_index in cards.size():
+		var card = cards[card_index]
+		if card is ObjectCard and card.get_owner_reveal():
+			for obj_owner in card.get_connections(Link.Type.PROPERTY):
+				if (obj_owner.reveal_status == Card.RevealStatus.HIDDEN
+					and not obj_owner in cards):
+					if card in object_owners:
+						object_owners[card].append(obj_owner)
+					else:
+						object_owners[card] = [obj_owner]
+					cards.append(obj_owner)
+
+	# create initial links to the newly revealed cards and, for NPCs, reveal
+	# their home addresses
+
+	for card_index in cards.size():
+		var card = cards[card_index]
 		if card is NpcCard:
 			var home = card.get_home()
-			if home.reveal_status == Card.RevealStatus.HIDDEN:
+			if (home.reveal_status == Card.RevealStatus.HIDDEN
+				and not home in cards):
 				cards.append(home)
 			var link = case.create_link(card, home, Link.Type.HOME)
 			if link:
 				link.status = Link.Status.NEW
 				home.display_name_changed()
 			case.add_links_between_npc_and_location(card, location)
-		else:
-			var npc = others[card]
-			if npc:
-				case.add_links_between_object_and_npc(card, npc)
+		elif card is ObjectCard:
+			if card in object_owners:
+				for obj_owner in object_owners[card]:
+					case.add_links_between_object_and_owner(card, obj_owner)
 			else:
 				case.add_links_between_object_and_location(card, location)
-		cards.append(card)
-		others.erase(card)
-		total_count -= 1
 
 	return cards
 
