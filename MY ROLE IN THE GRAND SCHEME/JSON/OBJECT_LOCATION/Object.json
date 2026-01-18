@@ -118,12 +118,12 @@
 	},
 	"OBJ014": {
 		"info_name": "- CONDOM -",
-		"name": "Fresh Condom",
-		"description": "Even empty, it's still a valid clue. And full...",
+		"name": "Used Condom",
+		"description": "Even fresh, it's still a valid clue. And used...",
 		"owners": {
 			"npc": [2]
 		},
-		"automatic_owners_reveal": false,
+		"automatic_owners_reveal": true,
 	},
 	"OBJ015": {
 		"info_name": "- WEAPON -",
