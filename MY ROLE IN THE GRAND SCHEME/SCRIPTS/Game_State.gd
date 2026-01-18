@@ -1689,10 +1689,8 @@ func _get_unknown_connections_to_location(
 			if (home.reveal_status == Card.RevealStatus.HIDDEN
 				and not home in cards):
 				cards.append(home)
-			var link = case.create_link(card, home, Link.Type.HOME)
-			if link:
-				link.status = Link.Status.NEW
-				home.display_name_changed()
+			case.create_link(card, home, Link.Type.HOME, true, true)
+			home.display_name_changed()
 			case.add_links_between_npc_and_location(card, location)
 		elif card is ObjectCard:
 			if card in object_owners:
