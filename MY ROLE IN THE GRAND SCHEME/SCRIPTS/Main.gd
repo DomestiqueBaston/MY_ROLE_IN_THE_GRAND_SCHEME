@@ -875,17 +875,26 @@ func populate(case: Case):
 			else:
 				cards.add_child(card)
 
-	# put any newly revealed cards in the lower right corner
+	# put any newly revealed cards in the lower right corner, NPCs to the left
+	# of the others
+
+	var place_card = func(card: Card, pos: Vector2):
+		cards.add_child(card)
+		card.blink()
+		card.reveal_status = Card.RevealStatus.REVEALED
+		card.global_position = pos
 
 	if cards_in_limbo:
 		var bottom_right = cards.global_position + cards.size
 		var pos = bottom_right - Vector2(Card.size) - Vector2(5, 5)
 		for card in cards_in_limbo:
-			cards.add_child(card)
-			card.blink()
-			card.reveal_status = Card.RevealStatus.REVEALED
-			card.global_position = pos
-			pos.x -= Card.size.x + 5
+			if not card is NpcCard:
+				place_card.call(card, pos)
+				pos.x -= Card.size.x + 5
+		for card in cards_in_limbo:
+			if card is NpcCard:
+				place_card.call(card, pos)
+				pos.x -= Card.size.x + 5
 
 	# add links AFTER cards so that they always appear in front
 
