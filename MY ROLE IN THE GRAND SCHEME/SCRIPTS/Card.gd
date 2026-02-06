@@ -485,6 +485,16 @@ func get_one_connection(type: Link.Type) -> Card:
 func has_connection(type: Link.Type) -> bool:
 	return type in _connections
 
+##
+## Looks for the first connection between this card and another. Returns the
+## type of connection found (a Link.Type), or -1 if none was found.
+##
+func get_connection_to(other: Card) -> int:
+	for type in _connections:
+		if other in _connections[type]:
+			return type
+	return -1
+
 func print_connections_of_type(label: String, type: Link.Type):
 	var cnxs = get_connections(type)
 	if cnxs:

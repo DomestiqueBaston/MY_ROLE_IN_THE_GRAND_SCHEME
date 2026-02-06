@@ -889,12 +889,8 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 		var total_count = roundi(margin / 3.0)
 		var evidence_count = 1 if margin >= 3 else 0
 		print("success margin: %s" % margin)
-		var newly_revealed_cards = _get_unknown_connections_to_location(
+		info_found = _get_unknown_connections_to_location(
 			_current_interaction_location, evidence_count, total_count)
-		for card in newly_revealed_cards:
-			print("discovery: ", card.get_display_name())
-			card.reveal_status = Card.RevealStatus.LIMBO
-		info_found = newly_revealed_cards.size()
 		save_game()
 
 	# display messages, increment the time, discard the cards that were played
@@ -1036,6 +1032,9 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		print("dialogue bonus/malus: %s" % player.next_dialogue_bonus_malus)
 		player.next_dialogue_bonus_malus = 0
 
+	# TODO: if the player played a card from the evidence pile but it is NOT
+	# evidence, give him a malus of 1
+
 	# roll the die for the player
 
 	var max_roll = roundi((attrs.PHY + 2 * attrs.MEN + attrs.HEA) / 4.0)
@@ -1092,7 +1091,6 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		else:
 			player.improve_emotion(1)
 			print("critical success: update Emo, %s" % critical_attr)
-		success = true
 
 	if npc_actual_roll == 10:
 		var npc_critical_attr = tweak_attr.call(npc, -1)
@@ -1109,16 +1107,26 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 			rep_delta -= 1
 			print("NPC critical success: update Rep, %s" % npc_critical_attr)
 
-	if actual_roll > 1:
-		if npc_actual_roll == 1:
-			print("failure due to NPC's critical success")
-		else:
-			var margin = max_roll - net_roll
-			var npc_margin = npc_max_roll - npc_net_roll
-			print("player success margin: %s" % margin)
-			print("NPC success margin: %s" % npc_margin)
-			print("net success margin: %s" % (margin - npc_margin))
-			success = (margin >= npc_margin)
+	var net_margin = -1
+
+	if actual_roll > 1 and npc_actual_roll == 1:
+		print("failure due to NPC's critical success")
+	else:
+		var margin = max_roll - net_roll
+		var npc_margin = npc_max_roll - npc_net_roll
+		net_margin = margin - npc_margin
+		print("player success margin: %s" % margin)
+		print("NPC success margin: %s" % npc_margin)
+		print("net success margin: %s" % net_margin)
+		if actual_roll == 1 or net_margin >= 0:
+			success = true
+
+	# if successful, NPC may reveal bits of information
+
+	if net_margin >= 0:
+		_get_info_from_npc(npc, net_margin, cards_played)
+
+	# adjust player's attributes depending on bonus/malus from played cards
 
 	var other_bonus_malus = attrs.get_post_bonus_malus(success)
 	for key in other_bonus_malus:
@@ -1592,13 +1600,186 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 	return randi_range(1, 100) <= percent
 
 #
-# Selects at random and returns discoveries (NPCs or objects) from the given
-# location. evidence_count is the maximum number of pieces of evidence that the
-# player may find; total_count is the maximum number of objects that he may
-# find, whether actual evidence or not.
+# Represents a piece of information, that is, a connection between two cards.
+#
+class InfoToReveal:
+	var card1: Card
+	var card2: Card
+	var link_type: Link.Type
+
+#
+# Returns true if the two given pieces of information are the same.
+#
+func _compare_infos(info1: InfoToReveal, info2: InfoToReveal) -> bool:
+	return (info1.link_type == info2.link_type and
+			info1.card1 in [info2.card1, info2.card2] and
+			info1.card2 in [info2.card1, info2.card2])
+
+#
+# Adds a piece of information to the given list if it is not already there.
+#
+func _add_info_to_reveal(
+	infos: Array[InfoToReveal], card1: Card, card2: Card, type: Link.Type):
+
+	var new_info = InfoToReveal.new()
+	new_info.card1 = card1
+	new_info.card2 = card2
+	new_info.link_type = type
+
+	for old_info in infos:
+		if _compare_infos(old_info, new_info):
+			return
+
+	infos.append(new_info)
+
+#
+# Returns true if the given NPC is qualified to reveal the hideout of another
+# NPC.
+#
+func _npc_can_reveal_hideout_of_other_npc(npc: NpcCard, other: NpcCard) -> bool:
+	return (npc == other
+			or npc.get_connection_to(other) in [
+				Link.Type.INTIMACY,
+				Link.Type.FRIEND,
+				Link.Type.ENEMY,
+				Link.Type.ACQUAINTANCE
+			])
+
+#
+# Adds every piece of information known about the "subject" NPC to the given
+# list, if the information is not there already. The subject's hideout can be
+# revealed only if the NPC talking (the "revealer") if hidden_info_ok is true,
+# the revealer is close enough to the subject.
+#
+func _add_all_known_info_about_npc(
+	infos: Array[InfoToReveal], revealer: NpcCard, subject: NpcCard,
+	hidden_info_ok: bool):
+
+	# where the NPC hangs out or hides out
+
+	var hangout = subject.get_hangout()
+	if hangout:
+		_add_info_to_reveal(infos, subject, hangout, Link.Type.HANGOUT)
+
+	if (hidden_info_ok and
+		_npc_can_reveal_hideout_of_other_npc(revealer, subject)):
+		var hideout = subject.get_one_connection(Link.Type.HIDEOUT)
+		if hideout:
+			_add_info_to_reveal(infos, subject, hideout, Link.Type.HIDEOUT)
+
+	# what other NPCs the NPC is linked to
+
+	for link_type in [
+		Link.Type.DEBT,
+		Link.Type.INTIMACY,
+		Link.Type.FRIEND,
+		Link.Type.ENEMY,
+		Link.Type.ACQUAINTANCE,
+		Link.Type.IDEOLOGY
+	]:
+		for other_npc in subject.get_connections(link_type):
+			_add_info_to_reveal(infos, subject, other_npc, link_type)
+
+	# objects belonging to the NPC
+
+	for obj in subject.get_connections(Link.Type.PROPERTY):
+		_add_info_to_reveal(infos, subject, obj, Link.Type.PROPERTY)
+
+#
+# Reveals new information from an NPC after a successful dialogue.
+#
+func _get_info_from_npc(
+	npc: NpcCard, margin: int, cards_played: Array[Card]) -> bool:
+
+	if margin < 0:
+		return false
+
+	#var info_count = maxi(1, roundi(margin / 2.0))
+	var hidden_info_ok = margin >= 2
+
+	# did the player ask for information about a specific object, place or NPC?
+
+	var subject_card: Card
+	for card in cards_played:
+		if card.get_card_type() in [
+				Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC]:
+			subject_card = card
+			break
+
+	# start by looking at information about the object, place or NPC the player
+	# asked about
+
+	var infos: Array[InfoToReveal]
+
+	if subject_card:
+		match subject_card.get_card_type():
+			Card.CardType.OBJECT:
+
+				# the object's owner(s), if the NPC knows them
+
+				for obj_owner in subject_card.get_connections(Link.Type.PROPERTY):
+					if obj_owner == npc or obj_owner in npc.get_all_npc_connections():
+						_add_info_to_reveal(
+							infos, obj_owner, subject_card, Link.Type.PROPERTY)
+						break
+
+			Card.CardType.LOCATION:
+				var npcs_at_location = subject_card.get_all_npc_connections()
+				if npc in npcs_at_location:
+
+					# known NPCs who live, work, hang out or hide out at the
+					# location
+
+					var known_npcs = npc.get_all_npc_connections()
+					for npc_at_location in npcs_at_location:
+						if npc_at_location == npc or npc_at_location in known_npcs:
+							var link_type = npc_at_location.get_connection_to(subject_card)
+							if (link_type != Link.Type.HIDEOUT
+								or (hidden_info_ok and
+									_npc_can_reveal_hideout_of_other_npc(npc, npc_at_location))):
+								_add_info_to_reveal(
+									infos, npc_at_location, subject_card, link_type)
+
+					# objects found at the location
+
+					for obj in subject_card.get_connections(Link.Type.FOUND):
+						_add_info_to_reveal(
+							infos, obj, subject_card, Link.Type.FOUND)
+
+			Card.CardType.NPC:
+
+				# everything that can be revealed about the NPC
+
+				if subject_card == npc or npc in subject_card.get_all_npc_connections():
+					_add_all_known_info_about_npc(
+						infos, npc, subject_card, hidden_info_ok)
+
+	# fall back on information about the NPC in the dialogue
+
+	if npc != subject_card:
+		_add_all_known_info_about_npc(infos, npc, npc, hidden_info_ok)
+
+	if infos.is_empty():
+		return false
+
+	print("information that can be revealed by %s:" % npc.get_display_name())
+	for info in infos:
+		print("- %s: %s <=> %s" % [
+			Link.Type.keys()[info.link_type].capitalize(),
+			info.card1.get_display_name(),
+			info.card2.get_display_name()])
+
+	return true
+
+#
+# Selects discoveries at random (NPCs or objects) from the given location.
+# evidence_count is the maximum number of pieces of evidence that the player may
+# find; total_count is the maximum number of objects that he may find, whether
+# actual evidence or not. Returns true if at least one piece of information was
+# revealed.
 #
 func _get_unknown_connections_to_location(
-	location: LocationCard, evidence_count: int, total_count: int) -> Array[Card]:
+	location: LocationCard, evidence_count: int, total_count: int) -> bool:
 
 	var case: Case = get_current_case()
 
@@ -1699,7 +1880,11 @@ func _get_unknown_connections_to_location(
 			else:
 				case.add_links_between_object_and_location(card, location)
 
-	return cards
+	for card in cards:
+		print("discovery: ", card.get_display_name())
+		card.reveal_status = Card.RevealStatus.LIMBO
+
+	return cards.size() > 0
 
 #
 # Saves the visual state of all object, location and NPC cards that are visible
