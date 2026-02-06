@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=30 format=3 uid="uid://oc1qwpv8yb2t"]
+[gd_resource type="Theme" load_steps=31 format=3 uid="uid://oc1qwpv8yb2t"]
 
 [ext_resource type="Texture2D" uid="uid://c6flkedn40iuv" path="res://GRAPHICS/CHARACTER_GENERATION/Slider_Button.png" id="1_rregs"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="3_3kxf1"]
@@ -44,6 +44,9 @@ bg_color = Color(0.2, 0.270588, 0.219608, 0.341176)
 bg_color = Color(1, 1, 1, 0.501961)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aikjv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o2nrs"]
+content_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotp6"]
 bg_color = Color(0.133333, 0.180392, 0.141176, 0.498039)
@@ -148,6 +151,7 @@ RichTextLabel/constants/outline_size = 3
 RichTextLabel/constants/shadow_offset_x = -1
 RichTextLabel/constants/shadow_offset_y = 1
 RichTextLabel/constants/shadow_outline_size = 0
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_o2nrs")
 TooltipLabel/styles/normal = SubResource("StyleBoxFlat_iotp6")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_0pnod")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_y3nae")

@@ -303,6 +303,7 @@ Le temps
 		Déplacement (Interaction « ratée ») : 1h.
 		Payer une facture : 1h (retour au bureau inclus).
 		Prendre 1 ou 2 doses de drogue d’un coup : 1h (retour au bureau inclus).
+		Switch case : 1h (retour au bureau inclus).
 		…
 	- Certaines cartes d’Interaction influent sur le temps passé.
 	- Seules les actions qui ne se font qu’au bureau ramènent automatiquement le joueur au bureau.
