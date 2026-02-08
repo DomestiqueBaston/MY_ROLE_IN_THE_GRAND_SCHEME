@@ -788,7 +788,7 @@ Enquête finale (6)	WTF!(malus de 3)
 
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
-		- round((niveau de difficulté) × 200) ±10% Dø (voir à la fin pour Niveau 0)
+		- round((niveau de difficulté) × 100) ±10% Dø (voir à la fin pour Niveau 0)
 		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites parmi lesquelles le joueur choisira celles qu’il garde pour sa main de maîtrise sans dépasser les limites de main de Maîtrise.
 		- Emo = 0, Add = 0, Wan = 0
  	- Si le joueur valide une enquête et qu’il s’est trompé, l’enquête est terminée pour lui et implique :
@@ -857,8 +857,8 @@ Enquêtes niveau 0 :
  - Chaque semaine, n’importe quel jour et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposer 1 enquête de niveau 0 par un PNJ quelconque.
 	- Pour ces crimes, un mobile ne sera pas « nécessaire » (le menu Crime Motive sera prérempli avec le seul mobile accessible).
 	- Les emplacements des preuves sont précisés dans le json !
-	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 150Dø.
-	- Le joueur à un bonus de 4 à ses jets de dé dans ces enquêtes.
+	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 75Dø.
+	- Le joueur à un bonus de 3 à ses jets de dé dans ces enquêtes.
 	- Le temps imparti pour résoudre une telle enquête est de : 6, 7 ou 8 jours.
 	- On ne peut pas abandonner une enquête de niveau 0 à plus d’1 jour de sa date de validité (comme niveau 1).
 	- Si on recycle les PNJs, alors refuser une enquête fera -1Rep et accepter +1Rep avec le PNJ.
