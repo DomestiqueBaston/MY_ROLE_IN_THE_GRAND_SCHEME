@@ -1162,7 +1162,7 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 
 	if npc.is_asleep():
 		rep_delta -= 1
-		print("NPC was sleeping: rep -1")
+		print("NPC was sleeping: Rep -1")
 
 	if rep_delta != 0:
 		var old_rep = npc.player_reputation
