@@ -1390,7 +1390,15 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 	var outcome = InteractionOutcome.FAILURE
 
-	match _current_interaction:
+	# reset the current interaction type immediately, so that the interaction
+	# will not be played again if the user interrupts the game, but leave the
+	# other interaction state variables, for now, so that they can be queried
+
+	var interaction_type = _current_interaction
+	_current_interaction = InteractionType.NONE
+	save_game()
+
+	match interaction_type:
 		InteractionType.INVESTIGATION:
 			outcome = await _play_investigation(cards_played)
 			if not _pop_card_state():
@@ -1421,7 +1429,7 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 		save_game()
 	else:
 		if outcome == InteractionOutcome.CONTINUE:
-			_pop_card_state(true)
+			_pop_card_state()
 		outcome = InteractionOutcome.FAILURE
 
 	return outcome
@@ -1904,14 +1912,7 @@ func _push_card_state():
 # the interaction scene to the main scene. Returns false if the card state
 # cannot be restored correctly.
 #
-func _pop_card_state(on_death: bool = false):
-	if not (on_death or _current_interaction in [
-			InteractionType.INVESTIGATION,
-			InteractionType.DIALOGUE,
-			InteractionType.COMBAT]):
-		push_error("cannot pop card state: no current interaction")
-		return false
-
+func _pop_card_state():
 	var ok = true
 	for card in get_current_case().get_revealed_cards():
 		if card.get_card_type() in [
