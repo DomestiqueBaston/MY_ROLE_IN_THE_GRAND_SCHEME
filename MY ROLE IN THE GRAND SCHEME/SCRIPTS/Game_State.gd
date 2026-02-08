@@ -1877,8 +1877,7 @@ func _get_unknown_connections_to_location(
 			if card in object_owners:
 				for obj_owner in object_owners[card]:
 					case.add_links_between_object_and_owner(card, obj_owner)
-			else:
-				case.add_links_between_object_and_location(card, location)
+			case.add_links_between_object_and_location(card, location)
 
 	for card in cards:
 		print("discovery: ", card.get_display_name())
