@@ -956,22 +956,6 @@ func add_links_between_npc_and_location(npc: NpcCard, location: LocationCard):
 		if location in npc.get_connections(type):
 			create_link(npc, location, type, type == Link.Type.WORK, true)
 
-##
-## Adds the initial, visible link between a newly discovered object and an NPC
-## or a location (if the object belongs to it).
-##
-func add_links_between_object_and_owner(object: ObjectCard, obj_owner: Card):
-	if obj_owner in object.get_connections(Link.Type.PROPERTY):
-		create_link(obj_owner, object, Link.Type.PROPERTY, false, true)
-
-##
-## Adds the initial, visible link between a newly discovered object and a
-## location (if the object is found in the location).
-##
-func add_links_between_object_and_location(object: ObjectCard, location: LocationCard):
-	if location in object.get_connections(Link.Type.FOUND):
-		create_link(location, object, Link.Type.FOUND, false, true)
-
 func print_case():
 	print()
 	print("************************************************************")

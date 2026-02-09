@@ -1802,43 +1802,19 @@ func _get_unknown_connections_to_location(
 	# useless objects and NPCs
 	var others = []
 
-	# for each object, an array of owners
-	var object_owners = {}
-
-	# look at every NPC connected with this location
+	# unknown NPCs associated with the location
 
 	for npc in location.get_all_npc_connections():
-
-		# unknown objects associated with known NPCs
-
-		if npc.reveal_status == Card.RevealStatus.REVEALED:
-			for obj in npc.get_all_object_connections():
-				if obj.reveal_status == Card.RevealStatus.HIDDEN:
-					if obj in case.evidence:
-						evidence.append(obj)
-					else:
-						others.append(obj)
-					if obj in object_owners:
-						object_owners[obj].append(npc)
-					else:
-						object_owners[obj] = [npc]
-
-		# unknown NPCs associated with the location
-
-		else:
+		if npc.reveal_status == Card.RevealStatus.HIDDEN:
 			others.append(npc)
 
-	# unknown objects associated with location (note that if the same object is
-	# associated with both an NPC and the location, the location wins)
+	# unknown objects associated with the location
 
 	for obj in location.get_all_object_connections():
 		if obj.reveal_status == Card.RevealStatus.HIDDEN:
 			if obj in case.evidence:
 				var array = evidence if obj in case.evidence else others
-				if obj in array:
-					object_owners.erase(obj)
-				else:
-					array.append(obj)
+				array.append(obj)
 
 	# first choose pieces of evidence at random, if the player has earned it
 
@@ -1859,44 +1835,58 @@ func _get_unknown_connections_to_location(
 		others.erase(card)
 		total_count -= 1
 
-	# also reveal the owners of objects as appropriate (NPCs and/or a location)
-
-	for card_index in cards.size():
-		var card = cards[card_index]
-		if card is ObjectCard and card.get_owner_reveal():
-			for obj_owner in card.get_connections(Link.Type.PROPERTY):
-				if (obj_owner.reveal_status == Card.RevealStatus.HIDDEN
-					and not obj_owner in cards):
-					if card in object_owners:
-						object_owners[card].append(obj_owner)
-					else:
-						object_owners[card] = [obj_owner]
-					cards.append(obj_owner)
-
-	# create initial links to the newly revealed cards and, for NPCs, reveal
-	# their home addresses
-
-	for card_index in cards.size():
-		var card = cards[card_index]
-		if card is NpcCard:
-			var home = card.get_home()
-			if (home.reveal_status == Card.RevealStatus.HIDDEN
-				and not home in cards):
-				cards.append(home)
-			case.create_link(card, home, Link.Type.HOME, true, true)
-			home.display_name_changed()
-			case.add_links_between_npc_and_location(card, location)
-		elif card is ObjectCard:
-			if card in object_owners:
-				for obj_owner in object_owners[card]:
-					case.add_links_between_object_and_owner(card, obj_owner)
-			case.add_links_between_object_and_location(card, location)
+	# reveal the new cards and appropriate links
 
 	for card in cards:
 		print("discovery: ", card.get_display_name())
-		card.reveal_status = Card.RevealStatus.LIMBO
+		_reveal_card(card)
+		if card is NpcCard:
+			case.add_links_between_npc_and_location(card, location)
+		elif card is ObjectCard:
+			for obj_owner in card.get_connections(Link.Type.PROPERTY):
+				if obj_owner == location or obj_owner.get_connection_to(location) >= 0:
+					_reveal_card(obj_owner)
+					case.create_link(obj_owner, card, Link.Type.PROPERTY, false, true)
+					if obj_owner is NpcCard:
+						case.add_links_between_npc_and_location(obj_owner, location)
 
 	return cards.size() > 0
+
+#
+# Reveals the given card, if it has not already been revealed, as well as some
+# information about the object, location or NPC that is revealed automatically.
+#
+func _reveal_card(card: Card):
+	if card.reveal_status != Card.RevealStatus.HIDDEN:
+		return
+	card.reveal_status = Card.RevealStatus.LIMBO
+
+	var case: Case = get_current_case()
+
+	match card.get_card_type():
+		Card.CardType.OBJECT:
+			if card.get_owner_reveal():
+				for obj_owner in card.get_connections(Link.Type.PROPERTY):
+					_reveal_card(obj_owner)
+					case.create_link(
+						obj_owner, card, Link.Type.PROPERTY, true, true)
+			var location = card.get_location()
+			if location:
+				_reveal_card(location)
+				case.create_link(location, card, Link.Type.FOUND, true, true)
+
+		Card.CardType.LOCATION:
+			for resident in card.get_connections(Link.Type.HOME):
+				_reveal_card(resident)
+				case.create_link(resident, card, Link.Type.HOME, true, true)
+			card.display_name_changed()
+
+		Card.CardType.NPC:
+			var home = card.get_home()
+			if home:
+				_reveal_card(home)
+				case.create_link(card, home, Link.Type.HOME, true, true)
+				home.display_name_changed()
 
 #
 # Saves the visual state of all object, location and NPC cards that are visible

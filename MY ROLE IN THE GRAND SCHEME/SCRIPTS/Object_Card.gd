@@ -32,6 +32,9 @@ func _ready():
 func _update_background():
 	$Card_Mask/Card_BG/Evidence.visible = is_object_evidence
 
+func get_location() -> LocationCard:
+	return get_one_connection(Link.Type.FOUND)
+
 ##
 ## Returns true if the object's "automatic_owners_reveal" flag is set, meaning
 ## that, when the object is revealed to the players, its owners are revealed,
