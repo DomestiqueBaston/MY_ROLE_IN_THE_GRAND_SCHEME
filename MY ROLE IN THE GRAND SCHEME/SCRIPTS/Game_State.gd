@@ -831,6 +831,8 @@ func _play_run_away(cards_played: Array[Card]) -> bool:
 #
 func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 	print("\n*** investigation: %s ***" % _current_interaction_location.get_display_name())
+	print("player attributes at start: MEN %d, PHY %d, HEA %d"
+		  % [player.mental, player.physical, player.health])
 
 	# roll the die
 
@@ -1020,6 +1022,8 @@ func start_dialogue(
 func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 	var npc: NpcCard = _current_interaction_npc
 	print("\n*** dialogue: %s ***" % npc.get_display_name())
+	print("player attributes at start: MEN %d, PHY %d, HEA %d"
+		  % [player.mental, player.physical, player.health])
 
 	var attrs: InteractionAttributes = _play_cards(cards_played)
 	var bonus_malus = attrs.get_bonus_malus()
@@ -1218,6 +1222,8 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 	var npc: NpcCard = _current_interaction_npc
 	print("\n*** combat: %s with %s ***"
 		  % [loc.get_display_name(), npc.get_display_name()])
+	print("player attributes at start: MEN %d, PHY %d, HEA %d"
+		  % [player.mental, player.physical, player.health])
 
 	# roll the die for the player
 
@@ -1396,7 +1402,6 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 
 	var interaction_type = _current_interaction
 	_current_interaction = InteractionType.NONE
-	save_game()
 
 	match interaction_type:
 		InteractionType.INVESTIGATION:
