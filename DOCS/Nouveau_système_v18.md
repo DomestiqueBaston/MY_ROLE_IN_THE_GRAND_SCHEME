@@ -521,13 +521,13 @@ Dialogue
 	- On peut ainsi, au bout d’un moment, réussir et n’obtenir aucune information !
 	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (pas une « vraie » preuve en réalité) ajoute un malus de 1 au jet de dé.
 	- Chances que chaque information donnée soit fausse (par erreur ou mensonge, peu importe). Basé sur MEN du PNJ :
-		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
-		Auprès d’1 Coupable : (5+MEN)/(15+MEN) (prioritaire par rapport à Témoin/Suspect)
-		Auprès d’1 Complice : (3+MEN)/(18+MEN) (prioritaire par rapport à Témoin/Suspect)
+		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(60+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
+		Auprès d’1 Coupable : (5+MEN)/(45+MEN) (prioritaire par rapport à Témoin/Suspect)
+		Auprès d’1 Complice : (3+MEN)/(54+MEN) (prioritaire par rapport à Témoin/Suspect)
 	 - Sauf pour les informations incriminantes (Fiche PNJ) :
-		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(20+MEN) 
-		Auprès d’1 Coupable : MENT toujours (prioritaire par rapport à Témoin/Suspect) !
-		Auprès d’1 Complice : (7+MEN)/(14+MEN) (prioritaire par rapport à Témoin/Suspect)
+		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(60+MEN) 
+		Auprès d’1 Coupable : (6+MEN)/(30+MEN) (prioritaire par rapport à Témoin/Suspect) !
+		Auprès d’1 Complice : (7+MEN)/(42+MEN) (prioritaire par rapport à Témoin/Suspect)
 	- Si un PNJ a menti sur au moins 1 information, il aura un malus de 1 au prochain Dialogue avec le joueur puis sera reset (à moins de mentir de nouveau et alors, il cumule).
 	- Une information cachée (hideout) est toujours révélée juste.
 	- Un PNJ peut révéler une info cachée concernant un autre PNJ uniquement si ceux-ci ont un lien reel d’Intimacy, Friend, Enemy, Accomplice entre eux.
