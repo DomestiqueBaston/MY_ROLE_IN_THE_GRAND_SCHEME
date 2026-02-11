@@ -42,6 +42,9 @@ class_name Link extends Node2D
 ## A blocked link cannot be changed or deleted by the player.
 var blocked: bool = false
 
+## Set to true for a link which has just been revealed to the player.
+var is_newly_revealed: bool = false
+
 #
 # Note that link types are assumed to begin at 0: see Globals.set_link_mask().
 #
@@ -303,6 +306,12 @@ func lower():
 	pin2.z_index -= 1
 	for pin in _follower_pins:
 		pin.z_index -= 1
+
+##
+## Causes the link to blink briefly.
+##
+func blink():
+	$Link_Animation.play("Blink")
 
 ##
 ## Returns true if the link is temporary, that is, if one of the endpoints has

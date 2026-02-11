@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var cards: Node2D = $Cards
-@onready var reserve: Node2D = $Reserve_Cards
+@onready var cards: SizedNode2D = $Cards
+@onready var reserve: CardStack = $Reserve_Cards
 @onready var drag_drop_line: Node2D = $Drag_Drop_Line
 @onready var popup: PopupMenu = $Mask_Card_Playground/Popup_Menu
 @onready var top_bar: Control = $Mask_Card_Playground/Top_Bar
@@ -878,23 +878,31 @@ func populate(case: Case):
 	# put any newly revealed cards in the lower right corner, NPCs to the left
 	# of the others
 
-	var place_card = func(card: Card, pos: Vector2):
-		cards.add_child(card)
+	var place_card = func(card: Card, cards_left: int, max_cards: int, pos: Vector2):
+		if cards_left > max_cards:
+			reserve.add_child(card)
+		else:
+			cards.add_child(card)
+			card.global_position = pos
+			pos.x -= Card.size.x + 5
 		card.blink()
 		card.reveal_status = Card.RevealStatus.REVEALED
-		card.global_position = pos
+		return pos
 
 	if cards_in_limbo:
 		var bottom_right = cards.global_position + cards.size
 		var pos = bottom_right - Vector2(Card.size) - Vector2(5, 5)
+		@warning_ignore("narrowing_conversion")
+		var max_cards: int = cards.size.x / (Card.size.x + 5)
+		var cards_left: int = cards_in_limbo.size()
 		for card in cards_in_limbo:
 			if not card is NpcCard:
-				place_card.call(card, pos)
-				pos.x -= Card.size.x + 5
+				pos = place_card.call(card, cards_left, max_cards, pos)
+				cards_left -= 1
 		for card in cards_in_limbo:
 			if card is NpcCard:
-				place_card.call(card, pos)
-				pos.x -= Card.size.x + 5
+				pos = place_card.call(card, cards_left, max_cards, pos)
+				cards_left -= 1
 
 	# add links AFTER cards so that they always appear in front
 
@@ -902,6 +910,9 @@ func populate(case: Case):
 		cards.add_child(link)
 		cards.add_child(link.pin1)
 		cards.add_child(link.pin2)
+		if link.is_newly_revealed:
+			link.blink()
+			link.is_newly_revealed = false
 
 #
 # Lays out the starting cards in a new game.
