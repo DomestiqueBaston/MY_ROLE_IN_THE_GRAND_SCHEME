@@ -1,0 +1,12 @@
+{
+  "tooltips": [
+    {
+      "id": "contradiction",
+      "text": "A contradiction\nemerged lately!"
+    },
+	 {
+      "id": "hangout",
+      "text": "Hm... Doesn't look like\nthe right place!"
+    }
+  ]
+}
