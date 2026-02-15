@@ -521,7 +521,7 @@ Dialogue
 	- On peut ainsi, au bout d’un moment, réussir et n’obtenir aucune information !
 	- Une carte Objet/PNJ utilisée comme Evidence à mauvais escient (pas une « vraie » preuve en réalité) ajoute un malus de 1 au jet de dé.
 	- Chances que chaque information donnée soit fausse (par erreur ou mensonge, peu importe). Basé sur MEN du PNJ :
-		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(60+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)
+		Auprès d’1 Victime, Témoin, Suspect ou « Lambda » : (1+MEN)/(60+MEN) (exemple : pour MEN = 5 → 6 chances sur 65)
 		Auprès d’1 Coupable : (5+MEN)/(45+MEN) (prioritaire par rapport à Témoin/Suspect)
 		Auprès d’1 Complice : (3+MEN)/(54+MEN) (prioritaire par rapport à Témoin/Suspect)
 	 - Sauf pour les informations incriminantes (Fiche PNJ) :
