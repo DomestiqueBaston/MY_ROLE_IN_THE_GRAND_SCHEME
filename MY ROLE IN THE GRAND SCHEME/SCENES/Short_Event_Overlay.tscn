@@ -1426,6 +1426,7 @@ show_bounding_box = true
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
 [node name="Interaction_Result" type="Node2D" parent="Overlays"]
+visible = false
 script = ExtResource("55_th1i4")
 
 [node name="Interaction_Result_BG" type="Sprite2D" parent="Overlays/Interaction_Result"]
