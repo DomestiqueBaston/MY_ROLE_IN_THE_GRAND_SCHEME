@@ -4,9 +4,17 @@
       "id": "contradiction",
       "text": "A contradiction\nemerged lately!"
     },
-	 {
+	{
       "id": "hangout",
       "text": "Hm... Doesn't look like\nthe right place!"
+    },
+	{
+      "id": "lie",
+      "text": "Someone's probably\nlying to me..."
+    },
+	{
+      "id": "trust",
+      "text": "I don't fully\nbuy that story!"
     }
   ]
 }
