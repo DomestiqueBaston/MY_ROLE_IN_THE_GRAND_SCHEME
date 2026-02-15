@@ -1435,6 +1435,7 @@ texture = ExtResource("55_qmu3t")
 centered = false
 
 [node name="Dialogue" type="Control" parent="Overlays/Interaction_Result"]
+visible = false
 modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
