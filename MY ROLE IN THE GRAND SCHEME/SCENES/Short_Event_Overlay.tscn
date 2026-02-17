@@ -3736,7 +3736,7 @@ rotation = -0.0964869
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff99 ease=-100.0][color=#ff1c18]Oh, bravo![/color][/pulse]
 
-You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don't  get  too  cocky, it's  just  a  tiny  step. Now  let's  see if you  can  [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up  without tripping  over yourself[/color][/shake].
+You  did something  [shake rate=7.0 level=5 connected=0][color=#ff8864]right[/color][/shake] for [shake rate=7.0 level=5 connected=0][color=#ff8864]once[/color][/shake]  but  don't  get  too  cocky, it's  just  a  tiny  step.  Now  let's  see if you  can  [shake rate=7.0 level=5 connected=0][color=#ff8864]keep it  up  without tripping  over yourself[/color][/shake].
 At  this  point,  you feel  a  little  [shake rate=7.0 level=5 connected=0][color=#ff8864]less  stupid.[/color][/shake][/center]"
 fit_content = true
 
