@@ -473,17 +473,6 @@ func _randomize(case: Case, cat: NpcRole, job_id: String, sex: int):
 	wanted = randi_range(0, 2)
 	player_reputation = -2 if actual_role == NpcRole.MINION else 0
 
-	# not all NPCs have a hideout location
-
-	var hideout_probability
-	if actual_role in [NpcRole.CULPRIT, NpcRole.ACCOMPLICE]:
-		hideout_probability = 0.8
-	else:
-		hideout_probability = 0.4
-	if randf() < hideout_probability:
-		var hideout = case.create_hideout()
-		Card.add_bidirectional_connection(Link.Type.HIDEOUT, self, hideout)
-
 ##
 ## Call this at the start of each new day to update the NPC's health and/or
 ## location.
@@ -545,10 +534,6 @@ func new_day():
 ## If possible_jobs is given, it is an array of job IDs, one of which is chosen
 ## at random for the NPC's profession. If it is not given or is empty, the NPC
 ## may be given any job.
-##
-## Note that the new character may be given a hideout, since hideouts are never
-## shared, but he will NOT be given a home, a place of work or a hangout. They
-## must be assigned later.
 ##
 static func generate_card(
 	case: Case, cat: NpcRole = NpcRole.NONE, possible_jobs = [],

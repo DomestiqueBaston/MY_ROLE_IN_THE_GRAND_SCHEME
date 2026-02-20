@@ -304,14 +304,14 @@ func _randomize():
 		_make_frenemies_for(npcs[i], i+1)
 
 	# assign hangouts, now that we know which NPCs are friends (who share
-	# hangouts)
+	# hangouts), and hideouts
 
 	for npc in npcs:
 		var hangout = npc.get_hangout()
 
 		# one hangout is shared by the NPC, his friends, their friends, etc.
 		if hangout == null:
-			hangout = _find_hangout()
+			hangout = _find_hangout_or_hideout(false)
 			var friends: Array[NpcCard]
 			_add_friends_of_friends(friends, npc)
 			for friend in friends:
@@ -321,8 +321,18 @@ func _randomize():
 		if randi() % 4 == 0:
 			var hangout2 = null
 			while hangout2 == null or hangout2 == hangout:
-				hangout2 = _find_hangout()
+				hangout2 = _find_hangout_or_hideout(false)
 			Card.add_bidirectional_connection(Link.Type.HANGOUT, npc, hangout2)
+
+		# not all NPCs have a hideout
+		var hideout_probability
+		if npc.actual_role in [NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE]:
+			hideout_probability = 0.8
+		else:
+			hideout_probability = 0.4
+		if randf() < hideout_probability:
+			var hideout = _find_hangout_or_hideout(true)
+			Card.add_bidirectional_connection(Link.Type.HIDEOUT, npc, hideout)
 
 	# affairs between NPCs (do this AFTER determining couples)
 
@@ -845,24 +855,15 @@ func _create_location(location_id: String) -> LocationCard:
 	return card
 
 #
-# Finds or creates a random hangout location.
+# Finds or creates a random hangout or hideout location.
 #
-func _find_hangout() -> LocationCard:
-	var hangouts = []
+func _find_hangout_or_hideout(hideout: bool) -> LocationCard:
+	var candidates = []
+	var criterion = "secret" if hideout else "yes"
 	for loc in _location_data:
-		if "yes" in _location_data[loc].get("hangout", []):
-			hangouts.append(loc)
-	return _find_or_create_location(hangouts.pick_random())
-
-##
-## Creates a random hideout location.
-##
-func create_hideout() -> LocationCard:
-	var hideouts = []
-	for loc in _location_data:
-		if "secret" in _location_data[loc].get("hangout", []):
-			hideouts.append(loc)
-	return _create_location(hideouts.pick_random())
+		if criterion in _location_data[loc].get("hangout", []):
+			candidates.append(loc)
+	return _find_or_create_location(candidates.pick_random())
 
 func start():
 	_status = Status.ACTIVE
