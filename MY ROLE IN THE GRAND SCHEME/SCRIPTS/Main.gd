@@ -286,10 +286,10 @@ func _start_drag_pin() -> bool:
 	# while dragging
 
 	_clicked_pin.pause_collisions()
+	link.pause_collisions()
 
 	# increase the Z index of the link connected to the pin being dragged
 
-	link.pause_collisions()
 	link.raise()
 	_drag_links.append(link)
 
@@ -368,7 +368,7 @@ func _stop_drag_card(global_pos: Vector2):
 		dragged_card.reparent(cards)
 
 func _stop_drag_pin(global_pos: Vector2):
-	if not _drop_target:
+	if not (_drop_target and _can_drop_pin(_clicked_pin, _drop_target)):
 		_abort_drag_pin()
 		return
 
@@ -544,23 +544,10 @@ func _set_drop_target(target: Node2D):
 	var ok
 
 	if _drop_target:
-
 		# dragging an existing pin
 
 		if _clicked_pin:
-			if _clicked_pin.backing == _drop_target:
-				ok = true
-			else:
-				var link = _clicked_pin.get_link_reference()
-				if link.blocked:
-					ok = false
-				else:
-					var src
-					if _clicked_pin == link.pin1:
-						src = link.pin2.backing
-					else:
-						src = link.pin1.backing
-					ok = _can_link(src, _drop_target, link.type)
+			ok = _can_drop_pin(_clicked_pin, _drop_target)
 
 		# creating a new link
 
@@ -587,10 +574,29 @@ func _set_drop_target(target: Node2D):
 		Globals.set_mouse_cursor(Globals.MouseCursor.CROSS)
 
 #
+# Returns true if the given pin can be dragged and dropped onto the given
+# target (a card or a link).
+#
+func _can_drop_pin(pin: Pin, target: Node2D) -> bool:
+	if pin.backing == target:
+		return true
+
+	var link: Link = pin.get_link_reference()
+	if link.blocked:
+		return false
+
+	var src: Node2D
+	if pin == link.pin1:
+		src = link.pin2.backing
+	else:
+		src = link.pin1.backing
+	return _can_link(src, target, link.type)
+
+#
 # Returns true if a link of the given type can be created between source and
 # target.
 #
-func _can_link(source: Node2D, target: Node2D, link_type: Link.Type):
+func _can_link(source: Node2D, target: Node2D, link_type: Link.Type) -> bool:
 	return source and target and Link.is_link_valid(source, target, link_type)
 
 #
