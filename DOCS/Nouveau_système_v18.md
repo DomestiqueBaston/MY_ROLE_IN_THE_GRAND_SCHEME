@@ -903,9 +903,9 @@ Ils incluent :
 PNJs inutiles : règles spécifiques de génération
 Ces personnages doivent enrichir le monde sans surcharger le nombre de lieux.
 Domicile
-	- Chaque PNJ inutile a son propre domicile.
-	- Les domiciles ne sont jamais partagés, sauf pour les couples (déjà géré).
-	- Ces domiciles comptent dans le plafond global des lieux non nécessaires.
+ - Chaque PNJ inutile a son propre domicile.
+ - Les domiciles ne sont jamais partagés, sauf pour les couples (déjà géré).
+ - Ces domiciles comptent dans le plafond global des lieux non nécessaires.
 
 Lieu de travail
 	- Chaque PNJ a un métier.
@@ -927,7 +927,7 @@ Réutilisation des lieux existants
 	- Cela concerne :
 		- Lieux de travail (si uniqueness le permet)
 		- Hangouts
-	- Cela ne concerne pas Hideout.
+		- Hideout
 Quand il reste des PNJs inutiles mais plus de lieux
 Une fois que tous les lieux générés pour les PNJs liés à l’enquête ont été réutilisés autant que possible pour les PNJs inutiles et qu’il reste encore des PNJs inutiles à générer, tout nouveau lieu généré pour un PNJ inutile restant devient immédiatement disponible pour être réutilisé par les autres PNJs inutiles restants.
 
