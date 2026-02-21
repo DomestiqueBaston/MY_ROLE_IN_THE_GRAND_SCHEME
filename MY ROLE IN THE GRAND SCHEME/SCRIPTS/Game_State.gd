@@ -136,7 +136,6 @@ signal drugs_changed
 signal debts_changed
 
 ## Signal emitted when the player has died.
-@warning_ignore("unused_signal")
 signal died
 
 ## Signal emitted when the player starts an interaction.
@@ -438,13 +437,9 @@ func pass_one_hour():
 ## be awaited, and also that the player may wake up dead!
 ##
 func sleep(hours: int):
-	if _player_location != PlayerLocation.OFFICE:
-		await pass_one_hour()
-		set_player_location(PlayerLocation.OFFICE)
-		if player.health <= 0:
-			return
-	await player.sleep(hours)
-	await _increment_time(hours, true)
+	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+		await player.sleep(hours)
+		await _increment_time(hours, true)
 
 ##
 ## Returns false if the player has already visited the Investigation Center
@@ -454,20 +449,12 @@ func can_visit_investigation_center() -> bool:
 	return not _has_visited_hub
 
 func visit_investigation_center():
-	if _player_location != PlayerLocation.INVESTIGATION_CENTER:
-		await pass_one_hour()
-		set_player_location(PlayerLocation.INVESTIGATION_CENTER)
-		if player.health <= 0:
-			return
-	_has_visited_hub = await Globals.dialog_overlay.open_investigation_center()
+	if not await move_player_to(PlayerLocation.INVESTIGATION_CENTER) or player.health > 0:
+		_has_visited_hub = await Globals.dialog_overlay.open_investigation_center()
 
 func visit_office():
-	if _player_location != PlayerLocation.OFFICE:
-		await pass_one_hour()
-		set_player_location(PlayerLocation.OFFICE)
-		if player.health <= 0:
-			return
-	await Globals.dialog_overlay.open_office()
+	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+		await Globals.dialog_overlay.open_office()
 
 func is_warrant_desk_open():
 	var day = get_day() % 7
@@ -475,33 +462,21 @@ func is_warrant_desk_open():
 	return day < 5 and hour >= 8 and hour < 20
 
 func buy_search_warrant():
-	if _player_location != PlayerLocation.WARRANT_DESK:
-		await pass_one_hour()
-		set_player_location(PlayerLocation.WARRANT_DESK)
-		if player.health <= 0:
-			return
-	if await Globals.dialog_overlay.buy_search_warrant(warrant_price):
-		player.money -= warrant_price
-		player.has_search_warrant = true
-		save_game()
+	if not await move_player_to(PlayerLocation.WARRANT_DESK) or player.health > 0:
+		if await Globals.dialog_overlay.buy_search_warrant(warrant_price):
+			player.money -= warrant_price
+			player.has_search_warrant = true
+			save_game()
 
 func pay_debt(debt_index: int):
-	if _player_location != PlayerLocation.OFFICE:
+	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
 		await pass_one_hour()
-		set_player_location(PlayerLocation.OFFICE)
-		if player.health <= 0:
-			return
-	await pass_one_hour()
-	await player.pay_debt(debt_index)
+		await player.pay_debt(debt_index)
 
 func use_drugs(doses: int):
-	if _player_location != PlayerLocation.OFFICE:
+	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
 		await pass_one_hour()
-		set_player_location(PlayerLocation.OFFICE)
-		if player.health <= 0:
-			return
-	await pass_one_hour()
-	await player.use_drugs(doses)
+		await player.use_drugs(doses)
 
 func get_player_drug_price() -> int:
 	var price: int = 35
@@ -518,11 +493,8 @@ func can_visit_dealer() -> bool:
 			and _last_dealer_day < get_working_day())
 
 func visit_dealer():
-	if _player_location != PlayerLocation.ROWENA:
-		await pass_one_hour()
-		set_player_location(PlayerLocation.ROWENA)
-		if player.health <= 0:
-			return
+	if await move_player_to(PlayerLocation.ROWENA) and player.health <= 0:
+		return
 
 	var price = get_player_drug_price()
 
@@ -554,11 +526,8 @@ func can_visit_doctor() -> bool:
 	return _last_doctor_day < 0 or day - _last_doctor_day >= 4
 
 func visit_doctor():
-	if _player_location != PlayerLocation.DOCTOR:
-		await pass_one_hour()
-		set_player_location(PlayerLocation.DOCTOR)
-		if player.health <= 0:
-			return
+	if await move_player_to(PlayerLocation.DOCTOR) and player.health <= 0:
+		return
 
 	var fee = get_player_doctor_fee()
 
@@ -587,12 +556,8 @@ func attempt_investigation(location: LocationCard):
 
 	# go to the location first
 
-	if (_player_location != PlayerLocation.OTHER
-		or _player_location_card != location):
-		await pass_one_hour()
-		set_player_location(PlayerLocation.OTHER, location)
-		if player.health <= 0:
-			return
+	if await move_player_to(PlayerLocation.OTHER, location) and player.health <= 0:
+		return
 
 	# check whether there is anybody there, whether the player has a warrant he
 	# can use or if he wants to break in, etc.
@@ -943,14 +908,9 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 	# go to the location first
 
 	if location:
-		if (_player_location != PlayerLocation.OTHER
-			or _player_location_card != location):
-			await pass_one_hour()
-			set_player_location(PlayerLocation.OTHER, location)
+		await move_player_to(PlayerLocation.OTHER, location)
 	else:
-		if _player_location != PlayerLocation.PRISON:
-			await pass_one_hour()
-			set_player_location(PlayerLocation.PRISON)
+		await move_player_to(PlayerLocation.PRISON)
 
 	if player.health <= 0:
 		return
@@ -1479,14 +1439,32 @@ func get_open_cases() -> Array[Case]:
 	return ret
 
 ##
-## Specifies where the player is located. If location is PlayerLocation.OTHER,
-## then a LocationCard must be given.
+## Moves the player to the given location, if he is not there already. If
+## location is PlayerLocation.OTHER, then a LocationCard must be given. The
+## trip to any location takes an hour. Returns false if the player is already at
+## the given location, otherwise emits a location_changed() signal and returns
+## true. Note that this is a coroutine to be awaited, and it is possible the
+## player may have died on return.
 ##
-func set_player_location(location: PlayerLocation, card: LocationCard = null):
-	if _player_location != location or _player_location_card != card:
-		_player_location = location
-		_player_location_card = card
-		location_changed.emit()
+func move_player_to(location: PlayerLocation, card: LocationCard = null) -> bool:
+	if _player_location == location and _player_location_card == card:
+		return false
+	await pass_one_hour()
+	set_player_location(location, card)
+	return true
+
+##
+## Changes the player's location. If location is PlayerLocation.OTHER, then a
+## LocationCard must be given. Returns false if the player is already at the
+## given location, otherwise emits a location_changed() signal and returns true.
+##
+func set_player_location(location: PlayerLocation, card: LocationCard = null) -> bool:
+	if _player_location == location and _player_location_card == card:
+		return false
+	_player_location = location
+	_player_location_card = card
+	location_changed.emit()
+	return true
 
 ##
 ## Returns the current location of the player. If it is PlayerLocation.OTHER,

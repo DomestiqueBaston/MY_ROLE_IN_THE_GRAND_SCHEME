@@ -1030,8 +1030,10 @@ func _update_info_box():
 				GameState.get_player_location_card())
 
 func _manage_cases():
-	if await Globals.dialog_overlay.manage_cases():
-		GameState.save_game()
+	if (not await GameState.move_player_to(GameState.PlayerLocation.OFFICE)
+		or GameState.player.health > 0):
+		if await Globals.dialog_overlay.manage_cases():
+			GameState.save_game()
 
 func _manage_cards():
 	if await Globals.dialog_overlay.manage_cards():
