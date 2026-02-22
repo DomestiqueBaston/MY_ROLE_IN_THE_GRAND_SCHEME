@@ -865,6 +865,17 @@ func _find_hangout_or_hideout(hideout: bool) -> LocationCard:
 			candidates.append(loc)
 	return _find_or_create_location(candidates.pick_random())
 
+##
+## Returns a list of all existing locations in this case that could be used as
+## a hangout.
+##
+func get_all_potential_hangouts() -> Array[LocationCard]:
+	var hangouts: Array[LocationCard]
+	for loc: LocationCard in locations:
+		if "yes" in _location_data[loc.database_id]:
+			hangouts.append(loc)
+	return hangouts
+
 func start():
 	_status = Status.ACTIVE
 

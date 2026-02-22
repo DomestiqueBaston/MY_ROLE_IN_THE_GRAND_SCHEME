@@ -182,6 +182,37 @@ var _current_interaction_npc: NpcCard
 var _current_interaction_bonus_malus: int
 var _current_interaction_do_not_kill: bool
 
+var _npc_link_types = [
+	Link.Type.DEBT,
+	Link.Type.INTIMACY,
+	Link.Type.FRIEND,
+	Link.Type.ENEMY,
+	Link.Type.ACQUAINTANCE,
+	Link.Type.IDEOLOGY
+]
+
+#
+# Represents a piece of information, that is, a connection between two cards,
+# which may or may not actually exist.
+#
+class InfoToReveal:
+	var card1: Card
+	var card2: Card
+	var link_type: Link.Type
+	
+	func _init(_card1: Card, _card2: Card, _link_type: Link.Type):
+		card1 = _card1
+		card2 = _card2
+		link_type = _link_type
+
+	#
+	# Returns true if two pieces of information are the same.
+	#
+	func compare(other: InfoToReveal) -> bool:
+		return (link_type == other.link_type and
+				card1 in [other.card1, other.card2] and 
+				card2 in [other.card1, other.card2])
+
 func _ready():
 	load_game()
 
@@ -1073,6 +1104,7 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 
 	var net_margin = -1
 	var infos_found = 0
+	var express_doubt = false
 
 	if actual_roll > 1 and npc_actual_roll == 1:
 		print("failure due to NPC's critical success")
@@ -1089,7 +1121,9 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 	# if successful, NPC may reveal bits of information
 
 	if net_margin >= 0:
-		infos_found = _get_info_from_npc(npc, net_margin, cards_played)
+		var ret = _get_info_from_npc(npc, net_margin, cards_played)
+		infos_found = ret[0]
+		express_doubt = ret[1]
 
 	# adjust player's attributes depending on bonus/malus from played cards
 
@@ -1147,8 +1181,8 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 			await Globals.dialog_overlay.show_player_improvement(-1)
 		elif actual_roll == 1:
 			await Globals.dialog_overlay.show_player_improvement(1, critical_attr)
-		# TODO: was information revealed or not?
-		await Globals.dialog_overlay.show_dialogue_result(success, infos_found)
+		await Globals.dialog_overlay.show_dialogue_result(
+			success, infos_found, express_doubt)
 
 	# player's status (health, etc.) will be checked in end_interaction()
 	await _increment_time(2, false)
@@ -1592,22 +1626,6 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 	return randi_range(1, 100) <= percent
 
 #
-# Represents a piece of information, that is, a connection between two cards.
-#
-class InfoToReveal:
-	var card1: Card
-	var card2: Card
-	var link_type: Link.Type
-
-#
-# Returns true if the two given pieces of information are the same.
-#
-func _compare_infos(info1: InfoToReveal, info2: InfoToReveal) -> bool:
-	return (info1.link_type == info2.link_type and
-			info1.card1 in [info2.card1, info2.card2] and
-			info1.card2 in [info2.card1, info2.card2])
-
-#
 # Adds a piece of information to the given list if it is not already there, and
 # if it is not yet known to the player.
 #
@@ -1617,15 +1635,10 @@ func _add_info_to_reveal(
 	if card1 in card2.find_linked_cards(type):
 		return
 
-	var new_info = InfoToReveal.new()
-	new_info.card1 = card1
-	new_info.card2 = card2
-	new_info.link_type = type
-
+	var new_info = InfoToReveal.new(card1, card2, type)
 	for old_info in infos:
-		if _compare_infos(old_info, new_info):
+		if old_info.compare(new_info):
 			return
-
 	infos.append(new_info)
 
 #
@@ -1651,11 +1664,11 @@ func _add_all_known_info_about_npc(
 	infos: Array[InfoToReveal], revealer: NpcCard, subject: NpcCard,
 	hidden_info_ok: bool):
 
-	# where the NPC hangs out or hides out
-
-	var hangout = subject.get_hangout()
-	if hangout:
-		_add_info_to_reveal(infos, subject, hangout, Link.Type.HANGOUT)
+	# where the NPC lives, works, hangs out and hides out
+	
+	for link_type in [Link.Type.HOME, Link.Type.WORK, Link.Type.HANGOUT]:
+		for loc in subject.get_connections(link_type):
+			_add_info_to_reveal(infos, subject, loc, link_type)
 
 	if (hidden_info_ok and
 		_npc_can_reveal_hideout_of_other_npc(revealer, subject)):
@@ -1665,14 +1678,7 @@ func _add_all_known_info_about_npc(
 
 	# what other NPCs the NPC is linked to
 
-	for link_type in [
-		Link.Type.DEBT,
-		Link.Type.INTIMACY,
-		Link.Type.FRIEND,
-		Link.Type.ENEMY,
-		Link.Type.ACQUAINTANCE,
-		Link.Type.IDEOLOGY
-	]:
+	for link_type in _npc_link_types:
 		for other_npc in subject.get_connections(link_type):
 			_add_info_to_reveal(infos, subject, other_npc, link_type)
 
@@ -1682,13 +1688,16 @@ func _add_all_known_info_about_npc(
 		_add_info_to_reveal(infos, subject, obj, Link.Type.PROPERTY)
 
 #
-# Reveals new information from an NPC after a successful dialogue.
+# Reveals new information from an NPC after a successful dialogue. Returns a
+# tuple containing the number of pieces of information that were revealed and
+# a bool which is true if the player may be permitted to doubt the veracity of
+# the information.
 #
 func _get_info_from_npc(
-	npc: NpcCard, margin: int, cards_played: Array[Card]) -> int:
+	npc: NpcCard, margin: int, cards_played: Array[Card]) -> Array:
 
 	if margin < 0:
-		return 0
+		return [0, false]
 
 	var info_count = maxi(1, roundi(margin / 2.0))
 	var hidden_info_ok = margin >= 2
@@ -1763,15 +1772,56 @@ func _get_info_from_npc(
 			var index = randi() % candidates.size()
 			revealed.push_back(candidates.pop_at(index))
 
+	# turn some of the information into misinformation, maybe...
+	# how likely is this NPC to lie?
+
+	var normal_lie_prob: float
+	var incriminating_lie_prob: float
+	var express_doubt: bool = false
+
+	match npc.actual_role:
+		NpcCard.NpcRole.CULPRIT:
+			normal_lie_prob = (5.0 + npc.mental) / (45.0 + npc.mental)
+			incriminating_lie_prob = (6.0 + npc.mental) / (30.0 + npc.mental)
+		NpcCard.NpcRole.ACCOMPLICE:
+			normal_lie_prob = (3.0 + npc.mental) / (54.0 + npc.mental)
+			incriminating_lie_prob = (7.0 + npc.mental) / (42.0 + npc.mental)
+		_:
+			normal_lie_prob = (1.0 + npc.mental) / (60.0 + npc.mental)
+			incriminating_lie_prob = normal_lie_prob
+
+	# for each piece of information, roll the dice to see if the NPC lies and,
+	# if the roll is borderline, express doubt about the NPC's honesty
+
+	var is_lie: Array[bool]
+
+	for i in revealed.size():
+		var info: InfoToReveal = revealed[i]
+		var lie_prob: float
+		if Link.is_type_incriminating(info.link_type):
+			lie_prob = incriminating_lie_prob
+		else:
+			lie_prob = normal_lie_prob
+		var roll = randf()
+		if roll > lie_prob * 0.8 and roll < lie_prob * 1.2:
+			express_doubt = true
+		if roll < lie_prob and _distort_info(
+			revealed, i, npc, subject_card if subject_card else npc):
+			is_lie.append(true)
+		else:
+			is_lie.append(false)
+
 	# reveal cards that are hidden and create new links
 
 	var case = get_current_case()
 
-	for info in revealed:
-		print("discovered %s: %s <=> %s" % [
+	for i in revealed.size():
+		var info: InfoToReveal = revealed[i]
+		print("discovered %s: %s <=> %s (%s)" % [
 			Link.Type.keys()[info.link_type].capitalize(),
 			info.card1.get_display_name(),
-			info.card2.get_display_name()])
+			info.card2.get_display_name(),
+			"a lie" if is_lie[i] else "true"])
 		_reveal_card(info.card1)
 		_reveal_card(info.card2)
 		var link = case.create_link(
@@ -1781,7 +1831,104 @@ func _get_info_from_npc(
 			and info.card2.reveal_status == Card.RevealStatus.REVEALED):
 			link.is_newly_revealed = true
 
-	return revealed.size()
+	return [revealed.size(), express_doubt]
+
+#
+# Tries to distort one piece of information in the given array to something
+# similar but different and plausible. Returns true on success.
+#
+func _distort_info(
+	all_info: Array[InfoToReveal], which_info: int, speaker: NpcCard,
+	subject: Card) -> bool:
+	var info: InfoToReveal = all_info[which_info]
+	var lies: Array[InfoToReveal]
+
+	# invent possible lies
+	
+	var npc_pool: Array[NpcCard] = speaker.get_all_npc_connections()
+	npc_pool.append(speaker)
+
+	# connection between two NPCs: we can change the nature of the connection,
+	# or change one of the NPCs to another NPC that the speaker knows
+
+	if info.link_type in _npc_link_types:
+		for other_type in _npc_link_types:
+			if other_type != info.link_type:
+				lies.append(
+					InfoToReveal.new(info.card1, info.card2, other_type))
+		for npc in npc_pool:
+			if not npc in [info.card1, info.card2]:
+				if info.card2 in [speaker, subject] or npc in [speaker, subject]:
+					lies.append(	InfoToReveal.new(npc, info.card2, info.link_type))
+				if info.card1 in [speaker, subject] or npc in [speaker, subject]:
+					lies.append(	InfoToReveal.new(info.card1, npc, info.link_type))
+
+	# an NPC's hangout: we can change the NPC to another NPC that the speaker
+	# knows, or change the hangout to another place
+
+	elif info.link_type == Link.Type.HANGOUT:
+		var npc: NpcCard
+		var hangout: LocationCard
+
+		if info.card1 is NpcCard:
+			npc = info.card1
+			hangout = info.card2
+		else:
+			npc = info.card2
+			hangout = info.card1
+
+		# if the player asked about the location, change the NPC; if he asked
+		# about the NPC, change the location
+
+		if subject == npc:
+			for loc in get_current_case().get_all_potential_hangouts():
+				if loc != hangout:
+					lies.append(	InfoToReveal.new(npc, loc, Link.Type.HANGOUT))
+		elif subject == hangout:
+			for other_npc in npc_pool:
+				if other_npc != npc:
+					lies.append(
+						InfoToReveal.new(other_npc, hangout, Link.Type.HANGOUT))
+
+	# who (or what location) an object belongs to: we can change the NPC owner
+	# to another NPC that the speaker knows (unless the player asked about the
+	# owner specifically), but not the object itself
+
+	elif info.link_type == Link.Type.PROPERTY:
+		var obj_owner: NpcCard
+		var obj: ObjectCard
+		if info.card1 is NpcCard:
+			obj_owner = info.card1
+			obj = info.card2
+		elif info.card2 is NpcCard:
+			obj_owner = info.card2
+			obj = info.card1
+		if obj_owner and subject == obj:
+			for npc in npc_pool:
+				if npc != obj_owner:
+					lies.append(InfoToReveal.new(npc, obj, Link.Type.PROPERTY))
+
+	# pick a lie at random which is not a duplicate of an existing link or of
+	# another piece of information we are about to reveal
+
+	while lies.size() > 0:
+		var which_lie: int = randi() % lies.size()
+		var lie: InfoToReveal = lies.pop_at(which_lie)
+		var is_duplicate = false
+
+		if lie.card1 in lie.card2.find_linked_cards(lie.link_type):
+			is_duplicate = true
+		else:
+			for i in all_info.size():
+				if i != which_info and lie.compare(all_info[i]):
+					is_duplicate = true
+					break
+
+		if not is_duplicate:
+			all_info[which_info] = lie
+			return true
+
+	return false
 
 #
 # Selects discoveries at random (NPCs or objects) from the given location.
@@ -1800,11 +1947,17 @@ func _get_unknown_connections_to_location(
 	# useless objects and NPCs
 	var others = []
 
-	# unknown NPCs associated with the location
+	# unknown NPCs associated with the location, and known NPCs whose
+	# connections to the location have not all been revealed
 
 	for npc in location.get_all_npc_connections():
 		if npc.reveal_status == Card.RevealStatus.HIDDEN:
 			others.append(npc)
+		else:
+			for link_type in npc.get_all_connections_to(location):
+				if not location in npc.find_linked_cards(link_type):
+					others.append(npc)
+					break
 
 	# unknown objects associated with the location
 

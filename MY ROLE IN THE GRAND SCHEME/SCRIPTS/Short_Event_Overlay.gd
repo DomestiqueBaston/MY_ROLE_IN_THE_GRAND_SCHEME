@@ -462,10 +462,11 @@ func manage_cases() -> bool:
 ##
 ## Displays the results of a dialogue with an NPC.
 ##
-func show_dialogue_result(success: bool, infos: int):
+func show_dialogue_result(success: bool, infos: int, express_doubt: bool):
 	$Overlays/Interaction_Result/Dialogue/Chalk/Control/Report/No_Info.visible = not success
 	$Overlays/Interaction_Result/Dialogue/Chalk/Control/Report/Info.visible = success
 	$Overlays/Interaction_Result/Dialogue/Chalk/Control/Report/No_New_Info.visible = success and infos == 0
+	$Overlays/Interaction_Result/Dialogue/Chalk/Control/Report/Info_Possible_Lie.visible = success and express_doubt
 	$Overlays/Interaction_Result/Dialogue.show()
 	$Overlays/Interaction_Result.show()
 	await _appear()

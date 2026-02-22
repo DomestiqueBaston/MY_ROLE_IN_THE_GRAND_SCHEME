@@ -495,6 +495,16 @@ func get_connection_to(other: Card) -> int:
 			return type
 	return -1
 
+##
+## Returns an array of all the link types connecting this card to another.
+##
+func get_all_connections_to(other: Card) -> Array[Link.Type]:
+	var link_types: Array[Link.Type]
+	for type in _connections:
+		if other in _connections[type]:
+			link_types.append(type)
+	return link_types
+
 func print_connections_of_type(label: String, type: Link.Type):
 	var cnxs = get_connections(type)
 	if cnxs:
