@@ -772,6 +772,7 @@ func _handle_popup(id: int):
 						Link.Type.PROPERTY,
 						Link.Type.HOME,
 						Link.Type.WORK,
+						Link.Type.HIDEOUT,
 						Link.Type.FOUND
 				]:
 					_popup_node.status = Link.Status.CONFIRMED
