@@ -690,7 +690,7 @@ Enquête
 	- Au « Hub » de sélection d’enquêtes, le joueur a toujours accès à 5 enquêtes aléatoirement générées (voir plus bas la règle des 5 enquêtes différentes dans Système de Difficulté pour les Enquêtes pour limitation d’apparition d’un type de crime) :
 	- Le niveau de difficulté d’une enquête est déterminé d’après l’enquête établie !
 	- La formule pour calculer le niveau de difficulté d’une enquête est la suivante :
-		Difficulté = round(clamp(((victimes + coupables + (complices × 0.5) + (liens incriminants × 0.5) + preuves - (suspects × 0.5) - (témoins × 0.5)) × 19 ÷ 50 + 1), 1, 5). Cela devrait donner un niveau de difficulté entre 1 et 5.
+		Difficulté = round(1 + ((victimes + coupables + complices + preuves) – 4) × 0.5). Cela devrait donner un niveau de difficulté entre 1 et 5.
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Prendre une enquête la fait passer automatiquement en enquête en cours.
 	- Changer d’enquête active ne stoppe pas le temps qui passe dans les autres enquêtes du joueur !
