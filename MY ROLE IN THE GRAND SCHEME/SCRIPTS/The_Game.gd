@@ -122,6 +122,7 @@ func _start_game():
 	GameState.start_game()
 	await _continue_game()
 	await Globals.dialog_overlay.show_starting_hand()
+	await GameState.visit_investigation_center()
 
 func _continue_game():
 	var interaction = GameState.get_current_interaction()

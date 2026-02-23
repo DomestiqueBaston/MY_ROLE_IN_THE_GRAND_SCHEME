@@ -224,7 +224,7 @@ func start_game():
 	_dealer_drug_stock = randi_range(3, 7)
 	_last_crimes.clear()
 	_current_case_index = -1
-	_player_location = PlayerLocation.OFFICE
+	_player_location = PlayerLocation.INVESTIGATION_CENTER
 	_player_location_card = null
 	_reset_interaction()
 
