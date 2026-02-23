@@ -895,7 +895,7 @@ texture_click_mask = ExtResource("48_pf81c")
 
 [node name="Drawer" type="AudioStreamPlayer" parent="Overlays/Case_Management"]
 stream = ExtResource("49_7vfi6")
-volume_db = -30.0
+volume_db = -15.0
 bus = &"UI"
 
 [node name="Cellphone" type="Node2D" parent="Overlays"]
@@ -2526,7 +2526,7 @@ texture_click_mask = ExtResource("23_1nskf")
 
 [node name="Intercom" type="AudioStreamPlayer" parent="Overlays/Intercom"]
 stream = ExtResource("25_7hyo2")
-volume_db = -25.0
+volume_db = -10.0
 bus = &"FX"
 
 [node name="Green_Button" type="AnimationPlayer" parent="Overlays/Intercom"]
@@ -4575,7 +4575,7 @@ text = "To sleep is to die a bit!"
 
 [node name="Drawer" type="AudioStreamPlayer" parent="Overlays/Sleep"]
 stream = ExtResource("112_d5ayf")
-volume_db = -35.0
+volume_db = -20.0
 bus = &"UI"
 
 [node name="Wanted" type="Node2D" parent="Overlays"]
@@ -4692,7 +4692,7 @@ alignment = 2
 
 [node name="Police" type="AudioStreamPlayer" parent="Overlays/Wanted"]
 stream = ExtResource("17_wp1dn")
-volume_db = -40.0
+volume_db = -20.0
 bus = &"FX"
 
 [node name="Zero_Level_Case_Proposal" type="Node2D" parent="Overlays"]
@@ -4995,7 +4995,7 @@ libraries = {
 }
 
 [node name="In_Out" type="AudioStreamPlayer" parent="."]
-volume_db = -37.5
+volume_db = -25.0
 bus = &"UI"
 
 [connection signal="button_down" from="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" to="Overlays/Investigation_Center/Chalkboard_Content/Chalk_Mask/Case/Case_Selector/Case_List" method="_on_button_down"]

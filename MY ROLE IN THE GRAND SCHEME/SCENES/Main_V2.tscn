@@ -190,12 +190,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ksebp")
 
 [node name="Folding" type="AudioStreamPlayer" parent="Reserve_Expansion"]
 stream = ExtResource("49_u5els")
-volume_db = -40.0
+volume_db = -17.5
 bus = &"FX"
 
 [node name="Unfolding" type="AudioStreamPlayer" parent="Reserve_Expansion"]
 stream = ExtResource("50_vlxab")
-volume_db = -47.5
+volume_db = -20.0
 bus = &"FX"
 
 [node name="Reserve_Cards" type="Node2D" parent="."]

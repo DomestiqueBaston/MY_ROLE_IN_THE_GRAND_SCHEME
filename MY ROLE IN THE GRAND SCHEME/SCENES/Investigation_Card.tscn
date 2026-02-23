@@ -1016,14 +1016,14 @@ libraries = {
 
 [node name="Drop_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("41_lp032")
-volume_db = -40.0
+volume_db = -35.0
 bus = &"UI"
 
 [node name="Take_Card" type="AudioStreamPlayer" parent="UI_Sounds"]
 stream = ExtResource("42_eqbj4")
-volume_db = -37.5
+volume_db = -30.0
 bus = &"UI"
 
 [node name="UI" type="AudioStreamPlayer" parent="UI_Sounds"]
-volume_db = -37.5
+volume_db = -25.0
 bus = &"UI"

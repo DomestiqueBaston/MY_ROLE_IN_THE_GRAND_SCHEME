@@ -450,7 +450,7 @@ offset_right = 87.0
 offset_bottom = 70.0
 scale = Vector2(1.035, 1.08)
 stream = ExtResource("15_k1rto")
-volume_db = -35.0
+volume_db = -34.999996
 autoplay = true
 paused = true
 loop = true
@@ -666,17 +666,17 @@ autoplay = "Shake"
 
 [node name="Tv_Switch" type="AudioStreamPlayer" parent="Top_Left_Screen"]
 stream = ExtResource("17_uvife")
-volume_db = -30.0
+volume_db = -20.0
 bus = &"FX"
 
 [node name="Turn_Button" type="AudioStreamPlayer" parent="Top_Left_Screen"]
 stream = ExtResource("25_lds6i")
-volume_db = -25.0
+volume_db = -10.0
 bus = &"FX"
 
 [node name="White_Noise" type="AudioStreamPlayer" parent="Top_Left_Screen"]
 stream = ExtResource("25_iwlie")
-volume_db = -20.0
+volume_db = -5.0
 autoplay = true
 bus = &"VIDEO"
 

@@ -277,7 +277,7 @@ text = "Got it!"
 
 [node name="Typing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_vnu4b")
-volume_db = -20.0
+volume_db = -5.0
 bus = &"FX"
 
 [node name="Writing" type="AnimationPlayer" parent="."]

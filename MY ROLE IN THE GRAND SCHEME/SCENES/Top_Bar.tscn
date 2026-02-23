@@ -770,10 +770,9 @@ one_shot = true
 
 [node name="Soft_Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0mfvj")
-volume_db = -17.5
+volume_db = -10.0
 bus = &"UI"
 
 [node name="Menu_Bip" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nvp8u")
-volume_db = -5.0
 bus = &"UI"
