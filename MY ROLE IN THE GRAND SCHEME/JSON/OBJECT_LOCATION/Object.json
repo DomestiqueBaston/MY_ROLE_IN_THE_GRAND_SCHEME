@@ -1324,7 +1324,7 @@
 	},
 	"OBJ336": {
 		"info_name": "- ANTENNA FRAGMENT -",
-		"name": "Fragment of a broken antenna",
+		"name": "Fragment of an antenna",
 		"description": "It looks like it came from an old transceiver.",
 		"owners": {
 			"npc": [1]
@@ -1333,7 +1333,7 @@
 	},
 	"OBJ337": {
 		"info_name": "- CLIPBOARD -",
-		"name": "Clipboard with pencil marks only",
+		"name": "Clipboard with pencil marks",
 		"description": "Someone erased everything. Intentionally.",
 		"owners": {
 			"npc": [1]
