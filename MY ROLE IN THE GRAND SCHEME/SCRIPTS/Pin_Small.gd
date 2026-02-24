@@ -1,13 +1,22 @@
 @tool
 class_name Pin extends Node2D
 
+#
+# There is a one-to-one correspondence between Pin.Location values and nodes in
+# the Pin_Locators scene. If you change one, be sure to change the other!
+#
 enum Location {
 	TOP_LEFT,
+	TOP_LEFT_MORE,
 	TOP_CENTER_LEFT,
+	TOP_CENTER_LEFT_MORE,
 	TOP_CENTER,
+	TOP_CENTER_MORE,
 	TOP_CENTER_RIGHT,
+	TOP_CENTER_RIGHT_MORE,
 	TOP_RIGHT,
 	LEFT_CENTER,
+	LEFT_CENTER_MORE,
 	BOTTOM_LEFT,
 	RIGHT_CENTER,
 	BOTTOM_RIGHT,
@@ -15,8 +24,11 @@ enum Location {
 	BOTTOM_CENTER,
 	BOTTOM_CENTER_RIGHT,
 	LEFT_CENTER_LEFT,
+	LEFT_CENTER_LEFT_MORE,
 	CENTER,
-	RIGHT_CENTER_RIGHT
+	CENTER_MORE,
+	RIGHT_CENTER_RIGHT,
+	RIGHT_CENTER_RIGHT_MORE
 }
 
 ## The pin can be attached to a card or to a link.

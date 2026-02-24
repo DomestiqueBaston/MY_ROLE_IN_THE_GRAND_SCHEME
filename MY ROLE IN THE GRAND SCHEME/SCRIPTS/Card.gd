@@ -91,6 +91,8 @@ var _is_expanded: bool = true
 var _pins = {}
 
 func _ready():
+	assert($Pin_Locators.get_child_count() == Pin.Location.keys().size())
+
 	$Card_Mask/Card_BG/Card_Text/Card_Name.text = get_display_name()
 	$Card_Mask/Card_BG/Card_Text/Card_Description.text = description
 	_update_opacity()
