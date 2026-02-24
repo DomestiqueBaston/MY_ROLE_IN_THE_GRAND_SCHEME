@@ -7,8 +7,12 @@ signal pre_dialog
 ## Signal emitted when a (modal) dialog finishes and has been hidden.
 signal post_dialog
 
+var _dialog_count: int = 0
+
 func _appear():
-	pre_dialog.emit()
+	if _dialog_count == 0:
+		pre_dialog.emit()
+	_dialog_count += 1
 	show()
 	$On_Off.play("Appearance")
 	await $On_Off.animation_finished
@@ -20,7 +24,9 @@ func _disappear(skip_animation: bool = false):
 		$On_Off.play("Disappearance")
 		await $On_Off.animation_finished
 	hide()
-	post_dialog.emit()
+	_dialog_count -= 1
+	if _dialog_count == 0:
+		post_dialog.emit()
 
 ##
 ## Display a dialog prompting the player to choose how many hours he wants to
