@@ -7,6 +7,7 @@ extends Node2D
 @onready var top_bar: Control = $Mask_Card_Playground/Top_Bar
 @onready var info_box: Node2D = $Mask_Card_Playground/Bottom_Left_Info
 @onready var location_bar = $Mask_Card_Playground/Player_Location/Text/Location
+@onready var motive_list = $Mask_Card_Playground/Crime_Motive_Selection/Motive_Selector/Motive_List
 @onready var pin_scene: PackedScene = preload("res://SCENES/Pin_Small.tscn")
 @onready var link_scene: PackedScene = preload("res://SCENES/Link.tscn")
 
@@ -845,6 +846,7 @@ func _on_case_changed():
 	var case = GameState.get_current_case()
 	if case:
 		populate(case)
+	motive_list.filterMotives()
 
 ##
 ## Populates the scene with the cards in the given case that have already been

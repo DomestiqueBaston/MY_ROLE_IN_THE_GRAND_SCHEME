@@ -17,6 +17,10 @@ func _ready():
 		submenu.index_pressed.connect(_on_item_pressed.bind(crime_index))
 		crime_index += 1
 
+	# disable menu items for motives that are not valid for the current case
+
+	filterMotives()
+
 	# if a crime and motive have been selected, highlight them in the menu, and
 	# set the menu's label and tooltip accordingly
 
@@ -65,3 +69,35 @@ func _set_motive_checked(crime: String, motive_id: String, checked: bool):
 
 func _get_label(base_name: String, checked: bool = false) -> String:
 	return (">" if checked else " ") + base_name
+
+##
+## Enables/disables motives depending on whether they are applicable to the
+## current case.
+##
+func filterMotives():
+	var case = GameState.get_current_case()
+	var popup: PopupMenu = get_popup()
+	var crime_index = 0
+	for crime in _crime_data:
+		var crime_dict = _crime_data[crime]
+		var submenu: PopupMenu = popup.get_item_submenu_node(crime_index)
+		var motive_index = 0
+		var is_one_enabled = false
+		for motive_id in crime_dict:
+			var is_enabled = _is_motive_valid(crime, motive_id, case)
+			submenu.set_item_disabled(motive_index, not is_enabled)
+			is_one_enabled = is_one_enabled or is_enabled
+			motive_index += 1
+		popup.set_item_disabled(crime_index, not is_one_enabled)
+		crime_index += 1
+
+func _is_motive_valid(crime: String, motive_id: String, case: Case) -> bool:
+	if case == null:
+		return true
+	var valid: bool
+	var location_names = _crime_data[crime][motive_id].crime_location
+	if location_names == ["none"]:
+		valid = case.get_crime_location() == null
+	else:
+		valid = case.get_crime_location() != null
+	return valid

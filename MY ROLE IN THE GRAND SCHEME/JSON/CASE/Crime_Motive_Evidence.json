@@ -1206,9 +1206,9 @@
 				"JOB008",
 				"JOB017"
 			],
-            "flags": [
+			"flags": [
                 "same_professions"
-            ],
+			],
 			"victims": [
 				1
 			],
@@ -1439,9 +1439,9 @@
 				"JOB038",
 				"JOB029"
 			],
-            "flags": [
+			"flags": [
                 "same_professions"
-            ],
+			],
 			"victims": [
 				1
 			],
@@ -1982,9 +1982,9 @@
 				"JOB039",
 				"JOB023"
 			],
-            "flags": [
+			"flags": [
                 "same_professions"
-            ],
+			],
 			"victims": [
 				1
 			],
@@ -3381,9 +3381,9 @@
 				"JOB039",
 				"JOB023"
 			],
-            "flags": [
+			"flags": [
                 "same_professions"
-            ],
+			],
 			"victims": [
 				1
 			],
@@ -4362,9 +4362,9 @@
 				"JOB037",
 				"JOB029"
 			],
-            "flags": [
+			"flags": [
                 "same_professions"
-            ],
+			],
 			"victims": [
 				1
 			],
@@ -5500,9 +5500,9 @@
 				"JOB039",
 				"JOB023"
 			],
-            "flags": [
+			"flags": [
                 "same_professions"
-            ],
+			],
 			"victims": [
 				1
 			],
