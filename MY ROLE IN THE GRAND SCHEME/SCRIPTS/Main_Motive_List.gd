@@ -18,8 +18,9 @@ func _ready():
 		crime_index += 1
 
 	# disable menu items for motives that are not valid for the current case
+	# when the menu is popped up
 
-	filterMotives()
+	popup.about_to_popup.connect(_enable_disable_motives)
 
 	# if a crime and motive have been selected, highlight them in the menu, and
 	# set the menu's label and tooltip accordingly
@@ -70,34 +71,78 @@ func _set_motive_checked(crime: String, motive_id: String, checked: bool):
 func _get_label(base_name: String, checked: bool = false) -> String:
 	return (">" if checked else " ") + base_name
 
-##
-## Enables/disables motives depending on whether they are applicable to the
-## current case.
-##
-func filterMotives():
+#
+# Enables/disables motives depending on whether they are applicable to the
+# current case.
+#
+func _enable_disable_motives():
 	var case = GameState.get_current_case()
+
+	# count identified culprits and accomplices once and for all
+
+	var culprit_count = 0
+	var accomplice_count = 0
+
+	for npc in case.npcs:
+		match npc.apparent_role:
+			NpcCard.NpcRole.CULPRIT:
+				culprit_count += 1
+			NpcCard.NpcRole.ACCOMPLICE:
+				accomplice_count += 1
+
+	# iterate over the crime submenus and motive entries
+
 	var popup: PopupMenu = get_popup()
 	var crime_index = 0
+
 	for crime in _crime_data:
 		var crime_dict = _crime_data[crime]
 		var submenu: PopupMenu = popup.get_item_submenu_node(crime_index)
 		var motive_index = 0
 		var is_one_enabled = false
 		for motive_id in crime_dict:
-			var is_enabled = _is_motive_valid(crime, motive_id, case)
+			var is_enabled = _is_motive_valid(
+				crime_dict[motive_id], case, culprit_count, accomplice_count)
 			submenu.set_item_disabled(motive_index, not is_enabled)
 			is_one_enabled = is_one_enabled or is_enabled
 			motive_index += 1
 		popup.set_item_disabled(crime_index, not is_one_enabled)
 		crime_index += 1
 
-func _is_motive_valid(crime: String, motive_id: String, case: Case) -> bool:
+func _is_motive_valid(
+	motive_dict: Dictionary, case: Case, culprit_count: int,
+	accomplice_count: int) -> bool:
+
 	if case == null:
 		return true
-	var valid: bool
-	var location_names = _crime_data[crime][motive_id].crime_location
+
+	# is there a crime scene?
+
+	var location_names = motive_dict.crime_location
 	if location_names == ["none"]:
-		valid = case.get_crime_location() == null
+		if case.get_crime_location():
+			return false
 	else:
-		valid = case.get_crime_location() != null
-	return valid
+		if not case.get_crime_location():
+			return false
+
+	# do the victim, culprit and accomplice counts correspond?
+
+	if case.get_victim_count() as float not in motive_dict.victims:
+		return false
+	if culprit_count > motive_dict.culprits.back():
+		return false
+	if accomplice_count > motive_dict.accomplices.back():
+		return false
+
+	# is the number of deaths compatible?
+
+	match motive_dict.dead_victims:
+		"no":
+			if case.get_dead_victim_count() > 0:
+				return false
+		"yes":
+			if case.get_dead_victim_count() == 0:
+				return false
+
+	return true

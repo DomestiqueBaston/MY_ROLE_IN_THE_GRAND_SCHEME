@@ -25,6 +25,10 @@ var _case_random_name: String
 var _case_name: String
 var _crime: String
 var _motive: Dictionary
+var _victim_count: int
+var _dead_victim_count: int
+var _culprit_count: int
+var _accomplice_count: int
 var _difficulty: int
 var _duration: int
 var _status: Status = Status.UNASSIGNED
@@ -83,18 +87,18 @@ func _randomize():
 	_motive = crime_dict[motive_id]
 	_case_name = _motive["name"]
 
-	var culprit_count = _get_count_from_array(_motive.get("culprits", 0))
-	var victim_count = _get_count_from_array(_motive.get("victims", 0))
+	_victim_count = _get_count_from_array(_motive.get("victims", 0))
+	_culprit_count = _get_count_from_array(_motive.get("culprits", 0))
+	_accomplice_count = _get_count_from_array(_motive.get("accomplices", 0))
 	var witness_count = _get_count_from_array(_motive.get("witnesses", 0))
-	var accomplice_count = _get_count_from_array(_motive.get("accomplices", 0))
 	var suspect_count = _get_count_from_array(_motive.get("suspects", 0))
 	var total_npc_count = \
-		culprit_count + victim_count + accomplice_count + suspect_count + witness_count
+		_culprit_count + _victim_count + _accomplice_count + suspect_count + witness_count
 	var other_npc_count = 2 * total_npc_count
 	total_npc_count += other_npc_count
 	var evidence_count = maxi(
 		_get_count_from_array(_motive.get("evidence_number", 0)),
-		culprit_count + accomplice_count + victim_count)
+		_culprit_count + _accomplice_count + _victim_count)
 
 	# incriminating links (we don't need to know between whom yet)
 
@@ -135,9 +139,9 @@ func _randomize():
 			incriminating_link_count += 1
 
 	var diff = 19.0/50.0 * (1.0
-		+ culprit_count
-		+ victim_count
-		+ accomplice_count * 0.5
+		+ _culprit_count
+		+ _victim_count
+		+ _accomplice_count * 0.5
 		- suspect_count * 0.5
 		- witness_count * 0.5
 		+ evidence_count
@@ -157,9 +161,9 @@ func _randomize():
 	var culprit_sex = -1
 	var culprit_orientation = -1
 
-	if culprit_count > 0:
+	if _culprit_count > 0:
 		var culprit_jobs = _motive.get("culprits_professions", [])
-		for i in culprit_count:
+		for i in _culprit_count:
 			var card = NpcCard.generate_card(
 				self, NpcCard.NpcRole.CULPRIT, culprit_jobs, culprit_sex)
 			if culprit_sex >= 0:
@@ -181,14 +185,14 @@ func _randomize():
 	else:
 		victim_sex = 1 - culprit_sex
 
-	if victim_count > 0:
+	if _victim_count > 0:
 		var victim_jobs
 		if "same_professions" in _motive.get("flags", []):
 			victim_jobs = [culprits[0].job]
 		else:
 			victim_jobs = _motive.get("victims_professions", [])
 		var dead = _motive["dead_victims"]
-		for i in victim_count:
+		for i in _victim_count:
 			var card = NpcCard.generate_card(
 				self, NpcCard.NpcRole.VICTIM, victim_jobs, victim_sex)
 			card.apparent_role = NpcCard.NpcRole.VICTIM
@@ -200,13 +204,15 @@ func _randomize():
 				if randi() & 1:
 					card.npc_status = NpcCard.NpcStatus.DEAD
 			victims.append(card)
+			if card.npc_status == NpcCard.NpcStatus.DEAD:
+				_dead_victim_count += 1
 
 	# NPCs: accomplices (if sex is involved, ensure they all have the same
 	# sexual interests as the culprits, to simplify)
 
 	var accomplices: Array[NpcCard]
 
-	for i in accomplice_count:
+	for i in _accomplice_count:
 		var card = NpcCard.generate_card(
 			self, NpcCard.NpcRole.ACCOMPLICE, [], culprit_sex)
 		if culprit_sex >= 0:
@@ -288,11 +294,11 @@ func _randomize():
 
 	for link_type in pre_links:
 		var npc1
-		var roll = randi() % (culprit_count + accomplice_count)
-		if roll < culprit_count:
+		var roll = randi() % (_culprit_count + _accomplice_count)
+		if roll < _culprit_count:
 			npc1 = culprits[roll]
 		else:
-			npc1 = accomplices[roll - culprit_count]
+			npc1 = accomplices[roll - _culprit_count]
 		var npc2 = victims.pick_random()
 		Card.add_bidirectional_connection(link_type, npc1, npc2)
 
@@ -783,8 +789,26 @@ func get_difficulty() -> int:
 func get_duration() -> int:
 	return _duration
 
+##
+## Returns the crime location, if there is one, and if it is known.
+##
 func get_crime_location() -> LocationCard:
 	return _crime_location
+
+func get_motive_dictionary() -> Dictionary:
+	return _motive
+
+func get_victim_count() -> int:
+	return _victim_count
+
+func get_dead_victim_count() -> int:
+	return _dead_victim_count
+
+func get_culprit_count() -> int:
+	return _culprit_count
+
+func get_accomplice_count() -> int:
+	return _accomplice_count
 
 ##
 ## Returns all the cards created for the case, including NPCs, objects and
@@ -1014,6 +1038,10 @@ func get_json_dict():
 		"case_name": _case_name,
 		"crime": _crime,
 		"motive": _motive,
+		"victim_count": _victim_count,
+		"dead_victim_count": _dead_victim_count,
+		"culprit_count": _culprit_count,
+		"accomplice_count": _accomplice_count,
 		"difficulty": _difficulty,
 		"duration": _duration,
 		"status": _status,
@@ -1066,6 +1094,10 @@ func restore(dict, catalog):
 	_case_name = dict.case_name
 	_crime = dict.crime
 	_motive = dict.motive
+	_victim_count = dict.get("victim_count", 0)
+	_dead_victim_count = dict.get("dead_victim_count", 0)
+	_culprit_count = dict.get("culprit_count", 0)
+	_accomplice_count = dict.get("accomplice_count", 0)
 	_difficulty = dict.difficulty
 	_duration = dict.duration
 	_status = dict.status
