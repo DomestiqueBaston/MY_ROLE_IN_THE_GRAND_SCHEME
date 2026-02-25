@@ -133,19 +133,9 @@ func _randomize():
 	# the difficulty must be determined BEFORE generating the NPCs, because it
 	# determines the number of points added to their main characteristics
 
-	var incriminating_link_count = 0
-	for link_type in pre_links:
-		if Link.is_type_incriminating(link_type):
-			incriminating_link_count += 1
-
-	var diff = 19.0/50.0 * (1.0
-		+ _culprit_count
-		+ _victim_count
-		+ _accomplice_count * 0.5
-		- suspect_count * 0.5
-		- witness_count * 0.5
-		+ evidence_count
-		+ incriminating_link_count * 0.5)
+	var diff = (1
+		+ _victim_count + _culprit_count + _accomplice_count + evidence_count
+		- 4) * 0.5
 
 	_difficulty = clampi(roundi(diff), 1, 5)
 
@@ -997,6 +987,8 @@ func print_case():
 	print("************************************************************")
 	print(_case_name)
 	print("************************************************************")
+	print()
+	print("difficulty: ", _difficulty)
 	for npc in npcs:
 		print()
 		npc.print_npc()
