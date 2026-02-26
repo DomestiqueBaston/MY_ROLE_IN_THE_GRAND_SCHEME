@@ -3519,9 +3519,9 @@ offset_right = 472.0
 offset_bottom = 251.0
 rotation = 0.0284044
 bbcode_enabled = true
-text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [color=#ff8864] you[/color]  made[/color][/shake]  to  the  [shake rate=7.0 level=5 connected=0][color=#ff8864]case  file[/color][/shake] just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
+text = "[center]The  [shake rate=7.0 level=5 connected=0][color=#ff1c18]changes [/color][/shake][color=#ff8864] made[/color]  to  the  [color=#ff8864]case[/color]  file just  made  the  [shake rate=7.0 level=5 connected=0][color=#ff1c18]motive  irrelevant[/color][/shake]!
 
-We'll have  to  [shake rate=7.0 level=5 connected=0][color=#ff8864]find[/color][/shake]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
+We'll have  to  [color=#ff8864]find[/color]  a  [shake rate=7.0 level=5 connected=0][color=#ff1c18]new  one[/color][/shake]![/center]"
 
 [node name="Lie" type="Control" parent="Overlays/Misc/Announces"]
 visible = false
