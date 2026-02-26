@@ -124,7 +124,7 @@ func _randomize():
 					else:
 						pre_links.append(Link.Type.ENEMY)
 				"acquaintance":
-					pre_links.append(Link.Type.INTIMACY)
+					pre_links.append(Link.Type.ACQUAINTANCE)
 				"ideology":
 					pre_links.append(Link.Type.IDEOLOGY)
 				"debt_influence":

@@ -430,11 +430,14 @@ func _stop_drag_pin(global_pos: Vector2):
 		_stuff_to_do_when_drag_ends(null)
 		_clicked_pin.move_to_link_at(_drop_target, global_pos)
 
-	# need to update NPCs' apparent roles after changing a link
+	# need to update NPCs' apparent roles after changing a GUILT link, and to
+	# check whether the selected motive is still valid
 
-	var case = GameState.get_current_case()
-	if case:
-		case.update_npc_roles()
+	if link.type == Link.Type.GUILT:
+		var case = GameState.get_current_case()
+		if case:
+			case.update_npc_roles()
+	motive_list.check_motive_validity()
 
 func _stuff_to_do_when_drag_ends(dragged_card: Card):
 	for link in _drag_links:
@@ -526,10 +529,15 @@ func _stop_linking(global_pos: Vector2):
 	_new_link.resume_collisions()
 	_new_link.lower()
 
+	# update NPCs' apparent roles after changing a GUILT link, and check
+	# whether the selected motive is still valid
+
 	var case = GameState.get_current_case()
 	if case:
 		case.add_link(_new_link)
-		case.update_npc_roles()
+		if _new_link.type == Link.Type.GUILT:
+			case.update_npc_roles()
+	motive_list.check_motive_validity()
 
 	_drag_state = DragState.NONE
 	Globals.dragging = false
@@ -794,12 +802,15 @@ func _handle_submenu(id: int, submenu: int):
 				_start_linking(_popup_node, id as Link.Type, false)
 		2:
 			if _popup_node is Link:
+				var is_guilt_involved = (Link.Type.GUILT in [id, _popup_node.type])
 				_popup_node.type = id
 				if _popup_node.status == Link.Status.NEW:
 					_popup_node.status = Link.Status.CONFIRMED
-				var case = GameState.get_current_case()
-				if case:
-					case.update_npc_roles()
+				if is_guilt_involved:
+					var case = GameState.get_current_case()
+					if case:
+						case.update_npc_roles()
+				motive_list.check_motive_validity()
 
 func _handle_dialogue_submenu(idx: int, menu: PopupMenu):
 	var npc: NpcCard = _popup_node
@@ -811,20 +822,26 @@ func _delete_link(link: Link):
 
 	# remove the link, and any other links connected to it, from the case
 
+	var is_guilt_involved = (link.type == Link.Type.GUILT)
 	var case = GameState.get_current_case()
 	if case:
 		for pin in link.get_follower_pins():
-			case.remove_link(pin.get_link_reference())
+			var other_link = pin.get_link_reference()
+			if other_link.type == Link.Type.GUILT:
+				is_guilt_involved = true
+			case.remove_link(other_link)
 		case.remove_link(link)
 
 	# delete the link (which also deletes any links connected to it)
 
 	link.free()
 
-	# need to update NPCs' apparent roles
+	# need to update NPCs' apparent roles and check whether the selected motive
+	# is still valid
 
-	if case:
+	if case and is_guilt_involved:
 		case.update_npc_roles()
+	motive_list.check_motive_validity()
 
 #
 # Called before a (modal) dialog is displayed: all input handling is paused
@@ -846,6 +863,7 @@ func _on_case_changed():
 	var case = GameState.get_current_case()
 	if case:
 		populate(case)
+	motive_list.update()
 
 ##
 ## Populates the scene with the cards in the given case that have already been
