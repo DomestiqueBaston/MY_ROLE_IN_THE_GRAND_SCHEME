@@ -44,7 +44,7 @@ func update():
 	var crime_index = 0
 	for crime in _crime_data:
 		var crime_dict = _crime_data[crime]
-		popup.set_item_text(crime_index, _get_label(crime_dict.name))
+		popup.set_item_text(crime_index, _get_label(crime))
 		var submenu: PopupMenu = popup.get_item_submenu_node(crime_index)
 		var motive_index = 0
 		for motive_id in crime_dict:
