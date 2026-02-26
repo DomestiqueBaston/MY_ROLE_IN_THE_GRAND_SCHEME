@@ -695,7 +695,6 @@ Enquête
 	- Prendre une enquête la fait passer automatiquement en enquête en cours.
 	- Changer d’enquête active ne stoppe pas le temps qui passe dans les autres enquêtes du joueur !
 	- À la validation d’une enquête, si c’est bon : gros bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
-	- Jusqu’à 3 liens autres que noirs pleins supplémentaires faux : n’est pas considéré comme une erreur tant que les bons liens sont établis.
 	- Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’au moins 1 PNJ.
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
 	- Voir également à la fin pour les enquêtes de niveau 0 !
@@ -719,7 +718,7 @@ Evolution du statut des cartes de « normal » en Preuves/Pièces à convictio
 	- Changer le lien Found d’un Objet (par le joueur) peut entrer en contradiction avec les infos de l’Objet et éventuellement de son propriétaire. On prendra alors soin d’afficher le Warning.tscn sur le lien pour signaler la contradiction (ou on l’interdit ?).
 
 Liens entre les éléments dans l’enquête (Main.tscn)
-	- Tout changement de lien et ou de carte dans la zone de droite (Main.tscn) peut amener automatiquement à l’invalidation du mobile précédemment choisi ! Il sera alors désélectionné, le menu affichera de nouveau « Select a crime motive... » et clignotera (il y a une boucle d’animation pour ça et elle sera à jouer jusqu’à ce que le joueur change le mobile).
+	- Tout changement de lien et ou de carte dans la zone de droite (Main.tscn) peut amener automatiquement à l’invalidation du mobile précédemment choisi ! Il sera alors désélectionné, le menu affichera de nouveau « Select a crime motive... » et clignotera (il y a une boucle d’animation pour ça et elle sera à jouer jusqu’à ce que le joueur interagisse avec le menu).
 	- Lien plein (confirmé) : Utilisé pour des relations établies et vérifiées (par le joueur, pas dans l’absolu).
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Le joueur ne peut pas déplacer une origine d’un lien tant que celui-ci est pointillé.
@@ -730,7 +729,7 @@ Orange : Ennemi (pas exploité dans toutes les enquêtes)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
           Rose : Intime (adultère uniquement et pas exploité dans toutes les enquêtes)
           Bleu foncé : Idéologie (pas exploité dans toutes les enquêtes)
-          Bleu clair : Connaissance NE SERT PAS À VALIDER UNE ENQUÊTE.
+          Bleu clair : Connaissance  (pas exploité dans toutes les enquêtes)
 Rouge : Incohérence Il faudrait pouvoir AUSSI attacher une extrémité de tels liens au milieu d’un autre lien (idéalement) ou trouver une autre solution… NE SERT PAS À VALIDER UNE ENQUÊTE.
           Vert clair : Propriété NE SERT PAS À VALIDER UNE ENQUÊTE.
           Marron : Domicile NE SERT PAS À VALIDER UNE ENQUÊTE.
@@ -789,10 +788,10 @@ Enquête finale (6)	WTF!(malus de 3)
 Résolution des enquêtes, gains et implications
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
 		- round((niveau de difficulté) × 100) ±10% Dø (voir à la fin pour Niveau 0)
-		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en cartes Combat, Dialogue, Investigation et/ou Abstraites parmi lesquelles le joueur choisira celles qu’il garde pour sa main de maîtrise sans dépasser les limites de main de Maîtrise.
+		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en toutes cartes Combat (tous types), Dialogue, Investigation (tous types) et/ou Abstraites parmi lesquelles le joueur choisira celles qu’il garde pour sa main de maîtrise sans dépasser les limites de main de Maîtrise.
 		- Emo = 0, Add = 0, Wan = 0
  	- Si le joueur valide une enquête et qu’il s’est trompé, l’enquête est terminée pour lui et implique :
-		- Emo +1 → Min/Max ou Emo -1 si Emo = 0.
+		- Emo +1 → Min/Max ou Emo -1 si Emo = 0 et HEA -1 ou MEN -1 ou PHY -1.
 	- Renoncer à une enquête n’implique pas de malus ni de bonus mais coûte de l’argent selon : round(niveau de difficulté × nombre de jours prévus pour résoudre l’enquête + nombre de jours passés depuis l’acceptation de l’enquête)Dø.
 	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo +1 → Emo Min/Max ou Emo -1 si Emo = 0. L’annonce se fera avec Short_Event_Overlay.
 	- Le joueur aura plusieurs choix d'enquêtes à chaque fois. Les enquêtes sont accessibles tant que leur limite de validité est à plus de (niveau de difficulté de l’enquête) jours. Pour les enquêtes de niveau 0, on compte comme niveau 1.
@@ -833,7 +832,7 @@ Comment va-t-on définir les enquêtes, comment va-t-on les résoudre, quels son
 	- Pour le nombre de coupables, victimes, etc. par enquête voir Crime_Motive_Evidence.json.
 	- Il faudra rencontrer les PNJs afin de les « connaître » (emplois du temps, leurs rapports, leurs liens…).
 	- Il faudra rassembler les indices (preuves, infos, etc.) qui seront disséminées dans les divers lieux concernés par l’enquête ou détenus/connus par des PNJs.
-	- Il faudra découvrir le mobile du crime dans la liste de mobiles dont les mobiles incompatibles avec ce qu’a établi le joueur disparaîtront. Sans aucun lien noir, le menu est désactivé. Au départ d’une enquête, le menu est désactivé puisqu’aucun lien noir n’est établi.
+	- Il faudra découvrir le mobile du crime dans la liste de mobiles dont les mobiles incompatibles avec ce qu’a établi le joueur disparaîtront.
 	- Chaque PNJ doit connaître (Acquaintance) au moins 1 autre PNJ (en plus de son éventuel conjoint).
 	- Les PNJs qui se connaissent bien (Friend) doivent partager un Lieu Fréquenté (+ appartement pour les couples).
 	- Tous les mobiles ayant un lien « Intimacy » (voir Crime_Motive_Evidence.json) imposent un couple dans l’enquête. Les enquêtes d’adultère nécessitent un/une amant/amante en plus du couple.
