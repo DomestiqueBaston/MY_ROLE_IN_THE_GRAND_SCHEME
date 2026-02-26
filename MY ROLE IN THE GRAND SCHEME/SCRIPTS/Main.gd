@@ -846,7 +846,6 @@ func _on_case_changed():
 	var case = GameState.get_current_case()
 	if case:
 		populate(case)
-	motive_list.filterMotives()
 
 ##
 ## Populates the scene with the cards in the given case that have already been
