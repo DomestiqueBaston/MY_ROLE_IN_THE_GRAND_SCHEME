@@ -231,7 +231,7 @@ func _update_tooltip():
 			Type.DEBT:
 				tooltip = "Debt\nInfluence"
 			Type.GUILT:
-				tooltip = "Culprit\nAccomplice\nEvidence\nWitness"
+				tooltip = "Culprit\nAccomplice\nEvidence"
 			_:
 				tooltip = Type.keys()[type].capitalize()
 		if status == Status.NEW:
