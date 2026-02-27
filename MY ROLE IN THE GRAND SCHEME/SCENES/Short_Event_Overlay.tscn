@@ -1425,6 +1425,258 @@ size = Vector2(154, 100)
 show_bounding_box = true
 metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
+[node name="Case_Summaries" type="Control" parent="Overlays/Income_Start"]
+visible = false
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("52_lkigo")
+
+[node name="Quit" type="Button" parent="Overlays/Income_Start/Case_Summaries"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 303.0
+offset_right = 343.0
+offset_bottom = 313.0
+text = "Well, ok..."
+
+[node name="Chalk" type="Sprite2D" parent="Overlays/Income_Start/Case_Summaries"]
+clip_children = 1
+position = Vector2(315, 178)
+texture = ExtResource("62_gjkrj")
+
+[node name="Title" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk"]
+clip_contents = false
+offset_left = -72.0
+offset_top = -108.0
+offset_right = 82.0
+offset_bottom = -98.0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Deadlines[/color][/pulse][/center]"
+
+[node name="Summary_Container" type="VBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk"]
+custom_minimum_size = Vector2(0, 150)
+anchors_preset = -1
+anchor_left = 0.388
+anchor_top = 0.44200003
+anchor_right = 0.62700003
+anchor_bottom = 0.77500004
+offset_left = -320.32
+offset_top = -258.12
+offset_right = -319.28003
+offset_bottom = -172.99998
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 2
+alignment = 1
+
+[node name="Intro" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "Here's your [color=#ff1c18]remaining time[/color], because apparently, [color=#ff8864]you need reminders[/color].
+
+Whatever. Nobody's expecting much more than a failure from you.
+
+[color=#ff1c18]- - - - - - - - - - - - - - -[/color]"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Case_1" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1"]
+clip_contents = false
+layout_mode = 1
+offset_right = 48.0
+offset_bottom = 8.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "- Case [color=#ff8864]#1[/color]:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1/Case"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 79.0
+offset_bottom = 22.0
+size_flags_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "   - Days left: "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "1"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Case_2" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+visible = false
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2"]
+clip_contents = false
+layout_mode = 1
+offset_right = 49.0
+offset_bottom = 8.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "- Case [color=#ff8864]#2[/color]:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2/Case"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 79.0
+offset_bottom = 22.0
+size_flags_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "   - Days left: "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "1"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Case_3" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+visible = false
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3"]
+clip_contents = false
+layout_mode = 1
+offset_right = 49.0
+offset_bottom = 8.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "- Case [color=#ff8864]#3[/color]:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3/Case"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 79.0
+offset_bottom = 22.0
+size_flags_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "   - Days left: "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "1"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Case_4" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+visible = false
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4"]
+clip_contents = false
+layout_mode = 1
+offset_right = 49.0
+offset_bottom = 8.0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "- Case [color=#ff8864]#4[/color]:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4/Case"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 79.0
+offset_bottom = 22.0
+size_flags_horizontal = 2
+theme_override_constants/separation = 0
+
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "   - Days left: "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4/Case/Info"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "1"
+fit_content = true
+autowrap_mode = 0
+
 [node name="Interaction_Result" type="Node2D" parent="Overlays"]
 visible = false
 script = ExtResource("55_th1i4")
