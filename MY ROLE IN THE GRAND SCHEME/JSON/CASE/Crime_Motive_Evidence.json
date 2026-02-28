@@ -339,7 +339,8 @@
 			"name": "Preemptive Strike Against Perceived Threat",
 			"more_explicit_name": "Anticipation of an Attack",
 			"link": [
-				"none"
+				"none",
+				"acquaintance"
 			],
 			"crime_location": [
 				"any_victim"
@@ -2059,6 +2060,7 @@
 			"name": "Extorting for a Payoff",
 			"more_explicit_name": "Ransom Demand",
 			"link": [
+				"debt_influence",
 				"debt_influence"
 			],
 			"crime_location": [
@@ -2170,7 +2172,8 @@
 			"name": "Capturing for Genetic Experimentation",
 			"more_explicit_name": "Proving the Clone Theory",
 			"link": [
-				"none"
+				"acquaintance",
+				"acquaintance"
 			],
 			"crime_location": [
 				"any_culprit"
@@ -2219,7 +2222,6 @@
 			"name": "Trading Lives for Profit",
 			"more_explicit_name": "Human Trafficking",
 			"link": [
-				"none",
 				"ideology"
 			],
 			"crime_location": [
@@ -2719,7 +2721,7 @@
 				"ideology"
 			],
 			"crime_location": [
-				"none"
+				"none",
 			],
 			"known_crime_location": 0,
 			"victims_professions": [],
@@ -3649,7 +3651,8 @@
 			"name": "Settling the Score in Flames",
 			"more_explicit_name": "Fiery Revenge",
 			"link": [
-				"none"
+				"none",
+				"enemy"
 			],
 			"crime_location": [
 				"home",
@@ -3738,7 +3741,9 @@
 			"name": "Setting the Stage for a Forbidden Ritual",
 			"more_explicit_name": "Preparing a Satanic Mass",
 			"link": [
-				"none"
+				"none",
+				"acquaintance",
+				"friend"
 			],
 			"crime_location": [
 				"any"
@@ -4069,7 +4074,8 @@
 			"name": "Indulging in Pure Cruelty for No Reason",
 			"more_explicit_name": "Vicious Psychopathy",
 			"link": [
-				"none"
+				"none",
+				"acquaintance"
 			],
 			"crime_location": [
 				"any_victim"
@@ -4287,7 +4293,8 @@
 			"name": "Taking Control Through Finality",
 			"more_explicit_name": "Murderous Psychopathy",
 			"link": [
-				"none"
+				"friend",
+				"intimacy"
 			],
 			"crime_location": [
 				"any_victim"
@@ -4397,7 +4404,6 @@
 			"name": "Righting Wrongs with Final Authority",
 			"more_explicit_name": "Vigilante Justice",
 			"link": [
-				"none",
 				"ideology"
 			],
 			"crime_location": [
@@ -5600,6 +5606,7 @@
 			"name": "Spreading Disruption to Wake the Masses",
 			"more_explicit_name": "Creating Large-Scale Chaos",
 			"link": [
+				"ideology",
 				"ideology"
 			],
 			"crime_location": [
@@ -5649,7 +5656,8 @@
 			"name": "Embracing Darkness to Ease a Tormented Mind",
 			"more_explicit_name": "Extreme and Morbid Psychopathy",
 			"link": [
-				"none"
+				"acquaintance",
+				"acquaintance"
 			],
 			"crime_location": [
 				"any"
@@ -5739,6 +5747,8 @@
 			"more_explicit_name": "Terrorizing the Annunaki",
 			"link": [
 				"none",
+				"ideology",
+				"ideology",
 				"ideology"
 			],
 			"crime_location": [
@@ -6960,8 +6970,8 @@
 			"name": "Breaking the Mold for Revenge",
 			"more_explicit_name": "Degradation of the Victim",
 			"link": [
-				"enemy",
-				"none"
+				"none",
+				"enemy"
 			],
 			"crime_location": [
 				"any_victim"
@@ -7086,7 +7096,7 @@
 			"name": "Activating Hidden Reproduction Plans",
 			"more_explicit_name": "Launch the Operation Incubation of the Burnes Larvae",
 			"link": [
-				"none"
+				"intimacy"
 			],
 			"crime_location": [
 				"any_victim"
