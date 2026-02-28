@@ -75,6 +75,15 @@ enum Status {
 	NEW
 }
 
+const incriminating_types = [
+	Type.DEBT,
+	Type.INTIMACY,
+	Type.FRIEND,
+	Type.ENEMY,
+	Type.ACQUAINTANCE,
+	Type.IDEOLOGY
+];
+
 static var _link_scene = preload("res://SCENES/Link.tscn")
 
 var _solid_textures: Array[CompressedTexture2D] = [
@@ -324,16 +333,13 @@ func is_temporary():
 ## Returns true if the link is one of the incriminating link types.
 ##
 func is_incriminating() -> bool:
-	return is_type_incriminating(type)
+	return type in incriminating_types
 
 ##
 ## Returns true if the given link type is incriminating.
 ##
 static func is_type_incriminating(link_type: Link.Type) -> bool:
-	return link_type in [
-		Type.DEBT, Type.GUILT, Type.INTIMACY, Type.FRIEND, Type.ENEMY,
-		Type.IDEOLOGY
-	]
+	return link_type in incriminating_types
 
 ##
 ## Returns true if a link of the given type can be created between the given

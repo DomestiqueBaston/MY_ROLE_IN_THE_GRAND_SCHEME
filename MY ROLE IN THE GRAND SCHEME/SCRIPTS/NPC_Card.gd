@@ -552,22 +552,25 @@ func print_npc():
 	else:
 		print("%s (%s):" % [
 			get_display_name(), NpcRole.keys()[actual_role].to_lower()])
+	if npc_status != NpcStatus.NONE:
+		print("  status: ", NpcStatus.keys()[npc_status].to_lower())
 	print("  sex: %s (%s)" % [
 		Sex.keys()[npc_sex].to_lower(),
 		SexualOrientation.keys()[orientation].to_lower()])
 	print("  married: ", is_married)
 	print("  job: ", _job_data[job].name)
-	#print_connections_of_type("home", Link.Type.HOME)
-	#print_connections_of_type("work", Link.Type.WORK)
-	#print_connections_of_type("hangout", Link.Type.HANGOUT)
-	#print_connections_of_type("hideout", Link.Type.HIDEOUT)
-	#print_connections_of_type("intimates", Link.Type.INTIMACY)
-	#print_connections_of_type("friends", Link.Type.FRIEND)
-	#print_connections_of_type("enemies", Link.Type.ENEMY)
-	#print_connections_of_type("acquaintances", Link.Type.ACQUAINTANCE)
-	#print_connections_of_type("property", Link.Type.PROPERTY)
-	#print_connections_of_type("debt", Link.Type.DEBT)
-	#print_connections_of_type("ideology", Link.Type.IDEOLOGY)
+	if actual_role != NpcRole.NONE:
+		print_connections_of_type("home", Link.Type.HOME)
+		print_connections_of_type("work", Link.Type.WORK)
+		print_connections_of_type("hangout", Link.Type.HANGOUT)
+		print_connections_of_type("hideout", Link.Type.HIDEOUT)
+		print_connections_of_type("intimates", Link.Type.INTIMACY)
+		print_connections_of_type("friends", Link.Type.FRIEND)
+		print_connections_of_type("enemies", Link.Type.ENEMY)
+		print_connections_of_type("acquaintances", Link.Type.ACQUAINTANCE)
+		print_connections_of_type("property", Link.Type.PROPERTY)
+		print_connections_of_type("debt", Link.Type.DEBT)
+		print_connections_of_type("ideology", Link.Type.IDEOLOGY)
 
 #
 # For save/load.

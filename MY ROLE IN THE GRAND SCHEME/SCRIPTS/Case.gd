@@ -100,6 +100,27 @@ func _randomize():
 		_get_count_from_array(_motive.get("evidence_number", 0)),
 		_culprit_count + _accomplice_count + _victim_count)
 
+	# determine victim statuses now, because we need to know if the player can
+	# talk to them or not
+
+	var victim_status: Array[NpcCard.NpcStatus]
+	var dead_victims = _motive["dead_victims"]
+
+	for i in _victim_count:
+		if dead_victims == "yes":
+			victim_status.append(NpcCard.NpcStatus.DEAD)
+		elif dead_victims == "disappeared":
+			victim_status.append(NpcCard.NpcStatus.DISAPPEARED)
+		elif dead_victims == "random":
+			if randi() & 1 == 0:
+				victim_status.append(NpcCard.NpcStatus.DEAD)
+			else:
+				victim_status.append(NpcCard.NpcStatus.NONE)
+		else:
+			victim_status.append(NpcCard.NpcStatus.NONE)
+		if victim_status.back() != NpcCard.NpcStatus.NONE:
+			_dead_victim_count += 1
+
 	# incriminating links (we don't need to know between whom yet)
 
 	var pre_links: Array[Link.Type]
@@ -108,9 +129,15 @@ func _randomize():
 		for link_type in link_types:
 			if link_type == "none":
 				continue
+
+			# there is a 50% chance that each link will be created, but if the
+			# victims are dead or disappeared, we always want to create the
+			# links, since the player won't be able to talk to them
+
 			var roll = randi()
-			if roll & 1:
+			if _dead_victim_count == 0 and roll & 1:
 				continue
+
 			match link_type:
 				"intimacy":
 					pre_links.append(Link.Type.INTIMACY)
@@ -129,6 +156,8 @@ func _randomize():
 					pre_links.append(Link.Type.IDEOLOGY)
 				"debt_influence":
 					pre_links.append(Link.Type.DEBT)
+				"any":
+					pre_links.append(Link.incriminating_types.pick_random())
 
 	# the difficulty must be determined BEFORE generating the NPCs, because it
 	# determines the number of points added to their main characteristics
@@ -175,27 +204,18 @@ func _randomize():
 	else:
 		victim_sex = 1 - culprit_sex
 
-	if _victim_count > 0:
-		var victim_jobs
-		if "same_professions" in _motive.get("flags", []):
-			victim_jobs = [culprits[0].job]
-		else:
-			victim_jobs = _motive.get("victims_professions", [])
-		var dead = _motive["dead_victims"]
-		for i in _victim_count:
-			var card = NpcCard.generate_card(
-				self, NpcCard.NpcRole.VICTIM, victim_jobs, victim_sex)
-			card.apparent_role = NpcCard.NpcRole.VICTIM
-			if dead == "yes":
-				card.npc_status = NpcCard.NpcStatus.DEAD
-			elif dead == "disappeared":
-				card.npc_status = NpcCard.NpcStatus.DISAPPEARED
-			elif dead == "random":
-				if randi() & 1:
-					card.npc_status = NpcCard.NpcStatus.DEAD
-			victims.append(card)
-			if card.npc_status == NpcCard.NpcStatus.DEAD:
-				_dead_victim_count += 1
+	var victim_jobs
+	if "same_professions" in _motive.get("flags", []):
+		victim_jobs = [culprits[0].job]
+	else:
+		victim_jobs = _motive.get("victims_professions", [])
+
+	for i in _victim_count:
+		var card = NpcCard.generate_card(
+			self, NpcCard.NpcRole.VICTIM, victim_jobs, victim_sex)
+		card.apparent_role = NpcCard.NpcRole.VICTIM
+		card.npc_status = victim_status[i]
+		victims.append(card)
 
 	# NPCs: accomplices (if sex is involved, ensure they all have the same
 	# sexual interests as the culprits, to simplify)
@@ -280,17 +300,26 @@ func _randomize():
 			workplace = _find_or_create_location(npc.job_location)
 		Card.add_bidirectional_connection(Link.Type.WORK, npc, workplace)
 
-	# incriminating links between culprits/accomplices and victims
+	# incriminating links between culprits/accomplices and victims; dead or
+	# disappeared victims have priority when creating links, since the player
+	# will not be able to talk to them
 
-	for link_type in pre_links:
-		var npc1
-		var roll = randi() % (_culprit_count + _accomplice_count)
-		if roll < _culprit_count:
-			npc1 = culprits[roll]
-		else:
-			npc1 = accomplices[roll - _culprit_count]
-		var npc2 = victims.pick_random()
-		Card.add_bidirectional_connection(link_type, npc1, npc2)
+	if _victim_count > 0:
+		var victim_index = 0
+		if _dead_victim_count > 0:
+			while (victim_index < _victim_count
+				   and victim_status[victim_index] == NpcCard.NpcStatus.NONE):
+				victim_index += 1
+		for link_type in pre_links:
+			var npc1
+			var roll = randi() % (_culprit_count + _accomplice_count)
+			if roll < _culprit_count:
+				npc1 = culprits[roll]
+			else:
+				npc1 = accomplices[roll - _culprit_count]
+			var npc2 = victims[victim_index]
+			Card.add_bidirectional_connection(link_type, npc1, npc2)
+			victim_index = (victim_index + 1) % _victim_count
 
 	# make other friend, enemy and acquaintance connections between NPCs, AFTER
 	# assigning workplaces, because priority is given to an NPC's colleagues, or
