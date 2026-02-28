@@ -696,7 +696,7 @@ Enquête
 	- Changer d’enquête active ne stoppe pas le temps qui passe dans les autres enquêtes du joueur !
 	- À la validation d’une enquête, si c’est bon : gros bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
 	- Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’au moins 1 PNJ.
-	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours
+	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 2 + 10) × (1 ± 0,1)) jours
 	- Voir également à la fin pour les enquêtes de niveau 0 !
 
 
@@ -723,7 +723,7 @@ Liens entre les éléments dans l’enquête (Main.tscn)
 	- Lien en pointillé (probable) : Utilisé pour des relations à confirmer (par le joueur, pas dans l’absolu).
 	- Le joueur ne peut pas déplacer une origine d’un lien tant que celui-ci est pointillé.
 	- Couleurs des liens :
-          Noir : Coupable/Complice/Preuve/Témoin
+          Noir : Coupable/Complice/Preuve
           Vert foncé : Ami (pas exploité dans toutes les enquêtes)
 Orange : Ennemi (pas exploité dans toutes les enquêtes)
 Gris : Dette/Influence (pas exploité dans toutes les enquêtes)
