@@ -125,7 +125,7 @@ func _randomize():
 
 	var pre_links: Array[Link.Type]
 	var link_types = _motive["link"]
-	if link_types.pick_random() != "none":
+	if _dead_victim_count > 0 or link_types.pick_random() != "none":
 		for link_type in link_types:
 			if link_type == "none":
 				continue
@@ -135,7 +135,7 @@ func _randomize():
 			# links, since the player won't be able to talk to them
 
 			var roll = randi()
-			if _dead_victim_count == 0 and roll & 1:
+			if _dead_victim_count == 0 and (roll & 1):
 				continue
 
 			match link_type:
