@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://mki238woun53" path="res://SOUND/MISC/Go_Back.ogg" id="11_8eio1"]
 [ext_resource type="AudioStream" uid="uid://begdmpue3itlh" path="res://SOUND/CARD/Unlock_Card.ogg" id="15_ukq3f"]
 [ext_resource type="AudioStream" uid="uid://bypgie5mycjh0" path="res://SOUND/CARD/Lock_Card.ogg" id="16_6ib2w"]
-[ext_resource type="AudioStream" uid="uid://bjbe8lop7a1u2" path="res://SOUND/MUSIC/Music_Theme_Intro.ogg" id="17_k78ot"]
+[ext_resource type="AudioStream" uid="uid://bjbe8lop7a1u2" path="res://SOUND/MUSIC/Music_Theme_Investigation.ogg" id="17_k78ot"]
 [ext_resource type="AudioStream" uid="uid://5vyoicjxwiq4" path="res://SOUND/MUSIC/Music_Theme_Main.ogg" id="18_dm1ah"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vnh2"]
