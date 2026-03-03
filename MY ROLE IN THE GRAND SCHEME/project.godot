@@ -18,6 +18,8 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/use_filter=false
 config/icon="res://MRitGS.png"
+config/macos_native_icon="res://MRitGS.icns"
+config/windows_native_icon="res://MRitGS.ico"
 run/vsync/vsync_mode=1
 
 [autoload]
