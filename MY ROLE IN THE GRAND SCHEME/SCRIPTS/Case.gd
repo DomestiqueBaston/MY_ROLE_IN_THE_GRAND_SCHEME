@@ -171,7 +171,7 @@ func _randomize():
 	if _difficulty == 6:
 		_duration = 15 + randi_range(-2, 2)
 	else:
-		_duration = roundi((_difficulty * 4 + 10) * randf_range(0.9, 1.1))
+		_duration = roundi((_difficulty * 2 + 10) * randf_range(0.9, 1.1))
 
 	# NPCs: culprits (if sex is involved, ensure they all have the same sex
 	# and orientation to simplify)
