@@ -32,6 +32,7 @@ var _accomplice_count: int
 var _difficulty: int
 var _duration: int
 var _status: Status = Status.UNASSIGNED
+var _start_day: int = -1
 var _links: Array[Link]
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
@@ -808,6 +809,9 @@ func get_difficulty() -> int:
 func get_duration() -> int:
 	return _duration
 
+func get_start_day() -> int:
+	return _start_day
+
 ##
 ## Returns the crime location, if there is one, and if it is known.
 ##
@@ -921,6 +925,7 @@ func get_all_potential_hangouts() -> Array[LocationCard]:
 
 func start():
 	_status = Status.ACTIVE
+	_start_day = GameState.get_day()
 
 func pause():
 	_status = Status.PAUSED
@@ -1066,6 +1071,7 @@ func get_json_dict():
 		"difficulty": _difficulty,
 		"duration": _duration,
 		"status": _status,
+		"start_day": _start_day,
 		"selected_crime": selected_crime,
 		"selected_motive": selected_motive,
 		"is_layout_needed": is_layout_needed,
@@ -1122,6 +1128,7 @@ func restore(dict, catalog):
 	_difficulty = dict.difficulty
 	_duration = dict.duration
 	_status = dict.status
+	_start_day = dict.get("start_day", -1)
 	selected_crime = dict.get("selected_crime", "")
 	selected_motive = dict.get("selected_motive", "")
 	is_layout_needed = dict.get("is_layout_needed", true)

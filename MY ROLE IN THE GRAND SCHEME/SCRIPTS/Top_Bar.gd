@@ -6,6 +6,9 @@ extends Control
 ## If false, don't listen for changes to player attributes, time, etc.
 @export var listen_for_changes: bool = true
 
+## Signal emitted when the player selects Deadlines from the case menu.
+signal show_deadlines
+
 ## Signal emitted when the player selects Case Management from the menu.
 signal manage_cases
 
@@ -69,7 +72,8 @@ enum DailiesMenuItem {
 enum CasesMenuItem {
 	MANAGE,
 	VALIDATE,
-	GIVE_UP
+	GIVE_UP,
+	DEADLINES
 }
 
 enum WhateverMenuItem {
@@ -188,10 +192,15 @@ func _on_cases_popup():
 	var popup: PopupMenu = $Menus/Cases.get_popup()
 	var index = popup.get_item_index(CasesMenuItem.MANAGE)
 	popup.set_item_disabled(index, GameState.get_open_cases().size() < 2)
+	index = popup.get_item_index(CasesMenuItem.DEADLINES)
+	popup.set_item_disabled(index, GameState.get_open_cases().is_empty())
 
 func _on_cases_press(id: int):
-	if id == CasesMenuItem.MANAGE:
-		manage_cases.emit()
+	match id:
+		CasesMenuItem.MANAGE:
+			manage_cases.emit()
+		CasesMenuItem.DEADLINES:
+			show_deadlines.emit()
 
 func _on_whatever_press(id: int):
 	match id:
