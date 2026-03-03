@@ -103,6 +103,7 @@ func _ready():
 	dialogue_submenu.index_pressed.connect(
 		_handle_dialogue_submenu.bind(dialogue_submenu))
 	
+	top_bar.show_deadlines.connect(Globals.dialog_overlay.show_case_deadlines)
 	top_bar.manage_cases.connect(_manage_cases)
 	top_bar.manage_cards.connect(_manage_cards)
 	top_bar.settings.connect(func(): settings.emit())

@@ -626,7 +626,7 @@ func announce_prison_for_wanted(is_player: bool, can_pay: bool = false) -> bool:
 	return is_player and can_pay and $Overlays/Wanted.is_pay_clicked()
 
 ##
-## Announes that the player has accumulated too many debts and will be sent to
+## Announces that the player has accumulated too many debts and will be sent to
 ## prison as a result.
 ##
 func announce_prison_for_debts():
@@ -637,3 +637,31 @@ func announce_prison_for_debts():
 	await _disappear()
 	$Overlays/Misc.hide()
 	$Overlays/Misc/Announces/Bill.hide()
+
+##
+## Displays the deadline for each open case.
+##
+func show_case_deadlines():
+	var cases: Array[Case] = GameState.get_open_cases()
+	if cases.is_empty():
+		return
+
+	var container: Control = $Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container
+	for index in 4:
+		var case_control: Control = container.get_node("Case_%d" % (index + 1))
+		if index < cases.size():
+			var case: Case = cases[index]
+			var days_label: RichTextLabel = case_control.get_node("Case/Info/Number")
+			var days_left = case.get_duration() - (GameState.get_day() - case.get_start_day())
+			days_label.text = str(days_left)
+			case_control.show()
+		else:
+			case_control.hide()
+
+	$Overlays/Income_Start/Case_Summaries.show()
+	$Overlays/Income_Start.show()
+	await _appear()
+	await $Overlays/Income_Start/Case_Summaries/Quit.pressed
+	await _disappear()
+	$Overlays/Income_Start.hide()
+	$Overlays/Income_Start/Case_Summaries.hide()

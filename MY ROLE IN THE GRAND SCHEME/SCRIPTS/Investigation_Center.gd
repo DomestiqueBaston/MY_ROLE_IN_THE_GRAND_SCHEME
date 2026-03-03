@@ -36,18 +36,23 @@ func populate():
 	_ok_button.disabled = true
 	_info.hide()
 
+
 func _on_item_selected(index: int):
 	var case: Case = GameState.cases[index]
+	var can_pick: bool = false
 
 	_id.text = case.get_case_id()
 
 	match case.get_status():
 		Case.Status.UNASSIGNED:
 			_status.text = "Unassigned"
+			can_pick = GameState.get_open_cases().size() < 4
 		Case.Status.ACTIVE:
 			_status.text = "Active"
+			can_pick = true
 		Case.Status.PAUSED:
 			_status.text = "Paused"
+			can_pick = true
 		Case.Status.DONE:
 			_status.text = "Done"
 
@@ -78,7 +83,7 @@ func _on_item_selected(index: int):
 		_crime_scene.hide()
 
 	_info.show()
-	_ok_button.disabled = false
+	_ok_button.disabled = not can_pick
 
 func _populate_npc_names(npcs, node):
 	var count = npcs.size()
