@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c7yxbbm1q32sw"]
+[gd_scene load_steps=22 format=3 uid="uid://c7yxbbm1q32sw"]
 
 [ext_resource type="Script" uid="uid://do10dnwt33dgt" path="res://SCRIPTS/Globals.gd" id="1_p5kqw"]
 [ext_resource type="Texture2D" uid="uid://6sv0vvfv0gej" path="res://GRAPHICS/UI/Mouse_Arrow_1.png" id="2_j2txx"]
@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://bypgie5mycjh0" path="res://SOUND/CARD/Lock_Card.ogg" id="16_6ib2w"]
 [ext_resource type="AudioStream" uid="uid://bjbe8lop7a1u2" path="res://SOUND/MUSIC/Music_Theme_Investigation.ogg" id="17_k78ot"]
 [ext_resource type="AudioStream" uid="uid://5vyoicjxwiq4" path="res://SOUND/MUSIC/Music_Theme_Main.ogg" id="18_dm1ah"]
+[ext_resource type="AudioStream" uid="uid://cw5rtdbq20tvk" path="res://SOUND/MUSIC/Music_Theme_Dialogue.ogg" id="18_fpcxn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2vnh2"]
 shader = ExtResource("4_f2dh2")
@@ -117,8 +118,17 @@ bus = &"UI"
 
 [node name="Music" type="Node" parent="."]
 
-[node name="Music_Intro" type="AudioStreamPlayer" parent="Music"]
+[node name="Music_Investigation" type="AudioStreamPlayer" parent="Music"]
 stream = ExtResource("17_k78ot")
+bus = &"MUSIC"
+parameters/looping = true
+
+[node name="Music_Dialogue" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("18_fpcxn")
+bus = &"MUSIC"
+parameters/looping = true
+
+[node name="Music_Combat" type="AudioStreamPlayer" parent="Music"]
 bus = &"MUSIC"
 
 [node name="Music_Main" type="AudioStreamPlayer" parent="Music"]
