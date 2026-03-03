@@ -6,7 +6,13 @@ class_name ObjectCard extends Card
 		if is_object_evidence != value:
 			is_object_evidence = value
 			if is_node_ready():
-				_update_background()
+				_update_appearance()
+
+@export var evidence_color: Color = Color("#525252"):
+	set(value):
+		evidence_color = value
+		if is_node_ready() and is_object_evidence:
+			_update_appearance()
 
 ## ID of corresponding entry in object database.
 var database_id: String
@@ -27,10 +33,17 @@ func get_card_type():
 
 func _ready():
 	super()
-	_update_background()
+	_update_appearance()
 
-func _update_background():
+func _update_appearance():
 	$Card_Mask/Card_BG/Evidence.visible = is_object_evidence
+
+	if is_object_evidence:
+		$Card_Mask/Card_BG/Card_Outlines.self_modulate = evidence_color
+		$Card_Drag.modulate = evidence_color
+	else:
+		$Card_Mask/Card_BG/Card_Outlines.self_modulate = Color.WHITE
+		$Card_Drag.modulate = Color.WHITE
 
 func get_location() -> LocationCard:
 	return get_one_connection(Link.Type.FOUND)
