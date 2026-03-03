@@ -1,4 +1,4 @@
-[gd_scene load_steps=238 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -58,6 +58,7 @@
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/CellPhone_Theme.tres" id="52_8x3ap"]
 [ext_resource type="Theme" uid="uid://wwkr2f8y2ykq" path="res://UI/Interaction_Result_Theme.tres" id="52_lkigo"]
 [ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="53_gfusj"]
+[ext_resource type="Script" uid="uid://bqvjros5fyxio" path="res://SCRIPTS/Case_Summaries.gd" id="53_th1i4"]
 [ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="54_sfan1"]
 [ext_resource type="Texture2D" uid="uid://bmt6odimg2n26" path="res://GRAPHICS/SHORT_EVENT/Interaction_Result_BG.png" id="55_qmu3t"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="55_s8rvk"]
@@ -1431,6 +1432,7 @@ modulate = Color(1, 1, 1, 0.941176)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("52_lkigo")
+script = ExtResource("53_th1i4")
 
 [node name="Quit" type="Button" parent="Overlays/Income_Start/Case_Summaries"]
 modulate = Color(1, 1, 1, 0.882353)

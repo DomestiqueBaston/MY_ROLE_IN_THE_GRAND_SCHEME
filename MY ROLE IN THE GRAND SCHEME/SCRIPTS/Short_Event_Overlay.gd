@@ -661,7 +661,7 @@ func show_case_deadlines():
 	$Overlays/Income_Start/Case_Summaries.show()
 	$Overlays/Income_Start.show()
 	await _appear()
-	await $Overlays/Income_Start/Case_Summaries/Quit.pressed
+	await $Overlays/Income_Start/Case_Summaries.done
 	await _disappear()
 	$Overlays/Income_Start.hide()
 	$Overlays/Income_Start/Case_Summaries.hide()
