@@ -238,3 +238,14 @@ func on_mouse_exited(button: BaseButton = null):
 		return
 	if not (hover_sound.playing or leave_sound.playing):
 		leave_sound.play()
+
+func start_city_sounds():
+	$Ambiance_Sound/City_Sound.play("Starter")
+
+func fade_in_city_sounds():
+	if not $Ambiance_Sound/City_Noise.playing:
+		$Ambiance_Sound/City_Sound.play("Fade_In")
+
+func fade_out_city_sounds():
+	if $Ambiance_Sound/City_Noise.playing:
+		$Ambiance_Sound/City_Sound.play("Fade_Out")

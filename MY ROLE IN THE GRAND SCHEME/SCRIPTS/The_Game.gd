@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var _title_screen: Node
 @onready var _option_menu_scene = preload("res://SCENES/Option_Menu.tscn")
 @onready var _settings_scene = preload("res://SCENES/Settings.tscn")
 @onready var _credits_scene = preload("res://SCENES/Credits.tscn")
@@ -26,12 +25,19 @@ var _saved_MEN = -1
 var _saved_HEA = -1
 
 func _ready():
-	_title_screen = $Active_Scene/Title_Screen
-	_title_screen.next.connect(_go_to_option_menu, CONNECT_DEFERRED)
+	Globals.start_city_sounds()
+	$Active_Scene/Title_Screen.next.connect(_go_to_option_menu, CONNECT_DEFERRED)
 	GameState.interaction_started.connect(_on_interaction_started, CONNECT_DEFERRED)
 	GameState.died.connect(_on_death, CONNECT_DEFERRED)
 
 func _replace_scene(new_scene: PackedScene) -> Node:
+
+	# start/stop city sounds
+
+	if new_scene in [_main_scene, _interaction_scene, _death_scene]:
+		Globals.fade_out_city_sounds()
+	else:
+		Globals.fade_in_city_sounds()
 
 	# save game before closing main scene
 
@@ -47,12 +53,7 @@ func _replace_scene(new_scene: PackedScene) -> Node:
 	# delete the current scene
 
 	for child in $Active_Scene.get_children():
-		if child == _title_screen:
-			# the title screen fades out before deleting itself
-			child.fade_out()
-			_title_screen = null
-		else:
-			child.free()
+		child.free()
 
 	# instantiate the new scene
 
