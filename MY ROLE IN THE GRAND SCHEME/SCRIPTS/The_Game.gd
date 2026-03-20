@@ -25,19 +25,20 @@ var _saved_MEN = -1
 var _saved_HEA = -1
 
 func _ready():
-	Globals.start_city_sounds()
+	Globals.init_city_sounds()
 	$Active_Scene/Title_Screen.next.connect(_go_to_option_menu, CONNECT_DEFERRED)
 	GameState.interaction_started.connect(_on_interaction_started, CONNECT_DEFERRED)
 	GameState.died.connect(_on_death, CONNECT_DEFERRED)
 
 func _replace_scene(new_scene: PackedScene) -> Node:
 
-	# start/stop city sounds
+	# start/stop city sounds, stop music
 
 	if new_scene in [_main_scene, _interaction_scene, _death_scene]:
-		Globals.fade_out_city_sounds()
+		Globals.stop_city_sounds()
 	else:
-		Globals.fade_in_city_sounds()
+		Globals.start_city_sounds()
+	Globals.stop_music()
 
 	# save game before closing main scene
 
@@ -133,6 +134,7 @@ func _continue_game():
 			GameState.InteractionType.RUN_AWAY
 	]:
 		var main = await _replace_scene(_main_scene)
+		Globals.start_music(Globals.Music.MAIN)
 		_check_player_attrs()
 		var case = GameState.get_current_case()
 		if case:
@@ -158,16 +160,19 @@ func _on_interaction_started():
 				GameState.get_current_interaction_npc(),
 				GameState.player.get_mastery_cards(),
 				GameState.player.get_fallback_cards())
+			Globals.start_music(Globals.Music.DIALOGUE)
 		GameState.InteractionType.COMBAT:
 			interaction_scene.start_combat(
 				GameState.get_current_interaction_npc(),
 				GameState.player.get_mastery_cards(),
 				GameState.player.get_fallback_cards())
+			Globals.start_music(Globals.Music.COMBAT)
 		GameState.InteractionType.INVESTIGATION:
 			interaction_scene.start_investigation(
 				GameState.get_current_interaction_location(),
 				GameState.player.get_mastery_cards(),
 				GameState.player.get_fallback_cards())
+			Globals.start_music(Globals.Music.INVESTIGATION)
 
 func _on_interaction_ended():
 	var interaction_scene = $Active_Scene.get_child(0)
@@ -192,6 +197,7 @@ func _on_interaction_ended():
 			npc,
 			GameState.player.get_mastery_cards(),
 			GameState.player.get_fallback_cards())
+		Globals.start_music(Globals.Music.DIALOGUE)
 	else:
 		if GameState.player.get_discard_cards().size() > 0:
 			if await Globals.dialog_overlay.manage_cards():
@@ -220,6 +226,7 @@ func _quit():
 
 func _on_death():
 	var death = await _replace_scene(_death_scene)
+	Globals.start_music(Globals.Music.REQUIEM)
 	await death.done
 	GameState.end_game()
 	_go_to_option_menu()

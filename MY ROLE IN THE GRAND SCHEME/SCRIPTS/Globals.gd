@@ -22,6 +22,23 @@ enum MouseCursor {
 	CROSS
 }
 
+## Available background music.
+enum Music {
+	MAIN,
+	INVESTIGATION,
+	DIALOGUE,
+	COMBAT,
+	REQUIEM
+}
+
+@onready var _music_players = [
+	$Music/Main,
+	$Music/Investigation,
+	$Music/Dialogue,
+	$Music/Combat,
+	$Music/Requiem
+]
+
 @warning_ignore("unused_signal")
 signal card_left_click(pos: Vector2, card: Card)
 
@@ -57,9 +74,9 @@ signal link_visibility_changed
 var _link_mask: int = -1
 var _show_dotted_links: bool = true
 var _mouse_cursor_stack: Array[MouseCursor]
-
 const _settings_path = "user://settings.cfg"
 var _volume: Array[float]
+var _current_music_player: AnimationPlayer
 
 func _ready():
 	# the mouse is drawn on top of menus
@@ -239,13 +256,25 @@ func on_mouse_exited(button: BaseButton = null):
 	if not (hover_sound.playing or leave_sound.playing):
 		leave_sound.play()
 
-func start_city_sounds():
+func init_city_sounds():
 	$Ambiance_Sound/City_Sound.play("Starter")
 
-func fade_in_city_sounds():
+func start_city_sounds():
 	if not $Ambiance_Sound/City_Noise.playing:
 		$Ambiance_Sound/City_Sound.play("Fade_In")
 
-func fade_out_city_sounds():
+func stop_city_sounds():
 	if $Ambiance_Sound/City_Noise.playing:
 		$Ambiance_Sound/City_Sound.play("Fade_Out")
+
+func start_music(music: Music):
+	var player = _music_players[music]
+	if player != _current_music_player:
+		stop_music()
+		player.play("Fade_In")
+		_current_music_player = player
+
+func stop_music():
+	if _current_music_player:
+		_current_music_player.play("Fade_Out")
+		_current_music_player = null
