@@ -25,7 +25,7 @@ enum MenuItem {
 	CHANGE_LINK_COLOR,
 	SWITCH_LINK,
 	DELETE_LINK,
-	REMOVE_NEW
+	REMOVE_NEW_OR_WARNING
 }
 
 # highlighted card
@@ -94,7 +94,7 @@ func _ready():
 	popup.add_item("Switch conf./prob.", MenuItem.SWITCH_LINK)
 	popup.add_item("Delete link", MenuItem.DELETE_LINK)
 	popup.add_separator("  - - - - - - - - - -  ")
-	popup.add_item("Remove new indicator", MenuItem.REMOVE_NEW)
+	popup.add_item("Remove new/warning indicator", MenuItem.REMOVE_NEW_OR_WARNING)
 	
 	popup.id_pressed.connect(_handle_popup)
 	submenu1.id_pressed.connect(_handle_submenu.bind(0))
@@ -716,9 +716,10 @@ func _popup_menu(pos: Vector2, node: Node2D):
 		index = popup.get_item_index(id)
 		popup.set_item_disabled(index, node is not Link or node.blocked)
 
-	index = popup.get_item_index(MenuItem.REMOVE_NEW)
+	index = popup.get_item_index(MenuItem.REMOVE_NEW_OR_WARNING)
 	popup.set_item_disabled(
-		index, node is not Link or node.status != Link.Status.NEW)
+		index, not (node is Link and
+					(node.status == Link.Status.NEW or node.has_warning())))
 
 	# player cannot change a link to a type for which there is already a link
 
@@ -776,9 +777,12 @@ func _handle_popup(id: int):
 			if _popup_node is Link:
 				_delete_link(_popup_node)
 				_popup_node = null
-		MenuItem.REMOVE_NEW:
+		MenuItem.REMOVE_NEW_OR_WARNING:
 			if _popup_node is Link:
-				if _popup_node.type in [
+				if _popup_node.has_warning():
+					_popup_node.remove_warning()
+					_popup_node.is_repeated = false
+				elif _popup_node.type in [
 						Link.Type.PROPERTY,
 						Link.Type.HOME,
 						Link.Type.WORK,
@@ -937,9 +941,11 @@ func populate(case: Case):
 		cards.add_child(link)
 		cards.add_child(link.pin1)
 		cards.add_child(link.pin2)
-		if link.is_newly_revealed:
+		if link.is_repeated:
+			link.add_warning(link.needs_attention)
+		elif link.needs_attention:
 			link.blink()
-			link.is_newly_revealed = false
+		link.needs_attention = false
 
 #
 # Lays out the starting cards in a new game.

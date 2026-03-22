@@ -740,7 +740,7 @@ func create_link(
 	from: Card, to: Card, type: Link.Type,
 	is_blocked: bool, is_new: bool) -> Link:
 
-	if from in to.find_linked_cards(type):
+	if from.find_link_to(to, type):
 		return null
 
 	var pin1 = Pin.allocate()

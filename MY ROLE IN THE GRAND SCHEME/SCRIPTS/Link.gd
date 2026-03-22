@@ -42,8 +42,17 @@ class_name Link extends Node2D
 ## A blocked link cannot be changed or deleted by the player.
 var blocked: bool = false
 
-## Set to true for a link which has just been revealed to the player.
-var is_newly_revealed: bool = false
+## Set to true for a link which has just been revealed or for any reaon should
+## blink to attract the player's attention.
+var needs_attention: bool = false
+
+## Set to true for a link representing information that the player already had
+## but that has been repeated by an NPC; a warning appears next to it until the
+## player clears the warning.
+var is_repeated: bool = false
+
+## Sources of the information (optional)
+var sources: Array[NpcCard]
 
 #
 # Note that link types are assumed to begin at 0: see Globals.set_link_mask().
@@ -85,6 +94,7 @@ const incriminating_types = [
 ];
 
 static var _link_scene = preload("res://SCENES/Link.tscn")
+static var _warning_scene = preload("res://SCENES/Warning.tscn")
 
 var _solid_textures: Array[CompressedTexture2D] = [
 	preload("res://GRAPHICS/LINK_PIN/Plein_Blanc.png"),
@@ -139,6 +149,8 @@ var _new_textures: Array[CompressedTexture2D] = [
 
 # Pins that are linked to the middle of this link.
 var _follower_pins: Array[Pin]
+
+var _warning: Node2D
 
 # for save/load
 var _unique_id: int
@@ -216,6 +228,11 @@ func _update_transform():
 
 	for pin in _follower_pins:
 		_update_follower_pin(pin)
+
+	# update position of warning
+
+	if _warning:
+		_warning.global_position = pos1 + 0.25 * (pos2 - pos1) - Vector2(0, 10)
 
 func _update_texture():
 	match status:
@@ -336,6 +353,32 @@ func is_incriminating() -> bool:
 	return type in incriminating_types
 
 ##
+## Adds a warning sign on the link, indicating that the information has been
+## given by more than one NPC source.
+##
+func add_warning(and_blink: bool):
+	if _warning == null:
+		_warning = _warning_scene.instantiate()
+		add_child(_warning)
+		if and_blink:
+			_warning.blink()
+
+##
+## Removes the warning added previously by add_warning().
+##
+func remove_warning():
+	if _warning:
+		remove_child(_warning)
+		_warning.queue_free()
+		_warning = null
+
+##
+## Returns true if a warning has been added to the link by add_warning().
+##
+func has_warning() -> bool:
+	return _warning != null
+
+##
 ## Returns true if the given link type is incriminating.
 ##
 static func is_type_incriminating(link_type: Link.Type) -> bool:
@@ -452,8 +495,8 @@ func get_referenced_objects():
 		refs.append(pin1)
 	if pin2:
 		refs.append(pin2)
-	for pin in _follower_pins:
-		refs.append(pin)
+	refs.append_array(_follower_pins)
+	refs.append_array(sources)
 	return refs
 
 #
@@ -463,7 +506,8 @@ func get_json_dict():
 	var dict = {
 		"type": type,
 		"status": status,
-		"blocked": blocked
+		"blocked": blocked,
+		"is_repeated": is_repeated
 	}
 	if pin1:
 		dict["pin1"] = pin1.get_unique_id()
@@ -474,6 +518,11 @@ func get_json_dict():
 		for pin in _follower_pins:
 			pin_refs.append(pin.get_unique_id())
 		dict["follower_pins"] = pin_refs
+	if sources:
+		var source_refs = []
+		for source in sources:
+			source_refs.append(source.get_unique_id())
+		dict["sources"] = source_refs
 	return dict
 
 #
@@ -483,12 +532,15 @@ func restore(dict, catalog):
 	type = dict.type
 	status = dict.status
 	blocked = dict.get("blocked", false)
+	is_repeated = dict.get("is_repeated", false)
 	if "pin1" in dict:
 		pin1 = catalog[dict.pin1]
 	if "pin2" in dict:
 		pin2 = catalog[dict.pin2]
 	for ref in dict.get("follower_pins", []):
 		_follower_pins.append(catalog[ref])
+	for ref in dict.get("sources", []):
+		sources.append(catalog[ref])
 
 #
 # For save/load.

@@ -430,6 +430,18 @@ func find_links(link_type: int = -1) -> Array[Link]:
 			ret.append(link)
 	return ret
 
+##
+## Searches for and returns an existing, non-temporary link of the given type
+## between two cards. Returns null if not found.
+##
+func find_link_to(other: Card, link_type: Link.Type) -> Link:
+	for pin in _pins.values():
+		var link = pin.get_link_reference()
+		if link and link_type == link.type and not link.is_temporary():
+			if other in [link.pin1.backing, link.pin2.backing]:
+				return link
+	return null
+
 func _add_connection(type: Link.Type, card: Card):
 	if type in _connections:
 		_connections[type].append(card)

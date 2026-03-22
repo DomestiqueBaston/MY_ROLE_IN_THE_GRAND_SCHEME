@@ -1627,12 +1627,16 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 
 #
 # Adds a piece of information to the given list if it is not already there, and
-# if it is not yet known to the player.
+# if it is not yet known to the player. Special case: if the information is to
+# be revealed by the given NPC, then it may be revealed again (i.e. confirmed),
+# unless it has already been revealed by the same NPC.
 #
 func _add_info_to_reveal(
-	infos: Array[InfoToReveal], card1: Card, card2: Card, type: Link.Type):
+	infos: Array[InfoToReveal], card1: Card, card2: Card, type: Link.Type,
+	revealer: NpcCard = null):
 
-	if card1 in card2.find_linked_cards(type):
+	var link = card1.find_link_to(card2, type)
+	if link and (revealer == null or revealer in link.sources):
 		return
 
 	var new_info = InfoToReveal.new(card1, card2, type)
@@ -1726,7 +1730,7 @@ func _get_info_from_npc(
 				for obj_owner in subject_card.get_connections(Link.Type.PROPERTY):
 					if obj_owner == npc or obj_owner in npc.get_all_npc_connections():
 						_add_info_to_reveal(
-							candidates, obj_owner, subject_card, Link.Type.PROPERTY)
+							candidates, obj_owner, subject_card, Link.Type.PROPERTY, npc)
 						break
 
 			Card.CardType.LOCATION:
@@ -1744,13 +1748,13 @@ func _get_info_from_npc(
 								or (hidden_info_ok and
 									_npc_can_reveal_hideout_of_other_npc(npc, npc_at_location))):
 								_add_info_to_reveal(
-									candidates, npc_at_location, subject_card, link_type)
+									candidates, npc_at_location, subject_card, link_type, npc)
 
 					# objects found at the location
 
 					for obj in subject_card.get_connections(Link.Type.FOUND):
 						_add_info_to_reveal(
-							candidates, obj, subject_card, Link.Type.FOUND)
+							candidates, obj, subject_card, Link.Type.FOUND, npc)
 
 			Card.CardType.NPC:
 
@@ -1824,12 +1828,18 @@ func _get_info_from_npc(
 			"a lie" if is_lie[i] else "true"])
 		_reveal_card(info.card1)
 		_reveal_card(info.card2)
-		var link = case.create_link(
-			info.card1, info.card2, info.link_type, false, true)
-		if (link
-			and info.card1.reveal_status == Card.RevealStatus.REVEALED
-			and info.card2.reveal_status == Card.RevealStatus.REVEALED):
-			link.is_newly_revealed = true
+		var link = info.card1.find_link_to(info.card2, info.link_type)
+		if link:
+			link.needs_attention = true
+			if link.sources:
+				link.is_repeated = true
+		else:
+			link = case.create_link(
+				info.card1, info.card2, info.link_type, false, true)
+			if (info.card1.reveal_status == Card.RevealStatus.REVEALED and
+				info.card2.reveal_status == Card.RevealStatus.REVEALED):
+				link.needs_attention = true
+		link.sources.append(npc)
 
 	return [revealed.size(), express_doubt]
 
