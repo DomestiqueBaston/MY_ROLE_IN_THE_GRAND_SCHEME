@@ -31,12 +31,22 @@ enum Music {
 	REQUIEM
 }
 
-@onready var _music_players = [
-	$Music/Main,
-	$Music/Investigation,
-	$Music/Dialogue,
-	$Music/Combat,
-	$Music/Requiem
+# AudioStreamPlayer for each music stream.
+@onready var _music_players: Array[AudioStreamPlayer] = [
+	$Music/Music_Main,
+	$Music/Music_Investigation,
+	$Music/Music_Dialogue,
+	$Music/Music_Combat,
+	$Music/Music_Requiem
+]
+
+# Current playback position for each music stream.
+var _music_pos = [
+	0.0,
+	0.0,
+	0.0,
+	0.0,
+	0.0
 ]
 
 @warning_ignore("unused_signal")
@@ -76,7 +86,7 @@ var _show_dotted_links: bool = true
 var _mouse_cursor_stack: Array[MouseCursor]
 const _settings_path = "user://settings.cfg"
 var _volume: Array[float]
-var _current_music_player: AnimationPlayer
+var _current_music: int = -1
 
 func _ready():
 	# the mouse is drawn on top of menus
@@ -267,14 +277,28 @@ func stop_city_sounds():
 	if $Ambiance_Sound/City_Noise.playing:
 		$Ambiance_Sound/City_Sound.play("Fade_Out")
 
+##
+## Fades out the current music, if any, and fades in the given music. Does
+## nothing if the given music is already playing.
+##
 func start_music(music: Music):
-	var player = _music_players[music]
-	if player != _current_music_player:
+	if _current_music != music:
 		stop_music()
-		player.play("Fade_In")
-		_current_music_player = player
+		var player: AudioStreamPlayer = _music_players[music]
+		var tween = get_tree().create_tween()
+		player.play(_music_pos[music])
+		tween.tween_property(player, "volume_db", 0.0, 0.2333)
+		_current_music = music
 
+##
+## Fades out the music that is currently playing. Does nothing if no music is
+## playing.
+##
 func stop_music():
-	if _current_music_player:
-		_current_music_player.play("Fade_Out")
-		_current_music_player = null
+	if _current_music >= 0:
+		var player: AudioStreamPlayer = _music_players[_current_music]
+		var tween = get_tree().create_tween()
+		_music_pos[_current_music] = player.get_playback_position()
+		tween.tween_property(player, "volume_db", -80.0, 0.2333)
+		tween.tween_callback(player.stop)
+		_current_music = -1
