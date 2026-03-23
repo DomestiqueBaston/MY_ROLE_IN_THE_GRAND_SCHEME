@@ -694,7 +694,7 @@ Enquête
 	- Le joueur ne peut prendre qu’une enquête par jour.
 	- Prendre une enquête la fait passer automatiquement en enquête en cours.
 	- Changer d’enquête active ne stoppe pas le temps qui passe dans les autres enquêtes du joueur !
-	- À la validation d’une enquête, si c’est bon : gros bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications.
+	- À la validation d’une enquête, si c’est bon : gros bonus. Sinon : rejet et malus ! Pour tous ces cas, voir Résolution des enquêtes, gains et implications. Si le choix de catégorie du mobile est bon mais que le mobile lui-même est faux, alors, les gains sont divisés par deux.
 	- Dans une enquête, chaque information (carte Objet ou PNJ (Evidence), liens et relations) vitale établissant un lien avec le coupable pour la validation de l’enquête sera toujours en possession d’au moins 1 PNJ.
 	- Le temps imparti pour résoudre une enquête se calcule ainsi : round((niveau de difficulté × 2 + 10) × (1 ± 0,1)) jours
 	- Voir également à la fin pour les enquêtes de niveau 0 !
@@ -786,11 +786,12 @@ Enquête finale (6)	WTF!(malus de 3)
 	- Un type d’enquête (crime) mené ne réapparaît que toutes les 5 enquêtes différentes choisies ensuite (résolues ou non, afin de « forcer » la variété). Par ex., une enquête sur un Vol n’apparaîtra plus tant que le joueur n’en aura pas pris 5 d’un autre type.
 
 Résolution des enquêtes, gains et implications
+	- Si le choix de catégorie du mobile est bon mais que le mobile lui-même est faux, alors, les gains sont divisés par deux.
 	- Lorsqu’une enquête est résolue et qu’elle est un succès, le joueur aura des bonus :
 		- round((niveau de difficulté) × 100) ±10% Dø (voir à la fin pour Niveau 0)
 		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en toutes cartes Combat (tous types), Dialogue, Investigation (tous types) et/ou Abstraites parmi lesquelles le joueur choisira celles qu’il garde pour sa main de maîtrise sans dépasser les limites de main de Maîtrise.
 		- Emo = 0, Add = 0, Wan = 0
- 	- Si le joueur valide une enquête et qu’il s’est trompé, l’enquête est terminée pour lui et implique :
+ 	- Si le joueur valide une enquête et qu’il s’est trompé (sauf voir au dessus), l’enquête est terminée pour lui et implique :
 		- Emo +1 → Min/Max ou Emo -1 si Emo = 0 et HEA -1 ou MEN -1 ou PHY -1.
 	- Renoncer à une enquête n’implique pas de malus ni de bonus mais coûte de l’argent selon : round(niveau de difficulté × nombre de jours prévus pour résoudre l’enquête + nombre de jours passés depuis l’acceptation de l’enquête)Dø.
 	- « Oublier » une enquête (dépasser ses délais de résolution) implique : Emo +1 → Emo Min/Max ou Emo -1 si Emo = 0. L’annonce se fera avec Short_Event_Overlay.
