@@ -126,39 +126,39 @@ func _randomize():
 
 	var pre_links: Array[Link.Type]
 	var link_types = _motive["link"]
+	var is_adultery = _motive.get("is_adultery", false)
 	if _dead_victim_count > 0 or link_types.pick_random() != "none":
 		for link_type in link_types:
 			if link_type == "none":
 				continue
 
-			# there is a 50% chance that each link will be created, but if the
-			# victims are dead or disappeared, we always want to create the
-			# links, since the player won't be able to talk to them
+			# there is a 50% chance that each link will be created, but with
+			# two special cases in which ALL links are created:
+			# - the victims are dead or disappeared (so the player will not be
+			#   able to talk to them)
+			# - adultery-related crimes (there MUST be an intimacy link)
 
-			var roll = randi()
-			if _dead_victim_count == 0 and (roll & 1):
-				continue
-
-			match link_type:
-				"intimacy":
-					pre_links.append(Link.Type.INTIMACY)
-				"friend":
-					pre_links.append(Link.Type.FRIEND)
-				"enemy":
-					pre_links.append(Link.Type.ENEMY)
-				"enemy/friend":
-					if roll & 2:
+			if is_adultery or _dead_victim_count > 0 or (randi() & 1):
+				match link_type:
+					"intimacy":
+						pre_links.append(Link.Type.INTIMACY)
+					"friend":
 						pre_links.append(Link.Type.FRIEND)
-					else:
+					"enemy":
 						pre_links.append(Link.Type.ENEMY)
-				"acquaintance":
-					pre_links.append(Link.Type.ACQUAINTANCE)
-				"ideology":
-					pre_links.append(Link.Type.IDEOLOGY)
-				"debt_influence":
-					pre_links.append(Link.Type.DEBT)
-				"any":
-					pre_links.append(Link.incriminating_types.pick_random())
+					"enemy/friend":
+						if randi() & 1:
+							pre_links.append(Link.Type.FRIEND)
+						else:
+							pre_links.append(Link.Type.ENEMY)
+					"acquaintance":
+						pre_links.append(Link.Type.ACQUAINTANCE)
+					"ideology":
+						pre_links.append(Link.Type.IDEOLOGY)
+					"debt_influence":
+						pre_links.append(Link.Type.DEBT)
+					"any":
+						pre_links.append(Link.incriminating_types.pick_random())
 
 	# the difficulty must be determined BEFORE generating the NPCs, because it
 	# determines the number of points added to their main characteristics
@@ -259,7 +259,8 @@ func _randomize():
 	for i in other_npc_count:
 		npcs.append(NpcCard.generate_card(self))
 
-	# decide which NPCs are couples (each has a 50% chance of being in a couple)
+	# decide which NPCs are couples: each has a 50% chance of being in a couple,
+	# except for victims of adultery-related crimes, who are ALWAYS married
 
 	# Note that for NPC #7 (for example), we only look for partners among NPCs
 	# #8 and up, because we have already "rolled the dice" for NPCs 0-6. That is
@@ -270,7 +271,10 @@ func _randomize():
 
 	for i in npcs.size() - 1:
 		var npc = npcs[i]
-		if not npc.is_married and randi() & 1:
+		if npc.is_married:
+			continue
+		if ((is_adultery and npc.actual_role == NpcCard.NpcRole.VICTIM)
+			 or randi() & 1):
 			var other = _find_partner_for(npc, i, false)
 			if other:
 				npc.is_married = true

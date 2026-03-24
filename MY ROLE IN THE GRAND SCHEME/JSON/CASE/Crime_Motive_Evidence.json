@@ -3,6 +3,7 @@
 		"MOT_ADU_001": {
 			"name": "Revelation of the Hidden Self",
 			"more_explicit_name": "Discovery of Hidden Superego",
+			"is_adultery": true,
 			"link": [
 				"intimacy"
 			],
@@ -54,6 +55,7 @@
 		"MOT_ADU_002": {
 			"name": "Dissemination of Extraterrestrial Genes",
 			"more_explicit_name": "Dissemination of Extraterrestrial Genes",
+			"is_adultery": true,
 			"link": [
 				"intimacy"
 			],
@@ -98,6 +100,7 @@
 		"MOT_ADU_003": {
 			"name": "Chasing Unfulfilled Desires",
 			"more_explicit_name": "Persistent Sexual Dissatisfaction",
+			"is_adultery": true,
 			"link": [
 				"intimacy"
 			],
@@ -144,6 +147,7 @@
 		"MOT_ADU_004": {
 			"name": "Manipulating Affections for Advantage",
 			"more_explicit_name": "Seeking Influence",
+			"is_adultery": true,
 			"link": [
 				"intimacy"
 			],
@@ -205,6 +209,7 @@
 		"MOT_ADU_005": {
 			"name": "Revenge Through Emotional Betrayal",
 			"more_explicit_name": "Personal Revenge",
+			"is_adultery": true,
 			"link": [
 				"enemy",
 				"intimacy"
