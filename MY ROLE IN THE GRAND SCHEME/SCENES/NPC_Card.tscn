@@ -2092,7 +2092,7 @@ polygon = PackedVector2Array(63, 26, 63, 6, 65, 3, 68, 1, 77, 1, 77, 26)
 [node name="Couple" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
 visible = false
 position = Vector2(-62, 0)
-color = Color(1, 0.24, 0.81, 0.643137)
+color = Color(1, 0, 0, 0.6431373)
 polygon = PackedVector2Array(63, 26, 63, 6, 65, 3, 68, 1, 77, 1, 77, 26)
 
 [node name="No_Info" type="Polygon2D" parent="Card_Mask/Card_BG/Card_Color/Npc"]
