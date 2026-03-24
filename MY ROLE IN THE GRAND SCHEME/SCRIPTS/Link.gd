@@ -66,7 +66,7 @@ enum Type {
 	ENEMY,
 	ACQUAINTANCE,
 	IDEOLOGY,
-	INCONSISTENCY,
+	SPOUSE,
 	PROPERTY,
 	HOME,
 	WORK,
@@ -406,12 +406,10 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 					var max_links = 2 if link_type == Type.HANGOUT else 1
 					return endpt.find_links(link_type).size() < max_links
 				return false
-			Type.DEBT, Type.INTIMACY, Type.FRIEND, Type.ENEMY, Type.ACQUAINTANCE, Type.IDEOLOGY:
+			Type.DEBT, Type.INTIMACY, Type.FRIEND, Type.ENEMY, Type.ACQUAINTANCE, Type.IDEOLOGY, Type.SPOUSE:
 				return endpt is NpcCard
 			Type.GUILT:
 				return endpt is NpcCard or endpt is ObjectCard
-			Type.INCONSISTENCY:
-				return true
 			Type.PROPERTY:
 				return endpt is ObjectCard or endpt is NpcCard or endpt is LocationCard
 			Type.FOUND:
@@ -432,14 +430,12 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 				var npc: NpcCard = endpt1 if endpt1 is NpcCard else endpt2
 				var max_links = 2 if link_type == Type.HANGOUT else 1
 				ok = npc.find_links(link_type).size() < max_links
-		Type.DEBT, Type.INTIMACY, Type.FRIEND, Type.ENEMY, Type.ACQUAINTANCE, Type.IDEOLOGY:
+		Type.DEBT, Type.INTIMACY, Type.FRIEND, Type.ENEMY, Type.ACQUAINTANCE, Type.IDEOLOGY, Type.SPOUSE:
 			ok = endpt1 is NpcCard and endpt2 is NpcCard
 		Type.GUILT:
 			ok = (endpt1 is NpcCard and endpt2 is NpcCard) \
 				or (endpt1 is NpcCard and endpt2 is ObjectCard) \
 				or (endpt1 is ObjectCard and endpt2 is NpcCard)
-		Type.INCONSISTENCY:
-			ok = true
 		Type.PROPERTY:
 			ok = (endpt1 is ObjectCard and (endpt2 is NpcCard or endpt2 is LocationCard)) \
 				or (endpt2 is ObjectCard and (endpt1 is NpcCard or endpt1 is LocationCard))

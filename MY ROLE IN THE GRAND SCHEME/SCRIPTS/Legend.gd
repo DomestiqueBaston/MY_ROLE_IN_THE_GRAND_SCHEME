@@ -9,7 +9,7 @@ extends Control
 	$Enemy_Orange:				Link.Type.ENEMY,
 	$Acquaintance_Light_Blue:	Link.Type.ACQUAINTANCE,
 	$Ideology_Dark_Blue:		Link.Type.IDEOLOGY,
-	$Inconsistency_Red:			Link.Type.INCONSISTENCY,
+	$Spouse_Red:				Link.Type.SPOUSE,
 	$Property_Light_Green:		Link.Type.PROPERTY,
 	$Home_Brown:				Link.Type.HOME,
 	$Work_Yellow:				Link.Type.WORK,

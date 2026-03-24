@@ -204,6 +204,9 @@ func get_player_reputation() -> int:
 func get_display_name() -> String:
 	return first_name + " " + last_name
 
+func get_spouse() -> NpcCard:
+	return get_one_connection(Link.Type.SPOUSE)
+
 func get_home() -> LocationCard:
 	return get_one_connection(Link.Type.HOME)
 
@@ -386,7 +389,7 @@ func is_known_to(other: NpcCard) -> bool:
 		return true
 	for link_type in [
 		Link.Type.FRIEND, Link.Type.ENEMY, Link.Type.ACQUAINTANCE,
-		Link.Type.INTIMACY]:
+		Link.Type.INTIMACY, Link.Type.SPOUSE]:
 		if other in get_connections(link_type):
 			return true
 	return false
@@ -564,6 +567,7 @@ func print_npc():
 		print_connections_of_type("work", Link.Type.WORK)
 		print_connections_of_type("hangout", Link.Type.HANGOUT)
 		print_connections_of_type("hideout", Link.Type.HIDEOUT)
+		print_connections_of_type("spouse", Link.Type.SPOUSE)
 		print_connections_of_type("intimates", Link.Type.INTIMACY)
 		print_connections_of_type("friends", Link.Type.FRIEND)
 		print_connections_of_type("enemies", Link.Type.ENEMY)

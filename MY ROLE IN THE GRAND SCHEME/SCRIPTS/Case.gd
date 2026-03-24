@@ -275,7 +275,7 @@ func _randomize():
 			if other:
 				npc.is_married = true
 				other.is_married = true
-				Card.add_bidirectional_connection(Link.Type.INTIMACY, npc, other)
+				Card.add_bidirectional_connection(Link.Type.SPOUSE, npc, other)
 				other.last_name = npc.last_name
 
 	# assign homes now that we know which NPCs are couples
@@ -287,7 +287,7 @@ func _randomize():
 		var home = _create_location("LOC001")
 		Card.add_bidirectional_connection(Link.Type.HOME, home, npc)
 
-		var partner = npc.get_one_connection(Link.Type.INTIMACY)
+		var partner = npc.get_one_connection(Link.Type.SPOUSE)
 		if partner:
 			Card.add_bidirectional_connection(Link.Type.HOME, home, partner)
 
@@ -367,8 +367,7 @@ func _randomize():
 
 		# do nothing if NPC already has an affair
 
-		var partners = npc.get_connections(Link.Type.INTIMACY)
-		if partners.size() > 1 or (partners.size() == 1 and not npc.is_married):
+		if npc.get_one_connection(Link.Type.INTIMACY):
 			continue
 
 		# otherwise there is a 10% chance NPC is having an affair
@@ -569,12 +568,17 @@ func _randomize():
 
 	for victim in victims:
 		if victim.is_married:
-			var partner = victim.get_one_connection(Link.Type.INTIMACY)
+			var partner = victim.get_spouse()
 			partner.reveal_status = Card.RevealStatus.REVEALED
 			var home = partner.get_home()
 			if home.reveal_status == Card.RevealStatus.REVEALED:
 				create_link(partner, home, Link.Type.HOME, true, false)
-			create_link(victim, partner, Link.Type.INTIMACY, true, false)
+
+	for npc_list in [victims, witnesses, suspects]:
+		for npc in npc_list:
+			var partner = npc.get_spouse()
+			if partner and partner.reveal_status == Card.RevealStatus.REVEALED:
+				create_link(npc, partner, Link.Type.SPOUSE, true, false)
 
 	if _crime_location:
 		_crime_location.reveal_status = Card.RevealStatus.REVEALED
@@ -639,6 +643,8 @@ func _find_partner_for(
 func _make_frenemies_for(npc: NpcCard, ignore_count: int):
 	var entourage = []
 	_add_to_entourage(entourage, npc, ignore_count)
+	if npc.is_married:
+		_add_to_entourage(entourage, npc.get_spouse(), ignore_count)
 	for partner in npc.get_connections(Link.Type.INTIMACY):
 		_add_to_entourage(entourage, partner, ignore_count)
 

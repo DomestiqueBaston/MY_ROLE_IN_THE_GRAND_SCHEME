@@ -1652,6 +1652,7 @@ func _add_info_to_reveal(
 func _npc_can_reveal_hideout_of_other_npc(npc: NpcCard, other: NpcCard) -> bool:
 	return (npc == other
 			or npc.get_connection_to(other) in [
+				Link.Type.SPOUSE,
 				Link.Type.INTIMACY,
 				Link.Type.FRIEND,
 				Link.Type.ENEMY,
@@ -2048,6 +2049,9 @@ func _reveal_card(card: Card):
 				_reveal_card(home)
 				case.create_link(card, home, Link.Type.HOME, true, true)
 				home.display_name_changed()
+			var partner = card.get_spouse()
+			if partner and partner.reveal_status != Card.RevealStatus.HIDDEN:
+				case.create_link(card, partner, Link.Type.SPOUSE, true, true)
 
 #
 # Saves the visual state of all object, location and NPC cards that are visible

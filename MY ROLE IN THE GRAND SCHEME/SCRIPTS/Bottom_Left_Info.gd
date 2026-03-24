@@ -350,15 +350,8 @@ func show_npc(npc: NpcCard):
 	else:
 		$VBox/Scroller_NPC/Info_NPC/Status_None.show()
 
-	var intimates = npc.find_links(Link.Type.INTIMACY)
-	var partners: Array[Link]
-	var affairs: Array[Link]
-
-	if npc.is_married:
-		partners = intimates.slice(0, 1)
-		affairs = intimates.slice(1, intimates.size())
-	else:
-		affairs = intimates
+	var partners: Array[Link] = npc.find_links(Link.Type.SPOUSE)
+	var affairs: Array[Link] = npc.find_links(Link.Type.INTIMACY)
 
 	if partners:
 		$VBox/Scroller_NPC/Info_NPC/Separator_03.show()
