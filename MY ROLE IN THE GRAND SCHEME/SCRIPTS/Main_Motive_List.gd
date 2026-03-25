@@ -139,8 +139,10 @@ func _enable_disable_motives():
 		alert_player.play("RESET")
 	var case = GameState.get_current_case()
 
-	# count identified culprits and accomplices once and for all
+	# fetch victims and count identified culprits and accomplices once and for
+	# all
 
+	var victims = case.get_victims()
 	var counts = _count_culprits_and_accomplices(case)
 	var culprit_count = counts[0]
 	var accomplice_count = counts[1]
@@ -157,7 +159,8 @@ func _enable_disable_motives():
 		var is_one_enabled = false
 		for motive_id in crime_dict:
 			var is_enabled = _is_motive_valid(
-				crime_dict[motive_id], case, culprit_count, accomplice_count)
+				crime_dict[motive_id], case, victims, culprit_count,
+				accomplice_count)
 			submenu.set_item_disabled(motive_index, not is_enabled)
 			is_one_enabled = is_one_enabled or is_enabled
 			motive_index += 1
@@ -165,8 +168,8 @@ func _enable_disable_motives():
 		crime_index += 1
 
 func _is_motive_valid(
-	motive_dict: Dictionary, case: Case, culprit_count: int,
-	accomplice_count: int) -> bool:
+	motive_dict: Dictionary, case: Case, victims: Array[NpcCard],
+	culprit_count: int, accomplice_count: int) -> bool:
 
 	if case == null:
 		return true
@@ -200,6 +203,46 @@ func _is_motive_valid(
 			if case.get_dead_victim_count() == 0:
 				return false
 
+	# for cases of adultery, there must be a married victim
+
+	if motive_dict.get("is_adultery", false):
+		var married_victim = false
+		for victim in victims:
+			if victim.is_married:
+				married_victim = true
+				break
+		if not married_victim:
+			return false
+
+	# exclude motives that cannot include an incriminating link identified by
+	# the player
+
+	var motive_links = motive_dict["link"]
+
+	for victim in victims:
+		for link in victim.find_links():
+			match link.type:
+				Link.Type.DEBT:
+					if not "debt_influence" in motive_links:
+						return false
+				Link.Type.INTIMACY:
+					if not "intimacy" in motive_links:
+						return false
+				Link.Type.FRIEND:
+					if not ("friend" in motive_links or
+							"enemy/friend" in motive_links):
+						return false
+				Link.Type.ENEMY:
+					if not ("enemy" in motive_links or
+							"enemy/friend" in motive_links):
+						return false
+				Link.Type.ACQUAINTANCE:
+					if not "acquaintance" in motive_links:
+						return false
+				Link.Type.IDEOLOGY:
+					if not "ideology" in motive_links:
+						return false
+
 	return true
 
 ##
@@ -215,12 +258,13 @@ func check_motive_validity():
 			alert_player.play("RESET")
 		return
 
+	var victims = case.get_victims()
 	var counts = _count_culprits_and_accomplices(case)
 	var culprit_count = counts[0]
 	var accomplice_count = counts[1]
 
 	if not _is_motive_valid(
-		_crime_data[case.selected_crime][case.selected_motive], case,
+		_crime_data[case.selected_crime][case.selected_motive], case, victims,
 		culprit_count, accomplice_count):
 		_set_motive_checked(case.selected_crime, case.selected_motive, false)
 		case.selected_crime = ""
