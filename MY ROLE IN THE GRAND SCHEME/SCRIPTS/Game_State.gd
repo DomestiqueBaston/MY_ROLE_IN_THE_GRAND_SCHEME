@@ -1715,67 +1715,59 @@ func _get_info_from_npc(
 				Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC]:
 			subject_card = card
 			break
+	if subject_card == null:
+		subject_card = npc
 
-	# start by looking at information about the object, place or NPC the player
-	# asked about
+	# look at information about the object, place or NPC the player asked about
 
 	var candidates: Array[InfoToReveal]
 	var revealed: Array[InfoToReveal]
 
-	if subject_card:
-		match subject_card.get_card_type():
-			Card.CardType.OBJECT:
+	match subject_card.get_card_type():
+		Card.CardType.OBJECT:
 
-				# the object's owner(s), if the NPC knows them
+			# the object's owner(s), if the NPC knows them
 
-				for obj_owner in subject_card.get_connections(Link.Type.PROPERTY):
-					if obj_owner == npc or obj_owner in npc.get_all_npc_connections():
-						_add_info_to_reveal(
-							candidates, obj_owner, subject_card, Link.Type.PROPERTY, npc)
-						break
+			for obj_owner in subject_card.get_connections(Link.Type.PROPERTY):
+				if obj_owner == npc or obj_owner in npc.get_all_npc_connections():
+					_add_info_to_reveal(
+						candidates, obj_owner, subject_card, Link.Type.PROPERTY, npc)
+					break
 
-			Card.CardType.LOCATION:
-				var npcs_at_location = subject_card.get_all_npc_connections()
-				if npc in npcs_at_location:
+		Card.CardType.LOCATION:
+			var npcs_at_location = subject_card.get_all_npc_connections()
+			if npc in npcs_at_location:
 
-					# known NPCs who live, work, hang out or hide out at the
-					# location
+				# known NPCs who live, work, hang out or hide out at the
+				# location
 
-					var known_npcs = npc.get_all_npc_connections()
-					for npc_at_location in npcs_at_location:
-						if npc_at_location == npc or npc_at_location in known_npcs:
-							var link_type = npc_at_location.get_connection_to(subject_card)
-							if (link_type != Link.Type.HIDEOUT
-								or (hidden_info_ok and
-									_npc_can_reveal_hideout_of_other_npc(npc, npc_at_location))):
-								_add_info_to_reveal(
-									candidates, npc_at_location, subject_card, link_type, npc)
+				var known_npcs = npc.get_all_npc_connections()
+				for npc_at_location in npcs_at_location:
+					if npc_at_location == npc or npc_at_location in known_npcs:
+						var link_type = npc_at_location.get_connection_to(subject_card)
+						if (link_type != Link.Type.HIDEOUT
+							or (hidden_info_ok and
+								_npc_can_reveal_hideout_of_other_npc(npc, npc_at_location))):
+							_add_info_to_reveal(
+								candidates, npc_at_location, subject_card, link_type, npc)
 
-					# objects found at the location
+				# objects found at the location
 
-					for obj in subject_card.get_connections(Link.Type.FOUND):
-						_add_info_to_reveal(
-							candidates, obj, subject_card, Link.Type.FOUND, npc)
+				for obj in subject_card.get_connections(Link.Type.FOUND):
+					_add_info_to_reveal(
+						candidates, obj, subject_card, Link.Type.FOUND, npc)
 
-			Card.CardType.NPC:
+		Card.CardType.NPC:
 
-				# everything that can be revealed about the NPC
+			# everything that can be revealed about the NPC
 
-				if subject_card == npc or npc in subject_card.get_all_npc_connections():
-					_add_all_known_info_about_npc(
-						candidates, npc, subject_card, hidden_info_ok)
+			if subject_card == npc or npc in subject_card.get_all_npc_connections():
+				_add_all_known_info_about_npc(
+					candidates, npc, subject_card, hidden_info_ok)
 
-		while candidates.size() > 0 and revealed.size() < info_count:
-			var index = randi() % candidates.size()
-			revealed.push_back(candidates.pop_at(index))
-
-	# fall back on information about the NPC in the dialogue
-
-	if revealed.size() < info_count and npc != subject_card:
-		_add_all_known_info_about_npc(candidates, npc, npc, hidden_info_ok)
-		while candidates.size() > 0 and revealed.size() < info_count:
-			var index = randi() % candidates.size()
-			revealed.push_back(candidates.pop_at(index))
+	while candidates.size() > 0 and revealed.size() < info_count:
+		var index = randi() % candidates.size()
+		revealed.push_back(candidates.pop_at(index))
 
 	# turn some of the information into misinformation, maybe...
 	# how likely is this NPC to lie?
