@@ -476,10 +476,9 @@ func start_break_in(mastery_cards: Array[Card], fallback_cards: Array[Card]):
 func start_dialogue(
 	npc: NpcCard, mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card: Card in GameState.get_current_case().get_revealed_cards():
-		if card == npc:
-			continue
 		card.set_expanded(true, false)
-		if card.find_links(Link.Type.GUILT):
+		if ((card is NpcCard and card.actual_role == NpcCard.NpcRole.VICTIM)
+			or card.find_links(Link.Type.GUILT)):
 			$Cards/Evidence.add_child(card)
 		else:
 			match card.get_card_type():
