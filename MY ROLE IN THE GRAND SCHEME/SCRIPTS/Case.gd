@@ -884,16 +884,6 @@ func get_unhidden_cards(revealed_cards, cards_in_limbo):
 func get_all_npcs() -> Array[NpcCard]:
 	return npcs
 
-##
-## Returns the cards for victim NPCs only.
-##
-func get_victims() -> Array[NpcCard]:
-	var victims: Array[NpcCard]
-	for npc in npcs:
-		if npc.actual_role == NpcCard.NpcRole.VICTIM:
-			victims.append(npc)
-	return victims
-
 func add_link(link: Link):
 	_links.append(link)
 
