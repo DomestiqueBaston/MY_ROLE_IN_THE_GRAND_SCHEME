@@ -5,7 +5,7 @@
 			"more_explicit_name": "Discovery of Hidden Superego",
 			"is_adultery": true,
 			"link": [
-				"intimacy"
+				"none"
 			],
 			"crime_location": [
 				"any",
@@ -56,7 +56,7 @@
 			"more_explicit_name": "Dissemination of Extraterrestrial Genes",
 			"is_adultery": true,
 			"link": [
-				"intimacy"
+				"none"
 			],
 			"crime_location": [
 				"any"
@@ -100,7 +100,7 @@
 			"more_explicit_name": "Persistent Sexual Dissatisfaction",
 			"is_adultery": true,
 			"link": [
-				"intimacy"
+				"none"
 			],
 			"crime_location": [
 				"any",
@@ -146,7 +146,7 @@
 			"more_explicit_name": "Seeking Influence",
 			"is_adultery": true,
 			"link": [
-				"intimacy"
+				"none"
 			],
 			"crime_location": [
 				"any"
@@ -207,8 +207,7 @@
 			"more_explicit_name": "Personal Revenge",
 			"is_adultery": true,
 			"link": [
-				"enemy",
-				"intimacy"
+				"enemy"
 			],
 			"crime_location": [
 				"any",

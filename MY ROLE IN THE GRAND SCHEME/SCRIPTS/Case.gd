@@ -133,12 +133,10 @@ func _randomize():
 				continue
 
 			# there is a 50% chance that each link will be created, but with
-			# two special cases in which ALL links are created:
-			# - the victims are dead or disappeared (so the player will not be
-			#   able to talk to them)
-			# - adultery-related crimes (there MUST be an intimacy link)
+			# one special case: ALL links are created if the victims are dead
+			# or disappeared (so the player will not be able to talk to them)
 
-			if is_adultery or _dead_victim_count > 0 or (randi() & 1):
+			if _dead_victim_count > 0 or (randi() & 1):
 				match link_type:
 					"intimacy":
 						pre_links.append(Link.Type.INTIMACY)
@@ -219,14 +217,16 @@ func _randomize():
 		victims.append(card)
 
 	# NPCs: accomplices (if sex is involved, ensure they all have the same
-	# sexual interests as the culprits, to simplify)
+	# sexual interests as the culprits, to simplify, except in adultery cases,
+	# where they have the same sex as the victim)
 
 	var accomplices: Array[NpcCard]
+	var accomplice_sex = victim_sex if is_adultery else culprit_sex
 
 	for i in _accomplice_count:
 		var card = NpcCard.generate_card(
-			self, NpcCard.NpcRole.ACCOMPLICE, [], culprit_sex)
-		if culprit_sex >= 0:
+			self, NpcCard.NpcRole.ACCOMPLICE, [], accomplice_sex)
+		if not is_adultery and culprit_sex >= 0:
 			card.orientation = culprit_orientation
 		accomplices.append(card)
 
@@ -259,8 +259,21 @@ func _randomize():
 	for i in other_npc_count:
 		npcs.append(NpcCard.generate_card(self))
 
-	# decide which NPCs are couples: each has a 50% chance of being in a couple,
-	# except for victims of adultery-related crimes, who are ALWAYS married
+	# in cases of adultery, the victim is always married to the culprit, and
+	# there is always an intimacy link between the culprit and an accomplice
+
+	if is_adultery and victims and culprits:
+		var victim = victims.front()
+		var culprit = culprits.front()
+		victim.is_married = true
+		culprit.is_married = true
+		Card.add_bidirectional_connection(Link.Type.SPOUSE, victim, culprit)
+		victim.last_name = culprit.last_name
+		if accomplices:
+			Card.add_bidirectional_connection(
+				Link.Type.INTIMACY, culprit, accomplices.front())
+
+	# decide which NPCs are couples: each has a 50% chance of being in a couple
 
 	# Note that for NPC #7 (for example), we only look for partners among NPCs
 	# #8 and up, because we have already "rolled the dice" for NPCs 0-6. That is
@@ -269,12 +282,10 @@ func _randomize():
 	# in the list. This same pattern is repeated below whenever we create
 	# connections between pairs of NPCs with a probability of less than 100%.
 
+
 	for i in npcs.size() - 1:
 		var npc = npcs[i]
-		if npc.is_married:
-			continue
-		if ((is_adultery and npc.actual_role == NpcCard.NpcRole.VICTIM)
-			 or randi() & 1):
+		if not npc.is_married and randi() & 1:
 			var other = _find_partner_for(npc, i, false)
 			if other:
 				npc.is_married = true
