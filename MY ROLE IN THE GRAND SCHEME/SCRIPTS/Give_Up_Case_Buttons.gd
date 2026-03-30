@@ -13,6 +13,10 @@ func _ready():
 	$Yes_No/No.mouse_entered.connect(Globals.on_mouse_entered)
 	$Yes_No/No.mouse_exited.connect(Globals.on_mouse_exited)
 
+func set_fee(fee: int):
+	$Fee.text = str(fee)
+	$Yes_No/Yes.disabled = GameState.player.money < fee
+
 func get_answer() -> bool:
 	return _answer
 

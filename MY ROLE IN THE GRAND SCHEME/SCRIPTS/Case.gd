@@ -834,6 +834,22 @@ func get_start_day() -> int:
 	return _start_day
 
 ##
+## Returns true if the case can still be abandoned. A case can be abandoned
+## until N days before its deadline, where N is the case's difficulty. A case
+## which is neither active nor paused cannot be abandoned.
+##
+func can_be_abandoned() -> bool:
+	if _status in [Status.UNASSIGNED, Status.DONE]:
+		return false
+	return _start_day + _duration - GameState.get_day() >= _difficulty
+
+##
+## Returns the fee the player must pay if he wants to abandon the case.
+##
+func get_abandon_fee() -> int:
+	return _difficulty * _duration + (GameState.get_day() - _start_day)
+
+##
 ## Returns the crime location, if there is one, and if it is known.
 ##
 func get_crime_location() -> LocationCard:

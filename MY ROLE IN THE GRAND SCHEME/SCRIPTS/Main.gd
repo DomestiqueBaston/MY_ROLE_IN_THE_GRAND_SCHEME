@@ -104,6 +104,7 @@ func _ready():
 		_handle_dialogue_submenu.bind(dialogue_submenu))
 	
 	top_bar.show_deadlines.connect(Globals.dialog_overlay.show_case_deadlines)
+	top_bar.abandon_case.connect(_abandon_case)
 	top_bar.manage_cases.connect(_manage_cases)
 	top_bar.manage_cards.connect(_manage_cards)
 	top_bar.settings.connect(func(): settings.emit())
@@ -1056,6 +1057,15 @@ func _update_info_box():
 			info_box.show_location(
 				GameState.get_player_location(),
 				GameState.get_player_location_card())
+
+func _abandon_case():
+	var case: Case = GameState.get_current_case()
+	if case and case.can_be_abandoned():
+		var fee = case.get_abandon_fee()
+		if await Globals.dialog_overlay.abandon_case(fee):
+			GameState.player.money -= fee
+			GameState.delete_current_case()
+			await GameState.visit_investigation_center()
 
 func _manage_cases():
 	if (not await GameState.move_player_to(GameState.PlayerLocation.OFFICE)

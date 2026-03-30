@@ -665,3 +665,17 @@ func show_case_deadlines():
 	await _disappear()
 	$Overlays/Income_Start.hide()
 	$Overlays/Income_Start/Case_Summaries.hide()
+
+##
+## Asks the player if he wants to pay the given fee to give up the current case.
+## Returns true if he agrees, and if he has enough money.
+##
+func abandon_case(fee: int) -> bool:
+	$Overlays/Give_Up_Case.set_fee(fee)
+	$Overlays/Give_Up_Case.show()
+	await _appear()
+	await $Overlays/Give_Up_Case.done
+	var ok = $Overlays/Give_Up_Case.get_answer()
+	await _disappear()
+	$Overlays/Give_Up_Case.hide()
+	return ok

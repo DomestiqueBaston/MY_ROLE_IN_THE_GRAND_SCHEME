@@ -1489,6 +1489,13 @@ func set_current_case(index: int):
 		case_changed.emit()
 		save_game()
 
+func delete_current_case():
+	if _current_case_index >= 0:
+		cases.remove_at(_current_case_index)
+		_current_case_index = -1
+		case_changed.emit()
+		save_game()
+
 func find_case(case: Case) -> int:
 	return cases.find(case)
 

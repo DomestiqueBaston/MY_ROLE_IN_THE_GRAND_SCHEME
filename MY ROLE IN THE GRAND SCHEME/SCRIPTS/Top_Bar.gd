@@ -9,6 +9,9 @@ extends Control
 ## Signal emitted when the player selects Deadlines from the case menu.
 signal show_deadlines
 
+## Signal emitted when the player selects Give Up Case from the menu.
+signal abandon_case
+
 ## Signal emitted when the player selects Case Management from the menu.
 signal manage_cases
 
@@ -189,9 +192,14 @@ func _on_dailies_press(id: int):
 				GameState.sleep(hours)
 
 func _on_cases_popup():
+	var case: Case = GameState.get_current_case()
 	var popup: PopupMenu = $Menus/Cases.get_popup()
 	var index = popup.get_item_index(CasesMenuItem.MANAGE)
 	popup.set_item_disabled(index, GameState.get_open_cases().size() < 2)
+	index = popup.get_item_index(CasesMenuItem.VALIDATE)
+	popup.set_item_disabled(index, true)
+	index = popup.get_item_index(CasesMenuItem.GIVE_UP)
+	popup.set_item_disabled(index, not (case and case.can_be_abandoned()))
 	index = popup.get_item_index(CasesMenuItem.DEADLINES)
 	popup.set_item_disabled(index, GameState.get_open_cases().is_empty())
 
@@ -199,6 +207,8 @@ func _on_cases_press(id: int):
 	match id:
 		CasesMenuItem.MANAGE:
 			manage_cases.emit()
+		CasesMenuItem.GIVE_UP:
+			abandon_case.emit()
 		CasesMenuItem.DEADLINES:
 			show_deadlines.emit()
 
