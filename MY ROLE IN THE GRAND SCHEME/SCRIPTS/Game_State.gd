@@ -1027,8 +1027,38 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 		print("dialogue bonus/malus: %s" % player.next_dialogue_bonus_malus)
 		player.next_dialogue_bonus_malus = 0
 
-	# TODO: if the player played a card from the evidence pile but it is NOT
-	# evidence, give him a malus of 1
+	# which card did the player ask for information about?
+
+	var subject_card: Card = npc
+	for card in cards_played:
+		if card.get_card_type() in [
+				Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC]:
+			subject_card = card
+			break
+
+	# if the player played a card from the evidence pile but it is NOT
+	# evidence, give him a malus of 1; if he played a card with a correct
+	# incriminating link, give him a bonus of 2
+
+	var evidence_malus: int = 0
+
+	if subject_card is ObjectCard:
+		if subject_card.is_object_evidence:
+			if subject_card in get_current_case().evidence:
+				evidence_malus -= 2
+			else:
+				evidence_malus += 1
+	elif subject_card is NpcCard:
+		var bad_roles = [NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE]
+		if subject_card.apparent_role in bad_roles:
+			if subject_card.apparent_role == subject_card.actual_role:
+				evidence_malus -= 2
+			elif not subject_card.actual_role in bad_roles:
+				evidence_malus += 1
+
+	if evidence_malus != 0:
+		bonus_malus += evidence_malus
+		print("evidence bonus/malus: %s" % evidence_malus)
 
 	# roll the die for the player
 
@@ -1121,7 +1151,7 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 	# if successful, NPC may reveal bits of information
 
 	if net_margin >= 0:
-		var ret = _get_info_from_npc(npc, net_margin, cards_played)
+		var ret = _get_info_from_npc(npc, net_margin, subject_card)
 		infos_found = ret[0]
 		express_doubt = ret[1]
 
@@ -1699,24 +1729,13 @@ func _add_all_known_info_about_npc(
 # the information.
 #
 func _get_info_from_npc(
-	npc: NpcCard, margin: int, cards_played: Array[Card]) -> Array:
+	npc: NpcCard, margin: int, subject_card: Card) -> Array:
 
 	if margin < 0:
 		return [0, false]
 
 	var info_count = maxi(1, roundi(margin / 2.0))
 	var hidden_info_ok = margin >= 2
-
-	# did the player ask for information about a specific object, place or NPC?
-
-	var subject_card: Card
-	for card in cards_played:
-		if card.get_card_type() in [
-				Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC]:
-			subject_card = card
-			break
-	if subject_card == null:
-		subject_card = npc
 
 	# look at information about the object, place or NPC the player asked about
 
