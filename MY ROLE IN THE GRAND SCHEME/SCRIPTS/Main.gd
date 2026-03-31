@@ -634,8 +634,7 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 	if (node is not NpcCard
 		or not player_is_apt
-		or node.npc_status in [NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED]
-		or node.has_been_seen_today()):
+		or node.npc_status in [NpcCard.NpcStatus.DEAD, NpcCard.NpcStatus.DISAPPEARED]):
 		popup.set_item_disabled(index, true)
 	else:
 		var workplace = node.find_linked_cards(Link.Type.WORK)
@@ -651,7 +650,7 @@ func _popup_menu(pos: Vector2, node: Node2D):
 				dialogue_menu.set_item_disabled(item_index, true)
 			elif places.size() == 1:
 				dialogue_menu.add_item(title)
-				if _will_npc_be_there(node, places[0], workplace):
+				if _can_visit_npc_at(node, places[0], workplace):
 					dialogue_menu.set_item_metadata(item_index, places[0])
 				else:
 					dialogue_menu.set_item_disabled(item_index, true)
@@ -660,7 +659,7 @@ func _popup_menu(pos: Vector2, node: Node2D):
 				for place in places:
 					var sub_index = submenu.item_count
 					submenu.add_item(place.get_display_name())
-					if _will_npc_be_there(node, place, workplace):
+					if _can_visit_npc_at(node, place, workplace):
 						submenu.set_item_metadata(sub_index, place)
 					else:
 						submenu.set_item_disabled(sub_index, true)
@@ -738,21 +737,25 @@ func _popup_menu(pos: Vector2, node: Node2D):
 
 #
 # Calculates the time it will take the player to get to the given location, then
-# returns true if the given NPC should be there when the player arrives. Note
-# that if the player does not know where the NPC works, then he does not know
-# the NPC's work schedule, so this will always return true.
+# returns true if the given NPC should be there when the player arrives, and if
+# the player has not yet seen the NPC today. Note that if the player does not
+# know where the NPC works, then he does not know the NPC's work schedule, so he
+# cannot know whether the NPC will be there or not.
 #
-func _will_npc_be_there(
+func _can_visit_npc_at(
 	npc: NpcCard, where: LocationCard, workplace: LocationCard) -> bool:
-	if workplace == null:
-		return true
-
 	var travel_time
 	if (GameState.get_player_location() == GameState.PlayerLocation.OTHER
 		and GameState.get_player_location_card() == where):
 		travel_time = 0
 	else:
 		travel_time = 1
+
+	if not npc.can_be_seen_today(travel_time):
+		return false
+
+	if workplace == null:
+		return true
 
 	var should_be_at_work = npc.should_be_at_work(travel_time)
 	if where == workplace:
