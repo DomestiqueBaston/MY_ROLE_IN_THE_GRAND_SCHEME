@@ -1059,13 +1059,14 @@ func _update_info_box():
 				GameState.get_player_location_card())
 
 func _abandon_case():
-	var case: Case = GameState.get_current_case()
-	if case and case.can_be_abandoned():
-		var fee = case.get_abandon_fee()
-		if await Globals.dialog_overlay.abandon_case(fee):
-			GameState.player.money -= fee
-			GameState.delete_current_case()
-			await GameState.visit_investigation_center()
+	if (await GameState.move_player_to(GameState.PlayerLocation.INVESTIGATION_CENTER)
+		and GameState.player.health <= 0):
+		return
+	var fee = GameState.get_current_case().get_abandon_fee()
+	if await Globals.dialog_overlay.abandon_case(fee):
+		GameState.player.money -= fee
+		GameState.delete_current_case()
+		await GameState.visit_investigation_center()
 
 func _manage_cases():
 	if (not await GameState.move_player_to(GameState.PlayerLocation.OFFICE)

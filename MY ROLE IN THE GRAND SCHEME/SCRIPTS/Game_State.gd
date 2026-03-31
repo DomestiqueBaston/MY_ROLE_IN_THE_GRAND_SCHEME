@@ -153,8 +153,8 @@ const _start_time = 8
 # hours passed since the first Monday at midnight
 var _hour: int
 
-# has the player visited the investigation center today?
-var _has_visited_hub: bool
+# the last day the player took on a new case at the investigation center
+var _last_new_case_day: int
 
 # the last day the player visited the doctor
 var _last_doctor_day: int
@@ -218,7 +218,7 @@ func _ready():
 
 func start_game():
 	_hour = _start_time
-	_has_visited_hub = false
+	_last_new_case_day = -1
 	_last_doctor_day = -1
 	_last_dealer_day = -1
 	_dealer_drug_stock = randi_range(3, 7)
@@ -420,9 +420,8 @@ func _new_day():
 			for npc in case.get_all_npcs():
 				npc.new_day()
 
-	# things the player can do only once a day
+	# things that happen to the player every morning
 
-	_has_visited_hub = false
 	player.new_day()
 
 func _send_new_bill():
@@ -472,25 +471,38 @@ func sleep(hours: int):
 		await player.sleep(hours)
 		await _increment_time(hours, true)
 
-##
-## Returns false if the player has already visited the Investigation Center
-## today.
-##
+func _is_office_hours(travel_time: int = 0) -> bool:
+	var day = get_day(travel_time) % 7
+	var hour = get_hour(travel_time)
+	return day < 5 and hour >= 8 and hour < 20
+
 func can_visit_investigation_center() -> bool:
-	return not _has_visited_hub
+	var travel_time = 0 if _player_location == PlayerLocation.INVESTIGATION_CENTER else 1
+	return _is_office_hours(travel_time)
 
 func visit_investigation_center():
 	if not await move_player_to(PlayerLocation.INVESTIGATION_CENTER) or player.health > 0:
-		_has_visited_hub = await Globals.dialog_overlay.open_investigation_center()
+		if await Globals.dialog_overlay.open_investigation_center():
+			_last_new_case_day = get_day()
+
+func can_take_new_case() -> bool:
+	var open_cases = get_open_cases()
+	if open_cases.is_empty():
+		print("*** no open cases")
+		return true
+	if open_cases.size() >= 4:
+		print("*** too many open cases")
+		return false
+	print("*** last new case: %s, today: %s" % [_last_new_case_day, get_day()])
+	return _last_new_case_day < 0 || _last_new_case_day < get_day()
 
 func visit_office():
 	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
 		await Globals.dialog_overlay.open_office()
 
-func is_warrant_desk_open():
-	var day = get_day() % 7
-	var hour = get_hour()
-	return day < 5 and hour >= 8 and hour < 20
+func can_visit_warrant_desk() -> bool:
+	var travel_time = 0 if _player_location == PlayerLocation.WARRANT_DESK else 1
+	return _is_office_hours(travel_time)
 
 func buy_search_warrant():
 	if not await move_player_to(PlayerLocation.WARRANT_DESK) or player.health > 0:
@@ -547,14 +559,12 @@ func get_player_doctor_fee() -> int:
 	return price
 
 func can_visit_doctor() -> bool:
-	var day = get_day()
 	var travel_time = 0 if _player_location == PlayerLocation.DOCTOR else 1
-	var eta = get_hour() + travel_time
 	var fee = get_player_doctor_fee()
-	if day % 7 >= 5 or eta < 8 or eta >= 20 \
-		or player.money < fee or player.get_debt_count() > 0:
+	if (not _is_office_hours(travel_time)
+		or player.money < fee or player.get_debt_count() > 0):
 		return false
-	return _last_doctor_day < 0 or day - _last_doctor_day >= 4
+	return _last_doctor_day < 0 or get_day(travel_time) - _last_doctor_day >= 4
 
 func visit_doctor():
 	if await move_player_to(PlayerLocation.DOCTOR) and player.health <= 0:
@@ -2123,7 +2133,7 @@ func assign(other: GameState):
 	player = other.player
 	cases = other.cases
 	_hour = other._hour
-	_has_visited_hub = other._has_visited_hub
+	_last_new_case_day = other._last_new_case_day
 	_last_doctor_day = other._last_doctor_day
 	_last_dealer_day = other._last_dealer_day
 	_dealer_drug_stock = other._dealer_drug_stock
@@ -2171,7 +2181,7 @@ func get_json_dict():
 	var dict = {
 		"player": player.get_unique_id(),
 		"hour": _hour,
-		"has_visited_hub": _has_visited_hub,
+		"last_new_case_day": _last_new_case_day,
 		"last_doctor_day": _last_doctor_day,
 		"last_dealer_day": _last_dealer_day,
 		"dealer_drug_stock": _dealer_drug_stock,
@@ -2208,7 +2218,7 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	_hour = dict.hour
-	_has_visited_hub = dict.get("has_visited_hub", false)
+	_last_new_case_day = dict.get("last_new_case_day", -1)
 	_last_doctor_day = dict.get("last_doctor_day", -1)
 	_last_dealer_day = dict.get("last_dealer_day", -1)
 	_dealer_drug_stock = dict.get("dealer_drug_stock", 0)

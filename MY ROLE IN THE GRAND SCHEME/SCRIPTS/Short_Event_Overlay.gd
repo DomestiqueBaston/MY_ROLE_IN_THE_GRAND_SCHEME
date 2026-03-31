@@ -180,7 +180,7 @@ func ask_for_confirmation(skip_anim_if_yes: bool = false) -> bool:
 ## case, and waits for him to confirm or cancel. Returns true if he changed the
 ## current case.
 ##
-func open_investigation_center()  -> bool:
+func open_investigation_center() -> bool:
 	$Overlays/Investigation_Center.populate()
 	$Overlays/Investigation_Center.show()
 	await _appear()

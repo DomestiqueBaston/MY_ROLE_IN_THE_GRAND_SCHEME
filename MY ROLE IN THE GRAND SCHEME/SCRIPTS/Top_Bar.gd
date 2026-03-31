@@ -199,7 +199,10 @@ func _on_cases_popup():
 	index = popup.get_item_index(CasesMenuItem.VALIDATE)
 	popup.set_item_disabled(index, true)
 	index = popup.get_item_index(CasesMenuItem.GIVE_UP)
-	popup.set_item_disabled(index, not (case and case.can_be_abandoned()))
+	popup.set_item_disabled(
+		index,
+		not (case and case.can_be_abandoned()
+			 and GameState.can_visit_investigation_center()))
 	index = popup.get_item_index(CasesMenuItem.DEADLINES)
 	popup.set_item_disabled(index, GameState.get_open_cases().is_empty())
 
@@ -286,7 +289,7 @@ func _on_dailies_menu_popup():
 			item_index,
 			player.money < GameState.warrant_price \
 			or player.get_debt_count() > 0 \
-			or not GameState.is_warrant_desk_open())
+			or not GameState.can_visit_warrant_desk())
 
 	# can the player go to the doctor?
 

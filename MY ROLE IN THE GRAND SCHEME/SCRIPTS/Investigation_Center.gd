@@ -36,7 +36,6 @@ func populate():
 	_ok_button.disabled = true
 	_info.hide()
 
-
 func _on_item_selected(index: int):
 	var case: Case = GameState.cases[index]
 	var can_pick: bool = false
@@ -46,7 +45,7 @@ func _on_item_selected(index: int):
 	match case.get_status():
 		Case.Status.UNASSIGNED:
 			_status.text = "Unassigned"
-			can_pick = GameState.get_open_cases().size() < 4
+			can_pick = GameState.can_take_new_case()
 		Case.Status.ACTIVE:
 			_status.text = "Active"
 			can_pick = true
