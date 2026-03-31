@@ -413,12 +413,23 @@ func _new_day():
 		if _dealer_drug_stock > 0 and randi() % 4 == 0:
 			_dealer_drug_stock -= 1
 
-	# increment the health of NPCs in active cases
+	# increment the health of NPCs in active cases, and check whether they have
+	# expired
+
+	var expired_cases: Array[Case]
 
 	for case in cases:
-		if case.get_status() == Case.Status.ACTIVE:
-			for npc in case.get_all_npcs():
-				npc.new_day()
+		if case.get_status() in [Case.Status.ACTIVE, Case.Status.PAUSED]:
+			if case.is_expired():
+				expired_cases.append(case)
+			else:
+				for npc in case.get_all_npcs():
+					npc.new_day()
+
+	if expired_cases:
+		for case in expired_cases:
+			GameState.delete_case(GameState.find_case(case))
+		await Globals.dialog_overlay.show_case_expired()
 
 	# things that happen to the player every morning
 
@@ -488,12 +499,9 @@ func visit_investigation_center():
 func can_take_new_case() -> bool:
 	var open_cases = get_open_cases()
 	if open_cases.is_empty():
-		print("*** no open cases")
 		return true
 	if open_cases.size() >= 4:
-		print("*** too many open cases")
 		return false
-	print("*** last new case: %s, today: %s" % [_last_new_case_day, get_day()])
 	return _last_new_case_day < 0 || _last_new_case_day < get_day()
 
 func visit_office():
@@ -597,7 +605,8 @@ func attempt_investigation(location: LocationCard):
 
 	# go to the location first
 
-	if await move_player_to(PlayerLocation.OTHER, location) and player.health <= 0:
+	if (await move_player_to(PlayerLocation.OTHER, location)
+		and (player.health <= 0 or get_current_case() == null)):
 		return
 
 	# check whether there is anybody there, whether the player has a warrant he
@@ -953,7 +962,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 	else:
 		await move_player_to(PlayerLocation.PRISON)
 
-	if player.health <= 0:
+	if player.health <= 0 or get_current_case() == null:
 		return
 
 	# check whether the NPC is there
@@ -1506,6 +1515,15 @@ func delete_current_case():
 		case_changed.emit()
 		save_game()
 
+func delete_case(index: int):
+	if _current_case_index == index:
+		delete_current_case()
+	else:
+		cases.remove_at(index)
+		if _current_case_index > index:
+			_current_case_index -= 1
+		save_game()
+
 func find_case(case: Case) -> int:
 	return cases.find(case)
 
@@ -1525,7 +1543,7 @@ func get_open_cases() -> Array[Case]:
 ## trip to any location takes an hour. Returns false if the player is already at
 ## the given location, otherwise emits a location_changed() signal and returns
 ## true. Note that this is a coroutine to be awaited, and it is possible the
-## player may have died on return.
+## player may have died on return, or that the current case may have expired.
 ##
 func move_player_to(location: PlayerLocation, card: LocationCard = null) -> bool:
 	if _player_location == location and _player_location_card == card:

@@ -679,3 +679,15 @@ func abandon_case(fee: int) -> bool:
 	await _disappear()
 	$Overlays/Give_Up_Case.hide()
 	return ok
+
+##
+## Displays a message explaining that a case has gone past its deadline.
+##
+func show_case_expired():
+	$Overlays/Misc/Announces/Outdated_Case.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Outdated_Case.hide()

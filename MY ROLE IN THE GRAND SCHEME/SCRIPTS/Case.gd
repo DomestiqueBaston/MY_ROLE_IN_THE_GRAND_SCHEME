@@ -833,6 +833,9 @@ func get_duration() -> int:
 func get_start_day() -> int:
 	return _start_day
 
+func is_expired() -> bool:
+	return _start_day + _duration <= GameState.get_day()
+
 ##
 ## Returns true if the case can still be abandoned. A case can be abandoned
 ## until N days before its deadline, where N is the case's difficulty. A case

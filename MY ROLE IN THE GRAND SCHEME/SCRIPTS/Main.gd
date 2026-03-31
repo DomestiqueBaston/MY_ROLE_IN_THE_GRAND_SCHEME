@@ -1060,7 +1060,7 @@ func _update_info_box():
 
 func _abandon_case():
 	if (await GameState.move_player_to(GameState.PlayerLocation.INVESTIGATION_CENTER)
-		and GameState.player.health <= 0):
+		and (GameState.player.health <= 0) or GameState.get_current_case() == null):
 		return
 	var fee = GameState.get_current_case().get_abandon_fee()
 	if await Globals.dialog_overlay.abandon_case(fee):

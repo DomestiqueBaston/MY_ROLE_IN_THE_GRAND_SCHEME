@@ -131,7 +131,14 @@ func _get_npcs_of_interest(
 func _enable_disable_motives():
 	if alert_player:
 		alert_player.play("RESET")
+
+	var popup: PopupMenu = get_popup()
+
 	var case = GameState.get_current_case()
+	if case == null:
+		for crime_index in _crime_data.size():
+			popup.set_item_disabled(crime_index, true)
+		return
 
 	# fetch victims and count identified culprits and accomplices once and for
 	# all
@@ -143,7 +150,6 @@ func _enable_disable_motives():
 
 	# iterate over the crime submenus and motive entries
 
-	var popup: PopupMenu = get_popup()
 	var crime_index = 0
 
 	for crime in _crime_data:
