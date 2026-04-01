@@ -1549,7 +1549,10 @@ func move_player_to(location: PlayerLocation, card: LocationCard = null) -> bool
 	if _player_location == location and _player_location_card == card:
 		return false
 	await pass_one_hour()
-	set_player_location(location, card)
+	# it is possible that, in the hour that just passed, the current case
+	# expired, in which case the location card may not exist anymore...
+	if card == null or is_instance_valid(card):
+		set_player_location(location, card)
 	return true
 
 ##
@@ -2106,11 +2109,13 @@ func _reveal_card(card: Card):
 # interaction, they can be put back where they were afterwards.
 #
 func _push_card_state():
-	for card in get_current_case().get_revealed_cards():
-		if card.get_card_type() in [
-			Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
-		]:
-			card.push_state()
+	var case = get_current_case()
+	if case:
+		for card in case.get_revealed_cards():
+			if card.get_card_type() in [
+				Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
+			]:
+				card.push_state()
 
 #
 # Restores the visual state of all object, location and NPC cards after a
@@ -2120,12 +2125,14 @@ func _push_card_state():
 #
 func _pop_card_state():
 	var ok = true
-	for card in get_current_case().get_revealed_cards():
-		if card.get_card_type() in [
-			Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
-		]:
-			if not card.pop_state():
-				ok = false
+	var case = get_current_case()
+	if case:
+		for card in case.get_revealed_cards():
+			if card.get_card_type() in [
+				Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
+			]:
+				if not card.pop_state():
+					ok = false
 	return ok
 
 func save_game(binary: bool = false):
