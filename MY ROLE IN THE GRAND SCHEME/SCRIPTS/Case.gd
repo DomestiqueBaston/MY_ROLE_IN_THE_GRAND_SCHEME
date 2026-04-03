@@ -827,14 +827,36 @@ func get_status() -> Status:
 func get_difficulty() -> int:
 	return _difficulty
 
+##
+## Returns the number of days the player has to solve the case.
+##
 func get_duration() -> int:
 	return _duration
 
+##
+## Returns the day the player took on the case.
+##
 func get_start_day() -> int:
 	return _start_day
 
+##
+## Returns the day FOLLOWING the last day the player has to solve the case.
+##
+func get_end_day() -> int:
+	return _start_day + _duration
+
+##
+## Returns the number of days left before the case expires.
+##
+func get_days_left() -> int:
+	return get_end_day() - GameState.get_day()
+
+##
+## Returns true if the case has expired, that is, if get_days_left() returns a
+## non-positive number.
+##
 func is_expired() -> bool:
-	return _start_day + _duration <= GameState.get_day()
+	return get_end_day() <= GameState.get_day()
 
 ##
 ## Returns true if the case can still be abandoned. A case can be abandoned

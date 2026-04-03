@@ -1498,6 +1498,10 @@ func get_current_case() -> Case:
 	else:
 		return null
 
+##
+## Sets the current case, making it active. If there is already a current case,
+## that case is paused.
+##
 func set_current_case(index: int):
 	if _current_case_index != index:
 		if _current_case_index >= 0 and _current_case_index < cases.size():
@@ -1508,13 +1512,36 @@ func set_current_case(index: int):
 		case_changed.emit()
 		save_game()
 
+#
+# Returns the index of the paused case which will expire next, or -1 if there
+# are no paused cases.
+#
+func _find_next_case() -> int:
+	var next_case = -1
+	var days_left = -1
+	for index in cases.size():
+		var case = cases[index]
+		if case._status == Case.Status.PAUSED:
+			var d = case.get_days_left()
+			if next_case < 0 or days_left > d:
+				next_case = index
+				days_left = d
+	return next_case
+
+##
+## Deletes the current case, if there is one, and replaces it with the paused
+## case which will expire next (if there are any).
+##
 func delete_current_case():
 	if _current_case_index >= 0:
 		cases.remove_at(_current_case_index)
 		_current_case_index = -1
-		case_changed.emit()
-		save_game()
+		set_current_case(_find_next_case())
 
+##
+## Deletes the given case. If the index given is that of the current case, this
+## is equivalent to calling delete_current_case().
+##
 func delete_case(index: int):
 	if _current_case_index == index:
 		delete_current_case()
@@ -1524,6 +1551,9 @@ func delete_case(index: int):
 			_current_case_index -= 1
 		save_game()
 
+##
+## Returns the index in the case list of the given case.
+##
 func find_case(case: Case) -> int:
 	return cases.find(case)
 

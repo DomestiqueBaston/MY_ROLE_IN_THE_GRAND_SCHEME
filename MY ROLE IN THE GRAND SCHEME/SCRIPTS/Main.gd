@@ -1069,7 +1069,8 @@ func _abandon_case():
 	if await Globals.dialog_overlay.abandon_case(fee):
 		GameState.player.money -= fee
 		GameState.delete_current_case()
-		await GameState.visit_investigation_center()
+		if GameState.get_current_case() == null:
+			await GameState.visit_investigation_center()
 
 func _manage_cases():
 	if (not await GameState.move_player_to(GameState.PlayerLocation.OFFICE)

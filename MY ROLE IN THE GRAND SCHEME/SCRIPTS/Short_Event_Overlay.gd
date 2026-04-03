@@ -652,8 +652,7 @@ func show_case_deadlines():
 		if index < cases.size():
 			var case: Case = cases[index]
 			var days_label: RichTextLabel = case_control.get_node("Case/Info/Number")
-			var days_left = case.get_duration() - (GameState.get_day() - case.get_start_day())
-			days_label.text = str(days_left)
+			days_label.text = str(case.get_days_left())
 			case_control.show()
 		else:
 			case_control.hide()
