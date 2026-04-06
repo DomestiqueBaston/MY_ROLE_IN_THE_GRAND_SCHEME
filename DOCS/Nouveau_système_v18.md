@@ -791,6 +791,10 @@ Résolution des enquêtes, gains et implications
 		- round((niveau de difficulté) × 100) ±10% Dø (voir à la fin pour Niveau 0)
 		- autant que le niveau de difficulté de l’enquête +1 aléatoirement en toutes cartes Combat (tous types), Dialogue, Investigation (tous types) et/ou Abstraites parmi lesquelles le joueur choisira celles qu’il garde pour sa main de maîtrise sans dépasser les limites de main de Maîtrise.
 		- Emo = 0, Add = 0, Wan = 0
+	- Enquête à « moitié » résolue :
+		- round((niveau de difficulté) × 50) ±10% Dø (voir à la fin pour Niveau 0)
+		- autant que le (niveau de difficulté de l’enquête +1) / 2 aléatoirement en toutes cartes Combat (tous types), Dialogue, Investigation (tous types) et/ou Abstraites parmi lesquelles le joueur choisira celles qu’il garde pour sa main de maîtrise sans dépasser les limites de main de Maîtrise.
+		- ±1Emo → 0, ±1Add → 0, -1Wan → 0
  	- Si le joueur valide une enquête et qu’il s’est trompé (sauf voir au dessus), l’enquête est terminée pour lui et implique :
 		- Emo +1 → Min/Max ou Emo -1 si Emo = 0 et HEA -1 ou MEN -1 ou PHY -1.
 	- Renoncer à une enquête n’implique pas de malus ni de bonus mais coûte de l’argent selon : round(niveau de difficulté × nombre de jours prévus pour résoudre l’enquête + nombre de jours passés depuis l’acceptation de l’enquête)Dø.
