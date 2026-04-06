@@ -1204,7 +1204,6 @@ flat = true
 alignment = 0
 
 [node name="Income_Start" type="Node2D" parent="Overlays"]
-visible = false
 
 [node name="Income_Start_BG" type="Sprite2D" parent="Overlays/Income_Start"]
 position = Vector2(200, 25)
@@ -1336,10 +1335,201 @@ theme_override_constants/line_separation = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a7igc")
 bbcode_enabled = true
 text = " to) improve yourself...
- - [color=#ff8864]Eased your[/color] [color=#ff1c18]mind[/color] and [color=#ff1c18]cooled[/color] [color=#ff8864]
- it with the [/color][color=#ff1c18]cops[/color]."
+ - [color=#ff8864]Eased your[/color] [color=#ff1c18]mind[/color] and [color=#ff1c18]body[/color] and
+ [color=#ff1c18]cooled[/color] [color=#ff8864]it with the [/color][color=#ff1c18]cops[/color]."
 fit_content = true
 autowrap_mode = 0
+
+[node name="Income_Half" type="Control" parent="Overlays/Income_Start"]
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("52_lkigo")
+
+[node name="Quit" type="Button" parent="Overlays/Income_Start/Income_Half"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 303.0
+offset_right = 343.0
+offset_bottom = 313.0
+text = "Hm... Ok!"
+
+[node name="Chalk" type="Sprite2D" parent="Overlays/Income_Start/Income_Half"]
+clip_children = 1
+position = Vector2(315, 178)
+texture = ExtResource("62_gjkrj")
+
+[node name="Content" type="RichTextLabel" parent="Overlays/Income_Start/Income_Half/Chalk"]
+clip_contents = false
+offset_left = -73.0
+offset_top = -110.0
+offset_right = 82.0
+offset_bottom = 101.0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]You could have done worse![/color][/pulse][/center]
+
+ - [color=#ff8864]Well[/color]! At last, you managed
+ to [color=#ff8864]help[/color] solve that case.
+ Consider yourself lucky that
+ the authorities [color=#ff8864]rewarded[/color] you:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[center]Grabbing some popcorn...[/center]"
+
+[node name="Money_Cards" type="FlowContainer" parent="Overlays/Income_Start/Income_Half/Chalk"]
+offset_left = -73.0
+offset_top = -56.0
+offset_right = 82.0
+offset_bottom = -18.0
+theme_override_constants/h_separation = -1
+theme_override_constants/v_separation = 0
+
+[node name="Dash" type="RichTextLabel" parent="Overlays/Income_Start/Income_Half/Chalk/Money_Cards"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = " - "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Money" type="RichTextLabel" parent="Overlays/Income_Start/Income_Half/Chalk/Money_Cards"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "XXX"
+fit_content = true
+autowrap_mode = 0
+
+[node name="And" type="RichTextLabel" parent="Overlays/Income_Start/Income_Half/Chalk/Money_Cards"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "[color=#ff8864]Dø[/color] and "
+fit_content = true
+autowrap_mode = 0
+
+[node name="Cards" type="RichTextLabel" parent="Overlays/Income_Start/Income_Half/Chalk/Money_Cards"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+theme_override_colors/default_color = Color(1, 0.109804, 0.0941176, 1)
+bbcode_enabled = true
+text = "X"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Beginning_Of_End" type="RichTextLabel" parent="Overlays/Income_Start/Income_Half/Chalk/Money_Cards"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = " [color=#ff8864]card(s)[/color] to (try "
+fit_content = true
+autowrap_mode = 0
+
+[node name="End_Of_End" type="RichTextLabel" parent="Overlays/Income_Start/Income_Half/Chalk/Money_Cards"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme = ExtResource("52_lkigo")
+theme_override_constants/line_separation = 1
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a7igc")
+bbcode_enabled = true
+text = " to) improve yourself...
+ - Somehow [color=#ff8864]eased your[/color] [color=#ff1c18]mind[/color] and
+ [color=#ff1c18]body[/color] (and the [color=#ff1c18]cops[/color])."
+fit_content = true
+autowrap_mode = 0
+
+[node name="Income_Fail" type="Control" parent="Overlays/Income_Start"]
+visible = false
+modulate = Color(1, 1, 1, 0.941176)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("52_lkigo")
+
+[node name="Quit" type="Button" parent="Overlays/Income_Start/Income_Fail"]
+modulate = Color(1, 1, 1, 0.882353)
+layout_mode = 0
+offset_left = 296.0
+offset_top = 303.0
+offset_right = 343.0
+offset_bottom = 313.0
+theme_override_colors/font_color = Color(1, 0.10980392, 0.09411765, 1)
+theme_override_colors/font_focus_color = Color(1, 0.10980392, 0.09411765, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.10980392, 0.09411765, 1)
+theme_override_colors/font_hover_color = Color(1, 0.46899998, 0.45999998, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.10980392, 0.09411765, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.10980392, 0.09411765, 1)
+text = "What?"
+
+[node name="Chalk" type="Sprite2D" parent="Overlays/Income_Start/Income_Fail"]
+clip_children = 1
+position = Vector2(315, 178)
+texture = ExtResource("62_gjkrj")
+
+[node name="Content" type="RichTextLabel" parent="Overlays/Income_Start/Income_Fail/Chalk"]
+clip_contents = false
+offset_left = -73.0
+offset_top = -105.0
+offset_right = 82.0
+offset_bottom = 101.0
+theme = ExtResource("52_lkigo")
+bbcode_enabled = true
+text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Maybe you should have kept
+your previous job...[/color][/pulse][/center]
+
+ - It's [color=#ff8864]pathetic[/color]! Sometimes, you
+ have to admit that you
+ should've stayed in your place
+ and kept quiet. [color=#ff8864]Stirring up shit[/color]
+ like that, you shouldn't be
+ surprised to find it [color=#ff8864]on your
+ shoes[/color].
+
+ - But here you are, taking it
+ even [color=#ff8864]further[/color]: you've got it [color=#ff8864]all
+ over your ears[/color] now. [color=#ff1c18]It's pro-
+ bably still time to go back to
+ your miserable previous life[/color].
+
+
+
+
+
+
+
+
+[center]Just saying...[/center]"
 
 [node name="Starting_Hand" type="Control" parent="Overlays/Income_Start"]
 visible = false
