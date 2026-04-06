@@ -104,6 +104,7 @@ func _ready():
 		_handle_dialogue_submenu.bind(dialogue_submenu))
 	
 	top_bar.show_deadlines.connect(Globals.dialog_overlay.show_case_deadlines)
+	top_bar.validate_case.connect(_validate_case)
 	top_bar.abandon_case.connect(_abandon_case)
 	top_bar.manage_cases.connect(_manage_cases)
 	top_bar.manage_cards.connect(_manage_cards)
@@ -1060,6 +1061,13 @@ func _update_info_box():
 			info_box.show_location(
 				GameState.get_player_location(),
 				GameState.get_player_location_card())
+
+func _validate_case():
+	var case = GameState.get_current_case()
+	if case == null:
+		return
+	var _result: Case.SolutionResult = case.check_solution()
+	# TODO: rewards, message, etc.
 
 func _abandon_case():
 	if (await GameState.move_player_to(GameState.PlayerLocation.INVESTIGATION_CENTER)

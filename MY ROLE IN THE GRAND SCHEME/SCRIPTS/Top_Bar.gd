@@ -9,6 +9,9 @@ extends Control
 ## Signal emitted when the player selects Deadlines from the case menu.
 signal show_deadlines
 
+## Signal emitted when the player selects Validate Case from the menu.
+signal validate_case
+
 ## Signal emitted when the player selects Give Up Case from the menu.
 signal abandon_case
 
@@ -197,7 +200,7 @@ func _on_cases_popup():
 	var index = popup.get_item_index(CasesMenuItem.MANAGE)
 	popup.set_item_disabled(index, GameState.get_open_cases().size() < 2)
 	index = popup.get_item_index(CasesMenuItem.VALIDATE)
-	popup.set_item_disabled(index, true)
+	popup.set_item_disabled(index, case == null or case.selected_motive.is_empty())
 	index = popup.get_item_index(CasesMenuItem.GIVE_UP)
 	popup.set_item_disabled(
 		index,
@@ -210,6 +213,8 @@ func _on_cases_press(id: int):
 	match id:
 		CasesMenuItem.MANAGE:
 			manage_cases.emit()
+		CasesMenuItem.VALIDATE:
+			validate_case.emit()
 		CasesMenuItem.GIVE_UP:
 			abandon_case.emit()
 		CasesMenuItem.DEADLINES:

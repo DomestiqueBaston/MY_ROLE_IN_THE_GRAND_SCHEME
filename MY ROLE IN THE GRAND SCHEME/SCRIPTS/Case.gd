@@ -7,6 +7,12 @@ enum Status {
 	DONE
 }
 
+enum SolutionResult {
+	WRONG,
+	HALF_RIGHT,
+	RIGHT
+}
+
 var is_layout_needed: bool = true
 
 var npcs: Array[NpcCard]
@@ -1080,6 +1086,117 @@ func add_links_between_npc_and_location(npc: NpcCard, location: LocationCard):
 	for type in [Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
 		if location in npc.get_connections(type):
 			create_link(npc, location, type, type == Link.Type.WORK, true)
+
+##
+## Checks whether the player has solved the case, by identifying the motive,
+## culprits, accomplices, evidence and incriminating links. Returns HALF_RIGHT
+## if he has identified all those except for the motive, or if he has also made
+## a small number of incorrect links.
+##
+func check_solution() -> SolutionResult:
+	var error_count = 0
+	var right_motive = false
+	var good_link_count = 0
+	var bad_link_count = 0
+
+	print("checking case solution:")
+
+	# check crime and motive
+
+	if not (selected_crime and selected_motive):
+		print("❌ no motive selected")
+		error_count += 1
+	elif selected_crime != _crime:
+		print("❌ wrong crime: %s" % selected_crime)
+		error_count += 1
+	elif _crime_data[selected_crime][selected_motive].name != _motive.name:
+		print("❌ wrong motive: %s" % _crime_data[selected_crime][selected_motive].name)
+	else:
+		print("✅ identified crime and motive")
+		right_motive = true
+
+	# check culprits and accomplices
+
+	for npc in npcs:
+		if npc.actual_role == NpcCard.NpcRole.CULPRIT:
+			if npc.apparent_role == NpcCard.NpcRole.CULPRIT:
+				print("✅ identified culprit: %s" % npc.get_display_name())
+				good_link_count += 1
+			else:
+				print("❌ culprit not found: %s" % npc.get_display_name())
+				error_count += 1
+		elif npc.actual_role == NpcCard.NpcRole.ACCOMPLICE:
+			if npc.apparent_role == NpcCard.NpcRole.ACCOMPLICE:
+				print("✅ identified accomplice: %s" % npc.get_display_name())
+				good_link_count += 1
+			else:
+				print("❌ accomplice not found: %s" % npc.get_display_name())
+				error_count += 1
+		elif npc.apparent_role == NpcCard.NpcRole.CULPRIT:
+			print("❌ not a culprit: %s" % npc.get_display_name())
+			bad_link_count += 1
+		elif npc.apparent_role == NpcCard.NpcRole.ACCOMPLICE:
+			print("❌ not an accomplice: %s" % npc.get_display_name())
+			bad_link_count += 1
+
+	# check evidence
+
+	for obj in evidence:
+		if obj.is_object_evidence:
+			print("✅ identified evidence: %s" % obj.get_display_name())
+			good_link_count += 1
+		else:
+			print("❌ evidence not found: %s" % obj.get_display_name())
+			error_count += 1
+
+	for obj in other_objects:
+		if obj.is_object_evidence:
+			print("❌ not evidence: %s" % obj.get_display_name())
+			bad_link_count += 1
+
+	# check incriminating links
+
+	for npc in npcs:
+		if npc.actual_role != NpcCard.NpcRole.VICTIM:
+			continue
+		for link_type in Link.incriminating_types:
+			var type_name = Link.Type.keys()[link_type].to_lower()
+			for other in npc.get_connections(link_type):
+				var link = npc.find_link_to(other, link_type)
+				if link == null:
+					print("❌ link not found: %s => %s" % [
+						type_name, other.get_display_name()])
+					error_count += 1
+				elif link.status != Link.Status.CONFIRMED:
+					print("❌ link not confirmed: %s => %s" % [
+						type_name, other.get_display_name()])
+					error_count += 1
+				else:
+					print("✅ link identified: %s => %s" % [
+						type_name, other.get_display_name()])
+					good_link_count += 1
+			for link in npc.find_links(link_type):
+				if link.status != Link.Status.CONFIRMED:
+					continue
+				var other
+				if link.pin1.backing == npc:
+					other = link.pin2.backing
+				else:
+					other = link.pin1.backing
+				if other is NpcCard and not other.apparent_role in [
+					NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE]:
+					continue
+				if not other in npc.get_connections(link_type):
+					print("❌ incorrect link: %s => %s" % [
+						type_name, other.get_display_name()])
+					bad_link_count += 1
+
+	if error_count == 0 and right_motive and bad_link_count == 0:
+		return SolutionResult.RIGHT
+	elif error_count > 0 or bad_link_count * 3 > good_link_count:
+		return SolutionResult.WRONG
+	else:
+		return SolutionResult.HALF_RIGHT
 
 func print_case():
 	print()
