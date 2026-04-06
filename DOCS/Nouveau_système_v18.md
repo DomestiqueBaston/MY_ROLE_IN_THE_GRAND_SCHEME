@@ -243,12 +243,13 @@ L’addiction (et l’émotion un peu aussi)
 Crise de paranoïa
 	- La paranoïa se déclenche après :
 		5 tests (réussis) contre la Mort par sur/sous-dose de drogue.
-	ou	5 enquêtes ratées ou abandonnées d’affilé.
-	ou	Après 10 nuits de 4h (le minimum de durée) au total.
+	ou	5 enquêtes abandonnées.
+	ou	5 enquêtes ratées.
+	ou	Après 10 nuits de 4h (le minimum de durée).
 	ou	5 jours consécutifs à PHY, MEN et HEA ≤ 2.
 	ou	15 combats avec des sbires.
 	ou	la réception de 15 SMS anonymes.
-	ou	10 factures non réglées le lundi au total.
+	ou	10 factures non réglées le lundi.
 
 	- Rappel : Paranoïa fige définitivement Emo et Add (dans la limite de -2/+2). Le joueur ne se drogue plus. Le joueur ne dort plus et son bonus/malus de sommeil réduit chaque jour jusqu’à atteindre un malus de 2 max.
 	- Au fur et à mesure que le joueur se rapproche de la crise de Paranoïa, le volume sonore de Paranoia_Voices (dans Ambiance_Sound.tscn) va monter (pour « informer » le joueur de son état) :
@@ -625,10 +626,11 @@ Déclenchement d’un Combat par un PNJ « sbire » (minion)
 	- Dans chaque enquête prise par le joueur, il arrivera probablement qu’1 PNJ soit envoyé pour attaquer le joueur.
 	- Pas d’attaque de sbire dans les enquêtes de niveau 0.
 	- Probabilité d’attaque pour chaque tranche horaire : (Niveau de difficulté d’enquête × 2)% (15% pour l’enquête finale).
+	- On ne peut pas éviter une attaque de sbire.
 	- Si une attaque doit survenir, elle surviendra toujours avant l’exécution de l’action suivante du joueur, y compris aller chez le médecin, etc. SAUF être au bureau et y faire des trucs comme se droguer (lieu sûr avec la prison où le joueur ne peut pas être attaqué)!
 	- Si l’attaquant ne meurt pas, il reviendra à la prochaine attaque (liée à cette enquête), son HEA sera remis à jour en suivant les règles d’évolution des PNJs : +1HEA/Jour (voir Système de Santé/Récupération (PNJs)). Son Wan augmentera de +1. S’il est amené à aller en Prison et qu’ultérieurement une attaque doit avoir lieu dans la même enquête, un nouveau sbire sera envoyé.
 	- Si l’attaquant meurt, la prochaine fois, un nouveau sbire sera envoyé.
-	- Si le joueur fouille le sbire mort, avec une probabilité de 10%, le joueur se verra révéler le nom du/d’un des coupable(s) du crime de l’enquête (aléatoirement s’il y en a plusieurs) (établissement d’un Lien Violet) et comme pour un « non sbire », on peut aussi trouver de l’argent avec les même probabilités (voir plus haut à Combat). Être attaqué n’est pas une preuve pour l’enquête.
+	- Si le joueur fouille le sbire mort, avec une probabilité de 10%, le joueur se verra révéler le nom du ou d’un des coupables du crime de l’enquête (aléatoirement s’il y en a plusieurs) (établissement d’un Lien Violet) et comme pour un « non sbire », on peut aussi trouver de l’argent avec les même probabilités (voir plus haut à Combat). Être attaqué n’est pas une preuve pour l’enquête.
 
 Fuir un Combat (Joueur) – RUN AWAY
 	- Avant tout combat initié par un PNJ, le jeu demandera au joueur s’il veut fuir SAUF avant un Dialogue.
