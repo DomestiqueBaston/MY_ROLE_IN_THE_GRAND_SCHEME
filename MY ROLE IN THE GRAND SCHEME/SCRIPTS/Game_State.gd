@@ -426,6 +426,10 @@ func _new_day():
 		if case.get_status() in [Case.Status.ACTIVE, Case.Status.PAUSED]:
 			if case.is_expired():
 				_close_case(index)
+				if player.emotion == 0:
+					player.emotion = -1
+				else:
+					player.improve_emotion(-1)
 				expired_cases = true
 			else:
 				for npc in case.get_all_npcs():

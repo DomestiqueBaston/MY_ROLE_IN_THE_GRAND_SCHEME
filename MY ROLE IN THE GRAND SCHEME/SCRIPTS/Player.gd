@@ -591,7 +591,8 @@ static func exacerbate(start_value: int, how_much: int = 1) -> int:
 
 ##
 ## Given the current value of a signed attribute (emotion or addiction),
-## returns a value that is better (closer to zero) by at most how_much.
+## returns a value that is better (closer to zero) by at most how_much. If
+## how_much is negative, returns a value that is farther from zero. 
 ##
 static func calm(start_value: int, how_much: int = 1) -> int:
 	if start_value == 0:
