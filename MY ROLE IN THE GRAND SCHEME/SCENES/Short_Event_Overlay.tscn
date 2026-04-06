@@ -3658,6 +3658,7 @@ text = "That's proably for the best."
 alignment = 2
 
 [node name="Misc" type="Node2D" parent="Overlays"]
+visible = false
 
 [node name="Misc_BG" type="Sprite2D" parent="Overlays/Misc"]
 texture = ExtResource("1_sivc1")
