@@ -1192,10 +1192,13 @@ func check_solution() -> SolutionResult:
 					bad_link_count += 1
 
 	if error_count == 0 and right_motive and bad_link_count == 0:
+		print("=> correct solution")
 		return SolutionResult.RIGHT
 	elif error_count > 0 or bad_link_count * 3 > good_link_count:
+		print("=> wrong solution")
 		return SolutionResult.WRONG
 	else:
+		print("=> half solution")
 		return SolutionResult.HALF_RIGHT
 
 func print_case():
