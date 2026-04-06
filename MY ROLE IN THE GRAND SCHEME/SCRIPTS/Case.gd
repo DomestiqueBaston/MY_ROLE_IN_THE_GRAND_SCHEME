@@ -992,6 +992,9 @@ func start():
 func pause():
 	_status = Status.PAUSED
 
+func close():
+	_status = Status.DONE
+
 ##
 ## Updates the apparent roles of NPCs based on the guilt/proof links that have
 ## been created by the player. Also updates the "evidence" tag of objects,

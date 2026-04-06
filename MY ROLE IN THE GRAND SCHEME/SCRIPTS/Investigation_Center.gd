@@ -114,6 +114,7 @@ func _on_ok_pressed():
 		if case != GameState.get_current_case():
 			_case_changed = true
 			GameState.set_current_case(case_index)
+			GameState.add_new_case()
 	done.emit()
 
 func has_case_changed() -> bool:

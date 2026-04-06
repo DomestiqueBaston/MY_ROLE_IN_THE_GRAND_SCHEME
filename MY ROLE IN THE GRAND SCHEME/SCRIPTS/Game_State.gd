@@ -230,9 +230,12 @@ func start_game():
 
 	cases.clear()
 	for i in 5:
-		cases.append(Case.generate())
+		add_new_case()
 
 	player.start_game()
+
+func add_new_case():
+	cases.append(Case.generate())
 
 func _reset_interaction():
 	_current_interaction = InteractionType.NONE
@@ -416,19 +419,19 @@ func _new_day():
 	# increment the health of NPCs in active cases, and check whether they have
 	# expired
 
-	var expired_cases: Array[Case]
+	var expired_cases = false
 
-	for case in cases:
+	for index in cases.size():
+		var case = cases[index]
 		if case.get_status() in [Case.Status.ACTIVE, Case.Status.PAUSED]:
 			if case.is_expired():
-				expired_cases.append(case)
+				_close_case(index)
+				expired_cases = true
 			else:
 				for npc in case.get_all_npcs():
 					npc.new_day()
 
 	if expired_cases:
-		for case in expired_cases:
-			GameState.delete_case(GameState.find_case(case))
 		await Globals.dialog_overlay.show_case_expired()
 
 	# things that happen to the player every morning
@@ -1521,7 +1524,7 @@ func _find_next_case() -> int:
 	var days_left = -1
 	for index in cases.size():
 		var case = cases[index]
-		if case._status == Case.Status.PAUSED:
+		if case.get_status() == Case.Status.PAUSED:
 			var d = case.get_days_left()
 			if next_case < 0 or days_left > d:
 				next_case = index
@@ -1529,26 +1532,25 @@ func _find_next_case() -> int:
 	return next_case
 
 ##
-## Deletes the current case, if there is one, and replaces it with the paused
+## Closes the current case, if there is one, and replaces it with the paused
 ## case which will expire next (if there are any).
 ##
-func delete_current_case():
+func close_current_case():
 	if _current_case_index >= 0:
-		cases.remove_at(_current_case_index)
-		_current_case_index = -1
+		var index = _current_case_index
+		set_current_case(-1)
+		cases[index].close()
 		set_current_case(_find_next_case())
 
-##
-## Deletes the given case. If the index given is that of the current case, this
-## is equivalent to calling delete_current_case().
-##
-func delete_case(index: int):
-	if _current_case_index == index:
-		delete_current_case()
+#
+# Closes the given case. If the index given is that of the current case, this
+# is equivalent to calling close_current_case().
+#
+func _close_case(index: int):
+	if index == _current_case_index:
+		close_current_case()
 	else:
-		cases.remove_at(index)
-		if _current_case_index > index:
-			_current_case_index -= 1
+		cases[index].close()
 		save_game()
 
 ##
