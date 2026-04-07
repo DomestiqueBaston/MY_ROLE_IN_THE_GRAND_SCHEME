@@ -1058,8 +1058,8 @@ func update_npc_roles():
 				if card1.actual_role != NpcCard.NpcRole.VICTIM:
 					card1.apparent_role = NpcCard.NpcRole.ACCOMPLICE
 
-	# objects that linked to both a culprit and to a victim or an accomplice are
-	# labeled as evidence
+	# objects that are linked to both a victim and to a culprit or an accomplice
+	# are labeled as evidence
 
 	for object_array in [evidence, other_objects]:
 		for obj in object_array:
