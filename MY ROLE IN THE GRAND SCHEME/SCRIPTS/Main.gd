@@ -104,10 +104,10 @@ func _ready():
 		_handle_dialogue_submenu.bind(dialogue_submenu))
 	
 	top_bar.show_deadlines.connect(Globals.dialog_overlay.show_case_deadlines)
-	top_bar.validate_case.connect(_validate_case)
-	top_bar.abandon_case.connect(_abandon_case)
-	top_bar.manage_cases.connect(_manage_cases)
-	top_bar.manage_cards.connect(_manage_cards)
+	top_bar.validate_case.connect(GameState.validate_case)
+	top_bar.abandon_case.connect(GameState.abandon_case)
+	top_bar.manage_cases.connect(GameState.manage_cases)
+	top_bar.manage_cards.connect(GameState.manage_cards)
 	top_bar.settings.connect(func(): settings.emit())
 	top_bar.quit.connect(func(): quit.emit())
 	
@@ -1061,31 +1061,3 @@ func _update_info_box():
 			info_box.show_location(
 				GameState.get_player_location(),
 				GameState.get_player_location_card())
-
-func _validate_case():
-	var case = GameState.get_current_case()
-	if case == null:
-		return
-	var _result: Case.SolutionResult = case.check_solution()
-	# TODO: rewards, message, etc.
-
-func _abandon_case():
-	if (await GameState.move_player_to(GameState.PlayerLocation.INVESTIGATION_CENTER)
-		and (GameState.player.health <= 0) or GameState.get_current_case() == null):
-		return
-	var fee = GameState.get_current_case().get_abandon_fee()
-	if await Globals.dialog_overlay.abandon_case(fee):
-		GameState.player.money -= fee
-		GameState.close_current_case()
-		if GameState.get_current_case() == null:
-			await GameState.visit_investigation_center()
-
-func _manage_cases():
-	if (not await GameState.move_player_to(GameState.PlayerLocation.OFFICE)
-		or GameState.player.health > 0):
-		if await Globals.dialog_overlay.manage_cases():
-			GameState.save_game()
-
-func _manage_cards():
-	if await Globals.dialog_overlay.manage_cards():
-		GameState.save_game()

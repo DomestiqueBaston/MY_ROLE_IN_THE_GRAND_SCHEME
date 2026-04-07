@@ -434,6 +434,27 @@ func clear_discard_cards():
 	_discard_cards.clear()
 
 ##
+## Awards the player some number of new cards, of any type, and which he does
+## not already have. The cards are added to his "discard" deck, so that he can
+## decide later which he wants to keep and which he does not.
+##
+func award_new_cards(count: int):
+	for i in count:
+		match randi() % 4:
+			0:
+				var id = _pick_random_abstract_card()
+				_discard_cards.append(AbstractCard.create_card(id))
+			1:
+				var id = _pick_random_combat_card(true, true)
+				_discard_cards.append(CombatCard.create_card(id))
+			2:
+				var id = _pick_random_dialogue_card()
+				_discard_cards.append(DialogueCard.create_card(id))
+			3:
+				var id = _pick_random_investigation_card(true, true, true)
+				_discard_cards.append(InvestigationCard.create_card(id))
+
+##
 ## Picks 5 abstract and/or investigation cards at random for an investigation,
 ## ensuring that there are no duplicates with the player's "mastery" cards, and
 ## puts them in the player's "fallback" deck. Any cards already in the fallback

@@ -2138,6 +2138,104 @@ func _reveal_card(card: Card):
 			if partner and partner.reveal_status != Card.RevealStatus.HIDDEN:
 				case.create_link(card, partner, Link.Type.SPOUSE, true, true)
 
+##
+## Takes the player to the investigation center, where his solution to the
+## current case is validated or invalidated.
+##
+## Note that this is a coroutine to be awaited, and on return the player may
+## have died, or may no longer have a current case.
+##
+func validate_case():
+	if (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
+		and (player.health <= 0) or get_current_case() == null):
+		return
+
+	var case = get_current_case()
+	var result: Case.SolutionResult = case.check_solution()
+	var money_won: int = 0
+	var cards_won: int = 0
+
+	match result:
+		Case.SolutionResult.WRONG:
+			if player.emotion == 0:
+				player.emotion = -1
+			else:
+				player.improve_emotion(-1)
+			match randi() % 3:
+				0:
+					player.health -= 1
+				1:
+					player.mental -= 1
+				2:
+					player.physical -= 1
+
+		Case.SolutionResult.HALF_RIGHT:
+			money_won = roundi(100 * case.get_difficulty() * randf_range(0.9, 1.1))
+			cards_won = roundi((case.get_difficulty() + 1) * 0.5)
+			player.improve_emotion(1)
+			player.improve_addiction(1)
+			player.wanted -= 1
+			player.money += money_won
+
+		Case.SolutionResult.RIGHT:
+			money_won = roundi(100 * case.get_difficulty() * randf_range(0.9, 1.1))
+			cards_won = case.get_difficulty() + 1
+			player.emotion = 0
+			player.addiction = 0
+			player.wanted = 0
+			player.money += money_won
+
+	await Globals.dialog_overlay.show_case_solved(result, money_won, cards_won)
+
+	if cards_won > 0:
+		player.award_new_cards(cards_won)
+		await manage_cards()
+
+	close_current_case()
+	if get_current_case() == null:
+		await visit_investigation_center()
+
+##
+## Takes the player to the investigation center, where he is given the option to
+## pay a fee and abandon his current case, if he has one, and if it is not too
+## late.
+##
+## Note that this is a coroutine to be awaited, and on return the player may
+## have died, or may no longer have a current case.
+##
+func abandon_case():
+	if (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
+		and (player.health <= 0) or get_current_case() == null):
+		return
+	var fee = get_current_case().get_abandon_fee()
+	if await Globals.dialog_overlay.abandon_case(fee):
+		player.money -= fee
+		close_current_case()
+		if get_current_case() == null:
+			await visit_investigation_center()
+
+##
+## Takes the player to the office to manage his cases, and possibly switch to a
+## previously paused case.
+##
+## Note that this is a coroutine to be awaited, and on return the player may
+## have died, or may no longer have a current case.
+##
+func manage_cases():
+	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+		if await Globals.dialog_overlay.manage_cases():
+			save_game()
+
+##
+## Allows the player to manage his cards, potentially keeping newly earned cards
+## and discarding others.
+##
+## Note that this is a coroutine to be awaited.
+##
+func manage_cards():
+	if await Globals.dialog_overlay.manage_cards():
+		save_game()
+
 #
 # Saves the visual state of all object, location and NPC cards that are visible
 # to the player. This is done before switching from the main scene to the

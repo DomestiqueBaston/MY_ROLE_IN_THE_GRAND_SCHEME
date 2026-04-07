@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=240 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -53,6 +53,7 @@
 [ext_resource type="Script" uid="uid://cg8d08ap6qvog" path="res://SCRIPTS/Give_Up_Case_Buttons.gd" id="47_qmu3t"]
 [ext_resource type="BitMap" uid="uid://bm6gwym070hpa" path="res://GRAPHICS/SHORT_EVENT/Case_2_Mask.png" id="48_pf81c"]
 [ext_resource type="AudioStream" uid="uid://gaoc58dislyn" path="res://SOUND/MISC/Wooden_Drawer.ogg" id="49_7vfi6"]
+[ext_resource type="Script" uid="uid://cddx0i32wllsi" path="res://SCRIPTS/Income.gd" id="49_psfuj"]
 [ext_resource type="Texture2D" uid="uid://wwiuu1o7rv8d" path="res://GRAPHICS/SHORT_EVENT/CellPhone_BG.png" id="50_cbb3s"]
 [ext_resource type="Texture2D" uid="uid://5gxa8b1vcj0n" path="res://GRAPHICS/SHORT_EVENT/CellPhone_Blinking_Button.png" id="51_ysja1"]
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/CellPhone_Theme.tres" id="52_8x3ap"]
@@ -1205,6 +1206,7 @@ alignment = 0
 
 [node name="Income_Start" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("49_psfuj")
 
 [node name="Income_Start_BG" type="Sprite2D" parent="Overlays/Income_Start"]
 position = Vector2(200, 25)
