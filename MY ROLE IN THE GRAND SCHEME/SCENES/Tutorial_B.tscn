@@ -370,9 +370,9 @@ metadata/_edit_lock_ = true
 
 [node name="Culprit_Accomplice_Etc" type="ColorRect" parent="Tuto_02"]
 offset_left = 463.0
-offset_top = 38.0
+offset_top = 41.0
 offset_right = 608.0
-offset_bottom = 181.0
+offset_bottom = 180.0
 theme = ExtResource("4_dg5q6")
 color = Color(1, 0.8000001, 0, 0.5882353)
 
@@ -404,8 +404,8 @@ text = "How to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]establ
 
 [color=#ffffff]-[/color] A [color=#ff1c18]Culprit[/color] is [color=#ff8864]linked[/color] to a [color=#ff1c18]Victim[/color].
 [color=#ffffff]-[/color] An [color=#ff1c18]Accomplice[/color] is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color].
-[color=#ffffff]-[/color] A [color=#ff1c18]Witness[/color] is [color=#ff8864]linked[/color] to [color=#ff1c18]another Link[/color].
-[color=#ffffff]-[/color] An [color=#ff1c18]Evidence[/color] (Object) is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color]."
+[color=#ffffff]-[/color] An [color=#ff1c18]Evidence[/color] (Object) is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color] or an
+[color=#ff1c18]Accomplice[/color] ."
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
