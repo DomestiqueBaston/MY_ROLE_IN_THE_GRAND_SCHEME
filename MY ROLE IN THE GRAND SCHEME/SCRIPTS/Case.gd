@@ -1004,8 +1004,7 @@ func close():
 ##
 ## Updates the apparent roles of NPCs based on the guilt/proof links that have
 ## been created by the player. Also updates the "evidence" tag of objects,
-## depending on whether or not they are linked to a victim and to a culprit or
-## an accomplice.
+## depending on whether or not they are linked to a culprit or an accomplice.
 ##
 ## Call this after the player creates, modifies or removes any guilt/proof
 ## links.
@@ -1058,24 +1057,17 @@ func update_npc_roles():
 				if card1.actual_role != NpcCard.NpcRole.VICTIM:
 					card1.apparent_role = NpcCard.NpcRole.ACCOMPLICE
 
-	# objects that are linked to both a victim and to a culprit or an accomplice
-	# are labeled as evidence
+	# objects that are linked to a culprit or to an accomplice are labeled as
+	# evidence
 
 	for object_array in [evidence, other_objects]:
 		for obj in object_array:
 			var is_evidence = false
-			var others = obj.find_linked_cards(Link.Type.GUILT)
-			if others.size() > 1:
-				var victim_count = 0
-				var bad_guy_count = 0
-				for card in others:
-					if card is NpcCard:
-						match card.apparent_role:
-							NpcCard.NpcRole.VICTIM:
-								victim_count += 1
-							NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE:
-								bad_guy_count += 1
-				is_evidence = victim_count > 0 and bad_guy_count > 0
+			for card in obj.find_linked_cards(Link.Type.GUILT):
+				if card is NpcCard and card.apparent_role in [
+					NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE
+				]:
+					is_evidence = true
 			obj.is_object_evidence = is_evidence
 
 ##
