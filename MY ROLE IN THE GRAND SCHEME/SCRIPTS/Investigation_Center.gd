@@ -29,15 +29,18 @@ func _ready():
 
 func populate():
 	_option_button.clear()
-	for case: Case in GameState.cases:
-		_option_button.add_item(case.get_random_name())
+	for case_index in GameState.cases.size():
+		var case: Case = GameState.cases[case_index]
+		if case.get_status() == Case.Status.UNASSIGNED:
+			_option_button.add_item(case.get_random_name(), case_index)
 	_option_button.add_separator("Ready for a mess? Pick one and dive in...")
 	_option_button.selected = _option_button.item_count - 1
 	_ok_button.disabled = true
 	_info.hide()
 
-func _on_item_selected(index: int):
-	var case: Case = GameState.cases[index]
+func _on_item_selected(idx: int):
+	var case_index = _option_button.get_item_id(idx)
+	var case: Case = GameState.cases[case_index]
 	var can_pick: bool = false
 
 	_id.text = case.get_case_id()

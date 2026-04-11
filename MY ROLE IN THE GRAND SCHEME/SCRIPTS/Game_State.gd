@@ -419,23 +419,28 @@ func _new_day():
 	# increment the health of NPCs in active cases, and check whether they have
 	# expired
 
-	var expired_cases = false
+	var expired_cases: Array[int]
 
 	for index in cases.size():
 		var case = cases[index]
 		if case.get_status() in [Case.Status.ACTIVE, Case.Status.PAUSED]:
 			if case.is_expired():
-				_close_case(index)
 				if player.emotion == 0:
 					player.emotion = -1
 				else:
 					player.improve_emotion(-1)
-				expired_cases = true
+				# expired case indexes are stored in DECREASING order to
+				# simplify their deletion below
+				expired_cases.insert(0, index)
 			else:
 				for npc in case.get_all_npcs():
 					npc.new_day()
 
 	if expired_cases:
+		# closed cases are deleted, changing the indexes of the cases following
+		# them in the list, but we stored indexes in decreasing order above
+		for index in expired_cases:
+			_close_case(index)
 		await Globals.dialog_overlay.show_case_expired()
 
 	# things that happen to the player every morning
@@ -1535,27 +1540,31 @@ func _find_next_case() -> int:
 				days_left = d
 	return next_case
 
-##
-## Closes the current case, if there is one, and replaces it with the paused
-## case which will expire next (if there are any).
-##
-func close_current_case():
+#
+# Closes the current case, if there is one.
+#
+func _close_current_case():
 	if _current_case_index >= 0:
-		var index = _current_case_index
-		set_current_case(-1)
-		cases[index].close()
-		set_current_case(_find_next_case())
+		_close_case(_current_case_index)
 
 #
-# Closes the given case. If the index given is that of the current case, this
-# is equivalent to calling close_current_case().
+# Closes the given case. If the index given is that of the current case, the
+# paused case which will expire next is made the current case.
 #
 func _close_case(index: int):
 	if index == _current_case_index:
-		close_current_case()
+		set_current_case(-1)
+		_delete_case(index)
+		set_current_case(_find_next_case())
 	else:
-		cases[index].close()
-		save_game()
+		_delete_case(index)
+	save_game()
+
+func _delete_case(index: int):
+	cases[index].close()
+	cases.remove_at(index)
+	if _current_case_index > index:
+		_current_case_index -= 1
 
 ##
 ## Returns the index in the case list of the given case.
@@ -2191,7 +2200,7 @@ func validate_case():
 		player.award_new_cards(cards_won)
 		await manage_cards()
 
-	close_current_case()
+	_close_current_case()
 	if get_current_case() == null:
 		await visit_investigation_center()
 
@@ -2210,7 +2219,7 @@ func abandon_case():
 	var fee = get_current_case().get_abandon_fee()
 	if await Globals.dialog_overlay.abandon_case(fee):
 		player.money -= fee
-		close_current_case()
+		_close_current_case()
 		if get_current_case() == null:
 			await visit_investigation_center()
 
