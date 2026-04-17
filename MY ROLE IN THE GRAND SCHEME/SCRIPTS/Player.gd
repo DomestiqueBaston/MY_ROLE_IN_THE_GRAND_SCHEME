@@ -42,6 +42,7 @@ var _last_wake_time: int
 var _last_wanted_change: int
 var _sleep_bonus_malus: int
 var _in_jail_or_bed: bool
+var _random_sms_count: int
 
 func reset():
 	_signal_pause += 1
@@ -70,6 +71,7 @@ func reset():
 	_last_wanted_change = 0
 	_sleep_bonus_malus = 0
 	_in_jail_or_bed = false
+	_random_sms_count = 0
 	_signal_pause -= 1
 
 func start_game():
@@ -95,6 +97,7 @@ func start_game():
 	_last_wanted_change = 0
 	_sleep_bonus_malus = 0
 	_in_jail_or_bed = false
+	_random_sms_count = 0
 
 	# all players start with one card from each category
 
@@ -713,17 +716,18 @@ func new_day():
 
 ##
 ## Specifies that the player has been sent to prison. Until he is released,
-## nights of sleep will have no effect on his wanted level or on his emotions.
+## nights of sleep will have no effect on his wanted level or on his emotions,
+## and he will not see any random text messages.
 ##
 func begin_jail_term():
 	_in_jail_or_bed = true
 
 ##
 ## Specifies that the player has been released from prison. It is assumed he has
-## just gotten 8 hours of sleep.
+## just gotten 8 hours of sleep. Note that this is a coroutine to be awaited.
 ##
 func end_jail_term():
-	_end_jail_or_forced_rest(8)
+	await _end_jail_or_forced_rest(8)
 
 ##
 ## Specifies that the player has been sent to bed to rest, which has the same
@@ -734,10 +738,11 @@ func begin_forced_rest():
 	await sleep(12)
 
 ##
-## Specifies that the player is allowed out of bed again.
+## Specifies that the player is allowed out of bed again. Note that this is a
+## coroutine to be awaited.
 ##
 func end_forced_rest():
-	_end_jail_or_forced_rest(12)
+	await _end_jail_or_forced_rest(12)
 
 func _end_jail_or_forced_rest(sleep_time: int):
 	_in_jail_or_bed = false
@@ -745,6 +750,19 @@ func _end_jail_or_forced_rest(sleep_time: int):
 	_last_wake_time = GameState.get_time()
 	_last_sleep_time = _last_wake_time - sleep_time
 	_sleep_bonus_malus = 0
+	while _random_sms_count > 0:
+		await Globals.dialog_overlay.send_random_sms()
+		_random_sms_count -= 1
+
+##
+## Sends the player a random text message. If he has been sent to jail or to
+## bed, he will not see the message until he is released or wakes up.
+##
+func receive_random_sms():
+	if _in_jail_or_bed:
+		_random_sms_count += 1
+	else:
+		await Globals.dialog_overlay.send_random_sms()
 
 ##
 ## Returns a bonus/malus to be added to dice rolls, depending on the player's

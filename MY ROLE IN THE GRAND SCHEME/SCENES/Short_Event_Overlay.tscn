@@ -1,4 +1,4 @@
-[gd_scene load_steps=240 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=239 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
@@ -40,6 +40,7 @@
 [ext_resource type="ButtonGroup" uid="uid://b28iyr3u1mwer" path="res://UI/Case_Management_group_01_02_03_04.tres" id="36_gfusj"]
 [ext_resource type="Texture2D" uid="uid://c6pea0rm8v7xv" path="res://GRAPHICS/SHORT_EVENT/Case_3_Pressed.png" id="37_sfan1"]
 [ext_resource type="Texture2D" uid="uid://218whlb6p2ll" path="res://GRAPHICS/SHORT_EVENT/Case_3_Hover.png" id="38_s8rvk"]
+[ext_resource type="Script" uid="uid://cgxmi78hgr5fh" path="res://SCRIPTS/Cellphone.gd" id="39_jo5q1"]
 [ext_resource type="BitMap" uid="uid://c6xmivbe78fph" path="res://GRAPHICS/SHORT_EVENT/Case_3_Mask.png" id="39_ojkpy"]
 [ext_resource type="Texture2D" uid="uid://bex3l5w8anmvy" path="res://GRAPHICS/SHORT_EVENT/Case_4_Pressed.png" id="40_vprm5"]
 [ext_resource type="Texture2D" uid="uid://decf7ye0m55mr" path="res://GRAPHICS/SHORT_EVENT/Case_4_Hover.png" id="41_llwhl"]
@@ -58,9 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://5gxa8b1vcj0n" path="res://GRAPHICS/SHORT_EVENT/CellPhone_Blinking_Button.png" id="51_ysja1"]
 [ext_resource type="Theme" uid="uid://scwcuoo1mgcn" path="res://UI/CellPhone_Theme.tres" id="52_8x3ap"]
 [ext_resource type="Theme" uid="uid://wwkr2f8y2ykq" path="res://UI/Interaction_Result_Theme.tres" id="52_lkigo"]
-[ext_resource type="Script" uid="uid://cl0khdv6ddxxw" path="res://SCRIPTS/Cell_Phone_Message.gd" id="53_gfusj"]
 [ext_resource type="Script" uid="uid://bqvjros5fyxio" path="res://SCRIPTS/Case_Summaries.gd" id="53_th1i4"]
-[ext_resource type="Script" uid="uid://dew50iqkcfkc0" path="res://SCRIPTS/Cell_Phone_Button.gd" id="54_sfan1"]
 [ext_resource type="Texture2D" uid="uid://bmt6odimg2n26" path="res://GRAPHICS/SHORT_EVENT/Interaction_Result_BG.png" id="55_qmu3t"]
 [ext_resource type="FontFile" uid="uid://be1apdr471bag" path="res://UI/monobit_edit.ttf" id="55_s8rvk"]
 [ext_resource type="Script" uid="uid://dqk3manj87jh5" path="res://SCRIPTS/Interaction_Result.gd" id="55_th1i4"]
@@ -902,6 +901,7 @@ bus = &"UI"
 
 [node name="Cellphone" type="Node2D" parent="Overlays"]
 visible = false
+script = ExtResource("39_jo5q1")
 
 [node name="Cellphone_BG" type="Sprite2D" parent="Overlays/Cellphone"]
 position = Vector2(211, 30)
@@ -929,7 +929,6 @@ text = "Message..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-script = ExtResource("53_gfusj")
 
 [node name="Buttons" type="Control" parent="Overlays/Cellphone"]
 layout_mode = 3
@@ -939,10 +938,8 @@ offset_top = 20.0
 offset_right = 620.0
 offset_bottom = 340.0
 theme = ExtResource("52_8x3ap")
-script = ExtResource("54_sfan1")
 
 [node name="Ok" type="Button" parent="Overlays/Cellphone/Buttons"]
-visible = false
 modulate = Color(1, 1, 1, 0.196078)
 layout_mode = 0
 offset_left = 294.0
@@ -972,7 +969,6 @@ root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_pfg73")
 }
-autoplay = "Blinking"
 
 [node name="Confirmation" type="Node2D" parent="Overlays"]
 visible = false

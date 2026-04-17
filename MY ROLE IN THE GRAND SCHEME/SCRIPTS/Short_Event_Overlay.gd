@@ -704,3 +704,14 @@ func show_case_solved(result: Case.SolutionResult, money: int = 0, cards: int = 
 	await _disappear()
 	$Overlays/Income_Start.hide()
 	$Overlays/Income_Start.clear(result)
+
+##
+## Displays a random text message on the player's cell phone.
+##
+func send_random_sms():
+	$Overlays/Cellphone.send_random_message()
+	$Overlays/Cellphone.show()
+	await _appear()
+	await $Overlays/Cellphone.done
+	await _disappear()
+	$Overlays/Cellphone.hide()

@@ -153,6 +153,9 @@ const _start_time = 8
 # hours passed since the first Monday at midnight
 var _hour: int
 
+# time when the player will be sent a random SMS, if he is on a case
+var _random_sms_time: int
+
 # the last day the player took on a new case at the investigation center
 var _last_new_case_day: int
 
@@ -218,6 +221,7 @@ func _ready():
 
 func start_game():
 	_hour = _start_time
+	_random_sms_time = -1
 	_last_new_case_day = -1
 	_last_doctor_day = -1
 	_last_dealer_day = -1
@@ -307,7 +311,8 @@ func get_time_slot(travel_time: int = 0) -> TimeSlot:
 func _increment_time(hours: int, check_player_status: bool):
 	while hours > 0:
 
-		# move forward at most to the beginning of the next working day (8 AM)
+		# move forward at most to the beginning of the next working day (8 AM),
+		# or to the time when the player is to receive a random SMS
 
 		var to_next_working_day
 		var now = get_hour()
@@ -316,8 +321,19 @@ func _increment_time(hours: int, check_player_status: bool):
 		else:
 			to_next_working_day = 32 - now
 		var delta = mini(hours, to_next_working_day)
+
+		if _random_sms_time >= 0:
+			delta = mini(hours, _random_sms_time - _hour)
+
 		_hour += delta
 		hours -= delta
+
+		# time for a random SMS?
+
+		if _random_sms_time >= _hour:
+			if _current_case_index >= 0:
+				await player.receive_random_sms()
+			_random_sms_time = -1
 
 		# stuff to do at the start of each working day
 
@@ -376,7 +392,7 @@ func _send_player_to_bed():
 
 	player.begin_forced_rest()
 	await _increment_time(duration, false)
-	player.end_forced_rest()
+	await player.end_forced_rest()
 
 	save_game()
 
@@ -396,7 +412,7 @@ func _send_player_to_prison():
 
 	player.begin_jail_term()
 	await _increment_time(duration, false)
-	player.end_jail_term()
+	await player.end_jail_term()
 
 	save_game()
 
@@ -442,6 +458,16 @@ func _new_day():
 		for index in expired_cases:
 			_close_case(index)
 		await Globals.dialog_overlay.show_case_expired()
+
+	# every day, there is 1 chance in 10 that the player will receive a random
+	# SMS at a random time in the next 16 hours
+
+	var smsrand = randi()
+	if smsrand % 10 == 0:
+		@warning_ignore("integer_division")
+		_random_sms_time = _hour + ((smsrand / 10) % 17)
+	else:
+		_random_sms_time = -1
 
 	# things that happen to the player every morning
 
@@ -2301,6 +2327,7 @@ func assign(other: GameState):
 	player = other.player
 	cases = other.cases
 	_hour = other._hour
+	_random_sms_time = other._random_sms_time
 	_last_new_case_day = other._last_new_case_day
 	_last_doctor_day = other._last_doctor_day
 	_last_dealer_day = other._last_dealer_day
@@ -2349,6 +2376,7 @@ func get_json_dict():
 	var dict = {
 		"player": player.get_unique_id(),
 		"hour": _hour,
+		"random_sms_time": _random_sms_time,
 		"last_new_case_day": _last_new_case_day,
 		"last_doctor_day": _last_doctor_day,
 		"last_dealer_day": _last_dealer_day,
@@ -2386,6 +2414,7 @@ func get_json_dict():
 #
 func restore(dict, catalog):
 	_hour = dict.hour
+	_random_sms_time = dict.get("random_sms_time", -1)
 	_last_new_case_day = dict.get("last_new_case_day", -1)
 	_last_doctor_day = dict.get("last_doctor_day", -1)
 	_last_dealer_day = dict.get("last_dealer_day", -1)
