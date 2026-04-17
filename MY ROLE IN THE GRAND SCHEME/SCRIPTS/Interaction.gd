@@ -100,6 +100,9 @@ var _interaction_type: GameState.InteractionType = GameState.InteractionType.NON
 # which card to show info about when the mouse is not over a card
 var _default_info_card: Card
 
+# card whose info is displayed in the info box until further notice
+var _blocked_info_card: Card
+
 # only one of these card types can be played in a dialogue interaction
 const _dialog_question_types = [
 	Card.CardType.OBJECT, Card.CardType.LOCATION, Card.CardType.NPC
@@ -172,19 +175,14 @@ func _mouse_entered_card(card: Card):
 			_current_card.set_highlighted(false)
 		card.set_highlighted(true)
 		_current_card = card
-		if info_box:
-			info_box.show_card(_current_card)
+		_update_info_box()
 
 func _mouse_exited_card(card: Card):
 	# if this is a sub-scene, ignore signals from other cards in the scene
 	if _drag_state == DragState.NONE and card == _current_card:
 		card.set_highlighted(false)
 		_current_card = null
-		if info_box:
-			if _default_info_card:
-				info_box.show_card(_default_info_card)
-			else:
-				info_box.clear()
+		_update_info_box()
 
 func _click_on_card(global_pos: Vector2, card: Card):
 	# if this is a sub-scene, ignore signals from other cards in the scene
@@ -192,6 +190,11 @@ func _click_on_card(global_pos: Vector2, card: Card):
 		_mouse_entered_card(card)
 		_drag_state = DragState.CLICKED
 		_drag_click_pos = global_pos
+		if card == _blocked_info_card:
+			_unblock_info_box()
+		else:
+			_unblock_info_box()
+			_block_info_box()
 
 func _start_drag() -> bool:
 	_drag_local_init_pos = _current_card.position
@@ -211,6 +214,10 @@ func _start_drag() -> bool:
 	var pile = _cards_played.get(_current_card, _current_card.get_parent())
 	_highlighted_overlay = _area_overlays[pile]
 	_highlighted_overlay.show()
+
+	# no need to block the info box to show information about the dragged card
+
+	_unblock_info_box()
 
 	return true
 
@@ -543,10 +550,10 @@ func _start_interaction(type: GameState.InteractionType, card: Card = null):
 				tv_screen.set_npc(card)
 			elif card is LocationCard:
 				tv_screen.set_location(card)
-			if info_box:
-				_default_info_card = card
-				info_box.show_card(card)
 		tv_screen.set_interaction_type(type)
+	if info_box:
+		_default_info_card = card
+		_update_info_box()
 
 #
 # Resets the scene and emits the appropriate signal when an interaction 
@@ -556,6 +563,7 @@ func _start_interaction(type: GameState.InteractionType, card: Card = null):
 func _end_interaction():
 	var type = _interaction_type
 	_interaction_type = GameState.InteractionType.NONE
+	_unblock_info_box()
 	_default_info_card = null
 	_current_card = null
 	_detach_cards()
@@ -566,3 +574,38 @@ func _end_interaction():
 			run_away_done.emit()
 		_:
 			done.emit()
+
+#
+# Blocks the info box so that it shows information about whichever card is
+# current now, until _unblock_info_box() is called.
+#
+func _block_info_box():
+	if info_box and _current_card and _current_card != _blocked_info_card:
+		_blocked_info_card = _current_card
+		_blocked_info_card.set_locked(true)
+		Globals.lock_sound.play()
+
+#
+# Unblocks the info box, if it was previously blocked by a call to
+# _block_info_box().
+#
+func _unblock_info_box():
+	if info_box and _blocked_info_card:
+		_blocked_info_card.set_locked(false)
+		_blocked_info_card = null
+		_update_info_box()
+		Globals.unlock_sound.play()
+
+#
+# Updates the contents of the info box with info about the current card, if
+# there is one, or about the default info card, if not. Does nothing if the
+# info box has been blocked by a call to _block_info_box().
+#
+func _update_info_box():
+	if info_box and not _blocked_info_card:
+		if _current_card:
+			info_box.show_card(_current_card)
+		elif _default_info_card:
+			info_box.show_card(_default_info_card)
+		else:
+			info_box.clear()
