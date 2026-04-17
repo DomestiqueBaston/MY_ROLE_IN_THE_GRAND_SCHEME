@@ -459,13 +459,13 @@ func _new_day():
 			_close_case(index)
 		await Globals.dialog_overlay.show_case_expired()
 
-	# every day, there is 1 chance in 10 that the player will receive a random
+	# every day, there is 1 chance in 5 that the player will receive a random
 	# SMS at a random time in the next 16 hours
 
 	var smsrand = randi()
-	if smsrand % 10 == 0:
+	if smsrand % 5 == 0:
 		@warning_ignore("integer_division")
-		_random_sms_time = _hour + ((smsrand / 10) % 17)
+		_random_sms_time = _hour + ((smsrand / 5) % 17)
 	else:
 		_random_sms_time = -1
 
