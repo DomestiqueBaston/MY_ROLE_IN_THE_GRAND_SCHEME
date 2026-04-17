@@ -808,7 +808,7 @@ Résolution des enquêtes, gains et implications
 	- À la suite d’une enquête réussie, l’écran Income_Overlay.tscn s’affiche avec les gains. Ensuite, on enchaîne directement sur l’écran Card_Management_Overlay.tscn pour modifier le deck (si besoin).
 
 Autres :
-	- 1 fois par jour, à une heure aléatoire, le joueur aura 10% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) qui ne sert à rien sinon faire monter le niveau de Paranoïa (voir déclencher la Paranoïa) ! Pas de SMS hors enquête en cours ou enquête niveau 0. On dit que les sms n’arrivent pas lorsque le joueur dort ! :-) 
+	- 1 fois par jour, à une heure aléatoire, le joueur aura 20% de chance de recevoir un SMS anonyme aléatoire (SMS.json dans Cellphone_Overlay.tscn) qui ne sert à rien sinon faire monter le niveau de Paranoïa (voir déclencher la Paranoïa) ! Pas de SMS hors enquête en cours ou enquête niveau 0. On dit que les sms n’arrivent pas lorsque le joueur dort ! :-) 
 	- Dans l’enquête finale, à chaque fois que le joueur entrera dans un lieu dans lequel il va découvrir des victimes, il recevra un SMS anonyme. Pas d’influence sur la Paranoïa vu qu’il est déjà paranoïaque.
 
 	- Dans les json (je pense à NPC, OBJ, CASE…) on n’aura que des infos vraies. Les fausses sont générées aléatoirement en jeu.

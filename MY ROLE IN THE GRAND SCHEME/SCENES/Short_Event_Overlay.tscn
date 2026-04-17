@@ -1648,29 +1648,27 @@ theme = ExtResource("52_lkigo")
 bbcode_enabled = true
 text = "[center][pulse freq=3.0 color=#ffffff64 ease=-100.0][color=#ff1c18]Deadlines[/color][/pulse][/center]"
 
-[node name="Summary_Container" type="VBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk"]
+[node name="Centering_Container" type="PanelContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk"]
+offset_left = -72.0
+offset_top = -98.999985
+offset_right = 82.0
+offset_bottom = 100.0
+size_flags_vertical = 3
+
+[node name="Summary_Container" type="VBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container"]
 custom_minimum_size = Vector2(0, 150)
-anchors_preset = -1
-anchor_left = 0.388
-anchor_top = 0.44200003
-anchor_right = 0.62700003
-anchor_bottom = 0.77500004
-offset_left = -320.32
-offset_top = -258.12
-offset_right = -319.28003
-offset_bottom = -172.99998
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 2
+layout_mode = 2
+size_flags_vertical = 4
 alignment = 1
 
-[node name="Intro" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+[node name="Intro" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container"]
 clip_contents = false
+custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("52_lkigo")
 bbcode_enabled = true
-text = "Here's your [color=#ff1c18]remaining time[/color], because apparently, [color=#ff8864]you need reminders[/color].
+text = "Here's the [color=#ff1c18]remaining time[/color], since apparently, [color=#ff8864]you need reminders[/color].
 
 Whatever. Nobody's expecting much more than a failure from you.
 
@@ -1678,11 +1676,11 @@ Whatever. Nobody's expecting much more than a failure from you.
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Case_1" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+[node name="Case_1" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container"]
 custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 
-[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1"]
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_1"]
 clip_contents = false
 layout_mode = 1
 offset_right = 48.0
@@ -1695,7 +1693,7 @@ text = "- Case [color=#ff8864]#1[/color]:"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1/Case"]
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_1/Case"]
 layout_mode = 0
 offset_top = 11.0
 offset_right = 79.0
@@ -1703,7 +1701,7 @@ offset_bottom = 22.0
 size_flags_horizontal = 2
 theme_override_constants/separation = 0
 
-[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1/Case/Info"]
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_1/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1713,7 +1711,7 @@ text = "   - Days left: "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_1/Case/Info"]
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_1/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
@@ -1725,12 +1723,12 @@ text = "1"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Case_2" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+[node name="Case_2" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container"]
 visible = false
 custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 
-[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2"]
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_2"]
 clip_contents = false
 layout_mode = 1
 offset_right = 49.0
@@ -1743,7 +1741,7 @@ text = "- Case [color=#ff8864]#2[/color]:"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2/Case"]
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_2/Case"]
 layout_mode = 0
 offset_top = 11.0
 offset_right = 79.0
@@ -1751,7 +1749,7 @@ offset_bottom = 22.0
 size_flags_horizontal = 2
 theme_override_constants/separation = 0
 
-[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2/Case/Info"]
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_2/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1761,7 +1759,7 @@ text = "   - Days left: "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_2/Case/Info"]
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_2/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
@@ -1773,12 +1771,12 @@ text = "1"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Case_3" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+[node name="Case_3" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container"]
 visible = false
 custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 
-[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3"]
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_3"]
 clip_contents = false
 layout_mode = 1
 offset_right = 49.0
@@ -1791,7 +1789,7 @@ text = "- Case [color=#ff8864]#3[/color]:"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3/Case"]
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_3/Case"]
 layout_mode = 0
 offset_top = 11.0
 offset_right = 79.0
@@ -1799,7 +1797,7 @@ offset_bottom = 22.0
 size_flags_horizontal = 2
 theme_override_constants/separation = 0
 
-[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3/Case/Info"]
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_3/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1809,7 +1807,7 @@ text = "   - Days left: "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_3/Case/Info"]
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_3/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
@@ -1821,12 +1819,12 @@ text = "1"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Case_4" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container"]
+[node name="Case_4" type="Control" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container"]
 visible = false
 custom_minimum_size = Vector2(0, 27)
 layout_mode = 2
 
-[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4"]
+[node name="Case" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_4"]
 clip_contents = false
 layout_mode = 1
 offset_right = 49.0
@@ -1839,7 +1837,7 @@ text = "- Case [color=#ff8864]#4[/color]:"
 fit_content = true
 autowrap_mode = 0
 
-[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4/Case"]
+[node name="Info" type="HBoxContainer" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_4/Case"]
 layout_mode = 0
 offset_top = 11.0
 offset_right = 79.0
@@ -1847,7 +1845,7 @@ offset_bottom = 22.0
 size_flags_horizontal = 2
 theme_override_constants/separation = 0
 
-[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4/Case/Info"]
+[node name="Days_Left" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_4/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1857,7 +1855,7 @@ text = "   - Days left: "
 fit_content = true
 autowrap_mode = 0
 
-[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container/Case_4/Case/Info"]
+[node name="Number" type="RichTextLabel" parent="Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container/Case_4/Case/Info"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
