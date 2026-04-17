@@ -646,7 +646,7 @@ func show_case_deadlines():
 	if cases.is_empty():
 		return
 
-	var container: Control = $Overlays/Income_Start/Case_Summaries/Chalk/Summary_Container
+	var container: Control = $Overlays/Income_Start/Case_Summaries/Chalk/Centering_Container/Summary_Container
 	for index in 4:
 		var case_control: Control = container.get_node("Case_%d" % (index + 1))
 		if index < cases.size():
