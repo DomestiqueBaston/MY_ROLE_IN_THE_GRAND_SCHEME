@@ -276,10 +276,22 @@ func locate() -> LocationCard:
 
 	var hour = GameState.get_hour()
 
-	# each work day there is 1 chance in 10 that the NPC will change his
-	# schedule and be at alternative location when he normally works
+	# one "roll of the dice" in the range 0-99, and other 50/50 rolls that are
+	# independent of that one
 
-	if (_location_randomness % 10 == 0) and is_work_day():
+	var percent_roll = _location_randomness % 100
+	var roll1 = (_location_randomness & 0x10000) == 0
+	var roll2 = (_location_randomness & 0x20000) == 0
+
+	# each work day there is a 10% chance that the NPC will change his schedule
+	# and be at alternative location when he normally works (20% if he does not
+	# want to be found)
+
+	var harder_to_find = \
+		actual_role == NpcRole.CULPRIT and apparent_role == NpcRole.CULPRIT
+	var hideout_chance = 20 if harder_to_find else 10
+
+	if (percent_roll < hideout_chance) and is_work_day():
 		var at_hideout = false
 
 		# night worker: he is off work all night
@@ -296,7 +308,7 @@ func locate() -> LocationCard:
 						  GameState.TimeSlot.AFTERNOON,
 						  GameState.TimeSlot.EVENING]:
 				if work_shifts & shift:
-					if (_location_randomness % 20) == 0:
+					if roll1:
 						if counter == 0:
 							off_shift = shift
 					else:
@@ -323,26 +335,22 @@ func locate() -> LocationCard:
 	if should_be_at_work():
 		return get_work()
 
-	# 50/50 roll that is independent of the 1 in 10 roll for schedule changes
-
-	@warning_ignore("integer_division")
-	var roll = (((_location_randomness / 10) & 1) == 0)
-
 	# NPCs that don't work the night shift spend either the morning or the
-	# afternoon at their hideout or hangout, and the rest of the time at home
-	# (we know it is not nighttime now because the NPC is not sleeping)
+	# afternoon of their days off at their hideout or hangout, and the rest of
+	# the time at home (we know it is not nighttime now because the NPC is not
+	# sleeping)
 
 	if (work_shifts & GameState.TimeSlot.NIGHT) == 0 and not is_work_day():
 		if hour < 12:
-			return get_home() if roll else _get_alternative_location()
+			return get_home() if roll2 else _get_alternative_location()
 		elif hour < 16:
-			return get_home() if not roll else _get_alternative_location()
-		else:
+			return get_home() if not roll2 else _get_alternative_location()
+		elif not harder_to_find:
 			return get_home()
 
 	# remaining free time: NPC is either at home or at his hideout or hangout
 
-	return get_home() if roll else _get_alternative_location()
+	return get_home() if roll2 else _get_alternative_location()
 
 #
 # Returns an alternative location where the NPC may be found: either his
