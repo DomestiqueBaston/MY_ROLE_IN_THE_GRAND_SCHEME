@@ -449,8 +449,7 @@ func _new_day():
 				# simplify their deletion below
 				expired_cases.insert(0, index)
 			else:
-				for npc in case.get_all_npcs():
-					npc.new_day()
+				case.new_day()
 
 	if expired_cases:
 		# closed cases are deleted, changing the indexes of the cases following
@@ -507,6 +506,14 @@ func get_new_crime() -> String:
 ## the player may have died on return.
 ##
 func pass_one_hour():
+	var case = get_current_case()
+	if case and case.check_minion_attack() and not _player_location in [
+		PlayerLocation.OFFICE, PlayerLocation.PRISON
+	]:
+		print("*** minion attack!")
+	await _pass_one_hour_private()
+
+func _pass_one_hour_private():
 	player.pass_one_hour()
 	await _increment_time(1, true)
 
@@ -559,12 +566,12 @@ func buy_search_warrant():
 
 func pay_debt(debt_index: int):
 	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
-		await pass_one_hour()
+		await _pass_one_hour_private()
 		await player.pay_debt(debt_index)
 
 func use_drugs(doses: int):
 	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
-		await pass_one_hour()
+		await _pass_one_hour_private()
 		await player.use_drugs(doses)
 
 func get_player_drug_price() -> int:
@@ -1619,7 +1626,10 @@ func get_open_cases() -> Array[Case]:
 func move_player_to(location: PlayerLocation, card: LocationCard = null) -> bool:
 	if _player_location == location and _player_location_card == card:
 		return false
-	await pass_one_hour()
+	var case = get_current_case()
+	if case and case.check_minion_attack():
+		print("*** minion attack!")
+	await _pass_one_hour_private()
 	# it is possible that, in the hour that just passed, the current case
 	# expired, in which case the location card may not exist anymore...
 	if card == null or is_instance_valid(card):

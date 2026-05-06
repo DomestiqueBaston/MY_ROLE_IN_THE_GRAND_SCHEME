@@ -485,8 +485,8 @@ func _randomize(case: Case, cat: NpcRole, job_id: String, sex: int):
 	player_reputation = -2 if actual_role == NpcRole.MINION else 0
 
 ##
-## Call this at the start of each new day to update the NPC's health and/or
-## location.
+## Call this at the start of each new day to update the NPC's health and other
+## attributes, the player's reputation with the NPC, etc.
 ##
 func new_day():
 	var yesterday = GameState.get_working_day() - 1

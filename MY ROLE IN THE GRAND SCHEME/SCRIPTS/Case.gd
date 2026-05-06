@@ -41,6 +41,9 @@ var _status: Status = Status.UNASSIGNED
 var _start_day: int = -1
 var _links: Array[Link]
 
+# date/time when a minion is scheduled to attack the player
+var _next_minion_attack: int = -1
+
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
@@ -1010,6 +1013,7 @@ func close():
 ## links.
 ##
 func update_npc_roles():
+	var culprit_id_count_before = _get_identified_culprit_count()
 
 	# start by restoring NPCs whose apparent roles are culprit or accomplice to
 	# their default roles
@@ -1070,6 +1074,22 @@ func update_npc_roles():
 					is_evidence = true
 			obj.is_object_evidence = is_evidence
 
+	# if the player just correctly identified a culprit, sic a minion on him in
+	# the next four hours
+
+	if culprit_id_count_before == 0 and _get_identified_culprit_count() > 0:
+		var now = GameState.get_time()
+		if _next_minion_attack < now or _next_minion_attack >= now + 4:
+			_next_minion_attack = now + 1 + randi() % 3
+
+func _get_identified_culprit_count() -> int:
+	var count = 0
+	for npc in npcs:
+		if (npc.actual_role == NpcCard.NpcRole.CULPRIT
+			and npc.apparent_role == NpcCard.NpcRole.CULPRIT):
+			count += 1
+	return count
+
 ##
 ## Adds initial, visible links between a newly discovered NPC and a location (if
 ## the location is the NPC's place of work, hangout or hideout).
@@ -1078,6 +1098,52 @@ func add_links_between_npc_and_location(npc: NpcCard, location: LocationCard):
 	for type in [Link.Type.WORK, Link.Type.HANGOUT, Link.Type.HIDEOUT]:
 		if location in npc.get_connections(type):
 			create_link(npc, location, type, type == Link.Type.WORK, true)
+
+##
+## Called every morning for as long as the case is active or paused. Whether
+## the case is paused or not, each NPC's new_day() method is called to update
+## his/her attributes. If the case is active, and the player has correctly
+## identified one or more culprits, a minion attack may be scheduled for some
+## time during the day.
+##
+func new_day():
+	for npc in npcs:
+		npc.new_day()
+
+	if _status != Status.ACTIVE:
+		return
+
+	var now = GameState.get_time()
+	if _next_minion_attack < now and _get_identified_culprit_count() > 0:
+		# attack probability = case difficulty * 2% for each time slot
+		var attack_prob = 8 * _difficulty
+		var attack_roll = randi() % 100
+		if attack_roll < attack_prob:
+			# NB. it is assumed that this method is called at 8 AM
+			match attack_roll % 4:
+				0:
+					# morning
+					_next_minion_attack = now + randi() % 4
+				1:
+					# afternoon
+					_next_minion_attack = now + 4 + randi() % 4
+				2:
+					# evening
+					_next_minion_attack = now + 8 + randi() % 4
+				3:
+					# night
+					_next_minion_attack = now + 12 + randi() % 12
+
+##
+## Checks whether a minion is scheduled to attack the player in the next hour.
+## If so, resets the time of the next minion attack and returns true.
+##
+func check_minion_attack() -> bool:
+	var now: int = GameState.get_time()
+	if _next_minion_attack >= now and _next_minion_attack <= now + 1:
+		_next_minion_attack = -1
+		return true
+	return false
 
 ##
 ## Checks whether the player has solved the case, by identifying the motive,
@@ -1249,6 +1315,7 @@ func get_json_dict():
 		"duration": _duration,
 		"status": _status,
 		"start_day": _start_day,
+		"next_minion_attack": _next_minion_attack,
 		"selected_crime": selected_crime,
 		"selected_motive": selected_motive,
 		"is_layout_needed": is_layout_needed,
@@ -1306,6 +1373,7 @@ func restore(dict, catalog):
 	_duration = dict.duration
 	_status = dict.status
 	_start_day = dict.get("start_day", -1)
+	_next_minion_attack = dict.get("next_minion_attack", -1)
 	selected_crime = dict.get("selected_crime", "")
 	selected_motive = dict.get("selected_motive", "")
 	is_layout_needed = dict.get("is_layout_needed", true)
