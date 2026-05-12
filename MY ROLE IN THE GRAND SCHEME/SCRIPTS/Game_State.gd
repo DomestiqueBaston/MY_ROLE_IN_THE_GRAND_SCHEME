@@ -141,7 +141,6 @@ signal died
 ## Signal emitted when the player starts an interaction.
 signal interaction_started
 
-var _combat_data = preload("res://JSON/INTERACTION/Combat.json").data
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 
 # where game state is saved/reloaded
@@ -180,7 +179,8 @@ var _player_location_card: LocationCard
 
 # current interaction
 var _current_interaction: InteractionType = InteractionType.NONE
-var _current_interaction_location: LocationCard
+var _current_interaction_location: PlayerLocation = PlayerLocation.OTHER
+var _current_interaction_location_card: LocationCard
 var _current_interaction_npc: NpcCard
 var _current_interaction_bonus_malus: int
 var _current_interaction_do_not_kill: bool
@@ -243,7 +243,8 @@ func add_new_case():
 
 func _reset_interaction():
 	_current_interaction = InteractionType.NONE
-	_current_interaction_location = null
+	_current_interaction_location = PlayerLocation.OTHER
+	_current_interaction_location_card = null
 	_current_interaction_npc = null
 	_current_interaction_bonus_malus = 0
 	_current_interaction_do_not_kill = false
@@ -510,8 +511,9 @@ func pass_one_hour():
 	if case and case.check_minion_attack() and not _player_location in [
 		PlayerLocation.OFFICE, PlayerLocation.PRISON
 	]:
-		print("*** minion attack!")
-	await _pass_one_hour_private()
+		await start_minion_attack()
+	else:
+		await _pass_one_hour_private()
 
 func _pass_one_hour_private():
 	player.pass_one_hour()
@@ -523,7 +525,7 @@ func _pass_one_hour_private():
 ## be awaited, and also that the player may wake up dead!
 ##
 func sleep(hours: int):
-	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+	if await move_player_to(PlayerLocation.OFFICE) and player.health > 0:
 		await player.sleep(hours)
 		await _increment_time(hours, true)
 
@@ -537,7 +539,7 @@ func can_visit_investigation_center() -> bool:
 	return _is_office_hours(travel_time)
 
 func visit_investigation_center():
-	if not await move_player_to(PlayerLocation.INVESTIGATION_CENTER) or player.health > 0:
+	if await move_player_to(PlayerLocation.INVESTIGATION_CENTER) and player.health > 0:
 		if await Globals.dialog_overlay.open_investigation_center():
 			_last_new_case_day = get_day()
 
@@ -550,7 +552,7 @@ func can_take_new_case() -> bool:
 	return _last_new_case_day < 0 || _last_new_case_day < get_day()
 
 func visit_office():
-	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+	if await move_player_to(PlayerLocation.OFFICE) and player.health > 0:
 		await Globals.dialog_overlay.open_office()
 
 func can_visit_warrant_desk() -> bool:
@@ -558,19 +560,19 @@ func can_visit_warrant_desk() -> bool:
 	return _is_office_hours(travel_time)
 
 func buy_search_warrant():
-	if not await move_player_to(PlayerLocation.WARRANT_DESK) or player.health > 0:
+	if await move_player_to(PlayerLocation.WARRANT_DESK) and player.health > 0:
 		if await Globals.dialog_overlay.buy_search_warrant(warrant_price):
 			player.money -= warrant_price
 			player.has_search_warrant = true
 			save_game()
 
 func pay_debt(debt_index: int):
-	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+	if await move_player_to(PlayerLocation.OFFICE) and player.health > 0:
 		await _pass_one_hour_private()
 		await player.pay_debt(debt_index)
 
 func use_drugs(doses: int):
-	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+	if await move_player_to(PlayerLocation.OFFICE) and player.health > 0:
 		await _pass_one_hour_private()
 		await player.use_drugs(doses)
 
@@ -589,7 +591,7 @@ func can_visit_dealer() -> bool:
 			and _last_dealer_day < get_working_day())
 
 func visit_dealer():
-	if await move_player_to(PlayerLocation.ROWENA) and player.health <= 0:
+	if not (await move_player_to(PlayerLocation.ROWENA) and player.health > 0):
 		return
 
 	var price = get_player_drug_price()
@@ -620,7 +622,7 @@ func can_visit_doctor() -> bool:
 	return _last_doctor_day < 0 or get_day(travel_time) - _last_doctor_day >= 4
 
 func visit_doctor():
-	if await move_player_to(PlayerLocation.DOCTOR) and player.health <= 0:
+	if not (await move_player_to(PlayerLocation.DOCTOR) and player.health > 0):
 		return
 
 	var fee = get_player_doctor_fee()
@@ -650,8 +652,8 @@ func attempt_investigation(location: LocationCard):
 
 	# go to the location first
 
-	if (await move_player_to(PlayerLocation.OTHER, location)
-		and (player.health <= 0 or get_current_case() == null)):
+	if not (await move_player_to(PlayerLocation.OTHER, location)
+			and player.health > 0 and get_current_case()):
 		return
 
 	# check whether there is anybody there, whether the player has a warrant he
@@ -694,7 +696,8 @@ func attempt_investigation(location: LocationCard):
 	if break_in_needed:
 		player.pick_break_in_cards()
 		_current_interaction = InteractionType.BREAK_IN
-		_current_interaction_location = location
+		_current_interaction_location = PlayerLocation.OTHER
+		_current_interaction_location_card = location
 		save_game()
 		var cards = await Globals.dialog_overlay.attempt_break_in()
 		if not await _play_break_in(cards):
@@ -712,7 +715,7 @@ func attempt_investigation(location: LocationCard):
 func resume_break_in():
 	var cards = await Globals.dialog_overlay.attempt_break_in()
 	if await _play_break_in(cards):
-		start_investigation(_current_interaction_location)
+		start_investigation(_current_interaction_location_card)
 	else:
 		await end_interaction()
 
@@ -725,7 +728,9 @@ func resume_run_away():
 	if await _play_run_away(cards):
 		await end_interaction()
 	else:
-		start_combat(_current_interaction_npc, _current_interaction_location)
+		start_combat(
+			_current_interaction_npc, _current_interaction_location,
+			_current_interaction_location_card)
 
 #
 # "Plays" the given cards, tracking any temporary bonus/malus effects in the
@@ -734,8 +739,8 @@ func resume_run_away():
 #
 func _play_cards(cards: Array[Card]) -> InteractionAttributes:
 	var attrs = InteractionAttributes.new()
-	if _current_interaction_location:
-		attrs.play_card(_current_interaction_location, false)
+	if _current_interaction_location_card:
+		attrs.play_card(_current_interaction_location_card, false)
 	for card in cards:
 		attrs.play_card(card, card in player.get_fallback_cards())
 	return attrs
@@ -759,7 +764,7 @@ func _discard_cards(cards: Array[Card], success: bool):
 # successful.
 #
 func _play_break_in(cards_played: Array[Card]) -> bool:
-	print("\n*** break-in: %s ***" % _current_interaction_location.get_display_name())
+	print("\n*** break-in: %s ***" % _current_interaction_location_card.get_display_name())
 
 	# roll the die
 
@@ -827,7 +832,7 @@ func _play_break_in(cards_played: Array[Card]) -> bool:
 # if it is.
 #
 func _play_run_away(cards_played: Array[Card]) -> bool:
-	print("\n*** run away: %s ***" % _current_interaction_location.get_display_name())
+	print("\n*** run away: %s ***" % _current_interaction_location_card.get_display_name())
 
 	# roll the die
 
@@ -890,7 +895,7 @@ func _play_run_away(cards_played: Array[Card]) -> bool:
 # Game logic for an investigation (possibly following a break-in).
 #
 func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
-	print("\n*** investigation: %s ***" % _current_interaction_location.get_display_name())
+	print("\n*** investigation: %s ***" % _current_interaction_location_card.get_display_name())
 	print("player attributes at start: MEN %d, PHY %d, HEA %d"
 		  % [player.mental, player.physical, player.health])
 
@@ -952,7 +957,7 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 		var evidence_count = 1 if margin >= 3 else 0
 		print("success margin: %s" % margin)
 		infos_found = _get_unknown_connections_to_location(
-			_current_interaction_location, evidence_count, total_count)
+			_current_interaction_location_card, evidence_count, total_count)
 		save_game()
 
 	# display messages, increment the time, discard the cards that were played
@@ -990,7 +995,8 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 func start_investigation(location: LocationCard):
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
-	_current_interaction_location = location
+	_current_interaction_location = PlayerLocation.OTHER
+	_current_interaction_location_card = location
 	_push_card_state()
 	save_game()
 	interaction_started.emit()
@@ -1002,12 +1008,12 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 
 	# go to the location first
 
+	var got_there: bool
 	if location:
-		await move_player_to(PlayerLocation.OTHER, location)
+		got_there = await move_player_to(PlayerLocation.OTHER, location)
 	else:
-		await move_player_to(PlayerLocation.PRISON)
-
-	if player.health <= 0 or get_current_case() == null:
+		got_there = await move_player_to(PlayerLocation.PRISON)
+	if not (got_there and player.health > 0 and get_current_case()):
 		return
 
 	# check whether the NPC is there
@@ -1036,14 +1042,15 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 		if await Globals.dialog_overlay.confirm_run_away():
 			player.pick_run_away_cards()
 			_current_interaction = InteractionType.RUN_AWAY
-			_current_interaction_location = location
+			_current_interaction_location = PlayerLocation.OTHER
+			_current_interaction_location_card = location
 			_current_interaction_npc = npc
 			save_game()
 			var cards = await Globals.dialog_overlay.attempt_run_away()
 			if await _play_run_away(cards):
 				await end_interaction()
 				return
-		start_combat(npc, location)
+		start_combat(npc, PlayerLocation.OTHER, location)
 	else:
 		start_dialogue(npc, location)
 
@@ -1064,7 +1071,8 @@ func start_dialogue(
 		npc: NpcCard, location: LocationCard, save_card_state: bool = true):
 	player.pick_dialogue_cards()
 	_current_interaction = InteractionType.DIALOGUE
-	_current_interaction_location = location
+	_current_interaction_location = PlayerLocation.OTHER
+	_current_interaction_location_card = location
 	_current_interaction_npc = npc
 	if save_card_state:
 		_push_card_state()
@@ -1286,15 +1294,28 @@ func _play_dialogue(cards_played: Array[Card]) -> InteractionOutcome:
 	return InteractionOutcome.SUCCESS if success else InteractionOutcome.FAILURE
 
 ##
+## Starts a combat interaction when the player is attacked by a minion. This is
+## a couroutine to be awaited, only because it displays a message first.
+##
+func start_minion_attack():
+	var case = get_current_case()
+	if case:
+		var minion: NpcCard = case.fetch_minion()
+		await Globals.dialog_overlay.show_attack_message(minion)
+		start_combat(minion, _player_location, _player_location_card)
+
+##
 ## Starts a combat interaction: picks the fallback cards for the combat, saves
 ## the state of the cards in the Main scene (before we switch to the Interaction
 ## scene), and emits an interaction_started() signal telling The Game to switch
 ## scenes.
 ##
-func start_combat(npc: NpcCard, location: LocationCard):
-	player.pick_combat_cards()
+func start_combat(
+		npc: NpcCard, location: PlayerLocation, location_card: LocationCard):
+	player.pick_combat_cards(npc.actual_role == NpcCard.NpcRole.MINION)
 	_current_interaction = InteractionType.COMBAT
 	_current_interaction_location = location
+	_current_interaction_location_card = location_card
 	_current_interaction_npc = npc
 	_push_card_state()
 	save_game()
@@ -1307,10 +1328,13 @@ func start_combat(npc: NpcCard, location: LocationCard):
 # do some damage.
 #
 func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
-	var loc: LocationCard = _current_interaction_location
 	var npc: NpcCard = _current_interaction_npc
-	print("\n*** combat: %s with %s ***"
-		  % [loc.get_display_name(), npc.get_display_name()])
+	var loc_name: String
+	if _current_interaction_location == PlayerLocation.OTHER:
+		loc_name = _current_interaction_location_card.get_display_name()
+	else:
+		loc_name = PlayerLocation.keys()[_current_interaction_location].capitalize()
+	print("\n*** combat: %s with %s ***" % [loc_name, npc.get_display_name()])
 	print("player attributes at start: MEN %d, PHY %d, HEA %d"
 		  % [player.mental, player.physical, player.health])
 
@@ -1400,15 +1424,14 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 		damage = mini(damage, player.health - 1)
 
 	# if the player played a Do Not Kill card, the NPC cannot die, and the
-	# player receives a bonus for the ensuing dialogue
+	# player receives a bonus for the ensuing dialogue (but you can't talk to a
+	# minion)
 
 	var do_not_kill = false
 
-	for card in cards_played:
-		if card is CombatCard:
-			var combat_bonus_malus = \
-				_combat_data[card.database_id].get("bonus_malus", {})
-			if combat_bonus_malus.get("other") == "opponent_survives":
+	if npc.actual_role != NpcCard.NpcRole.MINION:
+		for card in cards_played:
+			if card is CombatCard and card.is_do_not_kill():
 				do_not_kill = true
 				break
 
@@ -1433,27 +1456,39 @@ func _play_combat(cards_played: Array[Card]) -> InteractionOutcome:
 
 		var player_damage: CombatDamage
 		var npc_state: NpcCombatState
+		var is_minion: bool = npc.actual_role == NpcCard.NpcRole.MINION
+
 		if actual_roll == 10 or npc_actual_roll == 1:
 			player_damage = CombatDamage.CRITICAL_HIT
 		elif damage > 0:
 			player_damage = CombatDamage.HIT
 		else:
 			player_damage = CombatDamage.NONE
+
 		if npc.health <= 0:
 			npc_state = NpcCombatState.DEAD
 		elif do_not_kill and (actual_roll == 1 or net_roll <= max_roll):
 			npc_state = NpcCombatState.WILL_TALK
 		else:
 			npc_state = NpcCombatState.ESCAPED
-		await Globals.dialog_overlay.show_combat_result(player_damage, npc_state)
 
-	# don't send the NPC to jail until AFTER the ensuing dialogue!
+		var body_search = await Globals.dialog_overlay.show_combat_result(
+			player_damage, npc_state)
+
+		if is_minion:
+			if npc.health <= 0 or npc_jail:
+				get_current_case().forget_minion()
+			if body_search and randi() % 10 == 0:
+				_reveal_culprit()
+
+	# don't send the non-minion NPC to jail until AFTER the ensuing dialogue!
 
 	if npc_jail:
 		if do_not_kill:
 			_current_interaction_do_not_kill = true
 		else:
 			await Globals.dialog_overlay.announce_prison_for_wanted(false)
+
 
 	# player's status (health, wanted, etc.) will be checked in
 	# end_interaction()
@@ -1531,8 +1566,11 @@ func end_interaction(cards_played: Array[Card] = []) -> InteractionOutcome:
 func get_current_interaction() -> InteractionType:
 	return _current_interaction
 
-func get_current_interaction_location() -> LocationCard:
+func get_current_interaction_location() -> PlayerLocation:
 	return _current_interaction_location
+
+func get_current_interaction_location_card() -> LocationCard:
+	return _current_interaction_location_card
 
 func get_current_interaction_npc() -> NpcCard:
 	return _current_interaction_npc
@@ -1618,22 +1656,49 @@ func get_open_cases() -> Array[Case]:
 ##
 ## Moves the player to the given location, if he is not there already. If
 ## location is PlayerLocation.OTHER, then a LocationCard must be given. The
-## trip to any location takes an hour. Returns false if the player is already at
-## the given location, otherwise emits a location_changed() signal and returns
-## true. Note that this is a coroutine to be awaited, and it is possible the
-## player may have died on return, or that the current case may have expired.
+## trip to any location takes an hour.
+##
+## Returns true if the player is already at the given location or if the move
+## goes as planned, false if the player is attacked by a minion en route.
+##
+## If the player does change location, a location_changed() signal is emitted.
+##
+## Note that this is a coroutine to be awaited, and it is possible the
+## player may have died on return, or that the current case may have expired. It
+## is also possible the player may be attacked by a minion, either at his
+## current location (in which case he will not be moved) or at his destination.
 ##
 func move_player_to(location: PlayerLocation, card: LocationCard = null) -> bool:
 	if _player_location == location and _player_location_card == card:
-		return false
+		return true
+
+	# check for a minion attack and do it now, unless the player is still at the
+	# office or in prison
+
 	var case = get_current_case()
-	if case and case.check_minion_attack():
-		print("*** minion attack!")
+	var minion_attack = case and case.check_minion_attack()
+	if minion_attack and not _player_location in [
+		PlayerLocation.OFFICE, PlayerLocation.PRISON
+	]:
+		await start_minion_attack()
+		return false
+
 	await _pass_one_hour_private()
+
 	# it is possible that, in the hour that just passed, the current case
 	# expired, in which case the location card may not exist anymore...
 	if card == null or is_instance_valid(card):
 		set_player_location(location, card)
+
+	# do the minion attack now, if the player is no longer at the office or in
+	# prison
+
+	if minion_attack and not _player_location in [
+		PlayerLocation.OFFICE, PlayerLocation.PRISON
+	]:
+		await start_minion_attack()
+		return false
+
 	return true
 
 ##
@@ -2183,6 +2248,43 @@ func _reveal_card(card: Card):
 			if partner and partner.reveal_status != Card.RevealStatus.HIDDEN:
 				case.create_link(card, partner, Link.Type.SPOUSE, true, true)
 
+#
+# Creates a link, or highlights an existing link, between a culprit and a
+# victim.
+#
+func _reveal_culprit():
+	var case: Case = get_current_case()
+	if case == null:
+		return
+
+	# which culprit to reveal? and which victim to link to?
+
+	var victims: Array[NpcCard]
+	var culprits: Array[NpcCard]
+
+	for npc in case.npcs:
+		match npc.actual_role:
+			NpcCard.NpcRole.VICTIM:
+				victims.append(npc)
+			NpcCard.NpcRole.CULPRIT:
+				culprits.append(npc)
+
+	if not (victims and culprits):
+		return
+
+	var victim: NpcCard = victims.pick_random()
+	var culprit: NpcCard = culprits.pick_random()
+
+	# find existing link or create a new one
+
+	var link: Link = victim.find_link_to(culprit, Link.Type.GUILT)
+	if link:
+		link.status = Link.Status.CONFIRMED
+	else:
+		link = case.create_link(victim, culprit, Link.Type.GUILT, false, true)
+	link.needs_attention = true
+	culprit.apparent_role = NpcCard.NpcRole.CULPRIT
+
 ##
 ## Takes the player to the investigation center, where his solution to the
 ## current case is validated or invalidated.
@@ -2191,8 +2293,8 @@ func _reveal_card(card: Card):
 ## have died, or may no longer have a current case.
 ##
 func validate_case():
-	if (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
-		and (player.health <= 0) or get_current_case() == null):
+	if not (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
+			and player.health > 0 and get_current_case()):
 		return
 
 	var case = get_current_case()
@@ -2249,8 +2351,8 @@ func validate_case():
 ## have died, or may no longer have a current case.
 ##
 func abandon_case():
-	if (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
-		and (player.health <= 0) or get_current_case() == null):
+	if not (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
+			and player.health > 0 and get_current_case()):
 		return
 	var fee = get_current_case().get_abandon_fee()
 	if await Globals.dialog_overlay.abandon_case(fee):
@@ -2267,7 +2369,7 @@ func abandon_case():
 ## have died, or may no longer have a current case.
 ##
 func manage_cases():
-	if not await move_player_to(PlayerLocation.OFFICE) or player.health > 0:
+	if await move_player_to(PlayerLocation.OFFICE) and player.health > 0:
 		if await Globals.dialog_overlay.manage_cases():
 			save_game()
 
@@ -2348,6 +2450,7 @@ func assign(other: GameState):
 	_player_location_card = other._player_location_card
 	_current_interaction = other._current_interaction
 	_current_interaction_location = other._current_interaction_location
+	_current_interaction_location_card = other._current_interaction_location_card
 	_current_interaction_npc = other._current_interaction_npc
 	_current_interaction_bonus_malus = other._current_interaction_bonus_malus
 	_current_interaction_do_not_kill = other._current_interaction_do_not_kill
@@ -2373,8 +2476,8 @@ func get_referenced_objects():
 		refs.append(case)
 	if _player_location_card:
 		refs.append(_player_location_card)
-	if _current_interaction_location:
-		refs.append(_current_interaction_location)
+	if _current_interaction_location_card:
+		refs.append(_current_interaction_location_card)
 	if _current_interaction_npc:
 		refs.append(_current_interaction_npc)
 	return refs
@@ -2408,8 +2511,10 @@ func get_json_dict():
 
 	if _current_interaction != InteractionType.NONE:
 		dict["interaction"] = _current_interaction
-		if _current_interaction_location:
-			dict["interaction_location"] = _current_interaction_location.get_unique_id()
+		if _current_interaction_location != PlayerLocation.OTHER:
+			dict["interaction_location"] = _current_interaction_location
+		if _current_interaction_location_card:
+			dict["interaction_location_card"] = _current_interaction_location_card.get_unique_id()
 		if _current_interaction_npc:
 			dict["interaction_npc"] = _current_interaction_npc.get_unique_id()
 		if _current_interaction_bonus_malus != 0:
@@ -2443,8 +2548,9 @@ func restore(dict, catalog):
 
 	if "interaction" in dict:
 		_current_interaction = dict.interaction
-		if "interaction_location" in dict:
-			_current_interaction_location = catalog[dict.interaction_location]
+		_current_interaction_location = dict.get("interaction_location", PlayerLocation.OTHER)
+		if "interaction_location_card" in dict:
+			_current_interaction_location_card = catalog[dict.interaction_location_card]
 		if "interaction_npc" in dict:
 			_current_interaction_npc = catalog[dict.interaction_npc]
 		_current_interaction_bonus_malus = dict.get("interaction_bonus_malus", 0)

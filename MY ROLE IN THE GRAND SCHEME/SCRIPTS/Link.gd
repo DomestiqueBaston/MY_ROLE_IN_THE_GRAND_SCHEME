@@ -42,7 +42,7 @@ class_name Link extends Node2D
 ## A blocked link cannot be changed or deleted by the player.
 var blocked: bool = false
 
-## Set to true for a link which has just been revealed or for any reaon should
+## Set to true for a link which has just been revealed or for any reason should
 ## blink to attract the player's attention.
 var needs_attention: bool = false
 

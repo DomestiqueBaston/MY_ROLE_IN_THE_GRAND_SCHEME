@@ -145,7 +145,8 @@ func _pick_random_dialogue_card() -> String:
 
 func _pick_random_combat_card(
 	is_normal_ok: bool = true,
-	is_special_ok: bool = false) -> String:
+	is_special_ok: bool = false,
+	is_minion: bool = false) -> String:
 	var id = ""
 	var ok = false
 	while not ok:
@@ -154,7 +155,9 @@ func _pick_random_combat_card(
 			"Combat":
 				ok = is_normal_ok
 			"Combat SPECIAL":
-				ok = is_special_ok
+				# cannot play a Do Not Kill card against a minion
+				ok = is_special_ok and not (
+					is_minion and CombatCard.is_do_not_kill_id(id))
 			#"Combat RUN-AWAY":
 			#	ok = is_run_away_ok
 		ok = ok and not _have_card_already(Card.CardType.COMBAT, id)
@@ -534,7 +537,10 @@ func pick_dialogue_cards():
 ## the player's "fallback" deck. Any cards already in the fallback deck are
 ## deleted.
 ##
-func pick_combat_cards():
+## When combatting a minion (is_minion = true), special Do Not Kill cards are
+## never picked, because you cannot dialogue with a minion.
+##
+func pick_combat_cards(is_minion: bool = false):
 	clear_fallback_cards()
 
 	# 0-2 abstract cards
@@ -551,7 +557,7 @@ func pick_combat_cards():
 
 	while _fallback_cards.size() < 5:
 		var special_ok = normal_count + (5 - _fallback_cards.size()) > 2
-		var id = _pick_random_combat_card(true, special_ok)
+		var id = _pick_random_combat_card(true, special_ok, is_minion)
 		var card = CombatCard.create_card(id)
 		_fallback_cards.append(card)
 		if card.combat_type == CombatCard.CombatType.NORMAL:

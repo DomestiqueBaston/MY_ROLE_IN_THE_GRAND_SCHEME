@@ -169,7 +169,7 @@ func _on_interaction_started():
 			Globals.start_music(Globals.Music.COMBAT)
 		GameState.InteractionType.INVESTIGATION:
 			interaction_scene.start_investigation(
-				GameState.get_current_interaction_location(),
+				GameState.get_current_interaction_location_card(),
 				GameState.player.get_mastery_cards(),
 				GameState.player.get_fallback_cards())
 			Globals.start_music(Globals.Music.INVESTIGATION)
@@ -177,7 +177,7 @@ func _on_interaction_started():
 func _on_interaction_ended():
 	var interaction_scene = $Active_Scene.get_child(0)
 	var npc = GameState.get_current_interaction_npc()
-	var loc = GameState.get_current_interaction_location()
+	var dialogue_loc = GameState.get_current_interaction_location_card()
 
 	# GameState.end_interaction() returns CONTINUE in one special case: after a
 	# combat, when the player has succeeded AND has played a Do Not Kill card,
@@ -192,7 +192,7 @@ func _on_interaction_ended():
 
 	if outcome == GameState.InteractionOutcome.CONTINUE:
 		await Globals.dialog_overlay.show_do_not_kill_message()
-		await GameState.start_dialogue(npc, loc, false)
+		await GameState.start_dialogue(npc, dialogue_loc, false)
 		interaction_scene.start_dialogue(
 			npc,
 			GameState.player.get_mastery_cards(),

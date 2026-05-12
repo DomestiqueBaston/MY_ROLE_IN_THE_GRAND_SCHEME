@@ -15,12 +15,22 @@ enum SolutionResult {
 
 var is_layout_needed: bool = true
 
+## All NPCs in the case except for minions.
 var npcs: Array[NpcCard]
+
+## All objects in the case that are evidence.
 var evidence: Array[ObjectCard]
+
+## Other objects in the case (not evidence).
 var other_objects: Array[ObjectCard]
+
+## All locations in the case.
 var locations: Array[LocationCard]
 
+## The crime category that has been selected by the player in the motive list.
 var selected_crime: String
+
+## The ID of the motive that has been selected by the player in the motive list.
 var selected_motive: String
 
 # reference to item in locations
@@ -43,6 +53,9 @@ var _links: Array[Link]
 
 # date/time when a minion is scheduled to attack the player
 var _next_minion_attack: int = -1
+
+# minion attacking the player
+var _minion: NpcCard
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
@@ -68,6 +81,10 @@ func _notification(what: int):
 			for card in card_list:
 				card.queue_free()
 			card_list.clear()
+
+		if _minion:
+			_minion.queue_free()
+			_minion = null
 
 		_crime_location = null
 
@@ -905,18 +922,9 @@ func get_accomplice_count() -> int:
 	return _accomplice_count
 
 ##
-## Returns all the cards created for the case, including NPCs, objects and
-## locations.
-##
-func get_all_cards() -> Array[Card]:
-	var all_cards: Array[Card]
-	for card_list in [npcs, evidence, other_objects, locations]:
-		all_cards.append_array(card_list)
-	return all_cards
-
-##
 ## Returns an array of the cards that have been revealed to the player thus far,
-## that is, whose RevealStatus is REVEALED.
+## that is, whose RevealStatus is REVEALED. Only NPCs (but not minions), objects
+## and locations are ever "revealed".
 ##
 func get_revealed_cards() -> Array[Card]:
 	var cards: Array[Card]
@@ -938,12 +946,6 @@ func get_unhidden_cards(revealed_cards, cards_in_limbo):
 					cards_in_limbo.append(card)
 				Card.RevealStatus.REVEALED:
 					revealed_cards.append(card)
-
-##
-## Returns the cards for all the NPCs created for the case.
-##
-func get_all_npcs() -> Array[NpcCard]:
-	return npcs
 
 func add_link(link: Link):
 	_links.append(link)
@@ -1109,6 +1111,8 @@ func add_links_between_npc_and_location(npc: NpcCard, location: LocationCard):
 func new_day():
 	for npc in npcs:
 		npc.new_day()
+	if _minion:
+		_minion.new_day()
 
 	if _status != Status.ACTIVE:
 		return
@@ -1144,6 +1148,25 @@ func check_minion_attack() -> bool:
 		_next_minion_attack = -1
 		return true
 	return false
+
+##
+## Returns a minion to attack the player, creating one if necessary. If a
+## minion survived a previous attack and was not sent to jail, the same minion
+## is used again.
+##
+func fetch_minion() -> NpcCard:
+	if _minion == null:
+		_minion = NpcCard.generate_card(self, NpcCard.NpcRole.MINION)
+	return _minion
+
+##
+## If a minion was created previously for this case, he/she is removed. Call
+## this if the minion has been killed or sent to jail.
+##
+func forget_minion():
+	if _minion:
+		_minion.queue_free()
+		_minion = null
 
 ##
 ## Checks whether the player has solved the case, by identifying the motive,
@@ -1291,6 +1314,8 @@ func get_unique_id():
 func get_referenced_objects():
 	var refs = []
 	refs.append_array(npcs)
+	if _minion:
+		refs.append(_minion)
 	refs.append_array(evidence)
 	refs.append_array(other_objects)
 	refs.append_array(locations)
@@ -1326,6 +1351,9 @@ func get_json_dict():
 		for npc in npcs:
 			npc_refs.append(npc.get_unique_id())
 		dict["npcs"] = npc_refs
+
+	if _minion:
+		dict["minion"] = _minion.get_unique_id()
 
 	if evidence:
 		var evidence_refs = []
@@ -1379,6 +1407,8 @@ func restore(dict, catalog):
 	is_layout_needed = dict.get("is_layout_needed", true)
 	for ref in dict.get("npcs", []):
 		npcs.append(catalog[ref])
+	if "minion" in dict:
+		_minion = catalog[dict.minion]
 	for ref in dict.get("evidence", []):
 		evidence.append(catalog[ref])
 	for ref in dict.get("other_objects", []):

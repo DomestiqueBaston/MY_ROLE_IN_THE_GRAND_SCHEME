@@ -33,6 +33,20 @@ func get_card_type():
 func get_info() -> String:
 	return _combat_data[database_id].get("info", "")
 
+##
+## Returns true if this card is the special Do Not Kill card.
+##
+func is_do_not_kill() -> bool:
+	return is_do_not_kill_id(database_id)
+
+##
+## Returns true if the given database ID is that of the special Do Not Kill
+## card.
+##
+static func is_do_not_kill_id(id) -> bool:
+	var bonus_malus = _combat_data[id].get("bonus_malus", {})
+	return bonus_malus.get("other") == "opponent_survives"
+
 func _ready():
 	super()
 	_update_background()

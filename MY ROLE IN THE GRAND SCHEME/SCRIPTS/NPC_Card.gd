@@ -549,7 +549,7 @@ func new_day():
 static func generate_card(
 	case: Case, cat: NpcRole = NpcRole.NONE, possible_jobs = [],
 	sex: int = -1) -> NpcCard:
-	var card = _card_scene.instantiate()
+	var card: NpcCard = _card_scene.instantiate()
 	card._case = case
 	var job_id: String
 	if possible_jobs:

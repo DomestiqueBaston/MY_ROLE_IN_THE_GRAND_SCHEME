@@ -483,9 +483,12 @@ func show_dialogue_result(success: bool, infos: int, express_doubt: bool):
 
 ##
 ## Displays the results of a combat with an NPC. If the NPC died, the player is
-## given the option of searching the body (for money).
+## given the option of searching the body (for money). Returns true if the NPC
+## died and the player searched his body.
 ##
-func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.NpcCombatState):
+func show_combat_result(
+		damage: GameState.CombatDamage,
+		npc_state: GameState.NpcCombatState) -> bool:
 	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/But_Player_Hit.visible = \
 		damage == GameState.CombatDamage.HIT
 	$Overlays/Interaction_Result/Combat/Chalk/Control/Report/But_Player_Critically_Hit.visible = \
@@ -541,6 +544,8 @@ func show_combat_result(damage: GameState.CombatDamage, npc_state: GameState.Npc
 
 	if search_result:
 		search_result.hide()
+
+	return search_result != null
 
 ##
 ## Displays the results of an investigation, including whether it was a failure,
