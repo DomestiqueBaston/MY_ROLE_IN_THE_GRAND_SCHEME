@@ -11,12 +11,12 @@ var health: int: set = set_health, get = get_health
 var emotion: int: set = set_emotion, get = get_emotion
 var addiction: int: set = set_addiction, get = get_addiction
 var wanted: int: set = set_wanted, get = get_wanted
-var paranoia: int
 var money: int: set = set_money, get = get_money
 var drugs: int: set = set_drugs, get = get_drugs
 var drugs_taken_today: int
 var has_search_warrant: bool
 var next_dialogue_bonus_malus: int = 0
+var paranoia_state: Paranoia = Paranoia.new()
 
 enum PlayerState {
 	## Player is OK.
@@ -57,7 +57,6 @@ func reset():
 	emotion = 0
 	addiction = 0
 	wanted = 0
-	paranoia = 0
 	money = 0
 	drugs = 0
 	drugs_taken_today = 0
@@ -72,6 +71,7 @@ func reset():
 	_sleep_bonus_malus = 0
 	_in_jail_or_bed = false
 	_random_sms_count = 0
+	paranoia_state.reset()
 	_signal_pause -= 1
 
 func start_game():
@@ -83,7 +83,6 @@ func start_game():
 	emotion = 0
 	addiction = 0
 	wanted = 0
-	paranoia = 0
 	money = 300 + job_bonus_malus.get("money", 0)
 	drugs = 3 + job_bonus_malus.get("drugs", 0)
 	drugs_taken_today = 0
@@ -98,6 +97,7 @@ func start_game():
 	_sleep_bonus_malus = 0
 	_in_jail_or_bed = false
 	_random_sms_count = 0
+	paranoia_state.reset()
 
 	# all players start with one card from each category
 
@@ -219,6 +219,20 @@ func get_health() -> int:
 	return health
 
 ##
+## Returns true if the player has suffered an attack of paranoia.
+##
+func is_paranoid() -> bool:
+	return paranoia_state.check()
+
+##
+## If the player is not yet suffering from paranoia, check whether all the
+## conditions are met now, and return true if so. From then on, is_paranoid()
+## will return true (and update_paranoia() will return false).
+##
+func update_paranoia() -> bool:
+	return not paranoia_state.check() and paranoia_state.update()
+
+##
 ## Checks the player's health, emotion and addiction levels, and returns his
 ## status: OK, KO or DEAD. Note that if his emotion level reaches -5 or 5, that
 ## has negative consequences for his addiction level. And if his addiction level
@@ -240,6 +254,7 @@ func test_health() -> PlayerState:
 		if die:
 			return PlayerState.DEAD
 		addiction = 4 * signi(addiction)
+		paranoia_state.drug_crisis_count += 1
 
 	if physical <= 0 or mental <= 0:
 		await Globals.dialog_overlay.announce_forced_rest(false)
@@ -668,6 +683,7 @@ func sleep(hours: int):
 			health += dream_health_bonus
 			emotion = exacerbate(emotion, 1)
 			addiction = exacerbate(addiction, 1) - 1
+			paranoia_state.short_night_count += 1
 			_sleep_bonus_malus = 2
 		5:
 			health += dream_health_bonus
@@ -720,6 +736,14 @@ func new_day():
 			wanted -= 1
 		improve_emotion(1)
 
+	if physical <= 2 and mental <= 2 and health <= 2:
+		paranoia_state.bad_health_period += 1
+	else:
+		paranoia_state.bad_health_period = 0
+
+	paranoia_state.unpaid_bill_count = \
+		maxi(paranoia_state.unpaid_bill_count, _debts.size())
+
 ##
 ## Specifies that the player has been sent to prison. Until he is released,
 ## nights of sleep will have no effect on his wanted level or on his emotions,
@@ -757,6 +781,7 @@ func _end_jail_or_forced_rest(sleep_time: int):
 	_last_sleep_time = _last_wake_time - sleep_time
 	_sleep_bonus_malus = 0
 	while _random_sms_count > 0:
+		paranoia_state.sms_count += 1
 		await Globals.dialog_overlay.send_random_sms()
 		_random_sms_count -= 1
 
@@ -768,6 +793,7 @@ func receive_random_sms():
 	if _in_jail_or_bed:
 		_random_sms_count += 1
 	else:
+		paranoia_state.sms_count += 1
 		await Globals.dialog_overlay.send_random_sms()
 
 ##
@@ -872,7 +898,6 @@ func get_json_dict():
 		"emotion": emotion,
 		"addiction": addiction,
 		"wanted": wanted,
-		"paranoia": paranoia,
 		"money": money,
 		"drugs": drugs,
 		"drugs_taken_today": drugs_taken_today,
@@ -880,7 +905,8 @@ func get_json_dict():
 		"last_sleep_time": _last_sleep_time,
 		"last_wake_time": _last_wake_time,
 		"last_wanted_change": _last_wanted_change,
-		"sleep_bonus_malus": _sleep_bonus_malus
+		"sleep_bonus_malus": _sleep_bonus_malus,
+		"paranoia_state": paranoia_state.get_json_dict()
 	}
 	if has_search_warrant:
 		dict["has_search_warrant"] = true
@@ -921,7 +947,6 @@ func restore(dict, catalog):
 	emotion = dict.emotion
 	addiction = dict.addiction
 	wanted = dict.wanted
-	paranoia = dict.paranoia
 	money = dict.money
 	drugs = dict.drugs
 	drugs_taken_today = dict.get("drugs_taken_today", 0)
@@ -930,6 +955,7 @@ func restore(dict, catalog):
 	_last_wanted_change = dict.get("last_wanted_change", 0)
 	_last_sleep_time = dict.get("last_sleep_time", _last_wake_time - 8)
 	_sleep_bonus_malus = dict.sleep_bonus_malus
+	paranoia_state.restore(dict.get("paranoia_state", {}), catalog)
 	has_search_warrant = dict.get("has_search_warrant", false)
 	next_dialogue_bonus_malus = dict.get("next_dialogue_bonus_malus", 0)
 	for card_ref in dict.cards:

@@ -305,9 +305,10 @@ func get_time_slot(travel_time: int = 0) -> TimeSlot:
 
 #
 # Increments the given time by the given number of hours. If check_player_status
-# is true, the player's health, wanted status and debts are checked as well each
-# morning. In that case, one or more messages may be displayed, making this is a
-# coroutine to be awaited, and the player may even have died on return.
+# is true, the player's health, wanted status, debts and paranoia status are
+# checked as well. One or more messages may be displayed, making this is a
+# coroutine to be awaited, and, if check_player_status is true, the player may
+# have suffered a paranoia attack or died on return.
 #
 func _increment_time(hours: int, check_player_status: bool):
 	while hours > 0:
@@ -340,18 +341,21 @@ func _increment_time(hours: int, check_player_status: bool):
 
 		if get_hour() == 8:
 			await _new_day()
-			if check_player_status:
-				await _check_player_status()
-				if player.health <= 0:
-					return
+
+		# check player's health, wanted status, debts, paranoia status, etc.
+
+		if check_player_status:
+			await _check_player_status()
+			if player.health <= 0:
+				return
 
 	time_changed.emit()
 	save_game()
 
 #
-# Checks the player's health, wanted status and debts. One or more messages may
-# be displayed, making this a coroutine to be awaited. The player may also be
-# forced to rest, sent to prison or die.
+# Checks the player's health, wanted status, debts and paranoia status. One or
+# more messages may be displayed, making this a coroutine to be awaited. The
+# player may also be forced to rest, sent to prison or die.
 #
 func _check_player_status():
 	match await player.test_health():
@@ -376,6 +380,9 @@ func _check_player_status():
 		while player.get_debt_count() >= 5:
 			player.remove_debt(0)
 		_send_player_to_prison()
+
+	if player.update_paranoia():
+		await paranoia_attack()
 
 #
 # Sends the player to bed for about 24 hours (until 8 AM the following day or
@@ -1301,6 +1308,7 @@ func start_minion_attack():
 	var case = get_current_case()
 	if case:
 		var minion: NpcCard = case.fetch_minion()
+		player.paranoia_state.minion_attack_count += 1
 		await Globals.dialog_overlay.show_attack_message(minion)
 		start_combat(minion, _player_location, _player_location_card)
 
@@ -2286,6 +2294,15 @@ func _reveal_culprit():
 	culprit.apparent_role = NpcCard.NpcRole.CULPRIT
 
 ##
+## TODO
+## Switches the game to paranoia mode: any open cases are abandoned and replaced
+## by the "final case", the player no longer sleeps or takes drugs, etc. This is
+## a coroutine to be awaited.
+##
+func paranoia_attack():
+	print("*** paranoia attack!")
+
+##
 ## Takes the player to the investigation center, where his solution to the
 ## current case is validated or invalidated.
 ##
@@ -2315,6 +2332,9 @@ func validate_case():
 					player.mental -= 1
 				2:
 					player.physical -= 1
+			player.paranoia_state.failed_case_count += 1
+			if player.update_paranoia():
+				await paranoia_attack()
 
 		Case.SolutionResult.HALF_RIGHT:
 			money_won = roundi(100 * case.get_difficulty() * randf_range(0.9, 1.1))
@@ -2357,7 +2377,10 @@ func abandon_case():
 	var fee = get_current_case().get_abandon_fee()
 	if await Globals.dialog_overlay.abandon_case(fee):
 		player.money -= fee
+		player.paranoia_state.abandoned_case_count += 1
 		_close_current_case()
+		if player.update_paranoia():
+			await paranoia_attack()
 		if get_current_case() == null:
 			await visit_investigation_center()
 

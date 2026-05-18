@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var sound_fade_time: float = 0.2333
+
 @onready var valid_sound: AudioStreamPlayer = $UI_Sounds/Valid
 @onready var cancel_sound: AudioStreamPlayer = $UI_Sounds/Cancel
 @onready var leave_sound: AudioStreamPlayer = $UI_Sounds/Leave
@@ -8,6 +10,7 @@ extends Node2D
 @onready var card_exited_sound: AudioStreamPlayer = $UI_Sounds/Card_Exited
 @onready var lock_sound: AudioStreamPlayer = $UI_Sounds/Lock_Card
 @onready var unlock_sound: AudioStreamPlayer = $UI_Sounds/Unlock_Card
+@onready var paranoia_voices: AudioStreamPlayer = $Ambiance_Sound/Paranoia_Voices
 
 ## Overlay used to block the UI while asking the player a question.
 @onready var dialog_overlay: Node2D = $DialogLayer/Short_Event_Overlay
@@ -48,6 +51,8 @@ var _music_pos = [
 	0.0,
 	0.0
 ]
+
+var _paranoia_voice_current_level: float = 0.0
 
 @warning_ignore("unused_signal")
 signal card_left_click(pos: Vector2, card: Card)
@@ -278,27 +283,62 @@ func stop_city_sounds():
 		$Ambiance_Sound/City_Sound.play("Fade_Out")
 
 ##
-## Fades out the current music, if any, and fades in the given music. Does
+## Sets the volume level of the paranoia voices heard by the player (between 0
+## and 1). The voices are heard in the same conditions as the music, so they are
+## faded in and out by start_music() and stop_music().
+##
+func set_paranoia_voice_level(level: float):
+	if _paranoia_voice_current_level == level:
+		return
+	_paranoia_voice_current_level = level
+	if _current_music < 0:
+		return
+	var tween = get_tree().create_tween()
+	if level > 0.0:
+		tween.tween_property(paranoia_voices, "volume_linear", level, sound_fade_time)
+	else:
+		tween.tween_property(paranoia_voices, "volume_linear", 0.0, sound_fade_time)
+		tween.tween_callback(paranoia_voices.stop)
+
+##
+## Fades out the current music, if any, and fades in the given music. Also fades
+## in the paranoia voices, depending on the player's paranoia level. Does
 ## nothing if the given music is already playing.
 ##
 func start_music(music: Music):
 	if _current_music != music:
-		stop_music()
+		_stop_music_only()
 		var player: AudioStreamPlayer = _music_players[music]
 		var tween = get_tree().create_tween()
+		player.volume_db = -80.0
 		player.play(_music_pos[music])
-		tween.tween_property(player, "volume_db", 0.0, 0.2333)
+		tween.tween_property(player, "volume_db", 0.0, sound_fade_time)
+		if not paranoia_voices.playing and _paranoia_voice_current_level > 0.0:
+			paranoia_voices.volume_linear = 0.0
+			paranoia_voices.play()
+			tween.parallel().tween_property(
+				paranoia_voices, "volume_linear", _paranoia_voice_current_level, sound_fade_time)
 		_current_music = music
 
 ##
-## Fades out the music that is currently playing. Does nothing if no music is
-## playing.
+## Fades out the music that is currently playing, if any, and the paranoia
+## voices, depending on the player's paranoia level.
 ##
 func stop_music():
+	_stop_music_only()
+	if paranoia_voices.playing:
+		var tween = get_tree().create_tween()
+		tween.tween_property(paranoia_voices, "volume_linear", 0.0, sound_fade_time)
+		tween.tween_callback(paranoia_voices.stop)
+
+#
+# Stops the music, but leaves the paranoia voices playing, if they are playing.
+#
+func _stop_music_only():
 	if _current_music >= 0:
 		var player: AudioStreamPlayer = _music_players[_current_music]
 		var tween = get_tree().create_tween()
 		_music_pos[_current_music] = player.get_playback_position()
-		tween.tween_property(player, "volume_db", -80.0, 0.2333)
+		tween.tween_property(player, "volume_db", -80.0, sound_fade_time)
 		tween.tween_callback(player.stop)
 		_current_music = -1
