@@ -27,6 +27,7 @@ func reset():
 	sms_count = 0
 	unpaid_bill_count = 0
 	_paranoia_flag = false
+	Globals.set_paranoia_voice_level(0.0)
 
 ##
 ## Updates the paranoid flag, if it has not already been set, depending on how
