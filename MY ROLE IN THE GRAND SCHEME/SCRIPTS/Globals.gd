@@ -295,6 +295,9 @@ func set_paranoia_voice_level(level: float):
 		return
 	var tween = get_tree().create_tween()
 	if level > 0.0:
+		if not paranoia_voices.playing:
+			paranoia_voices.volume_linear = 0.0
+			paranoia_voices.play()
 		tween.tween_property(paranoia_voices, "volume_linear", level, sound_fade_time)
 	else:
 		tween.tween_property(paranoia_voices, "volume_linear", 0.0, sound_fade_time)
