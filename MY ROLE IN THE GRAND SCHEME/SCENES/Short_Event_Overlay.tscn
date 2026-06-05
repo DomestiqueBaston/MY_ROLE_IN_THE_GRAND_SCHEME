@@ -6213,7 +6213,6 @@ autoplay = "Vibration"
 libraries = {
 &"": SubResource("AnimationLibrary_asw7s")
 }
-autoplay = "Appearance"
 
 [node name="In_Out" type="AudioStreamPlayer" parent="Paranoia_Overlay"]
 volume_db = -80.0
@@ -6222,7 +6221,6 @@ bus = &"UI"
 [node name="Alarm" type="AudioStreamPlayer" parent="Paranoia_Overlay"]
 stream = ExtResource("158_w41fr")
 volume_db = -80.0
-autoplay = true
 bus = &"FX"
 
 [node name="White_Noise" type="AudioStreamPlayer" parent="Paranoia_Overlay"]
