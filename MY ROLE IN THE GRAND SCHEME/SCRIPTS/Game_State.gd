@@ -2300,7 +2300,7 @@ func _reveal_culprit():
 ## a coroutine to be awaited.
 ##
 func paranoia_attack():
-	print("*** paranoia attack!")
+	await Globals.dialog_overlay.announce_paranoia()
 
 ##
 ## Takes the player to the investigation center, where his solution to the

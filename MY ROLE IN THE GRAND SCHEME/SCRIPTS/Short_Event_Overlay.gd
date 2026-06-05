@@ -9,13 +9,14 @@ signal post_dialog
 
 var _dialog_count: int = 0
 
-func _appear():
+func _appear(skip_animation: bool = false):
 	if _dialog_count == 0:
 		pre_dialog.emit()
 	_dialog_count += 1
 	show()
-	$On_Off.play("Appearance")
-	await $On_Off.animation_finished
+	if not skip_animation:
+		$On_Off.play("Appearance")
+		await $On_Off.animation_finished
 
 func _disappear(skip_animation: bool = false):
 	if skip_animation:
@@ -720,3 +721,12 @@ func send_random_sms():
 	await $Overlays/Cellphone.done
 	await _disappear()
 	$Overlays/Cellphone.hide()
+
+##
+## Announces that the player has officially become paranoid.
+##
+func announce_paranoia():
+	$Paranoia_Overlay.start()
+	await _appear(true)
+	await $Paranoia_Overlay.done
+	await _disappear(true)

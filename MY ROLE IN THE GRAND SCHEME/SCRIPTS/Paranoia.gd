@@ -30,7 +30,7 @@ func reset():
 	Globals.set_paranoia_voice_level(0.0)
 
 ##
-## Updates the paranoid flag, if it has not already been set, depending on how
+## Updates the paranoia flag, if it has not already been set, depending on how
 ## many drug crises the player has survived, how many SMS messages he has
 ## received, etc. The volume of the "paranoia voices" is also set accordingly.
 ##
@@ -46,15 +46,13 @@ func update() -> bool:
 			sms_count / 15.0,
 			unpaid_bill_count / 10.0
 		)
-		if level > 0:
-			print("*** paranoia level: %d%%" % roundi(level * 100))
 		Globals.set_paranoia_voice_level(level)
 		if level > 0.99:
 			_paranoia_flag = true
 	return _paranoia_flag
 
 ##
-## Returns true if the paranoid flag has been set.
+## Returns true if the paranoia flag has been set.
 ##
 func check() -> bool:
 	return _paranoia_flag
