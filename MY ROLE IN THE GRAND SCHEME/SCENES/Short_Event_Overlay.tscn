@@ -469,11 +469,11 @@ content_margin_top = 1.0
 content_margin_left = 1.0
 content_margin_top = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghmjl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rvn5"]
 shader = ExtResource("153_42ybe")
 shader_parameter/img = ExtResource("154_fn3bj")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_re1fv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6clx"]
 shader = ExtResource("155_tatxf")
 shader_parameter/strength = 0.0
 
@@ -6154,7 +6154,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Paranoia_Texture" type="Label" parent="Paranoia_Overlay/Center"]
-material = SubResource("ShaderMaterial_ghmjl")
+material = SubResource("ShaderMaterial_7rvn5")
 layout_mode = 0
 offset_left = -7.0
 offset_top = 22.399
@@ -6234,7 +6234,7 @@ vertical_alignment = 1
 
 [node name="Grain" type="ColorRect" parent="Paranoia_Overlay/Inner_Voice"]
 self_modulate = Color(1, 1, 1, 0)
-material = SubResource("ShaderMaterial_re1fv")
+material = SubResource("ShaderMaterial_b6clx")
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
