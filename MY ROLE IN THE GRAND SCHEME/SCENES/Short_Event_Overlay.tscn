@@ -6243,7 +6243,6 @@ offset_bottom = 360.0
 libraries = {
 &"": SubResource("AnimationLibrary_hqksm")
 }
-autoplay = "Vibration"
 
 [node name="On_Off" type="AnimationPlayer" parent="Paranoia_Overlay"]
 libraries = {
