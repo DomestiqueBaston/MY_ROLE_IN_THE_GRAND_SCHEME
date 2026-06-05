@@ -6085,6 +6085,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "No thanks..."
 
 [node name="Paranoia_Overlay" type="Node2D" parent="."]
+visible = false
 script = ExtResource("151_7rvn5")
 
 [node name="Center" type="Control" parent="Paranoia_Overlay"]
