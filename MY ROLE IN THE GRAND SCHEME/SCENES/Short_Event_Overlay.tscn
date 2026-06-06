@@ -1,8 +1,7 @@
-[gd_scene load_steps=257 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=256 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
-[ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_b6clx"]
 [ext_resource type="Script" uid="uid://c2pajop2yrn5s" path="res://SCRIPTS/Card_Management.gd" id="2_jo5q1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Button.gd" id="3_8qa11"]
@@ -1252,10 +1251,6 @@ _data = {
 
 [node name="Short_Event_Overlay" type="Node2D"]
 script = ExtResource("1_42ybe")
-
-[node name="MainBg" type="Sprite2D" parent="."]
-texture = ExtResource("2_b6clx")
-centered = false
 
 [node name="BG" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -6126,6 +6121,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "No thanks..."
 
 [node name="Paranoia_Overlay" type="Node2D" parent="."]
+visible = false
 script = ExtResource("151_7rvn5")
 
 [node name="Center" type="Control" parent="Paranoia_Overlay"]
