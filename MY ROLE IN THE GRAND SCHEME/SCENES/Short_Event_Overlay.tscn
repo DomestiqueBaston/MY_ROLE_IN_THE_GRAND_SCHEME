@@ -1,7 +1,8 @@
-[gd_scene load_steps=256 format=3 uid="uid://b2dn121b3l0e2"]
+[gd_scene load_steps=257 format=3 uid="uid://b2dn121b3l0e2"]
 
 [ext_resource type="Script" uid="uid://c23jr33avdx40" path="res://SCRIPTS/Short_Event_Overlay.gd" id="1_42ybe"]
 [ext_resource type="Texture2D" uid="uid://ufatj0lkfnif" path="res://GRAPHICS/SHORT_EVENT/Misc_BG.png" id="1_sivc1"]
+[ext_resource type="Texture2D" uid="uid://dfip5xqaa5ypt" path="res://GRAPHICS/MAIN/Main_BG.png" id="2_b6clx"]
 [ext_resource type="Script" uid="uid://c2pajop2yrn5s" path="res://SCRIPTS/Card_Management.gd" id="2_jo5q1"]
 [ext_resource type="Theme" uid="uid://hxwayjj1dxm2" path="res://UI/Short_Event_Theme.tres" id="2_vr7x7"]
 [ext_resource type="Script" uid="uid://bwd5gutphmmwa" path="res://SCRIPTS/Short_Event_Button.gd" id="3_8qa11"]
@@ -1251,6 +1252,10 @@ _data = {
 
 [node name="Short_Event_Overlay" type="Node2D"]
 script = ExtResource("1_42ybe")
+
+[node name="MainBg" type="Sprite2D" parent="."]
+texture = ExtResource("2_b6clx")
+centered = false
 
 [node name="BG" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -6121,7 +6126,6 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 0.745098)
 text = "No thanks..."
 
 [node name="Paranoia_Overlay" type="Node2D" parent="."]
-visible = false
 script = ExtResource("151_7rvn5")
 
 [node name="Center" type="Control" parent="Paranoia_Overlay"]
@@ -6134,9 +6138,9 @@ pivot_offset = Vector2(320, 180)
 
 [node name="Paranoia_Outline" type="Label" parent="Paranoia_Overlay/Center"]
 layout_mode = 0
-offset_left = -7.0
+offset_left = -14.0
 offset_top = 22.399
-offset_right = 745.0
+offset_right = 738.0
 offset_bottom = 307.399
 rotation = -0.159428
 scale = Vector2(0.775, 1.33)
@@ -6156,9 +6160,9 @@ vertical_alignment = 1
 [node name="Paranoia_Texture" type="Label" parent="Paranoia_Overlay/Center"]
 material = SubResource("ShaderMaterial_7rvn5")
 layout_mode = 0
-offset_left = -7.0
+offset_left = -14.0
 offset_top = 22.399
-offset_right = 745.0
+offset_right = 738.0
 offset_bottom = 307.399
 rotation = -0.159428
 scale = Vector2(0.775, 1.33)
@@ -6172,7 +6176,7 @@ vertical_alignment = 1
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 640.0
 offset_bottom = 360.0
-color = Color(0.54736, 0.1672, 0.88, 0.156863)
+color = Color(0.54736, 0.1672, 0.88, 0.2509804)
 
 [node name="Inner_Voice" type="Control" parent="Paranoia_Overlay"]
 layout_mode = 3
