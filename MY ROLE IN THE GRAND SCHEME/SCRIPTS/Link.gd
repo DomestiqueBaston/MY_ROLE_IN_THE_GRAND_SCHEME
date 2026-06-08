@@ -410,10 +410,8 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 				return endpt is NpcCard
 			Type.GUILT:
 				return endpt is NpcCard or endpt is ObjectCard
-			Type.PROPERTY:
-				return endpt is ObjectCard or endpt is NpcCard or endpt is LocationCard
-			Type.FOUND:
-				return endpt is ObjectCard or endpt is LocationCard
+			Type.PROPERTY, Type.FOUND:
+				return endpt is NpcCard or endpt is ObjectCard or endpt is LocationCard
 			_:
 				return true
 
@@ -440,8 +438,8 @@ static func is_link_valid(endpt1: Node2D, endpt2: Node2D, link_type: Type) -> bo
 			ok = (endpt1 is ObjectCard and (endpt2 is NpcCard or endpt2 is LocationCard)) \
 				or (endpt2 is ObjectCard and (endpt1 is NpcCard or endpt1 is LocationCard))
 		Type.FOUND:
-			ok = (endpt1 is ObjectCard and endpt2 is LocationCard) \
-				or (endpt1 is LocationCard and endpt2 is ObjectCard)
+			ok = (endpt1 is LocationCard and (endpt2 is NpcCard or endpt2 is ObjectCard)) \
+				or (endpt2 is LocationCard and (endpt1 is NpcCard or endpt1 is ObjectCard))
 		_:
 			ok = true
 

@@ -1965,8 +1965,9 @@ func _get_info_from_npc(
 				# objects found at the location
 
 				for obj in subject_card.get_connections(Link.Type.FOUND):
-					_add_info_to_reveal(
-						candidates, obj, subject_card, Link.Type.FOUND, npc)
+					if obj is ObjectCard:
+						_add_info_to_reveal(
+							candidates, obj, subject_card, Link.Type.FOUND, npc)
 
 		Card.CardType.NPC:
 
