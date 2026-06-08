@@ -887,7 +887,7 @@ Fiche d’enquête
 	- Une fois l’écran de paranoïa fermé, on enchaîne directement sur un écran qui va informer le joueur qu’il va interpeller un PNJ qui passe puis :
 	- Interaction de Dialogue avec le PNJ random que le joueur vient d’interpeler dans la rue.
 	- à l’issue de cette (fausse) interaction, le joueur obtiendra 1 info (on considérera que le joueur a fait le score minimum pour ça). C’est un peu forcé et ça se repère à la longue mais pas d’autre solution...
-	- À l’issue de ce Dialogue, le PNJ s’enfuit (sans aucun recours pour le joueur).
+	- À l’issue de ce Dialogue, le PNJ s’enfuit (sans aucun recours pour le joueur) jusqu’à la fin du jeu.
 	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) mais la fois suivante, les cadavres auront été débarrassés !
 
 Comment repartir les evidences ?
