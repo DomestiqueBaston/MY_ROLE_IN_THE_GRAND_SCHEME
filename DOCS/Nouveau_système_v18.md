@@ -886,8 +886,9 @@ Fiche d’enquête
 	- L’enquête finale se lance automatiquement après la crise de PARANOIA sur absolument aucun indice qui serait donné par le jeu. Il ne s’agit plus ici d’une enquête que le joueur aura prise à l’Investigation Center). Le joueur se lance de lui-même dans ce projet après avoir déclenché sa crise de paranoïa. Il faut donc donner une direction au joueur pour son enquête car sans Lieu/Objet/PNJ/Lien/etc., il ne peut rien faire.
 	- Une fois l’écran de paranoïa fermé, on enchaîne directement sur un écran qui va informer le joueur qu’il va interpeller un PNJ qui passe puis :
 	- Interaction de Dialogue avec le PNJ random que le joueur vient d’interpeler dans la rue.
-	- à l’issue de cette (fausse) interaction, le joueur obtiendra 1 info (on considérera que le joueur a fait le score minimum pour ça). C’est un peu forcé et ça se repère à la longue mais pas d’autre solution...
-	- À l’issue de ce Dialogue, le PNJ s’enfuit (sans aucun recours pour le joueur) jusqu’à la fin du jeu.
+	- à l’issue de cette (fausse) interaction, le joueur obtiendra 1 info (on considérera que le joueur a fait le score minimum pour ça). C’est un peu forcé et ça se repère à la longue mais pas d’autre solution…
+	- L’info obtenue concerne ce PNJ nommé lié à l’enquête donc son nom, prénom et lieu de résidence OU lieu de travail.
+	- À l’issue de ce Dialogue, le PNJ interpelé par le joueur s’enfuit (sans aucun recours pour le joueur) jusqu’à la fin du jeu.
 	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) mais la fois suivante, les cadavres auront été débarrassés !
 
 Comment repartir les evidences ?
