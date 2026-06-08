@@ -33,8 +33,8 @@ var selected_crime: String
 ## The ID of the motive that has been selected by the player in the motive list.
 var selected_motive: String
 
-# reference to item in locations
-var _crime_location: LocationCard
+# references to items in locations
+var _crime_locations: Array[LocationCard]
 
 var _case_id: String
 var _case_random_name: String
@@ -86,7 +86,7 @@ func _notification(what: int):
 			_minion.queue_free()
 			_minion = null
 
-		_crime_location = null
+		_crime_locations.clear()
 
 		for link in _links:
 			link.queue_free()
@@ -429,49 +429,85 @@ func _randomize():
 			if roll != 1:
 				_create_new_connection(npc, Link.Type.IDEOLOGY, i)
 
-	# determine crime location BEFORE distributing evidence
+	# determine crime locations BEFORE distributing evidence
 
+	var crime_location_count
+	if "crime_location_count" in _motive:
+		crime_location_count = _get_count_from_array(_motive.crime_location_count)
+	else:
+		crime_location_count = 0  # actually: 0 or 1
+
+	var secret_locations: Array[LocationCard]
 	var location_name = _motive["crime_location"]
-	if location_name is Array and not location_name.is_empty():
-		location_name = location_name.pick_random()
 
-	var secret_location: LocationCard
+	# if there are multiple crime locations, we assume that all candidates are
+	# real location IDs, not "none", "any", etc., and each dead victim is placed
+	# in one of those locations
 
-	match location_name:
-		"none":
-			secret_location = null
-		"any":
-			var who = (culprits if randi() & 1 else victims).pick_random()
-			secret_location = who.get_all_location_connections().pick_random()
-		"any_culprit":
-			var who = culprits.pick_random()
-			secret_location = who.get_all_location_connections().pick_random()
-		"any_victim":
-			var who = victims.pick_random()
-			secret_location = who.get_all_location_connections().pick_random()
-		"home":
-			secret_location = victims.pick_random().get_home()
-		"work":
-			secret_location = victims.pick_random().get_work()
-		"culprit_home":
-			secret_location = culprits.pick_random().get_home()
-		"culprit_work":
-			secret_location = culprits.pick_random().get_work()
-		_:
-			secret_location = _find_or_create_location(location_name)
+	if (crime_location_count > 1
+		and location_name is Array
+		and location_name.size() >= crime_location_count):
 
-	if secret_location:
-		var known_factor = _motive.get("known_crime_location", 1)
-		var is_known
-		if known_factor <= 0:
-			is_known = false
-		elif known_factor >= 1:
-			is_known = true
-		else:
-			is_known = (randf() < known_factor)
-		if is_known:
-			secret_location.location_status = LocationCard.LocationStatus.CRIME_SCENE
-			_crime_location = secret_location
+		# pick locations at random from the given list
+
+		var victim_count_per_location: Array[int]
+
+		for i in crime_location_count:
+			var index = randi() % location_name.size()
+			var id = location_name[index]
+			location_name.remove_at(index)
+			secret_locations.append(_find_or_create_location(id))
+			_reveal_crime_scene_maybe(
+				secret_locations.back(), _motive.get("known_crime_location", 1))
+			victim_count_per_location.append(0)
+
+		# distribute dead victims among the crime scenes
+
+		var location_candidates: Array[LocationCard] = secret_locations.duplicate()
+		var max_per_location: int = _motive.get("max_victims_per_location", 100)
+
+		for victim in victims:
+			if victim.npc_status == NpcCard.NpcStatus.DEAD:
+				var index = randi() % location_candidates.size()
+				var location: LocationCard = location_candidates[index]
+				Card.add_bidirectional_connection(Link.Type.FOUND, victim, location)
+				victim_count_per_location[index] += 1
+				if victim_count_per_location[index] >= max_per_location:
+					location_candidates.remove_at(index)
+
+	else:
+		if location_name is Array and not location_name.is_empty():
+			location_name = location_name.pick_random()
+
+		var secret_location: LocationCard
+
+		match location_name:
+			"none":
+				secret_location = null
+			"any":
+				var who = (culprits if randi() & 1 else victims).pick_random()
+				secret_location = who.get_all_location_connections().pick_random()
+			"any_culprit":
+				var who = culprits.pick_random()
+				secret_location = who.get_all_location_connections().pick_random()
+			"any_victim":
+				var who = victims.pick_random()
+				secret_location = who.get_all_location_connections().pick_random()
+			"home":
+				secret_location = victims.pick_random().get_home()
+			"work":
+				secret_location = victims.pick_random().get_work()
+			"culprit_home":
+				secret_location = culprits.pick_random().get_home()
+			"culprit_work":
+				secret_location = culprits.pick_random().get_work()
+			_:
+				secret_location = _find_or_create_location(location_name)
+
+		if secret_location:
+			secret_locations.append(secret_location)
+			_reveal_crime_scene_maybe(
+				secret_location, _motive.get("known_crime_location", 1))
 
 	# evidence
 
@@ -524,13 +560,13 @@ func _randomize():
 
 				Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, other_owner)
 
-				match randi() % (3 if secret_location else 2):
+				match randi() % (3 if secret_locations else 2):
 					0:
 						location = locations.pick_random()
 					1:
 						location = npc.get_all_location_connections().pick_random()
 					2:
-						location = secret_location
+						location = secret_locations.pick_random()
 			else:
 				if npc.actual_role == NpcCard.NpcRole.VICTIM:
 					var bad_guy = bad_guys.pick_random()
@@ -544,13 +580,13 @@ func _randomize():
 							location = hideout
 				else:
 					var victim = victims.pick_random()
-					match randi() % (3 if secret_location else 2):
+					match randi() % (3 if secret_locations else 2):
 						0:
 							location = victim.get_home()
 						1:
 							location = victim.get_work()
 						2:
-							location = secret_location
+							location = secret_locations.pick_random()
 
 			if location_owner_count > 0:
 				Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, location)
@@ -596,14 +632,24 @@ func _randomize():
 
 	for npc_list in [victims, witnesses, suspects]:
 		for npc in npc_list:
+
+			# victims are treated differently in the "final" case, where there
+			# are multiple crime scenes: each dead victim is found in one of
+			# those locations, and is not revealed initially
+
+			if (crime_location_count > 1
+				and npc.actual_role == NpcCard.NpcRole.VICTIM
+				and npc.npc_status == NpcCard.NpcStatus.DEAD):
+				continue
+
 			npc.reveal_status = Card.RevealStatus.REVEALED
 			var home = npc.get_home()
 			var work = npc.get_work()
 			var roll = 2 if home == work else randi() % 3
-			if roll != 0 or home == _crime_location:
+			if roll != 0 or home in _crime_locations:
 				home.reveal_status = Card.RevealStatus.REVEALED
 				create_link(npc, home, Link.Type.HOME, true, false)
-			if roll != 1 or work == _crime_location:
+			if roll != 1 or work in _crime_locations:
 				work.reveal_status = Card.RevealStatus.REVEALED
 				create_link(npc, work, Link.Type.WORK, true, false)
 
@@ -621,14 +667,26 @@ func _randomize():
 			if partner and partner.reveal_status == Card.RevealStatus.REVEALED:
 				create_link(npc, partner, Link.Type.SPOUSE, true, false)
 
-	if _crime_location:
-		_crime_location.reveal_status = Card.RevealStatus.REVEALED
+	for loc in _crime_locations:
+		loc.reveal_status = Card.RevealStatus.REVEALED
 
 func _get_count_from_array(count) -> int:
 	if count is Array and not count.is_empty():
 		return count.pick_random()
 	else:
 		return count
+
+func _reveal_crime_scene_maybe(location: LocationCard, known_prob: float):
+	var is_known
+	if known_prob <= 0:
+		is_known = false
+	elif known_prob >= 1:
+		is_known = true
+	else:
+		is_known = (randf() < known_prob)
+	if is_known:
+		location.location_status = LocationCard.LocationStatus.CRIME_SCENE
+		_crime_locations.append(location)
 
 func _create_new_connection(npc: NpcCard, link_type: Link.Type, ignore_count: int):
 	var existing_cnx = npc.get_connections(link_type)
@@ -901,10 +959,12 @@ func get_abandon_fee() -> int:
 	return _difficulty * _duration + (GameState.get_day() - _start_day)
 
 ##
-## Returns the crime location, if there is one, and if it is known.
+## Returns the crime location, if there is one, and if it is known. If there are
+## multiple crime locations (which can happen only on the "final" case after an
+## attack of paranoia), only the first is returned.
 ##
 func get_crime_location() -> LocationCard:
-	return _crime_location
+	return null if _crime_locations.is_empty() else _crime_locations.front()
 
 func get_motive_dictionary() -> Dictionary:
 	return _motive
@@ -1373,8 +1433,11 @@ func get_json_dict():
 			location_refs.append(card.get_unique_id())
 		dict["locations"] = location_refs
 
-	if _crime_location:
-		dict["crime_location"] = _crime_location.get_unique_id()
+	if _crime_locations:
+		var location_refs = []
+		for card in _crime_locations:
+			location_refs.append(card.get_unique_id())
+		dict["crime_locations"] = location_refs
 
 	if _links:
 		var link_refs = []
@@ -1415,8 +1478,11 @@ func restore(dict, catalog):
 		other_objects.append(catalog[ref])
 	for ref in dict.get("locations", []):
 		locations.append(catalog[ref])
-	if "crime_location" in dict:
-		_crime_location = catalog[dict.crime_location]
+	if "crime_locations" in dict:
+		for ref in dict.crime_locations:
+			_crime_locations.append(catalog[ref])
+	elif "crime_location" in dict:
+		_crime_locations.append(catalog[dict.crime_location])
 	for ref in dict.get("links", []):
 		_links.append(catalog[ref])
 
