@@ -722,7 +722,7 @@ func attempt_investigation(location: LocationCard):
 func resume_break_in():
 	var cards = await Globals.dialog_overlay.attempt_break_in()
 	if await _play_break_in(cards):
-		start_investigation(_current_interaction_location_card)
+		await start_investigation(_current_interaction_location_card)
 	else:
 		await end_interaction()
 
@@ -1000,6 +1000,13 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 ## telling The Game to switch scenes.
 ##
 func start_investigation(location: LocationCard):
+
+	# has player stumbled upon any new victims?
+
+	await _check_for_new_victims(location)
+
+	# start the interaction
+
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
 	_current_interaction_location = PlayerLocation.OTHER
@@ -1007,6 +1014,23 @@ func start_investigation(location: LocationCard):
 	_push_card_state()
 	save_game()
 	interaction_started.emit()
+
+#
+# Checks for new victims when the player arrives in the given location for the
+# first time. Displays a message, reveals the victim cards and returns true if
+# any are found.
+#
+func _check_for_new_victims(location: LocationCard) -> bool:
+	var ret = false
+	for card in location.get_connections(Link.Type.FOUND):
+		if card is NpcCard and card.reveal_status != Card.RevealStatus.REVEALED:
+			_reveal_card(card)
+			get_current_case().create_link(
+				card, location, Link.Type.FOUND, true, true)
+			ret = true
+	if ret:
+		await Globals.dialog_overlay.show_dead_victim()
+	return ret
 
 ##
 ## Note that a null location means the NPC is in jail.
@@ -1059,7 +1083,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 				return
 		start_combat(npc, PlayerLocation.OTHER, location)
 	else:
-		start_dialogue(npc, location)
+		await start_dialogue(npc, location)
 
 ##
 ## Starts a dialogue interaction: picks the fallback cards for the dialogue,
@@ -1076,6 +1100,14 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 ##
 func start_dialogue(
 		npc: NpcCard, location: LocationCard, save_card_state: bool = true):
+
+	# has player stumbled upon any new victims?
+
+	if location:
+		await _check_for_new_victims(location)
+
+	# start the interaction
+
 	player.pick_dialogue_cards()
 	_current_interaction = InteractionType.DIALOGUE
 	_current_interaction_location = PlayerLocation.OTHER
