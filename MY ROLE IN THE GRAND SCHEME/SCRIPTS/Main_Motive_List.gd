@@ -5,26 +5,68 @@ extends MenuButton
 @export var alert_player: AnimationPlayer
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
+var _final_crime_data = preload("res://JSON/CASE/Final_Crime_Motive_Evidence.json").data
+var _current_crime_data
+
+# At any given time, _current_crime_data points to either _crime_data, for
+# normal cases, or to _final_crime_data, for the "final" case, when the user is
+# paranoid. There is an important difference between the two JSON files: normal
+# cases have several possible motives for each crime, each with one name; the
+# final case has only one crime and one motive, but that motive has several
+# names. So it has a "names" property, rather than a "name" property. Those
+# names are displayed in the menu here, but cannot be used to solve the case.
+# And, for the final case, Case.selected_motive is set to the name that the
+# player has chosen from the menu, rather than the ID of the motive, which is
+# always the same and is of no importance.
 
 func _ready():
-	# populate the popup menu
 
-	var popup: PopupMenu = get_popup()
-	var crime_index = 0
-	for crime in _crime_data:
-		var crime_dict = _crime_data[crime]
-		var submenu: PopupMenu = PopupMenu.new()
-		for motive_id in crime_dict:
-			var motive_dict = crime_dict[motive_id]
-			submenu.add_item(_get_label(motive_dict.name))
-		popup.add_submenu_node_item(_get_label(crime), submenu)
-		submenu.index_pressed.connect(_on_item_pressed.bind(crime_index))
-		crime_index += 1
+	# populate the menu initially for a normal case or, if the player has
+	# attained paranoia, for the final case
+
+	if GameState.player.is_paranoid():
+		_current_crime_data = _final_crime_data
+	else:
+		_current_crime_data = _crime_data
+		GameState.paranoia.connect(_on_paranoia)
+
+	_populate()
 
 	# when the menu is popped up, disable menu items for motives that are not
 	# compatible with the current case
 
-	popup.about_to_popup.connect(_enable_disable_motives)
+	get_popup().about_to_popup.connect(_enable_disable_motives)
+
+#
+# Called when the player has suffered an attack of paranoia to repopulate the
+# menu. Note that this is never called if the player is already paranoid when
+# the scene is loaded; there is no coming back from paranoia...
+#
+func _on_paranoia():
+	if _current_crime_data != _final_crime_data:
+		_current_crime_data = _final_crime_data
+		_populate()
+
+func _populate():
+	# (re)populate the popup menu
+
+	var popup: PopupMenu = get_popup()
+	popup.clear(true)
+
+	var crime_index = 0
+	for crime in _current_crime_data:
+		var crime_dict = _current_crime_data[crime]
+		var submenu: PopupMenu = PopupMenu.new()
+		for motive_id in crime_dict:
+			var motive_dict = crime_dict[motive_id]
+			if _current_crime_data == _final_crime_data:
+				for motive in motive_dict.names:
+					submenu.add_item(_get_label(motive))
+			else:
+				submenu.add_item(_get_label(motive_dict.name))
+		popup.add_submenu_node_item(_get_label(crime), submenu)
+		submenu.index_pressed.connect(_on_item_pressed.bind(crime_index))
+		crime_index += 1
 
 	# if a crime and motive have been selected, highlight them in the menu, and
 	# set the menu button's label and tooltip accordingly
@@ -42,14 +84,19 @@ func update():
 
 	var popup: PopupMenu = get_popup()
 	var crime_index = 0
-	for crime in _crime_data:
-		var crime_dict = _crime_data[crime]
+	for crime in _current_crime_data:
+		var crime_dict = _current_crime_data[crime]
 		popup.set_item_text(crime_index, _get_label(crime))
 		var submenu: PopupMenu = popup.get_item_submenu_node(crime_index)
 		var motive_index = 0
 		for motive_id in crime_dict:
-			var motive_name = crime_dict[motive_id].name
-			submenu.set_item_text(motive_index, _get_label(motive_name))
+			var motive_dict = crime_dict[motive_id]
+			if _current_crime_data == _final_crime_data:
+				var motives = motive_dict.names
+				for i in motives.size():
+					submenu.set_item_text(i, _get_label(motives[i]))
+			else:
+				submenu.set_item_text(motive_index, _get_label(motive_dict.name))
 			motive_index += 1
 		crime_index += 1
 
@@ -66,7 +113,10 @@ func update():
 func _update_selected_motive():
 	var case: Case = GameState.get_current_case()
 	if case and case.selected_crime and case.selected_motive:
-		text = _crime_data[case.selected_crime][case.selected_motive].name
+		if _current_crime_data == _final_crime_data:
+			text = case.selected_motive
+		else:
+			text = _crime_data[case.selected_crime][case.selected_motive].name
 		tooltip_text = case.selected_crime
 		_set_motive_checked(case.selected_crime, case.selected_motive, true)
 	else:
@@ -79,10 +129,19 @@ func _update_selected_motive():
 func _on_item_pressed(motive_index: int, crime_index: int):
 	# update the menu's label and tooltip
 
-	var crime = _crime_data.keys()[crime_index]
-	var crime_dict = _crime_data[crime]
-	var motive_id = crime_dict.keys()[motive_index]
-	text = crime_dict[motive_id].name
+	var crime = _current_crime_data.keys()[crime_index]
+	var crime_dict = _current_crime_data[crime]
+	var selected_motive: String
+
+	if _current_crime_data == _final_crime_data:
+		var motive_id = crime_dict.keys().front()
+		text = crime_dict[motive_id].names[motive_index]
+		selected_motive = text
+	else:
+		var motive_id = crime_dict.keys()[motive_index]
+		text = crime_dict[motive_id].name
+		selected_motive = motive_id
+
 	tooltip_text = crime
 
 	# unhighlight the previous motive and highlight the new one
@@ -92,22 +151,31 @@ func _on_item_pressed(motive_index: int, crime_index: int):
 		if case.selected_crime and case.selected_motive:
 			_set_motive_checked(case.selected_crime, case.selected_motive, false)
 		case.selected_crime = crime
-		case.selected_motive = motive_id
+		case.selected_motive = selected_motive
 		_set_motive_checked(case.selected_crime, case.selected_motive, true)
 
 #
 # Highlights or unhighlights the given crime and motive in the menu.
 #
 func _set_motive_checked(crime: String, motive_id: String, checked: bool):
-	var submenu_index = _crime_data.keys().find(crime)
+	var submenu_index = _current_crime_data.keys().find(crime)
 	if submenu_index >= 0:
 		var popup: PopupMenu = get_popup()
 		popup.set_item_text(submenu_index, _get_label(crime, checked))
 		var submenu: PopupMenu = popup.get_item_submenu_node(submenu_index)
-		var crime_dict = _crime_data[crime]
-		var motive_index = crime_dict.keys().find(motive_id)
-		if motive_index >= 0:
-			var motive_name = crime_dict[motive_id].name
+		var crime_dict = _current_crime_data[crime]
+		var motive_index: int
+		var motive_name: String
+		if _current_crime_data == _final_crime_data:
+			var id = crime_dict.keys().front()
+			motive_index = crime_dict[id].names.find(motive_id)
+			if motive_index >= 0:
+				motive_name = motive_id
+		else:
+			motive_index = crime_dict.keys().find(motive_id)
+			if motive_index >= 0:
+				motive_name = crime_dict[motive_id].name
+		if motive_name:
 			submenu.set_item_text(motive_index, _get_label(motive_name, checked))
 
 func _get_label(base_name: String, checked: bool = false) -> String:
@@ -129,6 +197,10 @@ func _get_npcs_of_interest(
 # current case.
 #
 func _enable_disable_motives():
+	# in the final case, all motives are valid (and useless)
+	if _current_crime_data == _final_crime_data:
+		return
+
 	if alert_player:
 		alert_player.play("RESET")
 
@@ -136,7 +208,7 @@ func _enable_disable_motives():
 
 	var case = GameState.get_current_case()
 	if case == null:
-		for crime_index in _crime_data.size():
+		for crime_index in _current_crime_data.size():
 			popup.set_item_disabled(crime_index, true)
 		return
 
@@ -152,8 +224,8 @@ func _enable_disable_motives():
 
 	var crime_index = 0
 
-	for crime in _crime_data:
-		var crime_dict = _crime_data[crime]
+	for crime in _current_crime_data:
+		var crime_dict = _current_crime_data[crime]
 		var submenu: PopupMenu = popup.get_item_submenu_node(crime_index)
 		var motive_index = 0
 		var is_one_enabled = false
@@ -170,7 +242,8 @@ func _is_motive_valid(
 	motive_dict: Dictionary, case: Case, victims: Array[NpcCard],
 	culprits: Array[NpcCard], accomplices: Array[NpcCard]) -> bool:
 
-	if case == null:
+	#  no case, or the "final" case => all motives are valid
+	if case == null or _current_crime_data == _final_crime_data:
 		return true
 
 	# is there a crime scene?
@@ -254,6 +327,10 @@ func _is_motive_valid(
 ## this function is called.
 ##
 func check_motive_validity():
+	# in the final case, motives serve no purpose
+	if _current_crime_data == _final_crime_data:
+		return
+
 	var case = GameState.get_current_case()
 	if not (case and case.selected_crime and case.selected_motive):
 		if alert_player:
@@ -266,7 +343,7 @@ func check_motive_validity():
 	_get_npcs_of_interest(case, victims, culprits, accomplices)
 
 	if not _is_motive_valid(
-		_crime_data[case.selected_crime][case.selected_motive], case, victims,
+		_current_crime_data[case.selected_crime][case.selected_motive], case, victims,
 		culprits, accomplices):
 		_set_motive_checked(case.selected_crime, case.selected_motive, false)
 		case.selected_crime = ""

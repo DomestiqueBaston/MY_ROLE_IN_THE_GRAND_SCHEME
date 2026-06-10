@@ -135,6 +135,10 @@ signal drugs_changed
 @warning_ignore("unused_signal")
 signal debts_changed
 
+## Signal emitted when the player has become paranoid.
+@warning_ignore("unused_signal")
+signal paranoia
+
 ## Signal emitted when the player has died.
 signal died
 
@@ -381,8 +385,7 @@ func _check_player_status():
 			player.remove_debt(0)
 		_send_player_to_prison()
 
-	if player.update_paranoia():
-		await paranoia_attack()
+	await _check_for_paranoia_attack()
 
 #
 # Sends the player to bed for about 24 hours (until 8 AM the following day or
@@ -2326,14 +2329,18 @@ func _reveal_culprit():
 	link.needs_attention = true
 	culprit.apparent_role = NpcCard.NpcRole.CULPRIT
 
-##
-## TODO
-## Switches the game to paranoia mode: any open cases are abandoned and replaced
-## by the "final case", the player no longer sleeps or takes drugs, etc. This is
-## a coroutine to be awaited.
-##
-func paranoia_attack():
+#
+# Checks for a paranoia attack, if the player isn't already paranoid. In case of
+# a paranoia attack, switches the game to paranoia mode: any open cases are
+# abandoned and replaced by the "final case", the player no longer sleeps or
+# takes drugs, etc. This is a coroutine to be awaited.
+#
+func _check_for_paranoia_attack() -> bool:
+	if not player.update_paranoia():
+		return false
+	paranoia.emit()
 	await Globals.dialog_overlay.announce_paranoia()
+	return true
 
 ##
 ## Takes the player to the investigation center, where his solution to the
@@ -2366,8 +2373,7 @@ func validate_case():
 				2:
 					player.physical -= 1
 			player.paranoia_state.failed_case_count += 1
-			if player.update_paranoia():
-				await paranoia_attack()
+			await _check_for_paranoia_attack()
 
 		Case.SolutionResult.HALF_RIGHT:
 			money_won = roundi(100 * case.get_difficulty() * randf_range(0.9, 1.1))
@@ -2412,8 +2418,7 @@ func abandon_case():
 		player.money -= fee
 		player.paranoia_state.abandoned_case_count += 1
 		_close_current_case()
-		if player.update_paranoia():
-			await paranoia_attack()
+		await _check_for_paranoia_attack()
 		if get_current_case() == null:
 			await visit_investigation_center()
 

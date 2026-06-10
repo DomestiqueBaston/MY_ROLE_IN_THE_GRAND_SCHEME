@@ -31,6 +31,8 @@ var locations: Array[LocationCard]
 var selected_crime: String
 
 ## The ID of the motive that has been selected by the player in the motive list.
+## In the "final" case, after a paranoia attack, this is just a name picked by
+## the player at random.
 var selected_motive: String
 
 # references to items in locations
@@ -58,6 +60,7 @@ var _next_minion_attack: int = -1
 var _minion: NpcCard
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
+var _final_crime_data = preload("res://JSON/CASE/Final_Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 var _case_name_data = preload("res://JSON/CASE/Random_Case_Names.json").data
@@ -92,9 +95,9 @@ func _notification(what: int):
 			link.queue_free()
 		_links.clear()
 
-static func generate() -> Case:
+static func generate(is_final_case: bool = false) -> Case:
 	var case = Case.new()
-	case._randomize()
+	case._randomize(is_final_case)
 	case.print_case()
 	return case
 
@@ -102,17 +105,28 @@ static func generate() -> Case:
 # Note that it is assumed, for now, that the Case is brand new. Otherwise we
 # would need to clear everything first.
 #
-func _randomize():
+func _randomize(is_final_case: bool):
 	_case_id = _generate_case_id()
 	_case_random_name = _generate_random_name()
 
 	# crime, motive and lots of other information about the case
 
-	_crime = GameState.get_new_crime()
-	var crime_dict = _crime_data[_crime]
+	var current_crime_data
+	if is_final_case:
+		current_crime_data = _final_crime_data
+		_crime = _final_crime_data.keys().front()
+	else:
+		current_crime_data = _crime_data
+		_crime = GameState.get_new_crime()
+
+	var crime_dict = current_crime_data[_crime]
 	var motive_id = crime_dict.keys().pick_random()
 	_motive = crime_dict[motive_id]
-	_case_name = _motive["name"]
+
+	if is_final_case:
+		_case_name = _motive.more_explicit_name
+	else:
+		_case_name = _motive.name
 
 	_victim_count = _get_count_from_array(_motive.get("victims", 0))
 	_culprit_count = _get_count_from_array(_motive.get("culprits", 0))
@@ -1235,6 +1249,10 @@ func forget_minion():
 ## a small number of incorrect links.
 ##
 func check_solution() -> SolutionResult:
+	# in the final case, there is no solution!
+	if GameState.player.is_paranoid():
+		return SolutionResult.WRONG
+
 	var error_count = 0
 	var right_motive = false
 	var good_link_count = 0
