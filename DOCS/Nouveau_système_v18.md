@@ -255,7 +255,7 @@ Crise de paranoïa
 	- Au fur et à mesure que le joueur se rapproche de la crise de Paranoïa, le volume sonore de Paranoia_Voices (dans Ambiance_Sound.tscn) va monter (pour « informer » le joueur de son état) :
 		- le volume sonore sera défini par le niveau le plus proche du déclenchement d’une crise (voir la liste au dessus). Au départ d’une partie à -80db.
 	- Le joueur va tout d'un coup, quand le cap défini est franchi, devenir paranoïaque (on finira l’éventuelle interaction en cours avant comme dit dans Ordre de résolution des évaluations de bonus/malus/jets de dé liés à Emo, Add et Par).
-	- Le joueur aura 15 jours pour résoudre l’enquête finale puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné juste après avoir cliqué sur « Validate Case! »).
+	- Le joueur aura 15 ± 1 jours pour résoudre l’enquête finale puis mourra (car soit il n'y arrive pas et meurt d’épuisement, soit il est découvert et sera donc assassiné juste après avoir cliqué sur « Validate Case! »).
 	- Les effets de la Paranoïa sont également les suivants (sans jamais dépasser les seuils max/min) :
 		Bonus : +2 en PHY ou MEN ou HEA aléatoirement (sans dépasser le maximum).
 		Malus : -1 dans les autres caractéristiques principales (sans dépasser le seuil minimum).
@@ -751,7 +751,7 @@ Crime	Voir la liste
 Mobile	Voir la liste
 Difficulté	1 → 5 (6 pour enquête finale et 0 pour les enquêtes « à la con »)
 Statut	En cours/En pause (niveau 6 : ne peut pas être en pause)
-Délai imparti	round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours (15 ± 2 jours pour niveau de difficulté 6)
+Délai imparti	round((niveau de difficulté × 4 + 10) × (1 ± 0,1)) jours (15 ± 1 jours pour niveau de difficulté 6)
 Lieu du crime	Lieu (possiblement inconnu au départ et automatiquement connu lorsque la victime est morte sauf pour niveau 6 : voir plus bas)
 Nombre de PNJs inutiles	Voir Nombre de PNJs en plus de ceux liés à l’enquêtes (PNJs « inutiles »)
 Indices/témoins	PNJ(s) (témoin : erreur (1+MEN)/(20+MEN) (exemple : pour MEN = 5 → 6 chances sur 25)). 1 seule info (lien uniquement et concernant d’autres NPCs que lui mais pas PNJ inutile). Voir règles pour info fausse ! (niveau 6 : 0)
