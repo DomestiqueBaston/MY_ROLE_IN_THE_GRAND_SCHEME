@@ -1033,6 +1033,8 @@ func _check_for_new_victims(location: LocationCard) -> bool:
 			ret = true
 	if ret:
 		await Globals.dialog_overlay.show_dead_victim()
+		await player.receive_random_sms()
+		_random_sms_time = -1
 	return ret
 
 ##
