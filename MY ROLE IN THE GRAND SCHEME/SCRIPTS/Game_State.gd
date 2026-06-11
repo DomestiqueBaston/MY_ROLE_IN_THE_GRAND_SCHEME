@@ -135,6 +135,10 @@ signal drugs_changed
 @warning_ignore("unused_signal")
 signal debts_changed
 
+## Signal emitted when the player has become paranoid.
+@warning_ignore("unused_signal")
+signal paranoia
+
 ## Signal emitted when the player has died.
 signal died
 
@@ -381,8 +385,7 @@ func _check_player_status():
 			player.remove_debt(0)
 		_send_player_to_prison()
 
-	if player.update_paranoia():
-		await paranoia_attack()
+	await _check_for_paranoia_attack()
 
 #
 # Sends the player to bed for about 24 hours (until 8 AM the following day or
@@ -722,7 +725,7 @@ func attempt_investigation(location: LocationCard):
 func resume_break_in():
 	var cards = await Globals.dialog_overlay.attempt_break_in()
 	if await _play_break_in(cards):
-		start_investigation(_current_interaction_location_card)
+		await start_investigation(_current_interaction_location_card)
 	else:
 		await end_interaction()
 
@@ -1000,6 +1003,13 @@ func _play_investigation(cards_played: Array[Card]) -> InteractionOutcome:
 ## telling The Game to switch scenes.
 ##
 func start_investigation(location: LocationCard):
+
+	# has player stumbled upon any new victims?
+
+	await _check_for_new_victims(location)
+
+	# start the interaction
+
 	player.pick_investigation_cards()
 	_current_interaction = InteractionType.INVESTIGATION
 	_current_interaction_location = PlayerLocation.OTHER
@@ -1007,6 +1017,23 @@ func start_investigation(location: LocationCard):
 	_push_card_state()
 	save_game()
 	interaction_started.emit()
+
+#
+# Checks for new victims when the player arrives in the given location for the
+# first time. Displays a message, reveals the victim cards and returns true if
+# any are found.
+#
+func _check_for_new_victims(location: LocationCard) -> bool:
+	var ret = false
+	for card in location.get_connections(Link.Type.FOUND):
+		if card is NpcCard and card.reveal_status != Card.RevealStatus.REVEALED:
+			_reveal_card(card)
+			get_current_case().create_link(
+				card, location, Link.Type.FOUND, true, true)
+			ret = true
+	if ret:
+		await Globals.dialog_overlay.show_dead_victim()
+	return ret
 
 ##
 ## Note that a null location means the NPC is in jail.
@@ -1059,7 +1086,7 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 				return
 		start_combat(npc, PlayerLocation.OTHER, location)
 	else:
-		start_dialogue(npc, location)
+		await start_dialogue(npc, location)
 
 ##
 ## Starts a dialogue interaction: picks the fallback cards for the dialogue,
@@ -1076,6 +1103,14 @@ func attempt_dialogue(npc: NpcCard, location: LocationCard):
 ##
 func start_dialogue(
 		npc: NpcCard, location: LocationCard, save_card_state: bool = true):
+
+	# has player stumbled upon any new victims?
+
+	if location:
+		await _check_for_new_victims(location)
+
+	# start the interaction
+
 	player.pick_dialogue_cards()
 	_current_interaction = InteractionType.DIALOGUE
 	_current_interaction_location = PlayerLocation.OTHER
@@ -1965,8 +2000,9 @@ func _get_info_from_npc(
 				# objects found at the location
 
 				for obj in subject_card.get_connections(Link.Type.FOUND):
-					_add_info_to_reveal(
-						candidates, obj, subject_card, Link.Type.FOUND, npc)
+					if obj is ObjectCard:
+						_add_info_to_reveal(
+							candidates, obj, subject_card, Link.Type.FOUND, npc)
 
 		Card.CardType.NPC:
 
@@ -2293,14 +2329,18 @@ func _reveal_culprit():
 	link.needs_attention = true
 	culprit.apparent_role = NpcCard.NpcRole.CULPRIT
 
-##
-## TODO
-## Switches the game to paranoia mode: any open cases are abandoned and replaced
-## by the "final case", the player no longer sleeps or takes drugs, etc. This is
-## a coroutine to be awaited.
-##
-func paranoia_attack():
+#
+# Checks for a paranoia attack, if the player isn't already paranoid. In case of
+# a paranoia attack, switches the game to paranoia mode: any open cases are
+# abandoned and replaced by the "final case", the player no longer sleeps or
+# takes drugs, etc. This is a coroutine to be awaited.
+#
+func _check_for_paranoia_attack() -> bool:
+	if not player.update_paranoia():
+		return false
+	paranoia.emit()
 	await Globals.dialog_overlay.announce_paranoia()
+	return true
 
 ##
 ## Takes the player to the investigation center, where his solution to the
@@ -2333,8 +2373,7 @@ func validate_case():
 				2:
 					player.physical -= 1
 			player.paranoia_state.failed_case_count += 1
-			if player.update_paranoia():
-				await paranoia_attack()
+			await _check_for_paranoia_attack()
 
 		Case.SolutionResult.HALF_RIGHT:
 			money_won = roundi(100 * case.get_difficulty() * randf_range(0.9, 1.1))
@@ -2379,8 +2418,7 @@ func abandon_case():
 		player.money -= fee
 		player.paranoia_state.abandoned_case_count += 1
 		_close_current_case()
-		if player.update_paranoia():
-			await paranoia_attack()
+		await _check_for_paranoia_attack()
 		if get_current_case() == null:
 			await visit_investigation_center()
 

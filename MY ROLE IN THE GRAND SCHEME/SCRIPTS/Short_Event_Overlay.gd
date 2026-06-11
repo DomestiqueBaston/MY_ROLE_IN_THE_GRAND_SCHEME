@@ -712,6 +712,18 @@ func show_case_solved(result: Case.SolutionResult, money: int = 0, cards: int = 
 	$Overlays/Income_Start.clear(result)
 
 ##
+## Displays a message when the player has stumbled upon a dead victim.
+##
+func show_dead_victim():
+	$Overlays/Misc/Announces/Paranoia_First_Visit.show()
+	$Overlays/Misc.show()
+	await _appear()
+	await $Overlays/Misc/Announces.done
+	await _disappear()
+	$Overlays/Misc.hide()
+	$Overlays/Misc/Announces/Paranoia_First_Visit.hide()
+
+##
 ## Displays a random text message on the player's cell phone.
 ##
 func send_random_sms():
