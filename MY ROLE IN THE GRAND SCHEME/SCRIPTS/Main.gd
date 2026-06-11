@@ -895,13 +895,14 @@ func populate(case: Case):
 
 	if case.is_layout_needed:
 		for card in revealed_cards:
-			if card is NpcCard or \
-				(card is LocationCard and \
-				 card.location_status == LocationCard.LocationStatus.CRIME_SCENE):
+			if (case.get_difficulty() == 6
+				or card is NpcCard
+				or (card is LocationCard and card.location_status
+					== LocationCard.LocationStatus.CRIME_SCENE)):
 				cards.add_child(card)
 			else:
 				reserve.add_child(card)
-		_layout_cards()
+		_layout_cards(case)
 		case.is_layout_needed = false
 
 	# otherwise restore the card layout from last time
@@ -957,7 +958,7 @@ func populate(case: Case):
 #
 # Lays out the starting cards in a new game.
 #
-func _layout_cards():
+func _layout_cards(case: Case):
 	var top_left = cards.global_position
 	var bottom_right = top_left + cards.size
 	var npc_pos = top_left
@@ -965,7 +966,9 @@ func _layout_cards():
 	var shift = Vector2(20, 40)
 
 	for child in cards.get_children():
-		if child is NpcCard and child.apparent_role != NpcCard.NpcRole.NONE:
+		if (child is NpcCard
+			and (child.apparent_role != NpcCard.NpcRole.NONE
+				 or case.get_difficulty() == 6)):
 			child.global_position = npc_pos
 			npc_pos += shift
 			if npc_pos.y > bottom_right.y - Card.size.y:

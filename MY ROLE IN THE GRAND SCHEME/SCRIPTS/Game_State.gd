@@ -1682,6 +1682,12 @@ func _delete_case(index: int):
 	if _current_case_index > index:
 		_current_case_index -= 1
 
+func _open_final_case():
+	while cases.size() > 0:
+		_delete_case(cases.size() - 1)
+	cases.append(Case.generate(true))
+	set_current_case(0)
+
 ##
 ## Returns the index in the case list of the given case.
 ##
@@ -2340,8 +2346,17 @@ func _reveal_culprit():
 func _check_for_paranoia_attack() -> bool:
 	if not player.update_paranoia():
 		return false
+
+	# tell the player he has lapsed into paranoia; the paranoia() signal causes
+	# the motive list in the main scene to be updated accordingly
+
 	paranoia.emit()
 	await Globals.dialog_overlay.announce_paranoia()
+
+	# close all cases and open the new, final case
+
+	_open_final_case()
+
 	return true
 
 ##

@@ -321,7 +321,6 @@ func _randomize(is_final_case: bool):
 	# in the list. This same pattern is repeated below whenever we create
 	# connections between pairs of NPCs with a probability of less than 100%.
 
-
 	for i in npcs.size() - 1:
 		var npc = npcs[i]
 		if not npc.is_married and randi() & 1:
@@ -641,44 +640,34 @@ func _randomize(is_final_case: bool):
 				other_objects.append(obj)
 				obj_count -= 1
 
-	# cards and links that are revealed initially
+	# cards and links that are revealed initially: victims, witnesses, suspects
+	# and known crime locations
 
-	for npc_list in [victims, witnesses, suspects]:
-		for npc in npc_list:
+	# the final case is special: victims are dead and must be discovered by
+	# investigating, and there are no witnesses or suspects; only a single
+	# culprit or accomplice is revealed initially
 
-			# victims are treated differently in the "final" case, where there
-			# are multiple crime scenes: each dead victim is found in one of
-			# those locations, and is not revealed initially
+	if is_final_case:
+		_reveal_npc((culprits + accomplices).pick_random())
 
-			if (crime_location_count > 1
-				and npc.actual_role == NpcCard.NpcRole.VICTIM
-				and npc.npc_status == NpcCard.NpcStatus.DEAD):
-				continue
+	else:
+		for npc_list in [victims, witnesses, suspects]:
+			for npc in npc_list:
+				_reveal_npc(npc)
 
-			npc.reveal_status = Card.RevealStatus.REVEALED
-			var home = npc.get_home()
-			var work = npc.get_work()
-			var roll = 2 if home == work else randi() % 3
-			if roll != 0 or home in _crime_locations:
-				home.reveal_status = Card.RevealStatus.REVEALED
-				create_link(npc, home, Link.Type.HOME, true, false)
-			if roll != 1 or work in _crime_locations:
-				work.reveal_status = Card.RevealStatus.REVEALED
-				create_link(npc, work, Link.Type.WORK, true, false)
+		for victim in victims:
+			if victim.is_married:
+				var partner = victim.get_spouse()
+				partner.reveal_status = Card.RevealStatus.REVEALED
+				var home = partner.get_home()
+				if home.reveal_status == Card.RevealStatus.REVEALED:
+					create_link(partner, home, Link.Type.HOME, true, false)
 
-	for victim in victims:
-		if victim.is_married:
-			var partner = victim.get_spouse()
-			partner.reveal_status = Card.RevealStatus.REVEALED
-			var home = partner.get_home()
-			if home.reveal_status == Card.RevealStatus.REVEALED:
-				create_link(partner, home, Link.Type.HOME, true, false)
-
-	for npc_list in [victims, witnesses, suspects]:
-		for npc in npc_list:
-			var partner = npc.get_spouse()
-			if partner and partner.reveal_status == Card.RevealStatus.REVEALED:
-				create_link(npc, partner, Link.Type.SPOUSE, true, false)
+		for npc_list in [victims, witnesses, suspects]:
+			for npc in npc_list:
+				var partner = npc.get_spouse()
+				if partner and partner.reveal_status == Card.RevealStatus.REVEALED:
+					create_link(npc, partner, Link.Type.SPOUSE, true, false)
 
 	for loc in _crime_locations:
 		loc.reveal_status = Card.RevealStatus.REVEALED
@@ -688,6 +677,18 @@ func _get_count_from_array(count) -> int:
 		return count.pick_random()
 	else:
 		return count
+
+func _reveal_npc(npc: NpcCard):
+	npc.reveal_status = Card.RevealStatus.REVEALED
+	var home = npc.get_home()
+	var work = npc.get_work()
+	var roll = 2 if home == work else randi() % 3
+	if roll != 0 or home in _crime_locations:
+		home.reveal_status = Card.RevealStatus.REVEALED
+		create_link(npc, home, Link.Type.HOME, true, false)
+	if roll != 1 or work in _crime_locations:
+		work.reveal_status = Card.RevealStatus.REVEALED
+		create_link(npc, work, Link.Type.WORK, true, false)
 
 func _reveal_crime_scene_maybe(location: LocationCard, known_prob: float):
 	var is_known
