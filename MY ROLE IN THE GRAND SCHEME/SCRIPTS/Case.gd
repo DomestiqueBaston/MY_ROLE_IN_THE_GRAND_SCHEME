@@ -201,15 +201,14 @@ func _randomize(is_final_case: bool):
 	# the difficulty must be determined BEFORE generating the NPCs, because it
 	# determines the number of points added to their main characteristics
 
-	var diff = (1
-		+ _victim_count + _culprit_count + _accomplice_count + evidence_count
-		- 4) * 0.5
-
-	_difficulty = clampi(roundi(diff), 1, 5)
-
-	if _difficulty == 6:
-		_duration = 15 + randi_range(-2, 2)
+	if is_final_case:
+		_difficulty = 6
+		_duration = 15 + randi_range(-1, 1)
 	else:
+		var diff = (1
+			+ _victim_count + _culprit_count + _accomplice_count + evidence_count
+			- 4) * 0.5
+		_difficulty = clampi(roundi(diff), 1, 5)
 		_duration = roundi((_difficulty * 2 + 10) * randf_range(0.9, 1.1))
 
 	# NPCs: culprits (if sex is involved, ensure they all have the same sex
@@ -1250,7 +1249,7 @@ func forget_minion():
 ##
 func check_solution() -> SolutionResult:
 	# in the final case, there is no solution!
-	if GameState.player.is_paranoid():
+	if _difficulty == 6:
 		return SolutionResult.WRONG
 
 	var error_count = 0
