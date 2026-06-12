@@ -827,12 +827,13 @@ func get_bonus_malus() -> int:
 		print("sleep bonus/malus: %s" % _sleep_bonus_malus)
 		ret += _sleep_bonus_malus
 
-	var time_awake = get_hours_awake()
-	if time_awake > 16:
-		@warning_ignore("integer_division")
-		var wake_time_delta = (time_awake - 16) / 2
-		print("wake time malus: %s" % wake_time_delta)
-		ret += wake_time_delta
+	if not is_paranoid():
+		var time_awake = get_hours_awake()
+		if time_awake > 16:
+			@warning_ignore("integer_division")
+			var wake_time_delta = (time_awake - 16) / 2
+			print("wake time malus: %s" % wake_time_delta)
+			ret += wake_time_delta
 
 	var emo_delta = 0
 	if absi(emotion) > 2:
