@@ -895,7 +895,7 @@ func populate(case: Case):
 
 	if case.is_layout_needed:
 		for card in revealed_cards:
-			if (case.get_difficulty() == 6
+			if (case.is_final()
 				or card is NpcCard
 				or (card is LocationCard and card.location_status
 					== LocationCard.LocationStatus.CRIME_SCENE)):
@@ -968,7 +968,7 @@ func _layout_cards(case: Case):
 	for child in cards.get_children():
 		if (child is NpcCard
 			and (child.apparent_role != NpcCard.NpcRole.NONE
-				 or case.get_difficulty() == 6)):
+				 or case.is_final())):
 			child.global_position = npc_pos
 			npc_pos += shift
 			if npc_pos.y > bottom_right.y - Card.size.y:

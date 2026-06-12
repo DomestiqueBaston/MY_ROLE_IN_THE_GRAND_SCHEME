@@ -135,8 +135,7 @@ signal drugs_changed
 @warning_ignore("unused_signal")
 signal debts_changed
 
-## Signal emitted when the player has become paranoid.
-@warning_ignore("unused_signal")
+## Signal emitted when the player has succumbed to paranoia (happens only once).
 signal paranoia
 
 ## Signal emitted when the player has died.
@@ -2450,6 +2449,14 @@ func manage_cases():
 	if await move_player_to(PlayerLocation.OFFICE) and player.health > 0:
 		if await Globals.dialog_overlay.manage_cases():
 			save_game()
+
+##
+## Returns true if the player has succumbed to paranoia and the "final" case is
+## underway.
+##
+func is_final_case():
+	var case = get_current_case()
+	return case and case.is_final()
 
 ##
 ## Allows the player to manage his cards, potentially keeping newly earned cards

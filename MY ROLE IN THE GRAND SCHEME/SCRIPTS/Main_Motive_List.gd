@@ -24,8 +24,7 @@ func _ready():
 	# populate the menu initially for a normal case or, if the player has
 	# attained paranoia, for the final case
 
-	var case = GameState.get_current_case()
-	if case and case.get_difficulty() == 6:
+	if GameState.is_final_case():
 		_current_crime_data = _final_crime_data
 	else:
 		_current_crime_data = _crime_data

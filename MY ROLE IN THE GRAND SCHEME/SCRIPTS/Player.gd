@@ -219,7 +219,7 @@ func get_health() -> int:
 	return health
 
 ##
-## Returns true if the player has suffered an attack of paranoia.
+## Returns true if the player has succumbed to paranoia.
 ##
 func is_paranoid() -> bool:
 	return paranoia_state.check()

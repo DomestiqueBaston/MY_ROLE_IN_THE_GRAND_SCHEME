@@ -926,6 +926,12 @@ func get_difficulty() -> int:
 	return _difficulty
 
 ##
+## Returns true if this is the "final" case.
+##
+func is_final() -> bool:
+	return _difficulty == 6
+
+##
 ## Returns the number of days the player has to solve the case.
 ##
 func get_duration() -> int:
@@ -1250,7 +1256,7 @@ func forget_minion():
 ##
 func check_solution() -> SolutionResult:
 	# in the final case, there is no solution!
-	if _difficulty == 6:
+	if is_final():
 		return SolutionResult.WRONG
 
 	var error_count = 0

@@ -198,14 +198,16 @@ func _on_cases_popup():
 	var case: Case = GameState.get_current_case()
 	var popup: PopupMenu = $Menus/Cases.get_popup()
 	var index = popup.get_item_index(CasesMenuItem.MANAGE)
-	popup.set_item_disabled(index, GameState.get_open_cases().size() < 2)
+	popup.set_item_disabled(
+		index, GameState.get_open_cases().size() < 2 or GameState.is_final_case())
 	index = popup.get_item_index(CasesMenuItem.VALIDATE)
 	popup.set_item_disabled(index, case == null or case.selected_motive.is_empty())
 	index = popup.get_item_index(CasesMenuItem.GIVE_UP)
 	popup.set_item_disabled(
 		index,
 		not (case and case.can_be_abandoned()
-			 and GameState.can_visit_investigation_center()))
+			 and GameState.can_visit_investigation_center())
+		or GameState.is_final_case())
 	index = popup.get_item_index(CasesMenuItem.DEADLINES)
 	popup.set_item_disabled(index, GameState.get_open_cases().is_empty())
 
@@ -294,23 +296,29 @@ func _on_dailies_menu_popup():
 			item_index,
 			player.money < GameState.warrant_price \
 			or player.get_debt_count() > 0 \
-			or not GameState.can_visit_warrant_desk())
+			or not GameState.can_visit_warrant_desk() \
+			or player.is_paranoid())
 
 	# can the player go to the doctor?
 
 	item_index = popup.get_item_index(DailiesMenuItem.DOCTOR)
-	popup.set_item_disabled(item_index, not GameState.can_visit_doctor())
+	popup.set_item_disabled(
+		item_index,
+		not GameState.can_visit_doctor() or player.is_paranoid())
 
 	# can the player go see his dealer?
 
 	item_index = popup.get_item_index(DailiesMenuItem.DEALER)
-	popup.set_item_disabled(item_index, not GameState.can_visit_dealer())
+	popup.set_item_disabled(
+		item_index,
+		not GameState.can_visit_dealer() or player.is_paranoid())
 
 	# can the player visit the investigation center?
 
 	item_index = popup.get_item_index(DailiesMenuItem.INVESTIGATION_CENTER)
 	popup.set_item_disabled(
-		item_index, not GameState.can_visit_investigation_center())
+		item_index,
+		not GameState.can_visit_investigation_center() or player.is_paranoid())
 
 	# can the player go to the office?
 
@@ -322,7 +330,8 @@ func _on_dailies_menu_popup():
 	# can the player sleep?
 
 	item_index = popup.get_item_index(DailiesMenuItem.SLEEP)
-	popup.set_item_disabled(item_index, not player.can_sleep())
+	popup.set_item_disabled(
+		item_index, not player.can_sleep() or player.is_paranoid())
 
 	# populate the debts submenu with an item for each debt
 
@@ -338,11 +347,11 @@ func _on_dailies_menu_popup():
 		_debt_popup.add_item(label)
 		_debt_popup.set_item_disabled(i, player.money < debt)
 
-	# if the player has no debts, disable the submenu
+	# if the player has no debts or is paranoid, disable the submenu
 
 	var dailies: PopupMenu = _dailies_button.get_popup()
 	var index = dailies.get_item_index(DailiesMenuItem.DEBT_SUBMENU)
-	if player.get_debt_count() == 0:
+	if player.get_debt_count() == 0 or player.is_paranoid():
 		dailies.set_item_disabled(index, true)
 	else:
 		dailies.set_item_disabled(index, false)
@@ -350,7 +359,7 @@ func _on_dailies_menu_popup():
 	# enable/disable drug submenu and items as appropriate
 
 	index = dailies.get_item_index(DailiesMenuItem.DRUG_SUBMENU)
-	if player.drugs < 1 or player.drugs_taken_today >= 2:
+	if player.drugs < 1 or player.drugs_taken_today >= 2 or player.is_paranoid():
 		dailies.set_item_disabled(index, true)
 	else:
 		dailies.set_item_disabled(index, false)
