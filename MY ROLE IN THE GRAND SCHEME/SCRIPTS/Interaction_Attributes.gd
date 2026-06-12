@@ -30,10 +30,18 @@ func reset():
 	PHY = player.physical
 	MEN = player.mental
 	HEA = player.health
+
+	if player.is_paranoid():
+		var roll = randi() % 3
+		PHY += 2 if roll == 0 else -1
+		MEN += 2 if roll == 1 else -1
+		HEA += 2 if roll == 2 else -1
+
 	_fallback_card_count = 0
 	_dice = 0
 	_npc_dice = 0
 	_last_emo_malus = 0
+
 	_unhandled_bonus_malus.clear()
 	_unhandled_success_bonus.clear()
 	_unhandled_failure_malus.clear()

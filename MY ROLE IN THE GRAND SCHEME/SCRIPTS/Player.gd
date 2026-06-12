@@ -230,7 +230,12 @@ func is_paranoid() -> bool:
 ## will return true (and update_paranoia() will return false).
 ##
 func update_paranoia() -> bool:
-	return not paranoia_state.check() and paranoia_state.update()
+	if not paranoia_state.check() and paranoia_state.update():
+		emotion = clampi(emotion, -2, 2)
+		addiction = clampi(addiction, -2, 2)
+		return true
+	else:
+		return false
 
 ##
 ## Checks the player's health, emotion and addiction levels, and returns his
@@ -257,12 +262,14 @@ func test_health() -> PlayerState:
 		paranoia_state.drug_crisis_count += 1
 
 	if physical <= 0 or mental <= 0:
+		if is_paranoid():
+			return PlayerState.DEAD
 		await Globals.dialog_overlay.announce_forced_rest(false)
 		physical = mini(1, physical)
 		mental = mini(1, mental)
 		return PlayerState.KO
 
-	if get_hours_awake() >= 24:
+	if get_hours_awake() >= 24 and not is_paranoid():
 		await Globals.dialog_overlay.announce_forced_rest(true)
 		return PlayerState.KO
 
@@ -586,18 +593,25 @@ func pass_time(hours: int):
 		pass_one_hour()
 
 ##
-## For every waking hour, there is one chance in three that the player physical,
-## mental or health attribute will improve.
+## For every waking hour, there is one chance in ten that the player's physical,
+## mental or health attribute will improve (or worsen, perhaps, if he is
+## paranoid).
 ##
 func pass_one_hour():
-	if randi() % 10 == 0:
-		match randi() % 3:
+	var roll = randi() % 60
+	if roll < 6:
+		var delta
+		if is_paranoid():
+			delta = 1 if roll & 1 else -1
+		else:
+			delta = 1
+		match roll >> 1:
 			0:
-				physical += 1
+				physical += delta
 			1:
-				mental += 1
+				mental += delta
 			2:
-				health += 1
+				health += delta
 
 ##
 ## Picks 3 abstract and/or run-away cards at random for fleeing a combat,
@@ -734,15 +748,18 @@ func new_day():
 		drugs_taken_today = 0
 		if wanted > 0 and GameState.get_working_day() - _last_wanted_change >= 3:
 			wanted -= 1
-		improve_emotion(1)
+		if not is_paranoid():
+			improve_emotion(1)
 
-	if physical <= 2 and mental <= 2 and health <= 2:
-		paranoia_state.bad_health_period += 1
+	if is_paranoid():
+		_sleep_bonus_malus = mini(2, _sleep_bonus_malus + 1)
 	else:
-		paranoia_state.bad_health_period = 0
-
-	paranoia_state.unpaid_bill_count = \
-		maxi(paranoia_state.unpaid_bill_count, _debts.size())
+		if physical <= 2 and mental <= 2 and health <= 2:
+			paranoia_state.bad_health_period += 1
+		else:
+			paranoia_state.bad_health_period = 0
+		paranoia_state.unpaid_bill_count = \
+			maxi(paranoia_state.unpaid_bill_count, _debts.size())
 
 ##
 ## Specifies that the player has been sent to prison. Until he is released,
@@ -846,16 +863,17 @@ func get_bonus_malus() -> int:
 		print("Wan malus: %s" % wanted_malus)
 		ret += wanted_malus
 
-	@warning_ignore("integer_division")
-	var debt_delta = get_debt_count() / 2
-	if debt_delta > 0:
-		print("unpaid bills malus: %s" % debt_delta)
-		ret += debt_delta
+	if not is_paranoid():
+		@warning_ignore("integer_division")
+		var debt_delta = get_debt_count() / 2
+		if debt_delta > 0:
+			print("unpaid bills malus: %s" % debt_delta)
+			ret += debt_delta
 
-	var hour = GameState.get_hour()
-	if hour < 8 or hour >= 20:
-		print("night action malus: 1")
-		ret += 1
+		var hour = GameState.get_hour()
+		if hour < 8 or hour >= 20:
+			print("night action malus: 1")
+			ret += 1
 
 	var difficulty = GameState.get_current_case().get_difficulty()
 	if difficulty != 3:
