@@ -330,7 +330,7 @@ Passer le temps
 	- Lorsqu’il ne dort pas, le joueur pourra presser le bouton « Pass time » pour faire passer le temps d’1 heure.
 
 Passer le temps pendant la paranoïa
-	- Chaque « Pass time » donne 1/10 chance d’avoir ±1 de PHY, MEN ou HEA.
+	- Chaque « Pass time » fait passer 4h et donne 1/10 chance d’avoir ±1 de PHY, MEN ou HEA.
 
 Le temps des PNJs
 	- Les PNJs suivent le cycle jour/nuit par leur emploi du temps mais si le joueur les emmène au delà des limites par une interaction, ils suivront le joueur puis reprendront leur emploi du temps normal sans effet pour eux en fin d’Interaction.
