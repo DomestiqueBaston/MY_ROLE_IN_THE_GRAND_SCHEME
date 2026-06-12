@@ -1,7 +1,0 @@
-{
-  "death_parts": [
-	{ "part": 1, "choices": ["The search ends ", "The case is lost ", "All hope fades "] },
-	{ "part": 2, "choices": ["and the investigator is gone: ", "as silence falls: ", "leaving the truth behind: "] },
-	{ "part": 3, "choices": ["your journey ended here.", "the final chapter is closed.", "and nothing remains now."] }
-  ]
-}

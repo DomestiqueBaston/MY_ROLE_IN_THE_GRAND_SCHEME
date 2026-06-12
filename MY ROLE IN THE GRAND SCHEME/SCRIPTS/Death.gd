@@ -15,13 +15,34 @@ beyond his grasp.
 
 Condolences to the family, if applicable."
 
+@export var final_case_text = "\
+In Memoriam: A Private Investigator Who Refused to Move On.
+
+{player_name} died after the final days were consumed by a mystery that had \
+taken over every part of life. What began as a sudden fixation turned into a \
+consuming mental spiral.
+
+Every loose end became a pattern. Every coincidence, evidence. Every silence, \
+proof of something unseen. Sleep, stability, and judgment were gradually traded \
+for an answer that kept receding.
+
+Some say death came from exhaustion. Others say something far uglier than that. \
+The truth is, the investigation ended the only way it realistically could...
+
+Just another unsolved case.
+
+Condolences to the family, if applicable."
+
 signal done
 
 func _ready():
 	$Death_Note/Quit.pressed.connect(_on_quit_pressed)
 	$Death_Note/Quit.mouse_entered.connect(Globals.on_mouse_entered)
 	$Death_Note/Quit.mouse_exited.connect(Globals.on_mouse_exited)
-	$Death_Note/Necrology.text = text.format(GameState.player)
+	if GameState.is_final_case():
+		$Death_Note/Necrology.text = final_case_text.format(GameState.player)
+	else:
+		$Death_Note/Necrology.text = text.format(GameState.player)
 
 func _on_quit_pressed():
 	Globals.cancel_sound.play()

@@ -2366,11 +2366,20 @@ func _check_for_paranoia_attack() -> bool:
 ## have died, or may no longer have a current case.
 ##
 func validate_case():
-	if not (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
-			and player.health > 0 and get_current_case()):
+	var case = get_current_case()
+
+	# the "final" case can never be validated!
+
+	if case and case.is_final():
+		died.emit()
 		return
 
-	var case = get_current_case()
+	# try to get to the investigation center first
+
+	if not (await move_player_to(PlayerLocation.INVESTIGATION_CENTER)
+			and player.health > 0 and case):
+		return
+
 	var result: Case.SolutionResult = case.check_solution()
 	var money_won: int = 0
 	var cards_won: int = 0
