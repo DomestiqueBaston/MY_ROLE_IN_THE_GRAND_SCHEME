@@ -123,14 +123,16 @@ func apply_bonus_malus(bonus_malus: Dictionary):
 				delta = value
 				HEA += delta
 			"Emo":
-				delta = _interpret_bonus_malus_value(player.emotion, value)
-				if delta != 0:
-					if player.emotion == 0 or signi(delta) == signi(player.emotion):
-						_last_emo_malus = delta
-					player.emotion += delta
+				if not player.is_paranoid():
+					delta = _interpret_bonus_malus_value(player.emotion, value)
+					if delta != 0:
+						if player.emotion == 0 or signi(delta) == signi(player.emotion):
+							_last_emo_malus = delta
+						player.emotion += delta
 			"Add":
-				delta = _interpret_bonus_malus_value(player.addiction, value)
-				player.addiction += delta
+				if not player.is_paranoid():
+					delta = _interpret_bonus_malus_value(player.addiction, value)
+					player.addiction += delta
 			"dice":
 				delta = value
 				_dice += delta
