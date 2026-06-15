@@ -324,7 +324,7 @@ func _randomize(is_final_case: bool):
 	for i in npcs.size() - 1:
 		var npc = npcs[i]
 		if not npc.is_married and randi() & 1:
-			var other = _find_partner_for(npc, i, false)
+			var other = _find_partner_for(npc, i+1, false)
 			if other:
 				npc.is_married = true
 				other.is_married = true
@@ -340,7 +340,7 @@ func _randomize(is_final_case: bool):
 		var home = _create_location("LOC001")
 		Card.add_bidirectional_connection(Link.Type.HOME, home, npc)
 
-		var partner = npc.get_one_connection(Link.Type.SPOUSE)
+		var partner = npc.get_spouse()
 		if partner:
 			Card.add_bidirectional_connection(Link.Type.HOME, home, partner)
 
@@ -719,9 +719,9 @@ func _find_partner_for(
 
 		# same NPC?
 
-		if npcs[index] == npc:
-			continue
 		var other: NpcCard = npcs[index]
+		if other == npc:
+			continue
 
 		# other NPC already has somebody, or already has a connection to NPC?
 

@@ -452,6 +452,25 @@ func _add_connection(type: Link.Type, card: Card):
 ## Static function to add a bidirectional connection between two cards.
 ##
 static func add_bidirectional_connection(type: Link.Type, card_a: Card, card_b: Card):
+
+	# sanity test: see bug #229
+
+	if type == Link.Type.SPOUSE:
+		var other = card_a.get_spouse()
+		if other:
+			push_error(
+				"Error marrying %s to %s: %s already has a spouse: %s"
+				% [card_a.get_display_name(), card_b.get_display_name(),
+				   card_a.get_display_name(), other.get_display_name()])
+			return
+		other = card_b.get_spouse()
+		if other:
+			push_error(
+				"Error marrying %s to %s: %s already has a spouse: %s"
+				% [card_a.get_display_name(), card_b.get_display_name(),
+				   card_b.get_display_name(), other.get_display_name()])
+			return
+
 	card_a._add_connection(type, card_b)
 	card_b._add_connection(type, card_a)
 
