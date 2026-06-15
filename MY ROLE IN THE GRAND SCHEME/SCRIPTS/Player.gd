@@ -586,32 +586,38 @@ func pick_combat_cards(is_minion: bool = false):
 			normal_count += 1
 
 ##
-## See pass_one_hour().
+## For every waking hour, there is one chance in ten that the player's physical,
+## mental or health attribute will improve, unless he is paranoid.
+##
+## If the player is paranoid, there is one chance in 40 that the player's
+## physical, mental or health attribute will improve OR worsen.
 ##
 func pass_time(hours: int):
 	for i in hours:
-		pass_one_hour()
+		_pass_one_hour()
 
-##
-## For every waking hour, there is one chance in ten that the player's physical,
-## mental or health attribute will improve (or worsen, perhaps, if he is
-## paranoid).
-##
-func pass_one_hour():
-	var roll = randi() % 60
-	if roll < 6:
-		var delta
-		if is_paranoid():
-			delta = 1 if roll & 1 else -1
-		else:
-			delta = 1
-		match roll >> 1:
-			0:
-				physical += delta
-			1:
-				mental += delta
-			2:
-				health += delta
+func _pass_one_hour():
+	if is_paranoid():
+		var roll = randi() % 240
+		if roll < 6:
+			var delta = 1 if roll & 1 else -1
+			match roll >> 1:
+				0:
+					physical += delta
+				1:
+					mental += delta
+				2:
+					health += delta
+	else:
+		var roll = randi() % 30
+		if roll < 3:
+			match roll:
+				0:
+					physical += 1
+				1:
+					mental += 1
+				2:
+					health += 1
 
 ##
 ## Picks 3 abstract and/or run-away cards at random for fleeing a combat,

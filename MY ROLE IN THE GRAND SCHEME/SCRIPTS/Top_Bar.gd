@@ -187,7 +187,7 @@ func _on_dailies_press(id: int):
 		DailiesMenuItem.OFFICE:
 			GameState.visit_office()
 		DailiesMenuItem.PASS_TIME:
-			GameState.pass_one_hour()
+			GameState.pass_time()
 			$Menu_Bip.play()
 		DailiesMenuItem.SLEEP:
 			var hours = await Globals.dialog_overlay.choose_sleep_time()

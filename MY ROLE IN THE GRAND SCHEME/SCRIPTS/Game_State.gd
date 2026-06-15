@@ -515,17 +515,22 @@ func get_new_crime() -> String:
 ## Lets an hour pass. Note that this is a coroutine to be awaited, and also that
 ## the player may have died on return.
 ##
-func pass_one_hour():
+## In the "final" case, when the player is paranoid, pass_time() skips four
+## hours, not just one.
+##
+func pass_time():
+	var hours = 4 if player.is_paranoid() else 1
 	var case = get_current_case()
 	if case and case.check_minion_attack() and not _player_location in [
 		PlayerLocation.OFFICE, PlayerLocation.PRISON
 	]:
 		await start_minion_attack()
 	else:
-		await _pass_one_hour_private()
+		player.pass_time(hours)
+		await _increment_time(hours, true)
 
 func _pass_one_hour_private():
-	player.pass_one_hour()
+	player.pass_time(1)
 	await _increment_time(1, true)
 
 ##
