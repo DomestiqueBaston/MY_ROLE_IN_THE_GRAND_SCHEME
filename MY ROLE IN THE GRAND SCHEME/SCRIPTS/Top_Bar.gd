@@ -272,12 +272,13 @@ func _on_time_changed():
 	else:
 		$Date_Time/Time.text = "%dpm" % (12 if hour == 12 else hour - 12)
 
-	if GameState.player.get_hours_awake() >= 16:
-		$Date_Time/Time.tooltip_text = "You need to sleep!"
-		$Sleep_Alert.play("Alert")
-	else:
+	var player = GameState.player
+	if player.get_hours_awake() < 16 or player.is_paranoid():
 		$Date_Time/Time.tooltip_text = ""
 		$Sleep_Alert.play("RESET")
+	else:
+		$Date_Time/Time.tooltip_text = "You need to sleep!"
+		$Sleep_Alert.play("Alert")
 
 func _on_dailies_menu_popup():
 	var player: Player = GameState.player
