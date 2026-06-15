@@ -887,7 +887,7 @@ Fiche d’enquête
 	- Une fois l’écran de paranoïa fermé, on enchaîne directement sur un écran qui va informer le joueur qu’il va interpeller un PNJ qui passe puis :
 	- Retour à Main.tscn avec affichage de la carte du PNJ, ses infos (nom, prénom, lieu de travail et/ou lieu de résidence… Comme d’hab’, quoi).
 	- À l’issue de ce Dialogue, le PNJ interpelé par le joueur s’enfuit (sans aucun recours pour le joueur) jusqu’à la fin du jeu.
-	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) mais la fois suivante, les cadavres auront été débarrassés !
+	- La première fois que le joueur entrera dans un lieu contenant des victimes, celles-ci seront présentes (mortes!) et le joueur recevra un SMS anonyme mais à la visite suivante du lieu, les cadavres auront été débarrassés donc pas de SMS !
 
 Comment repartir les evidences ?
 	- Les evidences sont réparties entre les coupables avec un minimum d’1 evidence par coupable.
