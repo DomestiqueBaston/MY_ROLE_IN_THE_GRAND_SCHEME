@@ -1034,12 +1034,15 @@ func _check_for_new_victims(location: LocationCard) -> bool:
 	var ret = false
 	for card in location.get_connections(Link.Type.FOUND):
 		if card is NpcCard and card.reveal_status != Card.RevealStatus.REVEALED:
+			#print("*** reveal victim: ", card.get_display_name())
 			_reveal_card(card)
 			get_current_case().create_link(
 				card, location, Link.Type.FOUND, true, true)
 			ret = true
 	if ret:
+		#print("*** show_dead_victim")
 		await Globals.dialog_overlay.show_dead_victim()
+		#print("*** random SMS")
 		await player.receive_random_sms()
 		_random_sms_time = -1
 	return ret
@@ -1122,8 +1125,12 @@ func start_dialogue(
 
 	player.pick_dialogue_cards()
 	_current_interaction = InteractionType.DIALOGUE
-	_current_interaction_location = PlayerLocation.OTHER
-	_current_interaction_location_card = location
+	if location:
+		_current_interaction_location = PlayerLocation.OTHER
+		_current_interaction_location_card = location
+	else:
+		_current_interaction_location = PlayerLocation.PRISON
+		_current_interaction_location_card = null
 	_current_interaction_npc = npc
 	if save_card_state:
 		_push_card_state()
