@@ -451,6 +451,9 @@ func _new_day():
 		var case = cases[index]
 		if case.get_status() in [Case.Status.ACTIVE, Case.Status.PAUSED]:
 			if case.is_expired():
+				if case and case.is_final():
+					died.emit()
+					return
 				if player.emotion == 0:
 					player.emotion = -1
 				else:
