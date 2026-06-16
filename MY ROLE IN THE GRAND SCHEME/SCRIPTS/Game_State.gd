@@ -1697,6 +1697,7 @@ func _delete_case(index: int):
 		_current_case_index -= 1
 
 func _open_final_case():
+	_close_current_case()
 	while cases.size() > 0:
 		_delete_case(cases.size() - 1)
 	cases.append(Case.generate(true))
