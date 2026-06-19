@@ -295,7 +295,7 @@ func _on_dailies_menu_popup():
 		popup.set_item_text(item_index, "Buy a search warrant...")
 		popup.set_item_disabled(
 			item_index,
-			player.money < GameState.warrant_price \
+			player.money < GameState.get_warrant_price() \
 			or player.get_debt_count() > 0 \
 			or not GameState.can_visit_warrant_desk() \
 			or player.is_paranoid())

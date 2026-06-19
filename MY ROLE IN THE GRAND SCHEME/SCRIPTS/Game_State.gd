@@ -80,9 +80,6 @@ enum NpcEscapeOutcome {
 var player: Player = Player.new()
 var cases: Array[Case]
 
-## Price for a search warrant.
-const warrant_price: int = 45
-
 ## Price to avoid prison.
 const prison_bail: int = 100
 
@@ -576,10 +573,17 @@ func can_visit_warrant_desk() -> bool:
 	var travel_time = 0 if _player_location == PlayerLocation.WARRANT_DESK else 1
 	return _is_office_hours(travel_time)
 
+func get_warrant_price() -> int:
+	var price: int = 45
+	if Globals.corruption_flag:
+		price = roundi(price * 1.2)
+	return price
+
 func buy_search_warrant():
 	if await move_player_to(PlayerLocation.WARRANT_DESK) and player.health > 0:
-		if await Globals.dialog_overlay.buy_search_warrant(warrant_price):
-			player.money -= warrant_price
+		var price = get_warrant_price()
+		if await Globals.dialog_overlay.buy_search_warrant(price):
+			player.money -= price
 			player.has_search_warrant = true
 			save_game()
 

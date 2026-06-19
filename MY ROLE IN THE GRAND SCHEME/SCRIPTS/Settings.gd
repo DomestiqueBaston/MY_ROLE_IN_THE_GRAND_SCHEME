@@ -14,6 +14,7 @@ signal done
 @onready var _difficulty_slider: Slider = $Buttons_Sliders/Sliders/Difficulty
 @onready var _drug_quality_button: BaseButton = $Buttons_Sliders/Buttons/Drug_Quality
 @onready var _plot_depth_button: BaseButton = $Buttons_Sliders/Buttons/Plot_Depth
+@onready var _corruption_button: BaseButton = $Buttons_Sliders/Buttons/Corruption
 
 var _initial_volumes: Array[float]
 var _confirmed: bool
@@ -29,6 +30,7 @@ func _ready():
 	_difficulty_slider.value = Globals.game_difficulty
 	_drug_quality_button.button_pressed = Globals.drug_quality_flag
 	_plot_depth_button.button_pressed = Globals.plot_depth_flag
+	_corruption_button.button_pressed = Globals.corruption_flag
 
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok.pressed.connect(_on_ok)
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Cancel.pressed.connect(_on_cancel)
@@ -43,6 +45,7 @@ func _on_ok():
 	Globals.game_difficulty = int(_difficulty_slider.value)
 	Globals.drug_quality_flag = _drug_quality_button.button_pressed
 	Globals.plot_depth_flag = _plot_depth_button.button_pressed
+	Globals.corruption_flag = _corruption_button.button_pressed
 	done.emit()
 
 func _on_cancel():
@@ -61,6 +64,7 @@ func _on_reset():
 	_difficulty_slider.value = Globals.default_game_difficulty
 	_drug_quality_button.button_pressed = false
 	_plot_depth_button.button_pressed = false
+	_corruption_button.button_pressed = false
 
 func is_confirmed() -> bool:
 	return _confirmed
