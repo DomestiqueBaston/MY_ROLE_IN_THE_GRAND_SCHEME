@@ -487,7 +487,7 @@ func _send_new_bill():
 		var debt = player.get_debt(i)
 		player.set_debt(i, roundi(debt * 1.1))
 
-	var new_debt = 75
+	var new_debt = 90 if Globals.inflation_flag else 75
 	var x = randf()
 	if x < 0.5:
 		#new_debt = roundi(new_debt * randf_range(0.9, 1.1))

@@ -33,6 +33,9 @@ var plot_depth_flag: bool = false
 ## Corruption flag: when set, search warrant prices are higher.
 var corruption_flag: bool = false
 
+## Inflation flag: when set, bills are more expensive.
+var inflation_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -258,6 +261,7 @@ func load_settings():
 		drug_quality_flag = config.get_value("settings", "drug_quality", false)
 		plot_depth_flag = config.get_value("settings", "plot_depth", false)
 		corruption_flag = config.get_value("settings", "corruption", false)
+		inflation_flag = config.get_value("settings", "inflation", false)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -272,6 +276,7 @@ func save_settings():
 	config.set_value("settings", "drug_quality", drug_quality_flag)
 	config.set_value("settings", "plot_depth", plot_depth_flag)
 	config.set_value("settings", "corruption", corruption_flag)
+	config.set_value("settings", "inflation", inflation_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:
