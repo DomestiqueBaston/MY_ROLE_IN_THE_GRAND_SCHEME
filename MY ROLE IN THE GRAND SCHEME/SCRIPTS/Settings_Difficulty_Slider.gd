@@ -1,20 +1,23 @@
 extends VSlider
 
-@onready var slider = self
+# The actual difficulty level is determined by Globals.game_difficulty; make
+# sure that its value and its default value are consistent with the number of
+# levels/tooltips.
+
+const _tooltips = [
+	"For dummies...",
+	"No sweat, no tears",
+	"Business as usual",
+	"No holds barred",
+	"Nightmare fueled!"
+]
 
 func _ready():
-	_update_tooltip(int(value))
+	min_value = 0
+	max_value = _tooltips.size() - 1
+	rounded = true
+	value = roundf(max_value / 2)
+	_on_value_changed(value)
 
-func _on_value_changed(new_value):
-	_update_tooltip(int(new_value))
-
-func _update_tooltip(new_value: int):
-	var labels = {
-		1: "For dummies...",
-		2: "No Sweat, no tears",
-		3: "Business as usual",
-		4: "No holds barred",
-		5: "Nightmare fueled!"
-	}
-
-	tooltip_text = "Difficulty: " + labels.get(new_value, "")
+func _on_value_changed(new_value: float):
+	tooltip_text = "Difficulty: " + _tooltips[int(new_value)]

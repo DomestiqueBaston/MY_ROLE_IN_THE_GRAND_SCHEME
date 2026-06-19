@@ -445,6 +445,34 @@ func _randomize(case: Case, cat: NpcRole, job_id: String, sex: int):
 			if get(attr_name) == 10:
 				candidates.remove_at(attr_index)
 
+	# game difficulty also influences principal characteristics
+
+	match Globals.game_difficulty:
+		0:
+			physical -= 1
+			mental -= 1
+			health -= 1
+		1:
+			match randi() % 3:
+				0:
+					physical -= 1
+				1:
+					mental -= 1
+				2:
+					health -= 1
+		3:
+			match randi() % 3:
+				0:
+					physical += 1
+				1:
+					mental += 1
+				2:
+					health += 1
+		4:
+			physical += 1
+			mental += 1
+			health += 1
+
 	# job and corresponding bonus/malus for principal characteristics
 
 	if job_id.is_empty():

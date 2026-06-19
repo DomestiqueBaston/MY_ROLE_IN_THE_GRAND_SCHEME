@@ -18,6 +18,12 @@ extends Node2D
 ## Indicates whether or not the user is in the middle of a drag & drop.
 var dragging: bool = false
 
+## The default game difficulty level (see game_difficulty).
+const default_game_difficulty: int = 2
+
+## Game difficulty levels are in the range [0 4].
+var game_difficulty: int = default_game_difficulty
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -238,6 +244,8 @@ func load_settings():
 			var volume = config.get_value("volume", bus_name, -1)
 			if volume >= 0:
 				AudioServer.set_bus_volume_linear(bus, volume)
+		game_difficulty = \
+			config.get_value("settings", "difficulty", default_game_difficulty)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -248,6 +256,7 @@ func save_settings():
 		var bus_name = AudioServer.get_bus_name(bus)
 		var volume = AudioServer.get_bus_volume_linear(bus)
 		config.set_value("volume", bus_name, volume)
+	config.set_value("settings", "difficulty", game_difficulty)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:

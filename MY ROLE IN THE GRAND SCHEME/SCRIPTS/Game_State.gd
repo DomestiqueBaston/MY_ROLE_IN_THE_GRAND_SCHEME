@@ -2397,8 +2397,21 @@ func validate_case():
 		return
 
 	var result: Case.SolutionResult = case.check_solution()
+	var min_win: float
+	var max_win: float
 	var money_won: int = 0
 	var cards_won: int = 0
+
+	match Globals.game_difficulty:
+		0, 1:
+			min_win = 1.0
+			max_win = 1.2
+		3, 4:
+			min_win = 0.8
+			max_win = 1.0
+		_:
+			min_win = 0.9
+			max_win = 1.1
 
 	match result:
 		Case.SolutionResult.WRONG:
@@ -2417,7 +2430,8 @@ func validate_case():
 			await _check_for_paranoia_attack()
 
 		Case.SolutionResult.HALF_RIGHT:
-			money_won = roundi(100 * case.get_difficulty() * randf_range(0.9, 1.1))
+			money_won = roundi(
+				100 * case.get_difficulty() * randf_range(min_win, max_win))
 			cards_won = roundi((case.get_difficulty() + 1) * 0.5)
 			player.improve_emotion(1)
 			player.improve_addiction(1)
@@ -2425,7 +2439,8 @@ func validate_case():
 			player.money += money_won
 
 		Case.SolutionResult.RIGHT:
-			money_won = roundi(100 * case.get_difficulty() * randf_range(0.9, 1.1))
+			money_won = roundi(
+				100 * case.get_difficulty() * randf_range(min_win, max_win))
 			cards_won = case.get_difficulty() + 1
 			player.emotion = 0
 			player.addiction = 0

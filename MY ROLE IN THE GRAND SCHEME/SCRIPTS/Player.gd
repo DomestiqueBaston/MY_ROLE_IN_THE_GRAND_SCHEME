@@ -827,7 +827,15 @@ func receive_random_sms():
 ## positive number is a malus.
 ##
 func get_bonus_malus() -> int:
-	var ret = 0
+	var ret: int
+
+	match Globals.game_difficulty:
+		0:
+			ret = -1
+		4:
+			ret = 1
+		_:
+			ret = 0
 
 	if _sleep_bonus_malus != 0:
 		print("sleep bonus/malus: %s" % _sleep_bonus_malus)

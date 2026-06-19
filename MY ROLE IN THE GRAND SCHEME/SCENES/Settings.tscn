@@ -182,9 +182,6 @@ raise the game's difficulty?"
 theme_override_icons/grabber = ExtResource("3_ngdns")
 theme_override_icons/grabber_highlight = ExtResource("5_0arvw")
 theme_override_styles/slider = SubResource("StyleBoxEmpty_h80l4")
-min_value = 1.0
-max_value = 5.0
-value = 3.0
 script = ExtResource("14_28wos")
 
 [node name="Buttons" type="Control" parent="Buttons_Sliders"]
