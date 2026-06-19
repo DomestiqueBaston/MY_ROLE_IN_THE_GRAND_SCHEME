@@ -201,15 +201,29 @@ func _randomize(is_final_case: bool):
 	# the difficulty must be determined BEFORE generating the NPCs, because it
 	# determines the number of points added to their main characteristics
 
+	var base_duration: int
+	var min_duration: float
+	var max_duration: float
+
 	if is_final_case:
 		_difficulty = 6
-		_duration = 15 + randi_range(-1, 1)
+		base_duration = 15
+		min_duration = 0.9333
+		max_duration = 1.0667
 	else:
 		var diff = (1
 			+ _victim_count + _culprit_count + _accomplice_count + evidence_count
 			- 4) * 0.5
 		_difficulty = clampi(roundi(diff), 1, 5)
-		_duration = roundi((_difficulty * 2 + 10) * randf_range(0.9, 1.1))
+		base_duration = _difficulty * 2 + 10
+		min_duration = 0.9
+		max_duration = 1.1
+
+	if Globals.plot_depth_flag:
+		min_duration += 0.2
+		max_duration += 0.2
+
+	_duration = roundi(base_duration * randf_range(min_duration, max_duration))
 
 	# NPCs: culprits (if sex is involved, ensure they all have the same sex
 	# and orientation to simplify)
