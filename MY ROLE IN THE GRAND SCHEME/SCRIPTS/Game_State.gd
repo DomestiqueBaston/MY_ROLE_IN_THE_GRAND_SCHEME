@@ -293,7 +293,7 @@ func get_hour(travel_time: int = 0) -> int:
 ##
 func get_time_slot(travel_time: int = 0) -> TimeSlot:
 	var hour = get_hour(travel_time)
-	var workday = get_working_day(travel_time)
+	var workday = get_working_day(travel_time) % 7
 	if hour < 8 or hour >= 20:
 		return TimeSlot.NIGHT if workday < 5 else TimeSlot.WE_NIGHT
 	elif hour < 12:
@@ -431,7 +431,7 @@ func _new_day():
 	# every Monday the player is sent a new bill, and Rowena replenishes her
 	# stock of drugs
 
-	if get_working_day() == 0:
+	if get_working_day() % 7 == 0:
 		_send_new_bill()
 		await Globals.dialog_overlay.show_debt_reminder()
 		_dealer_drug_stock = randi_range(3, 7)

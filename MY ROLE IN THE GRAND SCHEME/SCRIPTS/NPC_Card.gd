@@ -386,7 +386,7 @@ func should_be_at_work(travel_time: int = 0) -> bool:
 ## travel_time is not zero, it is added to the current time first.
 ##
 func is_work_day(travel_time: int = 0) -> bool:
-	var workday = GameState.get_working_day(travel_time)
+	var workday = GameState.get_working_day(travel_time) % 7
 	if has_weekend_shift:
 		return workday >= 2
 	else:
