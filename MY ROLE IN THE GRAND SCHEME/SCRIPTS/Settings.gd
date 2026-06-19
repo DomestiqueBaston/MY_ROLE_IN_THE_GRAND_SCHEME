@@ -12,6 +12,7 @@ signal done
 }
 
 @onready var _difficulty_slider: Slider = $Buttons_Sliders/Sliders/Difficulty
+@onready var _drug_quality_button: BaseButton = $Buttons_Sliders/Buttons/Drug_Quality
 
 var _initial_volumes: Array[float]
 var _confirmed: bool
@@ -25,6 +26,7 @@ func _ready():
 		sliders[i].value = volume * 100.0
 		sliders[i].value_changed.connect(_on_volume_changed.bind(i))
 	_difficulty_slider.value = Globals.game_difficulty
+	_drug_quality_button.button_pressed = Globals.drug_quality_flag
 
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok.pressed.connect(_on_ok)
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Cancel.pressed.connect(_on_cancel)
@@ -37,6 +39,7 @@ func _on_volume_changed(value: float, index: int):
 func _on_ok():
 	_confirmed = true
 	Globals.game_difficulty = int(_difficulty_slider.value)
+	Globals.drug_quality_flag = _drug_quality_button.button_pressed
 	done.emit()
 
 func _on_cancel():
@@ -53,6 +56,7 @@ func _on_reset():
 		sliders[i].value = 100.0
 		Globals.set_volume(bus_names[i], 1.0)
 	_difficulty_slider.value = Globals.default_game_difficulty
+	_drug_quality_button.button_pressed = false
 
 func is_confirmed() -> bool:
 	return _confirmed

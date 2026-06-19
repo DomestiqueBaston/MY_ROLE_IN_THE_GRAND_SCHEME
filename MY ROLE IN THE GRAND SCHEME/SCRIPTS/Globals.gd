@@ -24,6 +24,9 @@ const default_game_difficulty: int = 2
 ## Game difficulty levels are in the range [0 4].
 var game_difficulty: int = default_game_difficulty
 
+## Drug quality flag: when set, drug prices are 20% higher.
+var drug_quality_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -246,6 +249,7 @@ func load_settings():
 				AudioServer.set_bus_volume_linear(bus, volume)
 		game_difficulty = \
 			config.get_value("settings", "difficulty", default_game_difficulty)
+		drug_quality_flag = config.get_value("settings", "drug_quality", false)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -257,6 +261,7 @@ func save_settings():
 		var volume = AudioServer.get_bus_volume_linear(bus)
 		config.set_value("volume", bus_name, volume)
 	config.set_value("settings", "difficulty", game_difficulty)
+	config.set_value("settings", "drug_quality", drug_quality_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:

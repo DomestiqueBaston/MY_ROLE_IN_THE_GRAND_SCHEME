@@ -595,9 +595,9 @@ func use_drugs(doses: int):
 
 func get_player_drug_price() -> int:
 	var price: int = 35
-	if "dealer_discount" in player.job_bonus_malus:
-		price = roundi(price * player.job_bonus_malus.dealer_discount)
-	return price
+	var markup: float = 1.2 if Globals.drug_quality_flag else 1.0
+	markup *= player.job_bonus_malus.get("dealer_discount", 1.0)
+	return roundi(price * markup)
 
 func can_visit_dealer() -> bool:
 	var price = get_player_drug_price()
