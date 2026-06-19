@@ -41,23 +41,9 @@ func populate():
 func _on_item_selected(idx: int):
 	var case_index = _option_button.get_item_id(idx)
 	var case: Case = GameState.cases[case_index]
-	var can_pick: bool = false
 
 	_id.text = case.get_case_id()
-
-	match case.get_status():
-		Case.Status.UNASSIGNED:
-			_status.text = "Unassigned"
-			can_pick = GameState.can_take_new_case()
-		Case.Status.ACTIVE:
-			_status.text = "Active"
-			can_pick = true
-		Case.Status.PAUSED:
-			_status.text = "Paused"
-			can_pick = true
-		Case.Status.DONE:
-			_status.text = "Done"
-
+	_status.text = "Unassigned"
 	_deadline.text = "%d days" % case.get_duration()
 
 	var victims = []
@@ -85,7 +71,7 @@ func _on_item_selected(idx: int):
 		_crime_scene.hide()
 
 	_info.show()
-	_ok_button.disabled = not can_pick
+	_ok_button.disabled = not GameState.can_take_new_case()
 
 func _populate_npc_names(npcs, node):
 	var count = npcs.size()
@@ -110,14 +96,10 @@ func _on_cancel_pressed():
 func _on_ok_pressed():
 	Globals.valid_sound.play()
 	await Globals.valid_sound.finished
-	_case_changed = false
-	var case_index = _option_button.selected
-	if case_index < GameState.cases.size():
-		var case = GameState.cases[case_index]
-		if case != GameState.get_current_case():
-			_case_changed = true
-			GameState.set_current_case(case_index)
-			GameState.add_new_case()
+	var case_index = _option_button.get_selected_id()
+	_case_changed = true
+	GameState.set_current_case(case_index)
+	GameState.add_new_case()
 	done.emit()
 
 func has_case_changed() -> bool:
