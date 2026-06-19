@@ -992,7 +992,7 @@ Difficulté du jeu
 		Cauchemar : malus de 1 supplémentaire à TOUS les jets de dé, -10 % de Dø en fin d’enquête réussie, PNJs: +1 à PHY, MEN et HEA à la génération.
 
 Éléments additionnels de difficulté
-	- Dans la scène Mixette.tscn, il y a 7 boutons pour augmenter encore la difficulté :
+	- Dans la scène Settings.tscn, il y a 7 boutons pour augmenter encore la difficulté :
 		Drug Quality : Prix de la dose de drogue +20%.
 		Plot Depth : Temps imparti pour résoudre une enquête : -20%.
 		Corruption : Prix d’une autorisation de fouille +20%.
@@ -1000,9 +1000,8 @@ Difficulté du jeu
 		Vice : Prix de la caution (prison) +25% et prix d’un abandon d’enquête + 20%.
 		Mentirosos : +10 % de chances de mensonge.
 		Hardboiled Minions : +10% HEA sans dépasser 10.
-		Over Crowded City : +20% de PNJs inutiles.
 		No public docs : Prix de l’intervention thérapeutique +20%.
-		Hectic City : toutes les actions prennent 15% de temps en plus (l’horloge n’affiche que les heures, pas les minutes mais on les compte sans arrondir) !
+		Hectic City : +20% de PNJs inutiles.
 		They are watching : +10% de chance de SMS !
 		Cat’s eye : le malus de jet de dé de nuit est annulé et passe de jour !
 	- Dans la scène Option_Menu.tscn en cliquant 10 fois sur le tiroir Secrets they’re hiding from us! (on désactive de la même manière) :
