@@ -629,8 +629,10 @@ func visit_dealer():
 
 func get_player_doctor_fee() -> int:
 	var price: int = 75
-	if "doctor_discount" in player.job_bonus_malus:
-		price = roundi(price * player.job_bonus_malus.doctor_discount)
+	var markup: float = player.job_bonus_malus.get("doctor_discount", 1.0)
+	if Globals.no_public_medicine_flag:
+		markup *= 1.2
+	price = roundi(price * markup)
 	return price
 
 func can_visit_doctor() -> bool:

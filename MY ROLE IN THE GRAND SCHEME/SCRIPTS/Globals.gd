@@ -45,6 +45,9 @@ var liars_flag: bool = false
 ## Hardboiled minions flag: when set, minions have greater HEA.
 var hardboiled_minions_flag: bool = false
 
+## No public medicine flag: when set, visits to the doctor are more expensive.
+var no_public_medicine_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -275,6 +278,8 @@ func load_settings():
 		liars_flag = config.get_value("settings", "liars", false)
 		hardboiled_minions_flag = \
 			config.get_value("settings", "hardboiled_minions", false)
+		no_public_medicine_flag = \
+			config.get_value("settings", "no_public_medicine", false)
 ##
 ## Saves current settings (e.g. sound levels) to disk.
 ##
@@ -292,6 +297,7 @@ func save_settings():
 	config.set_value("settings", "vice", vice_flag)
 	config.set_value("settings", "liars", liars_flag)
 	config.set_value("settings", "hardboiled_minions", hardboiled_minions_flag)
+	config.set_value("settings", "no_public_medicine", no_public_medicine_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:
