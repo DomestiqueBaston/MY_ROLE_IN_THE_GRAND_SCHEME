@@ -990,7 +990,10 @@ func can_be_abandoned() -> bool:
 ## Returns the fee the player must pay if he wants to abandon the case.
 ##
 func get_abandon_fee() -> int:
-	return _difficulty * _duration + (GameState.get_day() - _start_day)
+	var fee: int = _difficulty * _duration + (GameState.get_day() - _start_day)
+	if Globals.vice_flag:
+		fee = roundi(fee * 1.2)
+	return fee
 
 ##
 ## Returns the crime location, if there is one, and if it is known. If there are

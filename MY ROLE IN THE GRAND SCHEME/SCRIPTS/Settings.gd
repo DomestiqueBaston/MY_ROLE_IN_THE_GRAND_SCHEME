@@ -16,6 +16,7 @@ signal done
 @onready var _plot_depth_button: BaseButton = $Buttons_Sliders/Buttons/Plot_Depth
 @onready var _corruption_button: BaseButton = $Buttons_Sliders/Buttons/Corruption
 @onready var _inflation_button: BaseButton = $Buttons_Sliders/Buttons/Retail_Investment
+@onready var _vice_button: BaseButton = $Buttons_Sliders/Buttons/Vice
 
 var _initial_volumes: Array[float]
 var _confirmed: bool
@@ -33,6 +34,7 @@ func _ready():
 	_plot_depth_button.button_pressed = Globals.plot_depth_flag
 	_corruption_button.button_pressed = Globals.corruption_flag
 	_inflation_button.button_pressed = Globals.inflation_flag
+	_vice_button.button_pressed = Globals.vice_flag
 
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok.pressed.connect(_on_ok)
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Cancel.pressed.connect(_on_cancel)
@@ -49,6 +51,7 @@ func _on_ok():
 	Globals.plot_depth_flag = _plot_depth_button.button_pressed
 	Globals.corruption_flag = _corruption_button.button_pressed
 	Globals.inflation_flag = _inflation_button.button_pressed
+	Globals.vice_flag = _vice_button.button_pressed
 	done.emit()
 
 func _on_cancel():
@@ -69,6 +72,7 @@ func _on_reset():
 	_plot_depth_button.button_pressed = false
 	_corruption_button.button_pressed = false
 	_inflation_button.button_pressed = false
+	_vice_button.button_pressed = false
 
 func is_confirmed() -> bool:
 	return _confirmed

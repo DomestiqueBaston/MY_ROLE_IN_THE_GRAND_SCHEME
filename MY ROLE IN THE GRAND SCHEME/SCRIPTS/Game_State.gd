@@ -80,9 +80,6 @@ enum NpcEscapeOutcome {
 var player: Player = Player.new()
 var cases: Array[Case]
 
-## Price to avoid prison.
-const prison_bail: int = 100
-
 ## Signal emitted when the time has changed: see get_day() and get_hour().
 @warning_ignore("unused_signal")
 signal time_changed
@@ -367,11 +364,13 @@ func _check_player_status():
 			return
 
 	if player.wanted >= 5:
-		var can_pay = (player.money >= prison_bail)
-		var pay = await Globals.dialog_overlay.announce_prison_for_wanted(true, can_pay)
+		var bail: int = 125 if Globals.vice_flag else 100
+		var can_pay = (player.money >= bail)
+		var pay = await Globals.dialog_overlay.announce_prison_for_wanted(
+			true, bail, can_pay)
 		player.wanted = 0
 		if pay:
-			player.money -= prison_bail
+			player.money -= bail
 		else:
 			_send_player_to_prison()
 

@@ -615,9 +615,11 @@ func announce_forced_rest(lack_of_sleep: bool):
 ## the option to pay in order to avoid jail. Returns true if the player opts to
 ## pay.
 ##
-func announce_prison_for_wanted(is_player: bool, can_pay: bool = false) -> bool:
+func announce_prison_for_wanted(
+	is_player: bool, bail: int = 100, can_pay: bool = false) -> bool:
 	var node: Control
 	if is_player:
+		$Overlays/Wanted/Info/Player/Situation/Money.text = str(bail)
 		node = $Overlays/Wanted/Info/Player
 	else:
 		node = $Overlays/Wanted/Info/NPC
