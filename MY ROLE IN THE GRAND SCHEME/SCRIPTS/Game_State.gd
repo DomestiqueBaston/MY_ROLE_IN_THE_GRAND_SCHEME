@@ -2072,6 +2072,8 @@ func _get_info_from_npc(
 			lie_prob = incriminating_lie_prob
 		else:
 			lie_prob = normal_lie_prob
+		if Globals.liars_flag:
+			lie_prob *= 1.1
 		var roll = randf()
 		if roll > lie_prob * 0.8 and roll < lie_prob * 1.2:
 			express_doubt = true

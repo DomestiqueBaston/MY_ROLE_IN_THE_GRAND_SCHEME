@@ -39,6 +39,9 @@ var inflation_flag: bool = false
 ## Vice flag: when set, prices to avoid prison or abandon a case are higher.
 var vice_flag: bool = false
 
+## Liars flag: when set, it is more likely that NPCs will lie.
+var liars_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -266,6 +269,7 @@ func load_settings():
 		corruption_flag = config.get_value("settings", "corruption", false)
 		inflation_flag = config.get_value("settings", "inflation", false)
 		vice_flag = config.get_value("settings", "vice", false)
+		liars_flag = config.get_value("settings", "liars", false)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -282,6 +286,7 @@ func save_settings():
 	config.set_value("settings", "corruption", corruption_flag)
 	config.set_value("settings", "inflation", inflation_flag)
 	config.set_value("settings", "vice", vice_flag)
+	config.set_value("settings", "liars", liars_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:
