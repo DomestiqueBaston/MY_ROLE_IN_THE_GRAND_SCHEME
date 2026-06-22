@@ -433,6 +433,9 @@ func _randomize(case: Case, cat: NpcRole, job_id: String, sex: int):
 	mental = randi_range(min_men, max_men)
 	health = base_points - physical - mental
 
+	if Globals.hardboiled_minions_flag:
+		health = roundi(health * 1.1)
+
 	# add extra points to principal characteristics at random, limiting to 10
 
 	var extra_points = case.get_difficulty()

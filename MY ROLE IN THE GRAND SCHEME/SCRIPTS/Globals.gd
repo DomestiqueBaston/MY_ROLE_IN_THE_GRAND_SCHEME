@@ -42,6 +42,9 @@ var vice_flag: bool = false
 ## Liars flag: when set, it is more likely that NPCs will lie.
 var liars_flag: bool = false
 
+## Hardboiled minions flag: when set, minions have greater HEA.
+var hardboiled_minions_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -270,7 +273,8 @@ func load_settings():
 		inflation_flag = config.get_value("settings", "inflation", false)
 		vice_flag = config.get_value("settings", "vice", false)
 		liars_flag = config.get_value("settings", "liars", false)
-
+		hardboiled_minions_flag = \
+			config.get_value("settings", "hardboiled_minions", false)
 ##
 ## Saves current settings (e.g. sound levels) to disk.
 ##
@@ -287,6 +291,7 @@ func save_settings():
 	config.set_value("settings", "inflation", inflation_flag)
 	config.set_value("settings", "vice", vice_flag)
 	config.set_value("settings", "liars", liars_flag)
+	config.set_value("settings", "hardboiled_minions", hardboiled_minions_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:
