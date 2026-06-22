@@ -886,9 +886,14 @@ func get_bonus_malus() -> int:
 			ret += debt_delta
 
 		var hour = GameState.get_hour()
-		if hour < 8 or hour >= 20:
-			print("night action malus: 1")
-			ret += 1
+		if Globals.cats_eye_flag:
+			if hour >= 8 and hour < 20:
+				print("day action malus: 1")
+				ret += 1
+		else:
+			if hour < 8 or hour >= 20:
+				print("night action malus: 1")
+				ret += 1
 
 	var difficulty = GameState.get_current_case().get_difficulty()
 	if difficulty != 3:

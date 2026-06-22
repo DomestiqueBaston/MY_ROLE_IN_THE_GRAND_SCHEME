@@ -54,6 +54,10 @@ var hectic_city_flag: bool = false
 ## They are watching flag: when set, player receives more anonymous messages.
 var they_are_watching_flag: bool = false
 
+## Cat's eye flag: when set, player receives a malus for daytime interactions
+## rather than nighttime interactions.
+var cats_eye_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -289,6 +293,7 @@ func load_settings():
 		hectic_city_flag = config.get_value("settings", "hectic_city", false)
 		they_are_watching_flag = \
 			config.get_value("settings", "they_are_watching", false)
+		cats_eye_flag = config.get_value("settings", "cats_eye_flag", false)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -310,6 +315,7 @@ func save_settings():
 	config.set_value("settings", "no_public_medicine", no_public_medicine_flag)
 	config.set_value("settings", "hectic_city", hectic_city_flag)
 	config.set_value("settings", "they_are_watching", they_are_watching_flag)
+	config.set_value("settings", "cats_eye", cats_eye_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:
