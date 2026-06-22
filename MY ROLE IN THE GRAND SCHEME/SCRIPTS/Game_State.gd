@@ -470,10 +470,9 @@ func _new_day():
 	# every day, there is 1 chance in 5 that the player will receive a random
 	# SMS at a random time in the next 16 hours
 
-	var smsrand = randi()
-	if smsrand % 5 == 0:
-		@warning_ignore("integer_division")
-		_random_sms_time = _hour + ((smsrand / 5) % 17)
+	var chances = 3 if Globals.they_are_watching_flag else 2
+	if randi() % 10 < chances:
+		_random_sms_time = _hour + randi() % 17
 	else:
 		_random_sms_time = -1
 
@@ -1039,15 +1038,12 @@ func _check_for_new_victims(location: LocationCard) -> bool:
 	var ret = false
 	for card in location.get_connections(Link.Type.FOUND):
 		if card is NpcCard and card.reveal_status != Card.RevealStatus.REVEALED:
-			#print("*** reveal victim: ", card.get_display_name())
 			_reveal_card(card)
 			get_current_case().create_link(
 				card, location, Link.Type.FOUND, true, true)
 			ret = true
 	if ret:
-		#print("*** show_dead_victim")
 		await Globals.dialog_overlay.show_dead_victim()
-		#print("*** random SMS")
 		await player.receive_random_sms()
 		_random_sms_time = -1
 	return ret

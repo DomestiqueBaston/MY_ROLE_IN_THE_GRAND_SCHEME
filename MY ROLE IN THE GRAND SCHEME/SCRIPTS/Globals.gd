@@ -51,6 +51,9 @@ var no_public_medicine_flag: bool = false
 ## Hectic city flag: when set, there are more useless NPCs in each case.
 var hectic_city_flag: bool = false
 
+## They are watching flag: when set, player receives more anonymous messages.
+var they_are_watching_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -284,6 +287,8 @@ func load_settings():
 		no_public_medicine_flag = \
 			config.get_value("settings", "no_public_medicine", false)
 		hectic_city_flag = config.get_value("settings", "hectic_city", false)
+		they_are_watching_flag = \
+			config.get_value("settings", "they_are_watching", false)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -304,6 +309,7 @@ func save_settings():
 	config.set_value("settings", "hardboiled_minions", hardboiled_minions_flag)
 	config.set_value("settings", "no_public_medicine", no_public_medicine_flag)
 	config.set_value("settings", "hectic_city", hectic_city_flag)
+	config.set_value("settings", "they_are_watching", they_are_watching_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:
