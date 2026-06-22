@@ -136,6 +136,8 @@ func _randomize(is_final_case: bool):
 	var total_npc_count = \
 		_culprit_count + _victim_count + _accomplice_count + suspect_count + witness_count
 	var other_npc_count = 2 * total_npc_count
+	if Globals.hectic_city_flag:
+		other_npc_count = roundi(other_npc_count * 1.2)
 	total_npc_count += other_npc_count
 	var evidence_count = maxi(
 		_get_count_from_array(_motive.get("evidence_number", 0)),

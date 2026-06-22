@@ -20,6 +20,7 @@ signal done
 @onready var _liars_button: BaseButton = $Buttons_Sliders/Buttons/Mentirosos
 @onready var _hardboiled_minions_button: BaseButton = $Buttons_Sliders/Buttons/Hardboiled_Minions
 @onready var _no_public_medicine_button: BaseButton = $Buttons_Sliders/Buttons/No_Public_Docs
+@onready var _hectic_city_button: BaseButton = $Buttons_Sliders/Buttons/Hectic_City
 
 var _initial_volumes: Array[float]
 var _confirmed: bool
@@ -41,6 +42,7 @@ func _ready():
 	_liars_button.button_pressed = Globals.liars_flag
 	_hardboiled_minions_button.button_pressed = Globals.hardboiled_minions_flag
 	_no_public_medicine_button.button_pressed = Globals.no_public_medicine_flag
+	_hectic_city_button.button_pressed = Globals.hectic_city_flag
 
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok.pressed.connect(_on_ok)
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Cancel.pressed.connect(_on_cancel)
@@ -61,6 +63,7 @@ func _on_ok():
 	Globals.liars_flag = _liars_button.button_pressed
 	Globals.hardboiled_minions_flag = _hardboiled_minions_button.button_pressed
 	Globals.no_public_medicine_flag = _no_public_medicine_button.button_pressed
+	Globals.hectic_city_flag = _hectic_city_button.button_pressed
 	done.emit()
 
 func _on_cancel():
@@ -85,6 +88,7 @@ func _on_reset():
 	_liars_button.button_pressed = false
 	_hardboiled_minions_button.button_pressed = false
 	_no_public_medicine_button.button_pressed = false
+	_hectic_city_button.button_pressed = false
 
 func is_confirmed() -> bool:
 	return _confirmed
