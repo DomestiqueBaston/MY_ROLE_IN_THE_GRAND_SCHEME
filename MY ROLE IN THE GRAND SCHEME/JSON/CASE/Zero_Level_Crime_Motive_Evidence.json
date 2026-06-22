@@ -1,711 +1,623 @@
-[
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_001",
-				"crime_id": "MOT_MUN_001_ID_001",
-				"name": "ATM Dispute",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Someone claims they didn't receive their cash at the ATM.",
-				"link": [],
-				"crime_location": [
-					"LOC031"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ009",
-					"OBJ006"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_002",
-				"crime_id": "MOT_MUN_002_ID_001",
-				"name": "The Vanishing Package",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A package marked as delivered never reached the recipient.",
-				"link": [],
-				"crime_location": [
-					"LOC001"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ500",
-					"OBJ006"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_003",
-				"crime_id": "MOT_MUN_003_ID_001",
-				"name": "Strange Smell",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A strange smell is coming from a hallway. Rotten food or something worse?",
-				"link": [],
-				"crime_location": [
-					"LOC001"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ501",
-					"OBJ006"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_004",
-				"crime_id": "MOT_MUN_004_ID_001",
-				"name": "Silent Calls",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Someone receives silent phone calls at the same time every day.",
-				"link": [],
-				"crime_location": [
-					"LOC001"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ006"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_005",
-				"crime_id": "MOT_MUN_005_ID_001",
-				"name": "Replaced Lock",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A tenant returned to find the lock on their storage unit had been changed.",
-				"link": [],
-				"crime_location": [
-					"LOC013"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ502",
-					"OBJ006"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_006",
-				"crime_id": "MOT_MUN_006_ID_001",
-				"name": "Ghost Rumor",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Strange sounds are heard at night in a school and a ghost is blamed.",
-				"link": [],
-				"crime_location": [
-					"LOC011"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [
-					"JOB016"
-				],
-				"culprits_professions": [
-					"JOB016"
-				],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ503",
-					"OBJ504"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_007",
-				"crime_id": "MOT_MUN_007_ID_001",
-				"name": "The Note",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A mysterious post-it appears on someone's door: 'I know what you did.'",
-				"link": [],
-				"crime_location": [
-					"LOC001"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ505",
-					"OBJ006"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_008",
-				"crime_id": "MOT_MUN_008_ID_001",
-				"name": "Fake Technician",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A fake technician visited an elderly person's home but nothing appears stolen.",
-				"link": [],
-				"crime_location": [
-					"LOC001"
-				],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": [
-					"OBJ506",
-					"OBJ006"
-				]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_009",
-				"crime_id": "MOT_MUN_009_ID_001",
-				"name": "The Borrowed Bike",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A resident claims their locked bike was moved or used without authorization.",
-				"link": [],
-				"crime_location": ["LOC001", "LOC022", "LOC011"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ302"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_010",
-				"crime_id": "MOT_MUN_010_ID_001",
-				"name": "Voice from the Vents",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Whispers or conversations are heard through the air ducts at night.",
-				"link": [],
-				"crime_location": ["LOC001", "LOC016"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ006"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_011",
-				"crime_id": "MOT_MUN_011_ID_001",
-				"name": "Laundry Tampering",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Clean laundry is found wet again, as if someone rewetted it after washing.",
-				"link": [],
-				"crime_location": ["LOC043"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": ["JOB014"],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ281"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_012",
-				"crime_id": "MOT_MUN_012_ID_001",
-				"name": "Fake Fire Alarm",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "The fire alarm keeps triggering in the same empty place with no cause.",
-				"link": [],
-				"crime_location": ["LOC001", "LOC005", "LOC011", "LOC016", "LOC006"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ341", "OBJ350"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_013",
-				"crime_id": "MOT_MUN_013_ID_001",
-				"name": "The Dog That Wasn't There",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Residents report hearing a dog barking, but no dog lives in the building.",
-				"link": [],
-				"crime_location": ["LOC001"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ006", "OBJ038", "OBJ257"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_014",
-				"crime_id": "MOT_MUN_014_ID_001",
-				"name": "The Elevator Note",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A new note appears each morning in the elevator, signed by an unknown person.",
-				"link": [],
-				"crime_location": ["LOC005", "LOC016"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ342", "OBJ326"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_015",
-				"crime_id": "MOT_MUN_015_ID_001",
-				"name": "Wrong Name on Mailbox",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "An unknown name appears on a mailbox for several days, then vanishes.",
-				"link": [],
-				"crime_location": ["LOC024"],
-				"known_crime_location": 1,
-				"victims_professions": ["JOB015", "JOB002"],
-				"culprits_professions": ["JOB015", "JOB002"],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ042", "OBJ035", "OBJ079"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_016",
-				"crime_id": "MOT_MUN_016_ID_001",
-				"name": "Framed!",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "A resident is accused of a petty act, but footage shows someone identical to them.",
-				"link": [],
-				"crime_location": ["LOC001", "LOC034", "LOC004", "LOC005"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ006", "OBJ013"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_017",
-				"crime_id": "MOT_MUN_017_ID_001",
-				"name": "Mystery Book Returns",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Books reappear on a bookshelf with strange handwritten notes.",
-				"link": [],
-				"crime_location": ["LOC004", "LOC011"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ006"]
-			}
-		]
-	},
-	{
-		"crime": "Mundane",
-		"motive": [
-			{
-				"id": "MOT_MUN_018",
-				"crime_id": "MOT_MUN_018_ID_001",
-				"name": "The Apartment That Answers",
-				"more_explicit_name_1": "Walk-in Request",
-				"more_explicit_name_2": "Someone knocks on a vacant apartment and hears a voice replying from inside.",
-				"link": [],
-				"crime_location": ["LOC001"],
-				"known_crime_location": 1,
-				"victims_professions": [],
-				"culprits_professions": [],
-				"victims": [
-					1
-				],
-				"dead_victims": "no",
-				"culprits": [
-					1
-				],
-				"accomplices": [
-					0
-				],
-				"suspects": [
-					1
-				],
-				"witnesses": [
-					1
-				],
-				"evidence_number": [
-					1
-				],
-				"evidences": ["OBJ006", "OBJ257", "OBJ073"]
-			}
-		]
+{
+	"Mundane": {
+		"MOT_MUN_001": {
+			"name": "ATM Dispute",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Someone claims they didn't receive their cash at the ATM.",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC031"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ009",
+				"OBJ006"
+			]
+		},
+		"MOT_MUN_002": {
+			"name": "The Vanishing Package",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A package marked as delivered never reached the recipient.",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC001"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ500",
+				"OBJ006"
+			]
+		},
+		"MOT_MUN_003": {
+			"name": "Strange Smell",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A strange smell is coming from a hallway. Rotten food or something worse?",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC001"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ501",
+				"OBJ006"
+			]
+		},
+		"MOT_MUN_004": {
+			"name": "Silent Calls",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Someone receives silent phone calls at the same time every day.",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC001"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ006"
+			]
+		},
+		"MOT_MUN_005": {
+			"name": "Replaced Lock",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A tenant returned to find the lock on their storage unit had been changed.",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC013"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ502",
+				"OBJ006"
+			]
+		},
+		"MOT_MUN_006": {
+			"name": "Ghost Rumor",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Strange sounds are heard at night in a school and a ghost is blamed.",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC011"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [
+				"JOB016"
+			],
+			"culprits_professions": [
+				"JOB016"
+			],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ503",
+				"OBJ504"
+			]
+		},
+		"MOT_MUN_007": {
+			"name": "The Note",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A mysterious post-it appears on someone's door: 'I know what you did.'",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC001"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ505",
+				"OBJ006"
+			]
+		},
+		"MOT_MUN_008": {
+			"name": "Fake Technician",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A fake technician visited an elderly person's home but nothing appears stolen.",
+			"link": [
+				"none"
+			],
+			"crime_location": [
+				"LOC001"
+			],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": [
+				"OBJ506",
+				"OBJ006"
+			]
+		},
+		"MOT_MUN_009": {
+			"name": "The Borrowed Bike",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A resident claims their locked bike was moved or used without authorization.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC001", "LOC022", "LOC011"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ302"]
+		},
+		"MOT_MUN_010": {
+			"name": "Voice from the Vents",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Whispers or conversations are heard through the air ducts at night.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC001", "LOC016"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ006"]
+		},
+		"MOT_MUN_011": {
+			"name": "Laundry Tampering",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Clean laundry is found wet again, as if someone rewetted it after washing.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC043"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": ["JOB014"],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ281"]
+		},
+		"MOT_MUN_012": {
+			"name": "Fake Fire Alarm",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "The fire alarm keeps triggering in the same empty place with no cause.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC001", "LOC005", "LOC011", "LOC016", "LOC006"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ341", "OBJ350"]
+		},
+		"MOT_MUN_013": {
+			"name": "The Dog That Wasn't There",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Residents report hearing a dog barking, but no dog lives in the building.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC001"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ006", "OBJ038", "OBJ257"]
+		},
+		"MOT_MUN_014": {
+			"name": "The Elevator Note",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A new note appears each morning in the elevator, signed by an unknown person.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC005", "LOC016"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ342", "OBJ326"]
+		},
+		"MOT_MUN_015": {
+			"name": "Wrong Name on Mailbox",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "An unknown name appears on a mailbox for several days, then vanishes.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC024"],
+			"known_crime_location": 1,
+			"victims_professions": ["JOB015", "JOB002"],
+			"culprits_professions": ["JOB015", "JOB002"],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ042", "OBJ035", "OBJ079"]
+		},
+		"MOT_MUN_016": {
+			"name": "Framed!",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "A resident is accused of a petty act, but footage shows someone identical to them.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC001", "LOC034", "LOC004", "LOC005"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ006", "OBJ013"]
+		},
+		"MOT_MUN_017": {
+			"name": "Mystery Book Returns",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Books reappear on a bookshelf with strange handwritten notes.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC004", "LOC011"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ006"]
+		},
+		"MOT_MUN_018": {
+			"name": "The Apartment That Answers",
+			"more_explicit_name_1": "Walk-in Request",
+			"more_explicit_name_2": "Someone knocks on a vacant apartment and hears a voice replying from inside.",
+			"link": [
+				"none"
+			],
+			"crime_location": ["LOC001"],
+			"known_crime_location": 1,
+			"victims_professions": [],
+			"culprits_professions": [],
+			"victims": [
+				1
+			],
+			"dead_victims": "no",
+			"culprits": [
+				1
+			],
+			"accomplices": [
+				0
+			],
+			"suspects": [
+				1
+			],
+			"witnesses": [
+				1
+			],
+			"evidence_number": [
+				1
+			],
+			"evidences": ["OBJ006", "OBJ257", "OBJ073"]
+		}
 	}
-]
+}
