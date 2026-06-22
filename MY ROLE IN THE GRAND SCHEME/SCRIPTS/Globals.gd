@@ -58,6 +58,9 @@ var they_are_watching_flag: bool = false
 ## rather than nighttime interactions.
 var cats_eye_flag: bool = false
 
+## I am one of them flag: when set, the player is never sent to prison.
+var i_am_one_of_them_flag: bool = false
+
 ## Available mouse cursor types.
 enum MouseCursor {
 	ARROW,
@@ -294,6 +297,8 @@ func load_settings():
 		they_are_watching_flag = \
 			config.get_value("settings", "they_are_watching", false)
 		cats_eye_flag = config.get_value("settings", "cats_eye_flag", false)
+		i_am_one_of_them_flag = \
+			config.get_value("settings", "i_am_one_of_them", false)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -316,6 +321,7 @@ func save_settings():
 	config.set_value("settings", "hectic_city", hectic_city_flag)
 	config.set_value("settings", "they_are_watching", they_are_watching_flag)
 	config.set_value("settings", "cats_eye", cats_eye_flag)
+	config.set_value("settings", "i_am_one_of_them", i_am_one_of_them_flag)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:

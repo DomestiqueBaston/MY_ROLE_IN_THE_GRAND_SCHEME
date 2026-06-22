@@ -3,7 +3,6 @@ extends Node2D
 signal button_pressed(which: StringName)
 
 var _secret_clicks = 0
-var _minions_state = false
 var _input_paused = false
 
 func _ready():
@@ -28,11 +27,12 @@ func _on_button_pressed(button: BaseButton):
 	if button_name == &"Secrets":
 		_secret_clicks += 1
 		if _secret_clicks % 10 == 0:
-			if _minions_state:
+			if Globals.i_am_one_of_them_flag:
 				$Minions_Off.play()
 			else:
 				$Minions_On.play()
-			_minions_state = not _minions_state
+			Globals.i_am_one_of_them_flag = not Globals.i_am_one_of_them_flag
+			Globals.save_settings()
 	else:
 		var pitches = [0.75, 1.0, 1.25]
 		var pitch = pitches[randi() % pitches.size()]

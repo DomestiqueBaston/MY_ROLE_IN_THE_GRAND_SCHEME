@@ -1854,8 +1854,8 @@ func _does_npc_run(npc: NpcCard) -> NpcEscapeOutcome:
 	return NpcEscapeOutcome.SUCCEEDED if success else NpcEscapeOutcome.FAILED
 
 func _increase_npc_wanted(npc: NpcCard) -> bool:
-	if npc.wanted < 4:
-		npc.wanted += 1
+	npc.wanted += 1
+	if npc.wanted < 5:
 		return false
 	else:
 		npc.npc_status = NpcCard.NpcStatus.JAIL

@@ -310,7 +310,8 @@ func get_addiction() -> int:
 	return addiction
 
 func set_wanted(wan: int):
-	wan = clampi(wan, 0, 5)
+	var max_wanted = 4 if Globals.i_am_one_of_them_flag else 5
+	wan = clampi(wan, 0, max_wanted)
 	if wanted != wan:
 		wanted = wan
 		_last_wanted_change = GameState.get_working_day()
