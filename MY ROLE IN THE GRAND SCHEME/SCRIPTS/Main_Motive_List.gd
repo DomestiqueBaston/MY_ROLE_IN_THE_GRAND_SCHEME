@@ -59,6 +59,9 @@ func _populate():
 					submenu.add_item(_get_label(motive))
 			else:
 				submenu.add_item(_get_label(motive_dict.name))
+				if (_current_case_type == Case.CaseType.LEVEL0
+					and motive_id != case.get_motive_id()):
+					submenu.set_item_disabled(submenu.item_count - 1, true)
 		popup.add_submenu_node_item(_get_label(crime), submenu)
 		submenu.index_pressed.connect(_on_item_pressed.bind(crime_index))
 		crime_index += 1
@@ -84,7 +87,8 @@ func update():
 		_populate()
 		return
 
-	# unselect all motives
+	# unselect all motives and, for level zero cases, disable all motives
+	# except the correct one
 
 	var popup: PopupMenu = get_popup()
 	var crime_data = _get_crime_data()
@@ -102,6 +106,9 @@ func update():
 					submenu.set_item_text(i, _get_label(motives[i]))
 			else:
 				submenu.set_item_text(motive_index, _get_label(motive_dict.name))
+				if _current_case_type == Case.CaseType.LEVEL0:
+					submenu.set_item_disabled(
+						motive_index, motive_id != case.get_motive_id())
 			motive_index += 1
 		crime_index += 1
 
