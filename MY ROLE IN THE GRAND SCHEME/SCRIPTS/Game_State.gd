@@ -152,6 +152,9 @@ var _hour: int
 # time when the player will be sent a random SMS, if he is on a case
 var _random_sms_time: int
 
+# day when the player will next be offered a level zero case
+var _level_zero_case_day: int
+
 # the last day the player took on a new case at the investigation center
 var _last_new_case_day: int
 
@@ -219,6 +222,12 @@ func _ready():
 func start_game():
 	_hour = _start_time
 	_random_sms_time = -1
+	# the player may be offered a level zero case later in the week
+	var level_zero_roll = randi() % 18
+	if level_zero_roll < 6:
+		_level_zero_case_day = 1 + level_zero_roll
+	else:
+		_level_zero_case_day = -1
 	_last_new_case_day = -1
 	_last_doctor_day = -1
 	_last_dealer_day = -1
@@ -427,13 +436,19 @@ func _send_player_to_prison():
 #
 func _new_day():
 
-	# every Monday the player is sent a new bill, and Rowena replenishes her
-	# stock of drugs
+	# every Monday the player is sent a new bill, Rowena replenishes her stock
+	# of drugs, and we decide if the player will be offered a level zero case
+	# one day this week
 
-	if get_working_day() % 7 == 0:
+	var day = get_day()
+
+	if day % 7 == 0:
 		_send_new_bill()
 		await Globals.dialog_overlay.show_debt_reminder()
 		_dealer_drug_stock = randi_range(3, 7)
+		var level_zero_roll = randi() % 21
+		if level_zero_roll < 7:
+			_level_zero_case_day = day + level_zero_roll
 	else:
 		if _dealer_drug_stock > 0 and randi() % 4 == 0:
 			_dealer_drug_stock -= 1
@@ -1726,18 +1741,30 @@ func get_open_cases() -> Array[Case]:
 ## trip to any location takes an hour.
 ##
 ## Returns true if the player is already at the given location or if the move
-## goes as planned, false if the player is attacked by a minion en route.
+## goes as planned, false if something happens to the player en route.
 ##
 ## If the player does change location, a location_changed() signal is emitted.
 ##
 ## Note that this is a coroutine to be awaited, and it is possible the
-## player may have died on return, or that the current case may have expired. It
-## is also possible the player may be attacked by a minion, either at his
-## current location (in which case he will not be moved) or at his destination.
+## player may have died on return, or that the current case may have expired or
+## changed, if the player is offered a level zero case. It is also possible the
+## player may be attacked by a minion, either at his current location (in which
+## case he will not be moved) or at his destination.
 ##
 func move_player_to(location: PlayerLocation, card: LocationCard = null) -> bool:
 	if _player_location == location and _player_location_card == card:
 		return true
+
+	# is today the day the player will be offered a level zero case?
+
+	if _level_zero_case_day >= 0 and _level_zero_case_day <= get_working_day():
+		_level_zero_case_day = -1
+		if get_open_cases().size() < 4:
+			var level0_case: Case = Case.generate(Case.CaseType.LEVEL0)
+			if await Globals.dialog_overlay.offer_level_zero_case(level0_case):
+				cases.append(level0_case)
+				set_current_case(cases.size() - 1)
+				return false
 
 	# check for a minion attack and do it now, unless the player is still at the
 	# office or in prison
@@ -2565,6 +2592,7 @@ func assign(other: GameState):
 	cases = other.cases
 	_hour = other._hour
 	_random_sms_time = other._random_sms_time
+	_level_zero_case_day = other._level_zero_case_day
 	_last_new_case_day = other._last_new_case_day
 	_last_doctor_day = other._last_doctor_day
 	_last_dealer_day = other._last_dealer_day
@@ -2615,6 +2643,7 @@ func get_json_dict():
 		"player": player.get_unique_id(),
 		"hour": _hour,
 		"random_sms_time": _random_sms_time,
+		"level_zero_case_day": _level_zero_case_day,
 		"last_new_case_day": _last_new_case_day,
 		"last_doctor_day": _last_doctor_day,
 		"last_dealer_day": _last_dealer_day,
@@ -2655,6 +2684,7 @@ func get_json_dict():
 func restore(dict, catalog):
 	_hour = dict.hour
 	_random_sms_time = dict.get("random_sms_time", -1)
+	_level_zero_case_day = dict.get("level_zero_case_day", -1)
 	_last_new_case_day = dict.get("last_new_case_day", -1)
 	_last_doctor_day = dict.get("last_doctor_day", -1)
 	_last_dealer_day = dict.get("last_dealer_day", -1)

@@ -744,3 +744,18 @@ func announce_paranoia():
 	await _appear(true)
 	await $Paranoia_Overlay.done
 	await _disappear(true)
+
+##
+## Offers the player the given level zero case, and returns true if he accepts
+## it. Note that it is assumed that the case has exactly one victim, one
+## witness, one suspect and one (known) crime scene.
+##
+func offer_level_zero_case(case: Case) -> bool:
+	var node: Node2D = $Overlays/Zero_Level_Case_Proposal
+	node.start(case)
+	node.show()
+	await _appear()
+	await node.done
+	await _disappear()
+	node.hide()
+	return node.get_accepted()

@@ -33,6 +33,12 @@ func populate():
 		var case: Case = GameState.cases[case_index]
 		if case.get_status() == Case.Status.UNASSIGNED:
 			_option_button.add_item(case.get_random_name(), case_index)
+
+	while _option_button.item_count < 5:
+		GameState.add_new_case()
+		_option_button.add_item(
+			GameState.cases.back().get_random_name(), GameState.cases.size() - 1)
+
 	_option_button.add_separator("Ready for a mess? Pick one and dive in...")
 	_option_button.selected = _option_button.item_count - 1
 	_ok_button.disabled = true
@@ -99,7 +105,6 @@ func _on_ok_pressed():
 	var case_index = _option_button.get_selected_id()
 	_case_changed = true
 	GameState.set_current_case(case_index)
-	GameState.add_new_case()
 	done.emit()
 
 func has_case_changed() -> bool:
