@@ -471,7 +471,9 @@ func start_investigation(
 ##
 func start_break_in(mastery_cards: Array[Card], fallback_cards: Array[Card]):
 	for card in mastery_cards:
-		if card is AbstractCard:
+		if card is AbstractCard or (
+				card is InvestigationCard and
+				card.investigation_type == InvestigationCard.InvestigationType.BREAK_IN):
 			$Cards/Mastery.add_child(card)
 	for card in fallback_cards:
 		$Cards/Fallback.add_child(card)
