@@ -1701,7 +1701,7 @@ func _open_final_case():
 	_close_current_case()
 	while cases.size() > 0:
 		_delete_case(cases.size() - 1)
-	cases.append(Case.generate(true))
+	cases.append(Case.generate(Case.CaseType.FINAL))
 	set_current_case(0)
 
 ##
@@ -1899,7 +1899,7 @@ func _does_npc_attack(npc: NpcCard) -> bool:
 		else:
 			percent += 5
 
-	percent *= case.get_difficulty()
+	percent *= maxi(1, case.get_difficulty())
 
 	if npc.actual_role == NpcCard.NpcRole.VICTIM:
 		percent *= 0.25
@@ -2400,21 +2400,20 @@ func validate_case():
 		return
 
 	var result: Case.SolutionResult = case.check_solution()
-	var min_win: float
-	var max_win: float
 	var money_won: int = 0
 	var cards_won: int = 0
 
-	match Globals.game_difficulty:
-		0, 1:
-			min_win = 1.0
-			max_win = 1.2
-		3, 4:
-			min_win = 0.8
-			max_win = 1.0
-		_:
-			min_win = 0.9
-			max_win = 1.1
+	if result != Case.SolutionResult.WRONG:
+		if case.is_level_zero():
+			money_won = randi_range(50, 75)
+		else:
+			money_won = randi_range(90, 110) * case.get_difficulty()
+
+		match Globals.game_difficulty:
+			0, 1:
+				money_won = roundi(money_won * randf_range(1.0, 1.2))
+			3, 4:
+				money_won = roundi(money_won * randf_range(0.8, 1.0))
 
 	match result:
 		Case.SolutionResult.WRONG:
@@ -2433,18 +2432,16 @@ func validate_case():
 			await _check_for_paranoia_attack()
 
 		Case.SolutionResult.HALF_RIGHT:
-			money_won = roundi(
-				100 * case.get_difficulty() * randf_range(min_win, max_win))
-			cards_won = roundi((case.get_difficulty() + 1) * 0.5)
+			var dif = maxi(1, case.get_difficulty())
+			cards_won = roundi((dif + 1) * 0.5)
 			player.improve_emotion(1)
 			player.improve_addiction(1)
 			player.wanted -= 1
 			player.money += money_won
 
 		Case.SolutionResult.RIGHT:
-			money_won = roundi(
-				100 * case.get_difficulty() * randf_range(min_win, max_win))
-			cards_won = case.get_difficulty() + 1
+			var dif = maxi(1, case.get_difficulty())
+			cards_won = dif + 1
 			player.emotion = 0
 			player.addiction = 0
 			player.wanted = 0

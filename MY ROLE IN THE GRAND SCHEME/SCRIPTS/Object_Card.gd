@@ -57,6 +57,8 @@ func get_owner_reveal() -> bool:
 	return _object_data[database_id].get("automatic_owners_reveal", false)
 
 static func create_card(id: String) -> ObjectCard:
+	if not id in _object_data:
+		return null
 	var card = _card_scene.instantiate()
 	var object_info = _object_data[id]
 	card.card_name = object_info["name"]

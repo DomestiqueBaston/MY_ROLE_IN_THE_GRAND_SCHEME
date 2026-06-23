@@ -7,6 +7,12 @@ enum Status {
 	DONE
 }
 
+enum CaseType {
+	NORMAL,
+	FINAL,
+	LEVEL0
+}
+
 enum SolutionResult {
 	WRONG,
 	HALF_RIGHT,
@@ -42,6 +48,7 @@ var _case_id: String
 var _case_random_name: String
 var _case_name: String
 var _crime: String
+var _motive_id: String
 var _motive: Dictionary
 var _victim_count: int
 var _dead_victim_count: int
@@ -61,6 +68,7 @@ var _minion: NpcCard
 
 var _crime_data = preload("res://JSON/CASE/Crime_Motive_Evidence.json").data
 var _final_crime_data = preload("res://JSON/CASE/Final_Crime_Motive_Evidence.json").data
+var _level0_crime_data = preload("res://JSON/CASE/Zero_Level_Crime_Motive_Evidence.json").data
 var _location_data = preload("res://JSON/OBJECT_LOCATION/Location.json").data
 var _object_data = preload("res://JSON/OBJECT_LOCATION/Object.json").data
 var _case_name_data = preload("res://JSON/CASE/Random_Case_Names.json").data
@@ -95,9 +103,9 @@ func _notification(what: int):
 			link.queue_free()
 		_links.clear()
 
-static func generate(is_final_case: bool = false) -> Case:
+static func generate(type: CaseType = CaseType.NORMAL) -> Case:
 	var case = Case.new()
-	case._randomize(is_final_case)
+	case._randomize(type)
 	case.print_case()
 	return case
 
@@ -105,25 +113,29 @@ static func generate(is_final_case: bool = false) -> Case:
 # Note that it is assumed, for now, that the Case is brand new. Otherwise we
 # would need to clear everything first.
 #
-func _randomize(is_final_case: bool):
+func _randomize(type: CaseType):
 	_case_id = _generate_case_id()
 	_case_random_name = _generate_random_name()
 
 	# crime, motive and lots of other information about the case
 
-	var current_crime_data
-	if is_final_case:
-		current_crime_data = _final_crime_data
-		_crime = _final_crime_data.keys().front()
-	else:
-		current_crime_data = _crime_data
-		_crime = GameState.get_new_crime()
+	var crime_data
+	match type:
+		CaseType.NORMAL:
+			crime_data = _crime_data
+			_crime = GameState.get_new_crime()
+		CaseType.FINAL:
+			crime_data = _final_crime_data
+			_crime = _final_crime_data.keys().front()
+		CaseType.LEVEL0:
+			crime_data = _level0_crime_data
+			_crime = _level0_crime_data.keys().pick_random()
 
-	var crime_dict = current_crime_data[_crime]
-	var motive_id = crime_dict.keys().pick_random()
-	_motive = crime_dict[motive_id]
+	var crime_dict = crime_data[_crime]
+	_motive_id = crime_dict.keys().pick_random()
+	_motive = crime_dict[_motive_id]
 
-	if is_final_case:
+	if type == CaseType.FINAL:
 		_case_name = _motive.more_explicit_name
 	else:
 		_case_name = _motive.name
@@ -207,19 +219,25 @@ func _randomize(is_final_case: bool):
 	var min_duration: float
 	var max_duration: float
 
-	if is_final_case:
-		_difficulty = 6
-		base_duration = 15
-		min_duration = 0.9333
-		max_duration = 1.0667
-	else:
-		var diff = (1
-			+ _victim_count + _culprit_count + _accomplice_count + evidence_count
-			- 4) * 0.5
-		_difficulty = clampi(roundi(diff), 1, 5)
-		base_duration = _difficulty * 2 + 10
-		min_duration = 0.9
-		max_duration = 1.1
+	match type:
+		CaseType.NORMAL:
+			var diff = (1
+				+ _victim_count + _culprit_count + _accomplice_count + evidence_count
+				- 4) * 0.5
+			_difficulty = clampi(roundi(diff), 1, 5)
+			base_duration = _difficulty * 2 + 10
+			min_duration = 0.9
+			max_duration = 1.1
+		CaseType.FINAL:
+			_difficulty = 6
+			base_duration = 15
+			min_duration = 0.9333
+			max_duration = 1.0667
+		CaseType.LEVEL0:
+			_difficulty = 0
+			base_duration = 8
+			min_duration = 0.75
+			max_duration = 0.875
 
 	if Globals.plot_depth_flag:
 		min_duration += 0.2
@@ -566,6 +584,8 @@ func _randomize(is_final_case: bool):
 
 			var obj_id = candidates.pop_at(randi() % candidates.size())
 			var obj = ObjectCard.create_card(obj_id)
+			if obj == null:
+				continue
 
 			var owner_counts = _get_object_owner_counts(obj_id)
 			var npc_owner_count = owner_counts[0]
@@ -627,8 +647,9 @@ func _randomize(is_final_case: bool):
 
 	for card: LocationCard in locations:
 		var obj_count = randi_range(0, 3)
-		while obj_count > 0:
-			var obj_id = _object_data.keys().pick_random()
+		var obj_candidates = _object_data.keys().duplicate()
+		while obj_count > 0 and obj_candidates:
+			var obj_id = obj_candidates.pop_at(randi() % obj_candidates.size())
 			var owner_counts = _get_object_owner_counts(obj_id)
 			var npc_owner_count = owner_counts[0]
 			var location_owner_count = owner_counts[1]
@@ -642,9 +663,9 @@ func _randomize(is_final_case: bool):
 				Card.add_bidirectional_connection(Link.Type.FOUND, card, obj)
 
 				if npc_owner_count > 1:
-					var candidates = location_npcs.duplicate()
+					var loc_candidates = location_npcs.duplicate()
 					for i in npc_owner_count:
-						var owner = candidates.pop_at(randi() % candidates.size())
+						var owner = loc_candidates.pop_at(randi() % loc_candidates.size())
 						Card.add_bidirectional_connection(Link.Type.PROPERTY, obj, owner)
 				elif npc_owner_count == 1:
 					var owner = location_npcs.pick_random()
@@ -663,7 +684,7 @@ func _randomize(is_final_case: bool):
 	# investigating, and there are no witnesses or suspects; only a single
 	# culprit or accomplice is revealed initially
 
-	if is_final_case:
+	if type == CaseType.FINAL:
 		_reveal_npc((culprits + accomplices).pick_random())
 
 	else:
@@ -941,11 +962,32 @@ func get_status() -> Status:
 func get_difficulty() -> int:
 	return _difficulty
 
+func get_case_type() -> CaseType:
+	match _difficulty:
+		0:
+			return CaseType.LEVEL0
+		6:
+			return CaseType.FINAL
+		_:
+			return CaseType.NORMAL
+
+func get_crime() -> String:
+	return _crime
+
+func get_motive_id() -> String:
+	return _motive_id
+
 ##
 ## Returns true if this is the "final" case.
 ##
 func is_final() -> bool:
 	return _difficulty == 6
+
+##
+## Returns true if this is a "level zero" case.
+##
+func is_level_zero() -> bool:
+	return _difficulty == 0
 
 ##
 ## Returns the number of days the player has to solve the case.
@@ -986,13 +1028,15 @@ func is_expired() -> bool:
 func can_be_abandoned() -> bool:
 	if _status in [Status.UNASSIGNED, Status.DONE]:
 		return false
-	return _start_day + _duration - GameState.get_day() >= _difficulty
+	var diff = maxi(1, _difficulty)
+	return _start_day + _duration - GameState.get_day() >= diff
 
 ##
 ## Returns the fee the player must pay if he wants to abandon the case.
 ##
 func get_abandon_fee() -> int:
-	var fee: int = _difficulty * _duration + (GameState.get_day() - _start_day)
+	var diff = maxi(1, _difficulty)
+	var fee: int = diff * _duration + (GameState.get_day() - _start_day)
 	if Globals.vice_flag:
 		fee = roundi(fee * 1.2)
 	return fee
@@ -1178,7 +1222,8 @@ func update_npc_roles():
 	# if the player just correctly identified a culprit, sic a minion on him in
 	# the next four hours
 
-	if culprit_id_count_before == 0 and _get_identified_culprit_count() > 0:
+	if (_difficulty > 0
+		and culprit_id_count_before == 0 and _get_identified_culprit_count() > 0):
 		var now = GameState.get_time()
 		if _next_minion_attack < now or _next_minion_attack >= now + 4:
 			_next_minion_attack = now + 1 + randi() % 3
@@ -1217,9 +1262,11 @@ func new_day():
 		return
 
 	var now = GameState.get_time()
-	if _next_minion_attack < now and _get_identified_culprit_count() > 0:
+	if (_difficulty > 0
+		and _next_minion_attack < now and _get_identified_culprit_count() > 0):
 		# attack probability = case difficulty * 2% for each time slot
-		var attack_prob = 8 * _difficulty
+		var diff = maxi(1, _difficulty)
+		var attack_prob = 8 * diff
 		var attack_roll = randi() % 100
 		if attack_roll < attack_prob:
 			# NB. it is assumed that this method is called at 8 AM
@@ -1287,14 +1334,16 @@ func check_solution() -> SolutionResult:
 
 	# check crime and motive
 
+	var crime_data = _level0_crime_data if is_level_zero() else _crime_data
+
 	if not (selected_crime and selected_motive):
 		print("❌ no motive selected")
 		error_count += 1
 	elif selected_crime != _crime:
 		print("❌ wrong crime: %s" % selected_crime)
 		error_count += 1
-	elif _crime_data[selected_crime][selected_motive].name != _motive.name:
-		print("❌ wrong motive: %s" % _crime_data[selected_crime][selected_motive].name)
+	elif crime_data[selected_crime][selected_motive].name != _motive.name:
+		print("❌ wrong motive: %s" % crime_data[selected_crime][selected_motive].name)
 	else:
 		print("✅ identified crime and motive")
 		right_motive = true
@@ -1434,6 +1483,7 @@ func get_json_dict():
 		"case_random_name": _case_random_name,
 		"case_name": _case_name,
 		"crime": _crime,
+		"motive_id": _motive_id,
 		"motive": _motive,
 		"victim_count": _victim_count,
 		"dead_victim_count": _dead_victim_count,
@@ -1498,6 +1548,7 @@ func restore(dict, catalog):
 	_case_random_name = dict.get("case_random_name", "Bork Bork Bork")
 	_case_name = dict.case_name
 	_crime = dict.crime
+	_motive_id = dict.get("motive_id", "MOT_XXX_000")
 	_motive = dict.motive
 	_victim_count = dict.get("victim_count", 0)
 	_dead_victim_count = dict.get("dead_victim_count", 0)
