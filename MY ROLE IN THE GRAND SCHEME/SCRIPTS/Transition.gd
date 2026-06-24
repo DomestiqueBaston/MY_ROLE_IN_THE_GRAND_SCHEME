@@ -9,10 +9,10 @@ signal transition_finished
 ## before making changes to the scene which might affect the screenshot.
 ##
 func start_transition():
-	Globals.hide_ui_layers()
+	Globals.hide_mouse()
 	await RenderingServer.frame_post_draw
 	var img = get_viewport().get_texture().get_image()
-	Globals.show_ui_layers()
+	Globals.show_mouse()
 	$Sprite.texture = ImageTexture.create_from_image(img)
 	$Animation.play("Fade")
 	show()

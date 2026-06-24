@@ -167,18 +167,29 @@ func _unhandled_input(event: InputEvent):
 		get_viewport().set_input_as_handled()
 
 ##
-## Hides the mouse cursor (temporarily).
+## Enables or disables display of the shader overlay (video effects that make
+## everything harder to read). By default, display is enabled.
 ##
-func hide_ui_layers():
-	$MouseLayer.hide()
-	#$ShaderOverlayLayer.hide()
+func set_shader_overlay_enabled(enabled: bool):
+	$ShaderOverlayLayer.visible = enabled
 
 ##
-## Makes the mouse cursor visible after a call to hide_ui_layers().
+## Returns true if display of the shader overlay is enabled.
 ##
-func show_ui_layers():
+func is_shader_overlay_enabled() -> bool:
+	return $ShaderOverlayLayer.visible
+
+##
+## Hides the mouse cursor (temporarily).
+##
+func hide_mouse():
+	$MouseLayer.hide()
+
+##
+## Makes the mouse cursor visible after a call to hide_mouse().
+##
+func show_mouse():
 	$MouseLayer.show()
-	#$ShaderOverlayLayer.show()
 
 ##
 ## As long as the mouse is "grabbed", mouse motion events will report no
@@ -299,6 +310,8 @@ func load_settings():
 		cats_eye_flag = config.get_value("settings", "cats_eye_flag", false)
 		i_am_one_of_them_flag = \
 			config.get_value("settings", "i_am_one_of_them", false)
+		$ShaderOverlayLayer.visible = \
+			config.get_value("settings", "video_shader", true)
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -322,6 +335,7 @@ func save_settings():
 	config.set_value("settings", "they_are_watching", they_are_watching_flag)
 	config.set_value("settings", "cats_eye", cats_eye_flag)
 	config.set_value("settings", "i_am_one_of_them", i_am_one_of_them_flag)
+	config.set_value("settings", "video_shader", $ShaderOverlayLayer.visible)
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:
