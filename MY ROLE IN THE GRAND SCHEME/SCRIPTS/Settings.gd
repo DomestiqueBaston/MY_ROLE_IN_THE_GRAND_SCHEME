@@ -24,6 +24,7 @@ signal done
 @onready var _watching_button: BaseButton = $Buttons_Sliders/Buttons/Watching
 @onready var _cats_eye_button: BaseButton = $Buttons_Sliders/Buttons/Cats_Eye
 @onready var _video_shader_button: BaseButton = $Buttons_Sliders/Cosmetic_Buttons/Video_Shader
+@onready var _mouse_cursor_button: BaseButton = $Buttons_Sliders/Cosmetic_Buttons/Mouse_Cursor
 
 var _initial_volumes: Array[float]
 var _confirmed: bool
@@ -49,6 +50,7 @@ func _ready():
 	_watching_button.button_pressed = Globals.they_are_watching_flag
 	_cats_eye_button.button_pressed = Globals.cats_eye_flag
 	_video_shader_button.button_pressed = Globals.is_shader_overlay_enabled()
+	_mouse_cursor_button.button_pressed = Globals.is_mouse_enabled()
 
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok.pressed.connect(_on_ok)
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Cancel.pressed.connect(_on_cancel)
@@ -73,6 +75,7 @@ func _on_ok():
 	Globals.they_are_watching_flag = _watching_button.button_pressed
 	Globals.cats_eye_flag = _cats_eye_button.button_pressed
 	Globals.set_shader_overlay_enabled(_video_shader_button.button_pressed)
+	Globals.set_mouse_enabled(_mouse_cursor_button.button_pressed)
 	done.emit()
 
 func _on_cancel():
@@ -101,6 +104,7 @@ func _on_reset():
 	_watching_button.button_pressed = false
 	_cats_eye_button.button_pressed = false
 	_video_shader_button.button_pressed = true
+	_mouse_cursor_button.button_pressed = true
 
 func is_confirmed() -> bool:
 	return _confirmed

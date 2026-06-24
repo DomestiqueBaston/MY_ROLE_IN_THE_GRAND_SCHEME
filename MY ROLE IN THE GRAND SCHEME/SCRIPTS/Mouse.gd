@@ -3,12 +3,18 @@ extends Node2D
 var _is_macos = (OS.get_name() == "macOS")
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	if visible:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	else:
+		set_process(false)
 
 func _notification(what: int):
-	# on macOS only, the cursor remains invisible when the mouse leaves the
-	# window
-	if _is_macos:
+
+	# on macOS only, in MOUSE_MODE_HIDDEN mode, the system cursor remains
+	# invisible when the mouse leaves the window, so we explicitly show it
+	# until it reenters the window
+
+	if _is_macos and visible:
 		match what:
 			NOTIFICATION_WM_MOUSE_ENTER:
 				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -16,27 +22,16 @@ func _notification(what: int):
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _process(_delta):
-	# while the mouse is captured, we need to set the mouse position in
-	# _input(), because the system mouse position is not updated
-	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
-		global_position = get_global_mouse_position().round()
+	global_position = get_global_mouse_position().round()
 
-func _input(event: InputEvent):
-	# while the mouse is captured, we have to update its position using
-	# InputEventMouseMouse.relative
-	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		global_position += event.relative
+func set_enabled(enabled: bool):
+	visible = enabled
+	set_process(enabled)
+	Input.set_mouse_mode(
+		Input.MOUSE_MODE_HIDDEN if enabled else Input.MOUSE_MODE_VISIBLE)
 
-func grab_mouse():
-	# stop updating the global mouse position
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-func release_mouse():
-	# start updating the global mouse position again
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-
-	# put the mouse back where we want it
-	Input.warp_mouse(get_viewport().get_screen_transform() * global_position)
+func is_enabled() -> bool:
+	return visible
 
 func set_cursor(cursor: Globals.MouseCursor):
 	$Arrow_Cursor.visible = (cursor == Globals.MouseCursor.ARROW)
