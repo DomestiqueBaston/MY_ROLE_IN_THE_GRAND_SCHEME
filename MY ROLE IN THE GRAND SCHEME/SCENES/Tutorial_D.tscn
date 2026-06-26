@@ -23,13 +23,16 @@ next_button = NodePath("Text/Chalk_Mask/Next_Button")
 [node name="Tuto_Bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_lwv6c")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Text" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Chalk_Mask" type="Sprite2D" parent="Text"]
 clip_children = 1
 texture = ExtResource("3_6ehsp")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
 offset_left = 59.0
@@ -54,6 +57,7 @@ text = "
 
 [color=#ff8864]D.B.[/color]"
 horizontal_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
 anchors_preset = 7
@@ -82,3 +86,4 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
 text = "Done"
+metadata/_edit_lock_ = true

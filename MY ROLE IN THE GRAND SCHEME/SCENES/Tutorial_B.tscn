@@ -370,11 +370,12 @@ metadata/_edit_lock_ = true
 
 [node name="Culprit_Accomplice_Etc" type="ColorRect" parent="Tuto_02"]
 offset_left = 463.0
-offset_top = 41.0
-offset_right = 608.0
-offset_bottom = 180.0
+offset_top = 35.0
+offset_right = 610.0
+offset_bottom = 196.0
 theme = ExtResource("4_dg5q6")
 color = Color(1, 0.8000001, 0, 0.5882353)
+metadata/_edit_lock_ = true
 
 [node name="Empty_Label" type="Label" parent="Tuto_02/Culprit_Accomplice_Etc"]
 layout_mode = 1
@@ -400,12 +401,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 3
 bbcode_enabled = true
-text = "How to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]establish the charges[/pulse][/color] ([color=#ff8864]Solid Black links[/color])!
+text = "How to [color=#ff1c18][pulse freq=3.0 color=#ffffff64 ease=-100.0]Establish Charges[/pulse][/color] ([color=#ff8864]Solid Black Links for First 3[/color])
 
 [color=#ffffff]-[/color] A [color=#ff1c18]Culprit[/color] is [color=#ff8864]linked[/color] to a [color=#ff1c18]Victim[/color].
 [color=#ffffff]-[/color] An [color=#ff1c18]Accomplice[/color] is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color].
-[color=#ffffff]-[/color] An [color=#ff1c18]Evidence[/color] (Object) is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color] or an
-[color=#ff1c18]Accomplice[/color] ."
+[color=#ffffff]-[/color] A piece of [color=#ff1c18]Evidence[/color] (Object) is [color=#ff8864]linked[/color] to a [color=#ff1c18]Culprit[/color] or an
+[color=#ff1c18]Accomplice[/color].
+[color=#ffffff]-[/color] A [color=#ff1c18]Social Link[/color] connects
+[color=#ff1c18]two Characters[/color]."
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true

@@ -23,13 +23,16 @@ next_button = NodePath("Text/Chalk_Mask/Next_Button")
 [node name="Tuto_Bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_dprvf")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Text" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Chalk_Mask" type="Sprite2D" parent="Text"]
 clip_children = 1
 texture = ExtResource("2_ykdmj")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Tutorial_Text" type="RichTextLabel" parent="Text/Chalk_Mask"]
 offset_left = 14.0
@@ -58,9 +61,11 @@ text = "
 [center]- [color=#ff1c18]ESTABLISHING INVESTIGATION RELATIONSHIPS[/color] -[/center]
 
 	[color=#ffffff]-[/color] Use the [color=#ff8864]Investigation Board[/color] to [color=#ff8864]organize[/color] [color=#ff1c18]clues[/color] and [color=#ff8864]connect[/color] [color=#ff1c18]cards[/color] with [color=#ff1c18]colored threads[/color] (each color represents a different relation type like [color=#ff1c18]Friendship[/color], [color=#ff1c18]Intimacy[/color], [color=#ff1c18]Culprit[/color], [color=#ff1c18]Accomplice[/color], etc.) to visualize [color=#ff1c18]relationships[/color], make [color=#ff1c18]accusations[/color], and [color=#ff1c18]establish evidence[/color]. These [color=#ff8864]links[/color] can be [color=#ff1c18]Confirmed[/color] ([color=#ff8864]Solid[/color]) or [color=#ff1c18]Probable[/color] ([color=#ff8864]Dashed[/color]) and represent relations between elements of the case.
-	[color=#ffffff]-[/color] A [color=#ff1c18]Culprit[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Victim[/color], An [color=#ff1c18]Accomplice[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Culprit[/color] and a [color=#ff1c18]Witness[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to [color=#ff1c18]another link[/color].
-	[color=#ffffff]-[/color] Make sure you have [color=#ff8864]at least[/color] one [color=#ff1c18]culprit[/color], one piece of [color=#ff1c18]evidence[/color], and a [color=#ff1c18]motive[/color]. When you're ready, [color=#ff1c18]validate the case[/color] (in the [color=#ff8864]Cases[/color] menu).
+	[color=#ffffff]-[/color] A [color=#ff1c18]Culprit[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Victim[/color], An [color=#ff1c18]Accomplice[/color] is linked ([color=#ff8864]Confirmed - Black[/color]) to a [color=#ff1c18]Culprit[/color].
+	[color=#ffffff]-[/color] Make sure you have [color=#ff8864]at least[/color] one [color=#ff1c18]culprit[/color], one piece of [color=#ff1c18]evidence[/color], and a [color=#ff1c18]motive[/color] (though you'll very probably need [color=#ff1c18]more[/color] than that as [color=#ff1c18]relationships[/color] [color=#ff8864]are just as important[/color]).
+	[color=#ffffff]-[/color] When you're ready, [color=#ff1c18]validate the case[/color] (in the [color=#ff8864]Cases[/color] menu)...
 "
+metadata/_edit_lock_ = true
 
 [node name="Next_Button" type="Button" parent="Text/Chalk_Mask"]
 anchors_preset = 7
@@ -89,3 +94,4 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_s180t")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_lalru")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dc34s")
 text = "Next..."
+metadata/_edit_lock_ = true
