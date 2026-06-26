@@ -1225,7 +1225,7 @@
 	},
 	"OBJ325": {
 		"info_name": "- COORDINATES NOTE -",
-		"name": "Folded paper with coordinates",
+		"name": "Paper with coordinates",
 		"description": "No names, no titles. Just latitude and longitude.",
 		"owners": {
 			"npc": [1]
