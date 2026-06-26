@@ -2,19 +2,16 @@ extends Node2D
 
 var _is_macos = (OS.get_name() == "macOS")
 
+var _arrow1: Texture2D = preload("res://GRAPHICS/UI/Mouse_Arrow_1.png")
+var _arrow2: Texture2D = preload("res://GRAPHICS/UI/Mouse_Arrow_2.png")
+
 func _ready():
-	if visible:
-		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	else:
-		set_process(false)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _notification(what: int):
-
-	# on macOS only, in MOUSE_MODE_HIDDEN mode, the system cursor remains
-	# invisible when the mouse leaves the window, so we explicitly show it
-	# until it reenters the window
-
-	if _is_macos and visible:
+	# on macOS only, the cursor remains invisible when the mouse leaves the
+	# window
+	if _is_macos:
 		match what:
 			NOTIFICATION_WM_MOUSE_ENTER:
 				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -22,16 +19,27 @@ func _notification(what: int):
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _process(_delta):
-	global_position = get_global_mouse_position().round()
+	# while the mouse is captured, we need to set the mouse position in
+	# _input(), because the system mouse position is not updated
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		global_position = get_global_mouse_position().round()
 
-func set_enabled(enabled: bool):
-	visible = enabled
-	set_process(enabled)
-	Input.set_mouse_mode(
-		Input.MOUSE_MODE_HIDDEN if enabled else Input.MOUSE_MODE_VISIBLE)
+func _input(event: InputEvent):
+	# while the mouse is captured, we have to update its position using
+	# InputEventMouseMouse.relative
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		global_position += event.relative
 
-func is_enabled() -> bool:
-	return visible
+func grab_mouse():
+	# stop updating the global mouse position
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func release_mouse():
+	# start updating the global mouse position again
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+	# put the mouse back where we want it
+	Input.warp_mouse(get_viewport().get_screen_transform() * global_position)
 
 func set_cursor(cursor: Globals.MouseCursor):
 	$Arrow_Cursor.visible = (cursor == Globals.MouseCursor.ARROW)
@@ -45,3 +53,9 @@ func get_cursor() -> Globals.MouseCursor:
 		return Globals.MouseCursor.CIRCLE
 	else:
 		return Globals.MouseCursor.CROSS
+
+func set_alternate_style(alternate: bool):
+	$Arrow_Cursor.texture = _arrow2 if alternate else _arrow1
+
+func is_alternate_style() -> bool:
+	return $Arrow_Cursor.texture == _arrow2

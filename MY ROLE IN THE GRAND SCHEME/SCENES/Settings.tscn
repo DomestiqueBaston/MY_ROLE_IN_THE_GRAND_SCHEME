@@ -352,7 +352,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 tooltip_text = "Switch mouse cursor"
 toggle_mode = true
-button_pressed = true
 texture_pressed = ExtResource("36_665vc")
 texture_hover = ExtResource("37_fl83n")
 texture_click_mask = ExtResource("38_k42nh")

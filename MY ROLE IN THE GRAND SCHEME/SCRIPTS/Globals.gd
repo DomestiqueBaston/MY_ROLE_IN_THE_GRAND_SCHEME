@@ -180,6 +180,18 @@ func is_shader_overlay_enabled() -> bool:
 	return $ShaderOverlayLayer.visible
 
 ##
+## When passed true, uses a different, non-default style for the mouse cursor.
+##
+func set_alternate_mouse_style(alternate: bool):
+	_mouse.set_alternate_style(alternate)
+
+##
+## Returns true if set_alternate_mouse_style(true) has been called.
+##
+func is_alternate_mouse_style() -> bool:
+	return _mouse.is_alternate_style()
+
+##
 ## Hides the mouse cursor (temporarily).
 ##
 func hide_mouse():
@@ -190,6 +202,21 @@ func hide_mouse():
 ##
 func show_mouse():
 	$MouseLayer.show()
+
+##
+## As long as the mouse is "grabbed", mouse motion events will report no
+## movement, meaning that nodes' _input() methods will not detect any movement.
+## The user, however, will not see the difference: see the Mouse node. Be sure
+## to call release_mouse() when done.
+##
+func grab_mouse():
+	_mouse.grab_mouse()
+
+##
+## "Ungrabs" the mouse after a call to grab_mouse().
+##
+func release_mouse():
+	_mouse.release_mouse()
 
 ##
 ## Returns the mouse cursor currently displayed.
@@ -220,19 +247,6 @@ func pop_mouse_cursor():
 		push_error("pop_mouse_cursor: stack is empty!")
 	else:
 		_mouse.set_cursor(_mouse_cursor_stack.pop_back())
-
-##
-## If enabled is true, our custom mouse cursor is displayed instead of the
-## system mouse cursor. This is the default.
-##
-func set_mouse_enabled(enabled: bool):
-	_mouse.set_enabled(enabled)
-
-##
-## Returns true if our custom mouse cursor is displayed.
-##
-func is_mouse_enabled() -> bool:
-	return _mouse.is_enabled()
 
 ##
 ## Specifies whether links of the given type are visible or not. By default,
@@ -310,8 +324,8 @@ func load_settings():
 			config.get_value("settings", "i_am_one_of_them", false)
 		$ShaderOverlayLayer.visible = \
 			config.get_value("settings", "video_shader", true)
-		set_mouse_enabled(
-			config.get_value("settings", "mouse_cursor", true))
+		_mouse.set_alternate_style(
+			config.get_value("settings", "alternate_mouse", false))
 
 ##
 ## Saves current settings (e.g. sound levels) to disk.
@@ -336,7 +350,7 @@ func save_settings():
 	config.set_value("settings", "cats_eye", cats_eye_flag)
 	config.set_value("settings", "i_am_one_of_them", i_am_one_of_them_flag)
 	config.set_value("settings", "video_shader", $ShaderOverlayLayer.visible)
-	config.set_value("settings", "mouse_cursor", is_mouse_enabled())
+	config.set_value("settings", "alternate_mouse", _mouse.is_alternate_style())
 	config.save(_settings_path)
 
 func get_volume(bus_name: StringName) -> float:

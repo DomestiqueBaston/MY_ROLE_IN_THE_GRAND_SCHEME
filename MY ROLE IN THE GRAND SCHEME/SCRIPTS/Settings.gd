@@ -27,6 +27,8 @@ signal done
 @onready var _mouse_cursor_button: BaseButton = $Buttons_Sliders/Cosmetic_Buttons/Mouse_Cursor
 
 var _initial_volumes: Array[float]
+var _initial_video_button_state: bool
+var _initial_mouse_button_state: bool
 var _confirmed: bool
 
 func _ready():
@@ -37,6 +39,7 @@ func _ready():
 		_initial_volumes.append(volume)
 		sliders[i].value = volume * 100.0
 		sliders[i].value_changed.connect(_on_volume_changed.bind(i))
+
 	_difficulty_slider.value = Globals.game_difficulty
 	_drug_quality_button.button_pressed = Globals.drug_quality_flag
 	_plot_depth_button.button_pressed = Globals.plot_depth_flag
@@ -49,8 +52,14 @@ func _ready():
 	_hectic_city_button.button_pressed = Globals.hectic_city_flag
 	_watching_button.button_pressed = Globals.they_are_watching_flag
 	_cats_eye_button.button_pressed = Globals.cats_eye_flag
-	_video_shader_button.button_pressed = Globals.is_shader_overlay_enabled()
-	_mouse_cursor_button.button_pressed = Globals.is_mouse_enabled()
+
+	_initial_video_button_state = Globals.is_shader_overlay_enabled()
+	_video_shader_button.button_pressed = _initial_video_button_state
+	_video_shader_button.toggled.connect(_on_video_button_toggled)
+
+	_initial_mouse_button_state = Globals.is_alternate_mouse_style()
+	_mouse_cursor_button.button_pressed = _initial_mouse_button_state
+	_mouse_cursor_button.toggled.connect(_on_mouse_button_toggled)
 
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Ok.pressed.connect(_on_ok)
 	$Buttons_Sliders/Ok_Cancel_Reset_Buttons/Cancel.pressed.connect(_on_cancel)
@@ -59,6 +68,12 @@ func _ready():
 func _on_volume_changed(value: float, index: int):
 	var bus_name = _volume_sliders.values()[index]
 	Globals.set_volume(bus_name, value / 100.0)
+
+func _on_video_button_toggled(toggled_on: bool):
+	Globals.set_shader_overlay_enabled(toggled_on)
+
+func _on_mouse_button_toggled(toggled_on: bool):
+	Globals.set_alternate_mouse_style(toggled_on)
 
 func _on_ok():
 	_confirmed = true
@@ -75,13 +90,15 @@ func _on_ok():
 	Globals.they_are_watching_flag = _watching_button.button_pressed
 	Globals.cats_eye_flag = _cats_eye_button.button_pressed
 	Globals.set_shader_overlay_enabled(_video_shader_button.button_pressed)
-	Globals.set_mouse_enabled(_mouse_cursor_button.button_pressed)
+	Globals.set_alternate_mouse_style(_mouse_cursor_button.button_pressed)
 	done.emit()
 
 func _on_cancel():
 	var bus_names = _volume_sliders.values()
 	for i in _volume_sliders.size():
 		Globals.set_volume(bus_names[i], _initial_volumes[i])
+	Globals.set_shader_overlay_enabled(_initial_video_button_state)
+	Globals.set_alternate_mouse_style(_initial_mouse_button_state)
 	_confirmed = false
 	done.emit()
 
@@ -104,7 +121,7 @@ func _on_reset():
 	_watching_button.button_pressed = false
 	_cats_eye_button.button_pressed = false
 	_video_shader_button.button_pressed = true
-	_mouse_cursor_button.button_pressed = true
+	_mouse_cursor_button.button_pressed = false
 
 func is_confirmed() -> bool:
 	return _confirmed
