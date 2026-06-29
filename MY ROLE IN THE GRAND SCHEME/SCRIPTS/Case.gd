@@ -1387,14 +1387,26 @@ func check_solution() -> SolutionResult:
 			print("❌ not evidence: %s" % obj.get_display_name())
 			bad_link_count += 1
 
-	# check incriminating links
+	# check incriminating links: we are only interested in links between a
+	# victim and a culprit/accomplice, or between a culprit and an accomplice
+	# (for intimacy links in adultery cases)
 
 	for npc in npcs:
-		if npc.actual_role != NpcCard.NpcRole.VICTIM:
-			continue
+		var other_roles
+		match npc.actual_role:
+			NpcCard.NpcRole.VICTIM:
+				other_roles = [NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE]
+			NpcCard.NpcRole.CULPRIT:
+				other_roles = [NpcCard.NpcRole.ACCOMPLICE]
+			_:
+				continue
+
 		for link_type in Link.incriminating_types:
 			var type_name = Link.Type.keys()[link_type].to_lower()
+
 			for other in npc.get_connections(link_type):
+				if not (other is NpcCard and other.actual_role in other_roles):
+					continue
 				var link = npc.find_link_to(other, link_type)
 				if link == null:
 					print("❌ link not found: %s => %s" % [
@@ -1408,6 +1420,7 @@ func check_solution() -> SolutionResult:
 					print("✅ link identified: %s => %s" % [
 						type_name, other.get_display_name()])
 					good_link_count += 1
+
 			for link in npc.find_links(link_type):
 				if link.status != Link.Status.CONFIRMED:
 					continue
@@ -1416,8 +1429,7 @@ func check_solution() -> SolutionResult:
 					other = link.pin2.backing
 				else:
 					other = link.pin1.backing
-				if other is NpcCard and not other.apparent_role in [
-					NpcCard.NpcRole.CULPRIT, NpcCard.NpcRole.ACCOMPLICE]:
+				if not (other is NpcCard and other.actual_role in other_roles):
 					continue
 				if not other in npc.get_connections(link_type):
 					print("❌ incorrect link: %s => %s" % [
