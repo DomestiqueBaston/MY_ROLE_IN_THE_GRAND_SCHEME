@@ -2878,7 +2878,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_0yrs3")
 text = "No more trouble..."
 
 [node name="Search_Result" type="VBoxContainer" parent="Overlays/Interaction_Result/Combat/Chalk/Control/Report/Search_Body"]
-visible = false
 custom_minimum_size = Vector2(215, 11)
 layout_mode = 0
 offset_top = 16.0
