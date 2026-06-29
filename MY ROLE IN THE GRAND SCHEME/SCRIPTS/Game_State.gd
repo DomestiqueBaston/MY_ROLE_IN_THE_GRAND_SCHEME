@@ -1377,6 +1377,7 @@ func start_minion_attack():
 	var case = get_current_case()
 	if case:
 		var minion: NpcCard = case.fetch_minion()
+		minion.update_visible_health()
 		player.paranoia_state.minion_attack_count += 1
 		await Globals.dialog_overlay.show_attack_message(minion)
 		start_combat(minion, _player_location, _player_location_card)

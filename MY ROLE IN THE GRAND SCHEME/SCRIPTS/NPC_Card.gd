@@ -232,13 +232,19 @@ func has_been_seen() -> bool:
 ## Updates the NPC's visible health, and flags him as having been seen today.
 ##
 func visit():
+	update_visible_health()
+	_last_dialogue = GameState.get_working_day()
+
+##
+## Updates the NPC's visible health.
+##
+func update_visible_health():
 	if health >= 8:
 		npc_health = NpcHealth.GOOD
 	elif health >= 4:
 		npc_health = NpcHealth.AVERAGE
 	else:
 		npc_health = NpcHealth.LOW
-	_last_dialogue = GameState.get_working_day()
 
 ##
 ## An NPC who works the night shift sleeps in the morning and the afternoon;
