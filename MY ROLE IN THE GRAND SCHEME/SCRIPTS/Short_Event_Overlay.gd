@@ -44,18 +44,6 @@ func choose_sleep_time() -> int:
 	return result
 
 ##
-## Display a message telling the player he has a lot of outstanding debts.
-##
-func show_bill_announcement():
-	$Overlays/Misc/Announces/Bill.show()
-	$Overlays/Misc.show()
-	await _appear()
-	await $Overlays/Misc/Announces.done
-	await _disappear()
-	$Overlays/Misc.hide()
-	$Overlays/Misc/Announces/Bill.hide()
-
-##
 ## Display a message telling the player he has overcome his addiction or died.
 ##
 func show_addiction_message(die: bool):

@@ -444,7 +444,9 @@ func _new_day():
 
 	if day % 7 == 0:
 		_send_new_bill()
-		await Globals.dialog_overlay.show_debt_reminder()
+		# if the player has 5 or more debts, he will be sent to prison shortly...
+		if GameState.player.get_debt_count() < 5:
+			await Globals.dialog_overlay.show_debt_reminder()
 		_dealer_drug_stock = randi_range(3, 7)
 		var level_zero_roll = randi() % 21
 		if level_zero_roll < 7:
