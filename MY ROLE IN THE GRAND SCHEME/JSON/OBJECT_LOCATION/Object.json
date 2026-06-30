@@ -452,7 +452,7 @@
 	"OBJ050": {
 		"info_name": "- TALISMAN -",
 		"name": "Talisman",
-		"description": "A Pentagram-shaped plastic talisman.",
+		"description": "A Pentagram\nshaped plastic talisman.",
 		"owners": {
 			"npc": [1]
 		},
@@ -1423,7 +1423,7 @@
 	},
 	"OBJ347": {
 		"info_name": "- SERIAL LABEL -",
-		"name": "Paper label with serial code",
+		"name": "Paper with serial code",
 		"description": "The code is not linked to anything identifiable. Swell!",
 		"owners": {
 			"npc": [1]
