@@ -860,7 +860,7 @@ Les sbires ne font pas partie du pool de PNJs, ils sont générés à chaque bes
 
 Enquêtes niveau 0 :
  - Ces enquêtes ont pour but de soutenir un peu le joueur lorsqu’il va se trouver à cours d’argent.
- - Chaque semaine, n’importe quel jour et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 33% de chance de ce voir proposer 1 enquête de niveau 0 par un PNJ quelconque.
+ - Tous les 3 jours, et à moins d’avoir déjà 4 enquêtes en cours, le joueur aura 25% de chance de se voir proposer 1 enquête de niveau 0 par un PNJ quelconque.
 	- Pour ces crimes, un mobile ne sera pas « nécessaire » (le menu Crime Motive sera prérempli avec le seul mobile accessible).
 	- Les emplacements des preuves sont précisés dans le json !
 	- Les gains (et pertes) sont les mêmes sauf pour l’argent. La récompense sera aléatoirement de 50 à 75Dø.
