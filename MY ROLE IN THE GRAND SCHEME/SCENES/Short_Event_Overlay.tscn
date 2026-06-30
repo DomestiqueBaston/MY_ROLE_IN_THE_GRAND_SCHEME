@@ -2004,6 +2004,13 @@ text = " to) improve yourself...
 fit_content = true
 autowrap_mode = 0
 
+[node name="Cards" type="Node2D" parent="Overlays/Income_Start/Income"]
+position = Vector2(243, 159)
+script = ExtResource("76_5oqru")
+size = Vector2(154, 100)
+show_bounding_box = true
+metadata/_custom_type_script = "uid://bfic46uloqv5p"
+
 [node name="Income_Half" type="Control" parent="Overlays/Income_Start"]
 visible = false
 modulate = Color(1, 1, 1, 0.941176)
@@ -2134,6 +2141,13 @@ text = " to) improve yourself...
  [color=#ff1c18]body[/color] (and the [color=#ff1c18]cops[/color])."
 fit_content = true
 autowrap_mode = 0
+
+[node name="Cards" type="Node2D" parent="Overlays/Income_Start/Income_Half"]
+position = Vector2(243, 163)
+script = ExtResource("76_5oqru")
+size = Vector2(154, 100)
+show_bounding_box = true
+metadata/_custom_type_script = "uid://bfic46uloqv5p"
 
 [node name="Income_Fail" type="Control" parent="Overlays/Income_Start"]
 visible = false

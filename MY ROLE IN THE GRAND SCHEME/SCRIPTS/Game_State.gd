@@ -2477,10 +2477,13 @@ func validate_case():
 			player.wanted = 0
 			player.money += money_won
 
-	await Globals.dialog_overlay.show_case_solved(result, money_won, cards_won)
+	var new_cards: Array[Card]
+	if cards_won > 0:
+		new_cards = player.award_new_cards(cards_won)
+
+	await Globals.dialog_overlay.show_case_solved(result, money_won, new_cards)
 
 	if cards_won > 0:
-		player.award_new_cards(cards_won)
 		await manage_cards()
 
 	_close_current_case()

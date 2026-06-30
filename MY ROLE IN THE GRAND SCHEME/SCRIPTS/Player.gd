@@ -465,9 +465,10 @@ func clear_discard_cards():
 ##
 ## Awards the player some number of new cards, of any type, and which he does
 ## not already have. The cards are added to his "discard" deck, so that he can
-## decide later which he wants to keep and which he does not.
+## decide later which he wants to keep and which he does not, and they are also
+## returned.
 ##
-func award_new_cards(count: int):
+func award_new_cards(count: int) -> Array[Card]:
 	for i in count:
 		match randi() % 4:
 			0:
@@ -482,6 +483,7 @@ func award_new_cards(count: int):
 			3:
 				var id = _pick_random_investigation_card(true, true, true)
 				_discard_cards.append(InvestigationCard.create_card(id))
+	return _discard_cards.slice(_discard_cards.size() - count)
 
 ##
 ## Picks 5 abstract and/or investigation cards at random for an investigation,

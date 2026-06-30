@@ -15,32 +15,38 @@ func _ready():
 	$Income_Half/Quit.connect("pressed", _on_ok_pressed)
 	$Income_Fail/Quit.connect("pressed", _on_ok_pressed)
 
-func start(result: Case.SolutionResult, money: int = 0, cards: int = 0):
-	var control: Control
+func _get_income_control(result: Case.SolutionResult) -> Control:
 	match result:
 		Case.SolutionResult.WRONG:
-			control = $Income_Fail
+			return $Income_Fail
 		Case.SolutionResult.HALF_RIGHT:
-			control = $Income_Half
+			return $Income_Half
 		Case.SolutionResult.RIGHT:
-			control = $Income
+			return $Income
+	return null
+
+func start(result: Case.SolutionResult, money: int = 0, cards: Array[Card] = []):
+	var control: Control = _get_income_control(result)
 
 	if result != Case.SolutionResult.WRONG:
 		var money_label: RichTextLabel = control.get_node("Chalk/Money_Cards/Money")
 		var cards_label: RichTextLabel = control.get_node("Chalk/Money_Cards/Cards")
+		var card_stack: CardStack = control.get_node("Cards")
 		money_label.text = str(money)
-		cards_label.text = str(cards)
+		cards_label.text = str(cards.size())
+		for card in cards:
+			card_stack.add_child(card)
 
 	control.show()
 
 func clear(result: Case.SolutionResult):
-	match result:
-		Case.SolutionResult.WRONG:
-			$Income_Fail.hide()
-		Case.SolutionResult.HALF_RIGHT:
-			$Income_Half.hide()
-		Case.SolutionResult.RIGHT:
-			$Income.hide()
+	var control: Control = _get_income_control(result)
+	control.hide()
+
+	if result != Case.SolutionResult.WRONG:
+		var card_stack: CardStack = control.get_node("Cards")
+		while card_stack.get_child_count() > 0:
+			card_stack.remove_child(card_stack.get_child(0))
 
 func _on_ok_pressed():
 	Globals.valid_sound.play()

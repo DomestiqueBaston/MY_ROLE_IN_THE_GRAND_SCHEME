@@ -689,10 +689,11 @@ func show_case_expired():
 
 ##
 ## Displays a message when the player has found a solution for the case,
-## explaining whether or not his solution was right, and how much money and now
-## many cards he has earned.
+## explaining whether or not his solution was right, how much money he has
+## earned, and showing any new cards he has won.
 ##
-func show_case_solved(result: Case.SolutionResult, money: int = 0, cards: int = 0):
+func show_case_solved(
+	result: Case.SolutionResult, money: int = 0, cards: Array[Card] = []):
 	$Overlays/Income_Start.start(result, money, cards)
 	$Overlays/Income_Start.show()
 	await _appear()
