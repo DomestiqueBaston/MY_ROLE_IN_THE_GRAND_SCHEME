@@ -222,9 +222,9 @@ func _ready():
 func start_game():
 	_hour = _start_time
 	_random_sms_time = -1
-	# the player may be offered a level zero case later in the week
-	var level_zero_roll = randi() % 18
-	if level_zero_roll < 6:
+	# the player may be offered a level zero case in the next couple days
+	var level_zero_roll = randi() % 8
+	if level_zero_roll < 2:
 		_level_zero_case_day = 1 + level_zero_roll
 	else:
 		_level_zero_case_day = -1
@@ -436,9 +436,8 @@ func _send_player_to_prison():
 #
 func _new_day():
 
-	# every Monday the player is sent a new bill, Rowena replenishes her stock
-	# of drugs, and we decide if the player will be offered a level zero case
-	# one day this week
+	# every Monday the player is sent a new bill, and Rowena replenishes her
+	# stock of drugs
 
 	var day = get_day()
 
@@ -448,12 +447,17 @@ func _new_day():
 		if GameState.player.get_debt_count() < 5:
 			await Globals.dialog_overlay.show_debt_reminder()
 		_dealer_drug_stock = randi_range(3, 7)
-		var level_zero_roll = randi() % 21
-		if level_zero_roll < 7:
-			_level_zero_case_day = day + level_zero_roll
 	else:
 		if _dealer_drug_stock > 0 and randi() % 4 == 0:
 			_dealer_drug_stock -= 1
+
+	# every 3 days, there is 1 chance in 4 that the player will be offered a
+	# level zero case
+
+	if day % 3 == 0:
+		var level_zero_roll = randi() % 12
+		if level_zero_roll < 3:
+			_level_zero_case_day = day + level_zero_roll
 
 	# increment the health of NPCs in active cases, and check whether they have
 	# expired
