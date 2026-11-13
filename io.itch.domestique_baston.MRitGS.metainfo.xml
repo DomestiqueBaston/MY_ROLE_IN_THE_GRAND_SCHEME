@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.itch.domestique_baston.MRitGS</id>
+
+  <name>My Role in the Grand Scheme</name>
+  <summary>A sort of Clue-inspired role-playing game</summary>
+
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <content_rating type="oars-1.0" />
+
+  <developer id="io.itch.domestique_baston">
+    <name>Domestique Baston</name>
+  </developer>
+
+  <url type="homepage">https://domestique-baston.itch.io/my-role-in-the-grand-scheme</url>
+
+  <releases>
+    <release version="1.0" date="2026-11-13"/>
+  </releases>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <description>
+    <p>
+      Welcome to New Caelum.
+    </p>
+    <p>
+      You're a newly licensed private investigator. Gather clues, interrogate
+      suspects, search crime scenes and connect the pieces (and perhaps defend
+      yourself). Every case is a puzzle, and every conclusion is yours to make.
+    </p>
+    <p>
+      Take cases. Get paid. Stay alive. Repeat.
+    </p>
+    <p>
+      Build your investigation board, establish relationships between people,
+      places and evidence, and uncover the madness and the corruption hiding
+      beneath the city's surface.
+    </p>
+    <p>
+      There won’t be any easy answers.
+    </p>
+    <p>
+      Figure it out yourself.
+    </p>
+    <p>
+      P.S. Keep in mind that the game is VERY difficult, the tutorial is
+      minimal, and you'll have to learn as you go (everything is intentional).
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.itch.domestique_baston.MRitGS.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://www.ferdiferdi.com/DomestiqueBaston/mritgs/02.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.ferdiferdi.com/DomestiqueBaston/mritgs/03.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.ferdiferdi.com/DomestiqueBaston/mritgs/04.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.ferdiferdi.com/DomestiqueBaston/mritgs/05.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.ferdiferdi.com/DomestiqueBaston/mritgs/06.png</image>
+    </screenshot>
+  </screenshots>
+</component>
